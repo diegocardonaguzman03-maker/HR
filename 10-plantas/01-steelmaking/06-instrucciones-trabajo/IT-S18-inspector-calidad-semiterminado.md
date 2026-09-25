@@ -6,21 +6,21 @@
 | Código | IT-ACE-S18 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-18 Inspector de Calidad de Semiterminado (línea 5 Calidad, nivel N-5) |
+| Rol | S-18 Inspector de Calidad de Semiterminado (sindicalizado, línea 5 Calidad, nivel N-5) |
 | Área | Inspección en línea y en patio: planchón (CC1) y palanquilla (CC2) |
-| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) y administrativo (acondicionamiento en patio) |
+| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) y administrativo (acondicionamiento en patio) · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-09 Metalurgista de Producto / Ingeniero de Calidad; coordina con C-06 en el turno |
 | Manuales de referencia | MO-CC1-09, MO-CC2-09; MS-ACE-01, -04, -06, -08, -09; FT-ACE-001 v0.3 §4, §5, §7 |
 | Elaboró | experto-operativo-metalurgia (con criterio de diseño instruccional de C&D) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director de C&D |
 
 > Esta IT **no reemplaza** a los manuales ni al catálogo de defectos. Criterios de referencia: validar con C-09, OEM y Laminación antes de usarlos en planta.
 
 ## 2. Mi puesto en 30 segundos
-Eres la última barrera antes de Laminación. Inspeccionas, mides, clasificas y dispones cada defecto: aceptar, acondicionar, degradar o rechazar. Si ves un defecto que se repite, avisas a la máquina para que corrija en línea. Inspeccionas cerca de producto caliente y de grúas: primero tu seguridad.
+Eres la última barrera antes de Laminación. Inspeccionas, mides, clasificas y dispones cada defecto: aceptar, acondicionar, degradar o rechazar. Si ves un defecto que se repite, avisas a la máquina para que corrija en línea. Inspeccionas cerca de producto caliente y de grúas: primero tu seguridad. Sin funciones de mando (LFT art. 9): si algo no está bien, **avisas, detienes y escalas** a C-09 (en turno, C-06).
 
 > **★ Mis 3 reglas de oro**
 > 1. ★ Inspecciono solo con la pieza **asentada**, la grúa fuera y la pila estable; nunca entre pilas durante izajes.
@@ -44,6 +44,8 @@ flowchart LR
   end
   A --> B --> C --> D
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 ![Figura 1. Inspección de planchón y palanquilla: estaciones, zonas y rutas de escape](../img/it-S18-puesto.svg)
@@ -181,6 +183,14 @@ flowchart LR
 | OJT | 25 turnos con inspector certificado (300 h): CC1 300 planchones verificados · CC2 20 coladas y 20 macros |
 | Pasos ★ que me evalúan | MO-CC1-09 pasos 2, 6 y concordancia ≥ 90% con el catálogo · MO-CC2-09 pasos 5, 11, 12, 13 y 10 macros con ≥ 90% de acuerdo con C-09 |
 | Vigencia | **24 meses** (TD-P07). No tiene certificaciones de 12 meses. Refresco anual 8 h de calibración de criterio con C-09 |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 | Término | Qué es |

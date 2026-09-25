@@ -9,20 +9,20 @@
 | Estado | Borrador para validación |
 | Rol | S-10 Operador de Manejo de Escoria (sindicalizado, N-4) |
 | Área | Portaollas de escoria de EAF-1, EAF-2 y LF; patio de escoria |
-| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) |
+| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-05 Supervisor de Hornos |
 | Manuales de referencia | MO-EAF-05 · MS-ACE-01, 03, 06, 08, 09 · FT-ACE-001 §2 |
 | Elaboró | experto-operativo-metalurgia (con diseño instruccional) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
 > Esta IT **resume** tu parte de MO-EAF-05 y MS-ACE-03. **No reemplaza al manual.** Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 / C-16 lo validen.
 
 ## 2. Mi puesto en 30 segundos
 
-Coloco la olla de escoria (pote) bajo la puerta del EAF. La retiro llena y la vacío en el patio de escoria. También retiro la escoria del LF. La escoria sale a **más de 1,500 °C**: si toca **agua**, explota. Si no hay olla lista, el horno no puede desescoriar y se retrasa la colada.
+Coloco la olla de escoria (pote) bajo la puerta del EAF. La retiro llena y la vacío en el patio de escoria. También retiro la escoria del LF. La escoria sale a **más de 1,500 °C**: si toca **agua**, explota. Si no hay olla lista, el horno no puede desescoriar y se retrasa la colada. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-05.
 
 > ★ **Mis 3 reglas de oro**
 > 1. **Olla, fosa y suelo secos.** Nunca coloques ni vacíes escoria sobre agua, charcos o suelo húmedo.
@@ -39,6 +39,8 @@ flowchart LR
     D --> C
     C --> E["18:45 / 06:45<br/>Registro de ollas de escoria<br/>entrega de turno"]
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -190,6 +192,14 @@ flowchart LR
 | MS-ACE-03 | **U** (3) | 6 h | 20 h | 7, 8, 9 | 24 meses (TD-P07) |
 
 Plan del puesto (DP-ACE-S): ruta técnica 24 h, OJT 180 h (15 turnos), refresco de manejo defensivo y escoria–agua 8 h/año. Licencia interna de equipo móvil pesado. Sin certificaciones de 12 meses en este puesto.
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 

@@ -6,21 +6,21 @@
 | Código | IT-ACE-S15 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-15 Preparador de Distribuidores (nivel N-3, entrada) |
+| Rol | S-15 Preparador de Distribuidores (sindicalizado, nivel N-3, entrada) |
 | Área | Taller de distribuidores compartido: CC1 (45 t) y CC2 (30 t) |
-| Turno | 4x4 de 12 h (precalentamiento y entrega; relevo 07:00 / 19:00) y administrativo (revestimiento) |
+| Turno | 4x4 de 12 h (precalentamiento y entrega; relevo 07:00 / 19:00) y administrativo (revestimiento) · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-06 Supervisor de Colada Continua; línea técnica de C-15 Especialista de Refractarios |
 | Manuales de referencia | MO-CC1-01, MO-CC2-01; MS-ACE-02, -03, -04, -05, -06, -08; FT-ACE-001 v0.3 §4–§5 |
 | Elaboró | experto-operativo-metalurgia (con criterio de diseño instruccional de C&D) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director de C&D |
 
 > Esta IT **no reemplaza** a los manuales. Valores de referencia de FT-ACE-001 y del proveedor de refractarios: validar con C-15 / OEM antes de usarlos en planta.
 
 ## 2. Mi puesto en 30 segundos
-Entregas distribuidores limpios, **secos**, bien armados y precalentados a tiempo para cada secuencia. Un distribuidor húmedo puede **explotar** al recibir acero. Una buza del diámetro equivocado frena o desborda una línea de CC2. Tu firma en la hoja es la primera barrera del arranque.
+Entregas distribuidores limpios, **secos**, bien armados y precalentados a tiempo para cada secuencia. Un distribuidor húmedo puede **explotar** al recibir acero. Una buza del diámetro equivocado frena o desborda una línea de CC2. Tu firma en la hoja es la primera barrera del arranque. Sin funciones de mando (LFT art. 9): si algo no está bien, **avisas, detienes y escalas** a C-06.
 
 > **★ Mis 3 reglas de oro**
 > 1. ★ Si no está seco, no sale: sin tarjeta de secado completa, **no se usa**.
@@ -44,6 +44,8 @@ flowchart LR
   end
   A --> B --> C --> D
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 ![Figura 1. Taller de distribuidores: estaciones, zonas y rutas de escape](../img/it-S15-puesto.svg)
@@ -190,6 +192,14 @@ flowchart LR
 | OJT | 20 turnos (240 h): 10 distribuidores completos de CC1 y 10 de CC2 |
 | Pasos ★ que me evalúan | MO-CC1-01 pasos 4, 7, 10, 13, 14, 15 · MO-CC2-01 pasos 1, 5, 6, 8, 10, 11 |
 | Vigencia | **12 meses:** espacios confinados (MS-ACE-05, NOM-033), grúas/izaje (MS-ACE-04, NOM-006), alturas (NOM-009). **24 meses:** demás TD-P07. Refresco anual 8 h de espacios confinados |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 | Término | Qué es |

@@ -7,22 +7,22 @@
 | Código | IT-ACE-S23 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-23 Soldador Calificado — Técnico C (N-5) / B (N-6) / A (N-7) |
+| Rol | S-23 Soldador Calificado · sindicalizado — Técnico C (N-5) / B (N-6) / A (N-7) |
 | Área | Mantenimiento de Acería: paneles y bóveda enfriados por agua, estructura, canastas, corazas de olla y pailería |
-| Turno | Guardia 4x4 de 12 h (relevo 07:00 / 19:00) y taller de soldadura y pailería en horario de día |
+| Turno | Guardia 4x4 de 12 h (relevo 07:00 / 19:00) y taller de soldadura y pailería en horario de día · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico |
 | Manuales de referencia | MM-EAF-01 · apoyo en MM-OLL-01 y MM-GR-01 · MS-ACE-02, -03, -05, -06, -10 · DP-ACE-S (S-23) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 | Fecha | 2026-09-25 |
 
 > Esta IT resume tu trabajo; **no reemplaza al manual ni al WPS**. Los parámetros de soldadura del manual son **[Validar WPS]**: manda siempre el WPS calificado vigente.
 
 ## 2. Mi puesto en 30 segundos
-Reparo por soldadura, con procedimiento calificado (WPS), componentes críticos. Si fallan, pueden echar agua sobre metal líquido o romper una estructura. Mi trabajo principal son los tubos de paneles y bóveda del EAF. También reparo canastas, corazas de olla y estructura, y fabrico en el taller de pailería. Una soldadura mal hecha en un panel es una fuga repetida sobre el horno.
+Reparo por soldadura, con procedimiento calificado (WPS), componentes críticos. Si fallan, pueden echar agua sobre metal líquido o romper una estructura. Mi trabajo principal son los tubos de paneles y bóveda del EAF. También reparo canastas, corazas de olla y estructura, y fabrico en el taller de pailería. Una soldadura mal hecha en un panel es una fuga repetida sobre el horno. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-11.
 
 > ★ **Mis 3 reglas de oro**
 > 1. ★ **Sin WPS aplicable y sin permiso en caliente, no sueldo.**
@@ -48,6 +48,8 @@ flowchart LR
 ```
 
 - **Cada panel reparado o nuevo** de reserva pasa prueba hidrostática antes de almacenarse (MM-EAF-01 §5.1).
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -211,12 +213,20 @@ flowchart LR
 
 | Concepto | Detalle |
 |---|---|
-| Nivel ILUO requerido | **L** Técnico C (suelda con guía de B o A) · **U** Técnico B (MM-EAF-01 paso 11a solo) · **O** Técnico A (soldador líder; inspector con certificación externa) |
+| Nivel ILUO requerido | **L** Técnico C (suelda con guía de B o A) · **U** Técnico B (MM-EAF-01 paso 11a solo) · **O** Técnico A (referente técnico de soldadura, sin mando; inspector con certificación externa) |
 | Teoría | Ruta técnica 64 h (tubo de paneles, WPS, metalurgia básica) · MM-EAF-01 8 h + calificación ASME IX / AWS |
 | OJT | 60 reparaciones (360 h) · 3 reparaciones de panel supervisadas |
 | Pasos ★ que me evalúan | MM-EAF-01 paso 11a + prueba de doblez vigente · MS-ACE-02 pasos 5–9, 11 |
 | Vigencia | Calificación: 6 meses sin uso → recalificar. TD-P07: 24 meses. **12 meses:** alturas, espacios confinados, grúas e izaje |
 | DC-3 / NOM | NOM-027, NOM-010, NOM-033, NOM-009, NOM-017; WPQ AWS D1.1 / ASME IX — verificar con Jurídico Laboral / SSO |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 - **WPS:** procedimiento de soldadura calificado; dice cómo soldar.

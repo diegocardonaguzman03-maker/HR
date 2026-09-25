@@ -9,20 +9,20 @@
 | Estado | Borrador para validación |
 | Rol | S-09 Operador de Grúa de Colada (sindicalizado, N-6) |
 | Área | Nave de ollas — 2 grúas de colada de 250/63 t (doble freno, límites redundantes) |
-| Turno | 4x4 de 12 h (relevo 07:00 / 19:00); rotación de cabina cada 2 h |
+| Turno | 4x4 de 12 h (relevo 07:00 / 19:00); rotación de cabina cada 2 h · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-04 Jefe de Turno de Acería (dueño de MO-OLL-02), vía C-05 |
 | Manuales de referencia | MO-OLL-02 · MM-GR-01 · MO-EAF-07 · MO-CC1-05 / MO-CC2-05 · MO-OLL-01 · MS-ACE-01, 03, 04, 08, 09 · FT-ACE-001 §3 y §6 |
 | Elaboró | experto-operativo-metalurgia (con diseño instruccional) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
 > Esta IT **resume** MO-OLL-02 y tu checklist de MM-GR-01. **No reemplaza al manual.** Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-04 / Mantenimiento lo validen.
 
 ## 2. Mi puesto en 30 segundos
 
-Muevo ollas con **≈ 150 t de acero líquido** (≈ 230 t en el gancho [Supuesto]) del LF a la torreta de colada. Regreso las vacías. Si la olla cae, se ladea o se perfora en el aire, la consecuencia es **catastrófica**. Por eso pruebo la grúa cada turno, uso solo la ruta autorizada y **no muevo una olla insegura**. Tengo la autoridad y la obligación de detener un traslado inseguro.
+Muevo ollas con **≈ 150 t de acero líquido** (≈ 230 t en el gancho [Supuesto]) del LF a la torreta de colada. Regreso las vacías. Si la olla cae, se ladea o se perfora en el aire, la consecuencia es **catastrófica**. Por eso pruebo la grúa cada turno, uso solo la ruta autorizada y **no muevo una olla insegura**. Tengo la autoridad y la obligación de detener un traslado inseguro. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-04 (vía C-05).
 
 > ★ **Mis 3 reglas de oro**
 > 1. **Frenos y límites probados** al inicio del turno. Si falla uno, la grúa **no mueve metal líquido**.
@@ -39,6 +39,8 @@ flowchart LR
     D --> C
     C --> E["18:45 / 06:45<br/>Registro de movimientos<br/>entrega con grúa sin carga"]
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -229,6 +231,14 @@ flowchart LR
 | MS-ACE-09 | **O** (4) | 4 h (olla perforada) + simulador | 2 simulacros | Paso 3 (olla a la fosa) | **12 meses** |
 
 Plan del puesto (DP-ACE-S): ruta técnica 32 h, simulador 24 h, OJT 240 h (20 turnos), refresco 12 h/año. Alturas (NOM-009): 12 meses. Las horas de teoría y OJT difieren entre manuales: pendiente de homologar con C&D.
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 

@@ -9,19 +9,19 @@
 | Estado | Borrador para validación |
 | Rol | S-05 Operador de Patio de Chatarra (canastas, electroimán, pórtico de radiación) · sindicalizado N-3 |
 | Área | Hornos — patio de chatarra: recepción y pórtico, grúas y manipuladores con electroimán, carros portacanastas, preparación y oxicorte |
-| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) o administrativo (preparación y oxicorte de chatarra pesada) |
+| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) o administrativo (preparación y oxicorte de chatarra pesada) · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-17 Supervisor de Patio de Chatarra y Materiales |
 | Manuales de referencia | MO-EAF-02 (R, armado de canasta); MS-ACE-03, 04, 07 (R); MS-ACE-01, 06, 08, 09, 10; FT-ACE-001 v0.3 |
 | Elaboró | experto-operativo-metalurgia (con enfoque de diseño de capacitación) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
 > Esta IT **no reemplaza** a los manuales: los resume para tu puesto. Si hay duda, manda el manual. Los valores salen de FT-ACE-001 v0.3 y conservan sus marcas [Validar con OEM / Ingeniería de Proceso] y [Supuesto].
 
 ## 2. Mi puesto en 30 segundos
-Recibo, reviso, clasifico y cargo la chatarra en canastas según la receta. Lo que yo dejo pasar cae sobre acero líquido en el horno: un tanque cerrado, agua o hielo pueden causar una explosión, y una fuente radiactiva contamina la planta. Por eso paso cada camión por el pórtico y retiro los prohibidos. Entrego canastas secas de 55–70 t a tiempo para el tap-to-tap de 55 min.
+Recibo, reviso, clasifico y cargo la chatarra en canastas según la receta. Lo que yo dejo pasar cae sobre acero líquido en el horno: un tanque cerrado, agua o hielo pueden causar una explosión, y una fuente radiactiva contamina la planta. Por eso paso cada camión por el pórtico y retiro los prohibidos. Entrego canastas secas de 55–70 t a tiempo para el tap-to-tap de 55 min. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-17.
 
 > **★ Mis 3 reglas de oro**
 > 1. ★ **Alarma del pórtico = detengo, aíslo y aviso.** Nunca toco la pieza sospechosa.
@@ -39,6 +39,8 @@ flowchart LR
     E --> D
     D --> F["18:30 / 06:30<br/>Inventario de pilas<br/>entrega de turno"]
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -202,6 +204,14 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Pasos ★ que me evalúan | EAF-02 pasos 1, 2, 3, 4 · MS-ACE-07 pasos 7, 8 · identificación de material prohibido con muestras |
 | Vigencia | **12 meses** fuentes radiactivas (MS-ACE-07, NOM-012), grúas/izaje (NOM-006) y alturas (NOM-009); **24 meses** demás TD-P07 |
 | Refresco | 8 h/año: simulacro de alarma radiológica |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 

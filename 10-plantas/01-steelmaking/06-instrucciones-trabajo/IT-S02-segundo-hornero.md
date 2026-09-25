@@ -9,13 +9,13 @@
 | Estado | Borrador para validación |
 | Rol | S-02 Operador de Horno de Piso (Segundo Hornero) · sindicalizado N-6 |
 | Área | Hornos — piso del EAF-1 o EAF-2 (puerta, plataforma del EBT, fosa de vaciado) |
-| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) |
-| Reporta a | C-05 Supervisor de Hornos; coordinación técnica del S-01 de su horno |
+| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) · jornada según el CCT [CCT: pedir texto] |
+| Reporta a | C-05 Supervisor de Hornos (en turno, C-04). Recibe la secuencia técnica del S-01 de su horno, sin relación de mando (LFT art. 9) |
 | Manuales de referencia | MO-EAF-01, 05, 06, 07, 08 (R); MM-EAF-01 y 03 (C); MS-ACE-01, 02, 03, 06, 08, 09, 10; FT-ACE-001 v0.3 |
 | Elaboró | experto-operativo-metalurgia (con enfoque de diseño de capacitación) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
 > Esta IT **no reemplaza** a los manuales: los resume para tu puesto. Si hay duda, manda el manual. Los valores salen de FT-ACE-001 v0.3 y conservan sus marcas [Validar con OEM / Ingeniería de Proceso] y [Supuesto].
@@ -39,6 +39,8 @@ flowchart LR
     E --> D
     D --> F["18:30 / 06:30<br/>Orden del piso y<br/>entrega de turno"]
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -227,6 +229,14 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Pasos ★ que me evalúan | EAF-01 pasos 3, 8, 11, 13, 14, 17 · EAF-05 pasos 6, 7, 9, 11 · EAF-06 pasos 1, 4, 11 + 5 curvas · EAF-07 pasos 1, 4, 5 + lanceo simulado · EAF-08 pasos 3, 6, 8, 9, 12, 13, 14 |
 | Vigencia | **24 meses** TD-P07; **12 meses** alturas (MS-ACE-10, NOM-009) y grúas/izaje o señalero (NOM-006) |
 | Refresco | 12 h/año: simulacro de fuga de agua y de perforación |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 

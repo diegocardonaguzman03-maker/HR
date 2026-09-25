@@ -6,21 +6,21 @@
 | Código | IT-ACE-S14 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-14 Ayudante de Colada (nivel N-4). Se certifica por máquina: CC1 y/o CC2 |
+| Rol | S-14 Ayudante de Colada (sindicalizado, nivel N-4). Se certifica por máquina: CC1 y/o CC2 |
 | Área | Molde, línea, segmentos (CC1) o guías (CC2) y cámara de rociado |
-| Turno | 4x4 de 12 h; relevo 07:00 / 19:00; rotación por calor cada 1–2 h [Supuesto] |
-| Reporta a | C-06 Supervisor de Colada Continua; guía técnica de S-12 y S-13 |
+| Turno | 4x4 de 12 h; relevo 07:00 / 19:00; rotación por calor cada 1–2 h [Supuesto] · jornada según el CCT [CCT: pedir texto] |
+| Reporta a | C-06 Supervisor de Colada Continua. Recibe guía técnica de S-12 y S-13, sin relación de mando (LFT art. 9) |
 | Manuales de referencia | MO-CC1-02, -03, -04, -06, -07; MO-CC2-02, -03, -04, -06, -07; MS-ACE-01, -02, -03, -07, -09, -10; FT-ACE-001 v0.3 §4–§5 |
 | Elaboró | experto-operativo-metalurgia (con criterio de diseño instruccional de C&D) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director de C&D |
 
 > Esta IT **no reemplaza** a los manuales. Valores de referencia de FT-ACE-001: validar con OEM / Ingeniería de Proceso antes de usarlos en planta.
 
 ## 2. Mi puesto en 30 segundos
-Cuidas el molde y la línea. Sellas la barra falsa, alimentas polvo (CC1) o vigilas el aceite (CC2) y haces la ronda de rociado. Un molde húmedo o una cabeza mal sellada provocan explosiones o fugas al arrancar. Tus ojos en el molde avisan antes que cualquier alarma.
+Cuidas el molde y la línea. Sellas la barra falsa, alimentas polvo (CC1) o vigilas el aceite (CC2) y haces la ronda de rociado. Un molde húmedo o una cabeza mal sellada provocan explosiones o fugas al arrancar. Tus ojos en el molde avisan antes que cualquier alarma. Sin funciones de mando (LFT art. 9): si algo no está bien, **avisas, detienes y escalas** a C-06.
 
 > **★ Mis 3 reglas de oro**
 > 1. ★ Molde, cabeza y chatarra **secos, limpios y sin aceite** antes de arrancar.
@@ -44,6 +44,8 @@ flowchart LR
   end
   A --> B --> C --> D
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 ![Figura 1. Molde y línea CC1 y CC2: equipos, zonas y rutas de escape](../img/it-S14-puesto.svg)
@@ -198,6 +200,14 @@ flowchart LR
 | OJT | 20 turnos (240 h): CC1 8 sellados y 8 arranques · CC2 12 sellados de línea, 10 arranques, 15 cambios de buza |
 | Pasos ★ que me evalúan | MO-CC1-02 pasos 3, 8, 9, 11, 12; -03 pasos 2, 14; -04 paso 1 y capa líquida; -07 pasos 10, 11 · MO-CC2-02 pasos 3, 8, 9, 11, 12, 14, 15, 19; -03 pasos 10, 15; -04 pasos 8, 9, 13; -06 pasos 3, 5, 6, 13; -07 pasos 8, 15, 16 |
 | Vigencia | **12 meses:** fuentes radiactivas (MS-ACE-07, NOM-012) y alturas (NOM-009). **24 meses:** demás TD-P07. Refresco anual 8 h (breakout y radiación) |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 | Término | Qué es |

@@ -7,22 +7,22 @@
 | Código | IT-ACE-S21 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-21 Instrumentista — Técnico C (N-6) / B (N-7) / A (N-8); POE designado para la fuente de Cs-137 |
+| Rol | S-21 Instrumentista · sindicalizado — Técnico C (N-6) / B (N-7) / A (N-8); POE designado para la fuente de Cs-137 |
 | Área | Mantenimiento de Acería: instrumentación y control de EAF, LF y CC (agua, fugas, nivel de molde, BOP, oscilación) |
-| Turno | Guardia 4x4 de 12 h (relevo 07:00 / 19:00) y horario de día (calibraciones, pruebas y paros) |
+| Turno | Guardia 4x4 de 12 h (relevo 07:00 / 19:00) y horario de día (calibraciones, pruebas y paros) · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación |
 | Manuales de referencia | MM-CC-04, MM-EAF-01, MM-CC-03, MM-CC-01, MM-CC-02 · MS-ACE-02, -03, -07 · DP-ACE-S (S-21) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 | Fecha | 2026-09-25 |
 
 > Esta IT resume tu trabajo; **no reemplaza al manual**. Valores tal cual de los manuales. Los límites de radiación son **[Validar con ESR]** según la licencia CNSNS.
 
 ## 2. Mi puesto en 30 segundos
-Aseguro que las mediciones y protecciones de la Acería sean exactas y funcionen cuando se necesitan. Cuido la detección de fugas del EAF y el agua de molde con su emergencia. También el nivel de molde, el BOP y la oscilación. En CC2 trabajo con la fuente de Cs-137 solo con el ESR. Si un instrumento no es confiable, lo declaro y pido operar en modo seguro.
+Aseguro que las mediciones y protecciones de la Acería sean exactas y funcionen cuando se necesitan. Cuido la detección de fugas del EAF y el agua de molde con su emergencia. También el nivel de molde, el BOP y la oscilación. En CC2 trabajo con la fuente de Cs-137 solo con el ESR. Si un instrumento no es confiable, lo declaro y pido operar en modo seguro. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-12.
 
 > ★ **Mis 3 reglas de oro**
 > 1. ★ **Nunca anulo una alarma o un disparo** sin autorización escrita de C-12 y medida compensatoria.
@@ -48,6 +48,8 @@ flowchart LR
 ```
 
 - **Cada día:** conductividad y nivel de torre (MM-CC-03). **Cada semana:** compara FT de entrada y salida del EAF con agua y sin arco.
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -229,12 +231,20 @@ flowchart LR
 
 | Concepto | Detalle |
 |---|---|
-| Nivel ILUO requerido | **L** Técnico C · **U** Técnico B (MM-EAF-01, MM-CC-01/02/03 solo) · **O** Técnico A (lidera MM-CC-04, da el liberado, evaluador) |
+| Nivel ILUO requerido | **L** Técnico C · **U** Técnico B (MM-EAF-01, MM-CC-01/02/03 solo) · **O** Técnico A (coordina técnicamente MM-CC-04, da el liberado técnico, evaluador en pareja; sin mando) |
 | Teoría | Ruta técnica 80 h · MM-CC-04 24 h + protección radiológica POE (NOM-012) · MM-CC-03 24 h · MM-EAF-01 12 h · MM-CC-01 8 h · MM-CC-02 8 h |
 | OJT | 150 OT (480 h) · 10 calibraciones de nivel supervisadas · 3 calibraciones con ESR · 2 pruebas de lógica · 3 pruebas de emergencia · 3 corridas de gap checker |
 | Pasos ★ que me evalúan | MM-CC-04: 4, 7, 9, 11 · MM-EAF-01: 1, 15 + prueba de lógica · MM-CC-03: 1, 7, 10, 11 · MM-CC-01: 13 · MM-CC-02: 12; 8.1 pasos 2, 3 |
 | Vigencia | **12 meses:** fuentes radiactivas (MS-ACE-07, NOM-012), eléctrico (NOM-029), alturas, espacios confinados, izaje. **24 meses:** demás TD-P07 |
 | DC-3 / NOM | NOM-012 (POE), NOM-029, NOM-009, NOM-017; examen médico de POE y dosimetría — verificar con Jurídico Laboral / SSO |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 - **FT / TT / PT / LT:** transmisores de caudal, temperatura, presión y nivel.

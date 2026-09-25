@@ -6,21 +6,21 @@
 | Código | IT-ACE-S12 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-12 Operador de Púlpito de Colada (nivel N-8). Se certifica **por máquina**: CC1 o CC2 |
+| Rol | S-12 Operador de Púlpito de Colada (sindicalizado, nivel N-8). Se certifica **por máquina**: CC1 o CC2 |
 | Área | Colada Continua: CC1 planchón (1 línea) y CC2 palanquilla (6 líneas) |
-| Turno | 4x4 de 12 h; relevo 07:00 / 19:00. Titular (velocidad, molde, BOP) y segundo operador (enfriamiento, líneas, corte) se alternan |
+| Turno | 4x4 de 12 h; relevo 07:00 / 19:00. Titular (velocidad, molde, BOP) y segundo operador (enfriamiento, líneas, corte) se alternan · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-06 Supervisor de Colada Continua (técnica: C-08 Ingeniero de Proceso de CC) |
 | Manuales de referencia | MO-CC1-02 a -07; MO-CC2-02 a -07; MM-CC-03, MM-CC-04; MS-ACE-01, -02, -03, -06, -07, -08, -09; FT-ACE-001 v0.3 §4–§5 |
 | Elaboró | experto-operativo-metalurgia (con criterio de diseño instruccional de C&D) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director de C&D |
 
 > Esta IT **no reemplaza** a los manuales. Resume lo que tú haces en el turno. Si hay duda, manda el manual. Los valores son de referencia de FT-ACE-001. Deben validarse con OEM / Ingeniería de Proceso antes de usarse en planta.
 
 ## 2. Mi puesto en 30 segundos
-Conduces la máquina desde el púlpito: velocidad, nivel de molde, agua de molde, enfriamiento y alarmas. Arrancas, sostienes y cierras la secuencia. Si el molde pierde agua o nivel, tú eres el primero en verlo. Un breakout puede matar: tu reacción en segundos lo evita.
+Conduces la máquina desde el púlpito: velocidad, nivel de molde, agua de molde, enfriamiento y alarmas. Arrancas, sostienes y cierras la secuencia. Si el molde pierde agua o nivel, tú eres el primero en verlo. Un breakout puede matar: tu reacción en segundos lo evita. Sin funciones de mando (LFT art. 9): si algo no está bien, **avisas, detienes y escalas** a C-06.
 
 > **★ Mis 3 reglas de oro**
 > 1. ★ Sin agua de molde normal y sin agua de emergencia lista (≤ 15 s), **no arranco**.
@@ -44,6 +44,8 @@ flowchart LR
   end
   A --> B --> C --> D
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 ![Figura 1. Púlpito de colada: consolas, zonas y rutas de escape](../img/it-S12-puesto.svg)
@@ -231,6 +233,14 @@ flowchart LR
 | OJT | ≥ 30 secuencias como titular con S-12 certificado (360 h) |
 | Pasos ★ que me evalúan | MO-CC1-02 pasos 3, 8, 16, 17 · MO-CC1-03 pasos 2, 15 · MO-CC1-04 pasos 1, 15 y respuestas del simulador · MO-CC1-07 pasos 11, 12. CC2: MO-CC2-02 pasos 2, 11, 20 · MO-CC2-03 pasos 1, 11, 13, 15 · MO-CC2-04 pasos 2, 3, 4, 13 · MO-CC2-07 pasos 8, 14 |
 | Vigencia | **12 meses:** fuentes radiactivas (MS-ACE-07, NOM-012, CC2) y alturas (NOM-009). **24 meses:** demás TD-P07. Refresco anual: simulacro de breakout y apagón (16 h) |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 | Término | Qué es |

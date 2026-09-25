@@ -7,22 +7,22 @@
 | Código | IT-ACE-S26 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-26 Lubricador — categoría única N-3 (entrada al escalafón de mantenimiento) |
+| Rol | S-26 Lubricador · sindicalizado — categoría única N-3 (entrada al escalafón de mantenimiento) |
 | Área | Mantenimiento de Acería: rutas de lubricación de grúas, EAF, LF, CC y transportadores |
-| Turno | Guardia 4x4 de 12 h (relevo 07:00 / 19:00) y rutas de lubricación en horario de día |
+| Turno | Guardia 4x4 de 12 h (relevo 07:00 / 19:00) y rutas de lubricación en horario de día · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico |
 | Manuales de referencia | MM-GR-01 · apoyo en MM-EAF-02 y MM-CC-02 · MS-ACE-02, -04, -06, -10 · DP-ACE-S (S-26) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 | Fecha | 2026-09-25 |
 
 > Esta IT resume tu trabajo; **no reemplaza al manual ni a la carta de lubricación**. El lubricante, la cantidad y la frecuencia de cada punto salen de la carta del CMMS.
 
 ## 2. Mi puesto en 30 segundos
-Ejecuto las rutas de lubricación de grúas, horno, horno olla y colada. Con buena lubricación evito fallas de reductores, cables y rodamientos. En cada ruta uso mis sentidos: escucho, toco con cuidado y miro. Reporto ruidos, calor o fugas antes de que el equipo falle. Muchas rutas son en altura: siempre voy anclado.
+Ejecuto las rutas de lubricación de grúas, horno, horno olla y colada. Con buena lubricación evito fallas de reductores, cables y rodamientos. En cada ruta uso mis sentidos: escucho, toco con cuidado y miro. Reporto ruidos, calor o fugas antes de que el equipo falle. Muchas rutas son en altura: siempre voy anclado. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-11.
 
 > ★ **Mis 3 reglas de oro**
 > 1. ★ **Si el punto no se alcanza con el equipo en marcha, LOTO con mi candado.**
@@ -48,6 +48,8 @@ flowchart LR
 ```
 
 - **Meta:** ≥ 98 % de rutas cumplidas y cero fallas por falta de lubricación (DP-ACE-S).
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -191,6 +193,14 @@ flowchart LR
 | Vigencia | **12 meses:** alturas (MS-ACE-10), grúas e izaje (MS-ACE-04, MM-GR-01). **24 meses:** demás TD-P07 |
 | DC-3 / NOM | NOM-009, NOM-006 (acceso a grúas), NOM-018, NOM-017 — verificar con Jurídico Laboral / SSO |
 | Mi siguiente paso | S-19 Mecánico C (N-5): 24 meses [Supuesto] + certificaciones de MS-ACE-05 y MM-GR-01 (inspección) |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 - **Carta de lubricación:** lista de puntos, lubricante, cantidad y frecuencia.

@@ -13,8 +13,8 @@
 | Manuales de referencia | Dueño de MO-CC1-01/02/03/05/06/07/08 y MO-CC2-01/02/03/05/06/07/08; hace cumplir MO-CCx-04, MO-CCx-09, MO-OLL-02 y MS-ACE-01 a -10; FT-ACE-001 v0.3 §4–§6 |
 | Elaboró | experto-operativo-metalurgia (con criterio de diseño instruccional de C&D) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno (con observaciones), 2026-09-26 |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director de C&D |
 
 > Esta IT **no reemplaza** a los manuales. Tus tareas son **rutinas de supervisión**: verificar controles críticos (VCC), autorizar, coordinar y responder. La operación paso a paso está en las IT de S-12 a S-18.
@@ -44,6 +44,8 @@ flowchart LR
   end
   A --> B --> C --> D
 ```
+
+> **Jornada de mi cuadrilla (nota laboral).** El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo, también para mí (LFT art. 58). Programo relevos, charlas y capacitación dentro de la jornada. Lo que exceda se paga según el CCT o la política de confianza. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 ![Figura 1. Área de supervisión de CC1 y CC2: puestos, puntos VCC, refugios y PR3](../img/it-C06-puesto.svg)
@@ -165,6 +167,11 @@ flowchart LR
 | 4 | Llenado de bitácora y demoras | Causa, minutos, acción | |
 | 5 | Entrego el turno en sitio | Pendientes críticos, permisos abiertos, equipo fuera de servicio | |
 
+> **🛑 ALTO — detén y avisa si…**
+> - Un evaluado falla un paso ★ en el OJT: no queda certificado y no hace la tarea solo.
+> - Hay un permiso, un LOTO o un obturador de Cs-137 abierto sin dueño identificado: no entregues hasta aclararlo.
+> - El agua de emergencia o una barrera crítica quedó fuera de servicio: comunícalo por escrito a C-04 y al C-06 entrante.
+
 ## 7. Mis controles críticos (★)
 - ☐ V1 agua de molde y emergencia · ☐ V2 zona y torreta · ☐ V3 barra falsa seca y sellada · ☐ V4 distribuidor seco y liberado.
 - ☐ V5 obturador de Cs-137 (CC2) · ☐ V6 oxicorte · ☐ V7 retenidos · ☐ V8 izaje de producto.
@@ -199,6 +206,14 @@ flowchart LR
 | OJT | 120 h; 10 arranques dirigidos (CC1) o 5 arranques y 10 turnos acompañados (CC2) |
 | Pasos ★ que me evalúan | MO-CC1-03 pasos 2, 19; MO-CC1-07 paso 9 y decisión de cierre no planeado; MO-CC2-03 pasos 1, 2 y decisión de cierre; dirección de simulacros (MO-CC2-04); todas las respuestas ★ de MO-CC1-04 §9 |
 | Vigencia | **12 meses:** alturas, espacios confinados, grúas/izaje, fuentes radiactivas (CC2). **24 meses:** ERC, evaluador TD-P07 y demás |
+
+> **Evaluación y certificación** (nota laboral — verificar con Jurídico Laboral)
+> - Mi evaluación TD-P07 no es una sanción. Si aún no demuestro un paso ★, recibo refuerzo y me reevalúo. Puedo acreditar lo que ya sé con el examen de suficiencia (LFT art. 153-U).
+> - Cuando evalúo a sindicalizados, la evaluación sirve para formar y certificar, no para sancionar (DP-ACE-S §4). El dictamen lo emite el comité TD-P07.
+> - Solo un acto inseguro deliberado en tarea crítica puede llevar a una medida disciplinaria. Se aplica por el Reglamento Interior y el CCT, con audiencia y representación sindical.
+> - Asigno puestos y suplencias solo a personal certificado, respetando el escalafón y el CCT [CCT: pedir texto]. Si no hay certificado, uso el relevo.
+> - La suspensión preventiva de una certificación es una medida de seguridad: el trabajador pasa a tarea no crítica sin perder salario ni antigüedad.
+> - Programo la capacitación de mi cuadrilla en jornada. Si cae en día de descanso, se paga según el CCT.
 
 ## 11. Glosario rápido
 | Término | Qué es |

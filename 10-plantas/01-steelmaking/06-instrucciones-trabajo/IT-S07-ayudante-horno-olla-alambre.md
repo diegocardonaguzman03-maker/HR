@@ -9,20 +9,20 @@
 | Estado | Borrador para validación |
 | Rol | S-07 Ayudante de Horno Olla / Alimentación de Alambre (sindicalizado, N-4) |
 | Área | Metalurgia secundaria — piso de LF-1 / LF-2 |
-| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) |
-| Reporta a | C-05 Supervisor de Hornos (guía técnica del S-06) |
+| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) · jornada según el CCT [CCT: pedir texto] |
+| Reporta a | C-05 Supervisor de Hornos. Recibe guía técnica del S-06, sin relación de mando (LFT art. 9) |
 | Manuales de referencia | MO-LF-01 · MS-ACE-01, 02, 03, 05, 06, 08, 09 · FT-ACE-001 §3 |
 | Elaboró | experto-operativo-metalurgia (con diseño instruccional) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
 > Esta IT **resume** tu parte de MO-LF-01. **No reemplaza al manual.** Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 2. Mi puesto en 30 segundos
 
-Soy las manos del horno olla en el piso. Conecto el argón, mido temperatura, tomo muestras y alimento el alambre de CaSi, Al y C. Si el argón no burbujea o la muestra sale mala, la olla no se puede ajustar y la colada espera. Trabajo junto a metal líquido, arco eléctrico y argón, que asfixia sin avisar.
+Soy las manos del horno olla en el piso. Conecto el argón, mido temperatura, tomo muestras y alimento el alambre de CaSi, Al y C. Si el argón no burbujea o la muestra sale mala, la olla no se puede ajustar y la colada espera. Trabajo junto a metal líquido, arco eléctrico y argón, que asfixia sin avisar. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-05.
 
 > ★ **Mis 3 reglas de oro**
 > 1. **Sondas, muestreadores, adiciones y alambre siempre secos.** Húmedo = proyección de metal.
@@ -39,6 +39,8 @@ flowchart LR
     D --> C
     C --> E["18:45 / 06:45<br/>Limpieza de estación<br/>entrega de turno"]
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -205,6 +207,14 @@ flowchart LR
 | Vigencia | 24 meses (TD-P07) | 24 meses (TD-P07) |
 
 Plan del puesto (DP-ACE-S): ruta técnica 32 h, OJT 240 h (20 turnos), refresco de gases y asfixia 8 h/año. Alturas (MS-ACE-10, NOM-009): **12 meses**. MS-ACE-06 (gases): 24 meses.
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 

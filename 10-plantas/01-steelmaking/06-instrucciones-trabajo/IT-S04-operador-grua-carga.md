@@ -9,19 +9,19 @@
 | Estado | Borrador para validación |
 | Rol | S-04 Operador de Grúa de Carga (nave de hornos) · sindicalizado N-5 |
 | Área | Hornos — nave de hornos, 2 grúas viajeras de 120/40 t |
-| Turno | 4x4 de 12 h (relevo 07:00 / 19:00); rotación de cabina cada 2 h |
+| Turno | 4x4 de 12 h (relevo 07:00 / 19:00); rotación de cabina cada 2 h · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-05 Supervisor de Hornos |
 | Manuales de referencia | MO-EAF-02, MO-EAF-08, MM-EAF-02 (R); MM-GR-01 (C, criterios equivalentes para la grúa de carga); MM-EAF-03; MS-ACE-01, 03, 04, 09, 10; FT-ACE-001 v0.3 §6 |
 | Elaboró | experto-operativo-metalurgia (con enfoque de diseño de capacitación) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
 > Esta IT **no reemplaza** a los manuales: los resume para tu puesto. Si hay duda, manda el manual. Los valores salen de FT-ACE-001 v0.3 y conservan sus marcas [Validar con OEM / Ingeniería de Proceso] y [Supuesto]. MM-GR-01 cubre las grúas de colada; para la grúa de carga se aplican criterios equivalentes con el manual OEM de la grúa [Validar con OEM].
 
 ## 2. Mi puesto en 30 segundos
-Cargo el horno con canastas de chatarra de 55–70 t y muevo electrodos, bóveda y componentes. Cada carga cae sobre un talón de 20–30 t de acero líquido: la precisión y la señal correcta evitan proyecciones, daños y lesiones. Mi carga **nunca** pasa sobre personas ni sobre el púlpito. Si la grúa, el enganche o la señal no están bien, rechazo el izaje y aviso.
+Cargo el horno con canastas de chatarra de 55–70 t y muevo electrodos, bóveda y componentes. Cada carga cae sobre un talón de 20–30 t de acero líquido: la precisión y la señal correcta evitan proyecciones, daños y lesiones. Mi carga **nunca** pasa sobre personas ni sobre el púlpito. Si la grúa, el enganche o la señal no están bien, rechazo el izaje y aviso. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-05.
 
 > **★ Mis 3 reglas de oro**
 > 1. ★ **Inspección pre-uso** cada turno: si algo falla, 🛑 no opero.
@@ -39,6 +39,8 @@ flowchart LR
     E --> D
     D --> F["18:30 / 06:30<br/>Grúa estacionada<br/>bitácora y entrega"]
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -198,6 +200,14 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Pasos ★ que me evalúan | Inspección pre-uso · EAF-02 pasos 10, 11, 17 · EAF-08 pasos 4, 7 · MM-EAF-02 pasos 6, 7 · izaje sin personas bajo la carga |
 | Vigencia | **12 meses** grúas/izaje (MS-ACE-04, NOM-006) y alturas (NOM-009); **24 meses** demás TD-P07 |
 | Refresco | 8 h/año: simulador + inspección |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 

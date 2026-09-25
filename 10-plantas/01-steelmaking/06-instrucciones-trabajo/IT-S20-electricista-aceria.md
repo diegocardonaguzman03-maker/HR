@@ -7,22 +7,22 @@
 | Código | IT-ACE-S20 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-20 Electricista de Acería — Técnico C (N-6) / B (N-7) / A (N-8) |
+| Rol | S-20 Electricista de Acería · sindicalizado — Técnico C (N-6) / B (N-7) / A (N-8) |
 | Área | Mantenimiento de Acería: transformadores del EAF (140 MVA) y del LF (25 MVA), subestaciones, motores, grúas y CC |
-| Turno | Guardia 4x4 de 12 h (relevo 07:00 / 19:00) y horario de día (preventivo, pruebas y paros) |
+| Turno | Guardia 4x4 de 12 h (relevo 07:00 / 19:00) y horario de día (preventivo, pruebas y paros) · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación |
 | Manuales de referencia | MM-EAF-04, MM-EAF-02, MM-GR-01 · apoyo en MM-EAF-01, MM-CC-01, MM-CC-02, MM-CC-03 · MS-ACE-02, -04, -05, -10 · DP-ACE-S (S-20) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 | Fecha | 2026-09-25 |
 
 > Esta IT resume tu trabajo; **no reemplaza al manual**. Los valores salen tal cual de los manuales. El primario de 34.5 kV es **[Supuesto]** y los límites de prueba son **[Validar con OEM]**: no se usan en planta hasta validarse.
 
 ## 2. Mi puesto en 30 segundos
-Mantengo el sistema eléctrico de la Acería disponible y seguro. Soy el único que opera interruptores y seccionadores de media y alta tensión y aplica tierras. Ejecuto las maniobras del horno con licencia, cuido el transformador y mantengo motores, frenos y límites de las grúas. Mi meta es cero contactos eléctricos.
+Mantengo el sistema eléctrico de la Acería disponible y seguro. Soy el único que opera interruptores y seccionadores de media y alta tensión y aplica tierras. Ejecuto las maniobras del horno con licencia, cuido el transformador y mantengo motores, frenos y límites de las grúas. Mi meta es cero contactos eléctricos. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-12.
 
 > ★ **Mis 3 reglas de oro**
 > 1. ★ **Sin licencia de maniobra firmada, no toco la media tensión.**
@@ -49,6 +49,8 @@ flowchart LR
 
 - **Cada semana** lee los contadores del OLTC y del interruptor y revisa el monitor de DGA en línea.
 - **Cambio de turno con LOTO activo:** el entrante pone su candado antes de que el saliente quite el suyo (MS-ACE-02 §6.3).
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -224,12 +226,20 @@ flowchart LR
 
 | Concepto | Detalle |
 |---|---|
-| Nivel ILUO requerido | **L** Técnico C (baja tensión, con guía) · **U** Técnico B (MM-GR-01 y MM-EAF-02 solo) · **O** Técnico A (maniobra de alta tensión con licencia interna, da el liberado, evaluador) |
+| Nivel ILUO requerido | **L** Técnico C (baja tensión, con guía) · **U** Técnico B (MM-GR-01 y MM-EAF-02 solo) · **O** Técnico A (maniobra de alta tensión con licencia interna, da el liberado técnico, evaluador en pareja; sin mando) |
 | Teoría | Ruta técnica 80 h · NOM-029 16 h + maniobras MT 16 h + arco eléctrico 8 h · pruebas a transformadores 24 h · grúas 16 h |
 | OJT | C → B: 150 OT (480 h) · B → A: 20 maniobras de AT supervisadas · MM-EAF-04: 5 maniobras supervisadas |
 | Pasos ★ que me evalúan | MM-EAF-04: 3–9, 11, 14, 15 · MM-EAF-02: 3, 4, 13 · MM-GR-01: 3, 4, 9, 11, 12 · MS-ACE-02: 4, 9 (vivo–muerto–vivo) |
 | Vigencia | **12 meses:** eléctrico (NOM-029, MM-EAF-04), grúas e izaje (MM-GR-01), alturas, espacios confinados. **24 meses:** demás TD-P07 |
 | DC-3 / NOM | NOM-029 (BT en C; AT en A), NOM-009, NOM-017, NOM-022; autorización escrita del patrón — verificar con Jurídico Laboral / SSO |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 - **MT / AT:** media y alta tensión.

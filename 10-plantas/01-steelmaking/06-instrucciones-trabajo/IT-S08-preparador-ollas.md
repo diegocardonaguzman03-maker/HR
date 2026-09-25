@@ -9,20 +9,20 @@
 | Estado | Borrador para validación |
 | Rol | S-08 Preparador de Ollas (Ollero) (sindicalizado, N-3) |
 | Área | Área de preparación de ollas — flota de 10 ollas de 150 t (7 en ciclo) |
-| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) y administrativo (ollas fuera de ciclo) |
+| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) y administrativo (ollas fuera de ciclo) · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-05 Supervisor de Hornos (línea técnica: C-15 Especialista de Refractarios) |
 | Manuales de referencia | MO-OLL-01 · MM-OLL-01 · MO-EAF-07 (lista de olla) · MS-ACE-01, 02, 03, 05, 06, 08, 09 · FT-ACE-001 §3 |
 | Elaboró | experto-operativo-metalurgia (con diseño instruccional) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
 > Esta IT **resume** MO-OLL-01 y tu parte de MM-OLL-01. **No reemplaza al manual.** Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-15 / C-07 lo validen.
 
 ## 2. Mi puesto en 30 segundos
 
-Entrego cada olla **seca, caliente, con refractario vigente, válvula probada, tapón con argón y arena de sello**. Una olla fría o húmeda puede **explotar o perforarse** con 150 t de acero dentro. Una arena mal puesta hace que la olla no abra en la colada. Mi trabajo es la primera barrera contra la perforación de olla.
+Entrego cada olla **seca, caliente, con refractario vigente, válvula probada, tapón con argón y arena de sello**. Una olla fría o húmeda puede **explotar o perforarse** con 150 t de acero dentro. Una arena mal puesta hace que la olla no abra en la colada. Mi trabajo es la primera barrera contra la perforación de olla. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-05.
 
 > ★ **Mis 3 reglas de oro**
 > 1. **Nunca entregues una olla bajo 1,000 °C** en la cara caliente. Olla fría (> 4 h fuera): **≥ 8 h** de precalentamiento.
@@ -39,6 +39,8 @@ flowchart LR
     D --> C
     C --> E["18:45 / 06:45<br/>Registro de ollas<br/>entrega de turno"]
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -228,6 +230,14 @@ flowchart LR
 | Vigencia | 24 meses (TD-P07) | **12 meses** | **12 meses** |
 
 Plan del puesto (DP-ACE-S): ruta técnica 32 h, OJT 240 h (20 turnos), refresco 8 h/año. **12 meses:** alturas (NOM-009), espacios confinados (NOM-033) y señalero/enganche (DC-3 NOM-006). MS-ACE-03: 24 meses.
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 

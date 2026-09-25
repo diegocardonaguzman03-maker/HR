@@ -9,20 +9,20 @@
 | Estado | Borrador para validación |
 | Rol | S-06 Operador de Horno Olla (sindicalizado, N-7) |
 | Área | Metalurgia secundaria — LF-1 / LF-2 |
-| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) |
+| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-05 Supervisor de Hornos (línea técnica: C-07 Ingeniero de Proceso EAF/LF) |
 | Manuales de referencia | MO-LF-01 · MO-OLL-02 · MO-CC1-05 / MO-CC2-05 · MS-ACE-01, 02, 03, 06, 08, 09 · FT-ACE-001 §3 y §7 |
 | Elaboró | experto-operativo-metalurgia (con diseño instruccional) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
 > Esta IT **resume** MO-LF-01 para tu turno. **No reemplaza al manual.** Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 2. Mi puesto en 30 segundos
 
-Llevo cada olla a la **química y temperatura de envío** en **35–45 min**. Caliento con el arco, desulfuro con argón fuerte, ajusto aleaciones y dejo el acero limpio con argón suave. Si la olla sale mal, la colada se corta o el cliente recibe acero con defectos. Mi estación tiene arco eléctrico, agua en la bóveda, argón y metal líquido: aquí un error puede matar.
+Llevo cada olla a la **química y temperatura de envío** en **35–45 min**. Caliento con el arco, desulfuro con argón fuerte, ajusto aleaciones y dejo el acero limpio con argón suave. Si la olla sale mal, la colada se corta o el cliente recibe acero con defectos. Mi estación tiene arco eléctrico, agua en la bóveda, argón y metal líquido: aquí un error puede matar. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-05.
 
 > ★ **Mis 3 reglas de oro**
 > 1. **Nadie** en la bóveda ni en la plataforma de electrodos con el interruptor cerrado (llave cautiva o LOTO).
@@ -39,6 +39,8 @@ flowchart LR
     D --> C
     C --> E["18:45 / 06:45<br/>Registro en nivel 2<br/>entrega de turno"]
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -237,6 +239,14 @@ Antes de liberar:
 | Vigencia | 24 meses (TD-P07) | 24 meses |
 
 Plan del puesto (DP-ACE-S): ruta técnica 60 h, simulador LF 24 h, OJT 240 h (≥ 80 tratamientos), refresco 12 h/año. Alturas (MS-ACE-10): **12 meses**. Diferencia de horas OJT entre manual y DP: pendiente de homologar con C&D.
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 

@@ -7,22 +7,22 @@
 | Código | IT-ACE-S19 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-19 Mecánico de Acería — Técnico C (N-5) / B (N-6) / A (N-7) |
+| Rol | S-19 Mecánico de Acería · sindicalizado — Técnico C (N-5) / B (N-6) / A (N-7) |
 | Área | Mantenimiento de Acería: EAF-1/2, LF, ollas, grúas de nave, CC1, CC2 y servicios de agua |
-| Turno | Guardia 4x4 de 12 h (relevo 07:00 / 19:00) y horario de día (preventivo, talleres y paros) |
+| Turno | Guardia 4x4 de 12 h (relevo 07:00 / 19:00) y horario de día (preventivo, talleres y paros) · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico |
 | Manuales de referencia | MM-EAF-01, MM-EAF-02, MM-GR-01, MM-CC-01, MM-CC-02, MM-CC-03 · MS-ACE-02, -03, -04, -05, -09, -10 · DP-ACE-S (S-19) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 | Fecha | 2026-09-25 |
 
 > Esta IT resume tu trabajo; **no reemplaza al manual**. Los valores salen tal cual de los manuales MM-/MS-. Lo marcado **[Validar con OEM]** o **[Supuesto]** no se usa en planta hasta validarse.
 
 ## 2. Mi puesto en 30 segundos
-Mantengo el equipo mecánico de la Acería seguro y disponible. Mi prioridad son los equipos que pueden causar agua sobre metal, caída de olla o breakout. Reparo fugas del EAF y cambio bóveda y delta. Inspecciono grúas de colada y pruebo el agua de emergencia de CC. Con S-25 cambio moldes y segmentos.
+Mantengo el equipo mecánico de la Acería seguro y disponible. Mi prioridad son los equipos que pueden causar agua sobre metal, caída de olla o breakout. Reparo fugas del EAF y cambio bóveda y delta. Inspecciono grúas de colada y pruebo el agua de emergencia de CC. Con S-25 cambio moldes y segmentos. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-11.
 
 > ★ **Mis 3 reglas de oro**
 > 1. ★ **Sin LOTO y energía cero, no meto el cuerpo.** Mi candado, mi llave, mi prueba.
@@ -49,6 +49,8 @@ flowchart LR
 
 - **Cambio de turno con LOTO activo:** el entrante pone su candado **antes** de que el saliente quite el suyo. C-04 lo registra (MS-ACE-02 §6.3).
 - **Ventanas [Supuesto, validar con C-10 y C-13]:** V0 en operación; V1 entre coladas o secuencias; V2 paro semanal; V3 mensual; V4 anual.
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -272,12 +274,20 @@ flowchart LR
 
 | Concepto | Detalle |
 |---|---|
-| Nivel ILUO requerido | **L** Técnico C (ejecuta con un B o A) · **U** Técnico B (ejecuta solo) · **O** Técnico A (lidera la ejecución, da el liberado, puede ser evaluador) |
+| Nivel ILUO requerido | **L** Técnico C (ejecuta con un B o A) · **U** Técnico B (ejecuta solo) · **O** Técnico A (coordina técnicamente la ejecución y da el liberado técnico, sin mando; puede ser evaluador en pareja) |
 | Teoría | Ruta técnica 80 h; por proceso: MM-EAF-01 16 h, MM-EAF-02 16 h, MM-GR-01 24 h, MM-CC-01 16 h, MM-CC-02 16 h, MM-CC-03 16 h |
 | OJT | C → B: 150 OT (480 h). Por proceso: 3 reparaciones de panel, 2 cambios de bóveda, 4 inspecciones de grúa + 1 anual, 3 cambios de molde, 3 de segmento, 3 pruebas de emergencia |
 | Pasos ★ que me evalúan | MM-EAF-01: 6, 7, 8, 11b, 12, 14, 15 · MM-EAF-02: 3–7, 12, 14, 15 · MM-GR-01: 2–8, 10, 12 · MM-CC-01: 4–7, 9, 10, 14 · MM-CC-02: 3, 4, 6, 8, 11 · MM-CC-03: 5, 6, 9, 10 |
 | Vigencia | **12 meses:** alturas (MS-ACE-10), espacios confinados (MS-ACE-05), grúas e izaje (MS-ACE-04, MM-GR-01). **24 meses:** demás TD-P07 |
 | DC-3 / NOM | NOM-004, NOM-006, NOM-009, NOM-033, NOM-020, NOM-017, NOM-027 — verificar con Jurídico Laboral / SSO |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 - **LOTO:** bloqueo y etiquetado de energías con candado personal.

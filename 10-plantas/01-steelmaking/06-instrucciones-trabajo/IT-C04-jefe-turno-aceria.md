@@ -9,13 +9,13 @@
 | Estado | Borrador para validación |
 | Rol | C-04 Jefe de Turno de Acería (confianza, banda A3) |
 | Área | Toda la Acería en el turno: hornos, LF, ollas, patio, CC1, CC2 y mantenimiento de turno |
-| Turno | 4x4 de 12 h, día y noche (relevo 07:00 / 19:00; entrega–recepción 15 min antes, en campo) |
+| Turno | 4x4 de 12 h, día y noche (relevo 07:00 / 19:00; entrega–recepción de 15 min en campo, que cuenta como tiempo de trabajo, LFT art. 58) |
 | Reporta a | C-01 Gerente de Acería (lineamientos técnicos de C-02, C-03 y C-10) |
 | Manuales de referencia | MS-ACE-09 (dueño) · MO-OLL-02 (dueño) · MS-ACE-01, 02, 03, 04, 05, 06, 08 · MO-EAF-01, 02, 07 · MO-CC1-03/05 · MO-CC2-03/05 · MM-EAF-01 · MM-CC-03 · MM-GR-01 · MM-OLL-01 · FT-ACE-001 |
 | Elaboró | experto-operativo-metalurgia (con diseño instruccional) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno (con observaciones), 2026-09-26 |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
 > Esta IT **resume** tus rutinas de supervisión. **No reemplaza a los manuales.** Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa hasta que el dueño del proceso lo valide.
@@ -40,6 +40,8 @@ flowchart LR
     E --> D
     D --> F["18:30–18:45 / 06:30–06:45<br/>Bitácora y reporte a C-01<br/>entrega de turno"]
 ```
+
+> **Jornada de mi cuadrilla (nota laboral).** El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo, también para mí (LFT art. 58). Programo relevos, charlas y capacitación dentro de la jornada. Lo que exceda se paga según el CCT o la política de confianza. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -111,6 +113,7 @@ flowchart LR
 
 > 🛑 **ALTO — detén el traslado si…**
 > - Hay una persona bajo la ruta o la grúa tiene un freno o límite en falla.
+> - No se hizo la prueba de frenos con carga (200–300 mm, 10 s; MS-ACE-04) o la olla deslizó.
 > - La olla tiene punto rojo o fuga: ruta de emergencia y MS-ACE-09.
 
 ### Tarea 3 — Verificación de controles críticos (VCC) en campo
@@ -187,6 +190,11 @@ flowchart LR
 
 > 🛑 **Prohibido en cualquier escenario:** agua sobre metal líquido, rescate sin ERA, pasar personas u ollas bajo una carga, reintroducir agua a un molde sobrecalentado sin C-06/C-08.
 
+> 🛑 **ALTO — detén y avisa si…**
+> - El conteo no está completo en 10 min: búsqueda dirigida por la brigada con ERA; nadie busca solo.
+> - Alguien intenta un rescate o una intervención sin tu orden, sin EPP o sin ERA.
+> - La atmósfera no está en rango o el metal no está sólido: no autorices el reingreso (MS-ACE-09 paso 9).
+
 **Escenarios y acción inmediata (resumen de MS-ACE-09 §6.1):**
 
 | Escenario | Acción inmediata que verificas |
@@ -221,9 +229,9 @@ flowchart LR
 
 - ☐ Grúas de colada con checklist y tarjeta verde.
 - ☐ Fosa de emergencia seca y libre.
-- ☐ Agua de emergencia de CC con prueba mensual vigente.
+- ☐ Agua de emergencia de CC: prueba de cambio mensual y arranque semanal de diésel vigentes (MM-CC-03).
 - ☐ Personal certificado en cada puesto crítico.
-- ☐ Olla llena: ruta despejada, grúa liberada, señalero asignado.
+- ☐ Olla llena: ruta despejada, grúa liberada (prueba de frenos con carga 200–300 mm × 10 s), señalero asignado.
 - ☐ Permisos (izaje crítico, espacio confinado, zona roja) completos y por escrito.
 - ☐ Ningún enclavamiento puenteado.
 - ☐ Canal de emergencia probado; puntos de reunión conocidos por todos.
@@ -256,12 +264,20 @@ flowchart LR
 | Manual | Nivel ILUO | Teoría | OJT | Pasos ★ que me evalúan | Vigencia |
 |---|---|---|---|---|---|
 | MS-ACE-09 (CI) | **O** (4) | 16 h (comando de incidentes, escenarios A–H) | 4 tabletop + 2 simulacros como CI | 5, 6, 9 | 24 meses (TD-P07) |
-| MO-OLL-02 (dueño) | **O** (4) | 16 h + evaluador | — | Decisión en emergencia de olla | 24 meses (TD-P07) |
+| MO-OLL-02 (dueño) | **O** (4) | 16 h + evaluador | — | Decisión en emergencia de olla | **12 meses** (grúas/izaje) |
 | MS-ACE-04 (izaje crítico) | **U** (3) | 8 h (planeación de izaje crítico) | 5 planes de izaje | Paso 4 + plan de izaje | **12 meses** |
 | MS-ACE-05 (emisor del permiso) | **O** (4) | 12 h | 5 permisos con tutor | 1, 2, 6 | **12 meses** |
 | MS-ACE-01 | **O** (4) | 12 h | 20 eventos supervisados | 1, 4, 6, 11 + simulacro | 24 meses (TD-P07) |
 
-Plan del puesto (DP-ACE-C): inducción 40 h (ERC y mando de incidentes), L-1 "Líder de Turno" 96 h, rotación técnica 160 h, seguridad 40 h, gente 16 h. La DP marca **12 meses** para grúas/izaje (MS-ACE-04, MO-OLL-02); MO-OLL-02 §11 dice 24 meses para C-04: pendiente de homologar. Simulacros con su cuadrilla: ≥ 1 por trimestre; tabletop mensual.
+Plan del puesto (DP-ACE-C): inducción 40 h (ERC y mando de incidentes), L-1 "Líder de Turno" 96 h, rotación técnica 160 h, seguridad 40 h, gente 16 h. Vigencia homologada: **12 meses** para grúas/izaje (MS-ACE-04 y MO-OLL-02), igual que la DP-ACE-C y la presentación MO-OLL-02; falta corregir MO-OLL-02 §11, que aún dice 24 meses. Simulacros con su cuadrilla: ≥ 1 por trimestre; tabletop mensual.
+
+> **Evaluación y certificación** (nota laboral — verificar con Jurídico Laboral)
+> - Mi evaluación TD-P07 no es una sanción. Si aún no demuestro un paso ★, recibo refuerzo y me reevalúo. Puedo acreditar lo que ya sé con el examen de suficiencia (LFT art. 153-U).
+> - Cuando evalúo a sindicalizados, la evaluación sirve para formar y certificar, no para sancionar (DP-ACE-S §4). El dictamen lo emite el comité TD-P07.
+> - Solo un acto inseguro deliberado en tarea crítica puede llevar a una medida disciplinaria. Se aplica por el Reglamento Interior y el CCT, con audiencia y representación sindical.
+> - Asigno puestos y suplencias solo a personal certificado, respetando el escalafón y el CCT [CCT: pedir texto]. Si no hay certificado, uso el relevo.
+> - La suspensión preventiva de una certificación es una medida de seguridad: el trabajador pasa a tarea no crítica sin perder salario ni antigüedad.
+> - Programo la capacitación de mi cuadrilla en jornada. Si cae en día de descanso, se paga según el CCT.
 
 ## 11. Glosario rápido
 

@@ -1171,7 +1171,7 @@ Entregar el análisis químico de EAF, LF y distribuidor a tiempo y con exactitu
 ### Procesos críticos que ejecuta o supervisa (códigos del catálogo, R/A/C/I)
 | Código | Proceso crítico | Dueño | R/A/C/I | Qué le toca |
 |---|---|---|---|---|
-| MO-EAF-06 | Medición de temperatura, oxígeno activo y muestreo | C-05 | **R** | Recibe y prepara la muestra; analiza por espectrometría (OES) y LECO; reporta en ≤ 3 min al púlpito. |
+| MO-EAF-06 | Medición de temperatura, oxígeno activo y muestreo | C-05 | **R** | Recibe y prepara la muestra; analiza por espectrometría (OES) y LECO; reporta en ≤ 4 min al púlpito (MO-EAF-06). |
 | MO-LF-01 | Tratamiento en horno olla: calentamiento, ajuste químico, desulfuración, argón y alambre | C-07 | **R** | Analiza las muestras del LF y libera la química de envío. |
 | MO-CC1-04 | Colada en estado estable: nivel de molde, velocidad, enfriamiento, polvo de molde | C-08 | **C** | Analiza la muestra del distribuidor y reporta desviaciones. |
 | MO-CC2-04 | Colada en estado estable: nivel de molde, aceite, EMS, velocidad, enfriamiento | C-08 | **C** | Analiza la muestra del distribuidor y reporta desviaciones. |
@@ -1190,7 +1190,7 @@ Entregar el análisis químico de EAF, LF y distribuidor a tiempo y con exactitu
 - **Autoridad:** retiene un resultado y pide nueva muestra si el análisis no es confiable.
 
 ### Responsabilidades de calidad
-- 🔎 Tiempo de respuesta ≤ 3 min desde la llegada de la muestra [Supuesto].
+- 🔎 Tiempo de respuesta ≤ 4 min (MO-EAF-06) desde la llegada de la muestra [Supuesto].
 - 🔎 Verificación diaria con patrones; desviación fuera de tolerancia = recalibrar antes de reportar.
 - Trazabilidad colada–muestra–resultado.
 
@@ -1205,7 +1205,7 @@ Entregar el análisis químico de EAF, LF y distribuidor a tiempo y con exactitu
 ### Indicadores de desempeño (con meta)
 | Indicador | Meta | Fuente |
 |---|---|---|
-| Tiempo de respuesta | ≤ 3 min en ≥ 95% de muestras | LIMS |
+| Tiempo de respuesta | ≤ 4 min en ≥ 95% de muestras (MO-EAF-06) | LIMS |
 | Resultados repetidos por error de laboratorio | ≤ 1% | LIMS |
 | Verificación diaria completa | 100% | Bitácora de calibración |
 

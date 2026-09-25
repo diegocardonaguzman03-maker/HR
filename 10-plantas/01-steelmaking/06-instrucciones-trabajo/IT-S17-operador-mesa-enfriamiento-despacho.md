@@ -6,21 +6,21 @@
 | Código | IT-ACE-S17 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-17 Operador de Mesa de Enfriamiento y Despacho (nivel N-3, entrada) |
+| Rol | S-17 Operador de Mesa de Enfriamiento y Despacho (sindicalizado, nivel N-3, entrada) |
 | Área | CC1: mesa de enfriamiento y patio de planchón · CC2: lecho de enfriamiento y amarre · grúas de producto · despacho a Laminación |
-| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) y administrativo (despacho y embarques) |
+| Turno | 4x4 de 12 h (relevo 07:00 / 19:00) y administrativo (despacho y embarques) · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-06 Supervisor de Colada Continua |
 | Manuales de referencia | MO-CC1-08, MO-CC2-08; MS-ACE-04, -08, -09, -10; MM-GR-01 (criterio de inspección pre-uso); FT-ACE-001 v0.3 §6 |
 | Elaboró | experto-operativo-metalurgia (con criterio de diseño instruccional de C&D) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director de C&D |
 
 > Esta IT **no reemplaza** a los manuales. Valores de referencia de FT-ACE-001: validar con OEM, C-09 y C-16 antes de usarlos en planta.
 
 ## 2. Mi puesto en 30 segundos
-Mueves, enfrías, apilas y despachas el semiterminado sin mezclar coladas. Trabajas con cargas de hasta 32.8 t a más de 600 °C: una caída mata. Solo despachas lo que Calidad liberó. Tu orden en el patio es la trazabilidad que recibe Laminación.
+Mueves, enfrías, apilas y despachas el semiterminado sin mezclar coladas. Trabajas con cargas de hasta 32.8 t a más de 600 °C: una caída mata. Solo despachas lo que Calidad liberó. Tu orden en el patio es la trazabilidad que recibe Laminación. Sin funciones de mando (LFT art. 9): si algo no está bien, **avisas, detienes y escalas** a C-06.
 
 > **★ Mis 3 reglas de oro**
 > 1. ★ Nadie bajo la carga ni entre pilas durante el izaje (± 5 m de la proyección).
@@ -44,6 +44,8 @@ flowchart LR
   end
   A --> B --> C --> D
 ```
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 ![Figura 1. Mesa / lecho de enfriamiento, patio y despacho CC1 y CC2: equipos, zonas y rutas de escape](../img/it-S17-puesto.svg)
@@ -167,6 +169,14 @@ flowchart LR
 | OJT | 20 turnos (240 h); 80 h / 10 coladas por máquina |
 | Pasos ★ que me evalúan | MO-CC1-08 pasos 12, 13 · MO-CC2-08 paso 12 · MS-ACE-04 pasos del operador de grúa de CC y producto (1, 2, 4, 5, 7, 8, 9) |
 | Vigencia | **12 meses:** grúas/izaje (MS-ACE-04, NOM-006) y alturas (NOM-009). **24 meses:** demás TD-P07. Refresco anual 8 h de izaje |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 | Término | Qué es |

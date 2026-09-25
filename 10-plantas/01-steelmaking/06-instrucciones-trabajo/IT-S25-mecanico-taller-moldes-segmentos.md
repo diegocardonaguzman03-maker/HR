@@ -7,22 +7,22 @@
 | Código | IT-ACE-S25 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-25 Mecánico de Taller de Moldes y Segmentos — Técnico C (N-5) / B (N-6) / A (N-7) |
+| Rol | S-25 Mecánico de Taller de Moldes y Segmentos · sindicalizado — Técnico C (N-5) / B (N-6) / A (N-7) |
 | Área | Mantenimiento de Acería: taller de moldes (placas CC1, tubos CC2) y de segmentos y guías; apoyo en máquina CC1 / CC2 |
-| Turno | Horario de día (administrativo); el cambio en máquina lo apoya la guardia de S-19 (relevo 07:00 / 19:00) |
+| Turno | Horario de día (administrativo); el cambio en máquina lo apoya la guardia de S-19 (relevo 07:00 / 19:00) · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico |
 | Manuales de referencia | MM-CC-01, MM-CC-02 · MS-ACE-02, -04, -05, -07, -10 · DP-ACE-S (S-25) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 | Fecha | 2026-09-25 |
 
 > Esta IT resume tu trabajo; **no reemplaza al manual**. Espesores, torques y presiones de prueba son **[Validar con OEM]**. La conicidad y el gap por grado los fija C-08 en su tabla.
 
 ## 2. Mi puesto en 30 segundos
-Entrego moldes y segmentos dentro de tolerancia para evitar breakouts y defectos del producto. En el taller mido, rectifico y armo moldes; reconstruyo segmentos y guías. En la máquina alineo el molde y los segmentos y mido conicidad y gap con la guardia. **El molde es la primera barrera contra el breakout:** no libero nada fuera de tolerancia.
+Entrego moldes y segmentos dentro de tolerancia para evitar breakouts y defectos del producto. En el taller mido, rectifico y armo moldes; reconstruyo segmentos y guías. En la máquina alineo el molde y los segmentos y mido conicidad y gap con la guardia. **El molde es la primera barrera contra el breakout:** no libero nada fuera de tolerancia. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-11.
 
 > ★ **Mis 3 reglas de oro**
 > 1. ★ **Nada sale del taller sin hoja firmada:** prueba de presión, conicidad, TC y torques.
@@ -47,6 +47,8 @@ flowchart LR
 ```
 
 - **Meta:** 100 % de moldes y segmentos listos a tiempo para paros programados (DP-ACE-S).
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -230,12 +232,20 @@ flowchart LR
 
 | Concepto | Detalle |
 |---|---|
-| Nivel ILUO requerido | **L** Técnico C · **U** Técnico B (MM-CC-01 y MM-CC-02 como R) · **O** Técnico A (lidera la ejecución, libera, evaluador) |
+| Nivel ILUO requerido | **L** Técnico C · **U** Técnico B (MM-CC-01 y MM-CC-02 como R) · **O** Técnico A (coordina técnicamente la ejecución, da el liberado técnico, evaluador en pareja; sin mando) |
 | Teoría | Ruta técnica 64 h · MM-CC-01 32 h · MM-CC-02 32 h · protección radiológica básica 8 h (NOM-012) |
 | OJT | 360 h: 20 moldes y 20 segmentos · 5 armados CC1 + 10 tubos CC2 · 3 reconstrucciones + 2 alineaciones |
 | Pasos ★ que me evalúan | MM-CC-01: 1, 11, 12 + medición en taller · MM-CC-02: 1, 10 · MS-ACE-07 paso de observar al ESR |
 | Vigencia | **12 meses:** fuentes radiactivas (MS-ACE-07), grúas e izaje (MS-ACE-04), alturas, espacios confinados. **24 meses:** demás TD-P07 |
 | DC-3 / NOM | NOM-004, NOM-006, NOM-017, NOM-012 (conciencia radiológica; POE solo si el ESR lo determina); curso de metrología — verificar con Jurídico Laboral / SSO |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 - **Conicidad:** cuánto se cierra el molde hacia abajo, en %/m.

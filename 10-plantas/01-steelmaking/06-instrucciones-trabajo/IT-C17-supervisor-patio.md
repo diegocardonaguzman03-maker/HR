@@ -15,7 +15,7 @@
 | Elaboró | experto-operativo-metalurgia (con enfoque de diseño de capacitación) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
 > Esta IT **no reemplaza** a los manuales: resume tus rutinas de supervisión. Si hay duda, manda el manual. Los valores salen de FT-ACE-001 v0.3 y conservan sus marcas [Validar con OEM / Ingeniería de Proceso] y [Supuesto].
@@ -39,6 +39,8 @@ flowchart LR
     E --> D
     D --> F["18:30 / 06:30<br/>Inventario, bitácora<br/>entrega cara a cara"]
 ```
+
+> **Jornada de mi cuadrilla (nota laboral).** El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo, también para mí (LFT art. 58). Programo relevos, charlas y capacitación dentro de la jornada. Lo que exceda se paga según el CCT o la política de confianza. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -228,6 +230,14 @@ En cada recorrido marco:
 | Evaluador | Evaluador TD-P07: 16 h |
 | Pasos ★ que me evalúan | Respuesta a alarma del pórtico (MO-EAF-02 / MS-ACE-07) · liberación de canasta · VCC grúa–peatón |
 | Vigencia | **12 meses** fuentes radiactivas (MS-ACE-07), grúas/izaje (MS-ACE-04) y alturas (MS-ACE-10); **24 meses** ERC, evaluador TD-P07 y demás |
+
+> **Evaluación y certificación** (nota laboral — verificar con Jurídico Laboral)
+> - Mi evaluación TD-P07 no es una sanción. Si aún no demuestro un paso ★, recibo refuerzo y me reevalúo. Puedo acreditar lo que ya sé con el examen de suficiencia (LFT art. 153-U).
+> - Cuando evalúo a sindicalizados, la evaluación sirve para formar y certificar, no para sancionar (DP-ACE-S §4). El dictamen lo emite el comité TD-P07.
+> - Solo un acto inseguro deliberado en tarea crítica puede llevar a una medida disciplinaria. Se aplica por el Reglamento Interior y el CCT, con audiencia y representación sindical.
+> - Asigno puestos y suplencias solo a personal certificado, respetando el escalafón y el CCT [CCT: pedir texto]. Si no hay certificado, uso el relevo.
+> - La suspensión preventiva de una certificación es una medida de seguridad: el trabajador pasa a tarea no crítica sin perder salario ni antigüedad.
+> - Programo la capacitación de mi cuadrilla en jornada. Si cae en día de descanso, se paga según el CCT.
 
 ## 11. Glosario rápido
 

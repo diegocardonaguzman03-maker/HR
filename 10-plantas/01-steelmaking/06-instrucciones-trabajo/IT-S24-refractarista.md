@@ -7,22 +7,22 @@
 | Código | IT-ACE-S24 |
 | Versión | 0.1 |
 | Estado | Borrador para validación |
-| Rol | S-24 Refractarista — Técnico C (N-4) / B (N-5) / A (N-6) |
+| Rol | S-24 Refractarista · sindicalizado — Técnico C (N-4) / B (N-5) / A (N-6) |
 | Área | Mantenimiento de Acería / Ollas: refractario del EAF (solera, bancos, EBT, gunning), ollas (revestimiento, placas, tapón) y apoyo a distribuidores |
-| Turno | Guardia 4x4 de 12 h (gunning, EBT, placas; relevo 07:00 / 19:00) y taller de refractarios en horario de día |
+| Turno | Guardia 4x4 de 12 h (gunning, EBT, placas; relevo 07:00 / 19:00) y taller de refractarios en horario de día · jornada según el CCT [CCT: pedir texto] |
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico (administrativo) y C-15 Especialista de Refractarios (técnico y programa) |
 | Manuales de referencia | MM-EAF-03, MM-OLL-01, MO-OLL-01 · MS-ACE-01, -02, -03, -05, -08 · DP-ACE-S (S-24) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
-| Revisión laboral | Pendiente — experto-relaciones-laborales |
+| Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 | Fecha | 2026-09-25 |
 
 > Esta IT resume tu trabajo; **no reemplaza al manual**. Espesores, vidas y materiales dependen del proveedor: **[Validar con OEM / C-15]**. Lo marcado [Supuesto] no se usa en planta hasta validarse.
 
 ## 2. Mi puesto en 30 segundos
-Mantengo el refractario del horno y de las ollas para evitar perforaciones y fugas de metal. Proyecto (gunning) y reparo el horno y cambio las camisas del EBT. En las ollas cambio placas y tapón y reviso si siguen en ciclo. En el taller revisto ollas. Nunca libero un refractario húmedo: humedad con metal es explosión.
+Mantengo el refractario del horno y de las ollas para evitar perforaciones y fugas de metal. Proyecto (gunning) y reparo el horno y cambio las camisas del EBT. En las ollas cambio placas y tapón y reviso si siguen en ciclo. En el taller revisto ollas. Nunca libero un refractario húmedo: humedad con metal es explosión. Sin funciones de mando (LFT art. 9): si algo no está bien, **aviso, detengo y escalo** a C-11 o C-15.
 
 > ★ **Mis 3 reglas de oro**
 > 1. ★ **Todo seco:** arena ≤ 0.5 % de humedad, curva de secado completa, nunca proyecto sobre metal líquido.
@@ -48,6 +48,8 @@ flowchart LR
 ```
 
 - **Cada colada:** el termoescáner revisa la coraza de la olla. **Cada semana:** láser del EAF y Ø del canal EBT.
+
+> **Mi jornada (nota laboral).** Mi turno está pactado en el CCT [CCT: pedir texto]. El relevo y la entrega–recepción antes de las 07:00 / 19:00 son tiempo de trabajo (LFT art. 58). Se cuentan en la jornada o se pagan según el CCT. La jornada de 12 h y la reforma de 40 h están en revisión (arts. 59–61 y 66–68) — verificar con Jurídico Laboral.
 
 ## 4. Mi área de trabajo
 
@@ -239,12 +241,20 @@ flowchart LR
 
 | Concepto | Detalle |
 |---|---|
-| Nivel ILUO requerido | **L** Técnico C · **U** Técnico B (MO-OLL-01, MM-EAF-03, MM-OLL-01 solo) · **O** Técnico A (lidera y libera con C-15, evaluador) |
+| Nivel ILUO requerido | **L** Técnico C · **U** Técnico B (MO-OLL-01, MM-EAF-03, MM-OLL-01 solo) · **O** Técnico A (coordina técnicamente y da el liberado técnico con C-15, evaluador en pareja; sin mando) |
 | Teoría | Ruta técnica 48 h · MM-EAF-03 24 h · MM-OLL-01 24 h · NOM-033 8 h + NOM-015 |
 | OJT | 360 h: 10 revestimientos de olla y 20 reparaciones del EAF · 3 cambios de EBT · 10 cambios de placas + 1 reline · simulacro de rescate |
 | Pasos ★ que me evalúan | MM-EAF-03: 1–5, 8, 9, 11, 12, 13 · MM-OLL-01: 2, 3, 6, 7, 10, 12 |
 | Vigencia | **12 meses:** espacios confinados (MS-ACE-05), alturas, grúas e izaje. **24 meses:** demás TD-P07 |
 | DC-3 / NOM | NOM-033, NOM-010, NOM-006 (enganche), NOM-009, NOM-015, NOM-017 — verificar con Jurídico Laboral / SSO |
+
+> **Mi evaluación no es una sanción** (nota laboral — verificar con Jurídico Laboral)
+> - La evaluación TD-P07 sirve para formarme, certificarme y acreditar mi aptitud. No se usa para sancionarme (DP-ACE-S §4).
+> - Si aún no demuestro un paso ★, conservo mi categoría, mi salario y mi antigüedad. Recibo retroalimentación, OJT de refuerzo y otra oportunidad [Supuesto: 2 en ≤ 60 días, a validar con la CMCAP].
+> - Si ya sé hacer el trabajo, puedo pedir el **examen de suficiencia** (LFT art. 153-U). Si lo apruebo, recibo mi DC-3 sin cursar toda la ruta.
+> - La certificación prueba mi aptitud para ascender. Entre los aptos, asciende el de mayor antigüedad (LFT arts. 154–159 y CCT).
+> - Si mi certificación se suspende tras un incidente grave, es una medida de seguridad, no una sanción. Paso a tarea no crítica sin perder salario ni antigüedad y me reevalúan en ≤ 15 días [Supuesto].
+> - Mi capacitación y mis recertificaciones son en jornada y sin costo para mí. Si caen en mi descanso, se pagan según el CCT [CCT: pedir texto].
 
 ## 11. Glosario rápido
 - **EBT:** agujero de vaciado excéntrico del fondo del horno.
