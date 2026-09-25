@@ -1,0 +1,12 @@
+site,course_code,course,school,priority,modality,target_population,participants,hours_per_participant,total_hours,month,instructor_type,cost_mxn,dc3_required,stps_thematic_area_verify_catalog
+Acería Norte,S-CRS-01,Isolation and LOTO certification,Safety & Critical Risk,P1,Classroom + practical,Maintenance and operators,620,16,9920,Feb-Jun,Internal,186000,Y,Seguridad
+Acería Norte,S-CRS-04,Suspended loads and rigging,Safety & Critical Risk,P1,Classroom + simulator,Crane operators and riggers,180,24,4320,Mar-Aug,Internal,216000,Y,Seguridad
+Acería Norte,STL-EAF-02,EAF power profile and foamy slag,Steelmaking Academy,P2,Simulator + OJT,EAF operators,48,24,1152,Sep-Nov,Internal + OEM,540000,Y,Producción
+Acería Norte,L-1,Supervisor School (Líder de Turno),Leadership,P2,Blended cohort,New and current supervisors,80,96,7680,Jul-Dec,Internal + university,1840000,Y,Desarrollo personal
+Tepehuaje,S-02,Site induction NOM-023,Safety & Critical Risk,P1,Classroom + field,All site staff (annual refresher),1450,8,11600,Jan-Dec,Internal,290000,Y,Seguridad
+Tepehuaje,MIN-HT,Haul truck operator certification,Mining Academy,P1,Simulator + OJT,New operators,40,168,6720,Jan-Dec,Internal,1120000,Y,Producción
+Tepehuaje,S-CRS-07,Explosives handling and blasting,Safety & Critical Risk,P1,Classroom + field,Blasting crew,35,64,2240,Apr,External (SEDENA-compliant vendor),420000,Y,Seguridad
+Sierra Alta,S-05,Mine rescue brigade,Safety & Critical Risk,P1,Practical + drills,Brigade members,40,80,3200,Mar-Oct,Internal + external,640000,Y,Seguridad
+Manzanillo,S-CRS-02,Confined space entry and rescue,Safety & Critical Risk,P1,Classroom + practical,Kiln and filter maintenance,110,16,1760,May,Internal,88000,Y,Seguridad
+All,S-07,NOM-035 and harassment protocol,Safety & Critical Risk,P1,E-learning + workshop,All employees,8500,2,17000,Jan-Mar,LMS,150000,N,Desarrollo personal
+All,DIG-GS-01,Hydrogen fundamentals and safety,Digital & Future Skills,P3,Blended,DRI engineers and operators,90,16,1440,Oct,External + internal,405000,Y,Producción

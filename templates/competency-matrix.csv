@@ -1,0 +1,21 @@
+role_code,role,site,competency_code,competency,type,critical_task,required_level,nom_or_standard,learning_solution,assessment_method,validity_months
+MIN-OP-HT,Haul truck operator (240 t),Tepehuaje,S-CRS-06,Mobile equipment operation and vehicle-pedestrian interaction,Safety,Y,3,NOM-023-STPS-2012,Classroom 16h + simulator 24h + supervised OJT 120h,Field practical + simulator scenario,24
+MIN-OP-HT,Haul truck operator (240 t),Tepehuaje,MIN-HT-01,Pre-use inspection of haul truck,Technical,N,3,OEM manual,OJT 8h,Checklist observation,24
+MIN-OP-HT,Haul truck operator (240 t),Tepehuaje,MIN-HT-02,Efficient driving and dispatch system use,Technical,N,3,Internal standard,Simulator 8h + OJT,Telemetry KPIs + observation,
+MIN-OP-HT,Haul truck operator (240 t),Tepehuaje,S-GEN-01,Fatigue management on 12h shifts,Safety,N,2,NOM-023-STPS-2012,E-learning 2h,Quiz,12
+MIN-BL-01,Blaster (licensed),Tepehuaje,S-CRS-07,Explosives handling storage and blasting,Safety,Y,3,SEDENA permit + NOM-023-STPS-2012,Classroom 24h + field 40h,Field practical + written exam,12
+MIN-UG-01,Underground miner - scaling and bolting,Sierra Alta,S-CRS-13,Ground control,Safety,Y,3,NOM-023-STPS-2012,Classroom 16h + training drift 40h + OJT,Field practical,24
+STL-EAF-01,EAF operator,Acería Norte,S-CRS-08,Molten metal handling and emergency response,Safety,Y,3,Internal CRS-08 + NOM-015-STPS-2001,Classroom 8h + VR 4h + drill,Practical + VR scenario,24
+STL-EAF-01,EAF operator,Acería Norte,STL-EAF-02,EAF power profile and foamy slag practice,Technical,N,3,Internal SOP,EAF simulator 24h + OJT,Simulator scenario + KPIs,
+STL-EAF-01,EAF operator,Acería Norte,STL-EAF-03,Scrap charging and radiation detection,Technical,N,3,NOM-012-STPS-2012,Classroom 4h + field,Observation,24
+STL-CR-01,Overhead crane operator (ladle),Acería Norte,S-CRS-04,Suspended loads and rigging,Safety,Y,3,NOM-006-STPS-2014,Classroom 8h + crane simulator 16h + OJT 80h,Practical + simulator,24
+STL-CR-01,Overhead crane operator (ladle),Acería Norte,S-CRS-05,Overhead crane operation,Safety,Y,3,NOM-006-STPS-2014,Crane simulator + supervised OJT,Practical,24
+MNT-EL-01,Electrical technician,All,S-CRS-01,Isolation and LOTO,Safety,Y,3,NOM-029-STPS-2011 + NOM-004-STPS-1999,Classroom 8h + practical 8h,Practical checklist (CRS-01),24
+MNT-EL-01,Electrical technician,All,S-CRS-11,Electrical work and arc flash,Safety,Y,3,NOM-029-STPS-2011,Classroom 16h + lab 16h,Practical + written,12
+MNT-EL-01,Electrical technician,All,MNT-AUT-01,PLC troubleshooting,Technical,N,3,Internal standard,Lab 40h + OJT,Lab practical,
+MNT-ME-01,Mechanical technician,All,S-CRS-03,Work at heights,Safety,Y,3,NOM-009-STPS-2011,Classroom 8h + practical 8h,Practical,12
+MNT-ME-01,Mechanical technician,All,S-CRS-02,Confined space entry,Safety,Y,3,NOM-033-STPS-2015,Classroom 8h + practical 8h,Practical,12
+MNT-ME-01,Mechanical technician,All,MNT-HYD-01,Industrial hydraulics,Technical,N,3,Internal standard,Lab 40h + OJT,Lab practical,
+SUP-01,First-line supervisor,All,LDR-01,Safety leadership and critical control verification,Leadership,N,3,ISO 45001 7.2,Supervisor School module 1 (16h),360 + field VCC audit,36
+SUP-01,First-line supervisor,All,LDR-02,Labor relations and CCT,Leadership,N,3,LFT + CCT,Supervisor School module 3 (8h),Case assessment,
+SUP-01,First-line supervisor,All,LDR-03,Coaching and OJT delivery,Leadership,N,3,EC0217.01 (reference),Supervisor School module 6 (12h),Observation,
