@@ -120,14 +120,14 @@
 |---|---|---|
 | Grúas de carga (nave de hornos) | 2 × 120/40 t | Canastas de chatarra, mantenimiento de bóveda |
 | Grúas de colada (nave de ollas) | 2 × 250/63 t, con doble sistema de freno y límites redundantes | Ollas llenas de acero |
-| Grúas de CC y de producto | 2 × 50 t + 2 × 25 t (electroimán/tenaza) | Distribuidores, segmentos, planchón/palanquilla |
+| Grúas de CC y de producto | 2 × 50 t (distribuidores, segmentos, moldes) + 2 × 45 t con tenaza (planchón de CC1, hasta ≈ 32.8 t + tenaza) + 1 × 25 t con electroimán (palanquilla de CC2) | Corregido en v0.2: las grúas de 25 t no pueden levantar planchones de CC1 |
 
 ## 7. Grados típicos (familias)
 
 | Familia | Máquina | Ejemplo de química (%) | Uso |
 |---|---|---|---|
 | Bajo carbono calmado al Al | CC1 | C 0.03–0.06; Mn 0.20–0.35; Al 0.025–0.045; S ≤ 0.010 | Lámina automotriz y de electrodomésticos |
-| HSLA | CC1 | C 0.06–0.10; Mn 0.8–1.4; Nb 0.02–0.05 | Tubería, estructural |
+| HSLA | CC1 | C 0.06–0.10; Mn 0.8–1.4; Nb 0.02–0.05 | Tubería, estructural. ⚠️ **Rango peritéctico**: riesgo de grieta longitudinal; usar polvo de molde peritéctico, velocidad −0.2 m/min y enfriamiento secundario suave (0.8–0.9 L/kg) |
 | Varilla corrugada | CC2 | C 0.25–0.35; Mn 0.8–1.2; Si 0.15–0.30; CE ≤ 0.55 | Varilla NMX-B-506 / ASTM A615 |
 | Barras comerciales | CC2 | C 0.15–0.25; Mn 0.6–0.9 | Perfiles y barras |
 
