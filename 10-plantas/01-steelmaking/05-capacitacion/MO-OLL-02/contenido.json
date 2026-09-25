@@ -175,7 +175,7 @@
     {"pregunta": "¿A qué altura se hace la prueba de frenos con carga?", "opciones": ["100–200 mm, pausa 5 s", "1 m, pausa 30 s", "No se hace con carga"], "correcta": 0, "explicacion": "Levantar 100–200 mm y pausar 5 s: si la olla desliza, se asienta y la grúa sale de servicio."},
     {"pregunta": "¿Quién confirma el enganche de los dos muñones?", "opciones": ["S-06 desde el LF", "S-13 desde posición segura", "Nadie; lo ve el gruero"], "correcta": 1, "explicacion": "S-13 confirma visualmente ambos lados antes de levantar: un muñón mal enganchado voltea la olla."},
     {"pregunta": "La olla llena marca 245 t en la celda. ¿Qué haces?", "opciones": ["Trasladar despacio", "Asentar y avisar a C-04", "Subir la velocidad"], "correcta": 1, "explicacion": "Límite de olla llena ≤ 240 t [Supuesto]: se asienta y C-04 decide; revisar sobrellenado."},
-    {"pregunta": "La olla fuga metal durante el traslado. ¿Qué haces?", "opciones": ["Bajarla ahí y echar agua", "Llevarla a la fosa seca sin pasar sobre personas", "Seguir a la torreta"], "correcta": 1, "explicacion": "Si es seguro, a la fosa de emergencia seca; si no, al área segura más cercana. Evacuar a ≥ 25 m; nunca agua."},
+    {"pregunta": "La olla fuga metal durante el traslado. ¿Qué haces?", "opciones": ["Bajarla ahí y echar agua", "A la fosa seca, sin pasar sobre nadie", "Seguir a la torreta"], "correcta": 1, "explicacion": "Si es seguro, a la fosa de emergencia seca; si no, al área segura más cercana. Evacuar a ≥ 25 m; nunca agua."},
     {"pregunta": "¿Qué zona roja se aplica durante el traslado?", "opciones": ["Ruta ± 1 m", "Ruta ± 5 m", "Solo bajo la olla"], "correcta": 1, "explicacion": "Roja = proyección de la ruta ± 5 m; amarilla ± 5–15 m; nadie bajo ni junto a la ruta."}
   ],
   "reglas": [
