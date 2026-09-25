@@ -14,7 +14,7 @@
 | Manuales de referencia | MM-EAF-03, MM-OLL-01, MO-OLL-01 · MS-ACE-01, -02, -03, -05, -08 · DP-ACE-S (S-24) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno (con observaciones), 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 | Fecha | 2026-09-25 |
@@ -203,10 +203,10 @@ flowchart LR
 > - Falta el vigía o el equipo de rescate.
 
 ## 7. Mis controles críticos (★)
-- ☐ Permiso de trabajo y, si entro, permiso de espacio confinado con vigía.
+- ☐ Permiso de trabajo y, si entro, permiso de espacio confinado con vigía afuera, rescate listo y argón del tapón desconectado (olla).
 - ☐ Mi candado personal en la caja grupal.
 - ☐ Horno basculado y con perno, u olla estable con perno.
-- ☐ Gases medidos: O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL.
+- ☐ Gases medidos: O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL para entrar; ≤ 1 % de lectura LEL para oxicortar.
 - ☐ Material, arena y herramientas secos (arena ≤ 0.5 %).
 - ☐ Nadie bajo el EBT ni bajo la olla izada.
 - ☐ Curva de secado completa antes del primer acero.

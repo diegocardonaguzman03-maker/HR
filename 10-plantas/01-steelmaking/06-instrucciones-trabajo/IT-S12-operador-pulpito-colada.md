@@ -13,7 +13,7 @@
 | Manuales de referencia | MO-CC1-02 a -07; MO-CC2-02 a -07; MM-CC-03, MM-CC-04; MS-ACE-01, -02, -03, -06, -07, -08, -09; FT-ACE-001 v0.3 §4–§5 |
 | Elaboró | experto-operativo-metalurgia (con criterio de diseño instruccional de C&D) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno (con observaciones), 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director de C&D |
 
@@ -80,7 +80,7 @@ flowchart LR
 | 4 | Inserta la barra falsa | CC1: 3–5 m/min, a 2 m del molde 0.3 m/min; cabeza a ≈ 650 ± 10 mm. CC2: ≤ 3 m/min, últimos 2 m ≤ 0.5; cabeza a 700 ± 20 mm | |
 | 5 | Participa en el LOTO del sellado | Candados puestos; prueba de arranque sin movimiento | ★ |
 | 6 | Prueba el agua de molde | CC1: ≥ 95% nominal (4,200 L/min anchas; 450 angostas). CC2: 1,800–2,200 L/min por línea ≥ 5 min | ★ |
-| 7 | Verifica agua de emergencia | Torre con nivel; diésel en automático; última prueba ≤ 7 días | ★ |
+| 7 | Verifica agua de emergencia | Torre con nivel; diésel en automático; arranque de diésel ≤ 7 días y prueba de cambio mensual vigente (MM-CC-03) | ★ |
 | 8 | Prueba oscilación, nivel y BOP / EMS | CC1: frecuencia ± 2%, carrera ± 0.5 mm; termopares con lectura. CC2: 200 cpm en vacío, EMS 1 min | |
 | 9 | CC2: pide al ESR abrir el obturador al final | HMI marca "molde vacío" sin alarma | ★ |
 
@@ -198,7 +198,7 @@ flowchart LR
 
 ## 7. Mis controles críticos (★)
 - ☐ Agua de molde en caudal y ΔT normales (CC1 ΔT 6–9 °C; CC2 6–10 °C).
-- ☐ Agua de emergencia "lista": torre, diésel en automático, prueba ≤ 7 días.
+- ☐ Agua de emergencia "lista": torre, diésel en automático, arranque de diésel ≤ 7 días y prueba de cambio mensual vigente (MM-CC-03).
 - ☐ Zona de exclusión confirmada por radio antes de arrancar o extraer la cola.
 - ☐ Nivel automático calibrado; CC1 termopares BOP con lectura.
 - ☐ CC2: obturador de Cs-137 en el estado correcto y registro del ESR firmado.

@@ -13,7 +13,7 @@
 | Manuales de referencia | MO-CC1-01, MO-CC2-01; MS-ACE-02, -03, -04, -05, -06, -08; FT-ACE-001 v0.3 §4–§5 |
 | Elaboró | experto-operativo-metalurgia (con criterio de diseño instruccional de C&D) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno (con observaciones), 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director de C&D |
 
@@ -24,7 +24,7 @@ Entregas distribuidores limpios, **secos**, bien armados y precalentados a tiemp
 
 > **★ Mis 3 reglas de oro**
 > 1. ★ Si no está seco, no sale: sin tarjeta de secado completa, **no se usa**.
-> 2. ★ Entro al distribuidor **solo** con permiso de espacio confinado, gases medidos, LOTO y vigía.
+> 2. ★ Entro al distribuidor **solo** con permiso de espacio confinado, gases medidos, LOTO, vigía y rescate listo.
 > 3. ★ Nadie bajo el distribuidor suspendido ni a ± 5 m de su proyección.
 
 ## 3. Mi turno de 12 horas
@@ -160,7 +160,7 @@ flowchart LR
 ## 7. Mis controles críticos (★)
 - ☐ Tarjeta de secado / registro de curado completo y firmado.
 - ☐ Todos los materiales del almacén cubierto: secos, sin intemperie.
-- ☐ Permiso de espacio confinado, LOTO y gases medidos antes de entrar.
+- ☐ Permiso de espacio confinado, LOTO y gases medidos (O₂ 19.5–23.5 %, < 10 % LEL, CO < 25 ppm) antes de entrar; vigía afuera y rescate listo (≤ 10 min).
 - ☐ Quemadores: purga, prueba de flama, detector de gas activo, válvula de corte probada.
 - ☐ Nadie bajo el distribuidor suspendido ni a ± 5 m.
 - ☐ CC2: Ø de buza = orden de colada, verificado con calibrador.

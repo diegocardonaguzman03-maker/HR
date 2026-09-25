@@ -91,7 +91,7 @@ flowchart LR
 ```
 | Punto | Qué verifico | Criterio (medición) | ★ |
 |---|---|---|---|
-| V1 | Agua de molde y de emergencia | CC1: caudal ≥ 95%, ΔT 6–9 °C (alarma > 11 °C) · CC2: ≥ 1,800 L/min, ΔT 6–10 °C (alarma > 12 °C); emergencia ≤ 15 s, prueba ≤ 7 días | ★ |
+| V1 | Agua de molde y de emergencia | CC1: caudal ≥ 95%, ΔT 6–9 °C (alarma > 11 °C) · CC2: ≥ 1,800 L/min, ΔT 6–10 °C (alarma > 12 °C); emergencia ≤ 15 s; arranque de diésel ≤ 7 días y prueba de cambio mensual vigente (MM-CC-03) | ★ |
 | V2 | Zona de exclusión y torreta | Colada estable: solo S-13 y S-14 a ≤ 3 m del molde; nadie bajo la olla | ★ |
 | V3 | Barra falsa (antes del arranque) | Sellada, sin holguras, chatarra seca (CC1 15–25 kg · CC2 1.5–3 kg/línea) | ★ |
 | V4 | Distribuidor | Sin vapor; cara 1,100 ± 50 °C; CC1 SEN ≥ 1,000 °C · CC2 buzas ≥ 900 °C; permiso de espacio confinado si hay ingreso | ★ |

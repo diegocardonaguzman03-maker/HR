@@ -14,7 +14,7 @@
 | Manuales de referencia | MO-OLL-01 · MM-OLL-01 · MO-EAF-07 (lista de olla) · MS-ACE-01, 02, 03, 05, 06, 08, 09 · FT-ACE-001 §3 |
 | Elaboró | experto-operativo-metalurgia (con diseño instruccional) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno (con observaciones), 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
@@ -59,7 +59,7 @@ Figura de apoyo del manual:
 | Chaqueta, polainas y guantes aluminizados | Junto a una olla caliente (> 1,000 °C) |
 | Ropa ignífuga (FR) y botas metatarsales | Siempre |
 | Mascarilla para polvo | Polvo de cromita y refractario (según NOM-010) |
-| Detector multigás | Zona del precalentador: CO 25 ppm → sal; GN 10 % LEL → sal; 20 % LEL → evacuar |
+| Detector multigás | Zona del precalentador: CO 25 ppm → sal; CO 200 ppm → evacúa el sector; GN 10 % LEL → sal; 20 % LEL → evacúa |
 | Arnés y línea de vida | Trabajo en altura (MS-ACE-10) |
 
 ## 6. Mis tareas paso a paso
@@ -195,7 +195,7 @@ flowchart LR
 - ☐ Regla de olla fría: > 4 h fuera → ≥ 8 h.
 - ☐ Arena seca, llenado desde la posición protegida, ≤ 2 min.
 - ☐ Cara caliente ≥ 1,000 °C al entregar; lista firmada.
-- ☐ Permiso de espacio confinado para entrar a una olla (O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL).
+- ☐ Permiso de espacio confinado para entrar a una olla: argón del tapón desconectado, O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL, vigía y rescate listo (MS-ACE-05).
 
 ## 8. Si algo sale mal
 

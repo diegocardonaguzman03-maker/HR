@@ -14,7 +14,7 @@
 | Manuales de referencia | MO-LF-01 · MS-ACE-01, 02, 03, 05, 06, 08, 09 · FT-ACE-001 §3 |
 | Elaboró | experto-operativo-metalurgia (con diseño instruccional) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno (con observaciones), 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
@@ -26,7 +26,7 @@ Soy las manos del horno olla en el piso. Conecto el argón, mido temperatura, to
 
 > ★ **Mis 3 reglas de oro**
 > 1. **Sondas, muestreadores, adiciones y alambre siempre secos.** Húmedo = proyección de metal.
-> 2. **Nunca bajes a la fosa ni a un túnel de argón** sin permiso, medición de O₂ y vigía.
+> 2. **Nunca bajes a la fosa ni a un túnel de argón** sin permiso, medición (O₂ → LEL → CO), vigía y rescate listo.
 > 3. **Durante el CaSi, nadie frente a la ventana**; y para desatascar el alambre, **LOTO primero**.
 
 ## 3. Mi turno de 12 horas
@@ -60,7 +60,7 @@ Figura de apoyo del manual:
 | Guantes de carnaza y protección facial | Alimentador de alambre y cambio de bobina |
 | Ropa ignífuga (FR) y botas metatarsales | Siempre en la nave |
 | Protección auditiva | Siempre en la nave de ollas |
-| Detector personal de CO y O₂ | Siempre; CO 25 ppm → sal; O₂ < 19.5 % → sal |
+| Detector personal de CO y O₂ | Siempre; CO 25 ppm → sal; CO 200 ppm → evacúa el sector; O₂ fuera de 19.5–23.5 % → sal |
 
 Ver la Figura 1 de MS-ACE-08 (`../img/ms-epp-acería.svg`).
 

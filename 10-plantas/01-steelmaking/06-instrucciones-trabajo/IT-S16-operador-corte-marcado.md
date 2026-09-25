@@ -13,7 +13,7 @@
 | Manuales de referencia | MO-CC1-08, MO-CC2-08 (apoyo en MO-CC1-03/-07, MO-CC2-03/-06/-07); MS-ACE-01, -02, -03, -06, -08, -09; FT-ACE-001 v0.3 §4–§5 |
 | Elaboró | experto-operativo-metalurgia (con criterio de diseño instruccional de C&D) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno (con observaciones), 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director de C&D |
 
@@ -61,6 +61,7 @@ flowchart LR
 | [GUANTES] | Guantes de carnaza | Cambio de boquillas y corte manual |
 | [BOTAS] | Botas metatarsales | Todo el turno |
 | [OÍDO] | Protección auditiva | Zona de corte |
+| [MULTIGÁS] | Detector personal de gas (LEL, CO, O₂) | Zona de corte y cambio de boquillas: 10 % LEL sal; 20 % LEL evacúa (MS-ACE-06) |
 
 ## 6. Mis tareas paso a paso
 
@@ -135,7 +136,7 @@ flowchart LR
 > **🛑 ALTO:** olor a gas o detector en alarma: 10% LEL sal; 20% LEL evacuación del sector; sin chispas ni interruptores.
 
 ## 7. Mis controles críticos (★)
-- ☐ Prueba de fugas, arrestaflamas y flama al inicio del turno.
+- ☐ Prueba de fugas, arrestaflamas y antirretornos al inicio del turno; sin grasa ni aceite en conexiones de O₂.
 - ☐ Zona de corte delimitada; nadie en la línea de proyección.
 - ☐ LOTO de mesa y carro antes de meter manos.
 - ☐ Marca = MES / rastreo (primera y última de cada colada).

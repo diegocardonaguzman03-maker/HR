@@ -14,7 +14,7 @@
 | Manuales de referencia | MO-OLL-02 · MM-GR-01 · MO-EAF-07 · MO-CC1-05 / MO-CC2-05 · MO-OLL-01 · MS-ACE-01, 03, 04, 08, 09 · FT-ACE-001 §3 y §6 |
 | Elaboró | experto-operativo-metalurgia (con diseño instruccional) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno (con observaciones), 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
@@ -27,7 +27,7 @@ Muevo ollas con **≈ 150 t de acero líquido** (≈ 230 t en el gancho [Supuest
 > ★ **Mis 3 reglas de oro**
 > 1. **Frenos y límites probados** al inicio del turno. Si falla uno, la grúa **no mueve metal líquido**.
 > 2. **Nadie bajo la carga ni en la ruta.** Si ves a alguien, detén el traslado.
-> 3. **Ambos muñones asentados** (lo confirma el señalero) y **prueba de frenos con carga** antes de trasladar.
+> 3. **Ambos muñones asentados** (lo confirma el señalero) y **prueba de frenos con carga** (200–300 mm, 10 s) antes de trasladar.
 
 ## 3. Mi turno de 12 horas
 
@@ -100,7 +100,7 @@ flowchart LR
 flowchart LR
     A["Liberación de S-06<br/>y destino de S-12"] --> B["★ Ruta despejada<br/>bocina"]
     B --> C["★ Engancha 2 muñones<br/>S-13 confirma"]
-    C --> D["★ Sube 100–200 mm<br/>pausa 5 s"]
+    C --> D["★ Sube 200–300 mm<br/>detén 10 s"]
     D --> E["Traslado bajo<br/>≤ 50 % velocidad"]
     E --> F["★ Asienta con S-13"]
 ```
@@ -112,13 +112,13 @@ flowchart LR
 | 3 | Toca la bocina y revisa la ruta y el área bajo la trayectoria. | Nadie en roja (proyección ± 5 m). | ★ |
 | 4 | Baja la traviesa y engancha ambos muñones. | Los 2 ganchos enganchados. | ★ |
 | 5 | Espera la señal "enganche OK" de S-13. | Confirmación visual de ambos lados. | ★ |
-| 6 | Levanta y prueba frenos con carga. | Sube 100–200 mm y pausa 5 s (MO-OLL-02); sin deslizamiento; peso ≤ 240 t [Supuesto]. | ★ |
+| 6 | Levanta y prueba frenos con carga. | Sube 200–300 mm y detén 10 s (MS-ACE-04); sin deslizamiento; peso ≤ 240 t [Supuesto]. | ★ |
 | 7 | Traslada a la altura mínima segura. | ≥ 1 m sobre el obstáculo más alto; ≤ 50 % de velocidad [Validar con OEM]; sin balanceo. | |
 | 8 | Aproxima a la torreta en marcha lenta con señales de S-13. | Muñones alineados con el brazo. | |
 | 9 | Baja suave hasta asentar. | "Asentada OK" de S-13. | ★ |
 | 10 | Desengancha, sube y retira la traviesa. Registra el movimiento. | Tiempo LF → torreta ≤ 8 min [Supuesto]. | |
 
-> ⚠️ **Pendiente de homologar:** MS-ACE-04 pide la prueba de frenos a **200–300 mm y 10 s**; MO-OLL-02 dice **100–200 mm y 5 s**. Aplica lo que confirme C-04 hasta que C-16 y el OEM homologuen el valor [Validar con C-16 / OEM].
+> ⚠️ **Criterio homologado (revisión de seguridad, 2026-09-26):** la prueba de frenos con carga es a **200–300 mm y 10 s sin deslizamiento** (MS-ACE-04, criterio más estricto). El manual MO-OLL-02 todavía dice 100–200 mm y 5 s: queda pendiente actualizarlo. Mientras tanto, aplica 200–300 mm y 10 s.
 
 > 🛑 **ALTO — detén y avisa si…**
 > - Peso > 240 t en la celda de carga [Supuesto]: asienta y avisa a C-04.
@@ -194,7 +194,7 @@ flowchart LR
 - ☐ 2 frenos y 2 límites superiores probados.
 - ☐ Ruta despejada y bocina antes de cada traslado.
 - ☐ "Enganche OK" de S-13 en ambos muñones.
-- ☐ Prueba de frenos con carga y peso ≤ 240 t [Supuesto].
+- ☐ Prueba de frenos con carga a 200–300 mm por 10 s sin deslizamiento, y peso ≤ 240 t [Supuesto].
 - ☐ Altura mínima con ≥ 1 m de holgura; nunca sobre púlpitos, oficinas, comedores ni fosas con agua.
 - ☐ "Asentada OK" de S-13 antes de desenganchar.
 - ☐ Fosa de emergencia seca y libre.

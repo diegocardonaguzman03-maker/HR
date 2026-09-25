@@ -14,7 +14,7 @@
 | Manuales de referencia | MO-EAF-05 · MS-ACE-01, 03, 06, 08, 09 · FT-ACE-001 §2 |
 | Elaboró | experto-operativo-metalurgia (con diseño instruccional) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno (con observaciones), 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
@@ -59,7 +59,7 @@ Figura de apoyo del manual:
 | Careta con visor dorado, capucha y chaqueta aluminizadas | Fuera de la cabina cerca de la puerta o de escoria líquida |
 | Polainas y guantes aluminizados | Fuera de la cabina cerca de escoria líquida |
 | Ropa ignífuga (FR) y botas metatarsales | Siempre |
-| Detector personal multigás | Siempre; CO 25 ppm → sal |
+| Detector personal multigás | Siempre; CO 25 ppm → sal; CO 200 ppm → evacúa el sector |
 | Hidratación | 250 mL cada 15–20 min en calor (MS-ACE-08) |
 
 ## 6. Mis tareas paso a paso
