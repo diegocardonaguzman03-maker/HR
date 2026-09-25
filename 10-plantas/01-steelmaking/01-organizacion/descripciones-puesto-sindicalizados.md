@@ -1415,7 +1415,7 @@ Mantener el flujo de acero de la olla al molde sin interrupciones: abrir y cambi
 |---|---|
 | Torreta de ollas | CC1: brazos tipo mariposa, 2 ollas, pesaje; CC2: 2 brazos |
 | Manipulador del tubo protector | Sello de argón |
-| Distribuidor | CC1 45 t, barra tapón, presas y diques; CC2 30 t, buzas de ZrO₂ de 15–17 mm con cambio rápido |
+| Distribuidor | CC1 45 t, barra tapón, presas y diques; CC2 30 t, buzas de ZrO₂ de 20–24 mm para 160 × 160 (15–17 mm para 130 × 130) con cambio rápido |
 | Sistema de cambio de SEN / buza | Manipuladores de cambio en caliente |
 | Lanzas de temperatura y muestra | Cartuchos secos |
 
@@ -1573,7 +1573,7 @@ Entregar distribuidores revestidos, secos, con buzas y barra tapón correctament
 | Código | Proceso crítico | Dueño | R/A/C/I | Qué le toca |
 |---|---|---|---|---|
 | MO-CC1-01 | Preparación y precalentamiento del distribuidor | C-06 | **A** | Prepara el distribuidor de 45 t: revestimiento de trabajo, presas y diques, barra tapón, SEN; precalienta según curva. |
-| MO-CC2-01 | Preparación y precalentamiento del distribuidor y las buzas calibradas | C-06 | **A** | Prepara el distribuidor de 30 t, instala buzas calibradas de ZrO₂ (15–17 mm) y precalienta. |
+| MO-CC2-01 | Preparación y precalentamiento del distribuidor y las buzas calibradas | C-06 | **A** | Prepara el distribuidor de 30 t, instala buzas calibradas de ZrO₂ (20–24 mm para 160 × 160; 15–17 mm para 130 × 130) y precalienta. |
 | MO-CC1-06 | Cambio de buza sumergida (SEN) y cambio de distribuidor en caliente | C-06 | **C** | Consultado: aporta la condición de su equipo o área antes de ejecutar. |
 | MO-CC2-06 | Cambio rápido de buza calibrada y taponeo o cierre de línea | C-06 | **C** | Consultado: aporta la condición de su equipo o área antes de ejecutar. |
 | MO-CC1-03 | Arranque de colada (apertura de olla y distribuidor, llenado del molde) | C-06 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
@@ -1590,7 +1590,7 @@ Entregar distribuidores revestidos, secos, con buzas y barra tapón correctament
 - **Autoridad:** no entrega un distribuidor mal preparado.
 
 ### Responsabilidades de calidad
-- 🔎 Diámetro de buza calibrada **15–17 mm** verificado con calibrador (CC2).
+- 🔎 Diámetro de buza calibrada **20–24 mm (160 × 160) o 15–17 mm (130 × 130)** verificado con calibrador (CC2).
 - 🔎 Alineación de barra tapón y SEN; curva de precalentamiento registrada.
 
 ### Equipos que opera
@@ -1726,7 +1726,7 @@ Calor del producto recién cortado, proyecciones, gases, ruido.
 | Campo | Valor |
 |---|---|
 | Tipo de personal | Sindicalizado — línea 4 (Colada), **nivel N-3** (entrada) |
-| Área / equipo | Mesa de enfriamiento y patio de planchón (CC1), lecho de enfriamiento y amarre (CC2), grúas de producto (2 × 50 t y 2 × 25 t, electroimán/tenaza), despacho a laminación |
+| Área / equipo | Mesa de enfriamiento y patio de planchón (CC1), lecho de enfriamiento y amarre (CC2), grúas de producto (2 × 50 t; 2 × 45 t con tenaza para planchón; 1 × 25 t con electroimán para palanquilla), despacho a laminación |
 | Reporta a | C-06 Supervisor de Colada Continua |
 | Supervisa a | No aplica |
 | Plazas (total y por turno) | **81 plazas** (13 por turno × 4 cuadrillas = 52 + 7 de relevo; 20 puestos de día × 1.1 = 22) |
@@ -1767,7 +1767,7 @@ Mover, enfriar, apilar y despachar el semiterminado a laminación con trazabilid
 ### Equipos que opera
 | Equipo | Especificación clave |
 |---|---|
-| Grúas de CC y de producto | 2 × 50 t + 2 × 25 t, electroimán/tenaza |
+| Grúas de CC y de producto | 2 × 50 t (distribuidores, segmentos); 2 × 45 t con tenaza (planchón); 1 × 25 t con electroimán (palanquilla) |
 | Mesa de enfriamiento (CC1) / lecho de enfriamiento (CC2) | Planchón 8–11 m; palanquilla 12 m |
 | Amarradora de paquetes (CC2) | Según OEM |
 | Montacargas / equipo de patio | Licencia interna |
