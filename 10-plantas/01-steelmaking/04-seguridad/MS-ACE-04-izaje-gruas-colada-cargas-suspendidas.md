@@ -32,7 +32,7 @@
 
 Toda maniobra sigue el ciclo **inspeccionar → planear → despejar → levantar a prueba → trasladar → depositar → registrar**. Las rutas de ollas llenas y sus zonas están en la Figura 1 (MS-ACE-01).
 
-![Figura 1. Rutas de ollas y zonas de exclusión en la nave](../../img/ms-zonas-exclusion-nave.svg)
+![Figura 1. Rutas de ollas y zonas de exclusión en la nave](../img/ms-zonas-exclusion-nave.svg)
 
 ```mermaid
 flowchart TD

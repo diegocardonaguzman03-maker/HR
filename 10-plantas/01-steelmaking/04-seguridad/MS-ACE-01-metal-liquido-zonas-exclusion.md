@@ -39,7 +39,7 @@ La nave se divide en tres zonas que **cambian según la operación** (Figura 1):
 - **Zona AMARILLA:** personal autorizado del área, detrás de barreras físicas, con EPP completo de nave.
 - **Zona VERDE:** tránsito normal con EPP básico de nave.
 
-![Figura 1. Planta de la nave: zonas de exclusión, rutas de escape y refugios](../../img/ms-zonas-exclusion-nave.svg)
+![Figura 1. Planta de la nave: zonas de exclusión, rutas de escape y refugios](../img/ms-zonas-exclusion-nave.svg)
 
 ```mermaid
 flowchart TD
@@ -114,7 +114,7 @@ flowchart TD
 
 ### 6.2 EPP obligatorio
 
-Ver la Figura 1 de MS-ACE-08 (`../../img/ms-epp-acería.svg`). En **zona roja**: casco con careta de visor dorado, capucha aluminizada, chaquetón aluminizado, ropa FR o 100 % algodón, guantes aluminizados, polainas, botas metatarsales de liberación rápida, protección auditiva y detector personal de CO/O₂. **Prohibida** la ropa sintética (se funde sobre la piel).
+Ver la Figura 1 de MS-ACE-08 (`../img/ms-epp-acería.svg`). En **zona roja**: casco con careta de visor dorado, capucha aluminizada, chaquetón aluminizado, ropa FR o 100 % algodón, guantes aluminizados, polainas, botas metatarsales de liberación rápida, protección auditiva y detector personal de CO/O₂. **Prohibida** la ropa sintética (se funde sobre la piel).
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 

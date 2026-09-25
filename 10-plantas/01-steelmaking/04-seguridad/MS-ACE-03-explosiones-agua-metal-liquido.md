@@ -59,7 +59,7 @@ flowchart LR
     B1 & B2 & B3 & B4 & B5 & B6 --> R["Sin contacto<br/>agua–metal"]
 ```
 
-![Figura 1. Árbol de decisión de emergencias (rama A: fuga de agua en el EAF)](../../img/ms-emergencia-arbol-decision.svg)
+![Figura 1. Árbol de decisión de emergencias (rama A: fuga de agua en el EAF)](../img/ms-emergencia-arbol-decision.svg)
 
 ## 4. Equipos y maquinaria
 

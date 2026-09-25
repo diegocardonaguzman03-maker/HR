@@ -33,9 +33,9 @@
 
 El LOTO de la Acería sigue **10 pasos** (sección 8). Cada equipo tiene una **lista de puntos de aislamiento** numerada que coincide con las figuras 1 y 2 y con las etiquetas pintadas en campo.
 
-![Figura 1. Puntos de aislamiento y bloqueo del EAF](../../img/ms-loto-puntos-eaf.svg)
+![Figura 1. Puntos de aislamiento y bloqueo del EAF](../img/ms-loto-puntos-eaf.svg)
 
-![Figura 2. Puntos de aislamiento y bloqueo de CC1 y CC2](../../img/ms-loto-puntos-cc.svg)
+![Figura 2. Puntos de aislamiento y bloqueo de CC1 y CC2](../img/ms-loto-puntos-cc.svg)
 
 ```mermaid
 flowchart TD

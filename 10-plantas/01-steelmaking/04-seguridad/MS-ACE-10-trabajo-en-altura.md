@@ -28,7 +28,7 @@
 
 **Jerarquía de controles:** (1) eliminar el trabajo en altura (hacerlo a nivel de piso); (2) protección colectiva (barandales, plataformas, redes); (3) sistema de restricción (no permite llegar al borde); (4) sistema de detención de caídas (arnés + absorbedor o retráctil + anclaje); (5) rescate.
 
-![Figura 1. Puntos de aislamiento del EAF: la zona de trabajo en la bóveda (punto 11) requiere LOTO antes de subir](../../img/ms-loto-puntos-eaf.svg)
+![Figura 1. Puntos de aislamiento del EAF: la zona de trabajo en la bóveda (punto 11) requiere LOTO antes de subir](../img/ms-loto-puntos-eaf.svg)
 
 ```mermaid
 flowchart TD

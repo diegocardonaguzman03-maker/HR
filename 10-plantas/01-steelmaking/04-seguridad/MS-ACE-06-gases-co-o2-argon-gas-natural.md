@@ -34,7 +34,7 @@
 | **Gas natural** (CH₄) | Quemadores del EAF, precalentadores de olla y distribuidor, oxicorte | 0.55 (sube) | Incendio y explosión; LEL = 5 % vol | Sensor LEL |
 | **H₂** (hidrógeno) | Agua en contacto con metal o DRI caliente | 0.07 (sube rápido) | Explosión; LEL = 4 % vol | Sensor LEL (catalítico) |
 
-![Figura 1. Árbol de decisión de emergencias (rama E: fuga de gas)](../../img/ms-emergencia-arbol-decision.svg)
+![Figura 1. Árbol de decisión de emergencias (rama E: fuga de gas)](../img/ms-emergencia-arbol-decision.svg)
 
 ```mermaid
 flowchart TD

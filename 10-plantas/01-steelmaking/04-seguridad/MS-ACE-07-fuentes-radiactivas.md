@@ -33,9 +33,9 @@
 
 **Protección básica: TIEMPO (menos tiempo cerca), DISTANCIA (la dosis baja con el cuadrado de la distancia: al doble de distancia, ¼ de la dosis) y BLINDAJE (el contenedor de plomo y el obturador).**
 
-![Figura 1. Detalle del medidor de nivel de CC2 con Cs-137, obturador y candado del ESR (punto 7)](../../img/ms-loto-puntos-cc.svg)
+![Figura 1. Detalle del medidor de nivel de CC2 con Cs-137, obturador y candado del ESR (punto 7)](../img/ms-loto-puntos-cc.svg)
 
-![Figura 2. Ubicación del pórtico detector de radiación en el patio (punto 1)](../../img/ms-zonas-exclusion-nave.svg)
+![Figura 2. Ubicación del pórtico detector de radiación en el patio (punto 1)](../img/ms-zonas-exclusion-nave.svg)
 
 ```mermaid
 flowchart TD

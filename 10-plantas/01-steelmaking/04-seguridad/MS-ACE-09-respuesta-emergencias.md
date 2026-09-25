@@ -31,9 +31,9 @@
 
 ## 3. Descripción del proceso
 
-![Figura 1. Árbol de decisión de emergencias de la Acería](../../img/ms-emergencia-arbol-decision.svg)
+![Figura 1. Árbol de decisión de emergencias de la Acería](../img/ms-emergencia-arbol-decision.svg)
 
-![Figura 2. Rutas de escape, refugios y puntos de reunión](../../img/ms-zonas-exclusion-nave.svg)
+![Figura 2. Rutas de escape, refugios y puntos de reunión](../img/ms-zonas-exclusion-nave.svg)
 
 ```mermaid
 sequenceDiagram

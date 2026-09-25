@@ -25,7 +25,7 @@
 
 ## 3. Descripción del proceso
 
-![Figura 1. EPP de la Acería por zona y matriz de uso](../../img/ms-epp-acería.svg)
+![Figura 1. EPP de la Acería por zona y matriz de uso](../img/ms-epp-acería.svg)
 
 ```mermaid
 flowchart TD

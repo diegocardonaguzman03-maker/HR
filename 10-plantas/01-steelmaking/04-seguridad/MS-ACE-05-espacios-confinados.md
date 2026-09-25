@@ -41,7 +41,7 @@
 
 ## 3. Descripción del proceso
 
-![Figura 1. EPP por zona, incluye la fila de mantenimiento en frío y espacio confinado (detector a ≤ 30 cm de la zona respiratoria)](../../img/ms-epp-acería.svg)
+![Figura 1. EPP por zona, incluye la fila de mantenimiento en frío y espacio confinado (detector a ≤ 30 cm de la zona respiratoria)](../img/ms-epp-acería.svg)
 
 ```mermaid
 flowchart TD
