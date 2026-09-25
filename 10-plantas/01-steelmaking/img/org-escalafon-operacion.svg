@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="1000" height="800" font-family="Arial, Helvetica, sans-serif">
+<title>Figura 1. Escaleras de escalafón de operación — Acería (personal sindicalizado)</title>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#212121"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="500.0" y="26" font-size="16" font-weight="bold" fill="#212121" text-anchor="middle">Figura 1. Escaleras de escalafón de operación — Acería (personal sindicalizado)</text>
+<text x="500.0" y="46" font-size="12" fill="#212121" text-anchor="middle">Nivel del tabulador N-3 a N-8 (izquierda). Cada flecha numerada = ascenso con certificación interna TD-P07 + DC-3 (ver leyenda y §3.2).</text>
+<text x="500.0" y="62" font-size="12" fill="#212121" text-anchor="middle">Niveles y antigüedades: [Supuesto] para validar con el CCT, la CMCAP y Jurídico Laboral. No incluye salarios.</text>
+<line x1="72" y1="119.0" x2="995" y2="119.0" stroke="#CFD8DC" stroke-width="1" stroke-dasharray="3,4"/>
+<text x="40" y="124.0" font-size="14" font-weight="bold" fill="#212121" text-anchor="middle">N-8</text>
+<line x1="72" y1="189.0" x2="995" y2="189.0" stroke="#CFD8DC" stroke-width="1" stroke-dasharray="3,4"/>
+<text x="40" y="194.0" font-size="14" font-weight="bold" fill="#212121" text-anchor="middle">N-7</text>
+<line x1="72" y1="259.0" x2="995" y2="259.0" stroke="#CFD8DC" stroke-width="1" stroke-dasharray="3,4"/>
+<text x="40" y="264.0" font-size="14" font-weight="bold" fill="#212121" text-anchor="middle">N-6</text>
+<line x1="72" y1="329.0" x2="995" y2="329.0" stroke="#CFD8DC" stroke-width="1" stroke-dasharray="3,4"/>
+<text x="40" y="334.0" font-size="14" font-weight="bold" fill="#212121" text-anchor="middle">N-5</text>
+<line x1="72" y1="399.0" x2="995" y2="399.0" stroke="#CFD8DC" stroke-width="1" stroke-dasharray="3,4"/>
+<text x="40" y="404.0" font-size="14" font-weight="bold" fill="#212121" text-anchor="middle">N-4</text>
+<line x1="72" y1="469.0" x2="995" y2="469.0" stroke="#CFD8DC" stroke-width="1" stroke-dasharray="3,4"/>
+<text x="40" y="474.0" font-size="14" font-weight="bold" fill="#212121" text-anchor="middle">N-3</text>
+<text x="40" y="550" font-size="13" font-weight="bold" fill="#212121" text-anchor="middle">N-1/2</text>
+<text x="160" y="88" font-size="13" font-weight="bold" fill="#212121" text-anchor="middle">Línea 1 · Hornos EAF</text>
+<text x="330" y="88" font-size="13" font-weight="bold" fill="#212121" text-anchor="middle">Línea 2 · LF y ollas</text>
+<text x="500" y="88" font-size="13" font-weight="bold" fill="#212121" text-anchor="middle">Línea 3 · Grúas y patio</text>
+<text x="715" y="88" font-size="13" font-weight="bold" fill="#212121" text-anchor="middle">Línea 4 · Colada (CC1 y CC2)</text>
+<text x="920" y="88" font-size="13" font-weight="bold" fill="#212121" text-anchor="middle">Línea 5 · Calidad</text>
+<rect x="80" y="100" width="160" height="38" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="160.0" y="116.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-01 Primer Hornero</text>
+<text x="160.0" y="131.0" font-size="12" fill="#212121" text-anchor="middle">Púlpito EAF · N-8</text>
+<rect x="80" y="240" width="160" height="38" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="160.0" y="256.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-02 Segundo Hornero</text>
+<text x="160.0" y="271.0" font-size="12" fill="#212121" text-anchor="middle">Piso EAF · N-6</text>
+<rect x="80" y="450" width="160" height="38" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="160.0" y="466.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-03 Tercer Hornero</text>
+<text x="160.0" y="481.0" font-size="12" fill="#212121" text-anchor="middle">Ayudante EAF · N-3</text>
+<rect x="250" y="170" width="160" height="38" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="330.0" y="186.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-06 Operador LF</text>
+<text x="330.0" y="201.0" font-size="12" fill="#212121" text-anchor="middle">Horno olla · N-7</text>
+<rect x="250" y="380" width="160" height="38" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="330.0" y="396.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-07 Ayudante LF</text>
+<text x="330.0" y="411.0" font-size="12" fill="#212121" text-anchor="middle">Alambre y argón · N-4</text>
+<rect x="250" y="450" width="160" height="38" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="330.0" y="466.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-08 Ollero</text>
+<text x="330.0" y="481.0" font-size="12" fill="#212121" text-anchor="middle">Preparación de ollas · N-3</text>
+<rect x="420" y="240" width="160" height="38" rx="5" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+<text x="500.0" y="256.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-09 Grúa de colada</text>
+<text x="500.0" y="271.0" font-size="12" fill="#212121" text-anchor="middle">250/63 t · N-6</text>
+<rect x="420" y="310" width="160" height="38" rx="5" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+<text x="500.0" y="326.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-04 Grúa de carga</text>
+<text x="500.0" y="341.0" font-size="12" fill="#212121" text-anchor="middle">120/40 t · N-5</text>
+<rect x="448" y="380" width="132" height="38" rx="5" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+<text x="514.0" y="396.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-10 Escoria</text>
+<text x="514.0" y="411.0" font-size="12" fill="#212121" text-anchor="middle">Portaollas · N-4</text>
+<rect x="420" y="450" width="160" height="38" rx="5" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+<text x="500.0" y="466.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-05 Patio de chatarra</text>
+<text x="500.0" y="481.0" font-size="12" fill="#212121" text-anchor="middle">Canastas, imán · N-3</text>
+<rect x="620" y="100" width="190" height="38" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="715.0" y="116.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-12 Púlpito de colada</text>
+<text x="715.0" y="131.0" font-size="12" fill="#212121" text-anchor="middle">CC1 o CC2 · N-8</text>
+<rect x="620" y="240" width="190" height="38" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="715.0" y="256.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-13 Plataforma de colada</text>
+<text x="715.0" y="271.0" font-size="12" fill="#212121" text-anchor="middle">Olla y distribuidor · N-6</text>
+<rect x="590" y="380" width="120" height="38" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="650.0" y="396.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-14 Ayudante</text>
+<text x="650.0" y="411.0" font-size="12" fill="#212121" text-anchor="middle">Molde y línea · N-4</text>
+<rect x="720" y="380" width="120" height="38" rx="5" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+<text x="780.0" y="396.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-16 Corte</text>
+<text x="780.0" y="411.0" font-size="12" fill="#212121" text-anchor="middle">y marcado · N-4</text>
+<rect x="590" y="450" width="120" height="38" rx="5" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="650.0" y="466.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-15 Distribuidores</text>
+<text x="650.0" y="481.0" font-size="12" fill="#212121" text-anchor="middle">Preparador · N-3</text>
+<rect x="720" y="450" width="120" height="38" rx="5" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+<text x="780.0" y="466.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-17 Mesa/despacho</text>
+<text x="780.0" y="481.0" font-size="12" fill="#212121" text-anchor="middle">Grúa producto · N-3</text>
+<rect x="850" y="310" width="140" height="38" rx="5" fill="#E3F2FD" stroke="#1E88E5" stroke-width="2"/>
+<text x="920.0" y="326.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-18 Inspector</text>
+<text x="920.0" y="341.0" font-size="12" fill="#212121" text-anchor="middle">Semiterminado · N-5</text>
+<rect x="850" y="380" width="140" height="38" rx="5" fill="#E3F2FD" stroke="#1E88E5" stroke-width="2"/>
+<text x="920.0" y="396.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">S-11 Muestrero</text>
+<text x="920.0" y="411.0" font-size="12" fill="#212121" text-anchor="middle">Analista · N-4</text>
+<rect x="80" y="525" width="910" height="40" rx="5" fill="#FAFAFA" stroke="#212121" stroke-width="2"/>
+<text x="535.0" y="542.0" font-size="12" font-weight="bold" fill="#212121" text-anchor="middle">Ingreso N-1 / N-2: ayudante general, eventual o aprendiz dual (bolsa del CCT; no es rol del catálogo)</text>
+<text x="535.0" y="557.0" font-size="12" fill="#212121" text-anchor="middle">Inducción de 40 h (TD-P08) + MS-ACE-01, 03, 08 y 09 básicos + apto médico</text>
+<line x1="160" y1="525" x2="160" y2="488" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="160" cy="506" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="160" y="510" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">1</text>
+<line x1="160" y1="450" x2="160" y2="278" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="160" cy="329" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="160" y="333" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">2</text>
+<line x1="160" y1="240" x2="160" y2="138" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="160" cy="189" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="160" y="193" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">3</text>
+<line x1="330" y1="525" x2="330" y2="488" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="330" cy="506" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="330" y="510" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">4</text>
+<line x1="330" y1="450" x2="330" y2="418" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="352" cy="434" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="352" y="438" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">5</text>
+<line x1="330" y1="380" x2="330" y2="208" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="330" cy="329" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="330" y="333" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">6</text>
+<line x1="500" y1="525" x2="500" y2="488" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="500" cy="506" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="500" y="510" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">7</text>
+<line x1="432" y1="450" x2="432" y2="348" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="432" cy="434" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="432" y="438" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">8</text>
+<line x1="500" y1="310" x2="500" y2="278" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="522" cy="294" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="522" y="298" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">9</text>
+<line x1="545" y1="450" x2="545" y2="418" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="567" cy="434" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="567" y="438" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">10</text>
+<line x1="650" y1="525" x2="650" y2="488" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="650" cy="506" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="650" y="510" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">12</text>
+<line x1="780" y1="525" x2="780" y2="488" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="780" cy="506" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="780" y="510" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">12</text>
+<line x1="650" y1="450" x2="650" y2="418" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="672" cy="434" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="672" y="438" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">13</text>
+<line x1="780" y1="450" x2="780" y2="418" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="802" cy="434" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="802" y="438" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">13</text>
+<line x1="650" y1="380" x2="650" y2="278" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="650" cy="329" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="650" y="333" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">14</text>
+<line x1="780" y1="380" x2="780" y2="278" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="780" cy="329" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="780" y="333" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">14</text>
+<line x1="715" y1="240" x2="715" y2="138" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="715" cy="189" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="715" y="193" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">15</text>
+<line x1="920" y1="525" x2="920" y2="418" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="942" cy="480" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="942" y="484" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">11</text>
+<line x1="920" y1="380" x2="920" y2="348" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<circle cx="942" cy="364" r="11" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="942" y="368" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">16</text>
+<line x1="840" y1="388" x2="856" y2="348" stroke="#212121" stroke-width="1.8" stroke-dasharray="6,4" marker-end="url(#ah)"/>
+<path d="M 250 180 L 200 180 L 200 138" fill="none" stroke="#212121" stroke-width="1.8" stroke-dasharray="6,4" marker-end="url(#ah)"/>
+<circle cx="225" cy="180" r="10" fill="#ffffff" stroke="#C62828" stroke-width="1.8"/>
+<text x="225" y="184" font-size="12" font-weight="bold" fill="#C62828" text-anchor="middle">L</text>
+<rect x="10" y="588" width="980" height="202" fill="none" stroke="#B0BEC5" stroke-width="1"/>
+<text x="20" y="610" font-size="13" font-weight="bold" fill="#212121" text-anchor="start">Leyenda</text>
+<rect x="100" y="599" width="22" height="14" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text x="128" y="610" font-size="12" fill="#212121" text-anchor="start">Exposición directa a metal líquido</text>
+<rect x="330" y="599" width="22" height="14" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+<text x="358" y="610" font-size="12" fill="#212121" text-anchor="start">Grúas, patio y materiales</text>
+<rect x="560" y="599" width="22" height="14" fill="#E3F2FD" stroke="#1E88E5" stroke-width="2"/>
+<text x="588" y="610" font-size="12" fill="#212121" text-anchor="start">Calidad</text>
+<line x1="780" y1="606" x2="810" y2="606" stroke="#212121" stroke-width="1.8" marker-end="url(#ah)"/>
+<text x="816" y="610" font-size="12" fill="#212121" text-anchor="start">ascenso</text>
+<line x1="875" y1="606" x2="905" y2="606" stroke="#212121" stroke-width="1.8" stroke-dasharray="6,4" marker-end="url(#ah)"/>
+<text x="911" y="610" font-size="12" fill="#212121" text-anchor="start">lateral (CCT)</text>
+<text x="20" y="632" font-size="12" fill="#212121" text-anchor="start">1  Ingreso → S-03: MS-ACE-01/03/08/09 · DC-3 NOM-017, NOM-015</text>
+<text x="20" y="650" font-size="12" fill="#212121" text-anchor="start">2  S-03 → S-02: MO-EAF-01/05/06/07/08 · NOM-009, NOM-006, NOM-004</text>
+<text x="20" y="668" font-size="12" fill="#212121" text-anchor="start">3  S-02 → S-01: MO-EAF-02/03/04/07 + simulador EAF 40 h · NOM-020</text>
+<text x="20" y="686" font-size="12" fill="#212121" text-anchor="start">4  Ingreso → S-08: MS-ACE-01/05 · NOM-017, NOM-033</text>
+<text x="20" y="704" font-size="12" fill="#212121" text-anchor="start">5  S-08 → S-07: MO-OLL-01, MO-LF-01 (ayudante) · NOM-020, NOM-018</text>
+<text x="20" y="722" font-size="12" fill="#212121" text-anchor="start">6  S-07 → S-06: MO-LF-01 (como A), MO-EAF-06 + simulador LF 24 h</text>
+<text x="20" y="740" font-size="12" fill="#212121" text-anchor="start">7  Ingreso → S-05: MO-EAF-02, MS-ACE-07 · NOM-006, NOM-012, NOM-027</text>
+<text x="20" y="758" font-size="12" fill="#212121" text-anchor="start">8  S-05 → S-04: MO-EAF-02/08, MS-ACE-04 + simulador grúa · NOM-006</text>
+<text x="20" y="776" font-size="12" fill="#212121" text-anchor="start">9  S-04 → S-09: MO-OLL-02, MO-EAF-07, MO-CC1/CC2-05 · NOM-006</text>
+<text x="510" y="632" font-size="12" fill="#212121" text-anchor="start">10 S-03 o S-05 → S-10: MO-EAF-05, MS-ACE-03 · equipo móvil pesado</text>
+<text x="510" y="650" font-size="12" fill="#212121" text-anchor="start">11 Ingreso → S-11: MO-EAF-06, MO-LF-01 (muestreo) · NOM-010, NOM-018</text>
+<text x="510" y="668" font-size="12" fill="#212121" text-anchor="start">12 Ingreso → S-15 / S-17: MO-CC1/CC2-01 o -08 · NOM-033 / NOM-006</text>
+<text x="510" y="686" font-size="12" fill="#212121" text-anchor="start">13 S-15 → S-14; S-17 → S-16: MO-CC1/CC2-02 a -07 o -08 · NOM-012 / NOM-027</text>
+<text x="510" y="704" font-size="12" fill="#212121" text-anchor="start">14 S-14 o S-16 → S-13: MO-CC1/CC2-01/03/05/06/07, MO-OLL-02 · NOM-009</text>
+<text x="510" y="722" font-size="12" fill="#212121" text-anchor="start">15 S-13 → S-12: MO-CC1/CC2-02/03/04/07 + simulador 40 h · NOM-012 (POE CC2)</text>
+<text x="510" y="740" font-size="12" fill="#212121" text-anchor="start">16 S-11 (o S-14 / S-16, punteada) → S-18: MO-CC1/CC2-09 · metrología</text>
+<text x="510" y="758" font-size="12" fill="#212121" text-anchor="start">L  S-06 ↔ S-01: MO-EAF-03/04/07 · solo si el CCT permite el cambio de línea</text>
+<text x="510" y="776" font-size="12" fill="#212121" text-anchor="start">Antigüedades mínimas y detalle de requisitos: tabla de §3.2.</text>
+</svg>

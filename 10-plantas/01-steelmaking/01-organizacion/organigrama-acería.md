@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|---|---|---|---|
 | ORG-ACE-001 | 0.1 | **Borrador para validación** | Acería | gerente-personal-confianza | experto-operativo-metalurgia | experto-relaciones-laborales | Pendiente (Gerente de Acería C-01 / Director de C&D) | 2026-09-25 | 2027-09-25 |
 
-> **Mensaje clave.** La Acería tiene ≈ 1,020 personas: **60 de confianza** en 17 roles (C-01 a C-17) y **≈ 960 sindicalizados** en 26 categorías (S-01 a S-26). Hay tres superintendencias (Hornos, Colada Continua y Mantenimiento) y una **jefatura de turno** (4 C-04) que reporta al Gerente y tiene el mando de toda la planta en su cuadrilla. En cada turno de 12 h hay **7 mandos de confianza y ≈ 110 sindicalizados** en planta. Ingeniería de proceso, calidad y seguridad son staff: asesoran y tienen autoridad para detener, pero no mandan sobre la operación.
+> **Mensaje clave.** La Acería tiene ≈ 1,020 personas: **60 de confianza** en 17 roles (C-01 a C-17) y **≈ 960 sindicalizados** en 26 categorías (S-01 a S-26). Hay tres superintendencias (Hornos, Colada Continua y Mantenimiento) y una **jefatura de turno** (4 C-04) que reporta al Gerente y tiene el mando de toda la planta en su cuadrilla. En cada turno de 12 h hay **7 mandos de confianza y 159 sindicalizados** en planta (134 de operación y 25 de mantenimiento de guardia, según DP-ACE-S). Ingeniería de proceso, calidad y seguridad son staff: asesoran y tienen autoridad para detener, pero no mandan sobre la operación.
 
 **Fuentes:** FT-ACE-001 (§1 y §8), CAT-ACE-001, DP-ACE-C (`descripciones-puesto-confianza.md`). Las cifras sindicalizadas son **aprox., a conciliar con DP-ACE-S** (en elaboración en paralelo).
 
@@ -235,19 +235,15 @@ flowchart TB
     classDef sind fill:#FFF8E1,stroke:#FF8F00,color:#212121
 ```
 
-| Grupo en planta (por cuadrilla) | Confianza | Sindicalizados [Supuesto, aprox., a conciliar con DP-ACE-S] |
+| Grupo en planta (por cuadrilla) | Confianza | Sindicalizados en planta por turno (conciliado con DP-ACE-S §2) |
 |---|---|---|
 | Jefatura | C-04 ×1 | — |
-| EAF-1 / EAF-2 | C-05 ×1 | 18 (por horno: 1 S-01, 2 S-02, 3 S-03; más S-04 y S-10 compartidos) |
-| LF-1 / LF-2 y ollas | C-05 ×1 | 15 |
-| Patio de chatarra | C-17 ×1 | 14 |
-| Laboratorio e inspección | — | 9 |
-| CC1 | C-06 ×1 | 17 |
-| CC2 (6 líneas) | C-06 ×1 | 19 |
-| Mantenimiento de turno | C-12 ×1 | 18 |
-| **Total por turno** | **7** | **≈ 110** (≈ 117 personas en planta) |
+| Hornos EAF-1 / EAF-2, LF-1 / LF-2, ollas, grúas de colada, patio de chatarra, escoria y laboratorio | C-05 ×2 (EAF; LF y ollas) + C-17 ×1 (patio) | 73 |
+| Colada Continua CC1 y CC2 (incluye preparación de distribuidores, corte, mesas e inspección) | C-06 ×2 (CC1; CC2) | 61 |
+| Mantenimiento de guardia 24/7 | C-12 ×1 (de turno) | 25 |
+| **Total por turno** | **7** | **159** (≈ 166 personas en planta) |
 
-**Lectura:** 4 cuadrillas × ≈ 110 ≈ 440 sindicalizados en rol de turno. El resto de la plantilla sindicalizada (≈ 520) son cuadrillas de día (mantenimiento programado, taller de moldes y segmentos, revestimiento de ollas y refractarios, preparación de chatarra, manejo de escoria y fundentes) y relevos por vacaciones, descansos y ausentismo. **Esta proporción debe conciliarse con DP-ACE-S**: si el dimensionamiento de turno de DP-ACE-S es mayor, el tramo de C-05 y C-06 crece.
+**Lectura (conciliada):** 159 puestos continuos × factor 4.5 (4 cuadrillas + relevo por ≈ 11% de ausencias) + 214 puestos de día × 1.1 = **963 plazas sindicalizadas** (DP-ACE-S). El detalle por puesto de trabajo (púlpito del EAF-1, piso, LF, CC1, CC2, etc.) está en DP-ACE-S §2. Los tramos de C-05 y C-06 crecen de acuerdo con eso (ver §3).
 
 **Horario del turno** [Supuesto]: relevo 07:00 y 19:00; entrega–recepción de C-04 a C-04 y de supervisor a supervisor 15 min antes, en campo; junta diaria de producción a las 07:30 (C-01, superintendentes, C-04 saliente y entrante).
 
@@ -259,9 +255,9 @@ flowchart TB
 | C-02 Supt. Hornos | 17: C-05 ×8, C-17 ×4, C-07 ×3, C-15 ×2 | ≈ 380* (incluye S-24 vía C-15) | 12 de los 17 están en turno; en un día hábil ve a 5 en persona. Aceptable con el mando de C-04 |
 | C-03 Supt. Colada | 11: C-06 ×8, C-08 ×3 | ≈ 290* | Adecuado |
 | C-10 Supt. Mantenimiento | 17: C-11 ×5, C-12 ×7, C-13 ×3, C-14 ×2 | ≈ 210* | Adecuado para mantenimiento con planeación separada |
-| C-04 Jefe de Turno | Mando en turno de 6 supervisores | ≈ 110* por turno | Adecuado (5–8 mandos por jefe) |
-| C-05 EAF / C-05 LF | — | 18 / 15* por turno | Dentro del rango de referencia de 15–25 por supervisor en industria pesada [Supuesto] |
-| C-06 CC1 / C-06 CC2 | — | 17 / 19* por turno | Adecuado; CC2 con 6 líneas es el más cargado |
+| C-04 Jefe de Turno | Mando en turno de 6 supervisores | 159 por turno | Adecuado (5–8 mandos por jefe) |
+| C-05 EAF / C-05 LF | — | ≈ 35 / ≈ 24 por turno (73 del bloque de Hornos menos ≈ 14 de patio a cargo de C-17) | **Por encima** de la referencia de 15–25 por supervisor en el EAF [Supuesto]. Se mitiga con los S-01 (Primer Hornero) como líderes de equipo en cada horno; si no basta, evaluar un segundo C-05 de EAF por turno (decisión del Director) |
+| C-06 CC1 / C-06 CC2 | — | ≈ 28 / ≈ 33 por turno (61 de Colada) | Algo por encima de la referencia; los S-12 (púlpito) actúan como líderes de equipo. CC2, con 6 líneas, es el más cargado |
 | C-17 Patio | — | 14* por turno + transportistas y contratistas | Adecuado; la carga real está en contratistas |
 | C-11 (×5) | — | ≈ 29* por área (mecánicos, hidráulicos, soldadores, lubricadores de día; taller S-25) | En el límite alto; se apoya en técnicos líderes |
 | C-12 de área (×3) / de turno (×4) | — | ≈ 12* de día / 18* por turno | Adecuado |
