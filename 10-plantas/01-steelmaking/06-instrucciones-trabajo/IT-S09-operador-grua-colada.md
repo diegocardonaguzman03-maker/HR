@@ -22,12 +22,12 @@
 
 ## 2. Mi puesto en 30 segundos
 
-Muevo ollas con **≈ 150 t de acero líquido** (≈ 230 t en el gancho [Supuesto]) del LF a la torreta de colada y regreso las vacías. Si la olla cae, se ladea o se perfora en el aire, la consecuencia es **catastrófica**. Por eso pruebo la grúa cada turno, uso solo la ruta autorizada y **no muevo una olla insegura**. Tengo autoridad para detener cualquier traslado.
+Muevo ollas con **≈ 150 t de acero líquido** (≈ 230 t en el gancho [Supuesto]) del LF a la torreta de colada y regreso las vacías. Si la olla cae, se ladea o se perfora en el aire, la consecuencia es **catastrófica**. Por eso pruebo la grúa cada turno, uso solo la ruta autorizada y **no muevo una olla insegura**. Tengo la autoridad y la obligación de detener un traslado inseguro.
 
 > ★ **Mis 3 reglas de oro**
 > 1. **Frenos y límites probados** al inicio del turno. Si falla uno, la grúa **no mueve metal líquido**.
-> 2. **Nadie bajo la carga ni en la ruta.** Si veo a alguien, detengo.
-> 3. **Ambos muñones asentados** (confirmado por el señalero) y **prueba de frenos con carga** antes de trasladar.
+> 2. **Nadie bajo la carga ni en la ruta.** Si ves a alguien, detén el traslado.
+> 3. **Ambos muñones asentados** (lo confirma el señalero) y **prueba de frenos con carga** antes de trasladar.
 
 ## 3. Mi turno de 12 horas
 
@@ -71,7 +71,7 @@ flowchart LR
     B --> C["★ Límite superior<br/>principal y respaldo"]
     C --> D["Ganchos, cables<br/>celda, radio"]
     D --> E{"¿Todo OK?"}
-    E -- "No" --> F["🛑 Fuera de servicio<br/>aviso a C-04"]
+    E -- "No" --> F["🛑 Fuera de servicio<br/>avisa a C-04"]
     E -- "Sí" --> G["Registra y opera"]
 ```
 

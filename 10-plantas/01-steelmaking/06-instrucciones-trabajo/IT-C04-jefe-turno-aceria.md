@@ -38,7 +38,7 @@ flowchart LR
     C --> D["Durante el turno<br/>secuencia EAF–LF–CC<br/>rondas VCC · autorizaciones"]
     D --> E["Eventos<br/>desvío de colada · falla de grúa<br/>emergencia = CI"]
     E --> D
-    D --> F["18:30 / 06:30<br/>Bitácora y reporte a C-01<br/>entrega de turno"]
+    D --> F["18:30–18:45 / 06:30–06:45<br/>Bitácora y reporte a C-01<br/>entrega de turno"]
 ```
 
 ## 4. Mi área de trabajo
@@ -60,7 +60,6 @@ Figuras de apoyo:
 | Detector personal multigás | Siempre; CO 25 ppm → salir; 200 ppm → evacuar el sector |
 | EPP aluminizado completo | Si entras a zona roja durante una VCC o una emergencia |
 | Radio con canal de emergencia | Siempre; prueba al inicio del turno |
-| Chaleco o brazalete de CI [Supuesto] | Al asumir el mando en una emergencia |
 
 ## 6. Mis tareas (rutinas de supervisión)
 
@@ -166,7 +165,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    A["Alarma: EMERGENCIA ×3"] --> B["★ Me identifico como CI<br/>puesto de mando seguro"]
+    A["Alarma: EMERGENCIA ×3"] --> B["★ Identifícate como CI<br/>puesto de mando seguro"]
     B --> C["Activa brigadas<br/>y servicio médico"]
     C --> D["★ Evacuación y conteo<br/>≤ 10 min"]
     D --> E["Controla con C-16"]
@@ -203,11 +202,20 @@ flowchart LR
 
 ### Tarea 6 — Entrega de turno y reporte
 
+```mermaid
+flowchart LR
+    A["Cierra la bitácora"] --> B["Entrega en campo<br/>15 min antes"]
+    B --> C["Reporte a C-01"]
+    C --> D["Junta de 07:30"]
+```
+
 | Paso | Qué hago | Cómo verifico (medición) | ★ |
 |---|---|---|---|
 | 1 | Cierra la bitácora: coladas, secuencias, desvíos, fallas, permisos abiertos. | Bitácora electrónica completa. | |
-| 2 | Entrega al C-04 entrante en campo, 15 min antes del relevo. | Pendientes y equipos fuera explicados. | ★ |
+| 2 | Entrega al C-04 entrante en campo, 15 min antes del relevo. | Pendientes y equipos fuera explicados. | |
 | 3 | Reporta a C-01 y participa en la junta de 07:30 (turno de noche). | Indicadores del turno reportados. | |
+
+> 🛑 **ALTO — no entregues el turno** sin explicar en campo los permisos abiertos, los equipos fuera de servicio y los hallazgos de VCC sin cerrar.
 
 ## 7. Mis controles críticos (★)
 

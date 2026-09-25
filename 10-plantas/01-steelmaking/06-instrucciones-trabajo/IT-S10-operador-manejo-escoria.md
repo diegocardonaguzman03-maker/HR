@@ -69,7 +69,7 @@ flowchart LR
     A["Portaollas:<br/>frenos, luces, alarma"] --> B["★ Ollas sin grietas<br/>y secas"]
     B --> C["★ Fosa y pista<br/>sin agua"]
     C --> D{"¿Todo OK?"}
-    D -- "No" --> E["No se usa<br/>aviso a C-05"]
+    D -- "No" --> E["No se usa<br/>avisa a C-05"]
     D -- "Sí" --> F["Registra el checklist"]
 ```
 
@@ -113,7 +113,7 @@ flowchart LR
 ```mermaid
 flowchart LR
     A["S-01 / S-02 avisan<br/>olla llena"] --> B{"¿≤ 80 %?"}
-    B -- "No" --> C["No se mueve<br/>aviso a C-05"]
+    B -- "No" --> C["No se mueve<br/>avisa a C-05"]
     B -- "Sí" --> D["Retiro lento"]
     D --> E["Ruta exclusiva<br/>al patio"]
 ```

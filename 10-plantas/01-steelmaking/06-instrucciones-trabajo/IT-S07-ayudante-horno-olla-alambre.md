@@ -71,8 +71,8 @@ flowchart LR
     A["Olla en estación"] --> B["Conexión rápida<br/>sin fuga"]
     B --> C["Ar 100–200 NL/min"]
     C --> D{"¿Burbujeo?"}
-    D -- "Sí" --> E["Aviso a S-06"]
-    D -- "No" --> F["Revisa conexión<br/>aviso a S-06 y C-05"]
+    D -- "Sí" --> E["Avisa a S-06"]
+    D -- "No" --> F["Revisa conexión<br/>avisa a S-06 y C-05"]
 ```
 
 | Paso | Qué hago | Cómo verifico (medición) | ★ |

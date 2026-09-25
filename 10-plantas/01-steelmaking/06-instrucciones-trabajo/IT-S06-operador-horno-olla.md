@@ -141,7 +141,7 @@ flowchart LR
 > 🛑 **ALTO — detén y avisa si…**
 > - El Al queda > 0.045 %: no se corrige hacia abajo; C-09 decide.
 > - El Al en grados de CC2 supera 0.005 % [Validar]: riesgo de tapar buzas; C-09/C-08 deciden.
-> - El tratamiento pasa de 50 min: aviso a S-12 y C-04 (secuencia).
+> - El tratamiento pasa de 50 min: avisa a S-12 y C-04 (secuencia).
 
 ### Tarea 4 — CaSi, agitación suave y liberación (MO-LF-01, pasos 9–14)
 

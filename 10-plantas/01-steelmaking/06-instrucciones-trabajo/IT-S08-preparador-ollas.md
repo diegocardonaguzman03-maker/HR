@@ -92,7 +92,7 @@ flowchart LR
     A["Inspección visual<br/>y medición"] --> B["Termografía del<br/>ciclo anterior"]
     B --> C{"¿Dentro de criterio?"}
     C -- "Sí" --> D["Sigue a válvula"]
-    C -- "No" --> E["★ Olla no apta<br/>aviso a C-15"]
+    C -- "No" --> E["★ Olla no apta<br/>avisa a C-15"]
 ```
 
 | Paso | Qué hago | Cómo verifico (medición) | ★ |

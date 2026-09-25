@@ -163,7 +163,7 @@ flowchart LR
 | Paso | Qué hago | Cómo verifico (medición) | ★ |
 |---|---|---|---|
 | 1 | Analiza la escoria del EAF y reporta. | B2 1.8–2.2; FeO 25–35 %; MgO 8–10 %. | 🔎 |
-| 2 | Analiza la muestra del distribuidor y reporta desviaciones. | Química del grado; aviso a S-12 y C-09. | 🔎 |
+| 2 | Analiza la muestra del distribuidor y reporta desviaciones. | Química del grado; avisa a S-12 y C-09. | 🔎 |
 | 3 | Si sales al piso, ponte el EPP aluminizado antes de entrar a roja. | Roja ≤ 5 m de la puerta o agujero; solo el ejecutor y su acompañante. | ★ |
 | 4 | Mantente ≥ 1.5 m de la puerta y ≤ 2 min en roja. | Tiempo controlado. | ★ |
 
@@ -187,7 +187,7 @@ flowchart LR
 | Patrón fuera de tolerancia | Recalibra; retén resultados. | C-09 — ext. 4300 [Supuesto] |
 | Muestra con porosidad o escoria | Pide nueva muestra. | S-02 (EAF) / S-07 (LF) — canal 2 / 3 [Supuesto] |
 | Sin resultado en > 6 min | Avisa; S-01 decide con T y O. | S-01, C-05 — canal 2 |
-| Tubo neumático atascado | Pide envío manual seguro; reporta la falla. | C-05, mantenimiento — ext. 4200 [Supuesto] |
+| Tubo neumático atascado | Reporta la falla; S-01 / S-06 deciden con T y O. | C-05, mantenimiento — ext. 4200 [Supuesto] |
 | Química del LF fuera del grado | No liberes. | S-06, C-09 — canal 3 / ext. 4300 |
 | Fuga de gas de laboratorio | Cierra el cilindro si es seguro; ventila; sal. | C-04 — canal 1 [Supuesto] |
 | Alarma de emergencia en la nave | Sal a zona verde; reporta en tu punto de reunión. | Líder de sector — canal 1 |
