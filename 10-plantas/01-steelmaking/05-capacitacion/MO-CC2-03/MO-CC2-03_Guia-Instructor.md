@@ -31,7 +31,7 @@ Abrir las 6 líneas en orden, arrancar la extracción a ≈ 150 mm del borde y s
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de breakout y desbordamiento en arranque; reglas de oro | Portada y objetivos |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de breakout y desbordamiento en arranque; reglas de oro | Portada y objetivos |
 | 2. Roles y flujo del proceso | 60 | Recorrido del flujo con el perfil y el distribuidor | Roles, flujo y figuras |
 | 3. Equipos y parámetros | 90 | Ejercicio: leer la curva de llenado y decidir cuándo extraer | Equipos y parámetros |
 | 4. Seguridad | 60 | Zona de exclusión en el plano; EPP y lanceo | Seguridad, EPP físico |
@@ -83,7 +83,7 @@ Abrir las 6 líneas en orden, arrancar la extracción a ≈ 150 mm del borde y s
 
 | Parámetro | Objetivo | Rango | Alarma | Acción |
 | --- | --- | --- | --- | --- |
-| Sobrecalentamiento | 32 °C (1.ª) / 28 °C | 25–40 (1.ª) / 20–35 °C | < 20; > 40 (1.ª) o > 35 | < 15 °C: C-06 decide |
+| Sobrecalentamiento | 32 °C (1.ª) / 28 °C | 25–40 (1.ª) / 20–35 °C | < 20; > 40 (1.ª) o > 35 | < 20 avisa; < 15 C-06 decide |
 | Nivel del distribuidor al abrir | 400 mm | 350–450 mm [Validar] | < 300 mm | Espera a que suba |
 | Tiempo entre líneas | 20 s | 15–30 s [Validar] | L1/L6 > 3 min esperando | Abre o prepara cambio de buza |
 | Llenado del molde | 30 s | 25–40 s | < 20 s o > 50 s | Avisa a C-06; revisa la buza |
@@ -144,7 +144,7 @@ Abrir las 6 líneas en orden, arrancar la extracción a ≈ 150 mm del borde y s
 | Fuga en la cabeza de la barra | Cierra la línea; evacúa bajo la plataforma | C-06 |
 | Breakout al arranque | Cierra la línea, detén extracción, mantén agua; evacúa a ≥ 20 m; el ESR revisa el Cs-137 | C-06, C-04, C-16 |
 | Falla de agua de molde o apagón | Emergencia en ≤ 15 s; cierra olla y 6 líneas; evacúa ≥ 10 m; sin agua a molde caliente | C-04, C-06 |
-| Sobrecalentamiento < 15 °C | C-06 decide arrancar menos líneas o regresar la olla | C-06, C-07 |
+| Sobrecalentamiento < 20 °C | < 20: avisa a C-06; < 15: C-06 decide arrancar menos líneas o regresar la olla | C-06, C-07 |
 
 ## 5. Evaluación
 
@@ -189,9 +189,9 @@ Nivel requerido: **U** (escala ILUO).
 
 | Rol | ILUO | Teoría | OJT supervisado | Vigencia |
 | --- | --- | --- | --- | --- |
-| S-12 Operador de Púlpito | U | 24 h (simulador [Validar]) | 10 arranques | 24 meses |
-| S-13 Operador de Plataforma | U | 24 h | 10 arranques; 3 lanceos | 24 meses |
-| S-14 Ayudante de Colada | U | 16 h | 10 arranques | 24 meses |
+| S-12 Operador de Púlpito | U | 24 h (simulador [Validar]) | 10 arranques | 24 meses; radiación 12 |
+| S-13 Operador de Plataforma | U | 24 h | 10 arranques; 3 lanceos | 24 meses; radiación 12 |
+| S-14 Ayudante de Colada | U | 16 h | 10 arranques | 24 meses; radiación 12 |
 | C-06 Supervisor | O | 16 h | 5 arranques dirigidos | 24 meses |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
@@ -222,8 +222,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

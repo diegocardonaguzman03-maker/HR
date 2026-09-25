@@ -110,7 +110,7 @@
   <!-- Lógica -->
   <rect x="20" y="572" width="440" height="138" fill="#FFEBEE" stroke="#C62828" stroke-width="1.5"/>
   <g font-size="12" fill="#212121">
-    <text x="32" y="592" font-weight="bold" fill="#C62828">Lógica de cambio automático (prueba mensual)</text>
+    <text x="32" y="592" font-weight="bold" fill="#C62828" font-size="11.5">Cambio automático · prueba mensual en paro · diésel semanal</text>
     <text x="32" y="612">Disparo: pérdida de energía de P-1/P-2/P-3, o P cabezal</text>
     <text x="32" y="628">&lt; P mín (PSLL), o Q molde &lt; 80 % [Validar OEM]</text>
     <text x="32" y="648">→ XV-1 abre por falla-abierta (resorte / sin energía)</text>

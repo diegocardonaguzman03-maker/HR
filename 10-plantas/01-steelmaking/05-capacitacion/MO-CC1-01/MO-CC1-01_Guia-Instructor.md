@@ -8,7 +8,7 @@
 | Área | Colada Continua 1 · planchón |
 | Serie | Operación |
 | Manual base | `02-operacion/cc1/MO-CC1-01-preparacion-distribuidor.md` v0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-15 Preparador de Distribuidores · S-13 Operador de Plataforma de Colada · Operador de grúa de CC · C-06 |
+| Audiencia | S-15 Preparador de Distribuidores · S-13 Operador de Plataforma de Colada · Grúa de CC 50 t (hoy S-15) · C-06 |
 | Presentación | MO-CC1-01_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -25,13 +25,13 @@ Entregar un distribuidor de 45 t seco, bien armado y precalentado, con tapón y 
 1. **Armar el revestimiento de trabajo.** Masa seca de MgO de 40–60 mm, medida en 8 puntos, curada según la curva del proveedor, sin zonas blandas.
 2. **Alinear y probar tapón y SEN.** Tapón centrado ± 1 mm y sin paso de luz; SEN vertical ± 1 mm con puertos a caras angostas ± 2°; argón 3–8 NL/min.
 3. **Precalentar por curva.** Cara caliente 1,100 ± 50 °C y SEN ≥ 1,000 °C; ≤ 10 min sin quemador antes de abrir la olla.
-4. **Trabajar sin exponerte.** Permiso de espacio confinado con gases medidos, LOTO, izaje con grúa de 50 t y quemadores encendidos con purga.
+4. **Aplicar permisos, LOTO e izaje seguro.** Permiso de espacio confinado con gases medidos, LOTO, izaje con grúa de 50 t y quemadores encendidos con purga.
 
 ## 3. Plan de sesión
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de explosión por humedad; reglas de oro | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de explosión por humedad; reglas de oro | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con la figura del distribuidor | Láminas 3–6 |
 | 3. Equipos y parámetros | 75 | Ejercicio: leer una curva de precalentamiento | Láminas 7–8, registro real |
 | 4. Seguridad | 75 | Permiso de espacio confinado y medición de gases | Láminas 9–10, detector |
@@ -192,7 +192,7 @@ Nivel requerido: **U** (escala ILUO).
 | S-15 Preparador de Distribuidores | U | 16 h | 80 h / 10 distribuidores | 24 meses; confinado e izaje 12 |
 | S-13 Operador de Plataforma | L | 4 h | 5 recepciones | 24 meses |
 | C-06 Supervisor de CC | O (evaluador) | 8 h + evaluador | — | 24 meses |
-| Operador de grúa de CC | U | Curso NOM-006 | Según MS-ACE-04 | 12 meses |
+| Grúa de CC (hoy S-15) | U | Curso NOM-006 | Según MS-ACE-04 | 12 meses |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
 
@@ -222,8 +222,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

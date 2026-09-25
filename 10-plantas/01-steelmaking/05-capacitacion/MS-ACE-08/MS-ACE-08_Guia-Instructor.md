@@ -23,9 +23,9 @@
 ## 2. Objetivos de aprendizaje
 
 1. **Hidratarte a tiempo.** 250 mL cada 15–20 min aunque no tengas sed; electrolitos si el trabajo en calor pasa de 2 h.
-2. **Aplicar el régimen WBGT.** Conocer el régimen trabajo/descanso de tu puesto según la Tabla A1 de la NOM-015 y respetar los descansos.
+2. **Aplicar el régimen WBGT.** Seguir el régimen trabajo/descanso de tu puesto según la Tabla A1 de la NOM-015 y respetar los descansos.
 3. **Usar el EPP correcto y seco.** EPP por zona, seco e íntegro; ropa FR o 100 % algodón; nada sintético.
-4. **Reconocer y atender el golpe de calor.** Confusión, tambaleo, piel caliente: emergencia médica, retirar EPP y enfriar lejos del metal líquido.
+4. **Detectar y atender el golpe de calor.** Confusión, tambaleo, piel caliente: emergencia médica, retirar EPP y enfriar lejos del metal líquido.
 
 ## 3. Plan de sesión
 
@@ -50,7 +50,7 @@
 | C-04, C-05, C-06 Supervisores | Aplican régimen y relevos; detienen a quien muestre síntomas | R |
 | Todo el personal expuesto | Se hidrata, descansa, reporta síntomas y cuida su EPP | R |
 | Almacén / Compras | Surte EPP especificado, agua y electrolitos | R |
-| Relaciones Laborales / CMCAP | Validan el régimen de descansos con el sindicato | C |
+| Relaciones Laborales / Comisión Mixta de SyH | Revisan el régimen de descansos con el sindicato (CCT) | C |
 
 ### 4.2 Flujo del proceso
 
@@ -81,10 +81,10 @@
 | 75/25 (45/15 min) | 30.6 | 28.0 | 25.9 |
 | 50/50 (30/30 min) | 31.4 | 29.4 | 27.9 |
 | 25/75 (15/45 min) | 32.2 | 31.1 | 30.0 |
-| Hidratación | 750–1,000 mL/h | < 500 mL/h | > 1,500 mL/h [Sup.] |
-| Pérdida de peso | < 1.5 % | ≥ 2 % [Supuesto] | Retirar del calor |
+| Hidratación (todas) | Normal 750–1,000 mL/h | Bajo < 500 mL/h | Alto > 1,500 mL/h [Sup.] |
+| Pérdida de peso (todas) | Normal < 1.5 % | Límite ≥ 2 % [Supuesto] | Acción: retirar del calor |
 | Aclimatación | Día 1: 20 % | +20 % por día | 100 % al día 5 |
-| Permanencia en zona roja | ≤ 2 min | > 2 min | Salir y recuperar |
+| Zona roja (todas) | Normal ≤ 2 min | Límite > 2 min | Acción: salir y recuperar |
 
 > Tabla A1 NOM-015-STPS-2001 [Verificar con la NOM vigente / SSO]. Carga por puesto [Supuesto — Validar con C-16]; muestreo y refractario = pesada.
 
@@ -210,9 +210,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-25 |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

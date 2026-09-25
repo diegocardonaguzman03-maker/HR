@@ -8,7 +8,7 @@
 | Área | Acería · CC1, CC2 y taller de moldes |
 | Serie | Mantenimiento |
 | Manual base | `03-mantenimiento/MM-CC-01-moldes-conicidad-desgaste.md` v0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-25 Mecánico de Taller · S-19 Mecánico · S-21 Instrumentista · S-22 · S-20 · operador de grúa de CC · C-16 (ESR) |
+| Audiencia | S-25 Mecánico de Taller · S-19 Mecánico · S-21 Instrumentista · S-22 Técnico Hidráulico · S-20 Electricista · Grúa de CC 50 t (hoy S-15) · C-11 · C-06 · C-16 (ESR) |
 | Presentación | MM-CC-01_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -31,7 +31,7 @@ Moldes con conicidad, superficie y agua correctas, cambiados sin acero en la má
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de breakout por molde | Láminas 1–2 |
+| 1. Sesión 1 de 4: apertura y por qué importa | 30 | Casos de breakout por molde | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo taller–máquina | Láminas 3–6 |
 | 3. Equipos y especificaciones | 90 | Ejercicio: calcular conicidad con Ws, Wi y L | Láminas 7–8, calculadora |
 | 4. Seguridad, LOTO y energía cero | 75 | Puntos de bloqueo de CC y papel del ESR | Láminas 9–10, candados |
@@ -51,8 +51,8 @@ Moldes con conicidad, superficie y agua correctas, cambiados sin acero en la má
 | S-25 Mecánico de Taller de Moldes | Desarme, medición, armado y pruebas en taller | R |
 | S-19 Mecánico de Acería | Cambio en máquina, conexiones de agua y alineación | R |
 | S-21 Instrumentista | Termopares BOP, sensor de nivel (CC1) y EMS (CC2) | R |
-| S-22 / S-20 | LOTO hidráulico (acumuladores) y eléctrico del EMS (NOM-029) | R |
-| Operador de grúa de CC (50 t) | Iza el molde | R |
+| S-22 Hidráulico / S-20 Electricista | LOTO hidráulico (acumuladores) y eléctrico del EMS (NOM-029) | R |
+| Grúa de CC 50 t (hoy S-15; S-27 propuesto) | Iza el molde | R |
 | C-16 como ESR (CC2) | Cierra el obturador de Cs-137, pone su candado y mide < 2 × fondo | R (CC2) |
 | C-06 Supervisor de CC | Entrega la máquina vacía y firma la liberación | A (operación) |
 
@@ -190,11 +190,11 @@ Nivel requerido: **U** (escala ILUO).
 
 | Rol | ILUO | Teoría | OJT supervisado | Vigencia |
 | --- | --- | --- | --- | --- |
-| S-25 Mecánico de Taller | U | 32 h | 80 h / 5 CC1 + 10 tubos | 24 meses |
+| S-25 Mecánico de Taller | U | 32 h | 80 h / 5 CC1 + 10 tubos | 24 meses; POE 12 |
 | S-19 Mecánico de Acería | U | 16 h | 3 cambios | 24 meses; izaje 12 |
 | S-21 Instrumentista | U | 8 h | 3 verificaciones | 24 meses |
-| S-22 / S-20 | U | 8 h / NOM-029 + 4 h | 3 bloqueos | 24 / 12 meses |
-| Operador de grúa de CC | U | NOM-006 | 3 izajes de molde | 12 meses |
+| S-22 Hidráulico / S-20 Electricista | U | 8 h / NOM-029 + 4 h | 3 bloqueos | S-22: 24 · S-20: 12 meses |
+| Grúa de CC (hoy S-15) | U | NOM-006 | 3 izajes de molde | 12 meses |
 | Cerca de la fuente (CC2) | L | NOM-012 (8 h) | — | 12 meses |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
@@ -225,9 +225,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

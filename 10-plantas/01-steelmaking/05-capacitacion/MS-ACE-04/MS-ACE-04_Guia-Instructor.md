@@ -8,7 +8,7 @@
 | Área | Acería · naves de hornos y ollas, CC1, CC2 y patio |
 | Serie | Seguridad |
 | Manual base | `04-seguridad/MS-ACE-04-izaje-gruas-colada-cargas-suspendidas.md` v0.2 (borrador para validación; revisión de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-09 · S-04 · S-05 · S-03 · S-08 · S-13 · S-14 · S-15 · S-17 · S-19 · C-04 · C-05 · C-06 |
+| Audiencia | S-09 · S-04 · S-05 · S-03 · S-08 · S-13 · S-14 · S-15 · S-17 · S-19 · S-20 · C-04 · C-05 · C-06 |
 | Presentación | MS-ACE-04_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -31,7 +31,7 @@ Nadie bajo una carga suspendida: doble freno probado, límites probados, un solo
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de caída de carga; reglas | Láminas 1–2 |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de caída de carga; reglas | Láminas 1–2 |
 | 2. Roles y ciclo de maniobra | 45 | Recorrido del flujo de izaje | Láminas 3–5 |
 | 3. Rutas y gancho | 60 | Ruta de olla en el plano; criterios de retiro | Láminas 6–7 |
 | 4. Equipos y límites | 75 | Ejercicio: calcular % de capacidad de la olla | Láminas 8–9 |
@@ -73,9 +73,9 @@ Nadie bajo una carga suspendida: doble freno probado, límites probados, un solo
 | Equipo | Función | Especificación clave | Verificar antes |
 | --- | --- | --- | --- |
 | Grúas de colada (2) | Ollas llenas de acero | 250/63 t; doble freno; límites redundantes | Frenos y límites cada turno |
-| Grúas de carga y de CC | Canastas, bóveda, distribuidores | 120/40 t; 2 × 50 t + 2 × 25 t | Inspección previa por turno |
+| Grúas de carga y de CC | Canastas, bóveda, distribuidores | 120/40 t · CC: 2×50, 2×45 y 1×25 t | Inspección previa por turno |
 | Gancho de olla | Toma los muñones de la olla | Sin fisuras; garganta sin aumento > 5 % | Visual por turno |
-| Cable de elevación | Sostiene la carga | Retiro: 12 alambres rotos en un paso | Visual por turno; mensual |
+| Cable de elevación | Sostiene la carga | Retiro: 6 rotos en un paso o 3 en torón | Visual por turno; mensual |
 | Límites y limitador de carga | Evitan dos bloques y sobrecarga | Redundantes en grúa de colada | Prueba sin carga |
 | Accesorios de izaje | Enganche de cargas | WLL marcado; código de color vigente | Antes de cada uso |
 | Bocina, luces y radio | Avisan el movimiento | Audible en la nave | Prueba por turno |
@@ -221,9 +221,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-25 |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno con observaciones — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

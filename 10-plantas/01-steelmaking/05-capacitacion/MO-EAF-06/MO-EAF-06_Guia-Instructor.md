@@ -31,7 +31,7 @@ Medir T y O activo y tomar una muestra confiable para vaciar en ventana, sin exp
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de proyección por sonda húmeda | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de proyección por sonda húmeda | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo; momentos M1, M2 y M3 | Láminas 3–6 |
 | 3. Sondas y curvas | 90 | Interpretar 5 curvas reales; relación C–O | Sondas físicas, curvas impresas |
 | 4. Equipos y parámetros | 60 | Ventana de vaciado por grado | Láminas 7–8 |
@@ -212,8 +212,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

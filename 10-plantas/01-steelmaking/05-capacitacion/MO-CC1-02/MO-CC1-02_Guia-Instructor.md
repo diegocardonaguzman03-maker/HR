@@ -31,7 +31,7 @@ Dejar la CC1 lista para arrancar: línea seca, molde al ancho, cabeza sellada y 
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de fuga y explosión al arranque; reglas de oro | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de fuga y explosión al arranque; reglas de oro | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con el perfil de la máquina | Láminas 3–6 |
 | 3. Equipos y parámetros | 75 | Ejercicio: calcular el ancho del molde | Láminas 7–8, calculadora |
 | 4. Seguridad | 75 | Puntos de LOTO en plano; prueba de arranque | Láminas 9–10, candados |
@@ -205,7 +205,7 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 - **Sin LOTO no hay manos en el molde.** Barra falsa, segmentos, oscilación y ancho bloqueados y probados.
 - **Agua en el molde = no se arranca.** Humedad, aceite u óxido + acero líquido = explosión (MS-ACE-03).
-- **Sin agua de emergencia no se arranca.** Torre con nivel, diésel en automático y prueba ≤ 7 días.
+- **Sin agua de emergencia no se arranca.** Torre con nivel, diésel en automático; arranque semanal y prueba de cambio mensual vigentes.
 - **Sin lista firmada no hay arranque.** C-06 revisa todos los puntos y firma la lista previa.
 
 ## 7. Por confirmar
@@ -218,8 +218,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno con observaciones — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

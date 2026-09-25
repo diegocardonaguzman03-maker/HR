@@ -185,8 +185,8 @@ Nivel requerido: **U** (escala ILUO).
 
 | Rol | ILUO | Teoría | OJT supervisado | Vigencia |
 | --- | --- | --- | --- | --- |
-| S-13 Operador de Plataforma | U | 8 h | 5 fines de secuencia | 24 meses |
-| S-12 Operador de Púlpito | U | 8 h | 5 fines de secuencia | 24 meses |
+| S-13 Operador de Plataforma | U | 8 h | 5 fines de secuencia | 24 meses; radiación 12 |
+| S-12 Operador de Púlpito | U | 8 h | 5 fines de secuencia | 24 meses; radiación 12 |
 | S-14 Ayudante de Colada | U | 8 h + protección radiológica | 5 fines de secuencia | 24 meses; POE 12 meses |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
@@ -218,8 +218,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

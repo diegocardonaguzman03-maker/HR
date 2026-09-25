@@ -31,7 +31,7 @@ Fundir en ≈ 42–44 min de arco con 560 kWh/t, arco estable y sin dañar bóve
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de arco con fuga de agua y rotura de electrodo | Láminas 1–2 |
+| 1. Sesión 1 de 4: apertura y por qué importa | 30 | Casos de arco con fuga de agua y rotura de electrodo | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del perfil por etapas | Láminas 3–6 |
 | 3. Eléctrica del EAF y regulación | 90 | Z = V/I; tap y longitud de arco; arco cubierto | Pizarrón, tendencias HMI |
 | 4. Equipos y parámetros | 75 | Ejercicio: MWh y minutos de arco con 560 kWh/t | Láminas 7–8, calculadora |
@@ -215,8 +215,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

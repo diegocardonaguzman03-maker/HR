@@ -31,7 +31,7 @@ Solo el ESR toca el obturador; el camión que suena en el pórtico no se descarg
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Caso Ciudad Juárez 1983–84; reglas | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Caso Ciudad Juárez 1983–84; reglas | Láminas 1–2 |
 | 2. Roles y dos rutas | 45 | Flujo del molde de CC2 y del pórtico | Láminas 3–5 |
 | 3. Tiempo, distancia, blindaje | 75 | Ejercicio: dosis al doble de distancia | Láminas 6–7 |
 | 4. Equipos y límites | 75 | Práctica con medidor portátil y dosímetro | Láminas 8–9, medidor |
@@ -219,9 +219,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-25 |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

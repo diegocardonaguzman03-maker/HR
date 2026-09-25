@@ -22,7 +22,7 @@ Cuidar cinco variables por línea y dos del distribuidor, y responder a tiempo a
 
 ## 2. Objetivos de aprendizaje
 
-1. **Leer el lazo de nivel.** Explicar cómo el nivel del distribuidor y la buza fijan la velocidad en colada abierta.
+1. **Explicar el lazo de nivel.** Explicar cómo el nivel del distribuidor y la buza fijan la velocidad en colada abierta.
 2. **Mantener las variables en rango.** Nivel ± 5 mm, aceite 15–25 mL/min, agua ≥ 1,800 L/min con ΔT 6–10 °C, 2.5–3.5 m/min y 1.5–2.0 L/kg.
 3. **Detectar la buza por la velocidad.** Más de 3.5 m/min: erosión; menos de 2.3 m/min: taponamiento; diferencia > 0.4 m/min entre líneas.
 4. **Responder a emergencias.** Falla de agua: emergencia en ≤ 15 s o cerrar olla y líneas. Breakout: cerrar la línea, mantener agua y evacuar.
@@ -31,7 +31,7 @@ Cuidar cinco variables por línea y dos del distribuidor, y responder a tiempo a
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de breakout y de falla de agua; reglas de oro | Portada y objetivos |
+| 1. Sesión 1 de 4: apertura y por qué importa | 30 | Casos de breakout y de falla de agua; reglas de oro | Portada y objetivos |
 | 2. Roles y flujo del proceso | 60 | El lazo de nivel: distribuidor, buza, nivel y velocidad | Roles, flujo y figuras |
 | 3. Equipos y parámetros | 90 | Ejercicio: diagnosticar la buza con tendencias de velocidad | Equipos y parámetros, tendencias HMI |
 | 4. Seguridad | 60 | Breakout, falla de agua y radiación con el árbol de decisión | Seguridad y árbol de emergencias |
@@ -187,9 +187,9 @@ Nivel requerido: **U** (escala ILUO).
 
 | Rol | ILUO | Teoría | OJT supervisado | Vigencia |
 | --- | --- | --- | --- | --- |
-| S-12 Operador de Púlpito | U | 32 h (simulador [Validar]) | 160 h / 20 coladas | 24 meses |
-| S-13 Operador de Plataforma | U | 24 h | 120 h / 20 coladas | 24 meses |
-| S-14 Ayudante de Colada | U | 16 h | 120 h / 20 coladas | 24 meses |
+| S-12 Operador de Púlpito | U | 32 h (simulador [Validar]) | 160 h / 20 coladas | 24 meses; radiación 12 |
+| S-13 Operador de Plataforma | U | 24 h | 120 h / 20 coladas | 24 meses; radiación 12 |
+| S-14 Ayudante de Colada | U | 16 h | 120 h / 20 coladas | 24 meses; radiación 12 |
 | C-06 Supervisor | O | 24 h | 10 turnos acompañados | 24 meses |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
@@ -220,8 +220,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

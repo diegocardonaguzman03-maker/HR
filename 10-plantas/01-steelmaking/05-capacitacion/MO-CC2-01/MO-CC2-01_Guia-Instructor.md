@@ -31,7 +31,7 @@ Entregar un distribuidor seco, a 1,100 ± 50 °C, con 6 buzas del diámetro de l
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de explosión por humedad y de buza congelada; reglas de oro | Portada y objetivos |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de explosión por humedad y de buza congelada; reglas de oro | Portada y objetivos |
 | 2. Roles y flujo del proceso | 60 | Recorrido del flujo con la figura del distribuidor | Roles, flujo y figura |
 | 3. Equipos y parámetros | 90 | Ejercicio: Ø de buza contra velocidad con la tabla del manual | Equipos, parámetros, calibrador |
 | 4. Seguridad | 60 | Encendido de quemadores, izaje y EPP por zona | Seguridad, EPP físico |
@@ -191,7 +191,7 @@ Nivel requerido: **U** (escala ILUO).
 | S-15 Preparador de Distribuidores | U | 16 h | 40 h / 10 preparaciones | 24 meses |
 | S-13 Operador de Plataforma | U | 8 h | 16 h / 5 centrados | 24 meses |
 | C-06 Supervisor | O | 8 h | 5 liberaciones acompañadas | 24 meses |
-| Grúa de CC 50 t (S-27 propuesto) | U | Curso de grúa (NOM-006) | Según MS-ACE-04 | 12 meses |
+| Grúa de CC 50 t (hoy S-15) | U | Curso de grúa (NOM-006) | Según MS-ACE-04 | 12 meses |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
 
@@ -222,8 +222,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

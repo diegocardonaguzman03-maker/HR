@@ -31,7 +31,7 @@ Cargar 55–70 t de chatarra seca y sin materiales prohibidos, en ≤ 3 min y si
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de explosión por humedad en la carga | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de explosión por humedad en la carga | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo patio → horno | Láminas 3–6 |
 | 3. Equipos y parámetros | 60 | Ejercicio: armar una canasta por capas | Láminas 7–8, receta |
 | 4. Seguridad | 60 | Zonas de exclusión de carga en plano; EPP | Láminas 9–10, EPP físico |
@@ -188,10 +188,10 @@ Nivel requerido: **U** (escala ILUO).
 
 | Rol | ILUO | Teoría | OJT supervisado | Vigencia |
 | --- | --- | --- | --- | --- |
-| S-05 Operador de Patio | U | 16 h (4 h radiación) | 60 h / 40 canastas | 24 meses; pórtico 12 |
+| S-05 Operador de Patio | U | 16 h (4 h radiación) | 60 h / 40 canastas | 24 meses; pórtico e izaje 12 |
 | S-04 Grúa de Carga | U | 24 h (NOM-006) | 80 h / 40 cargas | 12 meses |
 | S-01 Primer Hornero | U | 8 h | 20 cargas | 24 meses |
-| C-17 Supervisor de Patio | O (evaluador) | 16 h + evaluador | — | 12 meses |
+| C-17 Supervisor de Patio | O (evaluador) | 16 h + evaluador | — | 24 meses; pórtico 12 |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
 
@@ -221,8 +221,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

@@ -31,7 +31,7 @@ Fundir ≈ 100 t de DRI por colada a 30–35 kg/min/MW, con baño plano, sin ice
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de ebullición violenta por iceberg | Láminas 1–2 |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de ebullición violenta por iceberg | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con el corte del horno | Láminas 3–6 |
 | 3. Balance de masa y energía | 90 | Ejercicio: tasa con MW y kg/min/MW | Calculadora, tendencias N2 |
 | 4. Equipos y parámetros | 60 | Consigna inicial por tipo de material | Láminas 7–8 |
@@ -215,8 +215,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

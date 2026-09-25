@@ -8,7 +8,7 @@
 | Área | Acería · taller de ollas |
 | Serie | Mantenimiento |
 | Manual base | `03-mantenimiento/MM-OLL-01-valvula-deslizante-tapon-revestimiento-ollas.md` v0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-24 Refractarista · S-08 Preparador de Ollas · S-09 Grúa de Colada · S-19 / S-22 · personal de reline · C-15 |
+| Audiencia | S-24 Refractarista · S-08 Preparador de Ollas · S-09 Grúa de Colada · S-19 Mecánico · S-22 Técnico Hidráulico · S-23 Soldador · personal de reline · C-15 |
 | Presentación | MM-OLL-01_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -31,7 +31,7 @@ Cada olla que entra al ciclo abre y cierra seguro, pasa argón y tiene espesor y
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de derrame por válvula y perforación | Láminas 1–2 |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de derrame por válvula y perforación | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con el corte de la olla | Láminas 3–6 |
 | 3. Equipos y especificaciones | 90 | Ejercicio: rechazar placas usadas con la tabla | Láminas 7–8, placas usadas |
 | 4. Seguridad, LOTO y energía cero | 75 | Aislamiento de GN, argón y cilindro; confinado | Láminas 9–10, candados |
@@ -219,9 +219,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

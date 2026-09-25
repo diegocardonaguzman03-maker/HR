@@ -8,7 +8,7 @@
 | Área | Acería · nave de ollas |
 | Serie | Mantenimiento |
 | Manual base | `03-mantenimiento/MM-GR-01-gruas-colada-inspeccion.md` v0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-19 Mecánico · S-20 Electricista · S-09 Operador de Grúa de Colada · S-26 Lubricador · C-11 · C-04 |
+| Audiencia | S-19 Mecánico · S-20 Electricista · S-09 Operador de Grúa de Colada · S-26 Lubricador · S-23 Soldador · C-11 · C-04 |
 | Presentación | MM-GR-01_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -31,7 +31,7 @@ Que una grúa de 250/63 t nunca deje caer una olla: gancho, cables, frenos doble
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de caída de carga y two-blocking | Láminas 1–2 |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de caída de carga y two-blocking | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Inspección escalonada: diaria a anual | Láminas 3–6 |
 | 3. Equipos y especificaciones | 90 | Criterios de rechazo de gancho, cable y freno | Láminas 7–8 |
 | 4. Seguridad, LOTO y energía cero | 75 | LOTO de vía y grúa vecina; altura | Láminas 9–10, arnés |
@@ -108,7 +108,7 @@ Que una grúa de 250/63 t nunca deje caer una olla: gancho, cables, frenos doble
 | --- | --- | --- | --- |
 | Disponibilidad de grúa de colada | ≥ 98 % [Supuesto]; 1 siempre | Mensual en CMMS | Olla espera: pierde T, corta secuencia |
 | Suavidad de movimientos | Sin tirones | Prueba funcional | Oleaje, derrame, reoxidación |
-| Tiempo de traslado de olla | Estable | KPI de operación | Sobrecalentamiento fuera de 20–30 °C |
+| Tiempo de traslado de olla | Estable | KPI de operación | Sobrecalentamiento fuera de 20–30 °C en CC1 |
 
 ### 4.7 Paso a paso
 
@@ -219,9 +219,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

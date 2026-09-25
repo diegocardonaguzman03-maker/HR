@@ -14,7 +14,7 @@
 | Manuales de referencia | MO-EAF-02, MO-EAF-08, MM-EAF-02 (R); MM-GR-01 (C, criterios equivalentes para la grúa de carga); MM-EAF-03; MS-ACE-01, 03, 04, 09, 10; FT-ACE-001 v0.3 §6 |
 | Elaboró | experto-operativo-metalurgia (con enfoque de diseño de capacitación) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno, 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 

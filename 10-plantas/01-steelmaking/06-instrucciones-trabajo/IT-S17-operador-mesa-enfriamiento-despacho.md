@@ -13,7 +13,7 @@
 | Manuales de referencia | MO-CC1-08, MO-CC2-08; MS-ACE-04, -08, -09, -10; MM-GR-01 (criterio de inspección pre-uso); FT-ACE-001 v0.3 §6 |
 | Elaboró | experto-operativo-metalurgia (con criterio de diseño instruccional de C&D) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno, 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director de C&D |
 

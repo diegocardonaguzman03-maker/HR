@@ -34,6 +34,12 @@
 
 Cada manual contiene: control documental, roles (R/A/C/I), descripción con figura técnica (SVG) y diagrama de flujo, equipos y maquinaria, parámetros (objetivo, rango, alarma, acción), seguridad (peligros, controles críticos, EPP, LOTO), calidad, **procedimiento paso a paso con pasos críticos ★**, condiciones anormales, registros, **competencia y certificación (TD-P07)**, referencias y control de cambios.
 
+## 4b. Capacitación e instrucciones de trabajo
+| Serie | Índice | Contenido |
+|---|---|---|
+| Presentaciones de capacitación (estándar AMMX) | [05-capacitacion](05-capacitacion/README.md) | 49 carpetas, una por proceso crítico: `contenido.json` (fuente), presentación `.pptx` AMMX (18 láminas) y guía del instructor (`.md` y `.pdf`) con plan de sesión, evaluación y checklist de certificación. Validadas por los expertos técnico, de seguridad, laboral y de documentación (ver `VALIDACION-*.md`) |
+| Instrucciones de trabajo por rol | [06-instrucciones-trabajo](06-instrucciones-trabajo/README.md) | 30 IT (S-01 a S-26, C-04, C-05, C-06, C-17), fáciles y paso a paso, con figura del puesto, diagramas de turno y de tarea, recuadros ALTO y checklist de controles críticos; PDF en `06-instrucciones-trabajo/pdf/` |
+
 ## 5. Uso para capacitación (Academia GASM)
 - Cada manual es el **contenido base** del curso del proceso y de la **evaluación de certificación**. La lista de pasos ★ de la sección 11 se convierte en el checklist de `templates/critical-task-certification-checklist.md`.
 - Las descripciones de puesto definen la **ruta de formación por rol** y la liga con el escalafón.

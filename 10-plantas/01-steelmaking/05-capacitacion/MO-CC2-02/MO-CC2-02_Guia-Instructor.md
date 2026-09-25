@@ -31,7 +31,7 @@ Dejar las 6 líneas probadas y selladas, con la cabeza a 700 ± 20 mm y el obtur
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de fuga de arranque y de exposición; reglas de oro | Portada y objetivos |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de fuga de arranque y de exposición; reglas de oro | Portada y objetivos |
 | 2. Roles y flujo del proceso | 60 | Recorrido del flujo con el perfil de la máquina y el molde | Roles, flujo y figuras |
 | 3. Equipos y parámetros | 90 | Ejercicio: liberar o no una línea con datos de prueba | Equipos y parámetros |
 | 4. Seguridad | 60 | Obturador, LOTO y zona controlada con la figura de bloqueos | Seguridad, dosímetro y candados |
@@ -218,8 +218,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

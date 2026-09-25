@@ -31,7 +31,7 @@ Cambiar la olla sin interrumpir la colada, sin pasar escoria y sin bajar el dist
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de olla perforada y pérdida de secuencia | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de olla perforada y pérdida de secuencia | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con la torreta y el distribuidor | Láminas 3–6 |
 | 3. Equipos y parámetros | 90 | Ejercicio: calcular la reserva y aplicar la tabla | Láminas 7–8, calculadora |
 | 4. Seguridad | 60 | Zonas bajo olla y giro; EPP de lanceado | Láminas 9–10, EPP físico |
@@ -219,8 +219,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

@@ -198,7 +198,7 @@ Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
 - [ ] Nombra lo prohibido: agua sobre metal, bascular con agua, rescate sin ERA
 - [ ] C-04 asume el mando y logra el conteo en ≤ 10 min
 - [ ] La brigada interviene solo por orden del CI, con EPP y ERA
-- [ ] El reingreso se autoriza por escrito con atmósfera en rango, metal sólido y LOTO
+- [ ] Reingreso por escrito: < 10 % LEL, CO < 25 ppm, O₂ 19.5–23.5 %, metal sólido y LOTO
 
 Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábiles) · ☐ Aún no competente (OJT dirigido y nueva evaluación).
 
@@ -219,9 +219,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-25 |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno con observaciones — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

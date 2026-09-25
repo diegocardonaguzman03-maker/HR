@@ -24,14 +24,14 @@ Maniobrar con las 5 reglas de oro y mantener el transformador de 140 MVA por ace
 
 1. **Aplicar las 5 reglas de oro.** Desconectar, prevenir reconexión, verificar ausencia de tensión, aterrizar y cortocircuitar, delimitar la zona.
 2. **Verificar 0 V sin atajos.** Detector probado en fuente conocida, 3 fases y otra vez en fuente conocida; tierras en primario y secundario.
-3. **Leer aceite, gases y pruebas.** Rigidez ≥ 50 kV, humedad ≤ 15 ppm, C₂H₂ ≤ 1 ppm, PI ≥ 1.5, Tan δ ≤ 0.5 %, TTR ±0.5 %.
+3. **Evaluar aceite, gases y pruebas.** Rigidez ≥ 50 kV, humedad ≤ 15 ppm, C₂H₂ ≤ 1 ppm, PI ≥ 1.5, Tan δ ≤ 0.5 %, TTR ±0.5 %.
 4. **Restituir con conteo.** Tierras retiradas = colocadas, protecciones probadas y personal contado fuera antes de energizar en vacío.
 
 ## 3. Plan de sesión
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de electrocución y arco en maniobra | Láminas 1–2 |
+| 1. Sesión 1 de 5: apertura y por qué importa | 30 | Casos de electrocución y arco en maniobra | Láminas 1–2 |
 | 2. Roles y flujo de la maniobra | 45 | Las 5 reglas de oro en el unifilar | Láminas 3–6, unifilar |
 | 3. Equipos y especificaciones | 75 | Lectura de un reporte de DGA y fisicoquímicos | Láminas 7–8, reporte |
 | 4. Seguridad, LOTO y energía cero | 90 | Detector, pértiga, tierras y EPP arc-rated | Láminas 9–10, EPP físico |
@@ -109,7 +109,7 @@ Maniobrar con las 5 reglas de oro y mantener el transformador de 140 MVA por ace
 | Variable | Especificación | Cómo y cuándo | Si falla |
 | --- | --- | --- | --- |
 | Perfil de potencia disponible | Todas las derivaciones del OLTC | Prueba funcional tras mantenimiento | Tap-to-tap > 55 min; T fuera de ±15 °C |
-| Energía específica | 560–620 kWh/t | KPI diario (C-07) | Energía alta por derivación bloqueada |
+| Energía específica | 560 kWh/t (520–600) | KPI diario (C-07) | Energía alta por derivación bloqueada |
 | Paros del horno por transformador | 0 | Mensual en CMMS | Pierde secuencia en CC; reoxidación |
 
 ### 4.7 Paso a paso
@@ -221,9 +221,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno con observaciones — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

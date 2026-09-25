@@ -31,7 +31,7 @@ El molde nunca se queda sin agua con acero dentro: emergencia con caudal ≥ 90 
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de breakout por falla de agua | Láminas 1–2 |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de breakout por falla de agua | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Secuencia de emergencia con la figura | Láminas 3–6 |
 | 3. Equipos y especificaciones | 90 | Lazos de caudal y ΔT; lectura de tendencias | Láminas 7–8, HMI |
 | 4. Seguridad, LOTO y energía cero | 75 | Barreras, selector automático y batería diésel | Láminas 9–10, candados |
@@ -132,7 +132,7 @@ El molde nunca se queda sin agua con acero dentro: emergencia con caudal ≥ 90 
 | Síntoma | Acción inmediata | Avisar a |
 | --- | --- | --- |
 | Caudal de molde < 90 % | Operación reduce velocidad o termina colada; arrancar reserva | C-06, C-12 |
-| ΔT alto con caudal normal | Operación reduce velocidad; verificar TT | C-08, S-21 |
+| ΔT > 11 (CC1) / > 12 °C (CC2) | Con caudal normal: operación reduce velocidad; verificar TT e incrustación | C-08, S-21 |
 | Apagón con acero en máquina | Emergencia automática; operación termina la colada (MS-ACE-09) | C-04, C-12 |
 | Diésel no arranca en prueba | No colar si el otro diésel no está disponible | C-03, C-12 |
 | Nivel de torre baja sin uso | Revisar XV-1 y tuberías | S-19 |
@@ -182,9 +182,9 @@ Nivel requerido: **U** (escala ILUO).
 | Rol | ILUO | Teoría | OJT supervisado | Vigencia |
 | --- | --- | --- | --- | --- |
 | S-21 Instrumentista | U | 24 h | 3 pruebas mensuales | 24 meses |
-| S-19 Mecánico | U | 16 h | 3 pruebas | 24; torre y tanques 12 |
+| S-19 Mecánico | U | 16 h | 3 pruebas | 24 meses; altura y confinado 12 |
 | S-20 Electricista | U | NOM-029 + 8 h | 3 pruebas | 12 meses |
-| S-12 Operador de Púlpito | U | 4 h | Simulacro | 12 meses |
+| S-12 Operador de Púlpito | U | 4 h | Simulacro | 24 meses |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
 
@@ -214,9 +214,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

@@ -24,14 +24,14 @@ Cubrir el arco con B2 1.8–2.2, FeO 25–35 % y MgO 8–10 %, y desescoriar sin
 
 1. **Operar quemadores y lanzas.** Modo quemador en la fusión (O₂:gas ≈ 2:1); modo lanza en baño plano; O₂ total 30–40 Nm³/t.
 2. **Formar y mantener la espuma.** Carbono 8–12 kg/t, cal 30–45 kg/t y dolomita 10–15 kg/t para que la espuma cubra el arco.
-3. **Leer y corregir la escoria.** B2 1.8–2.2, FeO 25–35 %, MgO 8–10 %: elegir la corrección con el análisis y con lo que se ve.
+3. **Evaluar y corregir la escoria.** B2 1.8–2.2, FeO 25–35 %, MgO 8–10 %: elegir la corrección con el análisis y con lo que se ve.
 4. **Desescoriar sin exponer a nadie.** Olla y fosa secas, zona libre frente a la puerta; ante ebullición, cortar C y reducir O₂.
 
 ## 3. Plan de sesión
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de ebullición y escoria sobre agua | Láminas 1–2 |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de ebullición y escoria sobre agua | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con el corte del horno | Láminas 3–6 |
 | 3. Química de la escoria | 90 | B2, FeO, MgO; diagnóstico por observación | Muestras de escoria, videos |
 | 4. Equipos y parámetros | 60 | Programa de O₂ por etapa | Láminas 7–8 |
@@ -214,8 +214,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

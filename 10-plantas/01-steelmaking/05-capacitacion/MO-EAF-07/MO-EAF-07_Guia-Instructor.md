@@ -31,14 +31,14 @@ Vaciar 150 t dentro de ventana, con la aleación correcta, sin escoria y con nad
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 20 | Casos de incidentes de vaciado; reglas de oro | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 20 | Casos de incidentes de vaciado; reglas de oro | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 40 | Recorrido del flujo con la figura del EBT | Láminas 3–6 |
-| 3. Equipos y parámetros | 60 | Ejercicio: calcular el Al con O = 700 ppm | Láminas 7–8, calculadora |
-| 4. Seguridad | 60 | Zonas de exclusión en plano; EPP completo | Láminas 9–10, EPP físico |
-| 5. Calidad y paso a paso | 90 | Lectura guiada de los 14 pasos; pasos ★ | Láminas 11–13 |
-| 6. Condiciones anormales | 45 | Simulacro de mesa: EBT que no abre | Lámina 14 |
+| 3. Equipos y parámetros | 90 | Ejercicio: calcular el Al con O = 700 ppm | Láminas 7–8, calculadora |
+| 4. Seguridad | 90 | Zonas de exclusión en plano; EPP completo | Láminas 9–10, EPP físico |
+| 5. Calidad y paso a paso | 120 | Lectura guiada de los 14 pasos; pasos ★ | Láminas 11–13 |
+| 6. Condiciones anormales | 60 | Simulacro de mesa: EBT que no abre | Lámina 14 |
 | 7. Evaluación teórica | 30 | Autoevaluación de 5 preguntas + retroalimentación | Lámina 16 |
-| 8. Cierre y ruta a OJT | 15 | Plan de OJT y certificación | Lámina 17 |
+| 8. Cierre y ruta a OJT | 30 | Plan de OJT y certificación | Lámina 17 |
 
 ## 4. Contenido clave
 
@@ -70,7 +70,7 @@ Vaciar 150 t dentro de ventana, con la aleación correcta, sin escoria y con nad
 | Equipo | Función | Especificación clave | Verificar antes |
 | --- | --- | --- | --- |
 | EBT y compuerta | Vaciado excéntrico por el fondo | Llenado con arena correcto | Compuerta operable |
-| Sistema de inclinación | Inclina y retroinclina | Retroinclinación ≤ 3 s a −3° [Validar con OEM] | Prueba de velocidad |
+| Sistema de inclinación | Inclina y retroinclina | Retroinclina ≤ 3 s a −3° [Validar con OEM] | Prueba de velocidad |
 | Carro con báscula | Posiciona y pesa | ± 0.5 t [Supuesto] | Cero con olla vacía |
 | Olla de 150 t | Recibe el acero | 1,000–1,100 °C; válvula cerrada | Lista MO-OLL-01 firmada |
 | Tolvas y chute | Dosifican aleaciones | ± 1% por tolva [Supuesto] | Materiales secos |
@@ -214,9 +214,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

@@ -8,7 +8,7 @@
 | Área | Colada Continua 1 · planchón |
 | Serie | Operación |
 | Manual base | `02-operacion/cc1/MO-CC1-08-corte-marcado-mesa-enfriamiento.md` v0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-16 Operador de Corte y Marcado · S-17 Mesa de Enfriamiento y Despacho · Operador de grúa de producto · C-06 |
+| Audiencia | S-16 Operador de Corte y Marcado · S-17 Mesa de Enfriamiento y Despacho · Grúa de producto 45 t (hoy S-17) · C-06 |
 | Presentación | MO-CC1-08_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -31,7 +31,7 @@ Cortar a 8–11 m ± 15 mm, marcar sin error y apilar sin accidentes con la grú
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de caída de carga y pérdida de trazabilidad | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de caída de carga y pérdida de trazabilidad | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo desde el segmento 14 | Láminas 3–6 |
 | 3. Equipos y parámetros | 90 | Ejercicio: peso teórico y selección de grúa | Láminas 7–8, calculadora |
 | 4. Seguridad | 75 | Zonas de izaje, oxicorte y LOTO de la mesa | Láminas 9–10, EPP físico |
@@ -189,8 +189,8 @@ Nivel requerido: **U** (escala ILUO).
 | Rol | ILUO | Teoría | OJT supervisado | Vigencia |
 | --- | --- | --- | --- | --- |
 | S-16 Operador de Corte y Marcado | U | 16 h | 80 h | 24 meses |
-| S-17 Mesa de Enfriamiento y Despacho | U | 16 h | 80 h | 12 meses (izaje) |
-| Operador de grúa de producto | U | Curso de grúa (NOM-006) | Según MS-ACE-04 | 12 meses |
+| S-17 Mesa de Enfriamiento y Despacho | U | 16 h | 80 h | 24 meses; izaje 12 |
+| Grúa de producto (hoy S-17) | U | Curso de grúa (NOM-006) | Según MS-ACE-04 | 12 meses |
 | C-06 Supervisor de CC | O (evaluador) | 4 h + evaluador | — | 24 meses |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
@@ -219,8 +219,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

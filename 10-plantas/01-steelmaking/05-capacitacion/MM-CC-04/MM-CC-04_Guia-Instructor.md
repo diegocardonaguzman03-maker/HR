@@ -31,7 +31,7 @@ Oscilación, nivel y tapón exactos, y trabajo junto a la fuente de Cs-137 solo 
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de breakout por pegado y de exposición | Láminas 1–2 |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de breakout por pegado y de exposición | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Papel del ESR; recorrido del flujo | Láminas 3–6 |
 | 3. Equipos y especificaciones | 90 | Oscilación no senoidal y lazos de nivel | Láminas 7–9 |
 | 4. Seguridad, LOTO y energía cero | 90 | Tiempo, distancia, blindaje; LOTO de HPU | Láminas 10–11, radiámetro |
@@ -126,7 +126,7 @@ Oscilación, nivel y tapón exactos, y trabajo junto a la fuente de Cs-137 solo 
 | 6 | Inspecciona mesa y resortes | Visual con lámpara; grietas en láminas; pernos marcados | Sin grietas; torque OK |  | S-19 |
 | 7 | Mantén el detector | Limpieza, conexiones y enfriamiento | Sin daño |  | S-21 (POE) |
 | 8 | Retira LOTO hidráulico | Solo el necesario para oscilar; personal fuera de la mesa | Nadie en la mesa | ★ | S-22 |
-| 9 | Analiza la oscilación | Acelerómetros triaxiales en el molde; oscila a 3 frecuencias del rango | ±1 cpm; ±0.1; ≤ 0.15 mm |  | S-21 |
+| 9 | Analiza la oscilación | Acelerómetros triaxiales en el molde; oscila a 3 frecuencias del rango | ±1 cpm; ±0.1 mm; ≤ 0.15 mm |  | S-21 |
 | 10 | El ESR abre la fuente | Personal fuera de la zona controlada (salvo POE con dosímetro); el ESR retira candado y abre | Abierto; cuentas estables | ★ | C-16 (ESR) |
 | 11 | Calibra el nivel | Calibración de 2 puntos según el sistema (vacío / referencia OEM) | ±2 % |  | S-21 con ESR |
 | 12 | Retira LOTO restante | Orden inverso; cada quien retira su candado | Candados retirados | ★ | Todos |
@@ -221,9 +221,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno con observaciones — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

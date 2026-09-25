@@ -22,7 +22,7 @@ Tu detector es tu nariz: pórtalo encendido, probado y a ≤ 30 cm de la boca, y
 
 ## 2. Objetivos de aprendizaje
 
-1. **Reconocer los cinco gases.** CO se mezcla; argón se acumula abajo; gas natural e H₂ suben; O₂ alto hace arder la ropa.
+1. **Identificar los cinco gases.** CO se mezcla; argón se acumula abajo; gas natural e H₂ suben; O₂ alto hace arder la ropa.
 2. **Portar y probar el detector.** Bump test diario, batería ≥ 12 h, calibración vigente; encendido a ≤ 30 cm de la nariz y la boca.
 3. **Responder a la alarma.** A1 (CO 25 ppm, O₂ fuera de 19.5–23.5 %, 10 % LEL): sal. A2 (CO 200 ppm, 20 % LEL): evacuación del sector.
 4. **No rescatar sin ERA.** Si alguien cae en zona con gas: alarma y esperar a la brigada; reingreso solo con medición de C-16.
@@ -108,7 +108,7 @@ Tu detector es tu nariz: pórtalo encendido, probado y a ≤ 30 cm de la boca, y
 | Detectores fijos | Mapa y prueba mensual | C-16 / S-21 | Zona sin detección |
 | Válvulas ESD | Cierre probado | Trimestral [Supuesto] | Fuga sin corte |
 | Evaluación NOM-010 | Agentes químicos y exámenes | C-16 y servicio médico | Exposición crónica |
-| Sello de argón en CC | Sin entrada de aire | Continuo en HMI | Reoxidación, N₂ alto |
+| Sello de argón en CC | Sin entrada de aire | Continuo en HMI | Reoxidación, N alto en acero, clogging |
 
 ### 4.7 Paso a paso
 
@@ -213,9 +213,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-25 |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

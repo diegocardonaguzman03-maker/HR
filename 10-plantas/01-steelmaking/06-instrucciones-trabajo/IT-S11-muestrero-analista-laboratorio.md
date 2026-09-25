@@ -14,7 +14,7 @@
 | Manuales de referencia | MO-EAF-06 · MO-LF-01 · MO-EAF-05 (escoria) · MO-CC1-04 / MO-CC2-04 (distribuidor) · MS-ACE-01, 03, 06, 08, 09 · FT-ACE-001 §2, §3 y §7 |
 | Elaboró | experto-operativo-metalurgia (con diseño instruccional) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno, 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 

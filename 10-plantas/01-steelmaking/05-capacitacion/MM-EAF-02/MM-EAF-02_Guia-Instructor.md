@@ -8,7 +8,7 @@
 | Área | Acería · EAF-1 / EAF-2 |
 | Serie | Mantenimiento |
 | Manual base | `03-mantenimiento/MM-EAF-02-brazos-columnas-regulacion-cambio-boveda.md` v0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-19 Mecánico · S-22 Técnico Hidráulico · S-20 Electricista · S-21 Instrumentista · S-04 Grúa de Carga · C-11 |
+| Audiencia | S-19 Mecánico · S-22 Técnico Hidráulico · S-20 Electricista · S-21 Instrumentista · S-04 Grúa de Carga · S-01 Primer Hornero · C-11 |
 | Presentación | MM-EAF-02_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -31,7 +31,7 @@ Brazos aislados, regulación estable y bóveda cambiada sin nadie bajo la carga 
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de aplastamiento y caída de electrodo | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de aplastamiento y caída de electrodo | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con el corte del horno | Láminas 3–6 |
 | 3. Equipos y especificaciones | 90 | Hidráulica proporcional, HFC y acumuladores | Láminas 7–8 |
 | 4. Seguridad, LOTO y energía cero | 90 | E1–E6 en plano; descarga de acumuladores | Láminas 9–10, candados |
@@ -100,7 +100,7 @@ Brazos aislados, regulación estable y bóveda cambiada sin nadie bajo la carga 
 - ★ **LOTO E1–E6 con calzas:** MT con tierras (S-20), HPU y acumuladores descargados a tanque, O₂/GN, agua V1/V2 y calzas y pernos de giro y basculamiento.
 - ★ **Prueba de energía cero:** Intento de mover columna y bóveda desde HMI y mando local sin respuesta; 0 bar; detector de tensión vivo–muerto–vivo.
 - ★ **Izaje crítico de la bóveda:** Plan de izaje, balancín certificado, prueba a 100 mm; nadie en el radio de giro ni a ± 5 m de la carga (MS-ACE-04).
-- ★ **Altura, calor y trabajo en caliente:** Arnés y línea de vida (NOM-009); bóveda ≤ 60 °C o EPP térmico; al cortar o soldar, 0 % LEL detectable.
+- ★ **Altura, calor y trabajo en caliente:** Arnés y línea de vida (NOM-009); bóveda ≤ 60 °C o EPP térmico; cortar o soldar solo con 0 % LEL detectable (≤ 1 % de lectura).
 
 **EPP:** Casco, lentes y careta · Guantes de carnaza y de nitrilo (hidráulica) · Ropa FR y botas metatarsales · Arnés de cuerpo completo en altura · Protección auditiva · Termografía en operación: ropa aluminizada
 
@@ -223,9 +223,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno con observaciones — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

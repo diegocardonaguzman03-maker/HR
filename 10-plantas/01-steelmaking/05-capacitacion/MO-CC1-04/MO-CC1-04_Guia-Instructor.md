@@ -25,13 +25,13 @@ Mantener nivel ± 3 mm, velocidad por sobrecalentamiento y ancho, agua y polvo e
 1. **Mantener nivel y velocidad.** Nivel de molde ± 3 mm; velocidad 0.8–1.6 m/min según la tabla velocidad–SH–ancho; cambios ≤ 0.1 m/min por minuto.
 2. **Cuidar agua, polvo y enfriamiento.** Agua de molde ≥ 95 % y ΔT 6–9 °C; capa líquida 8–15 mm; secundario según modelo; enderezado HSLA ≥ 900 °C.
 3. **Responder a sticker y breakout.** Sticker: 0.3–0.5 m/min ≥ 30 s y rampa ≤ 0.2. Breakout: tapón, extracción, olla, evacuación y conteo.
-4. **Proteger al personal.** Zona de exclusión bajo el molde y segmentos 1–3 toda la colada; agua de emergencia en ≤ 15 s.
+4. **Mantener la exclusión bajo el molde.** Zona de exclusión bajo el molde y segmentos 1–3 toda la colada; agua de emergencia en ≤ 15 s.
 
 ## 3. Plan de sesión
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de breakout y fuga de agua; reglas de oro | Láminas 1–2 |
+| 1. Sesión 1 de 5: apertura y por qué importa | 30 | Casos de breakout y fuga de agua; reglas de oro | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con el molde y el perfil | Láminas 3–6 |
 | 3. Equipos y parámetros | 90 | Ejercicio: usar la tabla velocidad–SH–ancho | Láminas 7–8, tabla impresa |
 | 4. Seguridad | 60 | Árbol de decisión de emergencias | Láminas 9–10 |
@@ -195,7 +195,7 @@ Nivel requerido: **U** (escala ILUO).
 | S-13 Operador de Plataforma | U | 24 h | 160 h | 24 meses |
 | S-14 Ayudante de Colada | U | 16 h | 120 h | 24 meses |
 | C-06 Supervisor de CC | O (evaluador) | 24 h + evaluador | — | 24 meses |
-| C-08 Ingeniero de Proceso de CC | O | 40 h | — | — |
+| C-08 Ingeniero de Proceso de CC | O | 40 h | — | 24 meses |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
 
@@ -224,8 +224,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

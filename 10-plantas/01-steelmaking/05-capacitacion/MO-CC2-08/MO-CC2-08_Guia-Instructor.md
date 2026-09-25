@@ -8,7 +8,7 @@
 | Área | Colada Continua 2 · palanquilla (6 líneas) |
 | Serie | Operación |
 | Manual base | `02-operacion/cc2/MO-CC2-08-corte-marcado-lecho-enfriamiento.md` v0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-16 Corte y Marcado · S-17 Mesa y Despacho · Grúa de producto · S-12 · S-18 · C-06 |
+| Audiencia | S-16 Corte y Marcado · S-17 Mesa y Despacho · Grúa de producto 25 t (hoy S-17) · S-12 · S-18 · C-06 |
 | Presentación | MO-CC2-08_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -31,7 +31,7 @@ Cortar a 12,000 ± 50 mm en frío, marcar el 100 % de las palanquillas y despach
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de palanquillas sin identidad y de carga caída; reglas de oro | Portada y objetivos |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de palanquillas sin identidad y de carga caída; reglas de oro | Portada y objetivos |
 | 2. Roles y flujo del proceso | 60 | Recorrido del flujo con el perfil de la máquina | Roles, flujo y figura |
 | 3. Equipos y parámetros | 90 | Ejercicio: calcular el corte en caliente y el peso por palanquilla | Equipos y parámetros, calculadora |
 | 4. Seguridad | 60 | Oxicorte, izaje con electroimán y pasarelas | Seguridad, EPP físico |
@@ -48,7 +48,7 @@ Cortar a 12,000 ± 50 mm en frío, marcar el 100 % de las palanquillas y despach
 | --- | --- | --- |
 | C-06 Supervisor de Colada Continua | Autoriza cambios de longitud y la disposición de palanquillas sin marca | A |
 | S-16 Operador de Corte y Marcado | Opera oxicortes, desbarbadora y marcadora; verifica longitud y marca | R |
-| S-17 Operador de Mesa y Despacho | Opera transferencia y lecho; forma lotes; dirige la grúa; despacha | R |
+| S-17 Operador de Mesa y Despacho | Opera transferencia y lecho; forma lotes; da señales a la grúa; despacha | R |
 | Grúa de producto 25 t (propuesta S-27; hoy S-17) | Maneja la palanquilla con electroimán o tenaza | R |
 | S-12 Operador de Púlpito | Vigila el rastreo (colada por línea) y las alarmas de corte | C |
 | S-18 Inspector de Calidad | Toma muestras e inspecciona (MO-CC2-09) | C |
@@ -186,7 +186,7 @@ Nivel requerido: **U** (escala ILUO).
 | Rol | ILUO | Teoría | OJT supervisado | Vigencia |
 | --- | --- | --- | --- | --- |
 | S-16 Operador de Corte y Marcado | U | 16 h | 80 h / 10 coladas | 24 meses |
-| S-17 Operador de Mesa y Despacho | U | 16 h + grúa (40 h) | 80 h / 10 coladas | 12 meses (izaje) |
+| S-17 Operador de Mesa y Despacho | U | 16 h + grúa (40 h) | 80 h / 10 coladas | 24 meses; izaje 12 |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
 
@@ -216,8 +216,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

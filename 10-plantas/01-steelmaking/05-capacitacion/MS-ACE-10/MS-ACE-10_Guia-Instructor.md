@@ -50,7 +50,7 @@ Desde 1.8 m, 100 % conectado a un anclaje de 22.2 kN, con rescate listo en menos
 | C-16 Especialista de Seguridad | Dueño; inventario de anclajes certificados; aprueba el plan de rescate | A |
 | Emisor (C-05, C-06, C-11, C-12) | Emite el permiso; verifica anclaje, equipo, LOTO y rescate | R |
 | Trabajador autorizado y contratistas | Inspecciona su equipo; se mantiene 100 % conectado | R |
-| Supervisor u observador | Vigila la tarea; activa el rescate de inmediato | R |
+| Supervisor u observador designado | Observa la tarea; activa el rescate de inmediato | R |
 | Brigada de rescate en altura | Rescata en < 15 min | R |
 | Ingeniería / C-14 | Certifica puntos de anclaje y líneas de vida fijas | R |
 | Almacén | Controla vida útil, inspección y retiro de arneses | R |
@@ -217,9 +217,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-25 |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

@@ -31,7 +31,7 @@ Cambiar la olla sin parar las 6 líneas: distribuidor a 850 mm, cierre sin escor
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de arrastre de escoria y de olla perforada; reglas de oro | Portada y objetivos |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de arrastre de escoria y de olla perforada; reglas de oro | Portada y objetivos |
 | 2. Roles y flujo del proceso | 60 | Recorrido del flujo con la torreta y el distribuidor | Roles, flujo y figuras |
 | 3. Equipos y parámetros | 90 | Ejercicio: calcular la reserva del distribuidor en minutos | Equipos y parámetros, calculadora |
 | 4. Seguridad | 60 | Carga suspendida, zonas de exclusión y perforación de olla | Seguridad y plano de zonas |
@@ -217,8 +217,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

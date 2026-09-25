@@ -31,7 +31,7 @@ Que ningún planchón defectuoso llegue a Laminación sin disposición: detectar
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de reclamos de cliente; reglas de oro | Láminas 1–2 |
+| 1. Sesión 1 de 4: apertura y por qué importa | 30 | Casos de reclamos de cliente; reglas de oro | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo y eventos que retienen | Láminas 3–5 |
 | 3. Mapa de defectos y causas | 90 | Ejercicio: defecto → causa → disposición | Lámina 6, catálogo fotográfico |
 | 4. Equipos y parámetros | 60 | Práctica de medición con calibrador y galga | Láminas 7–8, instrumentos |
@@ -193,7 +193,7 @@ Nivel requerido: **U** (escala ILUO).
 | S-18 Inspector de Calidad | U | 32 h | 160 h / 300 planchones | 24 meses |
 | Escarpador | U | 16 h | 40 h | 24 meses |
 | S-11 Muestrero / Analista | U | 16 h | 20 muestras | 24 meses |
-| C-09 Metalurgista de Producto | O (evaluador) | 24 h | — | — |
+| C-09 Metalurgista de Producto | O (evaluador) | 24 h | — | 24 meses |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
 
@@ -220,8 +220,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

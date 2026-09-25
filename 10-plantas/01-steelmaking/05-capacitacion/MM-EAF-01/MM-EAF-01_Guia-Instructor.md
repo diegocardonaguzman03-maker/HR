@@ -8,7 +8,7 @@
 | Área | Acería · EAF-1 / EAF-2 |
 | Serie | Mantenimiento |
 | Manual base | `03-mantenimiento/MM-EAF-01-fugas-paneles-boveda.md` v0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-19 Mecánico · S-23 Soldador · S-21 Instrumentista · S-20 Electricista · S-04 Grúa de Carga · C-11 |
+| Audiencia | S-19 Mecánico · S-23 Soldador · S-21 Instrumentista · S-20 Electricista · S-04 Grúa de Carga · S-01 Primer Hornero · C-11 · C-05 |
 | Presentación | MM-EAF-01_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -31,7 +31,7 @@ Detectar, aislar y reparar la fuga sin exponer a nadie al contacto agua–metal 
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de explosión agua–metal; reglas de oro | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de explosión agua–metal; reglas de oro | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con la figura del panel | Láminas 3–6 |
 | 3. Equipos y especificaciones | 75 | Ejercicio: calcular ΔQ con lecturas de FT | Láminas 7–8, calculadora |
 | 4. Seguridad, LOTO y energía cero | 90 | Puntos E1–E6 en plano; prueba de energía cero | Láminas 9–10, candados |
@@ -224,9 +224,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

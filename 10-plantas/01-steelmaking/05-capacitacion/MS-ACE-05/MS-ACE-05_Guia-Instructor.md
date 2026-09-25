@@ -22,7 +22,7 @@ Nadie entra sin permiso, sin medir O₂ → LEL → tóxicos, sin vigía afuera 
 
 ## 2. Objetivos de aprendizaje
 
-1. **Reconocer el espacio y su peligro.** Argón en ollas, CO en ductos y casa de bolsas, O₂ bajo en silos de DRI, sepultamiento en tolvas.
+1. **Identificar el espacio y su peligro.** Argón en ollas, CO en ductos y casa de bolsas, O₂ bajo en silos de DRI, sepultamiento en tolvas.
 2. **Aislar y ventilar.** LOTO con aislamiento positivo de Ar, N₂, O₂ y gas natural; ventilar con aire, nunca con oxígeno.
 3. **Medir en orden y en tres alturas.** O₂ → LEL → tóxicos, desde afuera, arriba, en medio y abajo; entrar con O₂ 19.5–23.5 %, < 10 % LEL, CO < 25 ppm.
 4. **Vigilar y rescatar sin entrar.** Vigía dedicado afuera, comunicación cada 5 min, rescate en ≤ 10 min con malacate y ERA.
@@ -50,7 +50,7 @@ Nadie entra sin permiso, sin medir O₂ → LEL → tóxicos, sin vigía afuera 
 | C-16 Especialista de Seguridad | Dueño; inventario; aprueba el análisis de riesgo; audita | A |
 | Emisor (C-04 / C-11 / C-15) | Emite el permiso; verifica LOTO, mediciones, vigía y rescate | R |
 | Medidor (S-21 o C-16) | Mide la atmósfera en el orden y las alturas definidas | R |
-| Vigía certificado | Se queda afuera todo el tiempo; controla entradas; activa rescate | R |
+| Vigía certificado | Se queda afuera todo el tiempo; registra entradas; activa rescate | R |
 | Entrantes y contratistas | Usan detector personal; salen al primer aviso | R |
 | Brigada de rescate | Rescate con equipo en ≤ 10 min [Supuesto] | R |
 | C-15 Especialista de Refractarios | Criterios de enfriamiento y estabilidad del refractario | C |
@@ -110,7 +110,7 @@ Nadie entra sin permiso, sin medir O₂ → LEL → tóxicos, sin vigía afuera 
 | Bump test y calibración | Detector responde en 4 celdas | Diario; calibración vigente | Lectura falsa |
 | Inventario de espacios | Completo y señalizado | C-16 | Espacio no reconocido |
 | Simulacro de rescate | Rescate en ≤ 10 min | ≥ 1 por cuadrilla al año [Supuesto] | Rescate tardío |
-| Argón reconectado | 50–150 NL/min (suave) | Prueba de flujo antes del ciclo | Inclusiones, S alto |
+| Argón reconectado | Tapón 100–200 NL/min (MM-OLL-01) | Prueba de flujo antes del ciclo | Inclusiones, S alto |
 | Limpieza de olla o distribuidor | Cero objetos extraños | Inspección final | Obstrucción de buza |
 
 ### 4.7 Paso a paso
@@ -196,7 +196,7 @@ Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
 
 - [ ] Aísla el argón del tapón poroso antes de entrar a una olla
 - [ ] Mide en el orden O₂ → LEL → tóxicos y en tres alturas
-- [ ] Aplica los límites: O₂ 19.5–23.5 %, < 10 % LEL, CO < 25 ppm; caliente ≤ 1 % LEL
+- [ ] Aplica límites: O₂ 19.5–23.5 %, CO < 25 ppm; entra < 10 % LEL, caliente ≤ 1 %, evacúa ≥ 20 %
 - [ ] Confirma rescate listo (≤ 10 min), aislamiento positivo y vigía dedicado antes de entrar
 - [ ] El vigía permanece afuera y activa el rescate sin entrar
 - [ ] Sale al primer aviso sin terminar la tarea
@@ -220,9 +220,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-25 |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno con observaciones — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno con observaciones — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

@@ -8,7 +8,7 @@
 | Área | Acería · CC1, CC2 y taller de segmentos |
 | Serie | Mantenimiento |
 | Manual base | `03-mantenimiento/MM-CC-02-segmentos-guias-gap-alineacion.md` v0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-25 Mecánico de Taller · S-19 Mecánico · S-21 Instrumentista · S-22 · S-20 · S-26 Lubricador · operador de grúa de CC |
+| Audiencia | S-25 Mecánico de Taller · S-19 Mecánico · S-21 Instrumentista · S-22 Técnico Hidráulico · S-20 Electricista · S-26 Lubricador · Grúa de CC 50 t (hoy S-15) · C-11 · C-06 |
 | Presentación | MM-CC-02_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -31,7 +31,7 @@ Gap en tabla ±0.5 mm, línea alineada al radio y rodillos que giran libres, sin
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Defectos internos por gap y alineación | Láminas 1–2 |
+| 1. Sesión 1 de 4: apertura y por qué importa | 30 | Defectos internos por gap y alineación | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con la figura del gap | Láminas 3–6 |
 | 3. Equipos y especificaciones | 90 | Lectura de un reporte del gap checker | Láminas 7–8, reporte |
 | 4. Seguridad, LOTO y energía cero | 75 | Siete energías; cámara de rociado; barra falsa | Láminas 9–10, candados |
@@ -50,10 +50,10 @@ Gap en tabla ±0.5 mm, línea alineada al radio y rodillos que giran libres, sin
 | C-11 Supervisor de Mantenimiento Mecánico | Dueño; programa de segmentos y liberación | A |
 | S-25 Mecánico de Taller de Segmentos | Reconstrucción, gap en banco y prueba de boquillas | R |
 | S-19 Mecánico de Acería | Cambio en máquina, alineación y conexiones | R |
-| S-22 / S-20 | Cilindros de apriete y acumuladores; motores y LOTO eléctrico | R |
+| S-22 Hidráulico / S-20 Electricista | Cilindros de apriete y acumuladores; motores y LOTO eléctrico | R |
 | S-21 Instrumentista | Gap checker y transductores de posición | R |
 | S-26 Lubricador | Sistema de lubricación aire-aceite o grasa | R |
-| Operador de grúa de CC (50 t) | Iza el segmento | R |
+| Grúa de CC 50 t (hoy S-15; S-27 propuesto) | Iza el segmento | R |
 | C-06 Supervisor de CC | Entrega la máquina vacía y firma la liberación | A (operación) |
 
 ### 4.2 Flujo del proceso
@@ -190,11 +190,11 @@ Nivel requerido: **U** (escala ILUO).
 | Rol | ILUO | Teoría | OJT supervisado | Vigencia |
 | --- | --- | --- | --- | --- |
 | S-25 Mecánico de Taller | U | 32 h | 80 h / 3 reconst. + 2 alin. | 24 meses |
-| S-19 Mecánico de Acería | U | 16 h | 3 cambios | 24; izaje, altura, confinado 12 |
+| S-19 Mecánico de Acería | U | 16 h | 3 cambios | 24 meses; izaje, altura y confinado 12 |
 | S-21 Instrumentista | U | 8 h | 3 corridas | 24 meses |
-| S-22 / S-20 | U | 16 h / NOM-029 + 4 h | 2 intervenciones / 3 bloqueos | 24 / 12 meses |
+| S-22 Hidráulico / S-20 Electricista | U | 16 h / NOM-029 + 4 h | 2 intervenciones / 3 bloqueos | S-22: 24 · S-20: 12 meses |
 | S-26 Lubricador | L | 8 h | 2 intervenciones | 24 meses; alturas 12 |
-| Operador de grúa de CC | U | NOM-006 | 3 izajes de segmento | 12 meses |
+| Grúa de CC (hoy S-15) | U | NOM-006 | 3 izajes de segmento | 12 meses |
 
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
 
@@ -224,9 +224,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

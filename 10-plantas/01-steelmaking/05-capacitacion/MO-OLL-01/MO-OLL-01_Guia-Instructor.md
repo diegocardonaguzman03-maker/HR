@@ -31,7 +31,7 @@ Entregar una olla seca, a 1,000–1,100 °C, con válvula probada, arena de sell
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de olla húmeda y perforación | Láminas 1–2 |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de olla húmeda y perforación | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del ciclo de la olla | Láminas 3–6 |
 | 3. Refractarios y criterios de retiro | 75 | Desgaste, espesores y termografía | Muestras de refractario |
 | 4. Equipos y parámetros | 60 | Válvula, tapón y plan de precalentamiento | Láminas 7–8 |
@@ -91,7 +91,7 @@ Entregar una olla seca, a 1,000–1,100 °C, con válvula probada, arena de sell
 | Prueba del tapón | 100–200 NL/min [Supuesto] | Presión según OEM | Caudal bajo, presión alta | Limpiar con O₂ o cambiar |
 | Humedad de la arena | ≤ 0.2 % [Supuesto] | — | > 0.5 % | No usar; cambiar el lote |
 
-> Olla nueva o revestida: curva completa, típico 24–48 h [Validar con OEM / Ingeniería de Proceso]. Barril ≥ 40 mm [Supuesto]; placas 2–5 coladas [Validar con OEM].
+> Olla nueva: curva completa, típico 24–48 h [Validar con OEM / Ingeniería de Proceso]. Barril ≥ 40 mm [Supuesto]; placas 2–5 coladas [Validar con OEM].
 
 ### 4.5 Seguridad: controles críticos
 
@@ -186,7 +186,7 @@ Nivel requerido: **U** (escala ILUO).
 | Rol | ILUO | Teoría | OJT supervisado | Vigencia |
 | --- | --- | --- | --- | --- |
 | S-08 Preparador de Ollas | U | 24 h | 120 h / 40 ollas | 24 meses |
-| S-24 Refractarista | U | 24 h | 120 h / 30 cambios de placas | 24 meses; olla 12 |
+| S-24 Refractarista | U | 24 h | 120 h / 30 cambios de placas | 24 meses; confinado 12 |
 | S-09 Grúa de Colada | U | según MO-OLL-02 | 20 volteos | 12 meses |
 | C-15 Especialista de Refractarios | O (evaluador) | 32 h + evaluador | — | 24 meses |
 
@@ -218,8 +218,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

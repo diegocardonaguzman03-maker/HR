@@ -8,7 +8,7 @@
 | Área | Colada Continua 1 · planchón |
 | Serie | Operación |
 | Manual base | `02-operacion/cc1/MO-CC1-03-arranque-colada.md` v0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-13 Operador de Plataforma · S-12 Operador de Púlpito · S-14 Ayudante de Colada · S-09 Grúa de Colada · C-06 |
+| Audiencia | S-13 Operador de Plataforma · S-12 Operador de Púlpito · S-14 Ayudante de Colada · S-09 Grúa de Colada · S-11 Muestrero · C-06 |
 | Presentación | MO-CC1-03_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -31,7 +31,7 @@ Abrir olla y distribuidor y llenar el molde sin fugas ni explosiones, con nivel 
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de fuga y breakout en arranque; reglas de oro | Láminas 1–2 |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de fuga y breakout en arranque; reglas de oro | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con las figuras de arranque | Láminas 3–6 |
 | 3. Equipos y parámetros | 75 | Ejercicio: calcular la T objetivo con el líquidus | Láminas 7–8, calculadora |
 | 4. Seguridad | 75 | Zona roja en plano; EPP de lanceado | Láminas 9–10, EPP físico |
@@ -222,8 +222,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

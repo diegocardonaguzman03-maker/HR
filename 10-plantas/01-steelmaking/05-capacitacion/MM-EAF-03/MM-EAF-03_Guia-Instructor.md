@@ -8,7 +8,7 @@
 | Área | Acería · EAF-1 / EAF-2 |
 | Serie | Mantenimiento |
 | Manual base | `03-mantenimiento/MM-EAF-03-refractario-eaf-solera-ebt-gunning.md` v0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25) |
-| Audiencia | S-24 Refractarista · S-03 Ayudante de Horno · S-20 Electricista · S-04 Grúa de Carga · C-15 · C-05 |
+| Audiencia | S-24 Refractarista · S-03 Ayudante de Horno · S-01 Primer Hornero · S-19 Mecánico · S-20 Electricista · S-04 Grúa de Carga · C-15 · C-05 |
 | Presentación | MM-EAF-03_Capacitacion_AMMX.pptx (estándar AMMX) |
 | Estado | Borrador para validación: no se usa en planta hasta validar los valores marcados |
 
@@ -31,7 +31,7 @@ Espesor suficiente para no perforar el horno y un EBT que vacía limpio, con mat
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de perforación y explosión por humedad | Láminas 1–2 |
+| 1. Sesión 1 de 3: apertura y por qué importa | 30 | Casos de perforación y explosión por humedad | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con el corte del EBT | Láminas 3–6 |
 | 3. Equipos y especificaciones | 90 | Materiales MgO y MgO-C; lectura de perfil láser | Láminas 7–8, reporte láser |
 | 4. Seguridad, LOTO y energía cero | 75 | Horno basculado; zona bajo el EBT; gases | Láminas 9–10, detector |
@@ -223,9 +223,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

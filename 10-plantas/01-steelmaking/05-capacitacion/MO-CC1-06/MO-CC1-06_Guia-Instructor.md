@@ -31,7 +31,7 @@ Manejar el clogging y cambiar SEN o distribuidor sin perder la secuencia, sin re
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de clogging y breakout en la unión | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de clogging y breakout en la unión | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido de las tres maniobras con las figuras | Láminas 3–6 |
 | 3. Equipos y parámetros | 90 | Ejercicio: leer una tendencia del tapón | Láminas 7–8, tendencias reales |
 | 4. Seguridad | 60 | Zona roja del frente y exclusión bajo el molde | Láminas 9–10, EPP físico |
@@ -222,8 +222,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

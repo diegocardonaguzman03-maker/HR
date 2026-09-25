@@ -22,7 +22,7 @@ Nadie en zona roja sin autorización, sin EPP aluminizado seco y sin ruta de esc
 
 ## 2. Objetivos de aprendizaje
 
-1. **Reconocer las tres zonas.** Roja: solo personal esencial con EPP aluminizado. Amarilla: autorizado tras barrera. Verde: tránsito con EPP básico.
+1. **Señalar las tres zonas en campo.** Roja: solo personal esencial con EPP aluminizado. Amarilla: autorizado tras barrera. Verde: tránsito con EPP básico.
 2. **Aplicar las distancias por operación.** Vaciado roja ≤ 10 m y amarilla 10–25 m; ruta de olla ± 5 / ± 15 m; arranque de CC ≤ 10 / 20 m.
 3. **Preparar el evento sin exponer a nadie.** Barreras, zona roja vacía (visual + CCTV), sirena y semáforo ≥ 30 s antes; ruta de escape libre.
 4. **Reaccionar a tiempo.** Máximo 2 min en roja por intervención; ante perforación, fuga o ebullición, a refugio o verde en ≤ 30 s.
@@ -128,7 +128,7 @@ Nadie en zona roja sin autorización, sin EPP aluminizado seco y sin ruta de esc
 | 8 | Opera desde posición protegida | Púlpito o posición marcada; ruta de escape a la espalda y libre | Operador protegido | ★ | Operadores |
 | 9 | Muestrea o mide temperatura | De lado a la puerta, a ≥ 1.5 m; lanza seca y precalentada; máximo 2 min en roja | Sin exposición prolongada | ★ | S-02/S-06/S-11 |
 | 10 | Traslada la olla | Solo por ruta pintada, altura mínima con ≥ 1 m de holgura; detente si alguien cruza | Nadie bajo la ruta | ★ | S-09 |
-| 11 | Arranca la CC | Solo S-12, S-13, S-14 y C-06 en roja; nadie bajo la máquina hasta que C-06 libere | Sin personal no esencial | ★ | C-06 |
+| 11 | Arranca la CC | Solo S-12, S-13, S-14 y C-06 en roja; nadie bajo la máquina hasta que la hebra salga de extractores y C-06 libere | Sin personal no esencial | ★ | C-06 |
 | 12 | Vigila condiciones anormales | Punto rojo en coraza, humo en válvula, vapor, chispeo o ruido de ebullición: responde | Respuesta ≤ 30 s | ★ | Todos |
 | 13 | Cierra el evento | Semáforo a verde, retira barreras temporales, registra hora y anomalías | Registro completo |  | S-01 / S-12 |
 
@@ -197,8 +197,8 @@ Nivel requerido: **U** (escala ILUO).
 Lista de verificación de pasos ★ (todos deben demostrarse correctamente):
 
 - [ ] Inspecciona el EPP aluminizado y rechaza el húmedo o dañado
-- [ ] Verifica que la zona roja está vacía antes de iniciar (visual + CCTV)
-- [ ] Anuncia y espera ≥ 30 s con sirena y semáforo
+- [ ] Cierra accesos con barreras y verifica la zona roja vacía (visual + CCTV) antes de iniciar
+- [ ] Prueba sirena, semáforo y CCTV al inicio del turno; anuncia y espera ≥ 30 s
 - [ ] Trabaja desde la posición protegida con la ruta de escape libre y ≤ 2 min en roja
 - [ ] Traslada la olla solo por la ruta pintada, con ≥ 1 m de holgura, y se detiene si alguien cruza
 - [ ] Reconoce las señales de perforación de olla y reacciona en ≤ 30 s
@@ -222,9 +222,9 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
-| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | Pendiente |
-| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-25 |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-26 |
+| Seguridad | experto-seguridad-salud | visto bueno con observaciones — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 

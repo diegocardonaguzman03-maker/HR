@@ -31,7 +31,7 @@ Agregar electrodos de 610 mm con el torque del fabricante y sin holgura, para ev
 
 | Bloque | Min | Actividad | Recurso |
 | --- | --- | --- | --- |
-| 1. Apertura y por qué importa | 30 | Casos de rotura y caída de electrodo | Láminas 1–2 |
+| 1. Sesión 1 de 2: apertura y por qué importa | 30 | Casos de rotura y caída de electrodo | Láminas 1–2 |
 | 2. Roles y flujo del proceso | 45 | Recorrido del flujo con la figura del empalme | Láminas 3–6 |
 | 3. Equipos y parámetros | 60 | Electrodos y niples: recepción y almacenamiento | Láminas 7–8 |
 | 4. Seguridad | 75 | Llave cautiva vs. LOTO; altura en método B | Láminas 9–10, EPP y arnés |
@@ -185,8 +185,8 @@ Nivel requerido: **U** (escala ILUO).
 
 | Rol | ILUO | Teoría | OJT supervisado | Vigencia |
 | --- | --- | --- | --- | --- |
-| S-02 Segundo Hornero | U | 12 h | 30 h / 10 empalmes | 24 meses; altura 12 |
-| S-03 Tercer Hornero | U | 8 h | 20 h / 10 empalmes | 24 meses; altura 12 |
+| S-02 Segundo Hornero | U | 12 h | 30 h / 10 empalmes | 24 meses; altura y señalero 12 |
+| S-03 Tercer Hornero | U | 8 h | 20 h / 10 empalmes | 24 meses; altura e izaje 12 |
 | S-04 Grúa de Carga | U | NOM-006 + grúa | 10 maniobras de electrodo | 12 meses |
 | C-05 Supervisor de Hornos | O (evaluador) | 8 h + evaluador | — | 24 meses |
 
@@ -218,8 +218,8 @@ Resultado: ☐ Competente (registro en IMaS y DC-3/SIRCE en ≤ 10 días hábile
 | Revisión | Responsable | Estado |
 | --- | --- | --- |
 | Técnica (operación, metalurgia y control de proceso) | experto-operativo-metalurgia | visto bueno — 2026-09-25 |
-| Seguridad | experto-seguridad-salud | Pendiente |
-| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | Pendiente |
-| Diseño instruccional y formato | experto-documentacion-mejora | Pendiente |
+| Seguridad | experto-seguridad-salud | visto bueno — 2026-09-26 |
+| Laboral (roles, certificación, escalafón) | experto-relaciones-laborales | visto bueno con observaciones — 2026-09-26 |
+| Diseño instruccional y formato | experto-documentacion-mejora | visto bueno — 2026-09-26 |
 | Aprobación | Director de C&D | Pendiente |
 
