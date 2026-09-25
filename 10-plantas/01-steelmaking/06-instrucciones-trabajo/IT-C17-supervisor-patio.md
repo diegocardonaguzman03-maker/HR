@@ -14,7 +14,7 @@
 | Manuales de referencia | Supervisa (R): MO-EAF-02, MS-ACE-01, 02, 03, 04, 06, 07, 08, 09, 10. Informado: MO-EAF-03. FT-ACE-001 v0.3 |
 | Elaboró | experto-operativo-metalurgia (con enfoque de diseño de capacitación) |
 | Revisión técnica | experto-operativo-metalurgia — visto bueno, 2026-09-25 |
-| Revisión de seguridad | Pendiente — experto-seguridad-salud |
+| Revisión de seguridad | experto-seguridad-salud — visto bueno (con observaciones), 2026-09-26 |
 | Revisión laboral | experto-relaciones-laborales — visto bueno (con observaciones), 2026-09-26 |
 | Aprobó | Pendiente — Director |
 
@@ -171,6 +171,11 @@ flowchart LR
 | 4 | Llevo a mi gente al punto de reunión y cuento. | Conteo completo ≤ 10 min, incluidos choferes y contratistas | ★ |
 | 5 | Reporto faltantes al CI y no reingreso sin su autorización. | Reingreso autorizado por C-04 | |
 
+> **🛑 ALTO — detén y avisa si…**
+> - Alguien quiere tocar, cortar o mover una pieza con alarma radiológica: solo el ESR (C-16) la maneja.
+> - Falta una persona en el conteo: búsqueda dirigida por la brigada, nunca individual.
+> - Hay fuego o fuga en el oxicorte: aísla gas y O₂ si es seguro y espera a la brigada; nadie regresa sin autorización del CI.
+
 ### Tarea 6 — Inventario y entrega de turno
 
 ```mermaid
@@ -183,6 +188,11 @@ flowchart LR
 | 1 | Reviso el inventario de chatarra por tipo, fundentes y ferroaleaciones. | Exactitud ± 2% [Supuesto] | 🔎 |
 | 2 | Coordino con Compras y con la planta DRI los faltantes. | Pedido o aviso registrado | |
 | 3 | Cierro la bitácora y entrego cara a cara. | Rechazos abiertos, alarmas, canastas listas, equipos fuera de servicio | ★ |
+
+> **🛑 ALTO — detén y avisa si…**
+> - Hay un camión retenido por el pórtico sin la liberación del ESR: sigue aislado y se entrega como pendiente crítico.
+> - Hay una canasta que goteó sin escurrir o un lote rechazado sin separar: no se libera al horno.
+> - El pórtico o una grúa del patio quedaron fuera de servicio: comunícalo por escrito a C-05 y al C-17 entrante.
 
 ## 7. Mis controles críticos (★)
 
