@@ -16,6 +16,7 @@ Este repositorio contiene el diseño del departamento de Capacitación y Desarro
    ┌──────────────── Staff de expertos (asesoría transversal) ────────────────┐
    │ experto-seguridad-salud      experto-liderazgo-cambio                      │
    │ experto-documentacion-mejora experto-relaciones-laborales                  │
+   │ experto-operativo-metalurgia (operación, control de proceso, metalurgia)   │
    └────────────────────────────────────────────────────────────────────────────┘
                  │                                           │
    gerente-personal-sindicalizado               gerente-personal-confianza
@@ -29,6 +30,7 @@ Este repositorio contiene el diseño del departamento de Capacitación y Desarro
 | `experto-liderazgo-cambio` | Experto en liderazgo y gestión del cambio | Escuela de supervisores, programas de liderazgo, sucesión, planes de gestión del cambio y comunicación |
 | `experto-documentacion-mejora` | Experto en documentación y mejora de procesos de capacitación | Procedimientos, manuales, auditorías, indicadores, A3/PDCA, ISO 10015/9001/45001, control documental |
 | `experto-relaciones-laborales` | Experto en relaciones laborales y capacitación sindicalizada | LFT, CCT, escalafón, CMCAP, DC-2/3/4, negociación con el sindicato, riesgos laborales |
+| `experto-operativo-metalurgia` | Experto operativo de planta, ingeniero de control de proceso y metalurgista | Fichas técnicas, parámetros de proceso, manuales de operación y mantenimiento, metalurgia y defectos de calidad. Da el visto bueno técnico a todo documento operativo |
 | `gerente-personal-sindicalizado` | Gerente de C&D para personal sindicalizado | Planes, presupuesto y resultados de capacitación de trabajadores sindicalizados; coordina su equipo |
 | `sind-procesos` | Célula de Procesos (sindicalizados) | DNC por categoría, plan DC-2, DC-3/DC-4, certificación, OJT, registros LMS |
 | `sind-servicio-clientes` | Célula de Servicio a Clientes Internos (sindicalizados) | Atención a Minas, Peletizadora, Acería, Laminación y Mantenimiento: solicitudes, planes por área, reportes |
@@ -41,12 +43,12 @@ La estructura de expertos + 2 gerencias es la oficial. En ella se acomodaron las
 - Experto Documentación y Mejora = ex TD-14; dirige el Centro de Diseño, Plataformas y Datos (TD-02 a TD-07, TD-16, TD-17).
 - Gerente Sindicalizado = ex TD-08; le reportan los superintendentes TD-S01 a S04, TD-09, TD-10 y TD-15.
 - Gerente de Confianza = ex TD-11; le reportan TD-13, TD-12 y TD-S05.
-- Expertos de Seguridad y Salud, Liderazgo y Cambio y Relaciones Laborales = plazas nuevas.
+- Expertos de Seguridad y Salud, Liderazgo y Cambio, Relaciones Laborales y Operativo/Metalurgia = plazas nuevas (total 68).
 
 ## Cómo se trabaja (flujo de orquestación)
 1. El Director hace un encargo. La sesión principal identifica qué agentes intervienen y los lanza **en paralelo** cuando sus tareas son independientes.
 2. Los **gerentes** definen el enfoque y reparten el trabajo entre sus células. Los **expertos** revisan la calidad técnica: seguridad, liderazgo, procesos o laboral, según el tema.
-3. Cualquier tema que toque al personal sindicalizado **debe** pasar por `experto-relaciones-laborales`. Cualquier tema con riesgo físico **debe** pasar por `experto-seguridad-salud`.
+3. Cualquier tema que toque al personal sindicalizado **debe** pasar por `experto-relaciones-laborales`. Cualquier tema con riesgo físico **debe** pasar por `experto-seguridad-salud`. Cualquier documento operativo o técnico de planta **debe** pasar por `experto-operativo-metalurgia`.
 4. La sesión principal consolida el resultado en **un solo entregable** para el Director, con la sección de decisión.
 5. Los entregables se guardan en `entregables/AAAA-MM-DD-tema/` y el seguimiento en `equipo-director/seguimiento-objetivos.md`.
 

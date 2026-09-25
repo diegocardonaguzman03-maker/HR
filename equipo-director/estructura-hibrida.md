@@ -9,7 +9,7 @@
 3. **Servicios compartidos en staff:** lo que usan las dos gerencias (diseño instruccional, LMS, VR, datos) queda con un experto de staff, no duplicado.
 4. **Sin romper la operación:** los superintendentes, coordinadores e instructores siguen en sus sitios con sus carteras. Cambia a quién reportan y a qué célula pertenecen.
 
-## 2. Organigrama híbrido (67 plazas)
+## 2. Organigrama híbrido (68 plazas)
 
 ```mermaid
 flowchart TB
@@ -20,6 +20,7 @@ flowchart TB
         EL["Experto Liderazgo y Cambio<br/>PLAZA NUEVA"]:::exp
         ED["Experto Documentación y Mejora<br/>ex TD-14 Gte. Cumplimiento y Analítica<br/>+ Centro de Diseño, Plataformas y Datos"]:::exp
         ER["Experto Relaciones Laborales<br/>PLAZA NUEVA"]:::exp
+        EO["Experto Operativo, Control de Proceso<br/>y Metalurgia — PLAZA NUEVA"]:::exp
     end
     DIR --- STAFF
 
@@ -48,7 +49,7 @@ flowchart TB
     classDef site fill:#f57c00,color:#fff,stroke:#e65100
 ```
 
-**Reportes directos al Director:** 6 (4 expertos + 2 gerentes), frente a 9 en el diseño anterior.
+**Reportes directos al Director:** 7 (5 expertos + 2 gerentes), frente a 9 en el diseño anterior.
 
 ## 3. Acomodo de las 64 plazas anteriores y las 3 nuevas
 
@@ -78,7 +79,8 @@ flowchart TB
 | **Nueva** | **Experto Seguridad y Salud** | +1 plaza |
 | **Nueva** | **Experto Liderazgo y Cambio** | +1 plaza |
 | **Nueva** | **Experto Relaciones Laborales** (puede venir de Relaciones Laborales corporativas por transferencia, sin plaza nueva) | +1 plaza (o 0 si es transferencia) |
-| **Total** | **67 plazas** (64 + 3) | |
+| **Nueva (agregada por el Director)** | **Experto Operativo de Planta, Control de Proceso y Metalurgia**: custodio de las fichas técnicas y de los manuales de operación de `10-plantas/` | +1 plaza |
+| **Total** | **68 plazas** (64 + 4) | |
 
 ## 4. Coordinadores de sitio por célula
 
