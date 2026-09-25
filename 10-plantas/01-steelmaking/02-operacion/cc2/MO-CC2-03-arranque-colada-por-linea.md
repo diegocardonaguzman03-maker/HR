@@ -47,6 +47,12 @@ sequenceDiagram
 
 ![Figura 1. Perfil de una línea de la CC2](../../img/cc2-perfil-maquina.svg)
 
+**Por qué importa (para aprender):**
+- **Llenado rápido, extracción a tiempo.** El molde de 160 × 160 mm se llena en 25–40 s. Si arrancas tarde, desborda; si arrancas temprano, la cabeza no se ancla y la piel se rompe.
+- **La rampa protege la piel.** En los primeros minutos la piel es delgada; subir de golpe a 3.0 m/min la saca del molde sin espesor suficiente y provoca breakout.
+- **Centro primero.** L3 y L4 están junto a la zona de impacto y reciben acero caliente; L1 y L6 son las más frías. Abrirlas en ≤ 3 min evita que su buza se congele.
+- **La primera palanquilla ("A")** tiene la cabeza, la chatarra de enfriamiento y el acero del arranque: se despunta y se inspecciona aparte.
+
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|
@@ -138,8 +144,8 @@ Chamarra, pantalón o polainas aluminizados, careta con visor dorado o filtro IR
 | Chorro abierto o en "abanico" | Buza dañada, parcialmente tapada o desalineada | Cambia la buza (MO-CC2-06) | C-06 |
 | Nivel sube sin control o molde a punto de desbordar | Extracción tarde, buza grande | Aumenta la velocidad; si llega a 60 mm bajo el borde: 🛑 cierra la línea con placa ciega | C-06 |
 | Fuga en la cabeza de la barra falsa (acero bajo el molde) | Sello mal hecho, cabeza descentrada | 🛑 Cierra la línea; evacúa bajo la plataforma | C-06 |
-| Breakout al arranque (debajo del molde) | Rampa rápida, poco aceite, nivel bajo | 🛑 Cierra la línea, detén su extracción, mantén el agua de molde; nadie en la fosa | C-06, C-04 |
-| Falla de agua de molde o apagón | Bombas, energía | 🛑 Verifica la entrada del agua de emergencia en ≤ 15 s; cierra la olla, cierra las 6 líneas con placa ciega, evacúa la plataforma (MS-ACE-09) | C-04, C-06 |
+| Breakout al arranque (debajo del molde) | Rampa rápida, poco aceite, nivel bajo | 🛑 Cierra la línea, detén su extracción, mantén el agua de molde y la secundaria; evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09); el ESR inspecciona el contenedor de Cs-137 | C-06, C-04, ESR |
+| Falla de agua de molde o apagón | Bombas, energía | 🛑 Verifica la entrada del agua de emergencia en ≤ 15 s; cierra la olla, cierra las 6 líneas con placa ciega, evacúa la plataforma de molde a ≥ 10 m (MS-ACE-09); no reintroduzcas agua a un molde sobrecalentado sin autorización de C-06/C-08 | C-04, C-06 |
 | Sobrecalentamiento < 15 °C | Olla fría, retraso | C-06 decide arrancar menos líneas o regresar la olla | C-06, C-07 |
 | La barra falsa no se desacopla | Cabeza mal sellada, deformada | Detén la línea antes del estacionamiento; mantenimiento libera | C-06, C-11 |
 | Rearranque de una línea en secuencia | Línea cerrada por falla | Con autorización de C-06: reinserta la barra falsa (MO-CC2-02) y repite los pasos 9–14 en esa línea [Validar OEM] | C-06 |

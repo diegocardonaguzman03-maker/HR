@@ -78,6 +78,16 @@ flowchart TD
 | Tiempo de análisis | min | ≤ 4 [Supuesto] | 3–5 | > 6 | Avisa a S-11; S-01 decide con O y T | Nivel 2 |
 | Diferencia T entre dos lecturas consecutivas sin energía | °C | ≤ 5 | — | > 10 | Revisa lote de sondas y profundidad | HMI |
 
+**Interpretación de curvas de medición** [Validar con proveedor de sondas]:
+
+| Forma de la curva | Significado | Acción |
+|---|---|---|
+| Subida rápida y meseta plana de ≥ 1.5 s | Lectura válida | Registrar |
+| Subida lenta sin meseta | Sonda en escoria o inmersión insuficiente | Repetir con mayor profundidad |
+| Picos y caídas bruscas | Contacto intermitente o termopar dañado | Limpiar contactos; nueva sonda |
+| Meseta baja y luego subida | Sonda húmeda o recubrimiento de escoria | Desechar lote si se repite; revisar almacén |
+| Señal de O inestable | Celda dañada o T no estabilizada | Repetir; no usar para cálculo de Al |
+
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |

@@ -27,16 +27,18 @@ Asegurar que cada olla que entra al ciclo tiene: válvula deslizante que abre y 
 ## 3. Descripción del proceso
 Después de cada colada la olla pasa por la estación de preparación: se inspecciona la válvula y el refractario, se decide si sigue en ciclo, si cambia placas/tapón, o si va a reparación. Con el termoescáner de coraza y la medición de espesor se decide la reparación intermedia o el reline.
 
+![Figura 1. Corte de la olla: refractario, válvula deslizante y tapón poroso](../../img/olla-corte-valvula-tapon.svg)
+
 ```mermaid
 flowchart TD
     A["Olla vacía<br/>tras colar en CC"] --> B["Volteo y limpieza de escoria"]
     B --> C["Inspección: placas, buza colectora,<br/>tapón, línea de escoria, termoescáner"]
     C --> D{"¿Placas dentro de criterio?"}
     D -- "No" --> E["Cambio de placas y colectora"]
-    D -- "Sí" --> F{"¿Tapón pasa argón<br/>≥ caudal mínimo?"}
+    D -- "Sí" --> F{"¿Tapón pasa argón<br/>100–200 NL/min?"}
     E --> F
     F -- "No" --> G["Limpieza o cambio de tapón"]
-    F -- "Sí" --> H{"¿Espesor residual ≥ 50 mm<br/>y coraza ≤ 350 °C?"}
+    F -- "Sí" --> H{"¿Espesor residual en criterio<br/>y coraza ≤ 350 °C?"}
     G --> H
     H -- "No" --> I["Reparación intermedia o reline<br/>(espacio confinado)"]
     H -- "Sí" --> J["Prueba de válvula 3 carreras<br/>+ arena (MO-OLL-01)"]
@@ -52,8 +54,8 @@ flowchart TD
 | Placa fija y placa móvil (2 o 3 placas) | Abrir, regular y cerrar el chorro | Barreno nominal según diseño (típ. Ø 60–75 mm [Validar]) | Dentro de criterio de desgaste (§5) |
 | Buza colectora | Guiar el chorro al tubo protector | Unida a la placa móvil | Sin erosión > 5 mm en asiento del tubo protector |
 | Mecanismo de la válvula (marco, resortes, cilindro) | Apretar placas y deslizar | Fuerza de resortes según OEM | Carrera completa, sin trabarse |
-| Tapón poroso (y bloque de tapón) | Inyectar argón | Cambiable desde afuera [Validar] | Caudal ≥ mínimo a presión de prueba; residual ≥ 150 mm |
-| Revestimiento de trabajo | Contener acero y escoria | MgO-C (escoria), Al₂O₃-MgO-C (barril/fondo) | Espesor residual ≥ 50 mm |
+| Tapón poroso (y bloque de tapón) | Inyectar argón | Cambiable desde afuera [Validar] | Caudal 100–200 NL/min a presión de prueba; residual ≥ 150 mm |
+| Revestimiento de trabajo | Contener acero y escoria | MgO-C (escoria), Al₂O₃-MgO-C (barril/fondo) | Residual: escoria ≥ 50 mm, barril ≥ 40 mm |
 | Revestimiento de seguridad | Respaldo | Ladrillo de alta alúmina [Validar] | Sin exposición |
 | Coraza y muñones | Soporte e izaje | Acero estructural | Sin grietas; muñones con END vigente |
 | Termoescáner de coraza | Detectar zonas delgadas | En estación de preparación | Calibrado |
@@ -67,14 +69,14 @@ flowchart TD
 | Surco de erosión en la carrera (cara deslizante) | mm prof. | 0 | ≤ 2 | **> 3 mm o llega al 50 % de la longitud de sello** | Cambio de placas | Profundímetro | Cada colada |
 | Longitud de sello remanente (placa cerrada) | mm | ≥ 50 | ≥ 40 | **< 35 mm [Validar]** | Cambio de placas | Regla | Cada colada |
 | Grietas en placas | — | Ninguna | Capilares no pasantes | **Grieta radial hasta el borde o pasante** | Cambio | Visual | Cada colada |
-| Vida de placas | coladas | 3–6 [Validar] | — | Criterio por desgaste | — | Registro | Por juego |
+| Vida de placas | coladas | 2–5 [Validar] (coherente con MO-OLL-01) | — | Criterio por desgaste | — | Registro | Por juego |
 | Junta de mortero placa–buza | mm | ≤ 1 | — | > 1.5 | Rehacer | Lainas | Cada cambio |
 | Carrera de la válvula | mm | Carrera OEM | 100 % | Traba o carrera incompleta | 🛑 No liberar | Regla / HMI | Cada cambio y cada olla |
 | Fuerza de apriete de resortes | kN | OEM | ±10 % | < 90 % | Cambiar resortes | Dispositivo de medición OEM | Cada cambio de placas |
 | Presión del cilindro para deslizar | bar | OEM | ≤ 1.2 × valor normal | > 1.5 × | Revisar placas, lubricación, mecanismo | Manómetro | Cada prueba |
-| Caudal del tapón poroso (prueba en frío/caliente) | NL/min @ bar | ≥ 200 @ 3 bar [Validar] | ≥ 150 @ 3 bar | < 150 o sin burbujeo | Limpieza (lanceo) o cambio | Rotámetro / FT + manómetro | Cada colada (en LF) · cada cambio |
+| Caudal del tapón poroso (prueba en frío/caliente) | NL/min a presión de prueba OEM | 150–200 [Supuesto] | 100–200 (MO-OLL-01) | < 100 o sin burbujeo | Limpieza (lanceo) o cambio | Rotámetro / FT + manómetro | Cada colada (en LF) · cada cambio |
 | Longitud residual del tapón | mm | ≥ 200 | ≥ 150 | Indicador de desgaste visible | Cambio | Regla / indicador | Cada 5 coladas |
-| Espesor residual del revestimiento | mm | ≥ 80 | ≥ 50 | **< 50: retirar de ciclo** | Reparación / reline | Láser o medición manual | Semanal por olla |
+| Espesor residual del revestimiento | mm | ≥ 80 | Línea de escoria ≥ 50; barril ≥ 40 [Supuesto, igual que MO-OLL-01] | **Línea de escoria < 50 o barril < 40: retirar de ciclo** | Reparación / reline | Láser o medición manual | Semanal por olla |
 | Temperatura de coraza (termoescáner) | °C | ≤ 300 | ≤ 350 | Alarma > 350; **🛑 > 400** | Retirar de ciclo | Termoescáner | Cada colada |
 | Vida de campaña | coladas | 60–80 | — | Criterio por espesor | Reline | Registro | Por olla |
 | Precalentamiento antes de recibir acero | °C | 1,050 | 1,000–1,100 | < 1,000 °C | Seguir precalentando; olla fría > 4 h: ≥ 8 h | Termopar / pirómetro | Cada olla |
@@ -86,7 +88,7 @@ flowchart TD
 |---|---|---|---|---|
 | Inspección posvaciado de placas, colectora, línea de escoria | Cada colada | S-08 | 10 min | Estación de preparación |
 | Termoescáner de coraza | Cada colada | Automático / S-08 | 2 min | Tras vaciado |
-| Cambio de placas y colectora | 3–6 coladas o por condición | S-24 / S-08 | 30–45 min | Olla fuera de ciclo en caliente |
+| Cambio de placas y colectora | 2–5 coladas o por condición | S-24 / S-08 | 30–45 min | Olla fuera de ciclo en caliente |
 | Prueba de caudal del tapón | Cada colada | S-06 (LF) / S-08 | 2 min | LF / preparación |
 | Cambio de tapón poroso | Por condición | S-24 | 45–60 min | Olla en caliente fuera de ciclo |
 | Medición de espesores | Semanal por olla | S-24 / C-15 | 20 min | Taller |
@@ -136,15 +138,15 @@ Ropa aluminizada en olla caliente, careta con visor dorado, guantes aluminizados
 | 6 | Coloca placas nuevas | Verifica lote, planitud visual, mortero ≤ 1 mm; orientación correcta | Placas asentadas | ★ | S-24 |
 | 7 | Cierra el marco | Aprieta resortes a la fuerza OEM; verifica con dispositivo | Fuerza ±10 % | ★ | S-24 |
 | 8 | Prueba de carrera | Conecta cilindro; abre/cierra 3 veces; presión ≤ 1.2 × normal | Carrera completa, cierre total | ★ | S-08 |
-| 9 | Revisa el tapón | Conecta argón; prueba caudal a 3 bar | ≥ 150 NL/min (objetivo ≥ 200) | 🔎 | S-08 |
+| 9 | Revisa el tapón | Conecta argón; prueba caudal a la presión de prueba OEM | 100–200 NL/min | 🔎 | S-08 |
 | 10 | Cambia el tapón (si aplica) | Retira desde afuera con extractor; limpia asiento; coloca nuevo con mortero; prueba caudal | Caudal ≥ mínimo, sin fuga en asiento | ★ | S-24 |
-| 11 | Revisa espesor y termoescáner | Registro de la última colada; medición si toca | ≥ 50 mm; coraza ≤ 350 °C | ★ | S-08, C-15 |
+| 11 | Revisa espesor y termoescáner | Registro de la última colada; medición si toca | Escoria ≥ 50 mm, barril ≥ 40 mm; coraza ≤ 350 °C | ★ | S-08, C-15 |
 | 12 | Precalienta | 1,000–1,100 °C (olla fría > 4 h: ≥ 8 h) | Temperatura alcanzada | ★ | S-08 |
 | 13 | Libera | Tarjeta de olla firmada (placas, tapón, espesor, temperatura) por S-08/C-15 y recibida por C-04 | Firmada | ★ | S-08, C-15, C-04 |
 
 **Reline completo (resumen):** enfriamiento forzado ≥ 24 h → permiso de espacio confinado → demolición mecánica → inspección de seguridad y coraza → END de muñones → colocación de fondo, barril y línea de escoria (juntas ≤ 1.5 mm [Validar]) → bloque de asiento y bloque de tapón con masa apisonada → curva de secado del proveedor → precalentamiento → liberación por C-15.
 
-**Checklist de liberación (Mantenimiento/Refractarios + Operación):** [ ] placas nuevas o dentro de criterio · [ ] prueba de 3 carreras OK · [ ] tapón ≥ 150 NL/min @ 3 bar · [ ] espesor ≥ 50 mm y coraza ≤ 350 °C · [ ] END de muñones vigente · [ ] precalentada 1,000–1,100 °C · Firma C-15/S-08: ____ Firma C-04: ____ Fecha/hora: ____
+**Checklist de liberación (Mantenimiento/Refractarios + Operación):** [ ] placas nuevas o dentro de criterio · [ ] prueba de 3 carreras OK · [ ] tapón 100–200 NL/min a presión de prueba · [ ] espesor escoria ≥ 50 mm / barril ≥ 40 mm y coraza ≤ 350 °C · [ ] END de muñones vigente · [ ] precalentada 1,000–1,100 °C · Firma C-15/S-08: ____ Firma C-04: ____ Fecha/hora: ____
 
 ## 9. Condiciones anormales y respuesta
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |

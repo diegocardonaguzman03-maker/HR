@@ -44,6 +44,12 @@ flowchart TD
 
 ![Figura 1. Perfil de una línea de la CC2 (torreta, olla y distribuidor)](../../img/cc2-perfil-maquina.svg)
 
+**Por qué importa (para aprender):**
+- **Colchón de acero.** Con 850 mm el distribuidor tiene ≈ 30 t; a 3.5 t/min de consumo, esa reserva da pocos minutos. Por eso el cambio completo debe durar ≤ 3 min.
+- **Escoria abajo, nivel arriba.** La escoria de la olla flota sobre el acero; al vaciarse la olla forma un remolino que la jala al distribuidor. Cerrar con 2–4 t de residual evita que llegue a las palanquillas.
+- **Vórtice en el distribuidor.** Por debajo de ≈ 500 mm el acero forma remolinos sobre las buzas y arrastra escoria de cubierta al molde.
+- **Trazabilidad.** Durante ≈ 8–9 min el distribuidor mezcla dos coladas; las palanquillas de esa zona son "T" y su colada se asigna por el rastreo.
+
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|

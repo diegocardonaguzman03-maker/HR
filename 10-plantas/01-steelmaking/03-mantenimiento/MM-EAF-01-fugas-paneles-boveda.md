@@ -32,7 +32,7 @@ Cada panel es un serpentín de tubos con su propio circuito. Un medidor de cauda
 
 ```mermaid
 flowchart TD
-    A["Alarma ΔQ &gt; 2 % o fuga visible"] --> B{"¿Hay agua sobre el baño<br/>o ΔQ &gt; 4 %?"}
+    A["Alarma ΔQ > 2 % o fuga visible"] --> B{"¿Hay agua sobre el baño<br/>o ΔQ > 4 %?"}
     B -- "Sí" --> C["🛑 Arco fuera, O₂/GN/C fuera<br/>NO bascular · evacuar plataforma"]
     C --> D["Cerrar circuito afectado a distancia<br/>esperar evaporación"]
     B -- "No" --> E["Identificar circuito por ΔQ<br/>y T salida"]
@@ -67,7 +67,7 @@ flowchart TD
 | Presión de suministro | bar | 5 | 4–6 | < 3 bar alarma | Revisar bombas, filtro y fugas mayores | PT / manómetro | Continuo |
 | Caudal total | m³/h | 2,200 | ±5 % | < 90 % del nominal | Revisar bombas y válvulas | FT cabezal | Continuo |
 | Δcaudal por circuito | % | ≤ 0.5 | 0–1 | **> 2 % alarma; > 4 % disparo** | Sección 9 | FT ent/sal + PLC | Continuo |
-| Temperatura de salida de panel | °C | ≤ 45 | 30–55 | > 60 °C alarma | Revisar incrustación, caudal y posición de quemadores | TT | Continuo |
+| Temperatura de salida de panel | °C | ≤ 50 [Supuesto] | 35–55 | > 60 °C alarma | Revisar incrustación, caudal y posición de quemadores | TT | Continuo |
 | Espesor de pared del tubo | mm | 10 (nuevo) | ≥ 6 | **< 5 mm: cambiar tubo o panel** | Programar cambio en el siguiente paro | Ultrasonido (UT) de espesores, sonda dual | Semanal en zonas calientes; mensual resto |
 | Deformación (pandeo) del panel | mm | 0 | ≤ 10 | > 20 mm | Cambiar panel | Regla de 1 m + flexómetro | Semanal |
 | Prueba hidrostática tras reparación | bar / min | 10 bar / 30 min | ≥ 1.5 × 6 bar | Cualquier caída o goteo = rechazo | Repetir reparación | Manómetro clase 0.5 | Cada reparación |
@@ -120,6 +120,8 @@ Casco, lentes, careta facial, ropa FR/aluminizada en zona de horno caliente, gua
 
 **Zona de exclusión:** plataforma del horno y fosa de escoria mientras haya metal líquido en el horno y exista sospecha de agua.
 
+![Figura 2. Puntos de aislamiento y bloqueo del EAF (ver MS-ACE-02)](../../img/ms-loto-puntos-eaf.svg)
+
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
 |---|---|---|---|---|
@@ -151,7 +153,7 @@ Casco, lentes, careta facial, ropa FR/aluminizada en zona de horno caliente, gua
 
 **Checklist de liberación a operación (firma Mantenimiento + Operación)**
 - [ ] Prueba hidrostática 10 bar / 30 min aprobada (valor registrado).
-- [ ] ΔQ del circuito ≤ 0.5 % y T de salida ≤ 45 °C con agua circulando.
+- [ ] ΔQ del circuito ≤ 0.5 % y T de salida ≤ 50 °C con agua circulando.
 - [ ] Lógica ΔQ probada si se cambió o se tocó un FT (alarma 2 %, disparo 4 %).
 - [ ] Todos los candados retirados; herramientas y materiales fuera del horno.
 - [ ] Refractario húmedo revisado (si hubo agua en el casco: secado con quemador según MM-EAF-03).

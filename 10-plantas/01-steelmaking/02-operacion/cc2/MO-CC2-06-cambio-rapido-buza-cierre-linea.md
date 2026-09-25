@@ -49,6 +49,12 @@ flowchart TD
     L -- No --> H
 ```
 
+**Por qué importa (para aprender):**
+- **Erosión.** El ZrO₂ se desgasta con el paso del acero; el diámetro crece, sube el caudal y la línea acelera hasta salirse del máximo de 3.5 m/min.
+- **Taponamiento.** Los óxidos sólidos (alúmina, sobre todo si el acero trae Al alto) se pegan en la pared de la buza y reducen el paso; la línea frena. Un chorro "en abanico" también indica depósitos o daño.
+- **Un empuje, un movimiento.** El cambio rápido corta el chorro 1–2 s; si se detiene a medias, el acero se derrama por el mecanismo.
+- **Cerrar a tiempo.** Una línea con desbordamiento, breakout o sin agua se vuelve peligrosa en segundos: la placa ciega la cierra en ≤ 10 s.
+
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|

@@ -74,6 +74,26 @@ flowchart TD
 | Agua de molde después de la salida de la cola | min | ≥ 10 con caudal nominal | — | — | Luego reducir según OEM | HMI |
 | Despunte de cola | mm | 800 | 500–1,000 [Validar con OEM / Ingeniería de Proceso] | Rechupe visible | Aumenta el despunte hasta sano | Oxicorte / inspección |
 
+**Secuencia típica de la salida de cola [Validar con OEM / Ingeniería de Proceso]:**
+
+| Tramo de la cola (desde el menisco) | Velocidad | Enfriamiento secundario | Observación |
+|---|---|---|---|
+| 0–1 m (dentro del molde) | 0.3 m/min | Z1–Z2 en modo cola (reducido) | Tramo más débil; vigila BOP y fuga |
+| 1–5 m (segmentos 1–2) | Rampa a 0.6 m/min | Zonas se apagan al paso de la cola | Zona de exclusión activa hasta el segmento 3 |
+| 5–32 m | Rampa a ≈ 1.0 m/min | Apagado por tracking zona por zona | Evita sobreenfriar y abombar |
+| > 32 m (oxicorte) | Según corte | — | Despunte de cola 500–1,000 mm |
+
+**Decisión de cierre no planeado:**
+
+| Condición | Cerrar de inmediato (sin esperar 400 mm) | Cierre controlado (pasos 1–19) |
+|---|---|---|
+| Breakout, fuga de agua en el molde, rebose | Sí | — |
+| Falla de agua de molde sin entrada del agua de emergencia | Sí | — |
+| Falla de oscilación > 60 s | Sí | — |
+| Olla siguiente no llega / no abre | — | Sí |
+| Clogging sin cambio de SEN posible | — | Sí |
+| SH < 10 °C | — | Sí |
+
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |

@@ -29,6 +29,8 @@ La CC2 usa **barra falsa rígida** (una por línea): es una barra curva, con el 
 
 ![Figura 3. Molde de tubo, agua, aceite, EMS y fuente de Cs-137](../../img/cc2-molde-tubo.svg)
 
+El punto de bloqueo del obturador (punto 7) está en la figura de puntos de bloqueo de la CC de MS-ACE-02 / MS-ACE-07: `../../img/ms-loto-puntos-cc.svg`.
+
 ```mermaid
 flowchart TD
     A["Máquina entregada por mantenimiento<br/>o fin de secuencia"] --> B["Agua de molde ON y prueba<br/>(caudal, ΔT, fugas)"]
@@ -43,6 +45,12 @@ flowchart TD
     I --> J["ESR abre obturador y prueba<br/>el nivel radiométrico"]
     J --> K["C-06 libera la línea → MO-CC2-03"]
 ```
+
+**Por qué importa (para aprender):**
+- **La cabeza es el "tapón" del molde.** Si el sello falla, el primer acero escurre por el hueco y sale bajo el molde: es una fuga de arranque.
+- **La chatarra de enfriamiento** absorbe calor del primer acero para que solidifique rápido sobre la cabeza y se "enganche" en ella. Si trae humedad, óxido o aceite, genera gas o vapor.
+- **El haz del Cs-137 cruza el molde** a la altura del menisco. Con el obturador abierto, quien mete la cabeza o las manos al molde recibe dosis. Cerrado y medido por el ESR, la zona queda en niveles de fondo.
+- **Alineación de 0.5 mm.** Si el molde y el pie de rodillos no están en línea, la piel recién formada se dobla al salir del molde y aparecen romboidad y grietas en la diagonal.
 
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
@@ -70,7 +78,7 @@ flowchart TD
 | Chatarra de enfriamiento | kg por línea | 2 | 1.5–3 [Validar] | Húmeda, oxidada o con aceite | Cámbiala por chatarra seca y limpia | Báscula y visual |
 | Alineación molde–pie de rodillos | mm | 0 | ± 0.5 [Validar OEM] | > ± 0.5 | No liberes; avisa a S-25 | Plantilla de alineación |
 | Boquillas de rociado abiertas | % | 100 | ≥ 95 [Validar] | < 95% o una boquilla tapada en esquina | Destapa o cambia boquillas | Prueba visual con agua |
-| Tasa de dosis en el molde con obturador cerrado | µSv/h | Fondo natural | ≤ 0.5 [Validar con el ESR] | Mayor al valor del ESR | 🛑 Nadie entra al molde; ESR investiga | Medidor de radiación del ESR |
+| Tasa de dosis en el punto de trabajo con obturador cerrado | µSv/h | Fondo natural (≈ 0.1–0.3) | < 2 × fondo [Validar con el ESR] (MS-ACE-07) | ≥ 2 × fondo | 🛑 Nadie entra al molde; aléjate ≥ 3 m; el ESR investiga | Medidor portátil del ESR |
 
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
@@ -109,7 +117,7 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 | 5 | Prueba oscilación y EMS | Oscilación en vacío a 200 cpm; EMS energizado 1 min | Sin alarmas; carrera 6–10 mm | | S-12 |
 | 6 | Inspecciona el tubo | Visual de rayas, desgaste y deformación | Sin defectos fuera del criterio de la sección 7 | 🔎 | S-14 |
 | 7 | Verifica la alineación molde–pie de rodillos | Plantilla de alineación | ± 0.5 mm | 🔎 | S-14, S-25 |
-| 8 | Pide al ESR el cierre del obturador | El ESR cierra, pone candado y tarjeta y mide la tasa de dosis en el molde | Lectura ≤ valor del ESR; registro firmado | ★ | ESR, S-14 |
+| 8 | Pide al ESR el cierre del obturador | Permiso de trabajo con firma del ESR; el ESR cierra, pone candado y tarjeta y mide en el punto de trabajo y a 1 m | Lectura < 2 × fondo; registro firmado en el permiso | ★ | ESR, S-14 |
 | 9 | Aplica LOTO al oscilador | Candado personal | Prueba de arranque sin movimiento | ★ | S-14 |
 | 10 | Inserta la barra falsa | HMI en modo inserción ≤ 3 m/min; los últimos 2 m a ≤ 0.5 m/min | La cabeza para sin golpe | | S-12 |
 | 11 | Ajusta la altura de la cabeza | Mide desde el borde del tubo | 700 ± 20 mm bajo el borde | ★ | S-14, S-12 |

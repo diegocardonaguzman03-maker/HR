@@ -124,6 +124,8 @@ Ropa arc-rated de la categoría de la celda, careta/capucha arc-rated, guantes d
 **Prueba de energía cero:** detector de tensión probado en fuente conocida → punto de trabajo (3 fases) → fuente conocida; intento de cierre del interruptor desde púlpito rechazado; OLTC sin respuesta.
 **Zona de exclusión:** límite de aproximación restringido de NOM-029 alrededor de partes energizadas adyacentes.
 
+![Figura 1. Puntos de aislamiento y bloqueo del EAF, incluido el interruptor del horno (ver MS-ACE-02)](../../img/ms-loto-puntos-eaf.svg)
+
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
 |---|---|---|---|---|

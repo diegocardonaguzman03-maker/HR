@@ -35,7 +35,7 @@ flowchart TD
     B -- "No" --> D{"¿Zona localizada?"}
     D -- "Sí" --> E["Reparación en caliente<br/>gunning / parcheo de solera"]
     D -- "No" --> F["Paro para reline<br/>(espacio confinado)"]
-    A --> G{"¿EBT: Ø ≥ 230 mm o<br/>vaciado &lt; 2.5 min?"}
+    A --> G{"¿EBT: Ø ≥ 230 mm o<br/>vaciado menor a 2.5 min?"}
     G -- "Sí" --> H["Cambio de camisas / bloque EBT<br/>en caliente"]
     C --> I["Secado / sinterizado"]
     E --> I
@@ -107,6 +107,8 @@ Ropa aluminizada (frente al horno), careta con visor dorado, casco con cubrenuca
 **LOTO:** E1 MT del horno; E2 HPU con horno **basculado y bloqueado mecánicamente** en la posición del trabajo; E3 O₂/GN de lanzas y quemadores cerrados y purgados; E4 DRI y carbono; E6 bóveda girada y asegurada. Agua de paneles **en servicio** (no se aísla, salvo que se trabaje en ellos). **Prueba de energía cero:** intento de arco y de basculamiento rechazados, manómetros de gases en 0 bar, gases en el interior O₂ 19.5–23.5 %, CO < 25 ppm, LEL 0 %.
 **Zona de exclusión:** debajo del EBT y en la trayectoria de la escoria durante el cambio en caliente.
 
+![Figura 2. Puntos de aislamiento y bloqueo del EAF (ver MS-ACE-02)](../../img/ms-loto-puntos-eaf.svg)
+
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
 |---|---|---|---|---|
@@ -133,6 +135,15 @@ Ropa aluminizada (frente al horno), careta con visor dorado, casco con cubrenuca
 | 13 | Retira LOTO | Orden inverso; personal fuera de zona | Candados retirados | ★ | Todos |
 | 14 | Libera | Checklist firmado por C-15 y C-05; primera colada con vigilancia del tiempo de vaciado | Firmado | ★ | C-15, C-05 |
 
+### 8.1 Secado y sinterizado después de reparación [Validar con proveedor de refractario / C-15]
+| Tipo de reparación | Condición de secado | Tiempo mínimo | Verificación | Rol |
+|---|---|---|---|---|
+| Gunning en caliente (cara ≥ 800 °C) | Calor residual del horno | Hasta que no haya vapor visible (≈ 5–10 min) | Visual | S-24 |
+| Parcheo de solera con masa seca | Talón líquido o arco a baja potencia | Primera colada con perfil de sinterizado | C-07 define perfil | S-01, C-15 |
+| Cambio de camisas del EBT (mortero) | Calor del horno | Según hoja del mortero | Sin vapor en canal | S-24 |
+| Reline de bancos con ladrillo | Quemadores a baja potencia | Curva del proveedor (típ. 8–12 h) | Registro de temperatura | C-15 |
+| Solera nueva | Programa de sinterizado del proveedor | 1–3 coladas con talón y potencia reducida | Registro de colada | C-07, C-15 |
+
 **Checklist de liberación (Mantenimiento/Refractarios + Operación):** [ ] Ø EBT 150–180 mm · [ ] placa cierra plana · [ ] arena seca (≤ 0.5 %) y cono formado · [ ] espesores ≥ mínimos (registro láser) · [ ] curva de secado cumplida (si hubo reparación húmeda) · [ ] candados retirados · Firma C-15/S-24: ____ Firma C-05/S-01: ____ Fecha/hora: ____
 
 ## 9. Condiciones anormales y respuesta
@@ -144,6 +155,8 @@ Ropa aluminizada (frente al horno), careta con visor dorado, casco con cubrenuca
 | Vaciado < 2.5 min | Canal erosionado | Programar cambio antes de la siguiente colada crítica | C-15, C-07 |
 | Tapa del EBT no cierra plana | Costra, bisagra dañada | No llenar; limpiar/reparar | S-19, C-05 |
 | Desprendimiento de gunning | Superficie fría o masa húmeda | Ajustar agua y temperatura | C-15 |
+| Solera con "hoyo" o metal infiltrado (sondeo más profundo de lo normal) | Erosión local, sinterizado deficiente | Parcheo con masa seca en el siguiente paro; vigilar termografía del fondo | C-15, C-05 |
+| Desgaste acelerado de línea de escoria (> 2× tendencia) | MgO de escoria bajo, FeO alto, arco descubierto | Revisar práctica de escoria con C-07 | C-07, C-15 |
 
 ## 10. Registros
 Perfil láser por semana · mapa termográfico · registro de EBT (coladas, Ø, tiempo de vaciado, apertura libre) · consumo de gunning · humedad de arena por lote · curva de secado · permisos y LOTO · checklist de liberación.

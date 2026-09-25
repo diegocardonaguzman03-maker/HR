@@ -73,6 +73,15 @@ flowchart TD
 | Relación cal/DRI | kg cal / t DRI | 50–65 [Supuesto] | según ganga | B2 < 1.6 en muestra de escoria | Sube la relación (MO-EAF-05) | Nivel 2 / análisis de escoria |
 | Retraso entre arranque y baño plano | — | Arranca con ≥ 70% de canasta fundida | — | Arranque con chatarra sólida alta | Espera; riesgo de pegado y de iceberg | Energía acumulada ≥ 150 kWh/t |
 
+**Consigna inicial según el tipo de material** [Validar con C-07]:
+
+| Material | Temperatura | Consigna inicial (kg/min/MW) | Tasa típica a ≈ 124 MW | Notas |
+|---|---|---|---|---|
+| DRI caliente | 500–650 °C | 33–35 | ≈ 4.1–4.3 t/min | Aporta energía sensible; permite la tasa más alta |
+| DRI frío | Ambiente | 30–32 | ≈ 3.7–4.0 t/min | Sensible a finos y reoxidación |
+| HBI | Ambiente | 30–32 | ≈ 3.7–4.0 t/min | Más denso; menor pérdida de finos; vigilar que no se acumule |
+| Mezcla con DRI de baja metalización (< 91%) | — | 28–30 | ≈ 3.5–3.7 t/min | Más FeO que reducir: más C y más energía |
+
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |

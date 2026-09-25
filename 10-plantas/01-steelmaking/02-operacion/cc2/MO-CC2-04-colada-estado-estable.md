@@ -46,6 +46,13 @@ flowchart LR
     EMS["EMS 250–400 A, 2–5 Hz"] --> CAL
 ```
 
+**Por qué importa (para aprender):**
+- **El nivel de molde es la variable reina.** Cada vez que el menisco sube o baja más de 5 mm, el aceite y la piel se alteran: aparecen marcas de oscilación profundas, pinholes e inclusiones.
+- **El aceite** se quema en el menisco y deja una película de carbón que evita que la piel se pegue al cobre. Poco aceite: pegado y breakout. Mucho o húmedo: gases, pinholes.
+- **El agua de molde** saca el calor que forma la piel (≈ 10–12 mm a la salida). Un ΔT alto indica poco caudal o incrustación: el cobre se calienta, se deforma y la palanquilla sale rómbica.
+- **El sobrecalentamiento alto** alarga el núcleo líquido y agranda el rechupe central; el **EMS** mueve el líquido, rompe las columnas de cristales y mejora el centro.
+- **La velocidad es un síntoma.** Si una línea cambia de velocidad sola, su buza cambió (erosión o taponamiento).
+
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|
@@ -132,11 +139,11 @@ Casco, careta con filtro IR, chamarra aluminizada en la plataforma, ropa retarda
 ## 9. Condiciones anormales y respuesta
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
-| **Breakout** (acero saliendo bajo el molde, alarma de fuego o chispas en la cámara) | Pegado por falta de aceite, nivel inestable, piel delgada, romboidad severa | 🛑 Cierra la línea con placa ciega (o tapón), detén su extracción, **mantén el agua de molde**, evacúa bajo la plataforma. No uses agua sobre el acero derramado fuera del sistema | C-06, C-04 |
+| **Breakout** (acero saliendo bajo el molde, alarma de fuego o chispas en la cámara) | Pegado por falta de aceite, nivel inestable, piel delgada, romboidad severa | 🛑 Cierra la línea con placa ciega (o tapón), detén su extracción, **mantén el agua de molde y la secundaria**, evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09). No cortes el agua ni entres a la cámara de rociado sin LOTO. Después, el ESR inspecciona el contenedor de Cs-137 de esa línea | C-06, C-04, ESR |
 | **Pérdida de nivel** (lectura errática o sin señal) | Falla del detector o de la fuente, salpicadura sobre el portafuente | Pasa a velocidad fija y control visual solo si C-06 lo autoriza; si no se recupera en 5 min [Validar], cierra la línea. **No toques el portafuente**: ESR | C-06, S-21, ESR |
 | Nivel sube sin control | Buza erosionada o quebrada | Sube la velocidad al máximo; si no alcanza: cambio de buza o 🛑 cierre de línea antes del desbordamiento | C-06 |
 | Nivel baja, velocidad < 2.3 m/min | Buza tapándose (Al alto, acero frío) | Cambio de buza (MO-CC2-06); avisa al LF si es por química | C-06, C-07 |
-| **Falla de agua de molde** (caudal < 80%, pérdida de presión o apagón) | Bomba, válvula, energía | 🛑 Confirma entrada del agua de emergencia en **≤ 15 s**; cierra la olla; cierra las 6 líneas; baja la extracción para vaciar los moldes según el OEM [Validar]; evacúa la plataforma | C-04, C-06, mantenimiento |
+| **Falla de agua de molde** (caudal < 80%, pérdida de presión o apagón) | Bomba, válvula, energía | 🛑 Confirma entrada del agua de emergencia en **≤ 15 s**; si no entra: cierra de inmediato la olla y las 6 líneas; evacúa la plataforma de molde a ≥ 10 m (MS-ACE-09). No reintroduzcas agua a un molde sobrecalentado sin autorización de C-06/C-08 | C-04, C-06, mantenimiento |
 | ΔT > 12 °C en una línea | Caudal bajo, incrustación, tubo deformado | Revisa caudal; si ΔT > 15 °C [Validar]: 🛑 cierra la línea | C-06, S-25 |
 | **Falla del EMS** | Disparo eléctrico o de agua del EMS | Sigue colando; marca las palanquillas "E" desde la hora del disparo; C-09 decide | C-06, S-20, C-09 |
 | **Desalineación** (chorro fuera de centro, palanquilla con romboidad creciente) | Distribuidor movido, buza inclinada, pie de rodillos | Centra el distribuidor; si es la buza, cámbiala; si persiste, avisa a S-25 | C-06, S-25 |

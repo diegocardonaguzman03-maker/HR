@@ -32,7 +32,7 @@ En estado estable, el acero pasa del distribuidor al molde por la SEN. El **lazo
 
 ```mermaid
 flowchart LR
-    subgraph Vigilancia continua
+    subgraph V["Vigilancia continua"]
     A["Nivel ± 3 mm"] --> Z{"¿Alarma?"}
     B["ΔT / caudal agua de molde"] --> Z
     C["BOP (termopares)"] --> Z

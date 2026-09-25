@@ -79,6 +79,17 @@ flowchart TD
 | Carrera de oscilación (prueba) | mm | 6 | 4–8 | > ± 0.5 mm del ajuste | Avisa a S-22 | HMI / indicador de carátula |
 | Presión de aire de secado de la línea | bar | 4–6 [Validar con OEM / Ingeniería de Proceso] | — | — | — | Manómetro |
 
+**Materiales de arranque en la plataforma (verificar antes de sellar):**
+
+| Material | Especificación | Cantidad por arranque | Condición |
+|---|---|---|---|
+| Cordón de fibra cerámica | Ø 10–20 mm, clase ≥ 1,260 °C [Validar con OEM / Ingeniería de Proceso] | 2 tramos del perímetro de la cabeza | Seco, en bolsa cerrada |
+| Sellador refractario seco | Polvo o pasta sin agua libre | 1 cubeta | Sin humedad; fecha vigente |
+| Chatarra de enfriamiento | Clavos, rondanas o recortes de acero al carbono limpios | 15–25 kg | Seca, sin óxido suelto, sin aceite ni pintura |
+| Polvo de arranque | Tipo definido por C-08 | Según grado | Sacos cerrados y secos |
+| Herramientas del molde | Varillas, raspadores, cucharas | Juego completo | Secas y precalentadas junto al distribuidor |
+| Lanzas de O₂ | Tubo de lanza | ≥ 4 | Secas; manguera y regulador inspeccionados |
+
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |

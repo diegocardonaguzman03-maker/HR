@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Custodio |
 |---|---|---|---|
-| FT-ACE-001 | 0.1 | **Borrador para validación** | Gerente de Acería (C-01) + Ingenieros de Proceso (C-07, C-08) |
+| FT-ACE-001 | 0.2 (corrige la buza calibrada de CC2 y la capacidad) | **Borrador para validación** | Gerente de Acería (C-01) + Ingenieros de Proceso (C-07, C-08) |
 
 > ⚠️ **Fuente única de datos técnicos.** Todos los manuales, descripciones de puesto y materiales de capacitación de la Acería usan los valores de esta ficha. Son **valores de referencia típicos** para una acería eléctrica alimentada con DRI de este tamaño. **Antes de usar cualquier manual en planta**, Ingeniería de Proceso debe validarlos contra los manuales de los fabricantes (OEM), las especificaciones de GASM y los parámetros reales de la planta. Si un valor cambia, se cambia primero aquí.
 
@@ -99,9 +99,9 @@
 |---|---|
 | Tipo | Curva, 6 líneas, radio 9 m |
 | Sección | 160 × 160 mm (opcional 130 × 130 mm) |
-| Velocidad de colada | 2.5–3.5 m/min (160 mm nominal 3.0 m/min) |
+| Velocidad de colada | 2.5–3.5 m/min (160 mm nominal 3.0 m/min). Capacidad de diseño ≈ 3.4 t/min con 6 líneas (≈ 1.7 Mt/año): la máquina tiene holgura sobre el plan de 0.9 Mt/año. Opera por campañas y ajusta la velocidad o el número de líneas a la cadencia de ollas de los EAF |
 | Torreta de ollas | 2 brazos; tubo protector con argón |
-| Distribuidor | 30 t; nivel de operación 700–850 mm; buza calibrada (metering nozzle) de ZrO₂ de 15–17 mm por línea con cambio rápido |
+| Distribuidor | 30 t; nivel de operación 700–850 mm; buza calibrada (metering nozzle) de ZrO₂ con cambio rápido: **160 × 160 mm → 20–24 mm (22 mm a 3.0 m/min)**; 130 × 130 mm → 15–17 mm. Tamaño por balance de masa: caudal ≈ 0.9·√(2·g·h)·área·ρ; con h = 0.8 m, 22 mm ≈ 0.57 t/min por línea [Validar con OEM] |
 | Lubricación del molde | Colada abierta con aceite vegetal (colza) 15–25 mL/min por línea |
 | Molde | Tubo de Cu-Ag de 1,000 mm; conicidad 0.8–1.0%/m; agitador electromagnético (EMS) |
 | Agua de molde | ≈ 2,000 L/min por línea; velocidad en la ranura 10–12 m/s; ΔT 6–10 °C; alarma ΔT > 12 °C o caudal < 90% |

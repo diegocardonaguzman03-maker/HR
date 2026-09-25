@@ -78,6 +78,16 @@ flowchart TD
 | Cantidad de escoria | kg/t | 110 [Supuesto] | 100–130 | > 150 | Revisa ganga del DRI y cal | Balance nivel 2 |
 | P₂O₅ en escoria | % | según balance | [Validar con Ingeniería de Proceso] | P en acero > 0.015% | Más desescoriado; FeO y B2 en rango; T no excesiva | Análisis |
 
+**Diagnóstico rápido de la escoria por observación (en la puerta o la cámara)** [Validar con C-07]:
+
+| Lo que se ve / oye | Diagnóstico probable | Corrección |
+|---|---|---|
+| Escoria que sale en "pan" esponjoso y continuo; arco silencioso | Espuma correcta | Mantener |
+| Escoria líquida, brillante, corre como agua; arco ruidoso | FeO alto y/o B2 baja; T alta | Más C, más cal |
+| Escoria seca, en terrones, no fluye | Cal o MgO en exceso; T baja | Más O₂; menos cal; revisar T |
+| Espuma que sube de golpe con llama larga | Inicio de ebullición | Cortar C, reducir O₂ (§9) |
+| Escoria con gotas metálicas brillantes | Arrastre de metal por inclinación | Reducir inclinación |
+
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |

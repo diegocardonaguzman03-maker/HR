@@ -76,6 +76,16 @@ flowchart LR
 | Enfriamiento lento (HSLA, peritécticos, con evento de grietas) | h | ≥ 48 en pila cubierta hasta < 300 °C [Validar con OEM / Ingeniería de Proceso] | — | Enfriamiento con agua | 🛑 Prohibido enfriar con agua estos grados | Registro de pila |
 | Capacidad de izaje con grúa de 25 t | t | Solo planchones ≤ 25 t − peso de tenaza (≈ ≤ 17 t netas) [Validar con OEM / Ingeniería de Proceso] | — | Planchón más pesado | Usa grúa de 50 t | Peso de MES |
 
+**Peso teórico del planchón en frío (t) = 0.23 × ancho × largo × 7.85 — grúa requerida:**
+
+| Ancho (mm) | 8 m | 9.5 m | 11 m | Grúa de 25 t (≤ 17 t netas) [Validar con OEM / Ingeniería de Proceso] |
+|---|---|---|---|---|
+| 900 | 13.0 | 15.4 | 17.9 | Solo 8 y 9.5 m |
+| 1,100 | 15.9 | 18.9 | 21.8 | Solo 8 m |
+| 1,300 | 18.8 | 22.3 | 25.8 | No |
+| 1,500 | 21.7 | 25.7 | 29.8 | No |
+| 1,650 | 23.8 | 28.3 | 32.8 | No |
+
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |

@@ -50,6 +50,12 @@ flowchart TD
     R --> J
 ```
 
+**Por qué importa (para aprender):**
+- **La romboidad es un aviso.** Casi siempre nace en el molde (tubo gastado, agua desigual, chorro descentrado) o en el pie de rodillos; medirla por línea permite corregir antes de que aparezcan grietas.
+- **Cada defecto tiene una "firma" de proceso:** esquina → molde y enfriamiento de esquinas; diagonal → romboidad y rociado; pinholes → aceite y desoxidación; centro → sobrecalentamiento y EMS; escoria → cambio de olla y nivel del distribuidor.
+- **Retener no es rechazar.** La etiqueta roja detiene la palanquilla hasta que C-09 decide con datos (esmerilar, degradar o rechazar). Liberar por presión de producción es una falta grave.
+- **La macro muestra lo que no se ve.** Un corte transversal atacado con ácido revela grietas internas, porosidad y rechupe que la inspección visual nunca verá.
+
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|

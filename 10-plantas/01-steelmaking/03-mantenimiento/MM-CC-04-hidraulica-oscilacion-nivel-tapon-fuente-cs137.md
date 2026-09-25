@@ -27,6 +27,10 @@ Mantener exactos y confiables los actuadores que controlan la interfaz acero–m
 ## 3. Descripción del proceso
 La mesa de oscilación mueve el molde con cilindros hidráulicos controlados por servoválvula y un perfil no senoidal. El nivel de molde se mide (CC1: sensor de corrientes parásitas sobre el menisco; CC2: fuente de Cs-137 de un lado del molde y detector de centelleo del otro) y el controlador actúa sobre la barra tapón (CC1) o sobre la velocidad de extracción (CC2).
 
+![Figura 1. Molde de CC1: nivel por corrientes parásitas, barra tapón y termopares](../../img/cc1-molde-nivel.svg)
+
+![Figura 2. Molde de tubo de CC2 con medición radiométrica de nivel (Cs-137)](../../img/cc2-molde-tubo.svg)
+
 ```mermaid
 flowchart TD
     A["OT en CC (oscilación, nivel, tapón)"] --> B{"¿Trabajo en el molde CC2<br/>o cerca del portafuente?"}
@@ -119,6 +123,8 @@ Casco, lentes, guantes (nitrilo para aceite), botas metatarsales, ropa FR; **dos
 **Permisos:** LOTO grupal; **permiso de trabajo con fuente radiactiva** (emitido por el ESR); altura si aplica.
 **Puntos de aislamiento:** E-H HPU de CC (CCM + válvula de bloqueo + descarga de acumuladores); E1 tableros de servos, sensor de nivel y detector; E-Ar válvula manual de argón al tapón; E-M perno mecánico del tapón y carro de distribuidor estacionado y bloqueado; **E-R obturador de Cs-137 cerrado con candado del ESR** (energía radiante); E-W agua de enfriamiento del sensor/detector si se desconecta. **Prueba de energía cero:** intento de oscilar y mover el tapón desde HMI rechazado; manómetros 0 bar; detector de tensión; **radiámetro en el punto de trabajo = fondo**.
 **Zona de exclusión:** zona controlada alrededor del portafuente según el plan de protección radiológica; señalización con el símbolo de radiación.
+
+![Puntos de aislamiento y bloqueo de CC1 y CC2 (ver MS-ACE-02)](../../img/ms-loto-puntos-cc.svg)
 
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |

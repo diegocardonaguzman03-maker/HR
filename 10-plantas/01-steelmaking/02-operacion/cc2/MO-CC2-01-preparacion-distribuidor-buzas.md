@@ -46,6 +46,13 @@ flowchart TD
     I --> J["Liberación por C-06<br/>→ MO-CC2-03"]
 ```
 
+**Por qué importa (para aprender):**
+- **El diámetro manda.** En colada abierta no hay barra tapón: el caudal depende del área de la buza. Pasar de 16 a 17 mm aumenta el área ≈ 13% y la velocidad de esa línea sube en la misma proporción.
+- **La humedad mata.** Un revestimiento, mortero o buza con agua genera vapor al contacto con acero a ≈ 1,530 °C; el vapor se expande más de 1,000 veces y proyecta metal líquido.
+- **Frío = buza congelada.** Si la buza está por debajo de ≈ 900 °C, el primer acero se solidifica en su orificio y la línea no arranca, sobre todo en L1 y L6.
+- **Centrado = palanquilla cuadrada.** Un chorro desviado golpea una cara del molde, adelgaza la piel de ese lado y produce romboidad y riesgo de breakout.
+- **Tiempo sin fuego.** El distribuidor pierde temperatura rápido sin quemadores; por eso se abre la olla ≤ 5 min después de retirarlos.
+
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|

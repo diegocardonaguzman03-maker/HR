@@ -76,6 +76,16 @@ flowchart TD
 | Humedad de la arena | % | ≤ 0.2 [Supuesto] | — | > 0.5 | No usar; cambiar lote | Certificado / prueba rápida |
 | Apertura libre en CC (KPI) | % de coladas | ≥ 98 | — | < 98% semanal | Análisis con C-15 (arena, tiempo de espera, T) | Registro de CC |
 
+**Plan de precalentamiento por condición de la olla** [Validar con C-15 / proveedor de refractarios]:
+
+| Condición | Definición | Precalentamiento mínimo | Criterio de entrega |
+|---|---|---|---|
+| Olla en ciclo | Regresó de CC y estuvo fuera ≤ 4 h | Hasta cara caliente 1,000–1,100 °C (típico 30–60 min [Supuesto]) | ≥ 1,000 °C |
+| Olla fría | Fuera de ciclo > 4 h | ≥ 8 h | ≥ 1,000 °C y 8 h cumplidas |
+| Olla con reparación de línea de escoria | Reparación con material nuevo | Curva del proveedor para el material de reparación | Curva completa + ≥ 1,000 °C |
+| Olla nueva o revestida | Refractario de trabajo nuevo | Curva de secado y calentamiento completa (típico 24–48 h) | Curva firmada por C-15 |
+| Olla con 1.ª colada después de revestir | — | Igual que la anterior; preferir grados no críticos [Supuesto] | Autorización de C-15 |
+
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |

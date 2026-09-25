@@ -70,6 +70,16 @@ flowchart TD
 | Frecuencia de adición por columna | coladas | ≈ 18–20 [Supuesto] | — | < 12 | Investiga consumo anormal | Registro |
 | Tiempo de adición (método A) | min | ≤ 10 [Supuesto] | — | > 15 | Registra la demora | Bitácora |
 
+**Recepción y almacenamiento de electrodos y niples** [Validar con el fabricante]:
+
+| Punto | Criterio | Acción si no cumple |
+|---|---|---|
+| Embalaje y protectores de rosca | Íntegros al recibir | Rechazar o inspeccionar rosca a detalle |
+| Almacenamiento | Bajo techo, seco, horizontal sobre apoyos de madera, máx. estiba según fabricante | Reubicar; secar si hubo humedad (según fabricante) |
+| Manejo | Con tapón de izaje o eslingas protegidas; sin golpes en extremos | Inspeccionar caras y roscas |
+| Roscas y caras | Sin despostillados, grietas ni polvo | Limpiar; separar para reclamo si hay daño |
+| Pareo electrodo–niple | Mismo fabricante, grado y lote compatible | No mezclar |
+
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |

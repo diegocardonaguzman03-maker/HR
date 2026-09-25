@@ -75,6 +75,17 @@ flowchart TD
 
 **Chatarra prohibida (rechazo obligatorio):** contenedores cerrados (tanques, tambores, cilindros, tubos tapados, amortiguadores), líquidos (aceite, agua, combustible, refrigerante), explosivos, municiones o artefactos sin detonar, fuentes radiactivas o **cualquier rechazo del pórtico**, baterías, materiales con plomo o cobre en exceso, hielo, nieve, lodo, llantas y plásticos en exceso.
 
+**Clasificación de chatarra y posición en la canasta (referencia)** [Validar con C-17 / C-07]:
+
+| Tipo de chatarra | Densidad aparente típica (t/m³) [Supuesto] | Posición en la canasta | Observaciones |
+|---|---|---|---|
+| Rebaba / viruta (ligera) | 0.4–0.6 | Fondo (10–15%) | Amortigua; libre de aceite y refrigerante |
+| Paquete ligero (lámina prensada) | 0.8–1.2 | Fondo o arriba | Revisar que no contenga contenedores cerrados |
+| Fragmentada (shredded) | 1.0–1.3 | Centro y arriba | Buena fusión; baja en residuales |
+| Pesada (vigas, placa, rieles cortados) | 1.0–1.5 | Centro, lejos de paredes, nunca arriba | Pieza ≤ 1.5 t [Supuesto]; corta la sobredimensión |
+| Retorno interno (despuntes, colas, costras) | 1.5–2.5 | Centro | Conocida en residuales; sin escoria adherida en exceso |
+| Hierro de primera fusión frío (si se usa) | 3.0–3.5 | Centro | Aporta C; seco |
+
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |

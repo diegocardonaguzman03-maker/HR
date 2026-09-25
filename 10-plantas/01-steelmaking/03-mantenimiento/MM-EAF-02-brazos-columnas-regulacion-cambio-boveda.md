@@ -27,6 +27,8 @@ Mantener en condición los 3 brazos portaelectrodos (conductores de corriente), 
 ## 3. Descripción del proceso
 Cada columna sube y baja con un cilindro hidráulico controlado por una válvula proporcional o servo; el regulador de impedancia manda la posición del electrodo. El brazo lleva la corriente (hasta decenas de kA) hasta la mordaza, que aprieta el electrodo por resortes y lo libera hidráulicamente. Una falla aquí provoca arco inestable, rotura de electrodo, arco entre brazo y bóveda o caída del electrodo.
 
+![Figura 1. Corte esquemático del EAF: bóveda, electrodos, brazos y columnas](../../img/eaf-corte-horno.svg)
+
 ```mermaid
 flowchart LR
     A["Paro programado<br/>OT + permisos"] --> B["Horno vacío, bóveda levantada<br/>y girada a posición de cambio"]
@@ -111,6 +113,8 @@ Casco, lentes, careta, guantes de carnaza y nitrilo (hidráulica), ropa FR, bota
 **Puntos de aislamiento:** E1 interruptor y seccionador MT del horno + tierras; E2 CCM de HPU + válvula de bloqueo de acumuladores + descarga a tanque; E3 O₂/GN de quemadores de bóveda (si existen) y lanza; E5 agua de bóveda y brazos (V1/V2 + dren); E6 calzas bajo cada columna, pernos de bloqueo de giro de bóveda y de basculamiento. **Prueba de energía cero:** intento de mover columna y bóveda desde HMI y mando local (sin respuesta), manómetros 0 bar, detector de tensión.
 **Zona de exclusión:** radio de giro de la bóveda y área bajo la carga durante el izaje.
 
+![Figura 2. Puntos de aislamiento y bloqueo del EAF (ver MS-ACE-02)](../../img/ms-loto-puntos-eaf.svg)
+
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
 |---|---|---|---|---|
@@ -151,6 +155,8 @@ Casco, lentes, careta, guantes de carnaza y nitrilo (hidráulica), ropa FR, bota
 | Temperatura de HFC > 55 °C | Enfriador sucio, válvula de alivio abierta | Reducir ciclo; revisar | S-22 |
 | Electrodo resbala en mordaza | Resortes fatigados, zapata desgastada | Detener regulación; cambiar paquete/zapata | C-05, C-11 |
 | Fuga de fluido a alta presión | Manguera rota | 🛑 Detener HPU; no tocar el chorro (inyección) | C-11, servicio médico |
+| Fuga de agua en brazo o cable flexible | Junta, manguera o cable dañado | Arco fuera; revisar si cae agua al horno (MM-EAF-01) | C-05, C-11 |
+| Bóveda no asienta o se atora al girar | Salpicaduras en anillo, pivote, topes | No forzar; limpiar anillo; revisar cilindros de levante | S-19, S-22 |
 
 ## 10. Registros
 OT y LOTO · reporte de análisis de aceite (ISO 4406, % agua) · precargas de acumuladores · reporte termográfico · megger de brazos · torques · prueba de respuesta de regulación · plan de izaje y checklist de aparejos · checklist de liberación.

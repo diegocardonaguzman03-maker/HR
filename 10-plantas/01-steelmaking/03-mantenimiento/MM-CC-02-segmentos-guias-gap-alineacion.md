@@ -112,6 +112,8 @@ Casco, lentes, guantes anticorte, botas metatarsales, ropa FR, protección audit
 **Puntos de aislamiento:** E1 motores de rodillos motrices del segmento y de los vecinos (CCM); E-H cilindros de apriete (válvula de bloqueo del segmento + descarga de acumuladores); E-S agua secundaria de las zonas afectadas (válvulas + dren); E-W agua de enfriamiento interno de rodillos; E-A aire de atomización; E-L lubricación aire-aceite; E-M barra falsa estacionada y bloqueada; segmento sujeto por grúa o apoyado en su cuna. **Prueba de energía cero:** intento de girar rodillos y mover barra falsa rechazado; manómetros de agua, aire e hidráulica 0 bar.
 **Zona de exclusión:** debajo del segmento en izaje y trayectoria de la barra falsa durante la corrida del gap checker.
 
+![Puntos de aislamiento y bloqueo de CC1 y CC2 (ver MS-ACE-02)](../../img/ms-loto-puntos-cc.svg)
+
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
 |---|---|---|---|---|
@@ -138,6 +140,15 @@ Casco, lentes, guantes anticorte, botas metatarsales, ropa FR, protección audit
 | 12 | Corrida de gap checker | Segmento 0 → 14 a velocidad baja; comunicación con púlpito | Gap ±0.5 mm, 100 % rodillos giran | 🔎 | S-21, S-12 |
 | 13 | Prueba de boquillas | Agua secundaria sin acero, inspección visual/cámara | ≤ 2 % tapadas por zona | 🔎 | S-19, S-12 |
 | 14 | Libera | Checklist firmado por C-11 y C-06 | Firmado | ★ | C-11, C-06 |
+
+### 8.1 Corrida del gap checker (detalle)
+| # | Paso | Cómo hacerlo | Criterio | ★ | Rol |
+|---|---|---|---|---|---|
+| 1 | Verifica el equipo | Calibración en bloque patrón antes de la corrida; baterías y memoria | Error ≤ ±0.05 mm [Validar] | 🔎 | S-21 |
+| 2 | Acopla a la barra falsa | Con máquina en LOTO parcial (solo barra falsa y rodillos habilitados bajo control del púlpito) | Acople seguro | ★ | S-21, S-12 |
+| 3 | Despeja la línea | Nadie en la cámara de rociado ni en plataformas de segmentos; aviso por radio | Recuento de personal | ★ | C-06 |
+| 4 | Corre a baja velocidad | Velocidad OEM (típ. ≤ 1 m/min [Validar]) de segmento 0 a 14 | Registro completo | | S-12 |
+| 5 | Descarga y compara | Gap vs. tabla de C-08; rodillos sin giro; boquillas | Reporte con desviaciones marcadas | 🔎 | S-21, C-08 |
 
 **Checklist de liberación (Mantenimiento + Operación):** [ ] gap checker aprobado (reporte adjunto) · [ ] alineación ±0.5 mm · [ ] 100 % rodillos giran · [ ] boquillas ≤ 2 % tapadas · [ ] sin fugas de agua/hidráulica · [ ] candados retirados · Firma C-11/S-25: ____ Firma C-06/S-12: ____ Fecha/hora: ____
 

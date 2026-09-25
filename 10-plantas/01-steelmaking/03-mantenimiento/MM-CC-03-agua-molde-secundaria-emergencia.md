@@ -122,6 +122,8 @@ Casco, lentes, guantes, botas de seguridad, protección auditiva (casa de bombas
 **Puntos de aislamiento:** E1 CCM de la bomba intervenida y selector "automático" de la reserva; E-D batería del diésel desconectada + selector en "fuera" con candado; E-W válvulas de succión y descarga de la bomba + dren; E-T válvula de la torre (solo con máquina parada); E-XV aire/energía de XV-1 con la válvula bloqueada mecánicamente (solo con máquina parada). **Prueba de energía cero:** intento de arranque local y remoto rechazado; manómetro 0 bar; detector de tensión en bornes del motor.
 **Zona de exclusión:** acoplamientos de bombas en prueba; escape del diésel.
 
+![Puntos de aislamiento y bloqueo de CC1 y CC2 (ver MS-ACE-02)](../../img/ms-loto-puntos-cc.svg)
+
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
 |---|---|---|---|---|

@@ -48,6 +48,12 @@ flowchart TD
 
 ![Figura 2. Niveles del distribuidor y orden de cierre](../../img/cc2-distribuidor-6-lineas.svg)
 
+**Por qué importa (para aprender):**
+- **De afuera hacia adentro.** Al bajar el nivel, las líneas extremas son las primeras en recibir acero frío y escoria; cerrarlas primero protege la calidad de las centrales.
+- **Cola lenta.** Sin acero nuevo, la cola del molde solo tiene una piel delgada arriba; sacarla rápido la rompe y derrama el líquido que aún tiene dentro.
+- **Nunca agua al molde.** Echar agua sobre la cola para "sellarla" puede atrapar agua bajo una costra y provocar una explosión.
+- **Tubos calientes.** El cobre sigue recibiendo calor de la camisa y de restos de acero; apagar el agua antes de tiempo lo deforma y arruina la conicidad para la siguiente secuencia.
+
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|
@@ -126,7 +132,7 @@ Chamarra y polainas aluminizadas, careta con filtro IR, casco con barbiquejo, gu
 | 12 | Retira el distribuidor | Carro a desescoriado; residual a la caja de escoria **seca** | Distribuidor fuera; nadie en la zona | ★ | S-13 |
 | 13 | Retira la olla vacía | S-09 la lleva a la nave de ollas | Torreta libre | | S-09 |
 | 14 | Mantén el agua de molde | ≥ 15 min después de la última cola | Tubos fríos | ★ | S-12 |
-| 15 | Pide al ESR cerrar los obturadores | ESR cierra, bloquea y mide en las 6 líneas | Registro del ESR | ★ | ESR, S-14 |
+| 15 | Pide al ESR cerrar los obturadores | ESR cierra, bloquea y mide en las 6 líneas (< 2 × fondo, MS-ACE-07) | Registro del ESR | ★ | ESR, S-14 |
 | 16 | Aplica LOTO a la máquina | Extractores, oscilador, carro | Candados puestos | ★ | S-14 |
 | 17 | Inspecciona moldes y línea | Rayas, desgaste, restos de acero, boquillas; avisa a S-25 | Hallazgos registrados | 🔎 | S-14, S-25 |
 | 18 | Registra la secuencia | Número de coladas, duración, causa del fin, cierres de línea | Hoja de secuencia completa | | S-12, C-06 |
@@ -135,7 +141,7 @@ Chamarra y polainas aluminizadas, careta con filtro IR, casco con barbiquejo, gu
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
 | Escoria en el distribuidor antes de cerrar las líneas centrales | Cierre de olla tarde | Cierra de inmediato todas las líneas restantes; marca colas | C-06, C-09 |
-| Breakout de cola | Velocidad de cola alta | 🛑 Detén la extracción de esa línea; evacúa la zona; mantén el agua de molde | C-06, C-04 |
+| Breakout de cola | Velocidad de cola alta | 🛑 Detén la extracción de esa línea; mantén el agua de molde y la secundaria; evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09); el ESR inspecciona el contenedor de Cs-137 | C-06, C-04, ESR |
 | La placa ciega no cierra | Placa fría o mecanismo dañado | Tapón con varilla (MO-CC2-06) | C-06 |
 | La cola se atora en los enderezadores | Cola fría, deformada | Detén; LOTO; mantenimiento la libera | C-06, C-11 |
 | Fin anticipado por emergencia (falla de agua, torreta) | Ver MO-CC2-04 y MO-CC2-05 | Cierra la olla y las 6 líneas; sigue la parte B solo si es seguro | C-04, C-06 |

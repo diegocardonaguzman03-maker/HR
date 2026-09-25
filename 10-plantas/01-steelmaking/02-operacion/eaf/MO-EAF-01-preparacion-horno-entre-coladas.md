@@ -102,6 +102,18 @@ Casco con barbiquejo, careta con visor dorado (filtro IR), chaqueta y polainas a
 | Escoria remanente | Mínima, sin costras en la puerta | Visual | Bitácora | Arrastre de P a la siguiente colada |
 | Estado de la línea de escoria y bancos | Sin cavidad visible; proyección según C-15 | Visual + IR, cada colada | Lista de preparación | Perforación de coraza |
 
+**Criterios de reparación del refractario del EAF (referencia)** [Validar con C-15 / proveedor de refractarios]:
+
+| Zona | Condición observada | Criterio | Acción |
+|---|---|---|---|
+| Línea de escoria / bancos | Cavidad o escalón visible | Profundidad estimada > 100 mm [Supuesto] | Proyección en esta preparación; si se repite 3 coladas, reparación programada |
+| Zona frente a quemadores y puerta | Desgaste localizado | Refractario brillante / delgado | Proyección dirigida |
+| Solera | Agujero o "pozo" visible con el horno a 0° | Cualquier pozo que retenga metal | C-05 + C-15 evalúan; posible vaciado total del talón |
+| Zona del EBT (asiento y bloque) | Erosión del bloque, costra | Tiempo de vaciado < 2.5 min o coladas del tubo al límite | Programar cambio de tubo (MM-EAF-03) |
+| Coraza inferior (termografía) | Punto caliente | > 300 °C [Supuesto] | 🛑 No cargar; evaluación inmediata |
+
+**Distribución típica de los 5 min de preparación** [Supuesto]: verificación de agua 0.5 min · inspección 1 min · proyección 1.5 min · EBT (limpieza, cierre y llenado) 1.5 min · liberación 0.5 min. Las tareas de proyección y EBT pueden hacerse en paralelo si hay dos personas certificadas y bloqueos independientes.
+
 ## 8. Procedimiento paso a paso
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|

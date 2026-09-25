@@ -48,6 +48,12 @@ flowchart LR
 - Ejemplo: `612345-3-07-14` = colada 612345, línea 3, séptima colada de la secuencia, palanquilla 14.
 - Letras de condición (se agregan al final): **A** arranque, **T** transición de colada, **B** cambio de buza, **E** EMS apagado, **C** cola, **R** retenida.
 
+**Por qué importa (para aprender):**
+- **Dilatación.** El acero a ≈ 900 °C mide ≈ 1.2% más que frío: 12 m en frío son ≈ 12.15 m en caliente. Si cortas a 12,000 mm en caliente, la palanquilla fría queda ≈ 150 mm corta.
+- **La marca es la identidad.** Laminación y el cliente final rastrean la varilla hasta la colada con esa marca; una palanquilla sin marca no se puede certificar.
+- **Electroimán y temperatura.** Arriba de ≈ 600–700 °C el acero pierde su magnetismo y el electroimán puede soltar la carga: por eso se usa tenaza para palanquilla muy caliente.
+- **Enfriamiento parejo.** Si la palanquilla se enfría más de un lado (lecho trabado, apoyos desiguales) se curva y ya no entra al horno de recalentamiento.
+
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|
