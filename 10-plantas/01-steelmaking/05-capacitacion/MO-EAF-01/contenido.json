@@ -1,0 +1,210 @@
+{
+  "code": "MO-EAF-01",
+  "title": "Preparación del horno entre coladas",
+  "titulo_corto": "Preparación del horno",
+  "serie": "Operación",
+  "area": "Hornos · EAF-1 / EAF-2",
+  "manual": "02-operacion/eaf/MO-EAF-01-preparacion-horno-entre-coladas.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Dejar el horno sin fugas, con refractario reparado y EBT lleno de arena seca en ≤ 5 min",
+  "audiencia": "S-01 Primer Hornero · S-02 Segundo Hornero · S-03 Tercer Hornero · C-05 Supervisor de Hornos",
+  "kpis": [
+    {"value": "16 h", "label": "teoría (S-01 / S-02)"},
+    {"value": "80 h", "label": "OJT · 30 preparaciones"},
+    {"value": "8", "label": "pasos críticos ★"},
+    {"value": "24", "label": "meses de vigencia (TD-P07)"}
+  ],
+  "cadena": ["Fin de vaciado", "Agua OK", "Refractario", "Proyección", "EBT lleno", "Horno liberado"],
+  "titulos": {
+    "objetivos": "Al terminar, dejas el horno listo y seguro en 5 min",
+    "roles": "S-01 libera; C-05 decide ante cualquier desviación",
+    "flujo": "Primero el agua, después el refractario y el EBT",
+    "figura": "El talón líquido queda bajo paneles con agua",
+    "equipos": "Siete equipos se verifican antes de liberar el horno",
+    "parametros": "Agua, talón y refractario definen si se carga",
+    "seguridad": "Agua bajo metal líquido: el riesgo que no perdona",
+    "calidad": "Un EBT mal llenado se paga en el vaciado",
+    "pasos": "Dieciséis pasos; ocho no admiten error",
+    "anormales": "Ante fuga de agua: horno quieto, arco bloqueado",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de la preparación que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Verificar el agua antes de mover", "detalle": "Leer Δ caudal ≤ 2 %, T de panel ≤ 60 °C y P ≥ 3 bar; revisar vapor y manchas. Con duda, el horno no se mueve."},
+    {"titulo": "Reparar el refractario sin riesgo", "detalle": "Inspeccionar solera, bancos y zona del EBT; proyectar 150–300 kg de MgO sin tocar el baño ni formar charcos."},
+    {"titulo": "Dejar el EBT listo para abrir", "detalle": "Compuerta cerrada y enclavada; agujero limpio y lleno de arena seca hasta corona de 50–100 mm."},
+    {"titulo": "Liberar en ≤ 5 min sin exponer a nadie", "detalle": "Llave cautiva por persona al subir, conteo de llaves al bajar y aviso de horno listo para carga."}
+  ],
+  "por_que_importa": "En los 5 min de preparación se decide si la siguiente colada es segura. Una fuga de agua bajo 20–30 t de talón líquido es una explosión; un EBT mal llenado o un banco adelgazado se convierten en lanceo, retraso o perforación de coraza.",
+  "principio": "Si hay duda de agua, el horno no se inclina ni se carga.",
+  "roles": [
+    ["Rol", "Qué hace en la preparación", "RACI"],
+    ["C-05 Supervisor de Hornos", "Dueño; autoriza liberar con desviación; decide parar por agua o refractario", "A"],
+    ["S-01 Primer Hornero", "Balance de agua y presiones en HMI; inclina, mueve bóveda y libera", "R"],
+    ["S-02 Segundo Hornero", "Inspecciona solera, bancos, puerta y EBT; proyecta y llena el EBT", "R"],
+    ["S-03 Tercer Hornero", "Limpia puerta, prepara arena y mezcla; apoya el llenado del EBT", "R"],
+    ["C-15 Especialista de Refractarios", "Define la práctica de proyección y el criterio de reparación", "C"],
+    ["C-07 Ingeniero de Proceso EAF / LF", "Define límites de proceso; analiza desviaciones repetitivas", "C"],
+    ["S-04 Operador de Grúa de Carga", "Recibe el aviso de horno listo para traer la canasta", "I"]
+  ],
+  "flujo": [
+    {"label": "Fin de vaciado", "desc": "EBT cerrado, horno a −3°"},
+    {"label": "¿Agua OK?", "desc": "Δ ≤ 2 %, T ≤ 60 °C, P ≥ 3 bar, sin vapor"},
+    {"label": "Inspección", "desc": "Solera, bancos, puerta, zona EBT"},
+    {"label": "Proyección", "desc": "Puntos calientes y bancos"},
+    {"label": "Bloqueo", "desc": "Llave cautiva antes de subir al EBT"},
+    {"label": "EBT", "desc": "Limpiar, cerrar y llenar con arena seca"},
+    {"label": "Revisión", "desc": "Electrodos, quemadores, 4.º agujero"},
+    {"label": "Liberar", "desc": "Horno a 0°, llaves completas, aviso"}
+  ],
+  "flujo_takeaway": "Si hay duda de agua, el horno no se mueve: todo lo demás espera.",
+  "figuras": [
+    {
+      "svg": "eaf-corte-horno.svg",
+      "lectura": [
+        "El talón de 20–30 t queda en la solera, contenido por los bancos refractarios.",
+        "Paneles y bóveda se enfrían con agua a 4–6 bar: una fuga cae sobre el metal.",
+        "El EBT (16) se cierra por abajo con la compuerta y se llena de arena por arriba.",
+        "El 4.º agujero (11) mantiene el horno entre −5 y −15 Pa."
+      ]
+    },
+    {
+      "svg": "eaf-ciclo-colada.svg",
+      "titulo": "La preparación tiene 5 de los 55 min del tap-to-tap",
+      "lectura": [
+        "La preparación es la última etapa del ciclo: 5 min con el arco apagado.",
+        "Reparto típico [Supuesto]: agua 0.5, inspección 1, proyección 1.5, EBT 1.5 y liberación 0.5 min.",
+        "Proyección y EBT pueden ir en paralelo con dos personas certificadas y bloqueos independientes."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Agua de paneles y bóveda", "Enfría coraza superior y bóveda", "≈ 2,200 m³/h a 4–6 bar", "★ Δ ≤ 2 %, T ≤ 60 °C, P ≥ 3 bar"],
+    ["Solera y bancos", "Contienen el talón y el baño", "MgO apisonada / MgO-C [Validar con OEM]", "Sin cavidades; coraza sin punto caliente"],
+    ["EBT y compuerta", "Vaciado por el fondo sin escoria", "Tubo y bloque reemplazables; flap", "Cerrada y enclavada; agujero limpio"],
+    ["Tolva de arena del EBT", "Llena el agujero", "Olivino/magnesia [Validar con OEM]", "Tolva cerrada; humedad ≤ 0.5 % [Supuesto]"],
+    ["Máquina de proyección", "Repara puntos calientes", "Mezcla de MgO; agua dosificada", "Boquilla libre; agua según proveedor"],
+    ["Sistema de inclinación", "Inclina a EBT (+) y a puerta (−)", "−10° a +15° [Validar con OEM]", "Enclavamiento de 0°; sin fugas de aceite"],
+    ["4.º agujero y quemadores", "Humos; O₂ y gas natural", "−5 a −15 Pa; 4 × 2,500 Nm³/h", "Damper en automático; boquillas libres"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Δ caudal agua ent–sal", "≤ 1 %", "0–2 %", "> 2 % alarma; > 4 % disparo", "No inclinar; C-05 y Mtto"],
+    ["T de salida de panel", "≤ 50 °C [Supuesto]", "35–55 °C", "> 60 °C", "Revisa caudal; aísla panel"],
+    ["Presión de agua", "5 bar", "4–6 bar", "< 3 bar", "No cargar ni energizar"],
+    ["Talón líquido", "25 t", "20–30 t", "< 20 t o > 30 t", "< 20: C-07; > 30: menos carga"],
+    ["Tiempo de preparación", "5 min", "4–6 min", "> 8 min [Supuesto]", "Registrar demora y causa"],
+    ["Proyección", "150–300 kg [Supuesto]", "1–2 kg/t", "> 450 kg en 3 coladas", "C-15 evalúa reparación"],
+    ["Humedad arena EBT", "≤ 0.3 % [Supuesto]", "—", "> 0.5 %", "No usar; cambiar lote"],
+    ["T de coraza inferior", "≤ 250 °C [Supuesto]", "—", "> 300 °C [Supuesto]", "No cargar; C-05 + C-15"]
+  ],
+  "parametros_nota": "Presión del horno −5 a −15 Pa (> 0 Pa: no cargar). Solera, arena, inclinación y corona del EBT: [Validar con OEM / Ingeniería de Proceso].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Llave cautiva o LOTO", "detalle": "Llave cautiva, una por persona, para la rutina en la plataforma del EBT. Para intervenir equipo: LOTO completo (MS-ACE-02 §6.4)."},
+      {"titulo": "Agua: con duda no se mueve el horno", "detalle": "Balance y visual antes de inclinar. Δ > 2 % o vapor: arco bloqueado, no inclinar, evacuar a ≥ 25 m (MS-ACE-03)."},
+      {"titulo": "Arena y proyección secas", "detalle": "Arena en tolva cerrada. Proyección solo sobre refractario caliente, nunca sobre el baño ni formando charcos."},
+      {"titulo": "CO en la plataforma superior", "detalle": "Detector multigás: CO 25 ppm salir, 200 ppm evacuar el sector; O₂ fuera de 19.5–23.5 % salir (MS-ACE-06)."}
+    ],
+    "epp": [
+      "Casco con barbiquejo y careta con visor dorado",
+      "Chaqueta, polainas y guantes aluminizados",
+      "Ropa ignífuga FR, nada sintético; botas metatarsales",
+      "Protección auditiva: > 100 dB(A) con arco encendido",
+      "Detector personal de CO; arnés si no hay barandal"
+    ],
+    "figura": "ms-emergencia-arbol-decision.svg",
+    "figura_titulo": "Fuga de agua en el EAF: no mover, evacuar, esperar",
+    "figura_lectura": [
+      "Δ caudal > 2 % es alarma y > 4 % dispara el arco: no inclinar ni mover electrodos.",
+      "Evacuar la plataforma y la zona ≤ 25 m; nadie frente a la puerta ni al EBT.",
+      "Esperar sin vapor ≥ 30 min [Supuesto]; reanudar solo con OK de C-05 y C-07."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Llenado del EBT", "Corona 50–100 mm [Validar con OEM]", "Visual, cada colada", "EBT no abre: lanceo, retraso, reoxidación"],
+    ["Talón líquido", "20–30 t", "Balance de masa, cada colada", "Bajo: fusión lenta; alto: sobrellenado"],
+    ["Escoria remanente", "Mínima, sin costras en la puerta", "Visual; bitácora", "Arrastre de P a la siguiente colada"],
+    ["Línea de escoria y bancos", "Sin cavidad; proyección según C-15", "Visual + IR, cada colada", "Perforación de coraza"]
+  ],
+  "calidad_takeaway": "Cavidad > 100 mm [Supuesto] se proyecta hoy; si se repite 3 coladas, reparación programada.",
+  "pasos": [
+    {"n": 1, "paso": "Confirma fin de vaciado", "como": "HMI: EBT cerrado, horno retroinclinado a −3°, carro de olla fuera de la fosa", "criterio": "Vaciado terminado en nivel 2", "critico": false, "rol": "S-01"},
+    {"n": 2, "paso": "Verifica el agua en HMI", "como": "Lee Δ caudal por circuito, T de salida por panel y presión; registra los tres valores", "criterio": "Δ ≤ 2 %, T ≤ 60 °C, P 4–6 bar", "critico": true, "rol": "S-01"},
+    {"n": 3, "paso": "Verifica el agua a la vista", "como": "Bóveda cerrada, desde posición protegida: vapor, manchas húmedas en la escoria, llama anormal", "criterio": "Sin evidencia de agua", "critico": true, "rol": "S-02"},
+    {"n": 4, "paso": "Decide si mueve el horno", "como": "Con duda en los pasos 2 o 3: no inclines, no gires bóveda, arco bloqueado; aplica condiciones anormales", "criterio": "Sin duda de fuga", "critico": true, "rol": "S-01 / C-05"},
+    {"n": 5, "paso": "Nivela a 0°", "como": "Inclina a 0° lentamente para la inspección", "criterio": "Enclavamiento de 0° activo", "critico": false, "rol": "S-01"},
+    {"n": 6, "paso": "Inspecciona el refractario", "como": "Desde la puerta con careta: solera, bancos, línea de escoria, jambas y zona del EBT; revisa la termografía", "criterio": "Sin cavidades; coraza ≤ 300 °C", "critico": false, "rol": "S-02"},
+    {"n": 7, "paso": "Estima el talón", "como": "Balance en nivel 2: carga metálica menos peso vaciado", "criterio": "20–30 t", "critico": false, "rol": "S-01"},
+    {"n": 8, "paso": "Proyecta puntos calientes", "como": "Mezcla de MgO sobre puntos desgastados, desde la puerta; nunca sobre el baño ni formando charcos", "criterio": "150–300 kg; superficie cubierta", "critico": true, "rol": "S-02"},
+    {"n": 9, "paso": "Rellena bancos, limpia puerta", "como": "Dolomita/MgO granular en bancos [Supuesto: 0.5–1 t]; costras con la máquina, nadie en la trayectoria", "criterio": "Banco continuo; umbral libre", "critico": false, "rol": "S-02 / S-03"},
+    {"n": 10, "paso": "Bloquea antes de subir al EBT", "como": "Interruptor abierto; inclinación y bóveda con llave cautiva, una por persona; S-01 confirma en HMI", "criterio": "Una llave por persona; OK S-01", "critico": true, "rol": "S-02 / S-01"},
+    {"n": 11, "paso": "Limpia el agujero del EBT", "como": "Revisa diámetro y costras; costra: lanza de O₂ desde arriba con EPP aluminizado; registra coladas del tubo", "criterio": "Agujero libre; tubo < límite", "critico": false, "rol": "S-02"},
+    {"n": 12, "paso": "Cierra la compuerta del EBT", "como": "Acciona el cierre desde el mando local; confirma el indicador de cerrado y enclavado", "criterio": "Indicador cerrado", "critico": true, "rol": "S-02"},
+    {"n": 13, "paso": "Llena el EBT con arena seca", "como": "Arena de la tolva cerrada hasta corona de 50–100 mm; seca y sin grumos", "criterio": "Corona uniforme; arena ≤ 0.5 %", "critico": true, "rol": "S-02 / S-03"},
+    {"n": 14, "paso": "Revisa electrodos y quemadores", "como": "Longitud bajo mordaza, grietas y juntas (MO-EAF-08); boquillas libres; presión −5 a −15 Pa", "criterio": "Sin alarmas; longitud suficiente", "critico": false, "rol": "S-01"},
+    {"n": 15, "paso": "Retira el bloqueo", "como": "Bajan todos; cada persona devuelve su propia llave al tablero; personas = llaves", "criterio": "Plataforma vacía; llaves completas", "critico": true, "rol": "S-02 / S-01"},
+    {"n": 16, "paso": "Libera el horno", "como": "Registra la lista de preparación en nivel 2; avisa por radio a S-04 y S-05: “EAF-x listo para carga”", "criterio": "Lista sin pendientes", "critico": false, "rol": "S-01"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Fuga: Δ > 2 %, vapor o manchas", "Arco bloqueado; no inclinar ni mover electrodos; cerrar el circuito; evacuar ≥ 25 m", "C-05, C-04, C-16, Mtto"],
+    ["Punto caliente en coraza > 300 °C", "No cargar; evaluar con C-15; vaciar el talón solo con procedimiento de C-05", "C-05, C-15"],
+    ["Costra que no sale del EBT", "Lanza de O₂ desde arriba con EPP; tras 2 intentos, C-05 decide", "C-05"],
+    ["Compuerta no cierra o no enclava", "No llenar con arena ni cargar; Mantenimiento revisa con LOTO", "C-05, Mtto"],
+    ["Arena húmeda o apelmazada", "Cambiar el lote; no usar esa arena", "C-05, C-17"],
+    ["Talón < 20 t o > 30 t", "< 20 t: C-07 ajusta la siguiente colada; > 30 t: reducir carga y vigilar la puerta", "C-07 / C-05"],
+    ["Presión del horno positiva", "No cargar hasta restablecer damper del 4.º agujero y casa de bolsas", "C-05, Mtto"],
+    ["Electrodo con grieta visible", "No energizar; cambiar o reparar según MO-EAF-08", "C-05"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-01 Primer Hornero", "U", "16 h", "80 h / 30 preparaciones", "24 meses"],
+      ["S-02 Segundo Hornero", "U", "16 h", "80 h / 30 preparaciones", "24 meses"],
+      ["S-03 Tercer Hornero", "L (U para suplir)", "12 h", "40 h / 15 preparaciones", "24 meses"],
+      ["C-05 Supervisor de Hornos", "O (evaluador)", "24 h + evaluador", "—", "24 meses"]
+    ],
+    "checklist": [
+      "Interpreta balance de agua, T de panel y presión: límites 2 % / 4 % / 60 °C / 3 bar",
+      "Explica por qué no se inclina con sospecha de fuga y ejecuta la respuesta",
+      "Verifica a la vista que no hay agua y no mueve el horno si hay duda",
+      "Distingue llave cautiva de LOTO; bloquea al subir y retira con conteo de personas",
+      "Verifica la compuerta cerrada y el EBT lleno con arena seca",
+      "Proyecta sin formar charcos ni proyectar sobre el baño"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Qué Δ de caudal de agua entrada–salida dispara el arco?", "opciones": ["> 1 %", "> 2 %", "> 4 %"], "correcta": 2, "explicacion": "> 2 % es alarma: no inclinar ni cargar. > 4 % dispara el arco en automático."},
+    {"pregunta": "Ves vapor y manchas húmedas en la escoria. ¿Qué haces?", "opciones": ["Inclinar a la puerta para escoriar", "No inclinar ni mover; evacuar", "Proyectar MgO sobre la mancha"], "correcta": 1, "explicacion": "Inclinar atrapa el agua bajo el metal: explosión. Arco bloqueado y evacuación a ≥ 25 m."},
+    {"pregunta": "¿Qué talón líquido debe quedar en el horno?", "opciones": ["5–10 t", "20–30 t", "40–50 t"], "correcta": 1, "explicacion": "Talón 20–30 t. Bajo: fusión lenta del DRI. Alto: sobrellenado en la siguiente colada."},
+    {"pregunta": "¿Hasta dónde se llena el EBT con arena seca?", "opciones": ["Hasta la mitad del tubo", "Corona de 50–100 mm", "Al ras de la solera"], "correcta": 1, "explicacion": "Corona de 50–100 mm con arena ≤ 0.5 % de humedad; si no, el EBT puede no abrir."},
+    {"pregunta": "¿Qué necesitas para subir a llenar el EBT?", "opciones": ["Aviso verbal a S-01", "Tu propia llave cautiva", "Nada si el arco está apagado"], "correcta": 1, "explicacion": "Rutina: una llave cautiva por persona y confirmación en HMI. Intervenir equipo: LOTO completo."}
+  ],
+  "reglas": [
+    {"titulo": "Con duda de agua, el horno no se mueve", "detalle": "No inclinar, no girar bóveda, arco bloqueado; reanudar solo con C-05 y C-07."},
+    {"titulo": "Nadie sube al EBT sin su llave", "detalle": "Una llave cautiva por persona; para intervenir equipo, LOTO completo."},
+    {"titulo": "Arena seca o no se llena", "detalle": "Humedad > 0.5 %: cambiar el lote. Humedad + metal líquido = explosión."},
+    {"titulo": "Coraza > 300 °C: no se carga", "detalle": "C-05 y C-15 evalúan antes de continuar [Supuesto]."}
+  ],
+  "por_confirmar": [
+    "Material de solera, arena del EBT, rango de inclinación y corona de arena con el OEM",
+    "T de panel, humedad de arena, proyección, T de coraza y reparto de los 5 min (supuestos)"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de fuga de agua en EAF; reglas de oro", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con el corte del horno", "Láminas 3–6"],
+    ["3. Equipos y parámetros", "75", "Ejercicio: leer el balance de agua en la HMI", "Láminas 7–8, pantallas HMI"],
+    ["4. Seguridad", "75", "Llave cautiva vs. LOTO; árbol de decisión", "Láminas 9–10, EPP físico"],
+    ["5. Calidad y paso a paso", "120", "Lectura guiada de los 16 pasos; pasos ★", "Láminas 11–14"],
+    ["6. Condiciones anormales", "60", "Simulacro de mesa: fuga de agua en panel", "Lámina 15"],
+    ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 18"],
+    ["8. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 16–17, 19"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

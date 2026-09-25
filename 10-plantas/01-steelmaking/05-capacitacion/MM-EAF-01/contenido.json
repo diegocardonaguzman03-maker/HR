@@ -1,0 +1,724 @@
+{
+  "code": "MM-EAF-01",
+  "title": "Detección y reparación de fugas en paneles y bóveda enfriados por agua",
+  "titulo_corto": "Fugas en paneles EAF",
+  "serie": "Mantenimiento",
+  "area": "Acería · EAF-1 / EAF-2",
+  "manual": "03-mantenimiento/MM-EAF-01-fugas-paneles-boveda.md",
+  "manual_version": "0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Detectar, aislar y reparar la fuga sin exponer a nadie al contacto agua–metal líquido",
+  "audiencia": "S-19 Mecánico · S-23 Soldador · S-21 Instrumentista · S-20 Electricista · S-04 Grúa de Carga · C-11",
+  "kpis": [
+    {
+      "value": "16 h",
+      "label": "teoría (S-19 Mecánico)"
+    },
+    {
+      "value": "40 h",
+      "label": "OJT · 3 reparaciones"
+    },
+    {
+      "value": "13",
+      "label": "pasos críticos ★"
+    },
+    {
+      "value": "24",
+      "label": "meses de vigencia (TD-P07)"
+    }
+  ],
+  "cadena": [
+    "Alarma ΔQ",
+    "Horno seguro",
+    "LOTO y energía cero",
+    "Reparar o cambiar",
+    "Prueba 10 bar",
+    "Liberación firmada"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, reparas la fuga sin agua sobre el metal",
+    "roles": "C-11 es dueño; nadie libera sin la firma de C-05",
+    "flujo": "Primero se asegura el horno, después se repara",
+    "figura": "ΔQ > 2 % avisa; ΔQ > 4 % dispara el arco",
+    "equipos": "Siete equipos detectan, aíslan y prueban la fuga",
+    "parametros": "Espesor < 5 mm o ΔQ > 4 %: el panel no sigue",
+    "seguridad": "Agua sobre acero líquido: la explosión que mata",
+    "calidad": "El agua que entra al baño sale como hidrógeno",
+    "pasos": "Dieciséis pasos; trece no admiten error",
+    "anormales": "Ante ΔQ > 4 %: arco fuera, no bascular, evacuar",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de las fugas de agua que no se negocian"
+  },
+  "objetivos": [
+    {
+      "titulo": "Asegurar el horno ante una fuga",
+      "detalle": "Con ΔQ > 4 % o agua visible: arco fuera, no bascular, evacuar a ≥ 25 m y esperar sin vapor ≥ 30 min."
+    },
+    {
+      "titulo": "Aislar con LOTO y energía cero",
+      "detalle": "Bloquear E1–E6 con candado personal y probar: arranque rechazado, 0 V, 0 bar y gases en rango."
+    },
+    {
+      "titulo": "Decidir: soldar o cambiar el panel",
+      "detalle": "UT en malla de 50 × 50 mm: todo ≥ 5 mm se repara con WPS; si no, se cambia el panel completo."
+    },
+    {
+      "titulo": "Probar y liberar",
+      "detalle": "Prueba hidrostática 10 bar / 30 min sin caída; ΔQ ≤ 0.5 % y liberación firmada por C-11 y C-05."
+    }
+  ],
+  "por_que_importa": "Agua más acero líquido es explosión de vapor: proyección de metal y fatalidad. Este manual es de riesgo máximo. Una fuga pequeña que no se detecta también mete hidrógeno al acero y termina en sopladuras y rechazo en laminación.",
+  "principio": "Con agua en el horno no se bascula, no se mueven electrodos y nadie se acerca a menos de 25 m.",
+  "roles": [
+    [
+      "Rol",
+      "Qué hace en la reparación de fugas",
+      "RACI"
+    ],
+    [
+      "C-11 Supervisor de Mantenimiento Mecánico",
+      "Dueño; emite OT, coordina LOTO y firma la liberación",
+      "A"
+    ],
+    [
+      "S-19 Mecánico de Acería",
+      "Aislamiento del agua, cambio de panel, prueba hidrostática",
+      "R"
+    ],
+    [
+      "S-23 Soldador Calificado",
+      "Reparación de tubos por soldadura con WPS calificado",
+      "R"
+    ],
+    [
+      "S-21 Instrumentista",
+      "Calibra FT, TT y PT; verifica la lógica de fuga",
+      "R"
+    ],
+    [
+      "S-01 Operador de Púlpito de Horno",
+      "Detiene el arco, no bascula, bloqueo de operación; firma la liberación",
+      "R"
+    ],
+    [
+      "C-05 Supervisor de Hornos",
+      "Autoriza el paro y firma la liberación por operación",
+      "A (operación)"
+    ],
+    [
+      "S-04 Operador de Grúa de Carga",
+      "Iza el panel de repuesto o la bóveda",
+      "R"
+    ]
+  ],
+  "flujo": [
+    {
+      "label": "Alarma",
+      "desc": "ΔQ > 2 % o fuga visible"
+    },
+    {
+      "label": "Asegurar horno",
+      "desc": "Arco fuera, no bascular, ≥ 25 m"
+    },
+    {
+      "label": "Esperar",
+      "desc": "Circuito cerrado; sin vapor ≥ 30 min"
+    },
+    {
+      "label": "LOTO E1–E6",
+      "desc": "Candados y prueba de energía cero"
+    },
+    {
+      "label": "Drenar y medir",
+      "desc": "0 bar; UT alrededor de la fuga"
+    },
+    {
+      "label": "Reparar o cambiar",
+      "desc": "Espesor ≥ 5 mm soldar; si no, panel"
+    },
+    {
+      "label": "Prueba 10 bar",
+      "desc": "30 min, caída 0 bar y sin goteo"
+    },
+    {
+      "label": "Circular agua",
+      "desc": "ΔQ ≤ 0.5 %, P 4–6 bar"
+    },
+    {
+      "label": "Liberar",
+      "desc": "Firma C-11 y C-05"
+    }
+  ],
+  "flujo_takeaway": "La reparación empieza cuando el horno está seguro y sin agua sobre el baño, nunca antes.",
+  "figuras": [
+    {
+      "svg": "mm-panel-enfriado-fuga.svg",
+      "lectura": [
+        "Cada panel tiene FT de entrada y de salida; el PLC calcula ΔQ % = (Q ent − Q sal) / Q ent × 100.",
+        "ΔQ > 2 % da alarma; ΔQ > 4 % dispara el arco y corta O₂, gas natural y carbono.",
+        "V1 y V2 son los puntos LOTO del circuito; el dren y el venteo sirven para drenar y para la prueba hidrostática."
+      ]
+    }
+  ],
+  "equipos": [
+    [
+      "Equipo",
+      "Función",
+      "Especificación clave",
+      "Verificar antes"
+    ],
+    [
+      "Paneles de pared (tubo)",
+      "Enfriar la pared sobre la escoria",
+      "Ø 70 × 10 mm A106-B [Validar OEM]",
+      "Espesor ≥ 5 mm; pandeo ≤ 20 mm"
+    ],
+    [
+      "Bóveda enfriada y codo",
+      "Enfriar bóveda y ducto de humos",
+      "Circuitos por sector [Validar OEM]",
+      "ΔQ ≤ 0.5 %; T salida ≤ 60 °C"
+    ],
+    [
+      "Medidores FT ent/sal",
+      "Detectar la fuga",
+      "Electromagnéticos, ±0.5 %",
+      "Etiqueta de calibración ≤ 12 meses"
+    ],
+    [
+      "Transmisores TT y PT",
+      "T de salida y presión",
+      "Pt100; 0–10 bar",
+      "Coincide con manómetro ±0.2 bar"
+    ],
+    [
+      "Válvulas V1 / V2",
+      "Aislar el circuito (punto LOTO)",
+      "Mariposa/compuerta con candado",
+      "Cierre hermético, porta-candado"
+    ],
+    [
+      "Bombas y cabezal",
+      "Suministro de agua al horno",
+      "2,200 m³/h, 4–6 bar",
+      "P ≥ 4 bar en cabezal"
+    ],
+    [
+      "Bomba de prueba hidrostática",
+      "Prueba de presión",
+      "0–25 bar; manómetro clase 0.5",
+      "Manómetro calibrado"
+    ]
+  ],
+  "parametros": [
+    [
+      "Especificación",
+      "Objetivo",
+      "Tolerancia",
+      "Límite / rechazo",
+      "Frecuencia"
+    ],
+    [
+      "Presión de suministro",
+      "5 bar",
+      "4–6 bar",
+      "< 3 bar alarma",
+      "Continuo"
+    ],
+    [
+      "Caudal total",
+      "2,200 m³/h",
+      "±5 %",
+      "< 90 % del nominal",
+      "Continuo"
+    ],
+    [
+      "ΔQ por circuito",
+      "≤ 0.5 %",
+      "0–1 %",
+      "> 2 % alarma; > 4 % disparo",
+      "Continuo"
+    ],
+    [
+      "T salida de panel",
+      "≤ 50 °C [Supuesto]",
+      "35–55 °C",
+      "> 60 °C alarma",
+      "Continuo"
+    ],
+    [
+      "Espesor de tubo (UT)",
+      "10 mm nuevo",
+      "≥ 6 mm",
+      "< 5 mm: cambiar",
+      "Semanal zona caliente"
+    ],
+    [
+      "Pandeo del panel",
+      "0 mm",
+      "≤ 10 mm",
+      "> 20 mm: cambiar",
+      "Semanal"
+    ],
+    [
+      "Prueba hidrostática",
+      "10 bar / 30 min",
+      "≥ 1.5 × 6 bar",
+      "Caída o goteo = rechazo",
+      "Cada reparación"
+    ],
+    [
+      "Lógica ΔQ (4–20 mA)",
+      "Alarma 2 %, disparo 4 %",
+      "±0.2 %",
+      "No dispara: no operar",
+      "Trimestral"
+    ]
+  ],
+  "parametros_nota": "Tubo, pandeo, filtro de 5 s y torques de bridas: [Validar con OEM / Ingeniería de Mantenimiento]. Calibración de FT anual (> ±1 %: recalibrar).",
+  "seguridad": {
+    "controles": [
+      {
+        "titulo": "Disparo y evacuación por agua",
+        "detalle": "ΔQ > 4 % dispara el arco. Con agua en el horno: no bascular, evacuar a ≥ 25 m y esperar sin vapor ≥ 30 min (MS-ACE-03)."
+      },
+      {
+        "titulo": "LOTO E1–E6 con candado personal",
+        "detalle": "Eléctrica MT (S-20), hidráulica, O₂/GN purgado con N₂, neumática y DRI, agua V1/V2 y perno de basculamiento."
+      },
+      {
+        "titulo": "Prueba de energía cero",
+        "detalle": "Arranque rechazado en HMI y botonera, detector de tensión, 0 bar; O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL."
+      },
+      {
+        "titulo": "Trabajo en caliente y altura",
+        "detalle": "Soldar solo con 0 % LEL detectable (≤ 1 % de lectura) en monitoreo continuo; arnés y línea de vida (NOM-009)."
+      }
+    ],
+    "epp": [
+      "Casco, lentes y careta facial",
+      "Ropa FR o aluminizada y guantes para calor",
+      "Botas metatarsales y protección auditiva",
+      "Arnés de cuerpo completo en altura",
+      "Respirador P100 en demolición de escoria",
+      "Soldadura: careta DIN 10–13, mangas y peto"
+    ],
+    "figura": "ms-loto-puntos-eaf.svg",
+    "figura_titulo": "Seis energías se bloquean antes de tocar el panel",
+    "figura_lectura": [
+      "Eléctrica, hidráulica, O₂/GN, neumática y DRI, agua del circuito y gravedad: cada una con su candado.",
+      "El agua se bloquea solo en el panel en reparación: V1 y V2 cerradas, dren abierto.",
+      "Si una lectura de la prueba de energía cero no cumple, no se trabaja y se avisa a C-04."
+    ]
+  },
+  "calidad": [
+    [
+      "Variable",
+      "Especificación",
+      "Cómo y cuándo",
+      "Si falla"
+    ],
+    [
+      "Ingreso de agua al baño",
+      "0 (ΔQ ≤ 0.5 %)",
+      "PLC continuo",
+      "H alto: sopladuras y pinholes"
+    ],
+    [
+      "H en acero (grados sensibles)",
+      "≤ 5 ppm en LF [Validar con C-09]",
+      "Sonda de H tras colada sospechosa",
+      "Porosidad; rechazo en laminación"
+    ],
+    [
+      "Escoria espumosa estable",
+      "Sin manchas de escoria enfriada",
+      "Visual del S-01",
+      "Arco descubierto, más daño a paneles"
+    ],
+    [
+      "T de salida de panel",
+      "≤ 60 °C",
+      "TT continuo",
+      "Incrustación, fatiga térmica, fuga"
+    ]
+  ],
+  "calidad_takeaway": "Una fuga pequeña bajo 2 % no dispara, pero sí mete hidrógeno: vapor y manchas negras también son alarma.",
+  "pasos": [
+    {
+      "n": 1,
+      "paso": "Recibe la alarma",
+      "como": "Identifica en la HMI el circuito con mayor ΔQ y mayor T de salida",
+      "criterio": "Circuito identificado",
+      "critico": false,
+      "rol": "S-01, S-21"
+    },
+    {
+      "n": 2,
+      "paso": "Asegura el horno",
+      "como": "ΔQ > 4 % o agua visible: arco, O₂/GN/C fuera; no bascules ni muevas electrodos; evacúa a ≥ 25 m",
+      "criterio": "Nadie a menos de 25 m",
+      "critico": true,
+      "rol": "S-01, C-05"
+    },
+    {
+      "n": 3,
+      "paso": "Espera la evaporación",
+      "como": "Cierra el circuito a distancia; sin vapor visible ≥ 30 min [Supuesto]; reanuda solo con C-05 + C-07",
+      "criterio": "Autorización registrada",
+      "critico": true,
+      "rol": "C-05, C-07"
+    },
+    {
+      "n": 4,
+      "paso": "Vacía el horno si es seguro",
+      "como": "Vaciado por EBT solo con autorización de C-05 y sin agua sobre el baño",
+      "criterio": "Sin metal o talón controlado",
+      "critico": true,
+      "rol": "S-01, C-05"
+    },
+    {
+      "n": 5,
+      "paso": "Emite OT y permisos",
+      "como": "OT, permiso en caliente, altura y, si aplica, espacio confinado; análisis de riesgos",
+      "criterio": "Permisos firmados",
+      "critico": true,
+      "rol": "C-11, C-16"
+    },
+    {
+      "n": 6,
+      "paso": "Aplica LOTO E1–E6",
+      "como": "Cada ejecutante coloca su candado en la caja grupal",
+      "criterio": "Candados y tarjetas puestos",
+      "critico": true,
+      "rol": "Todos"
+    },
+    {
+      "n": 7,
+      "paso": "Prueba energía cero",
+      "como": "Arranque desde HMI y botonera; detector de tensión; 0 bar; O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL",
+      "criterio": "Sin energía; gases en rango",
+      "critico": true,
+      "rol": "C-11, S-20"
+    },
+    {
+      "n": 8,
+      "paso": "Drena y ventea",
+      "como": "Abre dren y venteo; espera que el manómetro marque 0 bar",
+      "criterio": "0 bar, sin flujo",
+      "critico": true,
+      "rol": "S-19"
+    },
+    {
+      "n": 9,
+      "paso": "Localiza y mide espesores",
+      "como": "Visual o aire a 2 bar con agua jabonosa [Validar]; UT en malla 50 × 50 mm, 300 mm alrededor",
+      "criterio": "Todo ≥ 5 mm: reparar",
+      "critico": false,
+      "rol": "S-19"
+    },
+    {
+      "n": 10,
+      "paso": "Repara por soldadura",
+      "como": "Permiso vigente, LEL ≤ 1 % continuo; corta ≥ 150 mm, bisel 37.5°, GTAW + E7018 [Validar WPS]",
+      "criterio": "Sin porosidad ni socavado",
+      "critico": true,
+      "rol": "S-23"
+    },
+    {
+      "n": 11,
+      "paso": "O cambia el panel",
+      "como": "Iza con plan de izaje; juntas nuevas; bridas en cruz, M20 8.8: 350–400 N·m [Validar OEM]",
+      "criterio": "Panel asentado",
+      "critico": true,
+      "rol": "S-19, S-04"
+    },
+    {
+      "n": 12,
+      "paso": "Prueba hidrostática",
+      "como": "Llena, ventea, sube a 10 bar, aísla la bomba y sostén 30 min",
+      "criterio": "Caída 0 bar, sin goteo",
+      "critico": true,
+      "rol": "S-19, C-11"
+    },
+    {
+      "n": 13,
+      "paso": "Inspecciona la soldadura",
+      "como": "Visual y líquidos penetrantes en las uniones reparadas",
+      "criterio": "Sin indicaciones",
+      "critico": false,
+      "rol": "S-23"
+    },
+    {
+      "n": 14,
+      "paso": "Retira LOTO",
+      "como": "En orden inverso; cada quien retira su candado; personal fuera verificado",
+      "criterio": "Candados fuera, área limpia",
+      "critico": true,
+      "rol": "Todos"
+    },
+    {
+      "n": 15,
+      "paso": "Circula agua y verifica",
+      "como": "Abre V2 y luego V1; circula 10 min; ΔQ ≤ 0.5 %, T estable, P 4–6 bar",
+      "criterio": "Valores en rango",
+      "critico": true,
+      "rol": "S-21, S-01"
+    },
+    {
+      "n": 16,
+      "paso": "Libera el equipo",
+      "como": "Checklist de liberación firmado por Mantenimiento y Operación",
+      "criterio": "Firmado por C-11 y C-05",
+      "critico": true,
+      "rol": "C-11, C-05"
+    }
+  ],
+  "anormales": [
+    [
+      "Síntoma",
+      "Acción inmediata",
+      "Avisar a"
+    ],
+    [
+      "ΔQ > 4 % (disparo)",
+      "Arco fuera, no bascular, evacuar a ≥ 25 m; cerrar circuito; sin vapor ≥ 30 min",
+      "C-05, C-04, C-07"
+    ],
+    [
+      "Detector en alarma en el trabajo",
+      "Detén el trabajo en caliente y sal; ventila; revisa E3",
+      "C-11, C-16"
+    ],
+    [
+      "CO ≥ 200 ppm o ≥ 20 % LEL",
+      "Evacúa el sector",
+      "C-11, C-16"
+    ],
+    [
+      "ΔQ entre 2 y 4 %",
+      "Revisar visualmente con el arco apagado; comparar FT",
+      "C-05, S-21"
+    ],
+    [
+      "ΔQ oscila sin fuga visible",
+      "Ventear el circuito; limpiar electrodos del FT",
+      "S-21"
+    ],
+    [
+      "T salida > 60 °C, caudal normal",
+      "Reducir potencia; revisar escoria y quemador",
+      "S-01, C-07"
+    ],
+    [
+      "P < 3 bar",
+      "Cambiar a bomba de reserva; si no recupera, detener el arco",
+      "C-12, C-05"
+    ],
+    [
+      "Explosión o proyección de metal",
+      "Emergencia MS-ACE-09; no reingresar sin autorización",
+      "C-04, Brigada"
+    ]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      [
+        "Rol",
+        "ILUO",
+        "Teoría",
+        "OJT supervisado",
+        "Vigencia"
+      ],
+      [
+        "S-19 Mecánico",
+        "U",
+        "16 h",
+        "40 h / 3 reparaciones",
+        "24 meses; altura y confinado 12"
+      ],
+      [
+        "S-23 Soldador",
+        "U",
+        "8 h + ASME IX/AWS",
+        "3 reparaciones",
+        "24 meses; 6 sin uso: recalificar"
+      ],
+      [
+        "S-21 Instrumentista",
+        "U",
+        "12 h",
+        "2 pruebas de lógica",
+        "24 meses"
+      ],
+      [
+        "S-20 Electricista",
+        "O",
+        "NOM-029 + MT",
+        "3 bloqueos E1",
+        "12 meses"
+      ],
+      [
+        "S-04 Grúa de Carga",
+        "U",
+        "NOM-006 + izaje",
+        "2 izajes de panel",
+        "12 meses"
+      ],
+      [
+        "C-11 Emisor de permisos",
+        "O",
+        "12 h",
+        "5 permisos con tutor",
+        "12 meses"
+      ]
+    ],
+    "checklist": [
+      "No bascula con agua, evacúa a ≥ 25 m y vacía solo con autorización de C-05",
+      "Firma permisos en caliente, altura y confinado; aplica LOTO completo E1–E6",
+      "Prueba energía cero: arranque rechazado, 0 V, 0 bar y gases (≤ 1 % LEL para soldar)",
+      "Suelda con monitoreo continuo o iza el panel sin nadie bajo la carga",
+      "Prueba hidrostática 10 bar / 30 min sin caída",
+      "Retira candados con conteo, circula agua antes de energizar y libera con doble firma"
+    ]
+  },
+  "quiz": [
+    {
+      "pregunta": "¿Con qué ΔQ se dispara el arco del horno?",
+      "opciones": [
+        "> 2 %",
+        "> 4 %",
+        "> 10 %"
+      ],
+      "correcta": 1,
+      "explicacion": "ΔQ > 2 % da alarma e inspección; ΔQ > 4 % abre el interruptor del arco y corta O₂, GN y carbono."
+    },
+    {
+      "pregunta": "Hay agua visible sobre el baño. ¿Qué haces con el horno?",
+      "opciones": [
+        "Bascular para vaciar rápido",
+        "No bascular y evacuar a ≥ 25 m",
+        "Subir los electrodos y seguir"
+      ],
+      "correcta": 1,
+      "explicacion": "Con agua en el horno no se bascula ni se mueven electrodos; se evacúa y se espera sin vapor ≥ 30 min."
+    },
+    {
+      "pregunta": "Por UT, un punto junto a la fuga mide 4.5 mm. ¿Qué procede?",
+      "opciones": [
+        "Soldar la fuga",
+        "Cambiar el panel completo",
+        "Operar y medir la semana siguiente"
+      ],
+      "correcta": 1,
+      "explicacion": "Se repara solo si todos los puntos miden ≥ 5 mm; con menos de 5 mm se cambia el tubo o el panel."
+    },
+    {
+      "pregunta": "¿Cuál es la prueba hidrostática después de reparar?",
+      "opciones": [
+        "6 bar por 10 min",
+        "10 bar por 30 min",
+        "25 bar por 5 min"
+      ],
+      "correcta": 1,
+      "explicacion": "10 bar sostenidos 30 min con la bomba aislada: cualquier caída o goteo es rechazo."
+    },
+    {
+      "pregunta": "¿Qué atmósfera se requiere para soldar u oxicortar?",
+      "opciones": [
+        "< 10 % LEL",
+        "0 % LEL detectable (≤ 1 % de lectura)",
+        "< 20 % LEL"
+      ],
+      "correcta": 1,
+      "explicacion": "< 10 % LEL es para entrar; para trabajo en caliente se exige 0 % LEL detectable en monitoreo continuo."
+    }
+  ],
+  "reglas": [
+    {
+      "titulo": "Agua en el horno: no se bascula",
+      "detalle": "Arco fuera, evacuar a ≥ 25 m y esperar sin vapor ≥ 30 min."
+    },
+    {
+      "titulo": "Sin LOTO y energía cero no se toca",
+      "detalle": "Candado personal en E1–E6 y prueba de arranque, tensión, presión y gases."
+    },
+    {
+      "titulo": "Menos de 5 mm: se cambia",
+      "detalle": "El tubo o panel con espesor < 5 mm no se repara con soldadura."
+    },
+    {
+      "titulo": "Sin prueba de 10 bar no se libera",
+      "detalle": "30 min sin caída ni goteo; liberación firmada por C-11 y C-05."
+    }
+  ],
+  "por_confirmar": [
+    "Diámetro y espesor del tubo, pandeo y torque de bridas con el OEM",
+    "Tiempo de espera sin vapor ≥ 30 min y T de salida ≤ 50 °C (supuestos)",
+    "WPS de reparación y H ≤ 5 ppm en LF (validar con C-09)"
+  ],
+  "plan_sesion": [
+    [
+      "Bloque",
+      "Min",
+      "Actividad",
+      "Recurso"
+    ],
+    [
+      "1. Apertura y por qué importa",
+      "30",
+      "Casos de explosión agua–metal; reglas de oro",
+      "Láminas 1–2"
+    ],
+    [
+      "2. Roles y flujo del proceso",
+      "45",
+      "Recorrido del flujo con la figura del panel",
+      "Láminas 3–6"
+    ],
+    [
+      "3. Equipos y especificaciones",
+      "75",
+      "Ejercicio: calcular ΔQ con lecturas de FT",
+      "Láminas 7–8, calculadora"
+    ],
+    [
+      "4. Seguridad, LOTO y energía cero",
+      "90",
+      "Puntos E1–E6 en plano; prueba de energía cero",
+      "Láminas 9–10, candados"
+    ],
+    [
+      "5. Calidad y paso a paso",
+      "105",
+      "Lectura guiada de los 16 pasos; pasos ★",
+      "Láminas 11–13"
+    ],
+    [
+      "6. Práctica de UT y prueba hidrostática",
+      "60",
+      "Malla UT en tubo de muestra; registro de prueba",
+      "Equipo UT, manómetro"
+    ],
+    [
+      "7. Condiciones anormales",
+      "30",
+      "Simulacro de mesa: ΔQ > 4 % con metal",
+      "Lámina 14"
+    ],
+    [
+      "8. Evaluación teórica",
+      "30",
+      "Autoevaluación de 5 preguntas + retroalimentación",
+      "Lámina 16"
+    ],
+    [
+      "9. Cierre y ruta a OJT",
+      "15",
+      "Plan de OJT y certificación",
+      "Lámina 17"
+    ]
+  ],
+  "validacion": {}
+}

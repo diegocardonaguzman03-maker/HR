@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 820" width="1000" height="820" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <pattern id="hatchRed" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#C62828" fill-opacity="0.12"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#C62828" stroke-width="2" stroke-opacity="0.55"/>
+    </pattern>
+    <pattern id="hatchSlag" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <rect width="10" height="10" fill="#6D4C41" fill-opacity="0.18"/>
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#6D4C41" stroke-width="2" stroke-opacity="0.5"/>
+    </pattern>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E7D32"/>
+    </marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#E65100"/>
+    </marker>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1E88E5"/>
+    </marker>
+    <marker id="arrK" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#212121"/>
+    </marker>
+  </defs>
+  <text x="500" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#212121">Figura IT-S08. Mi área: preparación de ollas — volteo, válvula, tapón, precalentador y arena</text>
+  <text x="500" y="46" text-anchor="middle" font-size="12" fill="#212121">Esquemático sin escala, vista en planta. Valores de MO-OLL-01 y FT-ACE-001 §3; zonas según MS-ACE-01 [Supuesto — Validar con C-16]</text>
+  <rect x="20" y="70" width="960" height="430" fill="none" stroke="#455A64" stroke-width="3"/>
+  <text x="500" y="90" font-size="12" fill="#455A64" text-anchor="middle" font-weight="bold">ÁREA DE PREPARACIÓN DE OLLAS (nave de ollas)</text>
+  <rect x="440" y="494" width="40" height="12" fill="#43A047" stroke="#2E7D32" stroke-width="1"/>
+  <rect x="14" y="420" width="12" height="40" fill="#43A047" stroke="#2E7D32" stroke-width="1"/>
+  <circle cx="140" cy="210" r="115" fill="#FBC02D" stroke="#F9A825" stroke-width="1.2" fill-opacity="0.28"/>
+  <circle cx="140" cy="210" r="70" fill="url(#hatchRed)" stroke="#C62828" stroke-width="1.5"/>
+  <rect x="95" y="180" width="90" height="60" fill="url(#hatchSlag)" stroke="#6D4C41" stroke-width="2"/>
+  <text x="140" y="214" font-size="11" fill="#212121" text-anchor="middle">fosa seca</text>
+  <text x="140" y="342" font-size="11" fill="#C62828" text-anchor="middle">Volteo: roja ≤ 15 m · amarilla 15–30 m</text>
+  <circle cx="400" cy="200" r="55" fill="#8D6E63" stroke="#455A64" stroke-width="2"/>
+  <circle cx="400" cy="200" r="40" fill="#BCAAA4" stroke="#8D6E63" stroke-width="1"/>
+  <rect x="390" y="245" width="20" height="26" fill="#455A64" stroke="#263238" stroke-width="1.5"/>
+  <circle cx="425" cy="185" r="7" fill="#43A047" stroke="#2E7D32" stroke-width="1.5"/>
+  <text x="400" y="135" font-size="12" fill="#212121" text-anchor="middle" font-weight="bold">Estación de preparación</text>
+  <rect x="290" y="250" width="70" height="34" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+  <text x="325" y="265" font-size="10" fill="#212121" text-anchor="middle">unidad</text>
+  <text x="325" y="278" font-size="10" fill="#212121" text-anchor="middle">hidráulica</text>
+  <line x1="360" y1="267" x2="390" y2="258" stroke="#455A64" stroke-width="2"/>
+  <rect x="460" y="250" width="80" height="34" fill="#43A047" stroke="#2E7D32" stroke-width="2" fill-opacity="0.35"/>
+  <text x="500" y="265" font-size="10" fill="#212121" text-anchor="middle">banco de</text>
+  <text x="500" y="278" font-size="10" fill="#212121" text-anchor="middle">prueba Ar</text>
+  <line x1="460" y1="262" x2="430" y2="190" stroke="#43A047" stroke-width="2"/>
+  <line x1="300" y1="150" x2="370" y2="185" stroke="#43A047" stroke-width="3"/>
+  <text x="250" y="150" font-size="11" fill="#2E7D32" text-anchor="start">lanza O₂</text>
+  <rect x="600" y="120" width="170" height="95" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+  <circle cx="660" cy="168" r="32" fill="#8D6E63" stroke="#455A64" stroke-width="2"/>
+  <polygon points="700,158 740,168 700,178" fill="#FF8F00" stroke="#E65100" stroke-width="1"/>
+  <text x="745" y="142" font-size="12" fill="#212121" text-anchor="start" font-weight="bold">P1</text>
+  <text x="685" y="208" font-size="11" fill="#E65100" text-anchor="middle" font-weight="bold">1,000–1,100 °C</text>
+  <rect x="600" y="260" width="170" height="95" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+  <circle cx="660" cy="308" r="32" fill="#8D6E63" stroke="#455A64" stroke-width="2"/>
+  <polygon points="700,298 740,308 700,318" fill="#FF8F00" stroke="#E65100" stroke-width="1"/>
+  <text x="745" y="282" font-size="12" fill="#212121" text-anchor="start" font-weight="bold">P2</text>
+  <text x="685" y="348" font-size="11" fill="#E65100" text-anchor="middle" font-weight="bold">1,000–1,100 °C</text>
+  <text x="685" y="110" font-size="12" fill="#212121" text-anchor="middle" font-weight="bold">Precalentadores (gas natural)</text>
+  <text x="685" y="375" font-size="11" fill="#C62828" text-anchor="middle" font-weight="bold">Olla fría &gt; 4 h → ≥ 8 h</text>
+  <rect x="820" y="120" width="120" height="55" fill="#8D6E63" stroke="#455A64" stroke-width="2" fill-opacity="0.5"/>
+  <text x="880" y="142" font-size="11" fill="#212121" text-anchor="middle">Tolva de arena</text>
+  <text x="880" y="158" font-size="11" fill="#212121" text-anchor="middle">de cromita (cerrada)</text>
+  <rect x="820" y="215" width="120" height="60" fill="#43A047" stroke="#2E7D32" stroke-width="2" fill-opacity="0.18"/>
+  <text x="880" y="236" font-size="11" fill="#212121" text-anchor="middle">Posición de</text>
+  <text x="880" y="251" font-size="11" fill="#212121" text-anchor="middle">llenado con tubo</text>
+  <text x="880" y="266" font-size="11" fill="#212121" text-anchor="middle">(≤ 2 min)</text>
+  <line x1="880" y1="175" x2="880" y2="215" stroke="#8D6E63" stroke-width="4"/>
+  <path d="M800,440 L950,440" fill="none" stroke="#E65100" stroke-width="4" marker-end="url(#arrO)"/>
+  <text x="875" y="422" font-size="11" fill="#E65100" text-anchor="middle">carro de vaciado → EAF</text>
+  <text x="875" y="462" font-size="11" fill="#212121" text-anchor="middle">entrega ≤ 10 min [Supuesto]</text>
+  <path d="M60,400 L780,400" fill="none" stroke="#E65100" stroke-width="2" stroke-dasharray="10,6"/>
+  <rect x="60" y="392" width="720" height="16" fill="url(#hatchRed)" stroke="#C62828" stroke-width="1.5"/>
+  <text x="420" y="425" font-size="11" fill="#C62828" text-anchor="middle">Trayectoria de la grúa con olla suspendida: nadie debajo (MS-ACE-04)</text>
+  <circle cx="260" cy="460" r="26" fill="#8D6E63" stroke="#C62828" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="295" y="458" font-size="11" fill="#212121" text-anchor="start">Olla en reparación = espacio confinado</text>
+  <text x="295" y="473" font-size="11" fill="#212121" text-anchor="start">(permiso, medición y vigía)</text>
+  <path d="M560,470 L460,480" fill="none" stroke="#2E7D32" stroke-width="3" stroke-dasharray="8,5" marker-end="url(#arrG)"/>
+  <path d="M120,440 L35,440" fill="none" stroke="#2E7D32" stroke-width="3" stroke-dasharray="8,5" marker-end="url(#arrG)"/>
+  <rect x="20" y="520" width="960" height="290" fill="#FAFAFA" stroke="#455A64" stroke-width="1"/>
+  <text x="35" y="542" font-size="14" fill="#212121" text-anchor="start" font-weight="bold">Leyenda</text>
+  <text x="35" y="562" font-size="12" fill="#212121" text-anchor="start">1  Estación de volteo sobre fosa seca: nadie a pie a ≤ 15 m</text>
+  <text x="35" y="580" font-size="12" fill="#212121" text-anchor="start">2  Inspección de refractario: línea de escoria ≥ 50 mm, barril ≥ 40 mm [Supuesto]</text>
+  <text x="35" y="598" font-size="12" fill="#212121" text-anchor="start">3  Válvula deslizante: 3 carreras completas; hidráulica bloqueada al cambiar placas</text>
+  <text x="35" y="616" font-size="12" fill="#212121" text-anchor="start">4  Banco de prueba del tapón poroso: 100–200 NL/min [Supuesto]</text>
+  <text x="35" y="634" font-size="12" fill="#212121" text-anchor="start">5  Precalentadores: purga automática y detector de flama antes de encender</text>
+  <text x="35" y="652" font-size="12" fill="#212121" text-anchor="start">6  Tolva de arena de cromita cerrada: arena seca (≤ 0.2 % [Supuesto])</text>
+  <text x="35" y="670" font-size="12" fill="#212121" text-anchor="start">7  Posición de llenado de arena: tubo/embudo, sin asomarte a la boca</text>
+  <text x="35" y="688" font-size="12" fill="#212121" text-anchor="start">8  Entrega al carro de vaciado del EAF con la lista firmada</text>
+  <text x="35" y="706" font-size="12" fill="#212121" text-anchor="start">9  Trayectoria de la grúa de colada: nadie bajo la olla suspendida</text>
+  <text x="35" y="724" font-size="12" fill="#212121" text-anchor="start">10  Olla en reparación: espacio confinado (MS-ACE-05, NOM-033)</text>
+  <text x="560" y="542" font-size="13" fill="#212121" text-anchor="start" font-weight="bold">Zonas y valores clave</text>
+  <rect x="560" y="554" width="18" height="14" fill="#C62828" stroke="#C62828" stroke-width="1" fill-opacity="0.45"/>
+  <text x="585" y="566" font-size="12" fill="#212121" text-anchor="start">ROJA: solo personal esencial, EPP aluminizado</text>
+  <rect x="560" y="574" width="18" height="14" fill="#FBC02D" stroke="#F9A825" stroke-width="1" fill-opacity="0.45"/>
+  <text x="585" y="586" font-size="12" fill="#212121" text-anchor="start">AMARILLA: autorizado, tras barrera, EPP completo</text>
+  <rect x="560" y="594" width="18" height="14" fill="#43A047" stroke="#2E7D32" stroke-width="1" fill-opacity="0.45"/>
+  <text x="585" y="606" font-size="12" fill="#212121" text-anchor="start">VERDE: tránsito con EPP básico de nave</text>
+  <line x1="560" y1="621" x2="578" y2="621" stroke="#2E7D32" stroke-width="3" stroke-dasharray="6,3"/>
+  <text x="585" y="626" font-size="12" fill="#212121" text-anchor="start">Ruta de escape → salida (verde en el muro)</text>
+  <text x="560" y="650" font-size="12" fill="#212121" text-anchor="start">Cara caliente al entregar: 1,000–1,100 °C (objetivo 1,050)</text>
+  <text x="560" y="668" font-size="12" fill="#212121" text-anchor="start">Vida del refractario: 60–80 coladas</text>
+  <text x="560" y="686" font-size="12" fill="#212121" text-anchor="start">Coraza &gt; 350 °C: alarma; &gt; 400 °C: retiro [Supuesto]</text>
+  <text x="560" y="704" font-size="12" fill="#212121" text-anchor="start">Apertura libre en CC ≥ 98 %</text>
+  <text x="560" y="722" font-size="12" fill="#212121" text-anchor="start">Detector multigás: CO 25 ppm → sal · GN 10 % LEL → sal</text>
+  <text x="560" y="740" font-size="12" fill="#C62828" text-anchor="start">Perforación de olla: evacúa a ≥ 25 m; nunca agua</text>
+  <g font-size="12" font-weight="bold" fill="#ffffff">
+    <circle cx="95" cy="180" r="11" fill="#212121"/><text x="95" y="184" text-anchor="middle">1</text>
+    <circle cx="345" cy="150" r="11" fill="#212121"/><text x="345" y="154" text-anchor="middle">2</text>
+    <circle cx="390" cy="285" r="11" fill="#212121"/><text x="390" y="289" text-anchor="middle">3</text>
+    <circle cx="460" cy="250" r="11" fill="#212121"/><text x="460" y="254" text-anchor="middle">4</text>
+    <circle cx="600" cy="120" r="11" fill="#212121"/><text x="600" y="124" text-anchor="middle">5</text>
+    <circle cx="820" cy="120" r="11" fill="#212121"/><text x="820" y="124" text-anchor="middle">6</text>
+    <circle cx="820" cy="215" r="11" fill="#212121"/><text x="820" y="219" text-anchor="middle">7</text>
+    <circle cx="800" cy="440" r="11" fill="#212121"/><text x="800" y="444" text-anchor="middle">8</text>
+    <circle cx="60" cy="392" r="11" fill="#212121"/><text x="60" y="396" text-anchor="middle">9</text>
+    <circle cx="234" cy="460" r="11" fill="#212121"/><text x="234" y="464" text-anchor="middle">10</text>
+  </g>
+</svg>

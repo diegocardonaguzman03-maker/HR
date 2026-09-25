@@ -1,0 +1,205 @@
+{
+  "code": "MO-CC1-08",
+  "title": "Corte, marcado y mesa de enfriamiento",
+  "titulo_corto": "Corte y marcado",
+  "serie": "Operación",
+  "area": "Colada Continua 1 · planchón",
+  "manual": "02-operacion/cc1/MO-CC1-08-corte-marcado-mesa-enfriamiento.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Cortar a 8–11 m ± 15 mm, marcar sin error y apilar sin accidentes con la grúa de 45 t con tenaza",
+  "audiencia": "S-16 Operador de Corte y Marcado · S-17 Mesa de Enfriamiento y Despacho · Operador de grúa de producto · C-06",
+  "kpis": [
+    {"value": "16 h", "label": "teoría (S-16 / S-17)"},
+    {"value": "80 h", "label": "OJT supervisado"},
+    {"value": "4", "label": "pasos críticos ★"},
+    {"value": "12–24", "label": "meses de vigencia (izaje 12)"}
+  ],
+  "cadena": [
+    "Oxicorte verificado",
+    "Corte a escuadra",
+    "Peso y medida",
+    "ID = MES",
+    "Grúa de 45 t",
+    "Pila ≤ 2.5 m"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, cortas, marcas y apilas sin errores",
+    "roles": "S-16 corta y marca; S-17 pesa, separa y apila",
+    "flujo": "Cada planchón sale con destino según su estado",
+    "figura": "El oxicorte viaja con el planchón a la salida",
+    "equipos": "Planchón de hasta 32.8 t: solo grúa de 45 t con tenaza",
+    "parametros": "Longitud, peso e identificación definen la entrega",
+    "seguridad": "Carga suspendida y oxicorte: dos riesgos críticos",
+    "calidad": "Sin ID legible e igual al MES, el planchón se retiene",
+    "pasos": "Dieciséis pasos; cuatro no admiten error",
+    "anormales": "Grúa equivocada: no se iza",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del corte y apilado que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Cortar a la medida", "detalle": "Longitud fría 8–11 m ± 15 mm; corte en caliente × ≈ 1.013; escuadra ≤ 5 mm; despuntes de cabeza y cola."},
+    {"titulo": "Marcar sin error", "detalle": "ID 100 % legible e igual al MES: CC1 + colada + número de planchón; remarcar y retener si no coincide."},
+    {"titulo": "Separar por destino", "detalle": "Con evento a inspección; HSLA y sensibles a enfriamiento lento ≥ 48 h sin agua; normal a pila o carga caliente."},
+    {"titulo": "Izar y apilar seguro", "detalle": "Grúa de 45 t con tenaza para todo planchón; nadie bajo la carga ni a ± 5 m; pila ≤ 2.5 m con calzas."}
+  ],
+  "por_que_importa": "Un planchón de hasta 32.8 t a 800–1,000 °C cuelga de una tenaza sobre el patio. La grúa equivocada o una persona bajo la carga es una fatalidad. Y un planchón mal medido o mal marcado pierde su trazabilidad: se retiene, se rechaza en Laminación o llega un defecto al cliente.",
+  "principio": "Si la grúa no es de 45 t con tenaza o la ID no coincide con el MES, el planchón no se mueve.",
+  "roles": [
+    ["Rol", "Qué hace en corte y apilado", "RACI"],
+    ["C-06 Supervisor de Colada Continua", "Asegura programa de corte y trazabilidad; autoriza cortes manuales", "A"],
+    ["S-16 Operador de Corte y Marcado", "Longitudes, oxicorte, despuntes, muestras, marcado e ID", "R"],
+    ["S-17 Mesa de Enfriamiento y Despacho", "Transferencia, pesaje, apilado, enfriamiento lento y despacho", "R"],
+    ["Operador de grúa de producto (45 t)", "Izaje con tenaza (propuesta S-27; hoy lo cubre S-17)", "R"],
+    ["S-18 Inspector de Calidad", "Recibe planchones para inspección y retiene los con evento", "C"],
+    ["S-12 Operador de Púlpito", "Envía datos de colada y eventos al tracking", "C"],
+    ["C-09 Metalurgista de Producto", "Define enfriamiento lento o retención", "C"]
+  ],
+  "flujo": [
+    {"label": "Programa", "desc": "Longitudes por orden; mínimo recorte"},
+    {"label": "Oxicorte", "desc": "2 sopletes, de bordes a centro"},
+    {"label": "Verificar corte", "desc": "Pasante; escuadra ≤ 5 mm"},
+    {"label": "Pesar y medir", "desc": "Real vs. teórico ≤ 2 %"},
+    {"label": "Marcar", "desc": "ID legible e igual al MES"},
+    {"label": "Separar", "desc": "Evento, enfriamiento lento o normal"},
+    {"label": "Izar y apilar", "desc": "45 t con tenaza; pila ≤ 2.5 m"},
+    {"label": "MES y despacho", "desc": "Solo planchones liberados"}
+  ],
+  "flujo_takeaway": "Peso teórico = 0.23 × ancho × largo × 7.85: de 13.0 t (900 mm × 8 m) a 32.8 t (1,650 mm × 11 m).",
+  "figuras": [
+    {
+      "svg": "cc1-perfil-maquina.svg",
+      "lectura": [
+        "El planchón sale del segmento 14 como tira continua hacia el oxicorte.",
+        "La máquina de oxicorte se sujeta al planchón y viaja con él mientras corta.",
+        "La mesa de salida lleva cada planchón de 8–11 m a pesaje, marcado y transferencia."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Rueda de medición / encoder", "Mide la longitud", "≤ 5 mm; calibración mensual", "Calibración vigente"],
+    ["Máquina de oxicorte", "Corta el planchón", "O₂ + gas natural; 2 sopletes", "★ Arrestaflamas y retención"],
+    ["Báscula de planchones", "Peso real", "≥ 40 t; ± 0.1 % [Validar]", "Calibrada"],
+    ["Máquina de marcado", "Identifica el planchón", "Pintura o estampado de alta T", "Prueba al inicio del turno"],
+    ["Mesa y carro de transferencia", "Mueven el planchón", "Guardas y paros de emergencia", "Prueba de paro"],
+    ["Grúas de producto", "Apilan y cargan", "2 × 45 t con tenaza", "★ Planchón + tenaza ≤ 45 t"],
+    ["Patio de pilas", "Enfría y almacena", "Pilas separadas por colada", "Piso firme, calzas, señalización"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Longitud pedida (frío)", "Según orden", "8–11 m", "Fuera de 8–11 m", "No cortar; consultar a C-06"],
+    ["Tolerancia de longitud", "0 mm", "± 15 mm", "> ± 15 mm", "Recalibrar encoder; marcar"],
+    ["Escuadra del corte", "≤ 5 mm", "≤ 5 mm", "> 10 mm", "Revisar sopletes"],
+    ["Velocidad de corte", "300 mm/min", "250–350 mm/min", "Corte incompleto", "Limpiar boquilla; revisar O₂"],
+    ["Despunte de cabeza", "400 mm", "300–500 mm", "Restos de barra falsa", "Aumentar despunte"],
+    ["Peso del planchón", "Teórico", "13.0–32.8 t", "Diferencia > 2 %", "Revisar medición y báscula"],
+    ["Carga en gancho (45 t)", "Planchón + tenaza", "≤ 45 t", "> 45 t", "No izar; revisar peso"],
+    ["Altura de pila", "≤ 2.5 m", "—", "> 2.5 m", "Nueva pila"]
+  ],
+  "parametros_nota": "Contracción ≈ 1.013, presiones, velocidad de corte, despuntes, tenaza ≤ 12 t y enfriamiento ≥ 48 h: [Validar con OEM / Ingeniería de Proceso]; pila con C-16.",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Grúa correcta para planchón", "detalle": "Siempre grúa de 45 t con tenaza (13.0–32.8 t + tenaza ≤ 45 t). La de 25 t y la de 50 t no se usan para planchón."},
+      {"titulo": "Nadie bajo la carga", "detalle": "Zona de exclusión ± 5 m de la proyección y entre pilas durante el izaje (MS-ACE-04, NOM-006)."},
+      {"titulo": "Oxicorte seguro", "detalle": "Arrestaflamas y válvulas de retención; revisión de fugas; ropa sin grasa (NOM-027)."},
+      {"titulo": "LOTO en mesa y oxicorte", "detalle": "Bloquear mesa, carro y oxicorte para cambiar boquillas o retirar planchones atorados (MS-ACE-02)."}
+    ],
+    "epp": [
+      "Careta o lentes sombra 5 para oxicorte (S-16)",
+      "Casco, ropa FR, guantes y botas con metatarsal",
+      "Protección auditiva y respirador para humos",
+      "Chaleco de alta visibilidad en patio (S-17, grúa)"
+    ],
+    "figura": "ms-zonas-exclusion-nave.svg",
+    "figura_titulo": "Bajo la trayectoria de la grúa nadie camina",
+    "figura_lectura": [
+      "La proyección de la carga ± 5 m es zona de exclusión durante el izaje.",
+      "Entre pilas no hay nadie mientras la grúa mueve un planchón.",
+      "Las pilas ≤ 2.5 m, con calzas y alineadas, evitan caídas de planchón."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Longitud", "Pedida ± 15 mm (frío)", "Encoder; 1 por colada en pila", "Rechazo en Laminación"],
+    ["Escuadra y calidad del corte", "≤ 5 mm; sin rebaba", "Visual, cada planchón", "Daño en horno de recalentamiento"],
+    ["Identificación", "100 % legible e igual al MES", "Visual, cada planchón", "Pérdida de trazabilidad: retención"],
+    ["Planchones con evento", "100 % separados", "Tracking", "Defecto que llega al cliente"],
+    ["Grados sensibles", "Enfriamiento lento, sin agua", "Registro de pila", "Grietas por tensión térmica"]
+  ],
+  "calidad_takeaway": "Formato de ID [Supuesto]: 1-AAAAAA-NN = CC1, número de colada y número de planchón (01 = cabeza).",
+  "pasos": [
+    {"n": 1, "paso": "Revisa el programa de corte", "como": "Longitudes por orden; ajuste final de la secuencia para minimizar recortes", "criterio": "Programa cargado", "critico": false, "rol": "S-16"},
+    {"n": 2, "paso": "Verifica el oxicorte", "como": "Presiones de O₂ y gas; arrestaflamas; prueba de flama; boquillas limpias", "criterio": "Flama estable", "critico": true, "rol": "S-16"},
+    {"n": 3, "paso": "Prueba el marcado", "como": "Marca de prueba en placa", "criterio": "Legible", "critico": false, "rol": "S-16"},
+    {"n": 4, "paso": "Despunta la cabeza", "como": "Inicio de secuencia, tras desconectar la barra falsa: 300–500 mm", "criterio": "Cabeza sana", "critico": false, "rol": "S-16"},
+    {"n": 5, "paso": "Corta cada planchón", "como": "Automático: sujeción, viaje sincronizado, 2 sopletes de bordes a centro", "criterio": "Corte completo", "critico": false, "rol": "S-16"},
+    {"n": 6, "paso": "Verifica el corte", "como": "Corte pasante, sin puentes", "criterio": "Escuadra ≤ 5 mm", "critico": false, "rol": "S-16"},
+    {"n": 7, "paso": "Corta muestras y desbarba", "como": "Rebanada transversal según plan de C-09 si toca; retira rebabas", "criterio": "Sin rebaba", "critico": false, "rol": "S-16"},
+    {"n": 8, "paso": "Pesa y mide", "como": "Compara con el peso teórico 0.23 × ancho × largo × 7.85", "criterio": "Diferencia ≤ 2 %", "critico": false, "rol": "S-17"},
+    {"n": 9, "paso": "Marca el planchón", "como": "ID en la cara indicada; confírmala contra el MES", "criterio": "Legible y correcta", "critico": true, "rol": "S-16"},
+    {"n": 10, "paso": "Separa por destino", "como": "Con evento a inspección; sensible a enfriamiento lento; normal a pila o carga caliente", "criterio": "Destino correcto en MES", "critico": false, "rol": "S-17"},
+    {"n": 11, "paso": "Verifica grúa y peso", "como": "Peso del MES vs. capacidad neta: grúa de 45 t con tenaza, nunca la de 25 t ni la de 50 t", "criterio": "Grúa adecuada", "critico": true, "rol": "S-17 / grúa"},
+    {"n": 12, "paso": "Apila", "como": "Calzas alineadas; pila ≤ 2.5 m; una colada por pila si es posible; nadie bajo la carga", "criterio": "Pila estable", "critico": true, "rol": "S-17 / grúa"},
+    {"n": 13, "paso": "Cubre el enfriamiento lento", "como": "Grados sensibles ≥ 48 h cubiertos; registra la hora", "criterio": "Registro", "critico": false, "rol": "S-17"},
+    {"n": 14, "paso": "Actualiza el MES", "como": "Ubicación de pila y estado: liberado o retenido", "criterio": "MES al día", "critico": false, "rol": "S-17"},
+    {"n": 15, "paso": "Despunta la cola", "como": "Fin de secuencia: 500–1,000 mm hasta zona sana", "criterio": "Cola sana", "critico": false, "rol": "S-16"},
+    {"n": 16, "paso": "Despacha", "como": "Solo planchones liberados por inspección (MO-CC1-09)", "criterio": "Lista de despacho", "critico": false, "rol": "S-17"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Corte incompleto (puente)", "Detén la mesa; recorte manual con permiso de trabajo en caliente", "C-06"],
+    ["Retroceso de flama", "Cierra O₂ y gas; revisa arrestaflamas; no reencender sin revisión", "C-06, S-21"],
+    ["Fuga de O₂ o gas", "Cierra válvulas; ventila; prohibida la flama", "C-06, C-16"],
+    ["Longitud fuera de tolerancia", "Recalibra el encoder; marca los planchones afectados", "C-06, C-09"],
+    ["Marcado ilegible o ID ≠ MES", "Remarca manual; corrige el MES; retén hasta verificar", "C-06, S-18"],
+    ["Planchón atorado en la mesa", "Detén; LOTO antes de intervenir", "C-06, S-19"],
+    ["Grúa de 25 t o de 50 t asignada", "No izar; usa una grúa de 45 t con tenaza", "C-06"],
+    ["Falla del oxicorte en colada", "Baja la velocidad de colada; corte manual autorizado; si no, cierre", "C-06"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-16 Operador de Corte y Marcado", "U", "16 h", "80 h", "24 meses"],
+      ["S-17 Mesa de Enfriamiento y Despacho", "U", "16 h", "80 h", "12 meses (izaje)"],
+      ["Operador de grúa de producto", "U", "Curso de grúa (NOM-006)", "Según MS-ACE-04", "12 meses"],
+      ["C-06 Supervisor de CC", "O (evaluador)", "4 h + evaluador", "—", "24 meses"]
+    ],
+    "checklist": [
+      "Verifica arrestaflamas, presiones y fugas antes de cortar",
+      "Confirma que la ID marcada coincide con el MES",
+      "Compara el peso del planchón con la capacidad neta de la grúa antes del izaje",
+      "Apila con calzas, ≤ 2.5 m y sin personas bajo la carga"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Qué grúa se usa para mover un planchón de CC1?", "opciones": ["La de 25 t con electroimán", "La de 45 t con tenaza", "La de 50 t de distribuidores"], "correcta": 1, "explicacion": "Planchón de 13.0–32.8 t + tenaza ≤ 45 t. La de 25 t es de CC2 y la de 50 t es para distribuidores, segmentos y moldes."},
+    {"pregunta": "¿Por qué se corta el planchón más largo en caliente?", "opciones": ["Por el kerf del soplete", "Porque se contrae al enfriar", "Para dejar muestra"], "correcta": 1, "explicacion": "El acero se contrae: el nivel 2 corta a longitud fría × ≈ 1.013 para cumplir ± 15 mm en frío."},
+    {"pregunta": "La ID marcada no coincide con el MES. ¿Qué haces?", "opciones": ["Lo mandas a despacho", "Remarcas, corriges MES y retienes", "Lo dejas para el siguiente turno"], "correcta": 1, "explicacion": "Sin trazabilidad el planchón no se libera: remarca manual, corrige el MES y retén hasta verificar."},
+    {"pregunta": "¿Cuál es la altura máxima de una pila de planchones?", "opciones": ["1.5 m", "2.5 m", "4.0 m"], "correcta": 1, "explicacion": "Pila ≤ 2.5 m con calzas alineadas; si se pasa, se abre una pila nueva."},
+    {"pregunta": "¿Cómo se enfría un planchón HSLA o con evento de grietas?", "opciones": ["Con agua en la mesa", "Lento, en pila cubierta", "Al aire con ventilador"], "correcta": 1, "explicacion": "≥ 48 h en pila cubierta hasta < 300 °C; prohibido el agua: provoca grietas por tensión térmica."}
+  ],
+  "reglas": [
+    {"titulo": "Planchón solo con grúa de 45 t", "detalle": "Con tenaza; nunca la de 25 t ni la de 50 t."},
+    {"titulo": "Nadie bajo la carga ni entre pilas", "detalle": "± 5 m de la proyección durante todo el izaje."},
+    {"titulo": "ID igual al MES o se retiene", "detalle": "Sin trazabilidad el planchón no se despacha."},
+    {"titulo": "HSLA nunca se enfría con agua", "detalle": "Enfriamiento lento en pila cubierta ≥ 48 h."}
+  ],
+  "por_confirmar": [
+    "Peso de la tenaza ≤ 12 t, presiones y velocidad de oxicorte y factor de contracción con el OEM",
+    "Altura de pila con C-16, formato de ID [Supuesto] y desbarbadora instalada"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de caída de carga y pérdida de trazabilidad", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo desde el segmento 14", "Láminas 3–6"],
+    ["3. Equipos y parámetros", "90", "Ejercicio: peso teórico y selección de grúa", "Láminas 7–8, calculadora"],
+    ["4. Seguridad", "75", "Zonas de izaje, oxicorte y LOTO de la mesa", "Láminas 9–10, EPP físico"],
+    ["5. Calidad y paso a paso", "105", "Lectura guiada de los 16 pasos; pasos ★", "Láminas 11–13"],
+    ["6. Condiciones anormales", "60", "Simulacro de mesa: ID distinta al MES", "Lámina 14"],
+    ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + preguntas orales", "Lámina 16"],
+    ["8. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

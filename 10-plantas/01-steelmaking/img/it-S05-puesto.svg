@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 740" width="1000" height="740" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <pattern id="hatchRed" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#C62828" fill-opacity="0.12"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#C62828" stroke-width="2" stroke-opacity="0.5"/>
+    </pattern>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#43A047"/></marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#E65100"/></marker>
+    <marker id="arrS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#455A64"/></marker>
+  </defs>
+  <text x="500" y="28" font-size="16" text-anchor="middle" fill="#212121" font-weight="bold">Figura IT-S05. Mi área de trabajo: patio de chatarra</text>
+  <text x="500" y="48" font-size="12" text-anchor="middle" fill="#212121">Valores de MO-EAF-02, MS-ACE-03/04/07. Distancias y velocidad [Supuesto / Validar con ESR (C-16) y OEM]</text>
+  <rect x="20" y="60" width="960" height="470" fill="none" stroke="#455A64" stroke-width="3" />
+  <text x="40" y="80" font-size="12" text-anchor="start" fill="#455A64" font-weight="bold">PATIO DE CHATARRA (vista en planta, sin escala)</text>
+  <rect x="40" y="95" width="920" height="420" fill="#FFF3C4" stroke="#FF8F00" stroke-width="1.5" stroke-dasharray="4,3"/><text x="44" y="109" font-size="12" text-anchor="start" fill="#8D4B00" font-weight="bold">Zona amarilla: tránsito de camiones y grúas</text>
+  <line x1="50" y1="170" x2="140" y2="170" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/><text x="50" y="160" font-size="12" text-anchor="start" fill="#212121">Camiones</text>
+  <rect x="150" y="140" width="16" height="65" fill="#C62828" stroke="#C62828" stroke-width="1.5" /><rect x="214" y="140" width="16" height="65" fill="#C62828" stroke="#C62828" stroke-width="1.5" />
+  <text x="190" y="133" font-size="12" text-anchor="middle" fill="#C62828" font-weight="bold">Pórtico ≤ 8 km/h</text>
+  <rect x="260" y="145" width="110" height="50" fill="#ECEFF1" stroke="#455A64" stroke-width="1.5" /><text x="315" y="175" font-size="12" text-anchor="middle" fill="#455A64" font-weight="bold">Báscula</text>
+  <rect x="60" y="225" width="190" height="115" fill="none" stroke="#C62828" stroke-width="2" stroke-dasharray="4,3"/>
+  <circle cx="155" cy="275" r="42" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" stroke-dasharray="6,3"/>
+  <rect x="135" y="262" width="40" height="26" fill="#455A64" stroke="#455A64" stroke-width="1.5" />
+  <text x="155" y="333" font-size="12" text-anchor="middle" fill="#C62828" font-weight="bold">Aislamiento ≥ 10 m</text>
+  <path d="M300,330 l40,-60 l40,60 z" fill="#8D6E63" stroke="#455A64"/><text x="340" y="346" font-size="12" text-anchor="middle" fill="#212121">Rebaba</text>
+  <path d="M410,330 l40,-60 l40,60 z" fill="#8D6E63" stroke="#455A64"/><text x="450" y="346" font-size="12" text-anchor="middle" fill="#212121">Paquete</text>
+  <path d="M520,330 l40,-60 l40,60 z" fill="#8D6E63" stroke="#455A64"/><text x="560" y="346" font-size="12" text-anchor="middle" fill="#212121">Fragmentada</text>
+  <path d="M630,330 l40,-60 l40,60 z" fill="#8D6E63" stroke="#455A64"/><text x="670" y="346" font-size="12" text-anchor="middle" fill="#212121">Pesada</text>
+  <path d="M740,330 l40,-60 l40,60 z" fill="#8D6E63" stroke="#455A64"/><text x="780" y="346" font-size="12" text-anchor="middle" fill="#212121">Retorno</text>
+  <rect x="420" y="135" width="130" height="60" fill="#FFEBEE" stroke="#C62828" stroke-width="2" /><text x="485" y="160" font-size="12" text-anchor="middle" fill="#C62828" font-weight="bold">Área de rechazo</text><text x="485" y="178" font-size="12" text-anchor="middle" fill="#C62828">(prohibidos)</text>
+  <circle cx="640" cy="205" r="55" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" stroke-dasharray="6,3"/><text x="640" y="164" font-size="12" text-anchor="middle" fill="#C62828" font-weight="bold">Roja</text>
+  <circle cx="640" cy="213" r="20" fill="#455A64"/><text x="640" y="217" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">Imán</text>
+  <rect x="760" y="150" width="170" height="110" fill="#F5F5F5" stroke="#455A64" stroke-width="1.5" /><text x="845" y="170" font-size="12" text-anchor="middle" fill="#455A64" font-weight="bold">Armado de canasta</text>
+  <path d="M810,180 L880,180 L870,230 L820,230 Z" fill="#455A64" fill-opacity="0.25" stroke="#455A64" stroke-width="2"/><path d="M818,192 l12,-8 l10,10 l12,-9 l10,9 l10,-8" fill="none" stroke="#6D4C41" stroke-width="3"/>
+  <text x="845" y="252" font-size="12" text-anchor="middle" fill="#212121">55–70 t · seca</text>
+  <rect x="760" y="380" width="170" height="50" fill="#ECEFF1" stroke="#455A64" stroke-width="1.5" /><text x="845" y="410" font-size="12" text-anchor="middle" fill="#212121">Carro portacanastas</text>
+  <line x1="845" y1="265" x2="845" y2="375" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/>
+  <line x1="930" y1="405" x2="970" y2="405" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/><text x="965" y="395" font-size="12" text-anchor="end" fill="#212121">Nave</text>
+  <rect x="300" y="390" width="170" height="70" fill="#FFF8E1" stroke="#FF8F00" stroke-width="2" /><text x="385" y="415" font-size="12" text-anchor="middle" fill="#E65100" font-weight="bold">Oxicorte (día)</text><text x="385" y="433" font-size="12" text-anchor="middle" fill="#212121">permiso en caliente</text><text x="385" y="451" font-size="12" text-anchor="middle" fill="#212121">+ vigía de fuego</text>
+  <rect x="560" y="420" width="160" height="60" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5" /><text x="640.0" y="454.0" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">Caseta / refugio</text>
+  <polyline points="640,420 640,380 520,380 520,500 555,518" fill="none" stroke="#43A047" stroke-width="4" stroke-dasharray="10,5" marker-end="url(#arrG)"/>
+  <rect x="560" y="512" width="40" height="12" fill="#43A047" stroke="#43A047" stroke-width="1.5" /><text x="580.0" y="538" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">SALIDA</text>
+  <circle cx="240" cy="140" r="11" fill="#212121"/><text x="240" y="144" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">1</text>
+  <circle cx="315" cy="140" r="11" fill="#212121"/><text x="315" y="144" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">2</text>
+  <circle cx="70" cy="230" r="11" fill="#212121"/><text x="70" y="234" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">3</text>
+  <circle cx="410" cy="290" r="11" fill="#212121"/><text x="410" y="294" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">4</text>
+  <circle cx="420" cy="130" r="11" fill="#212121"/><text x="420" y="134" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">5</text>
+  <circle cx="590" cy="160" r="11" fill="#212121"/><text x="590" y="164" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">6</text>
+  <circle cx="760" cy="145" r="11" fill="#212121"/><text x="760" y="149" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">7</text>
+  <circle cx="760" cy="375" r="11" fill="#212121"/><text x="760" y="379" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">8</text>
+  <circle cx="300" cy="385" r="11" fill="#212121"/><text x="300" y="389" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">9</text>
+  <circle cx="720" cy="415" r="11" fill="#212121"/><text x="720" y="419" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">10</text>
+  <rect x="20" y="570" width="960" height="160" fill="#FAFAFA" stroke="#455A64" stroke-width="1" />
+  <text x="30" y="590" font-size="13" text-anchor="start" fill="#212121" font-weight="bold">Leyenda (números del dibujo)</text>
+  <circle cx="40" cy="610" r="11" fill="#212121"/><text x="40" y="614" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">1</text><text x="58" y="614" font-size="12" text-anchor="start" fill="#212121">Pórtico de radiación: prueba al inicio del turno</text>
+  <circle cx="40" cy="630" r="11" fill="#212121"/><text x="40" y="634" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">2</text><text x="58" y="634" font-size="12" text-anchor="start" fill="#212121">Báscula: cero, peso y registro</text>
+  <circle cx="40" cy="650" r="11" fill="#212121"/><text x="40" y="654" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">3</text><text x="58" y="654" font-size="12" text-anchor="start" fill="#212121">Zona de aislamiento: perímetro inicial 10 m</text>
+  <circle cx="40" cy="670" r="11" fill="#212121"/><text x="40" y="674" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">4</text><text x="58" y="674" font-size="12" text-anchor="start" fill="#212121">Pilas por tipo (receta de C-07 / C-17)</text>
+  <circle cx="40" cy="690" r="11" fill="#212121"/><text x="40" y="694" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">5</text><text x="58" y="694" font-size="12" text-anchor="start" fill="#212121">Área de rechazo: cerrados, líquidos, explosivos</text>
+  <circle cx="520" cy="610" r="11" fill="#212121"/><text x="520" y="614" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">6</text><text x="538" y="614" font-size="12" text-anchor="start" fill="#212121">Electroimán: nadie en su radio (zona roja)</text>
+  <circle cx="520" cy="630" r="11" fill="#212121"/><text x="520" y="634" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">7</text><text x="538" y="634" font-size="12" text-anchor="start" fill="#212121">Armado de canasta por capas, 55–70 t</text>
+  <circle cx="520" cy="650" r="11" fill="#212121"/><text x="520" y="654" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">8</text><text x="538" y="654" font-size="12" text-anchor="start" fill="#212121">Carro portacanastas: canasta seca a la nave</text>
+  <circle cx="520" cy="670" r="11" fill="#212121"/><text x="520" y="674" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">9</text><text x="538" y="674" font-size="12" text-anchor="start" fill="#212121">Oxicorte de pesada: permiso y vigía (NOM-027)</text>
+  <circle cx="520" cy="690" r="11" fill="#212121"/><text x="520" y="694" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">10</text><text x="538" y="694" font-size="12" text-anchor="start" fill="#212121">Caseta, refugio y punto de reunión</text>
+  <text x="30" y="718" font-size="13" text-anchor="start" fill="#212121" font-weight="bold">Zonas:</text><rect x="90" y="706" width="26" height="16" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" /><text x="122" y="718" font-size="12" text-anchor="start" fill="#212121">Roja: solo personal esencial con EPP aluminizado</text><rect x="430" y="706" width="26" height="16" fill="#FFF3C4" stroke="#FF8F00" stroke-width="1.5" /><text x="462" y="718" font-size="12" text-anchor="start" fill="#212121">Amarilla: paso con precaución</text><rect x="660" y="706" width="26" height="16" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5" /><text x="692" y="718" font-size="12" text-anchor="start" fill="#212121">Verde: refugio / segura</text><line x1="850" y1="714" x2="890" y2="714" stroke="#43A047" stroke-width="4" stroke-dasharray="10,5" marker-end="url(#arrG)"/><text x="896" y="718" font-size="12" text-anchor="start" fill="#212121">Escape</text>
+</svg>

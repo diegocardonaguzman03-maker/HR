@@ -1,0 +1,217 @@
+{
+  "code": "MS-ACE-02",
+  "title": "Aislamiento y bloqueo (LOTO) de EAF, LF, CC y equipos",
+  "titulo_corto": "Aislamiento y bloqueo",
+  "serie": "Seguridad",
+  "area": "Acería · EAF, LF, ollas, CC1, CC2, grúas y patio",
+  "manual": "04-seguridad/MS-ACE-02-loto-aislamiento-bloqueo.md",
+  "manual_version": "0.2 (borrador para validación; revisión de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Un candado, una persona, una llave: nadie mete el cuerpo hasta probar todas las energías en cero",
+  "audiencia": "S-19 · S-20 · S-21 · S-22 · S-23 · S-24 · S-25 · S-26 · S-01 · S-12 · C-04 · C-05 · C-06 · C-11 · C-12 · contratistas",
+  "kpis": [
+    {"value": "8 h", "label": "teoría CRS-01 LOTO (ejecutores)"},
+    {"value": "5", "label": "bloqueos supervisados en OJT"},
+    {"value": "9", "label": "pasos críticos ★"},
+    {"value": "0", "label": "V, bar y movimiento"}
+  ],
+  "cadena": [
+    "Identificar energías",
+    "Parar y aislar",
+    "Candado y tarjeta",
+    "Candado personal",
+    "Energía cero",
+    "Retiro ordenado"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, bloqueas y pruebas cero sin atajos",
+    "roles": "Solo S-20 opera alta tensión; cada quien su candado",
+    "flujo": "Nadie trabaja antes de la prueba de energía cero",
+    "figura": "Cada punto de bloqueo está numerado en campo",
+    "equipos": "Candado personal, tierras y pasadores: sin préstamo",
+    "parametros": "Cero volts, cero bar y cero movimiento, sin excepción",
+    "seguridad": "Energía que regresa: electrocución y aplastamiento",
+    "calidad": "El equipo se devuelve probado: agua antes que energía",
+    "pasos": "Once pasos; nueve no admiten error",
+    "anormales": "Si algo se mueve en la prueba, nadie trabaja",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del bloqueo que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Identificar todas las energías", "detalle": "Eléctrica, hidráulica, neumática, agua, gases, gravedad, térmica y radiación, con la lista de puntos del equipo."},
+    {"titulo": "Aislar, bloquear y etiquetar", "detalle": "Candado de equipo y tarjeta en cada punto; llaves a la caja grupal; un candado personal por trabajador."},
+    {"titulo": "Probar energía cero", "detalle": "Intento de arranque, 0 V vivo–muerto–vivo, 0 bar, multigás en rango y Cs-137 < 2 × fondo."},
+    {"titulo": "Distinguir llave cautiva de LOTO", "detalle": "Llave cautiva solo para acceso de rutina listado; toda intervención en el equipo exige LOTO completo."}
+  ],
+  "por_que_importa": "Un transformador de 140 MVA, brazos de electrodo, acumuladores hidráulicos, agua a presión y gases pueden liberar su energía sin aviso. Si alguien tiene el cuerpo dentro del equipo, el resultado es electrocución, aplastamiento, quemadura o asfixia. Solo la prueba de energía cero lo evita.",
+  "principio": "Un candado, una persona, una llave. Prueba energía cero antes de tocar.",
+  "roles": [
+    ["Rol", "Qué hace en el bloqueo", "RACI"],
+    ["C-16 Especialista de Seguridad", "Dueño; audita bloqueos (VCC); aprueba métodos alternos", "A"],
+    ["C-04 Jefe de Turno", "Autoriza la liberación a mantenimiento; custodia la caja grupal", "R"],
+    ["C-05 / C-06 Supervisores", "Entregan el equipo vacío, frío y estacionado", "R"],
+    ["C-11 / C-12 Mantenimiento", "Emiten el permiso; identifican energías con la lista de puntos", "R"],
+    ["S-20 Electricista de Acería", "Único que opera interruptores de media y alta tensión y aplica tierras", "R"],
+    ["S-22 Técnico Hidráulico", "Descarga acumuladores y verifica 0 bar", "R"],
+    ["S-19, S-21, S-23 a S-25, contratistas", "Colocan su candado personal; verifican energía cero antes de tocar", "R"],
+    ["C-16 como ESR", "Cierra el obturador de Cs-137, pone su candado y mide < 2 × fondo", "R"]
+  ],
+  "flujo": [
+    {"label": "Preparar", "desc": "Permiso + lista de puntos del equipo"},
+    {"label": "Avisar y parar", "desc": "Horno vacío y a nivel; máquina vacía"},
+    {"label": "Aislar", "desc": "Interruptor, válvulas, pasadores, obturador"},
+    {"label": "Bloquear", "desc": "Candado de equipo + tarjeta; caja grupal"},
+    {"label": "Candado personal", "desc": "Uno por trabajador, antes de entrar"},
+    {"label": "Liberar residual", "desc": "0 bar, calzas, drenar, purgar, ≤ 50 °C"},
+    {"label": "Energía cero", "desc": "Arranque, 0 V, 0 bar, gas, radiación"},
+    {"label": "Trabajar", "desc": "Repetir prueba si > 2 h o cambia alcance"},
+    {"label": "Retiro ordenado", "desc": "Contar personal; agua, hidráulica, eléctrica"}
+  ],
+  "flujo_takeaway": "Si la prueba de energía cero falla, se regresa a aislar: nunca se trabaja buscando la energía con el cuerpo.",
+  "figuras": [
+    {
+      "svg": "ms-loto-puntos-eaf.svg",
+      "lectura": [
+        "Interruptor de AT, transformador, hidráulica, agua, gases y banda de DRI tienen su punto.",
+        "El pasador de basculamiento y la calza de columna bloquean la gravedad.",
+        "O₂ y gas natural se aíslan con doble bloqueo y venteo; brida ciega si hay ingreso."
+      ]
+    },
+    {
+      "svg": "ms-loto-puntos-cc.svg",
+      "titulo": "En CC el agua de molde se cierra solo con máquina vacía",
+      "lectura": [
+        "Agua de molde: cerrar solo sin acero líquido; bloquear bombas y torre de emergencia.",
+        "La barra falsa se estaciona con pasador; segmentos y extractores con HPU bloqueada.",
+        "Cs-137 de CC2: obturador cerrado con candado del ESR y lectura < 2 × fondo."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Candado personal", "Identifica a cada trabajador", "Rojo, llave única, foto y nombre", "Uno por persona; nunca prestado"],
+    ["Candado de equipo y caja grupal", "Bloquean puntos; guardan llaves", "Caja para ≥ 20 candados personales", "Numerados según la lista"],
+    ["Tarjeta NO OPERAR", "Informa quién, por qué y cuándo", "Nombre, fecha, radio", "Una por candado"],
+    ["Detector de AT y multímetro", "Prueba de ausencia de tensión", "Multímetro CAT III 1,000 V / CAT IV 600 V", "Vivo–muerto–vivo"],
+    ["Tierras temporales", "Contra reenergización e inducción", "Según corriente de falla [Validar con C-12]", "Inspección y registro"],
+    ["Calzas, pasadores, bridas ciegas", "Bloqueo de gravedad y de gases", "Diseño OEM [Validar con OEM]", "Pintados en rojo; numeradas"],
+    ["Multigás y medidor de radiación", "Atmósfera y obturador de Cs-137", "O₂, CO, LEL; μSv/h", "Bump test diario; calibración"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Límite", "Acción"],
+    ["Tensión en el punto", "0 V", "Cualquier lectura > 0", "No tocar; C-12 revisa"],
+    ["Hidráulica y acumuladores", "0 bar", "> 0 bar", "Descargar de nuevo"],
+    ["Agua de panel o molde", "0 bar", "> 0 bar o flujo en dren", "Revisar; doble bloqueo"],
+    ["O₂ / gas natural / argón", "0 bar en venteo", "> 0 bar", "Revisar doble bloqueo"],
+    ["Atmósfera de entrada", "O₂ 19.5–23.5 %", "CO ≥ 25 ppm o ≥ 10 % LEL", "Salir; no ingresar"],
+    ["Evacuación del sector", "—", "CO ≥ 200 ppm o ≥ 20 % LEL", "Evacuar el sector"],
+    ["Superficie de trabajo", "≤ 40 °C", "> 50 °C [Supuesto]", "Esperar enfriamiento"],
+    ["Cs-137 con obturador cerrado", "Fondo 0.1–0.3 μSv/h", "≥ 2 × fondo", "Alejarse ≥ 3 m; ESR"]
+  ],
+  "parametros_nota": "Trabajo en caliente: 0 % LEL detectable (≤ 1 % de lectura del equipo). Horno a 0° con pasador. Límites de radiación [Validar con ESR].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Aislamiento eléctrico por S-20", "detalle": "Interruptor extraído y bloqueado, seccionador abierto y tierras en AT. Prueba vivo–muerto–vivo con registro."},
+      {"titulo": "Gravedad y acumuladores en cero", "detalle": "Acumuladores a 0 bar; calzas en brazos y columnas; pasador de basculamiento y de barra falsa."},
+      {"titulo": "Fluidos con doble bloqueo", "detalle": "Agua, O₂, gas natural y argón con doble bloqueo y venteo; brida ciega si hay ingreso; manómetro 0 bar."},
+      {"titulo": "Agua de molde con acero: prohibido", "detalle": "Nunca cerrar el agua de molde con acero líquido o hebra sin solidificar. C-06 confirma máquina vacía."}
+    ],
+    "epp": [
+      "EPP básico de nave: casco, lentes y botas metatarsales",
+      "Ropa FR o algodón, guantes y protección auditiva",
+      "S-20: EPP para arco según estudio [Validar con C-12]",
+      "Detector multigás si hay ingreso (MS-ACE-05)"
+    ],
+    "figura": "ms-loto-puntos-eaf.svg",
+    "figura_titulo": "Cada energía del EAF tiene su candado rojo",
+    "figura_lectura": [
+      "Los números de la figura coinciden con las etiquetas pintadas en campo.",
+      "Todas las llaves de los candados de equipo van a la caja grupal.",
+      "Cada trabajador pone su candado personal en la caja grupal antes de entrar."
+    ]
+  },
+  "calidad": [
+    ["Qué se controla", "Criterio", "Cómo y cuándo", "Si falla"],
+    ["Permiso de trabajo", "Lista de puntos, lecturas cero, firmas", "Cada bloqueo", "No se trabaja"],
+    ["Bitácora de caja grupal", "Candados y transferencias de turno", "Cada colocación y retiro", "Candado sin dueño"],
+    ["Retiro forzado de candado", "C-04 + C-16, búsqueda ≥ 30 min", "Cada caso, con investigación", "Riesgo de reenergizar"],
+    ["Tierras temporales (S-20)", "Aplicadas y retiradas", "Registro por maniobra", "Energización con tierras"],
+    ["Agua restablecida", "Caudal y ΔT en rango", "Antes de energizar", "Panel sobrecalentado"],
+    ["Auditorías VCC de LOTO", "≥ 4 al mes por área [Supuesto]", "C-16", "Acción correctiva"]
+  ],
+  "calidad_takeaway": "Al devolver el equipo se reenergiza en orden: agua, luego hidráulica, luego eléctrica.",
+  "pasos": [
+    {"n": 1, "paso": "Prepara", "como": "Permiso de trabajo y lista de puntos (figura); identifica todas las energías, incluida radiación", "criterio": "Lista completa y firmada", "critico": true, "rol": "C-11 / C-12"},
+    {"n": 2, "paso": "Avisa", "como": "Informa a C-04, al púlpito y a los afectados: equipo, hora y duración", "criterio": "Aviso en bitácora", "critico": false, "rol": "C-11 / C-12"},
+    {"n": 3, "paso": "Para el equipo", "como": "EAF vacío y a nivel; CC con máquina vacía, sin acero y hebra fuera; olla vacía", "criterio": "Entrega firmada", "critico": true, "rol": "C-05 / C-06"},
+    {"n": 4, "paso": "Aísla la energía eléctrica", "como": "En AT: extrae el interruptor, abre el seccionador y aplica tierras; en BT abre el interruptor del MCC", "criterio": "Abierto visible", "critico": true, "rol": "S-20"},
+    {"n": 5, "paso": "Aísla fluidos", "como": "Cierra agua; O₂, gas natural, argón y aire con doble bloqueo y venteo; brida ciega si hay ingreso", "criterio": "Válvulas cerradas y rotuladas", "critico": true, "rol": "S-19 / S-22"},
+    {"n": 6, "paso": "Bloquea y etiqueta", "como": "Candado de equipo + tarjeta en cada punto; llaves a la caja grupal", "criterio": "Todos los puntos con candado", "critico": true, "rol": "Emisor"},
+    {"n": 7, "paso": "Pon tu candado personal", "como": "Cada trabajador pone su candado en la caja grupal antes de entrar", "criterio": "1 candado por persona", "critico": true, "rol": "Ejecutores"},
+    {"n": 8, "paso": "Libera energía residual", "como": "Acumuladores a 0 bar; calzas y pasadores; drena agua; purga gases; enfría a ≤ 50 °C", "criterio": "0 bar; calzas puestas", "critico": true, "rol": "S-22, S-19"},
+    {"n": 9, "paso": "Prueba energía cero", "como": "Arranque desde HMI y local sin movimiento; 0 V vivo–muerto–vivo; 0 bar; multigás; Cs-137 < 2 × fondo", "criterio": "Todo en cero y anotado", "critico": true, "rol": "S-20, ejecutor"},
+    {"n": 10, "paso": "Trabaja", "como": "Si se interrumpe > 2 h o cambia el alcance, repite la prueba del paso 9", "criterio": "Sin cambio de condición", "critico": false, "rol": "Ejecutores"},
+    {"n": 11, "paso": "Retira ordenadamente", "como": "Herramientas y calzas fuera; cuenta al personal; cada quien quita su candado; agua, hidráulica, eléctrica", "criterio": "Personal completo fuera", "critico": true, "rol": "Emisor + C-05"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["El equipo se mueve en la prueba", "Detén todo; revisa la lista de puntos; no trabajes", "C-12, C-16"],
+    ["Presión que no baja a 0 bar", "Descarga de nuevo; si persiste, aísla aguas arriba", "S-22, C-11"],
+    ["Tensión inducida en AT", "Aplica tierras en ambos lados del trabajo", "S-20, C-12"],
+    ["Candado de alguien que no aparece", "Procedimiento de retiro forzado: localizar, verificar, registrar", "C-04, C-16"],
+    ["Multigás en alarma", "Sal; ventila; aislamiento positivo con brida ciega", "C-16"],
+    ["Radiación > 2 × fondo", "Aléjate ≥ 3 m [Supuesto]; delimita; llama al ESR", "ESR, C-16"],
+    ["Cerrar agua de molde con acero", "Prohibido. Escala", "C-04, C-03"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-19, S-21 a S-26 (ejecutores)", "U", "8 h", "5 bloqueos", "24 meses"],
+      ["S-20 Electricista", "O", "8 h + 16 h", "10 maniobras de AT", "12 meses"],
+      ["S-01, S-12", "U", "4 h", "3 entregas de equipo", "24 meses"],
+      ["S-02, S-03, S-06, S-07 (llave cautiva)", "L", "2 h", "3 accesos", "24 meses"],
+      ["C-04, C-05, C-06, C-11, C-12", "O", "12 h", "10 permisos con tutor", "24 meses"],
+      ["Contratistas", "U", "8 h (TD-P08)", "2 bloqueos", "12 meses"]
+    ],
+    "checklist": [
+      "Identifica todas las energías del equipo con la lista de puntos (figura 1 o 2)",
+      "Aísla fluidos con doble bloqueo y venteo, y brida ciega si hay ingreso",
+      "Coloca su propio candado personal y nunca usa el de otro",
+      "Descarga acumuladores y coloca calzas y pasadores antes de entrar",
+      "Hace la prueba de energía cero completa (incluido Cs-137 < 2 × fondo) y la anota",
+      "Retira en orden y reenergiza agua, luego hidráulica, luego eléctrica"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Cuántos candados personales pone cada trabajador en la caja grupal?", "opciones": ["Uno propio", "Uno por cuadrilla", "Ninguno si hay candado de equipo"], "correcta": 0, "explicacion": "Un candado, una persona, una llave. Nunca se presta ni se usa el de otro."},
+    {"pregunta": "¿Quién opera interruptores de media y alta tensión y aplica tierras?", "opciones": ["El supervisor", "S-20 Electricista", "Cualquier ejecutor"], "correcta": 1, "explicacion": "Solo S-20, con prueba vivo–muerto–vivo (NOM-029)."},
+    {"pregunta": "En la prueba de arranque el equipo se mueve. ¿Qué haces?", "opciones": ["Trabajo con cuidado", "Detengo todo y reviso los puntos", "Pongo otro candado"], "correcta": 1, "explicacion": "Hay un punto omitido o puenteado: nadie trabaja hasta encontrar la energía no aislada."},
+    {"pregunta": "Vas a cambiar un componente en la plataforma de bóveda. ¿Basta la llave cautiva?", "opciones": ["Sí, siempre", "No, se requiere LOTO completo", "Solo si hay supervisor"], "correcta": 1, "explicacion": "La llave cautiva es solo para acceso de rutina listado. Toda intervención exige LOTO completo."},
+    {"pregunta": "¿En qué orden se reenergiza el equipo al retirar el LOTO?", "opciones": ["Eléctrica, hidráulica, agua", "Agua, hidráulica, eléctrica", "Todo a la vez"], "correcta": 1, "explicacion": "Primero agua con caudales normales, luego hidráulica, al final eléctrica."}
+  ],
+  "reglas": [
+    {"titulo": "Un candado, una persona, una llave", "detalle": "Tu candado en la caja grupal antes de entrar; nunca prestado."},
+    {"titulo": "Sin energía cero no se toca", "detalle": "0 V, 0 bar, calzas y pasadores puestos, anotado en el permiso."},
+    {"titulo": "Llave cautiva no es LOTO", "detalle": "Solo acceso de rutina listado; para intervenir el equipo, LOTO completo."},
+    {"titulo": "Agua de molde con acero: nunca", "detalle": "No se cierra el agua de molde con acero líquido en la máquina."}
+  ],
+  "por_confirmar": [
+    "Clase del detector de AT y calibre de tierras con el diagrama unifilar y C-12",
+    "Calzas y pasadores según OEM; temperatura de contacto ≤ 50 °C (supuesto)",
+    "Límite < 2 × fondo de Cs-137 con el ESR; frecuencia de VCC de LOTO"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de reenergización; reglas", "Láminas 1–2"],
+    ["2. Roles y flujo de 10 pasos", "45", "Recorrido del flujo con la caja grupal", "Láminas 3–5"],
+    ["3. Puntos de bloqueo", "75", "Ejercicio: identificar puntos en EAF y CC", "Láminas 6–7, figuras"],
+    ["4. Equipos y energía cero", "75", "Práctica vivo–muerto–vivo y lectura de manómetros", "Láminas 8–9, kit LOTO"],
+    ["5. Controles y llave cautiva", "60", "Casos: ¿llave cautiva o LOTO completo?", "Láminas 10–11"],
+    ["6. Registros y paso a paso", "75", "Llenado de un permiso con los 11 pasos", "Láminas 12–14"],
+    ["7. Condiciones anormales", "60", "Simulacro de mesa: candado sin dueño", "Lámina 15"],
+    ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
+    ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {"seguridad": "visto bueno — 2026-09-25"}
+}

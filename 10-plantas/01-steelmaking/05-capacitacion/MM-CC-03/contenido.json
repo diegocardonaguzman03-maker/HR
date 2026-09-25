@@ -1,0 +1,195 @@
+{
+  "code": "MM-CC-03",
+  "title": "Sistemas de agua de molde, enfriamiento secundario y agua de emergencia",
+  "titulo_corto": "Agua de molde y emergencia",
+  "serie": "Mantenimiento",
+  "area": "Acería · casa de bombas CC1 / CC2",
+  "manual": "03-mantenimiento/MM-CC-03-agua-molde-secundaria-emergencia.md",
+  "manual_version": "0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "El molde nunca se queda sin agua con acero dentro: emergencia con caudal ≥ 90 % en ≤ 15 s",
+  "audiencia": "S-21 Instrumentista · S-19 Mecánico · S-20 Electricista · S-12 Operador de Púlpito de CC · C-12 · C-06",
+  "kpis": [
+    {"value": "24 h", "label": "teoría (S-21 Instrumentista)"},
+    {"value": "3", "label": "pruebas mensuales (OJT)"},
+    {"value": "≤ 15 s", "label": "a caudal ≥ 90 % en emergencia"},
+    {"value": "24", "label": "meses de vigencia (TD-P07)"}
+  ],
+  "cadena": ["Paro sin acero", "Condiciones iniciales", "Simular la falla", "Q ≥ 90 % en ≤ 15 s", "Probar D-2", "Selectores en auto"],
+  "titulos": {
+    "objetivos": "Al terminar, pruebas la emergencia y la dejas lista",
+    "roles": "C-12 programa la prueba; C-06 da la ventana sin acero",
+    "flujo": "Torre por gravedad y diésel: dos barreras en 15 s",
+    "figura": "XV-1 abre sin energía y el diésel arranca en 10 s",
+    "equipos": "Diez equipos; ninguna barrera puede quedar fuera",
+    "parametros": "Más de 15 s para llegar a 90 %: no se cuela",
+    "seguridad": "Sin agua en el molde con acero: breakout y explosión",
+    "calidad": "Caudal, ΔT y química del agua se ven en la cáscara",
+    "pasos": "Doce pasos; siete no admiten error",
+    "anormales": "Diésel que no arranca sin el otro: no se cuela",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del agua de molde que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Mantener las cuatro barreras", "detalle": "Bomba de reserva en automático, torre ≥ 90 %, XV-1 falla-abierta y diésel D-1/D-2 con combustible ≥ 75 %."},
+    {"titulo": "Probar el cambio a emergencia", "detalle": "Sin acero en CC1 y CC2: XV-1 ≤ 5 s [Validar], diésel ≤ 10 s y caudal en molde ≥ 90 % en ≤ 15 s."},
+    {"titulo": "Cuidar caudal, ΔT y química", "detalle": "Caudal < 90 % o ΔT > 11 °C (CC1) / > 12 °C (CC2) es alarma; conductividad ≤ 100 µS/cm."},
+    {"titulo": "Dejar todo en automático", "detalle": "Selectores en automático y ningún candado de prueba olvidado, verificado por 2 personas y firmado."}
+  ],
+  "por_que_importa": "Si el molde se queda sin agua con acero dentro, la cáscara se funde: breakout y explosión agua–metal. La torre y las bombas diésel son la última barrera y solo sirven si entran solas en 15 s. Una prueba mal restablecida deja la máquina colando sin protección.",
+  "principio": "No se cuela con la torre o ambos diésel fuera de servicio.",
+  "roles": [
+    ["Rol", "Qué hace en el agua de molde y emergencia", "RACI"],
+    ["C-12 Supervisor Eléctrico e Instrumentación", "Dueño; programa las pruebas de emergencia y libera", "A"],
+    ["S-19 Mecánico de Acería", "Bombas, válvulas, intercambiadores, filtros y diésel", "R"],
+    ["S-21 Instrumentista", "FT, TT, PT, LT, lógica de cambio y calibraciones", "R"],
+    ["S-20 Electricista", "Motores, CCM, UPS, baterías y arranque del diésel", "R"],
+    ["C-06 Supervisor de CC", "Autoriza la ventana de prueba; firma la liberación", "A (operación)"],
+    ["S-12 Operador de Púlpito de CC", "Confirma alarmas y caudales en HMI durante la prueba", "R"],
+    ["Tratamiento de aguas", "Química del agua de molde", "R"],
+    ["C-14 Ingeniero de Confiabilidad", "Vibraciones, tendencia de ΔT e incrustación", "C"]
+  ],
+  "flujo": [
+    {"label": "Falla", "desc": "Pérdida de energía o P bajo PSLL (t = 0)"},
+    {"label": "XV-1 abre", "desc": "Falla-abierta; ≤ 5 s [Validar]"},
+    {"label": "Torre", "desc": "Agua por gravedad a los moldes"},
+    {"label": "D-1 arranca", "desc": "Presión en ≤ 10 s; si no, D-2"},
+    {"label": "Q ≥ 90 %", "desc": "En todos los moldes en ≤ 15 s"},
+    {"label": "Terminar colada", "desc": "Operación aplica MS-ACE-09"}
+  ],
+  "flujo_takeaway": "La secuencia es automática; el mantenimiento asegura que cada barrera esté lista cuando se necesite.",
+  "figuras": [
+    {
+      "svg": "mm-agua-emergencia.svg",
+      "lectura": [
+        "Circuito cerrado: tanque, bombas P-1/P-2/P-3 (2 + 1), intercambiador, filtro con ΔP y moldes.",
+        "Sin energía o con presión baja, XV-1 abre por resorte y la torre alimenta por gravedad.",
+        "Arranca D-1 y, si no da presión en 10 s, D-2. Criterio: caudal en molde ≥ 90 % en ≤ 15 s."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Bombas P-1/P-2/P-3", "Circular agua de molde", "2 en servicio + 1 reserva", "Reserva en automático"],
+    ["Filtros / coladores", "Proteger ranuras del molde", "Malla ≤ 200 µm [Validar]", "ΔP < 0.5 bar"],
+    ["Torre elevada", "Agua por gravedad", "Volumen ≥ vaciado de máquina [Validar]", "Nivel ≥ 90 %"],
+    ["XV-1 (falla-abierta)", "Conectar la torre", "Abre sin energía (resorte)", "Carrera completa ≤ 5 s [Validar]"],
+    ["Bombas diésel D-1/D-2", "Emergencia prolongada", "Arranque automático", "Diésel ≥ 75 %; baterías cargadas"],
+    ["FT/TT por cara o línea", "Alarmas de caudal y ΔT", "FT ±1 %; TT ±0.2 °C", "Calibrados"],
+    ["UPS de control", "Mantener PLC e instrumentos", "Autonomía ≥ 30 min [Validar]", "Prueba de baterías vigente"]
+  ],
+  "parametros": [
+    ["Especificación", "Objetivo", "Tolerancia", "Límite / rechazo", "Frecuencia"],
+    ["Caudal cara ancha CC1", "4,200 L/min", "±5 %", "< 90 % alarma", "Continuo"],
+    ["ΔT molde CC1 / CC2", "7.5 / 8 °C", "6–9 / 6–10 °C", "> 11 / > 12 °C alarma", "Continuo"],
+    ["Caudal por línea CC2", "2,000 L/min", "±5 %", "< 90 % alarma", "Continuo"],
+    ["Conductividad", "≤ 50 µS/cm [Validar]", "≤ 100 µS/cm", "> 150 µS/cm", "Diario"],
+    ["Nivel de torre", "100 %", "≥ 90 %", "< 90 % alarma", "Continuo / diario"],
+    ["Cambio a emergencia", "≤ 10 s", "—", "> 15 s: no colar", "Mensual; anual apagón"],
+    ["Arranque de diésel", "≤ 10 s a presión", "—", "No arranca", "Semanal"],
+    ["Baterías de arranque 24 V", "≥ 25.5 V [Validar]", "—", "< 24.5 V", "Semanal"]
+  ],
+  "parametros_nota": "Presión a moldes (típ. 8–10 bar), T de entrada 35 °C, química del agua, aire de atomización y tiempos de la lógica: [Validar con OEM].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Barrera fuera = autorización escrita", "detalle": "C-03 y C-12 autorizan; con la torre o ambos diésel fuera de servicio la máquina no cuela [Validar con C-03 / C-16]."},
+      {"titulo": "LOTO y prueba de energía cero", "detalle": "CCM y selector automático, batería del diésel desconectada; arranque local y remoto rechazado, 0 bar y detector de tensión."},
+      {"titulo": "Torre y XV-1 solo con máquina parada", "detalle": "La válvula de la torre y la XV-1 se aíslan solo sin acero en la máquina; XV-1 bloqueada mecánicamente."},
+      {"titulo": "Gases, ruido y químicos", "detalle": "Escape del diésel: CO < 25 ppm, evacuar a 200 ppm. Tanques: confinado (NOM-033). Químicos con EPP y regadera."}
+    ],
+    "epp": [
+      "Casco, lentes, guantes y botas de seguridad",
+      "Protección auditiva (casa de bombas > 85 dB(A))",
+      "Careta y guantes químicos para tratamiento",
+      "Arnés y línea de vida en la torre",
+      "EPP eléctrico según categoría en CCM"
+    ],
+    "figura": "ms-emergencia-arbol-decision.svg",
+    "figura_titulo": "Sin agua de molde: 15 s para que entre la emergencia",
+    "figura_lectura": [
+      "Caudal < 90 % o ΔT alto: verifica que entra el agua de emergencia en ≤ 15 s.",
+      "Si no entra en 15 s, operación cierra olla y distribuidor y evacúa la plataforma a ≥ 10 m.",
+      "No se mete agua a un molde sobrecalentado sin OK de C-06 / C-08."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Caudal y ΔT de molde", "FT-ACE-001 §4–§5", "Continuo", "Cáscara delgada, grietas, breakout"],
+    ["Calidad del agua de molde", "≤ 100 µS/cm; dureza ≤ 0.5 °dH", "Diario / semanal", "Incrustación, molde caliente, grietas"],
+    ["Agua secundaria por zona", "Modelo ±5 %", "Continuo", "Grietas superficiales e internas"],
+    ["Exactitud de TT de molde", "±0.2 °C", "Semestral", "ΔT falso: alarmas no confiables"]
+  ],
+  "calidad_takeaway": "Un TT descalibrado o una ranura incrustada engañan al operador: la alarma llega tarde o no llega.",
+  "pasos": [
+    {"n": 1, "paso": "Programa la prueba", "como": "Ventana de paro sin acero en CC1 y CC2; aviso a púlpitos", "criterio": "Autorización de C-06", "critico": true, "rol": "C-12"},
+    {"n": 2, "paso": "Verifica condiciones", "como": "Torre ≥ 90 %; diésel ≥ 75 %; baterías ≥ 25.5 V; XV-1 cerrada; agua a caudal nominal", "criterio": "Todo en rango", "critico": false, "rol": "S-21, S-19"},
+    {"n": 3, "paso": "Prepara registro", "como": "Tendencia de FT de moldes a 1 s; cronómetro; observador en XV-1 y en diésel", "criterio": "Registro activo", "critico": false, "rol": "S-21"},
+    {"n": 4, "paso": "Simula la falla", "como": "Sin acero y nadie en acoplamientos ni en el escape; dispara las bombas principales desde el CCM", "criterio": "t = 0 registrado", "critico": true, "rol": "S-20"},
+    {"n": 5, "paso": "Observa XV-1", "como": "Tiempo de apertura completa", "criterio": "≤ 5 s [Validar]", "critico": false, "rol": "S-19"},
+    {"n": 6, "paso": "Observa el diésel", "como": "Arranque de D-1 y presión en el cabezal", "criterio": "≤ 10 s", "critico": false, "rol": "S-19"},
+    {"n": 7, "paso": "Verifica caudal en moldes", "como": "Todas las caras (CC1) y todas las líneas (CC2)", "criterio": "≥ 90 % en ≤ 15 s", "critico": true, "rol": "S-21, S-12"},
+    {"n": 8, "paso": "Sostén 10 min", "como": "Vigila el nivel de la torre y la temperatura del diésel", "criterio": "Estable", "critico": false, "rol": "S-19"},
+    {"n": 9, "paso": "Prueba D-2", "como": "Repite la prueba con D-1 bloqueado", "criterio": "D-2 cumple ≤ 10 s", "critico": true, "rol": "S-19, S-20"},
+    {"n": 10, "paso": "Restablece", "como": "Arranca bombas principales, cierra XV-1, diésel a automático, repone la torre", "criterio": "Normal; torre ≥ 90 %", "critico": true, "rol": "S-21, S-19"},
+    {"n": 11, "paso": "Verifica selectores", "como": "Todos en automático; ningún candado de prueba olvidado", "criterio": "Verificado por 2 personas", "critico": true, "rol": "S-21, S-12"},
+    {"n": 12, "paso": "Libera", "como": "Checklist firmado por Mantenimiento y Operación con los tiempos medidos", "criterio": "Firmado por C-12 y C-06", "critico": true, "rol": "C-12, C-06"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Caudal de molde < 90 %", "Operación reduce velocidad o termina colada; arrancar reserva", "C-06, C-12"],
+    ["ΔT alto con caudal normal", "Operación reduce velocidad; verificar TT", "C-08, S-21"],
+    ["Apagón con acero en máquina", "Emergencia automática; operación termina la colada (MS-ACE-09)", "C-04, C-12"],
+    ["Diésel no arranca en prueba", "No colar si el otro diésel no está disponible", "C-03, C-12"],
+    ["Nivel de torre baja sin uso", "Revisar XV-1 y tuberías", "S-19"],
+    ["Conductividad > 150 µS/cm", "Revisar intercambiador (agua cruda); purgar", "Aguas, C-12"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-21 Instrumentista", "U", "24 h", "3 pruebas mensuales", "24 meses"],
+      ["S-19 Mecánico", "U", "16 h", "3 pruebas", "24; torre y tanques 12"],
+      ["S-20 Electricista", "U", "NOM-029 + 8 h", "3 pruebas", "12 meses"],
+      ["S-12 Operador de Púlpito", "U", "4 h", "Simulacro", "12 meses"]
+    ],
+    "checklist": [
+      "Programa la prueba solo sin acero en CC1 y CC2 y con autorización de C-06",
+      "Confirma personal fuera de acoplamientos y escape antes de simular la falla",
+      "Verifica caudal ≥ 90 % en ≤ 15 s en todos los moldes y prueba ambos diésel",
+      "Restablece bombas, XV-1 y torre ≥ 90 %",
+      "Deja selectores en automático con doble verificación y libera con firma",
+      "Sabe que no se cuela con la torre o ambos diésel fuera de servicio"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Cuál es el criterio de la prueba de cambio a emergencia?", "opciones": ["Q ≥ 50 % en ≤ 30 s", "Q ≥ 90 % en ≤ 15 s", "Q ≥ 100 % en ≤ 5 s"], "correcta": 1, "explicacion": "Caudal en todos los moldes ≥ 90 % en ≤ 15 s; más de 15 s bloquea la colada hasta corregir."},
+    {"pregunta": "¿Cómo abre la XV-1 cuando falla la energía?", "opciones": ["Con el diésel", "Por resorte, sin energía", "Manualmente"], "correcta": 1, "explicacion": "Es falla-abierta: al quitarle energía abre por resorte y conecta la torre por gravedad."},
+    {"pregunta": "¿Cuándo se hace la prueba mensual de emergencia?", "opciones": ["Colando a baja velocidad", "En paro, sin acero en la máquina", "Solo con CC2 colando"], "correcta": 1, "explicacion": "Se programa con C-06 en paro, sin acero en CC1 ni CC2."},
+    {"pregunta": "D-1 no arranca y D-2 está en mantenimiento. ¿Qué pasa con la colada?", "opciones": ["Se cuela normal", "No se cuela", "Se cuela a media velocidad"], "correcta": 1, "explicacion": "Con ambos diésel fuera de servicio la máquina no cuela; avisar a C-03 y C-12."},
+    {"pregunta": "¿Qué se verifica al final de la prueba?", "opciones": ["Solo el nivel de torre", "Selectores en automático, 2 personas", "Que D-1 siga encendido"], "correcta": 1, "explicacion": "Todos los selectores en automático y sin candados de prueba, verificado por 2 personas."}
+  ],
+  "reglas": [
+    {"titulo": "Más de 15 s: no se cuela", "detalle": "El cambio a emergencia debe dar caudal ≥ 90 % en ≤ 15 s."},
+    {"titulo": "Torre o ambos diésel fuera: no se cuela", "detalle": "Toda barrera fuera requiere autorización escrita de C-03 y C-12."},
+    {"titulo": "La prueba se hace sin acero", "detalle": "Paro programado con CC1 y CC2 vacías y autorización de C-06."},
+    {"titulo": "Todo vuelve a automático", "detalle": "Selectores y XV-1 en automático, verificado por 2 personas."}
+  ],
+  "por_confirmar": [
+    "Tiempo de apertura de XV-1 (≤ 5 s), volumen de la torre y autonomía de la UPS con el OEM",
+    "Presión a moldes, T de entrada y química del agua",
+    "Regla de barrera fuera de servicio con C-03 / C-16"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de breakout por falla de agua", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Secuencia de emergencia con la figura", "Láminas 3–6"],
+    ["3. Equipos y especificaciones", "90", "Lazos de caudal y ΔT; lectura de tendencias", "Láminas 7–8, HMI"],
+    ["4. Seguridad, LOTO y energía cero", "75", "Barreras, selector automático y batería diésel", "Láminas 9–10, candados"],
+    ["5. Calidad y paso a paso", "90", "Lectura guiada de los 12 pasos; pasos ★", "Láminas 11–13"],
+    ["6. Recorrido de casa de bombas", "60", "Ubicar XV-1, torre, D-1/D-2 y selectores", "Casa de bombas"],
+    ["7. Condiciones anormales", "45", "Simulacro de mesa: diésel que no arranca", "Lámina 14"],
+    ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
+    ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {}
+}

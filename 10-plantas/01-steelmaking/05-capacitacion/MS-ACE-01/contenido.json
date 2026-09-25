@@ -1,0 +1,211 @@
+{
+  "code": "MS-ACE-01",
+  "title": "Metal líquido: zonas de exclusión, EPP aluminizado y distancias",
+  "titulo_corto": "Metal líquido y zonas",
+  "serie": "Seguridad",
+  "area": "Acería · EAF, LF, ollas, CC1, CC2 y patio",
+  "manual": "04-seguridad/MS-ACE-01-metal-liquido-zonas-exclusion.md",
+  "manual_version": "0.2 (borrador para validación; revisión de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Nadie en zona roja sin autorización, sin EPP aluminizado seco y sin ruta de escape libre",
+  "audiencia": "S-01 · S-02 · S-03 · S-06 · S-07 · S-09 · S-11 · S-12 · S-13 · S-14 · C-04 · C-05 · C-06 · contratistas",
+  "kpis": [
+    {"value": "8 h", "label": "teoría CRS-08 (operadores)"},
+    {"value": "40 h", "label": "OJT + 20 eventos supervisados"},
+    {"value": "11", "label": "pasos críticos ★"},
+    {"value": "≤ 30 s", "label": "para llegar a refugio o verde"}
+  ],
+  "cadena": [
+    "Zonas y refugios OK",
+    "Sirena y CCTV",
+    "EPP seco",
+    "Zona roja vacía",
+    "Aviso ≥ 30 s",
+    "Operar protegido"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, operas sin nadie expuesto en zona roja",
+    "roles": "C-16 fija las zonas; cada operador las hace cumplir",
+    "flujo": "La zona roja se verifica antes de mover el metal",
+    "figura": "La zona cambia según la operación que se ejecuta",
+    "equipos": "Sin sirena, semáforo o refugio libre no se opera",
+    "parametros": "Distancias y tiempos definen quién puede estar",
+    "seguridad": "Salpicadura, perforación y volteo: riesgos que matan",
+    "calidad": "Temperatura y refractario controlan la perforación",
+    "pasos": "Trece pasos; once no admiten error",
+    "anormales": "Ante un punto rojo o humo: evacua a ≥ 25 m",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del metal líquido que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Reconocer las tres zonas", "detalle": "Roja: solo personal esencial con EPP aluminizado. Amarilla: autorizado tras barrera. Verde: tránsito con EPP básico."},
+    {"titulo": "Aplicar las distancias por operación", "detalle": "Vaciado roja ≤ 10 m y amarilla 10–25 m; ruta de olla ± 5 / ± 15 m; arranque de CC ≤ 10 / 20 m."},
+    {"titulo": "Preparar el evento sin exponer a nadie", "detalle": "Barreras, zona roja vacía (visual + CCTV), sirena y semáforo ≥ 30 s antes; ruta de escape libre."},
+    {"titulo": "Reaccionar a tiempo", "detalle": "Máximo 2 min en roja por intervención; ante perforación, fuga o ebullición, a refugio o verde en ≤ 30 s."}
+  ],
+  "por_que_importa": "El acero líquido está a ≈ 1,630 °C y una olla llena pesa más de 200 t. Una salpicadura, una olla perforada o una olla que cae alcanzan a quien está cerca. La única protección segura es no estar ahí: zona roja vacía, EPP aluminizado seco y ruta de escape libre.",
+  "principio": "Si hay una persona no esencial en zona roja, no se vacía, no se traslada y no se arranca.",
+  "roles": [
+    ["Rol", "Qué hace con el metal líquido", "RACI"],
+    ["C-16 Especialista de Seguridad", "Dueño del estándar; define zonas y distancias; audita (VCC)", "A"],
+    ["C-04 Jefe de Turno de Acería", "Hace cumplir las zonas; autoriza excepciones por escrito", "R"],
+    ["C-05 / C-06 Supervisores", "Verifican barreras, EPP y personal esencial antes de cada evento", "R"],
+    ["S-01 / S-12 Púlpito", "Anuncian, activan sirena y semáforo; no inician con personas en roja", "R"],
+    ["S-02 / S-03 / S-06 / S-07 / S-11", "Muestreo, temperatura y adiciones en roja con EPP completo", "R"],
+    ["S-09 Grúa de Colada", "Traslada solo por la ruta marcada; detiene si alguien cruza", "R"],
+    ["S-13 / S-14 Colada", "Únicos en roja de CC durante el arranque, con S-12 y C-06", "R"],
+    ["Todo el personal y contratistas", "Respetan las zonas; ejercen el derecho a detener el trabajo", "I"]
+  ],
+  "flujo": [
+    {"label": "Revisar zonas", "desc": "Marcas, barreras, R1–R4, fosa seca"},
+    {"label": "Probar avisos", "desc": "Sirena, semáforo y CCTV en púlpito"},
+    {"label": "EPP seco", "desc": "Sin roturas, humedad ni grasa"},
+    {"label": "Barreras", "desc": "Accesos cerrados con letrero"},
+    {"label": "Roja vacía", "desc": "Visual + CCTV; si hay alguien, no inicia"},
+    {"label": "Aviso ≥ 30 s", "desc": "Radio, sirena y semáforo rojo"},
+    {"label": "Operar", "desc": "Posición protegida, escape libre"},
+    {"label": "Cerrar", "desc": "Semáforo verde, retiro y registro"}
+  ],
+  "flujo_takeaway": "Seis de los ocho pasos ocurren antes de mover el metal: la seguridad se asegura en la preparación.",
+  "figuras": [
+    {
+      "svg": "ms-zonas-exclusion-nave.svg",
+      "lectura": [
+        "La roja es el alcance posible de una salpicadura, un derrame o la caída de una olla.",
+        "Las distancias cambian por operación: vaciado, ruta de olla, arranque de CC, escoria.",
+        "Refugios R1–R4 y púlpitos a ≤ 30 s a pie desde cualquier punto de la zona roja.",
+        "Distancias [Supuesto — Validar con C-16 / estudio de la nave]."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Barreras físicas", "Delimitan la zona roja", "Visibles a 25 m; cierre en cada acceso", "Colocadas antes del evento"],
+    ["Semáforo y sirena", "Avisan el inicio del evento", "≥ 10 dB(A) sobre el fondo [Supuesto]", "Prueba al inicio de turno"],
+    ["Refugios R1–R4 y púlpitos", "Protegen ante salpicadura o derrame", "A ≤ 30 s a pie desde la roja", "Libres, señalizados, iluminados"],
+    ["Fosa de emergencia", "Recibe el acero de olla perforada", "Seca; ≥ 1 olla [Validar con Ingeniería]", "Seca y libre por turno"],
+    ["CCTV de vaciado y torreta", "Vigilancia sin exponer personas", "Vista de EBT, carro y torreta", "Imagen en púlpito"],
+    ["EPP aluminizado", "Protege de calor y salpicadura", "ISO 11612 [Verificar con proveedor]", "Seco, sin roturas ni grasa"],
+    ["Arena seca y lanzas", "Contener derrames; medir a distancia", "Arena bajo techo; lanza ≥ 1.5 m", "Secas; nivel de arena ≥ 50 %"]
+  ],
+  "parametros": [
+    ["Operación / límite", "Zona roja", "Zona amarilla", "En roja"],
+    ["Vaciado por EBT", "≤ 10 m de olla y EBT", "10–25 m", "Nadie a pie"],
+    ["Canasta sobre talón", "≤ 15 m del horno", "15–30 m", "Nadie; señalero en refugio"],
+    ["Muestreo / temperatura", "≤ 5 m de la puerta", "5–15 m", "Ejecutor a ≥ 1.5 m"],
+    ["Olla en grúa o carro", "Ruta ± 5 m", "± 5–15 m", "Nadie bajo ni junto"],
+    ["Arranque de CC1/CC2", "≤ 10 m; bajo la máquina", "10–20 m", "S-12, S-13, S-14, C-06"],
+    ["Volteo de olla de escoria", "≤ 15 m del volteo", "15–30 m", "Nadie a pie"],
+    ["Aviso antes del evento", "≥ 30 s (objetivo 60)", "< 30 s", "No iniciar"],
+    ["Permanencia en roja", "≤ 2 min", "> 2 min", "Salir y relevo"]
+  ],
+  "parametros_nota": "Distancias de exclusión: [Supuesto — Validar con C-16 / SSO mediante un estudio de la nave]. Francobordo de olla ≥ 400 mm [Supuesto].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Zona roja sin personas", "detalle": "Mando remoto desde púlpito; verificación visual + CCTV; lista de vaciado firmada antes de iniciar."},
+      {"titulo": "Ruta de olla libre y fosa seca", "detalle": "Nadie bajo ni junto a la ruta; fosa de emergencia seca; vida de refractario de olla 60–80 coladas."},
+      {"titulo": "Grúa con doble freno", "detalle": "Prueba de frenos por turno (MS-ACE-04); nadie bajo la carga; holgura ≥ 1 m sobre obstáculos."},
+      {"titulo": "EPP aluminizado seco y tiempo limitado", "detalle": "EPP húmedo, roto o con grasa no entra a roja. Máximo 2 min por intervención; relevo (MS-ACE-08)."}
+    ],
+    "epp": [
+      "Casco con careta de visor dorado y capucha aluminizada",
+      "Chaquetón, guantes y polainas aluminizados",
+      "Ropa FR o 100 % algodón; prohibido lo sintético",
+      "Botas metatarsales de liberación rápida",
+      "Protección auditiva y detector personal CO/O₂"
+    ],
+    "figura": "ms-epp-acería.svg",
+    "figura_titulo": "EPP de zona roja: completo, seco e íntegro",
+    "figura_lectura": [
+      "En roja todo el EPP aluminizado es obligatorio.",
+      "La ropa sintética se funde sobre la piel: está prohibida.",
+      "Un EPP húmedo produce quemadura por vapor: se cambia antes de entrar."
+    ]
+  },
+  "calidad": [
+    ["Qué se controla", "Criterio", "Cómo y cuándo", "Si falla"],
+    ["Lista de inicio de turno", "Zonas, R1–R4 y fosa seca", "Firma C-05 / C-06 cada turno", "No se inicia el evento"],
+    ["Hoja de colada", "Hora de aviso, personal en roja", "Cada vaciado o arranque", "Evento sin evidencia"],
+    ["Inspección de EPP aluminizado", "Seco e íntegro", "Registro por turno", "EPP fuera de servicio"],
+    ["Autorización de ingreso a roja", "Escrita, firmada por C-04", "Cada ingreso no esencial", "Ingreso no autorizado"],
+    ["Refractario de olla", "60–80 coladas; sin puntos calientes", "Registro de ollas (C-15) cada ciclo", "Riesgo de perforación"],
+    ["VCC de C-16", "Controles críticos presentes", "Mensual", "Acción correctiva"]
+  ],
+  "calidad_takeaway": "Temperatura de vaciado > 1,660 °C aumenta el riesgo de perforación de olla: avisar a C-07.",
+  "pasos": [
+    {"n": 1, "paso": "Revisa zonas al iniciar turno", "como": "Recorre la nave con la figura: marcas visibles, barreras completas, refugios R1–R4 libres, fosa seca", "criterio": "Lista firmada", "critico": true, "rol": "C-05 / C-06"},
+    {"n": 2, "paso": "Prueba sirena, semáforo, CCTV", "como": "Activa sirena y semáforo 5 s; confirma imagen del EBT y de la torreta en púlpito", "criterio": "Audible en toda la amarilla", "critico": true, "rol": "S-01 / S-12"},
+    {"n": 3, "paso": "Inspecciona tu EPP", "como": "Costuras, capa aluminizada, visor y cierres; confirma que está seco", "criterio": "Sin roturas, humedad ni grasa", "critico": true, "rol": "Esenciales"},
+    {"n": 4, "paso": "Confirma el personal esencial", "como": "Nombra por radio quién estará en roja, solo los permitidos por operación", "criterio": "Lista de nombres", "critico": false, "rol": "C-05 / C-06"},
+    {"n": 5, "paso": "Coloca barreras", "como": "Cierra accesos con cadena y letrero ZONA ROJA — METAL LÍQUIDO", "criterio": "Accesos cerrados", "critico": true, "rol": "S-03 / S-14"},
+    {"n": 6, "paso": "Verifica la roja vacía", "como": "Visual directa + CCTV. Si alguien está: no inicias", "criterio": "Roja vacía (salvo esenciales)", "critico": true, "rol": "S-01/S-12/S-09"},
+    {"n": 7, "paso": "Anuncia y espera", "como": "Radio: evento en 60 segundos. Sirena y semáforo rojo; espera ≥ 30 s", "criterio": "Aviso ≥ 30 s", "critico": true, "rol": "S-01 / S-12"},
+    {"n": 8, "paso": "Opera desde posición protegida", "como": "Púlpito o posición marcada; ruta de escape a la espalda y libre", "criterio": "Operador protegido", "critico": true, "rol": "Operadores"},
+    {"n": 9, "paso": "Muestrea o mide temperatura", "como": "De lado a la puerta, a ≥ 1.5 m; lanza seca y precalentada; máximo 2 min en roja", "criterio": "Sin exposición prolongada", "critico": true, "rol": "S-02/S-06/S-11"},
+    {"n": 10, "paso": "Traslada la olla", "como": "Solo por ruta pintada, altura mínima con ≥ 1 m de holgura; detente si alguien cruza", "criterio": "Nadie bajo la ruta", "critico": true, "rol": "S-09"},
+    {"n": 11, "paso": "Arranca la CC", "como": "Solo S-12, S-13, S-14 y C-06 en roja; nadie bajo la máquina hasta que C-06 libere", "criterio": "Sin personal no esencial", "critico": true, "rol": "C-06"},
+    {"n": 12, "paso": "Vigila condiciones anormales", "como": "Punto rojo en coraza, humo en válvula, vapor, chispeo o ruido de ebullición: responde", "criterio": "Respuesta ≤ 30 s", "critico": true, "rol": "Todos"},
+    {"n": 13, "paso": "Cierra el evento", "como": "Semáforo a verde, retira barreras temporales, registra hora y anomalías", "criterio": "Registro completo", "critico": false, "rol": "S-01 / S-12"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Persona no autorizada en roja", "Detén o no inicies; retírala; repite la verificación", "C-05 / C-06"],
+    ["Punto rojo o humo en la coraza", "Evacúa ruta y zona ≥ 25 m; la grúa lleva la olla a la fosa seca", "C-04, C-15"],
+    ["Fuga por la válvula deslizante", "No te acerques; olla a la fosa o a posición segura", "C-04, S-08"],
+    ["Ebullición o salpicadura", "Detén el vaciado desde el púlpito si es posible; evacúa", "C-05, C-07"],
+    ["Sirena o semáforo sin funcionar", "No vacíes ni arranques; viva voz + radio solo con autorización", "C-04, C-12"],
+    ["EPP húmedo o dañado", "No entres a roja; cámbialo", "C-05 / C-06"],
+    ["Refugio bloqueado", "Despeja antes del evento", "C-04"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-02, S-03, S-06, S-07, S-11", "U", "8 h", "40 h + 20 muestreos", "24 meses"],
+      ["S-01, S-12", "O", "8 h", "40 h + 20 eventos", "24 meses"],
+      ["S-09 Grúa de Colada", "O", "8 h + CRS-05", "80 h + 30 traslados", "12 meses"],
+      ["S-13, S-14", "U", "8 h", "40 h + 10 arranques", "24 meses"],
+      ["C-04, C-05, C-06", "O", "12 h", "20 eventos + simulacro", "24 meses"],
+      ["Contratistas y visitantes", "I", "2 h (TD-P08)", "—", "12 meses"]
+    ],
+    "checklist": [
+      "Inspecciona el EPP aluminizado y rechaza el húmedo o dañado",
+      "Verifica que la zona roja está vacía antes de iniciar (visual + CCTV)",
+      "Anuncia y espera ≥ 30 s con sirena y semáforo",
+      "Trabaja desde la posición protegida con la ruta de escape libre y ≤ 2 min en roja",
+      "Traslada la olla solo por la ruta pintada, con ≥ 1 m de holgura, y se detiene si alguien cruza",
+      "Reconoce las señales de perforación de olla y reacciona en ≤ 30 s"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Qué distancia define la zona roja durante el vaciado por EBT?", "opciones": ["≤ 5 m", "≤ 10 m", "≤ 25 m"], "correcta": 1, "explicacion": "Roja ≤ 10 m de la olla y del EBT, fosa incluida; amarilla de 10 a 25 m."},
+    {"pregunta": "¿Cuánto tiempo mínimo de aviso con sirena y semáforo antes del evento?", "opciones": ["10 s", "30 s", "2 min"], "correcta": 1, "explicacion": "Aviso ≥ 30 s (objetivo 60 s). Con menos de 30 s no se inicia y se repite el aviso."},
+    {"pregunta": "Tu chaquetón aluminizado está húmedo. ¿Qué haces?", "opciones": ["Entro rápido", "Lo cambio antes de entrar", "Me pongo otro encima"], "correcta": 1, "explicacion": "El EPP húmedo produce quemadura por vapor. Húmedo, roto o con grasa: no entra a roja."},
+    {"pregunta": "Ves un punto rojo en la coraza de una olla llena. ¿Qué haces?", "opciones": ["Me acerco a revisar", "Evacúo a ≥ 25 m y aviso", "Echo agua para enfriar"], "correcta": 1, "explicacion": "Es perforación inminente: evacuar ruta y zona ≥ 25 m; la grúa lleva la olla a la fosa seca."},
+    {"pregunta": "¿Cuánto tiempo máximo continuo en zona roja por intervención?", "opciones": ["2 min", "5 min", "10 min"], "correcta": 0, "explicacion": "≤ 2 min por intervención; después salir, recuperar y relevo (MS-ACE-08)."}
+  ],
+  "reglas": [
+    {"titulo": "Respeta la zona roja", "detalle": "Solo personal esencial, con EPP aluminizado seco y ruta de escape libre."},
+    {"titulo": "Nunca bajo una olla ni en su ruta", "detalle": "Ruta de olla: roja ± 5 m, amarilla ± 15 m."},
+    {"titulo": "Sin aviso de 30 s no hay evento", "detalle": "Sirena y semáforo funcionando; si fallan, no se vacía ni se arranca."},
+    {"titulo": "Cualquiera puede detener", "detalle": "Si ves a una persona en roja, detén el trabajo. Nadie es sancionado por detener."}
+  ],
+  "por_confirmar": [
+    "Distancias de exclusión por operación: estudio de la nave con C-16 / SSO",
+    "Nivel de la sirena (≥ 10 dB(A) sobre el fondo) y francobordo de olla (supuestos)",
+    "Capacidad de la fosa de emergencia con Ingeniería"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de incidentes con metal líquido; reglas", "Láminas 1–2"],
+    ["2. Roles y flujo del evento", "45", "Recorrido del flujo de preparación", "Láminas 3–5"],
+    ["3. Zonas de la nave", "75", "Ejercicio: marcar zonas por operación en el plano", "Lámina 6, plano de nave"],
+    ["4. Equipos y distancias", "60", "Prueba cronometrada de ruta a refugio", "Láminas 7–8"],
+    ["5. Controles críticos y EPP", "75", "Inspección de EPP aluminizado físico", "Láminas 9–10, EPP"],
+    ["6. Registros y paso a paso", "75", "Lectura guiada de los 13 pasos; pasos ★", "Láminas 11–13"],
+    ["7. Condiciones anormales", "60", "Simulacro de mesa: olla con punto rojo", "Lámina 14"],
+    ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
+    ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {"seguridad": "visto bueno — 2026-09-25"}
+}

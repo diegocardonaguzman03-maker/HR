@@ -1,0 +1,205 @@
+{
+  "code": "MM-EAF-02",
+  "title": "Brazos portaelectrodos, columnas, regulación hidráulica y cambio de bóveda / delta",
+  "titulo_corto": "Brazos y cambio de bóveda",
+  "serie": "Mantenimiento",
+  "area": "Acería · EAF-1 / EAF-2",
+  "manual": "03-mantenimiento/MM-EAF-02-brazos-columnas-regulacion-cambio-boveda.md",
+  "manual_version": "0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Brazos aislados, regulación estable y bóveda cambiada sin nadie bajo la carga ni energía almacenada",
+  "audiencia": "S-19 Mecánico · S-22 Técnico Hidráulico · S-20 Electricista · S-21 Instrumentista · S-04 Grúa de Carga · C-11",
+  "kpis": [
+    {"value": "16 h", "label": "teoría (S-19 Mecánico)"},
+    {"value": "40 h", "label": "OJT · 2 cambios de bóveda"},
+    {"value": "10", "label": "pasos críticos ★"},
+    {"value": "24", "label": "meses de vigencia (TD-P07)"}
+  ],
+  "cadena": ["Reserva lista", "LOTO y calzas", "Energía cero", "Izaje de bóveda", "Megger y torque", "Pruebas y liberación"],
+  "titulos": {
+    "objetivos": "Al terminar, cambias la bóveda sin energía guardada",
+    "roles": "C-11 es dueño; S-22 manda en la energía hidráulica",
+    "flujo": "La bóveda se iza solo con 0 bar y agua drenada",
+    "figura": "Brazo, mordaza y columna llevan decenas de kA",
+    "equipos": "Diez componentes; el aislamiento ≥ 1 MΩ manda",
+    "parametros": "Megger < 1 MΩ o columna que deriva: no se opera",
+    "seguridad": "La energía hidráulica guardada mueve la columna",
+    "calidad": "Una mordaza floja se paga en electrodo y en arco",
+    "pasos": "Dieciséis pasos; diez no admiten error",
+    "anormales": "Columna que deriva: nadie debajo, calzar y avisar",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de brazos y bóveda que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Bloquear todas las energías", "detalle": "LOTO E1–E6, calzas bajo columnas y acumuladores descargados; prueba: sin movimiento, 0 bar y 0 V."},
+    {"titulo": "Izar la bóveda con plan", "detalle": "Balancín certificado en 4 orejas, prueba de levante a 100 mm por 1 min y nadie a ± 5 m de la carga."},
+    {"titulo": "Dejar brazos aislados y firmes", "detalle": "Megger ≥ 1 MΩ a 1,000 V DC, torque OEM en cruz y zapatas sin cráteres > 2 mm."},
+    {"titulo": "Probar antes de liberar", "detalle": "Holgura electrodo–delta ≥ 50 mm, agua sin fugas, escalón de 100 mm y deriva ≤ 5 mm en 10 min."}
+  ],
+  "por_que_importa": "La columna, el brazo y la bóveda de 50–70 t guardan energía hidráulica y de gravedad: un acumulador cargado o una columna sin calza aplasta. Un brazo mal aislado o una mordaza floja provoca arco a la bóveda, rotura o caída del electrodo al baño.",
+  "principio": "Nadie trabaja bajo una columna, un brazo o una bóveda que no esté calzada y a 0 bar.",
+  "roles": [
+    ["Rol", "Qué hace en brazos y cambio de bóveda", "RACI"],
+    ["C-11 Supervisor de Mantenimiento Mecánico", "Dueño; OT, LOTO grupal, plan de izaje y liberación", "A"],
+    ["S-19 Mecánico de Acería", "Guías, mordazas, uniones y cambio de bóveda o delta", "R"],
+    ["S-22 Técnico Hidráulico", "HPU, válvulas proporcionales, acumuladores, cilindros y aceite", "R"],
+    ["S-04 Operador de Grúa de Carga", "Iza la bóveda (grúa 120/40 t) y el delta", "R"],
+    ["S-20 Electricista", "LOTO eléctrico MT, megger de brazos y termografía", "R"],
+    ["S-21 Instrumentista", "Transductores de posición; prueba de respuesta de regulación", "R"],
+    ["S-01 Operador de Púlpito", "Posiciona brazos y bóveda; firma la liberación", "R"],
+    ["C-16 Especialista de Seguridad", "Izaje crítico, altura y LOTO", "C"]
+  ],
+  "flujo": [
+    {"label": "Paro programado", "desc": "OT, permisos y reserva inspeccionada"},
+    {"label": "Posicionar", "desc": "Horno vacío, bóveda girada a cambio"},
+    {"label": "LOTO", "desc": "MT, HPU, O₂/GN, agua y calzas"},
+    {"label": "Energía cero", "desc": "Sin movimiento, 0 bar, 0 V"},
+    {"label": "Drenar agua", "desc": "V1/V2 cerradas, drenes a 0 bar"},
+    {"label": "Izar y colocar", "desc": "Balancín, grúa 120/40 t, centrar"},
+    {"label": "Brazos", "desc": "Holgura, zapatas, torque, megger"},
+    {"label": "Agua y LOTO fuera", "desc": "Sin fuga; retiro en orden inverso"},
+    {"label": "Probar y liberar", "desc": "Levante, giro, escalón; firma"}
+  ],
+  "flujo_takeaway": "Antes de abrir una línea o izar la bóveda: calzas puestas y acumuladores en 0 bar.",
+  "figuras": [
+    {
+      "svg": "eaf-corte-horno.svg",
+      "lectura": [
+        "Tres electrodos UHP de 610 mm cuelgan de los brazos y mordazas; los mástiles se mueven con regulación hidráulica.",
+        "La bóveda enfriada por agua y el delta refractario cierran el horno y aíslan los electrodos.",
+        "Una falla de brazo o mordaza da arco inestable, arco a la bóveda o caída del electrodo."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Brazo portaelectrodo", "Conducir corriente, sostener electrodo", "Aislado de la columna", "≥ 1 MΩ a 1,000 V DC; sin fuga"],
+    ["Mordaza y zapata (Cu)", "Apretar el electrodo de 610 mm", "Resortes; apertura hidráulica", "Cráteres ≤ 2 mm; fuerza OEM"],
+    ["Columna y rodillos guía", "Guiar el movimiento vertical", "Holgura 0.5–1.0 mm [Validar OEM]", "Verticalidad ≤ 1 mm/m"],
+    ["Cilindro y servo", "Mover la columna con control fino", "ISO 4406 ≤ 16/14/11", "Deriva ≤ 5 mm en 10 min [Validar]"],
+    ["HPU con fluido HFC", "Presión para regular y mover", "120–160 bar [Validar OEM]", "30–50 °C; filtros sin alarma ΔP"],
+    ["Acumuladores de vejiga", "Respaldo y respuesta rápida", "Precarga N₂ ≈ 0.9 × P mín", "±5 % OEM; registro NOM-020"],
+    ["Bóveda y delta", "Cerrar horno, aislar electrodos", "50–70 t / 8–12 t [Validar OEM]", "Holgura electrodo–delta ≥ 50 mm"]
+  ],
+  "parametros": [
+    ["Especificación", "Objetivo", "Tolerancia", "Límite / rechazo", "Frecuencia"],
+    ["Temperatura de HFC", "40 °C", "30–50 °C", "> 55 °C; no operar > 60", "Continuo"],
+    ["Agua en el HFC", "40 %", "35–45 %", "< 35 o > 50 %", "Mensual"],
+    ["Limpieza (ISO 4406)", "16/14/11", "≤ 17/15/12", "> 18/16/13", "Mensual"],
+    ["Precarga de acumulador", "0.9 × P mín", "±5 %", "< 80 %", "Mensual"],
+    ["Aislamiento de brazo", "≥ 10 MΩ", "≥ 1 MΩ a 1,000 V DC", "< 1 MΩ: no energizar", "Trimestral y tras cambio"],
+    ["Termografía de brazos", "ΔT ≤ 10 °C", "—", "10–30 investigar; > 30", "Mensual"],
+    ["Holgura de rodillos guía", "0.5 mm", "0.5–1.0 mm", "> 1.5 mm", "Semanal"],
+    ["Holgura electrodo–delta", "≥ 75 mm", "≥ 50 mm por lado", "< 50 mm: recentrar", "Cada cambio"]
+  ],
+  "parametros_nota": "Presión de HPU, torques (ej. M36 10.9 ≈ 2,500 N·m), vida del delta 150–300 coladas y deriva: [Validar con OEM / Ingeniería de Mantenimiento].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "LOTO E1–E6 con calzas", "detalle": "MT con tierras (S-20), HPU y acumuladores descargados a tanque, O₂/GN, agua V1/V2 y calzas y pernos de giro y basculamiento."},
+      {"titulo": "Prueba de energía cero", "detalle": "Intento de mover columna y bóveda desde HMI y mando local sin respuesta; 0 bar; detector de tensión vivo–muerto–vivo."},
+      {"titulo": "Izaje crítico de la bóveda", "detalle": "Plan de izaje, balancín certificado, prueba a 100 mm; nadie en el radio de giro ni a ± 5 m de la carga (MS-ACE-04)."},
+      {"titulo": "Altura, calor y trabajo en caliente", "detalle": "Arnés y línea de vida (NOM-009); bóveda ≤ 60 °C o EPP térmico; al cortar o soldar, 0 % LEL detectable."}
+    ],
+    "epp": [
+      "Casco, lentes y careta",
+      "Guantes de carnaza y de nitrilo (hidráulica)",
+      "Ropa FR y botas metatarsales",
+      "Arnés de cuerpo completo en altura",
+      "Protección auditiva",
+      "Termografía en operación: ropa aluminizada"
+    ],
+    "figura": "ms-loto-puntos-eaf.svg",
+    "figura_titulo": "HPU, acumuladores y calzas: el bloqueo que protege",
+    "figura_lectura": [
+      "Unidad hidráulica bloqueada y acumuladores a 0 bar antes de abrir una línea.",
+      "Calza mecánica bajo cada columna; electrodos apoyados o soportados.",
+      "Interruptor de AT extraído y tierras puestas solo por S-20 (NOM-029)."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Estabilidad de regulación", "Corriente de arco sin oscilación", "Tendencia corriente/impedancia, trimestral", "Más kWh/t; T de vaciado fuera de ±15 °C"],
+    ["Contacto zapata–electrodo", "ΔT ≤ 10 °C", "Termografía mensual", "Rotura; punta al baño (C alto)"],
+    ["Holgura electrodo–delta", "≥ 50 mm", "Cada cambio de bóveda o delta", "Arco a bóveda; contaminación"],
+    ["Consumo de electrodo", "1.3–1.6 kg/t", "KPI por turno (C-07)", "Desgaste lateral por mordaza floja"]
+  ],
+  "calidad_takeaway": "Una zapata caliente o una mordaza floja termina en electrodo roto y carbono alto en el baño.",
+  "pasos": [
+    {"n": 1, "paso": "Prepara y posiciona", "como": "Reserva y balancín con certificado; horno vacío; electrodos retirados o asegurados; bóveda girada", "criterio": "Reserva lista y posición", "critico": false, "rol": "C-11, S-01"},
+    {"n": 2, "paso": "Aplica LOTO E1–E6", "como": "Candado de cada ejecutante; calzas bajo columnas", "criterio": "Todos los candados", "critico": true, "rol": "Todos"},
+    {"n": 3, "paso": "Prueba energía cero", "como": "Intento de movimiento desde HMI y mando local; HPU y acumuladores 0 bar; detector de tensión", "criterio": "Sin movimiento, 0 bar, 0 V", "critico": true, "rol": "C-11, S-22"},
+    {"n": 4, "paso": "Drena agua de bóveda", "como": "Cierra V1/V2, abre drenes hasta 0 bar; desconecta mangueras y tapa conexiones", "criterio": "Sin agua", "critico": true, "rol": "S-19"},
+    {"n": 5, "paso": "Iza la bóveda", "como": "Balancín en 4 orejas; levante a 100 mm, espera 1 min; traslada a su base", "criterio": "Estable, nadie bajo la carga", "critico": true, "rol": "S-04, S-19"},
+    {"n": 6, "paso": "Coloca la reserva", "como": "Baja sobre el anillo; centra con marcas; asiento uniforme, holgura ≤ 10 mm [Validar]", "criterio": "Asentada", "critico": true, "rol": "S-04, S-19"},
+    {"n": 7, "paso": "Cambia el delta si aplica", "como": "Retira pernos o cuñas; iza con aparejo certificado; coloca el nuevo con mortero OEM", "criterio": "Sin escalón > 10 mm", "critico": false, "rol": "S-19, S-24"},
+    {"n": 8, "paso": "Mide holgura electrodo–delta", "como": "Plantilla de electrodo o flexómetro en los 3 agujeros", "criterio": "≥ 50 mm por lado", "critico": false, "rol": "S-19"},
+    {"n": 9, "paso": "Revisa brazos y mordazas", "como": "Limpia zapatas; mide cráteres (≤ 2 mm); abre y cierra la mordaza 3 veces", "criterio": "Abre y cierra, sin fuga", "critico": false, "rol": "S-19, S-22"},
+    {"n": 10, "paso": "Mide holgura de guías", "como": "Lainas en cada rodillo", "criterio": "0.5–1.0 mm", "critico": false, "rol": "S-19"},
+    {"n": 11, "paso": "Aprieta uniones", "como": "Torquímetro calibrado en cruz al valor OEM; marca de pintura", "criterio": "Torque registrado", "critico": true, "rol": "S-19"},
+    {"n": 12, "paso": "Megger de aislamiento", "como": "1,000 V DC por 1 min, brazo–columna y mordaza–brazo", "criterio": "≥ 1 MΩ (objetivo ≥ 10)", "critico": true, "rol": "S-20"},
+    {"n": 13, "paso": "Conecta agua y prueba", "como": "Conecta, ventea y presuriza a presión de operación 10 min", "criterio": "Sin fuga; ΔQ ≤ 0.5 %", "critico": true, "rol": "S-19, S-21"},
+    {"n": 14, "paso": "Retira LOTO", "como": "Orden inverso; verifica que el personal esté fuera", "criterio": "Candados retirados", "critico": true, "rol": "Todos"},
+    {"n": 15, "paso": "Pruebas funcionales", "como": "Levante y giro completos; escalón de 100 mm por columna; deriva en 10 min", "criterio": "Tiempo OEM; deriva ≤ 5 mm", "critico": false, "rol": "S-22, S-21"},
+    {"n": 16, "paso": "Libera", "como": "Checklist de liberación firmado por Mantenimiento y Operación", "criterio": "Firmado por C-11 y C-05", "critico": true, "rol": "C-11, C-05"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Columna cae o deriva con HPU parada", "No trabajar bajo la columna; calzar", "C-11, S-22"],
+    ["Arco entre brazo y bóveda", "Arco fuera; megger; recentrar", "C-05, C-12"],
+    ["Oscilación de corriente sin causa", "Prueba de respuesta; muestreo de aceite", "S-22, C-07"],
+    ["HFC > 55 °C", "Reducir ciclo; revisar enfriador y válvula de alivio", "S-22"],
+    ["Electrodo resbala en la mordaza", "Detener regulación; cambiar paquete de resortes o zapata", "C-05, C-11"],
+    ["Fuga de fluido a alta presión", "Detener HPU; no tocar el chorro (inyección)", "C-11, servicio médico"],
+    ["Fuga de agua en brazo o cable", "Arco fuera; revisar si cae agua al horno (MM-EAF-01)", "C-05, C-11"],
+    ["Bóveda no asienta o se atora", "No forzar; limpiar anillo; revisar cilindros de levante", "S-19, S-22"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-19 Mecánico", "U", "16 h", "40 h / 2 cambios de bóveda", "24 meses; altura e izaje 12"],
+      ["S-22 Técnico Hidráulico", "U", "24 h", "40 h", "24 meses"],
+      ["S-20 Electricista", "U", "NOM-029 + 8 h", "16 h", "12 meses"],
+      ["S-04 Operador de Grúa", "U", "NOM-006 + izaje", "2 izajes de bóveda", "12 meses"]
+    ],
+    "checklist": [
+      "Aplica LOTO E1–E6 con candado propio y prueba energía cero: sin movimiento, 0 bar, 0 V",
+      "Calza columnas y descarga acumuladores a 0 bar antes de abrir líneas; drena la bóveda",
+      "Hace prueba de levante y no permite a nadie bajo la bóveda durante el izaje",
+      "Aprieta uniones con torquímetro calibrado y mide megger ≥ 1 MΩ antes de energizar",
+      "Prueba el agua sin fugas antes de retirar LOTO y retira candados con conteo de personal",
+      "Verifica holgura electrodo–delta ≥ 50 mm y libera con firma de C-11 y C-05"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Cuál es el aislamiento mínimo del brazo antes de energizar?", "opciones": ["0.5 MΩ", "1 MΩ a 1,000 V DC", "100 kΩ"], "correcta": 1, "explicacion": "Con menos de 1 MΩ no se energiza; el objetivo es ≥ 10 MΩ."},
+    {"pregunta": "La columna deriva con la HPU parada. ¿Qué haces?", "opciones": ["Seguir, la HPU está fuera", "No trabajar debajo y calzar", "Arrancar la HPU para sostenerla"], "correcta": 1, "explicacion": "Sello o retención dañados: la gravedad y la energía guardada siguen presentes. Calzar y avisar a C-11 y S-22."},
+    {"pregunta": "¿Qué holgura mínima debe haber entre electrodo y delta?", "opciones": ["≥ 20 mm", "≥ 50 mm por lado", "≥ 150 mm"], "correcta": 1, "explicacion": "Menos de 50 mm provoca arco a la bóveda y rotura; se recentra la bóveda o la columna."},
+    {"pregunta": "¿Cómo se hace la prueba de levante de la bóveda?", "opciones": ["A 100 mm, esperar 1 min", "A 1 m, esperar 10 s", "Sin prueba si el balancín es nuevo"], "correcta": 0, "explicacion": "Se levanta a 100 mm y se espera 1 min para confirmar carga estable, sin nadie bajo la carga."},
+    {"pregunta": "¿Con qué gas se recarga un acumulador de vejiga?", "opciones": ["Aire comprimido", "Oxígeno", "Solo N₂ seco"], "correcta": 2, "explicacion": "Solo N₂ seco; la precarga es ≈ 0.9 × la presión mínima de trabajo, ±5 %."}
+  ],
+  "reglas": [
+    {"titulo": "Calzas y 0 bar antes de meter las manos", "detalle": "Columnas calzadas y acumuladores descargados antes de abrir líneas."},
+    {"titulo": "Nadie bajo la bóveda en izaje", "detalle": "Prueba a 100 mm y ± 5 m de la proyección de la carga libres."},
+    {"titulo": "Menos de 1 MΩ: no se energiza", "detalle": "Megger a 1,000 V DC después de cada cambio de bóveda."},
+    {"titulo": "Sin LOTO y energía cero no se toca", "detalle": "Candado propio en E1–E6 y prueba de movimiento, presión y tensión."}
+  ],
+  "por_confirmar": [
+    "Presión de HPU, torques de uniones y fuerza de mordaza con el OEM",
+    "Holgura de rodillos, deriva de cilindro y asiento de bóveda ≤ 10 mm",
+    "Peso de bóveda y delta; vida del delta 150–300 coladas"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de aplastamiento y caída de electrodo", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con el corte del horno", "Láminas 3–6"],
+    ["3. Equipos y especificaciones", "90", "Hidráulica proporcional, HFC y acumuladores", "Láminas 7–8"],
+    ["4. Seguridad, LOTO y energía cero", "90", "E1–E6 en plano; descarga de acumuladores", "Láminas 9–10, candados"],
+    ["5. Calidad y paso a paso", "90", "Lectura guiada de los 16 pasos; pasos ★", "Láminas 11–13"],
+    ["6. Práctica de torque y megger", "60", "Torque en cruz; megger en brazo de muestra", "Torquímetro, megger"],
+    ["7. Condiciones anormales", "30", "Simulacro de mesa: columna que deriva", "Lámina 14"],
+    ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
+    ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {}
+}

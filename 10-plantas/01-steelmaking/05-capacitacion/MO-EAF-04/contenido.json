@@ -1,0 +1,205 @@
+{
+  "code": "MO-EAF-04",
+  "title": "Fusión: perfil de potencia y regulación de electrodos",
+  "titulo_corto": "Fusión y potencia",
+  "serie": "Operación",
+  "area": "Hornos · EAF-1 / EAF-2",
+  "manual": "02-operacion/eaf/MO-EAF-04-fusion-perfil-potencia-electrodos.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Fundir en ≈ 42–44 min de arco con 560 kWh/t, arco estable y sin dañar bóveda, paneles ni electrodos",
+  "audiencia": "S-01 Primer Hornero · S-02 Segundo Hornero · C-05 Supervisor de Hornos · C-07 Ingeniero de Proceso",
+  "kpis": [
+    {"value": "32 h", "label": "teoría (S-01)"},
+    {"value": "160 h", "label": "OJT · 60 coladas + simulador"},
+    {"value": "4", "label": "pasos críticos ★"},
+    {"value": "560", "label": "kWh/t objetivo (520–600)"}
+  ],
+  "cadena": ["Permisivos", "Perforación tap 10", "Fusión tap 15", "Baño plano + DRI", "Afino tap 14", "Arco apagado"],
+  "titulos": {
+    "objetivos": "Al terminar, fundes con arco cubierto y sin disparos",
+    "roles": "C-07 diseña el perfil; S-01 lo ejecuta y lo vigila",
+    "flujo": "El tap sube solo cuando el arco está cubierto",
+    "figura": "Cuatro etapas de potencia hasta la ventana de vaciado",
+    "equipos": "Siete equipos listos antes de cerrar el interruptor",
+    "parametros": "Energía, corriente y T de panel dicen si vas bien",
+    "seguridad": "Nadie arriba con el interruptor cerrado",
+    "calidad": "Arco cubierto: menos N, energía y electrodo",
+    "pasos": "Doce pasos; cuatro no admiten error",
+    "anormales": "Ante disparo por agua: no se rearma",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de la fusión que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Energizar con permisivos en verde", "detalle": "Bóveda, 0°, agua, hidráulica, presión y todas las llaves cautivas en el tablero; plataformas vacías."},
+    {"titulo": "Seguir el perfil de potencia", "detalle": "Tap 10 en perforación, tap 15 en fusión y baño plano con arco cubierto, tap 14 en afino."},
+    {"titulo": "Proteger paneles y electrodos", "detalle": "Bajar tap con espuma baja o T de panel > 60 °C; ante un colapso, subir electrodos y bajar tap."},
+    {"titulo": "Cerrar en energía y tiempo", "detalle": "560 kWh/t (520–600), 42–44 min de arco y 1.3–1.6 kg/t de electrodo; registrar todo."}
+  ],
+  "por_que_importa": "El arco entrega hasta ≈ 119 MW. Cubierto, esa energía funde la carga; expuesto, perfora paneles y mete agua al horno. Energizar con alguien en la plataforma es una fatalidad. Cada error de perfil se paga en kWh/t, electrodo y minutos de tap-to-tap.",
+  "principio": "Tap alto solo con arco cubierto; nadie arriba con el interruptor cerrado.",
+  "roles": [
+    ["Rol", "Qué hace en la fusión", "RACI"],
+    ["C-07 Ingeniero de Proceso EAF / LF", "Dueño; define perfiles por receta, consignas de impedancia y límites", "A"],
+    ["S-01 Primer Hornero", "Selecciona perfil, energiza, vigila la regulación y atiende alarmas", "R"],
+    ["C-05 Supervisor de Hornos", "Autoriza desviaciones del perfil y operar con una fase en falla", "C"],
+    ["S-20 Electricista / S-21 Instrumentista", "Atienden fallas del interruptor, OLTC, regulación y medición", "C"],
+    ["S-02 Segundo Hornero", "Informa lo que ve: colapso, arco expuesto, escoria", "I"]
+  ],
+  "flujo": [
+    {"label": "Permisivos", "desc": "Agua, bóveda, 0°, llaves completas"},
+    {"label": "Energizar", "desc": "Plataformas vacías; “arco en 10 s”"},
+    {"label": "Perforación", "desc": "Tap 10, arco corto, ≈ 2 min"},
+    {"label": "Fusión", "desc": "Tap 15, ≈ 66 kA, arco cubierto"},
+    {"label": "Baño plano", "desc": "≥ 150 kWh/t; corriente estable"},
+    {"label": "DRI + espuma", "desc": "Tap 15 solo con espuma; si no, 12–13"},
+    {"label": "Afino", "desc": "Tap 14; T y O en ventana"},
+    {"label": "Apagar", "desc": "Interruptor abierto → MO-EAF-07"}
+  ],
+  "flujo_takeaway": "El límite es físico, ≈ 119 MW: el tiempo se gana con arco cubierto, no forzando el tap.",
+  "figuras": [
+    {
+      "svg": "eaf-perfil-potencia.svg",
+      "lectura": [
+        "Perforación con tap 10 (≈ 1,000 V) y arco corto para proteger bóveda y paneles.",
+        "Fusión y baño plano con tap 15 (1,200 V), hasta ≈ 119 MW y ≈ 67 kA.",
+        "Afino con tap 14 (≈ 1,160 V). Tabla de taps ilustrativa [Validar con OEM]."
+      ]
+    },
+    {
+      "svg": "eaf-ciclo-colada.svg",
+      "titulo": "560 kWh/t equivalen a ≈ 42–44 min de arco",
+      "lectura": [
+        "560 kWh/t × 150 t = 84 MWh por colada.",
+        "A 119 MW constantes serían 42 min; con perforación y afino abajo del límite, ≈ 44 min.",
+        "Cada +15 kWh/t alarga el arco ≈ 1 min."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Transformador del horno", "Suministra potencia", "140 MVA; secundario hasta 1,200 V", "Sin alarma de aceite ni Buchholz"],
+    ["OLTC", "Cambia el voltaje (tap)", "15 posiciones [Validar con OEM]", "Contador dentro de mantenimiento"],
+    ["Interruptor de vacío", "Energiza y desenergiza", "≈ 2–4 operaciones por colada", "Contador y estado sin alarma"],
+    ["Regulación hidráulica", "Posiciona los electrodos", "Por impedancia; servoválvulas", "Presión en rango; sin fugas"],
+    ["Electrodos", "Conducen la corriente", "610 mm UHP; niple 4TPI", "Longitud; sin grietas (MO-EAF-08)"],
+    ["Medición eléctrica", "Control y registro", "kA, V, MW, kWh", "Lectura estable en las 3 fases"],
+    ["T de paneles", "Detecta arco expuesto", "Alarma T de salida > 60 °C", "Sin alarma"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Energía eléctrica", "560 kWh/t", "520–600 kWh/t", "> 600 o < 520", "Revisar causas; reportar a C-07"],
+    ["Tiempo de arco", "42–44 min", "40–46 min", "> 47 min", "Registrar la causa"],
+    ["Potencia en baño plano", "≈ 119 MW", "112–119 MW", "< 105 MW sostenido", "Revisar espuma, tap, regulación"],
+    ["Corriente por fase", "66–67 kA", "58–67 kA", "> 67 kA", "Regulación reduce; bajar tap"],
+    ["Desbalance entre fases", "≤ 5 %", "0–10 % [Supuesto]", "> 10 % por > 30 s", "Revisar electrodo y regulación"],
+    ["Cortocircuitos", "0/min", "≤ 2/min en perforación", "> 5/min", "Revisar impedancia y regulación"],
+    ["T de salida de panel", "≤ 50 °C", "35–55 °C", "> 60 °C", "Bajar 2 taps; mejorar espuma"],
+    ["Consumo de electrodo", "1.4 kg/t", "1.3–1.6 kg/t", "> 1.7 kg/t", "Revisar roturas y oxidación"]
+  ],
+  "parametros_nota": "Δ caudal de agua > 2 % alarma, > 4 % disparo; presión del horno > 0 Pa: no subir tap. Tabla de taps: [Validar con OEM / Ingeniería de Proceso].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Nadie arriba con interruptor cerrado", "detalle": "Toda subida: interruptor abierto + llave cautiva por persona o LOTO completo. Sin todas las llaves en el tablero no cierra."},
+      {"titulo": "Disparo por agua: no se rearma", "detalle": "Disparo automático > 4 %. No rearmar, no inclinar ni mover electrodos; evacuar a ≥ 25 m (MS-ACE-03)."},
+      {"titulo": "Tap alto solo con arco cubierto", "detalle": "El arco expuesto perfora paneles y mete agua. T de panel > 60 °C: bajar tap y mejorar la espuma."},
+      {"titulo": "Ruido, radiación y campo magnético", "detalle": "> 100 dB(A) y UV/IR: púlpito cerrado y EPP. Personal con implantes no entra a la zona de barras."}
+    ],
+    "epp": [
+      "Púlpito: ropa ignífuga y calzado de seguridad",
+      "Piso: casco y careta con visor dorado",
+      "Chaqueta aluminizada frente a la puerta",
+      "Guantes y botas metatarsales",
+      "Doble protección auditiva con arco encendido",
+      "Detector multigás (CO 25/200 ppm)"
+    ],
+    "figura": "ms-loto-puntos-eaf.svg",
+    "figura_titulo": "Interruptor e hidráulica: los puntos que se bloquean",
+    "figura_lectura": [
+      "El interruptor de AT (VCB) aísla el transformador de 140 MVA: abierto antes de subir.",
+      "Caja grupal: un candado personal y tarjeta por trabajador.",
+      "Electrodo que baja solo: hidráulica bloqueada y LOTO completo; no basta la llave cautiva."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["T al final del afino", "1,630 ± 15 °C según grado", "Termopar desechable (MO-EAF-06)", "Sobre-T: refractario y N; baja: congela"],
+    ["Captura de N", "Mínima; ≤ 50 ppm [Supuesto]", "Laboratorio, al vaciado", "N alto en bajo carbono"],
+    ["Energía por colada", "560 kWh/t (520–600)", "Nivel 2, cada colada", "Costo; problema de escoria o DRI"],
+    ["Consumo de electrodo", "1.3–1.6 kg/t", "Nivel 2, por turno", "Costo; roturas"]
+  ],
+  "calidad_takeaway": "La escoria espumosa cubre el arco: protege paneles y reduce la captura de N.",
+  "pasos": [
+    {"n": 1, "paso": "Verifica permisivos", "como": "HMI: bóveda asentada, 0° ± 2°, agua, hidráulica, presión negativa, llaves cautivas completas", "criterio": "Todos en verde", "critico": true, "rol": "S-01"},
+    {"n": 2, "paso": "Selecciona el perfil", "como": "Perfil de la receta según el grado y el número de canastas", "criterio": "Perfil correcto en nivel 2", "critico": false, "rol": "S-01"},
+    {"n": 3, "paso": "Energiza", "como": "CCTV y radio: plataformas vacías, llaves en el tablero; avisa “arco en 10 s”; cierra el interruptor", "criterio": "Arco en las 3 fases", "critico": true, "rol": "S-01"},
+    {"n": 4, "paso": "Perfora", "como": "Tap 10, regulación automática; vigila cortocircuitos y desbalance", "criterio": "Penetración en ≈ 2 min", "critico": false, "rol": "S-01"},
+    {"n": 5, "paso": "Pasa a fusión", "como": "Tap 15 con arco cubierto por chatarra; quemadores en modo quemador (MO-EAF-05)", "criterio": "≈ 66 kA, ≈ 117 MW", "critico": false, "rol": "S-01"},
+    {"n": 6, "paso": "Vigila colapsos", "como": "Si la corriente se dispara o cae de golpe: sube electrodos, baja tap y confirma integridad", "criterio": "Sin rotura", "critico": true, "rol": "S-01"},
+    {"n": 7, "paso": "Detecta baño plano", "como": "Corriente estable, baja el ruido, energía ≥ 150 kWh/t", "criterio": "Baño plano", "critico": false, "rol": "S-01"},
+    {"n": 8, "paso": "Inicia DRI y espuma", "como": "Arranca MO-EAF-03 y MO-EAF-05; tap 15 solo si la espuma cubre el arco", "criterio": "T de panel ≤ 60 °C", "critico": true, "rol": "S-01"},
+    {"n": 9, "paso": "Ajusta tap por espuma", "como": "Espuma baja: tap 12–13 y corrige O₂/C; espuma estable: tap 15", "criterio": "Arco estable", "critico": false, "rol": "S-01"},
+    {"n": 10, "paso": "Afina", "como": "DRI detenido; tap 14; medición de T y O (MO-EAF-06)", "criterio": "T y O en ventana", "critico": false, "rol": "S-01 / S-02"},
+    {"n": 11, "paso": "Apaga el arco", "como": "Abre el interruptor; sube electrodos a posición de vaciado", "criterio": "Interruptor abierto", "critico": false, "rol": "S-01"},
+    {"n": 12, "paso": "Registra", "como": "kWh/t, minutos de arco, MW promedio, roturas y alarmas", "criterio": "Registro completo", "critico": false, "rol": "S-01"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Arco inestable, ruido alto", "Bajar 2 taps; corregir O₂/C; bajar la tasa de DRI", "C-07"],
+    ["Colapso de chatarra", "Subir electrodos, bajar tap; revisar electrodos y corriente", "C-05"],
+    ["Rotura de electrodo", "Abrir interruptor; el trozo en el baño se funde; columna corta: MO-EAF-08", "C-05"],
+    ["Disparo por fuga de agua (> 4 %)", "No rearmar; no inclinar ni mover electrodos; evacuar ≥ 25 m; MO-EAF-01", "C-05, C-04, C-07, Mtto"],
+    ["T de panel > 60 °C", "Bajar tap; mejorar espuma; si no baja, aislar el panel con C-05", "C-05"],
+    ["Desbalance > 10 %", "Revisar longitudes; fase a manual solo con autorización de C-05", "C-05, S-21"],
+    ["Disparo del interruptor", "No rearmar más de 1 vez sin revisar; S-20 investiga", "S-20, C-05"],
+    ["Electrodo baja solo (deriva)", "Abrir interruptor; bloquear hidráulica; LOTO completo, no basta la llave", "S-22, C-05"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-01 Primer Hornero", "U", "32 h", "160 h / 60 coladas + simulador", "24 meses"],
+      ["C-05 Supervisor de Hornos", "O (evaluador)", "32 h + evaluador", "—", "24 meses"],
+      ["C-07 Ingeniero de Proceso", "O", "40 h", "—", "24 meses"]
+    ],
+    "checklist": [
+      "Enumera los permisivos; verifica llaves completas y plataformas vacías antes de energizar",
+      "Distingue llave cautiva de LOTO completo (MS-ACE-02 §6.4)",
+      "Explica por qué el tap alto solo se usa con arco cubierto",
+      "Responde a un colapso de chatarra sin romper electrodos",
+      "No rearma tras un disparo por fuga de agua",
+      "Lee la T de panel y reacciona antes de 60 °C"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Cuál es la potencia activa máxima que da el transformador?", "opciones": ["≈ 100 MW", "≈ 119 MW", "≈ 140 MW"], "correcta": 1, "explicacion": "140 MVA × FP ≈ 0.85 ≈ 119 MW: es un límite físico."},
+    {"pregunta": "¿Cuándo se usa el tap 15 (1,200 V)?", "opciones": ["Siempre, para fundir más rápido", "Solo con el arco cubierto", "Solo en la perforación"], "correcta": 1, "explicacion": "El arco largo expuesto radia a las paredes y perfora paneles. Con espuma baja: tap 12–13."},
+    {"pregunta": "La T de salida de un panel sube a 62 °C. ¿Qué haces?", "opciones": ["Subir tap para terminar antes", "Bajar 2 taps y mejorar la espuma", "Seguir; es normal en baño plano"], "correcta": 1, "explicacion": "> 60 °C: bajar tap y corregir O₂/C; si no baja, aislar el panel con C-05."},
+    {"pregunta": "Hay disparo por fuga de agua (> 4 %). ¿Qué haces?", "opciones": ["Rearmar y seguir con tap bajo", "No rearmar ni inclinar; evacuar", "Inclinar para sacar el agua"], "correcta": 1, "explicacion": "No se rearma ni se mueve el horno; evacuar a ≥ 25 m y aplicar MO-EAF-01 §9."},
+    {"pregunta": "¿Cuál es la energía eléctrica objetivo por colada?", "opciones": ["360 kWh/t", "560 kWh/t", "760 kWh/t"], "correcta": 1, "explicacion": "560 kWh/t (520–600). Fuera de rango se revisan demoras, O₂, escoria y DRI."}
+  ],
+  "reglas": [
+    {"titulo": "Nadie arriba con el interruptor cerrado", "detalle": "Llave cautiva por persona o LOTO completo; plataformas vacías antes de energizar."},
+    {"titulo": "Disparo por agua: no se rearma", "detalle": "No inclinar ni mover electrodos; evacuar a ≥ 25 m hasta que C-05 y C-07 autoricen."},
+    {"titulo": "Tap alto solo con arco cubierto", "detalle": "Espuma baja o panel > 60 °C: bajar tap."},
+    {"titulo": "Un solo rearme sin revisión", "detalle": "Si el interruptor vuelve a disparar, S-20 investiga antes de energizar."}
+  ],
+  "por_confirmar": [
+    "Tabla de taps, posiciones del OLTC y permisivos para energizar con el OEM",
+    "Tiempo de arco: la ficha da 42 min y el perfil de referencia ≈ 44 min a 560 kWh/t (propuesta a la ficha)",
+    "Desbalance 0–10 % y N ≤ 50 ppm (supuestos)"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de arco con fuga de agua y rotura de electrodo", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del perfil por etapas", "Láminas 3–6"],
+    ["3. Eléctrica del EAF y regulación", "90", "Z = V/I; tap y longitud de arco; arco cubierto", "Pizarrón, tendencias HMI"],
+    ["4. Equipos y parámetros", "75", "Ejercicio: MWh y minutos de arco con 560 kWh/t", "Láminas 7–8, calculadora"],
+    ["5. Seguridad", "60", "Llave cautiva vs. LOTO; puntos de bloqueo", "Láminas 9–10, EPP físico"],
+    ["6. Calidad y paso a paso", "60", "Lectura guiada de los 12 pasos; pasos ★", "Láminas 11–13"],
+    ["7. Condiciones anormales", "45", "Simulacro: disparo por agua y arco inestable", "Lámina 14, simulador"],
+    ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
+    ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

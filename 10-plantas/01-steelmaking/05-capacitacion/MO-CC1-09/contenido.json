@@ -1,0 +1,208 @@
+{
+  "code": "MO-CC1-09",
+  "title": "Inspección de calidad y disposición de defectos del planchón",
+  "titulo_corto": "Inspección de planchón",
+  "serie": "Operación",
+  "area": "Colada Continua 1 · planchón · Calidad",
+  "manual": "02-operacion/cc1/MO-CC1-09-inspeccion-calidad-planchon.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad sin observaciones · 2026-09-25)",
+  "subtitle": "Que ningún planchón defectuoso llegue a Laminación sin disposición: detectar, medir, decidir y retroalimentar",
+  "audiencia": "S-18 Inspector de Calidad de Semiterminado · Escarpador · S-11 Muestrero / Analista · S-17 Mesa · C-09",
+  "kpis": [
+    {"value": "32 h", "label": "teoría (S-18)"},
+    {"value": "160 h", "label": "OJT · 300 planchones"},
+    {"value": "3", "label": "pasos críticos ★"},
+    {"value": "≥ 90%", "label": "concordancia con el catálogo"}
+  ],
+  "cadena": [
+    "Condición segura",
+    "ID = MES",
+    "Visual y dimensional",
+    "Clasificar",
+    "Escarpear o decidir",
+    "Liberar y retroalimentar"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, clasificas y dispones cada planchón",
+    "roles": "S-18 inspecciona y dispone; C-09 decide la degradación",
+    "flujo": "Todo planchón con evento se retiene y se revisa al 100 %",
+    "figura": "Cada defecto tiene una causa en el proceso",
+    "equipos": "Luz, galga y volteador hacen confiable la inspección",
+    "parametros": "Espesor, abultamiento y cuña delatan la máquina",
+    "seguridad": "Pilas, volteador y escarpeo: los riesgos del inspector",
+    "calidad": "Las tasas de escarpeo y rechazo miden el proceso",
+    "pasos": "Dieciséis pasos; tres no admiten error",
+    "anormales": "Dos grietas longitudinales seguidas: retén la colada",
+    "competencia": "Certificación nivel U con prueba de concordancia",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de la inspección que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Inspeccionar con seguridad", "detalle": "Solo con el planchón asentado, la grúa fuera y nadie junto al volteador durante movimientos."},
+    {"titulo": "Detectar y medir", "detalle": "Caras, cantos, esquinas y extremos; espesor 230 ± 3 mm, abultamiento ≤ 3 mm, cuña ≤ 2 mm; profundidad con galga."},
+    {"titulo": "Disponer correctamente", "detalle": "Aceptar, escarpear (≤ 5 mm), degradar (decide C-09) o rechazar; espesor final tras escarpeo ≥ 220 mm."},
+    {"titulo": "Retroalimentar al proceso", "detalle": "Registro en MES, Pareto y SPC; aviso inmediato a CC1 ante defectos repetidos para corregir la causa."}
+  ],
+  "por_que_importa": "El inspector es la última barrera antes de Laminación y de clientes automotrices y de tubería. Un planchón mal liberado se convierte en reclamo; uno mal rechazado, en pérdida de rendimiento. Y cada defecto bien clasificado le dice a CC1 qué variable del proceso corregir.",
+  "principio": "Ningún planchón con evento se libera sin inspección, y ninguno se despacha sin disposición en el MES.",
+  "roles": [
+    ["Rol", "Qué hace en la inspección", "RACI"],
+    ["C-09 Metalurgista de Producto", "Dueño de criterios; decide degradación y rechazo; analiza tendencias", "A"],
+    ["S-18 Inspector de Calidad", "Visual y dimensional, clasificación, marcado, registro y re-inspección", "R"],
+    ["S-11 Muestrero / Analista", "Prepara y ataca muestras (macroataque / Baumann)", "R"],
+    ["S-17 Mesa de Enfriamiento y Despacho", "Mueve, voltea y separa planchones; ejecuta la disposición física", "R"],
+    ["Escarpador [Supuesto]", "Escarpeo manual con O₂ (S-18 o contratista REPSE)", "R"],
+    ["C-08 Ingeniero de Proceso de CC", "Recibe la retroalimentación y corrige el proceso", "C"],
+    ["C-06 Supervisor de Colada Continua", "Informado de defectos por turno", "I"]
+  ],
+  "flujo": [
+    {"label": "Lista del turno", "desc": "IDs, grado, eventos y retenciones"},
+    {"label": "Condición segura", "desc": "Asentado, grúa fuera, pila estable"},
+    {"label": "Inspección", "desc": "Estándar o reforzada si hay evento"},
+    {"label": "Medir", "desc": "Dimensiones y profundidad de defectos"},
+    {"label": "Clasificar", "desc": "Aceptar, escarpear, degradar, rechazar"},
+    {"label": "Escarpear", "desc": "3–5 mm por pasada; final ≥ 220 mm"},
+    {"label": "Re-inspeccionar", "desc": "Sin defecto remanente o rechazo"},
+    {"label": "MES y tendencias", "desc": "Liberar o retener; Pareto a C-08"}
+  ],
+  "flujo_takeaway": "Eventos que retienen: nivel ± 8 mm, sticker, SEN, unión, arranque, fin, transición y SH > 35 °C.",
+  "figuras": [
+    {
+      "svg": "cc1-defectos-planchon.svg",
+      "lectura": [
+        "Grieta longitudinal: peritéctico, nivel inestable, polvo o flujo asimétrico; escarpeo o rechazo según profundidad.",
+        "Grieta transversal en HSLA: enderezado a 700–900 °C y marcas profundas.",
+        "Segregación central: SH alto, abultamiento o gap fuera en la punta del cráter; se califica por macroataque.",
+        "Abultamiento ≤ 3 mm y cuña ≤ 2 mm; la romboidad no aplica a planchón."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Área de inspección y volteador", "Acceso a las 4 caras", "Planchones hasta 33 t [Validar]", "★ Enclavamientos y exclusión"],
+    ["Iluminación", "Detección visual", "≥ 1,000 lux [Validar con C-16]", "Medición con luxómetro"],
+    ["Calibrador, cinta, regla, escuadra", "Dimensional", "Calibrados", "Certificado vigente"],
+    ["Galga de profundidad", "Profundidad de defectos", "Resolución 0.1 mm", "Calibrada"],
+    ["Pirómetro de contacto o IR", "T antes de inspección o escarpeo", "0–1,000 °C", "Calibrado"],
+    ["Equipo de escarpeo (O₂ + gas)", "Remueve defectos superficiales", "Soplete de escarpeo", "Arrestaflamas, mangueras, válvulas"],
+    ["Laboratorio de macroataque", "Calidad interna", "Ácido caliente o Baumann", "Ventilación y EPP químico"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Espesor", "230 mm", "227–233 mm", "Fuera de ± 3 mm", "Rechazo o degradación; C-08"],
+    ["Abultamiento", "≤ 1 mm", "≤ 3 mm", "> 3 mm", "Degradar o rechazar; C-08"],
+    ["Cuña (lado A − lado B)", "≤ 1 mm", "≤ 2 mm", "> 2 mm", "C-08 revisa segmentos"],
+    ["Ancho", "Pedido", "−5 / +15 mm", "Fuera", "Rechazo o reasignar (C-09)"],
+    ["Longitud", "Pedida", "± 15 mm", "Fuera", "Recorte o reasignación"],
+    ["Sable (camber)", "≤ 10 mm en 10 m", "≤ 15 mm", "> 15 mm", "Rechazo o reasignación"],
+    ["Escarpeo por pasada", "3–5 mm", "≤ 10 mm por cara", "Final < 220 mm", "No escarpear más; C-09"],
+    ["Escarpeo de HSLA con Nb", "≥ 150 °C", "≥ 150 °C", "< 150 °C", "No escarpear en frío"]
+  ],
+  "parametros_nota": "Superficial ≤ 5 mm se escarpa; > 10 mm o grieta > 1 m se rechaza. Criterios, clases y tolerancias: [Validar con OEM / Ingeniería de Proceso] y Laminación.",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Planchón asentado, grúa fuera", "detalle": "Nadie entre pilas ni junto al volteador durante movimientos; inspección solo con el planchón asentado (MS-ACE-04)."},
+      {"titulo": "Escarpeo con permiso", "detalle": "Permiso de trabajo en caliente, arrestaflamas, área sin combustibles y EPP de escarpeo (NOM-027)."},
+      {"titulo": "Humos y ácidos", "detalle": "Extracción o respirador para humos metálicos; macroataque en campana con regadera y lavaojos."},
+      {"titulo": "Superficies y tránsito", "detalle": "Medir temperatura antes de tocar; usar escaleras y plataformas; no brincar entre planchones."}
+    ],
+    "epp": [
+      "Casco, lentes, ropa FR y chaleco de alta visibilidad",
+      "Guantes y botas con metatarsal",
+      "Escarpeo: careta sombra 5–6, cuero o aluminizado",
+      "Escarpeo: doble protección auditiva y respirador",
+      "Laboratorio: careta, guantes y mandil químico"
+    ],
+    "figura": "ms-epp-acería.svg",
+    "figura_titulo": "El EPP cambia entre inspección, escarpeo y laboratorio",
+    "figura_lectura": [
+      "En pilas, la ropa FR, las botas con metatarsal y el chaleco son la base.",
+      "El escarpeo supera 100 dB(A): tapones más orejeras.",
+      "En el laboratorio se agrega protección química contra ácidos."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Planchones con evento", "100 % antes de liberar", "MES bloquea el despacho", "Defecto al cliente"],
+    ["Concordancia entre inspectores", "≥ 90 % [Supuesto]", "Prueba trimestral", "Liberación errónea"],
+    ["Tasa de escarpeo", "≤ 5 % [Supuesto]", "SPC semanal", "Costo y rendimiento"],
+    ["Tasa de degradación", "≤ 1 % [Supuesto]", "SPC semanal", "Pérdida de margen"],
+    ["Tasa de rechazo", "≤ 0.3 % [Supuesto]", "SPC semanal", "Pérdida de rendimiento"],
+    ["Cpk de espesor y ancho", "≥ 1.33", "Mensual", "Variación dimensional"]
+  ],
+  "calidad_takeaway": "Grieta longitudinal: revisar nivel, polvo, ΔT y SEN. Segregación: SH y gap en la punta del cráter.",
+  "pasos": [
+    {"n": 1, "paso": "Revisa la lista de planchones", "como": "En el MES: IDs, grado, eventos y retenciones", "criterio": "Lista del turno", "critico": false, "rol": "S-18"},
+    {"n": 2, "paso": "Confirma condición segura", "como": "Planchón asentado, grúa fuera de la zona, pila estable", "criterio": "Confirmado con S-17", "critico": true, "rol": "S-18"},
+    {"n": 3, "paso": "Verifica la ID", "como": "Marcado legible e igual al MES", "criterio": "Coincide", "critico": false, "rol": "S-18"},
+    {"n": 4, "paso": "Inspecciona la cara superior", "como": "Recorrido completo con luz: grietas, depresiones, inclusiones, poros, marcas profundas", "criterio": "Defectos marcados", "critico": false, "rol": "S-18"},
+    {"n": 5, "paso": "Revisa cantos y extremos", "como": "Grietas de esquina, rechupe en extremos, rebaba", "criterio": "Registrado", "critico": false, "rol": "S-18"},
+    {"n": 6, "paso": "Inspecciona la cara inferior", "como": "Volteo según frecuencia; nadie junto al volteador", "criterio": "Registrado", "critico": true, "rol": "S-17 / S-18"},
+    {"n": 7, "paso": "Mide dimensiones", "como": "Espesor 3 puntos por extremo; ancho cabeza, centro y cola; largo, sable y escuadra", "criterio": "Dentro de tabla", "critico": false, "rol": "S-18"},
+    {"n": 8, "paso": "Mide la profundidad", "como": "Galga o escarpeo de prueba", "criterio": "Profundidad registrada", "critico": false, "rol": "S-18"},
+    {"n": 9, "paso": "Clasifica y dispone", "como": "Aplica la tabla de disposición: aceptar, escarpear, degradar o rechazar", "criterio": "Disposición en MES", "critico": false, "rol": "S-18"},
+    {"n": 10, "paso": "Escarpea (si aplica)", "como": "Permiso de trabajo en caliente; 3–5 mm por pasada; ≤ 10 mm por cara; final ≥ 220 mm", "criterio": "Defecto eliminado", "critico": true, "rol": "Escarpador"},
+    {"n": 11, "paso": "Re-inspecciona", "como": "Tras escarpear, sin defecto remanente", "criterio": "Liberado o rechazo", "critico": false, "rol": "S-18"},
+    {"n": 12, "paso": "Solicita la degradación", "como": "Envía evidencia (foto, medida, macro) a C-09", "criterio": "Decisión documentada", "critico": false, "rol": "S-18 / C-09"},
+    {"n": 13, "paso": "Toma muestras internas", "como": "Rebanada según frecuencia; S-11 prepara macroataque o Baumann", "criterio": "Segregación clasificada", "critico": false, "rol": "S-11 / C-09"},
+    {"n": 14, "paso": "Marca la disposición", "como": "Código de colores en el planchón", "criterio": "Coincide con MES", "critico": false, "rol": "S-18"},
+    {"n": 15, "paso": "Libera o retiene en MES", "como": "Solo planchones liberados pueden despacharse", "criterio": "MES actualizado", "critico": false, "rol": "S-18"},
+    {"n": 16, "paso": "Reporta tendencias", "como": "Resumen de turno a C-06 y semanal a C-08 (Pareto de defectos)", "criterio": "Reporte emitido", "critico": false, "rol": "C-09"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["≥ 2 grietas longitudinales seguidas", "Retén la colada completa; avisa de inmediato a CC1", "C-06, C-08, C-09"],
+    ["Grietas transversales en HSLA", "Retén; revisa la temperatura de enderezado", "C-08, C-09"],
+    ["Espesor fuera de tolerancia", "Retén; C-08 solicita medición de gap (MM-CC-02)", "C-08, C-11"],
+    ["Ancho fuera de tolerancia", "Retén; avisa a CC1 para verificar el ancho", "C-06, C-09"],
+    ["Segregación central sobre límite", "Degradar; análisis de SH y gap", "C-08, C-09"],
+    ["ID ilegible o duplicada", "Retén hasta identificar por colada y posición", "C-06, C-09"],
+    ["Defecto tras 2 pasadas de escarpeo", "Rechazo", "C-09"],
+    ["Planchón inestable en pila", "Aléjate; avisa a la grúa", "S-17, C-16"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-18 Inspector de Calidad", "U", "32 h", "160 h / 300 planchones", "24 meses"],
+      ["Escarpador", "U", "16 h", "40 h", "24 meses"],
+      ["S-11 Muestrero / Analista", "U", "16 h", "20 muestras", "24 meses"],
+      ["C-09 Metalurgista de Producto", "O (evaluador)", "24 h", "—", "—"]
+    ],
+    "checklist": [
+      "Inspecciona solo con el planchón asentado y la grúa o el volteador fuera de su zona",
+      "Clasifica correctamente 10 casos del catálogo fotográfico (≥ 9 correctos)",
+      "Escarpea con permiso y arrestaflamas: 3–5 mm por pasada y espesor final ≥ 220 mm"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "Una grieta longitudinal mide 4 mm de profundidad. ¿Qué disposición aplica?", "opciones": ["Aceptar", "Escarpear y re-inspeccionar", "Rechazar"], "correcta": 1, "explicacion": "≤ 5 mm se escarpa (1–2 pasadas); 5–10 mm solo con autorización de C-09; > 10 mm o > 1 m se rechaza."},
+    {"pregunta": "¿Cuál es el espesor mínimo del planchón después de escarpear?", "opciones": ["200 mm", "220 mm", "227 mm"], "correcta": 1, "explicacion": "3–5 mm por pasada, ≤ 10 mm por cara y espesor final ≥ 220 mm, con transición suave."},
+    {"pregunta": "¿Qué causa típica tienen las grietas transversales en HSLA?", "opciones": ["Enderezado a 700–900 °C", "Argón alto en el tapón", "Oxicorte lento"], "correcta": 0, "explicacion": "HSLA con Nb/V/N enderezado en la zona de baja ductilidad y marcas de oscilación profundas."},
+    {"pregunta": "¿Quién decide degradar un planchón a un grado menos exigente?", "opciones": ["El inspector S-18", "El metalurgista C-09", "El supervisor C-06"], "correcta": 1, "explicacion": "S-18 envía evidencia (foto, medida, macro); la decisión documentada es de C-09."},
+    {"pregunta": "Salen 2 planchones seguidos con grieta longitudinal. ¿Qué haces?", "opciones": ["Escarpear y seguir", "Retener la colada y avisar a CC1", "Esperar al reporte semanal"], "correcta": 1, "explicacion": "Es una señal de proceso (nivel, polvo, SEN, peritéctico): retén la colada completa y avisa de inmediato."}
+  ],
+  "reglas": [
+    {"titulo": "Sin planchón asentado no hay inspección", "detalle": "Grúa fuera; nadie entre pilas ni junto al volteador."},
+    {"titulo": "Sin permiso no hay escarpeo", "detalle": "Trabajo en caliente, arrestaflamas y EPP de escarpeo."},
+    {"titulo": "Con evento se inspecciona al 100 %", "detalle": "El MES bloquea el despacho hasta la disposición."},
+    {"titulo": "Defecto repetido: aviso inmediato", "detalle": "Retén y avisa a CC1 para corregir la causa en línea."}
+  ],
+  "por_confirmar": [
+    "Criterios de aceptación, profundidades, clases de segregación y tolerancias con el OEM y Laminación",
+    "Asignación del escarpador en CAT-ACE-001 y metas de tasas de escarpeo, degradación y rechazo [Supuesto]"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de reclamos de cliente; reglas de oro", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo y eventos que retienen", "Láminas 3–5"],
+    ["3. Mapa de defectos y causas", "90", "Ejercicio: defecto → causa → disposición", "Lámina 6, catálogo fotográfico"],
+    ["4. Equipos y parámetros", "60", "Práctica de medición con calibrador y galga", "Láminas 7–8, instrumentos"],
+    ["5. Seguridad", "45", "Pilas, volteador y permiso de escarpeo", "Láminas 9–10, EPP físico"],
+    ["6. Calidad y paso a paso", "90", "Lectura guiada de los 16 pasos; SPC y Pareto", "Láminas 11–13"],
+    ["7. Condiciones anormales", "45", "Simulacro de mesa: grietas repetidas", "Lámina 14"],
+    ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + concordancia", "Lámina 16"],
+    ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

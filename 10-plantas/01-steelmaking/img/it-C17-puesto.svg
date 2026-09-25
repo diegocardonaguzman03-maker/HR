@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" width="1000" height="760" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <pattern id="hatchRed" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#C62828" fill-opacity="0.12"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#C62828" stroke-width="2" stroke-opacity="0.5"/>
+    </pattern>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#43A047"/></marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#E65100"/></marker>
+    <marker id="arrS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#455A64"/></marker>
+  </defs>
+  <text x="500" y="28" font-size="16" text-anchor="middle" fill="#212121" font-weight="bold">Figura IT-C17. Mi área de supervisión: patio de chatarra y materiales (Supervisor de Patio)</text>
+  <text x="500" y="48" font-size="12" text-anchor="middle" fill="#212121">Puntos de verificación de controles críticos (VCC). Valores de MO-EAF-02, MS-ACE-03/04/07. Distancias [Supuesto — Validar con C-16 / ESR]</text>
+  <rect x="20" y="60" width="960" height="470" fill="none" stroke="#455A64" stroke-width="3" />
+  <text x="40" y="80" font-size="12" text-anchor="start" fill="#455A64" font-weight="bold">PATIO DE CHATARRA Y ALMACÉN DE MATERIALES — mi recorrido de supervisión (sin escala)</text>
+  <rect x="40" y="95" width="920" height="420" fill="#FFF3C4" stroke="#FF8F00" stroke-width="1.5" stroke-dasharray="4,3"/><text x="44" y="109" font-size="12" text-anchor="start" fill="#8D4B00" font-weight="bold">Zona amarilla: tránsito grúa–vehículo–peatón</text>
+  <rect x="80" y="140" width="14" height="55" fill="#C62828" stroke="#C62828" stroke-width="1.5" /><rect x="130" y="140" width="14" height="55" fill="#C62828" stroke="#C62828" stroke-width="1.5" /><text x="112" y="133" font-size="12" text-anchor="middle" fill="#C62828" font-weight="bold">Pórtico</text>
+  <rect x="170" y="140" width="90" height="50" fill="#ECEFF1" stroke="#455A64" stroke-width="1.5" /><text x="215" y="170" font-size="12" text-anchor="middle" fill="#212121">Báscula</text>
+  <circle cx="130" cy="280" r="50" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" stroke-dasharray="6,3"/>
+  <rect x="112" y="268" width="36" height="24" fill="#455A64" stroke="#455A64" stroke-width="1.5" /><text x="130" y="345" font-size="12" text-anchor="middle" fill="#C62828" font-weight="bold">Aislamiento ≥ 10 m</text>
+  <rect x="300" y="130" width="120" height="55" fill="#FFEBEE" stroke="#C62828" stroke-width="2" /><text x="360" y="155" font-size="12" text-anchor="middle" fill="#C62828" font-weight="bold">Rechazos</text><text x="360" y="173" font-size="12" text-anchor="middle" fill="#C62828">(actas)</text>
+  <path d="M280,330 l35,-55 l35,55 z" fill="#8D6E63" stroke="#455A64"/>
+  <path d="M370,330 l35,-55 l35,55 z" fill="#8D6E63" stroke="#455A64"/>
+  <path d="M460,330 l35,-55 l35,55 z" fill="#8D6E63" stroke="#455A64"/>
+  <path d="M550,330 l35,-55 l35,55 z" fill="#8D6E63" stroke="#455A64"/>
+  <text x="440" y="346" font-size="12" text-anchor="middle" fill="#212121">Pilas por tipo (inventario ± 2%)</text>
+  <circle cx="640" cy="230" r="55" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" stroke-dasharray="6,3"/><text x="640" y="189" font-size="12" text-anchor="middle" fill="#C62828" font-weight="bold">Roja</text>
+  <circle cx="640" cy="238" r="18" fill="#455A64"/>
+  <rect x="740" y="160" width="190" height="110" fill="#F5F5F5" stroke="#455A64" stroke-width="1.5" /><text x="835" y="180" font-size="12" text-anchor="middle" fill="#455A64" font-weight="bold">Liberación de canasta</text>
+  <path d="M800,190 L870,190 L860,235 L810,235 Z" fill="#455A64" fill-opacity="0.25" stroke="#455A64" stroke-width="2"/><path d="M808,202 l12,-8 l10,10 l12,-9 l10,9 l10,-8" fill="none" stroke="#6D4C41" stroke-width="3"/>
+  <text x="835" y="262" font-size="12" text-anchor="middle" fill="#212121">seca · 55–70 t · receta</text>
+  <rect x="740" y="300" width="190" height="70" fill="#ECEFF1" stroke="#455A64" stroke-width="1.5" /><text x="835" y="325" font-size="12" text-anchor="middle" fill="#455A64" font-weight="bold">Almacén de fundentes</text><text x="835" y="343" font-size="12" text-anchor="middle" fill="#212121">cal · dolomita · carbón</text><text x="835" y="361" font-size="12" text-anchor="middle" fill="#212121">ferroaleaciones</text>
+  <rect x="280" y="390" width="170" height="60" fill="#FFF8E1" stroke="#FF8F00" stroke-width="2" /><text x="365" y="415" font-size="12" text-anchor="middle" fill="#E65100" font-weight="bold">Oxicorte (día)</text><text x="365" y="433" font-size="12" text-anchor="middle" fill="#212121">permiso en caliente</text>
+  <rect x="520" y="400" width="150" height="60" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5" /><text x="595.0" y="434.0" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">Caseta de patio</text>
+  <rect x="740" y="400" width="190" height="60" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5" /><text x="835.0" y="434.0" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">Punto de reunión</text>
+  <line x1="60" y1="480" x2="940" y2="480" stroke="#43A047" stroke-width="3"/><text x="300" y="500" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">Pasillo peatonal pintado (separación grúa–peatón)</text>
+  <polyline points="595,460 595,522" fill="none" stroke="#43A047" stroke-width="4" stroke-dasharray="10,5" marker-end="url(#arrG)"/>
+  <circle cx="160" cy="128" r="11" fill="#212121"/><text x="160" y="132" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">1</text>
+  <circle cx="80" cy="245" r="11" fill="#212121"/><text x="80" y="249" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">2</text>
+  <circle cx="300" cy="125" r="11" fill="#212121"/><text x="300" y="129" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">3</text>
+  <circle cx="270" cy="290" r="11" fill="#212121"/><text x="270" y="294" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">4</text>
+  <circle cx="590" cy="180" r="11" fill="#212121"/><text x="590" y="184" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">5</text>
+  <circle cx="740" cy="155" r="11" fill="#212121"/><text x="740" y="159" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">6</text>
+  <circle cx="740" cy="295" r="11" fill="#212121"/><text x="740" y="299" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">7</text>
+  <circle cx="280" cy="385" r="11" fill="#212121"/><text x="280" y="389" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">8</text>
+  <circle cx="520" cy="395" r="11" fill="#212121"/><text x="520" y="399" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">9</text>
+  <circle cx="740" cy="395" r="11" fill="#212121"/><text x="740" y="399" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">10</text>
+  <circle cx="60" cy="470" r="11" fill="#212121"/><text x="60" y="474" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">11</text>
+  <rect x="20" y="570" width="960" height="180" fill="#FAFAFA" stroke="#455A64" stroke-width="1" />
+  <text x="30" y="590" font-size="13" text-anchor="start" fill="#212121" font-weight="bold">Leyenda (números del dibujo)</text>
+  <circle cx="40" cy="610" r="11" fill="#212121"/><text x="40" y="614" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">1</text><text x="58" y="614" font-size="12" text-anchor="start" fill="#212121">Pórtico: prueba de inicio de turno registrada</text>
+  <circle cx="40" cy="630" r="11" fill="#212121"/><text x="40" y="634" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">2</text><text x="58" y="634" font-size="12" text-anchor="start" fill="#212121">Aislamiento radiológico: aviso al ESR y C-04 ≤ 5 min</text>
+  <circle cx="40" cy="650" r="11" fill="#212121"/><text x="40" y="654" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">3</text><text x="58" y="654" font-size="12" text-anchor="start" fill="#212121">Rechazos: actas con proveedor (tipo, origen)</text>
+  <circle cx="40" cy="670" r="11" fill="#212121"/><text x="40" y="674" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">4</text><text x="58" y="674" font-size="12" text-anchor="start" fill="#212121">Pilas: receta de C-07 y residuales (Cu ≤ 0.15%)</text>
+  <circle cx="40" cy="690" r="11" fill="#212121"/><text x="40" y="694" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">5</text><text x="58" y="694" font-size="12" text-anchor="start" fill="#212121">Electroimán: zona roja sin personas</text>
+  <circle cx="40" cy="710" r="11" fill="#212121"/><text x="40" y="714" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">6</text><text x="58" y="714" font-size="12" text-anchor="start" fill="#212121">Libero canasta: seca, sin prohibidos, 55–70 t</text>
+  <circle cx="520" cy="610" r="11" fill="#212121"/><text x="520" y="614" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">7</text><text x="538" y="614" font-size="12" text-anchor="start" fill="#212121">Fundentes y carbón secos, bajo techo</text>
+  <circle cx="520" cy="630" r="11" fill="#212121"/><text x="520" y="634" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">8</text><text x="538" y="634" font-size="12" text-anchor="start" fill="#212121">Oxicorte: permiso, mangueras, arrestaflamas</text>
+  <circle cx="520" cy="650" r="11" fill="#212121"/><text x="520" y="654" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">9</text><text x="538" y="654" font-size="12" text-anchor="start" fill="#212121">Caseta: bitácora, charla, viento (anemómetro)</text>
+  <circle cx="520" cy="670" r="11" fill="#212121"/><text x="520" y="674" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">10</text><text x="538" y="674" font-size="12" text-anchor="start" fill="#212121">Punto de reunión: conteo ≤ 10 min</text>
+  <circle cx="520" cy="690" r="11" fill="#212121"/><text x="520" y="694" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">11</text><text x="538" y="694" font-size="12" text-anchor="start" fill="#212121">Pasillo peatonal y ruta de escape</text>
+  <text x="30" y="738" font-size="13" text-anchor="start" fill="#212121" font-weight="bold">Zonas:</text><rect x="90" y="726" width="26" height="16" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" /><text x="122" y="738" font-size="12" text-anchor="start" fill="#212121">Roja: solo personal esencial con EPP aluminizado</text><rect x="430" y="726" width="26" height="16" fill="#FFF3C4" stroke="#FF8F00" stroke-width="1.5" /><text x="462" y="738" font-size="12" text-anchor="start" fill="#212121">Amarilla: paso con precaución</text><rect x="660" y="726" width="26" height="16" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5" /><text x="692" y="738" font-size="12" text-anchor="start" fill="#212121">Verde: refugio / segura</text><line x1="850" y1="734" x2="890" y2="734" stroke="#43A047" stroke-width="4" stroke-dasharray="10,5" marker-end="url(#arrG)"/><text x="896" y="738" font-size="12" text-anchor="start" fill="#212121">Escape</text>
+</svg>

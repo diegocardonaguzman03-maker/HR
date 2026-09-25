@@ -1,0 +1,215 @@
+{
+  "code": "MS-ACE-07",
+  "title": "Fuentes radiactivas: Cs-137 de CC2 y pórtico de chatarra",
+  "titulo_corto": "Fuentes radiactivas",
+  "serie": "Seguridad",
+  "area": "Acería · CC2 (nivel de molde), patio de chatarra y casa de bolsas",
+  "manual": "04-seguridad/MS-ACE-07-fuentes-radiactivas.md",
+  "manual_version": "0.2 (borrador para validación; revisión de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Solo el ESR toca el obturador; el camión que suena en el pórtico no se descarga",
+  "audiencia": "POE (S-21 · S-25) · S-05 · C-17 · S-12 · S-13 · S-14 de CC2 · C-06 · C-11 · C-16 (ESR) · resto del personal (inducción)",
+  "kpis": [
+    {"value": "16 h", "label": "teoría POE (NOM-012)"},
+    {"value": "< 2×", "label": "fondo para trabajar en el molde"},
+    {"value": "10", "label": "pasos críticos ★"},
+    {"value": "12", "label": "meses de vigencia"}
+  ],
+  "cadena": [
+    "Solicitar al ESR",
+    "Obturador y candado",
+    "Medir < 2 × fondo",
+    "LOTO y trabajo",
+    "Abrir y verificar",
+    "Pórtico: no descargar"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, trabajas en CC2 sin dosis innecesaria",
+    "roles": "El ESR custodia la fuente; nadie más opera el obturador",
+    "flujo": "Obturador cerrado y medido antes de tocar el molde",
+    "figura": "El obturador cerrado con candado del ESR es el bloqueo",
+    "equipos": "El medidor portátil confirma lo que el obturador dice",
+    "parametros": "Menos de 2 veces el fondo: la condición para trabajar",
+    "seguridad": "Tiempo, distancia y blindaje: el EPP no detiene gamma",
+    "calidad": "Una fuente fundida contamina acero, polvo y personas",
+    "pasos": "Once pasos en dos rutas; diez no admiten error",
+    "anormales": "Lectura alta o contenedor dañado: aléjate ≥ 3 m",
+    "competencia": "Certificación nivel U para POE y patio",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de la radiación que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Aplicar tiempo, distancia y blindaje", "detalle": "Al doble de distancia, ¼ de la dosis. El contenedor de plomo y el obturador son el blindaje."},
+    {"titulo": "Preparar el trabajo en el molde", "detalle": "Punto 7 (Cs-137) en el permiso; el ESR cierra, pone candado y mide < 2 × fondo; luego LOTO del resto."},
+    {"titulo": "Responder a la alarma del pórtico", "detalle": "No descargar; segunda pasada a ≤ 8 km/h; si confirma, aislar el camión, perímetro de 10 m y aviso en ≤ 5 min."},
+    {"titulo": "Usar el dosímetro", "detalle": "El POE lo porta a la altura del pecho, por fuera de la ropa y por dentro del aluminizado."}
+  ],
+  "por_que_importa": "La Acería tiene dos riesgos radiológicos: las fuentes de Cs-137 de las 6 líneas de CC2 y las fuentes huérfanas que llegan escondidas en la chatarra. Si una fuente se funde, contamina el acero, el polvo y a las personas: en Ciudad Juárez (1983–84) una fuente de Co-60 terminó en varilla.",
+  "principio": "Solo el ESR toca la fuente. El camión que suena en el pórtico no se descarga.",
+  "roles": [
+    ["Rol", "Qué hace con las fuentes", "RACI"],
+    ["C-16 en función de ESR", "Custodia fuentes y llaves; dosimetría; reportes a la CNSNS; alarmas", "A"],
+    ["C-01 Gerente de Acería", "Titular de la licencia ante la CNSNS [Supuesto]", "A"],
+    ["C-12 / S-21 Instrumentista (POE)", "Mantiene los medidores con obturador cerrado y con el ESR", "R"],
+    ["S-25 Taller de moldes (POE)", "Cambio de molde de CC2 solo con obturador cerrado y verificado", "R"],
+    ["S-12 / S-13 / S-14 de CC2", "Respetan la señalización; no intervienen el molde sin el ESR", "R"],
+    ["S-05 / C-17 Patio", "Operan el pórtico; detienen y aíslan el camión en alarma", "R"],
+    ["C-04 Jefe de Turno", "Comandante del incidente en un evento radiológico", "R"]
+  ],
+  "flujo": [
+    {"label": "Solicitar", "desc": "Punto 7 (Cs-137) en el permiso"},
+    {"label": "Cerrar", "desc": "ESR cierra obturador, candado y tarjeta"},
+    {"label": "Medir", "desc": "Punto de trabajo y 1 m: < 2 × fondo"},
+    {"label": "LOTO", "desc": "Resto de energías en cero"},
+    {"label": "Trabajar", "desc": "Sin tocar ni golpear el contenedor"},
+    {"label": "Devolver", "desc": "ESR abre; señal de nivel ± 5 mm"},
+    {"label": "Pórtico", "desc": "Alarma: segunda pasada ≤ 8 km/h"},
+    {"label": "Aislar camión", "desc": "Perímetro 10 m; ESR y C-04 ≤ 5 min"}
+  ],
+  "flujo_takeaway": "Si la lectura no es menor a 2 veces el fondo, nadie trabaja: se aleja ≥ 3 m y el ESR investiga.",
+  "figuras": [
+    {
+      "svg": "ms-loto-puntos-cc.svg",
+      "lectura": [
+        "Punto 7: medidor de nivel de CC2 con Cs-137, uno por línea.",
+        "Obturador cerrado con candado del ESR antes de cualquier trabajo en el molde.",
+        "Verificación a 1 m y en el punto de trabajo: < 2 × fondo [Validar con ESR]."
+      ]
+    },
+    {
+      "svg": "ms-zonas-exclusion-nave.svg",
+      "titulo": "El pórtico está en la entrada de camiones del patio",
+      "lectura": [
+        "Punto 1: pórtico detector de radiación en la entrada del patio.",
+        "Cada camión pasa a ≤ 8 km/h [Validar con OEM].",
+        "La zona de aislamiento de camiones queda ≥ 50 m de áreas ocupadas [Supuesto]."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Medidor de nivel (6, CC2)", "Nivel del acero en el molde", "Cs-137 en contenedor de plomo; ± 5 mm", "Contenedor íntegro y señalizado"],
+    ["Obturador con candado", "Bloquea el haz para trabajar", "Abierto/cerrado visible", "Candado del ESR"],
+    ["Medidor de radiación portátil", "Verifica obturador y fuentes", "μSv/h; calibración anual [Verificar]", "Prueba con fuente de verificación"],
+    ["Dosímetros TLD/OSL y electrónico", "Dosis acumulada y en tarea", "Lectura por laboratorio acreditado", "Portado a la altura del pecho"],
+    ["Pórtico detector", "Detecta fuentes en camiones", "Umbral [Validar con OEM / ESR]", "Prueba diaria [Supuesto]"],
+    ["Zona de aislamiento de camiones", "Estacionar camiones en alarma", "≥ 50 m de áreas ocupadas [Supuesto]", "Libre y delimitada"],
+    ["Contenedor para fuentes huérfanas", "Resguardo temporal", "Aprobado por la CNSNS", "Bajo custodia del ESR"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Límite", "Acción"],
+    ["Punto de trabajo (cerrado)", "Fondo ≈ 0.1–0.3 μSv/h", "≥ 2 × fondo", "No trabajar; ≥ 3 m; ESR"],
+    ["A 1 m (obturador abierto)", "Según licencia", "> valor de licencia", "Delimitar; ESR"],
+    ["Dosis anual del POE", "≤ 6 mSv [Supuesto]", "Límite RGSR [Verificar]", "Investigación del ESR"],
+    ["Nivel de investigación", "—", "> 0.5 mSv/lectura [Sup.]", "ESR investiga"],
+    ["Personal no POE", "≈ 0 mSv/año", "≥ 1 mSv/año [Verificar]", "Revisar blindaje"],
+    ["Velocidad en pórtico", "5 km/h", "> 8 km/h", "Repetir la pasada"],
+    ["Perímetro por alarma", "10 m", "> 1 μSv/h fuera [Sup.]", "Ampliar perímetro"],
+    ["Prueba de fuga (frotis)", "< límite licencia", "≥ límite [Verificar]", "Fuente fuera; CNSNS"]
+  ],
+  "parametros_nota": "Límite legal RGSR/CNSNS: 50 mSv/año; ICRP 103: 20 mSv/año promedio [Verificar con la NOM vigente / SSO]. Restricción interna ≤ 6 mSv/año con el ESR.",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Obturador cerrado con candado del ESR", "detalle": "Solo el ESR opera el obturador. Cerrado, con candado y tarjeta, y medido < 2 × fondo antes de trabajar."},
+      {"titulo": "Contenedor íntegro", "detalle": "Tras breakout o salpicadura en el molde, el ESR hace levantamiento. Contenedor dañado: alejarse ≥ 3 m."},
+      {"titulo": "Pórtico y aislamiento del camión", "detalle": "Segunda pasada; si confirma, no descargar, perímetro de 10 m, chofer fuera y aviso al ESR y a C-04."},
+      {"titulo": "Custodia e inventario", "detalle": "Llaves bajo custodia del ESR; inventario mensual [Supuesto]; pérdida o robo: aviso inmediato a la CNSNS."}
+    ],
+    "epp": [
+      "El EPP convencional no protege contra la gamma",
+      "Dosímetro del POE a la altura del pecho",
+      "Por fuera de la ropa y por dentro del aluminizado",
+      "Con polvo contaminado: overol, guantes y P100"
+    ],
+    "figura": "ms-epp-acería.svg",
+    "figura_titulo": "El dosímetro es EPP de registro, no de protección",
+    "figura_lectura": [
+      "Solo el POE porta dosímetro personal (MS-ACE-07).",
+      "Va a la altura del pecho, por dentro del aluminizado.",
+      "La protección real es tiempo, distancia y blindaje."
+    ]
+  },
+  "calidad": [
+    ["Qué se controla", "Criterio", "Cómo y cuándo", "Si falla"],
+    ["Licencia e inventario", "Fuentes y movimientos al día", "ESR, mensual [Supuesto]", "Fuente sin control"],
+    ["Pruebas de fuga", "< límite de la licencia", "Cada 6–12 meses [Verificar]", "Fuente fuera; CNSNS"],
+    ["Historial de dosis del POE", "Bajo nivel de investigación", "Cada periodo de lectura", "Investigación"],
+    ["Alarmas del pórtico", "Todas resueltas y registradas", "Cada alarma", "Fuente al horno"],
+    ["Permisos en el molde", "Con firma del ESR", "Cada trabajo", "Exposición no planeada"],
+    ["Señal de nivel de CC2", "± 5 mm tras abrir", "ESR y púlpito", "Desbordes o breakout"]
+  ],
+  "calidad_takeaway": "Una fuente fundida obliga a retirar producto del mercado y a avisar a la CNSNS.",
+  "pasos": [
+    {"n": 1, "paso": "Solicita al ESR", "como": "Incluye en el permiso de trabajo el punto 7 (Cs-137)", "criterio": "ESR confirma horario", "critico": true, "rol": "C-11 / C-06"},
+    {"n": 2, "paso": "Cierra y bloquea obturador", "como": "El ESR cierra el obturador de la línea (o de las 6), pone su candado y tarjeta", "criterio": "Cerrado con candado", "critico": true, "rol": "ESR"},
+    {"n": 3, "paso": "Mide", "como": "El ESR mide en el punto de trabajo y a 1 m", "criterio": "< 2 × fondo, anotado", "critico": true, "rol": "ESR"},
+    {"n": 4, "paso": "Aplica LOTO del resto", "como": "Resto de energías según MS-ACE-02", "criterio": "Energía cero", "critico": true, "rol": "Ejecutores"},
+    {"n": 5, "paso": "Trabaja sin tocar contenedor", "como": "No desmontes ni golpees el contenedor; si se daña, detente y aléjate ≥ 3 m", "criterio": "Contenedor íntegro", "critico": true, "rol": "S-25, S-21"},
+    {"n": 6, "paso": "Devuelve y verifica", "como": "El ESR retira su candado, abre el obturador y verifica la señal de nivel con el púlpito", "criterio": "Señal ± 5 mm", "critico": true, "rol": "ESR, S-12"},
+    {"n": 7, "paso": "Detén el camión en alarma", "como": "No permitas que descargue; repite la pasada a ≤ 8 km/h", "criterio": "Segunda lectura registrada", "critico": true, "rol": "S-05"},
+    {"n": 8, "paso": "Aísla el camión", "como": "Si confirma: a la zona de aislamiento; perímetro de 10 m; chofer fuera y registrado", "criterio": "Perímetro colocado", "critico": true, "rol": "S-05, C-17"},
+    {"n": 9, "paso": "Llama al ESR y a C-04", "como": "Radio: alarma radiológica en pórtico, camión placas y ubicación", "criterio": "Aviso ≤ 5 min", "critico": true, "rol": "C-17"},
+    {"n": 10, "paso": "El ESR localiza", "como": "Levantamiento con medidor; ajusta el perímetro a la línea de 1 μSv/h [Supuesto]; resguarda la fuente", "criterio": "Fuente resguardada", "critico": true, "rol": "ESR"},
+    {"n": 11, "paso": "Reporta", "como": "El ESR notifica a la CNSNS en el plazo regulatorio [Verificar]; el camión no sale sin autorización", "criterio": "Reporte emitido", "critico": false, "rol": "ESR, C-01"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Lectura alta con obturador cerrado", "Aléjate ≥ 3 m; delimita; no trabajes", "ESR, C-16"],
+    ["Contenedor golpeado o quemado", "Aléjate; delimita; el ESR hace levantamiento", "ESR, C-06"],
+    ["Alarma del pórtico", "Ruta B completa: no descargar, segunda pasada, aislar", "ESR, C-17"],
+    ["Radiación en polvo o en acero", "Paro de extracción según ESR; aislar polvo y acero; plan radiológico", "ESR, C-04, C-01"],
+    ["Dosímetro perdido o dañado", "Reporte al ESR; estimación de dosis", "ESR"],
+    ["Dosis sobre nivel de investigación", "Investigación; retiro temporal de tareas con fuente", "ESR, médico"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["C-16 en función de ESR", "O", "Curso CNSNS [Verificar]", "Según CNSNS", "Licencia; interna 12 m"],
+      ["POE (S-21, S-25 de CC2)", "U", "16 h", "3 tareas con ESR", "12 meses"],
+      ["S-05, C-17 Patio", "U", "8 h", "5 simulacros de alarma", "12 meses"],
+      ["C-06, C-11 Solicitantes", "U", "2 h", "2 solicitudes con ESR", "12 meses"],
+      ["S-12, S-13, S-14 de CC2", "L", "4 h", "—", "12 meses"],
+      ["Resto del personal", "I", "1 h (inducción)", "—", "12 meses"]
+    ],
+    "checklist": [
+      "Sabe que solo el ESR opera el obturador y aplica tiempo, distancia y blindaje",
+      "Verifica la medición < 2 × fondo antes de trabajar en el molde de CC2",
+      "Trabaja sin tocar ni golpear el contenedor y se aleja ≥ 3 m si se daña",
+      "El ESR abre el obturador y verifica la señal de nivel ± 5 mm con el púlpito",
+      "Detiene y aísla un camión con alarma sin descargarlo",
+      "Avisa al ESR y a C-04 en ≤ 5 min ante una alarma confirmada del pórtico"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Quién puede cerrar y abrir el obturador del medidor de CC2?", "opciones": ["El instrumentista", "Solo el ESR", "El operador de púlpito"], "correcta": 1, "explicacion": "Solo el ESR (función de C-16, con licencia CNSNS) opera el obturador y pone su candado."},
+    {"pregunta": "¿Qué lectura se exige en el punto de trabajo con obturador cerrado?", "opciones": ["< 2 × fondo", "< 10 × fondo", "Cualquiera con EPP"], "correcta": 0, "explicacion": "< 2 × fondo (fondo ≈ 0.1–0.3 μSv/h). Si no, no se trabaja y se aleja ≥ 3 m."},
+    {"pregunta": "Si te alejas al doble de distancia de una fuente, ¿cuánta dosis recibes?", "opciones": ["La mitad", "Un cuarto", "La misma"], "correcta": 1, "explicacion": "La dosis baja con el cuadrado de la distancia: al doble, ¼ de la dosis."},
+    {"pregunta": "Un camión suena en el pórtico. ¿Qué haces primero?", "opciones": ["Lo descargo aparte", "No descarga; segunda pasada", "Lo regreso a la calle"], "correcta": 1, "explicacion": "Se repite la pasada a ≤ 8 km/h; si confirma, se aísla con perímetro de 10 m y se llama al ESR."},
+    {"pregunta": "¿El chaquetón aluminizado protege contra la radiación gamma?", "opciones": ["Sí", "No", "Solo de cerca"], "correcta": 1, "explicacion": "El EPP convencional no detiene la gamma. Protegen el tiempo, la distancia y el blindaje."}
+  ],
+  "reglas": [
+    {"titulo": "Solo el ESR toca la fuente", "detalle": "Obturador cerrado + candado del ESR antes de cualquier trabajo en el molde."},
+    {"titulo": "Sin < 2 × fondo no se trabaja", "detalle": "Lectura anotada en el permiso con firma del ESR."},
+    {"titulo": "Camión que suena no se descarga", "detalle": "Segunda pasada, aislamiento, perímetro de 10 m y aviso en ≤ 5 min."},
+    {"titulo": "Tiempo, distancia y blindaje", "detalle": "Menos tiempo, más lejos y detrás del plomo."}
+  ],
+  "por_confirmar": [
+    "Restricción interna ≤ 6 mSv/año y nivel de investigación > 0.5 mSv con el ESR",
+    "Umbral del pórtico, velocidad ≤ 8 km/h y prueba diaria (OEM / ESR)",
+    "Plazo de notificación a la CNSNS y límites legales del RGSR (Jurídico / SSO)",
+    "Teoría POE (16 h): este plan es la sesión 1 de 2 de 8 h"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Caso Ciudad Juárez 1983–84; reglas", "Láminas 1–2"],
+    ["2. Roles y dos rutas", "45", "Flujo del molde de CC2 y del pórtico", "Láminas 3–5"],
+    ["3. Tiempo, distancia, blindaje", "75", "Ejercicio: dosis al doble de distancia", "Láminas 6–7"],
+    ["4. Equipos y límites", "75", "Práctica con medidor portátil y dosímetro", "Láminas 8–9, medidor"],
+    ["5. Controles y señalización", "60", "Reconocer el trébol, el obturador y la zona", "Láminas 10–11"],
+    ["6. Registros y paso a paso", "75", "Lectura guiada de las rutas A y B", "Láminas 12–14"],
+    ["7. Condiciones anormales", "60", "Simulacro de mesa: alarma confirmada", "Lámina 15"],
+    ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
+    ["9. Cierre y ruta a OJT", "15", "Plan de OJT con el ESR", "Lámina 17"]
+  ],
+  "validacion": {"seguridad": "visto bueno — 2026-09-25"}
+}

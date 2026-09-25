@@ -1,0 +1,209 @@
+{
+  "code": "MO-CC1-01",
+  "title": "Preparación y precalentamiento del distribuidor",
+  "titulo_corto": "Preparación distribuidor",
+  "serie": "Operación",
+  "area": "Colada Continua 1 · planchón",
+  "manual": "02-operacion/cc1/MO-CC1-01-preparacion-distribuidor.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Entregar un distribuidor de 45 t seco, bien armado y precalentado, con tapón y SEN alineados y probados",
+  "audiencia": "S-15 Preparador de Distribuidores · S-13 Operador de Plataforma de Colada · Operador de grúa de CC · C-06",
+  "kpis": [
+    {"value": "16 h", "label": "teoría (S-15)"},
+    {"value": "80 h", "label": "OJT · 10 distribuidores"},
+    {"value": "6", "label": "pasos críticos ★"},
+    {"value": "24", "label": "meses de vigencia (TD-P07)"}
+  ],
+  "cadena": [
+    "Revestimiento OK",
+    "Armado y curado",
+    "Tapón y SEN probados",
+    "Todo seco",
+    "Precalentar por curva",
+    "Entrega a S-13"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, entregas un distribuidor seco y probado",
+    "roles": "S-15 arma y calienta; C-06 firma listo para colar",
+    "flujo": "El arranque seguro se gana en la preparación",
+    "figura": "Presa, dique y tapón deciden la limpieza del acero",
+    "equipos": "El distribuidor no sale sin tapón y SEN en tolerancia",
+    "parametros": "Humedad, alineación y temperatura definen la liberación",
+    "seguridad": "Humedad, carga suspendida y espacio confinado",
+    "calidad": "Un distribuidor mal armado da inclusiones y clogging",
+    "pasos": "Dieciséis pasos; seis no admiten error",
+    "anormales": "Si hay vapor, el distribuidor no se libera",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del distribuidor que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Armar el revestimiento de trabajo", "detalle": "Masa seca de MgO de 40–60 mm, medida en 8 puntos, curada según la curva del proveedor, sin zonas blandas."},
+    {"titulo": "Alinear y probar tapón y SEN", "detalle": "Tapón centrado ± 1 mm y sin paso de luz; SEN vertical ± 1 mm con puertos a caras angostas ± 2°; argón 3–8 NL/min."},
+    {"titulo": "Precalentar por curva", "detalle": "Cara caliente 1,100 ± 50 °C y SEN ≥ 1,000 °C; ≤ 10 min sin quemador antes de abrir la olla."},
+    {"titulo": "Trabajar sin exponerte", "detalle": "Permiso de espacio confinado con gases medidos, LOTO, izaje con grúa de 50 t y quemadores encendidos con purga."}
+  ],
+  "por_que_importa": "El distribuidor recibe 45 t de acero líquido. Si tiene humedad, explota al primer contacto con el metal. Si la presa, el tapón o la SEN quedan mal armados, el acero sale sucio, la SEN se tapa y la secuencia se corta antes de tiempo.",
+  "principio": "Si hay vapor, humedad o una pieza fuera de tolerancia, el distribuidor no se libera.",
+  "roles": [
+    ["Rol", "Qué hace en la preparación", "RACI"],
+    ["C-06 Supervisor de Colada Continua", "Autoriza el distribuidor como listo para colar; firma la lista", "A"],
+    ["S-15 Preparador de Distribuidores", "Arma revestimiento, pad, presas, tapón y SEN; precalienta; registra", "R"],
+    ["S-13 Operador de Plataforma", "Recibe; verifica centrado, SEN y temperatura antes de colar", "R"],
+    ["Operador de grúa de CC (50 t)", "Traslada el distribuidor vacío (propuesta S-27; hoy lo cubre S-15)", "R"],
+    ["S-24 Refractarista", "Revisa el revestimiento permanente; reparaciones menores", "C"],
+    ["C-15 Especialista de Refractarios", "Define materiales, curvas de secado y criterios de rechazo", "C"],
+    ["C-08 Ingeniero de Proceso de CC", "Define presas, dique, tipo de SEN y de tapón por grado", "C"],
+    ["C-16 Especialista de Seguridad", "Verifica controles de espacio confinado y de izaje", "I"]
+  ],
+  "flujo": [
+    {"label": "Inspección", "desc": "Casco y permanente: desprendimiento ≤ 30 mm"},
+    {"label": "Revestimiento", "desc": "MgO 40–60 mm, vibrado y curado"},
+    {"label": "Pad, presa, dique", "desc": "Pad ± 50 mm; presa y dique ± 20 mm"},
+    {"label": "Tapón y SEN", "desc": "Centrado ± 1 mm; puertos ± 2°"},
+    {"label": "Prueba de asiento", "desc": "Sin paso de luz; argón 3–8 NL/min"},
+    {"label": "Todo seco", "desc": "Mortero, sellos, pad y SEN sin humedad"},
+    {"label": "Precalentar", "desc": "Cara 1,100 ± 50 °C; SEN ≥ 1,000 °C"},
+    {"label": "Liberar y llevar", "desc": "Firma de C-06; ≤ 10 min sin quemador"}
+  ],
+  "flujo_takeaway": "Cada prueba que falla regresa al paso anterior: ningún distribuidor avanza con una duda abierta.",
+  "figuras": [
+    {
+      "svg": "cc1-distribuidor.svg",
+      "lectura": [
+        "El pad absorbe el chorro del tubo protector; la presa y el dique suben el flujo a la superficie para flotar inclusiones.",
+        "La barra tapón asienta en la buza interior y regula el paso de acero a la SEN.",
+        "Los niveles de operación (900–1,100 mm) dependen de una buena preparación del recipiente."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Revestimiento de trabajo", "Cara en contacto con el acero", "MgO 40–60 mm [Validar con C-15]", "Espesor uniforme, sin huecos, seco"],
+    ["Pad, presa y dique", "Calman y limpian el flujo", "Configuración por grado (C-08)", "Pad ± 50 mm; presa y dique ± 20 mm"],
+    ["Barra tapón", "Regula el flujo; inyecta argón", "Alúmina-grafito con canal de Ar", "Centrada ± 1 mm; canal libre"],
+    ["SEN (buza sumergida)", "Lleva el acero bajo el menisco", "Puertos laterales; manga de ZrO₂", "Vertical ± 1 mm; puertos ± 2°"],
+    ["Estación de precalentamiento", "Calienta distribuidor, tapón y SEN", "Quemadores gas natural–aire", "Detector de flama y corte probados"],
+    ["Carro de distribuidor", "Lleva a posición de colada", "Elevación, centrado X–Y, celdas", "Frenos, límites y pesaje"],
+    ["Grúa de CC (50 t)", "Mueve el distribuidor vacío", "Solo distribuidor vacío", "★ Inspección pre-uso (MS-ACE-04)"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Espesor revestimiento", "50 mm", "40–60 mm", "< 35 mm en un punto", "Rehacer la zona; avisar a C-15"],
+    ["Humedad del revestimiento", "Seco (curado completo)", "Curva del proveedor", "Vapor o curado incompleto", "No liberar; repetir curado"],
+    ["Centrado tapón / buza", "0 mm", "± 1 mm", "> 1 mm", "Reajustar el mecanismo"],
+    ["SEN: verticalidad / puertos", "0 mm / 0°", "± 1 mm / ± 2°", "> 1 mm o > 2°", "Reinstalar la SEN"],
+    ["Cara caliente al terminar", "1,100 °C", "1,050–1,150 °C", "< 1,000 o > 1,200 °C", "Seguir calentando / bajar fuego"],
+    ["SEN al salir del quemador", "≥ 1,050 °C", "1,000–1,150 °C", "< 1,000 °C", "No arrancar; precalentar SEN"],
+    ["Tiempo de precalentamiento", "3.0 h", "2.5–4.0 h", "< 2.5 h o > 6 h", "Continuar / consultar a C-15"],
+    ["Tiempo sin quemador", "≤ 5 min", "≤ 10 min", "> 10 min", "Regresar al quemador"]
+  ],
+  "parametros_nota": "Curva de precalentamiento y curado: [Validar con C-15 / proveedor]. Prueba de asiento y presión de gas: [Validar con OEM / Ingeniería de Proceso].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Cero humedad", "detalle": "Curado y precalentamiento completos por curva; ningún material mojado o a la intemperie. Si hay vapor, no se libera."},
+      {"titulo": "Espacio confinado con permiso", "detalle": "LOTO de quemadores y carro; O₂ 19.5–23.5 %, LEL < 10 %, CO < 25 ppm, ≤ 45 °C; vigía y rescate (MS-ACE-05)."},
+      {"titulo": "Carga suspendida", "detalle": "Distribuidor vacío de 30–40 t solo con grúa de 50 t; nadie bajo la carga ni a ± 5 m de su proyección."},
+      {"titulo": "Quemadores de gas natural", "detalle": "Purga y prueba de flama antes de encender. 10 % LEL: sal y corta gas; 20 % LEL: evacuar el sector."}
+    ],
+    "epp": [
+      "Casco con barboquejo, lentes y ropa FR",
+      "Botas con metatarsal y guantes de carnaza",
+      "Aluminizado y careta IR junto al distribuidor caliente",
+      "Respirador P100 para MgO y fibra cerámica",
+      "Protección auditiva si hay ≥ 85 dB(A)"
+    ],
+    "figura": "ms-epp-acería.svg",
+    "figura_titulo": "EPP de Acería: protege contra calor y proyección",
+    "figura_lectura": [
+      "La ropa FR o de algodón es la base; el sintético está prohibido.",
+      "Junto al distribuidor caliente se agregan aluminizado y careta con filtro IR.",
+      "El respirador P100 es obligatorio al manejar masa seca y fibra."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Limpieza del distribuidor", "Sin restos sueltos", "Visual, cada distribuidor", "Inclusiones exógenas, SEN tapada"],
+    ["Posición de presa y dique", "Plano de C-08 ± 20 mm", "Cinta, cada distribuidor", "Inclusiones por corto circuito"],
+    ["Alineación de la SEN", "± 1 mm; ± 2°", "Plantilla, cada distribuidor", "Flujo asimétrico, grietas longitudinales"],
+    ["Temperatura de SEN al arranque", "≥ 1,000 °C", "Pirómetro, cada arranque", "Congelamiento o taponamiento"],
+    ["Canal de argón del tapón", "Flujo libre", "Rotámetro, cada distribuidor", "Clogging por Al₂O₃"]
+  ],
+  "calidad_takeaway": "Una SEN desalineada o fría no se corrige en colada: se paga en grietas, inclusiones y SEN tapada.",
+  "pasos": [
+    {"n": 1, "paso": "Recibe e inspecciona", "como": "Casco < 100 °C [Validar con C-15]; orejas y casco sin grietas; permanente con desprendimiento ≤ 30 mm", "criterio": "Sin grietas pasantes", "critico": false, "rol": "S-15 / S-24"},
+    {"n": 2, "paso": "Limpia el interior", "como": "Retira restos de casco, escoria y polvo con aspiradora o aire; nunca con agua", "criterio": "Limpio y seco", "critico": false, "rol": "S-15"},
+    {"n": 3, "paso": "Entra solo con permiso", "como": "LOTO de quemadores y carro; mide O₂ → LEL → CO y temperatura ≤ 45 °C; vigía y rescate listos", "criterio": "Permiso firmado con lecturas", "critico": true, "rol": "S-15 / C-06"},
+    {"n": 4, "paso": "Coloca el pad", "como": "Centrado bajo la posición del tubo protector ± 50 mm", "criterio": "Asentado sin holgura", "critico": false, "rol": "S-15"},
+    {"n": 5, "paso": "Arma el revestimiento", "como": "Coloca el former, vacía y vibra la masa seca de MgO; espesor 40–60 mm", "criterio": "≥ 40 mm en 8 puntos", "critico": false, "rol": "S-15"},
+    {"n": 6, "paso": "Cura el revestimiento", "como": "Calienta el former según la curva del proveedor (típico ≈ 250 °C) y retíralo [Validar con C-15]", "criterio": "Sin zonas blandas", "critico": true, "rol": "S-15"},
+    {"n": 7, "paso": "Instala presa y dique", "como": "Según el plano del grado (C-08); sella las ranuras con mortero seco", "criterio": "Posición ± 20 mm", "critico": false, "rol": "S-15"},
+    {"n": 8, "paso": "Instala buza y tapón", "como": "Asienta la buza con mortero; monta el tapón en el mecanismo; conecta el argón", "criterio": "Centrado ± 1 mm", "critico": false, "rol": "S-15"},
+    {"n": 9, "paso": "Prueba el asiento del tapón", "como": "Cierra el tapón y aplica prueba de luz o de aire [Validar con OEM / Ingeniería de Proceso]", "criterio": "Sin paso de luz ni fuga", "critico": true, "rol": "S-15"},
+    {"n": 10, "paso": "Prueba el argón", "como": "Abre argón a presión nominal y confirma el flujo", "criterio": "3–8 NL/min estable", "critico": false, "rol": "S-15"},
+    {"n": 11, "paso": "Instala la SEN", "como": "Verticalidad ± 1 mm; puertos hacia caras angostas ± 2°; registra el lote", "criterio": "Dentro de tolerancia", "critico": false, "rol": "S-15"},
+    {"n": 12, "paso": "Verifica que todo esté seco", "como": "Revisa mortero, sellos, pad y SEN; nada mojado ni almacenado a la intemperie", "criterio": "Registro firmado", "critico": true, "rol": "S-15"},
+    {"n": 13, "paso": "Lleva a precalentamiento", "como": "Izaje con grúa de 50 t; nadie bajo la carga", "criterio": "Colocado y asegurado", "critico": true, "rol": "Grúa / S-15"},
+    {"n": 14, "paso": "Enciende los quemadores", "como": "Purga, prueba del detector de flama y encendido según la secuencia de la estación", "criterio": "Flama estable, sin alarma", "critico": true, "rol": "S-15"},
+    {"n": 15, "paso": "Precalienta y libera", "como": "Curva etapas 1–4; registra T cada 30 min; vapor = 0; C-06 firma listo para colar", "criterio": "1,100 ± 50 °C; SEN ≥ 1,000", "critico": false, "rol": "S-15 / C-06"},
+    {"n": 16, "paso": "Traslada, centra y entrega", "como": "≤ 10 min sin fuego antes de abrir la olla; SEN centrada ± 5 mm [Validar con OEM]; registra", "criterio": "Registro completo", "critico": false, "rol": "S-13"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Vapor o humedad visible", "No liberar; regresar al quemador; repetir etapa 1 de la curva", "C-06, C-15"],
+    ["Pérdida de flama", "Corte automático; purga antes de reencender", "S-21, C-06"],
+    ["Olor a gas o detector en alarma", "Cierra la válvula o ESD; ≥ 10 % LEL sal; ≥ 20 % LEL evacuar; sin flama", "C-06, C-16, S-21"],
+    ["Cara caliente no sube", "Ajusta relación aire–gas; revisa el quemador", "S-21, C-08"],
+    ["Temperatura > 1,200 °C", "Baja el fuego; registra; C-15 evalúa el daño", "C-15"],
+    ["Grieta en SEN o tapón", "Cambia la pieza y repite su precalentamiento", "C-06, C-15"],
+    ["Falla la prueba de asiento", "Recentrar; si persiste, cambiar tapón o buza", "C-06"],
+    ["Olla retrasada > 6 h", "Mantén 1,050–1,100 °C; C-15 decide si se usa o se rearma", "C-06, C-15"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-15 Preparador de Distribuidores", "U", "16 h", "80 h / 10 distribuidores", "24 meses; confinado e izaje 12"],
+      ["S-13 Operador de Plataforma", "L", "4 h", "5 recepciones", "24 meses"],
+      ["C-06 Supervisor de CC", "O (evaluador)", "8 h + evaluador", "—", "24 meses"],
+      ["Operador de grúa de CC", "U", "Curso NOM-006", "Según MS-ACE-04", "12 meses"]
+    ],
+    "checklist": [
+      "Mide gases y temperatura y aplica LOTO antes de entrar al distribuidor",
+      "Explica y aplica la curva de curado; reconoce señales de humedad",
+      "Ejecuta la prueba de asiento del tapón e interpreta el resultado",
+      "Verifica que todos los materiales estén secos y lo registra",
+      "Da señales correctas al izaje y se mantiene fuera de la zona bajo la carga",
+      "Enciende quemadores con purga y prueba de flama"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Qué temperatura de cara caliente se busca al terminar el precalentamiento?", "opciones": ["800 ± 50 °C", "1,100 ± 50 °C", "1,300 ± 50 °C"], "correcta": 1, "explicacion": "Objetivo 1,100 °C, rango 1,050–1,150 °C; < 1,000 °C seguir calentando y > 1,200 °C daña el refractario."},
+    {"pregunta": "Ves vapor en el distribuidor al 90 % de la curva. ¿Qué haces?", "opciones": ["Liberarlo si ya pasó 3 h", "No liberar y repetir la etapa 1", "Subir el fuego al máximo"], "correcta": 1, "explicacion": "Vapor es humedad: con acero líquido es explosión. Se regresa al quemador y se repite la etapa 1."},
+    {"pregunta": "¿Cuánto tiempo máximo puede estar el distribuidor sin quemador antes de abrir la olla?", "opciones": ["10 min", "30 min", "60 min"], "correcta": 0, "explicacion": "Objetivo ≤ 5 min, límite 10 min; si se pasa, regresar al quemador o recalentar la SEN."},
+    {"pregunta": "¿Qué tolerancia tiene el centrado del tapón sobre la buza interior?", "opciones": ["± 1 mm", "± 5 mm", "± 20 mm"], "correcta": 0, "explicacion": "± 1 mm con plantilla; si es mayor, reajustar el mecanismo antes de la prueba de asiento."},
+    {"pregunta": "¿Con qué se limpia el interior del distribuidor?", "opciones": ["Con agua a presión", "Con aspiradora o aire", "Con vapor"], "correcta": 1, "explicacion": "Nunca con agua: cualquier humedad que quede puede provocar una explosión de vapor al colar."}
+  ],
+  "reglas": [
+    {"titulo": "Con vapor no se libera", "detalle": "Humedad + acero líquido = explosión (MS-ACE-03)."},
+    {"titulo": "Sin permiso no se entra", "detalle": "Espacio confinado: LOTO, gases medidos, vigía y rescate listos."},
+    {"titulo": "Nadie bajo el distribuidor", "detalle": "Izaje solo con grúa de 50 t; ± 5 m de la proyección libre."},
+    {"titulo": "Sin purga no se enciende", "detalle": "Purga y prueba de flama antes de cada encendido de quemadores."}
+  ],
+  "por_confirmar": [
+    "Curva de curado y precalentamiento, espesor del revestimiento y casco < 100 °C con C-15",
+    "Prueba de asiento, presión de gas y centrado de la SEN ± 5 mm con el OEM"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de explosión por humedad; reglas de oro", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con la figura del distribuidor", "Láminas 3–6"],
+    ["3. Equipos y parámetros", "75", "Ejercicio: leer una curva de precalentamiento", "Láminas 7–8, registro real"],
+    ["4. Seguridad", "75", "Permiso de espacio confinado y medición de gases", "Láminas 9–10, detector"],
+    ["5. Calidad y paso a paso", "120", "Lectura guiada de los 16 pasos; pasos ★", "Láminas 11–13, plantillas"],
+    ["6. Condiciones anormales", "60", "Simulacro de mesa: vapor y alarma de gas", "Lámina 14"],
+    ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + preguntas orales", "Lámina 16"],
+    ["8. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

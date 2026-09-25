@@ -1,0 +1,203 @@
+{
+  "code": "MO-EAF-05",
+  "title": "Escoria espumosa: inyección de O₂ y carbono, desescoriado",
+  "titulo_corto": "Escoria espumosa",
+  "serie": "Operación",
+  "area": "Hornos · EAF-1 / EAF-2",
+  "manual": "02-operacion/eaf/MO-EAF-05-escoria-espumosa-oxigeno-carbono.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Cubrir el arco con B2 1.8–2.2, FeO 25–35 % y MgO 8–10 %, y desescoriar sin exponer a nadie",
+  "audiencia": "S-01 Primer Hornero · S-02 Segundo Hornero · S-10 Operador de Escoria · S-11 Muestrero",
+  "kpis": [
+    {"value": "24 h", "label": "teoría (S-01)"},
+    {"value": "120 h", "label": "OJT · 50 coladas"},
+    {"value": "3", "label": "pasos críticos ★"},
+    {"value": "2.0", "label": "basicidad B2 objetivo"}
+  ],
+  "cadena": ["Modo quemador", "Modo lanza + C", "Espuma cubre el arco", "Olla seca", "Desescoriado", "Química en rango"],
+  "titulos": {
+    "objetivos": "Al terminar, cubres el arco y desescorias sin riesgo",
+    "roles": "S-01 dosifica, S-02 vigila la puerta, S-10 la olla",
+    "flujo": "La espuma se ajusta con O₂, carbono y cal",
+    "figura": "Lanzas, inyector y puerta trabajan juntos",
+    "equipos": "Siete equipos; olla y fosa secas son críticas",
+    "parametros": "B2, FeO y MgO definen si la espuma aguanta",
+    "seguridad": "Escoria sobre agua y ebullición: riesgos de la puerta",
+    "calidad": "La escoria bien hecha se lleva el fósforo",
+    "pasos": "Trece pasos; tres no admiten error",
+    "anormales": "Ante ebullición: cortar carbono y alejarse",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de la escoria que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Operar quemadores y lanzas", "detalle": "Modo quemador en la fusión (O₂:gas ≈ 2:1); modo lanza en baño plano; O₂ total 30–40 Nm³/t."},
+    {"titulo": "Formar y mantener la espuma", "detalle": "Carbono 8–12 kg/t, cal 30–45 kg/t y dolomita 10–15 kg/t para que la espuma cubra el arco."},
+    {"titulo": "Leer y corregir la escoria", "detalle": "B2 1.8–2.2, FeO 25–35 %, MgO 8–10 %: elegir la corrección con el análisis y con lo que se ve."},
+    {"titulo": "Desescoriar sin exponer a nadie", "detalle": "Olla y fosa secas, zona libre frente a la puerta; ante ebullición, cortar C y reducir O₂."}
+  ],
+  "por_que_importa": "Sin espuma, el arco radia a paredes y bóveda: más kWh/t, paneles dañados y N alto. Con FeO y B2 fuera de rango se pierde hierro, se ataca el refractario y no sale el P. Y la escoria líquida que cae sobre agua o sale en una ebullición violenta mata.",
+  "principio": "Sin olla seca y zona libre, no se desescoria.",
+  "roles": [
+    ["Rol", "Qué hace con la escoria", "RACI"],
+    ["C-07 Ingeniero de Proceso EAF / LF", "Dueño; define programas de O₂/gas/C y la química objetivo de la escoria", "A"],
+    ["S-01 Primer Hornero", "Opera quemadores, lanzas e inyección de C; ajusta con espuma, T y análisis", "R"],
+    ["S-02 Segundo Hornero", "Vigila la puerta y el flujo de escoria; toma muestra; limpia la puerta", "R"],
+    ["S-10 Operador de Manejo de Escoria", "Coloca la olla de escoria seca, la retira llena y la vacía en el patio", "R"],
+    ["S-11 Muestrero / Analista", "Analiza CaO, SiO₂, FeO, MgO y P₂O₅", "C"],
+    ["C-05 Supervisor de Hornos", "Autoriza desviaciones; detiene el desescoriado ante riesgo", "C"]
+  ],
+  "flujo": [
+    {"label": "Quemador", "desc": "Fusión de canasta: O₂:gas ≈ 2:1"},
+    {"label": "Lanza + C", "desc": "Baño plano; C 40–60 kg/min"},
+    {"label": "Fundentes", "desc": "Cal y dolomita con el DRI"},
+    {"label": "¿Espuma?", "desc": "Cubre el arco; panel ≤ 60 °C"},
+    {"label": "Olla seca", "desc": "S-10 la coloca; S-02 confirma"},
+    {"label": "Zona libre", "desc": "Nadie frente a la puerta; bocina"},
+    {"label": "Desescoriar", "desc": "Flujo continuo, sin arrastrar metal"},
+    {"label": "Muestra", "desc": "B2, FeO, MgO → corregir"}
+  ],
+  "flujo_takeaway": "Seca o plana, la escoria se corrige con O₂, C y cal; nunca con carbono en masa sobre escoria oxidada.",
+  "figuras": [
+    {
+      "svg": "eaf-corte-horno.svg",
+      "lectura": [
+        "Las lanzas (14) meten O₂ y el inyector (15) mete C: el CO hace crecer la espuma.",
+        "La escoria espumosa (4) debe cubrir el arco de los electrodos.",
+        "La escoria sale por la puerta (13) a la olla de escoria (17), que debe estar seca."
+      ]
+    },
+    {
+      "svg": "eaf-ciclo-colada.svg",
+      "titulo": "El O₂ se reparte por etapas: 35 Nm³/t en total",
+      "lectura": [
+        "Fusión de canasta: ≈ 8 Nm³/t en modo quemador.",
+        "Baño plano con DRI: la mayor parte del O₂, en modo lanza y con carbono.",
+        "Afino: flujo reducido, según el O activo."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Quemadores/lanzas (4)", "Fundir y espumar", "Hasta 2,500 Nm³/h de O₂ cada uno", "Agua del bloque normal; boquilla libre"],
+    ["Válvulas de O₂ y gas natural", "Regulan los flujos", "Presiones [Validar con OEM]", "Sin fugas; corte rápido probado"],
+    ["Inyectores de carbono", "Inyectan finos de coque/antracita", "8–12 kg/t", "Silo con nivel; sin tapones"],
+    ["Tolvas de cal y dolomita", "Fundentes", "Cal 30–45 kg/t; dolomita 10–15 kg/t", "Material seco"],
+    ["Puerta de escoria", "Salida de escoria y medición", "—", "Umbral libre de costras"],
+    ["Olla de escoria", "Recibe la escoria", "≈ 20 m³ [Supuesto]", "★ Seca, sin agua ni hielo"],
+    ["Fosa bajo la puerta", "Aloja la olla de escoria", "—", "★ Seca, sin charcos ni fugas"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Consumo de O₂", "35 Nm³/t", "30–40 Nm³/t", "> 42 Nm³/t", "Revisar O activo y FeO; reducir"],
+    ["Carbono inyectado", "10 kg/t", "8–12 kg/t", "< 7 o > 14 kg/t", "Ajustar con espuma y FeO"],
+    ["Cal", "38 kg/t", "30–45 kg/t", "< 28 o > 50 kg/t", "Ajustar relación con el DRI"],
+    ["Dolomita", "12 kg/t", "10–15 kg/t", "< 8 kg/t", "MgO bajo: agregar"],
+    ["Basicidad B2", "2.0", "1.8–2.2", "< 1.6 o > 2.5", "< 1.6: más cal; > 2.5: menos"],
+    ["FeO en escoria", "30 %", "25–35 %", "> 38 % o < 20 %", "> 38: más C; < 20: más O₂"],
+    ["MgO en escoria", "9 %", "8–10 %", "< 7 %", "Más dolomita"],
+    ["Cantidad de escoria", "110 kg/t [Supuesto]", "100–130 kg/t", "> 150 kg/t", "Revisar ganga del DRI y cal"]
+  ],
+  "parametros_nota": "Flujo por lanza ≤ 2,500 Nm³/h. Altura de espuma ≥ longitud de arco [Validar con OEM / Ingeniería de Proceso]. P₂O₅ según balance [Validar con Ingeniería de Proceso].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Olla de escoria y fosa secas", "detalle": "S-10 y S-02 confirman olla seca y fosa sin agua antes de cada desescoriado. Si hay agua, no se desescoria (MS-ACE-03)."},
+      {"titulo": "Ebullición violenta", "detalle": "Nunca C en masa sobre escoria oxidada. Ante subida súbita: cortar C, reducir O₂, detener DRI y despejar la puerta."},
+      {"titulo": "Zona de exclusión de la puerta", "detalle": "Roja ≤ 5 m de la puerta, amarilla 5–15 m; ≤ 15 m del volteo de la olla. Solo el portaollas en posición."},
+      {"titulo": "O₂ y CO en la puerta", "detalle": "Ropa sin grasa y corte rápido de O₂. Detector multigás: CO 25 ppm salir, 200 ppm evacuar el sector (MS-ACE-06)."}
+    ],
+    "epp": [
+      "Careta con visor dorado y capucha aluminizada",
+      "Chaqueta, polainas y guantes aluminizados",
+      "Ropa ignífuga y botas metatarsales",
+      "Protección auditiva y detector multigás",
+      "S-10: cabina cerrada; fuera de ella, EPP como S-02"
+    ],
+    "figura": "ms-epp-acería.svg",
+    "figura_titulo": "EPP completo para trabajar en la puerta de escoria",
+    "figura_lectura": [
+      "Careta con visor dorado y capucha aluminizada frente a la puerta.",
+      "Chaquetón, polainas y guantes aluminizados sobre ropa FR; nada sintético.",
+      "Detector personal CO/O₂ cerca de nariz y boca."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["P al vaciado", "≤ 0.015 %", "Muestra (MO-EAF-06)", "P fuera de especificación; fragilidad"],
+    ["Química de escoria", "B2 1.8–2.2 · FeO 25–35 % · MgO 8–10 %", "Muestra en el afino [Supuesto]", "Refractario atacado; pérdida de Fe"],
+    ["O activo al vaciado", "500–900 ppm", "Sonda (MO-EAF-06)", "Más Al en olla e inclusiones"],
+    ["Nitrógeno", "Bajo con espuma estable", "Muestra", "N alto"]
+  ],
+  "calidad_takeaway": "Desescoriar con FeO y B2 en rango y sin T excesiva es lo que baja el P.",
+  "pasos": [
+    {"n": 1, "paso": "Verifica equipos", "como": "Agua de bloques normal; presiones de O₂, gas y aire de transporte de C; silos con nivel", "criterio": "Sin alarmas", "critico": false, "rol": "S-01"},
+    {"n": 2, "paso": "Opera en modo quemador", "como": "Fusión de canasta: O₂:gas ≈ 2:1, 1,500–2,500 Nm³/h", "criterio": "Chatarra frente al quemador fundida", "critico": false, "rol": "S-01"},
+    {"n": 3, "paso": "Cambia a modo lanza", "como": "Con baño plano; lanzas al programa de la etapa", "criterio": "Sin retroceso de llama", "critico": false, "rol": "S-01"},
+    {"n": 4, "paso": "Inicia carbono", "como": "Inyección de 40–60 kg/min total; ajusta según la espuma", "criterio": "Espuma visible", "critico": false, "rol": "S-01"},
+    {"n": 5, "paso": "Agrega fundentes", "como": "Cal y dolomita junto con el DRI (MO-EAF-03)", "criterio": "B2 y MgO en rango", "critico": false, "rol": "S-01"},
+    {"n": 6, "paso": "Verifica la olla de escoria", "como": "S-10 coloca la olla; S-02 confirma olla seca y fosa sin agua", "criterio": "“Olla seca” confirmada", "critico": true, "rol": "S-10 / S-02"},
+    {"n": 7, "paso": "Despeja la zona", "como": "Frente y bajo la puerta sin personas; bocina", "criterio": "Zona libre", "critico": true, "rol": "S-02"},
+    {"n": 8, "paso": "Desescoria", "como": "Inclina hacia la puerta (−3 a −8° [Validar con OEM]); flujo continuo sin arrastrar metal", "criterio": "Flujo controlado", "critico": false, "rol": "S-01"},
+    {"n": 9, "paso": "Toma muestra de escoria", "como": "Con cuchara o probador desde posición protegida, en el afino", "criterio": "Muestra enviada", "critico": false, "rol": "S-02 / S-11"},
+    {"n": 10, "paso": "Corrige la química", "como": "FeO > 38 %: más C y menos O₂; B2 < 1.8: más cal; MgO < 8 %: dolomita", "criterio": "En rango en la siguiente muestra", "critico": false, "rol": "S-01"},
+    {"n": 11, "paso": "Vigila ebullición", "como": "Subida súbita de espuma, llama larga en la puerta, CO alto: aplica condiciones anormales", "criterio": "Sin ebullición", "critico": true, "rol": "S-01 / S-02"},
+    {"n": 12, "paso": "Retira la olla de escoria", "como": "Llena ≤ 80 % [Supuesto]; S-10 la retira por la ruta", "criterio": "Sin derrame", "critico": false, "rol": "S-10"},
+    {"n": 13, "paso": "Registra", "como": "O₂, C, cal, dolomita, análisis de escoria y eventos", "criterio": "Registro completo", "critico": false, "rol": "S-01"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Ebullición violenta (boiling)", "Cortar C, reducir O₂, detener DRI; todos fuera del frente; no inclinar más", "C-05, C-04"],
+    ["Escoria plana, arco ruidoso", "Más C, más cal; bajar tap", "C-07"],
+    ["Escoria seca o espesa", "Más O₂, menos cal; revisar la T", "C-07"],
+    ["Olla húmeda o fosa con agua", "No desescoriar; controlar el nivel con O₂/C; cambiar la olla", "C-05"],
+    ["Escoria con metal (arrastre)", "Reducir la inclinación", "S-01"],
+    ["Retroceso de llama en quemador", "Cortar ese quemador; purgar; mantenimiento", "C-05"],
+    ["Fuga de agua de bloque de quemador", "Cortar O₂ y agua del bloque; aplicar MO-EAF-01 §9", "C-05, Mtto"],
+    ["P > 0.015 % antes de vaciar", "Más desescoriado, cal y O₂; C-05 decide si se vacía", "C-05, C-09"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-01 Primer Hornero", "U", "24 h", "120 h / 50 coladas", "24 meses"],
+      ["S-02 Segundo Hornero", "U", "12 h", "60 h / 30 desescoriados", "24 meses"],
+      ["S-10 Operador de Escoria", "U", "16 h", "60 h / 40 ollas", "24 meses"]
+    ],
+    "checklist": [
+      "Confirma olla de escoria y fosa secas antes de desescoriar",
+      "Despeja la zona frente a la puerta",
+      "Reconoce una ebullición violenta y responde: cortar C, reducir O₂, retirar personas",
+      "Interpreta B2, FeO y MgO y elige la corrección correcta"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Qué forma las burbujas que hacen espumar la escoria?", "opciones": ["Vapor de agua", "CO del C que reduce el FeO", "Argón del tapón poroso"], "correcta": 1, "explicacion": "El O₂ forma FeO; el C inyectado lo reduce y forma CO, que hace crecer la espuma."},
+    {"pregunta": "La escoria corre como agua y el arco suena fuerte. ¿Qué corriges?", "opciones": ["Más O₂ y menos cal", "Más C y más cal", "Nada; es espuma correcta"], "correcta": 1, "explicacion": "FeO alto o B2 baja: más carbono, más cal y bajar tap."},
+    {"pregunta": "¿Cuál es el rango de basicidad B2 (CaO/SiO₂)?", "opciones": ["1.0–1.4", "1.8–2.2", "2.8–3.2"], "correcta": 1, "explicacion": "< 1.6 ataca el refractario y no quita P; > 2.5 da escoria seca, sin espuma."},
+    {"pregunta": "La fosa bajo la puerta tiene un charco. ¿Qué haces?", "opciones": ["Desescoriar rápido", "No desescoriar; nivel con O₂/C", "Cubrir el charco con cal"], "correcta": 1, "explicacion": "Escoria líquida sobre agua = explosión. No se desescoria hasta tener olla y fosa secas."},
+    {"pregunta": "La espuma sube de golpe con llama larga. ¿Qué haces?", "opciones": ["Agregar carbono para bajarla", "Cortar C, reducir O₂ y despejar", "Inclinar más hacia la puerta"], "correcta": 1, "explicacion": "Es el inicio de una ebullición: cortar C, reducir O₂, detener DRI y todos fuera del frente."}
+  ],
+  "reglas": [
+    {"titulo": "Sin olla y fosa secas no se desescoria", "detalle": "Si hay agua, se controla el nivel con O₂/C y se cambia la olla."},
+    {"titulo": "Nadie frente a la puerta", "detalle": "Roja ≤ 5 m mientras sale escoria; solo el portaollas en posición."},
+    {"titulo": "Nunca carbono en masa sobre escoria oxidada", "detalle": "Es la receta de una ebullición violenta."},
+    {"titulo": "Ante ebullición: cortar C y reducir O₂", "detalle": "Detener el DRI, no inclinar más y retirar a todos del frente de la puerta."}
+  ],
+  "por_confirmar": [
+    "Presiones de O₂ y gas, ángulo de desescoriado y altura de espuma con el OEM",
+    "Volumen de olla de escoria, cantidad de escoria, llenado ≤ 80 % y frecuencia de muestra (supuestos)"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de ebullición y escoria sobre agua", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con el corte del horno", "Láminas 3–6"],
+    ["3. Química de la escoria", "90", "B2, FeO, MgO; diagnóstico por observación", "Muestras de escoria, videos"],
+    ["4. Equipos y parámetros", "60", "Programa de O₂ por etapa", "Láminas 7–8"],
+    ["5. Seguridad", "60", "Zona de la puerta; EPP aluminizado completo", "Láminas 9–10, EPP físico"],
+    ["6. Calidad y paso a paso", "75", "Lectura guiada de los 13 pasos; pasos ★", "Láminas 11–13"],
+    ["7. Condiciones anormales", "45", "Simulacro: ebullición y fosa con agua", "Lámina 14"],
+    ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
+    ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

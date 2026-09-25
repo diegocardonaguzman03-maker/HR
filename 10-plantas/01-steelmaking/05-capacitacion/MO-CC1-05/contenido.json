@@ -1,0 +1,214 @@
+{
+  "code": "MO-CC1-05",
+  "title": "Cambio de olla en secuencia",
+  "titulo_corto": "Cambio de olla",
+  "serie": "Operación",
+  "area": "Colada Continua 1 · planchón",
+  "manual": "02-operacion/cc1/MO-CC1-05-cambio-olla-secuencia.md",
+  "manual_version": "0.1 (visto bueno técnico sin observaciones y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Cambiar la olla sin interrumpir la colada, sin pasar escoria y sin bajar el distribuidor de 700 mm",
+  "audiencia": "S-13 Operador de Plataforma · S-09 Grúa de Colada · S-12 Operador de Púlpito · S-14 Ayudante de Colada · C-06",
+  "kpis": [
+    {"value": "16 h", "label": "teoría (S-13)"},
+    {"value": "20", "label": "cambios de olla en OJT"},
+    {"value": "4", "label": "pasos críticos ★"},
+    {"value": "24", "label": "meses de vigencia (TD-P07)"}
+  ],
+  "cadena": [
+    "Olla lista ≥ 10 min",
+    "Distribuidor 1,100 mm",
+    "Cierre por escoria",
+    "Giro ≤ 60 s",
+    "Nueva olla abierta",
+    "Nivel a 1,000 mm"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, cambias la olla sin cortar la secuencia",
+    "roles": "S-13 ejecuta el cambio; C-06 decide lanceo o cierre",
+    "flujo": "La reserva del distribuidor da ≈ 6 min; usa 2",
+    "figura": "De 1,100 a 700 mm hay ≈ 18 t de reserva",
+    "equipos": "Torreta, detector de escoria y grúa deciden el cambio",
+    "parametros": "El nivel del distribuidor dicta la velocidad",
+    "seguridad": "Olla suspendida, giro y lanceo: tres riesgos críticos",
+    "calidad": "La escoria que pasa al distribuidor termina en slivers",
+    "pasos": "Dieciséis pasos; cuatro no admiten error",
+    "anormales": "A 500 mm sin olla abierta, se cierra la secuencia",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del cambio de olla que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Preparar la reserva", "detalle": "Olla siguiente en torreta ≥ 10 min antes del final; distribuidor a 1,100 mm (≈ 45 t) antes de cerrar."},
+    {"titulo": "Cerrar sin escoria", "detalle": "Cerrar la olla al primer signo de escoria o con ≤ 4 t de peso residual (detector o celdas)."},
+    {"titulo": "Girar y abrir a tiempo", "detalle": "Giro de torreta ≤ 60 s con área despejada; cierre → apertura ≤ 2 min; lanceo con tabla nivel–velocidad."},
+    {"titulo": "Proteger la secuencia", "detalle": "Distribuidor ≥ 700 mm; recuperar a 1,000 mm; marcar eventos y planchones de transición."}
+  ],
+  "por_que_importa": "El cambio de olla ocurre en cada colada de la secuencia. Si pasa escoria, el acero sale sucio; si el distribuidor baja de 700 mm, se arrastra flux al molde; si la olla no abre a tiempo, se pierde la secuencia. Y todo pasa con 150 t de acero suspendido y una torreta girando.",
+  "principio": "Nadie bajo la olla ni en el radio de giro; la olla se cierra al primer signo de escoria.",
+  "roles": [
+    ["Rol", "Qué hace en el cambio de olla", "RACI"],
+    ["C-06 Supervisor de Colada Continua", "Coordina el cambio; decide lanceado, reducción de velocidad o cierre", "A"],
+    ["S-13 Operador de Plataforma", "Cierre por escoria, tubo, giro, apertura y nivel del distribuidor", "R"],
+    ["S-09 Operador de Grúa de Colada", "Coloca la olla llena en el brazo libre y retira la vacía", "R"],
+    ["S-12 Operador de Púlpito", "Ajusta la velocidad según el nivel; marca eventos en el tracking", "R"],
+    ["S-14 Ayudante de Colada", "Mantiene el molde (polvo, nivel) durante el cambio", "R"],
+    ["C-07 Ingeniero de Proceso EAF / LF", "Garantiza la llegada a tiempo y la temperatura de envío", "C"],
+    ["C-09 Metalurgista de Producto", "Define la disposición de planchones de transición", "I"]
+  ],
+  "flujo": [
+    {"label": "Olla siguiente", "desc": "≥ 10 min antes; T, peso, grado, arena"},
+    {"label": "Subir nivel", "desc": "Distribuidor a 1,100 mm (≈ 45 t)"},
+    {"label": "Cerrar olla", "desc": "Escoria detectada o ≤ 4 t residuales"},
+    {"label": "Girar torreta", "desc": "Área despejada; manipulador retraído"},
+    {"label": "Tubo protector", "desc": "Junta nueva y seca; argón de sello"},
+    {"label": "Abrir olla", "desc": "Libre en ≤ 2 min o lanceo con tabla"},
+    {"label": "Recuperar nivel", "desc": "1,000 mm; velocidad por tabla SH"},
+    {"label": "Olla vacía fuera", "desc": "S-09 al escorial; nadie bajo la carga"}
+  ],
+  "flujo_takeaway": "A 2.8 t/min, bajar de 1,100 a 700 mm tarda ≈ 6 min; el cambio normal dura ≤ 2 min.",
+  "figuras": [
+    {
+      "svg": "cc1-distribuidor.svg",
+      "lectura": [
+        "1,100 mm ≈ 45 t es el nivel máximo antes de cerrar la olla.",
+        "700 mm ≈ 27 t es el mínimo en el cambio de olla; debajo se baja la velocidad.",
+        "400 mm es el nivel de cierre: debajo se arrastra escoria por vórtice."
+      ]
+    },
+    {
+      "svg": "cc1-perfil-maquina.svg",
+      "titulo": "La torreta de dos brazos permite colar sin parar",
+      "lectura": [
+        "Un brazo cuela mientras el otro recibe la olla siguiente.",
+        "La torreta pesa cada olla: el peso residual avisa el final.",
+        "El tubo protector con sello de argón evita la reoxidación en cada olla."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Torreta de ollas", "Soporta y gira las ollas", "2 brazos; pesaje por brazo; 180°", "Frenos, límites y giro de emergencia"],
+    ["Olla de 150 t", "Contiene el acero", "Válvula deslizante; arena de cromita", "Apertura libre meta ≥ 98 %"],
+    ["Detector de escoria", "Detecta escoria al cierre", "[Validar con OEM — no está en la ficha]", "Señal probada; si no, peso residual"],
+    ["Tubo protector", "Protege el chorro", "Sello de argón; precalentado", "Sin grietas; juntas secas"],
+    ["Lanza de oxígeno", "Abre una olla que no abre libre", "Lanzas secas", "Regulador y manguera inspeccionados"],
+    ["Grúa de colada 250/63 t", "Coloca y retira ollas", "Doble freno; límites redundantes", "★ Inspección pre-uso (MM-GR-01)"],
+    ["Pesaje del distribuidor", "Controla la reserva", "Tabla nivel–peso", "Calibrado"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Anticipación de olla", "≥ 10 min", "10–20 min", "< 5 min", "Avisar; bajar velocidad"],
+    ["Nivel antes de cerrar", "1,100 mm", "1,050–1,150 mm", "> 1,250 mm", "No sobrellenar"],
+    ["Peso residual al cerrar", "3–4 t", "2–5 t", "Escoria en el chorro", "Cerrar de inmediato"],
+    ["Cierre → apertura", "≤ 2 min", "1.5–3 min", "> 3 min", "Tabla de velocidad por nivel"],
+    ["Giro de torreta", "≤ 60 s", "40–60 s", "> 90 s", "Revisar accionamiento"],
+    ["Nivel mínimo en cambio", "≥ 800 mm", "≥ 700 mm", "< 700 mm", "Bajar velocidad (tabla)"],
+    ["T de la olla siguiente", "≈ 1,575–1,590 °C", "Según programa", "Fuera de ± 10 °C", "Tabla SH (MO-CC1-04)"],
+    ["Nivel de molde", "0 mm", "± 3 mm", "± 8 mm", "MO-CC1-04 §9"]
+  ],
+  "parametros_nota": "Tabla nivel–velocidad: 800 mm 0.9; 700 mm 0.6; 600 mm 0.4 m/min; 500 mm sin abrir, cierre. Tabla, giro y T: [Validar con OEM / Ingeniería de Proceso].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Nadie bajo la olla suspendida", "detalle": "≈ 150 t de acero más la olla: nadie bajo ella ni en su trayectoria; doble freno; señalero único (MS-ACE-04)."},
+      {"titulo": "Giro de torreta seguro", "detalle": "Área de giro despejada, manipulador retraído y alarma sonora antes de girar."},
+      {"titulo": "Lanceado controlado", "detalle": "EPP aluminizado completo, lanza seca, posición lateral y vigía."},
+      {"titulo": "Olla con fuga o perforación", "detalle": "Evacuar a ≥ 25 m; olla a posición de emergencia sobre el pote seco; nunca agua (MS-ACE-09)."}
+    ],
+    "epp": [
+      "Careta IR, chamarra y polainas aluminizadas",
+      "Ropa FR, guantes y botas con metatarsal",
+      "Protección auditiva y detector de O₂/CO",
+      "Lanceado: aluminizado completo con capucha"
+    ],
+    "figura": "ms-zonas-exclusion-nave.svg",
+    "figura_titulo": "Bajo la olla suspendida la zona es roja",
+    "figura_lectura": [
+      "La proyección de la olla suspendida ± 5 m queda despejada en cada cambio.",
+      "La zona de giro de la torreta se despeja antes de girar.",
+      "La zona bajo el molde sigue vigente durante todo el cambio."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Paso de escoria de olla", "Cero (cierre al detectar)", "Detector / peso, cada olla", "Inclusiones macro, slivers"],
+    ["Reoxidación en el cambio", "Tubo sellado en ≤ 2 min", "Visual", "Inclusiones de Al₂O₃, clogging"],
+    ["Nivel mínimo del distribuidor", "≥ 700 mm", "Tendencia", "Arrastre de flux o escoria al molde"],
+    ["Planchones de cambio de olla", "Marcados automáticamente", "Tracking en MES", "Inspección especial si hubo lanceo"],
+    ["Planchones de transición", "Modelo de mezcla (1–2) [Validar]", "Tracking + muestra", "Degradar (C-09)"]
+  ],
+  "calidad_takeaway": "Si hubo lanceado o el distribuidor bajó de 700 mm, esos planchones van a inspección especial.",
+  "pasos": [
+    {"n": 1, "paso": "Confirma la olla siguiente", "como": "Grado, peso 145–155 t, T de envío y llegada ≥ 10 min antes del final", "criterio": "Datos en HMI", "critico": false, "rol": "S-12 / S-13"},
+    {"n": 2, "paso": "Recibe la olla", "como": "S-09 baja la olla en el brazo libre; nadie bajo la carga; S-13 confirma el asiento", "criterio": "Asentada; gancho libre", "critico": true, "rol": "S-09 / S-13"},
+    {"n": 3, "paso": "Revisa la olla", "como": "Mecanismo de válvula conectado; arena de sello visible; cilindro acoplado", "criterio": "Lista OK", "critico": false, "rol": "S-13"},
+    {"n": 4, "paso": "Sube el distribuidor", "como": "Aumenta el flujo de la olla en colada hasta 1,100 mm", "criterio": "1,050–1,150 mm", "critico": false, "rol": "S-13"},
+    {"n": 5, "paso": "Vigila el final de la olla", "como": "Peso residual y detector de escoria; observa el chorro si es visible", "criterio": "Señal clara", "critico": false, "rol": "S-13"},
+    {"n": 6, "paso": "Cierra la olla", "como": "Al primer signo de escoria o con ≤ 4 t residuales", "criterio": "Cerrada; hora registrada", "critico": false, "rol": "S-13"},
+    {"n": 7, "paso": "Retira el tubo protector", "como": "Manipulador hacia arriba y afuera; limpia la boca del tubo", "criterio": "Tubo libre", "critico": false, "rol": "S-13"},
+    {"n": 8, "paso": "Gira la torreta", "como": "Alarma; área despejada; manipulador retraído; giro ≤ 60 s", "criterio": "Olla sobre distribuidor", "critico": true, "rol": "S-13"},
+    {"n": 9, "paso": "Coloca el tubo protector", "como": "Junta nueva y seca; argón de sello abierto", "criterio": "Sello sin flama", "critico": false, "rol": "S-13"},
+    {"n": 10, "paso": "Abre la nueva olla", "como": "Apertura total; confirma el flujo", "criterio": "≤ 2 min desde el cierre", "critico": false, "rol": "S-13"},
+    {"n": 11, "paso": "Si no abre: lancea", "como": "Retira el tubo; lancea desde un costado; S-12 aplica la tabla nivel–velocidad", "criterio": "Abre antes de 500 mm", "critico": true, "rol": "S-13 / S-12"},
+    {"n": 12, "paso": "Recupera el nivel", "como": "Sube a 1,000 mm y regresa la velocidad según la tabla SH", "criterio": "900–1,100 mm", "critico": false, "rol": "S-13 / S-12"},
+    {"n": 13, "paso": "Mide la temperatura", "como": "A los 5 min de abrir la nueva olla", "criterio": "SH 20–30 °C", "critico": false, "rol": "S-13"},
+    {"n": 14, "paso": "Marca los eventos", "como": "Cambio de olla, lanceado, nivel mínimo alcanzado, cambio de grado", "criterio": "Eventos en tracking", "critico": false, "rol": "S-12"},
+    {"n": 15, "paso": "Retira la olla vacía", "como": "S-09 la lleva al vaciado de escoria; nadie bajo la carga", "criterio": "Olla fuera", "critico": true, "rol": "S-09"},
+    {"n": 16, "paso": "Registra", "como": "Peso residual, tiempos, nivel mínimo y temperatura", "criterio": "Hoja de colada completa", "critico": false, "rol": "S-13"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Olla siguiente no llega a tiempo", "Baja velocidad (mínimo 0.8 m/min); si no llega, cierre de secuencia", "C-04, C-07"],
+    ["Olla no abre libre", "Lancea; tabla nivel–velocidad; a 500 mm sin abrir: cierre", "C-06"],
+    ["Escoria pasa al distribuidor", "Cierra la olla; marca planchones; revisa escoria del distribuidor", "C-06, C-09"],
+    ["Distribuidor < 700 mm", "Baja a 0.6 m/min; a 600 mm, 0.4 m/min", "C-06"],
+    ["Falla de giro de la torreta", "Giro de emergencia según OEM; si no gira: cierre de secuencia", "C-06, S-19"],
+    ["Olla con fuga o perforación", "★ Evacúa a ≥ 25 m; olla sobre el pote de emergencia seco; nunca agua", "C-04, C-16"],
+    ["T de la nueva olla fuera ± 10 °C", "Ajusta la velocidad con la tabla SH", "C-07, C-08"],
+    ["Flama o aire en la junta del tubo", "Recoloca el tubo con junta nueva", "C-06"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-13 Operador de Plataforma", "U", "16 h", "20 cambios (5 lanceo simulado)", "24 meses"],
+      ["S-09 Grúa de Colada", "U", "Curso grúa de colada (NOM-006)", "Según MS-ACE-04", "12 meses"],
+      ["S-12 Operador de Púlpito", "U", "8 h", "20 cambios", "24 meses"],
+      ["C-06 Supervisor de CC", "O (evaluador)", "8 h + evaluador", "—", "24 meses"]
+    ],
+    "checklist": [
+      "Verifica que nadie esté bajo la olla suspendida ni en el radio de giro",
+      "Cierra la olla al primer signo de escoria",
+      "Gira la torreta con el manipulador retraído y el área despejada",
+      "Lancea con EPP completo y aplica la tabla nivel–velocidad"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿A qué nivel se sube el distribuidor antes de cerrar la olla que termina?", "opciones": ["700 mm", "900 mm", "1,100 mm"], "correcta": 2, "explicacion": "1,100 mm ≈ 45 t da la reserva para el cambio; no pasar de 1,250 mm para evitar rebose de escoria."},
+    {"pregunta": "A 2.8 t/min, ¿cuánto dura la reserva de 1,100 a 700 mm?", "opciones": ["≈ 2 min", "≈ 6 min", "≈ 15 min"], "correcta": 1, "explicacion": "Son ≈ 18 t de reserva: ≈ 6 min. El cambio normal debe durar ≤ 2 min."},
+    {"pregunta": "El distribuidor llega a 700 mm y la olla no abre. ¿Qué velocidad aplicas?", "opciones": ["0.9 m/min", "0.6 m/min", "1.2 m/min"], "correcta": 1, "explicacion": "Tabla nivel–velocidad: 800 mm 0.9; 700 mm 0.6; 600 mm 0.4 m/min; a 500 mm sin abrir, cierre."},
+    {"pregunta": "¿Cuándo se cierra la olla que termina?", "opciones": ["Al vaciarla por completo", "Al primer signo de escoria o ≤ 4 t", "Cuando llega la siguiente"], "correcta": 1, "explicacion": "El detector de escoria o el peso residual de 3–4 t marcan el cierre; la escoria en el chorro se corta de inmediato."},
+    {"pregunta": "¿Por qué no se cuela con el distribuidor debajo de 400 mm?", "opciones": ["Porque se enfría el molde", "Por arrastre de escoria por vórtice", "Porque se tapa el tubo"], "correcta": 1, "explicacion": "A 400 mm se cierra el tapón: el vórtice arrastra escoria del distribuidor al molde."}
+  ],
+  "reglas": [
+    {"titulo": "Nadie bajo la olla ni en el giro", "detalle": "Proyección ± 5 m y zona de giro despejadas en cada cambio."},
+    {"titulo": "Escoria a la vista: olla cerrada", "detalle": "Cierre al primer signo de escoria o con ≤ 4 t residuales."},
+    {"titulo": "Mínimo 700 mm en el cambio", "detalle": "Debajo se baja la velocidad por tabla; a 500 mm sin abrir, cierre."},
+    {"titulo": "Olla perforada: nunca agua", "detalle": "Evacuar a ≥ 25 m y llevar la olla sobre el pote de emergencia seco."}
+  ],
+  "por_confirmar": [
+    "Tabla nivel–peso del distribuidor, tiempos de giro y detector de escoria (no está en la ficha) con el OEM",
+    "Temperatura de llegada de la olla siguiente y número de planchones de transición"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de olla perforada y pérdida de secuencia", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con la torreta y el distribuidor", "Láminas 3–6"],
+    ["3. Equipos y parámetros", "90", "Ejercicio: calcular la reserva y aplicar la tabla", "Láminas 7–8, calculadora"],
+    ["4. Seguridad", "60", "Zonas bajo olla y giro; EPP de lanceado", "Láminas 9–10, EPP físico"],
+    ["5. Calidad y paso a paso", "105", "Lectura guiada de los 16 pasos; pasos ★", "Láminas 11–13"],
+    ["6. Condiciones anormales", "75", "Simulacro de mesa: olla que no abre a 700 mm", "Lámina 14"],
+    ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + preguntas orales", "Lámina 16"],
+    ["8. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

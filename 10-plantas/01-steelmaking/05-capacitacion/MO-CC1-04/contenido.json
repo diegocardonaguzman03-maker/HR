@@ -1,0 +1,220 @@
+{
+  "code": "MO-CC1-04",
+  "title": "Colada en estado estable",
+  "titulo_corto": "Colada en estado estable",
+  "serie": "Operación",
+  "area": "Colada Continua 1 · planchón",
+  "manual": "02-operacion/cc1/MO-CC1-04-colada-estado-estable.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Mantener nivel ± 3 mm, velocidad por sobrecalentamiento y ancho, agua y polvo en rango, y responder bien a cada alarma",
+  "audiencia": "S-12 Operador de Púlpito · S-13 Operador de Plataforma · S-14 Ayudante de Colada · S-11 Muestrero · C-06 · C-08",
+  "kpis": [
+    {"value": "40 h", "label": "teoría (S-12)"},
+    {"value": "240 h", "label": "OJT + simulador de emergencias"},
+    {"value": "2+5", "label": "pasos ★ + respuestas ★ (§9)"},
+    {"value": "24", "label": "meses de vigencia (TD-P07)"}
+  ],
+  "cadena": [
+    "Zona bajo molde libre",
+    "Nivel ± 3 mm",
+    "Velocidad por SH",
+    "Agua y polvo en rango",
+    "Alarma: respuesta",
+    "Registro"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, mantienes la colada estable y segura",
+    "roles": "C-08 fija los parámetros; C-06 decide en el turno",
+    "flujo": "La rutina se repite; la alarma cambia la respuesta",
+    "figura": "El molde forma la cáscara: nivel, agua y polvo mandan",
+    "equipos": "Nivel, agua de molde y BOP sostienen la colada",
+    "parametros": "Nivel, sobrecalentamiento y agua definen la velocidad",
+    "seguridad": "Breakout y agua en el molde: los riesgos que matan",
+    "calidad": "Cada evento de proceso queda marcado en el planchón",
+    "pasos": "Dieciséis pasos de rutina; dos no admiten error",
+    "anormales": "Ante sticker, baja; ante breakout, cierra y evacúa",
+    "competencia": "Certificación nivel U con simulador de emergencias",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de la colada que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Mantener nivel y velocidad", "detalle": "Nivel de molde ± 3 mm; velocidad 0.8–1.6 m/min según la tabla velocidad–SH–ancho; cambios ≤ 0.1 m/min por minuto."},
+    {"titulo": "Cuidar agua, polvo y enfriamiento", "detalle": "Agua de molde ≥ 95 % y ΔT 6–9 °C; capa líquida 8–15 mm; secundario según modelo; enderezado HSLA ≥ 900 °C."},
+    {"titulo": "Responder a sticker y breakout", "detalle": "Sticker: 0.3–0.5 m/min ≥ 30 s y rampa ≤ 0.2. Breakout: tapón, extracción, olla, evacuación y conteo."},
+    {"titulo": "Proteger al personal", "detalle": "Zona de exclusión bajo el molde y segmentos 1–3 toda la colada; agua de emergencia en ≤ 15 s."}
+  ],
+  "por_que_importa": "En estado estable salen ≈ 2.8 t/min de acero (1,300 mm a 1.2 m/min) con una cáscara de solo 15–20 mm a la salida del molde. Un sticker mal atendido termina en breakout; una fuga de agua en el molde, en explosión. Y cada desviación de nivel, agua o temperatura se vuelve un defecto en el planchón.",
+  "principio": "Nadie bajo el molde, y ante agua en el molde o breakout, el tapón se cierra primero.",
+  "roles": [
+    ["Rol", "Qué hace en la colada", "RACI"],
+    ["C-08 Ingeniero de Proceso de CC", "Dueño de tablas de velocidad, agua, oscilación y polvo; analiza BOP", "A"],
+    ["C-06 Supervisor de Colada Continua", "Dirige el turno; decide ante anormales; autoriza acceso bajo el molde", "A (turno)"],
+    ["S-12 Operador de Púlpito", "Velocidad, nivel, enfriamiento, oscilación, BOP, alarmas y registros", "R"],
+    ["S-13 Operador de Plataforma", "Nivel y temperatura del distribuidor, argón, flux, muestras, olla", "R"],
+    ["S-14 Ayudante de Colada", "Polvo de molde, capa líquida, observación del menisco, costras", "R"],
+    ["S-11 Muestrero", "Muestras de producto", "R"],
+    ["S-21 Instrumentista", "Fallas de sensor de nivel, termopares BOP y medidores de agua", "C"],
+    ["C-09 Metalurgista de Producto", "Recibe planchones con eventos para disposición (MO-CC1-09)", "I"]
+  ],
+  "flujo": [
+    {"label": "Zona libre", "desc": "Nadie bajo el molde ni en segmentos 1–3"},
+    {"label": "Revisar HMI", "desc": "Nivel, agua, secundario, BOP, emergencia"},
+    {"label": "Medir SH", "desc": "3 por olla; objetivo 20–30 °C"},
+    {"label": "Ajustar velocidad", "desc": "Tabla velocidad–SH–ancho; máx. 1.6"},
+    {"label": "Distribuidor", "desc": "900–1,100 mm; flux sin ojos de acero"},
+    {"label": "Polvo de molde", "desc": "Capa líquida 8–15 mm; 0.3–0.5 kg/t"},
+    {"label": "Vigilar", "desc": "Agua, secundario, enderezado, tapón"},
+    {"label": "Atender alarma", "desc": "Sticker, nivel, agua, clogging, breakout"},
+    {"label": "Registrar", "desc": "Hoja de colada y eventos por planchón"}
+  ],
+  "flujo_takeaway": "A 1.6 m/min la punta del cráter llega a ≈ 29 m de 32 m de máquina: por eso es la velocidad máxima.",
+  "figuras": [
+    {
+      "svg": "cc1-molde-nivel.svg",
+      "lectura": [
+        "El menisco va ≈ 100 mm bajo el borde; el sensor lo mantiene a ± 3 mm con alarma a ± 8 mm.",
+        "Caras anchas ≈ 4,200 L/min y angostas ≈ 450 L/min; ΔT 6–9 °C, alarma > 11 °C o caudal < 90 %.",
+        "Los termopares BOP en 3 filas detectan el sticker cuando la subida de temperatura se propaga hacia abajo."
+      ]
+    },
+    {
+      "svg": "cc1-perfil-maquina.svg",
+      "titulo": "Diez zonas de agua terminan la solidificación",
+      "lectura": [
+        "Fuera del molde, 10 zonas aire–agua enfrían el planchón: 0.8–1.2 L/kg según el grado.",
+        "Bajo C al Al usa ≈ 1.1 L/kg; HSLA y peritécticos ≈ 0.85 L/kg.",
+        "En el enderezado el HSLA debe llegar a ≥ 900 °C para evitar grietas transversales."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Lazo de nivel", "Mantiene el menisco con el tapón", "Eddy current + PID; ± 3 mm", "Señal estable; calibración vigente"],
+    ["Agua de molde", "Enfría las placas", "≈ 4,200 / 450 L/min; ΔT 6–9 °C", "Caudal y ΔT con alarmas activas"],
+    ["Agua de emergencia", "Respaldo del agua de molde", "Torre + diésel; ≤ 15 s", "★ Estado listo en HMI"],
+    ["Oscilador hidráulico", "Despega la cáscara", "120–200 cpm; carrera 4–8 mm", "Frecuencia y carrera según tabla"],
+    ["Secundario y modelo", "Solidifica el planchón", "10 zonas; 0.8–1.2 L/kg", "Modelo activo; tabla de respaldo"],
+    ["BOP", "Predice stickers", "Termopares en 3 filas", "Termopares con lectura"],
+    ["Polvo de molde", "Aísla, lubrica, absorbe inclusiones", "0.3–0.5 kg/t; capa 8–15 mm", "Tipo por grado; sacos secos"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Nivel de molde", "0 mm", "± 3 mm", "± 8 mm", "Ver pérdida de nivel"],
+    ["Velocidad de colada", "1.2 m/min", "0.8–1.6 m/min", "> 1.6 m/min", "Respetar tabla velocidad–SH"],
+    ["Sobrecalentamiento", "25 °C", "20–30 °C", "< 15 o > 35 °C", "Tabla; > 40: máx. 0.8 m/min"],
+    ["Nivel del distribuidor", "1,000 mm", "900–1,100 mm", "< 900 o > 1,250 mm", "Subir flujo / cerrar olla"],
+    ["Argón de barra tapón", "4–5 NL/min", "3–8 NL/min", "> 8 NL/min", "No exceder: pinholes"],
+    ["Agua de molde", "7.5 °C; 4,200 L/min", "ΔT 6–9 °C; ± 5 %", "ΔT > 11 °C o < 90 %", "Bajar a 0.8 m/min"],
+    ["Capa líquida de polvo", "10–12 mm", "8–15 mm", "< 6 o > 18 mm", "Agregar / reducir polvo"],
+    ["Enderezado (HSLA)", "≥ 920 °C", "≥ 900 °C", "< 880 °C", "Reducir agua Z6–Z8"]
+  ],
+  "parametros_nota": "Con SH < 15 °C no se baja la velocidad: se congela la SEN. Tabla velocidad–SH–ancho, reparto de agua y oscilación: [Validar con OEM / Ingeniería de Proceso].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Zona de exclusión bajo el molde", "detalle": "Permanente bajo el molde y segmentos 1–3; acceso solo con autorización de C-06 y la máquina a velocidad reducida."},
+      {"titulo": "Agua de emergencia ≤ 15 s", "detalle": "Si falla el agua de molde y la emergencia no entra: cierra tapón y olla, detén y evacúa."},
+      {"titulo": "Agua en el molde", "detalle": "Vapor, reventones o gotas en el menisco: cierra el tapón de inmediato, detén, evacúa la plataforma y no reanudes."},
+      {"titulo": "Plataforma de molde", "detalle": "Zona roja ≤ 3 m del molde: solo S-13 y S-14 con aluminizado seco; herramientas y polvo secos."}
+    ],
+    "epp": [
+      "Careta IR, chamarra aluminizada y ropa FR",
+      "Guantes y botas con metatarsal",
+      "Respirador P100 al agregar polvo de molde",
+      "Protección auditiva y detector de O₂/CO",
+      "Hidratación y pausas por estrés térmico"
+    ],
+    "figura": "ms-emergencia-arbol-decision.svg",
+    "figura_titulo": "En una emergencia, primero te proteges y das alarma",
+    "figura_lectura": [
+      "Sal a zona verde o refugio en ≤ 30 s; no regreses por herramientas.",
+      "Da la alarma por botón y radio: lugar, tipo de evento y personas.",
+      "Ante breakout: tapón, extracción, olla, evacuación y conteo de personal."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Nivel de molde", "± 3 mm; eventos > ± 8 mm marcados", "Continuo, nivel 2", "Inclusiones de polvo, grietas"],
+    ["Sobrecalentamiento", "20–30 °C", "3 mediciones por colada", "Segregación central / clogging"],
+    ["Capa líquida y consumo de polvo", "8–15 mm; 0.3–0.5 kg/t", "1 medición y consumo por colada", "Stickers, grietas, depresiones"],
+    ["Simetría de agua de molde", "ΔT 6–9 °C; diferencia ≤ 1.5 °C", "Continuo, nivel 2", "Grietas longitudinales, depresiones"],
+    ["Enderezado (HSLA)", "≥ 900 °C", "Pirómetro continuo", "Grietas transversales y de esquina"],
+    ["Eventos por planchón", "Marcado automático", "Tracking en MES", "Inspección especial (MO-CC1-09)"]
+  ],
+  "calidad_takeaway": "Un planchón con evento de nivel, sticker, SEN o cambio de olla va a inspección especial con C-09.",
+  "pasos": [
+    {"n": 1, "paso": "Verifica la zona de exclusión", "como": "Al inicio del turno y tras cada evento: barreras y nadie bajo el molde", "criterio": "Zona despejada", "critico": true, "rol": "C-06 / S-14"},
+    {"n": 2, "paso": "Revisa el HMI", "como": "Nivel, velocidad, agua de molde, enfriamiento, oscilación, BOP, agua de emergencia lista", "criterio": "Todo en verde", "critico": false, "rol": "S-12"},
+    {"n": 3, "paso": "Mide temperatura", "como": "A los 5 min de abrir cada olla, a mitad y 10 min antes del final", "criterio": "SH 20–30 °C", "critico": false, "rol": "S-13"},
+    {"n": 4, "paso": "Ajusta la velocidad", "como": "Aplica la tabla velocidad–SH–ancho; cambios ≤ 0.1 m/min por minuto", "criterio": "Dentro de tabla", "critico": false, "rol": "S-12"},
+    {"n": 5, "paso": "Cuida el distribuidor", "como": "Nivel 900–1,100 mm con la válvula de la olla; flux siempre cubriendo, sin acero visible", "criterio": "Sin ojos de acero", "critico": false, "rol": "S-13"},
+    {"n": 6, "paso": "Agrega polvo de molde", "como": "Poco y seguido: capa negra uniforme; sin zonas rojas; no tapar la SEN", "criterio": "Superficie negra", "critico": false, "rol": "S-14"},
+    {"n": 7, "paso": "Mide la capa líquida", "como": "Método de alambres a 1/4 del ancho, lado fijo y móvil, lejos de la SEN", "criterio": "8–15 mm", "critico": false, "rol": "S-14"},
+    {"n": 8, "paso": "Retira costras del menisco", "como": "Con herramienta seca, sin perturbar el nivel; solo si el rim > 10 mm", "criterio": "Menisco libre", "critico": false, "rol": "S-14"},
+    {"n": 9, "paso": "Vigila el agua de molde", "como": "Caudal ≥ 95 %, ΔT 6–9 °C, diferencia entre anchas ≤ 1.5 °C", "criterio": "En rango", "critico": false, "rol": "S-12"},
+    {"n": 10, "paso": "Vigila el secundario", "como": "Modelo activo; caudal = consigna ± 5 % por zona; aire 2.5–4 bar", "criterio": "En rango", "critico": false, "rol": "S-12"},
+    {"n": 11, "paso": "Vigila el enderezado (HSLA)", "como": "Pirómetro en el enderezado", "criterio": "≥ 900 °C", "critico": false, "rol": "S-12"},
+    {"n": 12, "paso": "Vigila la posición del tapón", "como": "Tendencia estable ± 5 %; subida sostenida = clogging (MO-CC1-06)", "criterio": "Estable", "critico": false, "rol": "S-12"},
+    {"n": 13, "paso": "Toma la muestra", "como": "A mitad de colada, del distribuidor", "criterio": "Muestra identificada", "critico": false, "rol": "S-11 / S-13"},
+    {"n": 14, "paso": "Atiende las alarmas BOP", "como": "Baja a 0.3–0.5 m/min, mantén ≥ 30 s y recupera con rampa ≤ 0.2 m/min por minuto", "criterio": "Sin breakout", "critico": true, "rol": "S-12"},
+    {"n": 15, "paso": "Varía la inmersión de SEN", "como": "Cada 2 h, ± 10 mm dentro de 120–160 mm [Validar con OEM / Ingeniería de Proceso]", "criterio": "Inmersión en rango", "critico": false, "rol": "S-13"},
+    {"n": 16, "paso": "Ajusta ancho y registra", "como": "Ancho en caliente a ≤ 1.0 m/min y marca transición; registra T, pesos, polvo, capa y eventos", "criterio": "Hoja de colada completa", "critico": false, "rol": "S-12 / S-13"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Alarma BOP de sticker", "★ Baja a 0.3–0.5 m/min ≥ 30 s; rampa ≤ 0.2; sin cambios bruscos", "C-06; C-08 si ≥ 2"],
+    ["Breakout", "★ Tapón, extracción, olla; evacúa y cuenta; nadie se acerca sin C-06", "C-04, C-06, C-16"],
+    ["Pérdida de nivel (± 8 mm)", "Tapón manual a 0.8 m/min; si en 5 min no se recupera, cierre", "C-06, S-21"],
+    ["Rebose del molde", "Cierra el tapón; baja velocidad; si sale acero, evacúa y detén", "C-06, C-04"],
+    ["Clogging (tapón sube > 10 %)", "Argón en pasos de 1 NL/min hasta 8; prepara cambio de SEN", "C-06, C-08, C-07"],
+    ["ΔT > 11 °C o caudal < 90 %", "Baja la velocidad a 0.8 m/min; revisa; avisa a S-21", "C-06, C-12"],
+    ["Falla de agua de molde o apagón", "★ Emergencia ≤ 15 s; si no entra: cierra tapón y olla, detén y evacúa", "C-04, C-06, C-12"],
+    ["Agua en el molde (vapor, gotas)", "★ Cierra el tapón de inmediato; detén; evacúa; no reanudes", "C-04, C-06, C-11"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-12 Operador de Púlpito", "U", "40 h", "240 h + simulador", "24 meses"],
+      ["S-13 Operador de Plataforma", "U", "24 h", "160 h", "24 meses"],
+      ["S-14 Ayudante de Colada", "U", "16 h", "120 h", "24 meses"],
+      ["C-06 Supervisor de CC", "O (evaluador)", "24 h + evaluador", "—", "24 meses"],
+      ["C-08 Ingeniero de Proceso de CC", "O", "40 h", "—", "—"]
+    ],
+    "checklist": [
+      "Mantiene y verifica la zona de exclusión bajo el molde",
+      "Responde a sticker: 0.3–0.5 m/min, espera ≥ 30 s, rampa ≤ 0.2 m/min por minuto",
+      "Responde a breakout en orden: tapón, extracción, olla, evacuación",
+      "Verifica agua de emergencia en ≤ 15 s y sabe qué hacer si no entra",
+      "Ante agua en el molde cierra el tapón de inmediato"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Por qué no se debe colar a más de 1.6 m/min?", "opciones": ["Se gasta más polvo", "El cráter sale de la máquina", "Se sobrecalienta el molde"], "correcta": 1, "explicacion": "A 1.6 m/min la punta del cráter llega a ≈ 29 m de ≈ 32 m de longitud metalúrgica."},
+    {"pregunta": "Salta una alarma BOP de sticker. ¿Qué pasa con la velocidad?", "opciones": ["Sube a 1.6 m/min", "Baja a 0.3–0.5 m/min ≥ 30 s", "Se detiene la máquina"], "correcta": 1, "explicacion": "Se mantiene baja ≥ 30 s o hasta normalizar y se recupera con rampa ≤ 0.2 m/min por minuto."},
+    {"pregunta": "El SH baja a 12 °C. ¿Qué haces con la velocidad?", "opciones": ["No la bajas y avisas a C-08", "La bajas a 0.8 m/min", "Detienes la máquina"], "correcta": 0, "explicacion": "Bajar la velocidad enfría más el distribuidor y congela la SEN; si baja de 10 °C se prepara el cierre."},
+    {"pregunta": "¿Qué indica que la barra tapón suba de forma sostenida más de 10 %?", "opciones": ["Falta argón en la olla", "Clogging de la SEN", "Nivel de molde alto"], "correcta": 1, "explicacion": "Al₂O₃ depositada en la SEN: sube argón en pasos de 1 NL/min hasta 8 y prepara cambio de SEN."},
+    {"pregunta": "Ves gotas y reventones en el menisco. ¿Qué haces primero?", "opciones": ["Agregar polvo", "Cerrar el tapón de inmediato", "Bajar la velocidad a 0.8"], "correcta": 1, "explicacion": "Es agua en el molde: riesgo de explosión. Tapón cerrado, detener, evacuar la plataforma y no reanudar."}
+  ],
+  "reglas": [
+    {"titulo": "Nadie bajo el molde en colada", "detalle": "Zona de exclusión bajo el molde y segmentos 1–3; acceso solo con C-06."},
+    {"titulo": "Agua en el molde: tapón cerrado", "detalle": "Vapor, reventones o gotas: cierra, detén, evacúa y no reanudes."},
+    {"titulo": "Breakout: tapón, extracción, olla", "detalle": "Después evacúa y cuenta; nadie regresa sin autorización de C-06."},
+    {"titulo": "Nunca más de 1.6 m/min", "detalle": "Respeta la tabla velocidad–SH–ancho; con SH < 15 °C no bajes."}
+  ],
+  "por_confirmar": [
+    "Tabla velocidad–SH–ancho, reparto de agua por zona, ley de oscilación y lógica del BOP con el OEM",
+    "Respuesta a falla de oscilación e ingreso de agua de máquina en breakout según OEM"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de breakout y fuga de agua; reglas de oro", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con el molde y el perfil", "Láminas 3–6"],
+    ["3. Equipos y parámetros", "90", "Ejercicio: usar la tabla velocidad–SH–ancho", "Láminas 7–8, tabla impresa"],
+    ["4. Seguridad", "60", "Árbol de decisión de emergencias", "Láminas 9–10"],
+    ["5. Calidad y paso a paso", "105", "Lectura guiada de la rutina; pasos ★", "Láminas 11–13"],
+    ["6. Condiciones anormales", "75", "Simulacro de mesa: sticker, breakout y agua", "Lámina 14"],
+    ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + preguntas orales", "Lámina 16"],
+    ["8. Cierre y ruta a OJT", "30", "Plan de OJT, simulador y certificación", "Lámina 17"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

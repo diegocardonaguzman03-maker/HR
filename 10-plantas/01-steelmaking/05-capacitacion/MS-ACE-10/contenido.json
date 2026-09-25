@@ -1,0 +1,206 @@
+{
+  "code": "MS-ACE-10",
+  "title": "Trabajo en altura: bóveda, plataformas y grúas",
+  "titulo_corto": "Trabajo en altura",
+  "serie": "Seguridad",
+  "area": "Acería · bóveda y plataformas del EAF y LF, torreta, grúas, casa de bolsas, silos",
+  "manual": "04-seguridad/MS-ACE-10-trabajo-en-altura.md",
+  "manual_version": "0.2 (borrador para validación; revisión de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Desde 1.8 m, 100 % conectado a un anclaje de 22.2 kN, con rescate listo en menos de 15 minutos",
+  "audiencia": "Trabajadores autorizados (S-02 · S-03 · S-19 · S-20 · S-22 · S-23 · S-24 · contratistas) · emisores (C-05 · C-06 · C-11 · C-12) · brigada · armadores de andamios",
+  "kpis": [
+    {"value": "8 h", "label": "teoría CRS-03 y torre"},
+    {"value": "1.8 m", "label": "altura que exige protección"},
+    {"value": "8", "label": "pasos críticos ★"},
+    {"value": "< 15", "label": "min para rescatar al suspendido"}
+  ],
+  "cadena": [
+    "Evaluar la tarea",
+    "Permiso y LOTO",
+    "Anclaje ≥ 22.2 kN",
+    "Equipo inspeccionado",
+    "Rescate listo",
+    "100 % conectado"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, subes, trabajas y bajas sin caer",
+    "roles": "El emisor planea; el trabajador nunca se desconecta",
+    "flujo": "Primero se elimina la altura; el arnés va al final",
+    "figura": "Sobre la bóveda se sube con el horno bloqueado",
+    "equipos": "Anclaje certificado y línea resistente al calor",
+    "parametros": "22.2 kN, 1.8 m y 15 min: los números de la altura",
+    "seguridad": "Caída, calor sobre la línea y suspensión: todos matan",
+    "calidad": "Nada se queda olvidado en la bóveda ni en la grúa",
+    "pasos": "Once pasos; ocho no admiten error",
+    "anormales": "Persona suspendida: rescate inmediato, nunca > 15 min",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes de la torre",
+    "cierre": "Reglas de la altura que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Elegir el método", "detalle": "Piso → protección colectiva → restricción → detención de caídas → rescate, en ese orden."},
+    {"titulo": "Conectarte a un anclaje válido", "detalle": "Solo anclajes con placa de ≥ 22.2 kN o líneas de vida certificadas; nunca tuberías ni barandales."},
+    {"titulo": "Calcular la distancia libre", "detalle": "Línea + absorbedor + estatura + 1 m (≈ 6 m con línea de 1.8 m); si no alcanza, retráctil o restricción."},
+    {"titulo": "Rescatar en menos de 15 min", "detalle": "Kit en sitio y rescatista designado antes de iniciar; el trauma por suspensión mata en ese tiempo."}
+  ],
+  "por_que_importa": "Una caída desde la bóveda, la plataforma de electrodos o un pasillo de grúa es una fatalidad; el estándar CRS-03 nace de un caso así en el laminador. Aun con la caída detenida, una persona suspendida puede morir por trauma de suspensión en menos de 15 minutos.",
+  "principio": "Desde 1.8 m, 100 % conectado, con rescate listo antes de subir.",
+  "roles": [
+    ["Rol", "Qué hace en altura", "RACI"],
+    ["C-16 Especialista de Seguridad", "Dueño; inventario de anclajes certificados; aprueba el plan de rescate", "A"],
+    ["Emisor (C-05, C-06, C-11, C-12)", "Emite el permiso; verifica anclaje, equipo, LOTO y rescate", "R"],
+    ["Trabajador autorizado y contratistas", "Inspecciona su equipo; se mantiene 100 % conectado", "R"],
+    ["Supervisor u observador", "Vigila la tarea; activa el rescate de inmediato", "R"],
+    ["Brigada de rescate en altura", "Rescata en < 15 min", "R"],
+    ["Ingeniería / C-14", "Certifica puntos de anclaje y líneas de vida fijas", "R"],
+    ["Almacén", "Controla vida útil, inspección y retiro de arneses", "R"]
+  ],
+  "flujo": [
+    {"label": "¿Desde piso?", "desc": "Si se puede, se hace en piso"},
+    {"label": "¿Barandal?", "desc": "Completo: sin salir de él"},
+    {"label": "Permiso y LOTO", "desc": "Horno, grúa o equipo bloqueado"},
+    {"label": "Anclaje y arnés", "desc": "≥ 22.2 kN; línea para calor"},
+    {"label": "Distancia libre", "desc": "≈ 6 m con línea de 1.8 m"},
+    {"label": "Rescate listo", "desc": "Kit y rescatista; < 15 min"},
+    {"label": "100 % conectado", "desc": "Doble línea al desplazarse"},
+    {"label": "Cerrar", "desc": "Sin objetos olvidados; permiso"}
+  ],
+  "flujo_takeaway": "Si la distancia libre no alcanza o el rescate no está listo, no se sube: se cambia a retráctil o restricción.",
+  "figuras": [
+    {
+      "svg": "ms-loto-puntos-eaf.svg",
+      "lectura": [
+        "Sobre la bóveda o fuera de barandal: LOTO del horno, arco fuera, interruptor abierto.",
+        "La llave cautiva solo vale para el acceso de rutina con barandal completo (MS-ACE-02 §6.4).",
+        "Cerca del horno la línea de conexión es de cable de acero o aramida, nunca nylon."
+      ]
+    },
+    {
+      "svg": "eaf-empalme-electrodo.svg",
+      "titulo": "El empalme de electrodos se hace dentro del barandal",
+      "lectura": [
+        "Método A: desde la plataforma con barandal, con llave cautiva.",
+        "Método B: exige LOTO completo del horno.",
+        "Herramientas amarradas y zona delimitada abajo, radio ≥ 3 m."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Punto de anclaje", "Soporta la fuerza de la caída", "≥ 22.2 kN (5,000 lb) por persona", "Placa; inspección anual [Sup.]"],
+    ["Arnés de cuerpo completo", "Distribuye la fuerza de detención", "Anillo D dorsal; argollas de rescate", "Antes de cada uso"],
+    ["Línea con absorbedor", "Limita la fuerza", "≤ 1.8 m; detención ≤ 6 kN [Verificar]", "Indicador de impacto intacto"],
+    ["Línea resistente al calor", "Cerca de horno, olla, distribuidor", "Cable de acero o aramida; no nylon", "Sin quemaduras ni fibras"],
+    ["Retráctil", "Reduce la caída libre", "Para bordes o poca distancia", "Prueba de bloqueo"],
+    ["Barandal y andamio", "Protección colectiva", "Barandal ≈ 0.90–1.10 m [Verificar]", "Completo; tarjeta verde"],
+    ["Kit de rescate", "Bajar al suspendido", "Descenso controlado; trípode; PEMP", "En el sitio antes de iniciar"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Límite", "Acción"],
+    ["Altura con protección", "—", "≥ 1.8 m o sobre metal", "Aplicar este manual"],
+    ["Anclaje por persona", "≥ 22.2 kN", "< 22.2 kN o sin placa", "No usar; otro anclaje"],
+    ["Caída libre", "≤ 0.6 m", "> 1.8 m", "Reubicar; retráctil"],
+    ["Distancia libre requerida", "≈ 6 m [Supuesto]", "Disponible menor", "Retráctil o restricción"],
+    ["Rescate del suspendido", "≤ 10 min", "≥ 15 min", "No iniciar sin plan"],
+    ["Superficie cerca del horno", "Sin arco ni metal", "> 50 °C [Supuesto]", "Línea para calor; esperar"],
+    ["Viento a la intemperie", "< 30 km/h", "≥ 40 km/h o tormenta", "Suspender"],
+    ["Zona bajo el trabajo", "Delimitada", "Radio ≥ 3 m [Supuesto]", "Detener; despejar"]
+  ],
+  "parametros_nota": "NOM-009-STPS-2011 [Verificar con la NOM vigente / SSO]. Distancia libre ≈ 6 m = 1.8 línea + 1.75 absorbedor + 1.5 trabajador + 1 margen [Supuesto].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Anclaje certificado ≥ 22.2 kN", "detalle": "Con placa o línea de vida certificada. Nunca tuberías, barandales, charolas de cable ni la grúa sin certificar."},
+      {"titulo": "LOTO antes de subir a equipos", "detalle": "Bóveda: arco fuera e interruptor abierto. Pasillo de grúa: barras colectoras bloqueadas y topes a la grúa vecina."},
+      {"titulo": "Línea resistente al calor", "detalle": "Cerca del horno, olla o distribuidor: cable de acero o aramida. El nylon y el poliéster se queman y fallan."},
+      {"titulo": "Rescate en menos de 15 min", "detalle": "Kit en sitio y rescatista designado antes de iniciar; correas de alivio en el arnés contra el trauma por suspensión."}
+    ],
+    "epp": [
+      "Casco con barbiquejo, lentes, guantes y botas",
+      "Ropa FR o algodón",
+      "Arnés de cuerpo completo con línea adecuada",
+      "Cerca del horno: EPP de la zona (MS-ACE-08)"
+    ]
+  },
+  "calidad": [
+    ["Qué se controla", "Criterio", "Cómo y cuándo", "Si falla"],
+    ["Permiso de altura", "Distancia libre y plan de rescate", "Cada trabajo", "Trabajo sin plan"],
+    ["Anclajes y líneas de vida", "Inventario y certificación", "Anual [Supuesto]", "Anclaje no válido"],
+    ["Arneses y líneas", "Inspección formal y retiros", "Cada 6 meses [Supuesto]", "Equipo dañado en uso"],
+    ["Andamios", "Tarjeta verde vigente", "Cada armado", "Colapso"],
+    ["Simulacros de rescate", "Rescate < 15 min", "2 al año por brigada", "Rescate tardío"],
+    ["Cierre del área", "Sin objetos olvidados", "Recorrido de cierre", "Objetos al baño o a la grúa"]
+  ],
+  "calidad_takeaway": "Un objeto olvidado en la bóveda cae al baño o daña la grúa: el cierre se recorre antes de firmar.",
+  "pasos": [
+    {"n": 1, "paso": "Evalúa la tarea", "como": "¿Se puede en piso? ¿Hay barandal completo? Elige: colectiva → restricción → detención", "criterio": "Método definido", "critico": true, "rol": "Emisor"},
+    {"n": 2, "paso": "Emite permiso y LOTO", "como": "Permiso de altura + LOTO del horno, grúa o equipo; llave cautiva solo en acceso de rutina", "criterio": "Permiso y LOTO verificados", "critico": true, "rol": "Emisor"},
+    {"n": 3, "paso": "Identifica el anclaje", "como": "Solo con placa ≥ 22.2 kN o línea de vida certificada; nunca tuberías ni barandales", "criterio": "Anclaje certificado", "critico": true, "rol": "Trabajador"},
+    {"n": 4, "paso": "Inspecciona tu equipo", "como": "Arnés (costuras, hebillas, anillo D, etiqueta), línea (absorbedor, doble seguro), retráctil", "criterio": "Sin defectos", "critico": true, "rol": "Trabajador"},
+    {"n": 5, "paso": "Calcula la distancia libre", "como": "Línea + elongación del absorbedor + estatura + 1 m; compárala con la distancia al piso", "criterio": "Disponible ≥ requerida", "critico": true, "rol": "Emisor"},
+    {"n": 6, "paso": "Prepara el rescate", "como": "Kit de rescate en sitio; rescatista designado; tiempo estimado < 15 min", "criterio": "Rescate listo", "critico": true, "rol": "Emisor/brigada"},
+    {"n": 7, "paso": "Delimita abajo", "como": "Cinta y letrero TRABAJO EN ALTURA — NO PASAR; radio ≥ 3 m", "criterio": "Zona libre", "critico": false, "rol": "Observador"},
+    {"n": 8, "paso": "Sube con 3 puntos de apoyo", "como": "En escaleras, 3 puntos de contacto; herramientas en bolsa o amarradas", "criterio": "Ascenso seguro", "critico": false, "rol": "Trabajador"},
+    {"n": 9, "paso": "Trabaja 100 % conectado", "como": "Al desplazarte usa doble línea: una siempre conectada", "criterio": "Nunca desconectado", "critico": true, "rol": "Trabajador"},
+    {"n": 10, "paso": "Si hay caída, rescata", "como": "El observador activa el rescate de inmediato; el suspendido mueve las piernas y usa las correas", "criterio": "Abajo en < 15 min", "critico": true, "rol": "Observador"},
+    {"n": 11, "paso": "Cierra", "como": "Retira herramientas; revisa que no queden objetos en bóveda o grúa; cierra permiso y LOTO", "criterio": "Área limpia", "critico": false, "rol": "Emisor"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Persona suspendida tras caída", "Rescate inmediato; nunca > 15 min; atención médica aunque se vea bien", "Brigada, médico"],
+    ["Indicador de impacto activado", "Retirar el equipo de servicio", "Almacén, C-16"],
+    ["Anclaje sin placa o dañado", "No usar; reportar", "C-16, C-14"],
+    ["Grúa se mueve con persona en vía", "Alarma y paro de emergencia; revisar el bloqueo", "C-04, C-16"],
+    ["Calor radiante inesperado", "Bajar; revisar LOTO y programa de ollas", "C-04"],
+    ["Viento fuerte o tormenta", "Suspender y bajar", "Emisor"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["Trabajador autorizado", "U", "8 h + torre", "3 tareas", "12 meses"],
+      ["Emisor del permiso", "O", "12 h", "5 permisos con tutor", "12 meses"],
+      ["Rescatista en altura", "O", "16–24 h", "2 simulacros al año", "12 meses"],
+      ["Armador de andamios", "O", "16 h", "5 armados", "12 meses"],
+      ["Contratistas", "U", "8 h (TD-P08)", "1 tarea", "12 meses"]
+    ],
+    "checklist": [
+      "Elige el método y emite el permiso con LOTO; llave cautiva solo en acceso de rutina",
+      "Usa solo anclajes certificados de ≥ 22.2 kN (5,000 lb)",
+      "Inspecciona arnés y línea, y usa línea resistente al calor cerca del horno",
+      "Calcula la distancia libre de caída y confirma rescate < 15 min antes de iniciar",
+      "Permanece 100 % conectado con doble línea al desplazarse",
+      "El observador activa el rescate de inmediato si hay una caída"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Desde qué altura se requiere protección contra caídas?", "opciones": ["1.0 m", "1.8 m", "3.0 m"], "correcta": 1, "explicacion": "Desde 1.8 m (NOM-009) o a cualquier altura sobre metal líquido, fosas o maquinaria."},
+    {"pregunta": "¿Qué resistencia mínima debe tener el anclaje por persona?", "opciones": ["5 kN", "12 kN", "22.2 kN"], "correcta": 2, "explicacion": "≥ 22.2 kN (5,000 lb) por persona, con placa o certificación."},
+    {"pregunta": "Trabajas cerca del horno. ¿Qué línea de conexión usas?", "opciones": ["Nylon", "Poliéster", "Cable de acero o aramida"], "correcta": 2, "explicacion": "El nylon y el poliéster se queman con el calor radiante y fallan en la detención."},
+    {"pregunta": "¿En cuánto tiempo debe bajarse a una persona suspendida?", "opciones": ["< 15 min", "< 1 h", "Al final del turno"], "correcta": 0, "explicacion": "El trauma por suspensión puede matar en ese tiempo: rescate < 15 min."},
+    {"pregunta": "Te desplazas por un pasillo de grúa. ¿Cómo te mantienes conectado?", "opciones": ["Me desconecto un momento", "Con doble línea, una siempre puesta", "Me sujeto al barandal"], "correcta": 1, "explicacion": "100 % conectado: con doble línea, una siempre enganchada a un anclaje certificado."}
+  ],
+  "reglas": [
+    {"titulo": "Desde 1.8 m, 100 % conectado", "detalle": "Doble línea al desplazarte; nunca desconectado."},
+    {"titulo": "Solo anclajes certificados", "detalle": "≥ 22.2 kN con placa; nunca tuberías, barandales ni charolas."},
+    {"titulo": "Sin rescate listo no se sube", "detalle": "Kit en sitio y rescatista designado; persona abajo en < 15 min."},
+    {"titulo": "Sobre equipos, LOTO primero", "detalle": "Bóveda, grúa, torreta: bloqueados antes de subir."}
+  ],
+  "por_confirmar": [
+    "Distancia libre ≈ 6 m, radio de zona de caída ≥ 3 m y viento límite (supuestos)",
+    "Frecuencia de inspección de anclajes y arneses (supuestos)",
+    "Altura de barandal y fuerza del absorbedor con la NOM-009 vigente (SSO)"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Caso de fatalidad del laminador; reglas", "Láminas 1–2"],
+    ["2. Roles y jerarquía de controles", "45", "Del piso al arnés: elegir el método", "Láminas 3–5"],
+    ["3. Bóveda y electrodos", "45", "LOTO frente a llave cautiva en las figuras", "Láminas 6–7"],
+    ["4. Equipos y distancia libre", "90", "Ejercicio: calcular la distancia libre", "Láminas 8–9, arnés"],
+    ["5. Controles y anclajes", "60", "Inspección de arnés, línea y retráctil", "Láminas 10–11, equipo"],
+    ["6. Registros y paso a paso", "60", "Llenado de un permiso de altura", "Láminas 12–14"],
+    ["7. Condiciones anormales", "90", "Práctica en torre: rescate en < 15 min", "Lámina 15, torre"],
+    ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
+    ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {"seguridad": "visto bueno — 2026-09-25"}
+}

@@ -1,0 +1,201 @@
+{
+  "code": "MM-OLL-01",
+  "title": "Cambio de placas de válvula deslizante y tapón poroso; revestimiento y reparación de ollas",
+  "titulo_corto": "Válvula y tapón de ollas",
+  "serie": "Mantenimiento",
+  "area": "Acería · taller de ollas",
+  "manual": "03-mantenimiento/MM-OLL-01-valvula-deslizante-tapon-revestimiento-ollas.md",
+  "manual_version": "0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Cada olla que entra al ciclo abre y cierra seguro, pasa argón y tiene espesor y muñones sanos",
+  "audiencia": "S-24 Refractarista · S-08 Preparador de Ollas · S-09 Grúa de Colada · S-19 / S-22 · personal de reline · C-15",
+  "kpis": [
+    {"value": "24 h", "label": "teoría (S-24 Refractarista)"},
+    {"value": "40 h", "label": "OJT · 10 cambios + 1 reline"},
+    {"value": "10", "label": "pasos críticos ★"},
+    {"value": "24", "label": "meses de vigencia (TD-P07)"}
+  ],
+  "cadena": ["Olla estable", "Energías aisladas", "Placas y resortes", "3 carreras y argón", "Espesor y 1,000 °C", "Tarjeta firmada"],
+  "titulos": {
+    "objetivos": "Al terminar, liberas ollas que cierran y no perforan",
+    "roles": "C-15 decide la reparación; S-08 firma cada olla",
+    "flujo": "Cada olla vacía se inspecciona antes de volver",
+    "figura": "Placas, tapón y línea de escoria deciden la olla",
+    "equipos": "Once componentes; la válvula debe cerrar siempre",
+    "parametros": "Barreno > 10 mm o coraza > 400 °C: fuera de ciclo",
+    "seguridad": "Válvula que no cierra: 150 t de acero en el piso",
+    "calidad": "La colectora mal sellada aspira aire y reoxida",
+    "pasos": "Trece pasos; diez no admiten error",
+    "anormales": "Coraza > 400 °C o grieta en muñón: olla fuera",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de las ollas que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Aislar antes de abrir el marco", "detalle": "Argón desconectado, cilindro retirado, precalentador bloqueado y purgado; candado personal y energía cero."},
+    {"titulo": "Rechazar placas a tiempo", "detalle": "Barreno > 10 mm, surco > 3 mm, sello < 35 mm o grieta hasta el borde: se cambian."},
+    {"titulo": "Probar válvula y tapón", "detalle": "Resortes a fuerza OEM ±10 %, 3 carreras con cierre total y tapón con 100–200 NL/min."},
+    {"titulo": "Liberar solo ollas sanas", "detalle": "Escoria ≥ 50 mm, barril ≥ 40 mm, coraza ≤ 350 °C, END vigente y 1,000–1,100 °C."}
+  ],
+  "por_que_importa": "Una olla perforada o una válvula que no cierra es un derrame de 150 t de acero en la torreta o en el traslado. Un muñón agrietado deja caer la olla llena. Y una colectora o un tapón mal preparados reoxidan el acero y dejan inclusiones.",
+  "principio": "Si la válvula no cierra en la prueba de 3 carreras, la olla no se libera.",
+  "roles": [
+    ["Rol", "Qué hace en la preparación de ollas", "RACI"],
+    ["C-15 Especialista de Refractarios", "Dueño; decide reparación o reline; libera la olla al ciclo", "A"],
+    ["S-24 Refractarista", "Placas, buzas, tapón, reline y reparación intermedia", "R"],
+    ["S-08 Preparador de Ollas", "Inspección posvaciado, limpieza, prueba de válvula y argón", "R"],
+    ["S-09 Operador de Grúa de Colada", "Traslados al taller y volteo", "R"],
+    ["S-19 / S-22", "Mecanismo de la válvula, cilindro, volteador y precalentadores", "R"],
+    ["S-23 Soldador", "Coraza y soportes; no en muñones sin procedimiento aprobado", "R"],
+    ["Inspector END nivel II", "Partículas magnéticas y ultrasonido de muñones", "R"],
+    ["C-16 Especialista de Seguridad", "Espacio confinado, polvo y calor", "C"]
+  ],
+  "flujo": [
+    {"label": "Olla vacía", "desc": "Tras colar en CC; volteo y limpieza"},
+    {"label": "Inspección", "desc": "Placas, colectora, tapón, termoescáner"},
+    {"label": "Placas", "desc": "Fuera de criterio: cambio y colectora"},
+    {"label": "Tapón", "desc": "Sin 100–200 NL/min: limpiar o cambiar"},
+    {"label": "Espesor y coraza", "desc": "Fuera de criterio: reparación o reline"},
+    {"label": "Precalentar", "desc": "1,000–1,100 °C; fría > 4 h: ≥ 8 h"},
+    {"label": "Prueba de válvula", "desc": "3 carreras + arena (MO-OLL-01)"},
+    {"label": "Liberar", "desc": "Tarjeta firmada; recibe C-04"}
+  ],
+  "flujo_takeaway": "Cada colada la olla se vuelve a ganar su lugar en el ciclo: placas, tapón, espesor y temperatura.",
+  "figuras": [
+    {
+      "svg": "olla-corte-valvula-tapon.svg",
+      "lectura": [
+        "La línea de escoria MgO-C es la zona de desgaste crítico; el barril y el fondo son Al₂O₃-MgO-C.",
+        "La válvula deslizante tiene buza superior, placa fija, placa deslizante y buza colectora.",
+        "El tapón poroso inyecta argón; la cara caliente se precalienta a 1,000–1,100 °C."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Placa fija y móvil (2 o 3)", "Abrir, regular y cerrar el chorro", "Barreno típ. Ø 60–75 mm [Validar]", "Dentro de criterio de desgaste"],
+    ["Buza colectora", "Guiar el chorro al tubo protector", "Unida a la placa móvil", "Erosión ≤ 5 mm en el asiento"],
+    ["Mecanismo (marco, resortes, cilindro)", "Apretar placas y deslizar", "Fuerza de resortes OEM", "Carrera completa, sin trabarse"],
+    ["Tapón poroso", "Inyectar argón", "Cambiable desde afuera [Validar]", "100–200 NL/min; residual ≥ 150 mm"],
+    ["Revestimiento de trabajo", "Contener acero y escoria", "MgO-C escoria; Al₂O₃-MgO-C barril", "Escoria ≥ 50 mm; barril ≥ 40 mm"],
+    ["Coraza y muñones", "Soporte e izaje", "Acero estructural", "Sin grietas; END vigente"],
+    ["Precalentador (GN + aire)", "Secar y precalentar", "1,000–1,100 °C cara caliente", "Termopar y flama operando"]
+  ],
+  "parametros": [
+    ["Especificación", "Objetivo", "Tolerancia", "Límite / rechazo", "Frecuencia"],
+    ["Crecimiento del barreno", "≤ 3 mm", "≤ 6 mm", "> 10 mm: cambiar", "Cada colada"],
+    ["Surco en la carrera", "0 mm", "≤ 2 mm", "> 3 mm o 50 % del sello", "Cada colada"],
+    ["Sello remanente", "≥ 50 mm", "≥ 40 mm", "< 35 mm [Validar]", "Cada colada"],
+    ["Fuerza de resortes", "OEM", "±10 %", "< 90 %: cambiar", "Cada cambio de placas"],
+    ["Caudal del tapón", "150–200 NL/min [Sup.]", "100–200 NL/min", "< 100 o sin burbujeo", "Cada colada"],
+    ["Espesor residual", "≥ 80 mm", "Escoria ≥ 50; barril ≥ 40", "Bajo mínimo: fuera", "Semanal por olla"],
+    ["T de coraza", "≤ 300 °C", "≤ 350 °C", "> 350 alarma; > 400 fuera", "Cada colada"],
+    ["Precalentamiento", "1,050 °C", "1,000–1,100 °C", "< 1,000 °C: no enviar", "Cada olla"]
+  ],
+  "parametros_nota": "Vida de placas 2–5 coladas, presión del cilindro ≤ 1.2 × normal, desgaste de muñón ≤ 2 % y espesores: [Validar con OEM / C-15].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "LOTO de GN, argón e hidráulica", "detalle": "Precalentador con candado y purga; argón desconectado; cilindro retirado; volteador con perno. Candado personal (MS-ACE-02)."},
+      {"titulo": "Prueba de energía cero", "detalle": "Encendido del precalentador y movimiento del volteador rechazados; O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL para entrar."},
+      {"titulo": "Reline: espacio confinado", "detalle": "NOM-033, precalentador bloqueado, argón desconectado, O₂ medido abajo, en medio y arriba; ≤ 1 % de lectura LEL para soldar."},
+      {"titulo": "Nadie bajo la olla izada", "detalle": "Zona de ± 5 m de su proyección (MS-ACE-04); refractario nuevo con secado completo y ≥ 1,000 °C antes del acero."}
+    ],
+    "epp": [
+      "Ropa aluminizada en olla caliente",
+      "Careta con visor dorado y guantes aluminizados",
+      "Casco y botas metatarsales",
+      "Respirador P100 en demolición",
+      "Protección auditiva",
+      "Entrada a olla: arnés con línea de rescate y 4 gases"
+    ],
+    "figura": "ms-zonas-exclusion-nave.svg",
+    "figura_titulo": "Olla llena en traslado: zona roja a ± 5 m de la ruta",
+    "figura_lectura": [
+      "Traslado de olla llena: roja en el eje de la ruta ± 5 m; amarilla ± 15 m.",
+      "La fosa de emergencia seca recibe una olla perforada; nunca agua sobre el metal.",
+      "Desde cualquier punto de zona roja se llega a refugio o zona verde en ≤ 30 s."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Apertura libre de la olla", "≥ 98 %", "Cada colada en CC", "Lanceo con O₂: reoxidación, N, clogging"],
+    ["Paso de argón por el tapón", "≥ caudal mínimo", "Cada colada en LF", "S > 0.010 %; inclusiones sin flotar"],
+    ["Sello colectora–tubo protector", "Asiento sin erosión > 5 mm", "Cada cambio", "Aspira aire: reoxidación, Al₂O₃, N"],
+    ["Estado del revestimiento", "Sin desprendimientos", "Visual", "Macro-inclusiones exógenas"],
+    ["Precalentamiento", "1,000–1,100 °C", "Cada olla", "Pérdida de T; buza congelada"]
+  ],
+  "calidad_takeaway": "Una olla bien preparada abre sola en CC; una mal preparada obliga a lancear y reoxida el acero.",
+  "pasos": [
+    {"n": 1, "paso": "Coloca la olla", "como": "Vacía, limpia de escoria, sobre base estable o en volteador con perno", "criterio": "Olla estable", "critico": true, "rol": "S-09, S-08"},
+    {"n": 2, "paso": "Aísla energías", "como": "Argón desconectado, cilindro retirado, precalentador bloqueado y purgado; candado personal; prueba", "criterio": "Energía cero probada", "critico": true, "rol": "S-08, S-24"},
+    {"n": 3, "paso": "Abre el marco", "como": "Libera resortes con la herramienta OEM, nunca a golpes", "criterio": "Resortes descargados", "critico": true, "rol": "S-24"},
+    {"n": 4, "paso": "Retira placas y colectora", "como": "Limpia asientos del marco; revisa la buza interna con lámpara", "criterio": "Buza interna sin grieta", "critico": false, "rol": "S-24"},
+    {"n": 5, "paso": "Mide las placas retiradas", "como": "Barreno, surco y grietas contra la tabla de criterios", "criterio": "Desgaste registrado", "critico": false, "rol": "S-24"},
+    {"n": 6, "paso": "Coloca placas nuevas", "como": "Verifica lote y planitud; mortero ≤ 1 mm; orientación correcta", "criterio": "Placas asentadas", "critico": true, "rol": "S-24"},
+    {"n": 7, "paso": "Cierra el marco", "como": "Aprieta resortes a la fuerza OEM; verifica con el dispositivo", "criterio": "Fuerza ±10 %", "critico": true, "rol": "S-24"},
+    {"n": 8, "paso": "Prueba de carrera", "como": "Conecta el cilindro; abre y cierra 3 veces; presión ≤ 1.2 × normal", "criterio": "Carrera y cierre total", "critico": true, "rol": "S-08"},
+    {"n": 9, "paso": "Revisa el tapón", "como": "Conecta argón; prueba el caudal a la presión de prueba OEM", "criterio": "100–200 NL/min", "critico": false, "rol": "S-08"},
+    {"n": 10, "paso": "Cambia el tapón si aplica", "como": "Retira desde afuera con extractor; limpia asiento; coloca con mortero; prueba caudal", "criterio": "Caudal ≥ mínimo, sin fuga", "critico": true, "rol": "S-24"},
+    {"n": 11, "paso": "Revisa espesor y coraza", "como": "Registro de la última colada y termoescáner; medición si toca", "criterio": "≥ 50 / 40 mm; ≤ 350 °C", "critico": true, "rol": "S-08, C-15"},
+    {"n": 12, "paso": "Precalienta", "como": "1,000–1,100 °C; si estuvo fría más de 4 h, al menos 8 h", "criterio": "Temperatura alcanzada", "critico": true, "rol": "S-08"},
+    {"n": 13, "paso": "Libera", "como": "Tarjeta de olla firmada (placas, tapón, espesor, temperatura) y recibida por C-04", "criterio": "Tarjeta firmada", "critico": true, "rol": "S-08, C-15"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Válvula no cierra en CC", "Desviar a olla de emergencia o fosa seca; evacuar a ≥ 25 m; nunca agua", "C-06, C-04"],
+    ["Fuga de acero entre placas", "Cerrar si es posible; retirar la olla", "C-06, C-15"],
+    ["Coraza > 400 °C", "Retirar de ciclo; vaciar si está llena", "C-04, C-15"],
+    ["Tapón sin paso de argón", "Lanceo desde adentro (olla vacía y caliente) o cambio", "C-07, C-15"],
+    ["Olla no alcanza 1,000 °C", "Revisar precalentador, GN y termopar; no enviar", "S-19, C-04"],
+    ["Indicación en END de muñón", "Olla fuera de servicio hasta evaluación de ingeniería", "C-10, C-11"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-24 Refractarista", "U", "24 h", "40 h / 10 placas + 1 reline", "24 meses; confinado 12"],
+      ["S-08 Preparador de Ollas", "U", "16 h", "40 h / 20 ollas", "24 meses"],
+      ["Personal de reline", "U", "NOM-033 (8 h) + NOM-015", "Simulacro de rescate", "12 meses"],
+      ["S-09 Grúa de Colada", "U", "NOM-006", "10 traslados y volteos", "12 meses"],
+      ["Inspector END", "Nivel II", "Externo (ASNT/ISO 9712)", "—", "Según certificación"]
+    ],
+    "checklist": [
+      "Asegura la olla en base o volteador con perno y aísla energías con candado personal",
+      "Abre el marco con la herramienta OEM y rechaza placas fuera de criterio",
+      "Verifica fuerza de resortes y 3 carreras con cierre total",
+      "Prueba el tapón con caudal y sin fuga en el asiento",
+      "Revisa espesor y termoescáner; precalienta ≥ 1,000 °C (fría > 4 h: ≥ 8 h)",
+      "Firma la tarjeta de olla; en reline mide gases y desconecta argón antes de entrar"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Con qué crecimiento del barreno se cambian las placas?", "opciones": ["> 3 mm", "> 10 mm", "> 20 mm"], "correcta": 1, "explicacion": "Objetivo ≤ 3 mm, tolerancia ≤ 6 mm; arriba de 10 mm sobre el nominal se cambian."},
+    {"pregunta": "¿Cuántas carreras se prueban antes de liberar la válvula?", "opciones": ["1", "3", "10"], "correcta": 1, "explicacion": "Tres aperturas y cierres con carrera completa, cierre total y presión ≤ 1.2 × normal."},
+    {"pregunta": "El termoescáner marca 410 °C en la coraza. ¿Qué haces?", "opciones": ["Liberar y vigilar", "Retirar de ciclo", "Enfriar con agua"], "correcta": 1, "explicacion": "Más de 400 °C: la olla sale de ciclo (se vacía si está llena). Alarma desde 350 °C."},
+    {"pregunta": "Una olla estuvo fría 6 h. ¿Cuánto se precalienta como mínimo?", "opciones": ["2 h", "4 h", "8 h"], "correcta": 2, "explicacion": "Olla fría más de 4 h: al menos 8 h de precalentamiento hasta 1,000–1,100 °C."},
+    {"pregunta": "¿Qué pasa si el END encuentra una grieta en un muñón?", "opciones": ["Se suelda en el turno", "Olla fuera hasta evaluación", "Se usa con carga reducida"], "correcta": 1, "explicacion": "Cualquier grieta retira la olla: un muñón roto deja caer 150 t de acero."}
+  ],
+  "reglas": [
+    {"titulo": "Sin 3 carreras con cierre total no sale", "detalle": "La válvula debe abrir y cerrar completa antes de liberar."},
+    {"titulo": "Coraza > 400 °C: fuera de ciclo", "detalle": "Escoria < 50 mm o barril < 40 mm también retiran la olla."},
+    {"titulo": "Muñón con grieta: olla fuera", "detalle": "END anual y tras cualquier golpe; nadie bajo una olla izada."},
+    {"titulo": "Sin LOTO y energía cero no se abre", "detalle": "GN, argón, cilindro y volteador aislados con candado personal."}
+  ],
+  "por_confirmar": [
+    "Barreno nominal, sello mínimo, fuerza de resortes y vida de placas con el OEM",
+    "Caudal objetivo del tapón 150–200 NL/min y espesores residuales (supuestos)",
+    "Intervalo de reparación intermedia (≈ 30–40 coladas) y desgaste de muñón"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de derrame por válvula y perforación", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con el corte de la olla", "Láminas 3–6"],
+    ["3. Equipos y especificaciones", "90", "Ejercicio: rechazar placas usadas con la tabla", "Láminas 7–8, placas usadas"],
+    ["4. Seguridad, LOTO y energía cero", "75", "Aislamiento de GN, argón y cilindro; confinado", "Láminas 9–10, candados"],
+    ["5. Calidad y paso a paso", "90", "Lectura guiada de los 13 pasos; pasos ★", "Láminas 11–13"],
+    ["6. Práctica en estación de ollas", "60", "Marco, resortes y prueba de carrera", "Olla fuera de ciclo en taller"],
+    ["7. Condiciones anormales", "45", "Simulacro de mesa: válvula que no cierra", "Lámina 14"],
+    ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
+    ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {}
+}

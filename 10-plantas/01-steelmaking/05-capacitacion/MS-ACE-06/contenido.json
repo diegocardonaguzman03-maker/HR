@@ -1,0 +1,211 @@
+{
+  "code": "MS-ACE-06",
+  "title": "Gases: CO, enriquecimiento de O₂, argón y N₂, gas natural",
+  "titulo_corto": "Gases de la Acería",
+  "serie": "Seguridad",
+  "area": "Acería · EAF, LF, ollas, CC1, CC2, redes de gases y patio",
+  "manual": "04-seguridad/MS-ACE-06-gases-co-o2-argon-gas-natural.md",
+  "manual_version": "0.2 (borrador para validación; revisión de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Tu detector es tu nariz: pórtalo encendido, probado y a ≤ 30 cm de la boca, y obedece sus alarmas",
+  "audiencia": "Todo el personal de nave · S-01 · S-06 · S-12 · S-08 · S-15 · S-16 · S-21 · C-04 · C-16",
+  "kpis": [
+    {"value": "4 h", "label": "teoría (todo el personal)"},
+    {"value": "25", "label": "ppm de CO: sal del área"},
+    {"value": "8", "label": "pasos críticos ★"},
+    {"value": "12", "label": "meses de vigencia (personal)"}
+  ],
+  "cadena": [
+    "Bump test",
+    "Detector bien puesto",
+    "Horno en depresión",
+    "A1: salir",
+    "A2: evacuar sector",
+    "Reingreso medido"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, reconoces la alarma y sales a tiempo",
+    "roles": "Cada persona porta su detector; C-04 evacúa el sector",
+    "flujo": "La alarma decide: A1 sales tú, A2 sale el sector",
+    "figura": "Con fuga de gas: sal contra el viento, sin chispas",
+    "equipos": "Detector probado cada día; fijos y ESD cada mes",
+    "parametros": "25 y 200 ppm, 19.5–23.5 % y 10/20 % LEL mandan",
+    "seguridad": "Gases que no se ven ni se huelen: el detector avisa",
+    "calidad": "Detector descargado: cada pico de CO se investiga",
+    "pasos": "Diez pasos; ocho no admiten error",
+    "anormales": "Mareo sin alarma también es señal: sal a aire limpio",
+    "competencia": "Certificación nivel L para todo el personal de nave",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de los gases que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Reconocer los cinco gases", "detalle": "CO se mezcla; argón se acumula abajo; gas natural e H₂ suben; O₂ alto hace arder la ropa."},
+    {"titulo": "Portar y probar el detector", "detalle": "Bump test diario, batería ≥ 12 h, calibración vigente; encendido a ≤ 30 cm de la nariz y la boca."},
+    {"titulo": "Responder a la alarma", "detalle": "A1 (CO 25 ppm, O₂ fuera de 19.5–23.5 %, 10 % LEL): sal. A2 (CO 200 ppm, 20 % LEL): evacuación del sector."},
+    {"titulo": "No rescatar sin ERA", "detalle": "Si alguien cae en zona con gas: alarma y esperar a la brigada; reingreso solo con medición de C-16."}
+  ],
+  "por_que_importa": "Ninguno de estos gases se ve y casi ninguno se huele. El CO a 1,600 ppm mata en menos de 2 h; el argón desplaza el oxígeno sin aviso; el O₂ alto hace que la ropa arda con violencia; el gas natural explota. El detector personal es la única forma de saberlo a tiempo.",
+  "principio": "Porta tu detector y obedécelo.",
+  "roles": [
+    ["Rol", "Qué hace con los gases", "RACI"],
+    ["C-16 Especialista de Seguridad", "Dueño; mapa de detectores fijos; límites de alarma; NOM-010", "A"],
+    ["C-04 Jefe de Turno", "Ordena evacuaciones de sector; coordina la respuesta", "R"],
+    ["C-12 / S-21 Instrumentista", "Mantiene y calibra detectores fijos y portátiles", "R"],
+    ["S-01, S-06, S-12 Púlpitos", "Vigilan detectores fijos y cortan el suministro de gas", "R"],
+    ["S-16 Operador de Corte", "Oxicorte sin fugas; revisa mangueras", "R"],
+    ["Todo el personal de nave", "Porta detector personal probado; obedece las alarmas", "R"],
+    ["C-07 / C-08 Ingenieros de Proceso", "Ajustes que reducen emisiones (horno −5 a −15 Pa)", "C"]
+  ],
+  "flujo": [
+    {"label": "Bump test", "desc": "Batería ≥ 12 h; calibración vigente"},
+    {"label": "Portar", "desc": "Autocero en aire limpio; ≤ 30 cm"},
+    {"label": "Vigilar", "desc": "Fijos en HMI; horno −5 a −15 Pa"},
+    {"label": "A1", "desc": "Sal a verde; avisa lugar y lectura"},
+    {"label": "A2", "desc": "C-04 evacúa el sector; corte ESD"},
+    {"label": "Sin ERA no", "desc": "Alarma y espera a la brigada"},
+    {"label": "Reingreso", "desc": "CO < 25 ppm, O₂ OK, < 10 % LEL"},
+    {"label": "Entregar", "desc": "Descarga de picos y carga"}
+  ],
+  "flujo_takeaway": "Con 10 % LEL no se opera ningún interruptor: el gas se corta desde la válvula remota.",
+  "figuras": [
+    {
+      "svg": "ms-emergencia-arbol-decision.svg",
+      "lectura": [
+        "Rama E: CO ≥ 25 ppm sal; CO ≥ 200 ppm evacúa el sector.",
+        "O₂ < 19.5 % o > 23.5 %: no entres y sal contra el viento por la ruta.",
+        "Sin chispas: corta el gas con la válvula remota, no con interruptores.",
+        "Reingreso solo de la brigada con ERA y medición continua."
+      ]
+    },
+    {
+      "svg": "lf-horno-olla.svg",
+      "titulo": "En el LF el argón puede acumularse bajo la plataforma",
+      "lectura": [
+        "La agitación fuerte usa 400–600 NL/min de argón.",
+        "El argón pesa 1.38 veces el aire: se acumula en fosas y sótanos.",
+        "Una fuga en conexiones se aísla y se mide O₂ en la zona."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Detector personal multigás", "Protección individual", "O₂, CO, LEL, H₂S; alarmas A1/A2", "Bump test diario"],
+    ["Detectores fijos de CO", "Plataformas, torreta, casa de bolsas", "Sirena y luz local y en púlpito", "Prueba con gas mensual [Supuesto]"],
+    ["Detectores fijos de O₂", "Estaciones de Ar/N₂/O₂, fosas, LF", "Alarma < 19.5 % y > 23.5 %", "Prueba mensual [Supuesto]"],
+    ["Detectores fijos de LEL", "Gas natural, precalentadores", "10 % y 20 % LEL; corte a 20 %", "Prueba mensual"],
+    ["Válvulas ESD de GN y O₂", "Corte remoto del suministro", "Cierre ≤ 5 s [Validar con OEM]", "Prueba trimestral [Supuesto]"],
+    ["Arrestaflamas y antirretorno", "Oxicorte y precalentadores", "En cada línea", "Inspección mensual"],
+    ["ERA", "Rescate y reingreso", "≥ 30 min", "Presión ≥ 90 %"]
+  ],
+  "parametros": [
+    ["Gas", "A1: acción individual", "A2: acción de sector", "Referencia"],
+    ["CO", "25 ppm: sal", "200 ppm: evacuar sector", "NOM-010 [Verificar]"],
+    ["O₂ bajo", "< 19.5 %: sal", "Fijo < 19.5 %: evacuar", "NOM-033"],
+    ["O₂ alto", "> 23.5 %: sal, sin chispas", "Fijo: aislar O₂, evacuar", "NOM-033"],
+    ["Gas natural / H₂", "10 % LEL: sal, corta gas", "20 % LEL: evacuar, corte", "NOM-033"],
+    ["Confinado: entrada", "< 10 % LEL", "Caliente: ≤ 1 % lectura", "MS-ACE-05"],
+    ["Presión del horno", "−5 a −15 Pa", "> 0 Pa: alejar personal", "FT-ACE-001"],
+    ["Reingreso", "CO < 25 ppm", "O₂ OK y < 10 % LEL", "Mide C-16"]
+  ],
+  "parametros_nota": "CO: IDLH 1,200 ppm (NIOSH); 200 ppm = techo NIOSH. Todos los valores normativos [Verificar con la NOM vigente / SSO].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Detector personal probado y bien puesto", "detalle": "Bump test diario; encendido en aire limpio; a ≤ 30 cm de nariz y boca, sin cubrir con ropa."},
+      {"titulo": "Horno en depresión", "detalle": "DES en operación y presión −5 a −15 Pa. Si es positiva: reducir O₂ y potencia y alejar al personal de la puerta."},
+      {"titulo": "Corte remoto y arrestaflamas", "detalle": "Válvulas ESD de gas natural y O₂; arrestaflamas y antirretorno en oxicorte y precalentadores."},
+      {"titulo": "Rescate solo con ERA", "detalle": "Nadie entra a una zona con gas sin ERA. Alarma, esperar a la brigada; reingreso con medición de C-16."}
+    ],
+    "epp": [
+      "Detector multigás encendido a ≤ 30 cm de la boca",
+      "Ropa sin grasa ni aceite cerca de O₂",
+      "Prohibido soplar la ropa con oxígeno",
+      "Respirador P100 para humos según evaluación",
+      "ERA solo para brigada en rescate y reingreso"
+    ],
+    "figura": "ms-epp-acería.svg",
+    "figura_titulo": "El detector solo protege en la zona respiratoria",
+    "figura_lectura": [
+      "El detector va a ≤ 30 cm de la nariz y la boca.",
+      "Cubierto por la ropa o en la cintura lee tarde.",
+      "Es obligatorio en hornos, LF, torreta, fosas y casa de bolsas."
+    ]
+  },
+  "calidad": [
+    ["Qué se controla", "Criterio", "Cómo y cuándo", "Si falla"],
+    ["Bump test y calibración", "Pasa; calibración vigente", "Diario; registro", "Detector fuera de uso"],
+    ["Descarga de detectores", "Picos > 25 ppm CO investigados", "Al entregar el detector", "Exposición sin atender"],
+    ["Detectores fijos", "Mapa y prueba mensual", "C-16 / S-21", "Zona sin detección"],
+    ["Válvulas ESD", "Cierre probado", "Trimestral [Supuesto]", "Fuga sin corte"],
+    ["Evaluación NOM-010", "Agentes químicos y exámenes", "C-16 y servicio médico", "Exposición crónica"],
+    ["Sello de argón en CC", "Sin entrada de aire", "Continuo en HMI", "Reoxidación, N₂ alto"]
+  ],
+  "calidad_takeaway": "Cada pico de CO sobre 25 ppm en un detector personal se investiga hasta encontrar la fuente.",
+  "pasos": [
+    {"n": 1, "paso": "Recoge y prueba tu detector", "como": "Bump test en la estación; batería ≥ 12 h y fecha de calibración vigente", "criterio": "Pasa la prueba", "critico": true, "rol": "Todos"},
+    {"n": 2, "paso": "Pórtalo bien", "como": "Enciéndelo en aire limpio (autocero); a ≤ 30 cm de nariz y boca, sin cubrirlo", "criterio": "Visible y encendido", "critico": true, "rol": "Todos"},
+    {"n": 3, "paso": "Revisa fijos en HMI", "como": "Al inicio del turno: sin fallas ni alarmas activas", "criterio": "Todos en línea", "critico": false, "rol": "Púlpitos"},
+    {"n": 4, "paso": "Vigila la presión del horno", "como": "−5 a −15 Pa; si es positiva, aleja al personal de la puerta y de la bóveda", "criterio": "Presión negativa", "critico": true, "rol": "S-01"},
+    {"n": 5, "paso": "Responde a A1", "como": "CO 25 ppm, O₂ fuera de 19.5–23.5 % o 10 % LEL: sal a verde; avisa lugar y lectura", "criterio": "Salida inmediata", "critico": true, "rol": "Todos"},
+    {"n": 6, "paso": "Responde a A2", "como": "CO 200 ppm, 20 % LEL o alarma de fijo: C-04 evacúa el sector y corta el gas por ESD", "criterio": "Sector evacuado", "critico": true, "rol": "C-04, púlpitos"},
+    {"n": 7, "paso": "No rescates sin ERA", "como": "Si alguien cae en zona con gas: alarma, no entres, espera a la brigada", "criterio": "Sin víctimas adicionales", "critico": true, "rol": "Todos"},
+    {"n": 8, "paso": "Reingresa con medición", "como": "C-16 o brigada con ERA mide: CO < 25 ppm, O₂ 19.5–23.5 %, < 10 % LEL; caliente ≤ 1 %", "criterio": "Lecturas registradas", "critico": true, "rol": "C-16"},
+    {"n": 9, "paso": "Revisa oxicorte", "como": "Mangueras, arrestaflamas y antirretorno antes de encender; secuencia OEM; agua jabonosa en frío", "criterio": "Sin fugas", "critico": true, "rol": "S-16/S-15/S-08"},
+    {"n": 10, "paso": "Entrega el detector", "como": "Descarga los datos de picos de exposición y ponlo a cargar", "criterio": "Datos registrados", "critico": false, "rol": "Todos"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Dolor de cabeza o mareo sin alarma", "Sal a aire limpio; servicio médico; revisa el detector", "C-04, médico"],
+    ["Persona inconsciente en LF o fosa", "Alarma; no entres sin ERA; brigada", "C-04"],
+    ["Llama o chispas anormales en ropa", "Aléjate; sin ignición; aísla O₂", "C-04"],
+    ["Olor a gas o sonido de fuga", "Sal; no operes interruptores; ESD", "C-04"],
+    ["Detector fijo en falla", "Detector portátil en la zona hasta su reparación", "S-21"],
+    ["Presión positiva del horno", "Reduce O₂ y potencia; evacúa la plataforma", "C-05, C-12"]
+  ],
+  "competencia": {
+    "iluo": "L",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["Todo el personal de nave", "L", "4 h", "Demostración", "12 meses"],
+      ["S-01, S-06, S-12 Púlpitos", "U", "6 h", "5 eventos o simulador", "24 meses"],
+      ["S-08, S-15, S-16 Oxicorte", "U", "6 h", "10 encendidos", "24 meses"],
+      ["S-21 Detectores", "O", "16 h", "10 calibraciones", "24 meses"],
+      ["C-04, C-16", "O", "8 h", "Simulacro", "24 meses"]
+    ],
+    "checklist": [
+      "Hace el bump test y porta el detector en la zona respiratoria",
+      "Explica las alarmas CO 25/200 ppm, O₂ 19.5/23.5 %, 10/20 % LEL y su acción",
+      "Sabe que el argón no se huele y se acumula abajo",
+      "Se niega a rescatar sin ERA y activa la alarma",
+      "Revisa arrestaflamas, antirretornos y mangueras antes de encender oxicorte",
+      "En púlpito vigila la presión del horno y aleja al personal si es positiva"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "Tu detector marca CO 25 ppm. ¿Qué haces?", "opciones": ["Sigo trabajando", "Salgo a zona verde y aviso", "Apago el detector"], "correcta": 1, "explicacion": "A1: CO 25 ppm, sal a aire limpio y avisa. No reingreses hasta < 25 ppm."},
+    {"pregunta": "¿Con qué lectura de CO C-04 evacúa el sector?", "opciones": ["50 ppm", "200 ppm", "1,200 ppm"], "correcta": 1, "explicacion": "A2: 200 ppm (techo NIOSH), evacuación del sector; solo brigada con ERA."},
+    {"pregunta": "¿Dónde se acumula el argón?", "opciones": ["Arriba, en el techo", "Abajo: fosas y sótanos", "Se mezcla igual"], "correcta": 1, "explicacion": "Densidad 1.38: baja y desplaza el O₂ sin olor ni aviso."},
+    {"pregunta": "Hueles gas natural cerca de un precalentador. ¿Qué NO haces?", "opciones": ["Salir del área", "Operar un interruptor", "Avisar a C-04"], "correcta": 1, "explicacion": "Un interruptor puede ser la chispa. Sal, avisa y corta el gas con la válvula ESD."},
+    {"pregunta": "¿A qué distancia de la nariz y la boca va el detector personal?", "opciones": ["≤ 30 cm", "En la cintura", "En el casco trasero"], "correcta": 0, "explicacion": "En la zona respiratoria, ≤ 30 cm y sin cubrir con ropa, para leer lo que respiras."}
+  ],
+  "reglas": [
+    {"titulo": "Porta tu detector y obedécelo", "detalle": "Probado, encendido y en la zona respiratoria todo el turno."},
+    {"titulo": "A1 sales tú; A2 sale el sector", "detalle": "CO 25/200 ppm; O₂ 19.5–23.5 %; gas natural 10/20 % LEL."},
+    {"titulo": "Nunca rescates sin ERA", "detalle": "Alarma y brigada. Un rescate improvisado multiplica las víctimas."},
+    {"titulo": "Nunca soples la ropa con oxígeno", "detalle": "La ropa enriquecida con O₂ arde con violencia."}
+  ],
+  "por_confirmar": [
+    "Umbrales CO 25/200 ppm con NOM-010 vigente (alternativa conservadora: 50 ppm para sector)",
+    "Frecuencia de prueba de detectores fijos y de válvulas ESD; cierre ≤ 5 s (OEM)",
+    "Calibración de detectores portátiles según fabricante"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "20", "Casos de intoxicación y asfixia; reglas", "Láminas 1–2"],
+    ["2. Los cinco gases y dónde están", "40", "Mapa de gases en la nave; densidades", "Láminas 3–7"],
+    ["3. Detector y límites", "50", "Práctica: bump test y colocación del detector", "Láminas 8–9, detector"],
+    ["4. Controles y EPP", "30", "Presión del horno y corte ESD", "Láminas 10–11"],
+    ["5. Paso a paso y anormales", "50", "Simulacro de mesa: alarma A1 y A2", "Láminas 12–15"],
+    ["6. Evaluación teórica", "35", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
+    ["7. Cierre y demostración", "15", "Plan de demostración práctica", "Lámina 17"]
+  ],
+  "validacion": {"seguridad": "visto bueno — 2026-09-25"}
+}

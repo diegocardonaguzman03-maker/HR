@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" width="1000" height="760" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <pattern id="hatchRed" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#C62828" fill-opacity="0.12"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#C62828" stroke-width="2" stroke-opacity="0.5"/>
+    </pattern>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#43A047"/></marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#E65100"/></marker>
+    <marker id="arrS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#455A64"/></marker>
+  </defs>
+  <text x="500" y="28" font-size="16" text-anchor="middle" fill="#212121" font-weight="bold">Figura IT-S02. Mi área de trabajo: piso del EAF (Segundo Hornero)</text>
+  <text x="500" y="48" font-size="12" text-anchor="middle" fill="#212121">Valores de FT-ACE-001 v0.3, MO-EAF-01/05/06/07/08 y MS-ACE-01. Distancias [Supuesto — Validar con C-16]</text>
+  <rect x="20" y="60" width="960" height="470" fill="none" stroke="#455A64" stroke-width="3" />
+  <text x="40" y="80" font-size="12" text-anchor="start" fill="#455A64" font-weight="bold">PISO DEL EAF — puerta, plataforma del EBT y fosa de vaciado (vista en planta, sin escala)</text>
+  <rect x="40" y="95" width="920" height="420" fill="#FFF3C4" stroke="#FF8F00" stroke-width="1.5" stroke-dasharray="4,3"/><text x="44" y="109" font-size="12" text-anchor="start" fill="#8D4B00" font-weight="bold">Zona amarilla (5–25 m)</text>
+  <circle cx="420" cy="260" r="90" fill="#8D6E63" stroke="#455A64" stroke-width="4"/><circle cx="420" cy="260" r="74" fill="#E65100" fill-opacity="0.85"/><circle cx="402" cy="250" r="8" fill="#455A64"/><circle cx="438" cy="250" r="8" fill="#455A64"/><circle cx="420" cy="276" r="8" fill="#455A64"/><text x="420" y="366" font-size="12" text-anchor="middle" fill="#212121" font-weight="bold">EAF · 150 t</text>
+  <rect x="250" y="120" width="130" height="110" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" stroke-dasharray="6,3"/><text x="254" y="134" font-size="12" text-anchor="start" fill="#C62828" font-weight="bold">Roja ≤ 5 m</text>
+  <rect x="300" y="215" width="60" height="14" fill="#6D4C41" stroke="#6D4C41" stroke-width="1.5" /><text x="330" y="247" font-size="12" text-anchor="middle" fill="#212121">Puerta</text>
+  <rect x="150" y="150" width="90" height="24" fill="#455A64" stroke="#455A64" stroke-width="1.5" /><line x1="240" y1="162" x2="300" y2="205" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/><text x="150" y="192" font-size="12" text-anchor="start" fill="#212121">Lanza manipuladora</text>
+  <rect x="60" y="210" width="100" height="50" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5" /><text x="110.0" y="239.0" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">Posición protegida</text>
+  <rect x="520" y="300" width="230" height="200" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" stroke-dasharray="6,3"/><text x="524" y="314" font-size="12" text-anchor="start" fill="#C62828" font-weight="bold">Roja en vaciado ≤ 10 m</text>
+  <circle cx="500" cy="320" r="11" fill="#455A64"/><text x="470" y="345" font-size="12" text-anchor="start" fill="#212121" font-weight="bold">EBT</text>
+  <rect x="560" y="400" width="150" height="70" fill="#8D6E63" stroke="#455A64" stroke-width="1" fill-opacity="0.35"/><text x="635" y="486" font-size="12" text-anchor="middle" fill="#6D4C41" font-weight="bold">Fosa seca</text>
+  <circle cx="635" cy="430" r="30" fill="#8D6E63" stroke="#455A64" stroke-width="3"/><circle cx="635" cy="430" r="21" fill="#FF8F00"/>
+  <rect x="430" y="370" width="80" height="36" fill="#ffffff" stroke="#455A64" stroke-width="1.5" /><text x="470" y="393" font-size="12" text-anchor="middle" fill="#212121">Tolva adic.</text>
+  <rect x="560" y="130" width="120" height="70" fill="#ECEFF1" stroke="#455A64" stroke-width="1.5" /><text x="620" y="150" font-size="12" text-anchor="middle" fill="#455A64" font-weight="bold">Plataforma EBT</text><text x="620" y="168" font-size="12" text-anchor="middle" fill="#212121">arena seca ≤ 0.5%</text><text x="620" y="186" font-size="12" text-anchor="middle" fill="#212121">corona 50–100 mm</text>
+  <rect x="760" y="110" width="180" height="90" fill="#ECEFF1" stroke="#455A64" stroke-width="1.5" /><text x="850" y="130" font-size="12" text-anchor="middle" fill="#455A64" font-weight="bold">Plataforma de columnas</text><text x="850" y="148" font-size="12" text-anchor="middle" fill="#212121">Soporte de empalme</text><text x="850" y="166" font-size="12" text-anchor="middle" fill="#212121">torque ≈ 4,500 N·m [OEM]</text><text x="850" y="184" font-size="12" text-anchor="middle" fill="#212121">laina 0.1 mm</text>
+  <rect x="140" y="360" width="150" height="110" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" stroke-dasharray="6,3"/>
+  <rect x="160" y="380" width="110" height="60" fill="#6D4C41" stroke="#455A64" stroke-width="1.5" fill-opacity="0.5"/><text x="215" y="456" font-size="12" text-anchor="middle" fill="#212121">Olla de escoria seca</text>
+  <rect x="800" y="380" width="140" height="60" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5" /><text x="870.0" y="414.0" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">Refugio</text>
+  <polyline points="700,260 870,260 870,370" fill="none" stroke="#43A047" stroke-width="4" stroke-dasharray="10,5" marker-end="url(#arrG)"/>
+  <polyline points="160,270 80,330 80,515" fill="none" stroke="#43A047" stroke-width="4" stroke-dasharray="10,5" marker-end="url(#arrG)"/>
+  <rect x="60" y="520" width="40" height="12" fill="#43A047" stroke="#43A047" stroke-width="1.5" /><text x="80.0" y="546" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">SALIDA</text>
+  <circle cx="250" cy="115" r="11" fill="#212121"/><text x="250" y="119" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">1</text>
+  <circle cx="150" cy="145" r="11" fill="#212121"/><text x="150" y="149" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">2</text>
+  <circle cx="60" cy="205" r="11" fill="#212121"/><text x="60" y="209" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">3</text>
+  <circle cx="430" cy="150" r="11" fill="#212121"/><text x="430" y="154" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">4</text>
+  <circle cx="500" cy="295" r="11" fill="#212121"/><text x="500" y="299" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">5</text>
+  <circle cx="425" cy="368" r="11" fill="#212121"/><text x="425" y="372" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">6</text>
+  <circle cx="635" cy="395" r="11" fill="#212121"/><text x="635" y="399" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">7</text>
+  <circle cx="555" cy="125" r="11" fill="#212121"/><text x="555" y="129" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">8</text>
+  <circle cx="755" cy="105" r="11" fill="#212121"/><text x="755" y="109" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">9</text>
+  <circle cx="145" cy="375" r="11" fill="#212121"/><text x="145" y="379" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">10</text>
+  <circle cx="800" cy="375" r="11" fill="#212121"/><text x="800" y="379" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">11</text>
+  <circle cx="80" cy="300" r="11" fill="#212121"/><text x="80" y="304" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">12</text>
+  <rect x="20" y="570" width="960" height="180" fill="#FAFAFA" stroke="#455A64" stroke-width="1" />
+  <text x="30" y="590" font-size="13" text-anchor="start" fill="#212121" font-weight="bold">Leyenda (números del dibujo)</text>
+  <circle cx="40" cy="610" r="11" fill="#212121"/><text x="40" y="614" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">1</text><text x="58" y="614" font-size="12" text-anchor="start" fill="#212121">Puerta de escoria: roja ≤ 5 m; de lado, a ≥ 1.5 m</text>
+  <circle cx="40" cy="630" r="11" fill="#212121"/><text x="40" y="634" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">2</text><text x="58" y="634" font-size="12" text-anchor="start" fill="#212121">Lanza manipuladora: T 4–6 s · O 8–12 s · 300–400 mm</text>
+  <circle cx="40" cy="650" r="11" fill="#212121"/><text x="40" y="654" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">3</text><text x="58" y="654" font-size="12" text-anchor="start" fill="#212121">Posición protegida para medir y para lancear el EBT</text>
+  <circle cx="40" cy="670" r="11" fill="#212121"/><text x="40" y="674" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">4</text><text x="58" y="674" font-size="12" text-anchor="start" fill="#212121">EAF: inspecciono solera, bancos, jambas (coraza ≤ 300 °C)</text>
+  <circle cx="40" cy="690" r="11" fill="#212121"/><text x="40" y="694" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">5</text><text x="58" y="694" font-size="12" text-anchor="start" fill="#212121">EBT: compuerta cerrada y enclavada antes de la arena</text>
+  <circle cx="40" cy="710" r="11" fill="#212121"/><text x="40" y="714" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">6</text><text x="58" y="714" font-size="12" text-anchor="start" fill="#212121">Tolva de adiciones: materiales secos, ventana 30→120 t</text>
+  <circle cx="520" cy="610" r="11" fill="#212121"/><text x="520" y="614" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">7</text><text x="538" y="614" font-size="12" text-anchor="start" fill="#212121">Olla y fosa secas; nadie a ≤ 10 m al vaciar</text>
+  <circle cx="520" cy="630" r="11" fill="#212121"/><text x="520" y="634" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">8</text><text x="538" y="634" font-size="12" text-anchor="start" fill="#212121">Plataforma del EBT: llave cautiva, una por persona</text>
+  <circle cx="520" cy="650" r="11" fill="#212121"/><text x="520" y="654" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">9</text><text x="538" y="654" font-size="12" text-anchor="start" fill="#212121">Plataforma de columnas: empalme con llave cautiva o LOTO</text>
+  <circle cx="520" cy="670" r="11" fill="#212121"/><text x="520" y="674" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">10</text><text x="538" y="674" font-size="12" text-anchor="start" fill="#212121">Olla de escoria y fosa secas antes de desescoriar</text>
+  <circle cx="520" cy="690" r="11" fill="#212121"/><text x="520" y="694" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">11</text><text x="538" y="694" font-size="12" text-anchor="start" fill="#212121">Refugio (zona verde) ≤ 30 s</text>
+  <circle cx="520" cy="710" r="11" fill="#212121"/><text x="520" y="714" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">12</text><text x="538" y="714" font-size="12" text-anchor="start" fill="#212121">Ruta de escape hacia la salida</text>
+  <text x="30" y="738" font-size="13" text-anchor="start" fill="#212121" font-weight="bold">Zonas:</text><rect x="90" y="726" width="26" height="16" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" /><text x="122" y="738" font-size="12" text-anchor="start" fill="#212121">Roja: solo personal esencial con EPP aluminizado</text><rect x="430" y="726" width="26" height="16" fill="#FFF3C4" stroke="#FF8F00" stroke-width="1.5" /><text x="462" y="738" font-size="12" text-anchor="start" fill="#212121">Amarilla: paso con precaución</text><rect x="660" y="726" width="26" height="16" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5" /><text x="692" y="738" font-size="12" text-anchor="start" fill="#212121">Verde: refugio / segura</text><line x1="850" y1="734" x2="890" y2="734" stroke="#43A047" stroke-width="4" stroke-dasharray="10,5" marker-end="url(#arrG)"/><text x="896" y="738" font-size="12" text-anchor="start" fill="#212121">Escape</text>
+</svg>

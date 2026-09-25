@@ -1,0 +1,217 @@
+{
+  "code": "MO-CC1-06",
+  "title": "Cambio de SEN y de distribuidor en caliente (incluye clogging)",
+  "titulo_corto": "Cambio SEN y distribuidor",
+  "serie": "Operación",
+  "area": "Colada Continua 1 · planchón",
+  "manual": "02-operacion/cc1/MO-CC1-06-cambio-sen-y-distribuidor.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad sin observaciones · 2026-09-25)",
+  "subtitle": "Manejar el clogging y cambiar SEN o distribuidor sin perder la secuencia, sin rebose y sin exponer a nadie",
+  "audiencia": "S-13 Operador de Plataforma · S-14 Ayudante de Colada · S-12 Operador de Púlpito · S-15 Preparador · C-06",
+  "kpis": [
+    {"value": "16 h", "label": "teoría (S-13)"},
+    {"value": "10", "label": "eventos: 6 SEN + 4 distribuidor"},
+    {"value": "8", "label": "pasos críticos ★"},
+    {"value": "24", "label": "meses de vigencia (TD-P07)"}
+  ],
+  "cadena": [
+    "Tendencia del tapón",
+    "Escalera anticlogging",
+    "Zona roja",
+    "Cambio SEN ≤ 10 s",
+    "Distribuidor a 400 mm",
+    "Unión fuera del seg. 3"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, cambias SEN o distribuidor sin cortar",
+    "roles": "C-06 decide el cambio; S-13 y S-14 hacen la maniobra",
+    "flujo": "El tapón avisa el clogging antes de perder el nivel",
+    "figura": "La posición del tapón es el mejor indicador de clogging",
+    "equipos": "Solo SEN y distribuidor precalentados entran a colar",
+    "parametros": "Tiempo sin flujo y nivel mandan en cada cambio",
+    "seguridad": "El frente del molde es zona roja durante la maniobra",
+    "calidad": "El planchón de unión se marca y se inspecciona al 100 %",
+    "pasos": "Dieciséis pasos en tres maniobras; ocho críticos",
+    "anormales": "Detención de más de 5 min: se cierra la secuencia",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de los cambios que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Detectar y manejar el clogging", "detalle": "Tapón que sube > 10 % en 15 min: argón en pasos de 1 NL/min hasta 8; > 80 % de apertura baja la velocidad."},
+    {"titulo": "Cambiar la SEN en caliente", "detalle": "SEN nueva ≥ 1,000 °C; velocidad 0.5 m/min; ≤ 10 s sin flujo; nivel ± 3 mm en ≤ 60 s."},
+    {"titulo": "Cambiar el distribuidor en caliente", "detalle": "Cerrar el tapón a 400 mm, línea detenida ≤ 3 min, abrir a 500 mm y reanudar a 0.3 m/min con rampa."},
+    {"titulo": "Proteger al personal y la unión", "detalle": "Solo S-13 y S-14 al frente; exclusión bajo el molde hasta que la unión pase el segmento 3."}
+  ],
+  "por_que_importa": "La alúmina tapa la SEN y el flujo se vuelve asimétrico: grietas, inclusiones y al final pérdida de nivel. Cambiar la SEN o el distribuidor con acero en el molde expone al frente a salpicaduras, y una unión débil o una rampa rápida pueden terminar en breakout.",
+  "principio": "Solo piezas precalentadas y liberadas, y nadie bajo el molde hasta que la unión pase el segmento 3.",
+  "roles": [
+    ["Rol", "Qué hace en el cambio", "RACI"],
+    ["C-06 Supervisor de Colada Continua", "Decide el cambio, dirige la maniobra y la zona de exclusión", "A"],
+    ["S-13 Operador de Plataforma", "Opera cambiador de SEN, carros del distribuidor, olla y tapón", "R"],
+    ["S-14 Ayudante de Colada", "Polvo, menisco, centrado de la SEN, costras y grapa", "R"],
+    ["S-12 Operador de Púlpito", "Velocidad, nivel, detención y rampa; eventos en el tracking", "R"],
+    ["S-15 Preparador de Distribuidores", "Entrega distribuidor y SEN de repuesto precalentados (MO-CC1-01)", "R"],
+    ["C-08 Ingeniero de Proceso de CC", "Criterios de clogging, vida de SEN y de distribuidor", "C"],
+    ["C-07 Ingeniero de Proceso EAF / LF", "Ajusta el tratamiento con Ca ante clogging repetido", "C"],
+    ["C-09 Metalurgista de Producto", "Disposición de planchones de unión y con evento", "I"]
+  ],
+  "flujo": [
+    {"label": "Detectar", "desc": "Tapón sube > 10 % en 15 min"},
+    {"label": "Anticlogging", "desc": "Ar +1 NL/min cada 5 min, máx. 8"},
+    {"label": "Decidir", "desc": "Sin mejora en 15 min o ΔT > 2 °C"},
+    {"label": "Cambio de SEN", "desc": "0.5 m/min; tapón cerrado ≤ 10 s"},
+    {"label": "Recuperar", "desc": "Nivel ± 3 mm en ≤ 60 s; rampa"},
+    {"label": "Vaciar el viejo", "desc": "Velocidad por nivel; tapón a 400 mm"},
+    {"label": "Cambiar", "desc": "Línea detenida ≤ 3 min; SEN centrada"},
+    {"label": "Reanudar", "desc": "500 mm; −60 mm; 0.3 m/min y rampa"},
+    {"label": "Unión", "desc": "Exclusión hasta pasar el segmento 3"}
+  ],
+  "flujo_takeaway": "Cambiador rápido de SEN y segundo carro de distribuidor son [Supuesto]: la ficha no los confirma.",
+  "figuras": [
+    {
+      "svg": "cc1-distribuidor.svg",
+      "lectura": [
+        "La barra tapón regula el flujo; si la SEN se tapa, el lazo de nivel abre más el tapón.",
+        "El argón del tapón (3–8 NL/min) ayuda contra el clogging; más de 8 da pinholes.",
+        "El distribuidor viejo se vacía hasta 400 mm; el nuevo se abre con 500 mm."
+      ]
+    },
+    {
+      "svg": "cc1-molde-nivel.svg",
+      "titulo": "La SEN nueva se inmerge 120–160 mm y va centrada",
+      "lectura": [
+        "Tras el cambio, la inmersión se revisa en 120–160 mm con la SEN centrada ± 5 mm.",
+        "Una diferencia de ΔT entre caras anchas > 2 °C indica flujo asimétrico.",
+        "El nivel se lleva de nuevo a ± 3 mm en automático."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Barra tapón y lazo de nivel", "Regula flujo; indica clogging", "Argón 3–8 NL/min", "Tendencia de posición en HMI"],
+    ["SEN", "Entrega al molde", "Inmersión 120–160 mm; manga ZrO₂", "Vida 8–10 h [Validar con OEM]"],
+    ["Cambiador de SEN [Supuesto]", "Cambia la SEN sin cambiar distribuidor", "Hidráulico; placa de SEN", "Probado en frío; repuesto caliente"],
+    ["Precalentador de SEN", "Mantiene la SEN de repuesto", "≥ 1,000 °C", "Temperatura registrada"],
+    ["Carros de distribuidor [Supuesto]", "Intercambian distribuidores", "Elevación, traslación, X–Y, pesaje", "Frenos, límites; ruta despejada"],
+    ["Distribuidor nuevo", "Reemplazo", "1,100 ± 50 °C (MO-CC1-01)", "★ ≤ 10 min sin quemador"],
+    ["Grapa de unión", "Refuerza la unión", "Según OEM [Validar con OEM]", "Seca, en la plataforma"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Posición del tapón", "Estable ± 5 %", "—", "> 10 % en 15 min / > 80 %", "Escalera anticlogging"],
+    ["Argón de barra tapón", "4–5 NL/min", "3–8 NL/min", "Máx. 8 NL/min", "No exceder: pinholes"],
+    ["Relación Ca/Al (LF)", "0.10", "0.08–0.14", "< 0.07", "C-07 ajusta CaSi en LF"],
+    ["SEN de repuesto", "≥ 1,050 °C", "1,000–1,150 °C", "< 1,000 °C", "No usar"],
+    ["Tiempo sin flujo (SEN)", "≤ 5 s", "≤ 10 s", "> 15 s", "C-06 evalúa"],
+    ["Nivel en cambio de SEN", "0 → −20 mm máx.", "0 a −30 mm", "< −40 o > + 8 mm", "Recuperar en manual"],
+    ["Cierre del distribuidor viejo", "400 mm", "400–450 mm", "< 400 mm", "Riesgo de arrastre de escoria"],
+    ["Línea detenida (distrib.)", "≤ 3 min", "2–4 min", "> 5 min", "Grapa o cierre de secuencia"]
+  ],
+  "parametros_nota": "Al reanudar: 0.3 m/min y rampa ≤ 0.2 m/min por minuto. Tiempos, criterios de clogging, Ca/Al y vidas: [Validar con OEM / Ingeniería de Proceso].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Zona roja del frente del molde", "detalle": "Durante la maniobra solo S-13 y S-14 con aluminizado completo; C-06 cuenta al personal."},
+      {"titulo": "Exclusión bajo el molde", "detalle": "Reforzada hasta que la unión o el planchón del cambio de SEN pase el segmento 3; rampa lenta."},
+      {"titulo": "Solo piezas precalentadas", "detalle": "Distribuidor liberado (MO-CC1-01) y SEN ≥ 1,000 °C. Con vapor o SEN fría, no se usa."},
+      {"titulo": "Carros y distribuidor viejo", "detalle": "Ruta despejada, alarma y nadie entre carros; el viejo lleva ≈ 14 t: traslado lento a fosa seca."}
+    ],
+    "epp": [
+      "Aluminizado completo: chamarra, polainas y capucha",
+      "Careta IR, ropa FR y guantes aluminizados",
+      "Botas con metatarsal y protección auditiva",
+      "Detector personal de O₂/CO"
+    ],
+    "figura": "ms-zonas-exclusion-nave.svg",
+    "figura_titulo": "Frente del molde y bajo la máquina: zona roja",
+    "figura_lectura": [
+      "Frente del molde: solo S-13 y S-14 mientras dura la maniobra.",
+      "Bajo el molde: nadie hasta que la unión pase el segmento 3 (≈ 5 m).",
+      "Ruta de carros y fosa del distribuidor despejadas y secas."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Simetría del flujo", "Diferencia de ΔT ≤ 1.5 °C", "Continuo, nivel 2", "Grietas longitudinales, inclusiones"],
+    ["Nivel en el cambio", "0 a −30 mm; recupera ≤ 60 s", "Tendencia", "Slivers, depresiones"],
+    ["Planchón de cambio de SEN", "Marcado", "Tracking en MES", "Inspección especial (MO-CC1-09)"],
+    ["Planchón de unión", "Marcado; inspección 100 %", "Tracking en MES", "Degradar o rechazar según C-09"],
+    ["Grados incompatibles", "Sin mezcla", "Cambio de distribuidor", "Química fuera de especificación"]
+  ],
+  "calidad_takeaway": "El clogging repetido se corrige en el LF: muestra Ca/Al y ajuste de CaSi por C-07.",
+  "pasos": [
+    {"n": 1, "paso": "Detecta el clogging", "como": "Posición del tapón sube > 10 % en 15 min con velocidad y ancho constantes", "criterio": "Tendencia confirmada", "critico": false, "rol": "S-12"},
+    {"n": 2, "paso": "Aplica la escalera", "como": "Argón +1 NL/min cada 5 min, máx. 8; pulsa el tapón si el OEM lo permite; > 80 %: −0.1 m/min", "criterio": "Tapón estable", "critico": false, "rol": "S-13 / S-12"},
+    {"n": 3, "paso": "Decide e informa a LF", "como": "Sin mejora en 15 min o ΔT entre anchas > 2 °C: cambio de SEN; muestra Ca/Al a C-07", "criterio": "Decisión de C-06", "critico": false, "rol": "C-06 / C-08"},
+    {"n": 4, "paso": "Prepara la SEN nueva", "como": "Precalentada ≥ 1,000 °C; revisa grietas y puertos", "criterio": "SEN lista", "critico": true, "rol": "S-15 / S-13"},
+    {"n": 5, "paso": "Despeja la zona", "como": "Solo S-13 y S-14 en el frente; zona bajo el molde despejada", "criterio": "Confirmación de C-06", "critico": true, "rol": "C-06"},
+    {"n": 6, "paso": "Prepara el cambio", "como": "Velocidad a 0.5 m/min con rampa; nivel en manual; retira costras; SEN en la guía del cambiador", "criterio": "SEN asentada", "critico": false, "rol": "S-12 / S-13"},
+    {"n": 7, "paso": "Cierra el tapón y cambia", "como": "Tapón cerrado y acciona el cambiador: la SEN nueva empuja a la vieja", "criterio": "≤ 10 s sin flujo", "critico": true, "rol": "S-13"},
+    {"n": 8, "paso": "Abre y recupera", "como": "Apertura progresiva a 0 mm y automático; inmersión 120–160 mm, centrada ± 5 mm; rampa; marca evento", "criterio": "± 3 mm en ≤ 60 s", "critico": false, "rol": "S-13 / S-12"},
+    {"n": 9, "paso": "Confirma distribuidor nuevo", "como": "Liberado (MO-CC1-01); 1,100 ± 50 °C; SEN ≥ 1,000 °C; carro 2 en espera", "criterio": "Firma de liberación", "critico": true, "rol": "S-15 / C-06"},
+    {"n": 10, "paso": "Establece la zona roja", "como": "Olla nueva en torreta sin abrir; frente del molde solo S-13 y S-14; nadie bajo el molde", "criterio": "Confirmación", "critico": true, "rol": "C-06"},
+    {"n": 11, "paso": "Vacía el distribuidor viejo", "como": "Velocidad por nivel: 800 mm 0.9; 700 mm 0.6; 600 mm 0.4 m/min", "criterio": "Nivel baja controlado", "critico": false, "rol": "S-12"},
+    {"n": 12, "paso": "Cierra el tapón a 400 mm", "como": "Cierra y detén la extracción (velocidad 0); mantén oscilación y agua de molde", "criterio": "Línea detenida; hora", "critico": true, "rol": "S-13 / S-12"},
+    {"n": 13, "paso": "Cambia el distribuidor", "como": "Cubre el menisco; carro 1 a la fosa; carro 2 centrado ± 5 mm; grapa si > 3 min; olla a 500 mm", "criterio": "Sin derrame", "critico": false, "rol": "S-13 / S-14"},
+    {"n": 14, "paso": "Abre el tapón", "como": "Apertura progresiva hasta nivel −60 mm", "criterio": "Sin rebose", "critico": true, "rol": "S-13"},
+    {"n": 15, "paso": "Reanuda y marca", "como": "0.3 m/min; nivel automático; rampa ≤ 0.2 m/min por minuto; marca el planchón de unión", "criterio": "Sin alarma BOP", "critico": false, "rol": "S-12"},
+    {"n": 16, "paso": "Mantén la exclusión", "como": "Nadie bajo el molde hasta que la unión pase el segmento 3 (≈ 5 m)", "criterio": "Autorización de C-06", "critico": true, "rol": "C-06"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Nivel ± 8 mm tras cambio de SEN", "Revisa centrado e inmersión; baja la velocidad", "C-06"],
+    ["SEN rota (flama, nivel errático)", "Cambio de SEN inmediato; sin cambiador: distribuidor o cierre", "C-06, C-08"],
+    ["El cambiador no acciona", "Tapón cerrado ≤ 15 s; si no, reabre con SEN vieja y baja velocidad", "C-06, S-22"],
+    ["Clogging repetido", "Muestra Ca/Al; revisa sellos de argón; C-07 corrige LF", "C-08, C-07"],
+    ["Detención > 5 min", "Cierre de secuencia y salida de cola (MO-CC1-07)", "C-06, C-04"],
+    ["Breakout en la unión", "Respuesta a breakout (MO-CC1-04 §9)", "C-04, C-06, C-16"],
+    ["Rebose del molde al reanudar", "Cierra el tapón; recupera en manual", "C-06"],
+    ["Distribuidor con vapor o SEN fría", "No usar; cierre de secuencia si no hay otro", "C-06, C-15"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-13 Operador de Plataforma", "U", "16 h", "6 SEN + 4 distribuidores", "24 meses"],
+      ["S-14 Ayudante de Colada", "U", "8 h", "6 + 4 eventos", "24 meses"],
+      ["S-12 Operador de Púlpito", "U", "12 h", "6 + 4 eventos (o simulador)", "24 meses"],
+      ["C-06 Supervisor de CC", "O (evaluador)", "8 h + evaluador", "—", "24 meses"]
+    ],
+    "checklist": [
+      "Usa solo SEN y distribuidor precalentados y liberados",
+      "Establece la zona roja y la zona de exclusión bajo el molde",
+      "Cambia la SEN con ≤ 10 s sin flujo y recupera el nivel sin rebose",
+      "Detiene la línea a 400 mm del distribuidor viejo y reanuda con 0.3 m/min y rampa",
+      "Mantiene la exclusión hasta que la unión pase el segmento 3"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Qué indica mejor que la SEN se está tapando?", "opciones": ["La temperatura del molde", "La posición de la barra tapón", "El consumo de polvo"], "correcta": 1, "explicacion": "El lazo de nivel compensa el clogging abriendo el tapón: una subida sostenida > 10 % en 15 min lo delata."},
+    {"pregunta": "¿Cuál es el máximo de argón en la barra tapón contra el clogging?", "opciones": ["5 NL/min", "8 NL/min", "15 NL/min"], "correcta": 1, "explicacion": "Se sube en pasos de 1 NL/min cada 5 min hasta 8; más argón da turbulencia en el menisco y pinholes."},
+    {"pregunta": "¿Cuánto tiempo sin flujo se permite al cambiar la SEN?", "opciones": ["≤ 10 s", "≤ 60 s", "≤ 3 min"], "correcta": 0, "explicacion": "Objetivo ≤ 5 s, límite 10 s; más de 15 s arriesga la cáscara y el nivel, y C-06 evalúa."},
+    {"pregunta": "¿A qué nivel se cierra el tapón del distribuidor viejo?", "opciones": ["700 mm", "400 mm", "100 mm"], "correcta": 1, "explicacion": "400 mm (400–450 mm); debajo se arrastra escoria. Después se detiene la extracción."},
+    {"pregunta": "La línea lleva más de 5 min detenida en el cambio de distribuidor. ¿Qué haces?", "opciones": ["Reanudar a 1.2 m/min", "Cierre de secuencia y salida de cola", "Esperar 10 min más"], "correcta": 1, "explicacion": "Con > 3 min se inserta la grapa; con > 5 min se cierra la secuencia (MO-CC1-07)."}
+  ],
+  "reglas": [
+    {"titulo": "Pieza fría o húmeda no entra", "detalle": "Distribuidor liberado y SEN ≥ 1,000 °C; con vapor no se usa."},
+    {"titulo": "Solo dos personas al frente", "detalle": "S-13 y S-14 con aluminizado completo durante la maniobra."},
+    {"titulo": "Nadie bajo el molde con la unión", "detalle": "La exclusión sigue hasta que la unión pase el segmento 3."},
+    {"titulo": "Argón máximo 8 NL/min", "detalle": "Más argón no destapa: da turbulencia y pinholes."}
+  ],
+  "por_confirmar": [
+    "Existencia del cambiador rápido de SEN y del segundo carro de distribuidor [Supuesto]",
+    "Tiempos de cambio, criterios de clogging, Ca/Al, vida de SEN y grapa de unión con el OEM"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de clogging y breakout en la unión", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido de las tres maniobras con las figuras", "Láminas 3–6"],
+    ["3. Equipos y parámetros", "90", "Ejercicio: leer una tendencia del tapón", "Láminas 7–8, tendencias reales"],
+    ["4. Seguridad", "60", "Zona roja del frente y exclusión bajo el molde", "Láminas 9–10, EPP físico"],
+    ["5. Calidad y paso a paso", "105", "Lectura guiada de los 16 pasos; pasos ★", "Láminas 11–13"],
+    ["6. Condiciones anormales", "75", "Simulacro de mesa: cambiador que no acciona", "Lámina 14"],
+    ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + preguntas orales", "Lámina 16"],
+    ["8. Cierre y ruta a OJT", "30", "Plan de OJT, simulador y certificación", "Lámina 17"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

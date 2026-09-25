@@ -1,0 +1,211 @@
+{
+  "code": "MO-EAF-02",
+  "title": "Carga de chatarra con canasta",
+  "titulo_corto": "Carga con canasta",
+  "serie": "Operación",
+  "area": "Hornos · Patio de chatarra y EAF-1 / EAF-2",
+  "manual": "02-operacion/eaf/MO-EAF-02-carga-chatarra-canasta.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Cargar 55–70 t de chatarra seca y sin materiales prohibidos, en ≤ 3 min y sin personas expuestas",
+  "audiencia": "S-05 Operador de Patio · S-04 Grúa de Carga · S-01 Primer Hornero · C-17 Supervisor de Patio",
+  "kpis": [
+    {"value": "16 h", "label": "teoría (S-05 Patio)"},
+    {"value": "60 h", "label": "OJT · 40 canastas"},
+    {"value": "9", "label": "pasos críticos ★"},
+    {"value": "≤ 3", "label": "min por canasta, arco apagado"}
+  ],
+  "cadena": ["Pórtico", "Inspección", "Canasta por capas", "Horno listo", "Zona libre", "Carga y bóveda"],
+  "titulos": {
+    "objetivos": "Al terminar, cargas seco, limpio y sin exponer a nadie",
+    "roles": "El patio arma, la grúa carga y C-05 detiene ante duda",
+    "flujo": "La carga se decide en el patio, no sobre el horno",
+    "figura": "La chatarra entra al horno en canasta de 55–70 t",
+    "equipos": "Siete equipos en condición antes de levantar la canasta",
+    "parametros": "Peso, humedad y radiación definen si se carga",
+    "seguridad": "Humedad, radiación y carga suspendida: cero tolerancia",
+    "calidad": "La mezcla de hoy son los residuales de mañana",
+    "pasos": "Dieciséis pasos; nueve no admiten error",
+    "anormales": "Ante la duda: detener, aislar y avisar",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de la carga que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Recibir solo chatarra segura", "detalle": "Probar el pórtico cada turno; rechazar contenedores cerrados, líquidos, explosivos y toda alarma de radiación."},
+    {"titulo": "Armar la canasta según la receta", "detalle": "Ligera al fondo, pesada ≤ 20 % al centro, ligera arriba; 55–70 t y nada sobre el borde."},
+    {"titulo": "Cargar con horno y zona listos", "detalle": "Arco apagado, interruptor abierto, sin agua a la vista y nadie a ≤ 15 m del horno."},
+    {"titulo": "Cargar en ≤ 3 min sin exponer a nadie", "detalle": "Canasta centrada a 0.5–1.0 m sobre el borde, nunca sobre personas; bóveda asentada al final."}
+  ],
+  "por_que_importa": "Un contenedor cerrado o chatarra mojada que cae sobre 20–30 t de talón líquido explota. Una fuente radiactiva contamina el acero y la planta. Una canasta mal armada rompe electrodos, no deja cerrar la bóveda o saca los residuales de especificación.",
+  "principio": "Si hay duda de humedad, material prohibido o radiación, no se carga.",
+  "roles": [
+    ["Rol", "Qué hace en la carga", "RACI"],
+    ["C-05 Supervisor de Hornos", "Dueño; autoriza desviación de peso o mezcla; detiene ante duda", "A"],
+    ["C-17 Supervisor de Patio de Chatarra", "Asegura receta, inspección y cuarentena de rechazos", "A (patio)"],
+    ["S-05 Operador de Patio de Chatarra", "Pórtico, inspección, segregación; arma, pesa y registra la canasta", "R"],
+    ["S-04 Operador de Grúa de Carga", "Traslada la canasta (120/40 t), la centra y la abre", "R"],
+    ["S-01 Primer Hornero", "Prepara el horno y confirma zona despejada", "R"],
+    ["C-16 Seguridad e Higiene (ESR)", "Atiende las alarmas del pórtico de radiación (MS-ACE-07)", "C"],
+    ["C-07 Ingeniero de Proceso", "Define la receta de carga y los límites de Cu, Sn, Ni, Cr", "C"]
+  ],
+  "flujo": [
+    {"label": "Pórtico", "desc": "Sin alarma; con alarma: aislar y ESR"},
+    {"label": "Inspección", "desc": "Sin prohibidos y sin humedad"},
+    {"label": "Armado", "desc": "Capas según la receta"},
+    {"label": "Peso", "desc": "55–70 t, nada sobre el borde"},
+    {"label": "Horno listo", "desc": "Arco apagado, sin fuga de agua"},
+    {"label": "Abrir horno", "desc": "Electrodos arriba, bóveda girada"},
+    {"label": "Zona libre", "desc": "Nadie a ≤ 15 m; bocina"},
+    {"label": "Cargar", "desc": "Centrar y abrir a 0.5–1.0 m del borde"},
+    {"label": "Cerrar", "desc": "Bóveda asentada → MO-EAF-04"}
+  ],
+  "flujo_takeaway": "Lo que no se detecta en el patio explota en el horno: pórtico e inspección van primero.",
+  "figuras": [
+    {
+      "svg": "eaf-flujo-acería.svg",
+      "lectura": [
+        "La chatarra (3) aporta el 40 % de la carga y entra por el pórtico de radiación.",
+        "La canasta de 90 m³ lleva 55–70 t con la grúa de 120/40 t (4).",
+        "El 60 % restante es DRI/HBI que entra por transportador (2)."
+      ]
+    },
+    {
+      "svg": "eaf-ciclo-colada.svg",
+      "titulo": "Cada canasta cuesta 3 min de arco apagado",
+      "lectura": [
+        "La carga dura 3 min por canasta, con el arco apagado.",
+        "Una 2.ª canasta suma ≈ 3 min más: tap-to-tap ≈ 58 min.",
+        "Después de cerrar la bóveda sigue la perforación con tap bajo."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Pórtico de radiación", "Detecta fuentes radiactivas", "Umbral de C-16 (ESR) [Validar con OEM]", "★ Prueba con fuente al inicio de turno"],
+    ["Canasta de chatarra", "Transporta y descarga la carga", "90 m³; apertura de concha", "Seca; concha, seguros y orejas sin grieta"],
+    ["Báscula / celda de grúa", "Pesa la carga", "± 0.5 t [Supuesto]", "Cero antes de pesar"],
+    ["Grúa de carga", "Traslada y abre la canasta", "2 × 120/40 t; gancho auxiliar", "Frenos, límites, gancho y cable"],
+    ["Electroimán / pulpo", "Arma la canasta en patio", "—", "Inspección previa al uso"],
+    ["Bóveda y giro", "Descubre el horno para cargar", "Enclavamiento bóveda–interruptor", "Sin arco con bóveda abierta"],
+    ["Electrodos 3 × 610 mm", "Se protegen de la carga", "Al tope antes de girar la bóveda", "Posición “arriba” en HMI"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Peso de canasta", "65 t", "55–70 t", "> 70 t o < 50 t", "> 70: retirar; < 50: C-05"],
+    ["Llenado", "≤ 90 m³", "—", "Material sobre el borde", "Retirar el excedente"],
+    ["Densidad aparente", "0.70 t/m³", "0.6–0.8 [Supuesto]", "< 0.55 t/m³", "Avisar a C-17: 2.ª canasta"],
+    ["Chatarra pesada", "≤ 20 %", "10–20 %", "> 20 % o > 1.5 t [Supuesto]", "Pesada al centro, nunca arriba"],
+    ["Humedad", "Sin agua visible", "—", "Agua, hielo, lodo o nieve", "★ No cargar; escurrir y secar"],
+    ["Pórtico de radiación", "Sin alarma", "—", "Alarma", "Detener y aislar; C-16"],
+    ["Cu de la mezcla", "≤ 0.15 % [Supuesto]", "—", "> 0.20 % [Supuesto]", "Ajustar receta con C-07"],
+    ["Tiempo de carga", "3 min", "2–4 min", "> 5 min", "Registrar la demora"]
+  ],
+  "parametros_nota": "Altura de la canasta al abrir: 0.5–1.0 m, límite > 1.5 m [Validar con OEM / Ingeniería de Proceso]. Pieza máx. 1.5 × 0.6 m [Supuesto]: cortar en patio.",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Zona de exclusión de carga", "detalle": "Roja ≤ 15 m del horno y ruta ± 5 m; amarilla 15–30 m. Nadie a pie desde que sube la canasta hasta que cierra la bóveda."},
+      {"titulo": "Chatarra y canasta secas", "detalle": "Agua, hielo, lodo o canasta que gotea: no se carga; se escurre y C-17 libera. Recipientes cerrados se cortan o perforan."},
+      {"titulo": "Nadie bajo la carga suspendida", "detalle": "Canasta de hasta ≈ 105 t con tara [Supuesto]: nunca sobre personas, púlpitos ni pasillos; ruta definida y señalero."},
+      {"titulo": "Pórtico en todo ingreso", "detalle": "Alarma: 2.ª pasada; si confirma, camión aislado a 10 m, chofer fuera. Solo C-16 (ESR) autoriza el manejo (MS-ACE-07)."}
+    ],
+    "epp": [
+      "Casco, lentes y botas con metatarsal",
+      "Patio: guantes de carnaza y chaleco de alta visibilidad",
+      "Protección auditiva; dosímetro si lo exige C-16",
+      "Piso de hornos: ropa ignífuga y careta visor dorado",
+      "Chaqueta aluminizada si se está en el piso",
+      "Grúa: cabina cerrada y presurizada"
+    ],
+    "figura": "ms-zonas-exclusion-nave.svg",
+    "figura_titulo": "Carga con canasta: nadie a pie a ≤ 15 m del horno",
+    "figura_lectura": [
+      "Carga con canasta: roja ≤ 15 m del horno, con la plataforma despejada [Supuesto].",
+      "Bajo el electroimán y la canasta (2) la zona es roja: nadie bajo la carga.",
+      "El pórtico de radiación (1) está en la entrada de camiones al patio."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Mezcla según receta", "Tipos y % por grado (C-07)", "Registro del electroimán, cada canasta", "Cu, Sn, Ni, Cr fuera de especificación"],
+    ["Peso de canasta", "55–70 t", "Báscula, cada canasta", "Vaciado fuera de 150 t; energía mal calculada"],
+    ["Limpieza de la chatarra", "Sin no ferrosos, tierra ni plásticos", "Visual, cada canasta", "Más escoria y kWh/t; menor rendimiento"],
+    ["Rendimiento metálico", "≥ 88 % de la carga [Supuesto]", "Balance de C-07, cada colada", "Costo"]
+  ],
+  "calidad_takeaway": "Pesados arriba rompen electrodos; material sobre el borde no deja cerrar la bóveda.",
+  "pasos": [
+    {"n": 1, "paso": "Prueba el pórtico", "como": "Al inicio de turno, con la fuente de verificación; registra. Si no responde, no se recibe chatarra y avisas a C-16", "criterio": "Pórtico responde", "critico": true, "rol": "S-05"},
+    {"n": 2, "paso": "Pasa camiones por el pórtico", "como": "≤ 8 km/h [Validar con OEM]; espera el libre. Alarma: 2.ª pasada; si confirma, aísla a 10 m y avisa a C-16 y C-17", "criterio": "Sin alarma", "critico": true, "rol": "S-05"},
+    {"n": 3, "paso": "Inspecciona la chatarra", "como": "Contenedores cerrados, líquidos, explosivos, humedad, no ferrosos; lo prohibido va al área de rechazo", "criterio": "Sin material prohibido", "critico": true, "rol": "S-05"},
+    {"n": 4, "paso": "Revisa la canasta vacía", "como": "Concha, seguros y orejas; sin agua en el fondo. Si gotea no se traslada: se escurre y C-17 la libera", "criterio": "Canasta seca y sin daño", "critico": true, "rol": "S-05"},
+    {"n": 5, "paso": "Arma por capas", "como": "Ligera al fondo (10–15 %), pesada al centro (≤ 20 %), media, ligera arriba", "criterio": "Receta; nada sobre el borde", "critico": false, "rol": "S-05"},
+    {"n": 6, "paso": "Pesa y registra", "como": "Cero de báscula; pesa; registra número de canasta, peso y mezcla", "criterio": "55–70 t", "critico": false, "rol": "S-05"},
+    {"n": 7, "paso": "Espera “horno listo”", "como": "S-01 avisa por radio con MO-EAF-01 completo", "criterio": "Aviso recibido", "critico": false, "rol": "S-04"},
+    {"n": 8, "paso": "Prepara el horno", "como": "Detén el DRI, apaga el arco, abre el interruptor, sube electrodos al tope, levanta y gira la bóveda", "criterio": "Interruptor abierto; bóveda girada", "critico": true, "rol": "S-01"},
+    {"n": 9, "paso": "Revisa agua y baño a la vista", "como": "Con el horno abierto: sin chorros de agua, sin vapor, talón cubierto de escoria", "criterio": "Sin evidencia de agua", "critico": true, "rol": "S-01"},
+    {"n": 10, "paso": "Despeja la zona de exclusión", "como": "Bocina; radio y CCTV: nadie a ≤ 15 m del horno ni a ± 5 m de la ruta (MS-ACE-01)", "criterio": "“Zona libre” por radio", "critico": true, "rol": "S-01 / S-04"},
+    {"n": 11, "paso": "Traslada la canasta", "como": "Altura mínima segura, velocidad reducida, nunca sobre personas", "criterio": "Ruta libre", "critico": true, "rol": "S-04"},
+    {"n": 12, "paso": "Centra y baja la canasta", "como": "Centro de la canasta sobre el centro del horno; fondo a 0.5–1.0 m sobre el borde de la coraza", "criterio": "Canasta centrada", "critico": false, "rol": "S-04"},
+    {"n": 13, "paso": "Abre la concha", "como": "Apertura controlada con el gancho auxiliar; observa flama y proyecciones", "criterio": "Carga completa en el horno", "critico": false, "rol": "S-04"},
+    {"n": 14, "paso": "Retira la canasta", "como": "Sube y retira por la ruta; verifica que no quedó material colgado", "criterio": "Canasta vacía", "critico": false, "rol": "S-04"},
+    {"n": 15, "paso": "Cierra bóveda y perfora", "como": "Gira y baja la bóveda sin chatarra en el borde; inicia la perforación con tap bajo (MO-EAF-04)", "criterio": "Bóveda asentada; arco estable", "critico": false, "rol": "S-01"},
+    {"n": 16, "paso": "2.ª canasta (si aplica)", "como": "Repite los pasos 7–15 con la 1.ª fundida ≥ 70 % y con volumen [Validar con Ingeniería de Proceso]", "criterio": "Mismo criterio", "critico": true, "rol": "S-01 / S-04"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Alarma del pórtico de radiación", "Detener; 2.ª pasada ≤ 8 km/h; si confirma: aislar a 10 m, chofer fuera, no descargar", "C-16, C-17, C-04"],
+    ["Explosión o proyección al abrir", "Todos fuera de la zona; no abrir otra canasta; revisar agua, electrodos, bóveda", "C-05, C-04, C-16"],
+    ["Derrumbe de chatarra en electrodos", "Subir electrodos, bajar el tap, revisar corriente; electrodo roto: MO-EAF-08", "C-05"],
+    ["Bóveda no cierra", "No energizar; retirar la chatarra con equipo desde fuera; nunca a mano", "C-05"],
+    ["Concha no abre o abre a medias", "Llevar la canasta a zona segura; nadie se acerca; revisar con LOTO de la grúa", "C-05, Mtto"],
+    ["Canasta con más de 70 t", "No trasladar; retirar material", "C-17"],
+    ["Chatarra mojada o canasta que gotea", "No cargar; escurrir y secar bajo techo; C-17 libera; priorizar chatarra seca", "C-17"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-05 Operador de Patio", "U", "16 h (4 h radiación)", "60 h / 40 canastas", "24 meses; pórtico 12"],
+      ["S-04 Grúa de Carga", "U", "24 h (NOM-006)", "80 h / 40 cargas", "12 meses"],
+      ["S-01 Primer Hornero", "U", "8 h", "20 cargas", "24 meses"],
+      ["C-17 Supervisor de Patio", "O (evaluador)", "16 h + evaluador", "—", "12 meses"]
+    ],
+    "checklist": [
+      "Prueba el pórtico al inicio de turno y no recibe chatarra si falla",
+      "Responde a una alarma del pórtico: detener, aislar y avisar; no tocar",
+      "Identifica los 6 grupos de chatarra prohibida y qué se hace con cada uno",
+      "No carga chatarra húmeda ni una canasta con agua",
+      "Prepara el horno, verifica sin agua a la vista y zona libre antes de trasladar",
+      "Traslada sin pasar la carga sobre personas"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "El pórtico da alarma y la 2.ª pasada la confirma. ¿Qué haces?", "opciones": ["Descargar en el área de rechazo", "Aislar el camión y avisar a C-16", "Regresar el camión al proveedor"], "correcta": 1, "explicacion": "No se descarga ni se toca: camión aislado a 10 m, chofer fuera; solo el ESR (C-16) autoriza el manejo."},
+    {"pregunta": "¿Cuál es el rango de peso de una canasta?", "opciones": ["40–50 t", "55–70 t", "75–90 t"], "correcta": 1, "explicacion": "Objetivo 65 t. Con más de 70 t no se traslada; con menos de 50 t se completa o C-05 ajusta el DRI."},
+    {"pregunta": "¿Dónde va la chatarra pesada en la canasta?", "opciones": ["Arriba, para perforar rápido", "Al centro, lejos de las paredes", "Pegada a las paredes"], "correcta": 1, "explicacion": "Pesada ≤ 20 % al centro; ligera al fondo y arriba. Pesados arriba rompen electrodos."},
+    {"pregunta": "¿Qué distancia marca la zona roja durante la carga?", "opciones": ["≤ 5 m del horno", "≤ 15 m del horno", "≤ 30 m del horno"], "correcta": 1, "explicacion": "Roja ≤ 15 m del horno y ruta ± 5 m; amarilla 15–30 m. Nadie a pie en la roja."},
+    {"pregunta": "La canasta llega goteando agua. ¿Qué haces?", "opciones": ["Cargar rápido antes de que escurra", "No cargar; escurrir y que C-17 libere", "Cargarla sobre un talón más caliente"], "correcta": 1, "explicacion": "Agua sobre el talón líquido = explosión. Se escurre y seca bajo techo; C-17 libera la canasta."}
+  ],
+  "reglas": [
+    {"titulo": "Alarma del pórtico: nadie toca el material", "detalle": "Aislar a 10 m y avisar a C-16 (ESR); un rechazo del pórtico nunca se carga."},
+    {"titulo": "Chatarra húmeda no se carga", "detalle": "Agua, hielo, lodo o canasta que gotea: escurrir y secar (MS-ACE-03)."},
+    {"titulo": "Nadie bajo la canasta", "detalle": "Ni en su ruta ± 5 m; la carga nunca pasa sobre personas, púlpitos o pasillos."},
+    {"titulo": "Sin zona libre no se abre la canasta", "detalle": "Roja ≤ 15 m despejada, bocina y confirmación “zona libre” por radio."}
+  ],
+  "por_confirmar": [
+    "Umbral del pórtico, velocidad de paso y altura de apertura de la canasta con el OEM y el ESR",
+    "Densidad, pieza máxima, Cu de la mezcla, tara de canasta y rendimiento metálico (supuestos)"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de explosión por humedad en la carga", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo patio → horno", "Láminas 3–6"],
+    ["3. Equipos y parámetros", "60", "Ejercicio: armar una canasta por capas", "Láminas 7–8, receta"],
+    ["4. Seguridad", "60", "Zonas de exclusión de carga en plano; EPP", "Láminas 9–10, EPP físico"],
+    ["5. Pórtico y chatarra prohibida", "75", "Muestras de material prohibido; pórtico con C-16", "Muestras físicas"],
+    ["6. Calidad y paso a paso", "90", "Lectura guiada de los 16 pasos; pasos ★", "Láminas 11–14"],
+    ["7. Condiciones anormales", "45", "Simulacro de mesa: alarma del pórtico", "Lámina 15"],
+    ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 18"],
+    ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 16–17, 19"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

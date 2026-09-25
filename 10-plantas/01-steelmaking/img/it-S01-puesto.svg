@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" width="1000" height="760" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <pattern id="hatchRed" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#C62828" fill-opacity="0.12"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#C62828" stroke-width="2" stroke-opacity="0.5"/>
+    </pattern>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#43A047"/></marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#E65100"/></marker>
+    <marker id="arrS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#455A64"/></marker>
+  </defs>
+  <text x="500" y="28" font-size="16" text-anchor="middle" fill="#212121" font-weight="bold">Figura IT-S01. Mi área de trabajo: púlpito del EAF (Primer Hornero)</text>
+  <text x="500" y="48" font-size="12" text-anchor="middle" fill="#212121">Valores de FT-ACE-001 v0.3 y MO-EAF-01…07. Distancias de zona [Supuesto — Validar con C-16 / estudio de la nave]</text>
+  <rect x="20" y="60" width="960" height="470" fill="none" stroke="#455A64" stroke-width="3" />
+  <text x="40" y="80" font-size="12" text-anchor="start" fill="#455A64" font-weight="bold">NAVE DE HORNOS — EAF-1 (vista en planta, esquemática, sin escala)</text>
+  <rect x="40" y="95" width="700" height="420" fill="#FFF3C4" stroke="#FF8F00" stroke-width="1.5" stroke-dasharray="4,3"/><text x="44" y="109" font-size="12" text-anchor="start" fill="#8D4B00" font-weight="bold">Zona amarilla de la nave (10–30 m del evento)</text>
+  <circle cx="330" cy="270" r="150" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" stroke-dasharray="6,3"/><text x="330" y="134" font-size="12" text-anchor="middle" fill="#C62828" font-weight="bold">Roja en carga: ≤ 15 m del horno</text>
+  <circle cx="330" cy="270" r="80" fill="#8D6E63" stroke="#455A64" stroke-width="4"/><circle cx="330" cy="270" r="64" fill="#E65100" fill-opacity="0.85"/><circle cx="312" cy="260" r="8" fill="#455A64"/><circle cx="348" cy="260" r="8" fill="#455A64"/><circle cx="330" cy="286" r="8" fill="#455A64"/><text x="330" y="366" font-size="12" text-anchor="middle" fill="#212121" font-weight="bold">EAF-1 · 150 t · talón 20–30 t</text>
+  <rect x="470" y="330" width="170" height="150" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" stroke-dasharray="6,3"/><text x="474" y="344" font-size="12" text-anchor="start" fill="#C62828" font-weight="bold">Roja en vaciado ≤ 10 m</text>
+  <circle cx="560" cy="420" r="34" fill="#8D6E63" stroke="#455A64" stroke-width="3"/><circle cx="560" cy="420" r="25" fill="#FF8F00"/><text x="560" y="468" font-size="12" text-anchor="middle" fill="#212121">Carro de olla (EBT)</text>
+  <circle cx="395" cy="320" r="10" fill="#455A64"/><text x="408" y="318" font-size="12" text-anchor="start" fill="#212121" font-weight="bold">EBT</text>
+  <rect x="300" y="170" width="60" height="14" fill="#6D4C41" stroke="#6D4C41" stroke-width="1.5" /><text x="330" y="164" font-size="12" text-anchor="middle" fill="#212121">Puerta de escoria</text>
+  <rect x="410" y="205" width="20" height="20" fill="#455A64" stroke="#455A64" stroke-width="1.5" /><text x="436" y="212" font-size="12" text-anchor="start" fill="#212121">5.º agujero (DRI)</text>
+  <rect x="230" y="250" width="20" height="20" fill="#607D8B" stroke="#455A64" stroke-width="1.5" /><text x="160" y="245" font-size="12" text-anchor="start" fill="#212121">4.º agujero (humos)</text>
+  <rect x="770" y="110" width="190" height="230" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5" />
+  <rect x="785" y="125" width="160" height="150" fill="#ECEFF1" stroke="#455A64" stroke-width="2" />
+  <text x="865" y="142" font-size="13" text-anchor="middle" fill="#455A64" font-weight="bold">PÚLPITO EAF-1</text>
+  <rect x="803" y="150" width="60" height="40" fill="#ffffff" stroke="#1E88E5" stroke-width="2" /><text x="833" y="166" font-size="12" text-anchor="middle" fill="#1E88E5" font-weight="bold">AGUA</text><text x="833" y="182" font-size="12" text-anchor="middle" fill="#1E88E5">2%/4%</text>
+  <rect x="870" y="150" width="65" height="40" fill="#ffffff" stroke="#E65100" stroke-width="2" /><text x="902" y="166" font-size="12" text-anchor="middle" fill="#E65100" font-weight="bold">ENERGÍA</text><text x="902" y="182" font-size="12" text-anchor="middle" fill="#E65100">≤ 119 MW</text>
+  <rect x="803" y="200" width="60" height="35" fill="#ffffff" stroke="#43A047" stroke-width="2" /><text x="833" y="222" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">DRI·O₂·C</text>
+  <rect x="870" y="200" width="65" height="35" fill="#ffffff" stroke="#455A64" stroke-width="2" /><text x="902" y="222" font-size="12" text-anchor="middle" fill="#455A64" font-weight="bold">Llaves</text>
+  <circle cx="840" cy="255" r="10" fill="#C62828"/><text x="856" y="259" font-size="12" text-anchor="start" fill="#212121">Paro / alarma</text>
+  <line x1="785" y1="275" x2="945" y2="275" stroke="#1E88E5" stroke-width="5"/><text x="865" y="292" font-size="12" text-anchor="middle" fill="#1E88E5">Vidrio de protección</text>
+  <text x="865" y="330" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">Zona verde</text>
+  <polyline points="865,340 865,470 925,515" fill="none" stroke="#43A047" stroke-width="4" stroke-dasharray="10,5" marker-end="url(#arrG)"/>
+  <rect x="910" y="524" width="40" height="12" fill="#43A047" stroke="#43A047" stroke-width="1.5" /><text x="930.0" y="550" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">SALIDA</text>
+  <rect x="770" y="400" width="120" height="50" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5" /><text x="830.0" y="429.0" font-size="12" text-anchor="middle" fill="#1B5E20" font-weight="bold">Punto de reunión</text>
+  <line x1="560" y1="470" x2="560" y2="505" stroke="#E65100" stroke-width="2" marker-end="url(#arrO)"/><text x="570" y="505" font-size="12" text-anchor="start" fill="#212121">a LF</text>
+  <circle cx="765" cy="125" r="11" fill="#212121"/><text x="765" y="129" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">1</text>
+  <circle cx="792" cy="158" r="11" fill="#212121"/><text x="792" y="162" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">2</text>
+  <circle cx="945" cy="150" r="11" fill="#212121"/><text x="945" y="154" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">3</text>
+  <circle cx="792" cy="212" r="11" fill="#212121"/><text x="792" y="216" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">4</text>
+  <circle cx="945" cy="205" r="11" fill="#212121"/><text x="945" y="209" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">5</text>
+  <circle cx="818" cy="255" r="11" fill="#212121"/><text x="818" y="259" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">6</text>
+  <circle cx="250" cy="340" r="11" fill="#212121"/><text x="250" y="344" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">7</text>
+  <circle cx="420" cy="195" r="11" fill="#212121"/><text x="420" y="199" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">8</text>
+  <circle cx="412" cy="338" r="11" fill="#212121"/><text x="412" y="342" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">9</text>
+  <circle cx="560" cy="380" r="11" fill="#212121"/><text x="560" y="384" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">10</text>
+  <circle cx="855" cy="380" r="11" fill="#212121"/><text x="855" y="384" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">11</text>
+  <circle cx="770" cy="395" r="11" fill="#212121"/><text x="770" y="399" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">12</text>
+  <rect x="20" y="570" width="960" height="180" fill="#FAFAFA" stroke="#455A64" stroke-width="1" />
+  <text x="30" y="590" font-size="13" text-anchor="start" fill="#212121" font-weight="bold">Leyenda (números del dibujo)</text>
+  <circle cx="40" cy="610" r="11" fill="#212121"/><text x="40" y="614" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">1</text><text x="58" y="614" font-size="12" text-anchor="start" fill="#212121">Púlpito con A/C y vidrio: mi estación de 12 h</text>
+  <circle cx="40" cy="630" r="11" fill="#212121"/><text x="40" y="634" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">2</text><text x="58" y="634" font-size="12" text-anchor="start" fill="#212121">HMI de agua: Δ caudal ≤ 2% · T panel ≤ 60 °C · P 4–6 bar</text>
+  <circle cx="40" cy="650" r="11" fill="#212121"/><text x="40" y="654" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">3</text><text x="58" y="654" font-size="12" text-anchor="start" fill="#212121">HMI eléctrica: 560 kWh/t · ≤ 119 MW · ≈ 67 kA</text>
+  <circle cx="40" cy="670" r="11" fill="#212121"/><text x="40" y="674" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">4</text><text x="58" y="674" font-size="12" text-anchor="start" fill="#212121">Consola DRI 3.5–4.3 t/min · O₂ 30–40 Nm³/t · C 8–12 kg/t</text>
+  <circle cx="40" cy="690" r="11" fill="#212121"/><text x="40" y="694" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">5</text><text x="58" y="694" font-size="12" text-anchor="start" fill="#212121">Tablero de llaves cautivas: conteo llaves = personas</text>
+  <circle cx="40" cy="710" r="11" fill="#212121"/><text x="40" y="714" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">6</text><text x="58" y="714" font-size="12" text-anchor="start" fill="#212121">Botón de paro de emergencia y alarma (canal 1)</text>
+  <circle cx="520" cy="610" r="11" fill="#212121"/><text x="520" y="614" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">7</text><text x="538" y="614" font-size="12" text-anchor="start" fill="#212121">EAF-1: nadie a ≤ 15 m durante la carga</text>
+  <circle cx="520" cy="630" r="11" fill="#212121"/><text x="520" y="634" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">8</text><text x="538" y="634" font-size="12" text-anchor="start" fill="#212121">5.º agujero: alimentación continua de DRI</text>
+  <circle cx="520" cy="650" r="11" fill="#212121"/><text x="520" y="654" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">9</text><text x="538" y="654" font-size="12" text-anchor="start" fill="#212121">EBT: vaciado 150 t a 1,630 ± 15 °C</text>
+  <circle cx="520" cy="670" r="11" fill="#212121"/><text x="520" y="674" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">10</text><text x="538" y="674" font-size="12" text-anchor="start" fill="#212121">Carro de olla: nadie a ≤ 10 m durante el vaciado</text>
+  <circle cx="520" cy="690" r="11" fill="#212121"/><text x="520" y="694" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">11</text><text x="538" y="694" font-size="12" text-anchor="start" fill="#212121">Ruta de escape del púlpito hacia la salida</text>
+  <circle cx="520" cy="710" r="11" fill="#212121"/><text x="520" y="714" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">12</text><text x="538" y="714" font-size="12" text-anchor="start" fill="#212121">Punto de reunión (conteo ≤ 10 min)</text>
+  <text x="30" y="738" font-size="13" text-anchor="start" fill="#212121" font-weight="bold">Zonas:</text><rect x="90" y="726" width="26" height="16" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2" /><text x="122" y="738" font-size="12" text-anchor="start" fill="#212121">Roja: solo personal esencial con EPP aluminizado</text><rect x="430" y="726" width="26" height="16" fill="#FFF3C4" stroke="#FF8F00" stroke-width="1.5" /><text x="462" y="738" font-size="12" text-anchor="start" fill="#212121">Amarilla: paso con precaución</text><rect x="660" y="726" width="26" height="16" fill="#E8F5E9" stroke="#43A047" stroke-width="1.5" /><text x="692" y="738" font-size="12" text-anchor="start" fill="#212121">Verde: refugio / segura</text><line x1="850" y1="734" x2="890" y2="734" stroke="#43A047" stroke-width="4" stroke-dasharray="10,5" marker-end="url(#arrG)"/><text x="896" y="738" font-size="12" text-anchor="start" fill="#212121">Escape</text>
+</svg>

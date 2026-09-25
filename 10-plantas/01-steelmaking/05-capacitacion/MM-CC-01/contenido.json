@@ -1,0 +1,206 @@
+{
+  "code": "MM-CC-01",
+  "title": "Cambio y preparación de moldes (placas CC1 / tubos CC2): medición de conicidad y desgaste",
+  "titulo_corto": "Moldes: conicidad",
+  "serie": "Mantenimiento",
+  "area": "Acería · CC1, CC2 y taller de moldes",
+  "manual": "03-mantenimiento/MM-CC-01-moldes-conicidad-desgaste.md",
+  "manual_version": "0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Moldes con conicidad, superficie y agua correctas, cambiados sin acero en la máquina ni fuente abierta",
+  "audiencia": "S-25 Mecánico de Taller · S-19 Mecánico · S-21 Instrumentista · S-22 · S-20 · operador de grúa de CC · C-16 (ESR)",
+  "kpis": [
+    {"value": "32 h", "label": "teoría (S-25 Taller)"},
+    {"value": "80 h", "label": "OJT · 5 armados CC1 + 10 CC2"},
+    {"value": "12", "label": "pasos críticos ★"},
+    {"value": "24", "label": "meses de vigencia (TD-P07)"}
+  ],
+  "cadena": ["Hoja de taller", "Máquina vacía y fuente", "LOTO y energía cero", "Cambiar molde", "Alinear y medir", "Caudal y liberación"],
+  "titulos": {
+    "objetivos": "Al terminar, montas moldes que no provocan breakout",
+    "roles": "C-11 libera el molde; C-06 lo recibe por operación",
+    "flujo": "El taller decide: reutilizar, rectificar o desechar",
+    "figura": "Conicidad, desgaste y diagonales deciden el molde",
+    "equipos": "El molde es la primera barrera contra el breakout",
+    "parametros": "Cu < 25 mm o diagonales > 0.5 mm: se desecha",
+    "seguridad": "Agua, izaje y Cs-137: tres riesgos en un cambio",
+    "calidad": "La conicidad equivocada se ve en grietas del producto",
+    "pasos": "Dieciséis pasos; doce no admiten error",
+    "anormales": "Fuga de agua con acero: fin de colada controlado",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del cambio de molde que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Medir y decidir en taller", "detalle": "Conicidad, espesor de Cu, rayas, Ni, lado y diagonales contra criterio: reutilizar, rectificar o desechar."},
+    {"titulo": "Cambiar el molde sin riesgo", "detalle": "Máquina vacía, obturador de Cs-137 cerrado por el ESR, LOTO, energía cero y drenado a 0 bar."},
+    {"titulo": "Alinear y verificar en máquina", "detalle": "Alineación ±0.3 mm con segmento 0 o pie de rodillos, conicidad ±0.05 %/m y termopares BOP al 100 %."},
+    {"titulo": "Liberar con caudal nominal", "detalle": "Sin fugas, caudal ≥ 100 % nominal, oscilación sin alarmas y checklist firmado por C-11 y C-06."}
+  ],
+  "por_que_importa": "El molde forma la cáscara del acero. Una conicidad mal ajustada, un Cu delgado o una fuga de agua terminan en grietas, romboidad o breakout, y un breakout con agua es explosión. En CC2 cada molde tiene una fuente de Cs-137: se trabaja solo con el obturador cerrado por el ESR.",
+  "principio": "Nunca se cierra el agua de molde con acero en la máquina.",
+  "roles": [
+    ["Rol", "Qué hace en el cambio de molde", "RACI"],
+    ["C-11 Supervisor de Mantenimiento Mecánico", "Dueño; programa de moldes y liberación a máquina", "A"],
+    ["S-25 Mecánico de Taller de Moldes", "Desarme, medición, armado y pruebas en taller", "R"],
+    ["S-19 Mecánico de Acería", "Cambio en máquina, conexiones de agua y alineación", "R"],
+    ["S-21 Instrumentista", "Termopares BOP, sensor de nivel (CC1) y EMS (CC2)", "R"],
+    ["S-22 / S-20", "LOTO hidráulico (acumuladores) y eléctrico del EMS (NOM-029)", "R"],
+    ["Operador de grúa de CC (50 t)", "Iza el molde", "R"],
+    ["C-16 como ESR (CC2)", "Cierra el obturador de Cs-137, pone su candado y mide < 2 × fondo", "R (CC2)"],
+    ["C-06 Supervisor de CC", "Entrega la máquina vacía y firma la liberación", "A (operación)"]
+  ],
+  "flujo": [
+    {"label": "Sale de máquina", "desc": "Por tonelaje o defecto"},
+    {"label": "Medir en taller", "desc": "Perfil, conicidad, Cu, rayas, Ni"},
+    {"label": "Decidir", "desc": "Reusar, rectificar ≤ 2 mm o desechar"},
+    {"label": "Armar", "desc": "Torque en secuencia, 3 pasadas"},
+    {"label": "Prueba de presión", "desc": "1.5 × P operación, 30 min"},
+    {"label": "TC y conicidad", "desc": "BOP al 100 %; ajuste de tabla"},
+    {"label": "Montar", "desc": "Máquina vacía, fuente cerrada, LOTO"},
+    {"label": "Alinear y probar", "desc": "±0.3 mm; caudal nominal"},
+    {"label": "Liberar", "desc": "Firma C-11 y C-06"}
+  ],
+  "flujo_takeaway": "Ningún molde sube a máquina sin su hoja de taller: presión, conicidad, termopares y torques.",
+  "figuras": [
+    {
+      "svg": "mm-molde-conicidad.svg",
+      "lectura": [
+        "CC1: conicidad (%/m) = (Ws − Wi) / (Wi × L) × 100; caras angostas 1.0–1.2 %/m, ±0.05 del ajuste.",
+        "CC2: tubo 160 × 160 mm, 0.8–1.0 %/m; se desecha si la conicidad pierde > 20 % o |D1 − D2| > 0.5 mm.",
+        "Desgaste local máximo 0.5 mm; Cu de placa ≥ 25 mm; el tubo se mide cada 100 mm con perfilómetro."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Placas anchas CC1 (Cu-Ag + Ni)", "Solidificar la cáscara", "900 mm; Cu nuevo ≈ 40 mm [Validar]", "Cu ≥ 25 mm; rayas ≤ 0.5 mm"],
+    ["Placas angostas CC1", "Ancho y conicidad", "1.0–1.2 %/m", "±0.05 %/m del ajuste"],
+    ["Termopares BOP (3 filas)", "Predicción de breakout", "Tipo K / T [Validar]", "Todos leen; responden a calor"],
+    ["Tubo CC2 (Cu-Ag)", "Molde de palanquilla", "1,000 mm; 160 × 160; 0.8–1.0 %/m", "Diagonales y conicidad en criterio"],
+    ["Chaqueta de agua CC2", "Agua de alta velocidad", "Ranura ≈ 4 mm [Validar]; 10–12 m/s", "Ranura uniforme ±0.2 mm"],
+    ["Conicímetro y perfilómetro", "Medir conicidad y perfil", "±0.01 %/m; ±0.02 mm", "Calibrados"],
+    ["Banco de prueba de presión", "Hermeticidad", "Hasta 25 bar", "Manómetro calibrado"]
+  ],
+  "parametros": [
+    ["Especificación", "Objetivo", "Tolerancia", "Límite / rechazo", "Frecuencia"],
+    ["Conicidad angosta CC1", "Tabla C-08 (1.0–1.2)", "±0.05 %/m", "> ±0.1 %/m", "Cada armado y paro"],
+    ["Espesor de Cu (CC1)", "≥ 35 mm", "≥ 25 mm", "< 25 mm: desechar", "Cada desarme"],
+    ["Rayas / Ni perdido", "0 mm", "≤ 0.3 mm", "> 0.5 mm: rectificar", "Cada salida"],
+    ["Conicidad tubo CC2", "0.9 %/m", "0.8–1.0 %/m", "Pérdida > 20 %", "Cada salida"],
+    ["Diagonales CC2", "≤ 0.3 mm", "≤ 0.5 mm", "> 0.5 mm: desechar", "Cada salida"],
+    ["Lado del tubo (menisco)", "160.0 mm", "±0.3 mm", "> ±0.5 mm", "Cada salida"],
+    ["Prueba de presión", "1.5 × P op / 30 min", "—", "Caída o goteo", "Cada armado"],
+    ["Alineación a segmento 0", "0 mm", "±0.3 mm", "> ±0.5 mm", "Cada cambio"]
+  ],
+  "parametros_nota": "Espesores, desgastes, ranura, torques (típ. 100–150 N·m), presión de prueba (típ. 15 bar) y vida de tubos: [Validar con OEM / Ingeniería de Mantenimiento].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Máquina vacía antes de tocar el agua", "detalle": "Fin de secuencia, sin acero ni hebra sin solidificar, barra falsa estacionada; entrega firmada por C-06."},
+      {"titulo": "Fuente de Cs-137 cerrada (CC2)", "detalle": "El ESR (C-16) cierra el obturador, pone su candado y mide < 2 × fondo en el punto de trabajo y a 1 m (MS-ACE-07)."},
+      {"titulo": "LOTO y prueba de energía cero", "detalle": "Agua, HPU de oscilación y ancho, EMS y secundario bloqueados; oscilación rechazada, 0 bar y detector de tensión."},
+      {"titulo": "Izaje del molde", "detalle": "Aparejo certificado, prueba de levante a 100 mm; nadie bajo la carga ni a ± 5 m de su proyección (MS-ACE-04)."}
+    ],
+    "epp": [
+      "Casco, lentes y careta para esmerilado",
+      "Guantes anticorte y botas metatarsales",
+      "Protección auditiva",
+      "Máquina caliente: ropa FR y guantes para calor",
+      "Dosímetro personal cerca de la fuente (CC2)"
+    ],
+    "figura": "ms-loto-puntos-cc.svg",
+    "figura_titulo": "Agua de molde, HPU y Cs-137: bloqueo en orden",
+    "figura_lectura": [
+      "El agua de molde se cierra solo con la máquina vacía; se bloquean bombas y torre de emergencia.",
+      "HPU de oscilación con acumuladores a 0 bar y barra falsa estacionada con pasador.",
+      "Cs-137: obturador cerrado con candado del ESR; radiación < 2 × fondo en el punto de trabajo."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Conicidad CC1", "1.0–1.2 %/m ±0.05", "Conicímetro, cada armado y paro", "Grietas longitudinales o transversales"],
+    ["Desgaste y Ni CC1", "≤ 0.5 mm; Ni íntegro", "Visual y profundímetro", "Grietas en estrella (Cu); marcas"],
+    ["Diagonales CC2", "|D1 − D2| ≤ 0.5 mm", "Perfilómetro", "Romboidad, grietas de esquina"],
+    ["Conicidad CC2", "0.8–1.0 %/m", "Perfilómetro", "Cáscara delgada, abultamiento"],
+    ["Ranura de agua", "±0.2 mm", "Lainas en 4 lados y 3 alturas", "Enfriamiento desigual, romboidad"],
+    ["Termopares BOP", "100 % funcionales", "Prueba con calor", "Breakout no detectado (sticker)"]
+  ],
+  "calidad_takeaway": "Poca conicidad da grietas longitudinales y breakout; mucha da desgaste, pegado y grietas transversales.",
+  "pasos": [
+    {"n": 1, "paso": "Verifica el molde nuevo", "como": "Hoja de liberación de taller: prueba de presión, conicidad o perfil, TC y torques", "criterio": "Hoja completa y firmada", "critico": true, "rol": "S-25, C-11"},
+    {"n": 2, "paso": "Asegura la máquina", "como": "Fin de secuencia; sin acero ni hebra sin solidificar; barra falsa estacionada", "criterio": "Entrega firmada por C-06", "critico": true, "rol": "C-06"},
+    {"n": 3, "paso": "Cierra la fuente (CC2)", "como": "El ESR cierra el obturador, pone candado y tarjeta y mide en el punto de trabajo y a 1 m", "criterio": "< 2 × fondo en el permiso", "critico": true, "rol": "C-16 (ESR)"},
+    {"n": 4, "paso": "Aplica LOTO", "como": "Agua de molde, HPU, EMS y enfriamiento secundario; candados personales", "criterio": "Candados puestos", "critico": true, "rol": "S-19, S-22"},
+    {"n": 5, "paso": "Prueba energía cero", "como": "Intento de oscilación; manómetros 0 bar; detector de tensión", "criterio": "Sin energía", "critico": true, "rol": "C-11"},
+    {"n": 6, "paso": "Drena y desconecta", "como": "Drena el agua hasta 0 bar; desconecta mangueras y acoples; tapa conexiones", "criterio": "0 bar; sin agua", "critico": true, "rol": "S-19"},
+    {"n": 7, "paso": "Retira el molde", "como": "Aparejo certificado, prueba de levante a 100 mm, traslado a taller", "criterio": "Nadie bajo la carga", "critico": true, "rol": "Grúa, S-19"},
+    {"n": 8, "paso": "Limpia asientos", "como": "Mesa de oscilación y asientos sin salpicaduras", "criterio": "Superficies limpias", "critico": false, "rol": "S-19"},
+    {"n": 9, "paso": "Instala el molde", "como": "Baja guiado; asienta en pernos de centrado; aprieta anclajes al torque OEM", "criterio": "Asentado", "critico": true, "rol": "S-19"},
+    {"n": 10, "paso": "Conecta agua y prueba", "como": "Presuriza a presión de operación 10 min", "criterio": "Sin fugas", "critico": true, "rol": "S-19"},
+    {"n": 11, "paso": "Alinea con segmento 0", "como": "Regla de alineación y lainas en 4 puntos (pie de rodillos en CC2)", "criterio": "±0.3 mm", "critico": false, "rol": "S-25"},
+    {"n": 12, "paso": "Verifica conicidad (CC1)", "como": "Conicímetro en ambas caras angostas, puntos P1–P3", "criterio": "Tabla ±0.05 %/m", "critico": false, "rol": "S-25"},
+    {"n": 13, "paso": "Verifica TC y nivel", "como": "Todos los TC leen; sensor de nivel (CC1) o detector (CC2) conectado", "criterio": "100 %", "critico": false, "rol": "S-21"},
+    {"n": 14, "paso": "Retira LOTO", "como": "Orden inverso, personal fuera; al final el ESR retira su candado, abre y verifica la señal", "criterio": "Señal de nivel ± 5 mm", "critico": true, "rol": "Todos, ESR"},
+    {"n": 15, "paso": "Prueba funcional", "como": "Agua a caudal nominal (CC1 ≈ 4,200 / 450 L/min; CC2 ≈ 2,000 L/min); oscilación en vacío", "criterio": "Caudal ≥ 100 %, sin alarmas", "critico": true, "rol": "S-21, S-12"},
+    {"n": 16, "paso": "Libera", "como": "Checklist de liberación firmado por Mantenimiento y Operación", "criterio": "Firmado por C-11 y C-06", "critico": true, "rol": "C-11, C-06"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Fuga de agua en molde con acero", "Fin de colada controlado; MS-ACE-09", "C-06, C-04"],
+    ["Alarma BOP repetitiva", "Reducir velocidad (MO-CC1-04); revisar TC y conicidad al paro", "C-08, S-21"],
+    ["Grietas longitudinales recurrentes", "Medir conicidad y desgaste; análisis con C-08", "C-08, C-11"],
+    ["Romboidad en palanquilla", "Cambiar el tubo de la línea", "C-08, S-25"],
+    ["Prueba de presión cae", "Rehacer el armado", "S-25"],
+    ["Radiámetro ≥ 2 × fondo, cerrado", "No trabajar; alejarse ≥ 3 m y delimitar; plan de emergencia del ESR", "C-16 (ESR), C-06"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-25 Mecánico de Taller", "U", "32 h", "80 h / 5 CC1 + 10 tubos", "24 meses"],
+      ["S-19 Mecánico de Acería", "U", "16 h", "3 cambios", "24 meses; izaje 12"],
+      ["S-21 Instrumentista", "U", "8 h", "3 verificaciones", "24 meses"],
+      ["S-22 / S-20", "U", "8 h / NOM-029 + 4 h", "3 bloqueos", "24 / 12 meses"],
+      ["Operador de grúa de CC", "U", "NOM-006", "3 izajes de molde", "12 meses"],
+      ["Cerca de la fuente (CC2)", "L", "NOM-012 (8 h)", "—", "12 meses"]
+    ],
+    "checklist": [
+      "Revisa la hoja de taller y recibe la máquina vacía firmada por C-06",
+      "Confirma que el ESR cerró el obturador con su candado y midió < 2 × fondo",
+      "Aplica LOTO con candado personal, prueba energía cero y drena a 0 bar",
+      "Iza sin nadie bajo la carga; asienta a torque y prueba sin fugas",
+      "Retira LOTO con personal fuera y el ESR verifica la señal de nivel",
+      "Confirma caudal nominal y libera con firma de C-11 y C-06"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Cuándo se puede cerrar el agua de molde?", "opciones": ["Al bajar la velocidad", "Solo con la máquina vacía", "Con la hebra en el segmento 0"], "correcta": 1, "explicacion": "Nunca con acero en la máquina: sin acero en molde ni hebra sin solidificar y barra falsa estacionada."},
+    {"pregunta": "La placa ancha de CC1 mide 24 mm de Cu. ¿Qué se hace?", "opciones": ["Rectificar 2 mm", "Desechar la placa", "Montar y medir después"], "correcta": 1, "explicacion": "Con Cu < 25 mm la placa va a desecho o recuperación de Cu; el rectificado máximo es 2 mm por vez."},
+    {"pregunta": "¿Con qué diferencia de diagonales se desecha un tubo CC2?", "opciones": ["> 0.1 mm", "> 0.5 mm", "> 2 mm"], "correcta": 1, "explicacion": "|D1 − D2| > 0.5 mm provoca romboidad, grietas de esquina y riesgo de breakout."},
+    {"pregunta": "¿Quién cierra el obturador de Cs-137 antes del cambio en CC2?", "opciones": ["El mecánico S-19", "El ESR (C-16)", "El operador de púlpito"], "correcta": 1, "explicacion": "Solo el ESR cierra, pone su candado y mide < 2 × fondo en el punto de trabajo y a 1 m."},
+    {"pregunta": "¿Qué tolerancia tiene la alineación molde–segmento 0?", "opciones": ["±0.3 mm", "±1.0 mm", "±3 mm"], "correcta": 0, "explicacion": "Objetivo 0, tolerancia ±0.3 mm; arriba de ±0.5 mm se corrige con lainas o reajuste."}
+  ],
+  "reglas": [
+    {"titulo": "Sin máquina vacía no se toca el agua", "detalle": "Nunca se cierra el agua de molde con acero en la máquina."},
+    {"titulo": "Fuente cerrada por el ESR (CC2)", "detalle": "Obturador con candado del ESR y radiación < 2 × fondo."},
+    {"titulo": "Sin hoja de taller el molde no sube", "detalle": "Presión, conicidad, termopares y torques registrados."},
+    {"titulo": "Sin LOTO y energía cero no se toca", "detalle": "Candado personal; oscilación rechazada, 0 bar y 0 V."}
+  ],
+  "por_confirmar": [
+    "Espesores de Cu, desgastes y ranura de chaqueta con el OEM",
+    "Torques, presión de prueba (típ. 15 bar) y peso del molde CC1 (20–30 t)",
+    "Vida de tubos CC2 (400–700 coladas) y tiempo de cambio de molde CC1"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de breakout por molde", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo taller–máquina", "Láminas 3–6"],
+    ["3. Equipos y especificaciones", "90", "Ejercicio: calcular conicidad con Ws, Wi y L", "Láminas 7–8, calculadora"],
+    ["4. Seguridad, LOTO y energía cero", "75", "Puntos de bloqueo de CC y papel del ESR", "Láminas 9–10, candados"],
+    ["5. Calidad y paso a paso", "90", "Lectura guiada de los 16 pasos; pasos ★", "Láminas 11–13"],
+    ["6. Práctica de metrología", "60", "Conicímetro, perfilómetro y UT en taller", "Taller de moldes"],
+    ["7. Condiciones anormales", "45", "Simulacro de mesa: obturador trabado", "Lámina 14"],
+    ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
+    ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {}
+}

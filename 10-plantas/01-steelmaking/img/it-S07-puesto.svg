@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 820" width="1000" height="820" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <pattern id="hatchRed" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#C62828" fill-opacity="0.12"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#C62828" stroke-width="2" stroke-opacity="0.55"/>
+    </pattern>
+    <pattern id="hatchSlag" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <rect width="10" height="10" fill="#6D4C41" fill-opacity="0.18"/>
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#6D4C41" stroke-width="2" stroke-opacity="0.5"/>
+    </pattern>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E7D32"/>
+    </marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#E65100"/>
+    </marker>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1E88E5"/>
+    </marker>
+    <marker id="arrK" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#212121"/>
+    </marker>
+  </defs>
+  <text x="500" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#212121">Figura IT-S07. Mi estación: piso del horno olla — alambre, argón y medición (vista lateral)</text>
+  <text x="500" y="46" text-anchor="middle" font-size="12" fill="#212121">Esquemático sin escala. Valores de MO-LF-01 y FT-ACE-001 §3; zonas según MS-ACE-01 [Supuesto — Validar con C-16]</text>
+  <rect x="150" y="430" width="130" height="14" fill="#FBC02D" stroke="#F9A825" stroke-width="1.2" fill-opacity="0.28"/>
+  <rect x="280" y="430" width="360" height="14" fill="url(#hatchRed)" stroke="#C62828" stroke-width="1.5"/>
+  <rect x="640" y="430" width="130" height="14" fill="#FBC02D" stroke="#F9A825" stroke-width="1.2" fill-opacity="0.28"/>
+  <line x1="20" y1="430" x2="980" y2="430" stroke="#455A64" stroke-width="3"/>
+  <text x="460" y="460" font-size="12" fill="#C62828" text-anchor="middle">Roja ≤ 5 m de la ventana / agujero de muestreo · Amarilla 5–15 m</text>
+  <rect x="340" y="466" width="240" height="40" fill="none" stroke="#C62828" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="460" y="490" font-size="11" fill="#C62828" text-anchor="middle">Fosa del carro: aquí se acumula el argón</text>
+  <rect x="595" y="472" width="34" height="22" fill="#FFFFFF" stroke="#43A047" stroke-width="2"/>
+  <text x="612" y="487" font-size="12" fill="#2E7D32" text-anchor="middle" font-weight="bold">O₂</text>
+  <rect x="350" y="405" width="220" height="22" fill="#455A64" stroke="#263238" stroke-width="1.5"/>
+  <circle cx="375" cy="428" r="8" fill="#263238" stroke="#263238" stroke-width="1.5"/>
+  <circle cx="545" cy="428" r="8" fill="#263238" stroke="#263238" stroke-width="1.5"/>
+  <polygon points="360,245 560,245 546,405 374,405" fill="#8D6E63" stroke="#455A64" stroke-width="2"/>
+  <polygon points="368,289.8 552,289.8 540,397 380,397" fill="#E65100" stroke="#FF8F00" stroke-width="1"/>
+  <rect x="368" y="279.8" width="184" height="10" fill="#6D4C41" stroke="#6D4C41" stroke-width="1"/>
+  <line x1="585" y1="245" x2="585" y2="279.8" stroke="#212121" stroke-width="1"/>
+  <line x1="578" y1="245" x2="592" y2="245" stroke="#212121" stroke-width="1"/>
+  <line x1="578" y1="279.8" x2="592" y2="279.8" stroke="#212121" stroke-width="1"/>
+  <text x="598" y="268" font-size="11" fill="#212121" text-anchor="start">bordo libre ≥ 300 mm</text>
+  <text x="598" y="282" font-size="11" fill="#212121" text-anchor="start">[Supuesto]</text>
+  <circle cx="505" cy="380" r="4" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1" fill-opacity="0.8"/>
+  <circle cx="500" cy="355" r="5" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1" fill-opacity="0.8"/>
+  <circle cx="508" cy="330" r="4" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1" fill-opacity="0.8"/>
+  <circle cx="498" cy="305" r="5" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1" fill-opacity="0.8"/>
+  <rect x="495" y="397" width="20" height="8" fill="#43A047" stroke="#2E7D32" stroke-width="1"/>
+  <rect x="340" y="212" width="240" height="28" fill="#455A64" stroke="#263238" stroke-width="2"/>
+  <line x1="345" y1="226" x2="575" y2="226" stroke="#1E88E5" stroke-width="2" stroke-dasharray="6,3"/>
+  <rect x="420" y="100" width="16" height="150" fill="#616161" stroke="#263238" stroke-width="1"/>
+  <rect x="452" y="100" width="16" height="150" fill="#616161" stroke="#263238" stroke-width="1"/>
+  <rect x="484" y="100" width="16" height="150" fill="#616161" stroke="#263238" stroke-width="1"/>
+  <rect x="330" y="150" width="260" height="8" fill="#455A64" stroke="#263238" stroke-width="1.5"/>
+  <line x1="340" y1="150" x2="340" y2="128" stroke="#455A64" stroke-width="2"/>
+  <line x1="380" y1="150" x2="380" y2="128" stroke="#455A64" stroke-width="2"/>
+  <line x1="420" y1="150" x2="420" y2="128" stroke="#455A64" stroke-width="2"/>
+  <line x1="460" y1="150" x2="460" y2="128" stroke="#455A64" stroke-width="2"/>
+  <line x1="500" y1="150" x2="500" y2="128" stroke="#455A64" stroke-width="2"/>
+  <line x1="540" y1="150" x2="540" y2="128" stroke="#455A64" stroke-width="2"/>
+  <line x1="580" y1="150" x2="580" y2="128" stroke="#455A64" stroke-width="2"/>
+  <line x1="330" y1="128" x2="590" y2="128" stroke="#455A64" stroke-width="2"/>
+  <text x="200" y="120" font-size="12" fill="#212121" text-anchor="start" font-weight="bold">Plataforma de electrodos</text>
+  <text x="200" y="136" font-size="11" fill="#212121" text-anchor="start">interruptor abierto +</text>
+  <text x="200" y="150" font-size="11" fill="#C62828" text-anchor="start">llave cautiva o LOTO</text>
+  <rect x="720" y="150" width="130" height="60" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+  <text x="785" y="175" font-size="12" fill="#212121" text-anchor="middle" font-weight="bold">Alimentador</text>
+  <text x="785" y="192" font-size="11" fill="#212121" text-anchor="middle">2 líneas · guías cerradas</text>
+  <path d="M720,170 L620,170 L545,205 L530,330" fill="none" stroke="#212121" stroke-width="2"/>
+  <path d="M720,190 L630,190 L560,210 L545,330" fill="none" stroke="#9E9E9E" stroke-width="2"/>
+  <text x="628" y="236" font-size="11" fill="#212121" text-anchor="start">alambre CaSi / Al / C</text>
+  <circle cx="760" cy="330" r="32" fill="#CFD8DC" stroke="#455A64" stroke-width="2"/>
+  <circle cx="760" cy="330" r="10" fill="#FFFFFF" stroke="#455A64" stroke-width="1"/>
+  <circle cx="830" cy="330" r="32" fill="#CFD8DC" stroke="#455A64" stroke-width="2"/>
+  <circle cx="830" cy="330" r="10" fill="#FFFFFF" stroke="#455A64" stroke-width="1"/>
+  <rect x="720" y="280" width="150" height="6" fill="#455A64" stroke="#455A64" stroke-width="1.5"/>
+  <text x="770" y="385" font-size="11" fill="#212121" text-anchor="middle">Bobinas bajo techo, secas</text>
+  <text x="770" y="399" font-size="11" fill="#212121" text-anchor="middle">izaje con dispositivo certificado</text>
+  <path d="M900,420 L640,420 L560,420 L515,404" fill="none" stroke="#43A047" stroke-width="3"/>
+  <rect x="880" y="395" width="60" height="30" fill="#43A047" stroke="#2E7D32" stroke-width="2" fill-opacity="0.35"/>
+  <text x="910" y="414" font-size="12" fill="#212121" text-anchor="middle" font-weight="bold">Ar</text>
+  <circle cx="640" cy="420" r="6" fill="#FFFFFF" stroke="#2E7D32" stroke-width="2"/>
+  <rect x="40" y="230" width="80" height="40" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+  <text x="80" y="254" font-size="11" fill="#212121" text-anchor="middle">Lanza</text>
+  <line x1="120" y1="250" x2="395" y2="340" stroke="#455A64" stroke-width="5"/>
+  <rect x="385" y="334" width="22" height="10" fill="#FFFFFF" stroke="#212121" stroke-width="1"/>
+  <circle cx="200" cy="403" r="6" fill="#212121" stroke="#212121" stroke-width="1"/>
+  <line x1="200" y1="409" x2="200" y2="425" stroke="#212121" stroke-width="3"/>
+  <line x1="192" y1="415" x2="208" y2="415" stroke="#212121" stroke-width="2"/>
+  <rect x="195" y="409" width="10" height="9" fill="#9E9E9E" stroke="#9E9E9E" stroke-width="1"/>
+  <text x="170" y="342" font-size="11" fill="#212121" text-anchor="start">Posición de medición</text>
+  <text x="170" y="356" font-size="11" fill="#212121" text-anchor="start">(de lado, ≥ 1.5 m)</text>
+  <path d="M185,400 L60,400" fill="none" stroke="#2E7D32" stroke-width="3" stroke-dasharray="8,5" marker-end="url(#arrG)"/>
+  <text x="40" y="390" font-size="11" fill="#2E7D32" text-anchor="start" font-weight="bold">zona verde / PR2</text>
+  <rect x="20" y="530" width="960" height="280" fill="#FAFAFA" stroke="#455A64" stroke-width="1"/>
+  <text x="35" y="552" font-size="14" fill="#212121" text-anchor="start" font-weight="bold">Leyenda</text>
+  <text x="35" y="572" font-size="12" fill="#212121" text-anchor="start">1  Plataforma de electrodos: solo con interruptor abierto y llave cautiva / LOTO</text>
+  <text x="35" y="590" font-size="12" fill="#212121" text-anchor="start">2  Electrodos de 457 mm (18"): nunca te acerques con arco encendido</text>
+  <text x="35" y="608" font-size="12" fill="#212121" text-anchor="start">3  Bóveda enfriada por agua: si hay alarma de fuga, evacúa a ≥ 25 m</text>
+  <text x="35" y="626" font-size="12" fill="#212121" text-anchor="start">4  Alimentador de alambre: metros y velocidad según receta; guías cerradas</text>
+  <text x="35" y="644" font-size="12" fill="#212121" text-anchor="start">5  Bobinas de alambre: secas, bajo techo, izaje con dispositivo certificado</text>
+  <text x="35" y="662" font-size="12" fill="#212121" text-anchor="start">6  Tapón poroso en el fondo de la olla: el argón hace burbujear el baño</text>
+  <text x="35" y="680" font-size="12" fill="#212121" text-anchor="start">7  Estación de argón y conexión rápida: revisa fugas en cada conexión</text>
+  <text x="35" y="698" font-size="12" fill="#212121" text-anchor="start">8  Lanza de medición: T, O y muestra con sonda seca</text>
+  <text x="35" y="716" font-size="12" fill="#212121" text-anchor="start">9  Mi posición de medición: de lado, con EPP aluminizado, ≤ 2 min en roja</text>
+  <text x="35" y="734" font-size="12" fill="#212121" text-anchor="start">10  Monitor de O₂ en la fosa: alarma &lt; 19.5 % o &gt; 23.5 %</text>
+  <text x="560" y="552" font-size="13" fill="#212121" text-anchor="start" font-weight="bold">Zonas y valores clave</text>
+  <rect x="560" y="564" width="18" height="14" fill="#C62828" stroke="#C62828" stroke-width="1" fill-opacity="0.45"/>
+  <text x="585" y="576" font-size="12" fill="#212121" text-anchor="start">ROJA: solo personal esencial, EPP aluminizado</text>
+  <rect x="560" y="584" width="18" height="14" fill="#FBC02D" stroke="#F9A825" stroke-width="1" fill-opacity="0.45"/>
+  <text x="585" y="596" font-size="12" fill="#212121" text-anchor="start">AMARILLA: autorizado, tras barrera, EPP completo</text>
+  <rect x="560" y="604" width="18" height="14" fill="#43A047" stroke="#2E7D32" stroke-width="1" fill-opacity="0.45"/>
+  <text x="585" y="616" font-size="12" fill="#212121" text-anchor="start">VERDE: tránsito con EPP básico de nave</text>
+  <line x1="560" y1="631" x2="578" y2="631" stroke="#2E7D32" stroke-width="3" stroke-dasharray="6,3"/>
+  <text x="585" y="636" font-size="12" fill="#212121" text-anchor="start">Ruta de escape → salida (verde en el muro)</text>
+  <text x="560" y="660" font-size="12" fill="#212121" text-anchor="start">Ar inicial 100–200 NL/min · fuerte 400–600 NL/min</text>
+  <text x="560" y="678" font-size="12" fill="#212121" text-anchor="start">Ar suave 50–150 NL/min, ≥ 8 min sin adiciones</text>
+  <text x="560" y="696" font-size="12" fill="#212121" text-anchor="start">CaSi 0.3–0.5 kg/t a 150–250 m/min [Supuesto]</text>
+  <text x="560" y="714" font-size="12" fill="#212121" text-anchor="start">Nadie frente a la ventana durante la inyección de CaSi</text>
+  <text x="560" y="732" font-size="12" fill="#212121" text-anchor="start">Detector personal: CO 25 ppm → sal; 200 ppm → evacuación</text>
+  <text x="560" y="750" font-size="12" fill="#C62828" text-anchor="start">Entrada a fosa: permiso, medición O₂ → LEL → CO y vigía</text>
+  <g font-size="12" font-weight="bold" fill="#ffffff">
+    <circle cx="330" cy="150" r="11" fill="#212121"/><text x="330" y="154" text-anchor="middle">1</text>
+    <circle cx="420" cy="95" r="11" fill="#212121"/><text x="420" y="99" text-anchor="middle">2</text>
+    <circle cx="340" cy="212" r="11" fill="#212121"/><text x="340" y="216" text-anchor="middle">3</text>
+    <circle cx="720" cy="150" r="11" fill="#212121"/><text x="720" y="154" text-anchor="middle">4</text>
+    <circle cx="760" cy="298" r="11" fill="#212121"/><text x="760" y="302" text-anchor="middle">5</text>
+    <circle cx="495" cy="395" r="11" fill="#212121"/><text x="495" y="399" text-anchor="middle">6</text>
+    <circle cx="880" cy="395" r="11" fill="#212121"/><text x="880" y="399" text-anchor="middle">7</text>
+    <circle cx="40" cy="230" r="11" fill="#212121"/><text x="40" y="234" text-anchor="middle">8</text>
+    <circle cx="200" cy="380" r="11" fill="#212121"/><text x="200" y="384" text-anchor="middle">9</text>
+    <circle cx="595" cy="480" r="11" fill="#212121"/><text x="595" y="484" text-anchor="middle">10</text>
+  </g>
+</svg>

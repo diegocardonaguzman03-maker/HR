@@ -1,0 +1,214 @@
+{
+  "code": "MO-CC1-07",
+  "title": "Fin de colada y cierre de secuencia",
+  "titulo_corto": "Fin de secuencia",
+  "serie": "Operación",
+  "area": "Colada Continua 1 · planchón",
+  "manual": "02-operacion/cc1/MO-CC1-07-fin-colada-cierre-secuencia.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Terminar la secuencia sin escoria en el molde, sin breakout de la cola y con nadie expuesto al metal líquido",
+  "audiencia": "S-13 Operador de Plataforma · S-12 Operador de Púlpito · S-14 Ayudante · S-16 Corte · S-09 Grúa de Colada · C-06",
+  "kpis": [
+    {"value": "8 h", "label": "teoría (S-13 / S-12)"},
+    {"value": "6", "label": "cierres de secuencia en OJT"},
+    {"value": "6", "label": "pasos críticos ★"},
+    {"value": "24", "label": "meses de vigencia (TD-P07)"}
+  ],
+  "cadena": [
+    "Última olla",
+    "Drenar por nivel",
+    "Tapón a 400 mm",
+    "Tapado 3–5 min",
+    "Cola a 0.3 m/min",
+    "Despunte y LOTO"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, cierras la secuencia sin escoria ni fuga",
+    "roles": "C-06 decide el cierre; S-13 y S-12 lo ejecutan",
+    "flujo": "La cola es la parte más débil: se saca despacio",
+    "figura": "Bajo 400 mm el vórtice arrastra escoria al molde",
+    "equipos": "Pesaje, tapón y modo cola deciden un cierre limpio",
+    "parametros": "Nivel de cierre, tapado y velocidad definen la cola",
+    "seguridad": "Breakout de cola y agua sobre acero: riesgo mortal",
+    "calidad": "El despunte de cola llega hasta zona sana",
+    "pasos": "Dieciséis pasos; seis no admiten error",
+    "anormales": "Fuga al extraer la cola: detén y evacúa",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del cierre que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Drenar sin arrastrar escoria", "detalle": "Última olla cerrada con ≤ 4 t; velocidad por nivel (0.9, 0.6, 0.4 m/min); tapón cerrado a 400 mm, nunca menos."},
+    {"titulo": "Tapar y sacar la cola", "detalle": "Línea detenida 3–5 min con agua y oscilación; 0.3 m/min el primer metro; salida a ≈ 1.0 m/min."},
+    {"titulo": "Mantener la exclusión", "detalle": "Zona bajo el molde activa todo el cierre; C-06 la reconfirma antes de extraer y la levanta tras el segmento 3."},
+    {"titulo": "Decidir un cierre no planeado", "detalle": "Breakout, fuga de agua, rebose o falla de agua u oscilación: cerrar de inmediato sin esperar 400 mm."}
+  ],
+  "por_que_importa": "Al final de la secuencia el distribuidor se vacía y aparece el vórtice que lleva escoria al molde. La cola sale con una cáscara delgada: si se extrae rápido o sin tapar, hay breakout. Y una sola gota de agua sobre la cola líquida puede causar una explosión.",
+  "principio": "El tapón se cierra a 400 mm, la cola se saca despacio y nunca se echa agua sobre acero líquido.",
+  "roles": [
+    ["Rol", "Qué hace en el cierre", "RACI"],
+    ["C-06 Supervisor de Colada Continua", "Decide el cierre planeado o de emergencia; dirige la salida de cola", "A"],
+    ["S-13 Operador de Plataforma", "Cierre de olla y tapón; retiro del distribuidor; nivel", "R"],
+    ["S-12 Operador de Púlpito", "Velocidad por nivel, detención, salida de cola y modo de enfriamiento", "R"],
+    ["S-14 Ayudante de Colada", "Limpia la superficie de la cola en el molde; observa", "R"],
+    ["S-16 Operador de Corte y Marcado", "Corta el último planchón y despunta la cola", "R"],
+    ["S-09 Operador de Grúa de Colada", "Retira la última olla", "R"],
+    ["C-08 Ingeniero de Proceso de CC", "Parámetros de salida de cola; análisis de cierres no planeados", "C"],
+    ["C-04 Jefe de Turno", "Informado del cierre y sus causas", "I"]
+  ],
+  "flujo": [
+    {"label": "Última olla", "desc": "Aviso a todos; cierre con ≤ 4 t"},
+    {"label": "Drenar", "desc": "800 → 0.9; 700 → 0.6; 600 → 0.4 m/min"},
+    {"label": "Cerrar tapón", "desc": "A 400 mm (≈ 14 t), nunca menos"},
+    {"label": "Detener", "desc": "Agua de molde y oscilación encendidas"},
+    {"label": "Limpiar y tapar", "desc": "Herramienta seca; 3–5 min sin agua"},
+    {"label": "Extraer cola", "desc": "0.3 m/min el primer metro"},
+    {"label": "Salida", "desc": "Rampa a ≈ 1.0 m/min; zonas se apagan"},
+    {"label": "Cortar y bloquear", "desc": "Despunte 500–1,000 mm; LOTO"}
+  ],
+  "flujo_takeaway": "En un cierre no planeado se cierran olla y tapón de inmediato y se aplica MO-CC1-04 §9.",
+  "figuras": [
+    {
+      "svg": "cc1-distribuidor.svg",
+      "lectura": [
+        "El tapón se cierra con 400 mm (≈ 14 t) en el distribuidor.",
+        "Debajo de 400 mm se forma un vórtice que arrastra escoria y flux al molde.",
+        "El distribuidor con residuo se lleva a la fosa seca por una ruta despejada."
+      ]
+    },
+    {
+      "svg": "cc1-perfil-maquina.svg",
+      "titulo": "La cola recorre ≈ 32 m hasta el oxicorte",
+      "lectura": [
+        "El primer metro (dentro del molde) sale a 0.3 m/min: es el tramo más débil.",
+        "La exclusión bajo el molde sigue hasta que la cola pasa el segmento 3.",
+        "Las zonas de enfriamiento se apagan por tracking para no sobreenfriar."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Detector de escoria / pesaje", "Cierre oportuno de la última olla", "Peso residual 2–5 t", "Señal disponible"],
+    ["Pesaje del distribuidor", "Nivel de cierre", "400 mm ≈ 14 t [Validar con OEM]", "Calibrado"],
+    ["Barra tapón", "Cierre final", "Cierre total", "Sin fuga al cerrar"],
+    ["Modo salida de cola (nivel 2)", "Velocidad y apagado de zonas", "Tracking de la cola", "Activo"],
+    ["Herramientas de molde", "Retiro de escoria de la cola", "Secas, precalentadas", "★ Inspeccionadas"],
+    ["Oxicorte", "Corte final y despunte", "O₂ + gas natural", "Listo"],
+    ["Fosa del distribuidor", "Recibe el distribuidor con residuo", "Seca", "Inspeccionada"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Peso residual última olla", "3–4 t", "2–5 t", "Escoria en el chorro", "Cerrar de inmediato"],
+    ["Nivel para cerrar tapón", "400 mm (≈ 14 t)", "400–450 mm", "< 400 mm", "Cerrar de inmediato"],
+    ["SH final", "≥ 15 °C", "≥ 15 °C", "< 15 °C", "No bajar velocidad; avisar C-08"],
+    ["Tapado de cola", "4 min", "3–5 min", "> 8 min", "Riesgo de pegado; C-06"],
+    ["Agua de molde", "Nominal", "≥ 95 %", "< 90 %", "MO-CC1-04 §9"],
+    ["Extracción inicial", "0.3 m/min", "0.2–0.4 m/min", "—", "Hasta ≈ 1 m fuera del molde"],
+    ["Salida de cola", "1.0 m/min", "0.8–1.2 m/min", "> 1.2 m/min", "Riesgo de abombamiento"],
+    ["Despunte de cola", "800 mm", "500–1,000 mm", "Rechupe visible", "Aumentar hasta zona sana"]
+  ],
+  "parametros_nota": "Agua de molde ≥ 10 min después de la salida de la cola. Nivel de cierre, tapado, velocidades y despunte: [Validar con OEM / Ingeniería de Proceso].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Exclusión bajo el molde", "detalle": "Activa sin interrupción desde la colada estable; C-06 la reconfirma antes de extraer y dura hasta que la cola pase el segmento 3."},
+      {"titulo": "Nunca agua sobre la cola", "detalle": "Prohibido echar agua sobre la cola líquida; herramientas secas; solo práctica aprobada por OEM."},
+      {"titulo": "Cierre a 400 mm", "detalle": "No bajar de 400 mm: el vórtice arrastra escoria y provoca salpicaduras en el molde."},
+      {"titulo": "Cargas y traslados", "detalle": "Olla con residuo: nadie bajo la carga. Distribuidor con ≈ 14 t: ruta despejada y fosa seca."}
+    ],
+    "epp": [
+      "Aluminizado completo y careta IR (S-13, S-14)",
+      "Ropa FR, guantes y botas con metatarsal",
+      "Protección auditiva y detector de O₂/CO",
+      "Oxicorte (S-16): careta sombra 5 y guantes"
+    ],
+    "figura": "ms-loto-puntos-cc.svg",
+    "figura_titulo": "Con la cola fuera, la máquina se bloquea",
+    "figura_lectura": [
+      "Solo se entra a inspeccionar con la cola fuera y la máquina detenida.",
+      "Se bloquean accionamientos, agua secundaria y oxicorte antes de entrar.",
+      "Cada trabajador pone su candado personal en la caja grupal."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Escoria en el último planchón", "Sin inclusiones macro", "Cierre a 400 mm; inspección", "Despunte mayor o rechazo"],
+    ["Despunte de cola", "Hasta zona sana", "Visual en el corte", "Rechupe o porosidad"],
+    ["Últimos planchones", "Marcados fin de secuencia", "Tracking en MES", "Inspección especial (MO-CC1-09)"],
+    ["Temperatura del último tramo", "SH ≥ 15 °C hasta el cierre", "Termopar", "Congelamiento en SEN"]
+  ],
+  "calidad_takeaway": "Si hubo escoria en el molde al final, se aumenta el despunte y el planchón se marca para C-09.",
+  "pasos": [
+    {"n": 1, "paso": "Anuncia y cierra la olla", "como": "Aviso de última olla por radio a todos; cierra al primer signo de escoria o ≤ 4 t; retira el tubo", "criterio": "Olla cerrada", "critico": false, "rol": "C-06 / S-13"},
+    {"n": 2, "paso": "Retira la olla", "como": "Giro de torreta y S-09 la lleva a escorial; nadie bajo la carga", "criterio": "Olla fuera", "critico": true, "rol": "S-13 / S-09"},
+    {"n": 3, "paso": "Drena el distribuidor", "como": "Baja velocidad: 800 mm → 0.9; 700 mm → 0.6; 600 mm → 0.4 m/min", "criterio": "Nivel de molde ± 3 mm", "critico": false, "rol": "S-12"},
+    {"n": 4, "paso": "Mide la temperatura final", "como": "A ≈ 600 mm del distribuidor", "criterio": "SH ≥ 15 °C", "critico": false, "rol": "S-13"},
+    {"n": 5, "paso": "Cierra el tapón", "como": "A 400 mm del distribuidor, no menos", "criterio": "Cerrado sin fuga", "critico": true, "rol": "S-13"},
+    {"n": 6, "paso": "Detén y retira distribuidor", "como": "Velocidad 0; agua de molde y oscilación encendidas; modo cola; distribuidor a fosa", "criterio": "Distribuidor fuera", "critico": false, "rol": "S-12 / S-13"},
+    {"n": 7, "paso": "Reconfirma la exclusión", "como": "Por radio y visual: nadie bajo el molde ni en segmentos 1–3 antes de extraer la cola", "criterio": "Confirmación de C-06", "critico": true, "rol": "C-06"},
+    {"n": 8, "paso": "Limpia la cola en el molde", "como": "Retira escoria y polvo con herramienta seca, sin romper la cáscara", "criterio": "Superficie limpia", "critico": true, "rol": "S-14"},
+    {"n": 9, "paso": "Tapa la cola", "como": "Espera 3–5 min con la línea detenida; no eches agua sobre acero líquido", "criterio": "Costra superior formada", "critico": true, "rol": "S-14 / S-12"},
+    {"n": 10, "paso": "Extrae la cola del molde", "como": "0.3 m/min hasta que la cola salga del molde (≈ 1 m)", "criterio": "Sin alarma BOP ni fuga", "critico": true, "rol": "S-12"},
+    {"n": 11, "paso": "Sube a velocidad de salida", "como": "Rampa ≤ 0.2 m/min por minuto hasta ≈ 1.0 m/min; zonas se apagan al paso de la cola", "criterio": "Sin abombamiento", "critico": false, "rol": "S-12"},
+    {"n": 12, "paso": "Levanta la exclusión", "como": "Cuando la cola pase el segmento 3", "criterio": "Autorización de C-06", "critico": false, "rol": "C-06"},
+    {"n": 13, "paso": "Mantén el agua de molde", "como": "≥ 10 min después de la salida de la cola; luego según OEM", "criterio": "Registro", "critico": false, "rol": "S-12"},
+    {"n": 14, "paso": "Corta el último planchón", "como": "Longitud según programa; despunte de cola 500–1,000 mm hasta zona sana", "criterio": "Corte sano", "critico": false, "rol": "S-16"},
+    {"n": 15, "paso": "Bloquea e inspecciona", "como": "LOTO (MS-ACE-02); rodillos, boquillas, molde y restos de acero", "criterio": "Reporte para MO-CC1-02", "critico": false, "rol": "S-14 / C-06"},
+    {"n": 16, "paso": "Registra la secuencia", "como": "Coladas, t, causa del cierre, residuos, vida de distribuidor y SEN", "criterio": "Hoja de secuencia", "critico": false, "rol": "S-12"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Escoria en el molde al final", "Cierra el tapón; aumenta el despunte; marca el planchón", "C-06, C-09"],
+    ["Fuga al extraer la cola", "★ Detén la línea; evacúa; respuesta a breakout (MO-CC1-04 §9)", "C-04, C-06, C-16"],
+    ["La cola no se mueve (pegada)", "Mantén oscilación; par gradual según OEM; sin O₂ sin autorización", "C-06, C-08"],
+    ["Tapón no cierra completo", "Cierre de emergencia del distribuidor (subirlo) según OEM", "C-06"],
+    ["Zona de enfriamiento no se apaga", "Apaga manual la zona; evita sobreenfriar", "S-12"],
+    ["Cola abombada entre rodillos", "Baja la velocidad; revisa el agua", "C-08"],
+    ["Falla de agua de molde en tapado", "Agua de emergencia ≤ 15 s; si no entra, evacúa", "C-04, C-12"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-13 Operador de Plataforma", "U", "8 h", "6 cierres de secuencia", "24 meses"],
+      ["S-12 Operador de Púlpito", "U", "8 h", "6 cierres (1 no planeado en simulador)", "24 meses"],
+      ["S-14 Ayudante de Colada", "U", "6 h", "6 cierres", "24 meses"],
+      ["C-06 Supervisor de CC", "O (evaluador)", "8 h + evaluador", "—", "24 meses"]
+    ],
+    "checklist": [
+      "Cierra el tapón a 400 mm, nunca por debajo",
+      "Mantiene la exclusión bajo el molde todo el cierre y la reconfirma antes de extraer la cola",
+      "Retira la olla sin nadie bajo la carga",
+      "Limpia la cola con herramienta seca y no echa agua sobre el acero líquido",
+      "Extrae el primer metro a 0.3 m/min"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿A qué nivel del distribuidor se cierra el tapón al final de la secuencia?", "opciones": ["200 mm", "400 mm", "700 mm"], "correcta": 1, "explicacion": "400 mm (≈ 14 t), nunca menos: debajo se forma un vórtice que arrastra escoria al molde."},
+    {"pregunta": "¿Cuánto tiempo se tapa la cola con la línea detenida?", "opciones": ["30 s", "3–5 min", "15 min"], "correcta": 1, "explicacion": "3–5 min para formar la costra superior; más de 8 min arriesga que la cola se pegue."},
+    {"pregunta": "¿A qué velocidad se extrae el primer metro de la cola?", "opciones": ["0.3 m/min", "1.0 m/min", "1.6 m/min"], "correcta": 0, "explicacion": "Dentro del molde la cola es el tramo más débil; luego rampa ≤ 0.2 hasta ≈ 1.0 m/min."},
+    {"pregunta": "¿Se puede echar agua sobre la cola líquida para acelerar el tapado?", "opciones": ["Sí, con manguera", "Sí, poca cantidad", "No, nunca"], "correcta": 2, "explicacion": "Agua sobre acero líquido es explosión de vapor; solo práctica aprobada por el OEM."},
+    {"pregunta": "Hay breakout durante la colada. ¿Esperas a 400 mm para cerrar?", "opciones": ["Sí, siempre", "No, se cierra de inmediato", "Solo si lo pide LF"], "correcta": 1, "explicacion": "Breakout, fuga de agua, rebose o falla de agua u oscilación: cierre inmediato de olla y tapón."}
+  ],
+  "reglas": [
+    {"titulo": "Tapón cerrado a 400 mm", "detalle": "Nunca por debajo: el vórtice arrastra escoria al molde."},
+    {"titulo": "Nunca agua sobre la cola", "detalle": "Herramientas secas; agua sobre acero líquido = explosión (MS-ACE-03)."},
+    {"titulo": "Nadie bajo el molde en el cierre", "detalle": "La exclusión se levanta solo cuando la cola pasa el segmento 3."},
+    {"titulo": "La cola sale despacio", "detalle": "0.3 m/min el primer metro; salida máxima 1.2 m/min."}
+  ],
+  "por_confirmar": [
+    "Nivel de cierre del distribuidor, tiempo de tapado y velocidad de salida de cola con el OEM",
+    "Apagado de zonas, despunte de cola y cierre de emergencia del distribuidor"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de breakout de cola; reglas de oro", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con el perfil de la máquina", "Láminas 3–6"],
+    ["3. Equipos y parámetros", "75", "Ejercicio: secuencia de salida de cola por tramos", "Láminas 7–8"],
+    ["4. Seguridad", "75", "Exclusión, nunca agua y LOTO de la máquina", "Láminas 9–10, candados"],
+    ["5. Calidad y paso a paso", "105", "Lectura guiada de los 16 pasos; pasos ★", "Láminas 11–13"],
+    ["6. Condiciones anormales", "75", "Simulacro de mesa: cierre no planeado", "Lámina 14"],
+    ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + preguntas orales", "Lámina 16"],
+    ["8. Cierre y ruta a OJT", "30", "Plan de OJT, simulador y certificación", "Lámina 17"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

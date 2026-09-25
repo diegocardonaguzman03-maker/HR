@@ -1,0 +1,205 @@
+{
+  "code": "MM-EAF-03",
+  "title": "Reparación de refractario del EAF: solera, bancos, EBT y gunning",
+  "titulo_corto": "Refractario EAF y EBT",
+  "serie": "Mantenimiento",
+  "area": "Acería · EAF-1 / EAF-2",
+  "manual": "03-mantenimiento/MM-EAF-03-refractario-eaf-solera-ebt-gunning.md",
+  "manual_version": "0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Espesor suficiente para no perforar el horno y un EBT que vacía limpio, con material seco y nadie bajo el EBT",
+  "audiencia": "S-24 Refractarista · S-03 Ayudante de Horno · S-20 Electricista · S-04 Grúa de Carga · C-15 · C-05",
+  "kpis": [
+    {"value": "24 h", "label": "teoría (S-24 Refractarista)"},
+    {"value": "60 h", "label": "OJT · 3 cambios de EBT"},
+    {"value": "11", "label": "pasos críticos ★"},
+    {"value": "24", "label": "meses de vigencia (TD-P07)"}
+  ],
+  "cadena": ["Medir espesores", "Material seco", "Horno basculado y LOTO", "Cambiar camisas EBT", "Llenar y gunning", "Liberación C-15 + C-05"],
+  "titulos": {
+    "objetivos": "Al terminar, reparas sin humedad y sin perforar",
+    "roles": "C-15 decide la reparación; C-05 libera la operación",
+    "flujo": "El espesor medido decide: gunning, parcheo o reline",
+    "figura": "Ø ≥ 230 mm o vaciado < 2.5 min: se cambian camisas",
+    "equipos": "La capa de seguridad nunca debe quedar expuesta",
+    "parametros": "Solera < 200 mm o coraza > 400 °C: no se opera",
+    "seguridad": "Humedad y espesor bajo: los dos que perforan",
+    "calidad": "Un EBT erosionado arrastra escoria y fósforo",
+    "pasos": "Catorce pasos; once no admiten error",
+    "anormales": "Coraza > 400 °C: no se carga, se vacía y se avisa",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del refractario que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Medir y decidir la reparación", "detalle": "Láser, sondeo y termografía: solera ≥ 300 mm, bancos ≥ 150 mm, coraza ≤ 300 °C."},
+    {"titulo": "Trabajar bajo el EBT sin riesgo", "detalle": "Horno basculado hacia la puerta de escoria y bloqueado; LOTO y prueba de energía cero antes de abrir."},
+    {"titulo": "Cambiar camisas y llenar el EBT", "detalle": "Camisas alineadas (≤ 5 mm), Ø nuevo 150–180 mm, placa plana y arena ≤ 0.5 % de humedad con cono."},
+    {"titulo": "Proyectar sin humedad sobre metal", "detalle": "Gunning con cara ≥ 800 °C, a 0.8–1.5 m, capas ≤ 50 mm y nunca sobre metal líquido."}
+  ],
+  "por_que_importa": "Si el espesor cae al mínimo, el horno se perfora: metal fuera de la coraza y contacto con paneles de agua, que es explosión. La humedad en arena o refractario también explota. Un EBT erosionado arrastra escoria: reversión de P, más Al y cal, e inclusiones.",
+  "principio": "Material seco, horno bloqueado y espesor medido: si falta uno, no se trabaja.",
+  "roles": [
+    ["Rol", "Qué hace en el refractario del EAF", "RACI"],
+    ["C-15 Especialista de Refractarios", "Dueño; define reparación, materiales y espesor mínimo; libera", "A"],
+    ["S-24 Refractarista", "Gunning, reparación de solera, cambio de EBT y reline", "R"],
+    ["S-03 Ayudante de Horno", "Apoyo en gunning y llenado del EBT; limpieza", "R"],
+    ["S-01 Operador de Púlpito", "Posiciona y bloquea el horno; programa de sinterizado", "R"],
+    ["C-05 Supervisor de Hornos", "Autoriza paro y reinicio; firma la liberación", "A (operación)"],
+    ["S-04 Operador de Grúa de Carga", "Iza materiales, camisas y bloques", "R"],
+    ["C-11 / S-19 Mecánica", "Tapa del EBT y máquina de gunning", "R"],
+    ["C-16 Especialista de Seguridad", "Espacio confinado, calor y polvo", "C"]
+  ],
+  "flujo": [
+    {"label": "Medir", "desc": "Láser, sondeo, termografía, t de vaciado"},
+    {"label": "Decidir", "desc": "Gunning, parcheo, reline o cambio EBT"},
+    {"label": "Preparar", "desc": "Material seco y precalentado"},
+    {"label": "Bascular y LOTO", "desc": "Hacia puerta de escoria; perno puesto"},
+    {"label": "Energía cero", "desc": "Arco y basculamiento rechazados; gases"},
+    {"label": "Cambiar EBT", "desc": "Camisas, bloque de salida, Ø 150–180"},
+    {"label": "Llenar y proyectar", "desc": "Arena ≤ 0.5 %; gunning con cara caliente"},
+    {"label": "Secar", "desc": "Curva del proveedor o calor del horno"},
+    {"label": "Liberar", "desc": "Firma C-15 y C-05"}
+  ],
+  "flujo_takeaway": "Nada entra al horno ni al EBT húmedo: la humedad sobre el acero es explosión de vapor.",
+  "figuras": [
+    {
+      "svg": "mm-ebt-cambio.svg",
+      "lectura": [
+        "El EBT tiene bloque de asiento, camisas del tubo, bloque de salida y placa de cierre.",
+        "Se cambian camisas con Ø ≥ 230 mm, vaciado < 2.5 min, escalón > 20 mm o 150–250 coladas.",
+        "La arena de llenado va seca (≤ 0.5 %) y forma un cono de 50–100 mm sobre el canal."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Solera (masa seca MgO)", "Contener baño y talón", "Nueva ≈ 650 mm [Validar]", "Residual ≥ 300 mm"],
+    ["Bancos y línea de escoria", "Resistir escoria FeO 25–35 %", "MgO-C nuevo 450 mm [Validar]", "Residual ≥ 150 mm"],
+    ["Capa de seguridad", "Última barrera", "Magnesia 115–230 mm [Validar]", "Nunca expuesta"],
+    ["Bloque de asiento EBT", "Entrada del canal", "MgO-C", "Erosión ≤ 50 mm"],
+    ["Camisas del tubo EBT", "Canal de vaciado", "Ø interior nuevo 150–180 mm", "Ø ≤ 230 mm; vaciado ≥ 2.5 min"],
+    ["Máquina de gunning", "Proyectar masa de MgO", "Aire 4–6 bar; agua 10–15 % [Validar]", "Boquilla libre; dosificación"],
+    ["Escáner láser y termografía", "Medir perfil y puntos calientes", "±10 mm [Validar]; 0–500 °C", "Calibrados; referencias en coraza"]
+  ],
+  "parametros": [
+    ["Especificación", "Objetivo", "Tolerancia", "Límite / rechazo", "Frecuencia"],
+    ["Espesor de solera", "≥ 450 mm", "≥ 300 mm", "< 300 reparar; < 200 parar", "Semanal"],
+    ["Espesor de bancos", "≥ 250 mm", "≥ 150 mm", "< 150 gunning; < 100 parar", "Visual cada colada"],
+    ["T de coraza", "≤ 250 °C", "≤ 300 °C", "> 300 investigar; > 400 parar", "Diario"],
+    ["Ø del canal EBT", "150–180 mm", "≤ 210 mm", "≥ 230 mm: cambiar", "Semanal y cada 50"],
+    ["Tiempo de vaciado 150 t", "4 min", "3–5 min", "< 2.5 cambiar; > 6 revisar", "Cada colada"],
+    ["Apertura libre del EBT", "≥ 98 %", "≥ 95 %", "< 95 %", "Cada colada"],
+    ["Humedad de arena", "≤ 0.3 %", "≤ 0.5 %", "> 0.5 %: no usar", "Cada lote"],
+    ["Rebote de gunning", "≤ 10 %", "≤ 15 %", "> 20 %", "Mensual"]
+  ],
+  "parametros_nota": "Espesores nuevos, vida de camisas (150–250) y del bloque (400–600 coladas), consumo de gunning y curvas de secado: [Validar con OEM / C-15].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "LOTO con el horno basculado", "detalle": "E1 MT, E2 HPU con perno de basculamiento, E3 O₂/GN purgados, E4 DRI y carbono, E6 bóveda asegurada; agua de paneles en servicio."},
+      {"titulo": "Prueba de energía cero", "detalle": "Arco y basculamiento rechazados, gases a 0 bar; O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL; ≤ 1 % de lectura para oxicortar."},
+      {"titulo": "Nadie bajo el EBT", "detalle": "Zona roja bajo el EBT y la trayectoria de la escoria hasta confirmar zona sin metal (MS-ACE-01)."},
+      {"titulo": "Cero humedad", "detalle": "Arena ≤ 0.5 %, materiales secos y precalentados, secado obligatorio; nunca proyectar sobre metal líquido (MS-ACE-03)."}
+    ],
+    "epp": [
+      "Ropa aluminizada y careta con visor dorado",
+      "Casco con cubrenuca y guantes largos aluminizados",
+      "Botas metatarsales con polainas",
+      "Respirador P100 y protección auditiva",
+      "Entrada al horno: arnés con línea de rescate",
+      "Detector de 4 gases"
+    ],
+    "figura": "ms-loto-puntos-eaf.svg",
+    "figura_titulo": "El horno se bloquea basculado, no a nivel",
+    "figura_lectura": [
+      "El pasador de basculamiento fija el horno hacia la puerta de escoria, con el talón lejos del EBT.",
+      "Interruptor de AT extraído, unidad hidráulica a 0 bar y O₂/GN con doble bloqueo y purga.",
+      "Si cualquier lectura de energía cero no cumple, no se trabaja y se avisa a C-04."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Arrastre de escoria", "Vaciado ≥ 2.5 min, sin vórtice", "Tiempo de vaciado cada colada", "Reversión de P (> 0.015 %), inclusiones"],
+    ["Apertura libre del EBT", "≥ 95 % (meta 98 %)", "Cada colada", "Lanceo con O₂: reoxidación y N"],
+    ["Limpieza del canal", "Sin costras ni escalón > 20 mm", "Semanal con plantilla", "Chorro abierto: reoxidación y N"],
+    ["MgO de escoria", "8–10 %", "Análisis de escoria (C-07)", "Desgaste acelerado del MgO-C"]
+  ],
+  "calidad_takeaway": "Un canal ancho vacía rápido y deja pasar escoria: el fósforo regresa al acero.",
+  "pasos": [
+    {"n": 1, "paso": "Prepara materiales", "como": "Camisas, bloque, mortero, arena (≤ 0.5 %), herramienta de izaje; todo seco y precalentado", "criterio": "Material seco verificado", "critico": true, "rol": "S-24, C-15"},
+    {"n": 2, "paso": "Vacía y posiciona", "como": "Tras el vaciado, bascula el horno hacia la puerta de escoria; talón lejos del EBT", "criterio": "Zona EBT sin metal", "critico": true, "rol": "S-01, C-05"},
+    {"n": 3, "paso": "Aplica LOTO", "como": "E1, E2 con perno de basculamiento, E3, E4 y E6", "criterio": "Candados puestos", "critico": true, "rol": "S-20, S-19"},
+    {"n": 4, "paso": "Prueba energía cero", "como": "Arco y basculamiento rechazados; O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL (≤ 1 % si hay oxicorte)", "criterio": "Sin energía; gases en rango", "critico": true, "rol": "C-05, C-15"},
+    {"n": 5, "paso": "Abre la placa de cierre", "como": "Desde el puesto de mando local, con la zona despejada", "criterio": "Abierta sin salida de metal", "critico": true, "rol": "S-24"},
+    {"n": 6, "paso": "Retira camisas y bloque", "como": "Extractor o empujador OEM; limpia restos con barra y oxicorte si hay costra", "criterio": "Sin escalón > 10 mm", "critico": false, "rol": "S-24, S-03"},
+    {"n": 7, "paso": "Mide el bloque de asiento", "como": "Plantilla en la boca del canal", "criterio": "Erosión ≤ 50 mm", "critico": false, "rol": "C-15"},
+    {"n": 8, "paso": "Coloca camisas nuevas", "como": "Método OEM; mortero en juntas ≤ 3 mm; relleno con masa apisonada sin huecos", "criterio": "Desalineación ≤ 5 mm", "critico": true, "rol": "S-24"},
+    {"n": 9, "paso": "Coloca bloque de salida", "como": "Asienta y fija; verifica que la placa cierre plana", "criterio": "Cierre sin luz visible", "critico": true, "rol": "S-24, S-19"},
+    {"n": 10, "paso": "Mide el Ø nuevo", "como": "Calibrador en 3 alturas", "criterio": "150–180 mm", "critico": false, "rol": "S-24"},
+    {"n": 11, "paso": "Cierra y llena el EBT", "como": "Cierra la placa; llena con arena seca hasta formar un cono de 50–100 mm", "criterio": "Canal lleno, cono visible", "critico": true, "rol": "S-03"},
+    {"n": 12, "paso": "Gunning de bancos", "como": "Cara ≥ 800 °C, a 0.8–1.5 m, capas ≤ 50 mm; nunca sobre metal líquido ni formando charcos", "criterio": "Cubierto; rebote ≤ 15 %", "critico": true, "rol": "S-24"},
+    {"n": 13, "paso": "Retira LOTO", "como": "Orden inverso; personal fuera de la zona", "criterio": "Candados retirados", "critico": true, "rol": "Todos"},
+    {"n": 14, "paso": "Libera", "como": "Checklist firmado por C-15 y C-05; primera colada vigilando el tiempo de vaciado", "criterio": "Firmado", "critico": true, "rol": "C-15, C-05"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Coraza > 400 °C", "No cargar; vaciar; gunning o paro", "C-05, C-15"],
+    ["Metal o escoria por la coraza", "Emergencia MS-ACE-09; arco fuera; evacuar a ≥ 25 m; nunca agua", "C-04, brigada"],
+    ["Detector en alarma en el horno", "Sal; detén el trabajo en caliente; ventila; a CO ≥ 200 ppm evacúa", "C-16, C-05"],
+    ["EBT no abre", "Lanceo con O₂ solo por personal autorizado y con EPP", "C-05, C-15"],
+    ["Vaciado < 2.5 min", "Programar cambio antes de la siguiente colada crítica", "C-15, C-07"],
+    ["Tapa del EBT no cierra plana", "No llenar; limpiar o reparar", "S-19, C-05"],
+    ["Solera con hoyo o metal infiltrado", "Parcheo con masa seca en el siguiente paro; vigilar termografía", "C-15, C-05"],
+    ["Línea de escoria > 2× tendencia", "Revisar práctica de escoria (MgO, FeO, arco)", "C-07, C-15"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-24 Refractarista", "U", "24 h", "60 h / 3 cambios de EBT", "24 meses; confinado 12"],
+      ["S-03 Ayudante de Horno", "L", "8 h", "20 h", "24 meses"],
+      ["S-20 Electricista", "O", "NOM-029 + MT", "3 bloqueos E1", "12 meses"],
+      ["S-04 Grúa de Carga", "U", "NOM-006", "3 izajes de camisas", "12 meses"],
+      ["C-15 Especialista", "O", "Proveedor + 16 h", "—", "24 meses; emisor 12"],
+      ["Quien entra al horno", "U", "NOM-033 (8 h) + NOM-015", "Simulacro de rescate", "12 meses"]
+    ],
+    "checklist": [
+      "Usa materiales secos y precalentados; arena de llenado ≤ 0.5 % de humedad",
+      "Bascula y bloquea el horno antes de trabajar bajo el EBT; LOTO completo",
+      "Prueba energía cero y gases: < 10 % LEL para entrar, ≤ 1 % para oxicortar",
+      "Abre la placa con la zona despejada; coloca camisas alineadas y placa cerrando plana",
+      "Forma el cono de arena y no proyecta gunning sobre metal líquido",
+      "Retira candados con conteo, registra Ø y espesores y libera con C-15 y C-05"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Con qué Ø interior del canal se cambian las camisas del EBT?", "opciones": ["≥ 180 mm", "≥ 230 mm", "≥ 300 mm"], "correcta": 1, "explicacion": "Nuevo 150–180 mm; con Ø ≥ 230 mm o vaciado < 2.5 min se cambian camisas."},
+    {"pregunta": "La termografía marca 420 °C en la coraza. ¿Qué haces?", "opciones": ["Seguir y medir mañana", "No cargar, vaciar y avisar", "Enfriar con agua"], "correcta": 1, "explicacion": "Más de 400 °C es espesor crítico: no se carga, se vacía y se hace gunning o paro. Nunca agua."},
+    {"pregunta": "¿Cuál es la humedad máxima de la arena de llenado?", "opciones": ["0.5 %", "2 %", "5 %"], "correcta": 0, "explicacion": "Arriba de 0.5 % no se usa: la humedad en contacto con el acero provoca explosión de vapor."},
+    {"pregunta": "¿Cómo se posiciona el horno para cambiar el EBT en caliente?", "opciones": ["A nivel (0°)", "Basculado hacia el EBT", "Basculado hacia la puerta de escoria"], "correcta": 2, "explicacion": "Hacia la puerta de escoria, con el talón lejos del EBT y el perno de basculamiento puesto."},
+    {"pregunta": "¿A qué distancia se proyecta el gunning?", "opciones": ["0.2–0.5 m", "0.8–1.5 m", "3–4 m"], "correcta": 1, "explicacion": "0.8–1.5 m, capas ≤ 50 mm, con cara ≥ 800 °C y nunca sobre metal líquido."}
+  ],
+  "reglas": [
+    {"titulo": "Material húmedo no entra al horno", "detalle": "Arena ≤ 0.5 %; secado obligatorio tras reparación húmeda."},
+    {"titulo": "Nadie bajo el EBT sin horno bloqueado", "detalle": "Horno basculado a la puerta de escoria, perno puesto y LOTO."},
+    {"titulo": "Coraza > 400 °C: no se carga", "detalle": "Se vacía y se repara; solera < 200 mm o bancos < 100 mm: no se opera."},
+    {"titulo": "Sin LOTO y energía cero no se toca", "detalle": "Arco y basculamiento rechazados; gases en rango antes de entrar."}
+  ],
+  "por_confirmar": [
+    "Espesores nuevos y mínimos de solera, bancos y capa de seguridad con el proveedor y C-15",
+    "Vida de camisas y bloque de asiento; tiempo de cambio de camisas",
+    "Curvas de secado y parámetros de la máquina de gunning"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de perforación y explosión por humedad", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con el corte del EBT", "Láminas 3–6"],
+    ["3. Equipos y especificaciones", "90", "Materiales MgO y MgO-C; lectura de perfil láser", "Láminas 7–8, reporte láser"],
+    ["4. Seguridad, LOTO y energía cero", "75", "Horno basculado; zona bajo el EBT; gases", "Láminas 9–10, detector"],
+    ["5. Calidad y paso a paso", "90", "Lectura guiada de los 14 pasos; pasos ★", "Láminas 11–13"],
+    ["6. Práctica de medición y secado", "60", "Ø con calibrador; humedad de arena; curvas", "Calibrador, balanza"],
+    ["7. Condiciones anormales", "45", "Simulacro de mesa: coraza a 420 °C", "Lámina 14"],
+    ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
+    ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {}
+}
