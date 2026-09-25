@@ -100,7 +100,7 @@
     ["Prueba del tapón", "100–200 NL/min [Supuesto]", "Presión según OEM", "Caudal bajo, presión alta", "Limpiar con O₂ o cambiar"],
     ["Humedad de la arena", "≤ 0.2 % [Supuesto]", "—", "> 0.5 %", "No usar; cambiar el lote"]
   ],
-  "parametros_nota": "Olla nueva o revestida: curva completa, típico 24–48 h [Validar con OEM / Ingeniería de Proceso]. Barril ≥ 40 mm [Supuesto]; placas 2–5 coladas [Validar con OEM].",
+  "parametros_nota": "Olla nueva: curva completa, típico 24–48 h [Validar con OEM / Ingeniería de Proceso]. Barril ≥ 40 mm [Supuesto]; placas 2–5 coladas [Validar con OEM].",
   "seguridad": {
     "controles": [
       {"titulo": "Olla caliente y seca", "detalle": "Cara caliente ≥ 1,000 °C; fría > 4 h: ≥ 8 h; olla nueva con curva de secado completa. Lista de entrega firmada."},

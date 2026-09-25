@@ -1,0 +1,205 @@
+{
+  "code": "MO-OLL-02",
+  "title": "Traslado de ollas llenas con grúa de colada",
+  "titulo_corto": "Traslado de ollas llenas",
+  "serie": "Operación",
+  "area": "Nave de ollas · LF-1 / LF-2 a CC1 / CC2",
+  "manual": "02-operacion/ollas-lf/MO-OLL-02-traslado-ollas-grua-colada.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Llevar ≈ 150 t de acero líquido del LF a la torreta sin nadie bajo la carga, sin choques ni derrames y a tiempo",
+  "audiencia": "S-09 Grúa de Colada · S-13 Operador de Plataforma (señalero) · S-06 Horno Olla · C-04 Jefe de Turno",
+  "kpis": [
+    {"value": "40 h", "label": "teoría (S-09)"},
+    {"value": "160 h", "label": "OJT · 60 movimientos llenos"},
+    {"value": "6", "label": "pasos críticos ★"},
+    {"value": "12", "label": "meses de vigencia (izaje)"}
+  ],
+  "cadena": ["Inspección de grúa", "Olla liberada", "Ruta libre", "Enganche OK", "Prueba de frenos", "Asentada OK"],
+  "titulos": {
+    "objetivos": "Al terminar, mueves 230 t sin nadie bajo la carga",
+    "roles": "S-09 puede negarse a mover una olla insegura",
+    "flujo": "La olla no se levanta sin ruta libre y enganche doble",
+    "figura": "Del LF a la torreta por una ruta definida",
+    "equipos": "Siete equipos revisados antes del primer izaje",
+    "parametros": "Peso, bordo libre y frenos deciden si se iza",
+    "seguridad": "Una olla que cae o se derrama no perdona",
+    "calidad": "Traslado rápido y suave cuida la temperatura",
+    "pasos": "Trece pasos; seis no admiten error",
+    "anormales": "Ante fuga: a la fosa seca, lejos y nunca agua",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del traslado que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Revisar la grúa antes de usarla", "detalle": "Frenos, dos límites superiores, ganchos, cables, anticolisión, celda de carga y radio; con falla no se opera."},
+    {"titulo": "Izar solo en condición segura", "detalle": "Olla liberada por S-06, bordo libre ≥ 300 mm [Supuesto], ruta despejada y enganche de ambos muñones confirmado."},
+    {"titulo": "Probar frenos con carga", "detalle": "Levantar 100–200 mm y pausar 5 s; peso ≤ 240 t [Supuesto]; si desliza, asentar y sacar la grúa de servicio."},
+    {"titulo": "Trasladar y asentar suave", "detalle": "Altura mínima, ≤ 50 % de velocidad [Validar con OEM], LF → torreta en ≤ 8 min [Supuesto]; asiento confirmado."}
+  ],
+  "por_que_importa": "Una olla llena pesa ≈ 225–235 t [Supuesto] y lleva 150 t de acero líquido. Si cae, se voltea o se perfora en la ruta, quien esté abajo muere. Un traslado lento o brusco también cuesta: pierde temperatura, reoxida el acero y retrasa la secuencia de colada.",
+  "principio": "Nadie bajo la carga; si la olla o la grúa no están seguras, no se mueve.",
+  "roles": [
+    ["Rol", "Qué hace en el traslado", "RACI"],
+    ["C-04 Jefe de Turno de Acería", "Dueño; prioriza movimientos, autoriza rutas alternas, decide en emergencia", "A"],
+    ["S-09 Operador de Grúa de Colada", "Inspecciona la grúa, iza, traslada y asienta; puede negarse", "R"],
+    ["S-13 Operador de Plataforma", "Señalero: confirma enganche de ambos muñones y asentamiento", "R"],
+    ["S-06 Operador de Horno Olla", "Libera la olla: T, química, argón suave, bordo libre, sin fuga", "R"],
+    ["S-12 Operador de Púlpito de Colada", "Confirma que la torreta está lista para recibir", "C"],
+    ["S-19 / S-20 Mantenimiento", "Atienden fallas de la grúa", "C"],
+    ["C-16 Especialista de Seguridad", "Define rutas y zonas de exclusión con C-04", "C"]
+  ],
+  "flujo": [
+    {"label": "Inspección", "desc": "Frenos, límites, ganchos, cables, radio"},
+    {"label": "Liberación", "desc": "S-06: T, química, bordo libre, sin fuga"},
+    {"label": "Destino", "desc": "S-12 confirma torreta y brazo libre"},
+    {"label": "Ruta libre", "desc": "Bocina; nadie bajo la trayectoria"},
+    {"label": "Enganche", "desc": "Ambos muñones; S-13 confirma"},
+    {"label": "Prueba frenos", "desc": "100–200 mm, pausa 5 s, peso"},
+    {"label": "Traslado", "desc": "Altura mínima, ≤ 50 % de velocidad"},
+    {"label": "Asentar", "desc": "Marcha lenta; “asentada OK”"},
+    {"label": "Liberar", "desc": "Ganchos libres → colada continua"}
+  ],
+  "flujo_takeaway": "Los primeros 5 s con la olla a 100–200 mm dicen si los frenos y el enganche aguantan: si algo se mueve, se asienta.",
+  "figuras": [
+    {
+      "svg": "eaf-flujo-acería.svg",
+      "lectura": [
+        "La olla tratada sale del LF (9) y la grúa de 250/63 t la lleva a CC1 (10) o CC2 (11).",
+        "La olla vacía regresa a volteo y preparación (12).",
+        "Las rutas están definidas en plano: nunca sobre púlpitos, comedores ni fosas con agua."
+      ]
+    },
+    {
+      "svg": "olla-corte-valvula-tapon.svg",
+      "titulo": "La olla se toma por los dos muñones",
+      "lectura": [
+        "La traviesa engancha los dos muñones; S-13 confirma ambos lados antes de levantar.",
+        "Bordo libre ≥ 300 mm [Supuesto]: con menos, la olla puede derramar al moverse.",
+        "Coraza > 350 °C [Supuesto] en la ruta se trata como fuga potencial."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Grúa de colada (2)", "Iza y traslada ollas llenas", "250/63 t; doble freno; límites dobles", "★ Inspección previa firmada"],
+    ["Traviesa y ganchos laminares", "Toma la olla por los muñones", "Capacidad ≥ 250 t", "Sin grietas; seguros; END vigente"],
+    ["Cables de izaje", "Soportan la carga", "Descarte según OEM / NOM-006", "Sin alambres rotos ni aplastamiento"],
+    ["Límites superiores", "Evitan el choque del bloque", "2 límites independientes", "Prueba sin carga al iniciar turno"],
+    ["Celda de carga", "Indica el peso de la olla", "Alarma de sobrecarga", "Cero coherente sin carga"],
+    ["Radio, bocina y luces", "Comunicación y alerta", "Canal dedicado", "Prueba al inicio de turno"],
+    ["Muñones de la olla", "Puntos de izaje", "END según programa [Validar con OEM]", "Sin grietas ni desgaste visible"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Peso de olla llena", "≈ 230 t [Supuesto]", "220–240 t", "> 240 t [Supuesto]", "No izar sin C-04"],
+    ["Bordo libre", "≥ 300 mm [Supuesto]", "—", "< 300 mm", "No trasladar sin C-04"],
+    ["Prueba de frenos", "100–200 mm, pausa 5 s", "—", "La carga desliza", "Asentar; grúa fuera de servicio"],
+    ["Altura en traslado", "≥ 500 mm [Validar con OEM]", "Mínima segura", "Carga alta sin necesidad", "Bajar a altura de ruta"],
+    ["Velocidad con olla llena", "≤ 50 % [Validar con OEM]", "—", "Balanceo de la olla", "Reducir; frenar suave"],
+    ["Tiempo LF → torreta", "≤ 8 min [Supuesto]", "5–10 min", "> 12 min", "Avisar a S-12 y S-06"],
+    ["T de coraza en ruta", "≤ 300 °C [Supuesto]", "—", "> 350 °C [Supuesto]", "Ruta de emergencia; C-04"]
+  ],
+  "parametros_nota": "Capacidad nominal 250 t: [Validar con OEM] si incluye la traviesa (≈ 15–25 t [Supuesto]); si la incluye, el límite de olla llena baja.",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Nadie bajo la carga", "detalle": "Roja = ruta ± 5 m; amarilla ± 5–15 m. Ruta definida y señalizada, bocina y luces; peatones en pasillos protegidos."},
+      {"titulo": "Frenos y límites probados", "detalle": "Inspección previa al uso y prueba de frenos con carga a 100–200 mm. Si la carga desliza: asentar y fuera de servicio."},
+      {"titulo": "Enganche de ambos muñones", "detalle": "S-13 confirma visualmente los dos ganchos desde posición segura antes de levantar."},
+      {"titulo": "Sin sobrecarga", "detalle": "Olla llena ≤ 240 t en la celda de carga [Supuesto]. El paso 7 no se certifica hasta confirmar el peso de la traviesa."}
+    ],
+    "epp": [
+      "S-09: ropa ignífuga, casco, lentes y botas",
+      "S-09: cabina climatizada con extintor",
+      "S-13: careta con visor dorado y chaqueta aluminizada",
+      "S-13: guantes, ropa ignífuga, botas metatarsales, radio",
+      "Todos en la nave de ollas: protección auditiva"
+    ],
+    "figura": "ms-zonas-exclusion-nave.svg",
+    "figura_titulo": "Olla llena: zona roja de ± 5 m sobre toda la ruta",
+    "figura_lectura": [
+      "Traslado de olla llena: roja = eje de la ruta ± 5 m; amarilla ± 15 m [Supuesto].",
+      "La ruta de ollas llenas (5) va del LF a CC1 y CC2; la fosa de emergencia seca (6) recibe una olla perforada.",
+      "Salida a zona verde o refugio en ≤ 30 s desde cualquier punto rojo."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Tiempo LF → torreta", "≤ 8 min [Supuesto]", "Nivel 2, cada colada", "Pérdida de T; sobrecalentamiento bajo"],
+    ["Olla correcta a la máquina", "Grado y destino según programa", "Olla y colada con S-12", "Grado equivocado en la máquina"],
+    ["Traslado suave", "Sin balanceo", "Observación", "Salpicadura, capa aislante, reoxidación"]
+  ],
+  "calidad_takeaway": "Si la torreta no está lista, la olla espera en el LF con argón suave, no colgada de la grúa.",
+  "pasos": [
+    {"n": 1, "paso": "Inspección previa al uso", "como": "Frenos sin carga, ambos límites superiores, ganchos y seguros, cables, radio, bocina, luces, anticolisión, celda", "criterio": "Lista sin pendientes", "critico": true, "rol": "S-09"},
+    {"n": 2, "paso": "Recibe la liberación", "como": "S-06 confirma colada, T, química, argón suave cumplido, bordo libre ≥ 300 mm, sin fuga ni punto caliente", "criterio": "Liberación por radio", "critico": false, "rol": "S-06"},
+    {"n": 3, "paso": "Confirma destino", "como": "S-12 confirma la torreta y el brazo libre", "criterio": "Destino confirmado", "critico": false, "rol": "S-12"},
+    {"n": 4, "paso": "Despeja la ruta", "como": "Bocina; verifica la ruta y el área bajo la trayectoria", "criterio": "Ruta libre", "critico": true, "rol": "S-09"},
+    {"n": 5, "paso": "Engancha", "como": "Baja la traviesa y engancha ambos muñones", "criterio": "Ambos ganchos enganchados", "critico": true, "rol": "S-09"},
+    {"n": 6, "paso": "Confirma enganche", "como": "S-13, desde posición segura, confirma visualmente ambos lados", "criterio": "“Enganche OK”", "critico": true, "rol": "S-13"},
+    {"n": 7, "paso": "Levanta y prueba frenos", "como": "Levanta 100–200 mm, pausa 5 s; observa deslizamiento y peso; si pasa el límite, asienta y avisa a C-04", "criterio": "Sin deslizar; ≤ 240 t", "critico": true, "rol": "S-09"},
+    {"n": 8, "paso": "Traslada", "como": "Altura mínima segura; ≤ 50 % de velocidad; arranques y frenados suaves", "criterio": "Sin balanceo", "critico": false, "rol": "S-09"},
+    {"n": 9, "paso": "Aproxima a la torreta", "como": "Marcha lenta; alinea muñones con el brazo; sigue las señales de S-13", "criterio": "Alineado", "critico": false, "rol": "S-09 / S-13"},
+    {"n": 10, "paso": "Asienta", "como": "Baja suave hasta asentar; S-13 confirma asiento completo", "criterio": "“Asentada OK”", "critico": true, "rol": "S-09 / S-13"},
+    {"n": 11, "paso": "Libera ganchos", "como": "Baja la traviesa, desengancha, sube y retira", "criterio": "Ganchos libres", "critico": false, "rol": "S-09"},
+    {"n": 12, "paso": "Olla vacía", "como": "Cuando la CC la libera, repite los pasos 4–11 hacia volteo y preparación (MO-OLL-01)", "criterio": "Olla en preparación", "critico": false, "rol": "S-09"},
+    {"n": 13, "paso": "Registra", "como": "Hora, olla, colada, destino, peso y eventos", "criterio": "Registro", "critico": false, "rol": "S-09"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Perforación o fuga en el traslado", "A fosa seca de emergencia sin pasar sobre personas; evacuar ≥ 25 m; nunca agua", "C-04, C-16"],
+    ["Olla desliza en prueba de frenos", "Bajar y asentar; grúa fuera de servicio", "C-04, Mtto"],
+    ["Pérdida de energía, olla colgada", "Frenos retienen; evacuar debajo; descenso solo con procedimiento OEM", "C-04, S-20"],
+    ["Actúa un límite superior", "Detener; no rearmar el límite de respaldo sin mantenimiento", "C-04, S-20"],
+    ["Choque o balanceo fuerte", "Detener y estabilizar; revisar derrame y daños", "C-04"],
+    ["Bordo libre < 300 mm", "No trasladar sin decisión de C-04", "C-04"],
+    ["Punto caliente en coraza", "Tratar como fuga potencial: ruta de emergencia", "C-04, C-15"],
+    ["Torreta no disponible", "Mantener la olla en el LF con argón suave y T", "C-04, S-12"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-09 Grúa de Colada", "U", "40 h", "160 h / 60 movimientos llenos", "12 meses"],
+      ["S-13 Plataforma (señalero)", "U", "16 h", "40 h / 30 movimientos", "12 meses"],
+      ["C-04 Jefe de Turno", "O (evaluador)", "16 h + evaluador", "—", "24 meses"]
+    ],
+    "checklist": [
+      "Realiza la inspección previa al uso y rechaza la grúa con falla",
+      "No mueve la olla sin ruta despejada ni con personas bajo la carga",
+      "Exige la confirmación de enganche de ambos muñones",
+      "Ejecuta la prueba de frenos con carga a 100–200 mm",
+      "Aplica la respuesta a fuga de olla durante el traslado"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿A qué altura se hace la prueba de frenos con carga?", "opciones": ["100–200 mm, pausa 5 s", "1 m, pausa 30 s", "No se hace con carga"], "correcta": 0, "explicacion": "Levantar 100–200 mm y pausar 5 s: si la olla desliza, se asienta y la grúa sale de servicio."},
+    {"pregunta": "¿Quién confirma el enganche de los dos muñones?", "opciones": ["S-06 desde el LF", "S-13 desde posición segura", "Nadie; lo ve el gruero"], "correcta": 1, "explicacion": "S-13 confirma visualmente ambos lados antes de levantar: un muñón mal enganchado voltea la olla."},
+    {"pregunta": "La olla llena marca 245 t en la celda. ¿Qué haces?", "opciones": ["Trasladar despacio", "Asentar y avisar a C-04", "Subir la velocidad"], "correcta": 1, "explicacion": "Límite de olla llena ≤ 240 t [Supuesto]: se asienta y C-04 decide; revisar sobrellenado."},
+    {"pregunta": "La olla fuga metal durante el traslado. ¿Qué haces?", "opciones": ["Bajarla ahí y echar agua", "Llevarla a la fosa seca sin pasar sobre personas", "Seguir a la torreta"], "correcta": 1, "explicacion": "Si es seguro, a la fosa de emergencia seca; si no, al área segura más cercana. Evacuar a ≥ 25 m; nunca agua."},
+    {"pregunta": "¿Qué zona roja se aplica durante el traslado?", "opciones": ["Ruta ± 1 m", "Ruta ± 5 m", "Solo bajo la olla"], "correcta": 1, "explicacion": "Roja = proyección de la ruta ± 5 m; amarilla ± 5–15 m; nadie bajo ni junto a la ruta."}
+  ],
+  "reglas": [
+    {"titulo": "Nadie bajo la olla ni en la ruta", "detalle": "Zona roja de ± 5 m durante todo el traslado."},
+    {"titulo": "Grúa sin inspección no opera", "detalle": "Frenos, límites, ganchos, cables y radio revisados cada turno."},
+    {"titulo": "Sin enganche doble no se levanta", "detalle": "S-13 confirma los dos muñones; luego prueba de frenos a 100–200 mm."},
+    {"titulo": "Fuga de olla: nunca agua", "detalle": "A la fosa seca sin pasar sobre personas; evacuar a ≥ 25 m."}
+  ],
+  "por_confirmar": [
+    "Si los 250 t de la grúa incluyen la traviesa: define el límite real de olla llena (paso 7 no certificable hasta confirmar)",
+    "Altura de traslado: el manual indica ≥ 500 mm en parámetros y ≥ 1 m de holgura en zonas de exclusión",
+    "Peso de olla llena, bordo libre, tiempo LF → torreta, T de coraza y zonas de ruta (supuestos)"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de caída y perforación de olla", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido de la ruta LF → torreta", "Láminas 3–6, plano de rutas"],
+    ["3. Equipos e inspección de grúa", "75", "Lista de inspección previa al uso", "Lámina 7, grúa en sitio"],
+    ["4. Parámetros", "45", "Peso, bordo libre y prueba de frenos", "Lámina 8"],
+    ["5. Seguridad y señales", "75", "Zona móvil de exclusión; señales NOM-006", "Láminas 9–10, EPP físico"],
+    ["6. Calidad y paso a paso", "75", "Lectura guiada de los 13 pasos; pasos ★", "Láminas 11–13"],
+    ["7. Condiciones anormales", "60", "Simulacro: fuga y pérdida de energía", "Lámina 14"],
+    ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
+    ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}
