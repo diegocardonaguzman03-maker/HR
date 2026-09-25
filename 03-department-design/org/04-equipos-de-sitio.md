@@ -30,14 +30,14 @@
 
 ### 0.2 Instructores de tiempo completo por sitio (referencia)
 
-Los 24 instructores de tiempo completo reportan en línea sólida al Superintendente del sitio y en línea técnica a su Academia o a Seguridad (ver [00](00-organigrama-general.md)). La asignación **oficial** está en el documento [02](02-academias-tecnicas-e-instructores.md). La asignación de abajo es la que usa este documento para dimensionar la carga.
+Los 24 instructores de tiempo completo reportan en línea sólida al Superintendente del sitio y en línea técnica a su Academia o a Seguridad (ver [00](00-organigrama-general.md)). La asignación **oficial** está en el documento [02](02-academias-tecnicas-e-instructores.md). La tabla de abajo reproduce esa asignación oficial.
 
 | Sitio | Seguridad / riesgos críticos (8) | Minería (5) | Acería y Laminación (5) | Mantenimiento (6) | Total |
 |---|---|---|---|---|---|
-| Tepehuaje | TD-IS-01, 02 | TD-IM-01, 02, 03 | – | TD-IN-01 | 6 |
-| Sierra Alta | TD-IS-03, 04 | TD-IM-04, 05 | – | TD-IN-02 | 5 |
-| Manzanillo | TD-IS-05 | – | – | TD-IN-03 | 2 |
-| Acería Norte | TD-IS-06, 07, 08 | – | TD-IA-01 a 05 | TD-IN-04, 05, 06 | 11 |
+| Tepehuaje | TD-IS-04, 05 | TD-IM-01, 02 | – | TD-IN-04 | 5 |
+| Sierra Alta | TD-IS-06, 07 (relevo 14x7) | TD-IM-03, 04 (relevo 14x7) | – | TD-IN-05 | 5 |
+| Manzanillo | TD-IS-08 | TD-IM-05 (peletizado) | – | TD-IN-06 (itinerante 25%) | 3 |
+| Acería Norte | TD-IS-01, 02, 03 (IS-03 itinerante a centros) | – | TD-IA-01 a 05 (IA-04 itinerante) | TD-IN-01, 02, 03 | 11 |
 | Centros + Corporativo | – (lo cubren itinerantes de Acería Norte y los SME) | – | – | – | 0 |
 | **Total** | **8** | **5** | **5** | **6** | **24** |
 
@@ -63,7 +63,7 @@ flowchart TB
     S --> C2["TD-C-TEP-02<br/>Registros LMS, DC-3<br/>y soporte CMCAP"]
     S --> C3["TD-C-TEP-03<br/>Riesgos críticos, OJT<br/>y simuladores"]
     S --> C4["TD-C-TEP-04<br/>Contratistas REPSE, inducción<br/>y aprendices duales"]
-    S --> I["Instructores de tiempo completo (6)<br/>TD-IS-01, 02 · TD-IM-01, 02, 03 · TD-IN-01"]
+    S --> I["Instructores de tiempo completo (5)<br/>TD-IS-04, 05 · TD-IM-01, 02 · TD-IN-04"]
     C3 -. "programa y agenda evaluaciones" .-> I
     AM -. "línea técnica" .-> I
     S -. "coordina ≈ 30 SME" .-> SME["Instructores SME<br/>de medio tiempo (≈ 30)"]
@@ -92,7 +92,7 @@ flowchart TB
     S --> C1 & C2 & C3 & C4
     C1 -. "suplencia" .- C2
     C3 -. "suplencia" .- C4
-    S --> I["Instructores de tiempo completo (5)<br/>TD-IS-03, 04 · TD-IM-04, 05 · TD-IN-02"]
+    S --> I["Instructores de tiempo completo (5)<br/>TD-IS-06, 07 · TD-IM-03, 04 · TD-IN-05"]
     C3 -. "programa y agenda evaluaciones" .-> I
     AM -. "línea técnica" .-> I
     S -. "coordina ≈ 25 SME" .-> SME["Instructores SME<br/>de medio tiempo (≈ 25)"]
@@ -113,7 +113,7 @@ flowchart TB
     S --> C1["TD-C-MZO-01<br/>Programación, registros LMS,<br/>DC-3 y soporte CMCAP"]
     S --> C2["TD-C-MZO-02<br/>Riesgos críticos, OJT,<br/>contratistas y aprendices"]
     C1 -. "suplencia" .- C2
-    S --> I["Instructores de tiempo completo (2)<br/>TD-IS-05 · TD-IN-03"]
+    S --> I["Instructores de tiempo completo (3)<br/>TD-IS-08 · TD-IM-05 · TD-IN-06"]
     C2 -. "programa y agenda evaluaciones" .-> I
     AM -. "línea técnica" .-> I
     S -. "coordina ≈ 15 SME" .-> SME["Instructores SME<br/>de medio tiempo (≈ 15)"]
@@ -145,7 +145,7 @@ flowchart TB
     end
     S --> AREA
     S --> TRANS
-    S --> I["Instructores de tiempo completo (11)<br/>TD-IS-06, 07, 08 · TD-IA-01 a 05 · TD-IN-04, 05, 06"]
+    S --> I["Instructores de tiempo completo (11)<br/>TD-IS-01, 02, 03 · TD-IA-01 a 05 · TD-IN-01, 02, 03"]
     C8 -. "agenda del centro y simuladores" .-> I
     AA -. "línea técnica" .-> I
     S -. "coordina ≈ 65 SME" .-> SME["Instructores SME<br/>de medio tiempo (≈ 65)"]
@@ -579,7 +579,7 @@ El ciclo de 21 días de cada coordinador es de 14 días en sitio y 7 de descanso
 | 2 | Horas por persona | TD-P03 protege 4.7 h por persona al mes (≈ 56 h al año). El año 1 del *scorecard* es 44 h y el mínimo de la política es 40 h. | Se toma 56 h como capacidad protegida y 44 h como meta medida del año 1. |
 | 3 | Metas de proceso contra metas del año 1 | TD-P06 (L1 ≥ 4.3, L2 ≥ 85%, L3 ≥ 70%), TD-P09 (DC-3 ≥ 98%) y TD-P12 (entrega interna ≥ 65%) son más altas que las del año 1 del *scorecard* (4.2 / 80% / 60% / 90% / 50%). | Se usan las del *scorecard* año 1 y las de proceso se tratan como metas de estado estable. |
 | 4 | Duración de la inducción de contratistas | TD-P08 dice 4 h + 2 h; la política dice 4 h + módulo de sitio (sin duración); el roadmap dice 4 h + examen. | Se usa "4 h generales + módulo de sitio" (2 h según TD-P08). |
-| 5 | Datos no desglosados | Ni la distribución de los 24 instructores de tiempo completo por sitio ni la de los ≈ 4,000 contratistas están definidas en los documentos base. | Se proponen como supuestos (§0.1 y §0.2), a conciliar con el documento 02. |
+| 5 | Datos no desglosados | Ni la distribución de los 24 instructores de tiempo completo por sitio ni la de los ≈ 4,000 contratistas están definidas en los documentos base. | Instructores: conciliado con la asignación oficial del documento 02. Contratistas: sigue siendo un supuesto (§0.1). |
 | 6 | Dueño del KPI de CMCAP activa | El KPI "CMCAP activa" es de RH de Sitio, pero TD-P11 asigna la operación a C&D de Sitio. | El Superintendente ejerce la secretaría técnica y RH de Sitio es el dueño del KPI. |
 | 7 | Certificación del Superintendente | `department-design.md` pide "EC0217/EC0301" y la política exige EC0217.01. | Se pide EC0217.01 obligatoria y EC0301 deseable. |
 | 8 | Riesgo de TD-S05 | Con 0 coordinadores, TD-S05 atiende 1,250 personas que sí hacen tareas críticas (grúas, slitters, montacargas). | Se mitiga con servicios compartidos del CoE, la unidad móvil y apoyo de Acería, más una métrica de alerta (§2.10). |
