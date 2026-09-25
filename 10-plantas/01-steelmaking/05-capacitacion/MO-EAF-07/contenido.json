@@ -1,0 +1,677 @@
+{
+  "code": "MO-EAF-07",
+  "title": "Vaciado por EBT y adiciones en olla",
+  "titulo_corto": "Vaciado por EBT",
+  "serie": "Operación",
+  "area": "Hornos · EAF-1 / EAF-2",
+  "manual": "02-operacion/eaf/MO-EAF-07-vaciado-ebt-adiciones.md",
+  "manual_version": "0.1 (visto bueno técnico, de seguridad y laboral con observaciones · 2026-09-25)",
+  "subtitle": "Vaciar 150 t dentro de ventana, con la aleación correcta, sin escoria y con nadie en la zona de exclusión",
+  "audiencia": "S-01 Primer Hornero · S-02 Segundo Hornero · S-03 Tercer Hornero · S-09 Grúa de Colada · C-05",
+  "kpis": [
+    {
+      "value": "16 h",
+      "label": "teoría (S-01 / S-02)"
+    },
+    {
+      "value": "80 h",
+      "label": "OJT · 40 vaciados supervisados"
+    },
+    {
+      "value": "5",
+      "label": "pasos críticos ★"
+    },
+    {
+      "value": "24",
+      "label": "meses de vigencia (TD-P07)"
+    }
+  ],
+  "cadena": [
+    "Olla lista",
+    "Fosa seca y zona libre",
+    "Abrir EBT",
+    "Adiciones 30–120 t",
+    "Cierre a 150 t",
+    "Registro"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, vacías en ventana y sin exponer a nadie",
+    "roles": "Seis roles, un dueño: C-05 autoriza lo que sale de norma",
+    "flujo": "El vaciado se decide antes de abrir el EBT",
+    "figura": "El EBT deja el talón y la escoria dentro del horno",
+    "equipos": "Seis equipos deben estar en condición antes de inclinar",
+    "parametros": "Temperatura, oxígeno y peso definen la ventana",
+    "seguridad": "Metal líquido y agua: los dos riesgos que matan",
+    "calidad": "La escoria que pasa a la olla se paga en el LF",
+    "pasos": "Catorce pasos; cinco no admiten error",
+    "anormales": "Ante la duda: retroinclinar, alejar y avisar",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del vaciado que no se negocian"
+  },
+  "objetivos": [
+    {
+      "titulo": "Verificar la olla y la fosa",
+      "detalle": "Aceptar la olla solo con cara caliente ≥ 1,000 °C, válvula cerrada, arena y argón probado; fosa seca."
+    },
+    {
+      "titulo": "Controlar la zona de exclusión",
+      "detalle": "Nadie a ≤ 10 m de la olla y del EBT; sirena y semáforo ≥ 30 s antes de abrir."
+    },
+    {
+      "titulo": "Alear y desoxidar según el grado",
+      "detalle": "Calcular el Al con el O activo; adiciones secas entre 30 y 120 t en la olla."
+    },
+    {
+      "titulo": "Cerrar a tiempo",
+      "detalle": "Retroinclinar a 150 t o al primer indicio de escoria, reteniendo un talón de 20–30 t."
+    }
+  ],
+  "por_que_importa": "El vaciado concentra 150 t de acero a 1,630 °C en movimiento. Un error de humedad o de posición es una fatalidad; un error de escoria o aleación se convierte en acero fuera de especificación y en horas extra de horno olla.",
+  "principio": "Si la olla, la fosa o la zona no están listas, no se vacía.",
+  "roles": [
+    [
+      "Rol",
+      "Qué hace en el vaciado",
+      "RACI"
+    ],
+    [
+      "C-05 Supervisor de Hornos",
+      "Dueño; autoriza vaciado fuera de ventana y lanceo del EBT",
+      "A"
+    ],
+    [
+      "S-01 Primer Hornero",
+      "Permisivos, inclina, abre y cierra el EBT; vigila peso y escoria",
+      "R"
+    ],
+    [
+      "S-02 Segundo Hornero",
+      "Confirma olla y zona libre; opera adiciones",
+      "R"
+    ],
+    [
+      "S-03 Tercer Hornero",
+      "Carga tolvas con materiales secos; conecta argón",
+      "R"
+    ],
+    [
+      "S-09 Operador de Grúa de Colada",
+      "Coloca la olla; disponible para emergencia",
+      "R"
+    ],
+    [
+      "S-08 Preparador de Ollas",
+      "Entrega la olla con su lista MO-OLL-01",
+      "C"
+    ],
+    [
+      "C-09 Metalurgista de Producto",
+      "Define la práctica de adiciones por grado",
+      "C"
+    ]
+  ],
+  "flujo": [
+    {
+      "label": "Ventana OK",
+      "desc": "T, O, C y P liberados (MO-EAF-06)"
+    },
+    {
+      "label": "Olla lista",
+      "desc": "≥ 1,000 °C, válvula, arena, Ar"
+    },
+    {
+      "label": "Zona libre",
+      "desc": "Fosa seca, conteo, sirena ≥ 30 s"
+    },
+    {
+      "label": "Abrir EBT",
+      "desc": "Arco apagado, inclina 3–5°"
+    },
+    {
+      "label": "Vaciar",
+      "desc": "Inclinación progresiva a 12–15°"
+    },
+    {
+      "label": "Adiciones",
+      "desc": "De 30 a 120 t, Ar 200–400 NL/min"
+    },
+    {
+      "label": "Cerrar",
+      "desc": "150 t o escoria: −3° de inmediato"
+    },
+    {
+      "label": "Registrar",
+      "desc": "Peso, tiempo, adiciones, arrastre"
+    }
+  ],
+  "flujo_takeaway": "El 80% de la seguridad del vaciado se asegura en los tres primeros pasos, antes de abrir el EBT.",
+  "figuras": [
+    {
+      "svg": "eaf-vaciado-ebt.svg",
+      "lectura": [
+        "La inclinación inicial de 3–5° abre el agujero excéntrico sin exponer la escoria.",
+        "Subir a 12–15° mantiene la carga hidrostática y el chorro compacto.",
+        "La retroinclinación a −3° deja dentro el talón de 20–30 t y la escoria oxidada, rica en P y FeO."
+      ]
+    },
+    {
+      "svg": "olla-corte-valvula-tapon.svg",
+      "titulo": "La olla que recibe debe estar caliente, cerrada y con argón",
+      "lectura": [
+        "Cara caliente ≥ 1,000 °C: una olla fría o húmeda puede explotar al recibir acero.",
+        "La válvula deslizante cerrada con arena de sello asegura la apertura libre en colada.",
+        "El tapón poroso agita con argón para mezclar las adiciones."
+      ]
+    }
+  ],
+  "equipos": [
+    [
+      "Equipo",
+      "Función",
+      "Especificación clave",
+      "Verificar antes"
+    ],
+    [
+      "EBT y compuerta",
+      "Vaciado excéntrico por el fondo",
+      "Llenado con arena correcto",
+      "Compuerta operable"
+    ],
+    [
+      "Sistema de inclinación",
+      "Inclina y retroinclina",
+      "Retroinclinación ≤ 3 s a −3° [Validar con OEM]",
+      "Prueba de velocidad"
+    ],
+    [
+      "Carro con báscula",
+      "Posiciona y pesa",
+      "± 0.5 t [Supuesto]",
+      "Cero con olla vacía"
+    ],
+    [
+      "Olla de 150 t",
+      "Recibe el acero",
+      "1,000–1,100 °C; válvula cerrada",
+      "Lista MO-OLL-01 firmada"
+    ],
+    [
+      "Tolvas y chute",
+      "Dosifican aleaciones",
+      "± 1% por tolva [Supuesto]",
+      "Materiales secos"
+    ],
+    [
+      "Fosa de vaciado",
+      "Contiene derrames",
+      "Seca y limpia",
+      "★ Sin agua ni fugas"
+    ]
+  ],
+  "parametros": [
+    [
+      "Parámetro",
+      "Objetivo",
+      "Rango",
+      "Alarma",
+      "Acción"
+    ],
+    [
+      "Temperatura de vaciado",
+      "1,630 °C",
+      "1,615–1,645 °C",
+      "< 1,610 o > 1,650 °C",
+      "No vaciar sin C-05; ajustar"
+    ],
+    [
+      "O activo",
+      "700 ppm",
+      "500–900 ppm",
+      "> 1,000 ppm",
+      "Recalcular Al; avisar a LF"
+    ],
+    [
+      "C / P",
+      "0.06 / ≤ 0.012 %",
+      "0.04–0.08 / ≤ 0.015 %",
+      "P > 0.015 %",
+      "Decisión de C-05 / C-09"
+    ],
+    [
+      "Peso vaciado",
+      "150 t",
+      "145–152 t",
+      "> 153 t",
+      "Cierre inmediato"
+    ],
+    [
+      "Talón retenido",
+      "25 t",
+      "20–30 t",
+      "< 20 t",
+      "Cerrar antes; informar"
+    ],
+    [
+      "Tiempo de vaciado",
+      "4 min",
+      "3–5 min",
+      "< 2.5 o > 6 min",
+      "Cambio de tubo o limpieza"
+    ],
+    [
+      "Ventana de adiciones",
+      "30 → 120 t",
+      "20–80 % del peso",
+      "Fuera de ventana",
+      "Ajustar el inicio"
+    ],
+    [
+      "Argón en olla",
+      "300 NL/min",
+      "200–400 NL/min",
+      "Sin flujo",
+      "Revisar conexión; avisar a LF"
+    ]
+  ],
+  "parametros_nota": "Tiempo de vaciado, ángulo máximo y caudal de argón: [Validar con OEM / Ingeniería de Proceso].",
+  "seguridad": {
+    "controles": [
+      {
+        "titulo": "Zona de exclusión de vaciado",
+        "detalle": "Zona roja ≤ 10 m de olla y EBT, fosa y vía del carro ± 5 m. Nadie a pie; sirena ≥ 30 s antes."
+      },
+      {
+        "titulo": "Cero humedad",
+        "detalle": "Olla ≥ 1,000 °C (fría > 4 h: ≥ 8 h de precalentamiento), adiciones secas, fosa sin agua. Si hay agua: no se vacía."
+      },
+      {
+        "titulo": "EBT que no abre",
+        "detalle": "Regresar a 0°/−3°; lanceo solo con autorización de C-05, desde posición protegida, máx. 2 intentos."
+      },
+      {
+        "titulo": "Gases en la fosa",
+        "detalle": "Detector multigás: CO 25 ppm salir, 200 ppm evacuar el sector (MS-ACE-06)."
+      }
+    ],
+    "epp": [
+      "Careta con visor dorado y capucha aluminizada",
+      "Chaqueta, polainas y guantes aluminizados",
+      "Ropa ignífuga y botas metatarsales",
+      "Protección auditiva y detector multigás"
+    ],
+    "figura": "ms-zonas-exclusion-nave.svg",
+    "figura_titulo": "Zonas roja, amarilla y verde durante el vaciado",
+    "figura_lectura": [
+      "Roja ≤ 10 m: nadie a pie mientras la olla está en la fosa.",
+      "Amarilla 10–25 m: solo personal autorizado, con EPP aluminizado.",
+      "Evacuación por perforación de olla: ≥ 25 m o refugio en ≤ 30 s."
+    ]
+  },
+  "calidad": [
+    [
+      "Variable",
+      "Especificación",
+      "Cómo y cuándo",
+      "Si falla"
+    ],
+    [
+      "Arrastre de escoria",
+      "≤ 5 kg/t [Supuesto]",
+      "Detector + espesor en LF, cada colada",
+      "Reversión de P, más Al y cal"
+    ],
+    [
+      "Reversión de P",
+      "ΔP ≤ 0.003 % [Supuesto]",
+      "Análisis EAF vs. LF",
+      "P fuera de especificación"
+    ],
+    [
+      "Desoxidación",
+      "Al (CC1) / Si-Mn sin Al (CC2)",
+      "Muestra de llegada a LF",
+      "Buzas tapadas en CC2"
+    ],
+    [
+      "T de llegada a LF",
+      "≈ 1,570–1,590 °C [Supuesto]",
+      "Medición en LF",
+      "Más tiempo de horno olla"
+    ]
+  ],
+  "calidad_takeaway": "En CC2 el acero va sin Al (Al soluble ≤ 0.005 %): el Al tapa las buzas calibradas.",
+  "pasos": [
+    {
+      "n": 1,
+      "paso": "Recibe la olla",
+      "como": "Lista MO-OLL-01: cara caliente ≥ 1,000 °C, válvula cerrada, arena, tapón probado",
+      "criterio": "Lista firmada",
+      "critico": true,
+      "rol": "S-02"
+    },
+    {
+      "n": 2,
+      "paso": "Posiciona y conecta",
+      "como": "Carro en posición; conecta argón; báscula en cero con olla vacía",
+      "criterio": "Ar con flujo",
+      "critico": false,
+      "rol": "S-03"
+    },
+    {
+      "n": 3,
+      "paso": "Prepara adiciones",
+      "como": "Tolvas según el grado; Al calculado con el O de M3; materiales secos",
+      "criterio": "Pesos ± 1 %",
+      "critico": true,
+      "rol": "S-03 / S-01"
+    },
+    {
+      "n": 4,
+      "paso": "Inspecciona la fosa",
+      "como": "Seca, sin agua, sin metal suelto",
+      "criterio": "Fosa en condición",
+      "critico": true,
+      "rol": "S-02"
+    },
+    {
+      "n": 5,
+      "paso": "Despeja la zona",
+      "como": "Barreras, conteo, CCTV: nadie a ≤ 10 m; sirena y semáforo ≥ 30 s",
+      "criterio": "“Zona libre” por radio",
+      "critico": true,
+      "rol": "S-02"
+    },
+    {
+      "n": 6,
+      "paso": "Prepara el horno",
+      "como": "Arco apagado; DRI, O₂ y C detenidos; electrodos arriba",
+      "criterio": "Estado en HMI",
+      "critico": false,
+      "rol": "S-01"
+    },
+    {
+      "n": 7,
+      "paso": "Inclina y abre",
+      "como": "Inclina a 3–5°; abre la compuerta del EBT",
+      "criterio": "Chorro libre",
+      "critico": false,
+      "rol": "S-01"
+    },
+    {
+      "n": 8,
+      "paso": "Vacía",
+      "como": "Aumenta la inclinación hasta 12–15° para chorro compacto",
+      "criterio": "Sin escoria",
+      "critico": false,
+      "rol": "S-01"
+    },
+    {
+      "n": 9,
+      "paso": "Agrega",
+      "como": "Adiciones desde ≈ 30 t hasta antes de 120 t; Ar 200–400 NL/min",
+      "criterio": "Adiciones en ventana",
+      "critico": false,
+      "rol": "S-02"
+    },
+    {
+      "n": 10,
+      "paso": "Vigila escoria",
+      "como": "Cámara / detector de escoria y peso en báscula",
+      "criterio": "Sin escoria",
+      "critico": false,
+      "rol": "S-01"
+    },
+    {
+      "n": 11,
+      "paso": "Cierra",
+      "como": "A 150 t o al primer indicio de escoria: retroinclina a −3° de inmediato",
+      "criterio": "Talón 20–30 t",
+      "critico": true,
+      "rol": "S-01"
+    },
+    {
+      "n": 12,
+      "paso": "Confirma cierre",
+      "como": "Chorro detenido; horno estable; EBT listo para preparación",
+      "criterio": "Sin flujo",
+      "critico": false,
+      "rol": "S-01"
+    },
+    {
+      "n": 13,
+      "paso": "Libera la zona",
+      "como": "El carro sale hacia LF; se levanta la exclusión",
+      "criterio": "Carro fuera",
+      "critico": false,
+      "rol": "S-02"
+    },
+    {
+      "n": 14,
+      "paso": "Registra",
+      "como": "Peso, tiempo, apertura libre, adiciones reales, argón, arrastre",
+      "criterio": "Registro completo",
+      "critico": false,
+      "rol": "S-01"
+    }
+  ],
+  "anormales": [
+    [
+      "Síntoma",
+      "Acción inmediata",
+      "Avisar a"
+    ],
+    [
+      "EBT no abre",
+      "Regresar a 0°/−3°; nadie se asoma; lanceo solo autorizado, máx. 2 intentos",
+      "C-05"
+    ],
+    [
+      "Escoria antes de 150 t",
+      "Cerrar de inmediato; registrar peso; avisar a LF",
+      "S-06, C-05"
+    ],
+    [
+      "Perforación de olla",
+      "Retroinclinar; evacuar ≥ 25 m; metal a fosa seca; nunca agua",
+      "C-05, C-04, C-16"
+    ],
+    [
+      "Ebullición en la olla",
+      "Detener adiciones y vaciado; evacuar a zona verde en ≤ 30 s",
+      "C-05, C-07"
+    ],
+    [
+      "Sobrellenado",
+      "Cerrar por nivel visual; calibrar báscula",
+      "C-05"
+    ],
+    [
+      "Sin argón en la olla",
+      "Continuar el vaciado; avisar a LF",
+      "S-06"
+    ],
+    [
+      "Retroinclinación lenta",
+      "Cierre de emergencia del EBT según OEM; evacuar",
+      "C-05, S-22"
+    ]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      [
+        "Rol",
+        "ILUO",
+        "Teoría",
+        "OJT supervisado",
+        "Vigencia"
+      ],
+      [
+        "S-01 Primer Hornero",
+        "U",
+        "16 h",
+        "80 h / 40 vaciados",
+        "24 meses"
+      ],
+      [
+        "S-02 Segundo Hornero",
+        "U",
+        "16 h",
+        "80 h / 40 vaciados",
+        "24 meses"
+      ],
+      [
+        "S-03 Tercer Hornero",
+        "U",
+        "8 h",
+        "40 h / 20 vaciados",
+        "24 meses"
+      ],
+      [
+        "S-09 Grúa de Colada",
+        "U",
+        "según MO-OLL-02",
+        "—",
+        "12 meses"
+      ]
+    ],
+    "checklist": [
+      "Verifica la olla (precalentamiento, válvula, arena, tapón) antes de aceptar el vaciado",
+      "Establece y confirma la zona de exclusión y la fosa seca",
+      "Calcula el Al con el O activo y usa adiciones secas",
+      "Retroinclina a tiempo reteniendo talón y escoria",
+      "Responde a un EBT que no abre sin exponer a nadie"
+    ]
+  },
+  "quiz": [
+    {
+      "pregunta": "¿Cuál es la temperatura mínima de cara caliente para aceptar una olla?",
+      "opciones": [
+        "800 °C",
+        "1,000 °C",
+        "1,200 °C"
+      ],
+      "correcta": 1,
+      "explicacion": "Olla ≥ 1,000 °C; si estuvo fría más de 4 h, ≥ 8 h de precalentamiento."
+    },
+    {
+      "pregunta": "¿Entre qué pesos en la olla se hacen las adiciones?",
+      "opciones": [
+        "0 a 30 t",
+        "30 a 120 t",
+        "120 a 150 t"
+      ],
+      "correcta": 1,
+      "explicacion": "Antes de 20–30 t atacan el fondo y el tapón; después de 120 t se mezclan mal."
+    },
+    {
+      "pregunta": "Detectas escoria a 140 t. ¿Qué haces?",
+      "opciones": [
+        "Terminar hasta 150 t",
+        "Retroinclinar de inmediato a −3°",
+        "Bajar la inclinación a 5°"
+      ],
+      "correcta": 1,
+      "explicacion": "Al primer indicio de escoria se cierra; el peso se registra y se avisa a LF."
+    },
+    {
+      "pregunta": "¿Qué distancia define la zona roja durante el vaciado?",
+      "opciones": [
+        "≤ 5 m",
+        "≤ 10 m",
+        "≤ 25 m"
+      ],
+      "correcta": 1,
+      "explicacion": "Zona roja ≤ 10 m de la olla y el EBT, fosa incluida; nadie a pie."
+    },
+    {
+      "pregunta": "¿Por qué los grados de CC2 se vacían sin Al?",
+      "opciones": [
+        "Para ahorrar costo",
+        "Porque el Al tapa las buzas calibradas",
+        "Porque sube el carbono"
+      ],
+      "correcta": 1,
+      "explicacion": "CC2 cuela abierto con buza calibrada: Al soluble ≤ 0.005 %."
+    }
+  ],
+  "reglas": [
+    {
+      "titulo": "Sin olla verificada no hay vaciado",
+      "detalle": "Lista MO-OLL-01 completa y firmada, cara caliente ≥ 1,000 °C."
+    },
+    {
+      "titulo": "Agua en la fosa = no se vacía",
+      "detalle": "Humedad + metal líquido = explosión (MS-ACE-03)."
+    },
+    {
+      "titulo": "Nadie en la zona roja",
+      "detalle": "≤ 10 m de olla y EBT; sirena y semáforo ≥ 30 s antes."
+    },
+    {
+      "titulo": "Escoria o 150 t: cierre inmediato",
+      "detalle": "Retroinclinar a −3° y retener talón y escoria."
+    }
+  ],
+  "por_confirmar": [
+    "Tiempo de vaciado, ángulo máximo y velocidad de retroinclinación con el OEM",
+    "Arrastre de escoria ≤ 5 kg/t y T de llegada a LF (supuestos)"
+  ],
+  "plan_sesion": [
+    [
+      "Bloque",
+      "Min",
+      "Actividad",
+      "Recurso"
+    ],
+    [
+      "1. Apertura y por qué importa",
+      "20",
+      "Casos de incidentes de vaciado; reglas de oro",
+      "Láminas 1–2"
+    ],
+    [
+      "2. Roles y flujo del proceso",
+      "40",
+      "Recorrido del flujo con la figura del EBT",
+      "Láminas 3–6"
+    ],
+    [
+      "3. Equipos y parámetros",
+      "60",
+      "Ejercicio: calcular el Al con O = 700 ppm",
+      "Láminas 7–8, calculadora"
+    ],
+    [
+      "4. Seguridad",
+      "60",
+      "Zonas de exclusión en plano; EPP completo",
+      "Láminas 9–10, EPP físico"
+    ],
+    [
+      "5. Calidad y paso a paso",
+      "90",
+      "Lectura guiada de los 14 pasos; pasos ★",
+      "Láminas 11–13"
+    ],
+    [
+      "6. Condiciones anormales",
+      "45",
+      "Simulacro de mesa: EBT que no abre",
+      "Lámina 14"
+    ],
+    [
+      "7. Evaluación teórica",
+      "30",
+      "Autoevaluación de 5 preguntas + retroalimentación",
+      "Lámina 16"
+    ],
+    [
+      "8. Cierre y ruta a OJT",
+      "15",
+      "Plan de OJT y certificación",
+      "Lámina 17"
+    ]
+  ]
+}
