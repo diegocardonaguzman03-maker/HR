@@ -45,7 +45,7 @@
 | Cal / dolomita | Cal 30–45 kg/t; dolomita 10–15 kg/t |
 | Escoria objetivo | Basicidad B2 (CaO/SiO₂) 1.8–2.2; FeO 25–35%; MgO 8–10% (saturación) |
 | Energía eléctrica | Objetivo 560 kWh/t (rango 520–600) de acero líquido. Límite físico: 140 MVA × FP ≈ 0.85 ≈ 119 MW activos, así que 560 kWh/t ≈ 84 MWh ≈ 42 min de arco. Cada +15 kWh/t alarga el arco ≈ 1 min |
-| Tiempo de colada a colada (tap-to-tap) | 55 min objetivo (con arco encendido 42 min) |
+| Tiempo de colada a colada (tap-to-tap) | 55 min objetivo (55–57 min real); arco encendido 42–44 min a 560 kWh/t |
 | Temperatura de vaciado | 1,630 °C ± 15 °C (según grado) |
 | Química al vaciado (típica) | C 0.04–0.08%; O activo 500–900 ppm; P ≤ 0.015% |
 | Enfriamiento por agua | Paneles de pared y bóveda de tubo; caudal total ≈ 2,200 m³/h a 4–6 bar |

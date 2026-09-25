@@ -84,7 +84,7 @@ flowchart TD
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
-| Energización con personas en plataforma de electrodos | Electrocución, arco | ★ Interruptor abierto + LOTO o llaves cautivas en poder del personal antes de subir (MS-ACE-02) | Tablero de llaves; VCC |
+| Energización con personas en plataforma de electrodos | Electrocución, arco | ★ Interruptor abierto + llave cautiva en poder de cada persona (método A, acceso de rutina) o LOTO completo (método B, destrabe o reparación) antes de subir (MS-ACE-02 §6.4) | Tablero de llaves; conteo de llaves = personas; VCC |
 | Movimiento de brazos o bóveda con personas cerca | Aplastamiento | ★ Hidráulica de brazos y giro de bóveda bloqueados | LOTO verificado por C-05 |
 | Caída del electrodo/columna (tapón mal roscado) | Aplastamiento, fatalidad | ★ Tapón roscado 100%; nadie bajo la carga; señalero | Observación de S-02 |
 | Trabajo en altura (método B) | Caída | ★ Arnés y línea de vida (NOM-009); barandales | Permiso de altura |
@@ -93,10 +93,11 @@ flowchart TD
 | Humedad en cajas o niples | Oxidación y rotura; vapor en el horno | Almacén seco; limpieza con aire seco sin aceite | Inspección |
 
 ### 6.2 EPP obligatorio
-Casco con barbiquejo, lentes, careta si hay columna caliente, guantes de carnaza o aluminizados, ropa ignífuga, botas metatarsales, protección auditiva, arnés con doble cola en método B, detector de CO en plataforma.
+Casco con barbiquejo, lentes, careta si hay columna caliente, guantes de carnaza o aluminizados, ropa ignífuga, botas metatarsales, protección auditiva, arnés con doble cola en método B, detector personal multigás en plataforma (CO 25/200 ppm; MS-ACE-06).
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- ★ **Antes de subir a la plataforma de electrodos o de bóveda:** interruptor del horno abierto y bloqueado, hidráulica de brazos y giro de bóveda bloqueados, llaves en poder de cada trabajador (MS-ACE-02). Verificación de ausencia de energía por C-05.
+- ★ **Antes de subir a la plataforma de electrodos o de bóveda:** interruptor del horno abierto y bloqueado, hidráulica de brazos y giro de bóveda bloqueados. **Método A** (adición y empalme de rutina desde la plataforma con barandal): basta la **llave cautiva**, una llave por persona. **Método B** (trabajo sobre la columna en el horno, con arnés), destrabe de mordaza, cambio de componentes o sistema de llaves en falla: **LOTO completo** con candado personal. Criterio único: MS-ACE-02 §6.4. Verificación de ausencia de energía por C-05.
+- La apertura de la mordaza en el paso 4 es el único movimiento permitido con personal en la plataforma, desde el mando designado y con la columna sujeta por la grúa [Validar con OEM / C-12 que el sistema de llaves lo permita solo en esa condición].
 - Permiso de trabajo en altura para el método B (MS-ACE-10).
 - Zona de exclusión bajo la trayectoria de la grúa y alrededor del soporte de adición (MS-ACE-04).
 
@@ -113,7 +114,7 @@ Casco con barbiquejo, lentes, careta si hay columna caliente, guantes de carnaza
 |---|---|---|---|---|---|
 | 1 | Prepara el electrodo nuevo | En el soporte: inspecciona grietas y roscas; limpia la caja con aire seco sin aceite. | Sin daño ni polvo | 🔎 | S-03 |
 | 2 | Rosca el niple | Rosca el niple a mano en la caja superior del electrodo nuevo hasta el tope. | Niple asentado | | S-02 |
-| 3 | Desenergiza y bloquea | Arco apagado, interruptor abierto; LOTO/llaves cautivas; hidráulica bloqueada. | Llaves en poder del personal | ★ | S-01 / C-05 |
+| 3 | Desenergiza y bloquea | Arco apagado, interruptor abierto; hidráulica bloqueada; método A: llave cautiva, una por persona, con confirmación de S-01 en HMI; método B: LOTO completo (MS-ACE-02 §6.4). | Una llave (o candado) por persona | ★ | S-01 / C-05 |
 | 4 | Retira la columna (método A) | Grúa toma la columna con el tapón de izaje; S-01 abre la mordaza; lleva la columna al soporte. | Columna en soporte, mordaza del soporte cerrada | ★ | S-04 / S-02 |
 | 5 | Limpia la columna | Limpia la caja superior de la columna con aire seco. | Rosca limpia | | S-03 |
 | 6 | Coloca el tapón de izaje | Rosca el tapón al electrodo nuevo con el 100% de las roscas enganchadas. | Tapón a fondo | ★ | S-03 |
@@ -123,8 +124,8 @@ Casco con barbiquejo, lentes, careta si hay columna caliente, guantes de carnaza
 | 10 | Marca | Pinta la marca de deslizamiento; registra serie de electrodo y niple, torque y hora. | Registro completo | 🔎 | S-02 |
 | 11 | Regresa la columna | Grúa lleva la columna a la mordaza; S-01 cierra la mordaza. | Columna sujeta | | S-04 / S-01 |
 | 12 | Desliza | Ajusta la posición: junta ≥ 300 mm bajo la mordaza; punta a la altura de trabajo. | Junta fuera de la mordaza y del delta | ★ | S-01 |
-| 13 | Retira bloqueos | Todos bajan; conteo; llaves al tablero. | Plataforma vacía | ★ | S-02 / C-05 |
-| 14 | Método B (alterno) | Igual a pasos 1–3, 6–10 y 12–13, con arnés y permiso de altura, electrodo nuevo bajado sobre la columna en el horno. | Mismos criterios | ★ | S-02 / S-03 |
+| 13 | Retira bloqueos | Todos bajan; conteo de personas = conteo de llaves devueltas; cada quien retira su propio candado o llave. | Plataforma vacía; tablero completo | ★ | S-02 / C-05 |
+| 14 | Método B (alterno) | Igual a pasos 1–3, 6–10 y 12–13, con **LOTO completo**, arnés 100 % conectado y permiso de altura (MS-ACE-10); electrodo nuevo bajado sobre la columna en el horno. | Mismos criterios | ★ | S-02 / S-03 |
 
 ## 9. Condiciones anormales y respuesta
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
@@ -147,16 +148,17 @@ Casco con barbiquejo, lentes, careta si hay columna caliente, guantes de carnaza
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-02 Segundo Hornero | 3 | 12 (electrodos, niples, torque, LOTO) | 30 h / 10 empalmes | Pasos 3, 6, 8, 9, 12, 13 | 24 meses (TD-P07) |
-| S-03 Tercer Hornero | 3 | 8 | 20 h / 10 empalmes | Pasos 1, 6 | 24 meses |
-| S-04 Operador de Grúa de Carga | 3 | NOM-006 + grúa | 10 maniobras de electrodo | Pasos 4, 7 (modo fino, nadie bajo carga) | 24 meses |
-| C-05 Supervisor de Hornos | 4 | 8 + evaluador | — | Verificación de LOTO | 24 meses |
+| S-02 Segundo Hornero | 3 | 12 (electrodos, niples, torque, LOTO) | 30 h / 10 empalmes | Pasos 3, 6, 8, 9, 12, 13, 14 | 24 meses (TD-P07); alturas (método B) 12 meses |
+| S-03 Tercer Hornero | 3 | 8 | 20 h / 10 empalmes | Pasos 1, 6, 14 | 24 meses (TD-P07); alturas (método B) 12 meses |
+| S-04 Operador de Grúa de Carga | 3 | NOM-006 + grúa | 10 maniobras de electrodo | Pasos 4, 7 (modo fino, nadie bajo carga) | 12 meses (grúas/izaje) |
+| C-05 Supervisor de Hornos | 4 | 8 + evaluador | — | Verificación de LOTO y de llave cautiva | 24 meses (TD-P07) |
 
 Lista corta de verificación de pasos ★:
-1. Aplica LOTO / llaves cautivas antes de subir y verifica ausencia de energía.
+1. Aplica la llave cautiva (método A) o el LOTO completo (método B) antes de subir, según MS-ACE-02 §6.4, y verifica ausencia de energía.
 2. Rosca el tapón de izaje al 100% y mantiene a todos fuera de la trayectoria.
 3. Aprieta al torque OEM con llave calibrada y verifica con laina 0.1 mm.
 4. Deja la junta fuera de la zona de la mordaza.
+5. Retira bloqueos con conteo de personas = llaves devueltas (paso 13); en método B trabaja 100 % conectado (paso 14).
 
 ## 12. Referencias
 - FT-ACE-001 §2 y §6; CAT-ACE-001; MO-EAF-01, MO-EAF-04; MM-EAF-02; MM-GR-01.

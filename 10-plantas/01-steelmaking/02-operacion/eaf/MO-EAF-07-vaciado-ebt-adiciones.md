@@ -98,13 +98,14 @@ flowchart TD
 | Sobrellenado | Derrame por el borde | Cierre a 150 t; bordo libre ≥ 300 mm [Supuesto] | Báscula |
 | EBT que no abre: intervención con lanza | Proyección, quemaduras | ★ Solo con autorización de C-05, horno a 0°/−3°, posición protegida, EPP completo | Registro de autorización |
 | Reacción violenta en la olla (escoria oxidada + Al/C) | Ebullición y derrame | Retener escoria del horno; adiciones en la ventana 30–120 t | Detección de escoria |
-| Humos y CO en la fosa | Intoxicación | Extracción; detector de CO | Detector |
+| Humos y CO en la fosa | Intoxicación | Extracción; detector personal multigás: CO 25 ppm → salir, 200 ppm → evacuación del sector [Verificar NOM-010] (MS-ACE-06) | Bump test diario |
 
 ### 6.2 EPP obligatorio
-En piso de vaciado y plataforma de adiciones: casco, careta con visor dorado, capucha y chaqueta aluminizadas, polainas, guantes aluminizados, ropa ignífuga (algodón FR/lana), botas metatarsales, protección auditiva, detector de CO. Púlpito: ropa ignífuga.
+En piso de vaciado y plataforma de adiciones: casco, careta con visor dorado, capucha y chaqueta aluminizadas, polainas, guantes aluminizados, ropa ignífuga (algodón FR/lana), botas metatarsales, protección auditiva, detector personal multigás (MS-ACE-06). Púlpito: ropa ignífuga.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- ★ **Zona de exclusión de vaciado** (Figura 5): fosa de vaciado, bajo el horno, vía del carro y alrededores definidos en MS-ACE-01. Activa desde que la olla entra hasta que el EBT cierra y el carro sale.
+- ★ **Zona de exclusión de vaciado** (Figura 5, MS-ACE-01): zona roja ≤ 10 m de la olla y del EBT, incluida la fosa de vaciado, bajo el horno y la vía del carro ± 5 m; zona amarilla 10–25 m. Nadie a pie en la roja (mando desde el púlpito; S-02 solo para adiciones desde la posición protegida). Aviso con sirena y semáforo ≥ 30 s antes. Activa desde que la olla entra hasta que el EBT cierra y el carro sale.
+- ★ **Humedad (MS-ACE-03):** olla ≥ 1,000 °C en cara caliente (fría > 4 h: ≥ 8 h de precalentamiento), adiciones de bodega techada y fosa sin agua estancada; si hay agua, 🛑 no se vacía.
 - Entrada a la fosa para limpieza: horno a 0° con inclinación bloqueada (LOTO, MS-ACE-02), carro bloqueado, permiso de C-05.
 - Grúa de colada no pasa sobre la fosa durante el vaciado.
 
@@ -124,7 +125,7 @@ En piso de vaciado y plataforma de adiciones: casco, careta con visor dorado, ca
 | 2 | Posiciona y conecta | Carro en posición de vaciado; conecta argón; verifica flujo. Cero de báscula con olla vacía. | Ar con flujo; báscula en cero | | S-03 |
 | 3 | Prepara adiciones | Carga las tolvas con la tabla del grado y el Al calculado con el O de M3. Verifica que los materiales estén secos. | Pesos correctos ± 1% | ★ | S-03 / S-01 |
 | 4 | Inspecciona la fosa | Seca, sin agua, sin metal suelto. | Fosa en condición | ★ | S-02 |
-| 5 | Despeja la zona de exclusión | Bocina; conteo de personas; barreras en posición. | "Zona libre" por radio | ★ | S-02 |
+| 5 | Despeja la zona de exclusión | Barreras en posición; conteo de personas; visual + CCTV: nadie a ≤ 10 m de la olla y del EBT; sirena y semáforo rojo ≥ 30 s antes de abrir (MS-ACE-01). | "Zona libre" por radio | ★ | S-02 |
 | 6 | Prepara el horno | Arco apagado, interruptor abierto; DRI, O₂ y C detenidos; electrodos arriba. | Estado en HMI | | S-01 |
 | 7 | Inclina y abre | Inclina a 3–5°; abre la compuerta del EBT. | Chorro libre | | S-01 |
 | 8 | Vacía | Aumenta la inclinación progresivamente (hasta 12–15°) para mantener el chorro compacto. | Chorro compacto, sin escoria | | S-01 |
@@ -141,9 +142,9 @@ En piso de vaciado y plataforma de adiciones: casco, careta con visor dorado, ca
 | EBT no abre (sin chorro al abrir la compuerta) | Arena sinterizada, costra, agujero cerrado | 🛑 Regresa el horno a 0°/−3°. Nadie se asoma. Con autorización de C-05, S-02 lancea con O₂ desde la posición protegida definida por el OEM [Validar con OEM / Ingeniería de Proceso]. Máx. 2 intentos; luego C-05 decide (mantener T con arco a 0°). | C-05 |
 | Chorro abierto en forma de abanico o chorro débil | Agujero desgastado o parcialmente obstruido | Continúa si es seguro; programa cambio de tubo | C-05, C-15 |
 | Escoria arrastrada detectada antes de 150 t | Vórtice, inclinación excesiva, talón bajo | Cierra de inmediato; registra peso; avisa a LF (desescoriado, P) | S-06, C-05 |
-| Perforación de olla (metal por la coraza o el fondo) | Refractario desgastado, olla fría | 🛑 Retroinclina de inmediato; evacua; deja que el metal caiga a la fosa seca; no uses agua | C-05, C-04, C-16 (MS-ACE-09) |
+| Perforación de olla (metal por la coraza o el fondo) | Refractario desgastado, olla fría | 🛑 Retroinclina de inmediato; evacúa a ≥ 25 m; deja que el metal caiga a la fosa seca; no uses agua | C-05, C-04, C-16 (MS-ACE-09) |
 | Olla se llena en exceso | Báscula fallada | Cierra por nivel visual; calibra báscula | C-05 |
-| Ebullición en la olla | Escoria oxidada + desoxidante, adiciones húmedas | Detén adiciones; evacua la zona | C-05 |
+| Ebullición en la olla | Escoria oxidada + desoxidante, adiciones húmedas | Detén adiciones y, si es posible desde el púlpito, el vaciado; evacúa a zona verde o refugio en ≤ 30 s (MS-ACE-01) | C-05, C-07 |
 | Sin argón en la olla | Tapón tapado, conexión | Continúa el vaciado; avisa a LF (MO-LF-01 §9) | S-06 |
 | Retroinclinación lenta o falla hidráulica | Hidráulica | Cierre de emergencia del EBT según OEM; evacua | C-05, S-22 |
 
@@ -157,9 +158,9 @@ En piso de vaciado y plataforma de adiciones: casco, careta con visor dorado, ca
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | S-01 Primer Hornero | 3 | 16 | 80 h / 40 vaciados | Pasos 3, 11 + escenario de escoria y de EBT que no abre | 24 meses (TD-P07) |
-| S-02 Segundo Hornero | 3 | 16 | 80 h / 40 vaciados | Pasos 1, 4, 5 + lanceo simulado en posición protegida | 24 meses |
-| S-03 Tercer Hornero | 3 | 8 | 40 h / 20 vaciados | Paso 3 (pesos y materiales secos) | 24 meses |
-| S-09 Operador de Grúa de Colada | 3 | según MO-OLL-02 | — | Respuesta a emergencia de olla | 24 meses |
+| S-02 Segundo Hornero | 3 | 16 | 80 h / 40 vaciados | Pasos 1, 4, 5 + lanceo simulado en posición protegida | 24 meses (TD-P07) |
+| S-03 Tercer Hornero | 3 | 8 | 40 h / 20 vaciados | Paso 3 (pesos y materiales secos) | 24 meses (TD-P07) |
+| S-09 Operador de Grúa de Colada | 3 | según MO-OLL-02 | — | Respuesta a emergencia de olla | 12 meses (grúas/izaje) |
 
 Lista corta de verificación de pasos ★:
 1. Verifica la olla (precalentamiento, válvula, arena, tapón) antes de aceptar el vaciado.

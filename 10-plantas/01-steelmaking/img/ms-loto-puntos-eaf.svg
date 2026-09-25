@@ -113,7 +113,7 @@
   <text x="920" y="87" text-anchor="middle" fill="#212121">Motor banda</text>
   <text x="920" y="102" text-anchor="middle" fill="#212121">DRI (MCC)</text>
   <use href="#lock" x="920" y="130"/>
-  <text x="760" y="80" fill="#212121">DRI/HBI 3.5–5.0 t/min</text>
+  <text x="760" y="80" fill="#212121">DRI/HBI 3.5–4.3 t/min</text>
   <rect x="590" y="190" width="30" height="12" fill="#C62828"/>
   <line x1="620" y1="196" x2="688" y2="218" stroke="#212121" stroke-width="1"/>
   <text x="692" y="222" fill="#212121">compuerta 5.º agujero</text>

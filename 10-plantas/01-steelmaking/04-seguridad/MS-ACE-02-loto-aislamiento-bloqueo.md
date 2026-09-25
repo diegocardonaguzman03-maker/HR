@@ -119,7 +119,7 @@ La **llave cautiva** (enclavamiento por llave atrapada) es un control de **acces
 | # | Condición | Verificación |
 |---|---|---|
 | 1 | La zona tiene un sistema de llave cautiva validado: al retirar la llave se abre el interruptor del horno (EAF o LF) y quedan inhibidos la inclinación, el giro y la elevación de la bóveda y el movimiento de los electrodos que alcanzan esa zona [Validar con OEM / C-12] | Prueba funcional mensual (C-12) con registro; VCC de C-16 |
-| 2 | La tarea es **operativa y de rutina**, y está en esta lista: inspección y llenado del EBT desde su plataforma (MO-EAF-01); adición y empalme de electrodos (MO-EAF-08); inspección visual desde las plataformas de bóveda y electrodos del EAF o del LF | Tarea en la lista |
+| 2 | La tarea es **operativa y de rutina**, y está en esta lista: inspección y llenado del EBT desde su plataforma (MO-EAF-01); adición y empalme de electrodos por el método A desde la plataforma con barandal (MO-EAF-08; el método B exige LOTO completo); inspección visual desde las plataformas de bóveda y electrodos del EAF o del LF | Tarea en la lista |
 | 3 | **Una llave por persona**: cada persona que sube retira y lleva su propia llave de la caja de intercambio; si hay más personas que llaves, se aplica LOTO | Conteo de llaves = conteo de personas |
 | 4 | Antes de subir, S-01 (o S-06) confirma en la HMI el interruptor abierto y los movimientos inhibidos, y un intento de mando es rechazado | Anotado en la bitácora del horno |
 | 5 | No se retiran guardas; no se abre ningún circuito de agua, hidráulica o gases; nadie entra al recipiente, bajo el horno o a la fosa; nadie pone el cuerpo en un punto de atrapamiento que el enclavamiento no cubre | Observación del supervisor |

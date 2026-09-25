@@ -16,7 +16,7 @@
   <!-- 2 transportador -->
   <line x1="200" y1="130" x2="330" y2="130" stroke="#455A64" stroke-width="4" marker-end="url(#fl)"/>
   <text x="265" y="112" text-anchor="middle" font-size="12" fill="#212121">(2) transportador</text>
-  <text x="265" y="154" text-anchor="middle" font-size="11" fill="#455A64">3.5–5.0 t/min</text>
+  <text x="265" y="154" text-anchor="middle" font-size="11" fill="#455A64">3.5–4.3 t/min</text>
 
   <!-- 3 Patio -->
   <rect x="30" y="300" width="170" height="80" rx="6" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
@@ -33,7 +33,7 @@
   <text x="425" y="137" text-anchor="middle" font-size="12" fill="#212121">AC · 140 MVA · 3 × 610 mm</text>
   <text x="425" y="155" text-anchor="middle" font-size="12" fill="#212121">150 t vaciado · talón 20–30 t</text>
   <text x="425" y="173" text-anchor="middle" font-size="12" fill="#212121">tap-to-tap 55 min</text>
-  <text x="425" y="191" text-anchor="middle" font-size="11" fill="#212121">560–620 kWh/t · O₂ 30–40 Nm³/t</text>
+  <text x="425" y="191" text-anchor="middle" font-size="11" fill="#212121">560 kWh/t (520–600) · O₂ 30–40 Nm³/t</text>
   <text x="425" y="209" text-anchor="middle" font-size="12" fill="#212121">C 8–12 kg/t · cal 30–45 kg/t</text>
   <text x="425" y="232" text-anchor="middle" font-size="12" font-weight="bold" fill="#C62828">Vaciado EBT 1,630 ± 15 °C</text>
   <text x="425" y="252" text-anchor="middle" font-size="12" fill="#212121">O activo 500–900 ppm</text>

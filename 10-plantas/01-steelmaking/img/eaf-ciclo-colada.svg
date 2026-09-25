@@ -74,9 +74,9 @@
 <text x="30" y="460" font-size="12" font-weight="bold" fill="#212121">Leyenda y notas</text>
 <text x="30" y="480" font-size="12" fill="#212121">(1) Carga: 3 min por canasta, arco apagado. Con 2.ª canasta suma ≈ 3 min más (tap-to-tap ≈ 58 min).</text>
 <text x="30" y="500" font-size="12" fill="#212121">(2) Fusión de canasta: perforación con tap bajo (≈ 2 min), luego tap máximo con quemadores en modo quemador.</text>
-<text x="30" y="520" font-size="12" fill="#212121">(3) DRI por el 5.º agujero a 30–35 kg/min/MW (≈ 4.0 t/min a ≈ 125 MW); inicia con ≥ 70% de la canasta fundida y escoria espumosa.</text>
+<text x="30" y="520" font-size="12" fill="#212121">(3) DRI por el 5.º agujero a 30–35 kg/min/MW (≈ 3.6–4.2 t/min a ≈ 119 MW); inicia con ≥ 70% de la canasta fundida y escoria espumosa.</text>
 <text x="30" y="540" font-size="12" fill="#212121">(4) Afino: DRI detenido, medición de T y O activo, ajuste final a 1,630 ± 15 °C.   (5) Vaciado EBT de 150 t, adiciones, talón 20–30 t retenido.</text>
 <text x="30" y="560" font-size="12" fill="#212121">(6) Preparación: inspección, llenado del EBT, proyección refractaria, verificación de agua.   (7) Barra amarilla = arco encendido.</text>
-<text x="30" y="580" font-size="12" fill="#C62828">Nota: 560 kWh/t en 42 min requieren ≈ 120 MW promedio; 620 kWh/t requieren ≈ 46–47 min de arco con el mismo MW.</text>
+<text x="30" y="580" font-size="12" fill="#C62828">Nota (FT-ACE-001 v0.3): 560 kWh/t ≈ 84 MWh ≈ 42–44 min a ≈ 119 MW activos; cada +15 kWh/t alarga el arco ≈ 1 min.</text>
 <text x="30" y="600" font-size="12" fill="#C62828">Ver la inconsistencia registrada en MO-EAF-04. [Validar con OEM / Ingeniería de Proceso]</text>
 </svg>

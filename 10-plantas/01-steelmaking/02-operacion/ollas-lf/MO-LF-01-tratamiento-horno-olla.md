@@ -101,23 +101,23 @@ La primera olla de secuencia sale más caliente porque el distribuidor absorbe c
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
-| Fuga de agua de la bóveda del LF | Explosión vapor–metal | ★ Monitoreo de caudal; ante alarma: arco fuera, bóveda arriba solo si no hay agua sobre el baño, evacuación (MS-ACE-09) | Tendencias; VCC |
+| Fuga de agua de la bóveda del LF | Explosión vapor–metal | ★ Monitoreo de caudal; ante alarma: arco fuera, bóveda arriba solo si no hay agua sobre el baño, evacuación a ≥ 25 m (MS-ACE-03, MS-ACE-09) | Tendencias; VCC |
 | Adiciones o alambre húmedos | Proyección de metal | ★ Materiales en tolvas cerradas; bobinas de alambre bajo techo | Inspección de lote |
-| Argón en fosas, bajo el carro y espacios cerrados | Asfixia | ★ Monitor de O₂ fijo en fosas (alarma < 19.5%); entrada con permiso (MS-ACE-05/06) | Prueba del monitor |
+| Argón en fosas, bajo el carro y espacios cerrados | Asfixia | ★ Monitor de O₂ fijo en fosas (alarma < 19.5 % o > 23.5 %); entrada con permiso y medición: O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL (MS-ACE-05/06) | Prueba del monitor |
 | Agitación fuerte con bordo libre bajo | Derrame de escoria/acero | Bordo libre ≥ 300 mm [Supuesto]; flujo ≤ 600 NL/min | Visual |
 | Reacción del CaSi (vapor de Ca, llamarada) | Quemaduras | Bóveda abajo; nadie frente a la ventana durante la inyección | Supervisor |
 | Latigazo o rotura de alambre | Golpes, cortes | Guías cerradas; nadie en la trayectoria; LOTO al desatascar | Observación |
-| Energía eléctrica del LF | Electrocución | ★ Nadie en la bóveda/plataforma de electrodos con el interruptor cerrado; LOTO (MS-ACE-02) | Tablero de llaves |
+| Energía eléctrica del LF | Electrocución | ★ Nadie en la bóveda/plataforma de electrodos con el interruptor cerrado; llave cautiva para el acceso de rutina (una llave por persona) o LOTO completo para intervenir el equipo (MS-ACE-02 §6.4) | Tablero de llaves completo; confirmación de S-06 en HMI |
 | Perforación de olla en la estación | Derrame | Termografía; fosa bajo la estación seca | Inspección |
-| CO y humos | Intoxicación | Extracción; detector de CO | Detector |
+| CO y humos | Intoxicación | Extracción; detector personal multigás: CO 25 ppm → salir, 200 ppm → evacuación del sector [Verificar NOM-010] (MS-ACE-06) | Bump test diario |
 
 ### 6.2 EPP obligatorio
 S-06 / S-07 en plataforma: casco, careta con visor dorado, chaqueta y guantes aluminizados para medición y muestreo, ropa ignífuga, botas metatarsales, protección auditiva, detector personal de CO y de O₂. Alimentador de alambre: además guantes de carnaza y protección facial.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- ★ Plataforma de electrodos y bóveda: interruptor abierto + LOTO antes de subir (MS-ACE-02).
-- ★ Fosa del carro y túneles de argón: espacio confinado con medición de O₂ (MS-ACE-05).
-- Zona de exclusión frente a la ventana de adiciones durante la inyección de CaSi y la agitación fuerte.
+- ★ Plataforma de electrodos y bóveda: interruptor abierto antes de subir, con **llave cautiva** (acceso de rutina: inspección visual, adición de electrodo desde la plataforma con barandal) o **LOTO completo** (intervención en el equipo, entrada a la bóveda, sistema de llaves en falla), según MS-ACE-02 §6.4.
+- ★ Fosa del carro y túneles de argón: espacio confinado con medición en el orden O₂ → LEL → CO (entrada con O₂ 19.5–23.5 %, < 10 % LEL, CO < 25 ppm), vigía y rescate (MS-ACE-05).
+- Zona de exclusión frente a la ventana de adiciones durante la inyección de CaSi y la agitación fuerte: zona roja ≤ 5 m de la ventana o del agujero de muestreo, amarilla 5–15 m (MS-ACE-01); adiciones y alambre secos (MS-ACE-03).
 - Movimiento del carro: bóveda arriba y electrodos arriba (enclavamiento).
 
 ## 7. Calidad
@@ -153,8 +153,8 @@ S-06 / S-07 en plataforma: casco, careta con visor dorado, chaqueta y guantes al
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
 | Tapón sin argón (no hay burbujeo) | Tapón tapado, fuga en la conexión | Revisa conexión; aplica presión de respaldo (bypass) [Validar con OEM / Ingeniería de Proceso]; si falla, lanza de argón superior; sin agitación no hay desulfuración | C-05, C-07 |
-| Perforación o fuga de olla en la estación | Refractario agotado | 🛑 Arco fuera, electrodos y bóveda arriba, corta argón si la fuga está en el fondo, evacua; metal a fosa seca | C-04, C-16 (MS-ACE-09) |
-| Alarma de fuga de agua en bóveda | Panel de bóveda dañado | 🛑 Arco fuera; no muevas la olla si hay agua sobre la escoria; evacua; corta el agua del circuito | C-05, Mantenimiento |
+| Perforación o fuga de olla en la estación | Refractario agotado | 🛑 Arco fuera, electrodos y bóveda arriba, corta argón si la fuga está en el fondo, evacúa a ≥ 25 m; metal a fosa seca; nunca agua | C-04, C-16 (MS-ACE-09) |
+| Alarma de fuga de agua en bóveda | Panel de bóveda dañado | 🛑 Arco fuera; no muevas la olla si hay agua sobre la escoria; evacúa a ≥ 25 m; corta el agua del circuito; reanuda solo con C-05 + C-07 (MS-ACE-03) | C-05, Mantenimiento |
 | Escoria espumando fuera de la olla | Escoria oxidada + desoxidante, argón excesivo | Reduce argón; detén adiciones; arco fuera | C-05 |
 | Arco inestable / ruidoso | Escoria delgada o seca | Agrega cal/aluminato; baja tap | S-06 |
 | S no baja de 0.010% | Escoria oxidada, poca agitación, poca escoria, T baja | Desoxida escoria, más cal, repite agitación fuerte | C-07, C-09 |
@@ -173,7 +173,7 @@ S-06 / S-07 en plataforma: casco, careta con visor dorado, chaqueta y guantes al
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | S-06 Operador de Horno Olla | 3 | 40 (metalurgia secundaria: desoxidación, desulfuración, inclusiones, T de envío) | 160 h / 60 tratamientos | Pasos 2, 7, 9, 11 + cálculo de aleaciones y T de envío | 24 meses (TD-P07) |
-| S-07 Ayudante / Alambre | 3 | 24 | 80 h / 40 tratamientos | Pasos 3, 4, 9, 12; manejo seguro del alimentador | 24 meses |
+| S-07 Ayudante / Alambre | 3 | 24 | 80 h / 40 tratamientos | Pasos 3, 4, 9, 12; manejo seguro del alimentador; llave cautiva / LOTO | 24 meses (TD-P07) |
 | S-11 Muestrero / Analista | 3 | 24 | 80 h / 100 análisis | Preparación y reporte | 24 meses |
 | C-07 Ingeniero de Proceso | 4 | 40 | — | Diseño de prácticas por grado | 24 meses |
 
@@ -182,7 +182,8 @@ Lista corta de verificación de pasos ★:
 2. Ejecuta la desulfuración con escoria desoxidada y argón fuerte sin derrame.
 3. Inyecta CaSi con la zona despejada y la bóveda abajo.
 4. Cumple ≥ 8 min de argón suave sin adiciones antes de liberar.
-5. Responde a tapón sin argón y a fuga de agua en bóveda.
+5. Responde a tapón sin argón y a fuga de agua en bóveda (evacúa a ≥ 25 m).
+6. Sube a la plataforma de electrodos solo con interruptor abierto y llave cautiva o LOTO según MS-ACE-02 §6.4.
 
 ## 12. Referencias
 - FT-ACE-001 §3, §4, §5 y §7; CAT-ACE-001; MO-EAF-07, MO-OLL-01, MO-OLL-02, MO-CC1-04, MO-CC2-04.

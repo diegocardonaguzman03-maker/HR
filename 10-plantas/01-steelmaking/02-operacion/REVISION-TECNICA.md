@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|
 | RT-MO-ACE-001 | 1.0 | Para decisión del Director | experto-operativo-metalurgia (visto bueno operativo, metalúrgico y de control de proceso) | FT-ACE-001 v0.3 · CAT-ACE-001 · Guía de estilo | 2026-09-25 |
 
-**Mensaje clave:** revisé los 29 manuales de operación (8 EAF, 3 Ollas/LF, 9 CC1, 9 CC2) y sus 3 README. Doy **visto bueno técnico a los 29**: 20 con observaciones (ya corregidas en el texto o pendientes de validar con el OEM) y 9 sin observaciones. Los cambios principales son cuatro: (1) el EAF queda alineado con la ficha v0.3 (560 kWh/t, ≤ 119 MW, DRI de 3.5–4.3 t/min); (2) CC1 usa las grúas de producto de 45 t con tenaza de la ficha v0.2; (3) se unificaron entre manuales el sobrecalentamiento de la 1.ª colada, el precalentamiento del distribuidor, el tiempo de cambio de olla, las velocidades de drenado y el Al por grado; (4) en MO-OLL-01, el llenado con arena ahora va después del precalentamiento. **No marqué "Aprobó"**. Tampoco edité las secciones 6 ni el contenido de los pasos ★: mis hallazgos de seguridad están en la sección 4 para experto-seguridad-salud. **Queda abierta una incoherencia de la ficha v0.3:** con 560 kWh/t no se alcanzan 42 min de arco (el cálculo da ≈ 44 min). La decisión está en la sección 7.
+**Mensaje clave:** revisé los 29 manuales de operación (8 EAF, 3 Ollas/LF, 9 CC1, 9 CC2) y sus 3 README. Doy **visto bueno técnico a los 29**: 21 con observaciones (ya corregidas en el texto o pendientes de validar con el OEM) y 8 sin observaciones. Los cambios principales son cuatro: (1) el EAF queda alineado con la ficha v0.3 (560 kWh/t, ≤ 119 MW, DRI de 3.5–4.3 t/min); (2) CC1 usa las grúas de producto de 45 t con tenaza de la ficha v0.2; (3) se unificaron entre manuales el sobrecalentamiento de la 1.ª colada, el precalentamiento del distribuidor, el tiempo de cambio de olla, las velocidades de drenado y el Al por grado; (4) en MO-OLL-01, el llenado con arena ahora va después del precalentamiento. **No marqué "Aprobó"**. Tampoco edité las secciones 6 ni el contenido de los pasos ★: mis hallazgos de seguridad están en la sección 4 para experto-seguridad-salud. **Queda abierta una incoherencia de la ficha v0.3:** con 560 kWh/t no se alcanzan 42 min de arco (el cálculo da ≈ 44 min). La decisión está en la sección 7.
 
 ## 1. Resultado por manual
 
@@ -116,7 +116,7 @@
 
 ## 9. Cierre
 **Resumen (5 líneas):**
-1. Visto bueno técnico a los 29 manuales (20 con observaciones y 9 sin observaciones); "Aprobó" queda para el Director.
+1. Visto bueno técnico a los 29 manuales (21 con observaciones y 8 sin observaciones); "Aprobó" queda para el Director.
 2. El EAF quedó alineado con la ficha v0.3; CC1 quedó con la grúa de 45 t con tenaza; ESR = C-16 en todos los manuales.
 3. Se unificaron el sobrecalentamiento de la 1.ª colada, el precalentamiento del distribuidor, el cambio de olla, el drenado, el Al por grado y la T de envío de la primera olla.
 4. MO-OLL-01 quedó en el orden real de planta: la arena se coloca después del precalentamiento.

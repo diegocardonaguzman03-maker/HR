@@ -50,13 +50,13 @@
 <polyline fill="none" stroke="#1E88E5" stroke-width="3" points="110.0,290.0 151.5,290.0 151.5,120.8 179.1,120.8 179.1,86.9 317.3,86.9 317.3,86.9 662.7,86.9 662.7,93.7 731.8,93.7 731.8,290.0 870.0,290.0"/>
 <polyline fill="none" stroke="#E65100" stroke-width="3" points="110.0,550.0 151.5,550.0 151.5,440.0 179.1,440.0 179.1,364.6 317.3,364.6 317.3,355.1 662.7,355.1 662.7,366.1 731.8,366.1 731.8,550.0 870.0,550.0"/>
 <line x1="110" y1="352.0" x2="870" y2="352.0" stroke="#C62828" stroke-dasharray="6,4"/>
-<text x="866" y="348.0" text-anchor="end" font-size="11" fill="#C62828">límite práctico ≈ 126 MW (140 MVA × cos φ 0.9)</text>
+<text x="866" y="348.0" text-anchor="end" font-size="11" fill="#C62828">límite práctico ≈ 119 MW (140 MVA × FP 0.85)</text>
 <text x="165.3" y="112.8" text-anchor="middle" font-size="11" fill="#0D47A1">tap 10 · 1,000 V</text>
 <text x="165.3" y="456.0" text-anchor="middle" font-size="11" fill="#BF360C">70 MW · 50 kA</text>
 <text x="248.2" y="78.9" text-anchor="middle" font-size="11" fill="#0D47A1">tap 15 · 1,200 V</text>
 <text x="248.2" y="380.6" text-anchor="middle" font-size="11" fill="#BF360C">118 MW · 63 kA</text>
 <text x="490.0" y="78.9" text-anchor="middle" font-size="11" fill="#0D47A1">tap 15 · 1,200 V</text>
-<text x="490.0" y="371.1" text-anchor="middle" font-size="11" fill="#BF360C">124 MW · 66 kA</text>
+<text x="490.0" y="371.1" text-anchor="middle" font-size="11" fill="#BF360C">≈ 119 MW · 63 kA</text>
 <text x="697.3" y="85.7" text-anchor="middle" font-size="11" fill="#0D47A1">tap 14 · 1,160 V</text>
 <text x="697.3" y="382.1" text-anchor="middle" font-size="11" fill="#BF360C">117 MW · 64 kA</text>
 <rect x="20" y="600" width="960" height="92" fill="#FAFAFA" stroke="#455A64"/>
