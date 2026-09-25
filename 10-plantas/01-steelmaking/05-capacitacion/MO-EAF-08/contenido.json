@@ -98,7 +98,7 @@
     ["Adición por columna", "≈ 18–20 coladas [Supuesto]", "—", "< 12 coladas", "Investigar el consumo"],
     ["Tiempo (método A)", "≤ 10 min [Supuesto]", "—", "> 15 min", "Registrar la demora"]
   ],
-  "parametros_nota": "Torque, velocidad y posición de junta según la tabla del fabricante [Validar con OEM / Ingeniería de Proceso]. Electrodo y niple: mismo fabricante, grado y lote.",
+  "parametros_nota": "Torque, velocidad y posición de junta según tabla del fabricante [Validar con OEM / Ingeniería de Proceso]. Electrodo y niple: mismo fabricante y grado.",
   "seguridad": {
     "controles": [
       {"titulo": "Bloqueo antes de subir", "detalle": "Interruptor abierto; brazos y bóveda bloqueados. Método A: llave cautiva por persona. Método B o destrabe: LOTO completo."},

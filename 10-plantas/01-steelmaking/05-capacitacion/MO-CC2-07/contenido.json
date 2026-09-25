@@ -1,0 +1,691 @@
+{
+  "code": "MO-CC2-07",
+  "title": "Fin de colada y cierre de secuencia",
+  "titulo_corto": "Fin de secuencia",
+  "serie": "Operación",
+  "area": "Colada Continua 2 · palanquilla (6 líneas)",
+  "manual": "02-operacion/cc2/MO-CC2-07-fin-colada-cierre-secuencia.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Terminar la secuencia sin escoria ni breakout de cola, cerrando de los extremos al centro y sin agua dentro del molde",
+  "audiencia": "S-13 Plataforma · S-12 Púlpito · S-14 Ayudante · S-16 Corte · C-16 (ESR) · C-06",
+  "kpis": [
+    {
+      "value": "8 h",
+      "label": "teoría (S-13 / S-12 / S-14)"
+    },
+    {
+      "value": "5",
+      "label": "fines de secuencia supervisados"
+    },
+    {
+      "value": "9",
+      "label": "pasos críticos ★"
+    },
+    {
+      "value": "24",
+      "label": "meses de vigencia (TD-P07)"
+    }
+  ],
+  "cadena": [
+    "Última olla",
+    "Cierre con 2–4 t",
+    "L1-L6 → L2-L5 → L3-L4",
+    "Cola ≤ 1.0 m/min",
+    "Agua ≥ 15 min",
+    "ESR y LOTO"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, cierras la secuencia limpia y segura",
+    "roles": "S-13 cierra líneas, S-12 saca colas, el ESR bloquea",
+    "flujo": "De los extremos al centro, conforme baja el nivel",
+    "figura": "Tres niveles de cierre: 450, 350 y 300 mm",
+    "equipos": "Siete equipos siguen activos hasta el final",
+    "parametros": "Niveles de cierre y velocidad de cola, sin atajos",
+    "seguridad": "Nunca agua al molde: la cola se saca con velocidad",
+    "calidad": "Colas marcadas y moldes inspeccionados",
+    "pasos": "Dieciséis pasos; nueve no admiten error",
+    "anormales": "Breakout de cola: detener, mantener agua y evacuar",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del fin de secuencia que no se negocian"
+  },
+  "objetivos": [
+    {
+      "titulo": "Cerrar la última olla sin escoria",
+      "detalle": "Cerrar con 2–4 t de residual o al ver escoria en el distribuidor."
+    },
+    {
+      "titulo": "Cerrar las líneas en orden",
+      "detalle": "L1 y L6 a 450 mm, L2 y L5 a 350 mm, L3 y L4 a 300 mm; nunca por debajo de 250 mm."
+    },
+    {
+      "titulo": "Sacar la cola sin romperla",
+      "detalle": "Dejar bajar el menisco 80–150 mm y sacar la cola a 0.5–1.0 m/min; nunca agua dentro del molde."
+    },
+    {
+      "titulo": "Entregar la máquina segura",
+      "detalle": "Agua de molde ≥ 15 min, obturadores cerrados por el ESR, LOTO e inspección de moldes."
+    }
+  ],
+  "por_que_importa": "Sin acero nuevo, la cola solo tiene una piel delgada arriba: sacarla rápido la rompe y derrama el líquido. Echar agua para sellarla puede atrapar agua bajo una costra y provocar una explosión. Apagar el agua de molde antes de tiempo deforma el cobre y arruina la conicidad para la siguiente secuencia.",
+  "principio": "Nunca se echa agua dentro del molde para sellar la cola.",
+  "roles": [
+    [
+      "Rol",
+      "Qué hace en el fin de secuencia",
+      "RACI"
+    ],
+    [
+      "C-06 Supervisor de Colada Continua",
+      "Decide el fin de secuencia y el orden de cierre; entrega la máquina",
+      "A"
+    ],
+    [
+      "S-13 Operador de Plataforma",
+      "Cierra la olla y las líneas con placa ciega; retira el distribuidor",
+      "R"
+    ],
+    [
+      "S-12 Operador de Púlpito",
+      "Controla la cola de cada línea: velocidad, oscilación, EMS y rociado",
+      "R"
+    ],
+    [
+      "S-14 Ayudante de Colada",
+      "Vigila cada molde durante la cola; prepara la inspección de moldes",
+      "R"
+    ],
+    [
+      "S-16 Operador de Corte y Marcado",
+      "Corta y marca las colas",
+      "R"
+    ],
+    [
+      "C-16 (función de ESR)",
+      "Cierra y bloquea los obturadores para la inspección de moldes",
+      "R"
+    ],
+    [
+      "S-25 Mecánico de Taller de Moldes",
+      "Inspecciona tubos y conicidad (MM-CC-01)",
+      "C"
+    ]
+  ],
+  "flujo": [
+    {
+      "label": "Última olla",
+      "desc": "C-06 avisa por radio al equipo"
+    },
+    {
+      "label": "Cerrar olla",
+      "desc": "Residual 2–4 t o al ver escoria"
+    },
+    {
+      "label": "L1 y L6",
+      "desc": "Cierre a 450 mm con placa ciega"
+    },
+    {
+      "label": "L2 y L5",
+      "desc": "Cierre a 350 mm"
+    },
+    {
+      "label": "L3 y L4",
+      "desc": "Cierre a 300 mm; nunca < 250 mm"
+    },
+    {
+      "label": "Cola",
+      "desc": "Menisco 80–150 mm; 0.5–1.0 m/min"
+    },
+    {
+      "label": "Apagar por zona",
+      "desc": "Oscilación, EMS y rociado tras la cola"
+    },
+    {
+      "label": "Cortar colas",
+      "desc": "Palanquilla C; < 6 m a chatarra"
+    },
+    {
+      "label": "Cerrar máquina",
+      "desc": "Agua ≥ 15 min; ESR, LOTO, inspección"
+    }
+  ],
+  "flujo_takeaway": "Las líneas que quedan reciben el acero más caliente y el nivel nunca llega a la zona de vórtice (≤ 300 mm).",
+  "figuras": [
+    {
+      "svg": "cc2-distribuidor-6-lineas.svg",
+      "lectura": [
+        "El corte A–A marca 850 y 700 mm de operación y 500 mm de mínimo en cambio de olla.",
+        "Con ≤ 300 mm hay riesgo de vórtice y escoria: es el fin de colada [Validar].",
+        "Para cerrar cada línea se empuja la placa ciega en el cambio rápido."
+      ]
+    },
+    {
+      "svg": "mm-molde-conicidad.svg",
+      "titulo": "Al final se inspecciona el tubo: conicidad y desgaste",
+      "lectura": [
+        "Conicidad del tubo de la CC2: 0.8–1.0 %/m; se retira con pérdida > 20 % [Validar].",
+        "Desgaste máximo local: 0.5 mm en esquinas y zona inferior [Validar].",
+        "Apagar el agua antes de 15 min deforma el tubo y arruina la conicidad."
+      ]
+    }
+  ],
+  "equipos": [
+    [
+      "Equipo",
+      "Función",
+      "Especificación clave",
+      "Verificar antes"
+    ],
+    [
+      "Cambio rápido + placas ciegas",
+      "Cierra cada línea",
+      "≤ 10 s por línea",
+      "6 placas calientes en el horno"
+    ],
+    [
+      "Varilla de taponeo",
+      "Respaldo de cierre",
+      "Tapón del Ø en uso (20–24 mm)",
+      "2 listas"
+    ],
+    [
+      "Extractores-enderezadores",
+      "Sacan la cola",
+      "Modo cola 0.5–1.0 m/min [Validar OEM]",
+      "Sin alarmas"
+    ],
+    [
+      "Rociado secundario",
+      "Enfría hasta la cola",
+      "Apagado por zona con la cola",
+      "Seguimiento de cola activo"
+    ],
+    [
+      "Carro del distribuidor",
+      "Retira el distribuidor",
+      "Posición de desescoriado [Validar OEM]",
+      "Caja de escoria seca en posición"
+    ],
+    [
+      "Agua de molde",
+      "Enfría los tubos",
+      "≈ 2,000 L/min por línea",
+      "Encendida hasta el final"
+    ],
+    [
+      "Medidor Cs-137",
+      "Nivel",
+      "Obturador para inspección",
+      "ESR disponible"
+    ]
+  ],
+  "parametros": [
+    [
+      "Parámetro",
+      "Objetivo",
+      "Rango",
+      "Alarma",
+      "Acción"
+    ],
+    [
+      "Residual de la última olla",
+      "3 t",
+      "2–4 t [Validar]",
+      "Escoria en el distribuidor",
+      "Cierra de inmediato"
+    ],
+    [
+      "Nivel cierre L1 y L6",
+      "450 mm",
+      "430–470 mm [Validar]",
+      "—",
+      "—"
+    ],
+    [
+      "Nivel cierre L2 y L5",
+      "350 mm",
+      "330–370 mm [Validar]",
+      "—",
+      "—"
+    ],
+    [
+      "Nivel cierre L3 y L4",
+      "300 mm",
+      "280–320 mm [Validar]",
+      "< 250 mm",
+      "Cierra ya: vórtice y escoria"
+    ],
+    [
+      "Caída del menisco",
+      "100 mm",
+      "80–150 mm [Validar]",
+      "—",
+      "—"
+    ],
+    [
+      "Velocidad de cola",
+      "0.8 m/min",
+      "0.5–1.0 m/min [Validar OEM]",
+      "> 1.5 con cola en molde",
+      "Baja la velocidad"
+    ],
+    [
+      "Agua de molde al final",
+      "15 min",
+      "≥ 15 min [Validar OEM]",
+      "Apagado antes",
+      "No la apagues"
+    ],
+    [
+      "Largo mínimo de la cola",
+      "6 m",
+      "≥ 6 m [Validar Laminación]",
+      "< 6 m",
+      "A chatarra"
+    ]
+  ],
+  "parametros_nota": "Niveles de cierre, velocidad de cola y tiempo de agua: [Validar con OEM / Ingeniería de Proceso].",
+  "seguridad": {
+    "controles": [
+      {
+        "titulo": "Prohibido agua al molde",
+        "detalle": "La cola se saca solo con la velocidad de cola; agua sobre acero bajo una costra = explosión (MS-ACE-03)."
+      },
+      {
+        "titulo": "Cola lenta, sin breakout",
+        "detalle": "≤ 1.0 m/min hasta que la cola sale del molde; ante breakout, detén la línea y evacúa a ≥ 20 m (MS-ACE-09)."
+      },
+      {
+        "titulo": "Caja de escoria seca",
+        "detalle": "Zona roja ≤ 15 m del punto de volteo, nadie a pie; caja seca (MS-ACE-01, MS-ACE-03)."
+      },
+      {
+        "titulo": "ESR y LOTO antes de inspeccionar",
+        "detalle": "El ESR cierra obturadores, pone candado y mide < 2 × fondo; LOTO de extractores, oscilador y carro."
+      }
+    ],
+    "epp": [
+      "Chamarra y polainas aluminizadas",
+      "Careta con filtro IR",
+      "Casco con barbiquejo y guantes aluminizados",
+      "Botas de fundidor y ropa retardante a la flama",
+      "Protección auditiva y dosímetro personal"
+    ],
+    "figura": "ms-loto-puntos-cc.svg",
+    "figura_titulo": "LOTO y candado del ESR antes de inspeccionar",
+    "figura_lectura": [
+      "Agua de molde: se cierra solo con la máquina vacía, sin acero líquido (punto 1).",
+      "Extractores, oscilación y carro con candado; barra falsa estacionada con pasador.",
+      "Cs-137: obturador cerrado con el candado del ESR (punto 7)."
+    ]
+  },
+  "calidad": [
+    [
+      "Variable",
+      "Especificación",
+      "Cómo y cuándo",
+      "Si falla"
+    ],
+    [
+      "Nivel al cerrar la última línea",
+      "≥ 300 mm",
+      "Continuo (tendencia)",
+      "Inclusiones de escoria en colas"
+    ],
+    [
+      "Identificación de colas",
+      "Marcadas C; largo ≥ 6 m",
+      "Cada cola",
+      "Rechupe de cola como producto normal"
+    ],
+    [
+      "Inspección de moldes",
+      "Desgaste, rayas y conicidad",
+      "Cada fin de secuencia",
+      "Romboidad y grietas en la siguiente"
+    ]
+  ],
+  "calidad_takeaway": "La inspección del fin de secuencia es la primera defensa contra la romboidad de la siguiente secuencia.",
+  "pasos": [
+    {
+      "n": 1,
+      "paso": "Confirma y prepara",
+      "como": "C-06 avisa la última olla por radio; 6 placas ciegas calientes en el horno",
+      "criterio": "Todos enterados; placas listas",
+      "critico": false,
+      "rol": "C-06, S-14"
+    },
+    {
+      "n": 2,
+      "paso": "Cierra la última olla",
+      "como": "Por residual (2–4 t) o al ver escoria",
+      "criterio": "Sin escoria en el distribuidor",
+      "critico": true,
+      "rol": "S-13"
+    },
+    {
+      "n": 3,
+      "paso": "Cierra L1 y L6",
+      "como": "A 450 mm, con placa ciega",
+      "criterio": "Chorro cortado",
+      "critico": true,
+      "rol": "S-13"
+    },
+    {
+      "n": 4,
+      "paso": "Cierra L2 y L5",
+      "como": "A 350 mm, con placa ciega",
+      "criterio": "Chorro cortado",
+      "critico": true,
+      "rol": "S-13"
+    },
+    {
+      "n": 5,
+      "paso": "Cierra L3 y L4",
+      "como": "A 300 mm; nunca por debajo de 250 mm",
+      "criterio": "Chorro cortado",
+      "critico": true,
+      "rol": "S-13"
+    },
+    {
+      "n": 6,
+      "paso": "Deja bajar el menisco",
+      "como": "80–150 mm con la velocidad en fijo",
+      "criterio": "Menisco baja sin fuga",
+      "critico": false,
+      "rol": "S-12"
+    },
+    {
+      "n": 7,
+      "paso": "Aplica la velocidad de cola",
+      "como": "0.5–1.0 m/min; no eches agua al molde",
+      "criterio": "Cola fuera del molde sin fuga",
+      "critico": true,
+      "rol": "S-12, S-14"
+    },
+    {
+      "n": 8,
+      "paso": "Apaga por zona",
+      "como": "Oscilación y EMS al salir la cola del molde; rociado zona por zona detrás de la cola",
+      "criterio": "Zonas apagadas tras la cola",
+      "critico": false,
+      "rol": "S-12"
+    },
+    {
+      "n": 9,
+      "paso": "Corta y marca la cola",
+      "como": "Palanquilla C; si mide < 6 m, a chatarra",
+      "criterio": "Cola identificada",
+      "critico": false,
+      "rol": "S-16"
+    },
+    {
+      "n": 10,
+      "paso": "Retira el distribuidor",
+      "como": "Carro a desescoriado; residual a la caja de escoria seca",
+      "criterio": "Distribuidor fuera; zona libre",
+      "critico": true,
+      "rol": "S-13"
+    },
+    {
+      "n": 11,
+      "paso": "Retira la olla vacía",
+      "como": "S-09 la lleva a la nave de ollas",
+      "criterio": "Torreta libre",
+      "critico": false,
+      "rol": "S-09"
+    },
+    {
+      "n": 12,
+      "paso": "Mantén el agua de molde",
+      "como": "≥ 15 min después de la última cola",
+      "criterio": "Tubos fríos",
+      "critico": true,
+      "rol": "S-12"
+    },
+    {
+      "n": 13,
+      "paso": "Pide al ESR los obturadores",
+      "como": "El ESR cierra, bloquea y mide en las 6 líneas (< 2 × fondo, MS-ACE-07)",
+      "criterio": "Registro del ESR",
+      "critico": true,
+      "rol": "C-16, S-14"
+    },
+    {
+      "n": 14,
+      "paso": "Aplica LOTO a la máquina",
+      "como": "Extractores, oscilador y carro",
+      "criterio": "Candados puestos",
+      "critico": true,
+      "rol": "S-14"
+    },
+    {
+      "n": 15,
+      "paso": "Inspecciona moldes y línea",
+      "como": "Rayas, desgaste, restos de acero y boquillas; avisa a S-25",
+      "criterio": "Hallazgos registrados",
+      "critico": false,
+      "rol": "S-14, S-25"
+    },
+    {
+      "n": 16,
+      "paso": "Registra la secuencia",
+      "como": "Coladas, duración, causa del fin y cierres de línea",
+      "criterio": "Hoja de secuencia completa",
+      "critico": false,
+      "rol": "S-12, C-06"
+    }
+  ],
+  "anormales": [
+    [
+      "Síntoma",
+      "Acción inmediata",
+      "Avisar a"
+    ],
+    [
+      "Escoria antes de cerrar centrales",
+      "Cierra de inmediato las líneas restantes; marca las colas",
+      "C-06, C-09"
+    ],
+    [
+      "Breakout de cola",
+      "Detén la línea; mantén agua de molde y secundaria; evacúa a ≥ 20 m; el ESR revisa el Cs-137",
+      "C-06, C-04, C-16"
+    ],
+    [
+      "La placa ciega no cierra",
+      "Tapón con varilla (MO-CC2-06)",
+      "C-06"
+    ],
+    [
+      "Cola atorada en enderezadores",
+      "Detén; LOTO; mantenimiento la libera",
+      "C-06, C-11"
+    ],
+    [
+      "Fin anticipado por emergencia",
+      "Cierra la olla y las 6 líneas; sigue la cola solo si es seguro",
+      "C-04, C-06"
+    ],
+    [
+      "Obturador que no cierra",
+      "Nadie en el molde; aléjate ≥ 3 m y acordona; el ESR atiende",
+      "C-16 (ESR)"
+    ]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      [
+        "Rol",
+        "ILUO",
+        "Teoría",
+        "OJT supervisado",
+        "Vigencia"
+      ],
+      [
+        "S-13 Operador de Plataforma",
+        "U",
+        "8 h",
+        "5 fines de secuencia",
+        "24 meses"
+      ],
+      [
+        "S-12 Operador de Púlpito",
+        "U",
+        "8 h",
+        "5 fines de secuencia",
+        "24 meses"
+      ],
+      [
+        "S-14 Ayudante de Colada",
+        "U",
+        "8 h + protección radiológica",
+        "5 fines de secuencia",
+        "24 meses; POE 12 meses"
+      ]
+    ],
+    "checklist": [
+      "Cierra la olla sin pasar escoria",
+      "Cierra las líneas de los extremos al centro en los niveles definidos",
+      "Saca la cola a ≤ 1.0 m/min y explica por qué no se usa agua en el molde",
+      "Retira el distribuidor con la caja de escoria seca y nadie en la zona",
+      "Mantiene el agua de molde ≥ 15 min después de la última cola",
+      "No interviene moldes sin candado y medición del ESR y sin LOTO de la máquina"
+    ]
+  },
+  "quiz": [
+    {
+      "pregunta": "¿En qué orden se cierran las líneas al fin de secuencia?",
+      "opciones": [
+        "L3-L4, L2-L5, L1-L6",
+        "L1-L6, L2-L5, L3-L4",
+        "Todas a la vez"
+      ],
+      "correcta": 1,
+      "explicacion": "De los extremos al centro: las centrales reciben el acero más caliente de la zona de impacto."
+    },
+    {
+      "pregunta": "¿Por qué nunca se echa agua al molde para sellar la cola?",
+      "opciones": [
+        "Porque ensucia el tubo",
+        "Porque enfría de más la cola",
+        "Porque puede atrapar agua y explotar"
+      ],
+      "correcta": 2,
+      "explicacion": "El agua bajo una costra se vuelve vapor y proyecta metal líquido (MS-ACE-03)."
+    },
+    {
+      "pregunta": "¿A qué velocidad máxima se saca la cola del molde?",
+      "opciones": [
+        "1.0 m/min",
+        "2.5 m/min",
+        "3.5 m/min"
+      ],
+      "correcta": 0,
+      "explicacion": "0.5–1.0 m/min; con más de 1.5 m/min y la cola en el molde la piel se rompe: breakout de cola."
+    },
+    {
+      "pregunta": "¿Cuánto tiempo se mantiene el agua de molde tras la última cola?",
+      "opciones": [
+        "≥ 2 min",
+        "≥ 15 min",
+        "≥ 2 h"
+      ],
+      "correcta": 1,
+      "explicacion": "≥ 15 min [Validar OEM]: apagarla antes deforma el cobre y arruina la conicidad."
+    },
+    {
+      "pregunta": "¿Con qué nivel del distribuidor se cierra de inmediato cualquier línea abierta?",
+      "opciones": [
+        "< 250 mm",
+        "< 500 mm",
+        "< 700 mm"
+      ],
+      "correcta": 0,
+      "explicacion": "L3 y L4 cierran a 300 mm; con < 250 mm hay vórtice y escoria: cierre inmediato."
+    }
+  ],
+  "reglas": [
+    {
+      "titulo": "Nunca agua dentro del molde",
+      "detalle": "La cola se saca solo con la velocidad de cola."
+    },
+    {
+      "titulo": "Extremos primero, centro al final",
+      "detalle": "450, 350 y 300 mm; nunca por debajo de 250 mm."
+    },
+    {
+      "titulo": "Agua de molde hasta el final",
+      "detalle": "≥ 15 min después de la última cola."
+    },
+    {
+      "titulo": "Moldes solo con ESR y LOTO",
+      "detalle": "Obturador bloqueado por el ESR y candados puestos antes de inspeccionar."
+    }
+  ],
+  "por_confirmar": [
+    "Niveles de cierre, velocidad de cola y caída del menisco con el OEM / C-08",
+    "Tiempo de agua de molde ≥ 15 min con el OEM",
+    "Largo mínimo de cola ≥ 6 m con Laminación"
+  ],
+  "plan_sesion": [
+    [
+      "Bloque",
+      "Min",
+      "Actividad",
+      "Recurso"
+    ],
+    [
+      "1. Apertura y por qué importa",
+      "30",
+      "Casos de breakout de cola y de agua en el molde; reglas de oro",
+      "Portada y objetivos"
+    ],
+    [
+      "2. Roles y flujo del proceso",
+      "60",
+      "Recorrido del flujo con los niveles del distribuidor",
+      "Roles, flujo y figuras"
+    ],
+    [
+      "3. Equipos y parámetros",
+      "90",
+      "Ejercicio: qué línea cerrar con cada nivel del distribuidor",
+      "Equipos y parámetros"
+    ],
+    [
+      "4. Seguridad",
+      "60",
+      "Agua–metal, caja de escoria, radiación y LOTO",
+      "Seguridad y figura de bloqueos"
+    ],
+    [
+      "5. Calidad y paso a paso",
+      "90",
+      "Lectura guiada de los 16 pasos; pasos ★",
+      "Calidad y paso a paso"
+    ],
+    [
+      "6. Condiciones anormales",
+      "60",
+      "Simulacro de mesa: breakout de cola y obturador que no cierra",
+      "Condiciones anormales"
+    ],
+    [
+      "7. Evaluación teórica",
+      "60",
+      "Autoevaluación de 5 preguntas y retroalimentación",
+      "Autoevaluación"
+    ],
+    [
+      "8. Cierre y ruta a OJT",
+      "30",
+      "Plan de OJT, curso POE y certificación",
+      "Competencia y cierre"
+    ]
+  ],
+  "validacion": {
+    "tecnica": "visto bueno — 2026-09-25"
+  }
+}

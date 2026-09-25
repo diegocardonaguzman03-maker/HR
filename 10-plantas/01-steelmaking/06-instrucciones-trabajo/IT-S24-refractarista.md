@@ -22,7 +22,7 @@
 > Esta IT resume tu trabajo; **no reemplaza al manual**. Espesores, vidas y materiales dependen del proveedor: **[Validar con OEM / C-15]**. Lo marcado [Supuesto] no se usa en planta hasta validarse.
 
 ## 2. Mi puesto en 30 segundos
-Mantengo el refractario del horno y de las ollas para evitar perforaciones y fugas de metal. Proyecto (gunning) y reparo el horno, cambio las camisas del EBT, cambio placas y tapón de las ollas y las reviso para decidir si siguen en ciclo. En el taller revisto ollas. Nunca libero un refractario húmedo: humedad con metal es explosión.
+Mantengo el refractario del horno y de las ollas para evitar perforaciones y fugas de metal. Proyecto (gunning) y reparo el horno y cambio las camisas del EBT. En las ollas cambio placas y tapón y reviso si siguen en ciclo. En el taller revisto ollas. Nunca libero un refractario húmedo: humedad con metal es explosión.
 
 > ★ **Mis 3 reglas de oro**
 > 1. ★ **Todo seco:** arena ≤ 0.5 % de humedad, curva de secado completa, nunca proyecto sobre metal líquido.

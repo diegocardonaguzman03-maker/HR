@@ -22,7 +22,7 @@
 > Esta IT resume tu trabajo; **no reemplaza al manual**. Los valores salen tal cual de los manuales MM-/MS-. Lo marcado **[Validar con OEM]** o **[Supuesto]** no se usa en planta hasta validarse.
 
 ## 2. Mi puesto en 30 segundos
-Mantengo el equipo mecánico de la Acería seguro y disponible. Mi prioridad son los equipos que pueden causar agua sobre metal, caída de olla o breakout. Localizo y reparo fugas del EAF, cambio bóveda y delta, inspecciono grúas de colada y pruebo el agua de emergencia de CC. Con S-25 cambio moldes y segmentos.
+Mantengo el equipo mecánico de la Acería seguro y disponible. Mi prioridad son los equipos que pueden causar agua sobre metal, caída de olla o breakout. Reparo fugas del EAF y cambio bóveda y delta. Inspecciono grúas de colada y pruebo el agua de emergencia de CC. Con S-25 cambio moldes y segmentos.
 
 > ★ **Mis 3 reglas de oro**
 > 1. ★ **Sin LOTO y energía cero, no meto el cuerpo.** Mi candado, mi llave, mi prueba.
@@ -48,7 +48,7 @@ flowchart LR
 ```
 
 - **Cambio de turno con LOTO activo:** el entrante pone su candado **antes** de que el saliente quite el suyo. C-04 lo registra (MS-ACE-02 §6.3).
-- **Ventanas:** V0 en operación · V1 entre coladas o secuencias · V2 paro semanal · V3 mensual · V4 anual [Supuesto, validar con C-10 y C-13].
+- **Ventanas [Supuesto, validar con C-10 y C-13]:** V0 en operación; V1 entre coladas o secuencias; V2 paro semanal; V3 mensual; V4 anual.
 
 ## 4. Mi área de trabajo
 

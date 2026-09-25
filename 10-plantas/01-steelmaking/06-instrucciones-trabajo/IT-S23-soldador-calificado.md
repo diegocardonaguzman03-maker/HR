@@ -22,7 +22,7 @@
 > Esta IT resume tu trabajo; **no reemplaza al manual ni al WPS**. Los parámetros de soldadura del manual son **[Validar WPS]**: manda siempre el WPS calificado vigente.
 
 ## 2. Mi puesto en 30 segundos
-Reparo por soldadura, con procedimiento calificado (WPS), los componentes cuya falla puede echar agua sobre metal líquido o romper una estructura. Mi trabajo principal son los tubos de paneles y bóveda del EAF. También reparo canastas, corazas de olla y estructura, y fabrico en el taller de pailería. Una soldadura mal hecha en un panel es una fuga repetida sobre el horno.
+Reparo por soldadura, con procedimiento calificado (WPS), componentes críticos. Si fallan, pueden echar agua sobre metal líquido o romper una estructura. Mi trabajo principal son los tubos de paneles y bóveda del EAF. También reparo canastas, corazas de olla y estructura, y fabrico en el taller de pailería. Una soldadura mal hecha en un panel es una fuga repetida sobre el horno.
 
 > ★ **Mis 3 reglas de oro**
 > 1. ★ **Sin WPS aplicable y sin permiso en caliente, no sueldo.**

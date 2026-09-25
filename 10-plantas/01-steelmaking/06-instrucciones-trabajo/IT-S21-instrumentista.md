@@ -22,7 +22,7 @@
 > Esta IT resume tu trabajo; **no reemplaza al manual**. Valores tal cual de los manuales. Los límites de radiación son **[Validar con ESR]** según la licencia CNSNS.
 
 ## 2. Mi puesto en 30 segundos
-Aseguro que las mediciones y protecciones de la Acería sean exactas y funcionen cuando se necesitan. Cuido la detección de fugas del EAF, el agua de molde y su emergencia, el nivel de molde, el BOP y la oscilación. En CC2 trabajo con la fuente de Cs-137 solo con el ESR. Si un instrumento no es confiable, lo declaro y pido operar en modo seguro.
+Aseguro que las mediciones y protecciones de la Acería sean exactas y funcionen cuando se necesitan. Cuido la detección de fugas del EAF y el agua de molde con su emergencia. También el nivel de molde, el BOP y la oscilación. En CC2 trabajo con la fuente de Cs-137 solo con el ESR. Si un instrumento no es confiable, lo declaro y pido operar en modo seguro.
 
 > ★ **Mis 3 reglas de oro**
 > 1. ★ **Nunca anulo una alarma o un disparo** sin autorización escrita de C-12 y medida compensatoria.

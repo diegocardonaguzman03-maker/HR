@@ -1,0 +1,209 @@
+{
+  "code": "MO-OLL-01",
+  "title": "Preparación de olla: válvula deslizante, arena de sello, tapón poroso y precalentamiento",
+  "titulo_corto": "Preparación de olla",
+  "serie": "Operación",
+  "area": "Metalurgia secundaria · Taller de ollas",
+  "manual": "02-operacion/ollas-lf/MO-OLL-01-preparacion-olla.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Entregar una olla seca, a 1,000–1,100 °C, con válvula probada, arena de sello y argón, para abrir libre ≥ 98 %",
+  "audiencia": "S-08 Preparador de Ollas · S-24 Refractarista · S-09 Grúa de Colada · C-15 Especialista de Refractarios",
+  "kpis": [
+    {"value": "24 h", "label": "teoría (S-08)"},
+    {"value": "120 h", "label": "OJT · 40 ollas"},
+    {"value": "6", "label": "pasos críticos ★"},
+    {"value": "≥ 98", "label": "% de apertura libre en la CC"}
+  ],
+  "cadena": ["Volteo", "Inspección", "Placas y válvula", "Tapón con Ar", "Precalentar", "Arena y entrega"],
+  "titulos": {
+    "objetivos": "Al terminar, entregas una olla seca, caliente y lista",
+    "roles": "C-15 decide el retiro; S-08 firma la entrega",
+    "flujo": "Primero caliente; la arena va al final",
+    "figura": "Refractario, válvula y tapón deciden la colada",
+    "equipos": "Siete equipos se revisan en cada ciclo de olla",
+    "parametros": "Temperatura, refractario y pruebas liberan la olla",
+    "seguridad": "Olla fría o húmeda: explosión al recibir acero",
+    "calidad": "La apertura libre se gana en la preparación",
+    "pasos": "Trece pasos; seis no admiten error",
+    "anormales": "Punto caliente o perforación: retirar y alejarse",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de la olla que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Decidir si la olla sigue en servicio", "detalle": "Revisar línea de escoria, barril, fondo, asiento y termografía; retiro con ≥ 80 coladas o fuera de criterio."},
+    {"titulo": "Probar válvula y tapón", "detalle": "Placas con la hidráulica bloqueada; 3 carreras completas; tapón con paso de argón; válvula cerrada."},
+    {"titulo": "Precalentar según la condición", "detalle": "Cara caliente 1,000–1,100 °C; olla fría > 4 h: ≥ 8 h; olla nueva o revestida: curva completa."},
+    {"titulo": "Colocar la arena y entregar", "detalle": "Arena de cromita seca en cono con la olla ya caliente; lista firmada y al carro en ≤ 10 min [Supuesto]."}
+  ],
+  "por_que_importa": "Una olla fría o húmeda que recibe 150 t de acero puede explotar. Un refractario agotado perfora y derrama metal. Y una válvula que no abre obliga a lancear con O₂ en la colada continua: reoxidación, inclusiones y un operador expuesto.",
+  "principio": "Olla que no está caliente, seca y probada no se entrega.",
+  "roles": [
+    ["Rol", "Qué hace en la preparación", "RACI"],
+    ["C-15 Especialista de Refractarios", "Dueño; define retiro, vida y curvas de calentamiento; decide el retiro", "A"],
+    ["S-08 Preparador de Ollas (Ollero)", "Prepara, prueba, precalienta, llena la arena y firma la lista de entrega", "R"],
+    ["S-24 Refractarista", "Cambia placas, buzas y tapón; repara línea de escoria y zona de impacto", "R"],
+    ["S-09 Operador de Grúa de Colada", "Mueve la olla entre volteo, preparación, precalentador y carro", "R"],
+    ["C-04 Jefe de Turno de Acería", "Asigna ollas a coladas según la secuencia y la disponibilidad", "C"],
+    ["S-02 Segundo Hornero", "Recibe la olla y verifica la lista (MO-EAF-07)", "I"]
+  ],
+  "flujo": [
+    {"label": "Recibir", "desc": "Número, coladas y notas de la CC"},
+    {"label": "Voltear", "desc": "Escoria y costra sobre fosa seca"},
+    {"label": "Inspeccionar", "desc": "Espesor, grietas, termografía"},
+    {"label": "Limpiar asiento", "desc": "Lanza de O₂ sin dañar el bloque"},
+    {"label": "Placas y buza", "desc": "Cambio con la hidráulica bloqueada"},
+    {"label": "Probar", "desc": "3 carreras de válvula; tapón con Ar"},
+    {"label": "Precalentar", "desc": "1,000–1,100 °C; fría > 4 h: ≥ 8 h"},
+    {"label": "Arena", "desc": "Cromita seca en cono, olla caliente"},
+    {"label": "Entregar", "desc": "Lista firmada → carro del EAF"}
+  ],
+  "flujo_takeaway": "La arena va al final, con la olla caliente: si pasa horas en el precalentador se sinteriza y la olla no abre.",
+  "figuras": [
+    {
+      "svg": "olla-corte-valvula-tapon.svg",
+      "lectura": [
+        "Cara caliente precalentada a 1,000–1,100 °C; vida del refractario de 60–80 coladas.",
+        "La línea de escoria MgO-C (3) es la zona de desgaste crítico.",
+        "Válvula cerrada con arena de cromita sobre la buza: meta de apertura libre ≥ 98 %.",
+        "El tapón poroso inyecta argón; se prueba en cada ciclo."
+      ]
+    },
+    {
+      "svg": "eaf-flujo-acería.svg",
+      "titulo": "Diez ollas: siete en ciclo y tres en reserva",
+      "lectura": [
+        "Cada olla da una vuelta en ≈ 3.5 h: EAF, LF, colada continua y regreso.",
+        "La preparación (12) recibe la olla vacía y la entrega precalentada al EAF.",
+        "Tres ollas quedan en mantenimiento o reserva."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Olla de 150 t (flota de 10)", "Contiene el acero", "7 en ciclo; vida 60–80 coladas", "Coladas en registro; muñones OK"],
+    ["Refractario de trabajo", "Protege la coraza", "Escoria MgO-C; barril Al₂O₃-MgO-C", "Espesor ≥ criterio de C-15"],
+    ["Válvula deslizante", "Abre y cierra el flujo en la CC", "Placas de 2 o 3 piezas; buza colectora", "Carrera completa, sin trabas"],
+    ["Arena de cromita", "Evita que el acero solidifique", "Según proveedor [Validar con OEM]", "Seca ≤ 0.2 % [Supuesto]; tolva cerrada"],
+    ["Tapón poroso (1–2)", "Inyecta argón", "Conexión rápida al carro", "Paso de argón en la prueba"],
+    ["Precalentador", "Calienta la cara caliente", "Gas natural [Validar con OEM]", "Detector de flama y purga automática"],
+    ["Pirómetro / cámara IR", "Mide cara caliente y coraza", "—", "Calibración vigente"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["T de cara caliente", "1,050 °C", "1,000–1,100 °C", "< 1,000 °C", "No entregar; seguir calentando"],
+    ["Tiempo fuera de ciclo", "≤ 4 h (en ciclo)", "—", "> 4 h (olla fría)", "Precalentar ≥ 8 h"],
+    ["Precalentado olla fría", "≥ 8 h", "8–12 h", "< 8 h", "No entregar"],
+    ["Coladas del refractario", "—", "60–80", "≥ 80 o por inspección", "Retiro a MM-OLL-01"],
+    ["Espesor línea de escoria", "—", "≥ 50 mm [Supuesto]", "< 50 mm", "Retiro o reparación (C-15)"],
+    ["T de coraza", "≤ 300 °C [Supuesto]", "—", "> 350 / > 400 °C [Supuesto]", "> 350 alarma; > 400 retiro"],
+    ["Prueba del tapón", "100–200 NL/min [Supuesto]", "Presión según OEM", "Caudal bajo, presión alta", "Limpiar con O₂ o cambiar"],
+    ["Humedad de la arena", "≤ 0.2 % [Supuesto]", "—", "> 0.5 %", "No usar; cambiar el lote"]
+  ],
+  "parametros_nota": "Olla nueva o revestida: curva completa, típico 24–48 h [Validar con OEM / Ingeniería de Proceso]. Barril ≥ 40 mm [Supuesto]; placas 2–5 coladas [Validar con OEM].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Olla caliente y seca", "detalle": "Cara caliente ≥ 1,000 °C; fría > 4 h: ≥ 8 h; olla nueva con curva de secado completa. Lista de entrega firmada."},
+      {"titulo": "Arena y refractario secos", "detalle": "Arena en tolva cerrada; se llena con la olla caliente, desde posición protegida, sin asomarse a la boca, ≤ 2 min."},
+      {"titulo": "Precalentador: purga antes de encender", "detalle": "Purga automática y detector de flama. Nunca reencender a mano sin purga: explosión de gas."},
+      {"titulo": "Válvula y olla suspendida", "detalle": "Placas con la hidráulica bloqueada (MS-ACE-02). Nadie bajo una olla suspendida ni en la ruta de la grúa."}
+    ],
+    "epp": [
+      "Casco y careta con visor dorado",
+      "Chaqueta, polainas y guantes aluminizados",
+      "Ropa ignífuga, botas metatarsales y lentes",
+      "Mascarilla para polvo de cromita y refractario",
+      "Protección auditiva",
+      "Detector multigás (CO y LEL) en el precalentador"
+    ],
+    "figura": "ms-emergencia-arbol-decision.svg",
+    "figura_titulo": "Perforación de olla: fosa seca, lejos y nunca agua",
+    "figura_lectura": [
+      "En grúa: llevar la olla a la fosa de emergencia seca, sin pasar sobre personas.",
+      "En carro o estación: retirar a todos a ≥ 25 m; no intentar taponar.",
+      "Derrame: nunca agua; dejar solidificar y contener con arena seca."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Apertura libre", "≥ 98 % de las coladas", "Registro de la CC, cada colada", "Lanceo en CC: reoxidación e inclusiones"],
+    ["T de la olla", "Cara caliente 1,000–1,100 °C", "Pirómetro, cada entrega", "Caída de T, costras, más tiempo de LF"],
+    ["Limpieza de la olla", "Sin costra en fondo ni asiento", "Visual, cada ciclo", "Reoxidación; válvula que no abre"],
+    ["Tapón poroso", "Con paso de argón", "Prueba, cada ciclo", "Sin desulfuración ni flotación"]
+  ],
+  "calidad_takeaway": "Apertura libre < 98 % en la semana: análisis de causa con C-15 y la CC (arena, espera, T, costra).",
+  "pasos": [
+    {"n": 1, "paso": "Recibe la olla vacía", "como": "Registra número, coladas acumuladas y observaciones de la CC (apertura libre, flujo)", "criterio": "Registro", "critico": false, "rol": "S-08"},
+    {"n": 2, "paso": "Voltea escoria y costra", "como": "Con grúa de colada, en la estación, sobre fosa seca; nadie a ≤ 15 m ni bajo la olla", "criterio": "Olla limpia", "critico": true, "rol": "S-09 / S-08"},
+    {"n": 3, "paso": "Inspecciona el refractario", "como": "Línea de escoria, barril, fondo, zona de impacto, asiento y tapón; termografía del ciclo anterior", "criterio": "Dentro de criterio", "critico": false, "rol": "S-08 / S-24"},
+    {"n": 4, "paso": "Decide el retiro", "como": "Si algún criterio falla: avisa a C-15 y retira la olla (MM-OLL-01)", "criterio": "Decisión registrada", "critico": true, "rol": "C-15"},
+    {"n": 5, "paso": "Limpia el asiento", "como": "Lanza de O₂ desde arriba en el asiento de la buza superior, sin dañar el bloque", "criterio": "Asiento limpio", "critico": false, "rol": "S-08"},
+    {"n": 6, "paso": "Revisa o cambia placas", "como": "Con la hidráulica desconectada y bloqueada: orificio y superficie; cambio según OEM y el conteo", "criterio": "Placas vigentes", "critico": true, "rol": "S-24"},
+    {"n": 7, "paso": "Cambia la buza colectora", "como": "Si está erosionada o con costra", "criterio": "Buza nueva o íntegra", "critico": false, "rol": "S-24"},
+    {"n": 8, "paso": "Prueba la válvula", "como": "Reconecta; 3 carreras completas; revisa tiempo y suavidad; déjala cerrada", "criterio": "Carrera completa, cerrada", "critico": false, "rol": "S-24"},
+    {"n": 9, "paso": "Prueba el tapón", "como": "Conecta argón; mide caudal a la presión de prueba; confirma burbujeo o caudal", "criterio": "100–200 NL/min [Supuesto]", "critico": false, "rol": "S-08"},
+    {"n": 10, "paso": "Precalienta", "como": "Purga automática y encendido; hasta 1,000–1,100 °C. Fría > 4 h: ≥ 8 h. Nueva: curva completa", "criterio": "Cara caliente en rango", "critico": true, "rol": "S-08"},
+    {"n": 11, "paso": "Llena con arena", "como": "Olla caliente, fuera del precalentador; arena seca con tubo o embudo, sin asomarte; cono sobre la buza", "criterio": "Cono completo; ≤ 2 min expuesto", "critico": true, "rol": "S-08"},
+    {"n": 12, "paso": "Verifica antes de entregar", "como": "Mide la cara caliente; arena sin remover, válvula cerrada, conexión de Ar", "criterio": "Todo conforme", "critico": true, "rol": "S-08"},
+    {"n": 13, "paso": "Entrega", "como": "Firma la lista; la olla va al carro de vaciado (MO-EAF-07) en ≤ 10 min [Supuesto]", "criterio": "Lista firmada", "critico": false, "rol": "S-08 / S-09"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Coraza > 350 °C", "Retirar la olla; C-15 evalúa", "C-15, C-04"],
+    ["Perforación de olla", "Evacuar a ≥ 25 m; metal a fosa seca; nunca agua; MS-ACE-09", "C-04, C-16, C-15"],
+    ["Tapón sin paso de argón", "Limpiar con O₂ en caliente; si falla, cambiar o marcar “sin Ar” (decide C-04)", "C-15, C-04"],
+    ["Válvula con carrera incompleta", "No entregar; S-24 corrige", "C-15"],
+    ["Olla no llega a 1,000 °C", "Seguir calentando; sin otra olla, C-04 y C-07 ajustan la T de vaciado", "C-04, C-07"],
+    ["Falla de flama del precalentador", "Corte automático; purga antes de reencender; mantenimiento", "Mtto"],
+    ["Arena húmeda", "Cambiar el lote; revisar el almacenamiento", "C-15, C-17"],
+    ["Apertura libre < 98 % semanal", "Análisis de causa con C-15 y la CC", "C-15, C-06"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-08 Preparador de Ollas", "U", "24 h", "120 h / 40 ollas", "24 meses"],
+      ["S-24 Refractarista", "U", "24 h", "120 h / 30 cambios de placas", "24 meses; olla 12"],
+      ["S-09 Grúa de Colada", "U", "según MO-OLL-02", "20 volteos", "12 meses"],
+      ["C-15 Especialista de Refractarios", "O (evaluador)", "32 h + evaluador", "—", "24 meses"]
+    ],
+    "checklist": [
+      "Aplica la regla de olla fría (> 4 h → ≥ 8 h) y mide la cara caliente ≥ 1,000 °C",
+      "Llena con arena seca, olla caliente y desde la posición protegida; forma el cono correcto",
+      "Verifica T, arena y válvula antes de entregar",
+      "Cambia placas con la hidráulica bloqueada",
+      "Conoce los criterios de retiro (coladas, espesor, termografía)",
+      "Nunca reenciende sin purga; voltea sobre fosa seca sin nadie a ≤ 15 m ni bajo la olla"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "Una olla estuvo 6 h fuera de ciclo. ¿Cuánto se precalienta?", "opciones": ["30–60 min", "≥ 8 h", "24–48 h"], "correcta": 1, "explicacion": "Olla fría (> 4 h fuera de ciclo): ≥ 8 h y cara caliente ≥ 1,000 °C."},
+    {"pregunta": "¿Cuándo se coloca la arena de cromita?", "opciones": ["Al recibir la olla vacía", "Antes del precalentador", "Con la olla caliente, al final"], "correcta": 2, "explicacion": "Si la arena pasa horas en el precalentador se sinteriza y baja la apertura libre."},
+    {"pregunta": "¿Cuándo se retira el refractario de trabajo?", "opciones": ["Con ≥ 40 coladas", "Con ≥ 80 coladas o fuera de criterio", "Con ≥ 150 coladas"], "correcta": 1, "explicacion": "Vida de 60–80 coladas; también se retira por espesor o termografía. C-15 decide."},
+    {"pregunta": "El precalentador pierde la flama. ¿Qué haces?", "opciones": ["Reencender a mano de inmediato", "Purgar antes de reencender", "Abrir más el gas"], "correcta": 1, "explicacion": "Reencender sin purga puede provocar una explosión de gas."},
+    {"pregunta": "¿Cómo se cambian las placas de la válvula?", "opciones": ["Con la hidráulica bloqueada", "Con la olla suspendida", "Con la válvula en automático"], "correcta": 0, "explicacion": "Hidráulica desconectada y bloqueada, olla asentada en su soporte: evita atrapamientos."}
+  ],
+  "reglas": [
+    {"titulo": "Olla fría o húmeda no recibe acero", "detalle": "Cara caliente ≥ 1,000 °C; fría > 4 h: ≥ 8 h de precalentamiento."},
+    {"titulo": "Sin purga no se enciende", "detalle": "El precalentador se reenciende solo después de la purga automática."},
+    {"titulo": "Arena seca, con la olla caliente", "detalle": "Desde la posición protegida, sin asomarse a la boca, ≤ 2 min."},
+    {"titulo": "Nadie bajo una olla suspendida", "detalle": "Ni en la ruta de la grúa ni a ≤ 15 m del volteo."}
+  ],
+  "por_confirmar": [
+    "Placas, presión de cierre, arena, precalentador y curva de secado con el OEM y el proveedor de refractarios",
+    "Espesores de retiro, T de coraza, prueba del tapón, humedad de arena y tiempo al carro (supuestos)"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de olla húmeda y perforación", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del ciclo de la olla", "Láminas 3–6"],
+    ["3. Refractarios y criterios de retiro", "75", "Desgaste, espesores y termografía", "Muestras de refractario"],
+    ["4. Equipos y parámetros", "60", "Válvula, tapón y plan de precalentamiento", "Láminas 7–8"],
+    ["5. Seguridad", "60", "Purga del precalentador; arena con olla caliente", "Láminas 9–10, EPP físico"],
+    ["6. Calidad y paso a paso", "90", "Lectura guiada de los 13 pasos; pasos ★", "Láminas 11–13"],
+    ["7. Condiciones anormales", "45", "Simulacro de mesa: perforación de olla", "Lámina 14"],
+    ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
+    ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}
