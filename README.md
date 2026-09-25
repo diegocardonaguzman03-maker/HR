@@ -42,6 +42,19 @@ The model follows the Mexican legal framework (Federal Labor Law, Chapter III Bi
 | [Critical-task certification checklist (LOTO example)](templates/critical-task-certification-checklist.md) | TD-P07 |
 | [Contractor induction checklist](templates/contractor-induction-checklist.md) | TD-P08 |
 
+## Equipo del Director (subagentes de Claude Code)
+
+El Director (el usuario) cuenta con un equipo de 10 subagentes en `.claude/agents/`: 4 expertos (Seguridad y Salud, Liderazgo y Cambio, Documentación y Mejora, Relaciones Laborales), 2 gerentes (personal sindicalizado y personal de confianza) y sus células de Procesos y de Servicio a Clientes Internos. Todos entregan informes, propuestas, presentaciones, planes de acción o mejora y seguimiento de objetivos. **Solo el Director decide.**
+
+| Documento | Contenido |
+|---|---|
+| [CLAUDE.md](CLAUDE.md) | Reglas del equipo, flujo de trabajo y cuándo usar a cada agente |
+| [Organigrama del equipo del Director](equipo-director/organigrama-equipo-director.md) | Estructura v2, responsabilidades y flujo de decisión |
+| [Estándar de entregables](equipo-director/estandar-de-entregables.md) | 6 formatos, reglas de calidad, semáforo y cadencia de reportes |
+| [Plantillas](equipo-director/plantillas-entregables/) | Informe, propuesta, presentación, plan de acción, A3, seguimiento |
+| [Registro de decisiones](equipo-director/decisiones/registro-de-decisiones.md) · [Seguimiento de objetivos](equipo-director/seguimiento-objetivos.md) | Control de decisiones y KPIs del Director |
+| [Organigrama detallado de 64 plazas](03-department-design/org/00-organigrama-general.md) | Descripciones de puesto por área |
+
 ## How to adapt this model to a real company
 1. Replace the figures in `01` (headcount, sites, safety and operating data) with real data.
 2. Have labor counsel and HSE validate `02-research/regulatory-framework-mexico.md` against the current DOF publications and STPS guidelines.

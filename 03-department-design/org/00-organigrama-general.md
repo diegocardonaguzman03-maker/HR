@@ -78,8 +78,11 @@ flowchart LR
     S2 --- K2["CMCAP Sierra Alta"]
     S3 --- K3["CMCAP Manzanillo"]
     S4 --- K4["CMCAP Acería Norte"]
-    S5 --- K5["CMCAP Centros / Corporativo"]
+    S5 --- K5["CMCAP Centros de Servicio"]
+    S5 --- K6["CMCAP Corporativo"]
 ```
+
+Hay 6 CMCAP (una por centro de trabajo del scorecard). TD-S05 atiende dos: Centros de Servicio y Corporativo. Jurídico Laboral debe confirmar si cada centro de servicio (Monterrey, Querétaro, Silao) requiere su propia CMCAP.
 
 La asignación individual de los 24 instructores de tiempo completo por sitio está en el documento [02](02-academias-tecnicas-e-instructores.md). La de los 18 coordinadores está en el documento [04](04-equipos-de-sitio.md).
 
