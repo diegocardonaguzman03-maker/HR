@@ -26,7 +26,8 @@
 | S-22 Técnico Hidráulico | Descarga acumuladores y verifica 0 bar | R |
 | S-19, S-21, S-23, S-24, S-25 y contratistas | Colocan su candado personal; verifican energía cero antes de tocar | R |
 | S-01 / S-12 Operadores de púlpito | Hacen la prueba de arranque desde la HMI; no reenergizan sin autorización | R |
-| ESR Encargado de Seguridad Radiológica | Cierra y bloquea el obturador de Cs-137 (MS-ACE-07) | R |
+| C-16 en función de ESR (Encargado de Seguridad Radiológica, con licencia de la CNSNS) | Cierra el obturador de Cs-137, pone su candado y mide < 2 × fondo (MS-ACE-07) | R |
+| S-02, S-03, S-06, S-07 (usuarios de llave cautiva) | Usan la llave cautiva solo para el acceso de rutina de la sección 6.4; nunca para intervenir el equipo | R |
 | C-07 / C-08 Ingenieros de Proceso | Confirman el estado de proceso (horno vacío, máquina vacía) | C |
 
 ## 3. Descripción del proceso
@@ -76,9 +77,9 @@ flowchart TD
 | Presión hidráulica (sistema y acumuladores) | bar | 0 | 0 | > 0 bar | Descargar de nuevo; revisar válvula de purga | Manómetro local |
 | Presión de agua del panel o del molde aislado | bar | 0 | 0 | > 0 bar o flujo en el dren | Revisar válvula; doble bloqueo | Manómetro + dren |
 | Presión de O₂ / gas natural / argón en el venteo | bar | 0 | 0 | > 0 bar | Revisar doble bloqueo y purga | Manómetro del venteo |
-| Atmósfera en zona de trabajo | % / ppm | O₂ 20.9 %, CO 0 ppm, 0 % LEL | O₂ 19.5–23.5 %; CO < 25 ppm; < 10 % LEL | Fuera de rango | 🛑 No ingresar (MS-ACE-05/06) | Detector multigás |
+| Atmósfera en zona de trabajo | % / ppm | O₂ 20.9 %, CO 0 ppm, 0 % LEL | Entrada: O₂ 19.5–23.5 %; CO < 25 ppm; < 10 % LEL. Trabajo en caliente: 0 % LEL detectable (≤ 1 % de lectura del equipo) | CO ≥ 25 ppm, O₂ fuera de 19.5–23.5 % o ≥ 10 % LEL: salir · CO ≥ 200 ppm o ≥ 20 % LEL: evacuar el sector | 🛑 No ingresar / salir (MS-ACE-05, MS-ACE-06) | Detector multigás |
 | Temperatura de la superficie de trabajo | °C | ≤ 40 | ≤ 50 [Supuesto] | > 50 °C | Esperar enfriamiento o EPP térmico según C-16 | Pirómetro/termómetro de contacto |
-| Tasa de dosis en el molde de CC2 con obturador cerrado | μSv/h | Fondo (≈ 0.1–0.3) | < 2 × fondo [Validar con ESR] | ≥ 2 × fondo | 🛑 No trabajar; avisar al ESR | Medidor de radiación |
+| Tasa de dosis en el molde de CC2 con obturador cerrado | μSv/h | Fondo (≈ 0.1–0.3) | < 2 × fondo [Validar con ESR] | ≥ 2 × fondo | 🛑 No trabajar; alejarse ≥ 3 m; avisar al ESR (C-16) | Medidor de radiación |
 | Horno eléctrico: posición de basculamiento | ° | 0 (nivel) | 0 | ≠ 0 sin pasador | Colocar pasador antes de ingresar | Indicador HMI + visual |
 
 ## 6. Seguridad
@@ -108,6 +109,29 @@ Básico de nave (casco, lentes, botas metatarsales, ropa FR o algodón, guantes,
 - Cada punto de aislamiento está **identificado en campo** con el número de la Figura 1 o 2.
 - **Cambio de turno con LOTO activo:** el trabajador entrante coloca su candado **antes** de que el saliente retire el suyo; C-04 registra la transferencia en la bitácora.
 - **Retiro de un candado ajeno (persona ausente):** solo con el procedimiento de retiro forzado: C-04 + C-16 localizan a la persona (llamada y búsqueda ≥ 30 min [Supuesto]), verifican que no está en el equipo, registran y notifican a la persona antes de su regreso.
+
+### 6.4 Llave cautiva frente a LOTO completo (criterio único de la Acería)
+
+La **llave cautiva** (enclavamiento por llave atrapada) es un control de **acceso**, no de mantenimiento. Los manuales de operación (MO-EAF-01, MO-EAF-04, MO-EAF-08, MO-LF-01) se remiten a esta sección.
+
+**Basta la llave cautiva** (acceso de rutina a una zona con enclavamiento) solo si se cumplen **todas** estas condiciones:
+
+| # | Condición | Verificación |
+|---|---|---|
+| 1 | La zona tiene un sistema de llave cautiva validado: al retirar la llave se abre el interruptor del horno (EAF o LF) y quedan inhibidos la inclinación, el giro y la elevación de la bóveda y el movimiento de los electrodos que alcanzan esa zona [Validar con OEM / C-12] | Prueba funcional mensual (C-12) con registro; VCC de C-16 |
+| 2 | La tarea es **operativa y de rutina**, y está en esta lista: inspección y llenado del EBT desde su plataforma (MO-EAF-01); adición y empalme de electrodos (MO-EAF-08); inspección visual desde las plataformas de bóveda y electrodos del EAF o del LF | Tarea en la lista |
+| 3 | **Una llave por persona**: cada persona que sube retira y lleva su propia llave de la caja de intercambio; si hay más personas que llaves, se aplica LOTO | Conteo de llaves = conteo de personas |
+| 4 | Antes de subir, S-01 (o S-06) confirma en la HMI el interruptor abierto y los movimientos inhibidos, y un intento de mando es rechazado | Anotado en la bitácora del horno |
+| 5 | No se retiran guardas; no se abre ningún circuito de agua, hidráulica o gases; nadie entra al recipiente, bajo el horno o a la fosa; nadie pone el cuerpo en un punto de atrapamiento que el enclavamiento no cubre | Observación del supervisor |
+
+**Se requiere el LOTO completo** (sección 8, pasos 1–11, con candado personal) cuando ocurre **cualquiera** de estos casos:
+- Intervención en el equipo: mantenimiento, reparación, ajuste, destrabe, cambio de componentes o limpieza dentro de mecanismos (todo trabajo de 03-mantenimiento).
+- Entrada al horno, a la bóveda, bajo el horno o a la fosa de vaciado, o trabajo en espacio confinado (MS-ACE-05).
+- Apertura de circuitos de agua, hidráulica o gases, o necesidad de liberar energía residual (acumuladores, gravedad).
+- El sistema de llave cautiva está en falla, puenteado o con su prueba mensual vencida.
+- La tarea no está en la lista de la condición 2, o se interrumpe por un cambio de turno (se baja, se devuelve la llave y se repite el acceso).
+
+**Retiro:** todos bajan, cada persona devuelve su llave al tablero y se cuenta al personal antes de reenergizar. Nadie devuelve la llave de otra persona.
 
 ## 7. Calidad
 
@@ -160,8 +184,9 @@ Básico de nave (casco, lentes, botas metatarsales, ropa FR o algodón, guantes,
 |---|---|---|---|---|---|
 | S-19, S-21, S-22, S-23, S-24, S-25, S-26 | 3 | 8 (CRS-01 LOTO) | 5 bloqueos supervisados | Pasos 6, 7, 8, 9, 11 | 24 meses (TD-P07) |
 | S-20 Electricista | 4 | 8 + 16 (CRS-11 eléctrico, NOM-029, arco eléctrico) | 10 maniobras de AT supervisadas | Pasos 4, 9 (vivo–muerto–vivo) | 12 meses (NOM-029) |
-| S-01, S-12 | 3 | 4 | 3 entregas de equipo | Pasos 3, 9(a) | 24 meses |
-| C-04, C-05, C-06, C-11, C-12 | 4 | 12 (emisor de permisos) | 10 permisos emitidos con tutor | Pasos 1, 3, 6, 11 + retiro forzado | 24 meses |
+| S-01, S-12 | 3 | 4 | 3 entregas de equipo | Pasos 3, 9(a); confirmación de enclavamiento de la sección 6.4 | 24 meses (TD-P07) |
+| S-02, S-03, S-06, S-07 (usuarios de llave cautiva) | 2 | 2 (sección 6.4) | 3 accesos supervisados | Condiciones 1–5 de la sección 6.4 | 24 meses (TD-P07) |
+| C-04, C-05, C-06, C-11, C-12 | 4 | 12 (emisor de permisos) | 10 permisos emitidos con tutor | Pasos 1, 3, 6, 11 + retiro forzado | 24 meses (TD-P07) |
 | Contratistas | 3 | 8 (TD-P08 + CRS-01) | 2 bloqueos supervisados | Pasos 7, 9 | 12 meses |
 
 **Lista corta de verificación de pasos ★:**
@@ -171,6 +196,8 @@ Básico de nave (casco, lentes, botas metatarsales, ropa FR o algodón, guantes,
 4. ¿Hace la prueba de energía cero completa y la anota?
 5. ¿Sabe que el agua de molde nunca se cierra con acero en la máquina?
 6. ¿Aplica el orden de reenergización (agua → hidráulica → eléctrica)?
+7. ¿Distingue cuándo basta la llave cautiva (acceso de rutina, sección 6.4) y cuándo se requiere el LOTO completo (intervención en el equipo)?
+8. ¿Cierra el obturador de Cs-137 con candado del ESR (C-16) y confirma < 2 × fondo antes de trabajar en el molde de CC2 (paso 9e)?
 
 ## 12. Referencias
 
@@ -184,3 +211,4 @@ Básico de nave (casco, lentes, botas metatarsales, ropa FR o algodón, guantes,
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
+| 0.2 | 2026-09-25 | Revisión cruzada de seguridad: nueva sección 6.4 (llave cautiva frente a LOTO completo); criterio LEL de entrada, trabajo en caliente y evacuación; C-16 como ESR; roles de usuario de llave cautiva en las secciones 2 y 11 | experto-seguridad-salud |
