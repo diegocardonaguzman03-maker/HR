@@ -29,7 +29,7 @@ Mantener las grúas de colada en condición de **no dejar caer nunca una olla**:
 ## 3. Descripción del proceso
 La inspección es escalonada: **diaria** por el operador (lista rápida), **frecuente** por mantenimiento (semanal), **periódica** anual con END y medición completa. Cualquier criterio de rechazo = grúa fuera de servicio para colada hasta corregir.
 
-![Figura 1. Gancho, frenos y cable: puntos de medición y criterios](../../img/mm-gancho-grua-inspeccion.svg)
+![Figura 1. Gancho, frenos y cable: puntos de medición y criterios](../img/mm-gancho-grua-inspeccion.svg)
 
 ```mermaid
 flowchart TD

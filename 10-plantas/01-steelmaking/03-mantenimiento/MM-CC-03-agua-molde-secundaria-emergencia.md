@@ -26,7 +26,7 @@ Garantizar que el molde **nunca se quede sin agua** mientras haya acero en él, 
 ## 3. Descripción del proceso
 El agua de molde es un **circuito cerrado** de agua tratada: tanque → bombas (2 + 1) → intercambiador → filtro → moldes → retorno. Si falla la energía o la presión cae, la **válvula XV-1 abre por falla-abierta** y la torre alimenta por gravedad mientras arrancan las **bombas diésel**. El criterio de diseño es: **caudal en molde ≥ 90 % en ≤ 15 s**.
 
-![Figura 1. Agua de molde y sistema de emergencia](../../img/mm-agua-emergencia.svg)
+![Figura 1. Agua de molde y sistema de emergencia](../img/mm-agua-emergencia.svg)
 
 ```mermaid
 sequenceDiagram
@@ -122,7 +122,7 @@ Casco, lentes, guantes, botas de seguridad, protección auditiva (casa de bombas
 **Puntos de aislamiento:** E1 CCM de la bomba intervenida y selector "automático" de la reserva; E-D batería del diésel desconectada + selector en "fuera" con candado; E-W válvulas de succión y descarga de la bomba + dren; E-T válvula de la torre (solo con máquina parada); E-XV aire/energía de XV-1 con la válvula bloqueada mecánicamente (solo con máquina parada). **Prueba de energía cero:** intento de arranque local y remoto rechazado; manómetro 0 bar; detector de tensión en bornes del motor.
 **Zona de exclusión:** acoplamientos de bombas en prueba; escape del diésel.
 
-![Puntos de aislamiento y bloqueo de CC1 y CC2 (ver MS-ACE-02)](../../img/ms-loto-puntos-cc.svg)
+![Puntos de aislamiento y bloqueo de CC1 y CC2 (ver MS-ACE-02)](../img/ms-loto-puntos-cc.svg)
 
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |

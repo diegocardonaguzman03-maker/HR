@@ -26,7 +26,7 @@ Mantener el revestimiento refractario del EAF con espesor suficiente para evitar
 ## 3. Descripción del proceso
 El revestimiento tiene: **capa de seguridad** (ladrillo de magnesia), **solera** de masa seca de magnesia apisonada, **bancos y línea de escoria** de ladrillo MgO-C, y el **EBT** (bloque de asiento, camisas del tubo, bloque de salida y placa de cierre). El desgaste se mide y se repara por proyección entre coladas; cuando el espesor residual cae al mínimo se hace reparación mayor o reline.
 
-![Figura 1. Corte del EBT y criterios de cambio](../../img/mm-ebt-cambio.svg)
+![Figura 1. Corte del EBT y criterios de cambio](../img/mm-ebt-cambio.svg)
 
 ```mermaid
 flowchart TD
@@ -107,7 +107,7 @@ Ropa aluminizada (frente al horno), careta con visor dorado, casco con cubrenuca
 **LOTO:** E1 MT del horno; E2 HPU con horno **basculado y bloqueado mecánicamente** en la posición del trabajo; E3 O₂/GN de lanzas y quemadores cerrados y purgados; E4 DRI y carbono; E6 bóveda girada y asegurada. Agua de paneles **en servicio** (no se aísla, salvo que se trabaje en ellos). **Prueba de energía cero:** intento de arco y de basculamiento rechazados, manómetros de gases en 0 bar, gases en el interior O₂ 19.5–23.5 %, CO < 25 ppm, LEL 0 %.
 **Zona de exclusión:** debajo del EBT y en la trayectoria de la escoria durante el cambio en caliente.
 
-![Figura 2. Puntos de aislamiento y bloqueo del EAF (ver MS-ACE-02)](../../img/ms-loto-puntos-eaf.svg)
+![Figura 2. Puntos de aislamiento y bloqueo del EAF (ver MS-ACE-02)](../img/ms-loto-puntos-eaf.svg)
 
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |

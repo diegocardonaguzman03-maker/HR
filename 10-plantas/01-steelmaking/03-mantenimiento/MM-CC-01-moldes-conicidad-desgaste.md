@@ -26,7 +26,7 @@ Entregar a la máquina moldes con geometría, conicidad, superficie y enfriamien
 ## 3. Descripción del proceso
 El molde gira entre la máquina y el taller. En taller se mide todo contra criterio y se decide: **reutilizar**, **rectificar** (placas CC1) o **desechar** (tubo CC2). Antes de subir a máquina se prueba a presión, se ajusta la conicidad y se verifican los termopares.
 
-![Figura 1. Medición de conicidad y desgaste del molde](../../img/mm-molde-conicidad.svg)
+![Figura 1. Medición de conicidad y desgaste del molde](../img/mm-molde-conicidad.svg)
 
 ```mermaid
 flowchart TD
@@ -115,7 +115,7 @@ Casco, lentes, careta (esmerilado), guantes anticorte, botas metatarsales, prote
 **Puntos de aislamiento:** E-W agua de molde de la línea (válvulas de entrada/salida + dren); E-H oscilación y ajuste de ancho (CCM HPU + descarga de acumuladores); E1 EMS y sensor de nivel (tableros); E-R obturador de Cs-137 cerrado con candado del ESR (CC2); E-S enfriamiento secundario de la zona 0 / pie de rodillos; E-M molde apoyado o sujeto por la grúa; barra falsa estacionada y bloqueada. **Prueba de energía cero:** intento de oscilar desde HMI rechazado, manómetros 0 bar, detector de tensión en EMS, radiámetro ≤ fondo en el punto de trabajo.
 **Zona de exclusión:** bajo el molde en izaje; alrededor de la fuente según plan de protección radiológica.
 
-![Puntos de aislamiento y bloqueo de CC1 y CC2 (ver MS-ACE-02)](../../img/ms-loto-puntos-cc.svg)
+![Puntos de aislamiento y bloqueo de CC1 y CC2 (ver MS-ACE-02)](../img/ms-loto-puntos-cc.svg)
 
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |

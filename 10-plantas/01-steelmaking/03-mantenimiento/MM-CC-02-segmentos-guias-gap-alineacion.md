@@ -28,7 +28,7 @@ Mantener la **geometría de la línea de colada**: separación correcta entre ro
 ## 3. Descripción del proceso
 El gap checker viaja por la máquina (tirado por la barra falsa) y mide el gap, la rotación de rodillos y el estado de boquillas. Con esos datos se decide cambiar segmentos o ajustar. Tras cada cambio se verifica la alineación del lado fijo con la plantilla de arco.
 
-![Figura 1. Medición de gap y alineación](../../img/mm-segmento-gap-alineacion.svg)
+![Figura 1. Medición de gap y alineación](../img/mm-segmento-gap-alineacion.svg)
 
 ```mermaid
 flowchart TD
@@ -112,7 +112,7 @@ Casco, lentes, guantes anticorte, botas metatarsales, ropa FR, protección audit
 **Puntos de aislamiento:** E1 motores de rodillos motrices del segmento y de los vecinos (CCM); E-H cilindros de apriete (válvula de bloqueo del segmento + descarga de acumuladores); E-S agua secundaria de las zonas afectadas (válvulas + dren); E-W agua de enfriamiento interno de rodillos; E-A aire de atomización; E-L lubricación aire-aceite; E-M barra falsa estacionada y bloqueada; segmento sujeto por grúa o apoyado en su cuna. **Prueba de energía cero:** intento de girar rodillos y mover barra falsa rechazado; manómetros de agua, aire e hidráulica 0 bar.
 **Zona de exclusión:** debajo del segmento en izaje y trayectoria de la barra falsa durante la corrida del gap checker.
 
-![Puntos de aislamiento y bloqueo de CC1 y CC2 (ver MS-ACE-02)](../../img/ms-loto-puntos-cc.svg)
+![Puntos de aislamiento y bloqueo de CC1 y CC2 (ver MS-ACE-02)](../img/ms-loto-puntos-cc.svg)
 
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |

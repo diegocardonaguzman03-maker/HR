@@ -28,7 +28,7 @@ Detectar a tiempo, aislar y reparar las fugas de agua en los paneles de pared, l
 ## 3. Descripción del proceso
 Cada panel es un serpentín de tubos con su propio circuito. Un medidor de caudal a la entrada y otro a la salida alimentan al PLC, que calcula **ΔQ % = (Q ent − Q sal) / Q ent × 100**. Con **ΔQ > 2 % hay alarma** y con **ΔQ > 4 % se dispara el arco** (FT-ACE-001 §2). Una fuga pequeña que no llega a 2 % se detecta por inspección visual (vapor, escoria "apagada", manchas negras) y por el aumento de H₂ en el humo o en el acero.
 
-![Figura 1. Panel enfriado por agua, medición de caudal y lógica de fuga](../../img/mm-panel-enfriado-fuga.svg)
+![Figura 1. Panel enfriado por agua, medición de caudal y lógica de fuga](../img/mm-panel-enfriado-fuga.svg)
 
 ```mermaid
 flowchart TD
@@ -120,7 +120,7 @@ Casco, lentes, careta facial, ropa FR/aluminizada en zona de horno caliente, gua
 
 **Zona de exclusión:** plataforma del horno y fosa de escoria mientras haya metal líquido en el horno y exista sospecha de agua.
 
-![Figura 2. Puntos de aislamiento y bloqueo del EAF (ver MS-ACE-02)](../../img/ms-loto-puntos-eaf.svg)
+![Figura 2. Puntos de aislamiento y bloqueo del EAF (ver MS-ACE-02)](../img/ms-loto-puntos-eaf.svg)
 
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |

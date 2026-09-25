@@ -27,7 +27,7 @@ Asegurar que cada olla que entra al ciclo tiene: válvula deslizante que abre y 
 ## 3. Descripción del proceso
 Después de cada colada la olla pasa por la estación de preparación: se inspecciona la válvula y el refractario, se decide si sigue en ciclo, si cambia placas/tapón, o si va a reparación. Con el termoescáner de coraza y la medición de espesor se decide la reparación intermedia o el reline.
 
-![Figura 1. Corte de la olla: refractario, válvula deslizante y tapón poroso](../../img/olla-corte-valvula-tapon.svg)
+![Figura 1. Corte de la olla: refractario, válvula deslizante y tapón poroso](../img/olla-corte-valvula-tapon.svg)
 
 ```mermaid
 flowchart TD
