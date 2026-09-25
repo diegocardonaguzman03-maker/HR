@@ -7,7 +7,7 @@
   "manual": "02-operacion/cc1/MO-CC1-03-arranque-colada.md",
   "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
   "subtitle": "Abrir olla y distribuidor y llenar el molde sin fugas ni explosiones, con nivel automático y rampa de velocidad",
-  "audiencia": "S-13 Operador de Plataforma · S-12 Operador de Púlpito · S-14 Ayudante de Colada · S-09 Grúa de Colada · C-06",
+  "audiencia": "S-13 Operador de Plataforma · S-12 Operador de Púlpito · S-14 Ayudante de Colada · S-09 Grúa de Colada · S-11 Muestrero · C-06",
   "kpis": [
     {"value": "24 h", "label": "teoría (S-13 / S-12)"},
     {"value": "120 h", "label": "OJT · 10 arranques"},
@@ -205,7 +205,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de fuga y breakout en arranque; reglas de oro", "Láminas 1–2"],
+    ["1. Sesión 1 de 3: apertura y por qué importa", "30", "Casos de fuga y breakout en arranque; reglas de oro", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con las figuras de arranque", "Láminas 3–6"],
     ["3. Equipos y parámetros", "75", "Ejercicio: calcular la T objetivo con el líquidus", "Láminas 7–8, calculadora"],
     ["4. Seguridad", "75", "Zona roja en plano; EPP de lanceado", "Láminas 9–10, EPP físico"],
@@ -214,5 +214,5 @@
     ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + preguntas orales", "Lámina 16"],
     ["8. Cierre y ruta a OJT", "30", "Plan de OJT, simulador y certificación", "Lámina 17"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

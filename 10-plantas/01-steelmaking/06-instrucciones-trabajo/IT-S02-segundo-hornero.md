@@ -1,5 +1,7 @@
 # IT-ACE-S02 — Instrucción de Trabajo: Segundo Hornero (Operador de Horno de Piso)
 
+## 1. Encabezado de control
+
 | Campo | Valor |
 |---|---|
 | Código | IT-ACE-S02 |
@@ -18,15 +20,15 @@
 
 > Esta IT **no reemplaza** a los manuales: los resume para tu puesto. Si hay duda, manda el manual. Los valores salen de FT-ACE-001 v0.3 y conservan sus marcas [Validar con OEM / Ingeniería de Proceso] y [Supuesto].
 
-## 1. Mi puesto en 30 segundos
-Soy los ojos del horno en el piso. Dejo el horno listo entre coladas, mido temperatura y oxígeno, tomo muestras, controlo el desescoriado y ejecuto el vaciado por el EBT. Empalmo electrodos con S-03 y S-04. Trabajo junto al metal líquido: mi EPP, mis herramientas secas y la zona libre me protegen a mí y a mi cuadrilla. Doy guía técnica en campo a S-03; no tengo funciones de mando (LFT art. 9).
+## 2. Mi puesto en 30 segundos
+Soy los ojos del horno en el piso. Dejo el horno listo entre coladas, mido temperatura y oxígeno y tomo muestras. Controlo el desescoriado y ejecuto el vaciado por el EBT. Empalmo electrodos con S-03 y S-04. Trabajo junto al metal líquido: mi EPP, mis herramientas secas y la zona libre me protegen a mí y a mi cuadrilla. Doy guía técnica en campo a S-03; no tengo funciones de mando (LFT art. 9).
 
 > **★ Mis 3 reglas de oro**
 > 1. ★ **Nada húmedo toca el metal:** sondas, lanzas, arena, adiciones, ollas y fosas secas.
 > 2. ★ **Zona libre antes de abrir:** nadie a ≤ 10 m de la olla y del EBT; sirena ≥ 30 s.
 > 3. ★ **Una llave por persona:** subo a la plataforma solo con mi propia llave cautiva (o LOTO completo).
 
-## 2. Mi turno de 12 horas
+## 3. Mi turno de 12 horas
 
 ```mermaid
 flowchart LR
@@ -38,13 +40,13 @@ flowchart LR
     D --> F["18:30 / 06:30<br/>Orden del piso y<br/>entrega de turno"]
 ```
 
-## 3. Mi área de trabajo
+## 4. Mi área de trabajo
 
 ![Figura IT-S02. Piso del EAF: puerta, EBT, fosa y plataformas](../img/it-S02-puesto.svg)
 
 Figuras de apoyo: [secuencia de vaciado EBT](../img/eaf-vaciado-ebt.svg) · [empalme de electrodo](../img/eaf-empalme-electrodo.svg).
 
-## 4. Mi EPP
+## 5. Mi EPP
 
 | EPP (pictograma en texto) | Cuándo lo uso |
 |---|---|
@@ -59,7 +61,7 @@ Figuras de apoyo: [secuencia de vaciado EBT](../img/eaf-vaciado-ebt.svg) · [emp
 
 Máximo **2 min** continuos en zona roja por intervención; hidrátate 250 mL cada 15–20 min.
 
-## 5. Mis tareas paso a paso
+## 6. Mis tareas paso a paso
 
 ### Tarea 1 — Preparación del horno entre coladas (MO-EAF-01)
 
@@ -179,7 +181,7 @@ flowchart LR
 > - La laina entra después de re-apretar: cambia niple o electrodo.
 > - La llave de torque falla: nunca aprietes "a estimación".
 
-## 6. Mis controles críticos (★)
+## 7. Mis controles críticos (★)
 
 Antes de cada tarea crítica marco:
 - ☐ Sondas, lanzas, arena y adiciones secas; EPP aluminizado seco.
@@ -190,7 +192,7 @@ Antes de cada tarea crítica marco:
 - ☐ Compuerta del EBT cerrada y enclavada antes de la arena.
 - ☐ Ruta a refugio libre (≤ 30 s).
 
-## 7. Si algo sale mal
+## 8. Si algo sale mal
 
 | Síntoma | Qué hago | A quién aviso |
 |---|---|---|
@@ -204,7 +206,7 @@ Antes de cada tarea crítica marco:
 
 Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar — tipo — personas — quién llama"**.
 
-## 8. Registros que lleno
+## 9. Registros que lleno
 
 | Registro | Cuándo | Dónde |
 |---|---|---|
@@ -215,7 +217,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Uso de llaves cautivas / LOTO | Cada acceso | Bitácora del horno |
 | Eventos: EBT que no abre, lanceo autorizado, proyecciones | Al ocurrir | Bitácora del horno |
 
-## 9. Mi certificación
+## 10. Mi certificación
 
 | Concepto | Requisito |
 |---|---|
@@ -226,7 +228,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Vigencia | **24 meses** TD-P07; **12 meses** alturas (MS-ACE-10, NOM-009) y grúas/izaje o señalero (NOM-006) |
 | Refresco | 12 h/año: simulacro de fuga de agua y de perforación |
 
-## 10. Glosario rápido
+## 11. Glosario rápido
 
 | Término | Qué significa |
 |---|---|
@@ -241,7 +243,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Llave cautiva | Llave que bloquea arco y movimientos mientras estás arriba |
 | Zona roja | Zona donde solo entra el personal esencial con EPP aluminizado |
 
-## 11. Control de cambios
+## 12. Control de cambios
 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|

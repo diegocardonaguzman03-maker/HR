@@ -7,7 +7,7 @@
   "manual": "03-mantenimiento/MM-EAF-02-brazos-columnas-regulacion-cambio-boveda.md",
   "manual_version": "0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25)",
   "subtitle": "Brazos aislados, regulación estable y bóveda cambiada sin nadie bajo la carga ni energía almacenada",
-  "audiencia": "S-19 Mecánico · S-22 Técnico Hidráulico · S-20 Electricista · S-21 Instrumentista · S-04 Grúa de Carga · C-11",
+  "audiencia": "S-19 Mecánico · S-22 Técnico Hidráulico · S-20 Electricista · S-21 Instrumentista · S-04 Grúa de Carga · S-01 Primer Hornero · C-11",
   "kpis": [
     {"value": "16 h", "label": "teoría (S-19 Mecánico)"},
     {"value": "40 h", "label": "OJT · 2 cambios de bóveda"},
@@ -20,7 +20,7 @@
     "roles": "C-11 es dueño; S-22 manda en la energía hidráulica",
     "flujo": "La bóveda se iza solo con 0 bar y agua drenada",
     "figura": "Brazo, mordaza y columna llevan decenas de kA",
-    "equipos": "Diez componentes; el aislamiento ≥ 1 MΩ manda",
+    "equipos": "En los componentes, el aislamiento ≥ 1 MΩ manda",
     "parametros": "Megger < 1 MΩ o columna que deriva: no se opera",
     "seguridad": "La energía hidráulica guardada mueve la columna",
     "calidad": "Una mordaza floja se paga en electrodo y en arco",
@@ -98,7 +98,7 @@
       {"titulo": "LOTO E1–E6 con calzas", "detalle": "MT con tierras (S-20), HPU y acumuladores descargados a tanque, O₂/GN, agua V1/V2 y calzas y pernos de giro y basculamiento."},
       {"titulo": "Prueba de energía cero", "detalle": "Intento de mover columna y bóveda desde HMI y mando local sin respuesta; 0 bar; detector de tensión vivo–muerto–vivo."},
       {"titulo": "Izaje crítico de la bóveda", "detalle": "Plan de izaje, balancín certificado, prueba a 100 mm; nadie en el radio de giro ni a ± 5 m de la carga (MS-ACE-04)."},
-      {"titulo": "Altura, calor y trabajo en caliente", "detalle": "Arnés y línea de vida (NOM-009); bóveda ≤ 60 °C o EPP térmico; al cortar o soldar, 0 % LEL detectable."}
+      {"titulo": "Altura, calor y trabajo en caliente", "detalle": "Arnés y línea de vida (NOM-009); bóveda ≤ 60 °C o EPP térmico; cortar o soldar solo con 0 % LEL detectable (≤ 1 % de lectura)."}
     ],
     "epp": [
       "Casco, lentes y careta",
@@ -191,7 +191,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de aplastamiento y caída de electrodo", "Láminas 1–2"],
+    ["1. Sesión 1 de 2: apertura y por qué importa", "30", "Casos de aplastamiento y caída de electrodo", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con el corte del horno", "Láminas 3–6"],
     ["3. Equipos y especificaciones", "90", "Hidráulica proporcional, HFC y acumuladores", "Láminas 7–8"],
     ["4. Seguridad, LOTO y energía cero", "90", "E1–E6 en plano; descarga de acumuladores", "Láminas 9–10, candados"],
@@ -201,5 +201,5 @@
     ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
     ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
   ],
-  "validacion": {}
+  "validacion": {"seguridad": "visto bueno con observaciones — 2026-09-26","tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

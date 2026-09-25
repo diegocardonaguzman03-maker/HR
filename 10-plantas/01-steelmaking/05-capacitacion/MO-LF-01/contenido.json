@@ -200,7 +200,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de clogging y breakout por T de envío", "Láminas 1–2"],
+    ["1. Sesión 1 de 5: apertura y por qué importa", "30", "Casos de clogging y breakout por T de envío", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del tratamiento con la figura del LF", "Láminas 3–6"],
     ["3. Metalurgia secundaria", "90", "Desoxidación, desulfuración, inclusiones y Ca", "Pizarrón, muestras"],
     ["4. Equipos y parámetros", "60", "Ejercicio: T de envío con líquidus y pérdidas", "Láminas 7–8, calculadora"],
@@ -210,5 +210,5 @@
     ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
     ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno — 2026-09-26"}
 }

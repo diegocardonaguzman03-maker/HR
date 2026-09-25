@@ -1,5 +1,7 @@
 # IT-ACE-C17 — Instrucción de Trabajo: Supervisor de Patio de Chatarra y Materiales
 
+## 1. Encabezado de control
+
 | Campo | Valor |
 |---|---|
 | Código | IT-ACE-C17 |
@@ -18,15 +20,15 @@
 
 > Esta IT **no reemplaza** a los manuales: resume tus rutinas de supervisión. Si hay duda, manda el manual. Los valores salen de FT-ACE-001 v0.3 y conservan sus marcas [Validar con OEM / Ingeniería de Proceso] y [Supuesto].
 
-## 1. Mi puesto en 30 segundos
-Entrego a los hornos canastas **seguras**: sin humedad, sin recipientes cerrados y sin fuentes radiactivas, con la mezcla y la densidad programadas y a tiempo para el tap-to-tap de 55 min. Superviso a 16 S-05 por turno, además de transportistas y contratistas de preparación. Controlo la interacción grúa–vehículo–peatón, el pórtico de radiación, el oxicorte y el inventario de chatarra y fundentes.
+## 2. Mi puesto en 30 segundos
+Entrego a los hornos canastas **seguras**: sin humedad, sin recipientes cerrados y sin fuentes radiactivas. Llegan con la mezcla y la densidad programadas, a tiempo para el tap-to-tap de 55 min. Superviso a 16 S-05 por turno, además de transportistas y contratistas de preparación. Controlo la interacción grúa–vehículo–peatón, el pórtico de radiación, el oxicorte y el inventario de chatarra y fundentes.
 
 > **★ Mis 3 reglas de oro**
 > 1. ★ **Ninguna carga pasa a canasta sin liberación del pórtico.** Ante alarma: aíslo y aviso al ESR (C-16) y a C-04.
 > 2. ★ **Rechazo** chatarra con agua, hielo, recipientes cerrados o explosivos; yo libero la canasta que goteó.
 > 3. ★ **Grúa y peatón separados:** nadie bajo el electroimán; pasillos respetados.
 
-## 2. Mi turno de 12 horas
+## 3. Mi turno de 12 horas
 
 ```mermaid
 flowchart LR
@@ -38,13 +40,13 @@ flowchart LR
     D --> F["18:30 / 06:30<br/>Inventario, bitácora<br/>entrega cara a cara"]
 ```
 
-## 3. Mi área de trabajo
+## 4. Mi área de trabajo
 
 ![Figura IT-C17. Recorrido de supervisión del patio de chatarra y materiales](../img/it-C17-puesto.svg)
 
 Figura de apoyo: [zonas de exclusión de la nave y del patio](../img/ms-zonas-exclusion-nave.svg).
 
-## 4. Mi EPP
+## 5. Mi EPP
 
 | EPP (pictograma en texto) | Cuándo lo uso |
 |---|---|
@@ -59,7 +61,7 @@ Figura de apoyo: [zonas de exclusión de la nave y del patio](../img/ms-zonas-ex
 
 Verifico también el EPP de mi gente y la hidratación en la intemperie.
 
-## 5. Mis tareas (rutinas de supervisión)
+## 6. Mis tareas (rutinas de supervisión)
 
 ### Tarea 1 — Arranque de turno
 
@@ -169,13 +171,18 @@ flowchart LR
 
 ### Tarea 6 — Inventario y entrega de turno
 
+```mermaid
+flowchart LR
+    A["Reviso inventario<br/>chatarra y fundentes"] --> B["Coordino faltantes<br/>Compras y DRI"] --> C["★ Cierro bitácora<br/>y entrego cara a cara"]
+```
+
 | Paso | Qué hago | Cómo verifico (medición) | ★ |
 |---|---|---|---|
 | 1 | Reviso el inventario de chatarra por tipo, fundentes y ferroaleaciones. | Exactitud ± 2% [Supuesto] | 🔎 |
 | 2 | Coordino con Compras y con la planta DRI los faltantes. | Pedido o aviso registrado | |
 | 3 | Cierro la bitácora y entrego cara a cara. | Rechazos abiertos, alarmas, canastas listas, equipos fuera de servicio | ★ |
 
-## 6. Mis controles críticos (★)
+## 7. Mis controles críticos (★)
 
 En cada recorrido marco:
 - ☐ Pórtico probado y en servicio; cada camión con "libre".
@@ -186,7 +193,7 @@ En cada recorrido marco:
 - ☐ Oxicorte con permiso en caliente y vigía.
 - ☐ Personal en pórtico, grúa y oxicorte con certificación vigente.
 
-## 7. Si algo sale mal
+## 8. Si algo sale mal
 
 | Síntoma | Qué hago | A quién aviso |
 |---|---|---|
@@ -198,7 +205,7 @@ En cada recorrido marco:
 | Canastas atrasadas | Reorganizo puestos; aviso del retraso | C-05 · canal 2 Hornos [Supuesto] |
 | Incendio por oxicorte | Brigada; aíslo gas y O₂ | C-04 · canal 1 |
 
-## 8. Registros que lleno
+## 9. Registros que lleno
 
 | Registro | Cuándo | Dónde |
 |---|---|---|
@@ -211,7 +218,7 @@ En cada recorrido marco:
 | Inventario de chatarra, fundentes y ferroaleaciones | Fin de turno | Sistema de inventario |
 | Evaluaciones TD-P07 de S-05 | Al evaluar | LMS |
 
-## 9. Mi certificación
+## 10. Mi certificación
 
 | Concepto | Requisito |
 |---|---|
@@ -222,7 +229,7 @@ En cada recorrido marco:
 | Pasos ★ que me evalúan | Respuesta a alarma del pórtico (MO-EAF-02 / MS-ACE-07) · liberación de canasta · VCC grúa–peatón |
 | Vigencia | **12 meses** fuentes radiactivas (MS-ACE-07), grúas/izaje (MS-ACE-04) y alturas (MS-ACE-10); **24 meses** ERC, evaluador TD-P07 y demás |
 
-## 10. Glosario rápido
+## 11. Glosario rápido
 
 | Término | Qué significa |
 |---|---|
@@ -236,7 +243,7 @@ En cada recorrido marco:
 | ILUO | Niveles de competencia: I aprende, L con apoyo, U autónomo, O enseña y evalúa |
 | Trabajo en caliente | Oxicorte o soldadura que requiere permiso (NOM-027) |
 
-## 11. Control de cambios
+## 12. Control de cambios
 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|

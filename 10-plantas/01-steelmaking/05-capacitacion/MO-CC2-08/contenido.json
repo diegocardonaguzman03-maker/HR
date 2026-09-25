@@ -7,7 +7,7 @@
   "manual": "02-operacion/cc2/MO-CC2-08-corte-marcado-lecho-enfriamiento.md",
   "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
   "subtitle": "Cortar a 12,000 ± 50 mm en frío, marcar el 100 % de las palanquillas y despachar por colada sin perder su identidad",
-  "audiencia": "S-16 Corte y Marcado · S-17 Mesa y Despacho · Grúa de producto · S-12 · S-18 · C-06",
+  "audiencia": "S-16 Corte y Marcado · S-17 Mesa y Despacho · Grúa de producto 25 t (hoy S-17) · S-12 · S-18 · C-06",
   "kpis": [
     {
       "value": "16 h",
@@ -41,7 +41,7 @@
     "figura": "Oxicorte, marcadora y lecho al final de la línea",
     "equipos": "Siete equipos que deciden medida e identidad",
     "parametros": "Largo en caliente, temperatura y marca definen el lote",
-    "seguridad": "Gases, carga suspendida y acero caliente en movimiento",
+    "seguridad": "Gases, carga suspendida y acero caliente: aléjate",
     "calidad": "Una palanquilla sin marca pierde su identidad",
     "pasos": "Catorce pasos; cuatro no admiten error",
     "anormales": "Marca dudosa o corte fallido: retener y avisar",
@@ -87,7 +87,7 @@
     ],
     [
       "S-17 Operador de Mesa y Despacho",
-      "Opera transferencia y lecho; forma lotes; dirige la grúa; despacha",
+      "Opera transferencia y lecho; forma lotes; da señales a la grúa; despacha",
       "R"
     ],
     [
@@ -516,7 +516,7 @@
         "U",
         "16 h + grúa (40 h)",
         "80 h / 10 coladas",
-        "12 meses (izaje)"
+        "24 meses; izaje 12"
       ]
     ],
     "checklist": [
@@ -610,7 +610,7 @@
       "Recurso"
     ],
     [
-      "1. Apertura y por qué importa",
+      "1. Sesión 1 de 2: apertura y por qué importa",
       "30",
       "Casos de palanquillas sin identidad y de carga caída; reglas de oro",
       "Portada y objetivos"
@@ -658,7 +658,8 @@
       "Competencia y cierre"
     ]
   ],
-  "validacion": {
-    "tecnica": "visto bueno — 2026-09-25"
+  "validacion": {"seguridad": "visto bueno — 2026-09-26",
+    "tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26",
+    "laboral": "visto bueno con observaciones — 2026-09-26"
   }
 }

@@ -22,7 +22,7 @@
     "figura": "La lanza entra por la puerta y cruza la escoria",
     "equipos": "Siete equipos; la sonda seca es la primera condición",
     "parametros": "T, O, C y P abren o cierran la ventana de vaciado",
-    "seguridad": "Sonda húmeda y puerta ocupada: los riesgos",
+    "seguridad": "Sonda húmeda o puerta ocupada: no se mide",
     "calidad": "Una muestra mala es un análisis falso",
     "pasos": "Once pasos; tres no admiten error",
     "anormales": "Ante proyección: retirar la lanza y alejarse",
@@ -187,7 +187,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de proyección por sonda húmeda", "Láminas 1–2"],
+    ["1. Sesión 1 de 2: apertura y por qué importa", "30", "Casos de proyección por sonda húmeda", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del flujo; momentos M1, M2 y M3", "Láminas 3–6"],
     ["3. Sondas y curvas", "90", "Interpretar 5 curvas reales; relación C–O", "Sondas físicas, curvas impresas"],
     ["4. Equipos y parámetros", "60", "Ventana de vaciado por grado", "Láminas 7–8"],
@@ -197,5 +197,5 @@
     ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
     ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

@@ -161,8 +161,8 @@
     "iluo": "U",
     "roles": [
       ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
-      ["S-02 Segundo Hornero", "U", "12 h", "30 h / 10 empalmes", "24 meses; altura 12"],
-      ["S-03 Tercer Hornero", "U", "8 h", "20 h / 10 empalmes", "24 meses; altura 12"],
+      ["S-02 Segundo Hornero", "U", "12 h", "30 h / 10 empalmes", "24 meses; altura y señalero 12"],
+      ["S-03 Tercer Hornero", "U", "8 h", "20 h / 10 empalmes", "24 meses; altura e izaje 12"],
       ["S-04 Grúa de Carga", "U", "NOM-006 + grúa", "10 maniobras de electrodo", "12 meses"],
       ["C-05 Supervisor de Hornos", "O (evaluador)", "8 h + evaluador", "—", "24 meses"]
     ],
@@ -194,7 +194,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de rotura y caída de electrodo", "Láminas 1–2"],
+    ["1. Sesión 1 de 2: apertura y por qué importa", "30", "Casos de rotura y caída de electrodo", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con la figura del empalme", "Láminas 3–6"],
     ["3. Equipos y parámetros", "60", "Electrodos y niples: recepción y almacenamiento", "Láminas 7–8"],
     ["4. Seguridad", "75", "Llave cautiva vs. LOTO; altura en método B", "Láminas 9–10, EPP y arnés"],
@@ -204,5 +204,5 @@
     ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
     ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

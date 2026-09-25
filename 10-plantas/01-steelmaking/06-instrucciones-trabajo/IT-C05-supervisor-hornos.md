@@ -1,5 +1,7 @@
 # IT-ACE-C05 — Instrucción de Trabajo: Supervisor de Hornos (EAF / LF)
 
+## 1. Encabezado de control
+
 | Campo | Valor |
 |---|---|
 | Código | IT-ACE-C05 |
@@ -18,7 +20,7 @@
 
 > Esta IT **no reemplaza** a los manuales: resume tus rutinas de supervisión. Si hay duda, manda el manual. Los valores salen de FT-ACE-001 v0.3 y conservan sus marcas [Validar con OEM / Ingeniería de Proceso] y [Supuesto].
 
-## 1. Mi puesto en 30 segundos
+## 2. Mi puesto en 30 segundos
 Dirijo en el turno la operación segura de los hornos (o del LF y las ollas). Superviso a 31 sindicalizados por turno en EAF (S-01, S-02, S-03, S-04, S-10) o 21 en LF/ollas (S-06, S-07, S-08, S-09). Hago cumplir los manuales, verifico los controles críticos en campo y autorizo lo que los operadores no pueden decidir solos. Cuido el tap-to-tap de 55 min y la química y temperatura que pide la colada continua. En una emergencia soy **líder de sector**: estabilizo mi área y cuento a mi gente.
 
 > **★ Mis 3 reglas de oro**
@@ -26,7 +28,7 @@ Dirijo en el turno la operación segura de los hornos (o del LF y las ollas). Su
 > 2. ★ **Veo con mis ojos:** zona de exclusión, llaves cautivas y LOTO se verifican en campo, no por radio.
 > 3. ★ **Solo personal certificado** en tareas críticas (TD-P07 vigente); si no hay, cubro con el relevo, nunca con alguien sin certificar.
 
-## 2. Mi turno de 12 horas
+## 3. Mi turno de 12 horas
 
 ```mermaid
 flowchart LR
@@ -38,13 +40,13 @@ flowchart LR
     D --> F["18:30 / 06:30<br/>Bitácora, demoras, desviaciones<br/>entrega cara a cara"]
 ```
 
-## 3. Mi área de trabajo
+## 4. Mi área de trabajo
 
 ![Figura IT-C05. Recorrido de supervisión: hornos, LF y ollas](../img/it-C05-puesto.svg)
 
 Figuras de apoyo: [zonas de exclusión de la nave](../img/ms-zonas-exclusion-nave.svg) · [puntos de bloqueo del EAF](../img/ms-loto-puntos-eaf.svg).
 
-## 4. Mi EPP
+## 5. Mi EPP
 
 | EPP (pictograma en texto) | Cuándo lo uso |
 |---|---|
@@ -58,7 +60,7 @@ Figuras de apoyo: [zonas de exclusión de la nave](../img/ms-zonas-exclusion-nav
 
 Verifico también el EPP de mi gente: aluminizado seco, sin ropa sintética.
 
-## 5. Mis tareas (rutinas de supervisión)
+## 6. Mis tareas (rutinas de supervisión)
 
 ### Tarea 1 — Arranque de turno
 
@@ -176,13 +178,18 @@ flowchart LR
 
 ### Tarea 6 — Entrega de turno
 
+```mermaid
+flowchart LR
+    A["Cierro bitácora<br/>coladas y demoras"] --> B["Reporto desviaciones<br/>a C-07 / C-09"] --> C["★ Entrego cara a cara<br/>al C-05 entrante"]
+```
+
 | Paso | Qué hago | Cómo verifico (medición) | ★ |
 |---|---|---|---|
 | 1 | Cierro la bitácora: coladas, demoras y causas. | Registro completo en MES | |
 | 2 | Reporto desviaciones (T, P, fugas, roturas, EBT). | Reporte de desviaciones enviado a C-07 / C-09 | 🔎 |
 | 3 | Entrego cara a cara al C-05 entrante. | Pendientes, bloqueos activos y equipos fuera de servicio | ★ |
 
-## 6. Mis controles críticos (★)
+## 7. Mis controles críticos (★)
 
 En cada recorrido marco:
 - ☐ Agua de paneles y bóveda en límite (2% / 4% / 60 °C / 3 bar) en ambos hornos.
@@ -194,7 +201,7 @@ En cada recorrido marco:
 - ☐ Personal en tareas críticas con certificación vigente.
 - ☐ Rotación por calor e hidratación cumplidas.
 
-## 7. Si algo sale mal
+## 8. Si algo sale mal
 
 | Síntoma | Qué hago | A quién aviso |
 |---|---|---|
@@ -205,7 +212,7 @@ En cada recorrido marco:
 | Lesionado o golpe de calor | Retiro del calor; primeros auxilios | Servicio médico ext. 2222 [Supuesto]; C-04 |
 | Falla de grúa de colada con olla llena | Olla a posición segura; área despejada | C-04, C-11 · canal 3 Grúas [Supuesto] |
 
-## 8. Registros que lleno
+## 9. Registros que lleno
 
 | Registro | Cuándo | Dónde |
 |---|---|---|
@@ -218,7 +225,7 @@ En cada recorrido marco:
 | Evaluaciones TD-P07 de pasos ★ | Al evaluar | LMS |
 | Reporte de desviaciones e incidentes | Al ocurrir | Sistema de SSO / MES |
 
-## 9. Mi certificación
+## 10. Mi certificación
 
 | Concepto | Requisito |
 |---|---|
@@ -229,7 +236,7 @@ En cada recorrido marco:
 | Pasos ★ que me evalúan | Respuesta a fuga de agua (MO-EAF-01) · perfiles y anormalidades (MO-EAF-04) · verificación de LOTO y llave cautiva (MO-EAF-08) · conteo y mando de sector (MS-ACE-09) |
 | Vigencia | **12 meses** alturas, espacios confinados y grúas/izaje; **24 meses** ERC, evaluador TD-P07 y demás |
 
-## 10. Glosario rápido
+## 11. Glosario rápido
 
 | Término | Qué significa |
 |---|---|
@@ -244,7 +251,7 @@ En cada recorrido marco:
 | WBGT | Índice de calor para el régimen trabajo/descanso (NOM-015) |
 | Ventana de vaciado | T, O, C y P que debe cumplir la colada para vaciar |
 
-## 11. Control de cambios
+## 12. Control de cambios
 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|

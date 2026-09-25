@@ -22,7 +22,7 @@
 
 ## 2. Mi puesto en 30 segundos
 
-Muevo ollas con **≈ 150 t de acero líquido** (≈ 230 t en el gancho [Supuesto]) del LF a la torreta de colada y regreso las vacías. Si la olla cae, se ladea o se perfora en el aire, la consecuencia es **catastrófica**. Por eso pruebo la grúa cada turno, uso solo la ruta autorizada y **no muevo una olla insegura**. Tengo la autoridad y la obligación de detener un traslado inseguro.
+Muevo ollas con **≈ 150 t de acero líquido** (≈ 230 t en el gancho [Supuesto]) del LF a la torreta de colada. Regreso las vacías. Si la olla cae, se ladea o se perfora en el aire, la consecuencia es **catastrófica**. Por eso pruebo la grúa cada turno, uso solo la ruta autorizada y **no muevo una olla insegura**. Tengo la autoridad y la obligación de detener un traslado inseguro.
 
 > ★ **Mis 3 reglas de oro**
 > 1. **Frenos y límites probados** al inicio del turno. Si falla uno, la grúa **no mueve metal líquido**.

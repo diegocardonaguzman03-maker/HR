@@ -1,5 +1,7 @@
 # IT-ACE-S01 — Instrucción de Trabajo: Primer Hornero (Operador de Púlpito de Horno)
 
+## 1. Encabezado de control
+
 | Campo | Valor |
 |---|---|
 | Código | IT-ACE-S01 |
@@ -18,7 +20,7 @@
 
 > Esta IT **no reemplaza** a los manuales: los resume para tu puesto. Si hay duda, manda el manual. Los valores salen de FT-ACE-001 v0.3 y conservan sus marcas [Validar con OEM / Ingeniería de Proceso] y [Supuesto].
 
-## 1. Mi puesto en 30 segundos
+## 2. Mi puesto en 30 segundos
 Conduzco la fusión del horno de colada a colada: 150 t en un tap-to-tap de 55 min. Manejo la energía, el DRI, el oxígeno, el carbono y el vaciado desde el púlpito. Vigilo el agua de paneles y bóveda: una fuga que llega al metal líquido puede causar una explosión. Doy la secuencia técnica y las señales de proceso a S-02, S-03, S-04, S-09 y S-10; no tengo funciones de mando (LFT art. 9).
 
 > **★ Mis 3 reglas de oro**
@@ -26,7 +28,7 @@ Conduzco la fusión del horno de colada a colada: 150 t en un tap-to-tap de 55 m
 > 2. ★ **Nadie en la roja:** no energizo, no cargo y no vacío si hay una persona en la zona de exclusión.
 > 3. ★ **Horno seguro para cargar:** interruptor abierto, electrodos arriba, bóveda girada y sin agua a la vista.
 
-## 2. Mi turno de 12 horas
+## 3. Mi turno de 12 horas
 
 ```mermaid
 flowchart LR
@@ -38,13 +40,13 @@ flowchart LR
     D --> F["18:30 / 06:30<br/>Registro en nivel 2<br/>Entrega de turno cara a cara"]
 ```
 
-## 3. Mi área de trabajo
+## 4. Mi área de trabajo
 
 ![Figura IT-S01. Púlpito del EAF: equipos, zonas y ruta de escape](../img/it-S01-puesto.svg)
 
 Figuras de apoyo: [corte del EAF](../img/eaf-corte-horno.svg) · [perfil de potencia](../img/eaf-perfil-potencia.svg).
 
-## 4. Mi EPP
+## 5. Mi EPP
 
 | EPP (pictograma en texto) | Cuándo lo uso |
 |---|---|
@@ -56,7 +58,7 @@ Figuras de apoyo: [corte del EAF](../img/eaf-corte-horno.svg) · [perfil de pote
 | [Detector personal CO/O₂] | Al salir al piso del horno |
 | [Careta dorada + capucha y chaquetón aluminizados, polainas, guantes] | Si entro a zona roja (solo con autorización de C-05) |
 
-## 5. Mis tareas paso a paso
+## 6. Mis tareas paso a paso
 
 ### Tarea 1 — Preparación del horno entre coladas (MO-EAF-01)
 
@@ -201,7 +203,7 @@ flowchart LR
 > - Hay perforación de olla: retroinclina, evacúa a ≥ 25 m, **nunca agua**.
 > - Ebullición en la olla: detén adiciones y vaciado; refugio en ≤ 30 s.
 
-## 6. Mis controles críticos (★)
+## 7. Mis controles críticos (★)
 
 Antes de cada tarea crítica marco:
 - ☐ Agua en HMI: Δ caudal ≤ 2%, T de panel ≤ 60 °C, presión 4–6 bar.
@@ -212,7 +214,7 @@ Antes de cada tarea crítica marco:
 - ☐ DRI, olla de escoria, fosa y adiciones secos.
 - ☐ Presión del horno −5 a −15 Pa; sin alarma de CO en el púlpito.
 
-## 7. Si algo sale mal
+## 8. Si algo sale mal
 
 | Síntoma | Qué hago | A quién aviso |
 |---|---|---|
@@ -227,7 +229,7 @@ Antes de cada tarea crítica marco:
 
 Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar — tipo — personas — quién llama"**.
 
-## 8. Registros que lleno
+## 9. Registros que lleno
 
 | Registro | Cuándo | Dónde |
 |---|---|---|
@@ -239,7 +241,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Demoras y eventos (fugas, iceberg, EBT, roturas) | Al ocurrir | Bitácora del horno |
 | Entrega de turno | 07:00 / 19:00 | Bitácora del horno |
 
-## 9. Mi certificación
+## 10. Mi certificación
 
 | Concepto | Requisito |
 |---|---|
@@ -250,7 +252,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Vigencia | **24 meses** TD-P07 del puesto; **12 meses** alturas (NOM-009) y grúas/izaje o señalero (NOM-006) |
 | Refresco | 16 h/año: simulacro de fuga de agua y lecciones aprendidas |
 
-## 10. Glosario rápido
+## 11. Glosario rápido
 
 | Término | Qué significa |
 |---|---|
@@ -266,7 +268,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Llave cautiva | Llave que bloquea el arco y los movimientos mientras alguien está en la plataforma |
 | M1 / M3 | Mediciones de T y O: a la mitad (min 24–26 de arco) y antes del vaciado |
 
-## 11. Control de cambios
+## 12. Control de cambios
 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|

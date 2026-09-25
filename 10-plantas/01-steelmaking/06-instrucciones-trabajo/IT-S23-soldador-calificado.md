@@ -13,7 +13,7 @@
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico |
 | Manuales de referencia | MM-EAF-01 · apoyo en MM-OLL-01 y MM-GR-01 · MS-ACE-02, -03, -05, -06, -10 · DP-ACE-S (S-23) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
-| Revisión técnica | experto-operativo-metalurgia (criterio aplicado por la Academia de Mantenimiento) — pendiente de firma del experto |
+| Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
 | Revisión laboral | Pendiente — experto-relaciones-laborales |
 | Aprobó | Pendiente — Director |
@@ -127,7 +127,7 @@ flowchart LR
 | 3 | Corta la sección dañada. | Longitud mínima 150 mm. | ★ |
 | 4 | Bisela los extremos y limpia. | Bisel 37.5° [Validar WPS]; sin óxido ni agua. | ★ |
 | 5 | Precalienta si el WPS lo pide. | Temperatura del WPS. | ★ |
-| 6 | Aplica la raíz GTAW y el relleno SMAW E7018. | Según WPS [Validar WPS]; sin porosidad ni socavado visible. | ★ |
+| 6 | Aplica la raíz GTAW y el relleno SMAW E7018. | Según WPS [Validar WPS]; E7018 seco, del horno de electrodos (bajo hidrógeno); sin porosidad ni socavado visible. | ★ |
 | 7 | Registra WPS, soldador y consumible. | Registro de soldadura completo. | 🔎 |
 
 > 🛑 **ALTO — detén y avisa si…**

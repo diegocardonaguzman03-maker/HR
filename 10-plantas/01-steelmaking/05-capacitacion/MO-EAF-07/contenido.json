@@ -36,7 +36,7 @@
   ],
   "titulos": {
     "objetivos": "Al terminar, vacías en ventana y sin exponer a nadie",
-    "roles": "Seis roles, un dueño: C-05 autoriza lo que sale de norma",
+    "roles": "Siete roles; C-05 autoriza lo que sale de norma",
     "flujo": "El vaciado se decide antes de abrir el EBT",
     "figura": "El EBT deja el talón y la escoria dentro del horno",
     "equipos": "Seis equipos deben estar en condición antes de inclinar",
@@ -157,7 +157,7 @@
     },
     {
       "svg": "olla-corte-valvula-tapon.svg",
-      "titulo": "La olla que recibe debe estar caliente, cerrada y con argón",
+      "titulo": "La olla receptora: caliente, cerrada y con argón",
       "lectura": [
         "Cara caliente ≥ 1,000 °C: una olla fría o húmeda puede explotar al recibir acero.",
         "La válvula deslizante cerrada con arena de sello asegura la apertura libre en colada.",
@@ -181,7 +181,7 @@
     [
       "Sistema de inclinación",
       "Inclina y retroinclina",
-      "Retroinclinación ≤ 3 s a −3° [Validar con OEM]",
+      "Retroinclina ≤ 3 s a −3° [Validar con OEM]",
       "Prueba de velocidad"
     ],
     [
@@ -626,7 +626,7 @@
       "Recurso"
     ],
     [
-      "1. Apertura y por qué importa",
+      "1. Sesión 1 de 2: apertura y por qué importa",
       "20",
       "Casos de incidentes de vaciado; reglas de oro",
       "Láminas 1–2"
@@ -639,25 +639,25 @@
     ],
     [
       "3. Equipos y parámetros",
-      "60",
+      "90",
       "Ejercicio: calcular el Al con O = 700 ppm",
       "Láminas 7–8, calculadora"
     ],
     [
       "4. Seguridad",
-      "60",
+      "90",
       "Zonas de exclusión en plano; EPP completo",
       "Láminas 9–10, EPP físico"
     ],
     [
       "5. Calidad y paso a paso",
-      "90",
+      "120",
       "Lectura guiada de los 14 pasos; pasos ★",
       "Láminas 11–13"
     ],
     [
       "6. Condiciones anormales",
-      "45",
+      "60",
       "Simulacro de mesa: EBT que no abre",
       "Lámina 14"
     ],
@@ -669,9 +669,10 @@
     ],
     [
       "8. Cierre y ruta a OJT",
-      "15",
+      "30",
       "Plan de OJT y certificación",
       "Lámina 17"
     ]
-  ]
+  ],
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno — 2026-09-26"}
 }

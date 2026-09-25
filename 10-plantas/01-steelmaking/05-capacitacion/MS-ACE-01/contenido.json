@@ -38,7 +38,7 @@
     "cierre": "Reglas del metal líquido que no se negocian"
   },
   "objetivos": [
-    {"titulo": "Reconocer las tres zonas", "detalle": "Roja: solo personal esencial con EPP aluminizado. Amarilla: autorizado tras barrera. Verde: tránsito con EPP básico."},
+    {"titulo": "Señalar las tres zonas en campo", "detalle": "Roja: solo personal esencial con EPP aluminizado. Amarilla: autorizado tras barrera. Verde: tránsito con EPP básico."},
     {"titulo": "Aplicar las distancias por operación", "detalle": "Vaciado roja ≤ 10 m y amarilla 10–25 m; ruta de olla ± 5 / ± 15 m; arranque de CC ≤ 10 / 20 m."},
     {"titulo": "Preparar el evento sin exponer a nadie", "detalle": "Barreras, zona roja vacía (visual + CCTV), sirena y semáforo ≥ 30 s antes; ruta de escape libre."},
     {"titulo": "Reaccionar a tiempo", "detalle": "Máximo 2 min en roja por intervención; ante perforación, fuga o ebullición, a refugio o verde en ≤ 30 s."}
@@ -143,7 +143,7 @@
     {"n": 8, "paso": "Opera desde posición protegida", "como": "Púlpito o posición marcada; ruta de escape a la espalda y libre", "criterio": "Operador protegido", "critico": true, "rol": "Operadores"},
     {"n": 9, "paso": "Muestrea o mide temperatura", "como": "De lado a la puerta, a ≥ 1.5 m; lanza seca y precalentada; máximo 2 min en roja", "criterio": "Sin exposición prolongada", "critico": true, "rol": "S-02/S-06/S-11"},
     {"n": 10, "paso": "Traslada la olla", "como": "Solo por ruta pintada, altura mínima con ≥ 1 m de holgura; detente si alguien cruza", "criterio": "Nadie bajo la ruta", "critico": true, "rol": "S-09"},
-    {"n": 11, "paso": "Arranca la CC", "como": "Solo S-12, S-13, S-14 y C-06 en roja; nadie bajo la máquina hasta que C-06 libere", "criterio": "Sin personal no esencial", "critico": true, "rol": "C-06"},
+    {"n": 11, "paso": "Arranca la CC", "como": "Solo S-12, S-13, S-14 y C-06 en roja; nadie bajo la máquina hasta que la hebra salga de extractores y C-06 libere", "criterio": "Sin personal no esencial", "critico": true, "rol": "C-06"},
     {"n": 12, "paso": "Vigila condiciones anormales", "como": "Punto rojo en coraza, humo en válvula, vapor, chispeo o ruido de ebullición: responde", "criterio": "Respuesta ≤ 30 s", "critico": true, "rol": "Todos"},
     {"n": 13, "paso": "Cierra el evento", "como": "Semáforo a verde, retira barreras temporales, registra hora y anomalías", "criterio": "Registro completo", "critico": false, "rol": "S-01 / S-12"}
   ],
@@ -170,8 +170,8 @@
     ],
     "checklist": [
       "Inspecciona el EPP aluminizado y rechaza el húmedo o dañado",
-      "Verifica que la zona roja está vacía antes de iniciar (visual + CCTV)",
-      "Anuncia y espera ≥ 30 s con sirena y semáforo",
+      "Cierra accesos con barreras y verifica la zona roja vacía (visual + CCTV) antes de iniciar",
+      "Prueba sirena, semáforo y CCTV al inicio del turno; anuncia y espera ≥ 30 s",
       "Trabaja desde la posición protegida con la ruta de escape libre y ≤ 2 min en roja",
       "Traslada la olla solo por la ruta pintada, con ≥ 1 m de holgura, y se detiene si alguien cruza",
       "Reconoce las señales de perforación de olla y reacciona en ≤ 30 s"
@@ -207,5 +207,5 @@
     ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
     ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
   ],
-  "validacion": {"seguridad": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno con observaciones — 2026-09-26", "tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno — 2026-09-26"}
 }

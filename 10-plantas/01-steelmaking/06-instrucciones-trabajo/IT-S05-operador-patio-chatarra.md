@@ -1,5 +1,7 @@
 # IT-ACE-S05 — Instrucción de Trabajo: Operador de Patio de Chatarra
 
+## 1. Encabezado de control
+
 | Campo | Valor |
 |---|---|
 | Código | IT-ACE-S05 |
@@ -18,15 +20,15 @@
 
 > Esta IT **no reemplaza** a los manuales: los resume para tu puesto. Si hay duda, manda el manual. Los valores salen de FT-ACE-001 v0.3 y conservan sus marcas [Validar con OEM / Ingeniería de Proceso] y [Supuesto].
 
-## 1. Mi puesto en 30 segundos
-Recibo, reviso, clasifico y cargo la chatarra en canastas según la receta. Lo que yo dejo pasar cae sobre acero líquido en el horno: un tanque cerrado, agua o hielo pueden causar una explosión, y una fuente radiactiva contamina la planta. Por eso paso cada camión por el pórtico, retiro los prohibidos y entrego canastas secas de 55–70 t a tiempo para el tap-to-tap de 55 min.
+## 2. Mi puesto en 30 segundos
+Recibo, reviso, clasifico y cargo la chatarra en canastas según la receta. Lo que yo dejo pasar cae sobre acero líquido en el horno: un tanque cerrado, agua o hielo pueden causar una explosión, y una fuente radiactiva contamina la planta. Por eso paso cada camión por el pórtico y retiro los prohibidos. Entrego canastas secas de 55–70 t a tiempo para el tap-to-tap de 55 min.
 
 > **★ Mis 3 reglas de oro**
 > 1. ★ **Alarma del pórtico = detengo, aíslo y aviso.** Nunca toco la pieza sospechosa.
 > 2. ★ **Nada prohibido ni húmedo en la canasta:** si lo veo, lo retiro o 🛑 no entrego la canasta.
 > 3. ★ **Nadie en el radio del electroimán.**
 
-## 2. Mi turno de 12 horas
+## 3. Mi turno de 12 horas
 
 ```mermaid
 flowchart LR
@@ -38,13 +40,13 @@ flowchart LR
     D --> F["18:30 / 06:30<br/>Inventario de pilas<br/>entrega de turno"]
 ```
 
-## 3. Mi área de trabajo
+## 4. Mi área de trabajo
 
 ![Figura IT-S05. Patio de chatarra: pórtico, aislamiento, pilas, electroimán y armado de canasta](../img/it-S05-puesto.svg)
 
 Figura de apoyo: [flujo general de la acería](../img/eaf-flujo-acería.svg).
 
-## 4. Mi EPP
+## 5. Mi EPP
 
 | EPP (pictograma en texto) | Cuándo lo uso |
 |---|---|
@@ -60,7 +62,7 @@ Figura de apoyo: [flujo general de la acería](../img/eaf-flujo-acería.svg).
 
 Trabajo a la intemperie: hidrátate 250 mL cada 15–20 min y usa la sombra en los descansos.
 
-## 5. Mis tareas paso a paso
+## 6. Mis tareas paso a paso
 
 ### Tarea 1 — Pórtico de radiación: prueba y recepción de camiones (MO-EAF-02 / MS-ACE-07)
 
@@ -153,7 +155,7 @@ flowchart LR
 > - Pesa > 70 t: retira material. < 50 t: completa o avisa a C-17.
 > - Ves un prohibido dentro de la canasta armada.
 
-## 6. Mis controles críticos (★)
+## 7. Mis controles críticos (★)
 
 Antes de cada tarea crítica marco:
 - ☐ Pórtico probado al inicio del turno y registrado.
@@ -164,7 +166,7 @@ Antes de cada tarea crítica marco:
 - ☐ Canasta seca, sin goteo, 55–70 t, nada sobre el borde.
 - ☐ Oxicorte: permiso de trabajo en caliente, mangueras y arrestaflamas revisados, vigía de fuego (NOM-027).
 
-## 7. Si algo sale mal
+## 8. Si algo sale mal
 
 | Síntoma | Qué hago | A quién aviso |
 |---|---|---|
@@ -179,7 +181,7 @@ Antes de cada tarea crítica marco:
 
 Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar — tipo — personas — quién llama"**.
 
-## 8. Registros que lleno
+## 9. Registros que lleno
 
 | Registro | Cuándo | Dónde |
 |---|---|---|
@@ -190,7 +192,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Permiso de trabajo en caliente | Cada oxicorte | Permiso firmado |
 | Inventario de pilas por tipo | Fin de turno | Sistema de inventario |
 
-## 9. Mi certificación
+## 10. Mi certificación
 
 | Concepto | Requisito |
 |---|---|
@@ -201,7 +203,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Vigencia | **12 meses** fuentes radiactivas (MS-ACE-07, NOM-012), grúas/izaje (NOM-006) y alturas (NOM-009); **24 meses** demás TD-P07 |
 | Refresco | 8 h/año: simulacro de alarma radiológica |
 
-## 10. Glosario rápido
+## 11. Glosario rápido
 
 | Término | Qué significa |
 |---|---|
@@ -215,7 +217,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Retorno interno | Despuntes, colas y costras de la propia planta |
 | Electroimán / pulpo | Aditamentos de la grúa para levantar chatarra |
 
-## 11. Control de cambios
+## 12. Control de cambios
 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|

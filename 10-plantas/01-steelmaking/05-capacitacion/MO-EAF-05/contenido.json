@@ -33,7 +33,7 @@
   "objetivos": [
     {"titulo": "Operar quemadores y lanzas", "detalle": "Modo quemador en la fusión (O₂:gas ≈ 2:1); modo lanza en baño plano; O₂ total 30–40 Nm³/t."},
     {"titulo": "Formar y mantener la espuma", "detalle": "Carbono 8–12 kg/t, cal 30–45 kg/t y dolomita 10–15 kg/t para que la espuma cubra el arco."},
-    {"titulo": "Leer y corregir la escoria", "detalle": "B2 1.8–2.2, FeO 25–35 %, MgO 8–10 %: elegir la corrección con el análisis y con lo que se ve."},
+    {"titulo": "Evaluar y corregir la escoria", "detalle": "B2 1.8–2.2, FeO 25–35 %, MgO 8–10 %: elegir la corrección con el análisis y con lo que se ve."},
     {"titulo": "Desescoriar sin exponer a nadie", "detalle": "Olla y fosa secas, zona libre frente a la puerta; ante ebullición, cortar C y reducir O₂."}
   ],
   "por_que_importa": "Sin espuma, el arco radia a paredes y bóveda: más kWh/t, paneles dañados y N alto. Con FeO y B2 fuera de rango se pierde hierro, se ataca el refractario y no sale el P. Y la escoria líquida que cae sobre agua o sale en una ebullición violenta mata.",
@@ -189,7 +189,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de ebullición y escoria sobre agua", "Láminas 1–2"],
+    ["1. Sesión 1 de 3: apertura y por qué importa", "30", "Casos de ebullición y escoria sobre agua", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con el corte del horno", "Láminas 3–6"],
     ["3. Química de la escoria", "90", "B2, FeO, MgO; diagnóstico por observación", "Muestras de escoria, videos"],
     ["4. Equipos y parámetros", "60", "Programa de O₂ por etapa", "Láminas 7–8"],
@@ -199,5 +199,5 @@
     ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
     ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno — 2026-09-26"}
 }

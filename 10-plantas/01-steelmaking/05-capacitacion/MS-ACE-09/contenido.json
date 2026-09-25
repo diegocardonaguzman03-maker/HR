@@ -172,7 +172,7 @@
       "Nombra lo prohibido: agua sobre metal, bascular con agua, rescate sin ERA",
       "C-04 asume el mando y logra el conteo en ≤ 10 min",
       "La brigada interviene solo por orden del CI, con EPP y ERA",
-      "El reingreso se autoriza por escrito con atmósfera en rango, metal sólido y LOTO"
+      "Reingreso por escrito: < 10 % LEL, CO < 25 ppm, O₂ 19.5–23.5 %, metal sólido y LOTO"
     ]
   },
   "quiz": [
@@ -205,5 +205,5 @@
     ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
     ["9. Cierre y ruta a simulacros", "15", "Plan de simulador y simulacros de campo", "Lámina 17"]
   ],
-  "validacion": {"seguridad": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno con observaciones — 2026-09-26", "tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

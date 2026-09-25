@@ -51,7 +51,7 @@
   },
   "objetivos": [
     {
-      "titulo": "Leer el lazo de nivel",
+      "titulo": "Explicar el lazo de nivel",
       "detalle": "Explicar cómo el nivel del distribuidor y la buza fijan la velocidad en colada abierta."
     },
     {
@@ -534,21 +534,21 @@
         "U",
         "32 h (simulador [Validar])",
         "160 h / 20 coladas",
-        "24 meses"
+        "24 meses; radiación 12"
       ],
       [
         "S-13 Operador de Plataforma",
         "U",
         "24 h",
         "120 h / 20 coladas",
-        "24 meses"
+        "24 meses; radiación 12"
       ],
       [
         "S-14 Ayudante de Colada",
         "U",
         "16 h",
         "120 h / 20 coladas",
-        "24 meses"
+        "24 meses; radiación 12"
       ],
       [
         "C-06 Supervisor",
@@ -649,7 +649,7 @@
       "Recurso"
     ],
     [
-      "1. Apertura y por qué importa",
+      "1. Sesión 1 de 4: apertura y por qué importa",
       "30",
       "Casos de breakout y de falla de agua; reglas de oro",
       "Portada y objetivos"
@@ -697,7 +697,8 @@
       "Competencia y cierre"
     ]
   ],
-  "validacion": {
-    "tecnica": "visto bueno — 2026-09-25"
+  "validacion": {"seguridad": "visto bueno — 2026-09-26",
+    "tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26",
+    "laboral": "visto bueno con observaciones — 2026-09-26"
   }
 }

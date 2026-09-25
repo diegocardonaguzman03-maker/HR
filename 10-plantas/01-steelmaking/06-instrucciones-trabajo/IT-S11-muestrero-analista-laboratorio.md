@@ -210,7 +210,7 @@ flowchart LR
 | MO-LF-01 | **U** (3) | 24 h | 80 h / 100 análisis | Preparación y reporte | 24 meses |
 | MS-ACE-01 | **U** (3) | 8 h (metal fundido) | 40 h + 20 muestreos | 3, 6, 9, 12 | 24 meses (TD-P07) |
 
-Plan del puesto (DP-ACE-S): ruta técnica 40 h, OJT 300 h (25 turnos), refresco con ensayo de aptitud interlaboratorio 8 h/año. Sin certificaciones de 12 meses en este puesto. La DP fija la meta de tiempo en ≤ 3 min [Supuesto] y los manuales en ≤ 4 min [Supuesto]: pendiente de homologar con C-09.
+Plan del puesto (DP-ACE-S): ruta técnica 40 h, OJT 300 h (25 turnos), refresco con ensayo de aptitud interlaboratorio 8 h/año. Sin certificaciones de 12 meses en este puesto. Tiempo de análisis homologado con MO-EAF-06 y MO-LF-01: **≤ 4 min** [Supuesto] (rango 3–5 min; alarma > 6 min). La DP-ACE-S de S-11 aún dice ≤ 3 min: se corrige en la DP; la meta final la valida C-09 (experto-operativo-metalurgia, 2026-09-26).
 
 ## 11. Glosario rápido
 

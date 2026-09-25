@@ -17,7 +17,7 @@
 | Revisión laboral | Pendiente — experto-relaciones-laborales |
 | Aprobó | Pendiente — Director de C&D |
 
-> Esta IT **no reemplaza** a los manuales. Resume lo que tú haces en el turno. Si hay duda, manda el manual. Los valores son de referencia de FT-ACE-001 y deben validarse con OEM / Ingeniería de Proceso antes de usarse en planta.
+> Esta IT **no reemplaza** a los manuales. Resume lo que tú haces en el turno. Si hay duda, manda el manual. Los valores son de referencia de FT-ACE-001. Deben validarse con OEM / Ingeniería de Proceso antes de usarse en planta.
 
 ## 2. Mi puesto en 30 segundos
 Conduces la máquina desde el púlpito: velocidad, nivel de molde, agua de molde, enfriamiento y alarmas. Arrancas, sostienes y cierras la secuencia. Si el molde pierde agua o nivel, tú eres el primero en verlo. Un breakout puede matar: tu reacción en segundos lo evita.
@@ -167,7 +167,7 @@ flowchart LR
 | 5 | Reanuda | 0.3 m/min, nivel automático, rampa ≤ 0.2 m/min por minuto | ★ |
 | 6 | Marca el planchón de cambio o de unión | Evento en tracking | 🔎 |
 
-**CC2 (MO-CC2-06):** soy consultado. Fijo la velocidad de la línea antes del cambio de buza, regreso a automático a ± 10 mm y controlo la línea cerrada (detengo la extracción si hay breakout o atoramiento).
+**CC2 (MO-CC2-06):** soy consultado. Fijo la velocidad de la línea antes del cambio de buza y regreso a automático a ± 10 mm. Controlo la línea cerrada (detengo la extracción si hay breakout o atoramiento).
 
 > **🛑 ALTO — detén y avisa si…**
 > - Línea detenida > 5 min en el cambio de distribuidor: cierre de secuencia.

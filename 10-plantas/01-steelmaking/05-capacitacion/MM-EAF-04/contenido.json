@@ -39,7 +39,7 @@
     "roles": "C-12 emite la licencia; solo S-20 certificado maniobra",
     "flujo": "Cinco reglas de oro antes de tocar cualquier celda",
     "figura": "Interruptor extraído, seccionador y tierras visibles",
-    "equipos": "Nueve equipos; las protecciones deben estar probadas",
+    "equipos": "Equipos en servicio solo con protecciones probadas",
     "parametros": "Acetileno creciente o PI < 1.25: no se energiza",
     "seguridad": "Media tensión y arco eléctrico: errores sin regreso",
     "calidad": "Un OLTC bloqueado alarga la colada y sube los kWh/t",
@@ -59,7 +59,7 @@
       "detalle": "Detector probado en fuente conocida, 3 fases y otra vez en fuente conocida; tierras en primario y secundario."
     },
     {
-      "titulo": "Leer aceite, gases y pruebas",
+      "titulo": "Evaluar aceite, gases y pruebas",
       "detalle": "Rigidez ≥ 50 kV, humedad ≤ 15 ppm, C₂H₂ ≤ 1 ppm, PI ≥ 1.5, Tan δ ≤ 0.5 %, TTR ±0.5 %."
     },
     {
@@ -323,7 +323,7 @@
     ],
     [
       "Energía específica",
-      "560–620 kWh/t",
+      "560 kWh/t (520–600)",
       "KPI diario (C-07)",
       "Energía alta por derivación bloqueada"
     ],
@@ -638,7 +638,7 @@
       "Recurso"
     ],
     [
-      "1. Apertura y por qué importa",
+      "1. Sesión 1 de 5: apertura y por qué importa",
       "30",
       "Casos de electrocución y arco en maniobra",
       "Láminas 1–2"
@@ -692,5 +692,5 @@
       "Lámina 17"
     ]
   ],
-  "validacion": {}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno con observaciones — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

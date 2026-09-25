@@ -201,7 +201,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de olla perforada y pérdida de secuencia", "Láminas 1–2"],
+    ["1. Sesión 1 de 2: apertura y por qué importa", "30", "Casos de olla perforada y pérdida de secuencia", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con la torreta y el distribuidor", "Láminas 3–6"],
     ["3. Equipos y parámetros", "90", "Ejercicio: calcular la reserva y aplicar la tabla", "Láminas 7–8, calculadora"],
     ["4. Seguridad", "60", "Zonas bajo olla y giro; EPP de lanceado", "Láminas 9–10, EPP físico"],
@@ -210,5 +210,5 @@
     ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + preguntas orales", "Lámina 16"],
     ["8. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Lámina 17"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

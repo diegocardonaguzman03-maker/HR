@@ -1,5 +1,7 @@
 # IT-ACE-S04 — Instrucción de Trabajo: Operador de Grúa de Carga (nave de hornos)
 
+## 1. Encabezado de control
+
 | Campo | Valor |
 |---|---|
 | Código | IT-ACE-S04 |
@@ -18,7 +20,7 @@
 
 > Esta IT **no reemplaza** a los manuales: los resume para tu puesto. Si hay duda, manda el manual. Los valores salen de FT-ACE-001 v0.3 y conservan sus marcas [Validar con OEM / Ingeniería de Proceso] y [Supuesto]. MM-GR-01 cubre las grúas de colada; para la grúa de carga se aplican criterios equivalentes con el manual OEM de la grúa [Validar con OEM].
 
-## 1. Mi puesto en 30 segundos
+## 2. Mi puesto en 30 segundos
 Cargo el horno con canastas de chatarra de 55–70 t y muevo electrodos, bóveda y componentes. Cada carga cae sobre un talón de 20–30 t de acero líquido: la precisión y la señal correcta evitan proyecciones, daños y lesiones. Mi carga **nunca** pasa sobre personas ni sobre el púlpito. Si la grúa, el enganche o la señal no están bien, rechazo el izaje y aviso.
 
 > **★ Mis 3 reglas de oro**
@@ -26,7 +28,7 @@ Cargo el horno con canastas de chatarra de 55–70 t y muevo electrodos, bóveda
 > 2. ★ **Nadie bajo la carga:** bocina antes de cada movimiento; ruta libre ± 5 m.
 > 3. ★ **Descargo solo con la señal del S-01** y el horno sin potencia.
 
-## 2. Mi turno de 12 horas
+## 3. Mi turno de 12 horas
 
 ```mermaid
 flowchart LR
@@ -38,13 +40,13 @@ flowchart LR
     D --> F["18:30 / 06:30<br/>Grúa estacionada<br/>bitácora y entrega"]
 ```
 
-## 3. Mi área de trabajo
+## 4. Mi área de trabajo
 
 ![Figura IT-S04. Grúa de carga en la nave de hornos](../img/it-S04-puesto.svg)
 
 Figuras de apoyo: [inspección de gancho de grúa](../img/mm-gancho-grua-inspeccion.svg) · [zonas de exclusión de la nave](../img/ms-zonas-exclusion-nave.svg).
 
-## 4. Mi EPP
+## 5. Mi EPP
 
 | EPP (pictograma en texto) | Cuándo lo uso |
 |---|---|
@@ -58,7 +60,7 @@ Figuras de apoyo: [inspección de gancho de grúa](../img/mm-gancho-grua-inspecc
 
 Cabina en altura con calor y polvo: hidrátate 250 mL cada 15–20 min y respeta la rotación de 2 h.
 
-## 5. Mis tareas paso a paso
+## 6. Mis tareas paso a paso
 
 ### Tarea 1 — Inspección pre-uso de la grúa (MS-ACE-04 / MM-GR-01)
 
@@ -152,7 +154,7 @@ flowchart LR
 > - La carga desliza en la prueba de levante.
 > - Te piden tirar en diagonal: inclinación del gancho > 5° = no se iza.
 
-## 6. Mis controles críticos (★)
+## 7. Mis controles críticos (★)
 
 Antes de cada tarea crítica marco:
 - ☐ Inspección pre-uso firmada sin hallazgos críticos.
@@ -163,7 +165,7 @@ Antes de cada tarea crítica marco:
 - ☐ Prueba de levante de 200–300 mm y 10 s con la primera carga.
 - ☐ Canasta seca, sin goteo.
 
-## 7. Si algo sale mal
+## 8. Si algo sale mal
 
 | Síntoma | Qué hago | A quién aviso |
 |---|---|---|
@@ -176,7 +178,7 @@ Antes de cada tarea crítica marco:
 
 Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar — tipo — personas — quién llama"**.
 
-## 8. Registros que lleno
+## 9. Registros que lleno
 
 | Registro | Cuándo | Dónde |
 |---|---|---|
@@ -185,7 +187,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Maniobras de electrodo y de mantenimiento | Cada maniobra | Bitácora de la grúa |
 | Fallas y golpes a paneles, bóveda o estructura | Al ocurrir | Reporte de turno |
 
-## 9. Mi certificación
+## 10. Mi certificación
 
 | Concepto | Requisito |
 |---|---|
@@ -197,7 +199,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Vigencia | **12 meses** grúas/izaje (MS-ACE-04, NOM-006) y alturas (NOM-009); **24 meses** demás TD-P07 |
 | Refresco | 8 h/año: simulador + inspección |
 
-## 10. Glosario rápido
+## 11. Glosario rápido
 
 | Término | Qué significa |
 |---|---|
@@ -211,7 +213,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Bóveda / delta | Techo del horno / pieza central por donde pasan los electrodos |
 | Zona de exclusión | Área donde nadie puede estar durante la maniobra |
 
-## 11. Control de cambios
+## 12. Control de cambios
 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|

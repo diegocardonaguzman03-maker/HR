@@ -201,7 +201,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Caso Ciudad Juárez 1983–84; reglas", "Láminas 1–2"],
+    ["1. Sesión 1 de 2: apertura y por qué importa", "30", "Caso Ciudad Juárez 1983–84; reglas", "Láminas 1–2"],
     ["2. Roles y dos rutas", "45", "Flujo del molde de CC2 y del pórtico", "Láminas 3–5"],
     ["3. Tiempo, distancia, blindaje", "75", "Ejercicio: dosis al doble de distancia", "Láminas 6–7"],
     ["4. Equipos y límites", "75", "Práctica con medidor portátil y dosímetro", "Láminas 8–9, medidor"],
@@ -211,5 +211,5 @@
     ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
     ["9. Cierre y ruta a OJT", "15", "Plan de OJT con el ESR", "Lámina 17"]
   ],
-  "validacion": {"seguridad": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26", "tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno — 2026-09-26"}
 }

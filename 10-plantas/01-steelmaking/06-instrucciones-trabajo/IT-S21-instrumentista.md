@@ -13,7 +13,7 @@
 | Reporta a | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación |
 | Manuales de referencia | MM-CC-04, MM-EAF-01, MM-CC-03, MM-CC-01, MM-CC-02 · MS-ACE-02, -03, -07 · DP-ACE-S (S-21) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
-| Revisión técnica | experto-operativo-metalurgia (criterio aplicado por la Academia de Mantenimiento) — pendiente de firma del experto |
+| Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
 | Revisión laboral | Pendiente — experto-relaciones-laborales |
 | Aprobó | Pendiente — Director |

@@ -38,7 +38,7 @@
     "cierre": "Reglas de los gases que no se negocian"
   },
   "objetivos": [
-    {"titulo": "Reconocer los cinco gases", "detalle": "CO se mezcla; argón se acumula abajo; gas natural e H₂ suben; O₂ alto hace arder la ropa."},
+    {"titulo": "Identificar los cinco gases", "detalle": "CO se mezcla; argón se acumula abajo; gas natural e H₂ suben; O₂ alto hace arder la ropa."},
     {"titulo": "Portar y probar el detector", "detalle": "Bump test diario, batería ≥ 12 h, calibración vigente; encendido a ≤ 30 cm de la nariz y la boca."},
     {"titulo": "Responder a la alarma", "detalle": "A1 (CO 25 ppm, O₂ fuera de 19.5–23.5 %, 10 % LEL): sal. A2 (CO 200 ppm, 20 % LEL): evacuación del sector."},
     {"titulo": "No rescatar sin ERA", "detalle": "Si alguien cae en zona con gas: alarma y esperar a la brigada; reingreso solo con medición de C-16."}
@@ -136,7 +136,7 @@
     ["Detectores fijos", "Mapa y prueba mensual", "C-16 / S-21", "Zona sin detección"],
     ["Válvulas ESD", "Cierre probado", "Trimestral [Supuesto]", "Fuga sin corte"],
     ["Evaluación NOM-010", "Agentes químicos y exámenes", "C-16 y servicio médico", "Exposición crónica"],
-    ["Sello de argón en CC", "Sin entrada de aire", "Continuo en HMI", "Reoxidación, N₂ alto"]
+    ["Sello de argón en CC", "Sin entrada de aire", "Continuo en HMI", "Reoxidación, N alto en acero, clogging"]
   ],
   "calidad_takeaway": "Cada pico de CO sobre 25 ppm en un detector personal se investiga hasta encontrar la fuente.",
   "pasos": [
@@ -207,5 +207,5 @@
     ["6. Evaluación teórica", "35", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
     ["7. Cierre y demostración", "15", "Plan de demostración práctica", "Lámina 17"]
   ],
-  "validacion": {"seguridad": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26", "tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

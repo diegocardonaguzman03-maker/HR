@@ -204,7 +204,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de clogging y breakout en la unión", "Láminas 1–2"],
+    ["1. Sesión 1 de 2: apertura y por qué importa", "30", "Casos de clogging y breakout en la unión", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido de las tres maniobras con las figuras", "Láminas 3–6"],
     ["3. Equipos y parámetros", "90", "Ejercicio: leer una tendencia del tapón", "Láminas 7–8, tendencias reales"],
     ["4. Seguridad", "60", "Zona roja del frente y exclusión bajo el molde", "Láminas 9–10, EPP físico"],
@@ -213,5 +213,5 @@
     ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + preguntas orales", "Lámina 16"],
     ["8. Cierre y ruta a OJT", "30", "Plan de OJT, simulador y certificación", "Lámina 17"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

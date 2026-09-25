@@ -20,7 +20,7 @@
     "roles": "C-12 programa la prueba; C-06 da la ventana sin acero",
     "flujo": "Torre por gravedad y diésel: dos barreras en 15 s",
     "figura": "XV-1 abre sin energía y el diésel arranca en 10 s",
-    "equipos": "Diez equipos; ninguna barrera puede quedar fuera",
+    "equipos": "Ningún equipo de las barreras puede quedar fuera",
     "parametros": "Más de 15 s para llegar a 90 %: no se cuela",
     "seguridad": "Sin agua en el molde con acero: breakout y explosión",
     "calidad": "Caudal, ΔT y química del agua se ven en la cáscara",
@@ -137,7 +137,7 @@
   "anormales": [
     ["Síntoma", "Acción inmediata", "Avisar a"],
     ["Caudal de molde < 90 %", "Operación reduce velocidad o termina colada; arrancar reserva", "C-06, C-12"],
-    ["ΔT alto con caudal normal", "Operación reduce velocidad; verificar TT", "C-08, S-21"],
+    ["ΔT > 11 (CC1) / > 12 °C (CC2)", "Con caudal normal: operación reduce velocidad; verificar TT e incrustación", "C-08, S-21"],
     ["Apagón con acero en máquina", "Emergencia automática; operación termina la colada (MS-ACE-09)", "C-04, C-12"],
     ["Diésel no arranca en prueba", "No colar si el otro diésel no está disponible", "C-03, C-12"],
     ["Nivel de torre baja sin uso", "Revisar XV-1 y tuberías", "S-19"],
@@ -148,9 +148,9 @@
     "roles": [
       ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
       ["S-21 Instrumentista", "U", "24 h", "3 pruebas mensuales", "24 meses"],
-      ["S-19 Mecánico", "U", "16 h", "3 pruebas", "24; torre y tanques 12"],
+      ["S-19 Mecánico", "U", "16 h", "3 pruebas", "24 meses; altura y confinado 12"],
       ["S-20 Electricista", "U", "NOM-029 + 8 h", "3 pruebas", "12 meses"],
-      ["S-12 Operador de Púlpito", "U", "4 h", "Simulacro", "12 meses"]
+      ["S-12 Operador de Púlpito", "U", "4 h", "Simulacro", "24 meses"]
     ],
     "checklist": [
       "Programa la prueba solo sin acero en CC1 y CC2 y con autorización de C-06",
@@ -181,7 +181,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de breakout por falla de agua", "Láminas 1–2"],
+    ["1. Sesión 1 de 3: apertura y por qué importa", "30", "Casos de breakout por falla de agua", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Secuencia de emergencia con la figura", "Láminas 3–6"],
     ["3. Equipos y especificaciones", "90", "Lazos de caudal y ΔT; lectura de tendencias", "Láminas 7–8, HMI"],
     ["4. Seguridad, LOTO y energía cero", "75", "Barreras, selector automático y batería diésel", "Láminas 9–10, candados"],
@@ -191,5 +191,5 @@
     ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
     ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
   ],
-  "validacion": {}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

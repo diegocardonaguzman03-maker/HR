@@ -1,5 +1,7 @@
 # IT-ACE-S03 — Instrucción de Trabajo: Tercer Hornero (Ayudante de Horno)
 
+## 1. Encabezado de control
+
 | Campo | Valor |
 |---|---|
 | Código | IT-ACE-S03 |
@@ -18,7 +20,7 @@
 
 > Esta IT **no reemplaza** a los manuales: los resume para tu puesto. Si hay duda, manda el manual. Los valores salen de FT-ACE-001 v0.3 y conservan sus marcas [Validar con OEM / Ingeniería de Proceso] y [Supuesto].
 
-## 1. Mi puesto en 30 segundos
+## 2. Mi puesto en 30 segundos
 Apoyo la preparación, el vaciado y el mantenimiento operativo del horno. Preparo la arena del EBT, las adiciones de la olla y los electrodos. Hago el rondín de silos, DRI y casa de bolsas, y mantengo el piso limpio y seguro. Mi trabajo evita la causa n.º 1 de explosiones en la acería: **agua o humedad que toca el metal líquido**. Sigo la guía técnica del S-02 y las instrucciones de C-05.
 
 > **★ Mis 3 reglas de oro**
@@ -26,7 +28,7 @@ Apoyo la preparación, el vaciado y el mantenimiento operativo del horno. Prepar
 > 2. ★ **Todo seco:** arena, lanzas, adiciones y herramientas que tocan el metal.
 > 3. ★ **Si veo algo, detengo y aviso** al S-02: humedad, fuga, metal en fosas o personas en la zona.
 
-## 2. Mi turno de 12 horas
+## 3. Mi turno de 12 horas
 
 ```mermaid
 flowchart LR
@@ -38,13 +40,13 @@ flowchart LR
     D --> F["18:30 / 06:30<br/>Orden y limpieza (5S)<br/>entrega de turno"]
 ```
 
-## 3. Mi área de trabajo
+## 4. Mi área de trabajo
 
 ![Figura IT-S03. Piso del EAF y sistemas de materiales](../img/it-S03-puesto.svg)
 
 Figuras de apoyo: [zonas de exclusión de la nave](../img/ms-zonas-exclusion-nave.svg) · [cambio del EBT](../img/mm-ebt-cambio.svg).
 
-## 4. Mi EPP
+## 5. Mi EPP
 
 | EPP (pictograma en texto) | Cuándo lo uso |
 |---|---|
@@ -59,7 +61,7 @@ Figuras de apoyo: [zonas de exclusión de la nave](../img/ms-zonas-exclusion-nav
 
 Hidrátate 250 mL cada 15–20 min. Si eres nuevo o regresas de > 7 días fuera: aclimatación de 5 días.
 
-## 5. Mis tareas paso a paso
+## 6. Mis tareas paso a paso
 
 ### Tarea 1 — Apoyo en la preparación entre coladas (MO-EAF-01)
 
@@ -150,7 +152,7 @@ flowchart LR
 > - Sale metal o escoria por la coraza: emergencia, evacúa a ≥ 25 m.
 > - La placa del EBT no cierra plana: no llenes.
 
-## 6. Mis controles críticos (★)
+## 7. Mis controles críticos (★)
 
 Antes de cada tarea crítica marco:
 - ☐ Estoy fuera de la zona roja durante carga, fusión y vaciado.
@@ -161,7 +163,7 @@ Antes de cada tarea crítica marco:
 - ☐ Fosa seca y permiso vigente antes de limpiarla; horno fuera de vaciado.
 - ☐ Detector de CO/O₂ encendido.
 
-## 7. Si algo sale mal
+## 8. Si algo sale mal
 
 | Síntoma | Qué hago | A quién aviso |
 |---|---|---|
@@ -175,7 +177,7 @@ Antes de cada tarea crítica marco:
 
 Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar — tipo — personas — quién llama"**.
 
-## 8. Registros que lleno
+## 9. Registros que lleno
 
 | Registro | Cuándo | Dónde |
 |---|---|---|
@@ -185,7 +187,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Condiciones inseguras reportadas | Al detectarlas | Sistema de SSO |
 | Candado / llave cautiva usada | Cada acceso | Bitácora del horno |
 
-## 9. Mi certificación
+## 10. Mi certificación
 
 | Concepto | Requisito |
 |---|---|
@@ -196,7 +198,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Vigencia | **24 meses** TD-P07; **12 meses** alturas (NOM-009), grúas/izaje (NOM-006) y espacios confinados como vigía (NOM-033) |
 | Refresco | 8 h/año: simulacro de emergencia |
 
-## 10. Glosario rápido
+## 11. Glosario rápido
 
 | Término | Qué significa |
 |---|---|
@@ -211,7 +213,7 @@ Mensaje de emergencia por radio: **"EMERGENCIA, EMERGENCIA, EMERGENCIA — lugar
 | Zona roja | Solo personal esencial con EPP aluminizado |
 | 5S | Orden y limpieza del puesto |
 
-## 11. Control de cambios
+## 12. Control de cambios
 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|

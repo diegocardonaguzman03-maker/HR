@@ -528,14 +528,14 @@
         "U",
         "8 h",
         "5 fines de secuencia",
-        "24 meses"
+        "24 meses; radiación 12"
       ],
       [
         "S-12 Operador de Púlpito",
         "U",
         "8 h",
         "5 fines de secuencia",
-        "24 meses"
+        "24 meses; radiación 12"
       ],
       [
         "S-14 Ayudante de Colada",
@@ -685,7 +685,8 @@
       "Competencia y cierre"
     ]
   ],
-  "validacion": {
-    "tecnica": "visto bueno — 2026-09-25"
+  "validacion": {"seguridad": "visto bueno — 2026-09-26",
+    "tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26",
+    "laboral": "visto bueno con observaciones — 2026-09-26"
   }
 }

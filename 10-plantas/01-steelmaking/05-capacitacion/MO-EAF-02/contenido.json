@@ -74,7 +74,7 @@
       "titulo": "Cada canasta cuesta 3 min de arco apagado",
       "lectura": [
         "La carga dura 3 min por canasta, con el arco apagado.",
-        "Una 2.ª canasta suma ≈ 3 min más: tap-to-tap ≈ 58 min.",
+        "Una 2.ª canasta suma ≈ 3 min de arco apagado: hay que cuidar el tap-to-tap de 55 min.",
         "Después de cerrar la bóveda sigue la perforación con tap bajo."
       ]
     }
@@ -164,10 +164,10 @@
     "iluo": "U",
     "roles": [
       ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
-      ["S-05 Operador de Patio", "U", "16 h (4 h radiación)", "60 h / 40 canastas", "24 meses; pórtico 12"],
+      ["S-05 Operador de Patio", "U", "16 h (4 h radiación)", "60 h / 40 canastas", "24 meses; pórtico e izaje 12"],
       ["S-04 Grúa de Carga", "U", "24 h (NOM-006)", "80 h / 40 cargas", "12 meses"],
       ["S-01 Primer Hornero", "U", "8 h", "20 cargas", "24 meses"],
-      ["C-17 Supervisor de Patio", "O (evaluador)", "16 h + evaluador", "—", "12 meses"]
+      ["C-17 Supervisor de Patio", "O (evaluador)", "16 h + evaluador", "—", "24 meses; pórtico 12"]
     ],
     "checklist": [
       "Prueba el pórtico al inicio de turno y no recibe chatarra si falla",
@@ -197,7 +197,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de explosión por humedad en la carga", "Láminas 1–2"],
+    ["1. Sesión 1 de 2: apertura y por qué importa", "30", "Casos de explosión por humedad en la carga", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del flujo patio → horno", "Láminas 3–6"],
     ["3. Equipos y parámetros", "60", "Ejercicio: armar una canasta por capas", "Láminas 7–8, receta"],
     ["4. Seguridad", "60", "Zonas de exclusión de carga en plano; EPP", "Láminas 9–10, EPP físico"],
@@ -207,5 +207,5 @@
     ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 18"],
     ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 16–17, 19"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno — 2026-09-26"}
 }

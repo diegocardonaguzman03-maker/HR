@@ -237,7 +237,7 @@
       "32 °C (1.ª) / 28 °C",
       "25–40 (1.ª) / 20–35 °C",
       "< 20; > 40 (1.ª) o > 35",
-      "< 15 °C: C-06 decide"
+      "< 20 avisa; < 15 C-06 decide"
     ],
     [
       "Nivel del distribuidor al abrir",
@@ -529,8 +529,8 @@
       "C-04, C-06"
     ],
     [
-      "Sobrecalentamiento < 15 °C",
-      "C-06 decide arrancar menos líneas o regresar la olla",
+      "Sobrecalentamiento < 20 °C",
+      "< 20: avisa a C-06; < 15: C-06 decide arrancar menos líneas o regresar la olla",
       "C-06, C-07"
     ]
   ],
@@ -549,21 +549,21 @@
         "U",
         "24 h (simulador [Validar])",
         "10 arranques",
-        "24 meses"
+        "24 meses; radiación 12"
       ],
       [
         "S-13 Operador de Plataforma",
         "U",
         "24 h",
         "10 arranques; 3 lanceos",
-        "24 meses"
+        "24 meses; radiación 12"
       ],
       [
         "S-14 Ayudante de Colada",
         "U",
         "16 h",
         "10 arranques",
-        "24 meses"
+        "24 meses; radiación 12"
       ],
       [
         "C-06 Supervisor",
@@ -664,7 +664,7 @@
       "Recurso"
     ],
     [
-      "1. Apertura y por qué importa",
+      "1. Sesión 1 de 3: apertura y por qué importa",
       "30",
       "Casos de breakout y desbordamiento en arranque; reglas de oro",
       "Portada y objetivos"
@@ -712,7 +712,8 @@
       "Competencia y cierre"
     ]
   ],
-  "validacion": {
-    "tecnica": "visto bueno — 2026-09-25"
+  "validacion": {"seguridad": "visto bueno — 2026-09-26",
+    "tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26",
+    "laboral": "visto bueno con observaciones — 2026-09-26"
   }
 }

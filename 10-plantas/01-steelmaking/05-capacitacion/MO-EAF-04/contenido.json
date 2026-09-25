@@ -191,7 +191,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de arco con fuga de agua y rotura de electrodo", "Láminas 1–2"],
+    ["1. Sesión 1 de 4: apertura y por qué importa", "30", "Casos de arco con fuga de agua y rotura de electrodo", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del perfil por etapas", "Láminas 3–6"],
     ["3. Eléctrica del EAF y regulación", "90", "Z = V/I; tap y longitud de arco; arco cubierto", "Pizarrón, tendencias HMI"],
     ["4. Equipos y parámetros", "75", "Ejercicio: MWh y minutos de arco con 560 kWh/t", "Láminas 7–8, calculadora"],
@@ -201,5 +201,5 @@
     ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
     ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno — 2026-09-26"}
 }

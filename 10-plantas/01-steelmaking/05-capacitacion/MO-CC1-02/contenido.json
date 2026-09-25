@@ -191,7 +191,7 @@
   "reglas": [
     {"titulo": "Sin LOTO no hay manos en el molde", "detalle": "Barra falsa, segmentos, oscilación y ancho bloqueados y probados."},
     {"titulo": "Agua en el molde = no se arranca", "detalle": "Humedad, aceite u óxido + acero líquido = explosión (MS-ACE-03)."},
-    {"titulo": "Sin agua de emergencia no se arranca", "detalle": "Torre con nivel, diésel en automático y prueba ≤ 7 días."},
+    {"titulo": "Sin agua de emergencia no se arranca", "detalle": "Torre con nivel, diésel en automático; arranque semanal y prueba de cambio mensual vigentes."},
     {"titulo": "Sin lista firmada no hay arranque", "detalle": "C-06 revisa todos los puntos y firma la lista previa."}
   ],
   "por_confirmar": [
@@ -200,7 +200,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de fuga y explosión al arranque; reglas de oro", "Láminas 1–2"],
+    ["1. Sesión 1 de 2: apertura y por qué importa", "30", "Casos de fuga y explosión al arranque; reglas de oro", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con el perfil de la máquina", "Láminas 3–6"],
     ["3. Equipos y parámetros", "75", "Ejercicio: calcular el ancho del molde", "Láminas 7–8, calculadora"],
     ["4. Seguridad", "75", "Puntos de LOTO en plano; prueba de arranque", "Láminas 9–10, candados"],
@@ -209,5 +209,5 @@
     ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + preguntas orales", "Lámina 16"],
     ["8. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Lámina 17"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno con observaciones — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno — 2026-09-26"}
 }

@@ -163,7 +163,7 @@
     "roles": [
       ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
       ["S-08 Preparador de Ollas", "U", "24 h", "120 h / 40 ollas", "24 meses"],
-      ["S-24 Refractarista", "U", "24 h", "120 h / 30 cambios de placas", "24 meses; olla 12"],
+      ["S-24 Refractarista", "U", "24 h", "120 h / 30 cambios de placas", "24 meses; confinado 12"],
       ["S-09 Grúa de Colada", "U", "según MO-OLL-02", "20 volteos", "12 meses"],
       ["C-15 Especialista de Refractarios", "O (evaluador)", "32 h + evaluador", "—", "24 meses"]
     ],
@@ -195,7 +195,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de olla húmeda y perforación", "Láminas 1–2"],
+    ["1. Sesión 1 de 3: apertura y por qué importa", "30", "Casos de olla húmeda y perforación", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del ciclo de la olla", "Láminas 3–6"],
     ["3. Refractarios y criterios de retiro", "75", "Desgaste, espesores y termografía", "Muestras de refractario"],
     ["4. Equipos y parámetros", "60", "Válvula, tapón y plan de precalentamiento", "Láminas 7–8"],
@@ -205,5 +205,5 @@
     ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
     ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

@@ -50,7 +50,7 @@
     ["C-16 Especialista de Seguridad", "Dueño; inventario de anclajes certificados; aprueba el plan de rescate", "A"],
     ["Emisor (C-05, C-06, C-11, C-12)", "Emite el permiso; verifica anclaje, equipo, LOTO y rescate", "R"],
     ["Trabajador autorizado y contratistas", "Inspecciona su equipo; se mantiene 100 % conectado", "R"],
-    ["Supervisor u observador", "Vigila la tarea; activa el rescate de inmediato", "R"],
+    ["Supervisor u observador designado", "Observa la tarea; activa el rescate de inmediato", "R"],
     ["Brigada de rescate en altura", "Rescata en < 15 min", "R"],
     ["Ingeniería / C-14", "Certifica puntos de anclaje y líneas de vida fijas", "R"],
     ["Almacén", "Controla vida útil, inspección y retiro de arneses", "R"]
@@ -202,5 +202,5 @@
     ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
     ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
   ],
-  "validacion": {"seguridad": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26", "tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno — 2026-09-26"}
 }

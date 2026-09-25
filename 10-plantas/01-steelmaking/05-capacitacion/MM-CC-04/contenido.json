@@ -20,13 +20,13 @@
     "roles": "Solo el ESR opera el obturador de la fuente",
     "flujo": "En CC2, primero la fuente cerrada; después el LOTO",
     "figura": "El sensor de nivel manda la barra tapón en CC1",
-    "equipos": "Doce equipos controlan la interfaz acero–molde",
+    "equipos": "Estos equipos controlan la interfaz acero–molde",
     "parametros": "Juego lateral > 0.20 mm o dosis ≥ 2 × fondo: alto",
     "seguridad": "Radiación, hidráulica y argón: tres energías ocultas",
     "calidad": "Oscilación y nivel se leen en las marcas del producto",
     "pasos": "Trece pasos; nueve no admiten error",
     "anormales": "Obturador dudoso: alejarse ≥ 3 m y llamar al ESR",
-    "competencia": "Certificación nivel U y protección radiológica",
+    "competencia": "Nivel U y curso POE vigente antes de calibrar",
     "quiz": "Autoevaluación: cinco preguntas antes del OJT",
     "cierre": "Reglas de oscilación, nivel y fuente no negociables"
   },
@@ -121,7 +121,7 @@
     "figura_lectura": [
       "HPU de oscilación y barra tapón: bomba bloqueada, acumuladores a 0 bar y cilindro apoyado.",
       "Cs-137: obturador cerrado y candado del ESR; solo el ESR o personal POE autorizado lo opera.",
-      "Medición a 1 m y en el punto de trabajo: fondo (≈ 0.1–0.3 µSv/h) o < 2 × fondo."
+      "Medición a 1 m y en el punto de trabajo: < 2 × fondo (fondo ≈ 0.1–0.3 µSv/h)."
     ]
   },
   "calidad": [
@@ -142,7 +142,7 @@
     {"n": 6, "paso": "Inspecciona mesa y resortes", "como": "Visual con lámpara; grietas en láminas; pernos marcados", "criterio": "Sin grietas; torque OK", "critico": false, "rol": "S-19"},
     {"n": 7, "paso": "Mantén el detector", "como": "Limpieza, conexiones y enfriamiento", "criterio": "Sin daño", "critico": false, "rol": "S-21 (POE)"},
     {"n": 8, "paso": "Retira LOTO hidráulico", "como": "Solo el necesario para oscilar; personal fuera de la mesa", "criterio": "Nadie en la mesa", "critico": true, "rol": "S-22"},
-    {"n": 9, "paso": "Analiza la oscilación", "como": "Acelerómetros triaxiales en el molde; oscila a 3 frecuencias del rango", "criterio": "±1 cpm; ±0.1; ≤ 0.15 mm", "critico": false, "rol": "S-21"},
+    {"n": 9, "paso": "Analiza la oscilación", "como": "Acelerómetros triaxiales en el molde; oscila a 3 frecuencias del rango", "criterio": "±1 cpm; ±0.1 mm; ≤ 0.15 mm", "critico": false, "rol": "S-21"},
     {"n": 10, "paso": "El ESR abre la fuente", "como": "Personal fuera de la zona controlada (salvo POE con dosímetro); el ESR retira candado y abre", "criterio": "Abierto; cuentas estables", "critico": true, "rol": "C-16 (ESR)"},
     {"n": 11, "paso": "Calibra el nivel", "como": "Calibración de 2 puntos según el sistema (vacío / referencia OEM)", "criterio": "±2 %", "critico": false, "rol": "S-21 con ESR"},
     {"n": 12, "paso": "Retira LOTO restante", "como": "Orden inverso; cada quien retira su candado", "criterio": "Candados retirados", "critico": true, "rol": "Todos"},
@@ -197,7 +197,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Casos de breakout por pegado y de exposición", "Láminas 1–2"],
+    ["1. Sesión 1 de 3: apertura y por qué importa", "30", "Casos de breakout por pegado y de exposición", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Papel del ESR; recorrido del flujo", "Láminas 3–6"],
     ["3. Equipos y especificaciones", "90", "Oscilación no senoidal y lazos de nivel", "Láminas 7–9"],
     ["4. Seguridad, LOTO y energía cero", "90", "Tiempo, distancia, blindaje; LOTO de HPU", "Láminas 10–11, radiámetro"],
@@ -207,5 +207,5 @@
     ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
     ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 18"]
   ],
-  "validacion": {}
+  "validacion": {"seguridad": "visto bueno con observaciones — 2026-09-26","tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

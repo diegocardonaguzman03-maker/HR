@@ -552,7 +552,7 @@
         "24 meses"
       ],
       [
-        "Grúa de CC 50 t (S-27 propuesto)",
+        "Grúa de CC 50 t (hoy S-15)",
         "U",
         "Curso de grúa (NOM-006)",
         "Según MS-ACE-04",
@@ -651,7 +651,7 @@
       "Recurso"
     ],
     [
-      "1. Apertura y por qué importa",
+      "1. Sesión 1 de 2: apertura y por qué importa",
       "30",
       "Casos de explosión por humedad y de buza congelada; reglas de oro",
       "Portada y objetivos"
@@ -699,7 +699,8 @@
       "Competencia y cierre"
     ]
   ],
-  "validacion": {
-    "tecnica": "visto bueno — 2026-09-25"
+  "validacion": {"seguridad": "visto bueno — 2026-09-26",
+    "tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26",
+    "laboral": "visto bueno con observaciones — 2026-09-26"
   }
 }

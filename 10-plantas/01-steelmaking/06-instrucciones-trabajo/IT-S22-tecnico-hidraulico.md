@@ -13,7 +13,7 @@
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico (línea técnica de C-12 en MM-CC-04) |
 | Manuales de referencia | MM-EAF-02, MM-CC-04, MM-CC-01, MM-CC-02 · MS-ACE-02, -04, -07 · DP-ACE-S (S-22) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
-| Revisión técnica | experto-operativo-metalurgia (criterio aplicado por la Academia de Mantenimiento) — pendiente de firma del experto |
+| Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
 | Revisión laboral | Pendiente — experto-relaciones-laborales |
 | Aprobó | Pendiente — Director |
@@ -123,7 +123,7 @@ flowchart LR
 | 1 | En CC2 espera que el ESR cierre el obturador y mida. | < 2 × fondo, anotado en el permiso; trabaja fuera del haz. | ★ |
 | 2 | Aplica E-H (CCM, válvula de bloqueo, descarga) y el perno del tapón. | 0 bar; intento de oscilar rechazado. | ★ |
 | 3 | Mantén servoválvulas, cilindros y acumuladores. | Precarga OEM ±5 %; aceite 40–50 °C. | ★ |
-| 4 | Toma la muestra de aceite. | ISO 4406 ≤ 16/14/11 (objetivo 15/13/10); agua ≤ 500 ppm. | 🔎 |
+| 4 | Toma la muestra de aceite. | ISO 4406 ≤ 16/14/11 (objetivo 15/13/10); agua ≤ 500 ppm (si es aceite mineral). | 🔎 |
 | 5 | Con el personal fuera de la mesa, retira solo tu LOTO E-H. | Nadie en la mesa de oscilación. | ★ |
 | 6 | Apoya el análisis de S-21 y ajusta el servo si hace falta. | Error de seguimiento ≤ 2 %; carrera ±0.1 mm. | 🔎 |
 

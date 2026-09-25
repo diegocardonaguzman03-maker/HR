@@ -13,7 +13,7 @@
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico |
 | Manuales de referencia | MM-EAF-01, MM-EAF-02, MM-GR-01, MM-CC-01, MM-CC-02, MM-CC-03 · MS-ACE-02, -03, -04, -05, -09, -10 · DP-ACE-S (S-19) |
 | Elaboró | gerente-personal-sindicalizado (Líder de la Academia de Mantenimiento y Confiabilidad) |
-| Revisión técnica | experto-operativo-metalurgia (criterio aplicado por la Academia de Mantenimiento) — pendiente de firma del experto |
+| Revisión técnica | experto-operativo-metalurgia — visto bueno (con observaciones), 2026-09-26 |
 | Revisión de seguridad | Pendiente — experto-seguridad-salud |
 | Revisión laboral | Pendiente — experto-relaciones-laborales |
 | Aprobó | Pendiente — Director |
@@ -158,7 +158,7 @@ flowchart LR
 | 1 | Pide a S-09 apoyar bloque y balancín en su base. | Cables sin tensión; carga cero. | ★ |
 | 2 | Bloquea con S-20: rieles, interruptor, radio, frenos y calzas; grúa vecina bloqueada. | Detector en colectores: 0 V; movimiento rechazado. | ★ |
 | 3 | Sube con línea de vida y anclaje certificado. | Siempre conectado; anclaje ≥ 22.2 kN (MS-ACE-10). | ★ |
-| 4 | Mide el Ø del cable en 3 puntos y 2 direcciones. | Rechazo: reducción ≥ 5 %; 6 alambres rotos en un paso; daño por calor. | 🔎 ★ |
+| 4 | Mide el Ø del cable en 3 puntos y 2 direcciones. | Rechazo: reducción ≥ 5 %; 6 alambres rotos en un paso o 3 en un torón; daño por calor. | 🔎 ★ |
 | 5 | Mide apertura del gancho entre punzonados (mensual). | Rechazo: > +5 % de la medida de origen; torsión > 10°. | 🔎 ★ |
 | 6 | Revisa balatas, entrehierro y tambor. | Balatas ≥ 50 %; entrehierro 0.5–1.0 mm [Validar]; surco ≤ 0.5 mm. | ★ |
 | 7 | Retira LOTO con personal fuera; prueba límites con S-20. | Límite 1.º y 2.º cortan (puenteo solo bajo control de C-11). | ★ |

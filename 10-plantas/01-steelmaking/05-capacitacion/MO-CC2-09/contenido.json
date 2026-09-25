@@ -541,7 +541,7 @@
         "O",
         "—",
         "Calibración anual de la carta",
-        "12 meses [Validar]"
+        "24 meses; carta anual [Validar]"
       ]
     ],
     "checklist": [
@@ -634,7 +634,7 @@
       "Recurso"
     ],
     [
-      "1. Apertura y por qué importa",
+      "1. Sesión 1 de 3: apertura y por qué importa",
       "30",
       "Casos de defectos que llegaron a Laminación; reglas de oro",
       "Portada y objetivos"
@@ -682,7 +682,8 @@
       "Competencia y cierre"
     ]
   ],
-  "validacion": {
-    "tecnica": "visto bueno — 2026-09-25"
+  "validacion": {"seguridad": "visto bueno — 2026-09-26",
+    "tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26",
+    "laboral": "visto bueno con observaciones — 2026-09-26"
   }
 }

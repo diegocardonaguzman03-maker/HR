@@ -39,9 +39,9 @@
   },
   "objetivos": [
     {"titulo": "Hidratarte a tiempo", "detalle": "250 mL cada 15–20 min aunque no tengas sed; electrolitos si el trabajo en calor pasa de 2 h."},
-    {"titulo": "Aplicar el régimen WBGT", "detalle": "Conocer el régimen trabajo/descanso de tu puesto según la Tabla A1 de la NOM-015 y respetar los descansos."},
+    {"titulo": "Aplicar el régimen WBGT", "detalle": "Seguir el régimen trabajo/descanso de tu puesto según la Tabla A1 de la NOM-015 y respetar los descansos."},
     {"titulo": "Usar el EPP correcto y seco", "detalle": "EPP por zona, seco e íntegro; ropa FR o 100 % algodón; nada sintético."},
-    {"titulo": "Reconocer y atender el golpe de calor", "detalle": "Confusión, tambaleo, piel caliente: emergencia médica, retirar EPP y enfriar lejos del metal líquido."}
+    {"titulo": "Detectar y atender el golpe de calor", "detalle": "Confusión, tambaleo, piel caliente: emergencia médica, retirar EPP y enfriar lejos del metal líquido."}
   ],
   "por_que_importa": "En las plataformas del horno y de colada el calor radiante del acero se suma al del verano y al EPP aluminizado, que no deja salir el sudor. El golpe de calor mata en horas y, antes, provoca errores en tareas críticas: una lectura mal hecha o un paso ★ omitido.",
   "principio": "Hidrátate aunque no tengas sed y respeta el descanso por calor.",
@@ -52,7 +52,7 @@
     ["C-04, C-05, C-06 Supervisores", "Aplican régimen y relevos; detienen a quien muestre síntomas", "R"],
     ["Todo el personal expuesto", "Se hidrata, descansa, reporta síntomas y cuida su EPP", "R"],
     ["Almacén / Compras", "Surte EPP especificado, agua y electrolitos", "R"],
-    ["Relaciones Laborales / CMCAP", "Validan el régimen de descansos con el sindicato", "C"]
+    ["Relaciones Laborales / Comisión Mixta de SyH", "Revisan el régimen de descansos con el sindicato (CCT)", "C"]
   ],
   "flujo": [
     {"label": "Medir WBGT", "desc": "C-16, por temporada y tras cambios"},
@@ -90,10 +90,10 @@
     ["75/25 (45/15 min)", "30.6", "28.0", "25.9"],
     ["50/50 (30/30 min)", "31.4", "29.4", "27.9"],
     ["25/75 (15/45 min)", "32.2", "31.1", "30.0"],
-    ["Hidratación", "750–1,000 mL/h", "< 500 mL/h", "> 1,500 mL/h [Sup.]"],
-    ["Pérdida de peso", "< 1.5 %", "≥ 2 % [Supuesto]", "Retirar del calor"],
+    ["Hidratación (todas)", "Normal 750–1,000 mL/h", "Bajo < 500 mL/h", "Alto > 1,500 mL/h [Sup.]"],
+    ["Pérdida de peso (todas)", "Normal < 1.5 %", "Límite ≥ 2 % [Supuesto]", "Acción: retirar del calor"],
     ["Aclimatación", "Día 1: 20 %", "+20 % por día", "100 % al día 5"],
-    ["Permanencia en zona roja", "≤ 2 min", "> 2 min", "Salir y recuperar"]
+    ["Zona roja (todas)", "Normal ≤ 2 min", "Límite > 2 min", "Acción: salir y recuperar"]
   ],
   "parametros_nota": "Tabla A1 NOM-015-STPS-2001 [Verificar con la NOM vigente / SSO]. Carga por puesto [Supuesto — Validar con C-16]; muestreo y refractario = pesada.",
   "seguridad": {
@@ -189,5 +189,5 @@
     ["6. Evaluación teórica", "35", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
     ["7. Cierre y demostración", "15", "Demostración de EPP y compromiso", "Lámina 17"]
   ],
-  "validacion": {"seguridad": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26", "tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

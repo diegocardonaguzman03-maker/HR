@@ -7,7 +7,7 @@
   "manual": "03-mantenimiento/MM-CC-02-segmentos-guias-gap-alineacion.md",
   "manual_version": "0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25)",
   "subtitle": "Gap en tabla ±0.5 mm, línea alineada al radio y rodillos que giran libres, sin nadie bajo la carga",
-  "audiencia": "S-25 Mecánico de Taller · S-19 Mecánico · S-21 Instrumentista · S-22 · S-20 · S-26 Lubricador · operador de grúa de CC",
+  "audiencia": "S-25 Mecánico de Taller · S-19 Mecánico · S-21 Instrumentista · S-22 Técnico Hidráulico · S-20 Electricista · S-26 Lubricador · Grúa de CC 50 t (hoy S-15) · C-11 · C-06",
   "kpis": [
     {"value": "32 h", "label": "teoría (S-25 Taller)"},
     {"value": "80 h", "label": "OJT · 3 reconst. + 2 alineac."},
@@ -20,7 +20,7 @@
     "roles": "C-11 es dueño; C-08 da la tabla de gap del grado",
     "flujo": "El gap checker decide: ajustar o cambiar segmento",
     "figura": "Gap ±0.5 mm y alineación ≤ 0.3 mm con plantilla",
-    "equipos": "Diez equipos sostienen y miden la geometría",
+    "equipos": "Estos equipos sostienen y miden la geometría",
     "parametros": "Rodillo trabado en segmentos 0–3: no se cuela",
     "seguridad": "Segmentos de 20–40 t y barra falsa en movimiento",
     "calidad": "Gap abierto es abultamiento y segregación central",
@@ -43,10 +43,10 @@
     ["C-11 Supervisor de Mantenimiento Mecánico", "Dueño; programa de segmentos y liberación", "A"],
     ["S-25 Mecánico de Taller de Segmentos", "Reconstrucción, gap en banco y prueba de boquillas", "R"],
     ["S-19 Mecánico de Acería", "Cambio en máquina, alineación y conexiones", "R"],
-    ["S-22 / S-20", "Cilindros de apriete y acumuladores; motores y LOTO eléctrico", "R"],
+    ["S-22 Hidráulico / S-20 Electricista", "Cilindros de apriete y acumuladores; motores y LOTO eléctrico", "R"],
     ["S-21 Instrumentista", "Gap checker y transductores de posición", "R"],
     ["S-26 Lubricador", "Sistema de lubricación aire-aceite o grasa", "R"],
-    ["Operador de grúa de CC (50 t)", "Iza el segmento", "R"],
+    ["Grúa de CC 50 t (hoy S-15; S-27 propuesto)", "Iza el segmento", "R"],
     ["C-06 Supervisor de CC", "Entrega la máquina vacía y firma la liberación", "A (operación)"]
   ],
   "flujo": [
@@ -156,11 +156,11 @@
     "roles": [
       ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
       ["S-25 Mecánico de Taller", "U", "32 h", "80 h / 3 reconst. + 2 alin.", "24 meses"],
-      ["S-19 Mecánico de Acería", "U", "16 h", "3 cambios", "24; izaje, altura, confinado 12"],
+      ["S-19 Mecánico de Acería", "U", "16 h", "3 cambios", "24 meses; izaje, altura y confinado 12"],
       ["S-21 Instrumentista", "U", "8 h", "3 corridas", "24 meses"],
-      ["S-22 / S-20", "U", "16 h / NOM-029 + 4 h", "2 intervenciones / 3 bloqueos", "24 / 12 meses"],
+      ["S-22 Hidráulico / S-20 Electricista", "U", "16 h / NOM-029 + 4 h", "2 intervenciones / 3 bloqueos", "S-22: 24 · S-20: 12 meses"],
       ["S-26 Lubricador", "L", "8 h", "2 intervenciones", "24 meses; alturas 12"],
-      ["Operador de grúa de CC", "U", "NOM-006", "3 izajes de segmento", "12 meses"]
+      ["Grúa de CC (hoy S-15)", "U", "NOM-006", "3 izajes de segmento", "12 meses"]
     ],
     "checklist": [
       "Revisa la hoja de taller y recibe la máquina vacía firmada por C-06",
@@ -191,7 +191,7 @@
   ],
   "plan_sesion": [
     ["Bloque", "Min", "Actividad", "Recurso"],
-    ["1. Apertura y por qué importa", "30", "Defectos internos por gap y alineación", "Láminas 1–2"],
+    ["1. Sesión 1 de 4: apertura y por qué importa", "30", "Defectos internos por gap y alineación", "Láminas 1–2"],
     ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con la figura del gap", "Láminas 3–6"],
     ["3. Equipos y especificaciones", "90", "Lectura de un reporte del gap checker", "Láminas 7–8, reporte"],
     ["4. Seguridad, LOTO y energía cero", "75", "Siete energías; cámara de rociado; barra falsa", "Láminas 9–10, candados"],
@@ -201,5 +201,5 @@
     ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
     ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
   ],
-  "validacion": {}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

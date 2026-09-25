@@ -22,7 +22,7 @@
 
 ## 2. Mi puesto en 30 segundos
 
-Coloco la olla de escoria (pote) bajo la puerta del EAF, la retiro llena y la vacío en el patio de escoria. También retiro la escoria del LF. La escoria sale a **más de 1,500 °C**: si toca **agua**, explota. Si no hay olla lista, el horno no puede desescoriar y se retrasa la colada.
+Coloco la olla de escoria (pote) bajo la puerta del EAF. La retiro llena y la vacío en el patio de escoria. También retiro la escoria del LF. La escoria sale a **más de 1,500 °C**: si toca **agua**, explota. Si no hay olla lista, el horno no puede desescoriar y se retrasa la colada.
 
 > ★ **Mis 3 reglas de oro**
 > 1. **Olla, fosa y suelo secos.** Nunca coloques ni vacíes escoria sobre agua, charcos o suelo húmedo.

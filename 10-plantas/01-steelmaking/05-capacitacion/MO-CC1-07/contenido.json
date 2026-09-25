@@ -210,5 +210,5 @@
     ["7. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + preguntas orales", "Lámina 16"],
     ["8. Cierre y ruta a OJT", "30", "Plan de OJT, simulador y certificación", "Lámina 17"]
   ],
-  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

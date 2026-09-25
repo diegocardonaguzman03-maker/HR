@@ -7,7 +7,7 @@
   "manual": "03-mantenimiento/MM-EAF-01-fugas-paneles-boveda.md",
   "manual_version": "0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25)",
   "subtitle": "Detectar, aislar y reparar la fuga sin exponer a nadie al contacto agua–metal líquido",
-  "audiencia": "S-19 Mecánico · S-23 Soldador · S-21 Instrumentista · S-20 Electricista · S-04 Grúa de Carga · C-11",
+  "audiencia": "S-19 Mecánico · S-23 Soldador · S-21 Instrumentista · S-20 Electricista · S-04 Grúa de Carga · S-01 Primer Hornero · C-11 · C-05",
   "kpis": [
     {
       "value": "16 h",
@@ -666,7 +666,7 @@
       "Recurso"
     ],
     [
-      "1. Apertura y por qué importa",
+      "1. Sesión 1 de 2: apertura y por qué importa",
       "30",
       "Casos de explosión agua–metal; reglas de oro",
       "Láminas 1–2"
@@ -720,5 +720,5 @@
       "Lámina 17"
     ]
   ],
-  "validacion": {}
+  "validacion": {"seguridad": "visto bueno — 2026-09-26","tecnica": "visto bueno — 2026-09-26", "documentacion": "visto bueno — 2026-09-26", "laboral": "visto bueno con observaciones — 2026-09-26"}
 }

@@ -42,7 +42,7 @@
     "equipos": "Siete elementos listos antes de cada cambio",
     "parametros": "Velocidad, horas y temperatura deciden el cambio",
     "seguridad": "Acero bajo el distribuidor: fuera de la expulsión",
-    "calidad": "Buza equivocada, velocidad equivocada",
+    "calidad": "Buza equivocada da velocidad equivocada",
     "pasos": "Dieciséis pasos; siete no admiten error",
     "anormales": "Si el cambio falla: placa ciega o tapón con varilla",
     "competencia": "Certificación nivel U: demostrar, no asistir",
@@ -518,21 +518,21 @@
         "U",
         "8 h",
         "15 cambios + 3 cierres o simulacro",
-        "24 meses"
+        "24 meses; radiación 12"
       ],
       [
         "S-14 Ayudante de Colada",
         "U",
         "8 h",
         "15 cambios de buza",
-        "24 meses"
+        "24 meses; radiación 12"
       ],
       [
         "S-12 Operador de Púlpito",
         "U",
         "4 h",
         "10 cambios",
-        "24 meses"
+        "24 meses; radiación 12"
       ]
     ],
     "checklist": [
@@ -674,7 +674,8 @@
       "Competencia y cierre"
     ]
   ],
-  "validacion": {
-    "tecnica": "visto bueno — 2026-09-25"
+  "validacion": {"seguridad": "visto bueno — 2026-09-26",
+    "tecnica": "visto bueno — 2026-09-25", "documentacion": "visto bueno — 2026-09-26",
+    "laboral": "visto bueno con observaciones — 2026-09-26"
   }
 }
