@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="960" height="680" font-family="Arial, Helvetica, sans-serif" font-size="13">
+  <defs>
+    <pattern id="arena" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#D7CCC8"/>
+      <circle cx="2" cy="2" r="1.1" fill="#6D4C41"/>
+      <circle cx="6" cy="6" r="1.1" fill="#8D6E63"/>
+    </pattern>
+    <pattern id="ladrillo" width="40" height="20" patternUnits="userSpaceOnUse">
+      <rect width="40" height="20" fill="#8D6E63"/>
+      <path d="M0,0 H40 M0,10 H40 M10,0 V10 M30,10 V20" stroke="#5D4037" stroke-width="1"/>
+    </pattern>
+    <pattern id="apisonado" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#BCAAA4"/>
+      <path d="M0,6 L6,0" stroke="#8D6E63" stroke-width="1"/>
+    </pattern>
+    <marker id="c" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,4 L8,4 M4,0 L4,8" stroke="#212121" stroke-width="1"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="480" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#212121">Figura MM-EAF-03. Corte del vaciado excéntrico por el fondo (EBT) y cambio del tubo</text>
+  <text x="480" y="51" text-anchor="middle" font-size="12" fill="#455A64">Dimensiones y vidas típicas para un EAF de 150 t [Validar con OEM / Especialista de Refractarios C-15]</text>
+
+  <!-- Baño / talón -->
+  <rect x="170" y="70" width="560" height="55" fill="#FF8F00"/>
+  <rect x="170" y="70" width="560" height="14" fill="#6D4C41"/>
+  <text x="200" y="110" fill="#ffffff" font-weight="bold">Talón líquido 20–30 t</text>
+  <!-- Nariz del EBT refractario -->
+  <rect x="170" y="125" width="560" height="340" fill="url(#ladrillo)" stroke="#5D4037" stroke-width="2"/>
+  <!-- Masa de apisonar alrededor del tubo -->
+  <rect x="395" y="165" width="170" height="255" fill="url(#apisonado)" stroke="#5D4037"/>
+  <!-- Bloque de asiento -->
+  <rect x="385" y="125" width="190" height="40" fill="#6D4C41" stroke="#3E2723" stroke-width="2"/>
+  <!-- Camisas del tubo -->
+  <g stroke="#3E2723" stroke-width="2" fill="#795548">
+    <rect x="425" y="165" width="110" height="62"/>
+    <rect x="425" y="229" width="110" height="62"/>
+    <rect x="425" y="293" width="110" height="62"/>
+    <rect x="425" y="357" width="110" height="63"/>
+  </g>
+  <!-- Coraza -->
+  <rect x="150" y="465" width="600" height="16" fill="#455A64"/>
+  <!-- Bloque de salida -->
+  <rect x="410" y="420" width="140" height="80" fill="#4E342E" stroke="#3E2723" stroke-width="2"/>
+  <!-- Canal con arena -->
+  <rect x="455" y="112" width="50" height="388" fill="url(#arena)" stroke="#3E2723" stroke-width="1"/>
+  <!-- Cono de arena -->
+  <path d="M 440 112 L 480 84 L 520 112 Z" fill="url(#arena)" stroke="#3E2723"/>
+  <!-- Placa de cierre -->
+  <rect x="385" y="503" width="190" height="16" fill="#455A64" stroke="#212121" stroke-width="1.5"/>
+  <rect x="400" y="500" width="160" height="5" fill="#8D6E63"/>
+  <line x1="575" y1="511" x2="660" y2="545" stroke="#455A64" stroke-width="8"/>
+  <rect x="655" y="532" width="80" height="24" rx="4" fill="#90A4AE" stroke="#212121" transform="rotate(22 695 544)"/>
+  <circle cx="575" cy="511" r="6" fill="#212121"/>
+  <text x="700" y="590" text-anchor="middle" font-size="11">Cilindro hidráulico de la tapa</text>
+
+  <!-- Cotas -->
+  <line x1="455" y1="540" x2="505" y2="540" stroke="#212121" marker-start="url(#c)" marker-end="url(#c)"/>
+  <text x="480" y="556" text-anchor="middle" font-size="11">Ø interior</text>
+  <line x1="600" y1="125" x2="600" y2="500" stroke="#212121" marker-start="url(#c)" marker-end="url(#c)"/>
+  <text x="612" y="300" font-size="11" transform="rotate(90 612 300)" text-anchor="middle">Longitud del canal ≈ 1.2–1.5 m</text>
+
+  <!-- Caja de criterios -->
+  <rect x="745" y="120" width="200" height="360" rx="6" fill="#FAFAFA" stroke="#455A64" stroke-width="2"/>
+  <text x="845" y="142" text-anchor="middle" font-weight="bold">Criterios de cambio</text>
+  <g font-size="11.5" fill="#212121">
+    <text x="755" y="166">Ø interior nuevo: 150–180 mm</text>
+    <text x="755" y="186" fill="#C62828" font-weight="bold">Cambiar camisas si:</text>
+    <text x="755" y="204">• Ø medido ≥ 230 mm, o</text>
+    <text x="755" y="222">• vaciado de 150 t &lt; 2.5 min, o</text>
+    <text x="755" y="240">• canal ovalado / escalón</text>
+    <text x="767" y="256">&gt; 20 mm, o</text>
+    <text x="755" y="274">• vida ≥ 150–250 coladas</text>
+    <text x="755" y="298">Bloque de asiento:</text>
+    <text x="755" y="316">400–600 coladas / erosión</text>
+    <text x="767" y="332">&gt; 50 mm</text>
+    <text x="755" y="356">Arena de llenado seca</text>
+    <text x="767" y="372">(humedad ≤ 0.5 %)</text>
+    <text x="755" y="396">Apertura libre ≥ 95 %</text>
+    <text x="767" y="412">(meta ≥ 98 %)</text>
+    <text x="755" y="436">Tiempo de vaciado</text>
+    <text x="767" y="452">normal: 3–5 min</text>
+    <text x="755" y="472" fill="#455A64">[Validar OEM / C-15]</text>
+  </g>
+
+  <!-- Números -->
+  <g font-size="12" font-weight="bold" fill="#ffffff">
+    <circle cx="160" cy="97" r="11" fill="#212121"/><text x="160" y="101" text-anchor="middle">1</text>
+    <circle cx="540" cy="92" r="11" fill="#212121"/><text x="540" y="96" text-anchor="middle">2</text>
+    <circle cx="370" cy="145" r="11" fill="#212121"/><text x="370" y="149" text-anchor="middle">3</text>
+    <circle cx="415" cy="260" r="11" fill="#212121"/><text x="415" y="264" text-anchor="middle">4</text>
+    <circle cx="555" cy="330" r="11" fill="#212121"/><text x="555" y="334" text-anchor="middle">5</text>
+    <circle cx="250" cy="300" r="11" fill="#212121"/><text x="250" y="304" text-anchor="middle">6</text>
+    <circle cx="200" cy="473" r="11" fill="#212121"/><text x="200" y="477" text-anchor="middle">7</text>
+    <circle cx="395" cy="460" r="11" fill="#212121"/><text x="395" y="464" text-anchor="middle">8</text>
+    <circle cx="370" cy="511" r="11" fill="#212121"/><text x="370" y="515" text-anchor="middle">9</text>
+    <circle cx="480" cy="300" r="11" fill="#212121"/><text x="480" y="304" text-anchor="middle">10</text>
+  </g>
+
+  <!-- Leyenda -->
+  <rect x="20" y="600" width="920" height="72" fill="#FAFAFA" stroke="#B0BEC5"/>
+  <g font-size="12" fill="#212121">
+    <text x="32" y="620">1 Baño y escoria (talón líquido)   2 Cono de arena sobre el canal (50–100 mm)   3 Bloque de asiento (well block, MgO-C)</text>
+    <text x="32" y="640">4 Camisas del tubo EBT (MgO-C, 4 piezas típ.)   5 Masa de apisonar / mortero de relleno   6 Refractario de la nariz del EBT</text>
+    <text x="32" y="660">7 Coraza del fondo   8 Bloque de salida (end block)   9 Placa de cierre (tapa) con cara refractaria   10 Arena de llenado (olivino/cromita)</text>
+  </g>
+</svg>

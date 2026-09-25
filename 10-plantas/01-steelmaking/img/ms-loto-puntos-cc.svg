@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 840" width="1000" height="840" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <g id="lk">
+      <path d="M-6,-2 L-6,-8 A6,6 0 0 1 6,-8 L6,-2" fill="none" stroke="#C62828" stroke-width="2.5"/>
+      <rect x="-8" y="-2" width="16" height="12" rx="2" fill="#C62828"/>
+    </g>
+  </defs>
+
+  <text x="500" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#212121">Figura 1. Puntos de aislamiento y bloqueo (LOTO) de CC1 (planchón) y CC2 (palanquilla)</text>
+  <text x="500" y="46" text-anchor="middle" font-size="12" fill="#212121">Perfil esquemático de una línea. Candado rojo = bloqueo obligatorio. Valores según FT-ACE-001 [Validar con OEM]</text>
+
+  <!-- Torreta y olla -->
+  <rect x="120" y="95" width="16" height="140" fill="#455A64"/>
+  <rect x="70" y="95" width="200" height="14" fill="#607D8B" stroke="#212121"/>
+  <path d="M170,110 L230,110 L222,175 L178,175 Z" fill="#8D6E63" stroke="#212121" stroke-width="2"/>
+  <path d="M176,118 L224,118 L219,168 L181,168 Z" fill="#E65100"/>
+  <text x="200" y="88" text-anchor="middle" fill="#212121">olla en torreta</text>
+  <use href="#lk" x="100" y="250"/>
+  <!-- distribuidor -->
+  <line x1="200" y1="175" x2="200" y2="205" stroke="#455A64" stroke-width="4"/>
+  <path d="M150,205 L290,205 L280,245 L160,245 Z" fill="#8D6E63" stroke="#212121" stroke-width="2"/>
+  <rect x="165" y="210" width="110" height="28" fill="#E65100"/>
+  <text x="310" y="222" fill="#212121">distribuidor (CC1 45 t / CC2 30 t)</text>
+  <rect x="140" y="248" width="160" height="10" fill="#455A64"/>
+  <circle cx="155" cy="263" r="6" fill="#212121"/>
+  <circle cx="285" cy="263" r="6" fill="#212121"/>
+  <text x="310" y="262" fill="#212121">carro de distribuidor</text>
+  <use href="#lk" x="330" y="278"/>
+  <!-- molde -->
+  <line x1="220" y1="245" x2="220" y2="290" stroke="#455A64" stroke-width="5"/>
+  <rect x="195" y="290" width="12" height="60" fill="#FF8F00" stroke="#212121"/>
+  <rect x="233" y="290" width="12" height="60" fill="#FF8F00" stroke="#212121"/>
+  <rect x="207" y="296" width="26" height="54" fill="#E65100"/>
+  <rect x="180" y="290" width="15" height="60" fill="#1E88E5" fill-opacity="0.5" stroke="#1E88E5"/>
+  <rect x="245" y="290" width="15" height="60" fill="#1E88E5" fill-opacity="0.5" stroke="#1E88E5"/>
+  <text x="178" y="290" text-anchor="end" fill="#212121">molde</text>
+  <!-- Fuente Cs-137 (CC2) -->
+  <rect x="265" y="300" width="22" height="22" fill="#FFEB3B" stroke="#212121" stroke-width="2"/>
+  <text x="276" y="315" text-anchor="middle" font-size="12" font-weight="bold" fill="#212121">Cs</text>
+  <rect x="150" y="300" width="22" height="22" fill="#ECEFF1" stroke="#212121"/>
+  <text x="161" y="316" text-anchor="middle" fill="#212121">D</text>
+  <use href="#lk" x="300" y="345"/>
+  <!-- oscilacion -->
+  <rect x="265" y="355" width="60" height="22" fill="#ECEFF1" stroke="#455A64"/>
+  <text x="295" y="370" text-anchor="middle" fill="#212121">oscil.</text>
+
+  <!-- linea curva: hebra y segmentos -->
+  <path d="M220,350 Q220,620 520,650 L900,650" fill="none" stroke="#FF8F00" stroke-width="18"/>
+  <g fill="#455A64" stroke="#212121">
+    <circle cx="203" cy="395" r="7"/><circle cx="238" cy="395" r="7"/>
+    <circle cx="206" cy="450" r="7"/><circle cx="241" cy="445" r="7"/>
+    <circle cx="220" cy="505" r="7"/><circle cx="254" cy="496" r="7"/>
+    <circle cx="248" cy="560" r="7"/><circle cx="280" cy="545" r="7"/>
+    <circle cx="300" cy="610" r="7"/><circle cx="320" cy="588" r="7"/>
+    <circle cx="380" cy="642" r="7"/><circle cx="390" cy="620" r="7"/>
+    <circle cx="470" cy="658" r="7"/><circle cx="470" cy="638" r="7"/>
+  </g>
+  <!-- rociado secundario -->
+  <g stroke="#1E88E5" stroke-width="2">
+    <line x1="185" y1="420" x2="198" y2="420"/><line x1="260" y1="420" x2="247" y2="420"/>
+    <line x1="195" y1="480" x2="208" y2="478"/><line x1="272" y1="470" x2="259" y2="472"/>
+  </g>
+  <text x="130" y="470" text-anchor="end" fill="#212121">rociado</text>
+  <text x="130" y="486" text-anchor="end" fill="#212121">secundario</text>
+  <!-- HPU segmentos -->
+  <rect x="380" y="500" width="120" height="50" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+  <text x="440" y="520" text-anchor="middle" fill="#212121">HPU segmentos /</text>
+  <text x="440" y="536" text-anchor="middle" fill="#212121">extractores</text>
+  <use href="#lk" x="515" y="520"/>
+  <!-- rodillos extractores -->
+  <rect x="560" y="628" width="60" height="44" fill="none" stroke="#455A64" stroke-width="3"/>
+  <text x="590" y="690" text-anchor="middle" fill="#212121">extractores</text>
+  <!-- barra falsa -->
+  <rect x="640" y="600" width="120" height="16" fill="#607D8B" stroke="#212121"/>
+  <text x="700" y="594" text-anchor="middle" fill="#212121">barra falsa estacionada</text>
+  <rect x="765" y="596" width="14" height="24" fill="#C62828"/>
+  <text x="800" y="612" fill="#212121">pasador</text>
+  <!-- oxicorte -->
+  <rect x="820" y="660" width="40" height="30" fill="#ECEFF1" stroke="#455A64"/>
+  <polygon points="840,660 834,645 846,645" fill="#43A047"/>
+  <text x="840" y="708" text-anchor="middle" fill="#212121">oxicorte</text>
+  <path d="M960,700 L960,760 L870,760 L870,690" fill="none" stroke="#43A047" stroke-width="3"/>
+  <rect x="930" y="740" width="55" height="40" fill="#E8F5E9" stroke="#43A047" stroke-width="2"/>
+  <text x="957" y="757" text-anchor="middle" fill="#212121">O₂</text>
+  <text x="957" y="772" text-anchor="middle" fill="#212121">GN</text>
+  <use href="#lk" x="915" y="735"/>
+
+  <!-- AGUA DE MOLDE -->
+  <rect x="30" y="130" width="140" height="70" fill="#E3F2FD" stroke="#1E88E5" stroke-width="2"/>
+  <text x="100" y="150" text-anchor="middle" fill="#212121">Agua de molde</text>
+  <text x="100" y="166" text-anchor="middle" fill="#212121">(circuito cerrado)</text>
+  <text x="100" y="182" text-anchor="middle" fill="#212121">+ torre emergencia</text>
+  <path d="M60,200 L60,320 L180,320" fill="none" stroke="#1E88E5" stroke-width="4"/>
+  <polygon points="52,240 68,256 68,240 52,256" fill="#1E88E5" stroke="#212121"/>
+  <use href="#lk" x="40" y="250"/>
+  <!-- AGUA SECUNDARIA -->
+  <rect x="30" y="520" width="120" height="50" fill="#E3F2FD" stroke="#1E88E5" stroke-width="2"/>
+  <text x="90" y="541" text-anchor="middle" fill="#212121">Agua secundaria</text>
+  <text x="90" y="557" text-anchor="middle" fill="#212121">(válvulas por zona)</text>
+  <path d="M150,545 L185,545 L185,480" fill="none" stroke="#1E88E5" stroke-width="3"/>
+  <use href="#lk" x="165" y="585"/>
+  <!-- HPU oscilacion -->
+  <rect x="360" y="300" width="130" height="50" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+  <text x="425" y="320" text-anchor="middle" fill="#212121">HPU oscilación y</text>
+  <text x="425" y="336" text-anchor="middle" fill="#212121">barra tapón (CC1)</text>
+  <path d="M360,366 L325,366" fill="none" stroke="#6D4C41" stroke-width="3" stroke-dasharray="6,3"/>
+  <line x1="425" y1="350" x2="425" y2="366" stroke="#6D4C41" stroke-width="3"/>
+  <line x1="360" y1="366" x2="425" y2="366" stroke="#6D4C41" stroke-width="3"/>
+  <use href="#lk" x="505" y="320"/>
+  <!-- MCC -->
+  <rect x="600" y="90" width="150" height="60" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+  <text x="675" y="112" text-anchor="middle" fill="#212121">MCC / accionamientos</text>
+  <text x="675" y="128" text-anchor="middle" fill="#212121">(torreta, carro, rodillos,</text>
+  <text x="675" y="143" text-anchor="middle" fill="#212121">EMS CC2, mesa)</text>
+  <use href="#lk" x="765" y="120"/>
+
+  <!-- Caja grupal -->
+  <rect x="790" y="180" width="180" height="120" fill="#FFF8E1" stroke="#C62828" stroke-width="2.5"/>
+  <text x="880" y="202" text-anchor="middle" font-weight="bold" fill="#212121">Caja grupal</text>
+  <use href="#lk" x="830" y="232"/><use href="#lk" x="860" y="232"/><use href="#lk" x="890" y="232"/><use href="#lk" x="920" y="232"/>
+  <text x="880" y="268" text-anchor="middle" fill="#212121">1 candado personal</text>
+  <text x="880" y="284" text-anchor="middle" fill="#212121">por trabajador</text>
+
+  <!-- Recuadro de detalle Cs-137 -->
+  <rect x="560" y="330" width="410" height="200" fill="#FFFDE7" stroke="#212121" stroke-width="1.5"/>
+  <text x="575" y="352" font-size="13" font-weight="bold" fill="#212121">Detalle: medidor de nivel CC2 (Cs-137, 1 por línea)</text>
+  <rect x="590" y="370" width="60" height="60" fill="#90A4AE" stroke="#212121" stroke-width="2"/>
+  <circle cx="620" cy="400" r="8" fill="#FFEB3B" stroke="#212121"/>
+  <rect x="650" y="385" width="14" height="30" fill="#C62828"/>
+  <text x="620" y="448" text-anchor="middle" fill="#212121">contenedor Pb</text>
+  <text x="670" y="370" fill="#212121">obturador cerrado + candado del ESR</text>
+  <line x1="664" y1="400" x2="760" y2="400" stroke="#FFEB3B" stroke-width="3" stroke-dasharray="4,4"/>
+  <rect x="760" y="380" width="20" height="40" fill="#FF8F00" stroke="#212121"/>
+  <rect x="800" y="380" width="30" height="40" fill="#ECEFF1" stroke="#212121"/>
+  <text x="815" y="405" text-anchor="middle" fill="#212121">D</text>
+  <text x="770" y="436" text-anchor="middle" fill="#212121">molde</text>
+  <text x="815" y="436" text-anchor="middle" fill="#212121">detector</text>
+  <g font-size="12" fill="#212121">
+    <text x="575" y="470">Verificación: medidor de radiación a 1 m y en el punto de trabajo</text>
+    <text x="575" y="486">= fondo (≈ 0.1–0.3 μSv/h) o &lt; 2 × fondo [Validar con ESR]</text>
+    <text x="575" y="502">Contenedor en posición de trabajo: ≤ tasa de la licencia CNSNS</text>
+    <text x="575" y="518">Solo el ESR o personal POE autorizado opera el obturador</text>
+  </g>
+
+  <!-- marcadores -->
+  <g font-size="12" font-weight="bold" fill="#ffffff">
+    <circle cx="25" cy="250" r="11" fill="#212121"/><text x="25" y="254" text-anchor="middle">1</text>
+    <circle cx="165" cy="610" r="11" fill="#212121"/><text x="165" y="614" text-anchor="middle">2</text>
+    <circle cx="530" cy="300" r="11" fill="#212121"/><text x="530" y="304" text-anchor="middle">3</text>
+    <circle cx="540" cy="520" r="11" fill="#212121"/><text x="540" y="524" text-anchor="middle">4</text>
+    <circle cx="772" cy="640" r="11" fill="#212121"/><text x="772" y="644" text-anchor="middle">5</text>
+    <circle cx="895" cy="760" r="11" fill="#212121"/><text x="895" y="764" text-anchor="middle">6</text>
+    <circle cx="276" cy="285" r="11" fill="#212121"/><text x="276" y="289" text-anchor="middle">7</text>
+    <circle cx="100" cy="272" r="11" fill="#212121"/><text x="100" y="276" text-anchor="middle">8</text>
+    <circle cx="352" cy="278" r="11" fill="#212121"/><text x="352" y="282" text-anchor="middle">9</text>
+    <circle cx="785" cy="120" r="11" fill="#212121"/><text x="785" y="124" text-anchor="middle">10</text>
+    <circle cx="880" cy="165" r="11" fill="#212121"/><text x="880" y="169" text-anchor="middle">11</text>
+  </g>
+
+  <!-- Leyenda -->
+  <rect x="30" y="705" width="780" height="130" fill="#FAFAFA" stroke="#455A64"/>
+  <g font-size="12" fill="#212121">
+    <text x="45" y="724">1  Agua de molde: cerrar SOLO con la máquina vacía (sin acero líquido); bloquear bombas y torre de emergencia</text>
+    <text x="45" y="741">2  Agua secundaria: válvulas de zona cerradas y bloqueadas; purga a 0 bar</text>
+    <text x="45" y="758">3  HPU de oscilación y barra tapón: bomba bloqueada, acumuladores a 0 bar, cilindro apoyado</text>
+    <text x="45" y="775">4  HPU de segmentos/extractores: 0 bar; rodillos abiertos y calzados antes de cambiar segmento</text>
+    <text x="45" y="792">5  Barra falsa: estacionada y con pasador (energía por gravedad); cadena CC1 soportada</text>
+    <text x="45" y="809">6  Oxicorte O₂ + GN: doble bloqueo y purga · 7 Cs-137 (CC2): obturador cerrado + candado del ESR</text>
+    <text x="45" y="826">8  Giro de torreta · 9 Carro de distribuidor · 10 MCC de accionamientos · 11 Caja grupal y prueba de energía cero</text>
+  </g>
+</svg>

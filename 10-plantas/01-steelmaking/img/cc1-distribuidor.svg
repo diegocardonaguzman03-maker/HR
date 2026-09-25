@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 715" width="980" height="715" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="490" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#212121">Figura 2. Distribuidor de CC1 (45 t) — corte longitudinal y niveles de operación</text>
+  <text x="490" y="44" text-anchor="middle" font-size="12" fill="#212121">Escala vertical aprox. 1 px = 5 mm (profundidad interior ≈ 1,300 mm) [Validar con OEM / Ingeniería de Proceso]</text>
+
+  <!-- Olla (parte inferior) y tubo protector -->
+  <path d="M120 60 L300 60 L292 100 L128 100 Z" fill="#8D6E63" stroke="#455A64" stroke-width="2"/>
+  <rect x="198" y="100" width="24" height="10" fill="#455A64"/>
+  <rect x="200" y="110" width="20" height="220" fill="#8D6E63" stroke="#455A64" stroke-width="1.5"/>
+  <rect x="204" y="110" width="12" height="220" fill="#FF8F00"/>
+  <!-- sello de argón en la junta -->
+  <circle cx="232" cy="112" r="5" fill="#43A047"/>
+  <path d="M237 112 L262 104" stroke="#43A047" stroke-width="2"/>
+
+  <!-- Coraza y refractario del distribuidor -->
+  <path d="M60 150 L60 440 L800 440 L800 150 L780 150 L780 420 L80 420 L80 150 Z" fill="#455A64"/>
+  <path d="M80 150 L80 420 L780 420 L780 150 L765 150 L765 405 L95 405 L95 150 Z" fill="#8D6E63"/>
+  <!-- Tapa -->
+  <rect x="55" y="132" width="750" height="18" fill="#455A64"/>
+  <rect x="190" y="126" width="40" height="30" fill="#ffffff" stroke="#455A64"/>
+  <rect x="624" y="126" width="36" height="30" fill="#ffffff" stroke="#455A64"/>
+
+  <!-- Acero líquido al nivel de 1,000 mm (y = 405 - 1000*0.2 = 205) -->
+  <rect x="95" y="205" width="670" height="200" fill="#FF8F00"/>
+  <!-- Flux / cobertura -->
+  <rect x="95" y="193" width="670" height="12" fill="#6D4C41"/>
+  <!-- volver a dibujar el tubo protector por encima del acero -->
+  <rect x="200" y="150" width="20" height="180" fill="#8D6E63" stroke="#455A64" stroke-width="1.5"/>
+  <rect x="204" y="150" width="12" height="180" fill="#E65100"/>
+
+  <!-- Zona de impacto: pad -->
+  <rect x="150" y="385" width="120" height="20" fill="#A1887F" stroke="#455A64"/>
+  <path d="M175 385 L175 370 M245 385 L245 370" stroke="#455A64" stroke-width="3"/>
+  <!-- Dique (desde arriba, no toca el fondo) -->
+  <rect x="320" y="175" width="14" height="170" fill="#A1887F" stroke="#455A64"/>
+  <!-- Presa (desde el fondo) -->
+  <rect x="390" y="325" width="14" height="80" fill="#A1887F" stroke="#455A64"/>
+  <!-- flechas de flujo -->
+  <path d="M230 330 C 280 360, 300 380, 330 380 C 370 380, 380 330, 420 300 C 480 260, 560 260, 630 320" fill="none" stroke="#E65100" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <path d="M624 312 L634 324 L618 322 Z" fill="#E65100"/>
+
+  <!-- Barra tapón -->
+  <rect x="634" y="80" width="16" height="316" fill="#8D6E63" stroke="#455A64" stroke-width="1.5"/>
+  <path d="M634 396 Q642 412 650 396 Z" fill="#8D6E63" stroke="#455A64"/>
+  <rect x="620" y="70" width="44" height="12" fill="#455A64"/>
+  <text x="668" y="78" font-size="11" fill="#212121">mecanismo / actuador</text>
+  <!-- argón por la barra tapón -->
+  <path d="M650 104 L700 104" stroke="#43A047" stroke-width="3" fill="none"/>
+  <text x="704" y="108" font-size="12" fill="#43A047">Ar 3–8 NL/min</text>
+  <!-- Buza interior y SEN -->
+  <rect x="632" y="405" width="20" height="35" fill="#8D6E63" stroke="#455A64"/>
+  <rect x="633" y="440" width="18" height="150" fill="#8D6E63" stroke="#455A64" stroke-width="1.5"/>
+  <rect x="639" y="440" width="6" height="150" fill="#FF8F00"/>
+  <!-- puertos laterales -->
+  <path d="M633 580 L618 592 M651 580 L666 592" stroke="#E65100" stroke-width="4"/>
+
+  <!-- Molde esquemático -->
+  <rect x="560" y="520" width="12" height="140" fill="#B87333" stroke="#455A64"/>
+  <rect x="712" y="520" width="12" height="140" fill="#B87333" stroke="#455A64"/>
+  <rect x="572" y="550" width="140" height="110" fill="#FF8F00"/>
+  <rect x="572" y="542" width="140" height="8" fill="#6D4C41"/>
+  <line x1="590" y1="550" x2="590" y2="590" stroke="#212121"/>
+  <line x1="584" y1="550" x2="596" y2="550" stroke="#212121"/>
+  <line x1="584" y1="590" x2="596" y2="590" stroke="#212121"/>
+  <text x="740" y="560" font-size="12" fill="#212121">Inmersión SEN</text>
+  <text x="740" y="576" font-size="12" fill="#212121">120–160 mm</text>
+  <line x1="596" y1="570" x2="736" y2="570" stroke="#212121" stroke-width="0.8"/>
+
+  <!-- Niveles (y = 405 - h*0.2) -->
+  <g font-size="12">
+    <line x1="95" y1="155" x2="765" y2="155" stroke="#C62828" stroke-width="1.2" stroke-dasharray="8,4"/>
+    <text x="812" y="159" fill="#C62828">1,250 mm: alarma alta</text>
+    <line x1="95" y1="185" x2="765" y2="185" stroke="#212121" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="812" y="189" fill="#212121">1,100 mm: máx. (≈ 45 t)</text>
+    <line x1="95" y1="225" x2="765" y2="225" stroke="#212121" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="812" y="229" fill="#212121">900 mm: mín. oper. (≈ 36 t)</text>
+    <line x1="95" y1="265" x2="765" y2="265" stroke="#FF6F00" stroke-width="1.2" stroke-dasharray="4,3"/>
+    <text x="812" y="269" fill="#E65100">700 mm: mín. cambio</text>
+    <text x="812" y="283" fill="#E65100">de olla (≈ 27 t)</text>
+    <line x1="95" y1="325" x2="765" y2="325" stroke="#C62828" stroke-width="1.2" stroke-dasharray="4,3"/>
+    <text x="812" y="333" fill="#C62828">400 mm: cierre de fin</text>
+    <text x="812" y="347" fill="#C62828">de colada (escoria)</text>
+    <line x1="95" y1="305" x2="765" y2="305" stroke="#212121" stroke-width="1" stroke-dasharray="2,3"/>
+    <text x="812" y="309" fill="#212121">500 mm: abrir tapón</text>
+    <text x="812" y="405" fill="#212121">0 mm: fondo</text>
+  </g>
+  <!-- Cota profundidad -->
+  <line x1="40" y1="150" x2="40" y2="405" stroke="#212121"/>
+  <line x1="34" y1="150" x2="46" y2="150" stroke="#212121"/>
+  <line x1="34" y1="405" x2="46" y2="405" stroke="#212121"/>
+  <text x="32" y="280" font-size="11" fill="#212121" transform="rotate(-90 32 280)" text-anchor="middle">≈ 1,300 mm</text>
+
+  <!-- Celdas de carga -->
+  <rect x="100" y="440" width="30" height="14" fill="#455A64"/>
+  <rect x="730" y="440" width="30" height="14" fill="#455A64"/>
+  <!-- Medición de temperatura -->
+  <rect x="520" y="110" width="8" height="160" fill="#455A64"/>
+  <circle cx="524" cy="272" r="5" fill="#C62828"/>
+
+  <!-- Números -->
+  <g font-size="12" font-weight="bold" fill="#212121">
+    <text x="306" y="76">(1)</text>
+    <text x="228" y="176">(2)</text>
+    <text x="160" y="378">(3)</text>
+    <text x="336" y="170">(4)</text>
+    <text x="408" y="320">(5)</text>
+    <text x="604" y="100">(6)</text>
+    <text x="656" y="470">(7)</text>
+    <text x="104" y="189">(8)</text>
+    <text x="532" y="262">(9)</text>
+    <text x="100" y="470">(10)</text>
+    <text x="728" y="620">(11)</text>
+    <text x="270" y="100">(12)</text>
+  </g>
+
+  <!-- Leyenda -->
+  <rect x="20" y="475" width="500" height="215" fill="#ffffff" stroke="#455A64"/>
+  <text x="32" y="494" font-size="13" font-weight="bold" fill="#212121">Leyenda</text>
+  <g font-size="12" fill="#212121">
+    <text x="32" y="514">(1) Olla de 150 t con válvula deslizante</text>
+    <text x="32" y="530">(2) Tubo protector sumergido (sello de argón)</text>
+    <text x="32" y="546">(3) Zona de impacto con pad antiturbulencia</text>
+    <text x="32" y="562">(4) Dique (desde arriba): flujo por debajo</text>
+    <text x="32" y="578">(5) Presa (desde el fondo): flujo hacia la superficie</text>
+    <text x="32" y="594">(6) Barra tapón (stopper): regula el nivel de molde</text>
+    <text x="32" y="610">(7) Buza interior + SEN con puertos laterales</text>
+    <text x="32" y="626">(8) Flux de cobertura 50–100 mm (aislante, captura inclusiones)</text>
+    <text x="32" y="642">(9) Medición de temperatura y muestra (lado del tapón)</text>
+    <text x="32" y="658">(10) Celdas de carga del carro (peso del distribuidor)</text>
+    <text x="32" y="674">(11) Molde; (12) Sello de argón del tubo protector</text>
+  </g>
+  <text x="20" y="708" font-size="11" fill="#C62828">Niveles, pesos y geometría: [Validar con OEM / Ingeniería de Proceso]. Fuente: FT-ACE-001 §4. Pesos ≈ por nivel según tabla de calibración del distribuidor.</text>
+</svg>

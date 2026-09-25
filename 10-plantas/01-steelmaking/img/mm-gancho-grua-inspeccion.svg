@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" width="960" height="720" font-family="Arial, Helvetica, sans-serif" font-size="13">
+  <defs>
+    <marker id="c" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,4 L8,4 M4,0 L4,8" stroke="#212121" stroke-width="1"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="480" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#212121">Figura MM-GR-01. Grúa de colada 250/63 t: gancho, frenos dobles y cables</text>
+  <text x="480" y="51" text-anchor="middle" font-size="12" fill="#455A64">Criterios de rechazo según NOM-006-STPS, ASME B30.2/B30.10, ISO 4309 y el fabricante [Validar con OEM / Ingeniería de Mantenimiento]</text>
+
+  <!-- A. Gancho -->
+  <text x="170" y="82" text-anchor="middle" font-weight="bold" fill="#455A64">A. Gancho laminado de colada</text>
+  <rect x="130" y="95" width="60" height="30" fill="#90A4AE" stroke="#212121" stroke-width="1.5"/>
+  <circle cx="160" cy="110" r="9" fill="#ffffff" stroke="#212121" stroke-width="1.5"/>
+  <path d="M 130 125 L 190 125 L 190 200 C 270 205 300 260 300 320 C 300 405 235 450 165 450 C 100 450 60 405 60 355 L 105 355 C 105 385 130 410 165 410 C 215 410 255 375 255 322 C 255 275 225 245 190 245 L 130 245 Z" fill="#78909C" stroke="#212121" stroke-width="2"/>
+  <g stroke="#455A64" stroke-width="1" fill="none">
+    <path d="M 140 130 L 140 240"/><path d="M 150 130 L 150 240"/><path d="M 160 130 L 160 240"/><path d="M 170 130 L 170 240"/><path d="M 180 130 L 180 240"/>
+  </g>
+  <g fill="#ECEFF1" stroke="#212121"><circle cx="145" cy="160" r="4"/><circle cx="175" cy="160" r="4"/><circle cx="145" cy="215" r="4"/><circle cx="175" cy="215" r="4"/><circle cx="265" cy="300" r="4"/><circle cx="200" cy="430" r="4"/></g>
+  <!-- punzonados -->
+  <circle cx="190" cy="262" r="4" fill="#C62828"/>
+  <circle cx="82" cy="355" r="4" fill="#C62828"/>
+  <line x1="190" y1="262" x2="82" y2="355" stroke="#C62828" stroke-width="1.5" marker-start="url(#c)" marker-end="url(#c)"/>
+  <text x="96" y="296" font-size="13" font-weight="bold" fill="#C62828">A</text>
+  <!-- espesor asiento -->
+  <line x1="165" y1="410" x2="165" y2="450" stroke="#1E88E5" stroke-width="1.5" marker-start="url(#c)" marker-end="url(#c)"/>
+  <text x="172" y="436" font-size="13" font-weight="bold" fill="#1E88E5">B</text>
+  <line x1="255" y1="322" x2="300" y2="322" stroke="#43A047" stroke-width="1.5" marker-start="url(#c)" marker-end="url(#c)"/>
+  <text x="304" y="318" font-size="13" font-weight="bold" fill="#43A047">C</text>
+  <rect x="20" y="468" width="310" height="100" fill="#FAFAFA" stroke="#B0BEC5"/>
+  <g font-size="11.5">
+    <text x="28" y="486"><tspan fill="#C62828" font-weight="bold">A</tspan> apertura entre punzonados: retirar si</text>
+    <text x="40" y="501">aumenta &gt; 5 % vs. registro de origen</text>
+    <text x="28" y="518"><tspan fill="#1E88E5" font-weight="bold">B</tspan> asiento: retirar si desgaste &gt; 5 % (laminado)</text>
+    <text x="28" y="535"><tspan fill="#43A047" font-weight="bold">C</tspan> sección lateral: deformación o torsión &gt; 10°</text>
+    <text x="28" y="552">Grieta (partículas magnéticas / tintas) → retirar</text>
+    <text x="28" y="566">Remache flojo o placas separadas → retirar</text>
+  </g>
+
+  <!-- B. Frenos -->
+  <text x="490" y="82" text-anchor="middle" font-weight="bold" fill="#455A64">B. Mecanismo de izaje principal: frenos dobles</text>
+  <rect x="360" y="130" width="70" height="50" rx="6" fill="#90A4AE" stroke="#212121" stroke-width="1.5"/>
+  <text x="395" y="160" text-anchor="middle" font-size="11" font-weight="bold">M1</text>
+  <rect x="360" y="290" width="70" height="50" rx="6" fill="#90A4AE" stroke="#212121" stroke-width="1.5"/>
+  <text x="395" y="320" text-anchor="middle" font-size="11" font-weight="bold">M2</text>
+  <line x1="430" y1="155" x2="440" y2="155" stroke="#212121" stroke-width="4"/><line x1="430" y1="315" x2="440" y2="315" stroke="#212121" stroke-width="4"/>
+  <g fill="#FFCDD2" stroke="#C62828" stroke-width="2">
+    <rect x="440" y="135" width="26" height="40"/><rect x="440" y="295" width="26" height="40"/>
+  </g>
+  <g font-size="10" text-anchor="middle" font-weight="bold"><text x="453" y="159">F1</text><text x="453" y="319">F2</text></g>
+  <line x1="466" y1="155" x2="490" y2="155" stroke="#212121" stroke-width="4"/>
+  <line x1="466" y1="315" x2="490" y2="315" stroke="#212121" stroke-width="4"/>
+  <rect x="490" y="130" width="60" height="210" fill="#B0BEC5" stroke="#212121" stroke-width="1.5"/>
+  <text x="520" y="240" text-anchor="middle" font-size="10" transform="rotate(-90 520 240)">Reductor</text>
+  <line x1="550" y1="235" x2="575" y2="235" stroke="#212121" stroke-width="5"/>
+  <rect x="575" y="175" width="50" height="120" fill="#CFD8DC" stroke="#212121" stroke-width="1.5"/>
+  <g stroke="#455A64"><line x1="575" y1="195" x2="625" y2="195"/><line x1="575" y1="215" x2="625" y2="215"/><line x1="575" y1="235" x2="625" y2="235"/><line x1="575" y1="255" x2="625" y2="255"/><line x1="575" y1="275" x2="625" y2="275"/></g>
+  <rect x="625" y="165" width="12" height="140" fill="#FFCDD2" stroke="#C62828" stroke-width="2"/>
+  <text x="600" y="168" text-anchor="middle" font-size="10">Tambor</text>
+  <text x="646" y="240" font-size="10" font-weight="bold" fill="#C62828">F3</text>
+  <rect x="345" y="360" width="300" height="208" fill="#FAFAFA" stroke="#B0BEC5"/>
+  <g font-size="11.5">
+    <text x="353" y="378">F1, F2 frenos de servicio (uno por motor)</text>
+    <text x="353" y="394">F3 freno de emergencia en el tambor</text>
+    <text x="353" y="414" font-weight="bold">Criterios:</text>
+    <text x="353" y="430">• Cada freno sostiene ≥ 125 % de la carga</text>
+    <text x="365" y="445">nominal (prueba mensual por freno)</text>
+    <text x="353" y="461">• Balata: espesor ≥ 50 % del nuevo</text>
+    <text x="353" y="477">• Entrehierro 0.5–1.0 mm (ajuste OEM)</text>
+    <text x="353" y="493">• Tambor/disco: surco ≤ 1 mm, sin grietas</text>
+    <text x="353" y="509">• Deslizamiento con carga de prueba: 0 mm</text>
+    <text x="353" y="525">• Límites de izaje dobles: rotativo +</text>
+    <text x="365" y="540">de contrapeso/bloque (corte de fuerza)</text>
+    <text x="353" y="556">• Limitador de carga: disparo al 110 %</text>
+  </g>
+
+  <!-- C. Cable -->
+  <text x="800" y="82" text-anchor="middle" font-weight="bold" fill="#455A64">C. Cable de acero (alma de acero IWRC)</text>
+  <g stroke="#455A64" stroke-width="2" fill="#B0BEC5">
+    <rect x="770" y="110" width="60" height="330" rx="28"/>
+  </g>
+  <g stroke="#455A64" stroke-width="1.5" fill="none">
+    <path d="M 772 130 L 828 160"/><path d="M 772 170 L 828 200"/><path d="M 772 210 L 828 240"/><path d="M 772 250 L 828 280"/>
+    <path d="M 772 290 L 828 320"/><path d="M 772 330 L 828 360"/><path d="M 772 370 L 828 400"/><path d="M 772 410 L 828 438"/>
+  </g>
+  <path d="M 812 262 l 18 -10 l -6 14" stroke="#C62828" stroke-width="2" fill="none"/>
+  <text x="836" y="262" font-size="11" fill="#C62828">Alambre roto</text>
+  <line x1="752" y1="190" x2="848" y2="190" stroke="#212121" stroke-width="1" marker-start="url(#c)" marker-end="url(#c)"/>
+  <text x="852" y="186" font-size="11">Ø medido</text>
+  <text x="852" y="200" font-size="10">(sobre crestas)</text>
+  <line x1="740" y1="130" x2="740" y2="410" stroke="#212121" marker-start="url(#c)" marker-end="url(#c)"/>
+  <text x="732" y="270" font-size="10" text-anchor="middle" transform="rotate(-90 732 270)">Paso (6 × Ø)</text>
+  <rect x="660" y="468" width="280" height="100" fill="#FAFAFA" stroke="#B0BEC5"/>
+  <g font-size="11.5">
+    <text x="668" y="486" font-weight="bold">Retirar el cable si:</text>
+    <text x="668" y="502">• Ø se reduce ≥ 5 % del nominal</text>
+    <text x="668" y="518">• 6 alambres rotos al azar en un paso, o</text>
+    <text x="680" y="532">3 en un torón en un paso</text>
+    <text x="668" y="548">• Coca, jaula de pájaro, alma salida,</text>
+    <text x="680" y="562">decoloración por calor o corrosión</text>
+  </g>
+
+  <!-- Números -->
+  <g font-size="12" font-weight="bold" fill="#ffffff">
+    <circle cx="110" cy="110" r="11" fill="#212121"/><text x="110" y="114" text-anchor="middle">1</text>
+    <circle cx="70" cy="410" r="11" fill="#212121"/><text x="70" y="414" text-anchor="middle">2</text>
+    <circle cx="210" cy="275" r="11" fill="#212121"/><text x="210" y="279" text-anchor="middle">3</text>
+    <circle cx="453" cy="118" r="11" fill="#212121"/><text x="453" y="122" text-anchor="middle">4</text>
+    <circle cx="660" cy="190" r="11" fill="#212121"/><text x="660" y="194" text-anchor="middle">5</text>
+    <circle cx="800" cy="100" r="11" fill="#212121"/><text x="800" y="104" text-anchor="middle">6</text>
+  </g>
+
+  <!-- Leyenda -->
+  <rect x="20" y="585" width="920" height="125" fill="#FAFAFA" stroke="#B0BEC5"/>
+  <g font-size="12" fill="#212121">
+    <text x="32" y="605" font-weight="bold">Leyenda</text>
+    <text x="32" y="625">1 Ojo y perno del gancho al balancín (ensayo MT anual; desgaste de perno ≤ 2 % del Ø [Validar OEM])</text>
+    <text x="32" y="645">2 Placas laminadas remachadas (gancho de colada)   3 Punzonados de referencia para medir la apertura A (registrar la medida de origen)</text>
+    <text x="32" y="665">4 Frenos de servicio F1/F2 en eje de motor   5 Freno de emergencia F3 en el tambor (actúa por sobrevelocidad o falla de freno)</text>
+    <text x="32" y="685">6 Cable de izaje (medir Ø en 3 puntos: zona de tambor, poleas compensadoras y cerca del bloque)</text>
+    <text x="32" y="703" fill="#455A64">Frecuencias: diario (operador S-09) · semanal (S-19/S-20) · mensual (prueba de frenos) · anual (inspección periódica + END + prueba de carga tras reparación mayor)</text>
+  </g>
+</svg>

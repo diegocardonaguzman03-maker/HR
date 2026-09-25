@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="1000" height="800" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="500" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#212121">Figura 3. Molde de CC1: agua, SEN, polvo de molde, nivel y termopares BOP</text>
+  <text x="500" y="44" text-anchor="middle" font-size="12" fill="#212121">Izquierda: corte por el ancho (caras angostas a los lados). Derecha: vista en planta. Espesores de capas exagerados (no a escala).</text>
+
+  <!-- ===== Vista principal (corte por el ancho) ===== -->
+  <!-- Cajas de agua caras angostas -->
+  <rect x="70" y="100" width="34" height="470" fill="#BBDEFB" stroke="#455A64"/>
+  <rect x="536" y="100" width="34" height="470" fill="#BBDEFB" stroke="#455A64"/>
+  <!-- Placas de cobre caras angostas (con conicidad: se cierran hacia abajo) -->
+  <path d="M104 100 L124 100 L128 570 L104 570 Z" fill="#B87333" stroke="#455A64"/>
+  <path d="M516 100 L536 100 L536 570 L512 570 Z" fill="#B87333" stroke="#455A64"/>
+  <!-- Acero líquido -->
+  <path d="M124 170 L516 170 L512 570 L128 570 Z" fill="#FF8F00"/>
+  <!-- Cáscara solidificada -->
+  <path d="M124 170 L134 170 L146 570 L128 570 Z" fill="#E65100"/>
+  <path d="M506 170 L516 170 L512 570 L494 570 Z" fill="#E65100"/>
+  <!-- Polvo: capa líquida y sinterizada / polvo -->
+  <rect x="124" y="160" width="392" height="10" fill="#6D4C41"/>
+  <rect x="124" y="140" width="392" height="20" fill="#BCAAA4"/>
+  <!-- SEN -->
+  <rect x="306" y="60" width="28" height="200" fill="#8D6E63" stroke="#455A64" stroke-width="1.5"/>
+  <rect x="314" y="60" width="12" height="200" fill="#FF8F00"/>
+  <path d="M306 240 L286 252 L286 262 L306 252 Z" fill="#8D6E63" stroke="#455A64"/>
+  <path d="M334 240 L354 252 L354 262 L334 252 Z" fill="#8D6E63" stroke="#455A64"/>
+  <!-- Chorros hacia caras angostas (doble recirculación) -->
+  <path d="M286 257 C 220 280, 160 300, 150 330 C 145 360, 190 420, 230 470" fill="none" stroke="#E65100" stroke-width="2" stroke-dasharray="6,4"/>
+  <path d="M150 330 C 150 290, 190 210, 250 180" fill="none" stroke="#E65100" stroke-width="2" stroke-dasharray="6,4"/>
+  <path d="M354 257 C 420 280, 480 300, 490 330 C 495 360, 450 420, 410 470" fill="none" stroke="#E65100" stroke-width="2" stroke-dasharray="6,4"/>
+  <path d="M490 330 C 490 290, 450 210, 390 180" fill="none" stroke="#E65100" stroke-width="2" stroke-dasharray="6,4"/>
+
+  <!-- Cota inmersión SEN: menisco (y=170) a borde superior de puertos (y=240) -->
+  <line x1="240" y1="170" x2="240" y2="240" stroke="#212121"/>
+  <line x1="234" y1="170" x2="246" y2="170" stroke="#212121"/>
+  <line x1="234" y1="240" x2="246" y2="240" stroke="#212121"/>
+  <text x="182" y="212" font-size="11" fill="#212121">120–160 mm</text>
+  <!-- Menisco -->
+  <line x1="40" y1="170" x2="124" y2="170" stroke="#C62828" stroke-dasharray="4,3"/>
+  <text x="10" y="166" font-size="11" fill="#C62828">Menisco</text>
+  <text x="10" y="186" font-size="11" fill="#C62828">≈ 100 mm</text>
+  <text x="10" y="199" font-size="11" fill="#C62828">bajo borde</text>
+  <!-- Cota longitud del molde -->
+  <line x1="590" y1="100" x2="590" y2="570" stroke="#212121"/>
+  <line x1="584" y1="100" x2="596" y2="100" stroke="#212121"/>
+  <line x1="584" y1="570" x2="596" y2="570" stroke="#212121"/>
+  <text x="606" y="335" font-size="12" fill="#212121" transform="rotate(-90 606 335)" text-anchor="middle">900 mm</text>
+
+  <!-- Sensor eddy current -->
+  <rect x="400" y="86" width="60" height="26" rx="4" fill="#455A64"/>
+  <path d="M430 112 L430 138" stroke="#43A047" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="466" y="58" font-size="11" fill="#212121">Sensor de nivel</text>
+  <text x="466" y="71" font-size="11" fill="#212121">(eddy current)</text>
+  <text x="466" y="84" font-size="11" font-weight="bold" fill="#212121">±3 mm normal</text>
+  <text x="466" y="97" font-size="11" font-weight="bold" fill="#C62828">±8 mm alarma</text>
+
+  <!-- Termopares BOP (3 filas en la cara ancha, al fondo) -->
+  <g fill="#212121">
+    <circle cx="170" cy="230" r="4"/><circle cx="250" cy="300" r="4"/><circle cx="390" cy="300" r="4"/><circle cx="470" cy="230" r="4"/>
+    <circle cx="170" cy="300" r="4"/><circle cx="470" cy="300" r="4"/>
+    <circle cx="170" cy="380" r="4"/><circle cx="250" cy="380" r="4"/><circle cx="390" cy="380" r="4"/><circle cx="470" cy="380" r="4"/>
+    <circle cx="250" cy="230" r="4" /><circle cx="390" cy="230" r="4"/>
+  </g>
+  <text x="380" y="224" font-size="11" fill="#212121">Fila 1</text>
+  <text x="400" y="296" font-size="11" fill="#212121">Fila 2</text>
+  <text x="400" y="376" font-size="11" fill="#212121">Fila 3</text>
+
+  <!-- Agua caras angostas: entra abajo, sale arriba -->
+  <path d="M87 560 L87 120" stroke="#1E88E5" stroke-width="3"/>
+  <path d="M80 130 L87 112 L94 130 Z" fill="#1E88E5"/>
+  <path d="M553 560 L553 120" stroke="#1E88E5" stroke-width="3"/>
+  <path d="M546 130 L553 112 L560 130 Z" fill="#1E88E5"/>
+  <text x="8" y="590" font-size="11" fill="#1E88E5">Entrada abajo</text>
+  <text x="8" y="92" font-size="11" fill="#1E88E5">Salida arriba</text>
+
+  <!-- Números vista principal -->
+  <g font-size="12" font-weight="bold" fill="#212121">
+    <text x="108" y="94">(1)</text>
+    <text x="72" y="610">(2)</text>
+    <text x="338" y="76">(3)</text>
+    <text x="130" y="136">(4)</text>
+    <text x="276" y="165">(5)</text>
+    <text x="140" y="470">(6)</text>
+    <text x="408" y="82">(7)</text>
+    <text x="178" y="252">(8)</text>
+    <text x="360" y="460">(9)</text>
+  </g>
+
+  <!-- ===== Vista en planta ===== -->
+  <text x="800" y="84" text-anchor="middle" font-size="13" font-weight="bold" fill="#212121">Vista en planta (ancho 900–1,650 mm)</text>
+  <rect x="660" y="120" width="280" height="16" fill="#B87333" stroke="#455A64"/>
+  <rect x="660" y="206" width="280" height="16" fill="#B87333" stroke="#455A64"/>
+  <rect x="660" y="136" width="14" height="70" fill="#B87333" stroke="#455A64"/>
+  <rect x="926" y="136" width="14" height="70" fill="#B87333" stroke="#455A64"/>
+  <rect x="674" y="136" width="252" height="70" fill="#FF8F00"/>
+  <circle cx="800" cy="171" r="12" fill="#8D6E63" stroke="#455A64"/>
+  <text x="800" y="112" text-anchor="middle" font-size="11" fill="#1E88E5">Cara ancha fija ≈ 4,200 L/min</text>
+  <text x="800" y="238" text-anchor="middle" font-size="11" fill="#1E88E5">Cara ancha móvil ≈ 4,200 L/min</text>
+  <text x="652" y="262" text-anchor="start" font-size="11" fill="#1E88E5">Caras angostas ≈ 450 L/min c/u</text>
+  <text x="652" y="278" text-anchor="start" font-size="11" fill="#1E88E5">ΔT 6–9 °C · alarma ΔT &gt; 11 °C o caudal &lt; 90%</text>
+  <!-- flechas ajuste de ancho -->
+  <path d="M640 171 L656 171" stroke="#212121" stroke-width="2"/>
+  <path d="M960 171 L944 171" stroke="#212121" stroke-width="2"/>
+  <text x="620" y="196" font-size="10" fill="#212121">Ajuste de ancho</text>
+  <text x="620" y="208" font-size="10" fill="#212121">en caliente</text>
+  <text x="700" y="178" font-size="11" fill="#212121">230 mm</text>
+  <text x="846" y="162" font-size="11" font-weight="bold" fill="#212121">(10)</text>
+
+  <!-- Recuadro oscilación y lazo de nivel -->
+  <rect x="620" y="300" width="360" height="118" fill="#ffffff" stroke="#455A64"/>
+  <text x="632" y="320" font-size="13" font-weight="bold" fill="#212121">(11) Oscilación hidráulica no senoidal</text>
+  <text x="632" y="340" font-size="12" fill="#212121">Frecuencia 120–200 cpm · carrera 4–8 mm</text>
+  <text x="632" y="358" font-size="12" fill="#212121">Tiempo de estría negativa (t_N) 0.10–0.15 s</text>
+  <text x="632" y="376" font-size="12" fill="#212121">Paso de marcas = v / f (≈ 7.5 mm a 1.2 m/min, 160 cpm)</text>
+  <text x="632" y="394" font-size="12" fill="#212121">Conicidad caras angostas ≈ 1.0–1.2 %/m</text>
+  <text x="632" y="410" font-size="11" fill="#C62828">[Validar con OEM / Ingeniería de Proceso]</text>
+
+  <rect x="620" y="432" width="360" height="138" fill="#ffffff" stroke="#455A64"/>
+  <text x="632" y="452" font-size="13" font-weight="bold" fill="#212121">(12) Lazo de control de nivel</text>
+  <rect x="632" y="466" width="90" height="36" rx="4" fill="#ECEFF1" stroke="#455A64"/>
+  <text x="677" y="482" text-anchor="middle" font-size="11" fill="#212121">Sensor</text>
+  <text x="677" y="496" text-anchor="middle" font-size="11" fill="#212121">eddy current</text>
+  <rect x="756" y="466" width="90" height="36" rx="4" fill="#ECEFF1" stroke="#455A64"/>
+  <text x="801" y="482" text-anchor="middle" font-size="11" fill="#212121">Controlador</text>
+  <text x="801" y="496" text-anchor="middle" font-size="11" fill="#212121">(PID, nivel 2)</text>
+  <rect x="880" y="466" width="90" height="36" rx="4" fill="#ECEFF1" stroke="#455A64"/>
+  <text x="925" y="482" text-anchor="middle" font-size="11" fill="#212121">Actuador de</text>
+  <text x="925" y="496" text-anchor="middle" font-size="11" fill="#212121">barra tapón</text>
+  <path d="M722 484 L752 484 M846 484 L876 484" stroke="#212121" stroke-width="1.5"/>
+  <path d="M746 480 L754 484 L746 488 Z M870 480 L878 484 L870 488 Z" fill="#212121"/>
+  <text x="632" y="524" font-size="12" fill="#212121">Velocidad de colada = constante (referencia);</text>
+  <text x="632" y="542" font-size="12" fill="#212121">el tapón abre/cierra para mantener el nivel.</text>
+  <text x="632" y="560" font-size="12" fill="#212121">Posición del tapón en tendencia = indicador de clogging.</text>
+
+  <!-- Leyenda -->
+  <rect x="20" y="625" width="960" height="165" fill="#ffffff" stroke="#455A64"/>
+  <text x="32" y="645" font-size="13" font-weight="bold" fill="#212121">Leyenda</text>
+  <g font-size="12" fill="#212121">
+    <text x="32" y="666">(1) Placa de Cu-Ag con recubrimiento de Ni (cara angosta, con conicidad)</text>
+    <text x="32" y="684">(2) Caja/canales de agua de molde (entrada abajo, salida arriba)</text>
+    <text x="32" y="702">(3) SEN (buza sumergida), puertos laterales hacia caras angostas</text>
+    <text x="32" y="720">(4) Polvo de molde sin fundir / sinterizado (cubierta térmica)</text>
+    <text x="32" y="738">(5) Capa de escoria líquida 8–15 mm (medir con método de alambres)</text>
+    <text x="32" y="756">(6) Cáscara solidificada (crece ≈ 15–20 mm a la salida del molde)</text>
+    <text x="510" y="666">(7) Sensor de nivel por corrientes parásitas (eddy current)</text>
+    <text x="510" y="684">(8) Cota de inmersión: menisco → borde superior de puertos</text>
+    <text x="510" y="702">(9) Termopares BOP en caras anchas, 3 filas (predicción de sticker)</text>
+    <text x="510" y="720">(10) Planta del molde: 2 caras anchas + 2 caras angostas móviles</text>
+    <text x="510" y="738">(11) Oscilación; (12) Lazo de control de nivel por barra tapón</text>
+    <text x="510" y="756">Chorros discontinuos: patrón de doble recirculación</text>
+  </g>
+  <text x="32" y="780" font-size="11" fill="#C62828">Posición del menisco, filas de termopares, espesor de cáscara y definición de la cota de inmersión: [Validar con OEM / Ingeniería de Proceso]. Fuente: FT-ACE-001 §4.</text>
+</svg>

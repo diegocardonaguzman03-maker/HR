@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="1000" height="700" font-family="Arial, Helvetica, sans-serif" font-size="13">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="500" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#212121">Figura 5. Secuencia de vaciado por EBT con retención de talón y escoria</text>
+<text x="500" y="47" text-anchor="middle" font-size="12" fill="#455A64">150 t a la olla · talón 20–30 t retenido · ángulos y tiempos ilustrativos [Validar con OEM / Ingeniería de Proceso]</text>
+<clipPath id="c0"><path d="M-76,-50 L-76,0 Q-76,45 0,48 Q46,46 56,28 L86,28 L86,-50 Z"/></clipPath>
+<rect x="20" y="60" width="232" height="400" rx="6" fill="#FAFAFA" stroke="#455A64"/>
+<text x="136" y="82" text-anchor="middle" font-weight="bold" fill="#212121">1. Listo para vaciar</text>
+<g transform="translate(115,165) scale(0.85) rotate(0)">
+<path d="M-95,-50 L-95,0 Q-95,62 0,66 Q58,64 72,44 L96,44 L96,-50 Z" fill="#455A64"/>
+<path d="M-85,-50 L-85,0 Q-85,54 0,57 Q52,55 64,36 L88,36 L88,-50 Z" fill="#8D6E63"/><path d="M-76,-50 L-76,0 Q-76,45 0,48 Q46,46 56,28 L86,28 L86,-50 Z" fill="#ECEFF1"/>
+<g clip-path="url(#c0)"><g transform="rotate(0)"><rect x="-150" y="-5" width="300" height="120" fill="#E65100"/><rect x="-150" y="-17" width="300" height="12" fill="#6D4C41"/></g></g>
+<rect x="72" y="36" width="14" height="34" fill="#8D6E63" stroke="#4E342E"/>
+<rect x="76" y="36" width="6" height="34" fill="#FFE0B2"/>
+<rect x="66" y="70" width="26" height="6" fill="#212121"/>
+</g>
+<path d="M125,300 L215,300 L206,395 L134,395 Z" fill="#8D6E63" stroke="#455A64" stroke-width="3"/>
+<rect x="110" y="397" width="120" height="10" fill="#455A64"/><circle cx="130" cy="412" r="6" fill="#455A64"/><circle cx="210" cy="412" r="6" fill="#455A64"/>
+<text x="136" y="435" text-anchor="middle" font-size="12" font-weight="bold" fill="#0D47A1">0° (nivelado)</text>
+<text x="136" y="452" text-anchor="middle" font-size="11" fill="#212121">EBT lleno de arena</text>
+<text x="136" y="468" text-anchor="middle" font-size="11" fill="#212121">olla precalentada, Ar abierto</text>
+<clipPath id="c1"><path d="M-76,-50 L-76,0 Q-76,45 0,48 Q46,46 56,28 L86,28 L86,-50 Z"/></clipPath>
+<rect x="262" y="60" width="232" height="400" rx="6" fill="#FAFAFA" stroke="#455A64"/>
+<text x="378" y="82" text-anchor="middle" font-weight="bold" fill="#212121">2. Apertura</text>
+<g transform="translate(357,165) scale(0.85) rotate(4)">
+<path d="M-95,-50 L-95,0 Q-95,62 0,66 Q58,64 72,44 L96,44 L96,-50 Z" fill="#455A64"/>
+<path d="M-85,-50 L-85,0 Q-85,54 0,57 Q52,55 64,36 L88,36 L88,-50 Z" fill="#8D6E63"/><path d="M-76,-50 L-76,0 Q-76,45 0,48 Q46,46 56,28 L86,28 L86,-50 Z" fill="#ECEFF1"/>
+<g clip-path="url(#c1)"><g transform="rotate(-4)"><rect x="-150" y="-3" width="300" height="120" fill="#E65100"/><rect x="-150" y="-15" width="300" height="12" fill="#6D4C41"/></g></g>
+<rect x="72" y="36" width="14" height="34" fill="#8D6E63" stroke="#4E342E"/>
+<rect x="76" y="36" width="6" height="34" fill="#FF8F00"/>
+<rect x="92" y="72" width="26" height="6" fill="#212121"/>
+</g>
+<path d="M367,300 L457,300 L448,395 L376,395 Z" fill="#8D6E63" stroke="#455A64" stroke-width="3"/>
+<path d="M372,380 L452,380 L446,390 L378,390 Z" fill="#E65100"/>
+<rect x="352" y="397" width="120" height="10" fill="#455A64"/><circle cx="372" cy="412" r="6" fill="#455A64"/><circle cx="452" cy="412" r="6" fill="#455A64"/>
+<path d="M419.5,234.1 Q414,307.1 412,380" stroke="#FF8F00" stroke-width="6" fill="none"/>
+<circle cx="415.5" cy="246.1" r="2.5" fill="#FFE0B2" stroke="#8D6E63"/>
+<circle cx="417.5" cy="255.1" r="2.5" fill="#FFE0B2" stroke="#8D6E63"/>
+<circle cx="419.5" cy="264.1" r="2.5" fill="#FFE0B2" stroke="#8D6E63"/>
+<circle cx="421.5" cy="273.1" r="2.5" fill="#FFE0B2" stroke="#8D6E63"/>
+<circle cx="423.5" cy="282.1" r="2.5" fill="#FFE0B2" stroke="#8D6E63"/>
+<line x1="422" y1="395" x2="422" y2="415" stroke="#43A047" stroke-width="3"/>
+<text x="378" y="435" text-anchor="middle" font-size="12" font-weight="bold" fill="#0D47A1">3–5°</text>
+<text x="378" y="452" text-anchor="middle" font-size="11" fill="#212121">abre compuerta: cae la arena</text>
+<text x="378" y="468" text-anchor="middle" font-size="11" fill="#212121">chorro libre (sin lanceo de O₂)</text>
+<clipPath id="c2"><path d="M-76,-50 L-76,0 Q-76,45 0,48 Q46,46 56,28 L86,28 L86,-50 Z"/></clipPath>
+<rect x="504" y="60" width="232" height="400" rx="6" fill="#FAFAFA" stroke="#455A64"/>
+<text x="620" y="82" text-anchor="middle" font-weight="bold" fill="#212121">3. Vaciado + adiciones</text>
+<g transform="translate(599,165) scale(0.85) rotate(13)">
+<path d="M-95,-50 L-95,0 Q-95,62 0,66 Q58,64 72,44 L96,44 L96,-50 Z" fill="#455A64"/>
+<path d="M-85,-50 L-85,0 Q-85,54 0,57 Q52,55 64,36 L88,36 L88,-50 Z" fill="#8D6E63"/><path d="M-76,-50 L-76,0 Q-76,45 0,48 Q46,46 56,28 L86,28 L86,-50 Z" fill="#ECEFF1"/>
+<g clip-path="url(#c2)"><g transform="rotate(-13)"><rect x="-150" y="22" width="300" height="120" fill="#E65100"/><rect x="-150" y="10" width="300" height="12" fill="#6D4C41"/></g></g>
+<rect x="72" y="36" width="14" height="34" fill="#8D6E63" stroke="#4E342E"/>
+<rect x="76" y="36" width="6" height="34" fill="#FF8F00"/>
+<rect x="92" y="72" width="26" height="6" fill="#212121"/>
+</g>
+<path d="M609,300 L699,300 L690,395 L618,395 Z" fill="#8D6E63" stroke="#455A64" stroke-width="3"/>
+<path d="M614,335 L694,335 L688,390 L620,390 Z" fill="#E65100"/>
+<rect x="594" y="397" width="120" height="10" fill="#455A64"/><circle cx="614" cy="412" r="6" fill="#455A64"/><circle cx="694" cy="412" r="6" fill="#455A64"/>
+<path d="M649.9,243.0 Q656,289.0 654,335" stroke="#FF8F00" stroke-width="9" fill="none"/>
+<path d="M729,215 L684,310" stroke="#455A64" stroke-width="7"/>
+<text x="714" y="208" text-anchor="middle" font-size="10" fill="#212121">tolva</text>
+<line x1="664" y1="395" x2="664" y2="415" stroke="#43A047" stroke-width="3"/>
+<text x="620" y="435" text-anchor="middle" font-size="12" font-weight="bold" fill="#0D47A1">hasta 12–15°</text>
+<text x="620" y="452" text-anchor="middle" font-size="11" fill="#212121">adiciones de 30 t a 120 t</text>
+<text x="620" y="468" text-anchor="middle" font-size="11" fill="#212121">Ar 200–400 NL/min · 3–5 min</text>
+<clipPath id="c3"><path d="M-76,-50 L-76,0 Q-76,45 0,48 Q46,46 56,28 L86,28 L86,-50 Z"/></clipPath>
+<rect x="746" y="60" width="232" height="400" rx="6" fill="#FAFAFA" stroke="#455A64"/>
+<text x="862" y="82" text-anchor="middle" font-weight="bold" fill="#212121">4. Cierre</text>
+<g transform="translate(841,165) scale(0.85) rotate(-3)">
+<path d="M-95,-50 L-95,0 Q-95,62 0,66 Q58,64 72,44 L96,44 L96,-50 Z" fill="#455A64"/>
+<path d="M-85,-50 L-85,0 Q-85,54 0,57 Q52,55 64,36 L88,36 L88,-50 Z" fill="#8D6E63"/><path d="M-76,-50 L-76,0 Q-76,45 0,48 Q46,46 56,28 L86,28 L86,-50 Z" fill="#ECEFF1"/>
+<g clip-path="url(#c3)"><g transform="rotate(3)"><rect x="-150" y="28" width="300" height="120" fill="#E65100"/><rect x="-150" y="16" width="300" height="12" fill="#6D4C41"/></g></g>
+<rect x="72" y="36" width="14" height="34" fill="#8D6E63" stroke="#4E342E"/>
+<rect x="76" y="36" width="6" height="34" fill="#FFE0B2"/>
+<rect x="66" y="70" width="26" height="6" fill="#212121"/>
+</g>
+<path d="M851,300 L941,300 L932,395 L860,395 Z" fill="#8D6E63" stroke="#455A64" stroke-width="3"/>
+<path d="M856,322 L936,322 L930,390 L862,390 Z" fill="#E65100"/>
+<rect x="836" y="397" width="120" height="10" fill="#455A64"/><circle cx="856" cy="412" r="6" fill="#455A64"/><circle cx="936" cy="412" r="6" fill="#455A64"/>
+<line x1="906" y1="395" x2="906" y2="415" stroke="#43A047" stroke-width="3"/>
+<text x="862" y="435" text-anchor="middle" font-size="12" font-weight="bold" fill="#0D47A1">retroinclina a −3°</text>
+<text x="862" y="452" text-anchor="middle" font-size="11" fill="#212121">al peso objetivo o 1.ª escoria</text>
+<text x="862" y="468" text-anchor="middle" font-size="11" fill="#212121">talón 20–30 t + escoria en el horno</text>
+<rect x="20" y="475" width="960" height="36" fill="#FFEBEE" stroke="#C62828" stroke-width="2" stroke-dasharray="8,4"/>
+<text x="500" y="498" text-anchor="middle" font-weight="bold" fill="#C62828">PASO CRÍTICO — ZONA DE EXCLUSIÓN durante todo el vaciado: nadie en la fosa, bajo el horno ni en la vía del carro de olla</text>
+<rect x="20" y="520" width="960" height="170" fill="#FAFAFA" stroke="#455A64"/>
+<text x="30" y="540" font-size="12" font-weight="bold" fill="#212121">Leyenda y parámetros clave</text>
+<text x="30" y="562" font-size="12" fill="#212121">Naranja = acero líquido · café oscuro = escoria · beige = arena de llenado del EBT · verde = argón por el tapón poroso · negro = compuerta (flap) del EBT.</text>
+<text x="30" y="584" font-size="12" fill="#212121">Temperatura de vaciado 1,630 ± 15 °C · O activo 500–900 ppm · C 0.04–0.08% · P ≤ 0.015% (FT-ACE-001 §2).</text>
+<text x="30" y="606" font-size="12" fill="#212121">Adiciones (desoxidantes, ferroaleaciones, cal/escoria sintética): iniciar con ≈ 20% del peso en la olla (≈ 30 t) y terminar antes del 80% (≈ 120 t).</text>
+<text x="30" y="628" font-size="12" fill="#212121">Cierre: retroinclinación inmediata al alcanzar 150 t en la báscula de la olla o al detectar escoria (cámara IR/visual). Arrastre de escoria objetivo ≤ 5 kg/t [Supuesto].</text>
+<text x="30" y="650" font-size="12" fill="#C62828">Apertura libre del EBT objetivo ≥ 95% [Supuesto]; si no abre: ALTO, nadie se asoma; aplica MO-EAF-07 §9 (lanceo de O₂ desde posición protegida).</text>
+<text x="30" y="672" font-size="12" fill="#C62828">Tiempos, ángulos y diámetro del agujero de vaciado: [Validar con OEM / Ingeniería de Proceso].</text>
+</svg>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="1000" height="800" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="500" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#212121">Figura 1. Equipo de protección personal (EPP) de la Acería por zona</text>
+  <text x="500" y="46" text-anchor="middle" font-size="12" fill="#212121">NOM-017-STPS-2008. Especificaciones de referencia [Verificar con la NOM vigente / SSO y fichas del proveedor]</text>
+
+  <!-- FIGURA HUMANA con EPP de zona roja -->
+  <!-- casco -->
+  <path d="M195,110 Q240,70 285,110 L290,118 L190,118 Z" fill="#ECEFF1" stroke="#212121" stroke-width="2"/>
+  <!-- capucha aluminizada -->
+  <path d="M195,118 L285,118 L295,205 L185,205 Z" fill="#B0BEC5" stroke="#212121" stroke-width="2"/>
+  <!-- visor dorado -->
+  <rect x="210" y="130" width="60" height="38" rx="6" fill="#FFB300" stroke="#212121" stroke-width="2"/>
+  <!-- chaquetón aluminizado -->
+  <path d="M170,205 L310,205 L330,420 L150,420 Z" fill="#CFD8DC" stroke="#212121" stroke-width="2"/>
+  <line x1="240" y1="205" x2="240" y2="420" stroke="#90A4AE" stroke-width="2"/>
+  <!-- brazos -->
+  <path d="M170,210 L120,330 L135,338 L180,240 Z" fill="#CFD8DC" stroke="#212121" stroke-width="2"/>
+  <path d="M310,210 L360,330 L345,338 L300,240 Z" fill="#CFD8DC" stroke="#212121" stroke-width="2"/>
+  <!-- guantes -->
+  <rect x="108" y="330" width="30" height="42" rx="6" fill="#B0BEC5" stroke="#212121" stroke-width="2"/>
+  <rect x="343" y="330" width="30" height="42" rx="6" fill="#B0BEC5" stroke="#212121" stroke-width="2"/>
+  <!-- pantalon FR -->
+  <rect x="180" y="420" width="55" height="170" fill="#1565C0" stroke="#212121" stroke-width="2"/>
+  <rect x="245" y="420" width="55" height="170" fill="#1565C0" stroke="#212121" stroke-width="2"/>
+  <!-- polainas -->
+  <rect x="176" y="530" width="63" height="70" fill="#B0BEC5" stroke="#212121" stroke-width="2"/>
+  <rect x="241" y="530" width="63" height="70" fill="#B0BEC5" stroke="#212121" stroke-width="2"/>
+  <!-- botas -->
+  <path d="M172,600 L240,600 L245,630 L160,630 Q158,612 172,600 Z" fill="#212121"/>
+  <path d="M240,600 L308,600 Q322,612 320,630 L235,630 Z" fill="#212121"/>
+  <rect x="180" y="603" width="40" height="10" fill="#607D8B"/>
+  <rect x="260" y="603" width="40" height="10" fill="#607D8B"/>
+  <!-- detector de gases y dosimetro -->
+  <rect x="262" y="222" width="22" height="30" rx="3" fill="#FDD835" stroke="#212121" stroke-width="2"/>
+  <rect x="200" y="230" width="16" height="20" rx="2" fill="#FFEB3B" stroke="#212121"/>
+  <text x="208" y="244" text-anchor="middle" font-size="12" fill="#212121">D</text>
+  <!-- orejeras -->
+  <ellipse cx="192" cy="150" rx="10" ry="18" fill="#E53935" stroke="#212121"/>
+  <ellipse cx="288" cy="150" rx="10" ry="18" fill="#E53935" stroke="#212121"/>
+
+  <!-- Llamadas -->
+  <g stroke="#212121" stroke-width="1">
+    <line x1="240" y1="85" x2="400" y2="80"/>
+    <line x1="270" y1="148" x2="400" y2="115"/>
+    <line x1="290" y1="190" x2="400" y2="150"/>
+    <line x1="315" y1="300" x2="400" y2="185"/>
+    <line x1="240" y1="400" x2="400" y2="220"/>
+    <line x1="373" y1="350" x2="400" y2="255"/>
+    <line x1="300" y1="570" x2="400" y2="290"/>
+    <line x1="310" y1="612" x2="400" y2="325"/>
+    <line x1="298" y1="150" x2="400" y2="360"/>
+    <line x1="284" y1="237" x2="400" y2="395"/>
+    <line x1="208" y1="240" x2="400" y2="430"/>
+  </g>
+  <g font-size="12" font-weight="bold" fill="#ffffff">
+    <circle cx="410" cy="80" r="10" fill="#212121"/><text x="410" y="84" text-anchor="middle">1</text>
+    <circle cx="410" cy="115" r="10" fill="#212121"/><text x="410" y="119" text-anchor="middle">2</text>
+    <circle cx="410" cy="150" r="10" fill="#212121"/><text x="410" y="154" text-anchor="middle">3</text>
+    <circle cx="410" cy="185" r="10" fill="#212121"/><text x="410" y="189" text-anchor="middle">4</text>
+    <circle cx="410" cy="220" r="10" fill="#212121"/><text x="410" y="224" text-anchor="middle">5</text>
+    <circle cx="410" cy="255" r="10" fill="#212121"/><text x="410" y="259" text-anchor="middle">6</text>
+    <circle cx="410" cy="290" r="10" fill="#212121"/><text x="410" y="294" text-anchor="middle">7</text>
+    <circle cx="410" cy="325" r="10" fill="#212121"/><text x="410" y="329" text-anchor="middle">8</text>
+    <circle cx="410" cy="360" r="10" fill="#212121"/><text x="410" y="364" text-anchor="middle">9</text>
+    <circle cx="410" cy="395" r="10" fill="#212121"/><text x="410" y="399" text-anchor="middle">10</text>
+    <circle cx="410" cy="430" r="10" fill="#212121"/><text x="410" y="434" text-anchor="middle">11</text>
+  </g>
+  <g font-size="12" fill="#212121">
+    <text x="428" y="84">Casco dieléctrico con suspensión y barbiquejo; resistente a salpicadura</text>
+    <text x="428" y="119">Careta con visor dorado (filtro IR/UV) montada al casco</text>
+    <text x="428" y="154">Capucha aluminizada con visor (vaciado, muestreo, plataforma)</text>
+    <text x="428" y="189">Chaquetón/abrigo aluminizado (ISO 11612: A1, B, C, D3, E3)</text>
+    <text x="428" y="224">Ropa de trabajo FR o 100 % algodón; PROHIBIDO sintético</text>
+    <text x="428" y="259">Guantes aluminizados o de aramida (≥ 1,000 °C por contacto breve)</text>
+    <text x="428" y="294">Polainas aluminizadas sobre el pantalón, cubren la bota</text>
+    <text x="428" y="329">Botas con metatarsal, casquillo, suela ≥ 300 °C, liberación rápida</text>
+    <text x="428" y="364">Protección auditiva: tapón; doble (tapón + orejera) si ≥ 105 dB(A)</text>
+    <text x="428" y="399">Detector personal CO/O₂ (multigás) a ≤ 30 cm de nariz y boca</text>
+    <text x="428" y="434">Dosímetro personal (solo POE, MS-ACE-07) a la altura del pecho</text>
+  </g>
+
+  <!-- Matriz EPP por zona -->
+  <text x="30" y="672" font-size="14" font-weight="bold" fill="#212121">Matriz de EPP por zona / tarea  (● obligatorio · ○ según ARP / permiso)</text>
+  <g font-size="12" fill="#212121">
+    <rect x="30" y="682" width="940" height="22" fill="#455A64"/>
+    <text x="40" y="697" fill="#ffffff">Zona / tarea</text>
+    <text x="330" y="697" fill="#ffffff">1</text><text x="370" y="697" fill="#ffffff">2</text><text x="410" y="697" fill="#ffffff">3</text>
+    <text x="450" y="697" fill="#ffffff">4</text><text x="490" y="697" fill="#ffffff">5</text><text x="530" y="697" fill="#ffffff">6</text>
+    <text x="570" y="697" fill="#ffffff">7</text><text x="610" y="697" fill="#ffffff">8</text><text x="650" y="697" fill="#ffffff">9</text>
+    <text x="690" y="697" fill="#ffffff">10</text><text x="735" y="697" fill="#ffffff">11</text>
+    <text x="780" y="697" fill="#ffffff">Otros</text>
+
+    <text x="40" y="720">ROJA: vaciado, muestreo, plataforma de colada</text>
+    <text x="330" y="720">●</text><text x="370" y="720">●</text><text x="410" y="720">●</text><text x="450" y="720">●</text><text x="490" y="720">●</text><text x="530" y="720">●</text><text x="570" y="720">●</text><text x="610" y="720">●</text><text x="650" y="720">●</text><text x="690" y="720">●</text><text x="735" y="720">○</text>
+    <text x="780" y="720">lentes sombra 3–5 ante el arco</text>
+    <text x="40" y="740">AMARILLA: nave de hornos/ollas, torreta</text>
+    <text x="330" y="740">●</text><text x="370" y="740">●</text><text x="410" y="740">○</text><text x="450" y="740">●</text><text x="490" y="740">●</text><text x="530" y="740">●</text><text x="570" y="740">○</text><text x="610" y="740">●</text><text x="650" y="740">●</text><text x="690" y="740">●</text><text x="735" y="740">○</text>
+    <text x="780" y="740">lentes de seguridad</text>
+    <text x="40" y="760">VERDE / patio de chatarra</text>
+    <text x="330" y="760">●</text><text x="370" y="760">○</text><text x="410" y="760">–</text><text x="450" y="760">○</text><text x="490" y="760">●</text><text x="530" y="760">○</text><text x="570" y="760">–</text><text x="610" y="760">●</text><text x="650" y="760">●</text><text x="690" y="760">○</text><text x="735" y="760">●</text>
+    <text x="780" y="760">guante anticorte; chaleco</text>
+    <text x="40" y="780">Mantenimiento en frío / confinado / altura</text>
+    <text x="330" y="780">●</text><text x="370" y="780">–</text><text x="410" y="780">–</text><text x="450" y="780">–</text><text x="490" y="780">●</text><text x="530" y="780">○</text><text x="570" y="780">–</text><text x="610" y="780">●</text><text x="650" y="780">●</text><text x="690" y="780">●</text><text x="735" y="780">○</text>
+    <text x="780" y="780">respirador P100; arnés</text>
+    <line x1="30" y1="726" x2="970" y2="726" stroke="#B0BEC5"/>
+    <line x1="30" y1="746" x2="970" y2="746" stroke="#B0BEC5"/>
+    <line x1="30" y1="766" x2="970" y2="766" stroke="#B0BEC5"/>
+    <line x1="30" y1="788" x2="970" y2="788" stroke="#455A64"/>
+  </g>
+
+  <!-- notas -->
+  <rect x="428" y="460" width="542" height="185" fill="#FFEBEE" stroke="#C62828" stroke-width="1.5"/>
+  <text x="440" y="482" font-size="13" font-weight="bold" fill="#C62828">Reglas de uso</text>
+  <g font-size="12" fill="#212121">
+    <text x="440" y="502">• Inspecciona el aluminizado antes de cada turno: sin roturas, sin</text>
+    <text x="440" y="518">  delaminación, sin grasa ni humedad. Si falla: retíralo y cámbialo.</text>
+    <text x="440" y="538">• EPP húmedo NO entra a zona roja (vapor = quemadura).</text>
+    <text x="440" y="558">• Pantalón por FUERA de la bota; manga por fuera del guante.</text>
+    <text x="440" y="578">• Detector: prueba de respuesta (bump test) diaria antes de usarlo;</text>
+    <text x="440" y="594">  calibración según el fabricante [Validar con OEM].</text>
+    <text x="440" y="614">• Nada de encendedores, celulares ni objetos sintéticos en bolsas</text>
+    <text x="440" y="630">  del pecho al trabajar frente a metal líquido.</text>
+  </g>
+</svg>

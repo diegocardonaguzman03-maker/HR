@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="1000" height="720" font-family="Arial, Helvetica, sans-serif" font-size="13">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#212121"/></marker>
+    <marker id="g" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#43A047"/></marker>
+  </defs>
+  <text x="500" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#212121">Figura 2. Corte esquemático del EAF (EAF-1 / EAF-2, AC, 150 t, EBT)</text>
+
+  <!-- mástiles y brazos -->
+  <rect x="730" y="55" width="30" height="330" fill="#455A64"/>
+  <rect x="345" y="62" width="400" height="14" fill="#78909C" stroke="#455A64"/>
+  <rect x="345" y="86" width="400" height="14" fill="#90A4AE" stroke="#455A64"/>
+  <rect x="345" y="110" width="400" height="14" fill="#B0BEC5" stroke="#455A64"/>
+  <!-- mordazas -->
+  <rect x="362" y="120" width="30" height="24" fill="#455A64"/>
+  <rect x="405" y="96" width="30" height="24" fill="#455A64"/>
+  <rect x="448" y="72" width="30" height="24" fill="#455A64"/>
+  <!-- electrodos -->
+  <rect x="366" y="140" width="22" height="265" fill="#616161"/>
+  <rect x="409" y="116" width="22" height="289" fill="#757575"/>
+  <rect x="452" y="92" width="22" height="313" fill="#616161"/>
+  <!-- arcos -->
+  <path d="M377,405 l-4,10 l6,6 l-4,10" stroke="#FFD600" stroke-width="3" fill="none"/>
+  <path d="M420,405 l-4,10 l6,6 l-4,10" stroke="#FFD600" stroke-width="3" fill="none"/>
+  <path d="M463,405 l-4,10 l6,6 l-4,10" stroke="#FFD600" stroke-width="3" fill="none"/>
+
+  <!-- bóveda -->
+  <path d="M180,250 Q420,150 660,250 L640,262 Q420,172 200,262 Z" fill="#1E88E5" stroke="#0D47A1"/>
+  <!-- delta -->
+  <path d="M355,196 L485,196 L480,214 L360,214 Z" fill="#8D6E63" stroke="#4E342E"/>
+  <!-- 4.º agujero -->
+  <rect x="540" y="160" width="46" height="50" fill="#ffffff" stroke="#455A64" stroke-width="3"/>
+  <path d="M540,160 L540,140 L640,140 L640,100 M586,160 L586,158 L660,158 L660,100" fill="none" stroke="#455A64" stroke-width="3"/>
+  <path d="M563,150 L563,120" stroke="#43A047" stroke-width="3" marker-end="url(#g)"/>
+  <!-- 5.º agujero DRI -->
+  <path d="M250,110 L300,212" stroke="#455A64" stroke-width="16"/>
+  <path d="M250,110 L300,212" stroke="#8D8D8D" stroke-width="10"/>
+  <circle cx="300" cy="235" r="4" fill="#424242"/><circle cx="306" cy="250" r="4" fill="#424242"/><circle cx="312" cy="268" r="4" fill="#424242"/><circle cx="318" cy="290" r="4" fill="#424242"/>
+
+  <!-- paneles de agua (coraza superior) -->
+  <rect x="180" y="262" width="22" height="170" fill="#1E88E5" stroke="#0D47A1"/>
+  <rect x="638" y="262" width="22" height="170" fill="#1E88E5" stroke="#0D47A1"/>
+  <line x1="191" y1="270" x2="191" y2="425" stroke="#ffffff" stroke-dasharray="4,6"/>
+  <line x1="649" y1="270" x2="649" y2="425" stroke="#ffffff" stroke-dasharray="4,6"/>
+
+  <!-- coraza inferior / solera refractaria -->
+  <path d="M175,432 L175,470 Q175,590 420,600 Q600,596 640,560 L700,560 L700,440 L665,432 Z" fill="#455A64"/>
+  <path d="M202,432 L202,470 Q205,570 420,578 Q590,574 620,540 L676,540 L676,448 L638,432 Z" fill="#8D6E63"/>
+  <!-- metal líquido (talón + baño) -->
+  <path d="M215,470 Q220,555 420,560 Q575,556 605,525 L660,525 L660,470 Z" fill="#E65100"/>
+  <!-- escoria espumosa -->
+  <rect x="202" y="400" width="436" height="70" fill="#6D4C41" opacity="0.85"/>
+  <rect x="638" y="455" width="22" height="15" fill="#6D4C41"/>
+  <text x="420" y="440" text-anchor="middle" fill="#ffffff" font-size="12">escoria espumosa (cubre el arco)</text>
+  <text x="420" y="515" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">acero líquido · talón 20–30 t retenido</text>
+
+  <!-- puerta de escoria -->
+  <rect x="160" y="400" width="42" height="34" fill="#ffffff" stroke="#C62828" stroke-width="2"/>
+  <path d="M160,440 L110,470 L60,478" stroke="#6D4C41" stroke-width="8" fill="none"/>
+  <path d="M40,478 L100,478 L92,520 L48,520 Z" fill="#78909C" stroke="#455A64"/>
+  <!-- quemador / lanza -->
+  <rect x="202" y="330" width="40" height="14" fill="#43A047" transform="rotate(25 202 330)"/>
+  <path d="M240,352 L300,388" stroke="#43A047" stroke-width="3" stroke-dasharray="6,3" marker-end="url(#g)"/>
+  <!-- inyección de carbono -->
+  <path d="M600,300 L560,392" stroke="#212121" stroke-width="5"/>
+
+  <!-- EBT -->
+  <rect x="640" y="540" width="26" height="90" fill="#8D6E63" stroke="#4E342E"/>
+  <rect x="648" y="540" width="10" height="90" fill="#FFE0B2"/>
+  <rect x="628" y="630" width="50" height="10" fill="#455A64"/>
+  <!-- cotas -->
+  <line x1="175" y1="655" x2="665" y2="655" stroke="#212121" marker-end="url(#a)"/>
+  <line x1="665" y1="655" x2="175" y2="655" stroke="#212121" marker-end="url(#a)"/>
+  <text x="420" y="675" text-anchor="middle" font-weight="bold" fill="#212121">Ø coraza 7.3 m</text>
+  <line x1="110" y1="400" x2="110" y2="470" stroke="#212121" marker-end="url(#a)"/>
+  <line x1="110" y1="470" x2="110" y2="400" stroke="#212121" marker-end="url(#a)"/>
+  <text x="104" y="385" text-anchor="end" font-size="11" fill="#212121">espuma ≥ longitud</text>
+  <text x="104" y="398" text-anchor="end" font-size="11" fill="#212121">de arco [Validar]</text>
+  <text x="440" y="160" font-size="11" fill="#212121">Ø 610 mm UHP</text>
+
+  <!-- números -->
+  <g font-weight="bold" font-size="12" fill="#ffffff">
+    <circle cx="300" cy="590" r="11" fill="#C62828"/><text x="300" y="594" text-anchor="middle">1</text>
+    <circle cx="250" cy="500" r="11" fill="#C62828"/><text x="250" y="504" text-anchor="middle">2</text>
+    <circle cx="540" cy="540" r="11" fill="#C62828"/><text x="540" y="544" text-anchor="middle">3</text>
+    <circle cx="560" cy="415" r="11" fill="#C62828"/><text x="560" y="419" text-anchor="middle">4</text>
+    <circle cx="250" cy="215" r="11" fill="#C62828"/><text x="250" y="219" text-anchor="middle">5</text>
+    <circle cx="420" cy="232" r="11" fill="#C62828"/><text x="420" y="236" text-anchor="middle">6</text>
+    <circle cx="500" cy="300" r="11" fill="#C62828"/><text x="500" y="304" text-anchor="middle">7</text>
+    <circle cx="700" cy="93" r="11" fill="#C62828"/><text x="700" y="97" text-anchor="middle">8</text>
+    <circle cx="745" cy="200" r="11" fill="#C62828"/><text x="745" y="204" text-anchor="middle">9</text>
+    <circle cx="160" cy="300" r="11" fill="#C62828"/><text x="160" y="304" text-anchor="middle">10</text>
+    <circle cx="610" cy="120" r="11" fill="#C62828"/><text x="610" y="124" text-anchor="middle">11</text>
+    <circle cx="228" cy="100" r="11" fill="#C62828"/><text x="228" y="104" text-anchor="middle">12</text>
+    <circle cx="140" cy="415" r="11" fill="#C62828"/><text x="140" y="419" text-anchor="middle">13</text>
+    <circle cx="215" cy="310" r="11" fill="#C62828"/><text x="215" y="314" text-anchor="middle">14</text>
+    <circle cx="615" cy="300" r="11" fill="#C62828"/><text x="615" y="304" text-anchor="middle">15</text>
+    <circle cx="700" cy="600" r="11" fill="#C62828"/><text x="700" y="604" text-anchor="middle">16</text>
+    <circle cx="70" cy="540" r="11" fill="#C62828"/><text x="70" y="544" text-anchor="middle">17</text>
+  </g>
+
+  <!-- leyenda -->
+  <rect x="780" y="400" width="210" height="305" fill="#FAFAFA" stroke="#455A64"/>
+  <text x="790" y="420" font-weight="bold" fill="#212121">Leyenda</text>
+  <g font-size="11" fill="#212121">
+    <text x="790" y="438">1 Coraza inferior (acero)</text>
+    <text x="790" y="454">2 Solera y bancos refractarios</text>
+    <text x="790" y="470">3 Talón líquido 20–30 t</text>
+    <text x="790" y="486">4 Escoria espumosa</text>
+    <text x="790" y="502">5 Bóveda enfriada por agua</text>
+    <text x="790" y="518">6 Delta refractario</text>
+    <text x="790" y="534">7 Electrodos (3) grafito UHP 610 mm</text>
+    <text x="790" y="550">8 Brazos portaelectrodos + mordazas</text>
+    <text x="790" y="566">9 Mástiles / regulación hidráulica</text>
+    <text x="790" y="582">10 Paneles de agua 4–6 bar</text>
+    <text x="790" y="598">11 4.º agujero (DES) −5 a −15 Pa</text>
+    <text x="790" y="614">12 5.º agujero: DRI 3.5–5.0 t/min</text>
+    <text x="790" y="630">13 Puerta de escoria</text>
+    <text x="790" y="646">14 Quemador/lanza O₂ (4 × 2,500 Nm³/h)</text>
+    <text x="790" y="662">15 Inyector de carbono 8–12 kg/t</text>
+    <text x="790" y="678">16 EBT (vaciado excéntrico)</text>
+    <text x="790" y="694">17 Olla de escoria (portaollas)</text>
+  </g>
+  <text x="20" y="705" font-size="11" fill="#C62828">Esquema no a escala. Geometría y cotas: [Validar con OEM / Ingeniería de Proceso]</text>
+</svg>

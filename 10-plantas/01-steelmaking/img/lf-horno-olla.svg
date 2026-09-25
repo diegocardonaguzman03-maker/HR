@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="1000" height="720" font-family="Arial, Helvetica, sans-serif" font-size="13">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <defs>
+    <marker id="g" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#43A047"/></marker>
+    <marker id="k" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#455A64"/></marker>
+  </defs>
+  <text x="500" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#212121">Figura 8. Estación de horno olla (LF-1 / LF-2)</text>
+  <text x="500" y="47" text-anchor="middle" font-size="12" fill="#455A64">Transformador 25 MVA · electrodos 457 mm (18") · calentamiento 4–5 °C/min · tratamiento 35–45 min [Validar con OEM / Ingeniería de Proceso]</text>
+
+  <!-- mástil y brazos -->
+  <rect x="640" y="70" width="26" height="250" fill="#455A64"/>
+  <rect x="330" y="80" width="330" height="12" fill="#90A4AE" stroke="#455A64"/>
+  <rect x="330" y="100" width="330" height="12" fill="#B0BEC5" stroke="#455A64"/>
+  <rect x="330" y="120" width="330" height="12" fill="#90A4AE" stroke="#455A64"/>
+  <!-- bóveda enfriada -->
+  <path d="M220,250 Q400,200 580,250 L580,262 Q400,212 220,262 Z" fill="#1E88E5" stroke="#0D47A1"/>
+  <!-- extracción de humos -->
+  <path d="M520,232 L520,160 L600,160" fill="none" stroke="#455A64" stroke-width="14"/>
+  <path d="M520,215 L520,175" stroke="#43A047" stroke-width="3" marker-end="url(#g)"/>
+  <!-- olla -->
+  <path d="M225,270 L575,270 L550,600 L250,600 Z" fill="#455A64"/>
+  <path d="M242,270 L558,270 L535,585 L265,585 Z" fill="#8D6E63"/>
+  <path d="M258,270 L542,270 L521,570 L279,570 Z" fill="#ECEFF1"/>
+  <path d="M257,330 L543,330 L521,570 L279,570 Z" fill="#E65100"/>
+  <rect x="255" y="305" width="290" height="25" fill="#6D4C41"/>
+  <text x="500" y="322" text-anchor="middle" font-size="11" fill="#ffffff">escoria reductora</text>
+  <rect x="345" y="120" width="26" height="240" fill="#757575"/>
+  <rect x="385" y="100" width="26" height="260" fill="#616161"/>
+  <rect x="425" y="80" width="26" height="280" fill="#757575"/>
+  <path d="M358,370 l-4,-10 M398,370 l-4,-10 M438,370 l-4,-10" stroke="#FFD600" stroke-width="3"/>
+  <!-- tapón y burbujas -->
+  <rect x="470" y="570" width="18" height="20" fill="#FFCC80" stroke="#4E342E"/>
+  <g fill="#ffffff" stroke="#43A047"><circle cx="478" cy="545" r="5"/><circle cx="474" cy="510" r="6"/><circle cx="480" cy="470" r="7"/><circle cx="476" cy="425" r="7"/><circle cx="478" cy="380" r="8"/></g>
+  <path d="M479,590 L479,640 L760,640" fill="none" stroke="#43A047" stroke-width="4"/>
+  <rect x="760" y="620" width="110" height="40" rx="4" fill="#E8F5E9" stroke="#43A047"/>
+  <text x="815" y="638" text-anchor="middle" font-size="11" fill="#212121">control de Ar</text>
+  <text x="815" y="652" text-anchor="middle" font-size="11" fill="#212121">NL/min + presión</text>
+  <!-- carro -->
+  <rect x="220" y="604" width="360" height="16" fill="#455A64"/>
+  <circle cx="260" cy="630" r="10" fill="#455A64"/><circle cx="540" cy="630" r="10" fill="#455A64"/>
+  <line x1="180" y1="642" x2="620" y2="642" stroke="#212121" stroke-width="3"/>
+  <!-- alimentador de alambre -->
+  <rect x="40" y="110" width="150" height="70" rx="6" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+  <text x="115" y="132" text-anchor="middle" font-size="12" font-weight="bold" fill="#212121">Alimentador</text>
+  <text x="115" y="148" text-anchor="middle" font-size="11" fill="#212121">2 líneas: CaSi · Al · C</text>
+  <text x="115" y="164" text-anchor="middle" font-size="11" fill="#212121">150–250 m/min [Supuesto]</text>
+  <path d="M190,150 Q270,150 285,240 L300,420" fill="none" stroke="#9E9E9E" stroke-width="4"/>
+  <path d="M190,165 Q255,165 270,240 L285,420" fill="none" stroke="#BDBDBD" stroke-width="4"/>
+  <!-- tolvas de aleación -->
+  <rect x="700" y="100" width="60" height="50" fill="#CFD8DC" stroke="#455A64"/>
+  <rect x="770" y="100" width="60" height="50" fill="#CFD8DC" stroke="#455A64"/>
+  <rect x="840" y="100" width="60" height="50" fill="#CFD8DC" stroke="#455A64"/>
+  <text x="800" y="92" text-anchor="middle" font-size="11" fill="#212121">tolvas: cal, ferroaleaciones, escoria sintética</text>
+  <rect x="700" y="160" width="200" height="16" fill="#90A4AE"/>
+  <text x="800" y="172" text-anchor="middle" font-size="10" fill="#212121">báscula / transportador</text>
+  <path d="M700,176 L520,238" stroke="#455A64" stroke-width="8"/>
+  <!-- manipulador T / muestra -->
+  <path d="M880,300 L640,300 L575,262" fill="none" stroke="#455A64" stroke-width="10"/>
+  <path d="M575,262 L515,450" stroke="#FFB300" stroke-width="6"/>
+  <rect x="880" y="280" width="90" height="46" rx="4" fill="#ECEFF1" stroke="#455A64"/>
+  <text x="925" y="300" text-anchor="middle" font-size="11" fill="#212121">manipulador</text>
+  <text x="925" y="315" text-anchor="middle" font-size="11" fill="#212121">T / O / muestra</text>
+
+  <!-- números -->
+  <g font-weight="bold" font-size="12" fill="#ffffff">
+    <circle cx="400" cy="226" r="11" fill="#C62828"/><text x="400" y="230" text-anchor="middle">1</text>
+    <circle cx="316" cy="200" r="11" fill="#C62828"/><text x="316" y="204" text-anchor="middle">2</text>
+    <circle cx="680" cy="250" r="11" fill="#C62828"/><text x="680" y="254" text-anchor="middle">3</text>
+    <circle cx="545" cy="140" r="11" fill="#43A047"/><text x="545" y="144" text-anchor="middle">4</text>
+    <circle cx="400" cy="460" r="11" fill="#C62828"/><text x="400" y="464" text-anchor="middle">5</text>
+    <circle cx="232" cy="320" r="11" fill="#C62828"/><text x="232" y="324" text-anchor="middle">6</text>
+    <circle cx="500" cy="590" r="11" fill="#43A047"/><text x="500" y="594" text-anchor="middle">7</text>
+    <circle cx="200" cy="600" r="11" fill="#C62828"/><text x="200" y="604" text-anchor="middle">8</text>
+    <circle cx="30" cy="145" r="11" fill="#C62828"/><text x="30" y="149" text-anchor="middle">9</text>
+    <circle cx="920" cy="130" r="11" fill="#C62828"/><text x="920" y="134" text-anchor="middle">10</text>
+    <circle cx="600" cy="330" r="11" fill="#C62828"/><text x="600" y="334" text-anchor="middle">11</text>
+    <circle cx="880" cy="640" r="11" fill="#43A047"/><text x="880" y="644" text-anchor="middle">12</text>
+  </g>
+  <rect x="640" y="360" width="350" height="240" fill="#FAFAFA" stroke="#455A64"/>
+  <text x="650" y="380" font-weight="bold" fill="#212121">Leyenda y parámetros</text>
+  <g font-size="11" fill="#212121">
+    <text x="650" y="398">1 Bóveda enfriada por agua (vigilar fugas)</text>
+    <text x="650" y="415">2 3 electrodos de grafito 457 mm</text>
+    <text x="650" y="432">3 Mástil / regulación de electrodos</text>
+    <text x="650" y="449">4 Extracción de humos</text>
+    <text x="650" y="466">5 Acero 150 t · envío = líquidus + SH + pérdidas</text>
+    <text x="650" y="483">6 Escoria reductora (FeO + MnO bajo [Validar])</text>
+    <text x="650" y="500">7 Tapón poroso: fuerte 400–600 · suave 50–150 NL/min</text>
+    <text x="650" y="517">8 Carro de olla con báscula</text>
+    <text x="650" y="534">9 Alimentador de alambre (CaSi, Al, C)</text>
+    <text x="650" y="551">10 Adiciones a granel (cal, FeMn, FeSi, SiMn, FeNb)</text>
+    <text x="650" y="568">11 Lanza manipuladora: termopar desechable, O, muestra</text>
+    <text x="650" y="585">12 Estación de argón (caudal y presión de respaldo)</text>
+  </g>
+  <text x="20" y="700" font-size="11" fill="#C62828">Objetivos: S ≤ 0.010% · Al soluble 0.020–0.045% (CC1) · agitación suave ≥ 8 min antes del envío · geometría ilustrativa [Validar con OEM / Ingeniería de Proceso]</text>
+</svg>

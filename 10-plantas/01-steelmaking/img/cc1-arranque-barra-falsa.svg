@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 780" width="1000" height="780" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="500" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#212121">Figura 4. Arranque de CC1: cabeza de barra falsa sellada en el molde y secuencia de llenado</text>
+  <text x="500" y="44" text-anchor="middle" font-size="12" fill="#212121">Izquierda: corte del molde por el ancho (esquema). Derecha: secuencia de llenado y rampa de velocidad.</text>
+
+  <!-- ===== Molde ===== -->
+  <rect x="80" y="80" width="26" height="450" fill="#BBDEFB" stroke="#455A64"/>
+  <rect x="434" y="80" width="26" height="450" fill="#BBDEFB" stroke="#455A64"/>
+  <path d="M106 80 L126 80 L130 530 L106 530 Z" fill="#B87333" stroke="#455A64"/>
+  <path d="M414 80 L434 80 L434 530 L410 530 Z" fill="#B87333" stroke="#455A64"/>
+  <!-- Nivel de menisco objetivo (100 mm bajo el borde: y = 80 + 50) -->
+  <line x1="130" y1="130" x2="412" y2="130" stroke="#C62828" stroke-dasharray="6,4"/>
+  <text x="470" y="134" font-size="11" fill="#C62828">Menisco objetivo (≈ 100 mm bajo el borde)</text>
+  <!-- Nivel de inicio de extracción -->
+  <line x1="130" y1="160" x2="412" y2="160" stroke="#E65100" stroke-dasharray="3,3"/>
+  <text x="470" y="164" font-size="11" fill="#E65100">Inicio de extracción (menisco −60 mm, control automático)</text>
+  <!-- Acero de llenado (parcial) -->
+  <path d="M129 300 L411 300 L410 395 L130 395 Z" fill="#FF8F00" opacity="0.85"/>
+  <text x="150" y="276" font-size="11" fill="#E65100">Acero entrando</text><text x="150" y="290" font-size="11" fill="#E65100">(llenado 40–60 s)</text>
+  <!-- SEN -->
+  <rect x="256" y="58" width="28" height="182" fill="#8D6E63" stroke="#455A64" stroke-width="1.5"/>
+  <rect x="264" y="58" width="12" height="182" fill="#FF8F00"/>
+  <path d="M256 222 L238 234 L238 244 L256 234 Z M284 222 L302 234 L302 244 L284 234 Z" fill="#8D6E63" stroke="#455A64"/>
+  <path d="M270 240 L270 300" stroke="#E65100" stroke-width="4" stroke-dasharray="5,3"/>
+
+  <!-- Chatarra de enfriamiento: clavos y rondanas sobre la cabeza -->
+  <g fill="#78909C" stroke="#455A64" stroke-width="0.8">
+    <rect x="140" y="396" width="26" height="6"/><rect x="176" y="398" width="30" height="5"/><rect x="214" y="396" width="22" height="6"/>
+    <rect x="300" y="396" width="26" height="6"/><rect x="336" y="398" width="30" height="5"/><rect x="374" y="396" width="26" height="6"/>
+    <circle cx="160" cy="410" r="6"/><circle cx="196" cy="412" r="6"/><circle cx="240" cy="410" r="6"/><circle cx="300" cy="412" r="6"/>
+    <circle cx="344" cy="410" r="6"/><circle cx="386" cy="412" r="6"/>
+    <rect x="150" y="416" width="32" height="5"/><rect x="250" y="418" width="36" height="5"/><rect x="330" y="416" width="34" height="5"/>
+  </g>
+  <!-- Cabeza de barra falsa -->
+  <path d="M134 424 L406 424 L406 500 L134 500 Z" fill="#455A64"/>
+  <!-- Cola de milano / gancho -->
+  <path d="M240 424 L220 404 L320 404 L300 424 Z" fill="#37474F" stroke="#212121"/>
+  <!-- Fibra cerámica en las holguras -->
+  <rect x="130" y="424" width="6" height="30" fill="#ECEFF1" stroke="#9E9E9E"/>
+  <rect x="404" y="424" width="6" height="30" fill="#ECEFF1" stroke="#9E9E9E"/>
+  <!-- Eslabones de la cadena -->
+  <g fill="none" stroke="#455A64" stroke-width="6">
+    <rect x="220" y="505" width="100" height="40" rx="12"/>
+    <rect x="220" y="555" width="100" height="40" rx="12"/>
+  </g>
+  <line x1="270" y1="500" x2="270" y2="505" stroke="#455A64" stroke-width="6"/>
+  <line x1="270" y1="545" x2="270" y2="555" stroke="#455A64" stroke-width="6"/>
+  <!-- Fondo del molde / rodillos pie -->
+  <circle cx="118" cy="548" r="10" fill="#455A64"/><circle cx="422" cy="548" r="10" fill="#455A64"/>
+
+  <!-- Cotas -->
+  <line x1="40" y1="80" x2="40" y2="424" stroke="#212121"/>
+  <line x1="34" y1="80" x2="46" y2="80" stroke="#212121"/>
+  <line x1="34" y1="424" x2="46" y2="424" stroke="#212121"/>
+  <text x="30" y="260" font-size="11" fill="#212121" transform="rotate(-90 30 260)" text-anchor="middle">≈ 650 mm borde → cabeza</text>
+  <line x1="60" y1="424" x2="60" y2="530" stroke="#212121"/>
+  <line x1="54" y1="530" x2="66" y2="530" stroke="#212121"/>
+  <text x="54" y="480" font-size="11" fill="#212121" transform="rotate(-90 54 480)" text-anchor="middle">≈ 250 mm</text>
+  <text x="480" y="552" font-size="11" fill="#212121">Capa de chatarra 50–80 mm</text>
+  <line x1="400" y1="410" x2="476" y2="548" stroke="#212121" stroke-width="0.8"/>
+  <text x="480" y="572" font-size="11" fill="#212121">Holgura sellada 2–5 mm por lado</text>
+  <line x1="410" y1="446" x2="476" y2="568" stroke="#212121" stroke-width="0.8"/>
+
+  <!-- Números -->
+  <g font-size="12" font-weight="bold" fill="#212121">
+    <text x="108" y="74">(1)</text>
+    <text x="290" y="76">(2)</text>
+    <text x="324" y="398">(3)</text>
+    <text x="178" y="470" fill="#ffffff">(4)</text>
+    <text x="326" y="528">(5)</text>
+    <text x="118" y="444">(6)</text>
+    <text x="90" y="566">(7)</text>
+  </g>
+
+  <!-- ===== Secuencia de llenado ===== -->
+  <text x="720" y="200" text-anchor="middle" font-size="13" font-weight="bold" fill="#212121">Secuencia de arranque (valores típicos)</text>
+  <g font-size="12" fill="#212121">
+    <text x="520" y="222">A. Distribuidor ≥ 500 mm (≈ 18 t) y T objetivo → abrir tapón</text>
+    <text x="520" y="240">B. Llenar molde de cabeza a menisco −60 mm en 40–60 s</text>
+    <text x="520" y="258">C. Polvo de arranque al cubrir puertos (≈ 50 mm arriba)</text>
+    <text x="520" y="276">D. Pasar a nivel automático; arrancar a 0.3 m/min</text>
+    <text x="520" y="294">E. Rampa ≤ 0.2 m/min por minuto hasta 1.2 m/min</text>
+    <text x="520" y="312">F. Agua secundaria y oscilación en automático desde el arranque</text>
+  </g>
+  <!-- Mini gráfica velocidad vs tiempo -->
+  <line x1="560" y1="480" x2="960" y2="480" stroke="#212121"/>
+  <line x1="560" y1="480" x2="560" y2="340" stroke="#212121"/>
+  <text x="760" y="506" text-anchor="middle" font-size="11" fill="#212121">Tiempo desde apertura del tapón (min)</text>
+  <text x="530" y="410" font-size="11" fill="#212121" transform="rotate(-90 530 410)" text-anchor="middle">Velocidad (m/min)</text>
+  <g font-size="10" fill="#212121">
+    <text x="560" y="494" text-anchor="middle">0</text><text x="620" y="494" text-anchor="middle">1</text><text x="680" y="494" text-anchor="middle">2</text>
+    <text x="740" y="494" text-anchor="middle">3</text><text x="800" y="494" text-anchor="middle">4</text><text x="860" y="494" text-anchor="middle">5</text>
+    <text x="920" y="494" text-anchor="middle">6</text>
+    <text x="552" y="483" text-anchor="end">0</text><text x="552" y="453" text-anchor="end">0.3</text>
+    <text x="552" y="400" text-anchor="end">0.8</text><text x="552" y="357" text-anchor="end">1.2</text>
+  </g>
+  <line x1="556" y1="450" x2="960" y2="450" stroke="#CFD8DC" stroke-dasharray="2,3"/>
+  <line x1="556" y1="397" x2="960" y2="397" stroke="#CFD8DC" stroke-dasharray="2,3"/>
+  <line x1="556" y1="354" x2="960" y2="354" stroke="#CFD8DC" stroke-dasharray="2,3"/>
+  <!-- curva: 0 hasta 0.8 min (llenado), luego 0.3; rampa a 1.2 hacia ~5.3 min -->
+  <polyline points="560,480 608,480 608,450 638,450 910,354 960,354" fill="none" stroke="#E65100" stroke-width="3"/>
+  <text x="612" y="472" font-size="10" fill="#E65100">llenado</text>
+  <text x="700" y="410" font-size="10" fill="#E65100">rampa</text>
+
+  <!-- Leyenda -->
+  <rect x="20" y="600" width="960" height="170" fill="#ffffff" stroke="#455A64"/>
+  <text x="32" y="620" font-size="13" font-weight="bold" fill="#212121">Leyenda</text>
+  <g font-size="12" fill="#212121">
+    <text x="32" y="642">(1) Placa de cobre del molde (cara angosta) con canal de agua</text>
+    <text x="32" y="660">(2) SEN precalentada (≥ 1,000 °C) y centrada</text>
+    <text x="32" y="678">(3) Chatarra de enfriamiento: clavos/rondanas/recortes limpios y SECOS</text>
+    <text x="32" y="696">(4) Cabeza de barra falsa con gancho de cola de milano (anclaje)</text>
+    <text x="32" y="714">(5) Eslabones de la barra falsa tipo cadena (inserción por abajo)</text>
+    <text x="510" y="642">(6) Cordón de fibra cerámica comprimido en holguras + sellador seco</text>
+    <text x="510" y="660">(7) Rodillos de pie (foot rolls) / segmento 1</text>
+    <text x="510" y="678">PASO CRÍTICO: todo material en el molde SECO, sin aceite ni óxido</text>
+    <text x="510" y="696">PASO CRÍTICO: nadie bajo el molde ni en la zona de exclusión</text>
+    <text x="510" y="714">PELIGRO: cabeza mal posicionada o mal sellada = fuga de acero</text>
+  </g>
+  <text x="32" y="756" font-size="11" fill="#C62828">Cotas, masa de chatarra, holguras, nivel de inicio y rampa: [Validar con OEM / Ingeniería de Proceso]. Fuente: FT-ACE-001 §4.</text>
+</svg>

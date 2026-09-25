@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 820" width="1000" height="820" font-family="Arial, Helvetica, sans-serif" font-size="12">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="500" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#212121">Figura 5. Mapa de defectos del planchón de CC1 (230 × 900–1,650 mm)</text>
+  <text x="500" y="44" text-anchor="middle" font-size="12" fill="#212121">Izquierda: cara ancha superior (vista en planta). Derecha: sección transversal (espesor exagerado ×2). Esquema, no a escala.</text>
+
+  <!-- ===== Cara ancha superior ===== -->
+  <text x="330" y="74" text-anchor="middle" font-size="13" font-weight="bold" fill="#212121">A. Cara ancha (superficie) — dirección de colada →</text>
+  <rect x="40" y="90" width="580" height="220" fill="#90A4AE" stroke="#455A64" stroke-width="2"/>
+  <!-- marcas de oscilación -->
+  <g stroke="#78909C" stroke-width="1">
+    <line x1="60" y1="90" x2="60" y2="310"/><line x1="80" y1="90" x2="80" y2="310"/><line x1="100" y1="90" x2="100" y2="310"/>
+    <line x1="120" y1="90" x2="120" y2="310"/><line x1="140" y1="90" x2="140" y2="310"/><line x1="160" y1="90" x2="160" y2="310"/>
+    <line x1="180" y1="90" x2="180" y2="310"/><line x1="200" y1="90" x2="200" y2="310"/><line x1="220" y1="90" x2="220" y2="310"/>
+    <line x1="240" y1="90" x2="240" y2="310"/><line x1="260" y1="90" x2="260" y2="310"/><line x1="280" y1="90" x2="280" y2="310"/>
+    <line x1="300" y1="90" x2="300" y2="310"/><line x1="320" y1="90" x2="320" y2="310"/><line x1="340" y1="90" x2="340" y2="310"/>
+    <line x1="360" y1="90" x2="360" y2="310"/><line x1="380" y1="90" x2="380" y2="310"/><line x1="400" y1="90" x2="400" y2="310"/>
+    <line x1="420" y1="90" x2="420" y2="310"/><line x1="440" y1="90" x2="440" y2="310"/><line x1="460" y1="90" x2="460" y2="310"/>
+    <line x1="480" y1="90" x2="480" y2="310"/><line x1="500" y1="90" x2="500" y2="310"/><line x1="520" y1="90" x2="520" y2="310"/>
+    <line x1="540" y1="90" x2="540" y2="310"/><line x1="560" y1="90" x2="560" y2="310"/><line x1="580" y1="90" x2="580" y2="310"/>
+    <line x1="600" y1="90" x2="600" y2="310"/>
+  </g>
+  <!-- (1) grieta longitudinal al centro de la cara ancha -->
+  <path d="M110 198 L150 201 L190 197 L240 202 L290 199 L330 203" fill="none" stroke="#C62828" stroke-width="3"/>
+  <!-- (2) grietas transversales en marcas de oscilación, cerca del borde -->
+  <path d="M420 96 L422 118 M440 96 L438 114 M460 96 L462 120" stroke="#C62828" stroke-width="3"/>
+  <!-- (3) grieta de esquina (borde) -->
+  <path d="M520 306 L524 290 M540 306 L537 292" stroke="#C62828" stroke-width="3"/>
+  <!-- (4) depresión longitudinal -->
+  <ellipse cx="420" cy="240" rx="80" ry="10" fill="#607D8B" stroke="#37474F"/>
+  <!-- (5) inclusión de polvo / escoria (sliver) -->
+  <path d="M170 130 L190 126 L200 134 L182 140 Z" fill="#6D4C41"/>
+  <path d="M230 270 L248 266 L256 274 L238 278 Z" fill="#6D4C41"/>
+  <!-- (6) sopladuras / pinholes -->
+  <g fill="#263238"><circle cx="520" cy="160" r="3"/><circle cx="532" cy="168" r="3"/><circle cx="514" cy="176" r="2.5"/><circle cx="540" cy="150" r="2.5"/><circle cx="528" cy="186" r="2"/></g>
+  <!-- (7) marca de oscilación profunda / pliegue (bleeding) -->
+  <path d="M580 94 Q586 200 580 306" stroke="#E65100" stroke-width="3" fill="none"/>
+  <!-- números -->
+  <g font-size="12" font-weight="bold" fill="#212121">
+    <text x="336" y="196">(1)</text>
+    <text x="468" y="116">(2)</text>
+    <text x="548" y="300">(3)</text>
+    <text x="410" y="266">(4)</text>
+    <text x="204" y="128">(5)</text>
+    <text x="546" y="176">(6)</text>
+    <text x="588" y="210">(7)</text>
+  </g>
+  <!-- cotas -->
+  <line x1="40" y1="324" x2="620" y2="324" stroke="#212121"/>
+  <line x1="40" y1="318" x2="40" y2="330" stroke="#212121"/><line x1="620" y1="318" x2="620" y2="330" stroke="#212121"/>
+  <text x="330" y="340" text-anchor="middle" font-size="11" fill="#212121">Longitud 8–11 m (tolerancia de corte ±15 mm)</text>
+  <line x1="28" y1="90" x2="28" y2="310" stroke="#212121"/>
+  <text x="20" y="200" font-size="11" fill="#212121" transform="rotate(-90 20 200)" text-anchor="middle">Ancho 900–1,650 mm</text>
+
+  <!-- ===== Sección transversal ===== -->
+  <text x="820" y="74" text-anchor="middle" font-size="13" font-weight="bold" fill="#212121">B. Sección transversal</text>
+  <!-- contorno con abultamiento (bulging) -->
+  <path d="M680 120 Q820 104 960 120 L960 240 Q820 256 680 240 Z" fill="#B0BEC5" stroke="#455A64" stroke-width="2"/>
+  <!-- contorno nominal -->
+  <rect x="680" y="120" width="280" height="120" fill="none" stroke="#212121" stroke-dasharray="5,4"/>
+  <!-- (8) segregación central -->
+  <line x1="700" y1="180" x2="940" y2="180" stroke="#6D4C41" stroke-width="4"/>
+  <g fill="#263238"><circle cx="760" cy="181" r="2"/><circle cx="800" cy="179" r="2.5"/><circle cx="850" cy="181" r="2"/><circle cx="890" cy="180" r="2.5"/></g>
+  <!-- (9) grietas internas (intermedias) -->
+  <path d="M740 150 L746 162 M780 146 L786 160 M860 212 L866 200 M900 214 L906 200" stroke="#C62828" stroke-width="2.5"/>
+  <!-- (3) grieta de esquina en sección -->
+  <path d="M682 122 L694 134 M958 238 L946 226" stroke="#C62828" stroke-width="3"/>
+  <!-- números -->
+  <g font-size="12" font-weight="bold" fill="#212121">
+    <text x="820" y="100">(10)</text>
+    <text x="904" y="176">(8)</text>
+    <text x="760" y="146">(9)</text>
+    <text x="696" y="140">(3)</text>
+  </g>
+  <!-- cotas sección -->
+  <line x1="970" y1="120" x2="970" y2="240" stroke="#212121"/>
+  <line x1="964" y1="120" x2="976" y2="120" stroke="#212121"/><line x1="964" y1="240" x2="976" y2="240" stroke="#212121"/>
+  <text x="984" y="180" font-size="11" fill="#212121" transform="rotate(-90 984 180)" text-anchor="middle">230 ± 3 mm</text>
+  <text x="820" y="274" text-anchor="middle" font-size="11" fill="#212121">Abultamiento: espesor al centro − espesor al borde</text>
+  <text x="820" y="289" text-anchor="middle" font-size="11" fill="#212121">límite ≤ 3 mm [Validar]</text>
+  <text x="820" y="310" text-anchor="middle" font-size="11" fill="#212121">Cuña (espesor lado A − lado B) ≤ 2 mm [Validar]</text>
+  <text x="820" y="331" text-anchor="middle" font-size="11" fill="#212121">Romboidad: no aplica a planchón (defecto de palanquilla)</text>
+
+  <!-- ===== Leyenda / tabla ===== -->
+  <rect x="20" y="360" width="960" height="450" fill="#ffffff" stroke="#455A64"/>
+  <text x="32" y="382" font-size="13" font-weight="bold" fill="#212121">Leyenda — defecto · causa probable · disposición típica</text>
+  <g font-size="12" fill="#212121">
+    <text x="32" y="406">(1) Grieta longitudinal en cara ancha · peritéctico, nivel inestable, polvo inadecuado, flujo asimétrico, ΔT de molde desbalanceado · escarpeo o rechazo según profundidad</text>
+    <text x="32" y="434">(2) Grietas transversales (en valles de marcas) · HSLA con Nb/V/N en el enderezado a 700–900 °C, marcas profundas · escarpeo; profundas = rechazo</text>
+    <text x="32" y="462">(3) Grieta de esquina · conicidad de cara angosta, enfriamiento de esquina, desalineación de pie de rodillos · escarpeo de esquina</text>
+    <text x="32" y="490">(4) Depresión longitudinal / transversal · enfriamiento no uniforme en el molde, nivel inestable · escarpeo; con grieta = rechazo</text>
+    <text x="32" y="518">(5) Inclusión de polvo o escoria (sliver) · atrapamiento en el menisco: nivel ±8 mm, argón alto, SEN mal centrada/inmersión baja · escarpeo</text>
+    <text x="32" y="546">(6) Sopladuras / pinholes · argón excesivo, humedad, desoxidación insuficiente (Al bajo) · escarpeo; masivas = rechazo</text>
+    <text x="32" y="574">(7) Marca de oscilación profunda / sangrado (bleeding) · t_N largo, polvo inadecuado, sobrecalentamiento alto · evaluar, escarpeo</text>
+    <text x="32" y="602">(8) Segregación central / porosidad · sobrecalentamiento alto, abultamiento, gap fuera de tolerancia en punta de cráter · macroataque; clase alta = degradar</text>
+    <text x="32" y="630">(9) Grietas internas (intermedias) · deformación en enderezado o por rodillos desalineados, enfriamiento secundario excesivo · macroataque; degradar</text>
+    <text x="32" y="658">(10) Abultamiento (bulging) · enfriamiento secundario bajo, velocidad alta, rodillos gastados/doblados · medir espesor; fuera de límite = rechazo</text>
+  </g>
+  <rect x="32" y="676" width="936" height="1" fill="#455A64"/>
+  <g font-size="12" fill="#212121">
+    <text x="32" y="700">Criterio general de disposición (detalle en MO-CC1-09): ACEPTAR (sin defecto o dentro de límite) · ESCARPEAR (defecto superficial</text>
+    <text x="32" y="718">≤ 5 mm de profundidad y re-inspección) · DEGRADAR (reasignar a grado/cliente menos exigente, decide C-09) · RECHAZAR (chatarra interna).</text>
+    <text x="32" y="742" fill="#C62828">Colores: rojo = grietas · café = inclusiones/segregación · gris oscuro = poros · naranja = marcas profundas.</text>
+    <text x="32" y="766" fill="#C62828">Límites de profundidad, clases de segregación y tolerancias dimensionales: [Validar con OEM / Ingeniería de Proceso] y con la</text>
+    <text x="32" y="784" fill="#C62828">especificación del cliente (Laminación en Caliente). Fuente: FT-ACE-001 §4 y §7.</text>
+  </g>
+</svg>

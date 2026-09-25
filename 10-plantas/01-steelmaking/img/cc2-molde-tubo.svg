@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 860" width="1000" height="860" font-family="Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="500" y="26" font-size="17" font-weight="bold" text-anchor="middle" fill="#212121">Figura 3. CC2 — Molde de tubo 160 × 160 mm: agua, aceite, EMS y medición radiométrica de nivel (Cs-137)</text>
+<text x="500" y="46" font-size="12" text-anchor="middle" fill="#212121">Corte vertical esquemático. Escala horizontal exagerada ×4 para ver la ranura de agua y la conicidad. Valores [Validar] dependen del OEM.</text>
+<rect x="170" y="110" width="260" height="530" fill="#CFD8DC" stroke="#455A64" stroke-width="3"/>
+<polygon points="200,120 212,120 214,620 202,620" fill="#1E88E5"/>
+<polygon points="388,120 400,120 398,620 386,620" fill="#1E88E5"/>
+<polygon points="212,120 220,120 224,620 214,620" fill="#BF6A2E" stroke="#455A64"/>
+<polygon points="380,120 388,120 386,620 376,620" fill="#BF6A2E" stroke="#455A64"/>
+<rect x="170" y="96" width="260" height="16" fill="#455A64"/>
+<rect x="214" y="96" width="6" height="18" fill="#9E9D24"/><rect x="380" y="96" width="6" height="18" fill="#9E9D24"/>
+<line x1="140" y1="104" x2="214" y2="104" stroke="#9E9D24" stroke-width="3"/><line x1="386" y1="104" x2="460" y2="104" stroke="#9E9D24" stroke-width="3"/>
+<text x="100" y="90" font-size="11" fill="#9E9D24">aceite 15–25 mL/min</text>
+<polygon points="221,170 379,170 376,620 224,620" fill="#E65100"/>
+<polygon points="221,170 227,176 236,620 224,620" fill="#455A64"/>
+<polygon points="379,170 373,176 364,620 376,620" fill="#455A64"/>
+<line x1="221" y1="170" x2="224" y2="620" stroke="#9E9D24" stroke-width="1.5"/><line x1="379" y1="170" x2="376" y2="620" stroke="#9E9D24" stroke-width="1.5"/>
+<rect x="296" y="60" width="8" height="110" fill="#FF8F00"/>
+<line x1="221" y1="170" x2="379" y2="170" stroke="#FFEB3B" stroke-width="2"/>
+<polygon points="202,560 210,560 206,550" fill="#ffffff"/>
+<polygon points="202,430 210,430 206,420" fill="#ffffff"/>
+<polygon points="202,300 210,300 206,290" fill="#ffffff"/>
+<polygon points="202,190 210,190 206,180" fill="#ffffff"/>
+<polygon points="390,560 398,560 394,550" fill="#ffffff"/>
+<polygon points="390,430 398,430 394,420" fill="#ffffff"/>
+<polygon points="390,300 398,300 394,290" fill="#ffffff"/>
+<polygon points="390,190 398,190 394,180" fill="#ffffff"/>
+<rect x="150" y="640" width="60" height="16" fill="#1E88E5"/><polygon points="210,648 200,642 200,654" fill="#ffffff"/>
+<text x="40" y="653" font-size="11" fill="#1E88E5">entrada ≈ 2,000 L/min</text>
+<rect x="430" y="116" width="60" height="14" fill="#1E88E5"/>
+<text x="434" y="146" font-size="11" fill="#1E88E5">salida</text>
+<rect x="132" y="380" width="36" height="150" fill="#455A64"/>
+<line x1="136" y1="388" x2="164" y2="388" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="136" y1="400" x2="164" y2="400" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="136" y1="412" x2="164" y2="412" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="136" y1="424" x2="164" y2="424" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="136" y1="436" x2="164" y2="436" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="136" y1="448" x2="164" y2="448" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="136" y1="460" x2="164" y2="460" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="136" y1="472" x2="164" y2="472" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="136" y1="484" x2="164" y2="484" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="136" y1="496" x2="164" y2="496" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="136" y1="508" x2="164" y2="508" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="136" y1="520" x2="164" y2="520" stroke="#B0BEC5" stroke-width="3"/>
+<rect x="432" y="380" width="36" height="150" fill="#455A64"/>
+<line x1="436" y1="388" x2="464" y2="388" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="436" y1="400" x2="464" y2="400" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="436" y1="412" x2="464" y2="412" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="436" y1="424" x2="464" y2="424" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="436" y1="436" x2="464" y2="436" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="436" y1="448" x2="464" y2="448" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="436" y1="460" x2="464" y2="460" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="436" y1="472" x2="464" y2="472" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="436" y1="484" x2="464" y2="484" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="436" y1="496" x2="464" y2="496" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="436" y1="508" x2="464" y2="508" stroke="#B0BEC5" stroke-width="3"/>
+<line x1="436" y1="520" x2="464" y2="520" stroke="#B0BEC5" stroke-width="3"/>
+<text x="480" y="445" font-size="11" fill="#212121">EMS: 250–400 A, 2–5 Hz</text>
+<text x="480" y="460" font-size="11" fill="#212121">[Validar OEM]</text>
+<rect x="92" y="152" width="40" height="36" fill="#FFEB3B" stroke="#C62828" stroke-width="2"/>
+<rect x="126" y="162" width="10" height="16" fill="#455A64"/>
+<text x="112" y="174" font-size="10" text-anchor="middle" fill="#212121">Cs-137</text>
+<rect x="515" y="140" width="38" height="60" fill="#ECEFF1" stroke="#C62828" stroke-width="2"/>
+<text x="534" y="174" font-size="10" text-anchor="middle" fill="#212121">det.</text>
+<polygon points="136,170 515,144 515,196" fill="#C62828" opacity="0.12"/>
+<line x1="136" y1="170" x2="515" y2="170" stroke="#C62828" stroke-dasharray="5 3"/>
+<rect x="70" y="70" width="500" height="130" fill="none" stroke="#C62828" stroke-width="2" stroke-dasharray="10 5"/>
+<text x="75" y="216" font-size="11" font-weight="bold" fill="#C62828">ZONA CONTROLADA — radiación ionizante</text>
+<circle cx="60" cy="160" r="19.0" fill="#FFEB3B" stroke="#212121" stroke-width="1"/>
+<circle cx="60" cy="160" r="3.0" fill="#212121"/>
+<path d="M 57.5 155.7 L 52.0 146.1 A 16.0 16.0 0 0 1 68.0 146.1 L 62.5 155.7 A 5.0 5.0 0 0 0 57.5 155.7 Z" fill="#212121"/>
+<path d="M 65.0 160.0 L 76.0 160.0 A 16.0 16.0 0 0 1 68.0 173.9 L 62.5 164.3 A 5.0 5.0 0 0 0 65.0 160.0 Z" fill="#212121"/>
+<path d="M 57.5 164.3 L 52.0 173.9 A 16.0 16.0 0 0 1 44.0 160.0 L 55.0 160.0 A 5.0 5.0 0 0 0 57.5 164.3 Z" fill="#212121"/>
+<line x1="590" y1="120" x2="590" y2="620" stroke="#212121"/>
+<polygon points="590,120 587,126 593,126" fill="#212121"/><polygon points="590,620 587,614 593,614" fill="#212121"/>
+<text x="584" y="370.0" font-size="11" fill="#212121" text-anchor="end">Tubo Cu-Ag 1,000 mm</text>
+<line x1="640" y1="120" x2="640" y2="170" stroke="#212121"/>
+<polygon points="640,120 637,126 643,126" fill="#212121"/><polygon points="640,170 637,164 643,164" fill="#212121"/>
+<text x="646" y="145.0" font-size="11" fill="#212121" text-anchor="start">Menisco ≈ 100 mm bajo el borde [Validar]</text>
+<line x1="379" y1="170" x2="650" y2="170" stroke="#212121" stroke-dasharray="2 3"/>
+<line x1="388" y1="120" x2="650" y2="120" stroke="#212121" stroke-dasharray="2 3"/>
+<line x1="386" y1="620" x2="600" y2="620" stroke="#212121" stroke-dasharray="2 3"/>
+<text x="646" y="188" font-size="11" fill="#212121">Nivel ±5 mm (alarma ±10 mm [Validar])</text>
+<text x="236" y="634" font-size="10" fill="#212121">piel ≈ 10–12 mm a la salida [Validar]</text>
+<text x="226" y="130" font-size="10" fill="#ffffff">160 + conicidad</text>
+<text x="232" y="612" font-size="10" fill="#ffffff">160 × 160</text>
+<rect x="150" y="664" width="300" height="14" fill="#455A64"/>
+<path d="M 470 656 L 470 686 M 465 662 L 470 654 L 475 662 M 465 680 L 470 688 L 475 680" stroke="#212121" fill="none" stroke-width="2"/>
+<text x="150" y="696" font-size="11" fill="#212121">oscilación 150–250 cpm · carrera 6–10 mm</text>
+<line x1="330" y1="70" x2="304" y2="80" stroke="#212121" stroke-width="0.8"/>
+<circle cx="330" cy="70" r="10" fill="#455A64"/>
+<text x="330" y="74" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<line x1="250" y1="80" x2="220" y2="98" stroke="#212121" stroke-width="0.8"/>
+<circle cx="250" cy="80" r="10" fill="#455A64"/>
+<text x="250" y="84" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<line x1="250" y1="300" x2="220" y2="300" stroke="#212121" stroke-width="0.8"/>
+<circle cx="250" cy="300" r="10" fill="#455A64"/>
+<text x="250" y="304" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<line x1="170" y1="250" x2="204" y2="250" stroke="#212121" stroke-width="0.8"/>
+<circle cx="170" cy="250" r="10" fill="#455A64"/>
+<text x="170" y="254" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<line x1="450" y1="250" x2="430" y2="250" stroke="#212121" stroke-width="0.8"/>
+<circle cx="450" cy="250" r="10" fill="#455A64"/>
+<text x="450" y="254" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<line x1="130" y1="600" x2="160" y2="648" stroke="#212121" stroke-width="0.8"/>
+<circle cx="130" cy="600" r="10" fill="#455A64"/>
+<text x="130" y="604" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+<line x1="520" y1="95" x2="490" y2="122" stroke="#212121" stroke-width="0.8"/>
+<circle cx="520" cy="95" r="10" fill="#455A64"/>
+<text x="520" y="99" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">7</text>
+<line x1="340" y1="152" x2="330" y2="169" stroke="#212121" stroke-width="0.8"/>
+<circle cx="340" cy="152" r="10" fill="#455A64"/>
+<text x="340" y="156" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">8</text>
+<line x1="260" y1="520" x2="232" y2="520" stroke="#212121" stroke-width="0.8"/>
+<circle cx="260" cy="520" r="10" fill="#455A64"/>
+<text x="260" y="524" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">9</text>
+<line x1="300" y1="420" x2="300" y2="440" stroke="#212121" stroke-width="0.8"/>
+<circle cx="300" cy="420" r="10" fill="#455A64"/>
+<text x="300" y="424" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">10</text>
+<line x1="115" y1="360" x2="132" y2="400" stroke="#212121" stroke-width="0.8"/>
+<circle cx="115" cy="360" r="10" fill="#455A64"/>
+<text x="115" y="364" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">11</text>
+<line x1="92" y1="135" x2="100" y2="152" stroke="#212121" stroke-width="0.8"/>
+<circle cx="92" cy="135" r="10" fill="#455A64"/>
+<text x="92" y="139" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">12</text>
+<line x1="575" y1="130" x2="553" y2="140" stroke="#212121" stroke-width="0.8"/>
+<circle cx="575" cy="130" r="10" fill="#455A64"/>
+<text x="575" y="134" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">13</text>
+<line x1="40" y1="220" x2="70" y2="200" stroke="#212121" stroke-width="0.8"/>
+<circle cx="40" cy="220" r="10" fill="#455A64"/>
+<text x="40" y="224" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">14</text>
+<line x1="130" y1="671" x2="150" y2="671" stroke="#212121" stroke-width="0.8"/>
+<circle cx="130" cy="671" r="10" fill="#455A64"/>
+<text x="130" y="675" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">15</text>
+<text x="680" y="230" font-size="13" font-weight="bold" fill="#212121">Vista superior del tubo</text>
+<rect x="688" y="238" width="184" height="184" rx="10" fill="#CFD8DC" stroke="#455A64" stroke-width="2"/>
+<rect x="696" y="246" width="168" height="168" rx="8" fill="#1E88E5"/>
+<rect x="700" y="250" width="160" height="160" rx="6" fill="#BF6A2E"/>
+<rect x="710" y="260" width="140" height="140" rx="5" fill="#E65100"/>
+<text x="780" y="334" font-size="12" text-anchor="middle" fill="#ffffff">160 × 160 mm</text>
+<text x="780" y="450" font-size="11" text-anchor="middle" fill="#212121">ranura de agua 10–12 m/s (azul)</text>
+<text x="780" y="465" font-size="11" text-anchor="middle" fill="#212121">radio de esquina [Validar OEM]</text>
+<rect x="610" y="492" width="380" height="208" fill="#FAFAFA" stroke="#B0BEC5"/>
+<text x="620" y="512" font-size="12" font-weight="bold" fill="#212121">Especificaciones clave (FT-ACE-001 §5)</text>
+<text x="620" y="531" font-size="12"  fill="#212121">Conicidad del tubo: 0.8–1.0 %/m</text>
+<text x="620" y="550" font-size="12"  fill="#212121">Agua de molde ≈ 2,000 L/min por línea</text>
+<text x="620" y="569" font-size="12"  fill="#212121">Velocidad en la ranura: 10–12 m/s</text>
+<text x="620" y="588" font-size="12"  fill="#212121">ΔT 6–10 °C · alarma ΔT &gt; 12 °C o caudal &lt; 90 %</text>
+<text x="620" y="607" font-size="12"  fill="#212121">Falla de agua: emergencia automática ≤ 15 s</text>
+<text x="620" y="626" font-size="12"  fill="#212121">Aceite de colza: 15–25 mL/min por línea</text>
+<text x="620" y="645" font-size="12"  fill="#212121">Nivel radiométrico Cs-137: ±5 mm</text>
+<text x="620" y="664" font-size="12"  fill="#C62828">Antes de intervenir: obturador CERRADO + candado</text>
+<text x="620" y="683" font-size="12"  fill="#C62828">+ medición con el ESR + dosímetro personal</text>
+<rect x="10" y="718" width="980" height="132" fill="#FAFAFA" stroke="#B0BEC5"/>
+<text x="20" y="736" font-size="13" font-weight="bold" fill="#212121">Leyenda</text>
+<text x="24" y="756" font-size="12.5" fill="#212121">1 Chorro abierto desde la buza calibrada</text>
+<text x="24" y="776" font-size="12.5" fill="#212121">2 Brida superior con ranuras de aceite</text>
+<text x="24" y="796" font-size="12.5" fill="#212121">3 Tubo de Cu-Ag (pared ≈ 15 mm [Validar])</text>
+<text x="24" y="816" font-size="12.5" fill="#212121">4 Ranura de agua primaria (flujo hacia arriba)</text>
+<text x="24" y="836" font-size="12.5" fill="#212121">5 Camisa / chaqueta de acero</text>
+<text x="349" y="756" font-size="12.5" fill="#212121">6 Entrada de agua (abajo)</text>
+<text x="349" y="776" font-size="12.5" fill="#212121">7 Salida de agua (arriba)</text>
+<text x="349" y="796" font-size="12.5" fill="#212121">8 Menisco (nivel del acero en el molde)</text>
+<text x="349" y="816" font-size="12.5" fill="#212121">9 Piel solidificada (crece hacia abajo)</text>
+<text x="349" y="836" font-size="12.5" fill="#212121">10 Núcleo líquido</text>
+<text x="674" y="756" font-size="12.5" fill="#212121">11 Agitador electromagnético (EMS)</text>
+<text x="674" y="776" font-size="12.5" fill="#212121">12 Fuente sellada Cs-137 con obturador</text>
+<text x="674" y="796" font-size="12.5" fill="#212121">13 Detector de centelleo</text>
+<text x="674" y="816" font-size="12.5" fill="#212121">14 Zona controlada señalizada (trébol)</text>
+<text x="674" y="836" font-size="12.5" fill="#212121">15 Mesa de oscilación</text>
+</svg>
