@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | MO-EAF-03 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.1. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
 **Objetivo:** fundir el 60% de la carga metálica (≈ 100 t de DRI/HBI por colada) alimentándolo en continuo **al ritmo que la potencia puede fundir**: 30–35 kg/min/MW (≈ 3.5–5.0 t/min), con baño plano, escoria espumosa estable y temperatura controlada, **sin acumulaciones ("icebergs")** y **sin DRI húmedo**.

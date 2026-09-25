@@ -7,7 +7,7 @@
 > **Mensaje clave para el operador:** en la CC2 el acero cae del distribuidor al molde en **chorro abierto** y lo que controla el flujo es el **diámetro de la buza calibrada**. Una buza equivocada, mal asentada o fría echa a perder la línea desde el arranque. Un revestimiento húmedo puede causar una **explosión** al recibir el acero.
 
 ## 1. Objetivo y alcance
-**Objetivo:** entregar a la plataforma de colada un distribuidor de 30 t **seco, íntegro, precalentado a 1,000–1,100 °C** y con **6 buzas calibradas de ZrO₂ del diámetro correcto (Ø 15–17 mm)**, bien asentadas, cerradas con placa ciega y alineadas con los 6 moldes.
+**Objetivo:** entregar a la plataforma de colada un distribuidor de 30 t **seco, íntegro, precalentado a 1,000–1,100 °C** y con **6 buzas calibradas de ZrO₂ del diámetro de la orden de colada (160 × 160 mm: Ø 20–24 mm, nominal 22 mm; 130 × 130 mm: Ø 15–17 mm)**, bien asentadas, cerradas con placa ciega y alineadas con los 6 moldes.
 
 **Alcance:** desde que el distribuidor sale revestido y secado del taller de distribuidores hasta que queda en la posición de colada, listo para abrir la olla (entrada a MO-CC2-03). No incluye el revestimiento en el taller (lo hace S-24 con C-15) ni el cambio de buza en colada (MO-CC2-06).
 
@@ -47,7 +47,7 @@ flowchart TD
 ```
 
 **Por qué importa (para aprender):**
-- **El diámetro manda.** En colada abierta no hay barra tapón: el caudal depende del área de la buza. Pasar de 16 a 17 mm aumenta el área ≈ 13% y la velocidad de esa línea sube en la misma proporción.
+- **El diámetro manda.** En colada abierta no hay barra tapón: el caudal depende del área de la buza. Pasar de 22 a 23 mm aumenta el área ≈ 9% y la velocidad de esa línea sube de ≈ 3.0 a ≈ 3.2 m/min (ver la tabla de la sección 5).
 - **La humedad mata.** Un revestimiento, mortero o buza con agua genera vapor al contacto con acero a ≈ 1,530 °C; el vapor se expande más de 1,000 veces y proyecta metal líquido.
 - **Frío = buza congelada.** Si la buza está por debajo de ≈ 900 °C, el primer acero se solidifica en su orificio y la línea no arranca, sobre todo en L1 y L6.
 - **Centrado = palanquilla cuadrada.** Un chorro desviado golpea una cara del molde, adelgaza la piel de ese lado y produce romboidad y riesgo de breakout.
@@ -60,7 +60,7 @@ flowchart TD
 | Revestimiento de trabajo | Cara caliente, protege el permanente | Masa de MgO proyectada, 25–40 mm [Validar con C-15] | Espesor medido en 6 puntos; sin desprendimientos |
 | Almohadilla de impacto y presas | Absorber el chorro de la olla y ordenar el flujo | Presas a ± 400 mm del eje de la olla [Validar OEM] | Íntegras, en su posición del plano |
 | Bloque asiento (well block) | Soporta la buza | Refractario de alta alúmina [Validar OEM] | Limpio, sin escoria ni grietas |
-| Buza calibrada de ZrO₂ | Fija el caudal de cada línea | Ø 15, 16 o 17 mm (según orden de colada) | Calibrador pasa/no pasa ± 0.2 mm; entrada sin astillas |
+| Buza calibrada de ZrO₂ | Fija el caudal de cada línea | 160 × 160 mm: Ø 20–24 mm (nominal 22); 130 × 130 mm: Ø 15–17 mm — según la orden de colada | Calibrador pasa/no pasa ± 0.2 mm; entrada sin astillas |
 | Mecanismo de cambio rápido | Cambiar buza o cerrar línea con placa ciega | Empuje ≤ 2 s [Validar OEM] | Carril limpio; placa ciega colocada en las 6 líneas antes del arranque |
 | Horno de buzas de repuesto | Tener buzas calientes para cambio rápido | ≥ 900 °C [Validar OEM]; mínimo 6 buzas | Encendido y con 6 buzas listas antes de abrir la olla |
 | Estación de precalentamiento | Calentar el revestimiento y las buzas | Quemadores de gas natural con supervisión de flama | Prueba de flama y purga OK; detector de gas operativo |
@@ -70,7 +70,7 @@ flowchart TD
 ## 5. Parámetros de operación
 | Parámetro | Unidad | Objetivo | Rango normal | Alarma / límite | Acción si está fuera de rango | Dónde se mide |
 |---|---|---|---|---|---|---|
-| Diámetro de buza | mm | Según orden de colada | 15–17 | Diferencia > ± 0.2 mm contra el nominal | Cambia la buza; no la instales | Calibrador pasa/no pasa |
+| Diámetro de buza | mm | Según orden de colada (22 en 160 × 160 mm a 3.0 m/min) | 160 × 160: 20–24; 130 × 130: 15–17 | Diferencia > ± 0.2 mm contra el nominal | Cambia la buza; no la instales | Calibrador pasa/no pasa |
 | Espesor del revestimiento de trabajo | mm | 30 | 25–40 [Validar] | < 20 mm en cualquier punto | Rechaza el distribuidor; avisa a C-15 | Varilla de medición, 6 puntos |
 | Temperatura de la cara caliente | °C | 1,050 | 1,000–1,100 | < 950 °C a la hora de colar | Retrasa la apertura y avisa a C-06 | Termopar / pirómetro, cada 30 min |
 | Tiempo a temperatura | h | 2.5 | ≥ 2 [Validar] | Total de precalentamiento > 6 h [Validar] | Consulta a C-15 antes de usarlo | Registro de precalentamiento |
@@ -79,7 +79,20 @@ flowchart TD
 | Alineación buza–molde (centro del chorro) | mm | 0 | ± 3 [Validar OEM] | > ± 3 mm | Corrige el centrado del carro | Plomada o láser de alineación |
 | Tara de celdas de carga | t | 0.0 | ± 0.2 | > ± 0.5 t | Llama a S-21 Instrumentista | HMI del púlpito |
 
-> ⚠️ **Nota de ingeniería (inconsistencia detectada, [Validar con OEM / Ingeniería de Proceso]).** Por balance de masa, una buza de 15–17 mm con 700–850 mm de nivel entrega ≈ 0.25–0.35 t/min por línea. Eso alcanza para 160 × 160 mm a solo ≈ 1.3–1.8 m/min (o para 130 × 130 mm a ≈ 1.9–2.7 m/min). Para 160 × 160 mm a 2.5–3.5 m/min se requieren ≈ 0.49–0.68 t/min por línea, es decir, buzas de ≈ 20–24 mm. **C-08 debe confirmar la tabla de diámetros de buza contra velocidad y sección antes de usar este manual en planta.**
+**Tabla de diámetro de buza contra sección y velocidad [Validar con OEM]** (FT-ACE-001 v0.2 §5; caudal ≈ 0.9·√(2·g·h)·área·ρ, nivel del distribuidor h = 0.8 m; entre paréntesis, la velocidad con 700–850 mm):
+
+| Sección | Ø buza (mm) | Caudal por línea (t/min, h = 0.8 m) | Velocidad resultante (m/min) |
+|---|---|---|---|
+| 160 × 160 mm | 20 | ≈ 0.47 | ≈ 2.4 (2.3–2.5) |
+| 160 × 160 mm | 21 | ≈ 0.52 | ≈ 2.7 (2.5–2.8) |
+| 160 × 160 mm | **22 (nominal)** | **≈ 0.57** | **≈ 3.0 (2.7–3.0)** |
+| 160 × 160 mm | 23 | ≈ 0.62 | ≈ 3.2 (3.0–3.3) |
+| 160 × 160 mm | 24 | ≈ 0.68 | ≈ 3.5 (3.3–3.6) |
+| 130 × 130 mm | 15 | ≈ 0.26 | ≈ 2.1 (1.9–2.1) |
+| 130 × 130 mm | 16 | ≈ 0.30 | ≈ 2.3 (2.2–2.4) |
+| 130 × 130 mm | 17 | ≈ 0.34 | ≈ 2.7 (2.5–2.7) |
+
+C-08 fija en la orden de colada el diámetro según sección, grado y velocidad objetivo; el operador **no elige** el diámetro.
 
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
@@ -115,7 +128,7 @@ Casco con barbiquejo, lentes de seguridad y careta con filtro IR, chamarra y pol
 | 2 | Inspecciona el revestimiento de trabajo | Visual con lámpara; mide el espesor en 6 puntos (fondo, paredes, zona de impacto) | 25–40 mm; sin grietas > 3 mm ni desprendimientos | | S-15 |
 | 3 | Verifica la almohadilla de impacto y las presas | Posición según el plano del OEM; sin daños | Íntegras y en su lugar | | S-15 |
 | 4 | Limpia los 6 pozos de buza | Aspira o sopla con aire seco; usa respirador P100 | Sin escoria ni restos de mortero | | S-15 |
-| 5 | Confirma el diámetro de buza de la orden de colada | Compara la orden con la HMI (S-12 confirma) | Mismo diámetro en papel, HMI y caja de buzas | ★ | S-15, S-12 |
+| 5 | Confirma el diámetro de buza de la orden de colada | Compara la orden con la HMI (S-12 confirma) y con la tabla de la sección 5 (160 × 160 mm: 20–24 mm; 130 × 130 mm: 15–17 mm) | Mismo diámetro en papel, HMI y caja de buzas | ★ | S-15, S-12 |
 | 6 | Verifica cada buza con calibrador | Pasa/no pasa de ± 0.2 mm; revisa grietas y astillas en la entrada | Pasa el nominal y no pasa el de +0.2 mm | ★ | S-15 |
 | 7 | Asienta bloque y buza | Según el OEM (mortero seco o junta); verticalidad con escuadra | Desviación ≤ 1 mm; sin juego | | S-15 |
 | 8 | Coloca placas ciegas en L1–L6 | Empuja la placa ciega en el mecanismo de cambio rápido de cada línea | 6 líneas cerradas; mecanismo sin juego | ★ | S-15 |

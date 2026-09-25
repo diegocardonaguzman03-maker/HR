@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | MO-EAF-07 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 y fosa de vaciado | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.1. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
 **Objetivo:** vaciar **150 t** de acero a una olla precalentada, **dentro de la ventana** (T 1,630 ± 15 °C, O activo 500–900 ppm, C 0.04–0.08%, P ≤ 0.015%), con **desoxidación y aleación** correctas para el grado, **arrastre mínimo de escoria** (≤ 5 kg/t [Supuesto]) y **retención del talón de 20–30 t**, con **nadie dentro de la zona de exclusión**.

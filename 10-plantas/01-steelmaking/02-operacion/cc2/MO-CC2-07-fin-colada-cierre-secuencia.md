@@ -58,7 +58,7 @@ flowchart TD
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|
 | Mecanismo de cambio rápido + placas ciegas | Cerrar cada línea | ≤ 10 s por línea | 6 placas ciegas calientes en el horno |
-| Varilla de taponeo | Respaldo | Tapón cónico Ø 15–17 mm | 2 listas |
+| Varilla de taponeo | Respaldo | Tapón cónico del diámetro en uso (160 × 160: Ø 20–24 mm) | 2 listas |
 | Extractores-enderezadores | Sacar la cola | Modo cola 0.5–1.0 m/min [Validar OEM] | Sin alarmas |
 | Rociado secundario | Enfriar hasta la cola | Apagado por zona con seguimiento de cola | Seguimiento de cola activo en la HMI |
 | Carro del distribuidor | Retirar el distribuidor | Posición de desescoriado [Validar OEM] | Caja de escoria seca en posición |

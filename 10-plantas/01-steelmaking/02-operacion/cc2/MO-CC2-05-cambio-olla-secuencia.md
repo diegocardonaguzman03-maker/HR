@@ -23,7 +23,7 @@
 | C-04 Jefe de Turno de Acería | Coordina el programa de ollas con EAF y LF | I |
 
 ## 3. Descripción del proceso
-La torreta tiene **2 brazos**: mientras una olla cuela, la siguiente espera en el otro brazo. Al terminar la olla, se cierra, se gira la torreta 180° y se abre la nueva. Durante el giro el distribuidor **no recibe acero**; sus 30 t alimentan a las 6 líneas (≈ 3.5 t/min a 3.0 m/min), por eso el nivel se sube antes a **850 mm** y el cambio completo debe durar **≤ 3 min** [Validar].
+La torreta tiene **2 brazos**: mientras una olla cuela, la siguiente espera en el otro brazo. Al terminar la olla, se cierra, se gira la torreta 180° y se abre la nueva. Durante el giro el distribuidor **no recibe acero**; sus 30 t alimentan a las 6 líneas (≈ 3.4 t/min con 6 líneas a 3.0 m/min), por eso el nivel se sube antes a **850 mm** y el cambio completo debe durar **≤ 3 min** [Validar].
 
 **Trazabilidad:** el acero de la olla nueva se mezcla con el que queda en el distribuidor. El sistema de rastreo asigna el cambio de colada en cada línea a partir del tiempo de residencia (≈ 8–9 min con 6 líneas a 3.0 m/min [Validar]). Las palanquillas de esa zona se marcan como **de transición**.
 
@@ -45,7 +45,7 @@ flowchart TD
 ![Figura 1. Perfil de una línea de la CC2 (torreta, olla y distribuidor)](../../img/cc2-perfil-maquina.svg)
 
 **Por qué importa (para aprender):**
-- **Colchón de acero.** Con 850 mm el distribuidor tiene ≈ 30 t; a 3.5 t/min de consumo, esa reserva da pocos minutos. Por eso el cambio completo debe durar ≤ 3 min.
+- **Colchón de acero.** Con 850 mm el distribuidor tiene ≈ 30 t; a ≈ 3.4 t/min de consumo, esa reserva da pocos minutos. Por eso el cambio completo debe durar ≤ 3 min.
 - **Escoria abajo, nivel arriba.** La escoria de la olla flota sobre el acero; al vaciarse la olla forma un remolino que la jala al distribuidor. Cerrar con 2–4 t de residual evita que llegue a las palanquillas.
 - **Vórtice en el distribuidor.** Por debajo de ≈ 500 mm el acero forma remolinos sobre las buzas y arrastra escoria de cubierta al molde.
 - **Trazabilidad.** Durante ≈ 8–9 min el distribuidor mezcla dos coladas; las palanquillas de esa zona son "T" y su colada se asigna por el rastreo.

@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | MO-EAF-01 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.1. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
 **Objetivo:** dejar el horno en condición segura y lista para la siguiente carga en **≤ 5 min** (ventana de preparación del tap-to-tap de 55 min): sin fugas de agua, con refractario reparado, EBT cerrado y lleno de arena seca, talón líquido de 20–30 t y electrodos, quemadores y humos en condición de operar.

@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | MO-OLL-01 | 0.1 | Borrador para validación | Metalurgia secundaria — Taller y estación de preparación de ollas | C-15 Especialista de Refractarios | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.1. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 / C-15 lo validen.
+> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 / C-15 lo validen.
 
 ## 1. Objetivo y alcance
 **Objetivo:** entregar al EAF una olla de 150 t **seca, caliente (cara caliente 1,000–1,100 °C), con refractario vigente, válvula deslizante probada y cerrada, arena de sello colocada y tapón poroso con paso de argón**, para lograr **apertura libre ≥ 98%** en la colada continua y **cero perforaciones**.

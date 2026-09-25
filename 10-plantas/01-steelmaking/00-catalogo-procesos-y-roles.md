@@ -112,15 +112,15 @@ Criterio de "crítico": un error en el proceso puede causar una fatalidad o lesi
 | Código | Proceso crítico | Rol dueño | Roles que ejecutan |
 |---|---|---|---|
 | MM-EAF-01 | Detección y reparación de fugas en paneles y bóveda enfriados por agua | C-11 | S-19, S-23, S-21 |
-| MM-EAF-02 | Mantenimiento de brazos portaelectrodos, columnas, regulación hidráulica y cambio de bóveda / delta | C-11 | S-19, S-22, S-04 |
+| MM-EAF-02 | Mantenimiento de brazos portaelectrodos, columnas, regulación hidráulica y cambio de bóveda / delta | C-11 | S-19, S-22, S-20, S-04 |
 | MM-EAF-03 | Reparación de refractario del EAF: solera, bancos, EBT (cambio de tubo/bloque) y proyección (gunning) | C-15 | S-24, S-03 |
 | MM-EAF-04 | Mantenimiento del transformador del horno y maniobras de alta tensión | C-12 | S-20 |
 | MM-OLL-01 | Cambio de placas de válvula deslizante y tapón poroso; revestimiento y reparación de ollas | C-15 | S-24, S-08 |
-| MM-CC-01 | Cambio y preparación de moldes (placas CC1 / tubos CC2), medición de conicidad y desgaste | C-11 | S-25, S-19 |
-| MM-CC-02 | Cambio y alineación de segmentos (CC1) y guías (CC2); medición de gap y alineación | C-11 | S-25, S-19 |
+| MM-CC-01 | Cambio y preparación de moldes (placas CC1 / tubos CC2), medición de conicidad y desgaste | C-11 | S-25, S-19, S-21, S-22 |
+| MM-CC-02 | Cambio y alineación de segmentos (CC1) y guías (CC2); medición de gap y alineación | C-11 | S-25, S-19, S-21, S-22 |
 | MM-CC-03 | Sistemas de agua de molde, enfriamiento secundario y agua de emergencia (pruebas de torre y bombas diésel) | C-12 | S-19, S-21 |
 | MM-CC-04 | Sistemas hidráulicos de oscilación, control de nivel y barra tapón (incluye la fuente de Cs-137 de CC2) | C-12 | S-22, S-21 |
-| MM-GR-01 | Inspección y mantenimiento de grúas de colada (ganchos, frenos, cables, límites) | C-11 | S-19, S-20 |
+| MM-GR-01 | Inspección y mantenimiento de grúas de colada (ganchos, frenos, cables, límites) | C-11 | S-19, S-20, S-09 (checklist diario), S-26 |
 
 ### 2.6 Seguridad crítica (`04-seguridad/`)
 | Código | Proceso crítico | Rol dueño | Aplica a |
@@ -131,10 +131,16 @@ Criterio de "crítico": un error en el proceso puede causar una fatalidad o lesi
 | MS-ACE-04 | Izaje con grúas de colada y de carga; cargas suspendidas | C-16 | S-04, S-09, S-13, mantenimiento |
 | MS-ACE-05 | Espacios confinados (ollas, distribuidores, fosas, ductos de humos, casa de bolsas) | C-16 | S-08, S-15, S-24, mantenimiento |
 | MS-ACE-06 | Gases: CO, enriquecimiento de O₂, argón y N₂ (asfixia), gas natural | C-16 | Todos |
-| MS-ACE-07 | Fuentes radiactivas (nivel de molde de CC2, detección de chatarra) | C-16 | S-05, S-12, S-14, S-21 |
+| MS-ACE-07 | Fuentes radiactivas (nivel de molde de CC2, detección de chatarra) | C-16 (función de Encargado de Seguridad Radiológica, ESR, con licencia de la CNSNS) | S-05, S-12, S-13, S-14, S-21, S-25 |
 | MS-ACE-08 | Estrés térmico, hidratación y EPP | C-16 | Todos |
 | MS-ACE-09 | Respuesta a emergencias: fuga de agua en el horno, perforación de olla, breakout en CC, falla de agua de molde o apagón, derrame | C-04 | Todos |
 | MS-ACE-10 | Trabajo en altura (bóveda, plataformas, grúas) | C-16 | Operación y mantenimiento |
 
-## 3. Nomenclatura de imágenes (`img/`)
+## 3. Pendientes de catálogo (decisión del Director)
+- **Rol faltante:** Operador de Grúa de CC y Producto (grúas de 50 t y 45 t). Hoy lo cubren S-15 (distribuidores) y S-17 (producto). Propuesta: crear el rol S-27.
+- **Escarpeo de planchón:** asignarlo a un rol (propuesta: S-18 con certificación) o a un contratista REPSE.
+- **Supervisor de mantenimiento de turno:** hoy lo cubre C-12 en modalidad de turno. Propuesta: evaluar crear el rol C-18.
+- **Dueño único de MS-ACE-03:** propuesta C-07 como dueño y C-16 como verificador.
+
+## 4. Nomenclatura de imágenes (`img/`)
 Prefijos: `eaf-`, `lf-`, `olla-`, `cc1-`, `cc2-`, `mm-`, `ms-`, `org-`. Formato **SVG** (ver la guía de estilo).

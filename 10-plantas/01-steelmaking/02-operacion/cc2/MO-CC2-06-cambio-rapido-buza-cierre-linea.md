@@ -24,7 +24,9 @@
 ## 3. Descripción del proceso
 Cada buza calibrada está montada en un **mecanismo de cambio rápido** bajo el distribuidor. Al empujar una **buza nueva precalentada**, la buza usada sale por el otro lado hacia un cajón receptor. Si en lugar de una buza se empuja una **placa ciega** (sin orificio), la línea **se cierra**. Como respaldo, la línea se puede **taponar** desde arriba del distribuidor con un **tapón cónico** montado en una **varilla de taponeo**.
 
-**Vida de la buza [Validar con OEM / C-08]:** 8–12 h de colada. El ZrO₂ se erosiona y el diámetro crece: con +1.0 mm la línea ya no se controla dentro de 3.5 m/min.
+**Vida de la buza [Validar con OEM / C-08]:** 8–12 h de colada. El ZrO₂ se erosiona y el diámetro crece: una buza de 22 mm (≈ 3.0 m/min) que se abre a 23.5 mm lleva la línea a ≈ 3.4 m/min, en el límite de 3.5 m/min.
+
+**Diámetros vigentes [Validar con OEM]:** 160 × 160 mm → Ø 20–24 mm (nominal 22 mm ≈ 3.0 m/min; 20 mm ≈ 2.4; 24 mm ≈ 3.5 m/min con 0.8 m de nivel); 130 × 130 mm → Ø 15–17 mm. Tabla completa en MO-CC2-01, sección 5. La buza de repuesto siempre es del **mismo diámetro de la orden de colada**.
 
 ![Figura 2. Distribuidor de 30 t, corte A–A y cambio rápido de buza](../../img/cc2-distribuidor-6-lineas.svg)
 
@@ -59,11 +61,11 @@ flowchart TD
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|
 | Mecanismo de cambio rápido (6) | Cambiar buza o cerrar la línea | Empuje ≤ 2 s [Validar OEM] | Carril libre; cilindro o palanca operando |
-| Buzas calibradas de repuesto | Reemplazo | Ø de la orden (15–17 mm); precalentadas | ≥ 900 °C y ≥ 30 min en el horno [Validar OEM] |
+| Buzas calibradas de repuesto | Reemplazo | Ø de la orden (160 × 160: 20–24 mm, nominal 22; 130 × 130: 15–17 mm); precalentadas | ≥ 900 °C y ≥ 30 min en el horno [Validar OEM] |
 | Placas ciegas | Cerrar la línea | Una por línea + 2 de repuesto, precalentadas | En el horno, listas |
 | Horno de buzas de repuesto | Mantener buzas calientes | ≥ 900 °C [Validar OEM] | Encendido; mínimo 6 buzas y 2 placas |
 | Tenazas para buza | Manipular la buza caliente | Mango ≥ 1.2 m [Validar] | Sin deformación |
-| Varilla de taponeo con tapón cónico | Respaldo de cierre desde arriba | Tapón de acero o refractario para Ø 15–17 mm; varilla ≥ 3 m [Validar] | 2 varillas listas por turno, secas |
+| Varilla de taponeo con tapón cónico | Respaldo de cierre desde arriba | Tapón de acero o refractario para Ø 15–24 mm (del diámetro en uso); varilla ≥ 3 m [Validar] | 2 varillas listas por turno, secas |
 | Cajón receptor | Recibir la buza usada | Seco, con arena seca | Vacío al inicio del turno |
 
 ## 5. Parámetros de operación

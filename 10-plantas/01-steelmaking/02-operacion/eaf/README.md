@@ -4,7 +4,7 @@
 |---|---|---|---|
 | IDX-MO-EAF-LF | 0.1 | Borrador para validación | experto-operativo-metalurgia (técnico) · experto-seguridad-salud (seguridad) · Gerente Sindicalizado (uso en capacitación) |
 
-**Mensaje clave:** hay 11 manuales de procesos críticos (8 de EAF y 3 de Ollas/LF) con la plantilla de 13 secciones de la guía de estilo. Todos toman sus valores de `FT-ACE-001` v0.1 y **no se usan en planta hasta que Ingeniería de Proceso (C-07) y el Especialista de Refractarios (C-15) validen los valores marcados como [Validar con OEM / Ingeniería de Proceso] o [Supuesto]**. Los pasos ★ de cada manual forman la lista de evaluación de la certificación TD-P07.
+**Mensaje clave:** hay 11 manuales de procesos críticos (8 de EAF y 3 de Ollas/LF) con la plantilla de 13 secciones de la guía de estilo. Todos toman sus valores de `FT-ACE-001` v0.2 y **no se usan en planta hasta que Ingeniería de Proceso (C-07) y el Especialista de Refractarios (C-15) validen los valores marcados como [Validar con OEM / Ingeniería de Proceso] o [Supuesto]**. Los pasos ★ de cada manual forman la lista de evaluación de la certificación TD-P07.
 
 ## 1. Manuales de EAF (`02-operacion/eaf/`)
 | Código | Manual | Propósito | Dueño | Ejecutan | Figuras |

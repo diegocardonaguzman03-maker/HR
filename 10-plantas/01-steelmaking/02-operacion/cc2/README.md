@@ -4,7 +4,7 @@
 |---|---|---|---|
 | Índice MO-CC2 | 0.1 | **Borrador para validación** (2026-09-25) | experto-operativo-metalurgia (técnico) · Gerente Sindicalizado / sind-servicio-clientes (TD-10, socio de C&D de Acería) |
 
-> **Mensaje clave:** estos 9 manuales cubren los procesos críticos de la CC2 (máquina curva de 6 líneas, radio 9 m, palanquilla de 160 × 160 mm, colada abierta con buza calibrada y aceite, EMS y control de nivel radiométrico con Cs-137). Están escritos para que el operador aprenda: pasos simples, cada medición con objetivo, rango, alarma y acción. **No se usan en planta hasta que Ingeniería de Proceso valide los valores marcados [Validar] contra el OEM** y se resuelva la inconsistencia de buza contra velocidad (ver la sección 5).
+> **Mensaje clave:** estos 9 manuales cubren los procesos críticos de la CC2 (máquina curva de 6 líneas, radio 9 m, palanquilla de 160 × 160 mm, colada abierta con buza calibrada y aceite, EMS y control de nivel radiométrico con Cs-137). Están escritos para que el operador aprenda: pasos simples, cada medición con objetivo, rango, alarma y acción. **No se usan en planta hasta que Ingeniería de Proceso valide los valores marcados [Validar] contra el OEM**. Los diámetros de buza ya están alineados con FT-ACE-001 v0.2.
 
 ## 1. Índice de manuales
 | Código | Proceso crítico | Dueño | Ejecutan | Pasos ★ | Figuras |
@@ -50,7 +50,8 @@ flowchart LR
 | Sección / velocidad | 160 × 160 mm; 2.5–3.5 m/min (nominal 3.0) | FT-ACE-001 §5 |
 | Sobrecalentamiento | 20–35 °C (líquidus de varilla ≈ 1,505 °C, se calcula por colada) | FT §5; líquidus [Validar] |
 | Distribuidor | 30 t; 700–850 mm; mínimo en cambio de olla 500 mm; fin de colada ≥ 300 mm | FT §5; mínimos [Validar] |
-| Buza calibrada | ZrO₂ Ø 15–17 mm; vida 8–12 h; cambio rápido ≤ 2 s | FT §5; vida y tiempo [Validar] |
+| Buza calibrada | ZrO₂ con cambio rápido: 160 × 160 mm → Ø 20–24 mm (22 mm ≈ 0.57 t/min ≈ 3.0 m/min con h = 0.8 m); 130 × 130 mm → Ø 15–17 mm; vida 8–12 h; cambio ≤ 2 s | FT v0.2 §5 [Validar con OEM]; vida y tiempo [Validar]. Tabla en MO-CC2-01 §5 |
+| Capacidad | ≈ 3.4 t/min con 6 líneas (≈ 1.7 Mt/año, holgura sobre 0.9 Mt/año); opera por campañas y ajusta velocidad o número de líneas a la cadencia de ollas | FT v0.2 §5 |
 | Orden de apertura | L3-L4 → L2-L5 → L1-L6; cierre al revés | [Validar] |
 | Arranque | Extracción a 0.5 m/min con nivel a ≈ 150 mm bajo el borde; rampa a ≥ 2.5 m/min en ≈ 2 min | [Validar OEM] |
 | Nivel de molde | Radiométrico Cs-137, ± 5 mm; alarma ± 10 mm | FT §5; alarma [Validar] |
@@ -63,11 +64,10 @@ flowchart LR
 | Romboidad | Aceptar ΔD ≤ 6 mm; retener 6–11 mm; rechazar > 11 mm (> 5%) | [Validar con C-09 y Laminación] |
 
 ## 5. Pendientes de validación e inconsistencias detectadas
-1. **Buza contra velocidad (crítico):** por balance de masa, buzas de 15–17 mm con 700–850 mm de nivel entregan ≈ 0.25–0.35 t/min por línea, que en 160 × 160 mm equivale a ≈ 1.3–1.8 m/min, no a 2.5–3.5 m/min. Para 2.5–3.5 m/min hacen falta ≈ 20–24 mm (o los valores de 15–17 mm corresponden a 130 × 130 mm). **Ingeniería de Proceso (C-08) debe confirmar el valor con el OEM.**
-2. La ficha cita la fuente de Cs-137 como **"SEG-ACE-07"**; el catálogo la codifica como **MS-ACE-07**.
-3. El catálogo no tiene código de rol para el **operador de grúa de CC y de producto** (grúas de 50 t y 25 t); los manuales lo citan sin código.
-4. En el catálogo, MS-ACE-07 "aplica a" S-05, S-12, S-14 y S-21; MS-ACE-07 ya incluye a S-25 en su texto, pero ninguno de los dos incluye a **S-13** (cambio de buza y taponeo junto a los moldes): conviene agregar S-13 y S-25 al catálogo.
-5. Faltan en la ficha: parámetros del EMS, tabla de buza por velocidad, vida de buza, niveles mínimos del distribuidor, punto del menisco, alarmas de nivel, velocidad y rampa de arranque, longitud metalúrgica (≈ 20–29 m a 2.5–3.5 m/min) y posición del corte, tolerancia de longitud, límites de romboidad y defectos, química para colada abierta (Al ≤ 0.005%, Mn/Si ≥ 3) y precalentamiento del distribuidor.
+1. **Resuelto en FT-ACE-001 v0.2:** diámetro de buza por sección (160 × 160 mm → 20–24 mm; 130 × 130 mm → 15–17 mm) y referencia a MS-ACE-07. Sigue pendiente la confirmación del OEM [Validar].
+2. El catálogo no tiene código de rol para el **operador de grúa de CC y de producto** (grúas de 50 t y 25 t); los manuales lo citan sin código.
+3. En el catálogo, MS-ACE-07 "aplica a" S-05, S-12, S-14 y S-21; MS-ACE-07 ya incluye a S-25 en su texto, pero ninguno de los dos incluye a **S-13** (cambio de buza y taponeo junto a los moldes): conviene agregar S-13 y S-25 al catálogo.
+4. Faltan en la ficha: parámetros del EMS, vida de buza, niveles mínimos del distribuidor, punto del menisco, alarmas de nivel, velocidad y rampa de arranque, longitud metalúrgica (≈ 20–29 m a 2.5–3.5 m/min) y posición del corte, tolerancia de longitud, límites de romboidad y defectos, química para colada abierta (Al ≤ 0.005%, Mn/Si ≥ 3) y precalentamiento del distribuidor.
 
 ## 6. Radiación: regla única para todos los manuales
 Antes de meter manos, herramientas o el cuerpo en la zona del molde (sellado de barra falsa, limpieza, inspección, cambio de molde, atención a un breakout): **(1)** el **Encargado de Seguridad Radiológica (ESR)** cierra el obturador, **(2)** pone su candado y tarjeta, **(3)** mide la tasa de dosis en el punto de trabajo (criterio < 2 × fondo, MS-ACE-07) y la registra en el permiso de trabajo que él firma, **(4)** el trabajador trae su **dosímetro personal**. Solo el ESR abre el obturador, después de confirmar que no hay nadie en el molde. Base: MS-ACE-07, NOM-012-STPS-2012 y la licencia de la CNSNS (verificar con Jurídico Laboral / SSO).
@@ -87,5 +87,5 @@ Antes de meter manos, herramientas o el cuerpo en la zona del molde (sellado de 
 | **B (recomendada)** | Validación técnica rápida por C-08 con el OEM (4 semanas), ajuste de la ficha FT-ACE-001 y después piloto de OJT y certificación TD-P07 con una cuadrilla de la CC2 | Retraso de ≈ 1 mes en el arranque de la certificación | Bajo: ≈ 40 h de ingeniería y 1 visita del OEM [Supuesto] |
 | **C** | Esperar a tener todos los manuales de la Acería (EAF, LF, CC1) para validar en bloque | Retraso de meses con procesos críticos sin estándar escrito | Bajo en costo, alto en riesgo |
 
-**Recomendación:** opción **B**, porque la inconsistencia de buza contra velocidad cambia pasos ★ del arranque y del cambio de buza, y los pasos ★ son la base de la certificación.
+**Recomendación:** opción **B**, porque los valores [Validar] (arranque, niveles, alarmas, límites de defectos) están en pasos ★, que son la base de la certificación; los diámetros de buza ya quedaron corregidos en la ficha v0.2.
 **Fecha límite sugerida para decidir:** 2026-10-09.

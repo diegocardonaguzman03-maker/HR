@@ -13,7 +13,7 @@ Aplica a todos los documentos de `10-plantas/`. Objetivo: que un operador los en
 
 ## 2. Imágenes y diagramas
 - **Diagramas de flujo:** mermaid dentro del Markdown.
-- **Ilustraciones técnicas** (cortes de equipos, perfiles de máquina, zonas de exclusión, puntos de bloqueo): **SVG** guardado en `10-plantas/01-steelmaking/img/` e insertado así: `![Figura N. Descripción](../../img/archivo.svg)` (ajusta la ruta relativa).
+- **Ilustraciones técnicas** (cortes de equipos, perfiles de máquina, zonas de exclusión, puntos de bloqueo): **SVG** guardado en `10-plantas/01-steelmaking/img/` e insertado con una ruta relativa: desde `02-operacion/<área>/` usa `../../img/archivo.svg`; desde `01-organizacion/`, `03-mantenimiento/` y `04-seguridad/` usa `../img/archivo.svg`.
 - **Estilo SVG:**
   - `viewBox` definido, ancho de 800–1,000 px y fondo blanco (`<rect width="100%" height="100%" fill="#ffffff"/>`).
   - Fuente: `font-family="Arial, Helvetica, sans-serif"`, 12–16 px.

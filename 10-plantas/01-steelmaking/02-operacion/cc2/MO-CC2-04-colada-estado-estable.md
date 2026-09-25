@@ -35,7 +35,7 @@ El aceite forma una película entre la piel y el cobre; el **EMS** agita el acer
 
 ```mermaid
 flowchart LR
-    TD["Nivel del distribuidor<br/>700–850 mm"] --> Q["Caudal por buza<br/>(Ø 15–17 mm)"]
+    TD["Nivel del distribuidor<br/>700–850 mm"] --> Q["Caudal por buza<br/>(160 × 160: Ø 20–24 mm)"]
     Q --> ML["Nivel de molde<br/>radiométrico ± 5 mm"]
     ML --> LC{"Lazo de control<br/>de nivel"}
     LC --> V["Velocidad de extracción<br/>2.5–3.5 m/min"]
@@ -84,9 +84,9 @@ flowchart LR
 | EMS | A / Hz | 300 / 3 | 250–400 / 2–5 [Validar OEM] | Disparo o corriente < 200 A | Sigue colando; marca las palanquillas "E" y avisa a S-20 | HMI |
 | Temperatura de enderezado (superficie) | °C | 1,000 | ≥ 950 [Validar] | < 900 (zona de baja ductilidad) | Baja el rociado de Z3 según tabla; avisa a C-08 | Pirómetro |
 
-**Producción de referencia:** a 3.0 m/min cada línea produce ≈ 0.58 t/min (≈ 35 t/h). Con 6 líneas, ≈ 3.5 t/min: una olla de 150 t dura ≈ 43 min.
+**Producción de referencia:** a 3.0 m/min cada línea produce ≈ 0.58 t/min (≈ 35 t/h). Con 6 líneas la capacidad de diseño es ≈ 3.4 t/min (≈ 1.7 Mt/año, con holgura sobre el plan de 0.9 Mt/año): una olla de 150 t dura ≈ 44 min. La máquina opera por campañas y **ajusta la velocidad o el número de líneas a la cadencia de ollas** de los EAF; esa decisión es de C-06 con C-04.
 
-> ⚠️ **Nota de ingeniería [Validar con OEM / Ingeniería de Proceso]:** con buzas de 15–17 mm y 700–850 mm de nivel, el caudal por línea (≈ 0.25–0.35 t/min) solo sostiene ≈ 1.3–1.8 m/min en 160 × 160 mm. Para 2.5–3.5 m/min hacen falta buzas de ≈ 20–24 mm. C-08 debe confirmar la tabla de buza contra velocidad (ver MO-CC2-01).
+**Buza y velocidad [Validar con OEM]:** en 160 × 160 mm la buza nominal es de **22 mm** (≈ 0.57 t/min por línea con 0.8 m de nivel ≈ 3.0 m/min); el rango es 20–24 mm (≈ 2.4–3.5 m/min). En 130 × 130 mm, 15–17 mm. La tabla completa está en MO-CC2-01, sección 5.
 
 **Química para colada abierta [Validar con C-07/C-08]:** acero calmado al Si-Mn con **Al soluble ≤ 0.005%** y relación **Mn/Si ≥ 3**, para que los óxidos sean líquidos y **no tapen la buza**. Un acero con Al alto tapa las buzas en minutos.
 

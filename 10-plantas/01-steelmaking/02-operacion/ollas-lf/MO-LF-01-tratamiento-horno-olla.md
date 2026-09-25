@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | MO-LF-01 | 0.1 | Borrador para validación | Metalurgia secundaria — LF-1 / LF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.1. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
 **Objetivo:** entregar a la colada continua, en **35–45 min**, acero en **composición del grado**, **limpio** y a la **temperatura de envío** (líquidus + sobrecalentamiento + pérdidas de transporte), con **S ≤ 0.010%** y **Al soluble 0.020–0.045%** en grados calmados al Al (CC1), y con **agitación suave de argón ≥ 8 min** antes del envío.

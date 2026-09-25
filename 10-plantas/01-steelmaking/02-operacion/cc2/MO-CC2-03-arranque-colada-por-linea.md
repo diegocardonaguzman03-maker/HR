@@ -59,7 +59,7 @@ sequenceDiagram
 | Torreta de ollas (2 brazos) | Llevar la olla a posición de colada | Pesaje de olla | Sin alarmas; olla asentada |
 | Válvula deslizante de la olla + tubo protector | Abrir la olla y proteger el chorro | Tubo con sello de argón | Tubo precalentado y alineado; argón fluyendo |
 | Distribuidor de 30 t | Repartir el acero | Nivel 700–850 mm | Liberado por MO-CC2-01 |
-| Buzas calibradas + cambio rápido | Abrir cada línea | Ø 15–17 mm; placas ciegas en las 6 líneas | Liberado por MO-CC2-01 |
+| Buzas calibradas + cambio rápido | Abrir cada línea | 160 × 160 mm: Ø 20–24 mm (nominal 22); 130 × 130 mm: Ø 15–17 mm; placas ciegas en las 6 líneas | Liberado por MO-CC2-01 |
 | Moldes, barra falsa, oscilación, EMS | Formar la palanquilla | Ver MO-CC2-02 | 6 líneas "listo para colar" |
 | Medidor de nivel radiométrico | Controlar el menisco | ± 5 mm | Obturador abierto por el ESR; lectura "vacío" OK |
 | Lanza de temperatura (termopar desechable) | Medir la temperatura del distribuidor | Lectura en °C | Lanza y puntas disponibles |
