@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Custodio |
 |---|---|---|---|
-| FT-ACE-001 | 0.2 (corrige la buza calibrada de CC2 y la capacidad) | **Borrador para validación** | Gerente de Acería (C-01) + Ingenieros de Proceso (C-07, C-08) |
+| FT-ACE-001 | 0.3 (v0.2: buza de CC2, capacidad, grúas de producto, HSLA; v0.3: energía y tasa de DRI del EAF coherentes con el transformador) | **Borrador para validación** | Gerente de Acería (C-01) + Ingenieros de Proceso (C-07, C-08) |
 
 > ⚠️ **Fuente única de datos técnicos.** Todos los manuales, descripciones de puesto y materiales de capacitación de la Acería usan los valores de esta ficha. Son **valores de referencia típicos** para una acería eléctrica alimentada con DRI de este tamaño. **Antes de usar cualquier manual en planta**, Ingeniería de Proceso debe validarlos contra los manuales de los fabricantes (OEM), las especificaciones de GASM y los parámetros reales de la planta. Si un valor cambia, se cambia primero aquí.
 
@@ -37,14 +37,14 @@
 | Consumo de electrodo | 1.3–1.6 kg/t |
 | Carga metálica | 60% DRI/HBI (alimentación continua por el 5.º agujero de la bóveda) + 40% chatarra (1–2 canastas) |
 | Canasta de chatarra | 90 m³; carga típica de 55–70 t |
-| Alimentación de DRI | 3.5–5.0 t/min con arco estable y escoria espumosa (≈ 30–35 kg/min/MW) |
+| Alimentación de DRI | 3.5–4.3 t/min con arco estable y escoria espumosa (≈ 30–35 kg/min/MW a ≈ 120 MW activos); hasta 5.0 t/min solo con DRI caliente validado |
 | Temperatura del DRI caliente (si aplica) | 500–650 °C |
 | Quemadores/lanzas de O₂ (jet coherente) | 4 en pared, hasta 2,500 Nm³/h cada uno, más gas natural para el modo quemador |
 | Consumo de O₂ | 30–40 Nm³/t |
 | Inyección de carbono | 8–12 kg/t (finos de coque/antracita) |
 | Cal / dolomita | Cal 30–45 kg/t; dolomita 10–15 kg/t |
 | Escoria objetivo | Basicidad B2 (CaO/SiO₂) 1.8–2.2; FeO 25–35%; MgO 8–10% (saturación) |
-| Energía eléctrica | 560–620 kWh/t de acero líquido (alta por el DRI) |
+| Energía eléctrica | Objetivo 560 kWh/t (rango 520–600) de acero líquido. Límite físico: 140 MVA × FP ≈ 0.85 ≈ 119 MW activos, así que 560 kWh/t ≈ 84 MWh ≈ 42 min de arco. Cada +15 kWh/t alarga el arco ≈ 1 min |
 | Tiempo de colada a colada (tap-to-tap) | 55 min objetivo (con arco encendido 42 min) |
 | Temperatura de vaciado | 1,630 °C ± 15 °C (según grado) |
 | Química al vaciado (típica) | C 0.04–0.08%; O activo 500–900 ppm; P ≤ 0.015% |
