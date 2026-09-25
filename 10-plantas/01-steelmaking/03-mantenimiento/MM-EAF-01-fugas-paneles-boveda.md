@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-EAF-01 | 0.1 | Borrador para validación | Acería · EAF-1 / EAF-2 | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-EAF-01 | 0.2 | Borrador para validación | Acería · EAF-1 / EAF-2 | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Los valores vienen de `00-ficha-tecnica-acería.md` (FT-ACE-001 §2). Los dependientes del fabricante están marcados **[Validar con OEM / Ingeniería de Mantenimiento]**. **Agua + acero líquido = explosión de vapor.** Este manual es de riesgo máximo.
 
@@ -33,8 +33,8 @@ Cada panel es un serpentín de tubos con su propio circuito. Un medidor de cauda
 ```mermaid
 flowchart TD
     A["Alarma ΔQ > 2 % o fuga visible"] --> B{"¿Hay agua sobre el baño<br/>o ΔQ > 4 %?"}
-    B -- "Sí" --> C["🛑 Arco fuera, O₂/GN/C fuera<br/>NO bascular · evacuar plataforma"]
-    C --> D["Cerrar circuito afectado a distancia<br/>esperar evaporación"]
+    B -- "Sí" --> C["🛑 Arco fuera, O₂/GN/C fuera<br/>NO bascular · evacuar a ≥ 25 m"]
+    C --> D["Cerrar circuito afectado a distancia<br/>esperar evaporación (sin vapor ≥ 30 min)"]
     B -- "No" --> E["Identificar circuito por ΔQ<br/>y T salida"]
     D --> E
     E --> F["Colada termina con permiso de C-05<br/>o paro inmediato"]
@@ -113,12 +113,14 @@ Casco, lentes, careta facial, ropa FR/aluminizada en zona de horno caliente, gua
 |---|---|---|---|---|
 | E1 | Eléctrica MT (arco) | Interruptor de vacío del horno abierto + seccionador abierto + cuchillas de tierra cerradas | S-20 (NOM-029) | Indicación de posición + detector de tensión en el lado de carga + intento de "arco ON" rechazado |
 | E2 | Hidráulica | CCM de la HPU del horno; descarga de acumuladores | S-22 / S-19 | Manómetros 0 bar; mando de basculamiento sin respuesta |
-| E3 | O₂ y gas natural | Válvulas manuales de la estación de lanzas/quemadores; purga con N₂ | S-19 | Manómetros aguas abajo 0 bar; detector LEL 0 % |
+| E3 | O₂ y gas natural | Válvulas manuales de la estación de lanzas/quemadores; purga con N₂ | S-19 | Manómetros aguas abajo 0 bar; LEL < 10 % para entrar y 0 % detectable (≤ 1 % de lectura) antes de soldar u oxicortar (MS-ACE-05) |
 | E4 | Neumática (carbono/cal) y DRI | Válvula de aire de inyección; CCM del transportador de DRI | S-19 / S-20 | Arranque local rechazado |
 | E5 | Agua del circuito a reparar | V1 y V2 cerradas y bloqueadas; dren y venteo abiertos | S-19 | Manómetro local 0 bar, sin flujo en el dren |
 | E6 | Mecánica / gravedad | Horno nivelado sobre topes + perno de bloqueo de basculamiento; bóveda asentada; electrodos arriba con seguro | S-19 + S-01 | Verificación visual de pernos colocados |
 
-**Zona de exclusión:** plataforma del horno y fosa de escoria mientras haya metal líquido en el horno y exista sospecha de agua.
+**Zona de exclusión:** con metal líquido en el horno y sospecha de agua, nadie a menos de **25 m** del horno (incluye plataforma, puerta, EBT y fosas) hasta que C-05 y C-07 autoricen (MS-ACE-01 y MS-ACE-03).
+
+**Atmósfera (criterio único, MS-ACE-05):** entrada al casco con < 10 % LEL, O₂ 19.5–23.5 % y CO < 25 ppm; soldadura u oxicorte solo con 0 % LEL detectable (≤ 1 % de lectura del equipo); salir a CO 25 ppm o 10 % LEL; evacuar a CO 200 ppm [Verificar NOM-010] o 20 % LEL.
 
 ![Figura 2. Puntos de aislamiento y bloqueo del EAF (ver MS-ACE-02)](../img/ms-loto-puntos-eaf.svg)
 
@@ -134,16 +136,16 @@ Casco, lentes, careta facial, ropa FR/aluminizada en zona de horno caliente, gua
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
 | 1 | Recibe la alarma o el reporte | Identifica el circuito con la mayor ΔQ y la T de salida más alta en la HMI | Circuito identificado | | S-01, S-21 |
-| 2 | Asegura el horno | Si ΔQ > 4 % o hay agua visible: arco fuera, O₂/GN/C fuera, **no bascules**, evacúa plataforma | Nadie en zona de exclusión | ★ | S-01, C-05 |
-| 3 | Espera la evaporación | Con agua sobre el baño, espera que no haya vapor visible (mín. 10 min [Validar]); cierra el circuito a distancia | Sin vapor, sin charco | ★ | C-05 |
+| 2 | Asegura el horno | Si ΔQ > 4 % o hay agua visible: arco fuera, O₂/GN/C fuera, **no bascules ni muevas electrodos**, evacúa a ≥ 25 m del horno (MS-ACE-03) | Nadie a menos de 25 m | ★ | S-01, C-05 |
+| 3 | Espera la evaporación | Con agua sobre el baño, cierra el circuito a distancia y espera sin vapor visible ≥ 30 min [Supuesto, igual que MS-ACE-03 y MS-ACE-09]; reanudación solo con C-05 + C-07 | Sin vapor, sin charco; autorización registrada | ★ | C-05, C-07 |
 | 4 | Vacía el horno cuando sea seguro | Vaciado por EBT solo con autorización de C-05 y sin agua sobre el baño | Horno sin metal o con talón controlado | ★ | S-01, C-05 |
-| 5 | Emite la OT y los permisos | OT, permiso en caliente, altura y, si aplica, espacio confinado; análisis de riesgos | Permisos firmados | | C-11, C-16 |
+| 5 | Emite la OT y los permisos | OT, permiso en caliente, altura y, si aplica, espacio confinado; análisis de riesgos | Permisos firmados | ★ | C-11, C-16 |
 | 6 | Aplica LOTO E1–E6 | Cada ejecutante coloca su candado en la caja grupal | Todos los candados y tarjetas puestos | ★ | S-20, S-19, S-22, S-01 |
-| 7 | Prueba energía cero | Intento de arranque desde HMI y botonera; detector de tensión; manómetros 0 bar; gases O₂ 19.5–23.5 %, LEL 0 %, CO < 25 ppm | Ninguna energía presente | ★ | C-11, S-20 |
+| 7 | Prueba energía cero | Intento de arranque desde HMI y botonera; detector de tensión; manómetros 0 bar; gases O₂ 19.5–23.5 %, CO < 25 ppm y < 10 % LEL para entrar; antes de soldar u oxicortar, 0 % LEL detectable (≤ 1 % de lectura) (MS-ACE-05) | Ninguna energía presente; gases en rango | ★ | C-11, S-20 |
 | 8 | Drena y ventea el circuito | Abre dren y venteo; espera que el manómetro marque 0 bar | 0 bar, sin flujo | ★ | S-19 |
 | 9 | Localiza la fuga | Inspección visual; si no se ve, presuriza con aire a 2 bar y usa agua jabonosa [Validar] | Punto de fuga marcado | | S-19 |
 | 10 | Mide espesores alrededor | UT en malla de 50 mm × 50 mm, 300 mm alrededor de la fuga | Todos los puntos ≥ 5 mm → reparar; si no → cambiar panel | 🔎 | S-19 |
-| 11a | Repara por soldadura | Corta la sección dañada (mín. 150 mm), bisela 37.5°, precalienta si aplica según WPS, raíz GTAW + relleno SMAW E7018 [Validar WPS] | Soldadura sin porosidad ni socavado visible | ★ | S-23 |
+| 11a | Repara por soldadura | Con permiso en caliente vigente y LEL ≤ 1 % de lectura en monitoreo continuo: corta la sección dañada (mín. 150 mm), bisela 37.5°, precalienta si aplica según WPS, raíz GTAW + relleno SMAW E7018 [Validar WPS] | Soldadura sin porosidad ni socavado visible | ★ | S-23 |
 | 11b | O cambia el panel | Desconecta mangueras/juntas, iza con S-04 (plan de izaje), coloca panel de reserva; aprieta bridas en cruz al torque OEM (típ. M20 8.8: 350–400 N·m [Validar OEM]) | Panel asentado, juntas nuevas | ★ | S-19, S-04 |
 | 12 | Prueba hidrostática | Llena, ventea, sube a **10 bar**, aísla la bomba, sostén **30 min** | Caída 0 bar y sin goteo | ★ | S-19, C-11 |
 | 13 | Inspección de soldadura | Visual + líquidos penetrantes en uniones reparadas | Sin indicaciones | 🔎 | S-23 / Calidad |
@@ -162,7 +164,8 @@ Casco, lentes, careta facial, ropa FR/aluminizada en zona de horno caliente, gua
 ## 9. Condiciones anormales y respuesta
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
-| ΔQ > 4 % (disparo) | Fuga grande o rotura de tubo | 🛑 Arco fuera, no bascular, evacuar, cerrar circuito | C-05, C-04, C-11 |
+| ΔQ > 4 % (disparo) | Fuga grande o rotura de tubo | 🛑 Arco fuera, no bascular, evacuar a ≥ 25 m, cerrar circuito a distancia; esperar sin vapor ≥ 30 min (MS-ACE-03) | C-05, C-04, C-07, C-11 |
+| Detector en alarma durante el trabajo (CO ≥ 25 ppm, ≥ 10 % LEL, O₂ fuera de 19.5–23.5 %) o LEL > 1 % durante la soldadura | DES detenido, paso de gas por E3 | Detén el trabajo en caliente y sal; ventila; revisa E3; evacúa el sector a CO ≥ 200 ppm o ≥ 20 % LEL | C-11, C-16 |
 | ΔQ entre 2 y 4 % | Fuga pequeña / FT descalibrado | Revisar visualmente con el arco apagado; comparar FT | C-05, S-21 |
 | ΔQ oscila sin fuga visible | Aire en el circuito, FT sucio | Ventear, limpiar electrodos del FT | S-21 |
 | T salida > 60 °C con caudal normal | Incrustación, arco descubierto, quemador desalineado | Reducir potencia; revisar escoria y quemador | S-01, C-07 |
@@ -175,13 +178,16 @@ OT en el sistema de mantenimiento (CMMS) · permisos y LOTO · mapa de espesores
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-19 Mecánico | 3 | 16 (circuitos de agua, LOTO, prueba hidrostática) | 40 h / 3 reparaciones | Pasos 6, 7, 8, 11b, 12, 14, 15 | 24 meses (TD-P07) |
+| S-19 Mecánico | 3 | 16 (circuitos de agua, LOTO, prueba hidrostática) | 40 h / 3 reparaciones | Pasos 6, 7, 8, 11b, 12, 14, 15 | 24 meses (TD-P07); alturas y espacio confinado 12 meses (MS-ACE-10, MS-ACE-05) |
 | S-23 Soldador | 3 | 8 + calificación de soldador (ASME IX/AWS) | 3 reparaciones | Paso 11a + prueba de doblez vigente | Calificación ≤ 6 meses sin uso → recalificar; TD-P07 24 meses |
-| S-21 Instrumentista | 3 | 12 (FT, lógica ΔQ) | 2 pruebas de lógica | Pasos 1, 15 + prueba de lógica | 24 meses |
+| S-21 Instrumentista | 3 | 12 (FT, lógica ΔQ) | 2 pruebas de lógica | Pasos 1, 15 + prueba de lógica | 24 meses (TD-P07) |
+| S-20 Electricista | 4 | NOM-029 + maniobra de MT (MM-EAF-04) | 3 bloqueos E1 supervisados | Pasos 6, 7 (E1 y detector de tensión) | 12 meses (eléctrico, NOM-029) |
+| S-04 Operador de Grúa de Carga | 3 | NOM-006 + izaje crítico | 2 izajes de panel | Paso 11b (plan de izaje, nadie bajo la carga) | 12 meses (grúas/izaje) |
+| C-11 (emisor de permisos) | 4 | 12 (emisor, MS-ACE-02/05/10) | 5 permisos con tutor | Pasos 5, 7, 12, 16 | 12 meses (confinados y alturas) |
 | S-01 / C-05 | 3 / 4 | 4 (respuesta a fuga) | Simulacro | Pasos 2, 3, 4, 16 | 12 meses (simulacro anual) |
 
 **Normas:** NOM-004-STPS (maquinaria y bloqueo), NOM-027-STPS (soldadura y corte), NOM-009-STPS (altura), NOM-033-STPS (espacio confinado, si aplica), NOM-029-STPS (maniobra eléctrica del paso 6 por S-20), NOM-017-STPS (EPP). Verificar con Jurídico Laboral / SSO.
-**Lista corta de verificación ★ (evaluador TD-P07):** ¿no basculó con agua? · ¿LOTO completo E1–E6? · ¿probó energía cero con intento de arranque y medición de gases? · ¿drenó a 0 bar? · ¿prueba hidrostática 10 bar/30 min sin caída? · ¿liberación firmada por ambos?
+**Lista corta de verificación ★ (evaluador TD-P07):** ¿no basculó con agua y evacuó a ≥ 25 m (paso 2)? · ¿esperó sin vapor ≥ 30 min y vació solo con autorización de C-05 (pasos 3, 4)? · ¿permisos en caliente, altura y confinado firmados (paso 5)? · ¿LOTO completo E1–E6 (paso 6)? · ¿probó energía cero con intento de arranque y gases: < 10 % LEL para entrar y ≤ 1 % para soldar (paso 7)? · ¿drenó a 0 bar (paso 8)? · ¿soldó con permiso y monitoreo continuo o izó el panel sin nadie bajo la carga (pasos 11a, 11b)? · ¿prueba hidrostática 10 bar/30 min sin caída (paso 12)? · ¿retiró candados con conteo de personal y circuló agua antes de energizar (pasos 14, 15)? · ¿liberación firmada por ambos (paso 16)?
 
 ## 12. Referencias
 FT-ACE-001 §2 · CAT-ACE-001 §2.5 · MO-EAF-01 (inspección entre coladas) · MS-ACE-02, -03, -05, -09, -10 · MM-EAF-03 (secado de refractario) · MM-EAF-04 (maniobra de MT) · Manual OEM de paneles y bóveda [por referenciar] · ASME B31.1 / B31.3 (prueba de presión, referencia) · ASME IX / AWS D1.1 (calificación de soldadura).
@@ -190,3 +196,4 @@ FT-ACE-001 §2 · CAT-ACE-001 §2.5 · MO-EAF-01 (inspección entre coladas) · 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
+| 0.2 | 2026-09-25 | Revisión cruzada de seguridad: criterio único de LEL (MS-ACE-05) en E3 y paso 7; evacuación a ≥ 25 m y espera ≥ 30 min (MS-ACE-03); paso 5 marcado ★; vigencias de 12 meses para eléctrico, izaje, alturas y confinados; lista ★ completa | experto-seguridad-salud |

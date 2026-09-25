@@ -173,6 +173,9 @@ Límite máximo de exposición en **°C WBGT** (índice de temperatura de globo 
 2. ¿Conoce el régimen de su puesto y la regla de 250 mL cada 15–20 min?
 3. ¿Reconoce los signos del golpe de calor y actúa como emergencia?
 4. ¿El supervisor aplica la aclimatación de 5 días al personal nuevo?
+5. ¿Se presenta en condiciones y avisa si tiene fiebre, diarrea o toma medicamentos de riesgo (paso 1)?
+6. ¿El supervisor revisa el régimen WBGT del día y hace cumplir los descansos (pasos 3 y 6)?
+7. ¿Vigila al compañero y enfría a la víctima con agua solo lejos del metal líquido (pasos 7 y 8)?
 
 ## 12. Referencias
 
@@ -185,3 +188,4 @@ Límite máximo de exposición en **°C WBGT** (índice de temperatura de globo 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
+| 0.2 | 2026-09-25 | Revisión cruzada: pasos ★ 1, 3, 6 y 7 en la lista de verificación | experto-seguridad-salud |

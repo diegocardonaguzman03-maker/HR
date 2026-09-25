@@ -2,9 +2,9 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-05 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-05 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno sin observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
 **Objetivo:** formar y mantener una **escoria espumosa** que cubra el arco durante el baño plano, con **B2 (CaO/SiO₂) 1.8–2.2, FeO 25–35% y MgO 8–10%**, usando **O₂ 30–40 Nm³/t** y **carbono 8–12 kg/t**, y retirar la escoria por la puerta de forma controlada, sin exponer a nadie y sin contacto con agua.
@@ -97,15 +97,15 @@ flowchart TD
 | Enriquecimiento de O₂ | Incendio de ropa o de equipo | Ropa sin grasa; válvulas de corte rápido; detección de fuga | Prueba de válvulas |
 | Retroceso de llama en quemador | Quemaduras, daño | Secuencia de encendido automática con purga | Mantenimiento OEM |
 | Fuga de agua de bloque de quemador | Explosión | Monitoreo de agua del bloque; disparo | HMI |
-| CO por la puerta | Intoxicación | Extracción; detector de CO; presión del horno negativa | Detector |
+| CO por la puerta | Intoxicación | Extracción; presión del horno negativa; detector personal multigás: CO 25 ppm → salir, 200 ppm → evacuación del sector [Verificar NOM-010] (MS-ACE-06) | Bump test diario |
 | Tránsito del portaollas | Atropellamiento | Rutas señalizadas; peatones fuera; claxon | VCC |
 
 ### 6.2 EPP obligatorio
-S-02 en la puerta: careta con visor dorado, capucha y chaqueta aluminizadas, polainas, guantes aluminizados, ropa ignífuga, botas metatarsales, auditiva, detector de CO. S-10: cabina del portaollas cerrada; fuera de ella, el mismo EPP que S-02.
+S-02 en la puerta: careta con visor dorado, capucha y chaqueta aluminizadas, polainas, guantes aluminizados, ropa ignífuga, botas metatarsales, auditiva, detector personal multigás (MS-ACE-06). S-10: cabina del portaollas cerrada; fuera de ella, el mismo EPP que S-02.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- ★ Zona de exclusión frente y bajo la puerta de escoria mientras sale escoria: solo el portaollas en posición; peatones fuera.
-- Antes de colocar la olla de escoria: fosa inspeccionada, sin agua ni tuberías con fuga.
+- ★ Zona de exclusión frente y bajo la puerta de escoria mientras sale escoria (zona roja ≤ 5 m de la puerta; amarilla 5–15 m) y ≤ 15 m del punto de volteo de la olla de escoria (MS-ACE-01): solo el portaollas en posición; peatones fuera.
+- ★ Antes de colocar la olla de escoria: olla seca (sin agua de lluvia) y fosa inspeccionada, sin agua estancada ni tuberías con fuga; si hay agua, 🛑 no se desescoria (MS-ACE-03).
 - Cambio de boquillas de lanza: arco apagado, O₂ y gas cerrados y bloqueados (LOTO de válvulas, MS-ACE-02 y MS-ACE-06).
 
 ## 7. Calidad
@@ -176,3 +176,4 @@ Lista corta de verificación de pasos ★:
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: sin cambios de contenido (solo referencia a la ficha v0.3). | experto-operativo-metalurgia |

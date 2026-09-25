@@ -2,9 +2,9 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-06 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-06 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
 **Objetivo:** obtener lecturas **confiables** de temperatura (T) y oxígeno activo (O) y una **muestra representativa** del acero para decidir el vaciado dentro de la ventana: **T 1,630 ± 15 °C (según grado), O activo 500–900 ppm, C 0.04–0.08%, P ≤ 0.015%**, sin exponer al personal.
@@ -28,7 +28,7 @@ La lanza manipuladora entra por la puerta de escoria (o por el puerto de medici�
 **Momentos de medición (referencia, Figura 3):**
 | # | Momento | Qué se mide | Para qué |
 |---|---|---|---|
-| M1 | Mitad de la alimentación de DRI (≈ min 25–28 del ciclo) | T | Ajustar kg/min/MW (MO-EAF-03) |
+| M1 | Mitad de la alimentación de DRI (≈ min 24–26 de arco, mitad de la etapa 3 de MO-EAF-04) | T | Ajustar kg/min/MW (MO-EAF-03) |
 | M2 | Inicio del afino (DRI detenido) | T + O + muestra | Química (C, P, S, Cu, Ni, Cr, Mo) y energía faltante |
 | M3 | 1–2 min antes de vaciar | T + O | Confirmar ventana de vaciado y calcular Al/aleaciones de la olla (MO-EAF-07) |
 
@@ -100,10 +100,10 @@ flowchart TD
 | Tubo neumático | Golpes | Estación cerrada | — |
 
 ### 6.2 EPP obligatorio
-S-02: careta con visor dorado, capucha y chaqueta aluminizadas, polainas, guantes aluminizados, ropa ignífuga, botas metatarsales, protección auditiva, detector de CO. S-11 en laboratorio: lentes y guantes para manejo de muestras calientes.
+S-02: careta con visor dorado, capucha y chaqueta aluminizadas, polainas, guantes aluminizados, ropa ignífuga, botas metatarsales, protección auditiva, detector personal multigás (CO 25/200 ppm; MS-ACE-06). S-11 en laboratorio: lentes y guantes para manejo de muestras calientes.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- ★ Zona de exclusión frente a la puerta mientras la lanza está dentro del horno.
+- ★ Zona de exclusión frente a la puerta mientras la lanza está dentro del horno: zona roja ≤ 5 m de la puerta, amarilla 5–15 m (MS-ACE-01). En medición manual, solo el ejecutor y su observador, de lado a la puerta, a ≥ 1.5 m y máximo 2 min en roja.
 - Mantenimiento de la lanza manipuladora: LOTO del robot (energía eléctrica, hidráulica/neumática) — MS-ACE-02.
 - Medición manual: permiso verbal registrado de C-05 y verificación de EPP por un segundo trabajador.
 
@@ -135,7 +135,7 @@ S-02: careta con visor dorado, capucha y chaqueta aluminizadas, polainas, guante
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
 | Sin meseta / lectura errática | Sonda defectuosa, inmersión en escoria, contacto sucio | Repite con otra sonda; limpia contactos; revisa profundidad | S-01; C-07 si se repite en el lote |
-| Proyección al inmergir | Sonda húmeda | Retira; aparta el lote; revisa almacén | C-05, C-16 |
+| Proyección al inmergir | Sonda húmeda | Retira la lanza y aléjate de la puerta; aparta el lote; revisa almacén; no uses sondas del lote hasta que se sequen o se desechen (MS-ACE-03) | C-05, C-16 |
 | Muestra con porosidad o escoria | Muestreador sin desoxidante, inmersión corta | Nueva muestra | S-11 |
 | Lanza manipuladora fuera de servicio | Falla mecánica/eléctrica | Mantenimiento; respaldo manual solo con autorización (paso 11) | C-05, Mantenimiento |
 | Laboratorio sin resultado > 6 min | Espectrómetro o tubo neumático | S-01 decide con T y O; C-05 autoriza vaciar solo si el grado lo permite | C-05, C-09 |
@@ -172,3 +172,4 @@ Lista corta de verificación de pasos ★:
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: momento M1 expresado en minutos de arco, coherente con el perfil de MO-EAF-04. | experto-operativo-metalurgia |

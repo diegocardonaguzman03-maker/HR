@@ -2,12 +2,12 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-03 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-03 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
-**Objetivo:** fundir el 60% de la carga metálica (≈ 100 t de DRI/HBI por colada) alimentándolo en continuo **al ritmo que la potencia puede fundir**: 30–35 kg/min/MW (≈ 3.5–5.0 t/min), con baño plano, escoria espumosa estable y temperatura controlada, **sin acumulaciones ("icebergs")** y **sin DRI húmedo**.
+**Objetivo:** fundir el 60% de la carga metálica (≈ 100 t de DRI/HBI por colada) alimentándolo en continuo **al ritmo que la potencia puede fundir**: 30–35 kg/min/MW (≈ 3.5–4.3 t/min a ≈ 119 MW activos; hasta 5.0 t/min solo con DRI caliente validado, FT-ACE-001 v0.3 §2), con baño plano, escoria espumosa estable y temperatura controlada, **sin acumulaciones ("icebergs")** y **sin DRI húmedo**.
 
 **Alcance:** desde el arranque de la alimentación (canasta fundida ≥ 70%) hasta el paro de la alimentación antes del afino. Incluye la co-alimentación de cal y dolomita por la misma vía. Aplica a DRI caliente (500–650 °C) y frío/HBI.
 **No incluye:** operación de la planta DRI ni del transporte fuera de la nave, perfil eléctrico (MO-EAF-04) ni la práctica de O₂/C (MO-EAF-05).
@@ -26,7 +26,7 @@ El DRI llega por transportador (caliente, con atmósfera inerte de N₂, o frío
 
 ![Figura 2. Corte esquemático del EAF (5.º agujero, n.º 12)](../../img/eaf-corte-horno.svg)
 
-**Ejemplo de cálculo:** a 124 MW y 32 kg/min/MW → 124 × 32 / 1,000 ≈ **4.0 t/min**; 100 t de DRI tardan ≈ 25 min (etapa 3 de la Figura 3).
+**Ejemplo de cálculo:** a 119 MW (límite físico: 140 MVA × FP ≈ 0.85) y 32 kg/min/MW → 119 × 32 / 1,000 ≈ **3.8 t/min**; 100 t de DRI tardan ≈ 26 min (etapa 3 del perfil de MO-EAF-04, min 12–38 de arco).
 
 ```mermaid
 flowchart TD
@@ -62,7 +62,7 @@ flowchart TD
 | Parámetro | Unidad | Objetivo | Rango normal | Alarma / límite | Acción si está fuera de rango | Dónde se mide |
 |---|---|---|---|---|---|---|
 | Consigna de alimentación | kg/min/MW | 32 | 30–35 | > 35 o < 25 | > 35: riesgo de iceberg, baja; < 25: tap-to-tap largo, revisa causa | HMI de DRI |
-| Tasa de DRI | t/min | 4.0 | 3.5–5.0 | > 5.0 | Limita; 5.0 t/min solo con DRI caliente y potencia plena [Validar con Ingeniería de Proceso] | Báscula del alimentador |
+| Tasa de DRI | t/min | 3.8 | 3.5–4.3 | > 4.3 con DRI frío/HBI; > 5.0 con DRI caliente | > 4.3 t/min con DRI frío/HBI: baja a 32 kg/min/MW (riesgo de iceberg). Más de 4.3 t/min solo con DRI caliente validado por C-07 y sin pasar la consigna máxima de §6 [Validar con Ingeniería de Proceso] | Báscula del alimentador |
 | DRI total por colada | t | ≈ 100 | 95–105 (60% de la carga) | ± 10 t del cálculo | Ajusta con C-07 (peso de vaciado 150 t) | Nivel 2 |
 | Temperatura del baño durante la alimentación | °C | 1,590 | 1,570–1,610 [Supuesto] | < 1,560 o > 1,630 | Ver diagrama §3 | Termopar desechable (MO-EAF-06) |
 | Temperatura del DRI caliente | °C | 600 | 500–650 | < 450 °C | Recalcula consigna (menos energía química) con C-07 | Transportador |
@@ -75,12 +75,12 @@ flowchart TD
 
 **Consigna inicial según el tipo de material** [Validar con C-07]:
 
-| Material | Temperatura | Consigna inicial (kg/min/MW) | Tasa típica a ≈ 124 MW | Notas |
+| Material | Temperatura | Consigna inicial (kg/min/MW) | Tasa típica a ≈ 119 MW | Notas |
 |---|---|---|---|---|
-| DRI caliente | 500–650 °C | 33–35 | ≈ 4.1–4.3 t/min | Aporta energía sensible; permite la tasa más alta |
-| DRI frío | Ambiente | 30–32 | ≈ 3.7–4.0 t/min | Sensible a finos y reoxidación |
-| HBI | Ambiente | 30–32 | ≈ 3.7–4.0 t/min | Más denso; menor pérdida de finos; vigilar que no se acumule |
-| Mezcla con DRI de baja metalización (< 91%) | — | 28–30 | ≈ 3.5–3.7 t/min | Más FeO que reducir: más C y más energía |
+| DRI caliente | 500–650 °C | 33–35 | ≈ 3.9–4.2 t/min | Aporta energía sensible; permite la tasa más alta. Hasta 5.0 t/min (≈ 42 kg/min/MW) solo con validación de C-07 y cambio del control crítico de §6 [Validar con Ingeniería de Proceso] |
+| DRI frío | Ambiente | 30–32 | ≈ 3.6–3.8 t/min | Sensible a finos y reoxidación |
+| HBI | Ambiente | 30–32 | ≈ 3.6–3.8 t/min | Más denso; menor pérdida de finos; vigilar que no se acumule |
+| Mezcla con DRI de baja metalización (< 91%) | — | 28–30 | ≈ 3.3–3.6 t/min | Más FeO que reducir: más C y más energía |
 
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
@@ -89,8 +89,8 @@ flowchart TD
 | DRI o HBI húmedo | Generación de vapor e H₂: explosión en el horno | ★ Silos y transportadores cerrados; no alimentar DRI mojado; reporte obligatorio de la planta DRI | Registro por lote; VCC |
 | Acumulación de DRI (iceberg) que se funde de golpe | Ebullición violenta, derrame de escoria por la puerta | ★ Consigna ≤ 35 kg/min/MW, arranque con baño plano, T mínima 1,560 °C | Tendencia de T y tasa en nivel 2 |
 | Reoxidación del DRI en silos (calentamiento espontáneo) | Incendio, CO | Silos inertizados; alarma de temperatura [Validar con OEM / Ingeniería de Proceso] | Monitoreo continuo |
-| Nitrógeno de inertización | Asfixia en galerías y cámaras del transportador | ★ Entrada solo con permiso de espacio confinado y medición de O₂ ≥ 19.5% (MS-ACE-05/06) | Permiso firmado |
-| CO en plataforma de la bóveda | Intoxicación | Detector personal de CO | Prueba diaria |
+| Nitrógeno de inertización | Asfixia en galerías y cámaras del transportador | ★ Entrada solo con permiso de espacio confinado, purga de N₂ y medición: O₂ 19.5–23.5 %, CO < 25 ppm y < 10 % LEL (0 % LEL detectable, ≤ 1 % de lectura, si hay trabajo en caliente) (MS-ACE-05/06) | Permiso firmado con lecturas |
+| CO en plataforma de la bóveda | Intoxicación | Detector personal multigás: CO 25 ppm → salir; 200 ppm → evacuación del sector [Verificar NOM-010] (MS-ACE-06) | Bump test diario |
 | Polvo de DRI | Exposición, explosión de polvo | Colección de polvo, limpieza, sin fuentes de ignición | Programa de limpieza |
 
 ### 6.2 EPP obligatorio
@@ -118,7 +118,7 @@ Casco, lentes, ropa ignífuga, guantes, botas con metatarsal, protección auditi
 | 3 | Confirma condición de arranque | Energía acumulada ≥ 150 kWh/t, baño plano (corriente estable), escoria espumosa formándose. | Canasta ≥ 70% fundida | | S-01 |
 | 4 | Arranca con rampa | Inicia a 25 kg/min/MW y sube a 32 kg/min/MW en 2–3 min. | Tasa estable | | S-01 |
 | 5 | Arranca la cal | Relación cal/DRI según C-07; dolomita según MgO objetivo. | Relación en consigna | 🔎 | S-01 |
-| 6 | Mide temperatura a mitad de la alimentación | Solicita a S-02 medición con la lanza manipuladora (≈ minuto 25–28 del ciclo). | 1,570–1,610 °C | 🔎 | S-02 |
+| 6 | Mide temperatura a mitad de la alimentación | Solicita a S-02 medición con la lanza manipuladora (≈ min 24–26 de arco, mitad de la etapa 3 de MO-EAF-04). | 1,570–1,610 °C | 🔎 | S-02 |
 | 7 | Ajusta la consigna | < 1,560 °C: baja 10–20%; > 1,630 °C: sube 5–10% sin pasar 35 kg/min/MW. | T en rango | | S-01 |
 | 8 | Vigila señales de iceberg | Caída de T, arco inestable en una fase, montón visible bajo el 5.º agujero, caída de CO en humos. | Sin señales | ★ | S-01 / S-02 |
 | 9 | Corrige un iceberg | Detén el DRI, dirige O₂ a la zona, potencia plena, mide T; reanuda con 25 kg/min/MW cuando se funda. | Montón fundido; T ≥ 1,580 °C | ★ | S-01 |
@@ -136,7 +136,7 @@ Casco, lentes, ropa ignífuga, guantes, botas con metatarsal, protección auditi
 | Alimentador atascado / tasa cero | Material grueso, falla de banda | Cambia a DRI frío/HBI si hay; mantenimiento con LOTO | C-05, Mantenimiento |
 | Alarma de O₂ alto o T alta en silo/transportador | Entrada de aire, reoxidación | Protocolo de la planta DRI; purga de N₂; no entrar | C-05, C-16 |
 | Humo o finos excesivos en el 4.º agujero | Finos > 5% | Baja la tasa; avisa a la planta DRI | C-07 |
-| Fuga de agua (Δ caudal > 2%) | Panel o ducto del 5.º agujero | DRI se detiene; aplica MO-EAF-01 §9 y MS-ACE-09 | C-05, C-04 |
+| Fuga de agua (Δ caudal > 2%) | Panel o ducto del 5.º agujero | DRI se detiene; con disparo (> 4%) o agua visible: arco fuera, no inclines, evacúa a ≥ 25 m (MS-ACE-03); aplica MO-EAF-01 §9 y MS-ACE-09 | C-05, C-04 |
 
 ## 10. Registros
 - Registro de calidad por lote de DRI (metalización, C, finos, T, humedad).
@@ -169,3 +169,4 @@ Lista corta de verificación de pasos ★:
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación. Se registra que 5.0 t/min requiere > 140 MW a 35 kg/min/MW (ver README, inconsistencias). | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: potencia activa ≈ 119 MW, tasa de DRI 3.5–4.3 t/min (5.0 solo con DRI caliente validado), ejemplo de cálculo y momento de medición M1. | experto-operativo-metalurgia |

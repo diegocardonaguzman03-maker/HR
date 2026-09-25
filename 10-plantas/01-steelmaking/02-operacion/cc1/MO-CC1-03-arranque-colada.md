@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-03 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-03 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores de referencia de FT-ACE-001 §4 y §7. Nivel de apertura, tiempo de llenado, velocidad de arranque y rampa: **[Validar con OEM / Ingeniería de Proceso]**.
 
@@ -70,7 +70,7 @@ flowchart TD
 | Parámetro | Unidad | Objetivo | Rango normal | Alarma / límite | Acción si está fuera de rango | Dónde se mide |
 |---|---|---|---|---|---|---|
 | Líquidus del grado (calculado) | °C | Bajo C al Al ≈ 1,525; HSLA ≈ 1,515–1,520 | Según química real | — | Usa el valor del nivel 2 con la química del LF | HMI / nivel 2 |
-| Temperatura del distribuidor, 1.ª colada | °C | Líquidus + 30 | Líquidus + 25 a + 35 | < líquidus + 20 o > + 40 | < +20: riesgo de congelar SEN, C-08 decide; > +40: arranca y limita a 0.9 m/min | Termopar desechable (a los 3–5 min del tapón abierto) |
+| Temperatura del distribuidor, 1.ª colada | °C | Líquidus + 30 | Líquidus + 25 a + 35 | < líquidus + 20 o > + 40 | < +20: riesgo de congelar SEN, C-08 decide; > +40: arranca y limita a 0.8 m/min (igual que MO-CC1-04) | Termopar desechable (a los 3–5 min del tapón abierto) |
 | Temperatura de la olla a la llegada (1.ª colada) | °C | T distribuidor objetivo + pérdidas + 15 °C [Validar con OEM / Ingeniería de Proceso] | — | — | Informa a LF para las siguientes ollas | Registro del LF |
 | Peso de acero en olla al llegar | t | 150 | 145–155 | < 140 t | Ajusta el plan de secuencia | Celdas de la torreta |
 | Nivel del distribuidor para abrir el tapón | mm | 500 (≈ 18 t) | 450–600 | < 400 mm | Espera; no abrir con menos | Pesaje / nivel del distribuidor |
@@ -155,7 +155,7 @@ flowchart TD
 | Alarma BOP en la rampa | Cáscara débil, rampa rápida, polvo | El sistema baja a 0.3–0.5 m/min; mantén hasta normalizar (MO-CC1-04) | C-06, C-08 |
 | Breakout en el arranque | Cáscara rota bajo el molde | Aplica respuesta a breakout de MO-CC1-04 §9 (cierra tapón y olla, detén, evacúa) | C-04, C-06, C-16 |
 | Barra falsa no se desconecta | Falla de la unidad de desconexión | Detén antes del oxicorte; desconexión manual con LOTO | C-06, S-19 |
-| Temperatura del distribuidor < líquidus + 15 °C | Olla fría | Riesgo de congelar SEN: C-08 decide subir velocidad para no perder T o cerrar | C-08 |
+| Temperatura del distribuidor < líquidus + 20 °C (1.ª colada) | Olla fría | Riesgo de congelar SEN: C-08 decide subir velocidad para no perder T o cerrar | C-08 |
 | Falla de agua de molde | Bomba, energía | Agua de emergencia ≤ 15 s; si no entra: cierra tapón y olla, detén y evacúa | C-04, C-12 |
 
 ## 10. Registros
@@ -190,3 +190,4 @@ flowchart TD
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: límites de sobrecalentamiento de la 1.ª colada alineados (alarma < +20 / > +40 °C; con > +40 °C máx. 0.8 m/min como MO-CC1-04). | experto-operativo-metalurgia |

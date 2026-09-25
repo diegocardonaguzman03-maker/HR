@@ -2,9 +2,9 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-OLL-02 | 0.1 | Borrador para validación | Nave de ollas — LF-1 / LF-2 a CC1 / CC2 | C-04 Jefe de Turno de Acería | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-OLL-02 | 0.1 | Borrador para validación | Nave de ollas — LF-1 / LF-2 a CC1 / CC2 | C-04 Jefe de Turno de Acería | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 / Mantenimiento lo validen.
+> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 / Mantenimiento lo validen.
 
 ## 1. Objetivo y alcance
 **Objetivo:** trasladar ollas con **≈ 150 t de acero líquido** (carga total ≈ 225–235 t [Supuesto]) desde el horno olla hasta la torreta de CC1 o CC2 —y las ollas vacías de regreso— **sin personas bajo la carga, sin choques, sin derrames y a tiempo** para la secuencia de colada.
@@ -172,3 +172,4 @@ Lista corta de verificación de pasos ★:
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: sin cambios de contenido; queda pendiente validar la tara real de la olla y si los 250 t nominales incluyen la traviesa. | experto-operativo-metalurgia |

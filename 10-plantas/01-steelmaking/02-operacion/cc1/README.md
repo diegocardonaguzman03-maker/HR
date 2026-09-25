@@ -53,18 +53,20 @@ flowchart LR
 ## 5. Valores clave (tarjeta de bolsillo)
 | Variable | Valor | Alarma / límite | Fuente |
 |---|---|---|---|
-| Sobrecalentamiento en distribuidor | 20–30 °C (1.ª colada 25–35 °C); líquidus bajo C ≈ 1,525 °C | < 15 o > 35 °C | FT §4; MO-CC1-03/04 |
+| Sobrecalentamiento en distribuidor | 20–30 °C (1.ª colada 25–35 °C); líquidus bajo C ≈ 1,525 °C | < 15 o > 35 °C (1.ª colada: < 20 o > 40 °C) | FT §4; MO-CC1-03/04 |
 | Nivel del distribuidor | 900–1,100 mm | Cambio de olla ≥ 700; cierre 400; alarma alta 1,250 | FT §4; MO-CC1-05/07 [Validar niveles de cambio y cierre] |
 | Nivel de molde | ± 3 mm | ± 8 mm | FT §4 |
 | Velocidad | 0.8–1.6 m/min (nominal 1.2); arranque 0.3; rampa ≤ 0.2 m/min por min | > 1.6 | FT §4; MO-CC1-03 |
 | Sticker (BOP) | Baja a 0.3–0.5 m/min, ≥ 30 s, rampa ≤ 0.2 | ≥ 2 por colada → C-08 | MO-CC1-04 |
 | Agua de molde | Anchas ≈ 4,200 L/min c/u; angostas ≈ 450 L/min c/u; ΔT 6–9 °C | ΔT > 11 °C o caudal < 90% → 0.8 m/min | FT §4 |
 | Agua de emergencia | Entrada automática | ≤ 15 s | FT §4 |
+| Precalentamiento del distribuidor | Cara caliente 1,100 ± 50 °C; SEN ≥ 1,000 °C; ≤ 10 min sin quemador | < 1,000 °C: no colar | MO-CC1-01 (mismo criterio en MO-CC2-01) |
+| Cambio de olla | Cierre → apertura ≤ 2 min; torreta ≤ 60 s | > 3 min; distribuidor < 700 mm | MO-CC1-05 |
 | Oscilación | 120–200 cpm; carrera 4–8 mm; t_N 0.10–0.15 s | — | FT §4; MO-CC1-04 |
 | Polvo de molde | 0.3–0.5 kg/t; capa líquida 8–15 mm | < 6 o > 18 mm | FT §4 |
 | Enfriamiento secundario | 0.8–1.2 L/kg (bajo C ≈ 1.1; HSLA ≈ 0.85) | Enderezado HSLA ≥ 900 °C | FT §4; MO-CC1-04 |
 | SEN / argón | Inmersión 120–160 mm; Ar 3–8 NL/min | Ar > 8 NL/min | FT §4 |
-| Corte | 8–11 m ± 15 mm | Planchón máx. ≈ 32.8 t → grúa de 50 t | FT §4, §6; MO-CC1-08 |
+| Corte | 8–11 m ± 15 mm | Planchón máx. ≈ 32.8 t → grúa de 45 t con tenaza (nunca la de 25 t) | FT §4, §6; MO-CC1-08 |
 
 ## 6. Controles críticos transversales (★)
 1. **Cero humedad**: distribuidor, SEN, molde, cabeza de barra falsa, chatarra, herramientas y lanzas secos (MS-ACE-03).

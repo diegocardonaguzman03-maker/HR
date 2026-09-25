@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | MS-ACE-06 | 0.1 | Borrador para validación | Toda la Acería | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> ⚠️ **Mensaje clave.** Ninguno de estos gases se ve y casi ninguno se huele. **Tu detector es tu nariz.** Lleva el detector personal encendido y probado, y obedece sus alarmas: **CO 25 ppm → sal del área; CO 200 ppm → evacuación del sector; O₂ < 19.5 % o > 23.5 % → sal; gas natural ≥ 10 % LEL → sal y sin chispas.** [Verificar con la NOM vigente / SSO — ver justificación en 5.1]
+> ⚠️ **Mensaje clave.** Ninguno de estos gases se ve y casi ninguno se huele. **Tu detector es tu nariz.** Lleva el detector personal encendido y probado, y obedece sus alarmas: **CO 25 ppm → sal del área; CO 200 ppm → evacuación del sector [Verificar NOM-010]; O₂ < 19.5 % o > 23.5 % → sal; gas natural ≥ 10 % LEL → sal y sin chispas; ≥ 20 % LEL → evacuación del sector.** Para entrar a un espacio confinado: < 10 % LEL; para trabajo en caliente: 0 % LEL detectable (≤ 1 % de lectura) (MS-ACE-05). [Verificar con la NOM vigente / SSO — ver justificación en 5.1]
 
 ## 1. Objetivo y alcance
 
@@ -70,7 +70,7 @@ flowchart TD
 
 | Gas | Unidad | Referencia normativa | Alarma A1 (acción individual) | Alarma A2 (acción de sector) | Justificación |
 |---|---|---|---|---|---|
-| CO | ppm | VLE-PPT 25 ppm (NOM-010-STPS-2014) [Verificar con la NOM vigente / SSO]; IDLH 1,200 ppm (NIOSH) | **25 ppm: sal a zona verde**, avisa; no reingreses hasta < 25 ppm | **200 ppm: evacuación del sector** por C-04; solo brigada con ERA | A1 = VLE-PPT para no acumular dosis; A2 = valor techo de NIOSH (200 ppm) que no debe superarse ni un instante |
+| CO | ppm | VLE-PPT 25 ppm (NOM-010-STPS-2014) [Verificar con la NOM vigente / SSO]; IDLH 1,200 ppm (NIOSH) | **25 ppm: sal a zona verde**, avisa; no reingreses hasta < 25 ppm | **200 ppm: evacuación del sector** por C-04; solo brigada con ERA [Verificar NOM-010] | A1 = VLE-PPT para no acumular dosis; A2 = valor techo de NIOSH (200 ppm) que no debe superarse ni un instante |
 | O₂ bajo | % vol | 19.5 % (NOM-033-STPS-2015) | **< 19.5 %: sal** | < 19.5 % en detector fijo: evacuación del área | Por debajo de 16 % el juicio se altera; < 10 % inconsciencia |
 | O₂ alto | % vol | 23.5 % (NOM-033-STPS-2015) | **> 23.5 %: sal, sin chispas** | > 23.5 % en fijo: aislar O₂ y evacuar | La ropa enriquecida arde con violencia |
 | Gas natural / H₂ | % LEL | 10 % LEL como límite de trabajo (NOM-033) | **10 % LEL: sal, sin chispas, corta el gas** | **20 % LEL: evacuación del sector y corte general** | 10 % LEL de CH₄ = 0.5 % vol; margen amplio antes de la mezcla explosiva |
@@ -130,7 +130,7 @@ Detector personal multigás encendido y en la **zona respiratoria (≤ 30 cm de 
 | 5 | Responde a A1 | CO 25 ppm / O₂ fuera de 19.5–23.5 % / 10 % LEL: sal a zona verde por la ruta de escape, avisa por radio con lugar y lectura | Salida inmediata | ★ | Todos |
 | 6 | Responde a A2 | CO 200 ppm / 20 % LEL / alarma de fijo: C-04 evacúa el sector y corta el gas por ESD | Sector evacuado | ★ | C-04, púlpitos |
 | 7 | No rescates sin ERA | Si alguien cae en una zona con gas: alarma, no entres; espera a la brigada | Sin víctimas adicionales | ★ | Todos |
-| 8 | Reingreso | C-16 o brigada mide con ERA; reingreso solo con CO < 25 ppm, O₂ 19.5–23.5 %, 0 % LEL | Lecturas registradas | ★ | C-16 |
+| 8 | Reingreso | C-16 o brigada mide con ERA; reingreso solo con CO < 25 ppm, O₂ 19.5–23.5 % y < 10 % LEL; si habrá trabajo en caliente, 0 % LEL detectable (≤ 1 % de lectura) (MS-ACE-05) | Lecturas registradas | ★ | C-16 |
 | 9 | Oxicorte y precalentadores | Revisa mangueras, arrestaflamas y antirretorno antes de encender; secuencia OEM | Sin fugas (prueba con agua jabonosa solo en frío) | ★ | S-16, S-15, S-08 |
 | 10 | Entrega del detector | Descarga los datos (picos de exposición) y ponlo a cargar | Datos registrados | | Todo el personal |
 
@@ -168,6 +168,8 @@ Detector personal multigás encendido y en la **zona respiratoria (≤ 30 cm de 
 2. ¿Conoce las alarmas CO 25/200 ppm, O₂ 19.5/23.5 %, 10/20 % LEL y su acción?
 3. ¿Sabe que el argón no se huele y se acumula abajo?
 4. ¿Se niega a rescatar sin ERA y activa la alarma?
+5. ¿Revisa arrestaflamas, antirretornos y mangueras antes de encender oxicorte o precalentadores (paso 9)?
+6. ¿El púlpito vigila la presión del horno y aleja al personal si es positiva (paso 4)?
 
 ## 12. Referencias
 
@@ -180,3 +182,4 @@ Detector personal multigás encendido y en la **zona respiratoria (≤ 30 cm de 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
+| 0.2 | 2026-09-25 | Revisión cruzada: umbrales únicos (CO 25/200 ppm, O₂ 19.5–23.5 %, GN 10/20 % LEL) y criterio de reingreso alineado con MS-ACE-05; pasos ★ 4 y 9 en la lista de verificación | experto-seguridad-salud |

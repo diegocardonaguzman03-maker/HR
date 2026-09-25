@@ -32,13 +32,13 @@
 | 1 | **Nunca te pongas bajo una carga suspendida ni en la ruta de una olla llena.** | Ruta de olla: roja ± 5 m, amarilla ± 15 m | 04 |
 | 2 | **Respeta la zona roja.** Entras solo si eres personal esencial, con EPP aluminizado **seco**, y con la ruta de escape libre. | Vaciado: roja ≤ 10 m, amarilla 10–25 m · refugio en ≤ 30 s | 01 |
 | 3 | **Nada húmedo, nada cerrado, nada frío toca el metal líquido.** | Olla ≥ 1,000 °C · 1 L de agua → > 1,700 L de vapor | 03 |
-| 4 | **Con agua en el horno: arco fuera, NO bascules, aléjate.** | Δ caudal > 2 % alarma, > 4 % disparo · evacuación ≤ 25 m | 03, 09 |
-| 5 | **Un candado, una persona, una llave.** Prueba energía cero antes de tocar. | 0 V · 0 bar · calzas y pasadores puestos | 02 |
+| 4 | **Con agua en el horno: arco fuera, NO bascules, aléjate.** | Δ caudal > 2 % alarma, > 4 % disparo · evacuación a ≥ 25 m del horno | 03, 09 |
+| 5 | **Un candado, una persona, una llave.** Prueba energía cero antes de tocar. | 0 V · 0 bar · calzas y pasadores puestos · llave cautiva solo para acceso de rutina; para intervenir el equipo, LOTO completo (MS-ACE-02 §6.4) | 02 |
 | 6 | **Nunca cierres el agua de molde con acero en la máquina.** | Agua de emergencia en ≤ 15 s | 02, 09 |
-| 7 | **Porta tu detector y obedécelo.** | CO 25 ppm → sal · CO 200 ppm → evacúa · O₂ < 19.5 % o > 23.5 % → sal · gas natural ≥ 10 % LEL → sal | 06 |
-| 8 | **No entres a un espacio confinado sin permiso, medición, vigía y rescate. El vigía nunca entra.** | Mide O₂ → LEL → tóxicos, arriba–medio–abajo · desconecta el argón de la olla | 05 |
+| 7 | **Porta tu detector y obedécelo.** | CO 25 ppm → sal · CO 200 ppm → evacúa · O₂ < 19.5 % o > 23.5 % → sal · gas natural ≥ 10 % LEL → sal · ≥ 20 % LEL → evacúa | 06 |
+| 8 | **No entres a un espacio confinado sin permiso, medición, vigía y rescate. El vigía nunca entra.** | Mide O₂ → LEL → tóxicos, arriba–medio–abajo · entra con < 10 % LEL; trabajo en caliente solo con 0 % LEL detectable (≤ 1 %) · desconecta el argón de la olla | 05 |
 | 9 | **Desde 1.8 m, 100 % conectado.** | Anclaje ≥ 22.2 kN (5,000 lb) · rescate < 15 min · línea resistente al calor cerca del horno | 10 |
-| 10 | **Solo el ESR toca la fuente radiactiva. El camión que suena en el pórtico no se descarga.** | Obturador cerrado + candado · < 2 × fondo para trabajar | 07 |
+| 10 | **Solo el ESR (C-16) toca la fuente radiactiva. El camión que suena en el pórtico no se descarga.** | Obturador cerrado + candado · < 2 × fondo para trabajar | 07 |
 | 11 | **Hidrátate y respeta el descanso por calor.** | 250 mL cada 15–20 min · régimen WBGT NOM-015 · aclimatación 5 días | 08 |
 | 12 | **En una emergencia: protégete, da la alarma, C-04 manda.** Nunca agua sobre metal; nunca rescate sin ERA. | "EMERGENCIA ×3 · lugar · tipo" · conteo ≤ 10 min | 09 |
 | 13 | **Si algo no está bien, detén el trabajo.** | Derecho y obligación de todos | Todos |
@@ -56,9 +56,9 @@ flowchart LR
 
 | Tema | Valor | Fuente / estado |
 |---|---|---|
-| CO | Alarma 25 ppm (VLE-PPT) · evacuación 200 ppm (techo NIOSH) · IDLH 1,200 ppm | NOM-010-STPS-2014 [Verificar con la NOM vigente / SSO] |
+| CO | Alarma 25 ppm (VLE-PPT, salir) · evacuación 200 ppm (techo NIOSH) [Verificar NOM-010] · IDLH 1,200 ppm | NOM-010-STPS-2014 [Verificar con la NOM vigente / SSO] |
 | Oxígeno | 19.5–23.5 % | NOM-033-STPS-2015 [Verificar] |
-| Gas natural / H₂ | 10 % LEL trabajo y alarma; 20 % LEL evacuación; trabajo en caliente en confinado solo con 0 % | NOM-033 [Verificar]; 0 % [Supuesto conservador] |
+| Gas natural / H₂ | Entrada a confinado < 10 % LEL; 10 % LEL alarma (salir); 20 % LEL evacuación; trabajo en caliente solo con 0 % LEL detectable (≤ 1 % de lectura del equipo) | NOM-033 [Verificar]; ≤ 1 % [Supuesto conservador]; criterio único en MS-ACE-05 |
 | Estrés térmico | Régimen por WBGT y carga (Tabla A1 NOM-015); 250 mL cada 15–20 min | NOM-015-STPS-2001 [Verificar] |
 | Altura | ≥ 1.8 m; anclaje ≥ 22.2 kN; caída libre ≤ 1.8 m; rescate < 15 min | NOM-009-STPS-2011 [Verificar] |
 | Radiación | POE con dosímetro; restricción interna ≤ 6 mSv/año [Supuesto]; límite legal según RGSR/CNSNS | NOM-012-STPS-2012 + CNSNS [Verificar] |
@@ -66,6 +66,7 @@ flowchart LR
 | Agua de molde | CC1 ΔT > 11 °C, CC2 ΔT > 12 °C o caudal < 90 %; emergencia ≤ 15 s | FT-ACE-001 |
 | Zonas de exclusión | Vaciado ≤ 10 / 25 m; canasta ≤ 15 m; ruta de olla ± 5 / ± 15 m; arranque de CC ≤ 10 / 20 m | [Supuesto — Validar con C-16 / estudio de la nave] |
 | Grúa de colada | 250 t, doble freno, prueba 200–300 mm × 10 s, holgura ≥ 1 m | FT-ACE-001 + [Supuesto] |
+| Vigencia de certificaciones | 12 meses: alturas, espacios confinados, grúas/izaje, eléctrico (NOM-029) y fuentes radiactivas · 24 meses como máximo: demás tareas críticas (TD-P07) | Criterio unificado en la revisión cruzada 2026-09-25 (ver `REVISION-SEGURIDAD.md`) |
 
 ## 4. Revisión cruzada requerida
 
@@ -82,6 +83,6 @@ flowchart LR
 | B | Esperar a validar todos los valores antes de usar cualquier contenido | Se retrasa la capacitación en riesgos críticos | Sin costo adicional inmediato |
 | C | Usar los manuales en planta sin validación | **Alto**: valores [Supuesto] podrían no corresponder a la planta real | — |
 
-**Decisiones puntuales a confirmar:** (1) umbrales de CO 25/200 ppm (alternativa más conservadora: evacuación de sector a 50 ppm); (2) frecuencia de simulacros (4 de campo por cuadrilla al año + tabletop mensual); (3) restricción interna de dosis (≤ 6 mSv/año) con el ESR; (4) vigencia de 12 meses para alturas, confinados, grúas y eléctrico frente a los 24 meses de TD-P07.
+**Decisiones puntuales a confirmar:** (1) umbrales de CO 25/200 ppm (alternativa más conservadora: evacuación de sector a 50 ppm); (2) frecuencia de simulacros (4 de campo por cuadrilla al año + tabletop mensual); (3) restricción interna de dosis (≤ 6 mSv/año) con el ESR; (4) vigencia de 12 meses para alturas, confinados, grúas/izaje, eléctrico y fuentes radiactivas frente a los 24 meses de TD-P07 (ya aplicada en todos los manuales; ver `REVISION-SEGURIDAD.md`).
 
 **Fecha límite sugerida para decidir:** 2026-10-15 [Supuesto].

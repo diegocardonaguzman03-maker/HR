@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-02 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-02 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** para sellar la cabeza de la barra falsa metes las manos y herramientas **dentro del molde**, justo donde pasa el haz de la **fuente de Cs-137**. El obturador de la fuente se cierra y se bloquea **antes** de empezar y se abre **solo** cuando ya no hay nadie en el molde. Un sello húmedo o mal hecho provoca una fuga o una explosión en el arranque.
 
@@ -17,7 +17,7 @@
 | C-06 Supervisor de Colada Continua | Libera las líneas; firma la lista de verificación de máquina | A |
 | S-12 Operador de Púlpito de Colada | Opera la inserción de la barra falsa desde la HMI; hace las pruebas de agua, rociado, oscilación y EMS | R |
 | S-14 Ayudante de Colada (molde y línea) | Inspecciona el molde, centra la cabeza, sella y coloca la chatarra de enfriamiento | R |
-| Encargado de Seguridad Radiológica (ESR) designado en la licencia de la CNSNS | Cierra/abre y bloquea el obturador de la fuente de Cs-137; mide la tasa de dosis | R (radiación) |
+| C-16 Especialista de Seguridad e Higiene de Acería, en función de Encargado de Seguridad Radiológica (ESR) designado en la licencia de la CNSNS (CAT-ACE-001) | Cierra/abre y bloquea el obturador de la fuente de Cs-137; mide la tasa de dosis | R (radiación) |
 | S-25 Mecánico de Taller de Moldes | Atiende hallazgos de desgaste, conicidad y alineación (MM-CC-01, MM-CC-02) | C |
 | S-21 Instrumentista | Atiende fallas del medidor de nivel, caudalímetros y termopares | C |
 | C-16 Especialista de Seguridad e Higiene | Verifica el procedimiento de radiación y LOTO | I |
@@ -117,7 +117,7 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 | 5 | Prueba oscilación y EMS | Oscilación en vacío a 200 cpm; EMS energizado 1 min | Sin alarmas; carrera 6–10 mm | | S-12 |
 | 6 | Inspecciona el tubo | Visual de rayas, desgaste y deformación | Sin defectos fuera del criterio de la sección 7 | 🔎 | S-14 |
 | 7 | Verifica la alineación molde–pie de rodillos | Plantilla de alineación | ± 0.5 mm | 🔎 | S-14, S-25 |
-| 8 | Pide al ESR el cierre del obturador | Permiso de trabajo con firma del ESR; el ESR cierra, pone candado y tarjeta y mide en el punto de trabajo y a 1 m | Lectura < 2 × fondo; registro firmado en el permiso | ★ | ESR, S-14 |
+| 8 | Pide al ESR el cierre del obturador | Permiso de trabajo con firma del ESR; el ESR cierra, pone candado y tarjeta y mide en el punto de trabajo y a 1 m | Lectura < 2 × fondo; registro firmado en el permiso | ★ | C-16 (ESR), S-14 |
 | 9 | Aplica LOTO al oscilador | Candado personal | Prueba de arranque sin movimiento | ★ | S-14 |
 | 10 | Inserta la barra falsa | HMI en modo inserción ≤ 3 m/min; los últimos 2 m a ≤ 0.5 m/min | La cabeza para sin golpe | | S-12 |
 | 11 | Ajusta la altura de la cabeza | Mide desde el borde del tubo | 700 ± 20 mm bajo el borde | ★ | S-14, S-12 |
@@ -129,7 +129,7 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 | 17 | Repite los pasos 8–16 en las 6 líneas | Una línea a la vez | 6 líneas selladas | | S-14 |
 | 18 | Ceba el aceite | Verifica salida por todas las ranuras; deja en espera | Salida uniforme | | S-14 |
 | 19 | Retira LOTO y confirma que no hay nadie en los moldes | Conteo de personal; retira tu candado | Plataforma y fosa despejadas | ★ | S-14, C-06 |
-| 20 | Pide al ESR la apertura del obturador | El ESR retira su candado y abre; S-12 revisa la lectura de "molde vacío" | Nivel indica vacío, sin alarma | ★ | ESR, S-12 |
+| 20 | Pide al ESR la apertura del obturador | El ESR retira su candado y abre; S-12 revisa la lectura de "molde vacío" | Nivel indica vacío, sin alarma | ★ | C-16 (ESR), S-12 |
 | 21 | Libera las líneas | C-06 firma la lista de verificación | 6 líneas en "listo para colar" en la HMI | | C-06 |
 
 ## 9. Condiciones anormales y respuesta
@@ -139,8 +139,8 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 | Caudal < 1,800 L/min en la prueba | Filtro tapado, válvula, bomba | No liberes; revisa con mantenimiento | C-06, C-12 |
 | La barra falsa no avanza o se atora | Rodillo desalineado, cabeza dañada, restos en la línea | Detén; LOTO; inspecciona la línea con mantenimiento | C-06, C-11 |
 | La cabeza no queda centrada | Cabeza deformada, guía desalineada | Cambia la cabeza; revisa alineación | C-06, S-25 |
-| El obturador no cierra o la dosis es mayor al límite | Falla mecánica del portafuente | 🛑 Nadie entra al molde; acordona; el ESR atiende y reporta a la CNSNS si aplica | ESR, C-16, C-06 |
-| El nivel no marca "molde vacío" con el obturador abierto | Falla del detector o de la fuente | No liberes la línea; S-21 con el ESR | C-06, S-21, ESR |
+| El obturador no cierra o la dosis es mayor al límite | Falla mecánica del portafuente | 🛑 Nadie entra al molde; acordona; el ESR atiende y reporta a la CNSNS si aplica | C-16 (ESR), C-06 |
+| El nivel no marca "molde vacío" con el obturador abierto | Falla del detector o de la fuente | No liberes la línea; S-21 con el ESR | C-06, S-21, C-16 (ESR) |
 | Chatarra húmeda u oxidada | Almacenamiento inadecuado | Usa otra caja seca; seca en estufa | C-06 |
 
 ## 10. Registros
@@ -154,7 +154,7 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 |---|---|---|---|---|---|
 | S-14 Ayudante de Colada | 3 | 16 + 8 de protección radiológica (POE) | 40 h / 12 sellados de línea | Pasos 3, 8, 9, 11, 12, 14, 15, 19 | 24 meses (TD-P07); protección radiológica según la licencia CNSNS [Validar] |
 | S-12 Operador de Púlpito | 3 | 16 + 8 de protección radiológica | 24 h / 6 preparaciones de máquina | Pasos 2, 11, 20 | 24 meses |
-| ESR | 4 | Según la CNSNS | — | Acreditación CNSNS vigente | Según la CNSNS |
+| C-16 (función de ESR) | 4 | Según la CNSNS | — | Acreditación CNSNS vigente | Según la CNSNS |
 
 **Lista corta de verificación de pasos ★ (TD-P07):**
 - [ ] Nunca mete las manos al molde sin el obturador cerrado, bloqueado y medido por el ESR.
@@ -173,3 +173,4 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: el ESR se cita con su código (C-16, CAT-ACE-001) en roles, columna Rol y competencias. | experto-operativo-metalurgia |

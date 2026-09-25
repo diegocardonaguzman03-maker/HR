@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-01 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-01 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores de referencia tomados de la ficha técnica FT-ACE-001 (§4). Antes de usar en planta, Ingeniería de Proceso (C-08) y Refractarios (C-15) deben validarlos contra los manuales OEM y del proveedor de refractarios.
 
@@ -22,7 +22,7 @@
 | S-24 Refractarista | Revisión del revestimiento permanente y reparaciones menores | C |
 | C-15 Especialista de Refractarios | Define materiales, curvas de secado/precalentamiento y criterios de rechazo del revestimiento | C |
 | C-08 Ingeniero de Proceso de CC | Define configuración de presas/dique, tipo de SEN y de tapón por grado | C |
-| Operador de grúa de CC (50 t) | Traslada el distribuidor vacío entre estaciones | R (izaje) |
+| Operador de grúa de CC (50 t) — sin código en CAT-ACE-001 (propuesta S-27; hoy lo cubre S-15) | Traslada el distribuidor vacío entre estaciones | R (izaje) |
 | C-16 Especialista de Seguridad | Verifica controles de espacio confinado y de izaje | I |
 
 ## 3. Descripción del proceso
@@ -195,3 +195,4 @@ flowchart TD
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: rol del operador de grúa de CC referido al pendiente del catálogo (S-27). Precalentamiento de 1,100 ± 50 °C adoptado también en MO-CC2-01. | experto-operativo-metalurgia |

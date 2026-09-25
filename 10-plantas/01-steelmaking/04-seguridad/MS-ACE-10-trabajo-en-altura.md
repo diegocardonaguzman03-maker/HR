@@ -83,7 +83,7 @@ flowchart TD
 
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
-| Caída desde la bóveda o plataforma de electrodos | Fatalidad | LOTO del horno (arco fuera, interruptor abierto) + anclaje + línea resistente al calor | Permiso firmado |
+| Caída desde la bóveda o plataforma de electrodos | Fatalidad | Sobre la bóveda o fuera de barandal: LOTO del horno (arco fuera, interruptor abierto) + anclaje + línea resistente al calor. Plataforma de electrodos con barandal completo en tarea de rutina: llave cautiva según MS-ACE-02 §6.4 | Permiso firmado / conteo de llaves |
 | Caída desde pasillos de grúa | Fatalidad | LOTO de barras colectoras y de la grúa; topes/bloqueo de la otra grúa en la misma vía; línea de vida | Permiso + LOTO |
 | Golpe de grúa en movimiento a persona en la vía | Fatalidad | Bloqueo de la vía (topes y LOTO de las grúas vecinas) | C-04 confirma |
 | Línea de conexión quemada por calor | Falla de la detención | Cable de acero o aramida; no nylon | Inspección |
@@ -114,7 +114,7 @@ Casco **con barbiquejo**, lentes, guantes, botas, ropa FR o algodón, arnés de 
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
 | 1 | Evalúa la tarea | ¿Puede hacerse en piso? ¿Hay barandal completo? Elige: colectiva → restricción → detención | Método definido | ★ | Emisor |
-| 2 | Emite el permiso y el LOTO | Permiso de altura + LOTO del horno, la grúa o el equipo (MS-ACE-02) | Permiso firmado; LOTO verificado | ★ | Emisor |
+| 2 | Emite el permiso y el LOTO | Permiso de altura + LOTO del horno, la grúa o el equipo (MS-ACE-02); la llave cautiva solo vale para el acceso de rutina de MS-ACE-02 §6.4 | Permiso firmado; LOTO verificado | ★ | Emisor |
 | 3 | Identifica el anclaje | Usa solo anclajes con placa de ≥ 22.2 kN o líneas de vida certificadas; nunca tuberías, barandales, charolas de cable ni la propia grúa sin certificar | Anclaje certificado | ★ | Trabajador |
 | 4 | Inspecciona tu equipo | Arnés (costuras, hebillas, anillo D, etiqueta), línea (absorbedor sin activar, ganchos con doble seguro), retráctil (bloqueo) | Sin defectos | ★ | Trabajador |
 | 5 | Calcula la distancia libre | Longitud de línea + elongación del absorbedor + altura del trabajador + 1 m; compárala con la distancia al piso u obstáculo | Distancia disponible ≥ requerida | ★ | Emisor |
@@ -149,9 +149,9 @@ Casco **con barbiquejo**, lentes, guantes, botas, ropa FR o algodón, arnés de 
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | Trabajador autorizado en altura | 3 | 8 (CRS-03, NOM-009) + práctica en torre | 3 tareas supervisadas | Pasos 3, 4, 9 | 12 meses [Verificar calendario regulatorio] |
-| Emisor del permiso | 4 | 12 (incluye cálculo de distancia libre y rescate) | 5 permisos con tutor | Pasos 1, 2, 5, 6 | 24 meses (TD-P07) |
+| Emisor del permiso | 4 | 12 (incluye cálculo de distancia libre y rescate) | 5 permisos con tutor | Pasos 1, 2, 5, 6 | 12 meses (alturas) |
 | Rescatista en altura (brigada) | 4 | 16–24 (rescate técnico) | 2 simulacros al año | Rescate < 15 min | 12 meses |
-| Armador de andamios | 4 | 16 | 5 armados | Armado e inspección | 24 meses |
+| Armador de andamios | 4 | 16 | 5 armados | Armado e inspección | 12 meses (alturas) |
 | Contratistas | 3 | 8 (TD-P08 + CRS-03) | 1 tarea supervisada | Pasos 3, 4, 9 | 12 meses |
 
 **Lista corta de verificación de pasos ★:**
@@ -160,6 +160,8 @@ Casco **con barbiquejo**, lentes, guantes, botas, ropa FR o algodón, arnés de 
 3. ¿Calcula la distancia libre de caída?
 4. ¿Hay plan de rescate < 15 min antes de iniciar?
 5. ¿Permanece 100 % conectado con doble línea al desplazarse?
+6. ¿Elige el método (colectiva → restricción → detención) y emite el permiso con LOTO o, solo en acceso de rutina, con llave cautiva (pasos 1 y 2)?
+7. ¿El observador activa el rescate de inmediato si hay una caída (paso 10)?
 
 ## 12. Referencias
 
@@ -172,3 +174,4 @@ Casco **con barbiquejo**, lentes, guantes, botas, ropa FR o algodón, arnés de 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
+| 0.2 | 2026-09-25 | Revisión cruzada: vigencia de 12 meses para emisor y armador de andamios; criterio de llave cautiva frente a LOTO (MS-ACE-02 §6.4); pasos ★ 1, 2 y 10 en la lista | experto-seguridad-salud |

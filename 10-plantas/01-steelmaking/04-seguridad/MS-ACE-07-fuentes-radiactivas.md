@@ -20,10 +20,10 @@
 
 | Rol | Responsabilidad en este proceso | R/A/C/I |
 |---|---|---|
-| **ESR Encargado de Seguridad Radiológica** (autorizado por la CNSNS) | Custodia de fuentes y llaves del obturador; pruebas de fuga; inventario; dosimetría; reportes a la CNSNS; respuesta a alarmas del pórtico | A (técnico) |
+| **ESR Encargado de Seguridad Radiológica** (función que cumple **C-16**, autorizado por la CNSNS; en su ausencia, un suplente con licencia vigente [Validar con la licencia]) | Custodia de fuentes y llaves del obturador; pruebas de fuga; inventario; dosimetría; reportes a la CNSNS; respuesta a alarmas del pórtico | A (técnico) |
 | C-16 Especialista de Seguridad e Higiene | Dueño del manual; integra el tema al sistema de SSO; auditoría | A |
 | C-12 / S-21 Instrumentista (POE) | Mantenimiento de los medidores con el obturador cerrado y con el ESR | R |
-| S-12 / S-14 Púlpito y Ayudante de Colada (CC2) | Respetan la señalización; avisan al ESR de daños al contenedor | R |
+| S-12 / S-13 / S-14 Púlpito, Plataforma y Ayudante de Colada (CC2) | Respetan la señalización; no intervienen el molde sin la liberación del ESR; avisan al ESR de daños al contenedor | R |
 | S-25 Taller de moldes | Cambio de molde CC2 solo con obturador cerrado y verificado | R |
 | S-05 Operador de Patio / C-17 Supervisor de Patio | Operan el pórtico; detienen y aíslan el camión en alarma | R |
 | C-04 Jefe de Turno | Comandante del incidente en un evento radiológico (MS-ACE-09) | R |
@@ -160,9 +160,9 @@ El EPP convencional **no protege contra la radiación gamma**. La protección es
 
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| ESR | 4 | Curso reconocido por la CNSNS [Verificar] | Según CNSNS | Autorización de la CNSNS | Según CNSNS |
-| POE (S-21, S-25 de CC2) | 3 | 16 (protección radiológica, NOM-012) | 3 tareas con ESR | Pasos 4, 5 + uso del dosímetro | 12 meses |
-| S-12, S-14 de CC2 | 2 | 4 (conciencia radiológica) | — | Reconocer el trébol y el obturador | 12 meses |
+| C-16 en función de ESR | 4 | Curso reconocido por la CNSNS [Verificar] | Según CNSNS | Autorización de la CNSNS + pasos 2, 3, 6 y 10 | Según la licencia CNSNS; evaluación interna 12 meses |
+| POE (S-21, S-25 de CC2) | 3 | 16 (protección radiológica, NOM-012) | 3 tareas con ESR | Pasos 4, 5 + uso del dosímetro | 12 meses (fuentes radiactivas) |
+| S-12, S-13, S-14 de CC2 | 2 | 4 (conciencia radiológica) | — | Reconocer el trébol y el obturador; no intervenir el molde sin la liberación del ESR | 12 meses (fuentes radiactivas) |
 | S-05, C-17 | 3 | 8 (pórtico y fuentes huérfanas) | 5 simulacros de alarma | Pasos 7, 8, 9 | 12 meses |
 | Resto del personal | 1 | 1 (inducción) | — | Reconocer el símbolo | 12 meses |
 
@@ -171,6 +171,9 @@ El EPP convencional **no protege contra la radiación gamma**. La protección es
 2. ¿Verifica la medición < 2 × fondo antes de trabajar en el molde de CC2?
 3. ¿Aplica tiempo, distancia y blindaje?
 4. ¿Detiene y aísla un camión con alarma sin descargarlo?
+5. ¿Trabaja sin tocar ni golpear el contenedor y se aleja ≥ 3 m si se daña (paso 5)?
+6. ¿El ESR (C-16) retira su candado, abre el obturador y verifica la señal de nivel ± 5 mm con el púlpito (paso 6)?
+7. ¿Avisa al ESR y a C-04 en ≤ 5 min ante una alarma confirmada del pórtico (pasos 9 y 10)?
 
 ## 12. Referencias
 
@@ -183,3 +186,4 @@ El EPP convencional **no protege contra la radiación gamma**. La protección es
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
+| 0.2 | 2026-09-25 | Revisión cruzada: C-16 cumple la función de ESR; S-13 agregado como ejecutor (catálogo); vigencias de 12 meses; pasos ★ 5, 6, 9 y 10 en la lista de verificación | experto-seguridad-salud |

@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-EAF-04 | 0.1 | Borrador para validación | Acería · subestaciones de EAF-1 / EAF-2 | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-EAF-04 | 0.2 | Borrador para validación | Acería · subestaciones de EAF-1 / EAF-2 | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §2 (transformador de 140 MVA, secundario hasta 1,200 V, OLTC). **La ficha no define el voltaje primario:** aquí se usa **34.5 kV [Supuesto]**. Todo límite de prueba está sujeto a **[Validar con OEM / Ingeniería de Mantenimiento]** y a la línea base de fábrica del transformador.
 
@@ -112,7 +112,7 @@ flowchart TD
 | Retroalimentación / tensión inducida | Electrocución | Tierras en ambos lados del punto de trabajo | Verificación visual de tierras |
 | Energía almacenada (capacitores RC, resortes del interruptor) | Descarga, golpe | Descargar capacitores; descargar resortes | Indicador "resorte descargado" |
 | Aceite caliente / incendio | Quemadura, incendio | Sistema contra incendio en servicio; aceite ≤ 40 °C antes de abrir | Termómetro |
-| Entrada al tanque (inspección interna) | Asfixia, caída | Espacio confinado NOM-033, aire seco, vigía | Permiso y gases |
+| Entrada al tanque (inspección interna) | Asfixia, caída | Espacio confinado NOM-033 (MS-ACE-05), aire seco, vigía | Permiso y gases: O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL para entrar; 0 % LEL detectable (≤ 1 % de lectura) si se suelda |
 | Altura (boquillas, conservador) | Caída | Plataforma o arnés (NOM-009) | Permiso de altura |
 
 ### 6.2 EPP obligatorio
@@ -146,11 +146,11 @@ Ropa arc-rated de la categoría de la celda, careta/capucha arc-rated, guantes d
 | 8 | Aterriza | Cierra cuchillas de tierra; coloca tierras temporales en primario y secundario | Tierras colocadas y visibles | ★ | S-20 |
 | 9 | Delimita | Barreras y señales; libera el área de trabajo | Zona delimitada | ★ | S-20 |
 | 10 | Toma muestra de aceite | Válvula de muestreo, jeringa de vidrio sin burbujas, etiqueta | Muestra válida | 🔎 | S-20 |
-| 11 | Pruebas eléctricas | Retira tierras solo del devanado bajo prueba (con control); megger 5 kV, PI, Tan δ, TTR, resistencia; corrige a 20/75 °C | Valores dentro de la tabla §5 y vs. base | 🔎 | S-20 / proveedor |
+| 11 | Pruebas eléctricas | Retira tierras solo del devanado bajo prueba, con registro y bajo control de S-20; megger 5 kV, PI, Tan δ, TTR, resistencia; corrige a 20/75 °C; al terminar cada prueba descarga el devanado y **vuelve a colocar sus tierras** | Valores dentro de la tabla §5 y vs. base; tierras repuestas | ★ 🔎 | S-20 / proveedor |
 | 12 | Mantenimiento de interruptor / OLTC | Según manual OEM y contador | Resistencia de contactos ≤ 1.2 × fábrica | | S-20 |
 | 13 | Prueba protecciones | Inyección secundaria de 87T, 50/51, 51N; disparo real de Buchholz y OLTC | Disparo correcto | ★ | S-21 |
 | 14 | Restituye | Retira tierras temporales (conteo contra registro), abre cuchillas de tierra, retira candados | Tierras contadas = colocadas | ★ | S-20 |
-| 15 | Energiza en vacío | Cierra interruptor sin arco; escucha ruido, revisa corriente de magnetización | Sin alarmas | | S-20, S-01 |
+| 15 | Energiza en vacío | Solo con personal contado fuera de la zona delimitada y barreras de celda repuestas: cierra interruptor sin arco; escucha ruido, revisa corriente de magnetización | Sin alarmas; conteo de personal registrado | ★ | S-20, S-01 |
 | 16 | Libera | Checklist firmado por C-12 y C-05 | Firmado | ★ | C-12, C-05 |
 
 **Checklist de liberación (Mantenimiento + Operación):** [ ] tierras temporales retiradas (número = número colocado) · [ ] PI ≥ 1.5 y megger ≥ base · [ ] protecciones probadas y en servicio · [ ] OLTC recorre todas las derivaciones · [ ] sin fugas de aceite ni alarma de fuga aceite–agua · [ ] candados retirados · Firma C-12/S-20: ____ Firma C-05/S-01: ____ Fecha/hora: ____
@@ -172,13 +172,13 @@ Licencia de maniobra y registro de tierras · reportes de DGA y fisicoquímicos 
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-20 Electricista (maniobra MT) | 4 | NOM-029 (16) + maniobras MT (16) + arc flash (8) | 5 maniobras supervisadas | Pasos 3–9, 14 | 24 meses; autorización escrita del patrón (NOM-029) |
-| S-20 Electricista (pruebas) | 3 | Pruebas a transformadores (24), termografía nivel I | 2 campañas anuales | Pasos 10, 11 | 24 meses |
-| S-21 Instrumentista | 3 | Protecciones y relés (24) | 2 pruebas | Paso 13 | 24 meses |
-| C-12 | 4 | Licencias de maniobra, coordinación de protecciones | — | Evaluador | 24 meses |
+| S-20 Electricista (maniobra MT) | 4 | NOM-029 (16) + maniobras MT (16) + arc flash (8) | 5 maniobras supervisadas | Pasos 3–9, 11, 14, 15 | 12 meses (eléctrico, NOM-029); autorización escrita del patrón (NOM-029) |
+| S-20 Electricista (pruebas) | 3 | Pruebas a transformadores (24), termografía nivel I | 2 campañas anuales | Pasos 10, 11 | 12 meses (eléctrico, NOM-029) |
+| S-21 Instrumentista | 3 | Protecciones y relés (24) + NOM-029 (trabajo en subestación) | 2 pruebas | Paso 13 | 12 meses (eléctrico, NOM-029) |
+| C-12 | 4 | Licencias de maniobra, coordinación de protecciones | — | Evaluador; pasos 1 y 16 | 12 meses (eléctrico, NOM-029) |
 
 **Normas:** NOM-029-STPS (mantenimiento de instalaciones eléctricas), NOM-001-SEDE (instalaciones eléctricas), NOM-022-STPS (electricidad estática/tierras, si aplica), NOM-033-STPS (tanque), NOM-009-STPS, NOM-017-STPS; referencias IEEE C57.104 (DGA), IEC 60422 (aceite), IEEE C57.152 (pruebas), NFPA 70E / IEEE 1584 (arc flash). Verificar con Jurídico Laboral / SSO.
-**Verificación ★:** ¿licencia antes de tocar? · ¿verificó ausencia de tensión con detector probado antes y después? · ¿tierras en ambos lados? · ¿conteo de tierras al restituir? · ¿protecciones probadas antes de energizar?
+**Verificación ★:** ¿licencia antes de tocar (paso 1)? · ¿arco a cero, interruptor abierto verificado con doble indicación y extraído con EPP arc-rated (pasos 3–5)? · ¿candado y tarjeta personales en cada punto (paso 6)? · ¿verificó ausencia de tensión con detector probado antes y después (paso 7)? · ¿tierras en ambos lados (paso 8)? · ¿zona delimitada (paso 9)? · ¿repuso las tierras tras cada prueba (paso 11)? · ¿protecciones probadas antes de energizar (paso 13)? · ¿conteo de tierras al restituir (paso 14)? · ¿personal contado fuera antes de energizar en vacío (paso 15)? · ¿liberación firmada (paso 16)?
 
 ## 12. Referencias
 FT-ACE-001 §2 · MM-EAF-02 · MS-ACE-02 · Diagrama unifilar de la subestación del EAF [por referenciar] · Manual OEM del transformador, OLTC e interruptor [por referenciar] · Estudio de coordinación de protecciones y de arc flash [por referenciar].
@@ -187,3 +187,4 @@ FT-ACE-001 §2 · MM-EAF-02 · MS-ACE-02 · Diagrama unifilar de la subestación
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
+| 0.2 | 2026-09-25 | Revisión cruzada de seguridad: pasos 11 (retiro controlado de tierras) y 15 (energización con conteo de personal) marcados ★; criterio de gases para el tanque (MS-ACE-05); vigencia de 12 meses para todo el trabajo eléctrico NOM-029; lista ★ completa | experto-seguridad-salud |

@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-08 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-08 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores de referencia de FT-ACE-001 §4 y §6. Presiones de oxicorte, factor de contracción, despuntes, altura de pilas y práctica de enfriamiento lento: **[Validar con OEM / Ingeniería de Proceso]** y con Laminación en Caliente (cliente interno).
 
@@ -17,7 +17,7 @@
 | C-06 Supervisor de Colada Continua | Asegura el programa de corte y la trazabilidad; autoriza cortes manuales | A |
 | S-16 Operador de Corte y Marcado | Programa de longitudes, oxicorte, despuntes, muestras, marcado y verificación de ID | R |
 | S-17 Operador de Mesa de Enfriamiento y Despacho | Transferencia, pesaje, apilado, enfriamiento lento, despacho; opera grúa de producto o coordina | R |
-| Operador de grúa de CC y producto (50 t / 25 t) | Izaje de planchones con tenaza | R (izaje) |
+| Operador de grúa de producto (45 t con tenaza) — sin código en CAT-ACE-001 (propuesta S-27; hoy lo cubre S-17) | Izaje de planchones con tenaza | R (izaje) |
 | S-18 Inspector de Calidad de Semiterminado | Recibe planchones para inspección y retiene los "con evento" | C |
 | S-12 Operador de Púlpito de Colada | Envía datos de colada y eventos al tracking | C |
 | C-09 Metalurgista de Producto | Define qué planchones requieren enfriamiento lento o retención | C |
@@ -55,7 +55,7 @@ flowchart LR
 | Báscula de planchones | Peso real | Capacidad ≥ 40 t; ± 0.1% [Validar con OEM / Ingeniería de Proceso] | Calibrada |
 | Máquina de marcado | Identifica el planchón | Pintura/estampado de alta temperatura; 1–2 caras | Prueba de marcado al inicio del turno |
 | Mesa de rodillos de salida y carro de transferencia | Mueven el planchón | — | Guardas, paros de emergencia, alarmas |
-| Grúas de CC y producto | Apilan y cargan | 2 × 50 t + 2 × 25 t con tenaza | Carga neta ≤ capacidad − peso de la tenaza |
+| Grúas de producto para planchón | Apilan y cargan | 2 × 45 t con tenaza (FT-ACE-001 §6). Las de 50 t son para distribuidores, segmentos y moldes; la de 25 t con electroimán es de CC2 | Planchón + tenaza ≤ 45 t (planchón máx. ≈ 32.8 t; tenaza ≤ 12 t [Validar con OEM]) |
 | Mesa de enfriamiento / patio de pilas | Enfría y almacena | Pilas separadas por colada | Piso firme, calzas, señalización |
 | Cubiertas de enfriamiento lento [Supuesto] | Enfriamiento lento de grados sensibles | — | Disponibles |
 
@@ -74,17 +74,19 @@ flowchart LR
 | Legibilidad de marcado | % | 100 | 100 | Ilegible | Remarca manual (crayón de alta temperatura) | Visual |
 | Altura máxima de pila | m | ≤ 2.5 | — [Validar con C-16] | > 2.5 | Nueva pila | Visual / regla |
 | Enfriamiento lento (HSLA, peritécticos, con evento de grietas) | h | ≥ 48 en pila cubierta hasta < 300 °C [Validar con OEM / Ingeniería de Proceso] | — | Enfriamiento con agua | 🛑 Prohibido enfriar con agua estos grados | Registro de pila |
-| Capacidad de izaje con grúa de 25 t | t | Solo planchones ≤ 25 t − peso de tenaza (≈ ≤ 17 t netas) [Validar con OEM / Ingeniería de Proceso] | — | Planchón más pesado | Usa grúa de 50 t | Peso de MES |
+| Carga en el gancho de la grúa de 45 t | t | Planchón + tenaza ≤ 45 | Planchón 13.0–32.8 t + tenaza ≤ 12 t [Validar con OEM / Ingeniería de Proceso] | > 45 t | No izar; revisa el peso del MES y la placa de la tenaza | Peso de MES + placa de la tenaza |
 
 **Peso teórico del planchón en frío (t) = 0.23 × ancho × largo × 7.85 — grúa requerida:**
 
-| Ancho (mm) | 8 m | 9.5 m | 11 m | Grúa de 25 t (≤ 17 t netas) [Validar con OEM / Ingeniería de Proceso] |
+| Ancho (mm) | 8 m | 9.5 m | 11 m | Grúa requerida |
 |---|---|---|---|---|
-| 900 | 13.0 | 15.4 | 17.9 | Solo 8 y 9.5 m |
-| 1,100 | 15.9 | 18.9 | 21.8 | Solo 8 m |
-| 1,300 | 18.8 | 22.3 | 25.8 | No |
-| 1,500 | 21.7 | 25.7 | 29.8 | No |
-| 1,650 | 23.8 | 28.3 | 32.8 | No |
+| 900 | 13.0 | 15.4 | 17.9 | 45 t con tenaza |
+| 1,100 | 15.9 | 18.9 | 21.8 | 45 t con tenaza |
+| 1,300 | 18.8 | 22.3 | 25.8 | 45 t con tenaza |
+| 1,500 | 21.7 | 25.7 | 29.8 | 45 t con tenaza |
+| 1,650 | 23.8 | 28.3 | 32.8 | 45 t con tenaza |
+
+Las grúas de 25 t (electroimán, palanquilla de CC2) y de 50 t (distribuidores, segmentos, moldes) **no** se usan para planchones (FT-ACE-001 v0.2 §6).
 
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
@@ -149,8 +151,8 @@ flowchart LR
 | Longitud fuera de tolerancia | Encoder patinando, cálculo de contracción | Recalibra; marca los planchones afectados | C-06, C-09 |
 | Marcado ilegible o ID ≠ MES | Máquina de marcado, error de tracking | Remarca manual; corrige MES; retén hasta verificar | C-06, S-18 |
 | Planchón atorado en la mesa | Rebaba, deformación | Detén; LOTO antes de intervenir | C-06, S-19 |
-| Planchón más pesado que la grúa disponible | Grúa de 25 t asignada | 🛑 No izar; usa grúa de 50 t | Supervisor de patio |
-| Pila inestable o inclinada | Calzas mal puestas, planchón torcido | Detén izajes cerca; reacomoda con grúa de 50 t | C-06, C-16 |
+| Grúa asignada sin tenaza de planchón o de menor capacidad | Grúa de 25 t o de 50 t asignada | 🛑 No izar; usa una grúa de 45 t con tenaza | C-06 |
+| Pila inestable o inclinada | Calzas mal puestas, planchón torcido | Detén izajes cerca; reacomoda con grúa de 45 t con tenaza | C-06, C-16 |
 | Planchón con grietas visibles en caliente | Proceso | Retén y avisa a S-18 | S-18, C-09 |
 | Falla del oxicorte con la colada en curso | Mecánica, gas | Baja la velocidad de colada para ganar tiempo; corte manual autorizado; si no, cierre (MO-CC1-07) | C-06 |
 
@@ -186,3 +188,4 @@ flowchart LR
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: grúas de producto según FT v0.2 §6 (2 × 45 t con tenaza para planchón; 25 t y 50 t no se usan para planchón) y rol del operador referido al pendiente S-27. El §6 aún dice "50 t para > 17 t netas": lo corrige experto-seguridad-salud. | experto-operativo-metalurgia |

@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-OLL-01 | 0.1 | Borrador para validación | Acería · taller de ollas | C-15 Especialista de Refractarios | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-OLL-01 | 0.2 | Borrador para validación | Acería · taller de ollas | C-15 Especialista de Refractarios | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §3 (flota de 10 ollas de 150 t; MgO-C en línea de escoria; Al₂O₃-MgO-C en barril y fondo; vida 60–80 coladas; válvula de 2 o 3 placas; apertura libre ≥ 98 %; precalentamiento 1,000–1,100 °C). Dimensiones de placas, fuerzas de resortes y caudales del tapón: **[Validar con OEM / Ingeniería de Mantenimiento / C-15]**. **Una olla perforada o una válvula que no cierra = derrame de 150 t de acero.**
 
@@ -107,16 +107,16 @@ flowchart TD
 | Agua o humedad en refractario nuevo | Explosión de vapor | Curva de secado completa antes del primer acero | Registro de precalentador |
 | Entrada a la olla (reline) | Calor, CO del precalentador, polvo, caída de ladrillo | Espacio confinado NOM-033; precalentador bloqueado; gases; T aire ≤ 45 °C [Validar] | Permiso y medición |
 | Olla en volteador | Aplastamiento | Volteador bloqueado mecánicamente | Perno colocado |
-| Gas natural del precalentador | Explosión | LOTO de GN + purga, prueba de hermeticidad | Detector LEL 0 % |
-| Argón en la olla | Asfixia | Manguera de argón desconectada y válvula bloqueada | O₂ ≥ 19.5 % |
+| Gas natural del precalentador | Explosión | LOTO de GN + purga, prueba de hermeticidad | Detector: < 10 % LEL para entrar; 0 % LEL detectable (≤ 1 % de lectura) para trabajo en caliente (MS-ACE-05) |
+| Argón en la olla | Asfixia | Manguera de argón desconectada y válvula bloqueada (aislamiento positivo, MS-ACE-05) | O₂ 19.5–23.5 % medido abajo, en medio y arriba |
 
 ### 6.2 EPP obligatorio
 Ropa aluminizada en olla caliente, careta con visor dorado, guantes aluminizados, casco, botas metatarsales, respirador P100 (demolición), protección auditiva; entrada a olla: arnés con línea de rescate, detector de 4 gases.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 **Permisos:** espacio confinado (reline), trabajo en caliente, izaje, altura (bordes de olla > 1.8 m).
-**Puntos de aislamiento:** E-GN precalentador (válvula manual + candado + purga); E-Ar argón (válvula y desconexión de acople rápido); E-H cilindro de la válvula (manguera desconectada; cilindro retirado); E-H2 volteador/máquina de demolición (CCM + descarga); E-M olla sobre su base o en volteador con perno mecánico. **Prueba de energía cero:** intento de encendido del precalentador y de movimiento del volteador rechazados; O₂ 19.5–23.5 %, CO < 25 ppm, LEL 0 %.
-**Zona de exclusión:** bajo la olla izada; zona de caída de ladrillo durante la demolición.
+**Puntos de aislamiento:** E-GN precalentador (válvula manual + candado + purga); E-Ar argón (válvula y desconexión de acople rápido); E-H cilindro de la válvula (manguera desconectada; cilindro retirado); E-H2 volteador/máquina de demolición (CCM + descarga); E-M olla sobre su base o en volteador con perno mecánico. **Prueba de energía cero:** intento de encendido del precalentador y de movimiento del volteador rechazados; O₂ 19.5–23.5 %, CO < 25 ppm y **< 10 % LEL para entrar**; **0 % LEL detectable (≤ 1 % de lectura del equipo) para oxicorte o soldadura**; salir a CO 25 ppm o 10 % LEL; evacuar a CO 200 ppm [Verificar NOM-010] o 20 % LEL (criterio único de MS-ACE-05).
+**Zona de exclusión:** bajo la olla izada y en ± 5 m de su proyección (MS-ACE-01, MS-ACE-04); zona de caída de ladrillo durante la demolición. Refractario nuevo o reparado: curva de secado completa y precalentamiento ≥ 1,000 °C antes del primer acero (MS-ACE-03).
 
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
@@ -131,7 +131,7 @@ Ropa aluminizada en olla caliente, careta con visor dorado, guantes aluminizados
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
 | 1 | Coloca la olla en la estación | Olla vacía, limpia de escoria, sobre base estable o volteador con perno | Olla estable | ★ | S-09, S-08 |
-| 2 | Aísla energías | Argón desconectado; cilindro de la válvula retirado; precalentador bloqueado | Candados/tarjetas | ★ | S-08 |
+| 2 | Aísla energías | Argón desconectado; cilindro de la válvula retirado; precalentador bloqueado y purgado; cada ejecutor pone su candado personal (MS-ACE-02); intento de encendido y de movimiento rechazados | Candados/tarjetas; energía cero probada | ★ | S-08, S-24 |
 | 3 | Abre el marco | Libera resortes con la herramienta OEM (nunca a golpes) | Resortes descargados | ★ | S-24 |
 | 4 | Retira placas y colectora | Limpia asientos del marco; revisa buza interna con lámpara | Asientos limpios, buza interna sin grieta | | S-24 |
 | 5 | Inspecciona y mide placas retiradas | Barreno, surco, grietas (tabla §5) | Registro de desgaste | 🔎 | S-24 |
@@ -151,7 +151,7 @@ Ropa aluminizada en olla caliente, careta con visor dorado, guantes aluminizados
 ## 9. Condiciones anormales y respuesta
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
-| Válvula no cierra en CC | Placa rota, infiltración de acero | Emergencia: desviar a olla de emergencia/fosa; evacuar plataforma | C-06, C-04 |
+| Válvula no cierra en CC | Placa rota, infiltración de acero | Emergencia: desviar a olla de emergencia/fosa seca; evacuar la plataforma y a ≥ 25 m de la olla (MS-ACE-09, escenario B); nunca agua | C-06, C-04 |
 | Fuga de acero entre placas | Resortes flojos, placa agrietada | Cerrar si es posible; retirar olla | C-06, C-15 |
 | Coraza > 400 °C | Revestimiento delgado | 🛑 Retirar de ciclo (vaciar si está llena) | C-04, C-15 |
 | Tapón sin paso de argón | Tapón infiltrado | Lanceo desde adentro (olla vacía y caliente) o cambio | C-07, C-15 |
@@ -164,13 +164,14 @@ Tarjeta de vida de cada olla (coladas, placas, tapones, reparaciones, espesores,
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-24 Refractarista | 3 | 24 (válvula deslizante, tapón, reline, secado) | 40 h / 10 cambios de placas + 1 reline | Pasos 3, 6, 7, 10, 12 | 24 meses |
-| S-08 Preparador de Ollas | 3 | 16 (criterios de rechazo, prueba de válvula) | 40 h / 20 ollas | Pasos 1, 2, 8, 11, 12, 13 | 24 meses |
-| Personal de reline | 3 | NOM-033 (8) + NOM-015 | Simulacro de rescate | Permiso y gases | 12 meses |
+| S-24 Refractarista | 3 | 24 (válvula deslizante, tapón, reline, secado) | 40 h / 10 cambios de placas + 1 reline | Pasos 2, 3, 6, 7, 10, 12 | 24 meses (TD-P07); espacio confinado 12 meses (MS-ACE-05) |
+| S-08 Preparador de Ollas | 3 | 16 (criterios de rechazo, prueba de válvula) | 40 h / 20 ollas | Pasos 1, 2, 8, 11, 12, 13 | 24 meses (TD-P07) |
+| Personal de reline | 3 | NOM-033 (8) + NOM-015 | Simulacro de rescate | Permiso y gases | 12 meses (espacios confinados) |
+| S-09 Operador de Grúa de Colada | 3 | NOM-006 (MS-ACE-04) | 10 traslados y volteos al taller | Paso 1 (nadie bajo la olla) | 12 meses (grúas/izaje) |
 | Inspector END | Nivel II (ASNT/ISO 9712) | Externo | — | Reporte | Según certificación |
 
 **Normas:** NOM-033-STPS, NOM-015-STPS, NOM-010-STPS, NOM-006-STPS (izaje de ollas), NOM-004-STPS, NOM-017-STPS. Verificar con Jurídico Laboral / SSO.
-**Verificación ★:** ¿midió las placas contra criterio y las rechazó cuando tocaba? · ¿fuerza de resortes verificada? · ¿3 carreras con cierre total? · ¿espesor/termoescáner revisados? · ¿olla precalentada?
+**Verificación ★:** ¿olla estable en base o volteador con perno (paso 1)? · ¿energías aisladas con candado personal y energía cero probada (paso 2)? · ¿abrió el marco con la herramienta OEM (paso 3)? · ¿midió las placas contra criterio y las rechazó cuando tocaba (paso 6)? · ¿fuerza de resortes verificada (paso 7)? · ¿3 carreras con cierre total (paso 8)? · ¿tapón con caudal y sin fuga (paso 10)? · ¿espesor/termoescáner revisados (paso 11)? · ¿olla precalentada ≥ 1,000 °C (> 4 h fría: ≥ 8 h) (paso 12)? · ¿tarjeta firmada (paso 13)? · En reline: ¿gases < 10 % LEL, O₂ 19.5–23.5 %, CO < 25 ppm y argón desconectado antes de entrar?
 
 ## 12. Referencias
 FT-ACE-001 §3 · MO-OLL-01, MO-OLL-02, MO-LF-01 · MM-GR-01 · MS-ACE-01, -03, -05, -06 · Manual OEM de la válvula deslizante [por referenciar] · Hojas técnicas de refractario y curvas de secado [por referenciar].
@@ -179,3 +180,4 @@ FT-ACE-001 §3 · MO-OLL-01, MO-OLL-02, MO-LF-01 · MM-GR-01 · MS-ACE-01, -03, 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
+| 0.2 | 2026-09-25 | Revisión cruzada de seguridad: LEL 0 % para entrar sustituido por el criterio único de MS-ACE-05; O₂ 19.5–23.5 %; paso 2 con candado personal y prueba de energía cero; zona de exclusión y evacuación alineadas con MS-ACE-01/09; vigencias de 12 meses; lista ★ completa | experto-seguridad-salud |

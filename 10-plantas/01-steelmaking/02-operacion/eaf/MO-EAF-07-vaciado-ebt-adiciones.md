@@ -2,9 +2,9 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-07 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 y fosa de vaciado | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-07 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 y fosa de vaciado | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
 **Objetivo:** vaciar **150 t** de acero a una olla precalentada, **dentro de la ventana** (T 1,630 ± 15 °C, O activo 500–900 ppm, C 0.04–0.08%, P ≤ 0.015%), con **desoxidación y aleación** correctas para el grado, **arrastre mínimo de escoria** (≤ 5 kg/t [Supuesto]) y **retención del talón de 20–30 t**, con **nadie dentro de la zona de exclusión**.
@@ -83,8 +83,8 @@ flowchart TD
 |---|---|---|---|---|
 | Bajo carbono calmado al Al (CC1) | Al en pieza/lingote: 1.5–2.5 kg/t según O activo (fórmula abajo) | FeMn de medio C: 3–4 kg/t (Mn 0.20–0.35%) | Cal 5–7 kg/t + aluminato de calcio 2–3 kg/t [Supuesto] | Al fino y CaSi en LF |
 | HSLA (CC1) | Al como arriba | FeMn medio C: 10–15 kg/t (Mn 0.8–1.4%) | Igual que arriba | FeNb en LF (Nb 0.02–0.05%) |
-| Varilla corrugada (CC2) | **Sin Al** (calmado al Si-Mn; el Al tapa las buzas calibradas) | SiMn 15–18 kg/t; FeSi 75% 0–2 kg/t; recarburante 2.5–3.5 kg/t (C 0.25–0.35%) | Cal 4–6 kg/t | Vigilar CE ≤ 0.55 |
-| Barras comerciales (CC2) | Sin Al | SiMn 10–13 kg/t; recarburante 1.5–2.5 kg/t (C 0.15–0.25%) | Cal 4–6 kg/t | — |
+| Varilla corrugada (CC2) | **Sin Al**: Al soluble ≤ 0.005% (calmado al Si-Mn, Mn/Si ≥ 3; el Al tapa las buzas calibradas) | SiMn 15–18 kg/t; FeSi 75% 0–2 kg/t; recarburante 2.5–3.5 kg/t (C 0.25–0.35%) | Cal 4–6 kg/t | Vigilar CE ≤ 0.55 |
+| Barras comerciales (CC2) | Sin Al (Al soluble ≤ 0.005%) | SiMn 10–13 kg/t; recarburante 1.5–2.5 kg/t (C 0.15–0.25%) | Cal 4–6 kg/t | — |
 
 **Cálculo de Al en el vaciado (guía):** Al (kg) ≈ W (kg) × [1.125 × O (ppm) + Al objetivo (ppm)] × 10⁻⁶ / η, con W = 150,000 kg y rendimiento η ≈ 0.5–0.6 [Validar con Ingeniería de Proceso]. Ejemplo: O = 700 ppm, Al objetivo 400 ppm, η = 0.55 → ≈ 324 kg (2.2 kg/t).
 
@@ -179,3 +179,4 @@ Lista corta de verificación de pasos ★:
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: límite de Al soluble ≤ 0.005% para grados de CC2 (colada abierta), igual que MO-LF-01 y MO-CC2-04. | experto-operativo-metalurgia |

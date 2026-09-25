@@ -4,13 +4,13 @@
 |---|---|---|---|
 | Índice MO-CC2 | 0.1 | **Borrador para validación** (2026-09-25) | experto-operativo-metalurgia (técnico) · Gerente Sindicalizado / sind-servicio-clientes (TD-10, socio de C&D de Acería) |
 
-> **Mensaje clave:** estos 9 manuales cubren los procesos críticos de la CC2 (máquina curva de 6 líneas, radio 9 m, palanquilla de 160 × 160 mm, colada abierta con buza calibrada y aceite, EMS y control de nivel radiométrico con Cs-137). Están escritos para que el operador aprenda: pasos simples, cada medición con objetivo, rango, alarma y acción. **No se usan en planta hasta que Ingeniería de Proceso valide los valores marcados [Validar] contra el OEM**. Los diámetros de buza ya están alineados con FT-ACE-001 v0.2.
+> **Mensaje clave:** estos 9 manuales cubren los procesos críticos de la CC2 (máquina curva de 6 líneas, radio 9 m, palanquilla de 160 × 160 mm, colada abierta con buza calibrada y aceite, EMS y control de nivel radiométrico con Cs-137). Están escritos para que el operador aprenda: pasos simples, cada medición con objetivo, rango, alarma y acción. **No se usan en planta hasta que Ingeniería de Proceso valide los valores marcados [Validar] contra el OEM**. Los diámetros de buza ya están alineados con FT-ACE-001 v0.2; la revisión técnica cruzada contra la v0.3 está en `../REVISION-TECNICA.md`.
 
 ## 1. Índice de manuales
 | Código | Proceso crítico | Dueño | Ejecutan | Pasos ★ | Figuras |
 |---|---|---|---|---|---|
 | [MO-CC2-01](MO-CC2-01-preparacion-distribuidor-buzas.md) | Preparación y precalentamiento del distribuidor y las buzas calibradas | C-06 | S-15, S-13 | 7 | 2 |
-| [MO-CC2-02](MO-CC2-02-insercion-barra-falsa-rigida.md) | Preparación de máquina: inserción y sellado de la barra falsa rígida (6 líneas) | C-06 | S-12, S-14, ESR | 10 | 1, 3 |
+| [MO-CC2-02](MO-CC2-02-insercion-barra-falsa-rigida.md) | Preparación de máquina: inserción y sellado de la barra falsa rígida (6 líneas) | C-06 | S-12, S-14, C-16 (ESR) | 10 | 1, 3 |
 | [MO-CC2-03](MO-CC2-03-arranque-colada-por-linea.md) | Arranque de colada por línea | C-06 | S-12, S-13, S-14 | 8 | 1 |
 | [MO-CC2-04](MO-CC2-04-colada-estado-estable.md) | Colada en estado estable: nivel, aceite, EMS, velocidad, enfriamiento | C-08 | S-12, S-13, S-14 | 4 | 3 |
 | [MO-CC2-05](MO-CC2-05-cambio-olla-secuencia.md) | Cambio de olla en secuencia (torreta) | C-06 | S-13, S-09, S-12 | 7 | 1 |
@@ -48,8 +48,8 @@ flowchart LR
 | Variable | Valor | Fuente |
 |---|---|---|
 | Sección / velocidad | 160 × 160 mm; 2.5–3.5 m/min (nominal 3.0) | FT-ACE-001 §5 |
-| Sobrecalentamiento | 20–35 °C (líquidus de varilla ≈ 1,505 °C, se calcula por colada) | FT §5; líquidus [Validar] |
-| Distribuidor | 30 t; 700–850 mm; mínimo en cambio de olla 500 mm; fin de colada ≥ 300 mm | FT §5; mínimos [Validar] |
+| Sobrecalentamiento | 20–35 °C; 1.ª colada de secuencia 25–40 °C (líquidus de varilla ≈ 1,505 °C, se calcula por colada) | FT §5; líquidus [Validar] |
+| Distribuidor | 30 t; 700–850 mm; mínimo en cambio de olla 500 mm; fin de colada ≥ 300 mm; precalentamiento 1,100 ± 50 °C (≥ 1,000 °C al colar, igual que CC1) | FT §5; mínimos [Validar] |
 | Buza calibrada | ZrO₂ con cambio rápido: 160 × 160 mm → Ø 20–24 mm (22 mm ≈ 0.57 t/min ≈ 3.0 m/min con h = 0.8 m); 130 × 130 mm → Ø 15–17 mm; vida 8–12 h; cambio ≤ 2 s | FT v0.2 §5 [Validar con OEM]; vida y tiempo [Validar]. Tabla en MO-CC2-01 §5 |
 | Capacidad | ≈ 3.4 t/min con 6 líneas (≈ 1.7 Mt/año, holgura sobre 0.9 Mt/año); opera por campañas y ajusta velocidad o número de líneas a la cadencia de ollas | FT v0.2 §5 |
 | Orden de apertura | L3-L4 → L2-L5 → L1-L6; cierre al revés | [Validar] |
@@ -65,8 +65,8 @@ flowchart LR
 
 ## 5. Pendientes de validación e inconsistencias detectadas
 1. **Resuelto en FT-ACE-001 v0.2:** diámetro de buza por sección (160 × 160 mm → 20–24 mm; 130 × 130 mm → 15–17 mm) y referencia a MS-ACE-07. Sigue pendiente la confirmación del OEM [Validar].
-2. El catálogo no tiene código de rol para el **operador de grúa de CC y de producto** (grúas de 50 t y 25 t); los manuales lo citan sin código.
-3. En el catálogo, MS-ACE-07 "aplica a" S-05, S-12, S-14 y S-21; MS-ACE-07 ya incluye a S-25 en su texto, pero ninguno de los dos incluye a **S-13** (cambio de buza y taponeo junto a los moldes): conviene agregar S-13 y S-25 al catálogo.
+2. El catálogo no tiene código de rol para el **operador de grúa de CC y de producto** (grúas de 50 t, 45 t con tenaza y 25 t con electroimán); los manuales lo citan sin código y remiten a la propuesta S-27 de CAT-ACE-001 §3.
+3. **Resuelto en CAT-ACE-001:** MS-ACE-07 ya incluye a S-13 y S-25, y C-16 cumple la función de ESR; los manuales citan al ESR como C-16.
 4. Faltan en la ficha: parámetros del EMS, vida de buza, niveles mínimos del distribuidor, punto del menisco, alarmas de nivel, velocidad y rampa de arranque, longitud metalúrgica (≈ 20–29 m a 2.5–3.5 m/min) y posición del corte, tolerancia de longitud, límites de romboidad y defectos, química para colada abierta (Al ≤ 0.005%, Mn/Si ≥ 3) y precalentamiento del distribuidor.
 
 ## 6. Radiación: regla única para todos los manuales

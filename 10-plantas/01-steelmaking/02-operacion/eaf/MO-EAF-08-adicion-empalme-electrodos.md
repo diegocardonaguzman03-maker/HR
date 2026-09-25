@@ -2,9 +2,9 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-08 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-08 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
 **Objetivo:** mantener cada columna de electrodos (grafito UHP **610 mm**, niple cónico **4TPI**) con la longitud necesaria, agregando electrodos con un **empalme apretado al torque del fabricante** y **sin holgura entre caras**, para evitar roturas, juntas flojas y caídas, con el consumo dentro de **1.3–1.6 kg/t**.
@@ -55,7 +55,7 @@ flowchart TD
 | Soporte / estación de adición | Sostiene la columna vertical para empalmar | Con mordaza de sujeción | Mordaza cierra; base limpia |
 | Llave de torque (hidráulica o neumática) | Aprieta la junta | Rango que cubre el torque OEM; calibración vigente | Certificado de calibración ≤ 12 meses [Supuesto] |
 | Laina (galga) de 0.1 mm | Verifica holgura entre caras | — | Íntegra |
-| Grúa de carga | Maniobra | 120/40 t; gancho auxiliar | Inspección previa al uso (MM-GR-01) |
+| Grúa de carga | Maniobra | 120/40 t; gancho auxiliar | Inspección previa al uso (misma práctica de MM-GR-01, que en CAT-ACE-001 cubre solo las grúas de colada) |
 | Mordaza del brazo | Sujeta la columna | Presión de resorte / hidráulica según OEM | Sin arco en la mordaza (quemaduras) |
 
 ## 5. Parámetros de operación
@@ -169,3 +169,4 @@ Lista corta de verificación de pasos ★:
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: nota sobre el alcance de MM-GR-01 para la grúa de carga. | experto-operativo-metalurgia |

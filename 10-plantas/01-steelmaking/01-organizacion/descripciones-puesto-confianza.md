@@ -1,12 +1,12 @@
 # Descripciones de Puesto del Personal de Confianza — Acería (Steelmaking)
 
-| Código | Versión | Estado | Área | Elaboró | Revisión técnica | Revisión de seguridad | Revisión de liderazgo | Aprobó | Fecha | Próxima revisión |
-|---|---|---|---|---|---|---|---|---|---|---|
-| DP-ACE-C | 0.1 | **Borrador para validación** | Acería — Complejo Acería Norte | gerente-personal-confianza | experto-operativo-metalurgia | experto-seguridad-salud | experto-liderazgo-cambio | Pendiente (Gerente de Acería C-01 / Director de C&D) | 2026-09-25 | 2027-09-25 |
+| Código | Versión | Estado | Área | Elaboró | Revisión técnica | Revisión de seguridad | Revisión de liderazgo | Revisión laboral | Revisión documental | Aprobó | Fecha | Próxima revisión |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| DP-ACE-C | 0.2 | **Borrador para validación** | Acería — Complejo Acería Norte | gerente-personal-confianza | experto-operativo-metalurgia — pendiente | experto-seguridad-salud — pendiente | experto-liderazgo-cambio — pendiente | experto-relaciones-laborales — visto bueno con observaciones, 2026-09-25 (ver `REVISION-LABORAL.md`) | Criterio de experto-documentacion-mejora aplicado en la revisión laboral; visto bueno formal pendiente | **Pendiente — Director de C&D** (único que aprueba; validación operativa previa con C-01) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave.** La Acería (EAF-1/2, LF-1/2, ollas, patio de chatarra, CC1 planchón, CC2 palanquilla y su mantenimiento) necesita **60 plazas de confianza** en 17 roles (C-01 a C-17) para operar 24/7 con 4 cuadrillas en rol 4x4 de 12 h. En cada cuadrilla hay **7 mandos de confianza en planta** (1 jefe de turno, 4 supervisores de operación, 1 supervisor de patio y 1 supervisor de mantenimiento de turno). Cada uno de los 49 procesos críticos del catálogo CAT-ACE-001 tiene **dueño asignado** (uno solo, salvo MS-ACE-03, que el catálogo comparte entre C-07 y C-16), aprobador y supervisor en turno. Para el Director de C&D, este documento define qué competencias técnicas y de liderazgo hay que desarrollar: **36 mandos de primera línea** (C-04, C-05, C-06, C-11, C-12, C-17) van a la Escuela de Supervisores **L-1 "Líder de Turno"**, y los **3 superintendentes y el gerente** (C-01, C-02, C-03, C-10) a **L-2 "Líder de Líderes"**; los 4 C-04 siguen después a L-2 como preparación para superintendente.
 
-**Fuentes:** `00-ficha-tecnica-acería.md` (FT-ACE-001), `00-catalogo-procesos-y-roles.md` (CAT-ACE-001), `00-guia-de-estilo-y-plantillas.md`, `08-kpis/kpi-scorecard.md`, `05-programs/program-portfolio.md`. Documento hermano: organigrama en `organigrama-acería.md`. Puestos sindicalizados: **DP-ACE-S** (en elaboración en paralelo).
+**Fuentes:** `00-ficha-tecnica-acería.md` (FT-ACE-001), `00-catalogo-procesos-y-roles.md` (CAT-ACE-001), `00-guia-de-estilo-y-plantillas.md`, `08-kpis/kpi-scorecard.md`, `05-programs/program-portfolio.md`. Documento hermano: organigrama en `organigrama-acería.md`. Puestos sindicalizados: **DP-ACE-S v0.2** (`descripciones-puesto-sindicalizados.md`; 963 plazas, 159 por turno).
 
 ## 0. Convenciones
 
@@ -26,6 +26,9 @@
 - Los valores técnicos y las metas salen de la ficha técnica y del scorecard. Las metas marcadas con **[Supuesto]** son propuestas para validar con C-01 e Ingeniería de Proceso contra la línea base real de la planta.
 - Programas de formación del portafolio: L-1 "Líder de Turno" (96 h, 6 meses), L-2 "Líder de Líderes" (120 h, 9 meses), L-3 Programa Ejecutivo, L-4 "Talento Sierra Madre", Ingenieros en Desarrollo (18 meses), Academia de Acería y Laminación, Academia de Mantenimiento y Confiabilidad, Escuela Digital y de Green Steel, Lean (green belt / black belt). **Nota:** la Escuela de Seguridad numera sus programas S-01 a S-08, que chocan con los códigos de roles sindicalizados. Aquí se citan por nombre: "Estándares de Riesgo Crítico (ERC)" = programa S-03 de la Escuela de Seguridad; "Liderazgo en seguridad para supervisores (32 h)" = programa S-04.
 - Las referencias a NOM-STPS son una ayuda de planeación: **verificar con Jurídico Laboral / SSO**.
+- **Mando sobre sindicalizados (LFT art. 9):** la dirección, asignación de trabajo, vigilancia, evaluación de desempeño y disciplina del personal sindicalizado son funciones exclusivas de los roles de confianza (C-04, C-05, C-06, C-09, C-11, C-12, C-15, C-17). No se delegan en S-01, S-06, S-12, S-13 ni en técnicos A, que solo coordinan técnicamente (DP-ACE-S §4). Las evaluaciones TD-P07 que aplican los mandos no se usan como sanción, salvo acto inseguro deliberado en tarea crítica de seguridad, por la vía del Reglamento Interior y el CCT — verificar con Jurídico Laboral.
+- **Vigencia de certificaciones (criterio unificado de seguridad):** **12 meses** para alturas (MS-ACE-10), espacios confinados (MS-ACE-05), grúas e izaje (MS-ACE-04, MO-OLL-02, MM-GR-01), trabajo eléctrico (NOM-029, MM-EAF-04) y fuentes radiactivas (MS-ACE-07); **24 meses como máximo** para las demás (ERC, evaluador TD-P07, técnicas). Aplica también a los mandos que supervisan, autorizan permisos o evalúan esas tareas. Cada plan de formación trae una fila "Vigencia".
+- **Escolaridad:** es referencia. En los roles de supervisión de primera línea (C-04, C-05, C-06, C-11, C-12, C-17) se acepta la **equivalencia** por experiencia en el escalafón con certificación vigente, acreditación de conocimientos (Acuerdo 286 SEP / CENEVAL) o estándar CONOCER, más la Escuela de Supervisores. Solo se exige título cuando lo pide una norma o licencia (p. ej. ESR ante la CNSNS) — verificar con Jurídico Laboral.
 
 ## 1. Supuestos de dimensionamiento
 
@@ -34,7 +37,7 @@
 | Operación | Continua 24/7, 4 cuadrillas (A, B, C, D), rol 4x4 de 12 h | FT-ACE-001 §1 |
 | Producción | 2.2 Mt/año de acero líquido (CC1 ≈ 1.3 Mt; CC2 ≈ 0.9 Mt); ≈ 22–24 coladas por horno al día | FT-ACE-001 §1–2 |
 | Staff de confianza | ≈ 60 | FT-ACE-001 §8 |
-| Sindicalizados | ≈ 380 hornos/LF/ollas/patio · ≈ 330 CC1+CC2 · ≈ 250 mantenimiento (**aprox., a conciliar con DP-ACE-S**) | FT-ACE-001 §8 |
+| Sindicalizados | **963**: 380 hornos/LF/ollas/patio · 332 CC1+CC2 · 251 mantenimiento; **159 por turno** (134 de operación + 25 de guardia de mantenimiento) | DP-ACE-S v0.2 §1–2 (conciliado con FT-ACE-001 §8) |
 | Mando en turno | Los puestos de día (C-01 a C-03, C-07 a C-11, C-13 a C-16) cubren noches y fines de semana con una **guardia rotativa por teléfono** y presencia en planta en ≤ 45 min ante una emergencia [Supuesto] | Práctica de acerías eléctricas |
 | Supervisores de mantenimiento de turno | Se cubren con **C-12 en modalidad de turno** (1 por cuadrilla), porque la mayoría de las fallas que paran el EAF y la CC son eléctricas o de instrumentación [Supuesto; ver Decisión 2] | Criterio operativo |
 
@@ -146,6 +149,7 @@ Oficina y nave (≥ 30% del tiempo en planta). Calor radiante, ruido > 90 dB(A),
 | Técnica | Actualización en DRI e hidrógeno, Green Steel y energía (ISO 50001), contabilidad de carbono | 24 h/año | Escuela Digital y de Green Steel |
 | Calidad | IATF 16949 para directivos; 8D | 16 h | Academia de Acería |
 | Desarrollo | Coaching ejecutivo; mentor de 2 superintendentes; patrocinador de un proyecto de L-4 | Continuo | Mentoring y coaching |
+| Vigencia | **12 meses:** ninguna. **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -156,7 +160,7 @@ Oficina y nave (≥ 30% del tiempo en planta). Calor radiante, ruido > 90 dB(A),
 | Tipo de personal | Confianza — banda A2 |
 | Área / equipo | EAF-1, EAF-2, LF-1, LF-2, flota de 10 ollas de 150 t, patio de chatarra, refractarios de hornos y ollas |
 | Reporta a | C-01 Gerente de Acería |
-| Supervisa a | C-05 (×8), C-17 (×4), C-07 (×3), C-15 (×2); a través de ellos ≈ 380 sindicalizados (aprox., a conciliar con DP-ACE-S) |
+| Supervisa a | C-05 (×8), C-17 (×4), C-07 (×3), C-15 (×2); a través de ellos 353 sindicalizados de hornos, LF, ollas y patio, más 47 S-24 en línea técnica vía C-15 (DP-ACE-S v0.2) |
 | Plazas (total y por turno) | 1 (sin turno) |
 | Turno | Administrativo + guardia rotativa de superintendentes (1 semana de cada 3) |
 
@@ -248,6 +252,7 @@ C-07 líder o C-04 → **C-02** → C-01.
 | Energía | Gestión de energía ISO 50001 | 16 h | Green Steel & Energy |
 | Seguridad | Liderazgo en seguridad (32 h) si no lo tiene; investigación ICAM | 32 h | Escuela de Seguridad |
 | Desarrollo | Mentor de C-05 y C-07; IDP anual; rotación de 2 semanas en CC | Continuo | Talento |
+| Vigencia | **12 meses:** ninguna. **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -258,7 +263,7 @@ C-07 líder o C-04 → **C-02** → C-01.
 | Tipo de personal | Confianza — banda A2 |
 | Área / equipo | CC1 (planchón 230 mm × 900–1,650 mm, 1 línea), CC2 (palanquilla 160 × 160 mm, 6 líneas), preparación de distribuidores, mesa y lecho de enfriamiento, despacho |
 | Reporta a | C-01 Gerente de Acería |
-| Supervisa a | C-06 (×8), C-08 (×3); a través de ellos ≈ 290 sindicalizados de CC (aprox., a conciliar con DP-ACE-S) |
+| Supervisa a | C-06 (×8), C-08 (×3); a través de ellos 298 sindicalizados de CC (S-12 a S-17; los 34 S-18 dependen de C-09) (DP-ACE-S v0.2) |
 | Plazas (total y por turno) | 1 (sin turno) |
 | Turno | Administrativo + guardia rotativa de superintendentes |
 
@@ -355,6 +360,7 @@ Plataforma de colada: calor radiante, metal líquido, vapor, radiación ionizant
 | Técnica | Ruta de colada continua nivel experto (simulador); defectos y metalografía; planchón para lámina automotriz | 40 h | Academia de Acería |
 | Calidad | Herramientas IATF (APQP, FMEA, SPC, MSA) y 8D | 40 h | Academia de Acería |
 | Desarrollo | Visita técnica a una planta de referencia; mentor de C-06 y C-08 | Anual | Talento |
+| Vigencia | **12 meses:** ninguna. **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -365,7 +371,7 @@ Plataforma de colada: calor radiante, metal líquido, vapor, radiación ionizant
 | Tipo de personal | Confianza — banda A3 |
 | Área / equipo | Toda la Acería en su turno (hornos, LF, ollas, patio, CC1, CC2 y mantenimiento de turno) |
 | Reporta a | C-01 Gerente de Acería (sólida). Recibe lineamientos técnicos de C-02, C-03 y C-10 |
-| Supervisa a | En su turno, con mando operativo: C-05 (×2), C-06 (×2), C-17 (×1), C-12 de turno (×1) y ≈ 110 sindicalizados de la cuadrilla (aprox., a conciliar con DP-ACE-S) |
+| Supervisa a | En su turno, con mando operativo: C-05 (×2), C-06 (×2), C-17 (×1), C-12 de turno (×1) y **159 sindicalizados por turno** (134 de operación + 25 de guardia de mantenimiento; DP-ACE-S v0.2 §2) |
 | Plazas (total y por turno) | 4 (1 por cuadrilla A–D) |
 | Turno | 4x4 de 12 h (día y noche) |
 
@@ -462,6 +468,7 @@ Todo el turno en nave: calor, ruido, metal líquido, cargas suspendidas, gases; 
 | Técnica | Rotación de 4 semanas en el área que no domina (hornos o CC); simulador de EAF y de CC | 160 h OJT | Academia de Acería |
 | Seguridad | Liderazgo en seguridad (32 h); investigación ICAM; simulacros | 40 h | Escuela de Seguridad |
 | Gente | Relaciones laborales y CCT aplicados al turno; NOM-035; manejo de fatiga en rol 12 h | 16 h | L-1 / Escuela de Seguridad |
+| Vigencia | **12 meses:** grúas/izaje (MS-ACE-04, MO-OLL-02). **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -472,7 +479,7 @@ Todo el turno en nave: calor, ruido, metal líquido, cargas suspendidas, gases; 
 | Tipo de personal | Confianza — banda A4 |
 | Área / equipo | Modalidad **EAF**: EAF-1 y EAF-2. Modalidad **LF/ollas**: LF-1, LF-2, preparación de ollas y grúas de colada |
 | Reporta a | C-02 Superintendente de Hornos (sólida); C-04 Jefe de Turno (mando operativo en turno) |
-| Supervisa a | EAF: S-01, S-02, S-03, S-04, S-10. LF/ollas: S-06, S-07, S-08, S-09 (y S-24 de turno asignado a ollas). ≈ 18 (EAF) y ≈ 15 (LF/ollas, incluye 2 S-24) sindicalizados por cuadrilla (aprox., a conciliar con DP-ACE-S) |
+| Supervisa a | EAF: S-01, S-02, S-03, S-04, S-10. LF/ollas: S-06, S-07, S-08, S-09. **31 (EAF) y 21 (LF/ollas) sindicalizados por turno** (DP-ACE-S v0.2 §2.1); los 4 S-24 de guardia de refractarios pertenecen a la guardia de mantenimiento (C-12 de turno) y se coordinan con el C-05 de LF/ollas |
 | Plazas (total y por turno) | 8: 2 por cuadrilla (1 EAF + 1 LF/ollas) |
 | Turno | 4x4 de 12 h |
 
@@ -567,6 +574,7 @@ Nave de hornos: calor radiante, arco, proyecciones, metal líquido, humos, CO, c
 | Técnica | Ruta EAF y horno olla (simulador de EAF, VR de emergencias); refractarios de olla; grúas de colada | 80 h + 120 h OJT | Academia de Acería |
 | Certificación | Evaluador de pasos ★ (TD-P07) de MO-EAF, MO-OLL, MO-LF | 16 h | TD-P07 |
 | Mejora | Lean yellow belt; data literacy (tableros) | 24 h | Escuela Digital |
+| Vigencia | **12 meses:** alturas (MS-ACE-10); espacios confinados (MS-ACE-05); grúas/izaje (MS-ACE-04). **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -577,7 +585,7 @@ Nave de hornos: calor radiante, arco, proyecciones, metal líquido, humos, CO, c
 | Tipo de personal | Confianza — banda A4 |
 | Área / equipo | Modalidad **CC1** (planchón, 1 línea) o **CC2** (palanquilla, 6 líneas): plataforma, púlpito, distribuidores, corte, mesa/lecho de enfriamiento, despacho |
 | Reporta a | C-03 Superintendente de Colada Continua (sólida); C-04 Jefe de Turno (mando operativo en turno) |
-| Supervisa a | S-12, S-13, S-14, S-15, S-16, S-17 de su máquina; coordina a S-18 y S-09 en su plataforma. ≈ 17 (CC1) o ≈ 19 (CC2) sindicalizados por cuadrilla (aprox., a conciliar con DP-ACE-S) |
+| Supervisa a | S-12, S-13, S-14, S-15, S-16, S-17 de su máquina; coordina a S-18 y S-09 en su plataforma. ≈ 28 sindicalizados por turno en cada máquina (22 en máquina + ≈ 6 S-15 del taller de distribuidores compartido; DP-ACE-S v0.2 §2.2) |
 | Plazas (total y por turno) | 8: 2 por cuadrilla (1 CC1 + 1 CC2) |
 | Turno | 4x4 de 12 h |
 
@@ -677,6 +685,7 @@ Plataforma de colada: calor, metal líquido, vapor, radiación (CC2), oxicorte, 
 | Técnica | Ruta de colada continua (simulador de CC); defectos del semiterminado; prevención de breakouts | 80 h + 120 h OJT | Academia de Acería |
 | Certificación | Evaluador de pasos ★ (TD-P07) de MO-CC1 o MO-CC2 | 16 h | TD-P07 |
 | Mejora | Lean yellow belt; data literacy | 24 h | Escuela Digital |
+| Vigencia | **12 meses:** alturas (MS-ACE-10); espacios confinados (MS-ACE-05); grúas/izaje (MS-ACE-04); fuentes radiactivas (MS-ACE-07). **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 ## C-07 — Ingeniero de Proceso EAF / LF
@@ -767,6 +776,7 @@ Ingeniero en Desarrollo → **C-07** → C-07 líder → C-02 (vía técnica) o 
 | Energía | Green Steel & Energy (ISO 50001, hidrógeno, contabilidad de carbono) | 24 h | Escuela Digital y de Green Steel |
 | Mejora | Lean **green belt** (líder: black belt) | 80 h | Lean |
 | Desarrollo | Mentor asignado (C-02); instructor interno SME certificado | Continuo | Talento / Academia |
+| Vigencia | **12 meses:** ninguna. **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -867,6 +877,7 @@ Ingeniero en Desarrollo → **C-08** → C-08 líder → C-03 (vía técnica) o 
 | Calidad | Herramientas IATF (FMEA, SPC, MSA) y 8D | 40 h | Academia de Acería |
 | Datos | Analítica avanzada para datos de proceso | 40 h | Escuela Digital |
 | Mejora | Lean green belt (líder: black belt) | 80 h | Lean |
+| Vigencia | **12 meses:** ninguna. **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -877,7 +888,7 @@ Ingeniero en Desarrollo → **C-08** → C-08 líder → C-03 (vía técnica) o 
 | Tipo de personal | Confianza — banda A3 (líder) / A4 |
 | Área / equipo | Calidad de acero líquido, planchón y palanquilla; laboratorio de Acería |
 | Reporta a | C-01 Gerente de Acería (sólida); Gerencia de Calidad del Complejo (punteada, sistema IATF 16949 y liberación) |
-| Supervisa a | S-11 Muestrero / Analista de Laboratorio (≈ 40) y S-18 Inspector de Calidad de Semiterminado (≈ 40) en línea administrativa; en turno quedan bajo el mando operativo de C-04 (aprox., a conciliar con DP-ACE-S) |
+| Supervisa a | S-11 Muestrero / Analista de Laboratorio (27) y S-18 Inspector de Calidad de Semiterminado (34) en línea administrativa (DP-ACE-S v0.2); en turno quedan bajo el mando operativo de C-04 |
 | Plazas (total y por turno) | 4: 1 líder e IATF, 1 planos (CC1), 1 largos (CC2), 1 laboratorio y reclamos |
 | Turno | Administrativo + guardia de liberación de producto |
 
@@ -953,6 +964,7 @@ Laboratorio y mesas de inspección: calor, muestras calientes, cargas suspendida
 | Técnica | Defectos de planchón y palanquilla; metalografía; requerimientos del cliente automotriz | 40 h | Academia de Acería |
 | Datos | Data literacy y SPC avanzado | 24 h | Escuela Digital |
 | Mejora | Lean green belt | 80 h | Lean |
+| Vigencia | **12 meses:** ninguna. **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -963,7 +975,7 @@ Laboratorio y mesas de inspección: calor, muestras calientes, cargas suspendida
 | Tipo de personal | Confianza — banda A2 |
 | Área / equipo | Mantenimiento mecánico, eléctrico, instrumentación, hidráulico, lubricación y taller de moldes y segmentos de toda la Acería (hornos, LF, ollas, grúas, CC1, CC2) |
 | Reporta a | C-01 Gerente de Acería (sólida); Mantenimiento Central / Confiabilidad del Complejo (punteada, estándares y CMMS) |
-| Supervisa a | C-11 (×5), C-12 (×7), C-13 (×3), C-14 (×2); ≈ 210 sindicalizados de mantenimiento (los ≈ 40 S-24 dependen técnicamente de C-15; aprox., a conciliar con DP-ACE-S) |
+| Supervisa a | C-11 (×5), C-12 (×7), C-13 (×3), C-14 (×2); 251 sindicalizados de mantenimiento (DP-ACE-S v0.2); los 47 S-24 dependen técnicamente de C-15 |
 | Plazas (total y por turno) | 1 (sin turno) |
 | Turno | Administrativo + guardia rotativa de superintendentes |
 
@@ -1044,6 +1056,7 @@ Nave y talleres: energías peligrosas, alta tensión, alturas, cargas suspendida
 | Técnica | Ingeniería de confiabilidad (RCM, FMEA, RCA); planeación y paros | 120 h + 40 h | Academia de Mantenimiento |
 | Digital | Industria 4.0 (IIoT, gemelo digital); ciberseguridad OT básica | 24 h | Escuela Digital |
 | Desarrollo | Mentor de C-11 y C-12; Legado Experto (TD-P10) para técnicos próximos a jubilarse | Continuo | Talento / Academia |
+| Vigencia | **12 meses:** ninguna. **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -1054,7 +1067,7 @@ Nave y talleres: energías peligrosas, alta tensión, alturas, cargas suspendida
 | Tipo de personal | Confianza — banda A4 |
 | Área / equipo | Una de 5 áreas: (1) hornos EAF/LF y ollas; (2) grúas y manejo de materiales; (3) CC1; (4) CC2; (5) taller de moldes y segmentos |
 | Reporta a | C-10 Superintendente de Mantenimiento de Acería |
-| Supervisa a | S-19, S-22, S-23, S-26 de su área (≈ 115 en total) y, en el taller, S-25 (≈ 30) (aprox., a conciliar con DP-ACE-S); contratistas asignados |
+| Supervisa a | S-19, S-22, S-23, S-26 de su área (131 en total) y, en el taller, S-25 (18); S-24 (47) en línea administrativa, con dirección técnica de C-15 (DP-ACE-S v0.2); contratistas asignados |
 | Plazas (total y por turno) | 5 (uno por área) |
 | Turno | Administrativo (L–V) + guardia; cubre en turno los paros programados de su área |
 
@@ -1095,7 +1108,8 @@ Ejecutar con seguridad y calidad el mantenimiento mecánico, hidráulico y de so
 | MM-CC-03 | Agua de molde, secundario y agua de emergencia | Consultado | C |
 | MM-CC-04 | Hidráulica de oscilación, nivel y barra tapón (Cs-137) | Consultado | C |
 | MS-ACE-03 | Prevención de explosiones agua–metal líquido | Consultado | C |
-| MS-ACE-04 | Izaje con grúas; cargas suspendidas | Consultado | C |
+| MS-ACE-04 | Izaje con grúas; cargas suspendidas | Supervisa / hace cumplir la ejecución (S-19, S-22, S-23, S-25 y S-26 en MM-GR-01 y maniobras) | R |
+| MS-ACE-07 | Fuentes radiactivas | Supervisa / hace cumplir la ejecución (S-25 en moldes de CC2 con detector de Cs-137) | R |
 
 ### Responsabilidades de seguridad
 - 🛑 Fuga en panel o bóveda: no autoriza entrar al horno hasta que el arco esté bloqueado, el agua aislada y el horno libre de charcos sobre acero o escoria líquidos (MS-ACE-03).
@@ -1139,6 +1153,7 @@ Energías peligrosas, alturas, espacios confinados, calor residual en equipos, c
 | Técnica | Nivel especialista mecánico (hidráulica, grúas, soldadura NOM-027) | 160 h | Academia de Mantenimiento |
 | Planeación | Planeación y programación; manejo de paros | 40 h | Academia de Mantenimiento |
 | Certificación | Evaluador TD-P07 de procesos MM- | 16 h | TD-P07 |
+| Vigencia | **12 meses:** alturas (MS-ACE-10); espacios confinados (MS-ACE-05); grúas/izaje (MS-ACE-04, MM-GR-01); fuentes radiactivas (MS-ACE-07). **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -1149,7 +1164,7 @@ Energías peligrosas, alturas, espacios confinados, calor residual en equipos, c
 | Tipo de personal | Confianza — banda A4 |
 | Área / equipo | **De área (3):** (1) EAF, LF, transformadores y alta tensión; (2) automatización e instrumentación de CC1/CC2 (incluye nivel de molde y fuente de Cs-137); (3) grúas y distribución eléctrica. **De turno (4):** atención de fallas de toda la Acería en su cuadrilla |
 | Reporta a | C-10 (sólida); los 4 de turno, además, bajo el mando operativo de C-04 |
-| Supervisa a | S-20 y S-21 (≈ 65); los de turno coordinan a toda la cuadrilla de mantenimiento de turno (S-19 a S-23, S-26; ≈ 18 por cuadrilla) (aprox., a conciliar con DP-ACE-S) |
+| Supervisa a | S-20 y S-21 (55); los de turno supervisan la guardia de mantenimiento de su cuadrilla (S-19 a S-24 y S-26: **25 por turno**; DP-ACE-S v0.2 §2.3) |
 | Plazas (total y por turno) | 7: 3 de área + 4 de turno (1 por cuadrilla) |
 | Turno | 3 administrativos con guardia · 4 en 4x4 de 12 h |
 
@@ -1191,7 +1206,7 @@ Mantener confiables los sistemas eléctricos, de control e instrumentación de l
 | MM-EAF-02 | Brazos portaelectrodos, columnas, hidráulica, bóveda/delta | Consultado | C |
 | MM-GR-01 | Grúas de colada: ganchos, frenos, cables, límites | Consultado | C |
 | MS-ACE-03 | Prevención de explosiones agua–metal líquido | Consultado | C |
-| MS-ACE-04 | Izaje con grúas; cargas suspendidas | Consultado | C |
+| MS-ACE-04 | Izaje con grúas; cargas suspendidas | Supervisa / hace cumplir la ejecución (S-20 en MM-GR-01) | R |
 | MS-ACE-06 | Gases: CO, O₂, Ar/N₂, gas natural | Consultado | C |
 
 ### Responsabilidades de seguridad
@@ -1235,6 +1250,7 @@ Alta tensión, arco eléctrico, radiación ionizante (CC2), alturas, calor; los 
 | Técnica | Nivel eléctrico e instrumentación; automatización (PLC, SCADA, redes) | 160 h + 120 h | Academia de Mantenimiento |
 | Seguridad radiológica | Curso para personal ocupacionalmente expuesto y suplente de ESR (CC2) | 40 h | SSO [verificar con SSO] |
 | Digital | Ciberseguridad OT (IEC 62443) | 16 h | Escuela Digital |
+| Vigencia | **12 meses:** alturas (MS-ACE-10); espacios confinados (MS-ACE-05); grúas/izaje (MS-ACE-04); eléctrico (NOM-029, MM-EAF-04); fuentes radiactivas (MS-ACE-07). **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 ## C-13 — Planeador / Programador de Mantenimiento
@@ -1313,6 +1329,7 @@ Oficina (≈ 70%) y recorridos de campo (≈ 30%) para levantar alcance.
 | Técnica | Planeación y programación; manejo de paros | 40 h | Academia de Mantenimiento |
 | Sistemas | CMMS avanzado; data literacy | 32 h | Escuela Digital |
 | Mejora | Lean yellow belt | 16 h | Lean |
+| Vigencia | **12 meses:** ninguna. **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -1391,6 +1408,7 @@ Rutas de campo en equipos en movimiento y energizados; alturas; calor.
 | Técnica | **Ingeniería de confiabilidad** (RCM, FMEA, RCA, vibraciones ISO 18436 cat. I–II, termografía, aceite) | 120 h | Academia de Mantenimiento |
 | Digital | Industria 4.0 (IIoT, gemelo digital); analítica avanzada | 40 h | Escuela Digital |
 | Mejora | Lean green belt | 80 h | Lean |
+| Vigencia | **12 meses:** ninguna. **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -1401,7 +1419,7 @@ Rutas de campo en equipos en movimiento y energizados; alturas; calor.
 | Tipo de personal | Confianza — banda A3 |
 | Área / equipo | Refractarios del EAF (solera, bancos, EBT, gunning), ollas (línea de escoria MgO-C, barril y fondo, válvula deslizante, tapón poroso) y distribuidores |
 | Reporta a | C-02 Superintendente de Hornos (sólida); C-10 (punteada, para la cuadrilla de S-24 y los paros) |
-| Supervisa a | S-24 Refractaristas (≈ 40) y, técnicamente, S-08 Preparadores de Ollas; contratistas de refractario (aprox., a conciliar con DP-ACE-S) |
+| Supervisa a | S-24 Refractaristas (47, DP-ACE-S v0.2) y, técnicamente, S-08 Preparadores de Ollas; contratistas de refractario |
 | Plazas (total y por turno) | 2: 1 EAF · 1 ollas y distribuidores |
 | Turno | Administrativo + guardia |
 
@@ -1479,6 +1497,7 @@ Ollas y hornos calientes, polvo de refractario (sílice cristalina en algunos ma
 | Liderazgo | Módulos de L-1 "Líder de Turno" sobre supervisión y CCT (tiene cuadrilla a cargo) | 32 h | Escuela de Liderazgo |
 | Mejora | Lean green belt (proyecto de vida de olla) | 80 h | Lean |
 | Conocimiento | Legado Experto (TD-P10): transferencia de refractaristas senior | Continuo | Academia |
+| Vigencia | **12 meses:** alturas (MS-ACE-10); espacios confinados (MS-ACE-05). **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -1517,7 +1536,7 @@ Ser el dueño técnico de los estándares de riesgo crítico de la Acería (MS-A
 | MS-ACE-04 | Izaje con grúas; cargas suspendidas | Dueño del proceso | A |
 | MS-ACE-05 | Espacios confinados | Dueño del proceso | A |
 | MS-ACE-06 | Gases: CO, O₂, Ar/N₂, gas natural | Dueño del proceso | A |
-| MS-ACE-07 | Fuentes radiactivas | Dueño del proceso | A |
+| MS-ACE-07 | Fuentes radiactivas | Dueño del proceso, en su función de ESR con licencia de la CNSNS | A |
 | MS-ACE-08 | Estrés térmico, hidratación y EPP | Dueño del proceso | A |
 | MS-ACE-10 | Trabajo en altura | Dueño del proceso | A |
 | MO-EAF-01 | Preparación del horno entre coladas | Consultado | C |
@@ -1547,7 +1566,7 @@ Ser el dueño técnico de los estándares de riesgo crítico de la Acería (MS-A
 
 ### Responsabilidades de seguridad
 - **Autoridad para detener** cualquier trabajo o equipo con un control crítico ausente o dañado 🛑.
-- Encargado de Seguridad Radiológica (titular: líder C-16) para la fuente de Cs-137 de CC2 y los detectores del pórtico de chatarra [Supuesto — verificar requisitos y licencia con CNSNS / SSO].
+- **Encargado de Seguridad Radiológica (ESR)** — función asignada a C-16 por CAT-ACE-001 como dueño de MS-ACE-07, con licencia de la CNSNS: titular, el líder C-16; se recomienda un suplente con licencia. Alcance: fuente de Cs-137 del nivel de molde de CC2 y detectores del pórtico de chatarra; define quién es POE (S-12, S-13, S-14 de CC2, S-21, S-25) y controla dosimetría — verificar requisitos y licencia con CNSNS / SSO.
 - Aprueba, con C-10, cualquier puenteo temporal de enclavamiento.
 
 ### Responsabilidades de calidad
@@ -1571,7 +1590,7 @@ Detectores de gases, dosímetros, monitores de estrés térmico, sistema de gest
 - **Escolaridad:** Ingeniería industrial, química, ambiental o mecánica; especialidad o maestría en SSO deseable.
 - **Experiencia:** ≥ 5 años en seguridad industrial en acería, fundición o industria pesada.
 - **Conocimientos:** NOM-STPS (006, 009, 011, 015, 017, 020, 027, 029, 030, 033, 035), NOM-012-STPS (radiación ionizante), ISO 45001, ICAM, higiene industrial — verificar con Jurídico Laboral / SSO.
-- **Certificaciones:** Auditor ISO 45001; investigador ICAM; protección radiológica (ESR para el líder).
+- **Certificaciones:** Auditor ISO 45001; investigador ICAM; **licencia de ESR ante la CNSNS** (obligatoria para el líder y para el suplente) — verificar con CNSNS / SSO.
 
 ### Ruta de progresión
 **C-16** → C-16 líder → Gerencia de SSO del Complejo.
@@ -1587,6 +1606,7 @@ Detectores de gases, dosímetros, monitores de estrés térmico, sistema de gest
 | Liderazgo | Liderazgo en seguridad (32 h); influencia sin autoridad | 32 h | Escuela de Seguridad / Liderazgo |
 | Sistema | Auditor ISO 45001 | 40 h | Externo |
 | Proceso | OJT de 2 semanas en EAF, LF y CC para entender el proceso | 80 h | Academia de Acería |
+| Vigencia | **12 meses:** alturas (MS-ACE-10); espacios confinados (MS-ACE-05); grúas/izaje (MS-ACE-04); fuentes radiactivas (MS-ACE-07; licencia ESR según CNSNS). **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -1597,7 +1617,7 @@ Detectores de gases, dosímetros, monitores de estrés térmico, sistema de gest
 | Tipo de personal | Confianza — banda A4 |
 | Área / equipo | Patio de chatarra (recepción, pórtico de radiación, clasificación, preparación y carga de canastas), almacén de fundentes (cal, dolomita), carbón de inyección y ferroaleaciones |
 | Reporta a | C-02 Superintendente de Hornos (sólida); C-04 Jefe de Turno (mando operativo en turno) |
-| Supervisa a | S-05 Operadores de Patio de Chatarra (≈ 14 por cuadrilla; ≈ 75 en total, aprox., a conciliar con DP-ACE-S); transportistas y contratistas de preparación de chatarra en su turno |
+| Supervisa a | S-05 Operadores de Patio de Chatarra (16 por turno; 97 plazas en total, DP-ACE-S v0.2); transportistas y contratistas de preparación de chatarra en su turno |
 | Plazas (total y por turno) | 4: 1 por cuadrilla |
 | Turno | 4x4 de 12 h |
 
@@ -1625,6 +1645,7 @@ Entregar a los hornos canastas seguras (sin humedad, recipientes cerrados ni fue
 | MS-ACE-04 | Izaje con grúas; cargas suspendidas | Supervisa / hace cumplir la ejecución | R |
 | MS-ACE-06 | Gases: CO, O₂, Ar/N₂, gas natural | Supervisa / hace cumplir la ejecución | R |
 | MS-ACE-07 | Fuentes radiactivas | Supervisa / hace cumplir la ejecución | R |
+| MS-ACE-10 | Trabajo en altura | Supervisa / hace cumplir la ejecución (S-05 en grúas y manipuladores del patio) | R |
 | MS-ACE-08 | Estrés térmico, hidratación y EPP | Supervisa / hace cumplir la ejecución | R |
 | MS-ACE-09 | Respuesta a emergencias | Supervisa / hace cumplir la ejecución | R |
 | MO-EAF-03 | Alimentación continua de DRI/HBI | Informado | I |
@@ -1670,6 +1691,7 @@ Exterior (sol, lluvia), polvo, ruido, electroimán, oxicorte, tránsito pesado.
 | Técnica | **Ruta Chatarra y materias primas** (clasificación, detección de radiación, calidad y rendimiento; app de reconocimiento por foto) | 40 h | Academia de Acería |
 | Grúas | Grúas y manejo de ollas / electroimán (simulador de grúa) para supervisar | 16 h | Academia de Acería |
 | Certificación | Evaluador TD-P07 | 16 h | TD-P07 |
+| Vigencia | **12 meses:** alturas (MS-ACE-10); grúas/izaje (MS-ACE-04); fuentes radiactivas (MS-ACE-07). **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -1743,13 +1765,13 @@ Exterior (sol, lluvia), polvo, ruido, electroimán, oxicorte, tránsito pesado.
 | MS-ACE-01 Trabajo con metal líquido | AF | S | S | S | S | S | C | C | I | S | S | S |  |  | S | **D** | S |
 | MS-ACE-02 Aislamiento y bloqueo (LOTO) | AF | C | C | S | S | S |  |  |  | C | S | S | C |  | S | **D** | S |
 | MS-ACE-03 Prevención de explosiones agua–metal líquido | AF | C | C | S | S | S | **D** | C |  |  | C | C |  |  | C | **D** | S |
-| MS-ACE-04 Izaje con grúas; cargas suspendidas | AF |  |  | S | S | S |  |  |  | C | C | C |  |  |  | **D** | S |
+| MS-ACE-04 Izaje con grúas; cargas suspendidas | AF |  |  | S | S | S |  |  |  | C | S | S |  |  |  | **D** | S |
 | MS-ACE-05 Espacios confinados | AF |  |  |  | S | S |  |  |  |  | S | S | C |  | S | **D** |  |
 | MS-ACE-06 Gases: CO, O₂, Ar/N₂, gas natural | AF |  |  | S | S | S | C | C |  |  | S | C |  |  |  | **D** | S |
-| MS-ACE-07 Fuentes radiactivas | AF |  | C |  |  | S |  | C |  |  |  | S |  |  |  | **D** | S |
+| MS-ACE-07 Fuentes radiactivas (dueño: C-16 como ESR) | AF |  | C |  |  | S |  | C |  |  | S | S |  |  |  | **D** | S |
 | MS-ACE-08 Estrés térmico, hidratación y EPP | AF |  |  | S | S | S |  |  |  |  | S | S |  |  | S | **D** | S |
 | MS-ACE-09 Respuesta a emergencias | AF | C | C | **D** | S | S | C | C |  | C | S | S |  |  |  | C | S |
-| MS-ACE-10 Trabajo en altura | AF |  |  |  | S | S |  |  |  |  | S | S |  |  | S | **D** |  |
+| MS-ACE-10 Trabajo en altura | AF |  |  |  | S | S |  |  |  |  | S | S |  |  | S | **D** | S |
 
 
 ### 4.6 Carga de procesos por rol (verificación)
@@ -1766,13 +1788,13 @@ Exterior (sol, lluvia), polvo, ruido, electroimán, oxicorte, tránsito pesado.
 | C-08 | 2 | 0 | 0 | MO-CC1-04, MO-CC2-04 |
 | C-09 | 2 | 0 | 0 | MO-CC1-09, MO-CC2-09 |
 | C-10 | 0 | 8 | 1 | — |
-| C-11 | 5 | 0 | 7 | MM-EAF-01, MM-EAF-02, MM-CC-01, MM-CC-02, MM-GR-01 |
-| C-12 | 3 | 0 | 7 | MM-EAF-04, MM-CC-03, MM-CC-04 |
+| C-11 | 5 | 0 | 9 | MM-EAF-01, MM-EAF-02, MM-CC-01, MM-CC-02, MM-GR-01 |
+| C-12 | 3 | 0 | 8 | MM-EAF-04, MM-CC-03, MM-CC-04 |
 | C-13 | 0 | 0 | 0 | — |
 | C-14 | 0 | 0 | 0 | — |
 | C-15 | 3 | 0 | 5 | MO-OLL-01, MM-EAF-03, MM-OLL-01 |
 | C-16 | 9 | 0 | 0 | MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-04, MS-ACE-05, MS-ACE-06, MS-ACE-07, MS-ACE-08, MS-ACE-10 |
-| C-17 | 0 | 0 | 9 | — |
+| C-17 | 0 | 0 | 10 | — |
 
 ---
 
@@ -1782,7 +1804,7 @@ Exterior (sol, lluvia), polvo, ruido, electroimán, oxicorte, tránsito pesado.
 |---|---|
 | experto-operativo-metalurgia | Metas técnicas marcadas [Supuesto] (kWh/t, electrodo, breakouts, secuencia, rendimiento), coherencia con FT-ACE-001 y con los manuales MO-/MM- |
 | experto-seguridad-salud | Responsabilidades de seguridad, autoridad para detener, NOM citadas, ESR para Cs-137 |
-| experto-relaciones-laborales | Supervisores que vienen del escalafón; mando de C-04 sobre sindicalizados; conciliación con DP-ACE-S |
+| experto-relaciones-laborales | Supervisores que vienen del escalafón; mando de C-04 sobre sindicalizados; conciliación con DP-ACE-S — **hecho en v0.2: visto bueno con observaciones** (`REVISION-LABORAL.md`) |
 | experto-liderazgo-cambio | Asignación de L-1 / L-2, sucesión de posiciones críticas |
 | Compensaciones (RH) | Bandas A1–A5 y su equivalencia con la escala corporativa |
 
@@ -1795,10 +1817,11 @@ Exterior (sol, lluvia), polvo, ruido, electroimán, oxicorte, tránsito pesado.
 | 3 | Dueño único de MS-ACE-03 (el catálogo pone C-07 / C-16) | **A.** C-07 dueño técnico, C-16 consultado. **B.** C-16 dueño, C-07 consultado. **C.** Mantener co-dueños | **A**: los límites de agua y humedad son parámetros de proceso; C-16 verifica en campo | Pérdida de visión de seguridad si C-16 no audita | Ninguno | Con la próxima versión de CAT-ACE-001 |
 | 4 | Metas [Supuesto] de breakouts, secuencia promedio, kWh/t y electrodo | **A.** Validar con la línea base de 12 meses antes de fijarlas en el desempeño. **B.** Fijarlas ya como metas del año 1 | **A** | B puede fijar metas inalcanzables o demasiado fáciles | Ninguno | 2026-11-30 |
 
-> Pendiente de confirmar con Jurídico Laboral / SSO: NOM aplicables y figura de Encargado de Seguridad Radiológica.
+> Pendiente de confirmar con Jurídico Laboral / SSO: NOM aplicables, licencia del ESR (C-16) ante la CNSNS y efecto de la reforma de 40 h en el rol 4x4 de los mandos de turno (C-04, C-05, C-06, C-12 de turno, C-17). Ver `REVISION-LABORAL.md`.
 
 ## 7. Control de cambios
 
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Versión inicial: 17 roles de confianza, 60 plazas, matriz rol × proceso de los 49 procesos críticos | gerente-personal-confianza |
+| 0.2 | 2026-09-25 | Revisión laboral y documental: cifras sindicalizadas conciliadas con DP-ACE-S v0.2 (963; 159 por turno); convenciones de mando (art. 9), uso de evaluaciones, vigencias 12/24 meses y escolaridad; C-16 como ESR (CAT-ACE-001); C-11 supervisa MS-ACE-04 y MS-ACE-07, C-12 MS-ACE-04 y C-17 MS-ACE-10 por los ejecutores nuevos del catálogo; fila "Vigencia" en los 17 planes; encabezado con revisores | experto-relaciones-laborales |

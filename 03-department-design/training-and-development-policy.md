@@ -52,7 +52,7 @@ All GASM companies and sites, all employees (unionized and salaried), interns an
 ### 6.3 Evaluation and certification
 - Every course has a learning assessment. The minimum passing score is **80%**, or **100% on the critical steps** of practical assessments.
 - DC-3s are issued only to people who passed, within **10 business days**.
-- Critical-task certifications last **24 months** at most, or less if the regulation or the risk standard requires it. They are suspended after any serious incident involving the holder until the person is re-assessed.
+- Critical-task certifications last **24 months** at most. Work at heights, confined spaces, cranes and rigging, electrical work (NOM-029) and radioactive sources are renewed every **12 months**. They are suspended after any serious incident involving the holder until the person is re-assessed.
 - Workers can prove their competence without taking the course (Art. 153-U) through **Recognition of Prior Learning**.
 
 ### 6.4 Contractors

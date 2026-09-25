@@ -175,10 +175,10 @@ Ver la Figura 1 de MS-ACE-08 (`../img/ms-epp-acería.svg`). En **zona roja**: ca
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | S-02, S-03, S-06, S-07, S-11 | 3 | 8 (CRS-08 metal fundido) | 40 h + 20 muestreos | Pasos 3, 6, 9, 12 | 24 meses (TD-P07) |
-| S-01, S-12 | 4 | 8 | 40 h + 20 vaciados/arranques | Pasos 2, 6, 7, 8, 12 | 24 meses |
+| S-01, S-12 | 4 | 8 | 40 h + 20 vaciados/arranques | Pasos 2, 6, 7, 8, 12 | 24 meses (TD-P07) |
 | S-09 | 4 | 8 + CRS-05 | 80 h + 30 traslados | Pasos 6, 10, 12 | 12 meses (grúa, NOM-006) |
-| S-13, S-14 | 3 | 8 | 40 h + 10 arranques | Pasos 3, 8, 11, 12 | 24 meses |
-| C-04, C-05, C-06 | 4 | 12 | 20 eventos supervisados | Pasos 1, 4, 6, 11 + simulacro | 24 meses |
+| S-13, S-14 | 3 | 8 | 40 h + 10 arranques | Pasos 3, 5, 8, 11, 12 | 24 meses (TD-P07) |
+| C-04, C-05, C-06 | 4 | 12 | 20 eventos supervisados | Pasos 1, 4, 6, 11 + simulacro | 24 meses (TD-P07) |
 | Contratistas y visitantes | 1 | 2 (inducción de Acería, TD-P08) | — | Reconocer zonas y sirena | 12 meses |
 
 **Lista corta de verificación de pasos ★ (evaluador certificado TD-P07):**
@@ -188,6 +188,10 @@ Ver la Figura 1 de MS-ACE-08 (`../img/ms-epp-acería.svg`). En **zona roja**: ca
 4. ¿Trabaja desde la posición protegida con la ruta de escape libre?
 5. ¿Limita la permanencia en roja a ≤ 2 min por intervención?
 6. ¿Reconoce las señales de perforación de olla y reacciona en ≤ 30 s?
+7. ¿El supervisor revisa zonas, refugios R1–R4 y fosa seca al inicio del turno, y prueba sirena, semáforo y CCTV (pasos 1 y 2)?
+8. ¿Cierra todos los accesos con barreras y letrero antes del evento (paso 5)?
+9. ¿El operador de grúa traslada solo por la ruta pintada, a la altura mínima con ≥ 1 m de holgura, y se detiene si alguien cruza (paso 10)?
+10. ¿En el arranque de CC solo están S-12, S-13, S-14 y C-06 en roja, y nadie bajo la máquina hasta la liberación de C-06 (paso 11)?
 
 ## 12. Referencias
 
@@ -202,3 +206,4 @@ Ver la Figura 1 de MS-ACE-08 (`../img/ms-epp-acería.svg`). En **zona roja**: ca
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
+| 0.2 | 2026-09-25 | Revisión cruzada: pasos ★ 1, 2, 5, 10 y 11 agregados a la lista de verificación; distancias de esta tabla adoptadas como criterio único para los manuales MO y MM | experto-seguridad-salud |

@@ -113,10 +113,12 @@ Estructura de cada manual (plantilla de la guía de estilo §3): 1 Objetivo · 2
 | CC agua | CCM de bombas; baterías y selector del diésel | — | Succión/descarga; torre y XV-1 solo con máquina parada | — | — | — |
 | Grúas de colada | Seccionador de rieles + interruptor principal + radio | Thrusters de freno | — | — | Bloque apoyado; grúa vecina bloqueada; resortes de freno | — |
 
-**Prueba de energía cero (siempre):** intento de arranque local y remoto rechazado · detector de tensión probado antes y después · manómetros en 0 bar · gases O₂ 19.5–23.5 %, LEL 0 %, CO < 25 ppm · radiámetro = fondo (CC2).
+**Prueba de energía cero (siempre):** intento de arranque local y remoto rechazado · detector de tensión probado antes y después · manómetros en 0 bar · gases O₂ 19.5–23.5 %, CO < 25 ppm y < 10 % LEL para entrar; 0 % LEL detectable (≤ 1 % de lectura del equipo) para trabajo en caliente; salir a CO 25 ppm o 10 % LEL, evacuar a CO 200 ppm o 20 % LEL (MS-ACE-05/06) · radiámetro < 2 × fondo con el obturador cerrado y el candado del ESR (C-16) (CC2, MS-ACE-07).
+
+**Llave cautiva:** nunca sustituye al LOTO en mantenimiento; todo trabajo de esta serie es intervención en el equipo y exige LOTO completo con candado personal (MS-ACE-02 §6.4).
 
 ## 5. Competencia y certificación (TD-P07)
-- Cada manual lista sus pasos ★ en la sección 11: son la lista de verificación del evaluador de TD-P07 (todos los ★ deben aprobarse; vigencia ≤ 24 meses; reevaluación tras incidente o cambio).
+- Cada manual lista sus pasos ★ en la sección 11: son la lista de verificación del evaluador de TD-P07 (todos los ★ deben aprobarse; vigencia de 12 meses para alturas, espacios confinados, grúas/izaje, eléctrico NOM-029 y fuentes radiactivas, y de 24 meses como máximo para las demás tareas críticas (TD-P07); reevaluación tras incidente o cambio).
 - El sistema de permisos no emite un permiso a quien no tenga la certificación vigente (TD-P07, integración LMS–permisos).
 - Normas por rol: S-20 → **NOM-029** (autorización escrita del patrón para MT); S-23 → **NOM-027** + calificación ASME IX/AWS; S-24, S-08 y personal de reline → **NOM-033**; quien trabaje en grúas, bóveda y torres → **NOM-009**; S-21 POE y ESR → **NOM-012** + licencia CNSNS; S-09/S-04 → **NOM-006**; S-22 → **NOM-020** (acumuladores). Verificar con Jurídico Laboral / SSO.
 

@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-07 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-07 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** al terminar la secuencia el distribuidor se vacía y **las líneas se cierran de los extremos al centro** conforme baja el nivel. La cola de cada palanquilla se saca **despacio**, y **nunca se echa agua dentro del molde** para "sellar" la cola. El agua de molde sigue encendida hasta que el último tubo esté frío.
 
@@ -19,7 +19,7 @@
 | S-12 Operador de Púlpito de Colada | Controla la cola de cada línea (velocidad, oscilación, EMS, rociado) | R |
 | S-14 Ayudante de Colada | Vigila cada molde durante la cola; prepara la inspección de moldes | R |
 | S-16 Operador de Corte y Marcado | Corta y marca las colas | R |
-| ESR | Cierra y bloquea los obturadores para la inspección de moldes | R (radiación) |
+| C-16 (función de ESR) | Cierra y bloquea los obturadores para la inspección de moldes | R (radiación) |
 | S-25 Mecánico de Taller de Moldes | Inspección de tubos y conicidad (MM-CC-01) | C |
 
 ## 3. Descripción del proceso
@@ -132,7 +132,7 @@ Chamarra y polainas aluminizadas, careta con filtro IR, casco con barbiquejo, gu
 | 12 | Retira el distribuidor | Carro a desescoriado; residual a la caja de escoria **seca** | Distribuidor fuera; nadie en la zona | ★ | S-13 |
 | 13 | Retira la olla vacía | S-09 la lleva a la nave de ollas | Torreta libre | | S-09 |
 | 14 | Mantén el agua de molde | ≥ 15 min después de la última cola | Tubos fríos | ★ | S-12 |
-| 15 | Pide al ESR cerrar los obturadores | ESR cierra, bloquea y mide en las 6 líneas (< 2 × fondo, MS-ACE-07) | Registro del ESR | ★ | ESR, S-14 |
+| 15 | Pide al ESR cerrar los obturadores | ESR cierra, bloquea y mide en las 6 líneas (< 2 × fondo, MS-ACE-07) | Registro del ESR | ★ | C-16 (ESR), S-14 |
 | 16 | Aplica LOTO a la máquina | Extractores, oscilador, carro | Candados puestos | ★ | S-14 |
 | 17 | Inspecciona moldes y línea | Rayas, desgaste, restos de acero, boquillas; avisa a S-25 | Hallazgos registrados | 🔎 | S-14, S-25 |
 | 18 | Registra la secuencia | Número de coladas, duración, causa del fin, cierres de línea | Hoja de secuencia completa | | S-12, C-06 |
@@ -141,11 +141,11 @@ Chamarra y polainas aluminizadas, careta con filtro IR, casco con barbiquejo, gu
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
 | Escoria en el distribuidor antes de cerrar las líneas centrales | Cierre de olla tarde | Cierra de inmediato todas las líneas restantes; marca colas | C-06, C-09 |
-| Breakout de cola | Velocidad de cola alta | 🛑 Detén la extracción de esa línea; mantén el agua de molde y la secundaria; evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09); el ESR inspecciona el contenedor de Cs-137 | C-06, C-04, ESR |
+| Breakout de cola | Velocidad de cola alta | 🛑 Detén la extracción de esa línea; mantén el agua de molde y la secundaria; evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09); el ESR inspecciona el contenedor de Cs-137 | C-06, C-04, C-16 (ESR) |
 | La placa ciega no cierra | Placa fría o mecanismo dañado | Tapón con varilla (MO-CC2-06) | C-06 |
 | La cola se atora en los enderezadores | Cola fría, deformada | Detén; LOTO; mantenimiento la libera | C-06, C-11 |
 | Fin anticipado por emergencia (falla de agua, torreta) | Ver MO-CC2-04 y MO-CC2-05 | Cierra la olla y las 6 líneas; sigue la parte B solo si es seguro | C-04, C-06 |
-| Obturador que no cierra al final | Portafuente dañado por salpicadura | 🛑 Nadie en el molde; ESR atiende | ESR, C-16 |
+| Obturador que no cierra al final | Portafuente dañado por salpicadura | 🛑 Nadie en el molde; ESR atiende | C-16 (ESR) |
 
 ## 10. Registros
 - Hoja de secuencia CC2: coladas, toneladas, duración, causa del fin, cierres de línea, buzas usadas.
@@ -178,3 +178,4 @@ Chamarra y polainas aluminizadas, careta con filtro IR, casco con barbiquejo, gu
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: ESR citado como C-16 en roles, columna Rol y avisos. | experto-operativo-metalurgia |

@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-07 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-07 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores de referencia de FT-ACE-001 §4. Nivel de cierre del distribuidor, tiempos de "tapado" de la cola, velocidad de salida de cola y apagado de zonas: **[Validar con OEM / Ingeniería de Proceso]**.
 
@@ -63,7 +63,8 @@ flowchart TD
 |---|---|---|---|---|---|---|
 | Peso residual al cerrar la última olla | t | 3–4 | 2–5 | Escoria en el chorro | Cierra de inmediato | Celdas de torreta / detector |
 | Velocidad a 800 mm del distribuidor | m/min | 0.9 | 0.8–1.0 | — | — | HMI |
-| Velocidad a 600 mm del distribuidor | m/min | 0.5 | 0.4–0.6 | — | — | HMI |
+| Velocidad a 700 mm del distribuidor | m/min | 0.6 | 0.5–0.7 | — | — | HMI |
+| Velocidad a 600 mm del distribuidor | m/min | 0.4 | 0.4–0.5 | — | — | HMI |
 | **Nivel del distribuidor para cerrar el tapón** | mm | 400 (≈ 14 t) | 400–450 | < 400 mm | 🛑 Cierra de inmediato (arrastre de escoria) | Pesaje / nivel |
 | Nivel del molde al cerrar el tapón | mm | 0 | ± 5 | — | — | Sensor |
 | Tiempo de tapado de cola (línea detenida) | min | 4 | 3–5 [Validar con OEM / Ingeniería de Proceso] | > 8 | Riesgo de pegado; C-06 evalúa | Cronómetro |
@@ -128,7 +129,7 @@ flowchart TD
 | 1 | Anuncia la última olla | Por radio a púlpito, plataforma, corte y grúa; ajusta programa de corte | Todos enterados | | C-06 |
 | 2 | Cierra la última olla | Al primer signo de escoria o ≤ 4 t residuales; retira el tubo protector | Olla cerrada | | S-13 |
 | 3 | Retira la olla | Giro de torreta y S-09 la lleva a escorial; nadie bajo la carga | Olla fuera | ★ | S-13, S-09 |
-| 4 | Drena el distribuidor | Baja velocidad: 800 mm → 0.9 m/min; 600 mm → 0.5 m/min | Nivel del molde ± 3 mm | | S-12 |
+| 4 | Drena el distribuidor | Baja velocidad: 800 mm → 0.9; 700 mm → 0.6; 600 mm → 0.4 m/min (misma tabla que MO-CC1-05 y MO-CC1-06) | Nivel del molde ± 3 mm | | S-12 |
 | 5 | Mide la temperatura final | A ≈ 600 mm del distribuidor | SH ≥ 15 °C | 🔎 | S-13 |
 | 6 | Cierra el tapón | A **400 mm** del distribuidor (no menos) | Tapón cerrado sin fuga | ★ | S-13 |
 | 7 | Detén la línea | Velocidad 0; mantén agua de molde y oscilación; activa modo "cola" | Detenida | | S-12 |
@@ -189,3 +190,4 @@ flowchart TD
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: velocidades de drenado del distribuidor alineadas con la tabla nivel–velocidad de MO-CC1-05/06 (700 mm → 0.6; 600 mm → 0.4 m/min). | experto-operativo-metalurgia |

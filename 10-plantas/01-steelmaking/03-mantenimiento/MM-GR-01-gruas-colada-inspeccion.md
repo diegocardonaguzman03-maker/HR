@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-GR-01 | 0.1 | Borrador para validación | Acería · nave de ollas | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-GR-01 | 0.2 | Borrador para validación | Acería · nave de ollas | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §6 (**2 grúas de colada de 250/63 t con doble sistema de freno y límites redundantes**). Criterios de rechazo tomados de NOM-006-STPS, ASME B30.2 / B30.10, ISO 4309 y la norma del fabricante; **prevalece el más estricto**. Valores específicos: **[Validar con OEM / Ingeniería de Mantenimiento]**. **Una olla de 150 t de acero líquido suspendida es el riesgo de mayor severidad de la Acería.**
 
@@ -174,14 +174,15 @@ Checklist diario del operador · inspección frecuente semanal · mediciones de 
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-19 Mecánico (grúas) | 3 | 24 (criterios de rechazo de gancho/cable, frenos, NOM-006) | 40 h / 4 inspecciones semanales + 1 anual | Pasos 2–8, 10, 12 | 24 meses |
-| S-20 Electricista (grúas) | 3 | NOM-029 + 16 (límites, variadores, frenos) | 4 inspecciones | Pasos 3, 4, 9, 11, 12 | 24 meses |
-| S-09 Operador de Grúa de Colada | 3 | NOM-006 (operación) + checklist pre-uso | Evaluación práctica | Checklist diario, pasos 2, 11–13 | 24 meses |
-| Todos los que suben a la grúa | 2 | NOM-009 (8) | — | Paso 5 | 12–24 meses |
+| S-19 Mecánico (grúas) | 3 | 24 (criterios de rechazo de gancho/cable, frenos, NOM-006) | 40 h / 4 inspecciones semanales + 1 anual | Pasos 2–8, 10, 12 | 12 meses (grúas/izaje y alturas) |
+| S-20 Electricista (grúas) | 3 | NOM-029 + 16 (límites, variadores, frenos) | 4 inspecciones | Pasos 3, 4, 9, 11, 12 | 12 meses (eléctrico NOM-029, grúas y alturas) |
+| S-09 Operador de Grúa de Colada | 3 | NOM-006 (operación) + checklist pre-uso | Evaluación práctica | Checklist diario, pasos 2, 11–13 | 12 meses (grúas/izaje) |
+| S-26 Lubricador | 2 | 8 (lubricación de cables, reductores y ruedas; LOTO; NOM-009) | 4 rutas de lubricación en la grúa | Pasos 3–5 (candado personal, energía cero, siempre anclado) y 10 | 12 meses (alturas) |
+| Todos los que suben a la grúa | 2 | NOM-009 (8) | — | Paso 5 | 12 meses (alturas) |
 | Inspector END | Nivel II ISO 9712 / ASNT | Externo | — | Reporte | Según certificación |
 
 **Normas:** NOM-006-STPS (manejo y almacenamiento de materiales; grúas), NOM-009-STPS (altura), NOM-004-STPS, NOM-029-STPS, NOM-027-STPS (soldadura en estructura), NOM-015-STPS, NOM-017-STPS; referencias ASME B30.2, B30.10, B30.20, ISO 4309, CMAA 70. Verificar con Jurídico Laboral / SSO.
-**Verificación ★:** ¿bloque apoyado y grúa vecina bloqueada? · ¿midió Ø de cable en 3 puntos y apertura del gancho contra la medida de origen? · ¿probó cada freno por separado? · ¿probó ambos límites? · ¿siempre anclado en altura?
+**Verificación ★:** ¿bloque apoyado y grúa vecina bloqueada (pasos 2, 3)? · ¿probó energía cero en colectores con detector (paso 4)? · ¿siempre anclado en altura (paso 5)? · ¿midió Ø de cable en 3 puntos y apertura del gancho contra la medida de origen (pasos 6, 7)? · ¿inspeccionó balatas, entrehierro y thrusters (paso 8)? · ¿retiró candados con personal fuera de la grúa (paso 10)? · ¿probó ambos límites, con el puenteo del 1.º solo bajo control de C-11 (paso 11)? · ¿probó cada freno por separado sin nadie bajo la carga (paso 12)? · ¿liberación firmada y tarjeta verde en cabina (paso 14)?
 
 ## 12. Referencias
 FT-ACE-001 §6 · MO-OLL-02 · MM-OLL-01 (muñones) · MS-ACE-01, -04, -10 · Manual OEM de las grúas de colada [por referenciar] · Expediente NOM-006 por grúa [por referenciar].
@@ -190,3 +191,4 @@ FT-ACE-001 §6 · MO-OLL-02 · MM-OLL-01 (muñones) · MS-ACE-01, -04, -10 · Ma
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
+| 0.2 | 2026-09-25 | Revisión cruzada de seguridad: S-26 agregado a la sección 11 (catálogo); vigencia de 12 meses para grúas, eléctrico y alturas; lista ★ completa | experto-seguridad-salud |

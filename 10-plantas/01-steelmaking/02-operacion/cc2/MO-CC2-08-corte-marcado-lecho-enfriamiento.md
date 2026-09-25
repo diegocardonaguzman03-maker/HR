@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-08 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-08 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** cada palanquilla de 12 m pesa **≈ 2.4 t** y sale a **más de 800 °C**. Córtala **a la medida en caliente** (el acero caliente mide más que frío), márcala con **colada, línea, secuencia y consecutivo**, y nunca la mezcles con otra colada. Si la marca no se lee, **la palanquilla pierde su identidad** y se retiene.
 
@@ -20,7 +20,7 @@
 | S-12 Operador de Púlpito de Colada | Vigila el rastreo (colada por línea) y las alarmas de corte | C |
 | S-18 Inspector de Calidad | Toma muestras e inspecciona (MO-CC2-09) | C |
 | C-09 Metalurgista de Producto | Define la disposición de palanquillas retenidas | I |
-| Operador de grúa de producto (25 t) — sin código propio en CAT-ACE-001 [Validar] | Manejo de palanquilla con electroimán o tenaza | R (izaje) |
+| Operador de grúa de producto (25 t con electroimán) — sin código en CAT-ACE-001 (propuesta S-27; hoy lo cubre S-17) | Manejo de palanquilla con electroimán o tenaza | R (izaje) |
 
 ## 3. Descripción del proceso
 Después de los extractores-enderezadores, cada línea tiene un **oxicorte automático** (oxígeno + gas natural) que se sujeta a la palanquilla y viaja con ella mientras corta. La longitud se mide con un **encoder o rodillo de medición**. Como el acero caliente está dilatado, el punto de corte en caliente es **≈ 1.2% mayor** que la longitud en frío [Validar]: para 12,000 mm en frío se corta a ≈ 12,150 mm en caliente.
@@ -169,3 +169,4 @@ Casco, lentes, careta para el área de corte, ropa retardante a la flama, guante
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: rol del operador de grúa de producto referido al pendiente S-27 del catálogo. | experto-operativo-metalurgia |

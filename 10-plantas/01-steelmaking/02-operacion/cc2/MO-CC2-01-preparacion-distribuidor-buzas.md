@@ -2,12 +2,12 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-01 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-01 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** en la CC2 el acero cae del distribuidor al molde en **chorro abierto** y lo que controla el flujo es el **diámetro de la buza calibrada**. Una buza equivocada, mal asentada o fría echa a perder la línea desde el arranque. Un revestimiento húmedo puede causar una **explosión** al recibir el acero.
 
 ## 1. Objetivo y alcance
-**Objetivo:** entregar a la plataforma de colada un distribuidor de 30 t **seco, íntegro, precalentado a 1,000–1,100 °C** y con **6 buzas calibradas de ZrO₂ del diámetro de la orden de colada (160 × 160 mm: Ø 20–24 mm, nominal 22 mm; 130 × 130 mm: Ø 15–17 mm)**, bien asentadas, cerradas con placa ciega y alineadas con los 6 moldes.
+**Objetivo:** entregar a la plataforma de colada un distribuidor de 30 t **seco, íntegro, precalentado a 1,100 ± 50 °C (cara caliente; no se cuela con < 1,000 °C)** y con **6 buzas calibradas de ZrO₂ del diámetro de la orden de colada (160 × 160 mm: Ø 20–24 mm, nominal 22 mm; 130 × 130 mm: Ø 15–17 mm)**, bien asentadas, cerradas con placa ciega y alineadas con los 6 moldes.
 
 **Alcance:** desde que el distribuidor sale revestido y secado del taller de distribuidores hasta que queda en la posición de colada, listo para abrir la olla (entrada a MO-CC2-03). No incluye el revestimiento en el taller (lo hace S-24 con C-15) ni el cambio de buza en colada (MO-CC2-06).
 
@@ -20,7 +20,7 @@
 | S-12 Operador de Púlpito de Colada | Confirma en la HMI la tara de las celdas de carga, el diámetro de buza cargado por línea y la hora de apertura prevista | C |
 | C-15 Especialista de Refractarios | Dictamina daños del revestimiento y excesos de tiempo de precalentamiento | C |
 | C-08 Ingeniero de Proceso de Colada Continua | Define el diámetro de buza por grado y velocidad | C |
-| Operador de grúa de CC y producto (50 t) — sin código en CAT-ACE-001 [Validar] | Traslada el distribuidor con señalero | R (izaje) |
+| Operador de grúa de CC (50 t) — sin código en CAT-ACE-001 (propuesta S-27; hoy lo cubre S-15) | Traslada el distribuidor con señalero | R (izaje) |
 | C-16 Especialista de Seguridad e Higiene | Verifica los controles de gas natural, izaje y polvo | I |
 
 ## 3. Descripción del proceso
@@ -39,7 +39,7 @@ flowchart TD
     D -- No --> C
     D -- Sí --> E["Placas ciegas en L1–L6<br/>y buzas de repuesto al horno"]
     E --> F["Izaje a estación de precalentamiento"]
-    F --> G["Purga y encendido de quemadores<br/>curva hasta 1,000–1,100 °C"]
+    F --> G["Purga y encendido de quemadores<br/>curva hasta 1,050–1,150 °C"]
     G --> H{"¿≥ 2 h a temperatura<br/>y ≤ 6 h total?"}
     H -- "Exceso de tiempo" --> H1["Consultar a C-15"]
     H -- Sí --> I["Carro a posición de colada<br/>centrado ± 3 mm"]
@@ -72,14 +72,14 @@ flowchart TD
 |---|---|---|---|---|---|---|
 | Diámetro de buza | mm | Según orden de colada (22 en 160 × 160 mm a 3.0 m/min) | 160 × 160: 20–24; 130 × 130: 15–17 | Diferencia > ± 0.2 mm contra el nominal | Cambia la buza; no la instales | Calibrador pasa/no pasa |
 | Espesor del revestimiento de trabajo | mm | 30 | 25–40 [Validar] | < 20 mm en cualquier punto | Rechaza el distribuidor; avisa a C-15 | Varilla de medición, 6 puntos |
-| Temperatura de la cara caliente | °C | 1,050 | 1,000–1,100 | < 950 °C a la hora de colar | Retrasa la apertura y avisa a C-06 | Termopar / pirómetro, cada 30 min |
+| Temperatura de la cara caliente | °C | 1,100 | 1,050–1,150 | < 1,000 °C a la hora de colar o > 1,200 °C | < 1,000 °C: retrasa la apertura y avisa a C-06; > 1,200 °C: baja el fuego (daña el refractario). Mismo criterio que MO-CC1-01 | Termopar / pirómetro, cada 30 min |
 | Tiempo a temperatura | h | 2.5 | ≥ 2 [Validar] | Total de precalentamiento > 6 h [Validar] | Consulta a C-15 antes de usarlo | Registro de precalentamiento |
 | Temperatura de la buza | °C | ≥ 900 | 900–1,100 [Validar OEM] | < 850 °C | Prolonga el precalentamiento | Pirómetro por abajo de la buza |
 | Tiempo sin fuego (quitar quemadores → abrir olla) | min | ≤ 5 | 0–5 [Validar] | > 10 min | Vuelve a precalentar 15 min mínimo | Reloj del púlpito |
 | Alineación buza–molde (centro del chorro) | mm | 0 | ± 3 [Validar OEM] | > ± 3 mm | Corrige el centrado del carro | Plomada o láser de alineación |
 | Tara de celdas de carga | t | 0.0 | ± 0.2 | > ± 0.5 t | Llama a S-21 Instrumentista | HMI del púlpito |
 
-**Tabla de diámetro de buza contra sección y velocidad [Validar con OEM]** (FT-ACE-001 v0.2 §5; caudal ≈ 0.9·√(2·g·h)·área·ρ, nivel del distribuidor h = 0.8 m; entre paréntesis, la velocidad con 700–850 mm):
+**Tabla de diámetro de buza contra sección y velocidad [Validar con OEM]** (FT-ACE-001 v0.2–v0.3 §5; caudal ≈ 0.9·√(2·g·h)·área·ρ, nivel del distribuidor h = 0.8 m; entre paréntesis, la velocidad con 700–850 mm):
 
 | Sección | Ø buza (mm) | Caudal por línea (t/min, h = 0.8 m) | Velocidad resultante (m/min) |
 |---|---|---|---|
@@ -118,7 +118,7 @@ Casco con barbiquejo, lentes de seguridad y careta con filtro IR, chamarra y pol
 |---|---|---|---|---|
 | Diámetro de buza por línea | Nominal ± 0.2 mm | Calibrador, 100% de las buzas | Hoja de preparación del distribuidor | Velocidad fuera de rango, nivel de molde inestable, romboidad |
 | Alineación del chorro | ± 3 mm del centro del molde | Plomada o láser, 6 líneas | Hoja de preparación | Piel desigual, romboidad, breakout |
-| Temperatura del distribuidor | 1,000–1,100 °C | Cada 30 min | Registro de precalentamiento | Buza congelada, caída de sobrecalentamiento |
+| Temperatura del distribuidor | 1,100 ± 50 °C (≥ 1,000 °C al colar) | Cada 30 min | Registro de precalentamiento | Buza congelada, caída de sobrecalentamiento |
 | Limpieza del revestimiento | Sin escoria ni restos sueltos | Visual, 100% | Hoja de preparación | Inclusiones de escoria y de refractario |
 
 ## 8. Procedimiento paso a paso
@@ -135,7 +135,7 @@ Casco con barbiquejo, lentes de seguridad y careta con filtro IR, chamarra y pol
 | 9 | Carga el horno de buzas de repuesto | Mínimo 6 buzas del diámetro de la orden, más 2 placas ciegas | Horno ≥ 900 °C [Validar] | | S-15 |
 | 10 | Iza el distribuidor a la estación de precalentamiento | Con señalero; nadie bajo la carga; asienta en los apoyos | Asentado y nivelado | ★ | Operador de grúa de CC, S-15 |
 | 11 | Enciende los quemadores | Purga completa, prueba de flama, encendido en fuego bajo | Flama estable; detector de gas sin alarma | ★ | S-15 |
-| 12 | Sigue la curva de precalentamiento | Fuego bajo 30 min [Validar], luego alto hasta 1,000–1,100 °C; registra cada 30 min | ≥ 2 h a temperatura; total ≤ 6 h | | S-15 |
+| 12 | Sigue la curva de precalentamiento | Fuego bajo 30 min [Validar], luego alto hasta 1,050–1,150 °C; registra cada 30 min | ≥ 2 h a temperatura; total ≤ 6 h | | S-15 |
 | 13 | Mide la temperatura de las buzas | Pirómetro por abajo de cada buza | ≥ 900 °C | 🔎 | S-15 |
 | 14 | Verifica el carro del distribuidor | Traslación, elevación y tara de celdas de carga | Tara ± 0.2 t; sin alarmas | | S-13, S-12 |
 | 15 | Traslada a la posición de colada | Retira quemadores ≤ 5 min antes de abrir la olla; mueve el carro | Tiempo sin fuego ≤ 5 min | | S-13 |
@@ -185,3 +185,4 @@ Casco con barbiquejo, lentes de seguridad y careta con filtro IR, chamarra y pol
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: precalentamiento del distribuidor unificado con CC1 (1,100 ± 50 °C; < 1,000 °C no se cuela, igual que el paso ★ 1 de MO-CC2-03) y rol del operador de grúa referido al pendiente S-27. | experto-operativo-metalurgia |

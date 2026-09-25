@@ -1,12 +1,12 @@
 # Descripciones de Puesto — Personal Sindicalizado de la Acería (Steelmaking)
 
-| Código | Versión | Estado | Área | Elaboró | Revisión laboral | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
-|---|---|---|---|---|---|---|---|---|---|---|
-| DP-ACE-S | 0.1 | **Borrador para validación** | Acería (Steelmaking), Complejo Acería Norte | gerente-personal-sindicalizado | experto-relaciones-laborales | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Director de C&D + Gerente de Acería C-01; revisión con la Comisión Mixta y el sindicato) | 2026-09-25 | 2027-09-25 |
+| Código | Versión | Estado | Área | Elaboró | Revisión laboral | Revisión técnica | Revisión de seguridad | Revisión documental | Aprobó | Fecha | Próxima revisión |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| DP-ACE-S | 0.2 | **Borrador para validación** | Acería (Steelmaking), Complejo Acería Norte | gerente-personal-sindicalizado | experto-relaciones-laborales — visto bueno con observaciones, 2026-09-25 (ver `REVISION-LABORAL.md`) | experto-operativo-metalurgia — pendiente | experto-seguridad-salud — pendiente | Criterio de experto-documentacion-mejora aplicado en la revisión laboral; visto bueno formal pendiente | **Pendiente — Director de C&D** (único que aprueba; antes: validación operativa con C-01 y presentación a la CMCAP y al sindicato) | 2026-09-25 | 2027-09-25 |
 
-> **Mensaje clave para el Director.** La Acería necesita **963 plazas sindicalizadas** en **26 roles** (S-01 a S-26) para operar 24/7 en rol 4x4 de 12 h: **380** en Hornos EAF + LF + ollas + patio, **332** en Colada Continua (CC1 + CC2) y **251** en Mantenimiento. Las cifras cuadran con los supuestos de la ficha técnica FT-ACE-001 (≈ 380 / ≈ 330 / ≈ 250). Se proponen **5 líneas de escalafón de operación y 1 de mantenimiento con 8 niveles (N-1 a N-8)**, en las que **cada ascenso exige la certificación interna TD-P07 de los procesos críticos del puesto destino y sus DC-3**. Antes de usar este documento hay que validar con el sindicato, con la CMCAP y con Jurídico Laboral la vinculación "certificación ↔ ascenso" y el tabulador por niveles (ver §6 y la sección de decisión).
+> **Mensaje clave para el Director.** La Acería necesita **963 plazas sindicalizadas** en **26 roles** (S-01 a S-26) para operar 24/7 en rol 4x4 de 12 h: **380** en Hornos EAF + LF + ollas + patio, **332** en Colada Continua (CC1 + CC2) y **251** en Mantenimiento. Las cifras cuadran con los supuestos de la ficha técnica FT-ACE-001 (≈ 380 / ≈ 330 / ≈ 250). Se proponen **5 líneas de escalafón de operación y 1 de mantenimiento con 8 niveles (N-1 a N-8)**, en las que la **certificación interna TD-P07 de los procesos críticos del puesto destino y sus DC-3 acreditan la aptitud** para el ascenso; entre los trabajadores aptos asciende el de mayor antigüedad (LFT art. 159) y cualquiera puede acreditar la aptitud por examen de suficiencia sin cursar la ruta completa (art. 153-U). Antes de usar este documento hay que validar con el sindicato, con la CMCAP y con Jurídico Laboral la vinculación "certificación ↔ ascenso" y el tabulador por niveles (ver §6 y la sección de decisión).
 
-**Fuentes:** `00-ficha-tecnica-acería.md` (FT-ACE-001, datos técnicos y supuestos de plantilla), `00-catalogo-procesos-y-roles.md` (CAT-ACE-001, códigos de roles y procesos), `00-guia-de-estilo-y-plantillas.md` (plantilla §4 y estilo SVG), `04-processes/process-manual.md` (TD-P07 certificación, TD-P08 inducción, TD-P09 DC-3), `03-department-design/training-and-development-policy.md` (vigencia de 24 meses; "sin certificación no hay tarea crítica"). Los valores técnicos son **de referencia** y deben validarse con OEM / Ingeniería de Proceso antes de usarse en planta. Los niveles de escalafón, plazas, antigüedades y horas de formación son **[Supuesto]** de este borrador. **No se incluyen salarios**: el tabulador en pesos lo define el CCT.
+**Fuentes:** `00-ficha-tecnica-acería.md` (FT-ACE-001, datos técnicos y supuestos de plantilla), `00-catalogo-procesos-y-roles.md` (CAT-ACE-001, códigos de roles y procesos), `00-guia-de-estilo-y-plantillas.md` (plantilla §4 y estilo SVG), `04-processes/process-manual.md` (TD-P07 certificación, TD-P08 inducción, TD-P09 DC-3), `03-department-design/training-and-development-policy.md` ("sin certificación no hay tarea crítica"; vigencia general de 24 meses, ajustada por el **criterio unificado de seguridad**: 12 meses para alturas, espacios confinados, grúas/izaje, eléctrico y fuentes radiactivas, ver §4). Los valores técnicos son **de referencia** y deben validarse con OEM / Ingeniería de Proceso antes de usarse en planta. Los niveles de escalafón, plazas, antigüedades y horas de formación son **[Supuesto]** de este borrador. **No se incluyen salarios**: el tabulador en pesos lo define el CCT.
 
 **Alineación:** scorecard `08-kpis/kpi-scorecard.md` (100% de certificados en tareas críticas, tiempo a competencia de 9 a 6 meses, disponibilidad del EAF de 87%) y procesos TD-P02 (DNC por categoría), TD-P05 (OJT), TD-P07 (certificación) y TD-P09 (DC-3/DC-4).
 
@@ -165,18 +165,26 @@ Tabla de "quién está en cada puesto" en **un turno** (una cuadrilla), más las
 **Reglas de cobertura dentro del turno [Supuesto, validar con C-04 y el CCT]:**
 - **Rotación por calor (NOM-015):** en el piso del EAF, las grúas de colada y la plataforma de colada se rota cada 1–2 h entre puestos de la misma categoría o con el relevo del turno. Por eso hay 4 operadores S-09 para 2 grúas de colada y 3 S-04 para 2 grúas de carga.
 - **Consola de materiales del EAF:** cada púlpito tiene 2 S-01 (titular y operador de consola de DRI y adiciones) que se alternan cada 4 h; ambos deben estar certificados en MO-EAF-03 y MO-EAF-04.
-- **Suplencias:** una ausencia en una categoría alta se cubre, en ese turno, con el trabajador de la categoría inmediata inferior **que ya tenga la certificación TD-P07 del puesto** (movimiento provisional según el CCT). Si nadie certificado está disponible, el puesto se cubre con el relevo y **nunca** con personal no certificado.
+- **Suplencias:** una ausencia en una categoría alta se cubre, en ese turno, con el trabajador de la categoría inmediata inferior **que ya tenga la certificación TD-P07 vigente del puesto**, respetando el orden de antigüedad entre los certificados del turno (movimiento provisional según el CCT, con el pago de la categoría superior que el CCT prevea). Si nadie certificado está disponible, el puesto se cubre con el relevo y **nunca** con personal no certificado.
 
 ---
 
 ## 3. Escaleras de escalafón
 
 ### 3.1 Criterios
-- **Nivel (N-1 a N-8)** = nivel del tabulador del CCT (la paga se define allí; aquí no se ponen pesos). **Línea de escalafón** = secuencia de categorías por la que se asciende. En la LFT (art. 159) las vacantes definitivas, las provisionales de más de 30 días y los puestos nuevos se cubren con el trabajador de la **categoría inmediata inferior de la misma línea**, y cuentan la capacitación, la antigüedad y la aptitud demostrada — **verificar con Jurídico Laboral y con el texto del CCT**.
+- **Nivel (N-1 a N-8)** = nivel del tabulador del CCT (la paga se define allí; aquí no se ponen pesos). **Línea de escalafón** = secuencia de categorías por la que se asciende.
+- **Regla legal del ascenso (LFT arts. 154–159)** — **verificar con Jurídico Laboral y con el texto del CCT**, que puede mejorarla:
+  - Las vacantes definitivas, las provisionales de más de 30 días y los puestos de nueva creación se cubren **escalafonariamente** con el trabajador de la **categoría inmediata inferior** (art. 159).
+  - Si la empresa **cumplió su obligación de capacitar**, asciende quien haya demostrado ser **apto** y tenga **mayor antigüedad**; en igualdad, el que tenga a su cargo una familia y, si persiste, el que acredite mayor aptitud previo examen. Si la empresa **no dio la capacitación**, asciende el de **mayor antigüedad**.
+  - Por eso, la certificación TD-P07 **define la aptitud, no el orden**: entre los aptos manda la antigüedad. Y solo puede exigirse si C&D ofreció a tiempo, **en jornada y sin costo**, la ruta de formación a **todos** los candidatos de la categoría inferior (registro en el plan DC-2 y en la CMCAP).
+  - El cuadro general de antigüedades lo forma la comisión mixta y el trabajador puede objetarlo (art. 158). La lista de certificados vigentes por categoría se comparte con la CMCAP y con el sindicato.
+- **Reconocimiento de lo aprendido (art. 153-U):** el trabajador que ya tenga los conocimientos puede **acreditarlos documentalmente o presentar el examen de suficiencia** sin cursar la ruta ni el OJT completos. En la Acería, el examen de suficiencia es la **evaluación TD-P07 de los pasos ★ del puesto destino** (teoría + práctica en campo o simulador), aplicada por la entidad instructora con registro ante la STPS; si aprueba, recibe la constancia (DC-3) y cuenta como apto. Aplica a todos los ascensos de §3.2 y §3.3, no solo a los que dicen "examen de suficiencia".
+- **Si no aprueba:** conserva su categoría y su lugar en el cuadro de antigüedades, recibe retroalimentación y una ruta de refuerzo, y puede reevaluarse (propuesta: 2 oportunidades en ≤ 60 días) **[Supuesto, negociable con la CMCAP]**. Una evaluación no aprobada **nunca** es causa de sanción.
 - **N-1 y N-2 son niveles de ingreso** (ayudante general / eventual / aprendiz dual) que administra el CCT y **no son roles del catálogo**. Todas las líneas empiezan en N-3.
 - **Propuesta central:** la **aptitud** se demuestra con la **certificación interna TD-P07** de los procesos críticos del puesto destino (todos los pasos ★ aprobados) y con las **DC-3** de las NOM que aplican. Un trabajador puede prepararse y certificarse antes de que exista la vacante (se crea una "reserva certificada" para suplencias).
-- **Antigüedades mínimas [Supuesto]:** sirven para planear la formación; la regla que manda es la del CCT.
-- Todas las certificaciones de tareas críticas vencen a los **24 meses** (política de C&D §6.3) o antes si la norma lo exige, y se suspenden tras un incidente grave del titular.
+- **Antigüedades mínimas [Supuesto]:** sirven para planear la formación; **no bloquean** el derecho del trabajador más antiguo que acredite la aptitud. La regla que manda es la del CCT.
+- **Vigencia de las certificaciones (criterio unificado de seguridad):** **12 meses** para alturas (MS-ACE-10, NOM-009), espacios confinados (MS-ACE-05, NOM-033), grúas e izaje (MS-ACE-04, MO-OLL-02, MM-GR-01, NOM-006), trabajo eléctrico (MM-EAF-04, NOM-029) y fuentes radiactivas (MS-ACE-07, NOM-012); **24 meses como máximo** para las demás certificaciones TD-P07. Si la norma o la licencia exigen menos, manda la norma.
+- **Suspensión preventiva tras un incidente grave del titular:** es una **medida de seguridad de tarea crítica, no una sanción**. El trabajador pasa a tarea no crítica de su misma categoría sin perder salario ni antigüedad y se reevalúa en ≤ 15 días **[Supuesto; validar con la CMCAP y el CCT]**. Si la investigación (ICAM) concluye que hubo un acto inseguro deliberado, la medida disciplinaria sigue el Reglamento Interior y el CCT, con derecho de audiencia y representación sindical — verificar con Jurídico Laboral.
 
 ### 3.2 Operación: Hornos EAF, Horno Olla y ollas, grúas y patio, Colada y Calidad
 
@@ -186,29 +194,29 @@ Tabla de "quién está en cada puesto" en **un turno** (una cuadrilla), más las
 |---|---|---|---|---|---|---|
 | 1 | Ingreso N-1/N-2 | S-03 Tercer Hornero (N-3) | Periodo de prueba del CCT | MS-ACE-01, MS-ACE-03, MS-ACE-08, MS-ACE-09 (nivel básico) | NOM-017 (EPP aluminizado), NOM-015 (calor) | Inducción de 40 h; apto médico |
 | 2 | S-03 (N-3) | S-02 Segundo Hornero (N-6) | 24 meses | MO-EAF-01, MO-EAF-05, MO-EAF-06, MO-EAF-07, MO-EAF-08; MS-ACE-02 (LOTO), MS-ACE-10 | NOM-009 (altura), NOM-006 (izaje de electrodos y señalero), NOM-004 (maquinaria) | Examen de suficiencia (LFT art. 153-U) si viene por reconocimiento de experiencia |
-| 3 | S-02 (N-6) | S-01 Primer Hornero (N-8) | 36 meses | MO-EAF-02, MO-EAF-03, MO-EAF-04, MO-EAF-07 (como A); simulador de proceso EAF ≥ 40 h con escenarios de fuga de agua y arco inestable | DC-3 del programa interno "Operación del EAF — Primer Hornero"; NOM-020 (recipientes y O₂) | Evaluación de conducción de cuadrilla (liderazgo sin mando) |
+| 3 | S-02 (N-6) | S-01 Primer Hornero (N-8) | 36 meses | MO-EAF-02, MO-EAF-03, MO-EAF-04, MO-EAF-07 (como A); simulador de proceso EAF ≥ 40 h con escenarios de fuga de agua y arco inestable | DC-3 del programa interno "Operación del EAF — Primer Hornero"; NOM-020 (recipientes y O₂) | Evaluación de coordinación técnica y comunicación con el equipo del horno (sin funciones de mando, LFT art. 9) |
 | 4 | Ingreso | S-08 Preparador de Ollas (N-3) | Periodo de prueba | MS-ACE-01, MS-ACE-05 (básico) | NOM-017, NOM-033 (espacios confinados, como entrante y vigía) | Inducción de 40 h |
 | 5 | S-08 (N-3) | S-07 Ayudante de Horno Olla (N-4) | 18 meses | MO-OLL-01 completo; MO-LF-01 (pasos de ayudante: alambre, muestreo, argón) | NOM-020 (gases a presión), NOM-018 (hojas de seguridad), NOM-009 | — |
 | 6 | S-07 (N-4) | S-06 Operador de Horno Olla (N-7) | 36 meses | MO-LF-01 (como A), MO-EAF-06 (mediciones); simulador LF ≥ 24 h | DC-3 del programa interno "Metalurgia secundaria — Operador LF" | Evaluación teórica de metalurgia secundaria ≥ 80% |
 | 7 | Ingreso | S-05 Operador de Patio de Chatarra (N-3) | Periodo de prueba | MO-EAF-02 (armado de canasta); MS-ACE-07 (pórtico de radiación, nivel usuario) | NOM-006 (grúa con electroimán), NOM-012 (conciencia radiológica), NOM-027 (oxicorte) | Licencia interna de equipo móvil |
 | 8 | S-05 (N-3) | S-04 Operador de Grúa de Carga (N-5) | 24 meses | MO-EAF-02 (izaje de canasta), MO-EAF-08 (izaje de electrodos), MS-ACE-04; simulador de grúa ≥ 24 h | NOM-006 (grúa viajera), NOM-009 (acceso a cabina) | Examen visual (profundidad y colores) |
-| 9 | S-04 (N-5) | S-09 Operador de Grúa de Colada (N-6) | 24 meses | MO-OLL-02, MO-EAF-07 (retiro de olla), MO-CC1-05 / MO-CC2-05 (colocación en torreta); simulador de grúa con olla llena y falla de freno | NOM-006 (grúa de metal líquido) | Sin incidentes de izaje en 12 meses |
+| 9 | S-04 (N-5) | S-09 Operador de Grúa de Colada (N-6) | 24 meses | MO-OLL-02, MO-EAF-07 (retiro de olla), MO-CC1-05 / MO-CC2-05 (colocación en torreta); simulador de grúa con olla llena y falla de freno | NOM-006 (grúa de metal líquido) | Sin incidentes de izaje **atribuibles a su operación** en 12 meses, según investigación ICAM (requisito de seguridad de tarea crítica; validar con la CMCAP) |
 | 10 | S-03 o S-05 (N-3) | S-10 Operador de Manejo de Escoria (N-4) | 12 meses | MO-EAF-05 (posicionamiento de portaollas), MS-ACE-03 | Licencia interna de equipo móvil pesado; NOM-004 | Rama lateral de las líneas 1 y 3 |
-| 11 | Ingreso (bachillerato técnico en química) | S-11 Muestrero / Analista (N-4) | Periodo de prueba | MO-EAF-06 y MO-LF-01 (muestreo y análisis) | NOM-017, NOM-010 (polvos y humos), NOM-018 | Evaluación de repetibilidad en el espectrómetro |
+| 11 | Ingreso (bachillerato técnico en química o equivalencia, ver §4) | S-11 Muestrero / Analista (N-4) | Periodo de prueba | MO-EAF-06 y MO-LF-01 (muestreo y análisis) | NOM-017, NOM-010 (polvos y humos), NOM-018 | Evaluación de repetibilidad en el espectrómetro |
 | 12 | Ingreso | S-15 Preparador de Distribuidores (N-3) o S-17 Operador de Mesa y Despacho (N-3) | Periodo de prueba | S-15: MO-CC1-01 / MO-CC2-01 (básico), MS-ACE-05. S-17: MO-CC1-08 / MO-CC2-08 (mesa y grúa de producto) | S-15: NOM-033, NOM-010. S-17: NOM-006 (grúa de producto, montacargas) | — |
 | 13 | S-15 (N-3) → S-14; S-17 (N-3) → S-16 | S-14 Ayudante de Colada (N-4) / S-16 Operador de Corte y Marcado (N-4) | 18 meses | S-14: MO-CC1-02/03/04/07 y MO-CC2-02/03/04/06/07 (pasos de ayudante), MS-ACE-07. S-16: MO-CC1-08 / MO-CC2-08 (oxicorte) | S-14: NOM-012 (trabajador en zona con fuente de Cs-137). S-16: NOM-027 (corte), NOM-020 | — |
-| 14 | S-14 o S-16 (N-4) | S-13 Operador de Plataforma de Colada (N-6) | 24 meses | MO-CC1-01, MO-CC1-03, MO-CC1-05, MO-CC1-06, MO-CC1-07 y equivalentes de CC2; MO-OLL-02 (señales) | NOM-009, NOM-006 (señalero de grúa de colada) | Simulacro de breakout y de perforación de olla aprobado |
+| 14 | S-14 o S-16 (N-4) | S-13 Operador de Plataforma de Colada (N-6) | 24 meses | MO-CC1-01, MO-CC1-03, MO-CC1-05, MO-CC1-06, MO-CC1-07 y equivalentes de CC2; MO-OLL-02 (señales); MS-ACE-07 (CC2) | NOM-009, NOM-006 (señalero de grúa de colada), NOM-012 (CC2) | Simulacro de breakout y de perforación de olla aprobado |
 | 15 | S-13 (N-6) | S-12 Operador de Púlpito de Colada (N-8) | 36 meses | MO-CC1-02, MO-CC1-03, MO-CC1-04, MO-CC1-07 (como A) o los de CC2; simulador de colada ≥ 40 h (sticker, pérdida de agua, apagón) | NOM-012 (POE para CC2), DC-3 del programa interno "Colada continua — Operador de púlpito" | Se certifica por máquina (CC1 o CC2); la segunda máquina es certificación adicional |
 | 16 | S-11 (N-4) o S-14 / S-16 (N-4) | S-18 Inspector de Calidad de Semiterminado (N-5) | 24 meses | MO-CC1-09 / MO-CC2-09; catálogo de defectos | NOM-017; curso interno de metrología (calibración de flexómetros, escuadras, pirómetro) | Prueba de agudeza visual y de concordancia con el patrón de defectos (≥ 90%) |
 | L | S-06 (N-7) ↔ S-01 (N-8) | Cambio lateral entre líneas | — | MO-EAF-03, MO-EAF-04, MO-EAF-07 | — | Solo si el CCT permite el cambio de línea — verificar con Jurídico Laboral |
 
-**Del sindicalizado al personal de confianza.** Los S-01, S-06, S-12 y S-13 con buen desempeño son la cantera natural para C-05 Supervisor de Hornos y C-06 Supervisor de Colada Continua; los técnicos A de mantenimiento, para C-11 y C-12. El paso a confianza sale del escalafón y lo lleva `gerente-personal-confianza` (Escuela de Supervisores); requiere renuncia voluntaria a la plaza sindical en los términos del CCT — **verificar con Jurídico Laboral**.
+**Del sindicalizado al personal de confianza.** Los S-01, S-06, S-12 y S-13 que lo soliciten voluntariamente son la cantera natural para C-05 Supervisor de Hornos y C-06 Supervisor de Colada Continua; los técnicos A de mantenimiento, para C-11 y C-12. El paso a confianza sale del escalafón y lo lleva `gerente-personal-confianza` (Escuela de Supervisores); requiere renuncia voluntaria a la plaza sindical en los términos del CCT — **verificar con Jurídico Laboral**.
 
 ### 3.3 Mantenimiento
 
 ![Figura 2. Escalera de escalafón de mantenimiento de la Acería (técnicos C, B y A)](../img/org-escalafon-mantenimiento.svg)
 
-Cada oficio tiene 3 categorías: **Técnico C** (ejecuta con supervisión de un B o A), **Técnico B** (ejecuta solo y guía a un C), **Técnico A** (diagnostica fallas complejas, lidera la ejecución de los procesos MM- críticos y es evaluador potencial TD-P07). Los niveles de S-20 y S-21 están un nivel arriba por el riesgo de alta tensión y el control de la fuente radiactiva **[Supuesto]**.
+Cada oficio tiene 3 categorías: **Técnico C** (ejecuta con supervisión de un B o A), **Técnico B** (ejecuta solo y guía a un C), **Técnico A** (diagnostica fallas complejas, coordina técnicamente la ejecución de los procesos MM- críticos y es evaluador potencial TD-P07). Ninguna categoría tiene funciones de mando, disciplina ni vigilancia general (LFT art. 9). **Evaluador sindicalizado:** aplica la lista de verificación técnica de los pasos ★ en pareja con un evaluador de confianza o de C&D; el dictamen lo emite el comité de certificación TD-P07 y el evaluador sindicalizado no participa en decisiones disciplinarias ni de escalafón. Los niveles de S-20 y S-21 están un nivel arriba por el riesgo de alta tensión y el control de la fuente radiactiva **[Supuesto]**.
 
 | Oficio | C | B | A | Entrada |
 |---|---|---|---|---|
@@ -225,7 +233,7 @@ Cada oficio tiene 3 categorías: **Técnico C** (ejecuta con supervisión de un 
 |---|---|---|---|---|---|
 | M1 | Ingreso → S-26 Lubricador (N-3) | Periodo de prueba | MS-ACE-02 (LOTO), MS-ACE-10 | NOM-009, NOM-006 (acceso a grúas), NOM-017 | Ruta de lubricación en CMMS |
 | M2 | S-26 → S-19 Mecánico C (N-5) | 24 meses | MS-ACE-02, MS-ACE-05, MS-ACE-10; MM-GR-01 (inspección) | NOM-004, NOM-033, NOM-009 | Examen de suficiencia de mecánica básica (art. 153-U) |
-| M3 | Técnico C → Técnico B (cualquier oficio) | 24 meses | Los procesos MM- del oficio como **R** (p. ej. S-19: MM-EAF-01, MM-EAF-02, MM-CC-01, MM-CC-02, MM-CC-03, MM-GR-01) | NOM del oficio: S-20/S-21 NOM-029; S-23 NOM-027; S-21 NOM-012 (POE); S-22 NOM-020 | ≥ 150 órdenes de trabajo cerradas en CMMS con calidad aprobada |
+| M3 | Técnico C → Técnico B (cualquier oficio) | 24 meses | Los procesos MM- del oficio como **R** (p. ej. S-19: MM-EAF-01, MM-EAF-02, MM-CC-01, MM-CC-02, MM-CC-03, MM-GR-01; S-20: MM-GR-01, MM-EAF-02; S-21 y S-22: MM-CC-01, MM-CC-02) | NOM del oficio: S-20/S-21 NOM-029; S-23 NOM-027; S-21 NOM-012 (POE); S-22 NOM-020 | ≥ 150 órdenes de trabajo cerradas en CMMS con calidad aprobada |
 | M4 | Técnico B → Técnico A | 36 meses | Los procesos MM- del oficio como **A** (lidera y libera) + evaluación de diagnóstico de fallas (caso real) | S-20: NOM-029 alta tensión (licencia interna de maniobra); S-23: calificación de soldador (WPQ, AWS D1.1 / ASME IX) vigente; S-21: POE con dosimetría | Curso de formación de evaluadores TD-P07 (para ser evaluador de su oficio) |
 | M5 | Laterales (S-19 C → S-22 / S-23 / S-25; S-08 o S-03 → S-24 C) | 12 meses en origen | Procesos MM- del oficio destino como R | NOM del oficio destino | Conservan antigüedad de empresa; antigüedad en la línea según el CCT — verificar con Jurídico Laboral |
 
@@ -237,7 +245,21 @@ Cada descripción sigue la plantilla §4 de la guía de estilo. Las tablas de "P
 - **Autoridad para detener el trabajo:** todo trabajador sindicalizado de la Acería tiene **el derecho y la obligación** de detener una tarea (🛑 "Alto al trabajo") cuando un control crítico falta o falla, sin represalia. Reanuda solo con autorización del supervisor C-xx responsable después de corregir la condición.
 - **EPP básico de nave:** casco con barbiquejo, lentes, careta y/o gafas según tarea, ropa ignífuga (FR), guantes, botas de seguridad con puntera y metatarso, protección auditiva, respirador cuando lo indique el análisis de riesgo (NOM-017). Cerca del metal líquido: **EPP aluminizado** (chamarra/mandil, polainas y careta) según MS-ACE-01.
 - **Vigilancia médica:** examen de ingreso y periódico anual por Medicina del Trabajo (NOM-030), audiometría (NOM-011), espirometría (NOM-010) y vigilancia de estrés térmico (NOM-015). La aptitud se valora por **capacidad funcional individual**, con ajustes razonables; ninguna condición de salud excluye por sí sola (no discriminación, LFT art. 3 y 133) — verificar con Jurídico Laboral.
-- **Recertificación:** cada certificación TD-P07 vence a los 24 meses; se renueva con verificación en campo (VCC) y reevaluación de pasos ★.
+- **Recertificación y vigencias (criterio unificado de seguridad):**
+
+  | Tipo de certificación | Vigencia | Procesos / NOM |
+  |---|---|---|
+  | Trabajo en altura | **12 meses** | MS-ACE-10 · NOM-009 |
+  | Espacios confinados | **12 meses** | MS-ACE-05 · NOM-033 |
+  | Grúas e izaje (operador, señalero, mantenimiento de grúas) | **12 meses** | MS-ACE-04, MO-OLL-02, MM-GR-01 · NOM-006 |
+  | Trabajo eléctrico (baja y alta tensión) | **12 meses** | MM-EAF-04 y trabajos eléctricos de S-20 / S-21 · NOM-029 |
+  | Fuentes radiactivas (POE y usuario del pórtico) | **12 meses** | MS-ACE-07 · NOM-012 y licencia CNSNS |
+  | Demás certificaciones TD-P07 (MO-, MM- y MS- restantes) | **≤ 24 meses** | Política de C&D |
+
+  Se renueva con verificación en campo (VCC) y reevaluación de pasos ★. Cada plan de formación indica en la fila "Vigencia" qué certificaciones del puesto son de 12 meses.
+- **Uso de las evaluaciones (TD-P07, VCC, OJT):** sirven para formar, certificar y acreditar la aptitud escalafonaria. **No se usan como sanción disciplinaria.** Única excepción: en tareas críticas de seguridad (pasos ★ y controles críticos MS-ACE), la evidencia de un **acto inseguro deliberado** puede sustentar una medida conforme al Reglamento Interior de Trabajo y al CCT, con derecho de audiencia y representación sindical. Los resultados son datos personales: acceso restringido a C&D, al supervisor directo y al comité TD-P07 — verificar con Jurídico Laboral.
+- **Sin funciones de mando (LFT art. 9):** ningún puesto sindicalizado dirige, vigila, fiscaliza ni sanciona a otros trabajadores. Donde el documento dice "coordina técnicamente", "guía" o "da el liberado" se refiere a la secuencia técnica de la tarea y a la señal de seguridad; la asignación de trabajo, la disciplina y la evaluación de desempeño son del supervisor de confianza (C-xx).
+- **Escolaridad y equivalencias (no discriminación, LFT arts. 3 y 133):** la escolaridad de cada perfil es **referencia, no filtro excluyente**. Se acredita con cualquiera de estas vías: (a) certificado oficial; (b) acreditación de conocimientos por experiencia laboral ante la SEP (Acuerdo 286 / CENEVAL); (c) estándar de competencia CONOCER del oficio; o (d) examen de suficiencia (art. 153-U) más la certificación TD-P07 del puesto. En ascensos, la experiencia en la categoría inmediata inferior con certificación vigente **sustituye** la escolaridad. No se sustituyen los requisitos legales de licencia (p. ej. POE de NOM-012, calificación de soldador, licencia de maniobra de alta tensión) — verificar con Jurídico Laboral.
 
 ## 4.1 Hornos EAF, Horno Olla, ollas, patio de chatarra y laboratorio
 
@@ -247,7 +269,7 @@ Cada descripción sigue la plantilla §4 de la guía de estilo. Las tablas de "P
 | Tipo de personal | Sindicalizado — línea de escalafón 1 (Hornos EAF), **nivel N-8** (máximo de operación) |
 | Área / equipo | EAF-1 o EAF-2, púlpito de control |
 | Reporta a | C-05 Supervisor de Hornos; en turno, C-04 Jefe de Turno de Acería |
-| Supervisa a | Sin mando disciplinario. **Coordina técnicamente** a S-02 y S-03 de su horno y da las señales de proceso a S-04, S-09 y S-10 |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9). **Coordinación técnica:** da la secuencia y las señales de proceso a S-02, S-03, S-04, S-09 y S-10 de su horno |
 | Plazas (total y por turno) | **18 plazas** (4 por turno × 4 cuadrillas = 16 + 2 de relevo) |
 | Turno | 4x4 de 12 h; alterna cada 4 h entre titular del horno y consola de DRI y adiciones |
 
@@ -259,7 +281,7 @@ Conducir la fusión del EAF de colada a colada (150 t, tap-to-tap de 55 min) de 
 |---|---|---|
 | 1 | Conducir la fusión: perfil de potencia, derivaciones del transformador y regulación de electrodos (MO-EAF-04) | 30 |
 | 2 | Controlar la alimentación continua de DRI/HBI y las adiciones de cal, dolomita y carbón (MO-EAF-03) | 20 |
-| 3 | Controlar la escoria espumosa con O₂ y carbono y ordenar el desescoriado (MO-EAF-05) | 15 |
+| 3 | Controlar la escoria espumosa con O₂ y carbono e indicar el momento del desescoriado (MO-EAF-05) | 15 |
 | 4 | Liberar la carga de canastas y el vaciado por EBT (MO-EAF-02, MO-EAF-07) | 15 |
 | 5 | Vigilar el sistema de agua de paneles y bóveda, la presión del horno y la casa de bolsas; responder a alarmas | 10 |
 | 6 | Registrar la colada en el sistema de nivel 2 / MES, entregar el turno y guiar en OJT a S-02 en formación | 10 |
@@ -272,7 +294,7 @@ Conducir la fusión del EAF de colada a colada (150 t, tap-to-tap de 55 min) de 
 | MO-EAF-02 | Carga de chatarra con canasta | C-05 | **A** | Autoriza la carga: horno sin potencia, electrodos arriba, bóveda girada, zona despejada; da la señal a S-04 y verifica el talón líquido de 20–30 t. |
 | MO-EAF-03 | Alimentación continua de DRI/HBI | C-07 | **A** | Ajusta la tasa de DRI a 3.5–5.0 t/min (≈ 30–35 kg/min/MW) según arco estable y escoria espumosa; la detiene ante arco inestable o baño frío. |
 | MO-EAF-04 | Fusión: perfil de potencia y regulación de electrodos | C-07 | **A** | Selecciona el perfil de potencia y la derivación (OLTC); vigila la regulación de electrodos, kWh/t y tiempo de arco (42 min objetivo). |
-| MO-EAF-05 | Escoria espumosa: inyección de O₂ y carbono, desescoriado | C-07 | **A** | Dosifica O₂ (30–40 Nm³/t) y carbono (8–12 kg/t) para escoria espumosa; ordena el desescoriado a S-02 y S-10. |
+| MO-EAF-05 | Escoria espumosa: inyección de O₂ y carbono, desescoriado | C-07 | **A** | Dosifica O₂ (30–40 Nm³/t) y carbono (8–12 kg/t) para escoria espumosa; da la señal de desescoriado a S-02 y S-10. |
 | MO-EAF-07 | Vaciado por EBT y adiciones en olla | C-05 | **A** | Decide el vaciado cuando temperatura (1,630 ± 15 °C) y química son correctas; coordina olla, grúa y adiciones; corta el vaciado para no pasar escoria. |
 | MO-EAF-06 | Medición de temperatura, oxígeno activo y muestreo | C-05 | **C** | Solicita las mediciones y decide con los resultados (temperatura, O activo, química). |
 | MO-EAF-08 | Adición y empalme de electrodos | C-05 | **C** | Posiciona columnas y autoriza la adición de electrodos con el horno sin potencia. |
@@ -324,7 +346,7 @@ Conducir la fusión del EAF de colada a colada (150 t, tap-to-tap de 55 min) de 
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato técnico (electromecánico, metalurgia o afín) o equivalente acreditado por examen de suficiencia |
+| Escolaridad | Bachillerato técnico (electromecánico, metalurgia o afín) o equivalente acreditado por experiencia, CONOCER o examen de suficiencia (ver §4, Escolaridad y equivalencias) |
 | Experiencia | ≥ 5 años en EAF, de ellos ≥ 3 como S-02 Segundo Hornero |
 | Conocimientos | Balance de energía y de oxígeno del EAF, escoria espumosa, basicidad (B2 1.8–2.2), química de defosforación, operación del transformador y regulación, sistema de agua y detección de fugas |
 | DC-3 / NOM | NOM-017, NOM-015, NOM-009, NOM-006 (señales de izaje), NOM-020 (O₂ y gases a presión), NOM-018; DC-3 del programa interno "Operación del EAF — Primer Hornero" |
@@ -346,6 +368,7 @@ Púlpito con aire acondicionado y vidrio de protección, pero con salidas al pis
 | OJT supervisado | Con S-01 certificado y C-05: bitácora con ≥ 60 coladas como titular | 360 |
 | Certificación TD-P07 | Evaluación práctica de pasos ★ en MO-EAF-02/03/04/07 | 8 |
 | Refresco anual | Simulacro de fuga de agua y lecciones aprendidas | 16/año |
+| Vigencia de certificaciones | **12 meses:** alturas (DC-3 NOM-009); grúas/izaje o señalero (DC-3 NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-02 — Operador de Horno de Piso (Segundo Hornero)
 | Campo | Valor |
@@ -353,7 +376,7 @@ Púlpito con aire acondicionado y vidrio de protección, pero con salidas al pis
 | Tipo de personal | Sindicalizado — línea 1 (Hornos EAF), **nivel N-6** |
 | Área / equipo | EAF-1 o EAF-2, piso del horno (puerta, plataforma de vaciado, EBT) |
 | Reporta a | C-05 Supervisor de Hornos; coordinación técnica del S-01 de su horno |
-| Supervisa a | Sin mando disciplinario; guía en campo a los S-03 del horno |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9). Guía técnica en campo a los S-03 del horno |
 | Plazas (total y por turno) | **18 plazas** (4 por turno × 4 cuadrillas = 16 + 2 de relevo) |
 | Turno | 4x4 de 12 h |
 
@@ -437,6 +460,7 @@ Trabajo en piso frente al horno: calor radiante extremo, proyecciones de metal y
 | OJT supervisado | ≥ 80 coladas con S-02 certificado | 240 |
 | Certificación TD-P07 | Pasos ★ de MO-EAF-01/05/06/07/08 | 8 |
 | Refresco anual | Simulacro de fuga de agua y de perforación | 12/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); grúas/izaje o señalero (DC-3 NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-03 — Ayudante de Horno (Tercer Hornero)
 | Campo | Valor |
@@ -503,7 +527,7 @@ Apoyar la preparación, el vaciado y el mantenimiento operativo del horno, prepa
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Secundaria terminada (preferente bachillerato técnico) |
+| Escolaridad | Secundaria terminada (preferente bachillerato técnico) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | No indispensable; periodo de prueba del CCT |
 | Conocimientos | Riesgos de metal líquido, EPP, orden y limpieza (5S) |
 | DC-3 / NOM | NOM-017, NOM-015, NOM-009, NOM-006 (enganche), NOM-033 (vigía) |
@@ -524,6 +548,7 @@ Calor radiante, polvo, ruido, proyecciones, humos, esfuerzo físico, altura, esp
 | OJT supervisado | Con S-02: 30 turnos | 360 |
 | Certificación TD-P07 | Pasos ★ básicos de metal líquido y agua–metal | 4 |
 | Refresco anual | Simulacro de emergencia | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); grúas/izaje (MS-ACE-04, NOM-006); espacios confinados (DC-3 NOM-033). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-04 — Operador de Grúa de Carga (nave de hornos)
 | Campo | Valor |
@@ -585,7 +610,7 @@ Cargar el horno con canastas de chatarra y mover electrodos, bóveda y component
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Secundaria (preferente bachillerato) |
+| Escolaridad | Secundaria (preferente bachillerato) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | ≥ 2 años como S-05 con grúa de electroimán |
 | Conocimientos | Mecánica de la grúa, señales de mano, capacidades y centros de gravedad |
 | DC-3 / NOM | NOM-006 (grúas viajeras), NOM-009 (acceso a cabina), NOM-017, NOM-015 |
@@ -607,6 +632,7 @@ Cabina en altura con calor y polvo, vibración, humos de carga; alta concentraci
 | OJT supervisado | 20 turnos con operador certificado | 240 |
 | Certificación TD-P07 | Pasos ★ de izaje | 4 |
 | Refresco anual | Simulador + inspección | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); grúas/izaje (MS-ACE-04, NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-05 — Operador de Patio de Chatarra (canastas, electroimán, pórtico de radiación)
 | Campo | Valor |
@@ -670,7 +696,7 @@ Recibir, revisar, clasificar y cargar la chatarra en canastas según la receta d
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Secundaria (preferente bachillerato) |
+| Escolaridad | Secundaria (preferente bachillerato) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | No indispensable; licencia interna de equipo móvil en los primeros 6 meses |
 | Conocimientos | Tipos de chatarra y prohibidos, receta de carga, operación de electroimán, oxicorte |
 | DC-3 / NOM | NOM-006 (grúa/manipulador), NOM-012 (conciencia radiológica), NOM-027 (corte), NOM-017, NOM-015 |
@@ -691,6 +717,7 @@ Intemperie (sol, lluvia, calor ambiental de Nuevo León), polvo, ruido, carga su
 | OJT supervisado | 20 turnos por puesto (recepción, grúa, carro) | 240 |
 | Certificación TD-P07 | Pasos ★ de MO-EAF-02 y MS-ACE-07 | 4 |
 | Refresco anual | Simulacro de alarma radiológica | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); grúas/izaje (MS-ACE-04, NOM-006); fuentes radiactivas (MS-ACE-07, NOM-012). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-06 — Operador de Horno Olla
 | Campo | Valor |
@@ -698,7 +725,7 @@ Intemperie (sol, lluvia, calor ambiental de Nuevo León), polvo, ruido, carga su
 | Tipo de personal | Sindicalizado — línea 2 (LF y ollas), **nivel N-7** |
 | Área / equipo | LF-1 o LF-2 |
 | Reporta a | C-05 Supervisor de Hornos (técnica de C-07 Ingeniero de Proceso EAF/LF) |
-| Supervisa a | Sin mando disciplinario; coordina técnicamente a los S-07 de su estación |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9). Coordinación técnica de los S-07 de su estación |
 | Plazas (total y por turno) | **9 plazas** (2 por turno × 4 cuadrillas = 8 + 1 de relevo) (las ausencias se cubren con S-07 certificados en MO-LF-01 como A) |
 | Turno | 4x4 de 12 h |
 
@@ -759,7 +786,7 @@ Llevar cada olla a la composición y temperatura de envío en 35–45 min, con l
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato técnico (metalurgia, química o electromecánico) |
+| Escolaridad | Bachillerato técnico (metalurgia, química o electromecánico) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | ≥ 3 años como S-07 |
 | Conocimientos | Metalurgia secundaria (desoxidación, desulfuración, inclusiones), cálculo de ferroaleaciones, líquidus y sobrecalentamiento |
 | DC-3 / NOM | NOM-017, NOM-015, NOM-020, NOM-018; DC-3 del programa interno "Metalurgia secundaria — Operador LF" |
@@ -781,6 +808,7 @@ Estación del LF con calor radiante, arco eléctrico, humos y gases (argón, CO)
 | OJT supervisado | ≥ 80 tratamientos como titular | 240 |
 | Certificación TD-P07 | Pasos ★ de MO-LF-01 | 8 |
 | Refresco anual | Casos de calidad y simulacro de perforación | 12/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-07 — Ayudante de Horno Olla / Alimentación de Alambre
 | Campo | Valor |
@@ -838,7 +866,7 @@ Ejecutar en campo el tratamiento del LF: medir, muestrear, alimentar alambre y a
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato (preferente técnico) |
+| Escolaridad | Bachillerato (preferente técnico) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | ≥ 18 meses como S-08 |
 | Conocimientos | Operación del LF, gases inertes, ferroaleaciones |
 | DC-3 / NOM | NOM-017, NOM-015, NOM-020, NOM-018, NOM-009 |
@@ -859,6 +887,7 @@ Calor, humos, argón (asfixia en zonas bajas), arco eléctrico, ruido.
 | OJT supervisado | 20 turnos con S-07 certificado | 240 |
 | Certificación TD-P07 | Pasos ★ de ayudante en MO-LF-01 | 4 |
 | Refresco anual | Gases y asfixia | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-08 — Preparador de Ollas (Ollero)
 | Campo | Valor |
@@ -925,7 +954,7 @@ Entregar cada olla lista para recibir acero: limpia, con refractario revisado, v
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Secundaria (preferente bachillerato) |
+| Escolaridad | Secundaria (preferente bachillerato) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | No indispensable |
 | Conocimientos | Refractarios básicos, válvula deslizante, precalentamiento, gases |
 | DC-3 / NOM | NOM-017, NOM-015, NOM-033, NOM-020, NOM-006 (enganche) |
@@ -946,6 +975,7 @@ Calor radiante de ollas vacías a > 1,000 °C, polvo de refractario (sílice cri
 | OJT supervisado | 20 turnos | 240 |
 | Certificación TD-P07 | Pasos ★ de MO-OLL-01 | 4 |
 | Refresco anual | Espacios confinados y perforación de olla | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); espacios confinados (MS-ACE-05, NOM-033); grúas/izaje o señalero (DC-3 NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-09 — Operador de Grúa de Colada (nave de ollas)
 | Campo | Valor |
@@ -979,7 +1009,7 @@ Mover las ollas llenas de acero líquido entre el EAF, el LF y la torreta de col
 | MO-CC2-05 | Cambio de olla en secuencia (torreta) | C-06 | **R** | Coloca la olla llena en el brazo libre de la torreta y retira la vacía. |
 | MO-LF-01 | Tratamiento en horno olla: calentamiento, ajuste químico, desulfuración, argón y alambre | C-07 | **C** | Posiciona la olla en la estación del LF y la retira al terminar. |
 | MM-OLL-01 | Cambio de placas de válvula deslizante y tapón poroso; revestimiento y reparación de ollas | C-15 | **C** | Traslada ollas al taller de reparación y de regreso. |
-| MM-GR-01 | Inspección y mantenimiento de grúas de colada (ganchos, frenos, cables, límites) | C-11 | **C** | Inspección pre-uso; reporta ruidos, frenos, límites y cables. |
+| MM-GR-01 | Inspección y mantenimiento de grúas de colada (ganchos, frenos, cables, límites) | C-11 | **R** | Ejecuta el **checklist diario** pre-uso (frenos, límites, gancho, cables) y lo registra; reporta anomalías y no opera la grúa si falla un punto crítico (ejecutor por CAT-ACE-001). |
 | MO-OLL-01 | Preparación de olla: válvula deslizante, arena de sello, tapón poroso, precalentamiento | C-15 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-CC1-07 | Fin de colada y cierre de secuencia | C-06 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-CC2-07 | Fin de colada y cierre de secuencia | C-06 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
@@ -1012,15 +1042,15 @@ Mover las ollas llenas de acero líquido entre el EAF, el LF y la torreta de col
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato (o secundaria con examen de suficiencia) |
-| Experiencia | ≥ 2 años como S-04 sin incidentes de izaje |
+| Escolaridad | Bachillerato (o secundaria con examen de suficiencia) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
+| Experiencia | ≥ 2 años como S-04 sin incidentes de izaje atribuibles a su operación (según investigación ICAM) |
 | Conocimientos | Grúas de metal líquido, frenos y límites redundantes, rutas y posiciones de emergencia |
 | DC-3 / NOM | NOM-006 (grúa de metal líquido), NOM-009, NOM-015, NOM-017 |
-| Certificación interna TD-P07 | MO-OLL-02, MO-EAF-07, MO-CC1-05, MO-CC2-05; MS-ACE-04, MS-ACE-09 |
+| Certificación interna TD-P07 | MO-OLL-02, MO-EAF-07, MO-CC1-05, MO-CC2-05; MM-GR-01 (checklist diario); MS-ACE-04, MS-ACE-09 |
 | Condición física y médica | Agudeza visual, percepción de profundidad, audición; evaluación de fatiga y sueño por trabajo nocturno |
 
 ### Ruta de progresión
-S-05 (N-3) → S-04 (N-5) → **S-09 (N-6)**. Carrera: evaluador TD-P07 de grúas.
+S-05 (N-3) → S-04 (N-5) → **S-09 (N-6)**. Carrera: evaluador técnico TD-P07 de grúas (en pareja con evaluador de confianza o de C&D).
 
 ### Condiciones de trabajo y riesgos
 Cabina sobre metal líquido: calor, humos, alta concentración; riesgo de consecuencia catastrófica si hay caída de olla.
@@ -1032,8 +1062,9 @@ Cabina sobre metal líquido: calor, humos, alta concentración; riesgo de consec
 | Ruta técnica | Grúas de metal líquido, frenos, rutas, emergencias | 32 |
 | Simulador de grúa | Olla llena, falla de freno, perforación | 24 |
 | OJT supervisado | 20 turnos con operador certificado | 240 |
-| Certificación TD-P07 | Pasos ★ de MO-OLL-02 | 4 |
+| Certificación TD-P07 | Pasos ★ de MO-OLL-02 y del checklist diario de MM-GR-01 | 6 |
 | Refresco anual | Simulador y simulacro de emergencia | 12/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); grúas/izaje (MS-ACE-04, MO-OLL-02, MM-GR-01, NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-10 — Operador de Manejo de Escoria (portaollas de escoria)
 | Campo | Valor |
@@ -1091,7 +1122,7 @@ Retirar la escoria del EAF y del LF sin interrumpir la operación y sin explosio
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Secundaria |
+| Escolaridad | Secundaria · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | ≥ 12 meses como S-03 o S-05 |
 | Conocimientos | Riesgo escoria–agua, manejo defensivo de equipo pesado |
 | DC-3 / NOM | NOM-004, NOM-017, NOM-015; licencia interna de equipo móvil pesado |
@@ -1112,6 +1143,7 @@ Escoria a > 1,500 °C, vapor y proyecciones, polvo, vehículos pesados, intemper
 | OJT supervisado | 15 turnos | 180 |
 | Certificación TD-P07 | Pasos ★ de posicionamiento y vaciado | 4 |
 | Refresco anual | Manejo defensivo y escoria–agua | 8/año |
+| Vigencia de certificaciones | **12 meses:** ninguna. **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-11 — Muestrero / Analista de Laboratorio de Acería
 | Campo | Valor |
@@ -1180,7 +1212,7 @@ Entregar el análisis químico de EAF, LF y distribuidor a tiempo y con exactitu
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato técnico en química, laboratorista o metalurgia |
+| Escolaridad | Bachillerato técnico en química, laboratorista o metalurgia · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | No indispensable (≥ 6 meses de OJT) |
 | Conocimientos | Química analítica básica, espectrometría, metrología, buenas prácticas de laboratorio |
 | DC-3 / NOM | NOM-017, NOM-010, NOM-018, NOM-020, NOM-004 |
@@ -1201,6 +1233,7 @@ Laboratorio con clima controlado; salidas al piso con calor y metal líquido; ru
 | OJT supervisado | 25 turnos | 300 |
 | Certificación TD-P07 | Pasos ★ de muestreo y análisis | 4 |
 | Refresco anual | Ensayo de aptitud interlaboratorio | 8/año |
+| Vigencia de certificaciones | **12 meses:** ninguna. **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## 4.2 Colada Continua (CC1 planchón y CC2 palanquilla) y calidad de semiterminado
 
@@ -1210,7 +1243,7 @@ Laboratorio con clima controlado; salidas al piso con calor y metal líquido; ru
 | Tipo de personal | Sindicalizado — línea 4 (Colada), **nivel N-8** (máximo de operación) |
 | Área / equipo | Púlpito de CC1 (planchón, 1 línea) o de CC2 (palanquilla, 6 líneas). Se certifica por máquina |
 | Reporta a | C-06 Supervisor de Colada Continua (técnica de C-08 Ingeniero de Proceso de CC) |
-| Supervisa a | Sin mando disciplinario; coordina técnicamente a S-13 y S-14 de su máquina y da señales a S-16 |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9). Coordinación técnica de S-13 y S-14 de su máquina y señales a S-16 |
 | Plazas (total y por turno) | **18 plazas** (4 por turno × 4 cuadrillas = 16 + 2 de relevo) |
 | Turno | 4x4 de 12 h; en cada púlpito, un titular (velocidad, molde, BOP) y un segundo operador (enfriamiento secundario, segmentos o líneas y corte), que se alternan |
 
@@ -1295,7 +1328,7 @@ Conducir la máquina de colada desde el arranque hasta el fin de secuencia con c
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato técnico (electromecánico, mecatrónica, metalurgia) |
+| Escolaridad | Bachillerato técnico (electromecánico, mecatrónica, metalurgia) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | ≥ 3 años como S-13 en la misma máquina |
 | Conocimientos | Solidificación, transferencia de calor en el molde, polvo de molde/aceite, conicidad, enfriamiento secundario, defectos y su causa, lógica del BOP |
 | DC-3 / NOM | NOM-017, NOM-015, NOM-009, NOM-012 (POE si opera CC2), NOM-020; DC-3 del programa interno "Colada continua — Operador de púlpito" |
@@ -1317,6 +1350,7 @@ Púlpito climatizado con salida a la plataforma y a la línea: calor, vapor, rui
 | OJT supervisado | ≥ 30 secuencias como titular con S-12 certificado | 360 |
 | Certificación TD-P07 | Pasos ★ de arranque, estado estable y fin de colada | 8 |
 | Refresco anual | Simulacro de breakout y de apagón con agua de emergencia | 16/año |
+| Vigencia de certificaciones | **12 meses:** fuentes radiactivas (MS-ACE-07, NOM-012); alturas (DC-3 NOM-009). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-13 — Operador de Plataforma de Colada (olla y distribuidor)
 | Campo | Valor |
@@ -1324,7 +1358,7 @@ Púlpito climatizado con salida a la plataforma y a la línea: calor, vapor, rui
 | Tipo de personal | Sindicalizado — línea 4 (Colada), **nivel N-6** |
 | Área / equipo | Plataforma de colada de CC1 o CC2: torreta, distribuidor, SEN / buzas calibradas |
 | Reporta a | C-06 Supervisor de Colada Continua; coordinación técnica del S-12 |
-| Supervisa a | Sin mando disciplinario; guía a S-14 en la plataforma |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9). Guía técnica a S-14 en la plataforma |
 | Plazas (total y por turno) | **36 plazas** (8 por turno × 4 cuadrillas = 32 + 4 de relevo) |
 | Turno | 4x4 de 12 h |
 
@@ -1361,7 +1395,7 @@ Mantener el flujo de acero de la olla al molde sin interrupciones: abrir y cambi
 | MO-LF-01 | Tratamiento en horno olla: calentamiento, ajuste químico, desulfuración, argón y alambre | C-07 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-CC1-02 | Preparación de máquina: inserción y sellado de la barra falsa | C-06 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-CC2-02 | Preparación de máquina: inserción de la barra falsa rígida (6 líneas) | C-06 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
-| MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-04, MS-ACE-06, MS-ACE-08, MS-ACE-09, MS-ACE-10; **C:** MS-ACE-07; **I:** MS-ACE-05 |
+| MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-04, MS-ACE-06, MS-ACE-07 (trabaja junto al molde de CC2 con fuente de Cs-137; ejecutor por CAT-ACE-001), MS-ACE-08, MS-ACE-09, MS-ACE-10; **I:** MS-ACE-05 |
 
 ### Responsabilidades de seguridad
 - ★ **Apertura de olla:** EPP aluminizado; si la olla no abre libre, usa lanza de O₂ solo con el procedimiento y fuera de la línea de proyección.
@@ -1396,11 +1430,11 @@ Mantener el flujo de acero de la olla al molde sin interrupciones: abrir y cambi
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato (preferente técnico) |
+| Escolaridad | Bachillerato (preferente técnico) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | ≥ 2 años como S-14 o S-16 |
 | Conocimientos | Torreta, distribuidor, refractarios de flujo, argón, señales de grúa |
 | DC-3 / NOM | NOM-017, NOM-015, NOM-009, NOM-006 (señalero), NOM-020 |
-| Certificación interna TD-P07 | MO-CC1-01, -03, -05, -06, -07 y/o MO-CC2-01, -03, -05, -06, -07; MO-OLL-02; MS-ACE-01, MS-ACE-04, MS-ACE-09 |
+| Certificación interna TD-P07 | MO-CC1-01, -03, -05, -06, -07 y/o MO-CC2-01, -03, -05, -06, -07; MO-OLL-02; MS-ACE-01, MS-ACE-04, MS-ACE-07 (CC2), MS-ACE-09 |
 | Condición física y médica | Apto para calor intenso, EPP aluminizado y altura |
 
 ### Ruta de progresión
@@ -1417,6 +1451,7 @@ La zona de mayor exposición a metal líquido de la colada: calor radiante, proy
 | OJT supervisado | ≥ 25 secuencias | 300 |
 | Certificación TD-P07 | Pasos ★ de apertura, cambio de olla y cambio en caliente | 8 |
 | Refresco anual | Simulacro de perforación de olla y breakout | 12/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); grúas/izaje (MS-ACE-04, MO-OLL-02, NOM-006); fuentes radiactivas (MS-ACE-07, NOM-012). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-14 — Ayudante de Colada (molde y línea)
 | Campo | Valor |
@@ -1488,7 +1523,7 @@ Cuidar el molde y la línea durante la colada: polvo o aceite, sellado de barra 
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato (preferente técnico) |
+| Escolaridad | Bachillerato (preferente técnico) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | ≥ 18 meses como S-15 |
 | Conocimientos | Molde y lubricación, barra falsa, rociado, defectos superficiales |
 | DC-3 / NOM | NOM-017, NOM-015, NOM-009, NOM-012 (trabajador en zona con fuente radiactiva, CC2) |
@@ -1509,6 +1544,7 @@ Calor y vapor en la zona del molde, ruido, metal líquido, radiación ionizante 
 | OJT supervisado | 20 turnos | 240 |
 | Certificación TD-P07 | Pasos ★ de ayudante | 4 |
 | Refresco anual | Breakout y radiación | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); fuentes radiactivas (MS-ACE-07, NOM-012). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-15 — Preparador de Distribuidores
 | Campo | Valor |
@@ -1575,7 +1611,7 @@ Entregar distribuidores revestidos, secos, con buzas y barra tapón correctament
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Secundaria (preferente bachillerato) |
+| Escolaridad | Secundaria (preferente bachillerato) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | No indispensable |
 | Conocimientos | Refractarios del distribuidor, buzas, precalentamiento |
 | DC-3 / NOM | NOM-033, NOM-010, NOM-006 (grúa de distribuidores), NOM-017, NOM-015 |
@@ -1596,6 +1632,7 @@ Polvo, calor de precalentamiento, ruido de demolición, espacios confinados, car
 | OJT supervisado | 20 turnos | 240 |
 | Certificación TD-P07 | Pasos ★ de preparación | 4 |
 | Refresco anual | Espacios confinados | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); espacios confinados (MS-ACE-05, NOM-033); grúas/izaje (MS-ACE-04, NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-16 — Operador de Corte y Marcado
 | Campo | Valor |
@@ -1662,7 +1699,7 @@ Cortar el producto a la longitud pedida y marcarlo con trazabilidad completa.
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato (preferente técnico) |
+| Escolaridad | Bachillerato (preferente técnico) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | ≥ 18 meses como S-17 |
 | Conocimientos | Oxicorte, gases, trazabilidad |
 | DC-3 / NOM | NOM-027, NOM-020, NOM-017, NOM-015 |
@@ -1683,6 +1720,7 @@ Calor del producto recién cortado, proyecciones, gases, ruido.
 | OJT supervisado | 15 turnos | 180 |
 | Certificación TD-P07 | Pasos ★ de corte y marcado | 4 |
 | Refresco anual | Gases y corte | 8/año |
+| Vigencia de certificaciones | **12 meses:** ninguna. **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-17 — Operador de Mesa de Enfriamiento y Despacho
 | Campo | Valor |
@@ -1744,7 +1782,7 @@ Mover, enfriar, apilar y despachar el semiterminado a laminación con trazabilid
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Secundaria (preferente bachillerato) |
+| Escolaridad | Secundaria (preferente bachillerato) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | No indispensable |
 | Conocimientos | Grúas de producto, apilado, trazabilidad |
 | DC-3 / NOM | NOM-006 (grúa y montacargas), NOM-009, NOM-017, NOM-015 |
@@ -1766,6 +1804,7 @@ Calor del producto, carga suspendida, vehículos, intemperie en patio.
 | OJT supervisado | 20 turnos | 240 |
 | Certificación TD-P07 | Pasos ★ de izaje | 4 |
 | Refresco anual | Izaje | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); grúas/izaje (MS-ACE-04, NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-18 — Inspector de Calidad de Semiterminado (planchón / palanquilla)
 | Campo | Valor |
@@ -1828,7 +1867,7 @@ Evitar que un semiterminado con defecto llegue a laminación o al cliente: inspe
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato técnico (metalurgia, calidad) |
+| Escolaridad | Bachillerato técnico (metalurgia, calidad) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | ≥ 2 años como S-11, S-14 o S-16 |
 | Conocimientos | Defectos de colada y sus causas, metrología, catálogo de defectos |
 | DC-3 / NOM | NOM-017, NOM-015; curso interno de metrología |
@@ -1849,10 +1888,11 @@ Producto caliente, patio con izajes, intemperie.
 | OJT supervisado | 25 turnos con inspector certificado | 300 |
 | Certificación TD-P07 | Evaluación con muestras patrón (≥ 90%) | 4 |
 | Refresco anual | Calibración de criterio con C-09 | 8/año |
+| Vigencia de certificaciones | **12 meses:** ninguna. **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## 4.3 Mantenimiento de Acería
 
-**Común a los oficios de mantenimiento:** todo trabajo empieza con orden de trabajo en CMMS, análisis de riesgo, permiso de trabajo y **LOTO personal** (candado y tarjeta propios, prueba de energía cero) según MS-ACE-02. El permiso de trabajo está ligado al LMS: sin certificación vigente no se emite (TD-P07). Técnico C = ejecuta con un B o A; Técnico B = ejecuta solo; Técnico A = lidera la ejecución, libera el equipo y puede ser evaluador.
+**Común a los oficios de mantenimiento:** todo trabajo empieza con orden de trabajo en CMMS, análisis de riesgo, permiso de trabajo y **LOTO personal** (candado y tarjeta propios, prueba de energía cero) según MS-ACE-02. El permiso de trabajo está ligado al LMS: sin certificación vigente no se emite (TD-P07). Técnico C = ejecuta con un B o A; Técnico B = ejecuta solo; Técnico A = coordina técnicamente la ejecución, libera el equipo y puede ser evaluador (en pareja con un evaluador de confianza o de C&D; sin funciones de mando, LFT art. 9).
 
 ## S-19 — Mecánico de Acería
 | Campo | Valor |
@@ -1860,7 +1900,7 @@ Producto caliente, patio con izajes, intemperie.
 | Tipo de personal | Sindicalizado — escalafón de Mantenimiento, **Técnico C N-5 / B N-6 / A N-7** |
 | Área / equipo | EAF-1/2, LF-1/2, ollas, grúas de nave, CC1, CC2 y servicios (agua) |
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico |
-| Supervisa a | Sin mando disciplinario; el Técnico A guía a los B y C de su cuadrilla y a S-26 |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9). El Técnico A da guía técnica a los B y C y a S-26 |
 | Plazas (total y por turno) | **78 plazas** (9 por turno × 4 cuadrillas = 36 + 5 de relevo; 33 puestos de día × 1.1 = 37) |
 | Turno | Guardia 4x4 de 12 h y administrativo (preventivo, talleres, paros) |
 
@@ -1926,7 +1966,7 @@ Mantener en condición segura y disponible el equipo mecánico de la Acería, co
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato técnico o técnico superior (mecánico, electromecánico, mecatrónico) |
+| Escolaridad | Bachillerato técnico o técnico superior (mecánico, electromecánico, mecatrónico) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | C: ≥ 2 años (o S-26); B: ≥ 2 años como C; A: ≥ 3 años como B |
 | Conocimientos | Mecánica industrial, alineación, rodamientos, reductores, bombas, lectura de planos, grúas |
 | DC-3 / NOM | NOM-004, NOM-006, NOM-009, NOM-033, NOM-020, NOM-017; NOM-027 (corte) |
@@ -1947,6 +1987,7 @@ Trabajo cerca de equipo caliente, altura, espacios confinados, energías peligro
 | OJT supervisado | C → B: 150 órdenes de trabajo | 480 |
 | Certificación TD-P07 | Pasos ★ de procesos MM- del oficio | 8 por proceso |
 | Refresco anual | LOTO, altura, espacios confinados | 16/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); espacios confinados (MS-ACE-05, NOM-033); grúas/izaje (MS-ACE-04, MM-GR-01, NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-20 — Electricista de Acería
 | Campo | Valor |
@@ -1954,7 +1995,7 @@ Trabajo cerca de equipo caliente, altura, espacios confinados, energías peligro
 | Tipo de personal | Sindicalizado — escalafón de Mantenimiento, **Técnico C N-6 / B N-7 / A N-8** |
 | Área / equipo | Transformadores del EAF (140 MVA) y del LF (25 MVA), subestaciones, motores, grúas, CC |
 | Reporta a | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación |
-| Supervisa a | Sin mando disciplinario; el A guía a B y C |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9). El A da guía técnica a B y C |
 | Plazas (total y por turno) | **32 plazas** (4 por turno × 4 cuadrillas = 16 + 2 de relevo; 12 puestos de día × 1.1 = 14) |
 | Turno | Guardia 4x4 de 12 h y administrativo |
 
@@ -1979,7 +2020,7 @@ Mantener el sistema eléctrico de la Acería disponible y seguro, y ejecutar las
 | MM-GR-01 | Inspección y mantenimiento de grúas de colada (ganchos, frenos, cables, límites) | C-11 | **R** | Mantiene motores, frenos electromagnéticos, límites redundantes y control de grúas. |
 | MO-EAF-04 | Fusión: perfil de potencia y regulación de electrodos | C-07 | **C** | Atiende fallas de regulación y del cambiador de derivaciones. |
 | MM-EAF-01 | Detección y reparación de fugas en paneles y bóveda enfriados por agua | C-11 | **C** | Consultado: aporta la condición de su equipo o área antes de ejecutar. |
-| MM-EAF-02 | Mantenimiento de brazos portaelectrodos, columnas, regulación hidráulica y cambio de bóveda / delta | C-11 | **C** | Consultado: aporta la condición de su equipo o área antes de ejecutar. |
+| MM-EAF-02 | Mantenimiento de brazos portaelectrodos, columnas, regulación hidráulica y cambio de bóveda / delta | C-11 | **R** | Desconecta y reconecta cables secundarios, sensores y control de la regulación de electrodos; prueba en vacío la regulación después del cambio de bóveda / delta (ejecutor por CAT-ACE-001). |
 | MM-CC-03 | Sistemas de agua de molde, enfriamiento secundario y agua de emergencia (pruebas de torre y bombas diésel) | C-12 | **C** | Consultado: aporta la condición de su equipo o área antes de ejecutar. |
 | MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-04, MS-ACE-05, MS-ACE-06, MS-ACE-08, MS-ACE-09, MS-ACE-10; **C:** MS-ACE-07; **I:** MS-ACE-03 |
 
@@ -2013,11 +2054,11 @@ Mantener el sistema eléctrico de la Acería disponible y seguro, y ejecutar las
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Técnico o técnico superior en electricidad o electromecánica |
+| Escolaridad | Técnico o técnico superior en electricidad o electromecánica · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | C: ≥ 2 años en mantenimiento eléctrico industrial; B: ≥ 2 años como C; A: ≥ 3 años como B con licencia de AT |
 | Conocimientos | Transformadores, protecciones, motores, variadores, PLC básico, NOM-001-SEDE |
 | DC-3 / NOM | NOM-029 (baja tensión C; alta tensión A), NOM-009, NOM-017, NOM-022 |
-| Certificación interna TD-P07 | MS-ACE-02; B: MM-GR-01 como R; A: MM-EAF-04 como A |
+| Certificación interna TD-P07 | MS-ACE-02; B: MM-GR-01 y MM-EAF-02 como R; A: MM-EAF-04 como A |
 | Condición física y médica | Visión de colores (códigos de conductores); apto para altura |
 
 ### Ruta de progresión
@@ -2032,8 +2073,9 @@ Alta tensión, arco eléctrico, campos magnéticos intensos cerca del EAF, calor
 | Inducción | Común | 40 |
 | Ruta técnica | Sistema eléctrico del EAF/LF, maniobras, protecciones, grúas | 80 |
 | OJT supervisado | C → B: 150 órdenes; B → A: 20 maniobras de AT supervisadas | 480 |
-| Certificación TD-P07 | Pasos ★ de MM-EAF-04 y MM-GR-01 | 8 por proceso |
+| Certificación TD-P07 | Pasos ★ de MM-EAF-04, MM-EAF-02 y MM-GR-01 | 8 por proceso |
 | Refresco anual | NOM-029 y rescate por contacto eléctrico | 16/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); espacios confinados (MS-ACE-05, NOM-033); grúas/izaje (MS-ACE-04, MM-GR-01, NOM-006); eléctrico (NOM-029, MM-EAF-04). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-21 — Instrumentista
 | Campo | Valor |
@@ -2041,7 +2083,7 @@ Alta tensión, arco eléctrico, campos magnéticos intensos cerca del EAF, calor
 | Tipo de personal | Sindicalizado — escalafón de Mantenimiento, **Técnico C N-6 / B N-7 / A N-8** |
 | Área / equipo | Instrumentación y control de EAF, LF y CC: caudal y temperatura de agua, detección de fugas, nivel de molde (eddy current y Cs-137), BOP, oscilación |
 | Reporta a | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación |
-| Supervisa a | Sin mando disciplinario |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9) |
 | Plazas (total y por turno) | **23 plazas** (3 por turno × 4 cuadrillas = 12 + 2 de relevo; 8 puestos de día × 1.1 = 9) |
 | Turno | Guardia 4x4 de 12 h y administrativo |
 
@@ -2069,8 +2111,8 @@ Asegurar que las mediciones y protecciones de la Acería (fugas de agua, agua de
 | MO-CC1-04 | Colada en estado estable: nivel de molde, velocidad, enfriamiento, polvo de molde | C-08 | **C** | Atiende alarmas de instrumentación en colada. |
 | MO-CC2-04 | Colada en estado estable: nivel de molde, aceite, EMS, velocidad, enfriamiento | C-08 | **C** | Atiende alarmas de instrumentación en colada. |
 | MM-EAF-04 | Mantenimiento del transformador del horno y maniobras de alta tensión | C-12 | **C** | Consultado: aporta la condición de su equipo o área antes de ejecutar. |
-| MM-CC-01 | Cambio y preparación de moldes (placas CC1 / tubos CC2), medición de conicidad y desgaste | C-11 | **C** | Consultado: aporta la condición de su equipo o área antes de ejecutar. |
-| MM-CC-02 | Cambio y alineación de segmentos (CC1) y guías (CC2); medición de gap y alineación | C-11 | **C** | Consultado: aporta la condición de su equipo o área antes de ejecutar. |
+| MM-CC-01 | Cambio y preparación de moldes (placas CC1 / tubos CC2), medición de conicidad y desgaste | C-11 | **R** | Desconecta y reconecta termopares del molde (BOP), sensor de nivel y, en CC2, retira e instala el detector de nivel con la fuente de Cs-137 bloqueada; verifica señales antes de liberar (ejecutor por CAT-ACE-001). |
+| MM-CC-02 | Cambio y alineación de segmentos (CC1) y guías (CC2); medición de gap y alineación | C-11 | **R** | Desconecta y reconecta sensores de posición, presión y rodillos instrumentados del segmento; verifica lazos y señales después de la alineación (ejecutor por CAT-ACE-001). |
 | MO-EAF-01 | Preparación del horno entre coladas (inspección, reparación de puerta y solera, llenado del EBT, verificación de agua) | C-05 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-04, MS-ACE-05, MS-ACE-06, MS-ACE-07, MS-ACE-08, MS-ACE-09, MS-ACE-10 |
 
@@ -2104,11 +2146,11 @@ Asegurar que las mediciones y protecciones de la Acería (fugas de agua, agua de
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Técnico superior en instrumentación, electrónica o mecatrónica |
+| Escolaridad | Técnico superior en instrumentación, electrónica o mecatrónica · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | C: ≥ 2 años; B: ≥ 2 años como C; A: ≥ 3 años como B |
 | Conocimientos | Medición de flujo, temperatura y nivel, lazos de control, PLC, protección radiológica |
 | DC-3 / NOM | NOM-012 (POE), NOM-029, NOM-009, NOM-017 |
-| Certificación interna TD-P07 | MS-ACE-02, MS-ACE-07; B: MM-EAF-01, MM-CC-03 como R; A: MM-CC-04 como A |
+| Certificación interna TD-P07 | MS-ACE-02, MS-ACE-07; B: MM-EAF-01, MM-CC-01, MM-CC-02, MM-CC-03 como R; A: MM-CC-04 como A |
 | Condición física y médica | Examen médico de POE (NOM-012) y vigilancia dosimétrica; visión de colores |
 
 ### Ruta de progresión
@@ -2123,8 +2165,9 @@ Radiación ionizante, calor, altura, energía eléctrica, trabajo en equipo en o
 | Inducción | Común | 40 |
 | Ruta técnica | Instrumentación de EAF y CC, lazos, PLC, protección radiológica para POE | 80 |
 | OJT supervisado | 150 órdenes; 10 calibraciones de nivel supervisadas | 480 |
-| Certificación TD-P07 | Pasos ★ de MM-CC-03 y MM-CC-04 | 8 por proceso |
+| Certificación TD-P07 | Pasos ★ de MM-CC-01, MM-CC-02, MM-CC-03 y MM-CC-04 | 8 por proceso |
 | Refresco anual | Protección radiológica y alarmas | 16/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); espacios confinados (MS-ACE-05, NOM-033); grúas/izaje (MS-ACE-04, NOM-006); eléctrico (NOM-029); fuentes radiactivas (MS-ACE-07, NOM-012). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-22 — Técnico Hidráulico
 | Campo | Valor |
@@ -2132,7 +2175,7 @@ Radiación ionizante, calor, altura, energía eléctrica, trabajo en equipo en o
 | Tipo de personal | Sindicalizado — escalafón de Mantenimiento, **Técnico C N-5 / B N-6 / A N-7** |
 | Área / equipo | Regulación hidráulica de electrodos (EAF/LF), válvulas deslizantes, oscilación, barra tapón, torreta, unidades hidráulicas |
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico (técnica de C-12 en MM-CC-04) |
-| Supervisa a | Sin mando disciplinario |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9) |
 | Plazas (total y por turno) | **18 plazas** (2 por turno × 4 cuadrillas = 8 + 1 de relevo; 8 puestos de día × 1.1 = 9) |
 | Turno | Guardia 4x4 de 12 h y taller hidráulico administrativo |
 
@@ -2156,7 +2199,8 @@ Mantener los sistemas hidráulicos de los que depende la regulación del arco y 
 | MM-CC-04 | Sistemas hidráulicos de oscilación, control de nivel y barra tapón (incluye la fuente de Cs-137 de CC2) | C-12 | **R** | Mantiene la unidad hidráulica de oscilación, barra tapón y cilindros. |
 | MO-OLL-01 | Preparación de olla: válvula deslizante, arena de sello, tapón poroso, precalentamiento | C-15 | **C** | Consultado: aporta la condición de su equipo o área antes de ejecutar. |
 | MM-OLL-01 | Cambio de placas de válvula deslizante y tapón poroso; revestimiento y reparación de ollas | C-15 | **C** | Consultado: aporta la condición de su equipo o área antes de ejecutar. |
-| MM-CC-02 | Cambio y alineación de segmentos (CC1) y guías (CC2); medición de gap y alineación | C-11 | **C** | Consultado: aporta la condición de su equipo o área antes de ejecutar. |
+| MM-CC-01 | Cambio y preparación de moldes (placas CC1 / tubos CC2), medición de conicidad y desgaste | C-11 | **R** | Desacopla y acopla la oscilación y las líneas hidráulicas del molde; purga y prueba fugas antes de liberar (ejecutor por CAT-ACE-001). |
+| MM-CC-02 | Cambio y alineación de segmentos (CC1) y guías (CC2); medición de gap y alineación | C-11 | **R** | Desconecta y reconecta los cilindros hidráulicos de apriete de segmentos; libera energía almacenada y verifica presiones de apriete después de la alineación (ejecutor por CAT-ACE-001). |
 | MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-04, MS-ACE-05, MS-ACE-06, MS-ACE-08, MS-ACE-09, MS-ACE-10; **C:** MS-ACE-03, MS-ACE-07 |
 
 ### Responsabilidades de seguridad
@@ -2187,11 +2231,11 @@ Mantener los sistemas hidráulicos de los que depende la regulación del arco y 
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Técnico en mecánica, electromecánica o mecatrónica |
+| Escolaridad | Técnico en mecánica, electromecánica o mecatrónica · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | Entrada lateral desde S-19 C o S-21 C con ≥ 12 meses |
 | Conocimientos | Oleohidráulica, servoválvulas, acumuladores, contaminación de aceite |
 | DC-3 / NOM | NOM-020 (acumuladores y recipientes a presión), NOM-004, NOM-009, NOM-017 |
-| Certificación interna TD-P07 | MS-ACE-02; B: MM-EAF-02, MM-CC-04 como R |
+| Certificación interna TD-P07 | MS-ACE-02; B: MM-EAF-02, MM-CC-01, MM-CC-02, MM-CC-04 como R |
 | Condición física y médica | Apto general, altura |
 
 ### Ruta de progresión
@@ -2206,8 +2250,9 @@ Alta presión, calor, riesgo de incendio por fluido, altura, radiación (CC2).
 | Inducción | Común (si viene de otra área) | 40 |
 | Ruta técnica | Hidráulica industrial y proporcional, servoválvulas | 64 |
 | OJT supervisado | 100 órdenes | 360 |
-| Certificación TD-P07 | Pasos ★ de MM-EAF-02 y MM-CC-04 | 8 por proceso |
+| Certificación TD-P07 | Pasos ★ de MM-EAF-02, MM-CC-01, MM-CC-02 y MM-CC-04 | 8 por proceso |
 | Refresco anual | Energía almacenada | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); espacios confinados (MS-ACE-05, NOM-033); grúas/izaje (MS-ACE-04, NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-23 — Soldador Calificado
 | Campo | Valor |
@@ -2215,7 +2260,7 @@ Alta presión, calor, riesgo de incendio por fluido, altura, radiación (CC2).
 | Tipo de personal | Sindicalizado — escalafón de Mantenimiento, **Técnico C N-5 / B N-6 / A N-7** |
 | Área / equipo | Paneles y bóveda enfriados por agua, estructura, canastas, ollas (coraza), pailería |
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico |
-| Supervisa a | Sin mando disciplinario |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9) |
 | Plazas (total y por turno) | **25 plazas** (2 por turno × 4 cuadrillas = 8 + 1 de relevo; 14 puestos de día × 1.1 = 16) |
 | Turno | Guardia 4x4 de 12 h y taller administrativo |
 
@@ -2266,7 +2311,7 @@ Reparar por soldadura, con procedimientos calificados, los componentes cuya fall
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Secundaria o bachillerato técnico con curso de soldadura |
+| Escolaridad | Secundaria o bachillerato técnico con curso de soldadura · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | Entrada lateral desde S-19 C o ingreso con calificación vigente |
 | Conocimientos | Procesos de soldadura, metalurgia de la soldadura, lectura de WPS y planos |
 | DC-3 / NOM | NOM-027, NOM-010, NOM-033, NOM-009, NOM-017; calificación de soldador (WPQ) AWS D1.1 / ASME IX según aplique |
@@ -2287,6 +2332,7 @@ Humos metálicos, radiación UV, calor, espacios confinados, altura.
 | OJT supervisado | 60 reparaciones | 360 |
 | Certificación TD-P07 + WPQ | Pasos ★ de MM-EAF-01 + prueba de calificación | 16 |
 | Refresco | Recalificación según código | Según código |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); espacios confinados (MS-ACE-05, NOM-033); grúas/izaje (MS-ACE-04, NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-24 — Refractarista
 | Campo | Valor |
@@ -2294,7 +2340,7 @@ Humos metálicos, radiación UV, calor, espacios confinados, altura.
 | Tipo de personal | Sindicalizado — escalafón de Mantenimiento, **Técnico C N-4 / B N-5 / A N-6** |
 | Área / equipo | Refractario del EAF (solera, bancos, EBT, proyección), ollas (revestimiento, placas, tapón) y apoyo a distribuidores |
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico (administrativo) y C-15 Especialista de Refractarios (técnico y programa) |
-| Supervisa a | Sin mando disciplinario |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9) |
 | Plazas (total y por turno) | **47 plazas** (4 por turno × 4 cuadrillas = 16 + 2 de relevo; 26 puestos de día × 1.1 = 29) |
 | Turno | Guardia 4x4 de 12 h (gunning, EBT, placas) y taller administrativo (revestimiento de ollas) |
 
@@ -2350,7 +2396,7 @@ Mantener la integridad del refractario del EAF y de las ollas para evitar perfor
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Secundaria (preferente bachillerato técnico) |
+| Escolaridad | Secundaria (preferente bachillerato técnico) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | Entrada lateral desde S-08 o S-03 con ≥ 12 meses, o ingreso |
 | Conocimientos | Materiales refractarios, patrones de revestimiento, secado, desgaste |
 | DC-3 / NOM | NOM-033, NOM-010, NOM-006 (enganche), NOM-009, NOM-015, NOM-017 |
@@ -2371,6 +2417,7 @@ Calor de ollas y horno, polvo, espacio confinado, esfuerzo físico, carga suspen
 | OJT supervisado | 10 revestimientos de olla y 20 reparaciones de EAF | 360 |
 | Certificación TD-P07 | Pasos ★ de MM-OLL-01 y MM-EAF-03 | 8 por proceso |
 | Refresco anual | Espacios confinados y sílice | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); espacios confinados (MS-ACE-05, NOM-033); grúas/izaje (MS-ACE-04, NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-25 — Mecánico de Taller de Moldes y Segmentos
 | Campo | Valor |
@@ -2378,7 +2425,7 @@ Calor de ollas y horno, polvo, espacio confinado, esfuerzo físico, carga suspen
 | Tipo de personal | Sindicalizado — escalafón de Mantenimiento, **Técnico C N-5 / B N-6 / A N-7** |
 | Área / equipo | Taller de moldes (placas CC1, tubos CC2) y de segmentos/guías |
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico |
-| Supervisa a | Sin mando disciplinario |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9) |
 | Plazas (total y por turno) | **18 plazas** (16 puestos de día × 1.1 = 18) |
 | Turno | Administrativo (el cambio en máquina lo apoya la guardia de S-19) |
 
@@ -2402,7 +2449,7 @@ Entregar moldes y segmentos dentro de tolerancia (conicidad, desgaste, gap y ali
 | MM-CC-02 | Cambio y alineación de segmentos (CC1) y guías (CC2); medición de gap y alineación | C-11 | **A** | Reconstruye segmentos, ajusta gap (± 0.5 mm) y alinea con plantilla/calibrador. |
 | MO-CC1-02 | Preparación de máquina: inserción y sellado de la barra falsa | C-06 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-CC2-02 | Preparación de máquina: inserción de la barra falsa rígida (6 líneas) | C-06 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
-| MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-04, MS-ACE-05, MS-ACE-06, MS-ACE-08, MS-ACE-09, MS-ACE-10; **C:** MS-ACE-07 |
+| MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-04, MS-ACE-05, MS-ACE-06, MS-ACE-07 (moldes de CC2 con detector de nivel de Cs-137; ejecutor por CAT-ACE-001), MS-ACE-08, MS-ACE-09, MS-ACE-10 |
 
 ### Responsabilidades de seguridad
 - ★ Izaje de moldes y segmentos con accesorios certificados y centro de gravedad conocido (MS-ACE-04).
@@ -2434,11 +2481,11 @@ Entregar moldes y segmentos dentro de tolerancia (conicidad, desgaste, gap y ali
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Bachillerato técnico o técnico superior en mecánica / máquinas herramienta |
+| Escolaridad | Bachillerato técnico o técnico superior en mecánica / máquinas herramienta · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | Entrada lateral desde S-19 C con ≥ 12 meses |
 | Conocimientos | Metrología dimensional, máquinas herramienta, rodamientos, geometría de la colada |
-| DC-3 / NOM | NOM-004, NOM-006, NOM-017; curso de metrología |
-| Certificación interna TD-P07 | MS-ACE-02, MS-ACE-04; B: MM-CC-01, MM-CC-02 como R; A: como A |
+| DC-3 / NOM | NOM-004, NOM-006, NOM-017, NOM-012 (conciencia radiológica; POE solo si el ESR lo determina); curso de metrología |
+| Certificación interna TD-P07 | MS-ACE-02, MS-ACE-04, MS-ACE-07 (usuario, fuente bloqueada); B: MM-CC-01, MM-CC-02 como R; A: como A |
 | Condición física y médica | Agudeza visual (medición fina) |
 
 ### Ruta de progresión
@@ -2455,6 +2502,7 @@ Taller con máquinas herramienta, cargas pesadas, ruido; en campo, calor y vapor
 | OJT supervisado | 20 moldes y 20 segmentos | 360 |
 | Certificación TD-P07 | Pasos ★ de MM-CC-01 y MM-CC-02 | 8 por proceso |
 | Refresco anual | Metrología y lecciones de breakout | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); espacios confinados (MS-ACE-05, NOM-033); grúas/izaje (MS-ACE-04, NOM-006); fuentes radiactivas (MS-ACE-07, NOM-012). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-26 — Lubricador
 | Campo | Valor |
@@ -2483,9 +2531,9 @@ Ejecutar las rutas de lubricación y detectar a tiempo condiciones anormales (ru
 | Código | Proceso crítico | Dueño | R/A/C/I | Qué le toca |
 |---|---|---|---|---|
 | MM-EAF-02 | Mantenimiento de brazos portaelectrodos, columnas, regulación hidráulica y cambio de bóveda / delta | C-11 | **C** | Lubrica articulaciones y guías según ruta. |
-| MM-GR-01 | Inspección y mantenimiento de grúas de colada (ganchos, frenos, cables, límites) | C-11 | **C** | Lubrica cables, reductores y rodamientos de grúas según ruta; reporta hallazgos. |
+| MM-GR-01 | Inspección y mantenimiento de grúas de colada (ganchos, frenos, cables, límites) | C-11 | **R** | Lubrica cables, reductores y rodamientos de grúas según ruta, con la grúa bloqueada; reporta hallazgos (ejecutor por CAT-ACE-001). |
 | MM-CC-03 | Sistemas de agua de molde, enfriamiento secundario y agua de emergencia (pruebas de torre y bombas diésel) | C-12 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
-| MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-06, MS-ACE-08, MS-ACE-09, MS-ACE-10; **C:** MS-ACE-04, MS-ACE-05; **I:** MS-ACE-03 |
+| MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-04, MS-ACE-06, MS-ACE-08, MS-ACE-09, MS-ACE-10; **C:** MS-ACE-05; **I:** MS-ACE-03 |
 
 ### Responsabilidades de seguridad
 - ★ LOTO para lubricar puntos que no son accesibles con el equipo en marcha (MS-ACE-02).
@@ -2513,11 +2561,11 @@ Ejecutar las rutas de lubricación y detectar a tiempo condiciones anormales (ru
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Secundaria (preferente bachillerato técnico) |
+| Escolaridad | Secundaria (preferente bachillerato técnico) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
 | Experiencia | No indispensable |
 | Conocimientos | Tipos de lubricantes, carta de lubricación, inspección sensorial |
 | DC-3 / NOM | NOM-009, NOM-006 (acceso a grúas), NOM-018, NOM-017 |
-| Certificación interna TD-P07 | MS-ACE-02, MS-ACE-10 |
+| Certificación interna TD-P07 | MS-ACE-02, MS-ACE-04 (acceso a grúas), MS-ACE-10; MM-GR-01 (ruta de lubricación de grúas) como R |
 | Condición física y médica | Apto para altura y esfuerzo moderado |
 
 ### Ruta de progresión
@@ -2532,14 +2580,15 @@ Altura (grúas, plataformas), cercanía a equipos calientes y en movimiento, lub
 | Inducción | Común | 40 |
 | Ruta técnica | Lubricación industrial, CMMS, altura, LOTO | 24 |
 | OJT supervisado | 15 turnos en cada ruta | 180 |
-| Certificación TD-P07 | LOTO y altura | 4 |
+| Certificación TD-P07 | LOTO, altura y pasos ★ de lubricación de grúas (MM-GR-01) | 6 |
 | Refresco anual | LOTO y altura | 8/año |
+| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); grúas/izaje (MS-ACE-04, MM-GR-01, NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ---
 
 ## 5. Matriz rol × proceso crítico
 
-Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO-, 10 MM-, 10 MS-). Celda vacía = el rol no participa. Por su anchura, la matriz se divide en 4 tablas. Validación hecha: todos los "roles que ejecutan" del catálogo aparecen como R o A, y cada proceso MO-/MM- tiene un solo A sindicalizado.
+Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO-, 10 MM-, 10 MS-). Celda vacía = el rol no participa. Por su anchura, la matriz se divide en 4 tablas. Validación hecha (v0.2, contra CAT-ACE-001 actualizado): todos los "roles que ejecutan" del catálogo aparecen como R o A —incluidos los ejecutores nuevos S-20 en MM-EAF-02, S-21 y S-22 en MM-CC-01/02, S-09 y S-26 en MM-GR-01 y S-13 y S-25 en MS-ACE-07— y cada proceso MO-/MM- tiene un solo A sindicalizado. Los procesos MS-ACE-07 ahora tienen como dueño a C-16 en su función de Encargado de Seguridad Radiológica (ESR).
 
 ### 5.1 Operación — EAF, ollas y horno olla
 
@@ -2617,7 +2666,7 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 | S-06 |  |  |  |  |  |  |  |  |  |  |
 | S-07 |  |  |  |  |  |  |  |  |  |  |
 | S-08 |  |  |  |  | R |  |  |  |  |  |
-| S-09 |  |  |  |  | C |  |  |  |  | C |
+| S-09 |  |  |  |  | C |  |  |  |  | R |
 | S-10 |  |  |  |  |  |  |  |  |  |  |
 | S-11 |  |  |  |  |  |  |  |  |  |  |
 | S-12 |  |  |  |  |  | I | I | C | C |  |
@@ -2628,14 +2677,14 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 | S-17 |  |  |  |  |  |  |  |  |  |  |
 | S-18 |  |  |  |  |  |  |  |  |  |  |
 | S-19 | A | A |  |  |  | R | R | A | I | A |
-| S-20 | C | C |  | A |  |  |  | C |  | R |
-| S-21 | R |  |  | C |  | C | C | R | A |  |
-| S-22 |  | R |  |  | C |  | C |  | R |  |
+| S-20 | C | R |  | A |  |  |  | C |  | R |
+| S-21 | R |  |  | C |  | R | R | R | A |  |
+| S-22 |  | R |  |  | C | R | R |  | R |  |
 | S-23 | R | C |  |  |  |  |  |  |  | C |
 | S-24 |  |  | A |  | A |  |  |  |  |  |
 | S-25 |  |  |  |  |  | A | A |  |  |  |
-| S-26 |  | C |  |  |  |  |  | I |  | C |
-| **R+A** | 3 | 3 | 2 | 1 | 2 | 2 | 2 | 2 | 2 | 2 |
+| S-26 |  | C |  |  |  |  |  | I |  | R |
+| **R+A** | 3 | 4 | 2 | 1 | 2 | 4 | 4 | 2 | 2 | 4 |
 
 ### 5.4 Seguridad crítica
 
@@ -2653,7 +2702,7 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 | S-10 | R | R | R | C | C | R |  | R | R | I |
 | S-11 | R | I | R | I | I | R |  | R | R | I |
 | S-12 | R | R | R | I | I | R | R | R | R | I |
-| S-13 | R | R | R | R | I | R | C | R | R | R |
+| S-13 | R | R | R | R | I | R | R | R | R | R |
 | S-14 | R | R | R | C | I | R | R | R | R | R |
 | S-15 | R | R | R | R | R | R |  | R | R | R |
 | S-16 | R | R | R | C | I | R |  | R | R | I |
@@ -2665,9 +2714,9 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 | S-22 | R | R | C | R | R | R | C | R | R | R |
 | S-23 | R | R | R | R | R | R |  | R | R | R |
 | S-24 | R | R | R | R | R | R |  | R | R | R |
-| S-25 | R | R | R | R | R | R | C | R | R | R |
-| S-26 | R | R | I | C | C | R |  | R | R | R |
-| **R+A** | 26 | 24 | 22 | 14 | 9 | 26 | 4 | 26 | 26 | 20 |
+| S-25 | R | R | R | R | R | R | R | R | R | R |
+| S-26 | R | R | I | R | C | R |  | R | R | R |
+| **R+A** | 26 | 24 | 22 | 15 | 9 | 26 | 6 | 26 | 26 | 20 |
 
 
 ---
@@ -2676,20 +2725,22 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 
 | # | Tema | Qué dice la ley (resumen) | Qué propone este documento | Validar con | Riesgo si no se valida |
 |---|---|---|---|---|---|
-| 1 | **Jornada de 12 h en rol 4x4** | La LFT fija jornadas máximas de 8 h diurna, 7 h nocturna y 7.5 h mixta (arts. 60–61) y el pago de tiempo extra (arts. 66–68). Las jornadas de 12 h suelen pactarse en el CCT con promedio semanal y pago de excedentes. Está en discusión la reducción gradual de la jornada semanal a 40 h | Se mantiene el 4x4 de la ficha; las plazas se calculan con factor 4.5 | Jurídico Laboral + texto del CCT. **Verificar con Jurídico Laboral** si una reforma de 40 h cambia el factor de relevo (podría pedir ≈ 5 cuadrillas) | Plantilla subestimada; contingencia laboral |
-| 2 | **Certificación TD-P07 como requisito de ascenso** | Arts. 154–159: las vacantes se cubren por la categoría inmediata inferior, considerando capacitación, antigüedad y aptitud; art. 153-U: examen de suficiencia | "Aptitud" = certificación interna TD-P07 + DC-3 del puesto destino | CMCAP, sindicato, Jurídico. **Verificar con Jurídico Laboral** | Que el sindicato lo vea como filtro contra la antigüedad; demandas por ascensos |
+| 1 | **Jornada de 12 h en rol 4x4** | **Art. 59:** trabajador y patrón fijan la jornada y pueden repartir las horas para dar descanso, sin exceder los máximos legales. **Arts. 60–61:** máximos de 8 h diurna, 7 h nocturna y 7.5 h mixta. **Arts. 66–68:** el tiempo extra no puede pasar de 3 h diarias ni de 3 veces por semana; se paga al 100% adicional y, lo que exceda de 9 h a la semana, al 200% adicional. Un turno de 12 h (sobre todo el nocturno) rebasa la jornada diaria; el 4x4 promedia 42 h/semana (84 h en 14 días) y solo se sostiene si el **CCT** lo pacta como jornada acumulada/promediada con pago de excedentes. **Reducción a 40 h:** está en proceso una reforma para bajar gradualmente la jornada semanal máxima de 48 a 40 h; con 40 h el promedio del 4x4 (42 h) queda por encima del máximo | Se mantiene el 4x4 de la ficha con factor 4.5. **Impacto estimado con 40 h [Supuesto]:** factor ≈ 4.7 (168 h ÷ 40 h × 1.12) → ≈ +35 plazas continuas (159 × 0.22), o pago de 2 h/semana de excedente por trabajador, o un rol de 5 cuadrillas (factor ≈ 5.6, ≈ +175 plazas) | **Verificar con Jurídico Laboral:** (a) cláusula del CCT que pacta el 4x4 y el pago del tiempo que excede la jornada legal; (b) tratamiento del turno nocturno de 12 h; (c) calendario y reglas de transición de la reforma de 40 h y su efecto en el factor de relevo | Plantilla subestimada; demandas por tiempo extra no pagado; contingencia laboral |
+| 2 | **Certificación TD-P07 como prueba de aptitud para el ascenso** | Art. 159: si la empresa capacitó, asciende el **apto de mayor antigüedad**; si no capacitó, el de mayor antigüedad. Art. 158: cuadro de antigüedades de la comisión mixta. Art. 153-U: el trabajador puede acreditar sus conocimientos o presentar examen de suficiencia sin tomar el curso | "Aptitud" = certificación TD-P07 + DC-3 del puesto destino; **la antigüedad ordena entre los aptos**; la ruta se ofrece en jornada y sin costo a todos los candidatos; la evaluación TD-P07 funciona como examen de suficiencia para quien ya sabe (§3.1) | CMCAP, sindicato, Jurídico. **Verificar con Jurídico Laboral** | Que el sindicato lo vea como filtro contra la antigüedad; demandas por ascensos si la empresa no probó que ofreció la capacitación |
 | 3 | **Tabulador por niveles N-1 a N-8** | Las categorías y los salarios los fija el CCT | Niveles propuestos sin pesos; S-01 y S-12 en N-8; técnicos A de S-20/S-21 en N-8 | Relaciones Laborales corporativas + Compensaciones | Reclasificaciones con impacto salarial; comparaciones entre áreas |
 | 4 | **Categorías C/B/A en mantenimiento** | Deben existir en el CCT o pactarse | 3 categorías por oficio con ascenso por certificación y órdenes de trabajo | Sindicato / CCT | Que existan categorías distintas en el CCT vigente |
 | 5 | **Niveles de ingreso N-1/N-2 (ayudante general, eventual, aprendiz dual)** | Contratación temporal y periodo de prueba (arts. 35, 39-A) | Todas las líneas empiezan en N-3; el ingreso lo administra el CCT | Jurídico Laboral | Uso incorrecto de eventuales en puestos permanentes |
-| 6 | **Suplencias de 1 turno con la categoría inmediata inferior certificada** | Art. 159: vacantes provisionales > 30 días se cubren escalafonariamente; las cortas según el CCT | Suplencia solo con certificación vigente del puesto; pago de la categoría superior según el CCT | Sindicato / CCT | Asignar a no certificados en tareas críticas (viola la política "sin certificación no hay tarea crítica") |
-| 7 | **Capacitación fuera de jornada** (refrescos, simulador) en rol 4x4 | Art. 153-E: la capacitación se da en la jornada salvo que se pacte otra cosa | Se programa en jornada o en días de descanso con pago según el CCT | CMCAP + Jurídico. **Verificar con Jurídico Laboral** | Horas extra no presupuestadas o baja asistencia |
+| 6 | **Suplencias de 1 turno con la categoría inmediata inferior certificada** | Art. 159: vacantes provisionales > 30 días se cubren escalafonariamente; las cortas según el CCT | Suplencia solo con certificación vigente del puesto, por antigüedad entre los certificados del turno; pago de la categoría superior según el CCT | Sindicato / CCT | Asignar a no certificados en tareas críticas (viola la política "sin certificación no hay tarea crítica") |
+| 7 | **Capacitación fuera de jornada** (refrescos, simulador, recertificaciones de 12 meses) en rol 4x4 | La capacitación se imparte en horas de jornada salvo que se pacte otra cosa (art. 153-A; la CMCAP es el art. 153-E) — verificar numeral con Jurídico Laboral. Con vigencias de 12 meses sube la carga de recertificación | Se programa en jornada o en días de descanso con pago según el CCT | CMCAP + Jurídico. **Verificar con Jurídico Laboral** | Horas extra no presupuestadas o baja asistencia |
 | 8 | **Cambio lateral entre líneas** (S-06 ↔ S-01, S-19 → S-22/S-23/S-25, S-08/S-03 → S-24) | Depende del CCT (escalafón departamental o general) | Permitido con certificación y conservando antigüedad de empresa | Sindicato / CCT | Conflicto entre líneas por derechos escalafonarios |
 | 9 | **Condición médica** | No discriminación (arts. 3, 133); exámenes médicos del trabajador (art. 134 fr. X) | Aptitud por capacidad funcional individual con ajustes razonables | Jurídico + Medicina del Trabajo | Discriminación por salud; datos personales sensibles |
-| 10 | **Personal ocupacionalmente expuesto (POE) a radiación** (S-12 de CC2, S-14 de CC2, S-21) | NOM-012-STPS-2012 y reglamento de seguridad radiológica: capacitación, dosimetría y vigilancia médica | S-21 como POE; S-12/S-14 de CC2 según el análisis del encargado de seguridad radiológica | SSO + ESR. **Verificar con Jurídico Laboral / SSO** | Incumplimiento con la autoridad nuclear y la STPS |
-| 11 | **Coordinación técnica sin mando** (S-01, S-06, S-12, S-13, técnicos A) | El mando disciplinario es del personal de confianza | Se redacta como "coordina técnicamente"; la disciplina es de C-xx | Sindicato | Que se interprete como trabajo de confianza o se reclame pago adicional |
+| 10 | **Personal ocupacionalmente expuesto (POE) a radiación** (S-12, S-13 y S-14 de CC2, S-21, S-25; S-05 como usuario del pórtico) | NOM-012-STPS-2012 y reglamento de seguridad radiológica: capacitación, dosimetría y vigilancia médica; recertificación de 12 meses | S-21 como POE; S-12/S-13/S-14 de CC2 y S-25 según el análisis del ESR (C-16) | SSO + ESR. **Verificar con Jurídico Laboral / SSO** | Incumplimiento con la autoridad nuclear y la STPS |
+| 11 | **Coordinación técnica sin mando** (S-01, S-06, S-12, S-13, técnicos A, evaluadores sindicalizados) | Art. 9: son de confianza las funciones de dirección, inspección, vigilancia y fiscalización de carácter general; se define por la función, no por el nombre del puesto | "Supervisa a: No aplica" en los 26 roles; "coordina técnicamente / guía / da el liberado" = secuencia técnica y señal de seguridad; asignación de trabajo, disciplina y evaluación de desempeño = C-xx; el evaluador sindicalizado evalúa pasos ★ en pareja y no dictamina (§3.3). En campo, los tramos altos de C-05 y C-06 no deben cubrirse delegando mando en S-01 o S-12 | Sindicato; **verificar con Jurídico Laboral** | Que la función real se vuelva de confianza (pérdida de la plaza sindical, reclamos de pago o de categoría) |
 | 12 | **Paso a confianza** (S → C-05, C-06, C-11, C-12) | Art. 9 (trabajador de confianza) y cláusulas del CCT | Por concurso y Escuela de Supervisores; renuncia a la plaza sindical según el CCT | Jurídico + Gerencia de Confianza | Derechos de regreso a la plaza |
-| 13 | **Evidencias TD-P07 para decisiones disciplinarias** | Uso proporcional y protección de datos | La evaluación se usa para formar y certificar, no para sancionar (salvo actos inseguros deliberados según el reglamento interior) | Sindicato / Jurídico | Rechazo a las evaluaciones |
+| 13 | **Evidencias TD-P07 para decisiones disciplinarias** | Uso proporcional, derecho de audiencia y protección de datos | La evaluación se usa para formar, certificar y acreditar aptitud; **no es sanción**. Excepción única: acto inseguro deliberado en tarea crítica de seguridad, por la vía del Reglamento Interior y el CCT. La suspensión preventiva de la certificación tras un incidente grave es medida de seguridad, sin pérdida de salario ni antigüedad (§3.1) | Sindicato / Jurídico. **Verificar con Jurídico Laboral** | Rechazo a las evaluaciones; nulidad de sanciones |
 | 14 | **Versiones de las NOM citadas** | Las NOM se actualizan (p. ej. NOM-006, NOM-017) | Se citan por número; la versión vigente la confirma SSO | experto-seguridad-salud. **Verificar con Jurídico Laboral / SSO** | DC-3 con referencia normativa vencida |
+| 15 | **Escolaridad como requisito** | No discriminación (arts. 3 y 133); art. 153-U | Escolaridad = referencia; equivalencia por experiencia (Acuerdo 286 SEP / CENEVAL), CONOCER o examen de suficiencia + TD-P07 (§4) | Jurídico + CMCAP. **Verificar con Jurídico Laboral** | Exclusión de trabajadores con experiencia y sin certificado escolar; queja por discriminación |
+| 16 | **Vigencias de 12 meses** (alturas, confinados, izaje, eléctrico, radiactivas) | Obligación de capacitar (art. 153-A) y NOM aplicables | Recertificación anual en jornada; plan DC-2 con la carga adicional | CMCAP + SSO | Certificaciones vencidas que dejan puestos sin cubrir; horas extra |
 
 ---
 
@@ -2697,7 +2748,7 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 
 | Revisor | Qué revisa | Por qué |
 |---|---|---|
-| `experto-relaciones-laborales` | §3 escalafón, §6 notas laborales, niveles y suplencias | Afecta a 963 trabajadores sindicalizados y al CCT |
+| `experto-relaciones-laborales` | §3 escalafón, §6 notas laborales, niveles y suplencias — **hecho en v0.2: visto bueno con observaciones** (`REVISION-LABORAL.md`) | Afecta a 963 trabajadores sindicalizados y al CCT |
 | `experto-seguridad-salud` | Responsabilidades de seguridad, NOM y DC-3 de cada puesto, aptitud médica, POE | Riesgo físico crítico (metal líquido, grúas, AT, radiación) |
 | `experto-operativo-metalurgia` | Parámetros de cada puesto, KPIs y metas, asignación R/A/C/I | Documento técnico de planta; valores de FT-ACE-001 |
 | `experto-documentacion-mejora` | Control documental DP-ACE-S y coherencia con CAT-ACE-001 | Documento controlado nuevo; propone cambios al catálogo |
@@ -2715,6 +2766,8 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 
 **Recomendación:** opción **B**. **Fecha límite sugerida para decidir:** 2026-10-16, para que la etapa 1 quede validada antes de cerrar la DNC y el plan DC-2 2027.
 
+> **Decisiones adicionales derivadas de la revisión laboral (v0.2):** jornada 4x4 frente a la reforma de 40 h, vigencias de 12 meses en el plan DC-2 y pendientes de catálogo (S-27 grúas de CC y producto, escarpeo). Ver `REVISION-LABORAL.md`, sección "Decisión requerida del Director".
+
 ---
 
 ## 9. Control de cambios
@@ -2722,3 +2775,4 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación: 26 descripciones de puesto, dotación, escalafón, matriz rol × proceso y notas laborales | gerente-personal-sindicalizado |
+| 0.2 | 2026-09-25 | Revisión laboral y documental: §3.1 reescrito con arts. 153-U y 154–159 (aptitud ≠ orden; antigüedad entre aptos; examen de suficiencia); uso no disciplinario de las evaluaciones; "Supervisa a: No aplica" (art. 9) en los 26 roles; equivalencias de escolaridad; vigencias de 12 / 24 meses y fila "Vigencia" en los 26 planes; ejecutores nuevos de CAT-ACE-001 (S-20 MM-EAF-02; S-21/S-22 MM-CC-01/02; S-09/S-26 MM-GR-01; S-13/S-25 MS-ACE-07) en matriz y fichas; nota de jornada 4x4 (arts. 59–61, 66–68, reforma de 40 h); encabezado con revisores | experto-relaciones-laborales |

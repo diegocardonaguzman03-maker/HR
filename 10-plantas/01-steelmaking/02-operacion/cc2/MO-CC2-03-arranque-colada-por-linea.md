@@ -2,12 +2,12 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-03 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-03 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** el arranque es el momento de **mayor riesgo** de la colada: metal líquido cayendo, moldes llenándose en segundos y gente cerca. Abre las líneas **una por una, en el orden del manual**, arranca la extracción **en el nivel correcto** y sube la velocidad **con la rampa**, no de golpe. Si una línea no arranca bien, **ciérrala**: una línea perdida se recupera; una persona no.
 
 ## 1. Objetivo y alcance
-**Objetivo:** arrancar las 6 líneas con un sobrecalentamiento de **20–35 °C**, llevar cada línea de 0 a **≥ 2.5 m/min** con la rampa definida y el nivel de molde en control automático (**± 5 mm**), sin fugas, breakouts ni desbordamientos.
+**Objetivo:** arrancar las 6 líneas con un sobrecalentamiento de **20–35 °C (1.ª colada de secuencia: 25–40 °C)**, llevar cada línea de 0 a **≥ 2.5 m/min** con la rampa definida y el nivel de molde en control automático (**± 5 mm**), sin fugas, breakouts ni desbordamientos.
 
 **Alcance:** desde la llegada de la primera olla a la torreta hasta que las 6 líneas están en estado estable y la barra falsa está estacionada (entrada a MO-CC2-04). Incluye el rearranque de una línea durante la secuencia.
 
@@ -69,7 +69,7 @@ sequenceDiagram
 ## 5. Parámetros de operación
 | Parámetro | Unidad | Objetivo | Rango normal | Alarma / límite | Acción si está fuera de rango | Dónde se mide |
 |---|---|---|---|---|---|---|
-| Sobrecalentamiento en el distribuidor (primera medición a los 3–5 min) | °C | 30 | 20–35 (primera colada de secuencia hasta +10 °C sobre el objetivo [Validar]) | < 20 o > 35 | < 15 °C: 🛑 riesgo de buza congelada, avisa a C-06 para decidir; > 40 °C: arranca con velocidad al mínimo de la rampa y avisa a C-08 | Lanza de temperatura |
+| Sobrecalentamiento en el distribuidor (primera medición a los 3–5 min) | °C | 1.ª colada de secuencia: 32; siguientes: 28 | 1.ª colada: 25–40; siguientes: 20–35 [Validar] | < 20; > 40 (1.ª colada) o > 35 (siguientes) | < 15 °C: 🛑 riesgo de buza congelada, avisa a C-06 para decidir; > 40 °C: arranca con velocidad al mínimo de la rampa y avisa a C-08 | Lanza de temperatura |
 | Temperatura de líquidus (varilla C 0.25–0.35%) | °C | ≈ 1,505 [Validar: se calcula por colada] | — | — | — | Hoja de colada (LF) |
 | Nivel del distribuidor para abrir la primera línea | mm | 400 | 350–450 [Validar] | < 300 mm | Espera a que suba | Celdas de carga / HMI |
 | Tiempo entre aperturas de líneas | s | 20 | 15–30 [Validar] | L1 o L6 esperando > 3 min con buza cubierta | Abre de inmediato o prepara cambio de buza | Reloj HMI |
@@ -106,7 +106,7 @@ Chamarra, pantalón o polainas aluminizados, careta con visor dorado o filtro IR
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
 |---|---|---|---|---|
-| Sobrecalentamiento | 20–35 °C | 3–5 min después de abrir la olla y a los 10 min | Hoja de colada CC2 | Buza congelada (bajo); rechupe, grietas y breakout (alto) |
+| Sobrecalentamiento | 20–35 °C (1.ª colada: 25–40 °C) | 3–5 min después de abrir la olla y a los 10 min | Hoja de colada CC2 | Buza congelada (bajo); rechupe, grietas y breakout (alto) |
 | Química del distribuidor (primera colada) | Según grado (FT-ACE-001 §7) | 1 muestra a los 5–10 min | LIMS | Colada fuera de grado |
 | Estabilidad del nivel | ± 5 mm después de la rampa | HMI continuo | Tendencias | Pinholes, inclusiones, marcas de oscilación |
 | Palanquillas de arranque | Marcadas "A" | La primera palanquilla de cada línea | Sistema de rastreo | Mezcla de palanquillas de arranque con producto normal |
@@ -121,7 +121,7 @@ Chamarra, pantalón o polainas aluminizados, careta con visor dorado o filtro IR
 | 5 | Coloca el tubo protector con argón | Alinea y abre el argón | Sello sin fugas visibles | | S-13 |
 | 6 | Abre la olla | Válvula deslizante al 100%; si no abre libre en 30 s, lancea con O₂ según el procedimiento | Chorro estable al distribuidor | ★ | S-13 |
 | 7 | Llena el distribuidor | Controla la apertura de la olla | Nivel ≥ 400 mm | | S-13 |
-| 8 | Mide la temperatura | Lanza a 3–5 min; a 300 mm de profundidad [Validar] lejos de la zona de impacto | Sobrecalentamiento 20–35 °C | 🔎 | S-13 |
+| 8 | Mide la temperatura | Lanza a 3–5 min; a 300 mm de profundidad [Validar] lejos de la zona de impacto | Sobrecalentamiento 20–35 °C (1.ª colada: 25–40 °C) | 🔎 | S-13 |
 | 9 | Arranca el aceite en L3 y L4 | 25 mL/min; verifica flujo en el rotámetro | Flujo en todas las ranuras | | S-14 |
 | 10 | Abre L3 y L4 | Empuja la buza en lugar de la placa ciega; verifica chorro centrado y compacto | Chorro centrado, sin abrirse | ★ | S-13, S-14 |
 | 11 | Arranca la extracción en cada línea | Al llegar el nivel a ≈ 150 mm bajo el borde: 0.5 m/min con oscilación | Nivel estable; sin fuga en la cabeza | ★ | S-12 |
@@ -144,7 +144,7 @@ Chamarra, pantalón o polainas aluminizados, careta con visor dorado o filtro IR
 | Chorro abierto o en "abanico" | Buza dañada, parcialmente tapada o desalineada | Cambia la buza (MO-CC2-06) | C-06 |
 | Nivel sube sin control o molde a punto de desbordar | Extracción tarde, buza grande | Aumenta la velocidad; si llega a 60 mm bajo el borde: 🛑 cierra la línea con placa ciega | C-06 |
 | Fuga en la cabeza de la barra falsa (acero bajo el molde) | Sello mal hecho, cabeza descentrada | 🛑 Cierra la línea; evacúa bajo la plataforma | C-06 |
-| Breakout al arranque (debajo del molde) | Rampa rápida, poco aceite, nivel bajo | 🛑 Cierra la línea, detén su extracción, mantén el agua de molde y la secundaria; evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09); el ESR inspecciona el contenedor de Cs-137 | C-06, C-04, ESR |
+| Breakout al arranque (debajo del molde) | Rampa rápida, poco aceite, nivel bajo | 🛑 Cierra la línea, detén su extracción, mantén el agua de molde y la secundaria; evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09); el ESR inspecciona el contenedor de Cs-137 | C-06, C-04, C-16 (ESR) |
 | Falla de agua de molde o apagón | Bombas, energía | 🛑 Verifica la entrada del agua de emergencia en ≤ 15 s; cierra la olla, cierra las 6 líneas con placa ciega, evacúa la plataforma de molde a ≥ 10 m (MS-ACE-09); no reintroduzcas agua a un molde sobrecalentado sin autorización de C-06/C-08 | C-04, C-06 |
 | Sobrecalentamiento < 15 °C | Olla fría, retraso | C-06 decide arrancar menos líneas o regresar la olla | C-06, C-07 |
 | La barra falsa no se desacopla | Cabeza mal sellada, deformada | Detén la línea antes del estacionamiento; mantenimiento libera | C-06, C-11 |
@@ -181,3 +181,4 @@ Chamarra, pantalón o polainas aluminizados, careta con visor dorado o filtro IR
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: sobrecalentamiento de la 1.ª colada de secuencia fijado en 25–40 °C (objetivo 32 °C, +5 °C sobre el rango normal, mismo criterio que CC1) y ESR citado como C-16. | experto-operativo-metalurgia |

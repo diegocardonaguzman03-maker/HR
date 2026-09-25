@@ -114,7 +114,7 @@ EPP de zona roja en toda tarea frente a metal líquido (MS-ACE-01 y MS-ACE-08). 
 
 - **Materiales prohibidos en canasta** (lista mínima): recipientes cerrados o con tapa; cilindros de gas; extintores; amortiguadores; tubos con extremos cerrados; hielo, nieve, lodo; chatarra con agua visible; baterías; materiales radiactivos (MS-ACE-07); explosivos o municiones.
 - La reparación de fugas de panel requiere LOTO (MS-ACE-02) y procedimiento MM-EAF-01.
-- Tras una fuga con agua en el baño, la zona roja se amplía a **≤ 25 m** del horno hasta que C-05 y C-07 autoricen.
+- Tras una fuga con agua en el baño, la zona roja se amplía a **25 m** alrededor del horno (nadie a menos de 25 m) hasta que C-05 y C-07 autoricen. Este criterio y los de humedad de esta sección son los únicos válidos para todos los manuales MO y MM.
 
 ## 7. Calidad
 
@@ -145,7 +145,7 @@ EPP de zona roja en toda tarea frente a metal líquido (MS-ACE-01 y MS-ACE-08). 
 
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
-| Δ caudal > 4 % (disparo), vapor, llama amarilla, chisporroteo en el EAF | Fuga de panel o bóveda | Arco fuera; **NO bascules el horno ni muevas electrodos**; evacúa ≤ 25 m; cierra el agua del panel por mando remoto si está identificado; espera a que evapore (sin vapor visible ≥ 30 min [Supuesto]) | C-05, C-07, C-04 |
+| Δ caudal > 4 % (disparo), vapor, llama amarilla, chisporroteo en el EAF | Fuga de panel o bóveda | Arco fuera; **NO bascules el horno ni muevas electrodos**; evacúa a ≥ 25 m del horno; cierra el agua del panel por mando remoto si está identificado; espera a que evapore (sin vapor visible ≥ 30 min [Supuesto]) | C-05, C-07, C-04 |
 | Agua visible sobre el baño o la escoria | Fuga mayor | Igual que arriba; nadie frente a la puerta ni al EBT; reanudación solo con C-05 + C-07 | C-04, C-16 |
 | Explosión o proyección durante la carga de canasta | Recipiente cerrado o agua en chatarra | Evacúa; atiende lesionados; retiene el lote para investigación | C-04, C-17, C-16 |
 | Olla con humedad detectada o precalentamiento incompleto | Falla del precalentador | 🛑 Olla fuera de ciclo | C-15, C-05 |
@@ -165,10 +165,11 @@ EPP de zona roja en toda tarea frente a metal líquido (MS-ACE-01 y MS-ACE-08). 
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | S-05, C-17 | 3 | 8 (materiales prohibidos, radiación) | 40 h + 30 camiones | Pasos 1, 2, 3 | 24 meses (TD-P07) |
-| S-01 | 4 | 8 (CRS-08 + CRS-09) | 20 coladas + simulador EAF | Pasos 4, 5 + escenario de fuga | 24 meses |
-| S-02, S-03, S-07, S-10 | 3 | 6 | 20 h | Pasos 7, 8, 9 | 24 meses |
-| S-08, S-24, C-15 | 3 | 6 | 10 ollas | Paso 6 | 24 meses |
-| S-12, S-13, S-14 | 3 | 6 | 10 coladas | Paso 10 + escenario de pérdida de agua | 24 meses |
+| S-01 | 4 | 8 (CRS-08 + CRS-09) | 20 coladas + simulador EAF | Pasos 4, 5 + escenario de fuga | 24 meses (TD-P07) |
+| S-02, S-03, S-07, S-10 | 3 | 6 | 20 h | Pasos 7, 8, 9 | 24 meses (TD-P07) |
+| S-08, S-24, C-15 | 3 | 6 | 10 ollas | Paso 6 | 24 meses (TD-P07) |
+| S-12, S-13, S-14 | 3 | 6 | 10 coladas | Paso 10 + escenario de pérdida de agua | 24 meses (TD-P07) |
+| S-04 | 3 | 4 | 10 canastas | Paso 3 | 24 meses (TD-P07) |
 
 **Lista corta de verificación de pasos ★:**
 1. ¿Reconoce y rechaza recipientes cerrados y chatarra con agua?
@@ -176,6 +177,10 @@ EPP de zona roja en toda tarea frente a metal líquido (MS-ACE-01 y MS-ACE-08). 
 3. ¿Verifica el agua del EAF (Δ caudal, presión, temperatura) antes de energizar?
 4. ¿Confirma olla ≥ 1,000 °C y herramientas secas y calientes?
 5. ¿Revisa fosas y pisos sin agua antes del vaciado?
+6. ¿No carga una canasta que gotea y espera la liberación de C-17 (paso 3)?
+7. ¿Atiende la alarma Δ caudal > 2 % en ≤ 1 min: reduce potencia y busca la fuga (paso 5)?
+8. ¿Revisa que las ollas de escoria estén secas (paso 9)?
+9. ¿Vigila ΔT y caudal de agua de molde y reduce velocidad o cierra la línea en alarma (paso 10)?
 
 ## 12. Referencias
 
@@ -189,3 +194,4 @@ EPP de zona roja en toda tarea frente a metal líquido (MS-ACE-01 y MS-ACE-08). 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
+| 0.2 | 2026-09-25 | Revisión cruzada: distancia de evacuación por fuga expresada como ≥ 25 m; pasos ★ 3, 5, 9 y 10 en la lista de verificación; S-04 en la sección 11 | experto-seguridad-salud |

@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-04 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-08 Ingeniero de Proceso de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-04 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-08 Ingeniero de Proceso de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** en estado estable cuidas **cinco variables por línea**: **nivel de molde (± 5 mm), aceite (15–25 mL/min), agua de molde (caudal y ΔT), velocidad (2.5–3.5 m/min) y agua secundaria (1.5–2.0 L/kg)**, más **dos del distribuidor**: **nivel (700–850 mm) y sobrecalentamiento (20–35 °C)**. Si una sale de rango, actúa según la tabla. Si falla el agua de molde, **es emergencia**.
 
@@ -21,7 +21,7 @@
 | S-14 Ayudante de Colada | Rondas en moldes y línea: chorro, aceite, rociado, estado de la palanquilla | R |
 | S-11 Muestrero | Toma muestras químicas del distribuidor | R |
 | C-09 Metalurgista de Producto | Recibe las desviaciones que afectan calidad | I |
-| ESR | Autoriza cualquier intervención en la zona controlada del molde | C |
+| C-16 (función de ESR) | Autoriza cualquier intervención en la zona controlada del molde | C |
 
 ## 3. Descripción del proceso
 En colada abierta **no hay barra tapón**: el caudal de cada línea lo fija la **buza calibrada** y la **altura del acero en el distribuidor**. El control radiométrico de nivel mide el menisco y **ajusta la velocidad de extracción** para mantenerlo en su punto (≈ 100 mm bajo el borde [Validar]). Por eso:
@@ -139,8 +139,8 @@ Casco, careta con filtro IR, chamarra aluminizada en la plataforma, ropa retarda
 ## 9. Condiciones anormales y respuesta
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
-| **Breakout** (acero saliendo bajo el molde, alarma de fuego o chispas en la cámara) | Pegado por falta de aceite, nivel inestable, piel delgada, romboidad severa | 🛑 Cierra la línea con placa ciega (o tapón), detén su extracción, **mantén el agua de molde y la secundaria**, evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09). No cortes el agua ni entres a la cámara de rociado sin LOTO. Después, el ESR inspecciona el contenedor de Cs-137 de esa línea | C-06, C-04, ESR |
-| **Pérdida de nivel** (lectura errática o sin señal) | Falla del detector o de la fuente, salpicadura sobre el portafuente | Pasa a velocidad fija y control visual solo si C-06 lo autoriza; si no se recupera en 5 min [Validar], cierra la línea. **No toques el portafuente**: ESR | C-06, S-21, ESR |
+| **Breakout** (acero saliendo bajo el molde, alarma de fuego o chispas en la cámara) | Pegado por falta de aceite, nivel inestable, piel delgada, romboidad severa | 🛑 Cierra la línea con placa ciega (o tapón), detén su extracción, **mantén el agua de molde y la secundaria**, evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09). No cortes el agua ni entres a la cámara de rociado sin LOTO. Después, el ESR inspecciona el contenedor de Cs-137 de esa línea | C-06, C-04, C-16 (ESR) |
+| **Pérdida de nivel** (lectura errática o sin señal) | Falla del detector o de la fuente, salpicadura sobre el portafuente | Pasa a velocidad fija y control visual solo si C-06 lo autoriza; si no se recupera en 5 min [Validar], cierra la línea. **No toques el portafuente**: ESR | C-06, S-21, C-16 (ESR) |
 | Nivel sube sin control | Buza erosionada o quebrada | Sube la velocidad al máximo; si no alcanza: cambio de buza o 🛑 cierre de línea antes del desbordamiento | C-06 |
 | Nivel baja, velocidad < 2.3 m/min | Buza tapándose (Al alto, acero frío) | Cambio de buza (MO-CC2-06); avisa al LF si es por química | C-06, C-07 |
 | **Falla de agua de molde** (caudal < 80%, pérdida de presión o apagón) | Bomba, válvula, energía | 🛑 Confirma entrada del agua de emergencia en **≤ 15 s**; si no entra: cierra de inmediato la olla y las 6 líneas; evacúa la plataforma de molde a ≥ 10 m (MS-ACE-09). No reintroduzcas agua a un molde sobrecalentado sin autorización de C-06/C-08 | C-04, C-06, mantenimiento |
@@ -183,3 +183,4 @@ Casco, careta con filtro IR, chamarra aluminizada en la plataforma, ropa retarda
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: ESR citado como C-16. Al soluble ≤ 0.005% y Mn/Si ≥ 3 coherentes con MO-LF-01 y MO-EAF-07 (propuesta de agregarlos a la ficha). | experto-operativo-metalurgia |

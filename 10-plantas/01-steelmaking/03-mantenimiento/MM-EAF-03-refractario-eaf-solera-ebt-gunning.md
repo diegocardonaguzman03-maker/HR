@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-EAF-03 | 0.1 | Borrador para validación | Acería · EAF-1 / EAF-2 | C-15 Especialista de Refractarios | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-EAF-03 | 0.2 | Borrador para validación | Acería · EAF-1 / EAF-2 | C-15 Especialista de Refractarios | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §2 (EAF de 150 t, coraza Ø 7.3 m, talón 20–30 t, EBT). Espesores, vidas y materiales dependen del proveedor de refractario y del OEM: **[Validar con OEM / Ingeniería de Mantenimiento / C-15]**.
 
@@ -104,8 +104,8 @@ Ropa aluminizada (frente al horno), careta con visor dorado, casco con cubrenuca
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 **Permisos:** espacio confinado (reline/entrada), trabajo en caliente (oxicorte de costras), altura (bancos altos), izaje (bloques).
-**LOTO:** E1 MT del horno; E2 HPU con horno **basculado y bloqueado mecánicamente** en la posición del trabajo; E3 O₂/GN de lanzas y quemadores cerrados y purgados; E4 DRI y carbono; E6 bóveda girada y asegurada. Agua de paneles **en servicio** (no se aísla, salvo que se trabaje en ellos). **Prueba de energía cero:** intento de arco y de basculamiento rechazados, manómetros de gases en 0 bar, gases en el interior O₂ 19.5–23.5 %, CO < 25 ppm, LEL 0 %.
-**Zona de exclusión:** debajo del EBT y en la trayectoria de la escoria durante el cambio en caliente.
+**LOTO:** E1 MT del horno; E2 HPU con horno **basculado y bloqueado mecánicamente** en la posición del trabajo; E3 O₂/GN de lanzas y quemadores cerrados y purgados; E4 DRI y carbono; E6 bóveda girada y asegurada. Agua de paneles **en servicio** (no se aísla, salvo que se trabaje en ellos). **Prueba de energía cero:** intento de arco y de basculamiento rechazados, manómetros de gases en 0 bar, gases en el interior O₂ 19.5–23.5 %, CO < 25 ppm y **< 10 % LEL para entrar**; **0 % LEL detectable (≤ 1 % de lectura del equipo) antes de oxicortar costras**; salir a CO 25 ppm o 10 % LEL y evacuar a CO 200 ppm [Verificar NOM-010] o 20 % LEL (criterio único de MS-ACE-05).
+**Zona de exclusión:** debajo del EBT y en la trayectoria de la escoria durante el cambio en caliente (zona roja de MS-ACE-01: nadie a pie hasta confirmar zona EBT sin metal). Materiales, arena y herramientas secos y precalentados según MS-ACE-03; nunca se proyecta sobre metal líquido.
 
 ![Figura 2. Puntos de aislamiento y bloqueo del EAF (ver MS-ACE-02)](../img/ms-loto-puntos-eaf.svg)
 
@@ -123,7 +123,7 @@ Ropa aluminizada (frente al horno), careta con visor dorado, casco con cubrenuca
 | 1 | Prepara materiales | Camisas, bloque, mortero, arena de llenado (humedad ≤ 0.5 %), herramienta de izaje; todo precalentado/seco | Material seco y verificado | ★ | S-24, C-15 |
 | 2 | Vacía y posiciona | Tras el vaciado, bascula el horno hacia la puerta de escoria; talón lejos del EBT | Zona EBT sin metal | ★ | S-01, C-05 |
 | 3 | LOTO | E1, E2 con perno de basculamiento, E3, E4, E6 | Candados puestos | ★ | S-20, S-19, S-01 |
-| 4 | Prueba energía cero | Intento de arco y basculamiento rechazados; gases | Sin energía | ★ | C-05, C-15 |
+| 4 | Prueba energía cero | Intento de arco y basculamiento rechazados; gases: O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL (≤ 1 % de lectura si habrá oxicorte) (MS-ACE-05) | Sin energía; gases en rango | ★ | C-05, C-15 |
 | 5 | Abre la placa de cierre | Desde el puesto de mando local, con zona despejada | Placa abierta sin salida de metal | ★ | S-24 |
 | 6 | Retira camisas y bloque de salida | Con el extractor/empujador OEM; limpia restos con barra y oxicorte si hay costra | Canal limpio, asiento sin escalón > 10 mm | | S-24, S-03 |
 | 7 | Mide el bloque de asiento | Plantilla en la boca | Erosión ≤ 50 mm; si no, programar cambio | 🔎 | C-15 |
@@ -131,7 +131,7 @@ Ropa aluminizada (frente al horno), careta con visor dorado, casco con cubrenuca
 | 9 | Coloca bloque de salida | Asienta y fija; verifica que la placa cierre plana | Cierre sin luz visible | ★ | S-24, S-19 |
 | 10 | Mide el Ø nuevo | Calibrador en 3 alturas | 150–180 mm | 🔎 | S-24 |
 | 11 | Cierra y llena el EBT | Cierra placa; llena con arena seca hasta formar cono de 50–100 mm | Canal lleno y cono visible | ★ | S-03 |
-| 12 | Gunning de bancos | Con horno caliente (≥ 800 °C en cara), distancia 0.8–1.5 m, capas ≤ 50 mm, sin proyectar sobre metal líquido | Superficie cubierta, rebote ≤ 15 % | | S-24 |
+| 12 | Gunning de bancos | Con horno caliente (≥ 800 °C en cara), distancia 0.8–1.5 m, capas ≤ 50 mm, sin proyectar sobre metal líquido ni formar charcos (MS-ACE-03) | Superficie cubierta, rebote ≤ 15 % | ★ | S-24 |
 | 13 | Retira LOTO | Orden inverso; personal fuera de zona | Candados retirados | ★ | Todos |
 | 14 | Libera | Checklist firmado por C-15 y C-05; primera colada con vigilancia del tiempo de vaciado | Firmado | ★ | C-15, C-05 |
 
@@ -150,7 +150,8 @@ Ropa aluminizada (frente al horno), careta con visor dorado, casco con cubrenuca
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
 | Punto caliente de coraza > 400 °C | Espesor crítico, grieta | 🛑 No cargar; vaciar; gunning o paro | C-05, C-15 |
-| Metal o escoria saliendo por la coraza | Perforación | Emergencia MS-ACE-09; arco fuera; evacuar | C-04, brigada |
+| Metal o escoria saliendo por la coraza | Perforación | Emergencia MS-ACE-09; arco fuera; evacuar a ≥ 25 m; nunca agua sobre el metal | C-04, brigada |
+| Detector en alarma dentro o frente al horno (CO ≥ 25 ppm, ≥ 10 % LEL, O₂ fuera de 19.5–23.5 %) o LEL > 1 % durante oxicorte | Gases residuales, paso por E3 | Sal; detén el trabajo en caliente; ventila; evacúa el sector a CO ≥ 200 ppm o ≥ 20 % LEL | C-16, C-05 |
 | EBT no abre (apertura libre falla) | Arena húmeda/sinterizada, costra | Lanceo con O₂ solo por personal autorizado y con EPP | C-05, C-15 |
 | Vaciado < 2.5 min | Canal erosionado | Programar cambio antes de la siguiente colada crítica | C-15, C-07 |
 | Tapa del EBT no cierra plana | Costra, bisagra dañada | No llenar; limpiar/reparar | S-19, C-05 |
@@ -164,13 +165,15 @@ Perfil láser por semana · mapa termográfico · registro de EBT (coladas, Ø, 
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-24 Refractarista | 3 | 24 (materiales, EBT, gunning, secado) | 60 h / 3 cambios de EBT | Pasos 1–5, 8, 9, 11, 13 | 24 meses |
-| S-03 Ayudante de Horno | 2 | 8 (llenado EBT, gunning básico) | 20 h | Paso 11 | 24 meses |
-| C-15 Especialista | 4 | Proveedor + 16 (criterios de desgaste) | — | Evaluador de pasos 7, 10, 14 | 24 meses |
+| S-24 Refractarista | 3 | 24 (materiales, EBT, gunning, secado) | 60 h / 3 cambios de EBT | Pasos 1–5, 8, 9, 11, 12, 13 | 24 meses (TD-P07); espacio confinado 12 meses (MS-ACE-05) |
+| S-03 Ayudante de Horno | 2 | 8 (llenado EBT, gunning básico) | 20 h | Paso 11 | 24 meses (TD-P07) |
+| S-20 Electricista | 4 | NOM-029 + maniobra de MT (MM-EAF-04) | 3 bloqueos E1 supervisados | Paso 3 (E1) | 12 meses (eléctrico, NOM-029) |
+| S-04 Operador de Grúa de Carga | 3 | NOM-006 | 3 izajes de camisas/bloques | Izaje sin personas bajo la carga (MS-ACE-04) | 12 meses (grúas/izaje) |
+| C-15 Especialista | 4 | Proveedor + 16 (criterios de desgaste) | — | Evaluador de pasos 7, 10, 14 | 24 meses (TD-P07); como emisor de permiso de espacio confinado, 12 meses |
 | Todos los que entran al horno | 3 | NOM-033 (8 h) + NOM-015 | Simulacro de rescate | Permiso y gases | 12 meses |
 
 **Normas:** NOM-033-STPS (espacio confinado), NOM-015-STPS (calor), NOM-010-STPS (polvos), NOM-009-STPS (altura), NOM-004-STPS (bloqueo), NOM-017-STPS, NOM-027-STPS (oxicorte). Verificar con Jurídico Laboral / SSO.
-**Verificación ★:** ¿horno basculado y bloqueado antes de trabajar bajo el EBT? · ¿arena ≤ 0.5 % de humedad? · ¿no proyectó sobre metal líquido? · ¿midió Ø y espesores y los registró? · ¿liberación firmada?
+**Verificación ★:** ¿materiales secos y precalentados (paso 1)? · ¿horno basculado y bloqueado antes de trabajar bajo el EBT (pasos 2, 3)? · ¿energía cero y gases: < 10 % LEL para entrar, ≤ 1 % para oxicortar (paso 4)? · ¿abrió la placa con la zona despejada (paso 5)? · ¿camisas alineadas y placa cerrando plana (pasos 8, 9)? · ¿arena ≤ 0.5 % de humedad y cono formado (paso 11)? · ¿no proyectó sobre metal líquido (paso 12)? · ¿retiró candados con conteo de personal (paso 13)? · ¿midió Ø y espesores y los registró? · ¿liberación firmada (paso 14)?
 
 ## 12. Referencias
 FT-ACE-001 §2 · MO-EAF-01, MO-EAF-07 · MM-EAF-01 · MS-ACE-03, -05, -08 · Hojas técnicas del proveedor de refractario [por referenciar] · Manual OEM del EBT [por referenciar].
@@ -179,3 +182,4 @@ FT-ACE-001 §2 · MO-EAF-01, MO-EAF-07 · MM-EAF-01 · MS-ACE-03, -05, -08 · Ho
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
+| 0.2 | 2026-09-25 | Revisión cruzada de seguridad: LEL 0 % para entrar sustituido por el criterio único de MS-ACE-05; paso 12 marcado ★; evacuación ≥ 25 m; vigencias de 12 meses (eléctrico, izaje, confinado); lista ★ completa | experto-seguridad-salud |

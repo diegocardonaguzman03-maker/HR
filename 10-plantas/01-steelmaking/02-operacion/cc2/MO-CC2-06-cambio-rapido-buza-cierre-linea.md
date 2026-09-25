@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-06 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-06 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno sin observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** la buza calibrada **se gasta o se tapa** y la línea te avisa con la **velocidad**: si sube de 3.5 m/min la buza está erosionada; si baja de 2.3 m/min se está tapando. Cámbiala **con el mecanismo de cambio rápido** y una buza **caliente y del diámetro correcto**. Si una línea se vuelve peligrosa (desbordamiento, breakout, sin agua), **ciérrala de inmediato con placa ciega**; el tapón con varilla es el respaldo.
 
@@ -177,3 +177,4 @@ Chamarra, pantalón o polainas aluminizados, careta con visor dorado, casco con 
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: sin cambios de contenido; diámetros de buza coherentes con FT v0.2 §5. | experto-operativo-metalurgia |

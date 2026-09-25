@@ -4,15 +4,15 @@
 |---|---|---|---|
 | IDX-MO-EAF-LF | 0.1 | Borrador para validación | experto-operativo-metalurgia (técnico) · experto-seguridad-salud (seguridad) · Gerente Sindicalizado (uso en capacitación) |
 
-**Mensaje clave:** hay 11 manuales de procesos críticos (8 de EAF y 3 de Ollas/LF) con la plantilla de 13 secciones de la guía de estilo. Todos toman sus valores de `FT-ACE-001` v0.2 y **no se usan en planta hasta que Ingeniería de Proceso (C-07) y el Especialista de Refractarios (C-15) validen los valores marcados como [Validar con OEM / Ingeniería de Proceso] o [Supuesto]**. Los pasos ★ de cada manual forman la lista de evaluación de la certificación TD-P07.
+**Mensaje clave:** hay 11 manuales de procesos críticos (8 de EAF y 3 de Ollas/LF) con la plantilla de 13 secciones de la guía de estilo. Todos toman sus valores de `FT-ACE-001` v0.3 (revisión técnica cruzada del 2026-09-25 en `../REVISION-TECNICA.md`) y **no se usan en planta hasta que Ingeniería de Proceso (C-07) y el Especialista de Refractarios (C-15) validen los valores marcados como [Validar con OEM / Ingeniería de Proceso] o [Supuesto]**. Los pasos ★ de cada manual forman la lista de evaluación de la certificación TD-P07.
 
 ## 1. Manuales de EAF (`02-operacion/eaf/`)
 | Código | Manual | Propósito | Dueño | Ejecutan | Figuras |
 |---|---|---|---|---|---|
 | MO-EAF-01 | [Preparación del horno entre coladas](MO-EAF-01-preparacion-horno-entre-coladas.md) | Dejar el horno sin fugas de agua, con refractario reparado, EBT lleno de arena seca y talón de 20–30 t en ≤ 5 min | C-05 | S-01, S-02, S-03 | Fig. 2, 3 |
 | MO-EAF-02 | [Carga de chatarra con canasta](MO-EAF-02-carga-chatarra-canasta.md) | Cargar 55–70 t de chatarra seca y sin materiales prohibidos (pórtico de radiación), sin personas expuestas | C-05 | S-04, S-05, S-01 | Fig. 1 |
-| MO-EAF-03 | [Alimentación continua de DRI/HBI](MO-EAF-03-alimentacion-continua-dri.md) | Fundir ≈ 100 t de DRI a 30–35 kg/min/MW sin acumulaciones ni humedad | C-07 | S-01 | Fig. 2 |
-| MO-EAF-04 | [Fusión: perfil de potencia y regulación de electrodos](MO-EAF-04-fusion-perfil-potencia-electrodos.md) | Seguir el perfil de taps y corriente por etapa: 42 min de arco, 560–620 kWh/t | C-07 | S-01 | Fig. 3, 4 |
+| MO-EAF-03 | [Alimentación continua de DRI/HBI](MO-EAF-03-alimentacion-continua-dri.md) | Fundir ≈ 100 t de DRI a 30–35 kg/min/MW (3.5–4.3 t/min) sin acumulaciones ni humedad | C-07 | S-01 | Fig. 2 |
+| MO-EAF-04 | [Fusión: perfil de potencia y regulación de electrodos](MO-EAF-04-fusion-perfil-potencia-electrodos.md) | Seguir el perfil de taps y corriente por etapa: 560 kWh/t (520–600), ≤ 119 MW activos, ≈ 42–44 min de arco | C-07 | S-01 | Fig. 3, 4 |
 | MO-EAF-05 | [Escoria espumosa: O₂, carbono y desescoriado](MO-EAF-05-escoria-espumosa-oxigeno-carbono.md) | Mantener la escoria espumosa (B2 1.8–2.2, FeO 25–35%, MgO 8–10%) y desescoriar sin contacto con agua | C-07 | S-01, S-02, S-10 | Fig. 2 |
 | MO-EAF-06 | [Medición de temperatura, O activo y muestreo](MO-EAF-06-temperatura-oxigeno-muestreo.md) | Lecturas válidas con lanza manipuladora y sondas desechables para decidir el vaciado (1,630 ± 15 °C; O 500–900 ppm) | C-05 | S-02, S-11 | Fig. 2 |
 | MO-EAF-07 | [Vaciado por EBT y adiciones en olla](MO-EAF-07-vaciado-ebt-adiciones.md) | Vaciar 150 t con desoxidación/aleación por grado, arrastre mínimo de escoria y zona de exclusión | C-05 | S-01, S-02, S-03, S-09 | Fig. 5, 7 |
@@ -70,8 +70,8 @@ flowchart LR
 ## 6. Inconsistencias detectadas en la ficha técnica (para C-07 / C-01)
 | # | Tema | Hallazgo | Propuesta |
 |---|---|---|---|
-| 1 | Energía vs. tiempo de arco (FT §2) | 560–620 kWh/t × 150 t = 84–93 MWh; en 42 min de arco exige 120–133 MW promedio. Un transformador de 140 MVA entrega ≈ 115–126 MW activos (cos φ 0.82–0.9). Solo el extremo bajo (560 kWh/t) es factible, al límite. | Validar potencia activa real. Opción: arco 45–47 min (tap-to-tap ≈ 58–60 min) o energía objetivo 540–580 kWh/t con DRI caliente. |
-| 2 | Tasa de DRI (FT §2) | 5.0 t/min a 30–35 kg/min/MW requiere 143–167 MW; con ≈ 124 MW la tasa máxima es ≈ 3.7–4.3 t/min. | Cambiar a "3.5–4.3 t/min (hasta 5.0 t/min solo con DRI caliente y validación)". |
+| 1 | Energía vs. tiempo de arco (FT §2) | **Resuelto en v0.3:** 560 kWh/t (520–600) y límite de ≈ 119 MW. **Queda abierto:** con perforación y afino por debajo de 119 MW, 560 kWh/t da ≈ 44 min de arco (tap-to-tap ≈ 57 min), no 42. | Ver propuesta P-1 en `../REVISION-TECNICA.md`. |
+| 2 | Tasa de DRI (FT §2) | **Resuelto en v0.3:** 3.5–4.3 t/min; hasta 5.0 t/min solo con DRI caliente validado. | Aplicado en MO-EAF-03. El control crítico de §6 (≤ 35 kg/min/MW) limita el DRI caliente a ≈ 4.2 t/min hasta que Seguridad lo revise. |
 | 3 | Peso de olla llena vs. grúa (FT §3 y §6) | 150 t de acero + tara de olla ≈ 70–80 t [Supuesto] + escoria ≈ 225–235 t frente a 250 t nominales: margen de 6–10%. | Registrar en la ficha la tara real de olla y el peso máximo admisible con olla llena. |
 | 4 | Temperatura de envío del LF (FT §3) | La ficha da la fórmula pero no valores por familia ni pérdidas de transporte. | Agregar tabla de T de envío por familia y primera olla de secuencia (propuesta en MO-LF-01 §5). |
 | 5 | Datos faltantes | No hay valores de: torque de empalme de 610 mm, tabla de taps del OLTC, tiempo/ángulo de vaciado, química de escoria de LF, Al máximo en CC2, relación Ca/Al, criterios de retiro de ollas. | Completar con OEM y C-07/C-15; se usaron valores de referencia marcados. |

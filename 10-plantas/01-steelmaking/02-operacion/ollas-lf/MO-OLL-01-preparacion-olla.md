@@ -2,9 +2,9 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-OLL-01 | 0.1 | Borrador para validación | Metalurgia secundaria — Taller y estación de preparación de ollas | C-15 Especialista de Refractarios | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-OLL-01 | 0.1 | Borrador para validación | Metalurgia secundaria — Taller y estación de preparación de ollas | C-15 Especialista de Refractarios | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 / C-15 lo validen.
+> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 / C-15 lo validen.
 
 ## 1. Objetivo y alcance
 **Objetivo:** entregar al EAF una olla de 150 t **seca, caliente (cara caliente 1,000–1,100 °C), con refractario vigente, válvula deslizante probada y cerrada, arena de sello colocada y tapón poroso con paso de argón**, para lograr **apertura libre ≥ 98%** en la colada continua y **cero perforaciones**.
@@ -23,7 +23,7 @@
 | S-02 Segundo Hornero | Recibe la olla y verifica la lista (MO-EAF-07). | I |
 
 ## 3. Descripción del proceso
-Una olla hace un ciclo de ≈ 3.5 h (7 ollas en ciclo para ≈ 46 coladas/día). Al regresar de la CC se voltea para retirar escoria y costra. En la estación de preparación se inspecciona el refractario, se limpia el asiento de la buza con lanza de O₂, se revisan o cambian las placas de la válvula deslizante, se prueba la válvula (carrera completa) y el tapón poroso (paso de argón), y se llena la buza superior con **arena de cromita seca** formando un cono. La olla va al precalentador hasta que la cara caliente llegue a **1,000–1,100 °C**. Una olla fría fuera de ciclo > 4 h se precalienta **≥ 8 h**.
+Una olla hace un ciclo de ≈ 3.5 h (7 ollas en ciclo para ≈ 46 coladas/día). Al regresar de la CC se voltea para retirar escoria y costra. En la estación de preparación se inspecciona el refractario, se limpia el asiento de la buza con lanza de O₂, se revisan o cambian las placas de la válvula deslizante, se prueba la válvula (carrera completa) y el tapón poroso (paso de argón). La olla va al precalentador hasta que la cara caliente llegue a **1,000–1,100 °C**. Una olla fría fuera de ciclo > 4 h se precalienta **≥ 8 h**. Al final, con la olla caliente y justo antes de entregarla, se llena la buza superior con **arena de cromita seca** formando un cono: si la arena pasa horas en el precalentador se sinteriza y baja la apertura libre.
 
 ![Figura 7. Corte de la olla de 150 t: refractario, válvula deslizante y tapón poroso](../../img/olla-corte-valvula-tapon.svg)
 
@@ -38,12 +38,12 @@ flowchart TD
     E -- "No" --> G
     F --> G["Prueba de válvula:<br/>3 carreras completas"]
     G --> H["Prueba de tapón poroso<br/>caudal/presión de Ar"]
-    H --> I["★ Arena de cromita seca<br/>cono sobre la buza"]
-    I --> J["Precalentador<br/>cara caliente 1,000–1,100 °C"]
+    H --> J["Precalentador<br/>cara caliente 1,000–1,100 °C"]
     J --> K{"¿Olla fría > 4 h?"}
     K -- "Sí" --> L["Precalentar ≥ 8 h"]
-    K -- "No" --> M
-    L --> M["Lista de entrega firmada<br/>→ carro de vaciado (MO-EAF-07)"]
+    K -- "No" --> I
+    L --> I["★ Arena de cromita seca<br/>cono sobre la buza (olla caliente)"]
+    I --> M["Lista de entrega firmada<br/>→ carro de vaciado (MO-EAF-07)"]
 ```
 
 ## 4. Equipos y maquinaria
@@ -128,8 +128,8 @@ Casco, careta con visor dorado, chaqueta, polainas y guantes aluminizados junto 
 | 7 | Cambia buza colectora | Si está erosionada o con costra. | Buza nueva/íntegra | | S-24 |
 | 8 | Prueba la válvula | Reconecta; ejecuta 3 carreras completas; verifica tiempo y suavidad; deja cerrada. | Carrera completa, cerrada | | S-24 |
 | 9 | Prueba el tapón | Conecta argón; mide caudal a la presión de prueba; confirma burbujeo o caudal. | 100–200 NL/min [Supuesto] | 🔎 | S-08 |
-| 10 | Llena con arena | Verifica que la arena esté seca; llena la buza superior y forma un cono sobre ella con la cantidad del proveedor. | Cono completo, sin huecos | ★ | S-08 |
-| 11 | Precalienta | Coloca en el precalentador; purga automática y encendido; controla hasta 1,000–1,100 °C. Olla fría > 4 h: ≥ 8 h. Olla nueva: curva completa. | T de cara caliente en rango | ★ | S-08 |
+| 10 | Precalienta | Coloca en el precalentador; purga automática y encendido; controla hasta 1,000–1,100 °C. Olla fría > 4 h: ≥ 8 h. Olla nueva: curva completa. | T de cara caliente en rango | ★ | S-08 |
+| 11 | Llena con arena | Verifica que la arena esté seca; llena la buza superior y forma un cono sobre ella con la cantidad del proveedor. | Cono completo, sin huecos | ★ | S-08 |
 | 12 | Verifica antes de entregar | Mide T de cara caliente; revisa arena (no removida), válvula cerrada, conexión de Ar. | Todo conforme | ★ | S-08 |
 | 13 | Entrega | Firma la lista de entrega; la olla va al carro de vaciado (MO-EAF-07) en ≤ 10 min [Supuesto] para no perder temperatura. | Lista firmada | | S-08 / S-09 |
 
@@ -177,3 +177,4 @@ Lista corta de verificación de pasos ★:
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: orden real de planta: el llenado con arena (ahora paso 11) va después del precalentamiento (ahora paso 10), justo antes de entregar; se intercambian los números sin cambiar el contenido de los pasos ★. | experto-operativo-metalurgia |

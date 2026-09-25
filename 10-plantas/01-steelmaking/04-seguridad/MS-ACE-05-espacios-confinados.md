@@ -36,7 +36,7 @@
 | Medidor autorizado (S-21 Instrumentista o C-16) | Mide la atmósfera en el orden y las alturas definidas | R |
 | Vigía (persona certificada) | Permanece afuera todo el tiempo; controla entradas; comunica; activa rescate | R |
 | Entrantes (S-08, S-15, S-24, S-19, S-23, contratistas) | Usan detector personal; salen al primer aviso | R |
-| Brigada de rescate de espacios confinados (S-05 del programa de brigadas) | Rescate con equipo en ≤ 10 min [Supuesto] | R |
+| Brigada de rescate de espacios confinados (programa de formación S-05 Brigadas; no confundir con el rol S-05 Operador de Patio) | Rescate con equipo en ≤ 10 min [Supuesto] | R |
 | C-15 Especialista de Refractarios | Criterios de enfriamiento y estabilidad del refractario en ollas y distribuidores | C |
 
 ## 3. Descripción del proceso
@@ -49,7 +49,7 @@ flowchart TD
     B --> C["LOTO de todas las energías<br/>+ brida ciega en Ar, N₂, O₂, gas natural"]
     C --> D["Ventilación forzada con AIRE<br/>(nunca con oxígeno)"]
     D --> E["Medición desde afuera:<br/>1) O₂ 2) LEL 3) CO y otros tóxicos<br/>arriba, en medio y abajo"]
-    E --> F{"¿O₂ 19.5–23.5 %,<br/>LEL < 10 %, CO < 25 ppm?"}
+    E --> F{"¿O₂ 19.5–23.5 %,<br/>LEL < 10 %, CO < 25 ppm?<br/>(caliente: LEL ≤ 1 %)"}
     F -- "No" --> G["🛑 No entrar.<br/>Ventilar más y volver a medir"]
     G --> E
     F -- "Sí" --> H["Vigía en posición, rescate listo,<br/>comunicación probada"]
@@ -81,14 +81,16 @@ flowchart TD
 | Parámetro | Unidad | Objetivo | Rango para entrar | Alarma / límite | Acción si está fuera de rango | Dónde se mide |
 |---|---|---|---|---|---|---|
 | Oxígeno | % vol | 20.9 | 19.5–23.5 | A1 < 19.5 % · A2 > 23.5 % | 🛑 No entrar / salir. Buscar fuga de Ar/N₂ (bajo) o de O₂ (alto) | Detector con bomba y personal |
-| Inflamables (gas natural, H₂, CO como inflamable) | % LEL | 0 | < 10 % LEL | A1 10 % LEL · A2 20 % LEL | 🛑 No entrar / salir; eliminar fuente; ventilar | Detector |
-| Inflamables para trabajo en caliente dentro del espacio | % LEL | 0 | 0 % (lectura sostenida) [Supuesto conservador] | > 0 % | No iniciar el trabajo en caliente | Detector continuo |
-| Monóxido de carbono (CO) | ppm | 0 | < 25 (VLE-PPT NOM-010) | A1 25 ppm (salir) · A2 200 ppm (evacuar el sector) | 🛑 Salir; ventilar; buscar la fuente | Detector |
+| Inflamables (gas natural, H₂, CO como inflamable) | % LEL | 0 | < 10 % LEL | A1 10 % LEL (no entrar / salir) · A2 20 % LEL (evacuar el sector) | 🛑 No entrar / salir; eliminar fuente; ventilar. ≥ 20 % LEL: evacuación y corte general del gas (MS-ACE-06) | Detector |
+| Inflamables para trabajo en caliente dentro del espacio | % LEL | 0 | 0 % LEL detectable (≤ 1 % de lectura del equipo, sostenida) [Supuesto conservador] | > 1 % de lectura | No iniciar o detener el trabajo en caliente; ventilar y volver a medir | Detector continuo |
+| Monóxido de carbono (CO) | ppm | 0 | < 25 (VLE-PPT NOM-010) | A1 25 ppm (salir) · A2 200 ppm (evacuar el sector) [Verificar NOM-010] | 🛑 Salir; ventilar; buscar la fuente | Detector |
 | H₂S (fosas, tanques) | ppm | 0 | < 1 [Verificar NOM-010] | A1 1 ppm · A2 5 ppm [Verificar] | Salir; ventilar | Detector |
 | Temperatura interior (olla, distribuidor, EAF) | °C / WBGT | ≤ 40 °C en superficies | WBGT según MS-ACE-08 | > 50 °C en contacto [Supuesto] | Esperar enfriamiento; régimen trabajo/descanso | Pirómetro + medidor WBGT |
 | Tiempo máximo sin remedición documentada | min | 30 | ≤ 30 (monitoreo continuo siempre) | > 30 min o tras pausa > 15 min | Volver a medir antes de reingresar | Registro del vigía |
 | Comunicación vigía–entrante | min | cada 5 | ≤ 5 | Sin respuesta | Ordenar salida; si no sale, activar rescate | Radio / voz |
 | Tiempo de llegada del rescate | min | ≤ 5 | ≤ 10 [Supuesto] | > 10 min | 🛑 No se emite el permiso | Simulacro |
+
+> **Criterio único de LEL de la Acería** (lo citan todos los manuales MO, MM y MS): **entrada permitida con < 10 % LEL**; **trabajo en caliente solo con 0 % LEL detectable (≤ 1 % de lectura del equipo)**; **salir a ≥ 10 % LEL y evacuar el sector a ≥ 20 % LEL**. No se exige 0 % LEL para entrar: esa exigencia se reserva al trabajo en caliente.
 
 **Orden y forma de medir (obligatorio):**
 1. **O₂ primero** (un O₂ bajo invalida la lectura del sensor catalítico de LEL y es el peligro más rápido).
@@ -123,7 +125,7 @@ Casco con barbiquejo, lentes, botas, guantes, ropa FR o algodón, protección au
 - **Permiso de entrada** (vigencia máxima: 1 turno de 12 h; se renueva al cambio de turno con nueva medición).
 - LOTO completo con **aislamiento positivo** (brida ciega, desconexión física o doble bloqueo y purga) de argón, N₂, O₂, gas natural, agua y vapor.
 - Acceso señalizado: "ESPACIO CONFINADO — ENTRADA SOLO CON PERMISO".
-- Trabajo en caliente dentro: permiso adicional NOM-027 y 0 % LEL sostenido.
+- Trabajo en caliente dentro: permiso adicional NOM-027 y 0 % LEL detectable sostenido (≤ 1 % de lectura del equipo), con monitoreo continuo.
 
 ## 7. Calidad
 
@@ -159,6 +161,8 @@ Casco con barbiquejo, lentes, botas, guantes, ropa FR o algodón, protección au
 | CO ≥ 25 ppm | Ductos, escoria caliente, combustión | Salir; ventilar; no reingresar hasta < 25 ppm | C-16 |
 | CO ≥ 200 ppm | Fuente activa | Evacuar el sector; solo brigada con ERA | C-04, C-16 |
 | ≥ 10 % LEL | Gas natural, H₂ | Salir; eliminar ignición; aislar | C-04, C-16 |
+| ≥ 20 % LEL | Fuga activa de gas natural o H₂ | Evacuar el sector; corte general del gas por ESD (MS-ACE-06); reingreso solo con < 10 % LEL medido por C-16 | C-04, C-16 |
+| > 1 % de lectura de LEL durante trabajo en caliente | Paso de gas, purga incompleta | Detener el trabajo en caliente; ventilar; volver a medir | Emisor, C-16 |
 | Entrante no responde | Asfixia, golpe de calor, lesión | Alarma; malacate desde afuera; brigada con ERA | C-04, servicio médico |
 | Detector falla o batería baja | Mantenimiento | Salir; sustituir detector | Emisor |
 | Material colgado en silo | Puente de material | Salir; derribar desde afuera con método aprobado | C-16 |
@@ -174,18 +178,19 @@ Casco con barbiquejo, lentes, botas, guantes, ropa FR o algodón, protección au
 
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| Entrante (S-08, S-15, S-24, S-19, S-23, contratistas) | 3 | 8 (CRS-02, NOM-033) | 3 entradas supervisadas | Pasos 8, 9, 10 | 12 meses [Verificar calendario regulatorio] |
+| Entrante (S-03, S-08, S-15, S-19, S-23, S-24, contratistas) | 3 | 8 (CRS-02, NOM-033) | 3 entradas supervisadas | Pasos 8, 9, 10 | 12 meses [Verificar calendario regulatorio] |
 | Vigía | 3 | 8 + 4 (funciones del vigía, rescate sin entrada) | 3 vigilancias supervisadas | Pasos 7, 9, 11 | 12 meses |
 | Medidor autorizado | 4 | 8 (detección de gases) | 10 mediciones | Pasos 4, 5 | 12 meses |
-| Emisor del permiso (C-04, C-11, C-15) | 4 | 12 | 5 permisos con tutor | Pasos 1, 2, 6 | 24 meses (TD-P07) |
+| Emisor del permiso (C-04, C-11, C-15) | 4 | 12 | 5 permisos con tutor | Pasos 1, 2, 6 | 12 meses (espacios confinados) |
 | Brigada de rescate | 4 | 24 (S-05 Brigadas) + ERA | 2 simulacros al año | Rescate en ≤ 10 min | 12 meses |
 
 **Lista corta de verificación de pasos ★:**
 1. ¿Aísla el argón del tapón poroso antes de entrar a una olla?
 2. ¿Mide en el orden O₂ → LEL → tóxicos y en tres alturas?
-3. ¿Conoce los límites: O₂ 19.5–23.5 %, < 10 % LEL, CO < 25 ppm?
+3. ¿Conoce los límites: O₂ 19.5–23.5 %; < 10 % LEL para entrar, 0 % LEL detectable (≤ 1 % de lectura) para trabajo en caliente, evacuar a ≥ 20 % LEL; CO < 25 ppm (salir a 25, evacuar a 200)?
 4. ¿El vigía permanece afuera y sabe activar el rescate sin entrar?
 5. ¿Sale al primer aviso sin terminar la tarea?
+6. ¿Confirma el rescate listo (≤ 10 min), el aislamiento positivo y el vigía dedicado antes de firmar la entrada?
 
 ## 12. Referencias
 
@@ -198,3 +203,4 @@ Casco con barbiquejo, lentes, botas, guantes, ropa FR o algodón, protección au
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
+| 0.2 | 2026-09-25 | Revisión cruzada: criterio único de LEL (entrada < 10 %, caliente ≤ 1 % de lectura, evacuación ≥ 20 %); emisor a 12 meses; S-03 como entrante (MM-EAF-03); aclaración del programa S-05 Brigadas | experto-seguridad-salud |

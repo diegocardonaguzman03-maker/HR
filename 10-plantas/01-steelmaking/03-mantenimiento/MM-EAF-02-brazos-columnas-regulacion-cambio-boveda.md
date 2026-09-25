@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-EAF-02 | 0.1 | Borrador para validación | Acería · EAF-1 / EAF-2 | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-EAF-02 | 0.2 | Borrador para validación | Acería · EAF-1 / EAF-2 | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores base: FT-ACE-001 §2 (electrodos UHP 610 mm, 3 columnas, transformador 140 MVA). Presiones, torques y fuerzas de mordaza dependen del fabricante: **[Validar con OEM / Ingeniería de Mantenimiento]**.
 
@@ -110,8 +110,9 @@ Casco, lentes, careta, guantes de carnaza y nitrilo (hidráulica), ropa FR, bota
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 **Permisos:** altura, izaje crítico (bóveda), trabajo en caliente (si se corta o suelda), LOTO grupal.
-**Puntos de aislamiento:** E1 interruptor y seccionador MT del horno + tierras; E2 CCM de HPU + válvula de bloqueo de acumuladores + descarga a tanque; E3 O₂/GN de quemadores de bóveda (si existen) y lanza; E5 agua de bóveda y brazos (V1/V2 + dren); E6 calzas bajo cada columna, pernos de bloqueo de giro de bóveda y de basculamiento. **Prueba de energía cero:** intento de mover columna y bóveda desde HMI y mando local (sin respuesta), manómetros 0 bar, detector de tensión.
-**Zona de exclusión:** radio de giro de la bóveda y área bajo la carga durante el izaje.
+**Puntos de aislamiento:** E1 interruptor y seccionador MT del horno + tierras; E2 CCM de HPU + válvula de bloqueo de acumuladores + descarga a tanque; E3 O₂/GN de quemadores de bóveda (si existen) y lanza; E5 agua de bóveda y brazos (V1/V2 + dren); E6 calzas bajo cada columna, pernos de bloqueo de giro de bóveda y de basculamiento. **Prueba de energía cero:** intento de mover columna y bóveda desde HMI y mando local (sin respuesta), manómetros 0 bar, detector de tensión (vivo–muerto–vivo). Si se corta o suelda: permiso en caliente y 0 % LEL detectable (≤ 1 % de lectura del equipo) en la zona (MS-ACE-05, MS-ACE-06).
+**Llave cautiva:** no sustituye al LOTO en este manual; todo trabajo aquí es intervención en el equipo (MS-ACE-02 §6.4).
+**Zona de exclusión:** radio de giro de la bóveda y área bajo la carga durante el izaje, con ± 5 m de la proyección de la carga libre de personas (MS-ACE-04).
 
 ![Figura 2. Puntos de aislamiento y bloqueo del EAF (ver MS-ACE-02)](../img/ms-loto-puntos-eaf.svg)
 
@@ -164,13 +165,13 @@ OT y LOTO · reporte de análisis de aceite (ISO 4406, % agua) · precargas de a
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-19 Mecánico | 3 | 16 (bóveda, mordazas, torque, izaje) | 40 h / 2 cambios de bóveda | Pasos 3–7, 12, 14, 15 | 24 meses |
-| S-22 Técnico Hidráulico | 3 | 24 (hidráulica proporcional, HFC, acumuladores, NOM-020) | 40 h | Pasos 3, 4, 10, 16 | 24 meses |
-| S-20 Electricista | 3 | NOM-029 + 8 (megger, termografía nivel I) | 16 h | Pasos 3, 4, 13 | 24 meses; termografía nivel I (ISO 18436-7) |
-| S-04 Operador de Grúa | 3 | NOM-006 + izaje crítico | 2 izajes de bóveda | Paso 6–7 | 24 meses |
+| S-19 Mecánico | 3 | 16 (bóveda, mordazas, torque, izaje) | 40 h / 2 cambios de bóveda | Pasos 3–7, 12, 14, 15 | 24 meses (TD-P07); alturas y maniobras de izaje 12 meses (MS-ACE-10, MS-ACE-04) |
+| S-22 Técnico Hidráulico | 3 | 24 (hidráulica proporcional, HFC, acumuladores, NOM-020) | 40 h | Pasos 3, 4, 10, 16 | 24 meses (TD-P07) |
+| S-20 Electricista | 3 | NOM-029 + 8 (megger, termografía nivel I) | 16 h | Pasos 3, 4, 13 | 12 meses (eléctrico, NOM-029); termografía nivel I (ISO 18436-7) |
+| S-04 Operador de Grúa | 3 | NOM-006 + izaje crítico | 2 izajes de bóveda | Paso 6–7 | 12 meses (grúas/izaje) |
 
 **Normas:** NOM-004-STPS, NOM-006-STPS (izaje), NOM-009-STPS (altura), NOM-020-STPS (acumuladores/recipientes a presión), NOM-029-STPS (eléctrico), NOM-017-STPS. Verificar con Jurídico Laboral / SSO.
-**Verificación ★:** ¿calzas y acumuladores a 0 bar antes de abrir líneas? · ¿nadie bajo la bóveda en izaje? · ¿megger ≥ 1 MΩ antes de energizar? · ¿holgura ≥ 50 mm? · ¿torques con torquímetro calibrado?
+**Verificación ★:** ¿LOTO E1–E6 con candado de cada ejecutante (paso 3)? · ¿energía cero probada: sin movimiento, 0 bar, 0 V (paso 4)? · ¿calzas y acumuladores a 0 bar antes de abrir líneas? · ¿agua de bóveda drenada a 0 bar (paso 5)? · ¿prueba de levante y nadie bajo la bóveda en izaje (pasos 6, 7)? · ¿torques con torquímetro calibrado (paso 12)? · ¿megger ≥ 1 MΩ antes de energizar (paso 13)? · ¿agua probada sin fugas antes de retirar LOTO (paso 14)? · ¿retiró candados con conteo de personal (paso 15)? · ¿holgura ≥ 50 mm? · ¿liberación firmada (paso 17)?
 
 ## 12. Referencias
 FT-ACE-001 §2 y §6 · CAT-ACE-001 · MO-EAF-04, MO-EAF-08 · MM-EAF-01, MM-EAF-04 · MS-ACE-02, -04, -10 · ISO 4406, ISO 10816-3, ISO 18436-7 · Manual OEM de brazos, HPU y bóveda [por referenciar].
@@ -179,3 +180,4 @@ FT-ACE-001 §2 y §6 · CAT-ACE-001 · MO-EAF-04, MO-EAF-08 · MM-EAF-01, MM-EAF
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
+| 0.2 | 2026-09-25 | Revisión cruzada de seguridad: vigencias de 12 meses (S-20 eléctrico, S-04 izaje, altura); criterio LEL para trabajo en caliente; llave cautiva no aplica; zona de exclusión de izaje (MS-ACE-04); lista ★ completa | experto-seguridad-salud |

@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-05 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-05 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** en el cambio de olla la secuencia depende del **nivel del distribuidor**. Súbelo a **850 mm** antes de cerrar la olla vieja, **ciérrala antes de que pase escoria**, gira la torreta **sin nadie bajo las ollas** y abre la nueva **en menos de 3 min**. Nunca dejes bajar el distribuidor de **500 mm**.
 
@@ -67,7 +67,7 @@ flowchart TD
 | Temperatura de llegada de la olla nueva | °C | Líquidus + sobrecalentamiento + pérdidas [Validar con C-07] | Según hoja del LF | Fuera de rango | C-06 decide aceptar o regresar la olla | Lanza en la torreta |
 | Nivel del distribuidor antes de cerrar | mm | 850 | 820–870 | < 800 | Sube el nivel antes de cerrar | Celdas de carga / HMI |
 | Residual de acero en la olla al cerrar | t | 3 | 2–4 [Validar] | Escoria en el distribuidor | Cierra de inmediato | Pesaje de la torreta |
-| Tiempo cierre de olla vieja → apertura de olla nueva | min | 2 | ≤ 3 [Validar] | > 4 | Aplica la tabla de cierre de líneas | Reloj HMI |
+| Tiempo cierre de olla vieja → apertura de olla nueva | min | 2 | ≤ 3 [Validar] | > 3 | Aplica la tabla de cierre de líneas (mismo criterio que MO-CC1-05: objetivo 2 min, máximo 3 min) | Reloj HMI |
 | Nivel mínimo del distribuidor durante el cambio | mm | ≥ 600 | ≥ 500 [Validar] | < 450 | 🛑 Cierra L1 y L6; < 350: cierra L2 y L5 | Celdas de carga |
 | Argón del tubo protector | NL/min | [Validar OEM] | [Validar OEM] | Sin flujo | Cambia la línea o el tubo | Rotámetro |
 | Sobrecalentamiento de la olla nueva (a los 5 min) | °C | 28 | 20–35 | < 20 o > 35 | Igual que en MO-CC2-04 | Lanza |
@@ -162,3 +162,4 @@ Chamarra y polainas aluminizadas, careta con visor dorado, casco con barbiquejo,
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: alarma del tiempo de cambio de olla en > 3 min (igual que CC1); con 850 → 500 mm hay ≈ 13 t de reserva ≈ 3.8 min a 3.4 t/min. | experto-operativo-metalurgia |

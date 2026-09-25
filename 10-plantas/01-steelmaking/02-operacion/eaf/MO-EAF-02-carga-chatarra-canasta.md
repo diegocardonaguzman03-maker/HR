@@ -2,9 +2,9 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-02 | 0.1 | Borrador para validación | Hornos — Patio de chatarra y EAF-1 / EAF-2 | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-02 | 0.1 | Borrador para validación | Hornos — Patio de chatarra y EAF-1 / EAF-2 | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
 **Objetivo:** cargar al horno una canasta de **55–70 t** (objetivo 65 t) de chatarra **seca, libre de materiales prohibidos**, bien acomodada, en **≤ 3 min** por canasta y sin personas expuestas.
@@ -20,7 +20,7 @@
 | S-05 Operador de Patio de Chatarra | Inspecciona, segrega, arma la canasta por capas, pesa y registra. Atiende el pórtico de radiación. | R |
 | S-04 Operador de Grúa de Carga | Traslada la canasta (grúa 120/40 t), la centra sobre el horno y la abre. | R |
 | S-01 Primer Hornero | Prepara el horno para recibir la carga (arco apagado, electrodos arriba, bóveda girada) y confirma zona despejada. | R |
-| C-16 Especialista de Seguridad e Higiene | Atiende las alarmas del pórtico de radiación junto con el Oficial de Seguridad Radiológica (OSR). | C |
+| C-16 Especialista de Seguridad e Higiene de Acería (función de Encargado de Seguridad Radiológica, ESR, con licencia de la CNSNS; CAT-ACE-001) | Atiende como ESR las alarmas del pórtico de radiación (MS-ACE-07). | C |
 | C-07 Ingeniero de Proceso | Define la receta de carga y los límites de residuales (Cu, Sn, Ni, Cr). | C |
 
 ## 3. Descripción del proceso
@@ -33,7 +33,7 @@ La chatarra entra por el **pórtico de radiación**, se inspecciona y se clasifi
 ```mermaid
 flowchart TD
     A["Camión / góndola"] --> B{"Pórtico de radiación"}
-    B -- "Alarma" --> Q["🛑 Detener y aislar<br/>C-16 + OSR · cuarentena<br/>nunca se carga"]
+    B -- "Alarma" --> Q["🛑 Detener y aislar<br/>C-16 (ESR) · cuarentena<br/>nunca se carga"]
     B -- "Sin alarma" --> C{"Inspección visual:<br/>contenedores cerrados, líquidos,<br/>explosivos, humedad, no ferrosos"}
     C -- "Prohibido" --> R["Rechazo / segregación<br/>y registro"]
     C -- "Húmeda" --> S["Escurrir y secar bajo techo<br/>no se carga mojada"]
@@ -51,11 +51,11 @@ flowchart TD
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|
-| Pórtico de radiación | Detecta fuentes radiactivas en camiones y góndolas | Umbral de alarma fijado por el OSR [Validar con OEM / Ingeniería de Proceso] | Prueba con fuente de verificación al inicio de turno; sin alarma de falla |
+| Pórtico de radiación | Detecta fuentes radiactivas en camiones y góndolas | Umbral de alarma fijado por el ESR (C-16) [Validar con OEM / Ingeniería de Proceso] | Prueba con fuente de verificación al inicio de turno; sin alarma de falla |
 | Grúa electroimán / pulpo del patio | Arma la canasta | — | Inspección previa al uso |
 | Canasta de chatarra | Transporta y descarga la carga | 90 m³; apertura de concha (clamshell) | Concha cierra sin holgura; seguros y orejas sin grieta; canasta seca (sin agua acumulada) |
 | Báscula de canasta o celda de carga de grúa | Pesa la carga | Exactitud ± 0.5 t [Supuesto] | Verificación de cero antes de pesar |
-| Grúa de carga (nave de hornos) | Traslada y abre la canasta | 2 × 120/40 t | Frenos, límites, gancho y cable revisados (MM-GR-01); gancho auxiliar para apertura |
+| Grúa de carga (nave de hornos) | Traslada y abre la canasta | 2 × 120/40 t | Frenos, límites, gancho y cable revisados (misma práctica de MM-GR-01, que en CAT-ACE-001 cubre solo las grúas de colada); gancho auxiliar para apertura |
 | Bóveda y sistema de giro | Descubre el horno para la carga | — | Enclavamientos: sin arco con bóveda abierta |
 | Electrodos (3 × 610 mm) | — | Se elevan al tope antes de girar la bóveda | Posición "arriba" confirmada en HMI |
 
@@ -68,7 +68,7 @@ flowchart TD
 | Chatarra pesada en la canasta | % | ≤ 20 | 10–20 | > 20% o pieza > 1.5 t [Supuesto] | Redistribuye; pieza pesada al centro, nunca arriba | Receta / S-05 |
 | Dimensión máxima de pieza | m | ≤ 1.5 × 0.6 [Supuesto] | — | Mayor | Corta con oxicorte en patio | Visual |
 | Humedad de la chatarra | — | Sin agua visible ni escurrimiento | — | Agua, hielo, lodo o nieve visibles | ★ No cargar: escurrir/secar bajo techo | Visual S-05 |
-| Pórtico de radiación | cps sobre fondo | Sin alarma | — | Alarma | 🛑 Detener e aislar el vehículo; C-16/OSR | Consola del pórtico |
+| Pórtico de radiación | cps sobre fondo | Sin alarma | — | Alarma | 🛑 Detener e aislar el vehículo; C-16 (ESR) | Consola del pórtico |
 | Residuales (Cu) de la mezcla calculada | % | ≤ 0.15 [Supuesto] | — | > 0.20% [Supuesto] | Ajusta receta con C-07 (más DRI/chatarra limpia) | Nivel 2 |
 | Tiempo de carga (arco apagado) | min | 3 | 2–4 | > 5 min | Registra demora | Nivel 2 |
 | Altura de la canasta sobre el borde de la coraza al abrir | m | 0.5–1.0 [Validar con OEM / Ingeniería de Proceso] | — | > 1.5 m | Baja la canasta: la caída alta proyecta metal y daña la solera | Visual S-04 |
@@ -92,19 +92,20 @@ flowchart TD
 |---|---|---|---|
 | Humedad, líquidos o contenedores cerrados en la carga | Explosión al contacto con el talón líquido; proyección de metal | ★ Inspección visual en patio, segregación, chatarra húmeda no se carga; canasta seca | Registro de inspección por canasta; VCC mensual |
 | Explosivos / municiones | Explosión | ★ Inspección y rechazo; protocolo con autoridades | Registro de rechazos |
-| Fuente radiactiva | Exposición a radiación, contaminación de acero y planta | ★ Pórtico de radiación en todo ingreso; rechazo no se toca; OSR y CNSNS (MS-ACE-07) | Prueba diaria del pórtico |
+| Fuente radiactiva | Exposición a radiación, contaminación de acero y planta | ★ Pórtico de radiación en todo ingreso; segunda pasada; rechazo no se toca; ESR (C-16) y CNSNS (MS-ACE-07) | Prueba diaria del pórtico |
 | Carga suspendida (canasta de hasta ≈ 105 t con tara [Supuesto]) | Aplastamiento | ★ Nadie bajo la canasta ni en su trayectoria; ruta definida; señalero | Supervisor / VCC |
 | Personas cerca del horno al abrir la canasta | Quemaduras por flama y proyección | ★ Zona de exclusión en piso de carga; bocina de aviso; conteo antes de abrir | S-01 confirma zona libre por radio |
 | Arco o movimiento con bóveda abierta | Electrocución, arco sin control | Enclavamiento eléctrico bóveda–interruptor | Prueba de enclavamiento (mantenimiento) |
 | Polvo y humos al abrir | Exposición a partículas y CO | Extracción en nave (canopy), cabina presurizada de grúa | Monitoreo de higiene |
 
 ### 6.2 EPP obligatorio
-Patio: casco, lentes, guantes de carnaza, botas con metatarsal, chaleco de alta visibilidad, protección auditiva, dosímetro/detector si lo exige el OSR. Piso de hornos durante la carga: además ropa ignífuga, careta con visor dorado y chaqueta aluminizada si la persona debe estar en el piso (solo fuera de la zona de exclusión). Operador de grúa: cabina cerrada y presurizada.
+Patio: casco, lentes, guantes de carnaza, botas con metatarsal, chaleco de alta visibilidad, protección auditiva, dosímetro/detector si lo exige el ESR (C-16). Piso de hornos durante la carga: además ropa ignífuga, careta con visor dorado y chaqueta aluminizada si la persona debe estar en el piso (solo fuera de la zona de exclusión). Operador de grúa: cabina cerrada y presurizada.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- ★ **Zona de exclusión de carga:** piso de carga alrededor del horno y la ruta de la canasta; delimitada y con bocina. Nadie entra desde que la canasta se levanta hasta que la bóveda cierra.
+- ★ **Zona de exclusión de carga (MS-ACE-01):** zona roja ≤ 15 m del horno con la plataforma despejada, y ruta de la canasta ± 5 m; zona amarilla 15–30 m. Nadie a pie en la roja (el señalero, en el refugio) desde que la canasta se levanta hasta que la bóveda cierra; delimitada y con bocina.
+- ★ **Humedad (MS-ACE-03):** no se carga una canasta que gotea ni chatarra con agua, hielo o lodo; se escurre y C-17 la libera. Recipientes cerrados se cortan o perforan antes de cargarse.
 - La grúa no pasa la canasta sobre púlpitos, pasillos ni personas (MS-ACE-04).
-- Rechazos del pórtico: área de cuarentena delimitada; solo el OSR autoriza el manejo (MS-ACE-07).
+- Rechazos del pórtico: camión a la zona de aislamiento, perímetro inicial de 10 m; solo el ESR (C-16) autoriza el manejo (MS-ACE-07).
 - No se requiere LOTO para la carga normal; el enclavamiento bóveda–interruptor es el control de ingeniería. Cualquier trabajo sobre la canasta atorada o en la bóveda requiere LOTO (MS-ACE-02).
 
 ## 7. Calidad
@@ -118,16 +119,16 @@ Patio: casco, lentes, guantes de carnaza, botas con metatarsal, chaleco de alta 
 ## 8. Procedimiento paso a paso
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
-| 1 | Verifica el pórtico al inicio de turno | Prueba con la fuente de verificación; registra. | Pórtico responde | | S-05 |
-| 2 | Pasa cada camión/góndola por el pórtico | Velocidad según el fabricante; espera el "libre". Si hay alarma: detén, aísla, no descargues, avisa. | Sin alarma | ★ | S-05 |
+| 1 | Verifica el pórtico al inicio de turno | Prueba con la fuente de verificación; registra. Si no responde: 🛑 no se recibe chatarra; avisa al ESR (C-16). | Pórtico responde | ★ | S-05 |
+| 2 | Pasa cada camión/góndola por el pórtico | ≤ 8 km/h [Validar con OEM]; espera el "libre". Si hay alarma: segunda pasada; si confirma, detén, aísla a 10 m, no descargues, avisa al ESR (C-16) y a C-17 (MS-ACE-07). | Sin alarma | ★ | S-05 |
 | 3 | Inspecciona la chatarra descargada | Busca contenedores cerrados, líquidos, explosivos, humedad, no ferrosos. Separa lo prohibido en el área de rechazo. | Sin material prohibido | ★ | S-05 |
-| 4 | Revisa la canasta vacía | Concha cerrada, seguros, orejas; sin agua acumulada en el fondo. | Canasta seca y sin daño | ★ | S-05 |
+| 4 | Revisa la canasta vacía | Concha cerrada, seguros, orejas; sin agua acumulada en el fondo. Una canasta cargada que gotea no se traslada: se escurre y C-17 la libera (MS-ACE-03). | Canasta seca y sin daño | ★ | S-05 |
 | 5 | Arma por capas según receta | Ligera al fondo (10–15%), pesada al centro (≤ 20%), media, ligera arriba. | Receta cumplida; nada sobre el borde | 🔎 | S-05 |
 | 6 | Pesa y registra | Cero de báscula, pesa, registra número de canasta, peso y mezcla. | 55–70 t | 🔎 | S-05 |
 | 7 | Espera "horno listo" | S-01 avisa por radio (MO-EAF-01 completo). | Aviso recibido | | S-04 |
 | 8 | Prepara el horno | Detén el DRI, apaga el arco, abre el interruptor, sube electrodos al tope, levanta y gira la bóveda. | HMI: interruptor abierto, electrodos arriba, bóveda girada | ★ | S-01 |
 | 9 | Verifica agua y baño a la vista | Con el horno abierto, observa: sin chorros de agua, sin vapor, talón cubierto de escoria. | Sin evidencia de agua | ★ | S-01 |
-| 10 | Despeja la zona de exclusión | Bocina; confirma por radio que nadie está en el piso de carga ni en la ruta. | Confirmación "zona libre" | ★ | S-01 / S-04 |
+| 10 | Despeja la zona de exclusión | Bocina; confirma por radio y CCTV que nadie está a ≤ 15 m del horno ni a ± 5 m de la ruta (MS-ACE-01). | Confirmación "zona libre" | ★ | S-01 / S-04 |
 | 11 | Traslada la canasta | Altura mínima segura; velocidad reducida; sin pasar sobre personas. | Ruta libre | ★ | S-04 |
 | 12 | Centra y baja la canasta | Centro de la canasta sobre el centro del horno; fondo a 0.5–1.0 m sobre el borde de la coraza. | Canasta centrada | | S-04 |
 | 13 | Abre la concha | Apertura controlada con el gancho auxiliar; observa flama y proyecciones. | Carga completa dentro del horno | | S-04 |
@@ -139,16 +140,16 @@ Patio: casco, lentes, guantes de carnaza, botas con metatarsal, chaleco de alta 
 ## 9. Condiciones anormales y respuesta
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
-| Alarma del pórtico de radiación | Fuente sellada o material contaminado | 🛑 Detén el vehículo, no descargues, aísla 10 m [Validar con OSR], registra placas | C-16, OSR, C-17 |
+| Alarma del pórtico de radiación | Fuente sellada o material contaminado | 🛑 Detén el vehículo, segunda pasada ≤ 8 km/h; si confirma: no descargues, camión a la zona de aislamiento, perímetro de 10 m [Validar con el ESR], chofer fuera, registra placas (MS-ACE-07) | C-16 (ESR), C-17, C-04 |
 | Explosión o proyección fuerte al abrir la canasta | Humedad o contenedor cerrado | Todos fuera de la zona; no se abre otra canasta; revisa daños (agua, electrodos, bóveda) | C-05, C-04, C-16 |
 | Colapso de chatarra (derrumbe sobre electrodos) durante la perforación | Carga mal acomodada, pesados arriba, perforación rápida | Sube electrodos, baja el tap, revisa corriente y electrodos; si hay electrodo roto, aplica MO-EAF-08 §9 | C-05 |
 | Bóveda no cierra | Chatarra sobre el borde de la coraza | No energices; empuja o retira con equipo desde fuera; nunca a mano | C-05 |
 | Concha no abre o abre parcialmente | Falla mecánica, chatarra atorada | Retira la canasta sobre zona segura; nadie se acerca; revisa con LOTO de la grúa | C-05, Mantenimiento |
 | Peso de canasta > 70 t | Error de armado | No trasladar; retira material | C-17 |
-| Chatarra mojada (lluvia) | Almacén descubierto | Escurrir y secar bajo techo; priorizar chatarra seca | C-17 |
+| Chatarra mojada (lluvia) o canasta que gotea | Almacén descubierto | 🛑 No cargar; escurrir y secar bajo techo; C-17 libera la canasta (MS-ACE-03); priorizar chatarra seca | C-17 |
 
 ## 10. Registros
-- Registro del pórtico: prueba diaria, alarmas, rechazos y actas con el OSR.
+- Registro del pórtico: prueba diaria, alarmas, rechazos y actas con el ESR (C-16).
 - Registro de inspección y rechazos de chatarra (tipo, origen, proveedor).
 - Registro de canasta: número, peso, mezcla, hora de carga, horno y colada (nivel 2).
 - Bitácora de la grúa de carga (inspección previa al uso).
@@ -157,10 +158,10 @@ Patio: casco, lentes, guantes de carnaza, botas con metatarsal, chaleco de alta 
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-05 Operador de Patio | 3 | 16 (incluye 4 h de radiación con OSR) | 60 h / 40 canastas | Pasos 2, 3, 4 + identificación de material prohibido con muestras | 24 meses (TD-P07) |
-| S-04 Operador de Grúa de Carga | 3 | 24 (NOM-006 + grúa) | 80 h / 40 cargas | Pasos 10, 11 + inspección previa de la grúa | 24 meses |
-| S-01 Primer Hornero | 3 | 8 | 20 cargas | Pasos 8, 9, 10, 17 | 24 meses |
-| C-17 Supervisor de Patio | 4 (evaluador) | 16 + evaluador | — | Evaluación de la respuesta a alarma del pórtico | 24 meses |
+| S-05 Operador de Patio | 3 | 16 (incluye 4 h de radiación con el ESR, C-16) | 60 h / 40 canastas | Pasos 1, 2, 3, 4 + identificación de material prohibido con muestras | 24 meses (TD-P07); pórtico y fuentes radiactivas 12 meses (MS-ACE-07) |
+| S-04 Operador de Grúa de Carga | 3 | 24 (NOM-006 + grúa) | 80 h / 40 cargas | Pasos 10, 11, 17 + inspección previa de la grúa | 12 meses (grúas/izaje) |
+| S-01 Primer Hornero | 3 | 8 | 20 cargas | Pasos 8, 9, 10, 17 | 24 meses (TD-P07) |
+| C-17 Supervisor de Patio | 4 (evaluador) | 16 + evaluador | — | Evaluación de la respuesta a alarma del pórtico | 12 meses (fuentes radiactivas, MS-ACE-07) |
 
 Lista corta de verificación de pasos ★:
 1. Identifica los 6 grupos de chatarra prohibida y lo que se hace con cada uno.
@@ -168,6 +169,8 @@ Lista corta de verificación de pasos ★:
 3. No carga chatarra húmeda ni una canasta con agua.
 4. Confirma el horno abierto sin agua y la zona de exclusión despejada antes de trasladar.
 5. Traslada sin pasar la carga sobre personas.
+6. Prueba el pórtico al inicio del turno y no recibe chatarra si falla (paso 1).
+7. Prepara el horno (interruptor abierto, electrodos arriba) y verifica que no hay agua a la vista antes de cargar (pasos 8 y 9).
 
 ## 12. Referencias
 - FT-ACE-001 §2 y §6; CAT-ACE-001; MO-EAF-01, MO-EAF-03, MO-EAF-04, MO-EAF-08.
@@ -180,3 +183,4 @@ Lista corta de verificación de pasos ★:
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: C-16 citado como ESR (se retira "OSR" fuera de §6); nota sobre MM-GR-01 para la grúa de carga. §6 conserva "OSR": lo corrige experto-seguridad-salud. | experto-operativo-metalurgia |

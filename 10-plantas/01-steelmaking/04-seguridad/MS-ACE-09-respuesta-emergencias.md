@@ -78,7 +78,7 @@ sequenceDiagram
 | Tiempo de conteo completo en punto de reunión | min | ≤ 7 | ≤ 10 [Supuesto] | > 10 min | Búsqueda dirigida por brigada | Lista de conteo |
 | Llegada de la brigada al punto | min | ≤ 3 | ≤ 5 [Supuesto] | > 5 min | Revisar ubicación y turnos de brigada | Simulacro |
 | Entrada del agua de emergencia de CC | s | ≤ 10 | ≤ 15 | > 15 s | Cierre inmediato de olla y distribuidor | HMI de CC |
-| Umbrales de gas para evacuar | ppm / % | — | — | CO 200 ppm; ≥ 20 % LEL; O₂ < 19.5 % o > 23.5 % (MS-ACE-06) | Evacuación del sector | Detectores |
+| Umbrales de gas para evacuar | ppm / % | — | — | CO ≥ 200 ppm [Verificar NOM-010]; ≥ 20 % LEL; O₂ < 19.5 % o > 23.5 % en detector fijo (MS-ACE-06). Umbral individual de salida: CO 25 ppm, 10 % LEL, O₂ fuera de 19.5–23.5 % | Evacuación del sector | Detectores |
 | Radio de evacuación inicial | m | — | — | Fuga EAF ≥ 25 m; perforación de olla ≥ 25 m; breakout: bajo la máquina y ≥ 20 m; gas: sector completo | Ajuste por C-16 | CI |
 | Frecuencia de simulacros | — | Ver 6.3 | — | Simulacro no realizado | Reprogramar en ≤ 30 días | Programa anual |
 
@@ -88,7 +88,7 @@ sequenceDiagram
 
 | Escenario | Señales | Acciones inmediatas (púlpito y área) | Prohibido |
 |---|---|---|---|
-| **A. Fuga de agua en el EAF** | Δ caudal > 2 % alarma, > 4 % disparo; vapor; llama amarilla; chisporroteo | Arco fuera; evacuación ≤ 25 m; cerrar el agua del panel por mando remoto si está identificado; esperar evaporación (sin vapor ≥ 30 min [Supuesto]); reinicio con C-05 + C-07 | Bascular el horno; mover electrodos; acercarse a la puerta o al EBT |
+| **A. Fuga de agua en el EAF** | Δ caudal > 2 % alarma, > 4 % disparo; vapor; llama amarilla; chisporroteo | Arco fuera; evacuación a ≥ 25 m del horno; cerrar el agua del panel por mando remoto si está identificado; esperar evaporación (sin vapor ≥ 30 min [Supuesto]); reinicio con C-05 + C-07 | Bascular el horno; mover electrodos; acercarse a la puerta o al EBT |
 | **B. Perforación de olla** | Punto rojo o chispa en la coraza; humo; fuga por la válvula | En grúa: olla a la fosa de emergencia seca por la ruta más corta sin pasar sobre personas; en carro o estación: evacuación ≥ 25 m | Intentar taponar; usar agua; pasar la olla sobre personas |
 | **C. Breakout en CC** | Alarma BOP (sticker); caída de nivel de molde; metal bajo el molde | Cierre de olla y distribuidor (barra tapón o buza); desvío a la caja de emergencia; mantener agua de molde y secundaria; evacuación bajo la máquina y ≥ 20 m | Cortar el agua de molde; entrar a la cámara de rociado; reingresar sin LOTO |
 | **D. Pérdida de agua de molde / apagón** | Caudal < 90 %; ΔT alto; disparo de bombas; apagón | Verificar agua de emergencia ≤ 15 s; si no entra: cierre inmediato de olla y distribuidor; evacuar plataforma de molde ≥ 10 m | Reintroducir agua a un molde sobrecalentado sin autorización de C-06/C-08 |
@@ -177,6 +177,9 @@ Para la respuesta: EPP de la zona donde se interviene (MS-ACE-08) y **ERA** en a
 2. ¿El púlpito conoce la acción inmediata de su escenario (A–E)?
 3. ¿Sabe lo prohibido (agua sobre metal, bascular con agua, rescate sin ERA)?
 4. ¿C-04 asume el mando y logra el conteo en ≤ 10 min?
+5. ¿El púlpito reporta al CI en ≤ 1 min (paso 4)?
+6. ¿La brigada interviene solo por orden del CI, con EPP y ERA, y atiende quemaduras con agua lejos del metal líquido (pasos 7 y 8)?
+7. ¿El reingreso se autoriza por escrito con atmósfera en rango (< 10 % LEL, CO < 25 ppm, O₂ 19.5–23.5 %), metal solidificado y LOTO (paso 9)?
 
 ## 12. Referencias
 
@@ -189,3 +192,4 @@ Para la respuesta: EPP de la zona donde se interviene (MS-ACE-08) y **ERA** en a
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
+| 0.2 | 2026-09-25 | Revisión cruzada: radio de evacuación de fuga del EAF expresado como ≥ 25 m; umbrales de gas alineados con MS-ACE-05/06; pasos ★ 4, 7, 8 y 9 en la lista | experto-seguridad-salud |

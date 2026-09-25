@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-04 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-08 Ingeniero de Proceso de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-04 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-08 Ingeniero de Proceso de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores de referencia de FT-ACE-001 §4 y §7. Tabla velocidad–sobrecalentamiento, reparto de agua por zona, ley de oscilación y lógica del BOP: **[Validar con OEM / Ingeniería de Proceso]**.
 
@@ -98,7 +98,7 @@ flowchart LR
 | 900–1,200 mm | 1.4–1.6 m/min | −0.1 m/min | −0.2 m/min | máx. 0.8 m/min; aviso a C-08 |
 | 1,200–1,450 mm | 1.2–1.4 m/min | −0.1 m/min | −0.2 m/min | máx. 0.8 m/min; aviso a C-08 |
 | 1,450–1,650 mm | 1.0–1.2 m/min | −0.1 m/min | −0.2 m/min | máx. 0.8 m/min; aviso a C-08 |
-| Grados peritécticos (HSLA C 0.08–0.10%) | −0.2 m/min sobre la fila | — | — | — |
+| Grados peritécticos (familia HSLA, C 0.06–0.10%; FT-ACE-001 §7) | −0.2 m/min sobre la fila del ancho en todas las columnas; polvo de molde peritéctico (C-08); agua secundaria 0.8–0.9 L/kg | — | — | — |
 
 > SH < 15 °C: **no bajes** la velocidad (se enfría más el distribuidor y se congela la SEN); avisa a C-08 y prepara el cierre si baja de 10 °C.
 > Flujo de acero (t/min) ≈ 0.23 × ancho (m) × v (m/min) × 7.8. Ejemplo: 1,300 mm a 1.2 m/min ≈ 2.8 t/min → una olla de 150 t dura ≈ 54 min.
@@ -113,7 +113,7 @@ flowchart LR
 | Z4 | Segmento 3 | 12 | 336 |
 | Z5 | Segmento 4 | 11 | 308 |
 | Z6 | Segmento 5 | 10 | 280 |
-| Z7 | Segmentos 6–7 | 9 | 252 |
+| Z7 | Segmento 6 | 9 | 252 |
 | Z8 | Segmentos 7–8 (enderezado) | 7 | 196 |
 | Z9 | Segmentos 9–10 | 5 | 140 |
 | Z10 | Segmentos 11–12 | 4 | 112 |
@@ -227,3 +227,4 @@ flowchart LR
 | Versión | Fecha | Cambio | Elaboró |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: nota peritéctica de la ficha v0.2 (familia HSLA, polvo peritéctico, −0.2 m/min, 0.8–0.9 L/kg) y corrección de zona Z7 (segmento 6; el 7 está en Z8). | experto-operativo-metalurgia |

@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-CC-03 | 0.1 | Borrador para validación | Acería · casa de bombas CC1 / CC2 | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-CC-03 | 0.2 | Borrador para validación | Acería · casa de bombas CC1 / CC2 | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §4–§5. CC1 agua de molde: caras anchas ≈ 4,200 L/min c/u, angostas ≈ 450 L/min c/u, ΔT 6–9 °C, **alarma ΔT > 11 °C o caudal < 90 %**; secundaria 10 zonas, 0.8–1.2 L/kg. CC2: ≈ 2,000 L/min por línea, ranura 10–12 m/s, ΔT 6–10 °C, **alarma ΔT > 12 °C o caudal < 90 %**; secundaria 1.5–2.0 L/kg. **Agua de emergencia: torre elevada + bombas diésel, entrada automática en ≤ 15 s.** Presiones, calidad de agua y tiempos internos: **[Validar con OEM / Ingeniería de Mantenimiento]**.
 
@@ -109,10 +109,10 @@ sequenceDiagram
 | Arranque automático inesperado de diésel o bomba de reserva | Atrapamiento | LOTO del selector automático, desconexión de batería del diésel | Intento de arranque rechazado |
 | Agua a presión y caliente | Golpe, quemadura | Aislar, drenar, ventear | Manómetro 0 bar |
 | Energía eléctrica en CCM | Electrocución, arco | LOTO NOM-029 | Detector de tensión |
-| Gases de escape del diésel | CO | Ventilación de la casa de diésel | CO < 25 ppm |
+| Gases de escape del diésel | CO | Ventilación de la casa de diésel; detector personal | CO < 25 ppm; salir a 25 ppm, evacuar a 200 ppm [Verificar NOM-010] (MS-ACE-06) |
 | Químicos de tratamiento | Quemadura química | Hoja de seguridad, EPP químico | Regadera de emergencia operativa |
 | Trabajo en la torre (altura) | Caída | Arnés y línea de vida NOM-009 | Permiso |
-| Tanques y fosas | Espacio confinado | NOM-033 | Permiso y gases |
+| Tanques y fosas | Espacio confinado | NOM-033 (MS-ACE-05) | Permiso y gases: O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL para entrar; trabajo en caliente con 0 % LEL detectable (≤ 1 % de lectura) |
 
 ### 6.2 EPP obligatorio
 Casco, lentes, guantes, botas de seguridad, protección auditiva (casa de bombas y diésel > 85 dB(A)), careta y guantes químicos para tratamiento, arnés en torre, EPP eléctrico según categoría en CCM.
@@ -138,7 +138,7 @@ Casco, lentes, guantes, botas de seguridad, protección auditiva (casa de bombas
 | 1 | Programa la prueba | Ventana de paro sin acero en CC1 y CC2; aviso a púlpitos | Autorización de C-06 | ★ | C-12 |
 | 2 | Verifica condiciones iniciales | Torre ≥ 90 %; diésel ≥ 75 %; baterías ≥ 25.5 V; XV-1 cerrada; moldes con agua a caudal nominal | Todo en rango | | S-21, S-19 |
 | 3 | Prepara registro | Tendencia de FT de moldes a 1 s; cronómetro; observador en XV-1 y en diésel | Registro activo | 🔎 | S-21 |
-| 4 | Simula la falla | Dispara las bombas principales desde el CCM (o señal de prueba OEM) | t = 0 registrado | ★ | S-20 |
+| 4 | Simula la falla | Confirma sin acero en CC1 y CC2 y personal fuera de acoplamientos y del escape del diésel; dispara las bombas principales desde el CCM (o señal de prueba OEM) | t = 0 registrado | ★ | S-20 |
 | 5 | Observa XV-1 | Tiempo de apertura completa | ≤ 5 s [Validar] | 🔎 | S-19 |
 | 6 | Observa diésel | Arranque de D-1 y presión en cabezal | ≤ 10 s | 🔎 | S-19 |
 | 7 | Verifica caudal en moldes | Todas las caras (CC1) y líneas (CC2) | ≥ 90 % en ≤ 15 s | ★ | S-21, S-12 |
@@ -166,13 +166,13 @@ Registro de pruebas mensuales y anuales (tiempos, caudales, firmas) · bitácora
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-21 Instrumentista | 3 | 24 (lazos de agua, lógica de emergencia, calibración) | 3 pruebas mensuales | Pasos 1, 7, 10, 11 | 24 meses |
-| S-19 Mecánico | 3 | 16 (bombas, diésel, XV-1) | 3 pruebas | Pasos 5, 6, 9, 10 | 24 meses |
-| S-20 Electricista | 3 | NOM-029 + 8 (CCM, UPS, arranque diésel) | 3 pruebas | Paso 4, LOTO | 24 meses |
-| S-12 Operador de Púlpito | 3 | 4 (respuesta a falla de agua) | Simulacro | Paso 7, respuesta MS-ACE-09 | 12 meses |
+| S-21 Instrumentista | 3 | 24 (lazos de agua, lógica de emergencia, calibración) | 3 pruebas mensuales | Pasos 1, 7, 10, 11 | 24 meses (TD-P07) |
+| S-19 Mecánico | 3 | 16 (bombas, diésel, XV-1) | 3 pruebas | Pasos 5, 6, 9, 10 | 24 meses (TD-P07); torre (alturas) y tanques (confinados) 12 meses |
+| S-20 Electricista | 3 | NOM-029 + 8 (CCM, UPS, arranque diésel) | 3 pruebas | Pasos 4, 9, LOTO | 12 meses (eléctrico, NOM-029) |
+| S-12 Operador de Púlpito | 3 | 4 (respuesta a falla de agua) | Simulacro | Pasos 7, 11, respuesta MS-ACE-09 | 12 meses |
 
 **Normas:** NOM-004-STPS, NOM-029-STPS, NOM-009-STPS, NOM-033-STPS, NOM-005-STPS (químicos), NOM-011-STPS (ruido), NOM-020-STPS (recipientes a presión, si aplica), NOM-017-STPS. Verificar con Jurídico Laboral / SSO.
-**Verificación ★:** ¿prueba sin acero en máquina? · ¿≤ 15 s con Q ≥ 90 %? · ¿probó ambos diésel? · ¿selectores en automático al final (doble verificación)?
+**Verificación ★:** ¿prueba programada sin acero en máquina (paso 1)? · ¿personal fuera de acoplamientos y escape antes de simular la falla (paso 4)? · ¿≤ 15 s con Q ≥ 90 % (paso 7)? · ¿probó ambos diésel (paso 9)? · ¿restableció bombas, XV-1 y torre ≥ 90 % (paso 10)? · ¿selectores en automático al final (doble verificación, paso 11)? · ¿liberación firmada (paso 12)? · ¿sabe que no se cuela con la torre o ambos diésel fuera de servicio?
 
 ## 12. Referencias
 FT-ACE-001 §4, §5 · MO-CC1-04, MO-CC2-04 · MM-CC-01, MM-CC-02 · MS-ACE-03, -09 · Manual OEM de sistema de agua, diésel y válvulas [por referenciar] · Programa de tratamiento de agua [por referenciar].
@@ -181,3 +181,4 @@ FT-ACE-001 §4, §5 · MO-CC1-04, MO-CC2-04 · MM-CC-01, MM-CC-02 · MS-ACE-03, 
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
+| 0.2 | 2026-09-25 | Revisión cruzada de seguridad: umbrales de CO y criterio de gases para tanques (MS-ACE-05/06); paso 4 con verificación de personal; vigencias de 12 meses (eléctrico, alturas, confinados); lista ★ completa | experto-seguridad-salud |

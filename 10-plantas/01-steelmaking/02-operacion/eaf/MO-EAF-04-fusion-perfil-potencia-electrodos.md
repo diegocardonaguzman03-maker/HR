@@ -2,12 +2,12 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-04 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-04 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.2. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
-**Objetivo:** fundir la carga en **42 min de arco** con **560–620 kWh/t**, arco estable, sin daño a bóveda y paneles, y con consumo de electrodo de **1.3–1.6 kg/t**, siguiendo el perfil de potencia (taps del transformador y corriente) de cada etapa.
+**Objetivo:** fundir la carga en **≈ 42–44 min de arco** con **560 kWh/t (rango 520–600)**, arco estable, sin daño a bóveda y paneles, y con consumo de electrodo de **1.3–1.6 kg/t**, siguiendo el perfil de potencia (taps del transformador y corriente) de cada etapa.
 
 **Alcance:** desde el cierre de la bóveda tras la carga (MO-EAF-02) hasta el apagado del arco para el vaciado (MO-EAF-07): perforación, fusión de canasta, fusión con DRI en baño plano y afino. Incluye la vigilancia de la regulación automática de electrodos.
 **No incluye:** maniobras de alta tensión y mantenimiento del transformador (MM-EAF-04) ni de la hidráulica de brazos (MM-EAF-02).
@@ -32,12 +32,12 @@ El transformador de **140 MVA** (secundario hasta **1,200 V**, OLTC) alimenta 3 
 
 | Etapa | Tiempo (min de arco) | Tap / voltaje secundario | Corriente por fase | Potencia activa | Energía acumulada al final | Condición para pasar a la siguiente etapa |
 |---|---|---|---|---|---|---|
-| 1. Perforación (bore-in) | 0–2 | Tap 10 · ≈ 1,000 V | ≈ 50 kA | ≈ 70 MW | ≈ 15 kWh/t | Electrodos penetraron la chatarra (≈ 1 m [Validar]); arco cubierto |
-| 2. Fusión de canasta | 2–12 | Tap 15 · 1,200 V | ≈ 63 kA | ≈ 118 MW | ≈ 150 kWh/t | Canasta ≥ 70% fundida, corriente estable (baño plano) |
-| 3. Baño plano con DRI | 12–37 | Tap 15 · 1,200 V (13–14 si la espuma baja) | ≈ 66 kA | ≈ 124 MW | ≈ 495 kWh/t | DRI total cargado |
-| 4. Afino / calentamiento | 37–42 | Tap 14 · ≈ 1,160 V | ≈ 64 kA | ≈ 117 MW | ≈ 560 kWh/t | T y O activo en ventana de vaciado (MO-EAF-06) |
+| 1. Perforación (bore-in) | 0–2 | Tap 10 · ≈ 1,000 V | ≈ 50 kA | ≈ 70–75 MW | ≈ 17 kWh/t | Electrodos penetraron la chatarra (≈ 1 m [Validar]); arco cubierto |
+| 2. Fusión de canasta | 2–12 | Tap 15 · 1,200 V | ≈ 66 kA | ≈ 117 MW | ≈ 150 kWh/t | Canasta ≥ 70% fundida, corriente estable (baño plano) |
+| 3. Baño plano con DRI | 12–38 | Tap 15 · 1,200 V (13–14 si la espuma baja) | ≈ 67 kA | ≈ 119 MW (límite) | ≈ 490 kWh/t | DRI total cargado (≈ 100 t a ≈ 3.8 t/min) |
+| 4. Afino / calentamiento | 38–44 | Tap 14 · ≈ 1,160 V | ≈ 66 kA | ≈ 113 MW | ≈ 560 kWh/t | T y O activo en ventana de vaciado (MO-EAF-06) |
 
-> **Inconsistencia registrada:** 560 kWh/t × 150 t = 84 MWh en 42 min exige ≈ 120 MW promedio, casi el máximo práctico de 140 MVA (≈ 126 MW con cos φ 0.9). El extremo de 620 kWh/t de la ficha requeriría ≈ 46–47 min de arco. Ingeniería de Proceso debe validar potencia real, tap-to-tap y energía (ver README).
+> **Límite físico (FT-ACE-001 v0.3 §2):** 140 MVA × FP ≈ 0.85 ≈ **119 MW activos**; el transformador no entrega más. 560 kWh/t × 150 t = 84 MWh. La ficha calcula 42 min de arco con 119 MW constantes; como la perforación y el afino trabajan por debajo del límite, este perfil de referencia da **≈ 44 min**. Cada +15 kWh/t alarga el arco ≈ 1 min. Para cumplir 42 min hacen falta ≈ 535–545 kWh/t (más energía química o DRI caliente) o recortar el tiempo sin arco. C-07 valida el perfil real [Validar con OEM / Ingeniería de Proceso].
 
 ```mermaid
 flowchart TD
@@ -46,7 +46,7 @@ flowchart TD
     B -- "Sí" --> C["Cierra interruptor · perfil por receta<br/>Etapa 1: tap 10, arco corto"]
     C --> D{"¿Electrodos penetraron?<br/>arco cubierto"}
     D -- "No" --> C
-    D -- "Sí" --> E["Etapa 2: tap 15, 63 kA"]
+    D -- "Sí" --> E["Etapa 2: tap 15, ≈ 66 kA"]
     E --> F{"¿Colapso o arco inestable?"}
     F -- "Sí" --> G["Sube electrodos, baja tap,<br/>revisa electrodos"]
     G --> E
@@ -75,10 +75,10 @@ flowchart TD
 ## 5. Parámetros de operación
 | Parámetro | Unidad | Objetivo | Rango normal | Alarma / límite | Acción si está fuera de rango | Dónde se mide |
 |---|---|---|---|---|---|---|
-| Energía eléctrica | kWh/t | 560–590 | 560–620 | > 640 [Supuesto] | Revisa pérdidas de tiempo, O₂, escoria, calidad DRI; reporte a C-07 | Nivel 2 |
-| Tiempo de arco encendido | min | 42 | 40–46 | > 48 | Registra causa (demoras, DRI, escoria) | Nivel 2 |
-| Potencia activa en baño plano | MW | ≈ 124 | 115–126 | < 105 sostenido | Revisa espuma, tap, regulación | HMI |
-| Corriente por fase (etapas 2–3) | kA | 63–66 | 58–67 | > 67 kA (≈ corriente nominal a 1,200 V) | La regulación reduce; si persiste, baja tap | HMI |
+| Energía eléctrica | kWh/t | 560 | 520–600 | > 600 o < 520 | > 600: revisa pérdidas de tiempo, O₂, escoria, calidad del DRI; reporte a C-07. < 520: verifica medición y balance | Nivel 2 |
+| Tiempo de arco encendido | min | 42–44 | 40–46 | > 47 | Registra causa (demoras, DRI, escoria) | Nivel 2 |
+| Potencia activa en baño plano | MW | ≈ 119 (límite) | 112–119 | < 105 sostenido | Revisa espuma, tap, regulación. No se puede pasar de ≈ 119 MW (140 MVA × FP 0.85) | HMI |
+| Corriente por fase (etapas 2–3) | kA | 66–67 | 58–67 | > 67 kA (nominal: 140 MVA / (√3 × 1,200 V) ≈ 67 kA) | La regulación reduce; si persiste, baja tap | HMI |
 | Desbalance de corriente entre fases | % | ≤ 5 | 0–10 [Supuesto] | > 10% por > 30 s | Revisa electrodo corto, colapso o falla de regulación | HMI |
 | Cortocircuitos (electrodo en contacto con carga) | n/min | 0 | ≤ 2 en perforación | > 5/min | Revisa consigna de impedancia y velocidad de regulación | HMI / nivel 2 |
 | T de salida de panel | °C | ≤ 50 | 35–55 | > 60 °C | Baja tap 2 posiciones; mejora espuma (MO-EAF-05) | HMI |
@@ -91,7 +91,7 @@ flowchart TD
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
-| Energizar con personas en plataforma de bóveda o de electrodos | Electrocución, quemadura por arco | ★ LOTO / llave cautiva: sin llaves en el tablero no cierra el interruptor | Tablero de llaves; VCC |
+| Energizar con personas en plataforma de bóveda o de electrodos | Electrocución, quemadura por arco | ★ Llave cautiva para el acceso de rutina (una llave por persona; sin todas las llaves en el tablero no cierra el interruptor) o LOTO completo para intervenir el equipo (MS-ACE-02 §6.4) | Tablero de llaves completo; prueba mensual del sistema; VCC |
 | Arco con fuga de agua | Explosión | ★ Disparo automático > 4%; no rearmar sin liberar la fuga | Prueba del enclavamiento (mantenimiento) |
 | Arco expuesto con tap alto | Perforación de paneles → fuga de agua | ★ Tap alto solo con arco cubierto; bajar tap ante T de panel > 60 °C | Tendencias de panel |
 | Rotura de electrodo | Caída de trozos, cortocircuito, proyección | Perfil de perforación; acomodo de canasta; juntas apretadas | Registro de roturas |
@@ -100,11 +100,12 @@ flowchart TD
 | Colapso de chatarra | Salpicadura, rotura de electrodo | Subir electrodos y bajar tap | Observación S-02 |
 
 ### 6.2 EPP obligatorio
-En púlpito: ropa ignífuga y calzado de seguridad. En piso del horno: casco, careta con visor dorado, ropa ignífuga, chaqueta aluminizada frente a la puerta, guantes, botas metatarsales, doble protección auditiva con arco encendido, detector de CO.
+En púlpito: ropa ignífuga y calzado de seguridad. En piso del horno: casco, careta con visor dorado, ropa ignífuga, chaqueta aluminizada frente a la puerta, guantes, botas metatarsales, doble protección auditiva con arco encendido, detector personal multigás (CO 25/200 ppm; MS-ACE-06).
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 - **Permisivos para energizar** [Validar con OEM / Ingeniería de Proceso]: bóveda cerrada y asentada, horno a 0° ± 2°, agua en rango (Δ ≤ 2%, P ≥ 3 bar), hidráulica en presión, presión del horno negativa, todas las llaves cautivas en el tablero, compensación en servicio.
-- ★ Nadie sube a la plataforma de electrodos o de bóveda con el interruptor cerrado. Toda entrada = interruptor abierto + LOTO (MS-ACE-02).
+- ★ Nadie sube a la plataforma de electrodos o de bóveda con el interruptor cerrado. Toda subida = interruptor abierto + **llave cautiva** (acceso de rutina, una llave por persona) o **LOTO completo** (intervención en el equipo, entrada a la bóveda o sistema de llaves en falla), según MS-ACE-02 §6.4.
+- Con disparo por fuga de agua: nadie a menos de 25 m del horno hasta que C-05 y C-07 autoricen (MS-ACE-03).
 - Zona de barras (bus) y transformador: acceso solo para S-20 con permiso eléctrico (NOM-029).
 
 ## 7. Calidad
@@ -112,7 +113,7 @@ En púlpito: ropa ignífuga y calzado de seguridad. En piso del horno: casco, ca
 |---|---|---|---|---|
 | Temperatura al final del afino | 1,630 ± 15 °C (según grado) | Termopar desechable (MO-EAF-06) | Nivel 2 | Sobre-T: refractario, N; baja T: congelamiento en olla |
 | Captura de nitrógeno | Mínima: arco cubierto por espuma | N al vaciado ≤ 50 ppm [Supuesto] | Laboratorio | N alto en bajo carbono |
-| Energía por colada | 560–620 kWh/t | Por colada | Nivel 2 | Costo; indica problema de escoria o DRI |
+| Energía por colada | 560 kWh/t (520–600) | Por colada | Nivel 2 | Costo; indica problema de escoria o DRI |
 | Consumo de electrodo | 1.3–1.6 kg/t | Por turno | Nivel 2 | Costo; roturas |
 
 ## 8. Procedimiento paso a paso
@@ -120,9 +121,9 @@ En púlpito: ropa ignífuga y calzado de seguridad. En piso del horno: casco, ca
 |---|---|---|---|---|---|
 | 1 | Verifica permisivos | Revisa en HMI: bóveda, 0°, agua, hidráulica, presión, llaves cautivas completas. | Todos en verde | ★ | S-01 |
 | 2 | Selecciona el perfil | Elige el perfil de la receta del grado y número de canastas. | Perfil correcto en nivel 2 | | S-01 |
-| 3 | Energiza | Avisa por radio "arco en 10 s"; cierra el interruptor. | Arco en las 3 fases | ★ | S-01 |
+| 3 | Energiza | Confirma por CCTV y radio plataformas vacías y todas las llaves cautivas en el tablero; avisa por radio "arco en 10 s"; cierra el interruptor. | Arco en las 3 fases | ★ | S-01 |
 | 4 | Perfora | Tap 10, regulación automática. Vigila cortocircuitos y desbalance. | Penetración en ≈ 2 min | | S-01 |
-| 5 | Pasa a fusión | Tap 15 con arco cubierto por chatarra. Quemadores en modo quemador (MO-EAF-05). | ≈ 63 kA, ≈ 118 MW | | S-01 |
+| 5 | Pasa a fusión | Tap 15 con arco cubierto por chatarra. Quemadores en modo quemador (MO-EAF-05). | ≈ 66 kA, ≈ 117 MW | | S-01 |
 | 6 | Vigila colapsos | Si la corriente se dispara o cae de golpe, sube electrodos, baja tap y confirma integridad. | Sin rotura | ★ | S-01 |
 | 7 | Detecta baño plano | Corriente estable, ruido baja, energía ≥ 150 kWh/t. | Baño plano | 🔎 | S-01 |
 | 8 | Inicia DRI y espuma | Arranca MO-EAF-03 y MO-EAF-05. Mantén tap 15 solo si la espuma cubre el arco. | T panel ≤ 60 °C | ★ | S-01 |
@@ -137,11 +138,11 @@ En púlpito: ropa ignífuga y calzado de seguridad. En piso del horno: casco, ca
 | Arco inestable (corriente oscilante, ruido alto) | Arco expuesto, escoria poco espumosa, colapso | Baja tap 2 posiciones; corrige O₂/C; baja tasa de DRI | C-07 |
 | Colapso de chatarra | Canasta mal acomodada, pesados arriba | Sube electrodos, baja tap, revisa electrodos y corriente | C-05 |
 | Rotura de electrodo | Colapso, junta floja, pieza pesada | Abre interruptor; evalúa: trozo en el baño se funde; columna corta → MO-EAF-08 | C-05 |
-| Disparo por fuga de agua (> 4%) | Panel o bóveda perforado | 🛑 No rearmes; no inclines; aplica MO-EAF-01 §9 y MS-ACE-09 | C-05, C-04, Mantenimiento |
+| Disparo por fuga de agua (> 4%) | Panel o bóveda perforado | 🛑 No rearmes; no inclines ni muevas electrodos; evacúa a ≥ 25 m (MS-ACE-03); aplica MO-EAF-01 §9 y MS-ACE-09 | C-05, C-04, C-07, Mantenimiento |
 | T de panel > 60 °C | Arco expuesto, escoria baja | Baja tap; mejora espuma; si no baja, aísla el panel con C-05 | C-05 |
 | Desbalance > 10% | Electrodo corto, regulación en falla | Revisa longitudes; pasa la fase a manual solo con autorización de C-05 | C-05, S-21 |
 | Disparo de sobrecorriente o del interruptor | Cortocircuito prolongado, falla eléctrica | No rearmes más de 1 vez sin revisar; S-20 investiga | S-20, C-05 |
-| Electrodo baja solo (deriva hidráulica) | Fuga o falla de servoválvula | Abre interruptor; bloquea hidráulica; LOTO | S-22, C-05 |
+| Electrodo baja solo (deriva hidráulica) | Fuga o falla de servoválvula | Abre interruptor; bloquea hidráulica; LOTO completo (no basta la llave cautiva) | S-22, C-05 |
 | Alarma del transformador | Temperatura, Buchholz | Desenergiza según OEM | S-20, C-12 |
 
 ## 10. Registros
@@ -158,7 +159,7 @@ En púlpito: ropa ignífuga y calzado de seguridad. En piso del horno: casco, ca
 | C-07 Ingeniero de Proceso | 4 | 40 | — | Diseño de perfil y análisis energético | 24 meses |
 
 Lista corta de verificación de pasos ★:
-1. Enumera los permisivos para energizar y verifica las llaves cautivas.
+1. Enumera los permisivos para energizar, verifica las llaves cautivas completas y confirma plataformas vacías antes de cerrar el interruptor (pasos 1 y 3); distingue llave cautiva de LOTO completo (MS-ACE-02 §6.4).
 2. Explica por qué el tap alto solo se usa con arco cubierto.
 3. Responde a un colapso de chatarra sin romper electrodos.
 4. No rearma tras un disparo por fuga de agua.
@@ -175,3 +176,4 @@ Lista corta de verificación de pasos ★:
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación. Registra inconsistencia energía vs. tiempo de arco. | experto-operativo-metalurgia |
+| 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: energía 560 kWh/t (520–600), potencia activa ≤ 119 MW, corrientes por etapa y perfil de referencia recalculado (≈ 44 min de arco a 560 kWh/t; propuesta a la ficha). | experto-operativo-metalurgia |

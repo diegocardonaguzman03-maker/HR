@@ -150,11 +150,12 @@ Operador de grúa: casco, lentes, protección auditiva, ropa FR o algodón; cabi
 
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-09 Grúa de colada | 4 | 24 (CRS-05, NOM-006) + simulador de grúa ≥ 16 h | 120 h + 50 traslados de olla llena | Pasos 1, 2, 3, 5, 7, 8, 9 | 12 meses [Verificar calendario regulatorio] |
+| S-09 Grúa de colada | 4 | 24 (CRS-05, NOM-006) + simulador de grúa ≥ 16 h | 120 h + 50 traslados de olla llena | Pasos 1, 2, 3, 4, 5, 7, 8, 9 | 12 meses (grúas/izaje) [Verificar calendario regulatorio] |
 | S-04 Grúa de carga | 4 | 24 + simulador ≥ 12 h | 80 h + 40 cargas de canasta | Pasos 1, 2, 5, 7, 8 | 12 meses |
 | S-05 Patio (electroimán) | 3 | 16 | 40 h | Pasos 1, 5, 8 | 12 meses |
-| Señaleros y maniobristas (S-03, S-08, S-13, S-14, S-15, S-19) | 3 | 16 (CRS-04, señales NOM-006) | 20 maniobras | Pasos 4, 6, 9 | 24 meses (TD-P07) |
-| C-04, C-05, C-06 | 3 | 8 (planeación de izaje crítico) | 5 planes de izaje | Paso 4 + plan de izaje | 24 meses |
+| Señaleros y maniobristas (S-03, S-08, S-13, S-14, S-15, S-19) | 3 | 16 (CRS-04, señales NOM-006) | 20 maniobras | Pasos 4, 6, 9 | 12 meses (grúas/izaje) |
+| C-04, C-05, C-06 | 3 | 8 (planeación de izaje crítico) | 5 planes de izaje | Paso 4 + plan de izaje | 12 meses (grúas/izaje) |
+| Operador de grúa de CC y producto (hoy S-15 / S-17; rol S-27 pendiente de catálogo) | 4 | 24 + simulador ≥ 8 h | 40 h + 30 maniobras (distribuidor, segmento, planchón con tenaza, palanquilla con electroimán) | Pasos 1, 2, 4, 5, 7, 8, 9 | 12 meses (grúas/izaje) |
 
 **Lista corta de verificación de pasos ★:**
 1. ¿Realiza la inspección previa completa y retira la grúa si hay hallazgo crítico?
@@ -162,6 +163,8 @@ Operador de grúa: casco, lentes, protección auditiva, ropa FR o algodón; cabi
 3. ¿Hace la prueba de 200–300 mm y 10 s antes de trasladar?
 4. ¿Traslada a la altura mínima con ≥ 1 m de holgura y sin personas bajo la ruta?
 5. ¿Obedece a un solo señalero y a cualquier señal de paro?
+6. ¿Confirma peso, accesorios y ruta antes de izar (paso 4)?
+7. ¿El señalero verifica ambos muñones asentados antes de levantar y el asiento antes de desenganchar (pasos 6 y 9)?
 
 ## 12. Referencias
 
@@ -174,3 +177,4 @@ Operador de grúa: casco, lentes, protección auditiva, ropa FR o algodón; cabi
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
+| 0.2 | 2026-09-25 | Revisión cruzada: vigencia de 12 meses para todas las certificaciones de grúas e izaje (incluye señaleros y planeación); fila del operador de grúa de CC y producto; pasos ★ 4, 6 y 9 en la lista | experto-seguridad-salud |

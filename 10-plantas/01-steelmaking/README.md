@@ -51,6 +51,6 @@ Cada manual contiene: control documental, roles (R/A/C/I), descripción con figu
 Consolidadas de los reportes de los agentes y de las revisiones cruzadas (ver `REVISION-*.md` en cada carpeta):
 1. **Uso de los manuales:** liberar como material de capacitación teórica mientras Ingeniería valida los valores marcados (recomendado, 30–60 días) o esperar la validación completa.
 2. **Catálogo:** crear el rol S-27 Operador de Grúa de CC y Producto, el C-18 Supervisor de Mantenimiento de Turno, y asignar el escarpeo y el dueño único de MS-ACE-03 (ver CAT-ACE-001 §3).
-3. **Tramo de control del supervisor del EAF** (≈ 35 por turno): segundo C-05 de EAF o líderes de equipo S-01.
+3. **Tramo de control del supervisor del EAF** (≈ 35 por turno): crear un segundo C-05 de EAF por turno o aceptar el tramo con apoyo técnico (sin mando) de los S-01. Por el art. 9 de la LFT, un sindicalizado no puede tener funciones de mando.
 4. **Seguridad:** umbral de evacuación por CO (200 ppm o 50 ppm), frecuencia de simulacros y restricción de dosis de radiación.
 5. **Laboral:** liga entre certificación y escalafón (negociación con el sindicato y la CMCAP) y el efecto de una jornada de 40 h en el rol 4x4.

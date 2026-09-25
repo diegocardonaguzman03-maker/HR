@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-CC-02 | 0.1 | Borrador para validación | Acería · CC1, CC2 y taller de segmentos | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-CC-02 | 0.2 | Borrador para validación | Acería · CC1, CC2 y taller de segmentos | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §4 (CC1: vertical-curva, radio 9.5 m, longitud metalúrgica ≈ 32 m, **14 segmentos, gap según tabla de conicidad ± 0.5 mm**) y §5 (CC2: curva, radio 9 m, 6 líneas, pie de rodillos, enderezado multipunto). Pesos, runout, desgastes y torques: **[Validar con OEM / Ingeniería de Mantenimiento]**.
 
@@ -110,7 +110,8 @@ Casco, lentes, guantes anticorte, botas metatarsales, ropa FR, protección audit
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 **Permisos:** LOTO grupal, izaje crítico, espacio confinado (cámara de rociado), altura.
 **Puntos de aislamiento:** E1 motores de rodillos motrices del segmento y de los vecinos (CCM); E-H cilindros de apriete (válvula de bloqueo del segmento + descarga de acumuladores); E-S agua secundaria de las zonas afectadas (válvulas + dren); E-W agua de enfriamiento interno de rodillos; E-A aire de atomización; E-L lubricación aire-aceite; E-M barra falsa estacionada y bloqueada; segmento sujeto por grúa o apoyado en su cuna. **Prueba de energía cero:** intento de girar rodillos y mover barra falsa rechazado; manómetros de agua, aire e hidráulica 0 bar.
-**Zona de exclusión:** debajo del segmento en izaje y trayectoria de la barra falsa durante la corrida del gap checker.
+**Zona de exclusión:** debajo del segmento en izaje y ± 5 m de la proyección de la carga (MS-ACE-04); trayectoria de la barra falsa durante la corrida del gap checker.
+**Atmósfera en la cámara de rociado (criterio único, MS-ACE-05):** entrada con O₂ 19.5–23.5 %, CO < 25 ppm y < 10 % LEL; trabajo en caliente solo con 0 % LEL detectable (≤ 1 % de lectura del equipo); salir a CO 25 ppm o 10 % LEL; evacuar a CO 200 ppm [Verificar NOM-010] o 20 % LEL.
 
 ![Puntos de aislamiento y bloqueo de CC1 y CC2 (ver MS-ACE-02)](../img/ms-loto-puntos-cc.svg)
 
@@ -127,7 +128,7 @@ Casco, lentes, guantes anticorte, botas metatarsales, ropa FR, protección audit
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
 | 1 | Verifica el segmento de reemplazo | Hoja de taller: gap en banco, runout, rodamientos, boquillas probadas, prueba de presión de agua interna | Hoja firmada | ★ | S-25 |
-| 2 | Asegura la máquina | Sin planchón en la línea; barra falsa estacionada | Máquina vacía | | C-06 |
+| 2 | Asegura la máquina | Sin planchón ni acero en la línea; barra falsa estacionada | Máquina vacía; entrega firmada por C-06 | ★ | C-06 |
 | 3 | Aplica LOTO | E1, E-H, E-S, E-W, E-A, E-L, E-M | Candados puestos | ★ | S-20, S-22, S-19 |
 | 4 | Prueba energía cero | Intentos de arranque; manómetros 0 bar | Sin energía | ★ | C-11 |
 | 5 | Desconecta servicios | Agua, aire, hidráulica y cables; tapa conexiones | Sin fugas, conexiones identificadas | | S-19, S-22 |
@@ -168,13 +169,16 @@ Reportes del gap checker con tendencia por segmento · hoja de vida de segmentos
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-25 Mecánico de Taller | 3 | 32 (geometría de máquina, gap, alineación, boquillas, metrología) | 80 h / 3 reconstrucciones + 2 alineaciones | Pasos 1, 10 | 24 meses |
-| S-19 Mecánico de Acería | 3 | 16 (cambio de segmento, LOTO de CC, izaje) | 3 cambios | Pasos 3, 4, 6, 8, 11 | 24 meses |
-| S-21 Instrumentista | 3 | 8 (gap checker) | 3 corridas | Paso 12 | 24 meses |
-| S-22 Técnico Hidráulico | 3 | 16 (cilindros de apriete, acumuladores NOM-020) | 2 intervenciones | Pasos 3, 4 | 24 meses |
+| S-25 Mecánico de Taller | 3 | 32 (geometría de máquina, gap, alineación, boquillas, metrología) | 80 h / 3 reconstrucciones + 2 alineaciones | Pasos 1, 10 | 24 meses (TD-P07) |
+| S-19 Mecánico de Acería | 3 | 16 (cambio de segmento, LOTO de CC, izaje) | 3 cambios | Pasos 3, 4, 6, 8, 11 | 24 meses (TD-P07); izaje, alturas y espacio confinado (cámara de rociado) 12 meses |
+| S-21 Instrumentista | 3 | 8 (gap checker) | 3 corridas | Paso 12; 8.1 pasos 2, 3 | 24 meses (TD-P07) |
+| S-22 Técnico Hidráulico | 3 | 16 (cilindros de apriete, acumuladores NOM-020) | 2 intervenciones | Pasos 3, 4 | 24 meses (TD-P07) |
+| S-20 Electricista | 3 | NOM-029 + 4 (motores de rodillos) | 3 bloqueos | Pasos 3, 4 (E1) | 12 meses (eléctrico, NOM-029) |
+| S-26 Lubricador | 2 | 8 (LOTO, sistema aire-aceite) | 2 intervenciones | Paso 3 (E-L, candado personal) | 24 meses (TD-P07); alturas 12 meses |
+| Operador de grúa de CC (50 t) | 3 | NOM-006 (MS-ACE-04) | 3 izajes de segmento | Paso 6 | 12 meses (grúas/izaje) |
 
 **Normas:** NOM-004-STPS, NOM-006-STPS, NOM-009-STPS, NOM-020-STPS (acumuladores), NOM-033-STPS (cámara de rociado, si aplica), NOM-029-STPS (motores), NOM-017-STPS. Verificar con Jurídico Laboral / SSO.
-**Verificación ★:** ¿hoja de taller revisada? · ¿energía cero probada incluida la barra falsa? · ¿nadie bajo carga? · ¿alineación medida y registrada? · ¿gap checker aprobado antes de liberar?
+**Verificación ★:** ¿hoja de taller revisada (paso 1)? · ¿máquina vacía entregada por C-06 (paso 2)? · ¿LOTO de las 7 energías con candado personal (paso 3)? · ¿energía cero probada incluida la barra falsa (paso 4)? · ¿nadie bajo carga (paso 6)? · ¿segmento asentado a torque (paso 8)? · ¿retiró LOTO en orden (paso 11)? · ¿LOTO parcial bajo control del púlpito y recuento de personal antes de mover la barra falsa (8.1, pasos 2 y 3)? · ¿alineación medida y registrada? · ¿gap checker aprobado antes de liberar (paso 14)?
 
 ## 12. Referencias
 FT-ACE-001 §4, §5 · MO-CC1-02, MO-CC1-04, MO-CC2-02, MO-CC2-04 · MM-CC-01, MM-CC-03 · MS-ACE-02, -04, -05, -10 · Manual OEM de segmentos y gap checker [por referenciar] · Tabla de conicidad de gap de C-08 [por referenciar].
@@ -183,3 +187,4 @@ FT-ACE-001 §4, §5 · MO-CC1-02, MO-CC1-04, MO-CC2-02, MO-CC2-04 · MM-CC-01, M
 | Versión | Fecha | Cambio | Autor |
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
+| 0.2 | 2026-09-25 | Revisión cruzada de seguridad: criterio de atmósfera de la cámara de rociado (MS-ACE-05); paso 2 marcado ★; S-20, S-26 y operador de grúa en la sección 11; vigencias de 12 meses; lista ★ completa | experto-seguridad-salud |
