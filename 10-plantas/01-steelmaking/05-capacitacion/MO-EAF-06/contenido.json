@@ -1,0 +1,201 @@
+{
+  "code": "MO-EAF-06",
+  "title": "Medición de temperatura, oxígeno activo y muestreo",
+  "titulo_corto": "Temperatura y muestreo",
+  "serie": "Operación",
+  "area": "Hornos · EAF-1 / EAF-2",
+  "manual": "02-operacion/eaf/MO-EAF-06-temperatura-oxigeno-muestreo.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Medir T y O activo y tomar una muestra confiable para vaciar en ventana, sin exponer a nadie en la puerta",
+  "audiencia": "S-02 Segundo Hornero · S-11 Muestrero / Analista · S-01 Primer Hornero · C-05 Supervisor de Hornos",
+  "kpis": [
+    {"value": "12 h", "label": "teoría (S-02)"},
+    {"value": "40 h", "label": "OJT · 50 mediciones"},
+    {"value": "3", "label": "pasos críticos ★"},
+    {"value": "1,630", "label": "°C de vaciado (± 15, por grado)"}
+  ],
+  "cadena": ["Sonda seca", "Puerta libre", "Inmersión", "Curva válida", "Laboratorio ≤ 4 min", "Decisión de vaciado"],
+  "titulos": {
+    "objetivos": "Al terminar, mides bien a la primera y sin exponerte",
+    "roles": "S-02 mide, S-11 analiza y S-01 decide el vaciado",
+    "flujo": "Una lectura mala se repite; nunca se adivina",
+    "figura": "La lanza entra por la puerta y cruza la escoria",
+    "equipos": "Siete equipos; la sonda seca es la primera condición",
+    "parametros": "T, O, C y P abren o cierran la ventana de vaciado",
+    "seguridad": "Sonda húmeda y puerta ocupada: los riesgos",
+    "calidad": "Una muestra mala es un análisis falso",
+    "pasos": "Once pasos; tres no admiten error",
+    "anormales": "Ante proyección: retirar la lanza y alejarse",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de la medición que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Usar solo sondas secas e íntegras", "detalle": "Tomar del almacén seco el tipo correcto; desechar la sonda con cartón húmedo, roto o golpeado."},
+    {"titulo": "Medir en el momento correcto", "detalle": "M1 a mitad del DRI (T); M2 al inicio del afino (T + O + muestra); M3 1–2 min antes de vaciar (T + O)."},
+    {"titulo": "Validar la curva", "detalle": "Meseta ≤ 2 °C por ≥ 1.5 s; si no, repetir con otra sonda, máximo 2 intentos."},
+    {"titulo": "Decidir el vaciado con datos", "detalle": "T 1,630 ± 15 °C, O 500–900 ppm, C 0.04–0.08 %, P ≤ 0.015 %; enviar T y O a olla y LF."}
+  ],
+  "por_que_importa": "Con la T, el O y la muestra se decide el vaciado y se calcula el Al de la olla. Una lectura falsa vacía acero frío, sobreoxidado o fuera de grado. Y una sonda húmeda o una persona frente a la puerta durante la inmersión son quemaduras graves.",
+  "principio": "Sonda seca, puerta libre y curva válida; si no, no hay lectura.",
+  "roles": [
+    ["Rol", "Qué hace en la medición", "RACI"],
+    ["C-05 Supervisor de Hornos", "Dueño; autoriza la medición manual y vaciar con datos incompletos", "A"],
+    ["S-02 Segundo Hornero", "Monta la sonda, opera la lanza, valida la curva y envía la muestra", "R"],
+    ["S-11 Muestrero / Analista", "Analiza la muestra en el espectrómetro; reporta en ≤ 4 min [Supuesto]", "R"],
+    ["S-01 Primer Hornero", "Pide la medición a tiempo; decide ajustes y la hora de vaciado", "R"],
+    ["C-07 Ingeniero de Proceso", "Define momentos de medición, tipos de sonda y reglas de validación", "C"],
+    ["C-09 Metalurgista de Producto", "Define límites químicos por grado", "C"]
+  ],
+  "flujo": [
+    {"label": "Pedir", "desc": "S-01 solicita M1, M2 o M3"},
+    {"label": "Sonda", "desc": "Seca, íntegra y del tipo correcto"},
+    {"label": "Montar", "desc": "“Contacto OK” en la HMI"},
+    {"label": "Puerta libre", "desc": "Arco reducido o apagado; nadie al frente"},
+    {"label": "Inmergir", "desc": "300–400 mm; T 4–6 s, O 8–12 s"},
+    {"label": "Validar", "desc": "Meseta; si no, otra sonda (máx. 2)"},
+    {"label": "Muestra", "desc": "Tubo neumático; laboratorio ≤ 4 min"},
+    {"label": "Decidir", "desc": "T, O, C, P en ventana → MO-EAF-07"}
+  ],
+  "flujo_takeaway": "Una lectura dentro de la escoria da una T falsa: profundidad correcta y meseta, o se repite.",
+  "figuras": [
+    {
+      "svg": "eaf-corte-horno.svg",
+      "lectura": [
+        "La lanza manipuladora entra por la puerta de escoria (13).",
+        "La sonda cruza la escoria espumosa (4) y mide 300–400 mm dentro del acero.",
+        "Una lectura en la escoria da T falsa: por eso se valida la meseta."
+      ]
+    },
+    {
+      "svg": "eaf-ciclo-colada.svg",
+      "titulo": "Tres mediciones: M1 en el DRI, M2 y M3 en el afino",
+      "lectura": [
+        "M1: T a mitad de la alimentación de DRI (≈ min 24–26 de arco).",
+        "M2: T + O + muestra al inicio del afino, con el DRI detenido.",
+        "M3: T + O 1–2 min antes de vaciar, para calcular Al y aleaciones de la olla."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Lanza manipuladora", "Inmerge sondas sin exponer a nadie", "Profundidad y tiempo [Validar con OEM]", "Contacto de portasondas; sin alarmas"],
+    ["Termopar desechable", "Temperatura", "± 3 °C [Supuesto]", "Lote vigente, almacenado seco"],
+    ["Sonda T + O (celda ZrO₂)", "Temperatura y O activo", "Rango de O según proveedor", "Lote vigente, seca, sin golpes"],
+    ["Muestreador (paleta)", "Muestra para espectrómetro", "Con desoxidante Al/Zr", "Seco y sin daño"],
+    ["HMI de lectura", "Muestra la curva y el valor", "Validación automática de meseta", "Calibración mensual [Supuesto]"],
+    ["Tubo neumático y OES", "Envía y analiza la muestra", "C, P, S, Mn, Cu, Ni, Cr, Mo, Sn", "Sin atascos; OES estandarizado"],
+    ["Lanza manual de respaldo", "Medir si falla el robot", "—", "Guardada seca; solo con autorización"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["T de vaciado", "1,630 °C", "1,615–1,645 °C", "< 1,610 o > 1,650 °C", "< 1,610: calentar; > 1,650: LF"],
+    ["O activo al vaciado", "700 ppm", "500–900 ppm", "> 1,000 o < 400 ppm", "> 1,000: menos O₂, más C"],
+    ["C al vaciado", "0.06 %", "0.04–0.08 %", "> 0.10 %", "Más O₂ en el afino"],
+    ["P al vaciado", "≤ 0.012 %", "≤ 0.015 %", "> 0.015 %", "No vaciar sin C-05 / C-09"],
+    ["Profundidad", "350 mm", "300–400 mm [Validar con OEM]", "< 250 mm", "Repetir: T falsa en escoria"],
+    ["Tiempo de inmersión", "T 5 s; O 10 s", "T 4–6 s; O 8–12 s", "> 15 s", "Sonda destruida; repetir"],
+    ["Meseta válida", "≤ 2 °C en ≥ 1.5 s [Supuesto]", "—", "Sin meseta", "Repetir con otra sonda"],
+    ["Tiempo de análisis", "≤ 4 min [Supuesto]", "3–5 min", "> 6 min", "S-01 decide con T y O"]
+  ],
+  "parametros_nota": "Calentar ≈ 1 min por 8–10 °C con tap 14 [Supuesto]. Termopar tipo S o B [Validar con OEM]. Dos lecturas sin energía con > 10 °C de diferencia: revisar lote.",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Sonda seca o no entra", "detalle": "Almacén seco y cerrado; cartón íntegro. Sonda húmeda o golpeada se desecha: puede proyectar metal por la puerta."},
+      {"titulo": "Nadie frente a la puerta", "detalle": "Roja ≤ 5 m de la puerta, amarilla 5–15 m, mientras la lanza está dentro. Se mide con la lanza manipuladora."},
+      {"titulo": "Medición manual solo autorizada", "detalle": "Con OK de C-05, arco apagado, EPP aluminizado completo, un intento y un segundo trabajador observando."},
+      {"titulo": "Arco y retiro de la muestra", "detalle": "Potencia reducida o arco apagado según la práctica [Validar con OEM]; retiro lento; la muestra se enfría protegida."}
+    ],
+    "epp": [
+      "Careta con visor dorado y capucha aluminizada",
+      "Chaqueta, polainas y guantes aluminizados",
+      "Ropa ignífuga y botas metatarsales",
+      "Protección auditiva y detector multigás",
+      "Laboratorio: lentes y guantes para muestra caliente"
+    ],
+    "figura": "ms-zonas-exclusion-nave.svg",
+    "figura_titulo": "Al medir, solo el ejecutor en zona roja",
+    "figura_lectura": [
+      "Muestreo y temperatura: solo el ejecutor en roja, a ≥ 1.5 m de la puerta.",
+      "Medición manual: de lado a la puerta y máximo 2 min en zona roja.",
+      "Salida a zona verde o refugio en ≤ 30 s desde cualquier punto rojo."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["T de vaciado", "1,630 ± 15 °C según grado", "Sonda en M3, cada colada", "Olla congelada o refractario dañado"],
+    ["O activo", "500–900 ppm", "Sonda en M2 y M3", "Al fuera de rango o exceso de inclusiones"],
+    ["Química del baño", "C 0.04–0.08 %; P ≤ 0.015 %", "Muestra en M2", "Colada fuera de grado"],
+    ["Representatividad", "Paleta sin porosidad ni escoria", "Visual en laboratorio", "Análisis falso"],
+    ["Trazabilidad", "Colada, momento y hora", "Etiqueta automática", "Error de asignación"]
+  ],
+  "calidad_takeaway": "El O activo de M3 es la base del cálculo de Al de la olla: con señal inestable no se usa.",
+  "pasos": [
+    {"n": 1, "paso": "Prepara sondas", "como": "Del almacén seco, el tipo requerido (T, T + O, muestreador); cartón sin humedad, roturas ni golpes", "criterio": "Sonda íntegra y seca", "critico": true, "rol": "S-02"},
+    {"n": 2, "paso": "Monta la sonda", "como": "En el portasondas hasta el tope; verifica “contacto OK” en la HMI", "criterio": "Contacto OK", "critico": false, "rol": "S-02"},
+    {"n": 3, "paso": "Coordina con el púlpito", "como": "S-01 reduce potencia o apaga el arco según la práctica; DRI detenido en M2/M3", "criterio": "Confirmación por radio", "critico": false, "rol": "S-01"},
+    {"n": 4, "paso": "Despeja la puerta", "como": "Nadie frente a la puerta ni en la trayectoria de la lanza", "criterio": "Zona libre", "critico": true, "rol": "S-02"},
+    {"n": 5, "paso": "Inmerge", "como": "Ciclo automático: 300–400 mm bajo la escoria; T 4–6 s, O 8–12 s", "criterio": "Ciclo completo", "critico": false, "rol": "S-02"},
+    {"n": 6, "paso": "Valida la curva", "como": "Meseta ≤ 2 °C por ≥ 1.5 s; si no es válida, repite con otra sonda (máx. 2 intentos)", "criterio": "Lectura válida", "critico": false, "rol": "S-02"},
+    {"n": 7, "paso": "Retira y envía la muestra", "como": "Retira la paleta sin golpear; enfría en posición protegida; tubo neumático con identificación", "criterio": "Muestra en laboratorio", "critico": false, "rol": "S-02"},
+    {"n": 8, "paso": "Analiza", "como": "Prepara la superficie, analiza y reporta en ≤ 4 min", "criterio": "Resultado en nivel 2", "critico": false, "rol": "S-11"},
+    {"n": 9, "paso": "Decide", "como": "Compara T, O, C y P con la ventana del grado; decide ajuste o vaciado", "criterio": "Ventana cumplida", "critico": false, "rol": "S-01"},
+    {"n": 10, "paso": "Informa a olla y LF", "como": "Envía T y O finales para el cálculo de adiciones (MO-EAF-07) y a LF", "criterio": "Datos transmitidos", "critico": false, "rol": "S-01"},
+    {"n": 11, "paso": "Respaldo manual", "como": "Solo si falla el robot: OK de C-05, arco apagado, EPP completo, un intento, segundo trabajador observando", "criterio": "Lectura sin exposición prolongada", "critico": true, "rol": "S-02 / C-05"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Sin meseta o lectura errática", "Repetir con otra sonda; limpiar contactos; revisar profundidad", "S-01; C-07 si repite"],
+    ["Proyección al inmergir", "Retirar la lanza y alejarse; apartar el lote; no usar sus sondas (MS-ACE-03)", "C-05, C-16"],
+    ["Muestra con porosidad o escoria", "Tomar una nueva muestra", "S-11"],
+    ["Lanza manipuladora fuera de servicio", "Mantenimiento; respaldo manual solo con autorización de C-05", "C-05, Mtto"],
+    ["Laboratorio > 6 min sin resultado", "S-01 decide con T y O; C-05 autoriza vaciar solo si el grado lo permite", "C-05, C-09"],
+    ["T > 30 °C distinta a la esperada", "Repetir la medición; revisar el DRI (MO-EAF-03)", "C-07"],
+    ["P > 0.015 %", "No vaciar; aplicar MO-EAF-05", "C-05, C-09"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-02 Segundo Hornero", "U", "12 h", "40 h / 50 mediciones", "24 meses"],
+      ["S-11 Muestrero / Analista", "U", "24 h", "80 h / 100 análisis", "24 meses"],
+      ["S-01 Primer Hornero", "U", "8 h", "20 decisiones de vaciado", "24 meses"]
+    ],
+    "checklist": [
+      "Rechaza una sonda húmeda o dañada",
+      "Mantiene la zona de la puerta libre durante la inmersión",
+      "Reconoce una curva válida y una no válida",
+      "Conoce las condiciones de la medición manual y no la hace sin autorización"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Qué haces con una sonda cuyo cartón está húmedo?", "opciones": ["Secarla junto a la puerta", "Desecharla", "Usarla solo para medir T"], "correcta": 1, "explicacion": "Sonda húmeda = proyección de metal por la puerta. Se desecha y se revisa el almacén."},
+    {"pregunta": "¿Qué curva de temperatura es válida?", "opciones": ["Subida lenta sin meseta", "Meseta ≤ 2 °C por ≥ 1.5 s", "Picos y caídas bruscas"], "correcta": 1, "explicacion": "Subida lenta: sonda en escoria. Picos: contacto o termopar dañado. En ambos casos se repite."},
+    {"pregunta": "¿Cuál es la ventana típica de T de vaciado?", "opciones": ["1,560–1,590 °C", "1,615–1,645 °C", "1,680–1,710 °C"], "correcta": 1, "explicacion": "Objetivo 1,630 °C según grado; < 1,610 se calienta; > 1,650 se ajusta y se avisa a LF."},
+    {"pregunta": "Falla la lanza manipuladora. ¿Qué haces?", "opciones": ["Medir a mano de inmediato", "Pedir autorización a C-05", "Vaciar sin medir"], "correcta": 1, "explicacion": "Respaldo manual solo con OK de C-05, arco apagado, EPP completo, un intento y un observador."},
+    {"pregunta": "¿Para qué sirve el O activo medido en M3?", "opciones": ["Calcular el Al de la olla", "Medir el nitrógeno", "Conocer el peso vaciado"], "correcta": 0, "explicacion": "Con el O activo se calculan el Al y las aleaciones de la olla (MO-EAF-07)."}
+  ],
+  "reglas": [
+    {"titulo": "Sonda húmeda no entra al horno", "detalle": "Cartón húmedo, roto o golpeado: se desecha."},
+    {"titulo": "Nadie frente a la puerta en la inmersión", "detalle": "Roja ≤ 5 m; se mide con la lanza manipuladora."},
+    {"titulo": "Sin meseta no hay lectura", "detalle": "Se repite con otra sonda, máximo 2 intentos."},
+    {"titulo": "Medición manual solo con OK de C-05", "detalle": "Arco apagado, EPP completo, un intento y un observador."}
+  ],
+  "por_confirmar": [
+    "Profundidad y tiempos de la lanza, tipo de termopar y práctica de arco durante la medición con el OEM",
+    "Exactitud ± 3 °C, meseta, tiempo de análisis, calibración mensual y velocidad de calentamiento (supuestos)"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de proyección por sonda húmeda", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo; momentos M1, M2 y M3", "Láminas 3–6"],
+    ["3. Sondas y curvas", "90", "Interpretar 5 curvas reales; relación C–O", "Sondas físicas, curvas impresas"],
+    ["4. Equipos y parámetros", "60", "Ventana de vaciado por grado", "Láminas 7–8"],
+    ["5. Seguridad", "60", "Zona de la puerta; medición manual; EPP", "Láminas 9–10, EPP físico"],
+    ["6. Calidad y paso a paso", "75", "Lectura guiada de los 11 pasos; pasos ★", "Láminas 11–13"],
+    ["7. Condiciones anormales", "45", "Simulacro de mesa: proyección al inmergir", "Lámina 14"],
+    ["8. Evaluación teórica", "45", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
+    ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}

@@ -1,0 +1,211 @@
+{
+  "code": "MM-CC-04",
+  "title": "Sistemas hidráulicos de oscilación, control de nivel y barra tapón (incluye la fuente de Cs-137 de CC2)",
+  "titulo_corto": "Oscilación, nivel y Cs-137",
+  "serie": "Mantenimiento",
+  "area": "Acería · CC1 y CC2",
+  "manual": "03-mantenimiento/MM-CC-04-hidraulica-oscilacion-nivel-tapon-fuente-cs137.md",
+  "manual_version": "0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Oscilación, nivel y tapón exactos, y trabajo junto a la fuente de Cs-137 solo con obturador cerrado por el ESR",
+  "audiencia": "S-21 Instrumentista (POE) · S-22 Técnico Hidráulico · S-19 Mecánico · C-16 (ESR) · personal de CC",
+  "kpis": [
+    {"value": "24 h", "label": "teoría (S-21) + curso POE"},
+    {"value": "3", "label": "calibraciones con ESR (OJT)"},
+    {"value": "9", "label": "pasos críticos ★"},
+    {"value": "12", "label": "meses radiológica (POE)"}
+  ],
+  "cadena": ["Línea sin acero", "ESR cierra y mide", "LOTO y energía cero", "Análisis de oscilación", "Calibrar nivel", "Liberación con ESR"],
+  "titulos": {
+    "objetivos": "Al terminar, calibras sin exponerte a radiación",
+    "roles": "Solo el ESR opera el obturador de la fuente",
+    "flujo": "En CC2, primero la fuente cerrada; después el LOTO",
+    "figura": "El sensor de nivel manda la barra tapón en CC1",
+    "equipos": "Doce equipos controlan la interfaz acero–molde",
+    "parametros": "Juego lateral > 0.20 mm o dosis ≥ 2 × fondo: alto",
+    "seguridad": "Radiación, hidráulica y argón: tres energías ocultas",
+    "calidad": "Oscilación y nivel se leen en las marcas del producto",
+    "pasos": "Trece pasos; nueve no admiten error",
+    "anormales": "Obturador dudoso: alejarse ≥ 3 m y llamar al ESR",
+    "competencia": "Certificación nivel U y protección radiológica",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de oscilación, nivel y fuente no negociables"
+  },
+  "objetivos": [
+    {"titulo": "Trabajar con la fuente cerrada", "detalle": "El ESR cierra el obturador, pone su candado y mide < 2 × fondo en el punto de trabajo y a 1 m del detector."},
+    {"titulo": "Aislar hidráulica, argón y tapón", "detalle": "HPU con acumuladores a 0 bar, argón cerrado, perno del tapón y tableros bloqueados; prueba de energía cero."},
+    {"titulo": "Medir la oscilación", "detalle": "Acelerómetros triaxiales a 3 frecuencias: ±1 cpm, carrera ±0.1 mm y juego lateral ≤ 0.15 mm."},
+    {"titulo": "Calibrar nivel y tapón", "detalle": "Radiométrico CC2 ±2 % en 2 puntos; corrientes parásitas CC1 ±1 mm; juego del tapón ≤ 0.5 mm."}
+  ],
+  "por_que_importa": "La oscilación evita que la cáscara se pegue; el nivel estable evita atrapar escoria; el tapón regula el flujo. Si fallan: marcas profundas, grietas, pinholes o breakout. En CC2 cada molde tiene una fuente sellada de Cs-137: tiempo, distancia y blindaje, y solo el ESR la opera.",
+  "principio": "Si el radiámetro marca ≥ 2 × fondo con el obturador cerrado, nadie trabaja.",
+  "roles": [
+    ["Rol", "Qué hace en oscilación, nivel y fuente", "RACI"],
+    ["C-12 Supervisor Eléctrico e Instrumentación", "Dueño; OT y liberación", "A"],
+    ["S-22 Técnico Hidráulico", "HPU, servoválvulas, cilindros, acumuladores y aceite", "R"],
+    ["S-21 Instrumentista", "Transductores, sensor de nivel, detector y análisis de oscilación", "R"],
+    ["C-16 como ESR (licencia CNSNS)", "Único que opera el obturador, bloquea, mide dosis y hace pruebas de fuga", "R / A (radiación)"],
+    ["POE (S-21 designados)", "Trabajo en el detector con dosímetro personal", "R"],
+    ["S-19 Mecánico", "Resortes y guías de oscilación; mecanismo de barra tapón", "R"],
+    ["C-08 Ingeniero de Proceso de CC", "Parámetros de oscilación y de control de nivel", "C"],
+    ["C-06 Supervisor de CC", "Autoriza la línea sin acero; firma la liberación", "A (operación)"]
+  ],
+  "flujo": [
+    {"label": "OT", "desc": "Línea sin acero; autorización de C-06"},
+    {"label": "Fuente cerrada", "desc": "ESR cierra, candado, < 2 × fondo"},
+    {"label": "LOTO", "desc": "Hidráulica, eléctrica, argón y tapón"},
+    {"label": "Energía cero", "desc": "No oscila ni mueve; 0 bar; 0 V"},
+    {"label": "Mantener", "desc": "Mesa, resortes, detector, tapón"},
+    {"label": "Oscilar y medir", "desc": "Solo E-H retirado; 3 frecuencias"},
+    {"label": "ESR abre", "desc": "Personal fuera de la zona controlada"},
+    {"label": "Calibrar nivel", "desc": "2 puntos, ±2 %"},
+    {"label": "Liberar", "desc": "Firma C-12, ESR y C-06"}
+  ],
+  "flujo_takeaway": "El candado del ESR es el primero en ponerse y el último en quitarse.",
+  "figuras": [
+    {
+      "svg": "cc1-molde-nivel.svg",
+      "lectura": [
+        "CC1: el sensor de corrientes parásitas mide el nivel (±3 mm normal, ±8 mm alarma).",
+        "El controlador abre o cierra la barra tapón para sostener el nivel con velocidad constante.",
+        "Oscilación hidráulica no senoidal: 120–200 cpm y carrera 4–8 mm."
+      ]
+    },
+    {
+      "svg": "cc2-molde-tubo.svg",
+      "titulo": "En CC2 la fuente de Cs-137 mide el nivel del tubo",
+      "lectura": [
+        "La fuente sellada con obturador emite a través del molde; el detector de centelleo mide nivel ±5 mm.",
+        "La zona alrededor es controlada y señalizada con el trébol de radiación.",
+        "Antes de intervenir: obturador cerrado con candado, medición con el ESR y dosímetro personal."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["HPU de CC", "Presión para oscilar, tapón, ancho", "ISO VG 46 o HFC [Validar]; 3 µm", "ISO 4406 ≤ 15/13/10"],
+    ["Servoválvulas y cilindros", "Perfil y carrera de oscilación", "Carrera 4–8 (CC1) / 6–10 mm (CC2)", "Seguimiento ≤ 2 %; carrera ±0.1"],
+    ["Resortes de lámina y guías", "Guiar la mesa sin juego", "Sin grietas", "Juego lateral ≤ 0.15 mm"],
+    ["Sensor de corrientes parásitas", "Nivel CC1 ±3 mm", "Enfriado", "Linealidad ±1 mm"],
+    ["Barra tapón y argón (CC1)", "Regular flujo; 3–8 NL/min", "Servo hidráulico o eléctrico", "Juego ≤ 0.5 mm; sin fugas"],
+    ["Portafuente Cs-137 (CC2)", "Emitir a través del molde", "Fuente sellada, licencia CNSNS", "Obturador, señalización, candado"],
+    ["Detector y radiámetro", "Nivel ±5 mm; verificar dosis", "Centelleo; radiámetro calibrado", "Cuentas estables; certificado"]
+  ],
+  "parametros": [
+    ["Especificación", "Objetivo", "Tolerancia", "Límite / rechazo", "Frecuencia"],
+    ["Frecuencia de oscilación", "Ajuste del modelo", "±1 cpm", "±3 cpm", "Mensual"],
+    ["Carrera real", "Ajuste", "±0.1 mm", "±0.3 mm", "Mensual"],
+    ["Juego lateral de la mesa", "≤ 0.10 mm", "≤ 0.15 mm", "> 0.20 mm: resortes", "Mensual"],
+    ["Limpieza de aceite", "15/13/10", "≤ 16/14/11", "> 17/15/12", "Mensual"],
+    ["Linealidad nivel CC1", "±0.5 mm", "±1 mm", "> ±2 mm", "Cambio de molde"],
+    ["Juego del tapón", "≤ 0.3 mm", "≤ 0.5 mm", "> 1.0 mm", "Cada distribuidor"],
+    ["Calibración radiométrica", "2 puntos", "±2 %", "> ±5 %", "Cambio de tubo; mensual"],
+    ["Dosis, obturador cerrado", "Fondo 0.1–0.3 µSv/h", "< 2 × fondo [Validar]", "≥ 2 × fondo: alto", "Cada intervención"]
+  ],
+  "parametros_nota": "Oscilación hidráulica en CC2 [Supuesto]. Límites de dosis, pruebas de fuga y actividad de la fuente: según licencia CNSNS y el ESR [Validar].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Fuente cerrada por el ESR", "detalle": "Solo el ESR (C-16) opera el obturador y pone su candado; radiámetro < 2 × fondo antes de trabajar (MS-ACE-07)."},
+      {"titulo": "LOTO de hidráulica, argón y tapón", "detalle": "HPU con acumuladores a 0 bar, tableros de servos y detector, argón cerrado, perno del tapón y carro de distribuidor bloqueado."},
+      {"titulo": "Prueba de energía cero", "detalle": "Intento de oscilar y de mover el tapón desde HMI rechazado; 0 bar; detector de tensión; radiámetro en el punto de trabajo."},
+      {"titulo": "Argón y metal cercano", "detalle": "O₂ 19.5–23.5 % en zonas bajas (MS-ACE-06); distribuidor retirado y EPP térmico entre secuencias."}
+    ],
+    "epp": [
+      "Casco, lentes y ropa FR",
+      "Guantes de nitrilo para aceite",
+      "Botas metatarsales",
+      "Dosímetro personal (POE y zona controlada)",
+      "Radiámetro con el ESR"
+    ],
+    "figura": "ms-loto-puntos-cc.svg",
+    "figura_titulo": "HPU de oscilación a 0 bar y obturador del ESR cerrado",
+    "figura_lectura": [
+      "HPU de oscilación y barra tapón: bomba bloqueada, acumuladores a 0 bar y cilindro apoyado.",
+      "Cs-137: obturador cerrado y candado del ESR; solo el ESR o personal POE autorizado lo opera.",
+      "Medición a 1 m y en el punto de trabajo: fondo (≈ 0.1–0.3 µSv/h) o < 2 × fondo."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Carrera y frecuencia", "Ajuste ±0.1 mm / ±1 cpm", "Analizador, mensual", "Marcas profundas, pegado, breakout"],
+    ["Juego lateral de la mesa", "≤ 0.15 mm", "Analizador, mensual", "Grietas longitudinales, depresiones"],
+    ["Estabilidad de nivel", "CC1 ±3 mm; CC2 ±5 mm", "Continuo (HMI)", "Escoria atrapada, sliver, pinholes"],
+    ["Respuesta del tapón", "Juego ≤ 0.5 mm", "Cada distribuidor", "Nivel oscilante, turbulencia"],
+    ["Argón al tapón", "3–8 NL/min estable", "Cada distribuidor", "Clogging de SEN o pinholes"]
+  ],
+  "calidad_takeaway": "Poco argón tapa la buza; mucho argón deja pinholes y atrapa escoria.",
+  "pasos": [
+    {"n": 1, "paso": "Programa", "como": "OT; línea sin acero; distribuidor retirado o línea tapada", "criterio": "Autorización de C-06", "critico": true, "rol": "C-12"},
+    {"n": 2, "paso": "Cierra la fuente", "como": "El ESR cierra el obturador y coloca su candado y tarjeta", "criterio": "Candado del ESR puesto", "critico": true, "rol": "C-16 (ESR)"},
+    {"n": 3, "paso": "Mide tasa de dosis", "como": "El ESR mide en el punto de trabajo y a 1 m del detector", "criterio": "< 2 × fondo en permiso", "critico": true, "rol": "C-16 (ESR)"},
+    {"n": 4, "paso": "Aplica LOTO", "como": "HPU, tableros (si se interviene el detector), argón y perno mecánico del tapón", "criterio": "Candados puestos", "critico": true, "rol": "S-22, S-21"},
+    {"n": 5, "paso": "Prueba energía cero", "como": "Intento de oscilar y de mover; 0 bar; 0 V", "criterio": "Sin energía", "critico": true, "rol": "C-12"},
+    {"n": 6, "paso": "Inspecciona mesa y resortes", "como": "Visual con lámpara; grietas en láminas; pernos marcados", "criterio": "Sin grietas; torque OK", "critico": false, "rol": "S-19"},
+    {"n": 7, "paso": "Mantén el detector", "como": "Limpieza, conexiones y enfriamiento", "criterio": "Sin daño", "critico": false, "rol": "S-21 (POE)"},
+    {"n": 8, "paso": "Retira LOTO hidráulico", "como": "Solo el necesario para oscilar; personal fuera de la mesa", "criterio": "Nadie en la mesa", "critico": true, "rol": "S-22"},
+    {"n": 9, "paso": "Analiza la oscilación", "como": "Acelerómetros triaxiales en el molde; oscila a 3 frecuencias del rango", "criterio": "±1 cpm; ±0.1; ≤ 0.15 mm", "critico": false, "rol": "S-21"},
+    {"n": 10, "paso": "El ESR abre la fuente", "como": "Personal fuera de la zona controlada (salvo POE con dosímetro); el ESR retira candado y abre", "criterio": "Abierto; cuentas estables", "critico": true, "rol": "C-16 (ESR)"},
+    {"n": 11, "paso": "Calibra el nivel", "como": "Calibración de 2 puntos según el sistema (vacío / referencia OEM)", "criterio": "±2 %", "critico": false, "rol": "S-21 con ESR"},
+    {"n": 12, "paso": "Retira LOTO restante", "como": "Orden inverso; cada quien retira su candado", "criterio": "Candados retirados", "critico": true, "rol": "Todos"},
+    {"n": 13, "paso": "Libera", "como": "Checklist firmado por Mantenimiento, ESR (si aplica) y Operación", "criterio": "Firma C-12, ESR y C-06", "critico": true, "rol": "C-12, C-06"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Alarma de oscilación", "Operación reduce velocidad o termina la colada", "C-06, S-22"],
+    ["Nivel oscilante (hunting)", "Revisar juego del tapón y argón; C-08 revisa el lazo", "C-06, S-21"],
+    ["Señal radiométrica errática", "Nivel manual por operación; revisar con el ESR", "C-06, ESR"],
+    ["Indicador de obturador no coincide", "Alejarse ≥ 3 m y delimitar; el ESR mide y bloquea", "C-16 (ESR), C-06"],
+    ["Portafuente con metal o fuego", "Evacuar la zona; el ESR activa el plan radiológico y avisa a CNSNS", "ESR, C-04, C-16"],
+    ["Grieta en resorte de lámina", "Programar cambio; revisar juego lateral", "C-12, C-11"],
+    ["Aceite > 60 °C", "Revisar enfriador y válvula de alivio", "S-22"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-21 Instrumentista (POE)", "U", "24 h + POE (NOM-012)", "3 calibraciones con ESR", "24 meses; POE y NOM-029 12"],
+      ["S-22 Técnico Hidráulico", "U", "32 h", "40 h", "24 meses"],
+      ["C-16 como ESR", "O", "Acreditación CNSNS", "—", "Licencia; interna 12 meses"],
+      ["S-19 Mecánico", "U", "8 h + radiológica", "2 intervenciones", "24 meses; radiológica 12"],
+      ["Personal de CC no POE", "I", "Concientización (2 h)", "—", "12 meses"]
+    ],
+    "checklist": [
+      "Confirma línea sin acero y autorización de C-06",
+      "Verifica que solo el ESR operó el obturador, con su candado, y midió < 2 × fondo",
+      "Aplica LOTO con candado personal; acumuladores a 0 bar y perno del tapón puesto",
+      "Prueba energía cero: no oscila ni mueve, 0 bar y 0 V",
+      "Retira solo el LOTO hidráulico necesario con personal fuera de la mesa",
+      "Retira el LOTO restante en orden y libera con firma de C-12, ESR y C-06"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Quién puede abrir o cerrar el obturador de la fuente de Cs-137?", "opciones": ["Cualquier S-21", "Solo el ESR (C-16)", "El operador de púlpito"], "correcta": 1, "explicacion": "Solo el ESR con licencia CNSNS opera el obturador, pone su candado y mide la tasa de dosis."},
+    {"pregunta": "Con el obturador cerrado, el radiámetro marca 3 × fondo. ¿Qué haces?", "opciones": ["Trabajar rápido", "No trabajar; alejarse ≥ 3 m", "Poner otro candado"], "correcta": 1, "explicacion": "≥ 2 × fondo es alto: alejarse, delimitar y el ESR aplica el plan de emergencia (MS-ACE-07)."},
+    {"pregunta": "¿Cuál es el juego lateral máximo aceptado de la mesa de oscilación?", "opciones": ["0.15 mm", "0.5 mm", "1.0 mm"], "correcta": 0, "explicacion": "Objetivo ≤ 0.10 mm, tolerancia ≤ 0.15 mm; arriba de 0.20 mm se cambian resortes o guías."},
+    {"pregunta": "¿Qué LOTO se retira para hacer el análisis de oscilación?", "opciones": ["Todos", "Solo el hidráulico necesario", "Ninguno"], "correcta": 1, "explicacion": "Solo el LOTO hidráulico necesario para oscilar, con el personal fuera de la mesa."},
+    {"pregunta": "¿Qué caudal de argón lleva la barra tapón en CC1?", "opciones": ["1–2 NL/min", "3–8 NL/min", "20–30 NL/min"], "correcta": 1, "explicacion": "3–8 NL/min estable: poco tapa la SEN (clogging); mucho deja pinholes."}
+  ],
+  "reglas": [
+    {"titulo": "Solo el ESR toca el obturador", "detalle": "Su candado es el primero en ponerse y el último en quitarse."},
+    {"titulo": "Dosis ≥ 2 × fondo: nadie trabaja", "detalle": "Alejarse ≥ 3 m, delimitar y avisar al ESR."},
+    {"titulo": "Sin LOTO y energía cero no se toca", "detalle": "HPU a 0 bar, argón cerrado, perno del tapón y tableros bloqueados."},
+    {"titulo": "Nadie en la mesa al oscilar", "detalle": "Se retira solo el LOTO hidráulico necesario, con conteo."}
+  ],
+  "por_confirmar": [
+    "Límites de dosis, periodicidad de pruebas de fuga y actividad de la fuente (licencia CNSNS / ESR)",
+    "Oscilación hidráulica en CC2 (supuesto) y tipo de aceite de la HPU",
+    "Frecuencia de cambio de servoválvulas (2–3 años)"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de breakout por pegado y de exposición", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Papel del ESR; recorrido del flujo", "Láminas 3–6"],
+    ["3. Equipos y especificaciones", "90", "Oscilación no senoidal y lazos de nivel", "Láminas 7–9"],
+    ["4. Seguridad, LOTO y energía cero", "90", "Tiempo, distancia, blindaje; LOTO de HPU", "Láminas 10–11, radiámetro"],
+    ["5. Calidad y paso a paso", "75", "Lectura guiada de los 13 pasos; pasos ★", "Láminas 12–14"],
+    ["6. Práctica de análisis de oscilación", "60", "Lectura de un reporte de acelerómetros", "Reporte de oscilación"],
+    ["7. Condiciones anormales", "45", "Simulacro de mesa: obturador que no coincide", "Lámina 15"],
+    ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
+    ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 18"]
+  ],
+  "validacion": {}
+}

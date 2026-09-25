@@ -98,7 +98,7 @@
     ["MgO en escoria", "9 %", "8–10 %", "< 7 %", "Más dolomita"],
     ["Cantidad de escoria", "110 kg/t [Supuesto]", "100–130 kg/t", "> 150 kg/t", "Revisar ganga del DRI y cal"]
   ],
-  "parametros_nota": "Flujo por lanza ≤ 2,500 Nm³/h. Altura de espuma ≥ longitud de arco [Validar con OEM / Ingeniería de Proceso]. P₂O₅ según balance [Validar con Ingeniería de Proceso].",
+  "parametros_nota": "Lanza ≤ 2,500 Nm³/h. Espuma ≥ longitud de arco [Validar con OEM / Ingeniería de Proceso]; P₂O₅ según balance [Validar con Ingeniería de Proceso].",
   "seguridad": {
     "controles": [
       {"titulo": "Olla de escoria y fosa secas", "detalle": "S-10 y S-02 confirman olla seca y fosa sin agua antes de cada desescoriado. Si hay agua, no se desescoria (MS-ACE-03)."},
