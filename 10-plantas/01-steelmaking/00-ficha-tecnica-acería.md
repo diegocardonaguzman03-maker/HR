@@ -105,7 +105,7 @@
 | Lubricación del molde | Colada abierta con aceite vegetal (colza) 15–25 mL/min por línea |
 | Molde | Tubo de Cu-Ag de 1,000 mm; conicidad 0.8–1.0%/m; agitador electromagnético (EMS) |
 | Agua de molde | ≈ 2,000 L/min por línea; velocidad en la ranura 10–12 m/s; ΔT 6–10 °C; alarma ΔT > 12 °C o caudal < 90% |
-| Control de nivel de molde | **Radiométrico con fuente sellada de Cs-137** (ver SEG-ACE-07); nivel ±5 mm |
+| Control de nivel de molde | **Radiométrico con fuente sellada de Cs-137** (ver MS-ACE-07); nivel ±5 mm |
 | Oscilación | 150–250 cpm; carrera 6–10 mm |
 | Sobrecalentamiento | 20–35 °C |
 | Enfriamiento secundario | Pie de rodillos + 3 zonas de rociado; agua específica 1.5–2.0 L/kg |
