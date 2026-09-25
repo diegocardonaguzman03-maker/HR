@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-CC-02 | 0.2 | Borrador para validación | Acería · CC1, CC2 y taller de segmentos | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-CC-02 | 0.2 | Borrador para validación | Acería · CC1, CC2 y taller de segmentos | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §4 (CC1: vertical-curva, radio 9.5 m, longitud metalúrgica ≈ 32 m, **14 segmentos, gap según tabla de conicidad ± 0.5 mm**) y §5 (CC2: curva, radio 9 m, 6 líneas, pie de rodillos, enderezado multipunto). Pesos, runout, desgastes y torques: **[Validar con OEM / Ingeniería de Mantenimiento]**.
 

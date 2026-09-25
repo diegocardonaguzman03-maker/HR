@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-EAF-04 | 0.2 | Borrador para validación | Acería · subestaciones de EAF-1 / EAF-2 | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-EAF-04 | 0.2 | Borrador para validación | Acería · subestaciones de EAF-1 / EAF-2 | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §2 (transformador de 140 MVA, secundario hasta 1,200 V, OLTC). **La ficha no define el voltaje primario:** aquí se usa **34.5 kV [Supuesto]**. Todo límite de prueba está sujeto a **[Validar con OEM / Ingeniería de Mantenimiento]** y a la línea base de fábrica del transformador.
 

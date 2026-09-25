@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-08 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-08 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** cada palanquilla de 12 m pesa **≈ 2.4 t** y sale a **más de 800 °C**. Córtala **a la medida en caliente** (el acero caliente mide más que frío), márcala con **colada, línea, secuencia y consecutivo**, y nunca la mezcles con otra colada. Si la marca no se lee, **la palanquilla pierde su identidad** y se retiene.
 
@@ -99,7 +99,7 @@ Casco, lentes, careta para el área de corte, ropa retardante a la flama, guante
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 - LOTO del oxicorte y del camino de rodillos antes de cambiar boquillas o liberar palanquillas atoradas.
-- Zona de exclusión del lecho de enfriamiento y del patio bajo la grúa.
+- Zona de exclusión del lecho de enfriamiento y del patio bajo la grúa (proyección de la carga ± 5 m, MS-ACE-04).
 - Permiso de trabajo en caliente para cortes manuales con soplete (palanquilla atorada).
 
 ## 7. Calidad
@@ -150,7 +150,7 @@ Casco, lentes, careta para el área de corte, ropa retardante a la flama, guante
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | S-16 Operador de Corte y Marcado | 3 | 16 (oxicorte, gases, rastreo) | 80 h / 10 coladas | Pasos 1, 6, 7 | 24 meses (TD-P07) |
-| S-17 Operador de Mesa y Despacho | 3 | 16 + grúa de producto si la opera (40) | 80 h / 10 coladas | Paso 12 | 24 meses (TD-P07) |
+| S-17 Operador de Mesa y Despacho | 3 | 16 + grúa de producto si la opera (40) | 80 h / 10 coladas | Paso 12 | 12 meses (grúas/izaje) |
 
 **Lista corta de verificación de pasos ★ (TD-P07):**
 - [ ] Hace la prueba de fugas y de antirretornos del oxicorte.

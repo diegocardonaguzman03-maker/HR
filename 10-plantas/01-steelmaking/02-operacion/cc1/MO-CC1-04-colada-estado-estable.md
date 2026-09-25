@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-04 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-08 Ingeniero de Proceso de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-04 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-08 Ingeniero de Proceso de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores de referencia de FT-ACE-001 §4 y §7. Tabla velocidad–sobrecalentamiento, reparto de agua por zona, ley de oscilación y lógica del BOP: **[Validar con OEM / Ingeniería de Proceso]**.
 
@@ -127,7 +127,7 @@ flowchart LR
 | Falla de agua de molde | Perforación del molde; explosión agua–acero | ★ Agua de emergencia automática en ≤ 15 s; si no entra: cierra tapón y olla, detén y evacúa | Prueba semanal (MM-CC-03); alarma en HMI |
 | Agua en el molde (fuga de placa) | Explosión de vapor | ★ Ante vapor, "reventones" o gotas en el menisco: cierra el tapón de inmediato | Observación del menisco por S-14 |
 | Salpicaduras al trabajar en el molde (polvo, costras) | Quemaduras | Herramientas secas y precalentadas; careta IR y aluminizado | EPP |
-| Argón acumulado bajo la plataforma | Asfixia | Detector de O₂; no entrar a fosas sin medición | Lectura |
+| Argón acumulado bajo la plataforma | Asfixia | Detector personal multigás (O₂ fuera de 19.5–23.5 % → salir; CO 25 ppm → salir, 200 ppm → evacuar [Verificar NOM-010]); no entrar a fosas sin permiso y medición (MS-ACE-05/06) | Lectura |
 | Polvo de molde (fluoruros) | Irritación respiratoria | Respirador P100 al agregar polvo | EPP |
 | Vapor de la cámara de rociado | Quemaduras, baja visibilidad | Puertas cerradas; extracción de vapor funcionando | Inspección |
 
@@ -138,6 +138,7 @@ flowchart LR
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 - **Zona de exclusión bajo el molde y segmentos 1–3** vigente toda la colada.
+- **Plataforma de molde (MS-ACE-01, colada estable):** zona roja ≤ 3 m del molde, solo S-13 y S-14 con EPP aluminizado seco; el resto de la plataforma de colada es zona amarilla. Herramientas y polvo de molde secos (MS-ACE-03).
 - Acceso a la cámara de rociado solo con la máquina parada o con permiso especial de C-06.
 - Cualquier trabajo en segmentos con colada en proceso: prohibido salvo procedimiento específico aprobado por C-03.
 

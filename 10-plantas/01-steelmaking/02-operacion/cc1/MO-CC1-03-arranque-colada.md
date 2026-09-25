@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-03 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-03 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores de referencia de FT-ACE-001 §4 y §7. Nivel de apertura, tiempo de llenado, velocidad de arranque y rampa: **[Validar con OEM / Ingeniería de Proceso]**.
 
@@ -97,7 +97,7 @@ flowchart TD
 | Lanceado con oxígeno | Quemaduras, retroceso de flama, proyección | ★ Lanza seca, regulador inspeccionado, EPP aluminizado completo, posición lateral, un solo operador certificado con vigía | Observación del C-06 |
 | Salpicaduras al llenar el molde | Quemaduras | Careta con filtro IR, chamarra aluminizada; mantenerse fuera de la línea del molde | EPP |
 | Falla de agua de molde durante el arranque | Perforación del molde, explosión | ★ Agua de emergencia automática en ≤ 15 s; si no entra: cierra tapón y olla y evacúa | Alarma probada en MO-CC1-02 |
-| Asfixia por argón en fosas o bajo la plataforma | Asfixia | Detector personal de O₂; no entrar a fosas sin medición (MS-ACE-06) | Lectura del detector |
+| Asfixia por argón en fosas o bajo la plataforma | Asfixia | Detector personal multigás (O₂ fuera de 19.5–23.5 % → salir; CO 25 ppm → salir, 200 ppm → evacuar); no entrar a fosas sin permiso y medición (MS-ACE-05/06) | Lectura del detector |
 
 ### 6.2 EPP obligatorio
 - Plataforma de colada: casco con careta y filtro IR, chamarra y polainas aluminizadas, ropa FR, guantes aluminizados o de carnaza larga, botas con metatarsal de desprendimiento rápido, protección auditiva, detector personal de O₂/CO.
@@ -105,7 +105,7 @@ flowchart TD
 - Lanceado: equipo aluminizado completo con capucha o careta de cara completa.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- **Zona roja de arranque:** plataforma inferior del molde, pie de rodillos y segmentos 1–3, cámara de rociado y bajo la torreta. Delimitada con barrera y letrero; solo se levanta con autorización de C-06 (MS-ACE-01, MS-ACE-09).
+- **Zona roja de arranque (MS-ACE-01):** ≤ 10 m del molde, del distribuidor y de la torreta, y todo lo que está bajo la máquina (plataforma inferior del molde, pie de rodillos, segmentos 1–3, cámara de rociado); zona amarilla 10–20 m. Solo S-12, S-13, S-14 y C-06 en la roja. Delimitada con barrera y letrero; aviso con sirena ≥ 30 s antes de abrir; solo se levanta con autorización de C-06 (MS-ACE-01, MS-ACE-09).
 - **Zona de giro de la torreta** y **área bajo la olla**: despejadas durante el giro y el izaje.
 - Frente del molde: solo S-13 y S-14 con EPP completo durante el llenado.
 
@@ -122,7 +122,7 @@ flowchart TD
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
 | 1 | Confirma máquina lista | Lista previa al arranque firmada (MO-CC1-02); distribuidor en posición y SEN ≥ 1,000 °C | Firmas completas | | C-06 |
-| 2 | Establece la zona de exclusión | Coloca barreras; confirma por radio que nadie está bajo el molde, en segmentos 1–3 ni en la cámara de rociado | Confirmación verbal de C-06 | ★ | C-06, S-13 |
+| 2 | Establece la zona de exclusión | Coloca barreras; confirma por radio y visual que nadie está a ≤ 10 m del molde, del distribuidor y de la torreta salvo S-12, S-13, S-14 y C-06, ni bajo el molde, en segmentos 1–3 o en la cámara de rociado (MS-ACE-01) | Confirmación verbal de C-06 | ★ | C-06, S-13 |
 | 3 | Revisa datos de la olla | Grado, peso (145–155 t), temperatura y química de envío del LF; calcula T objetivo del distribuidor | Dentro de programa | | S-12 |
 | 4 | Recibe la olla en la torreta | S-09 baja la olla en el brazo; nadie bajo la carga | Olla asentada, gancho libre | | S-09, S-13 |
 | 5 | Gira la torreta a colada | Alarma sonora; zona de giro despejada | Olla sobre el distribuidor | | S-13 |

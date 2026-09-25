@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-04 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-08 Ingeniero de Proceso de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-04 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-08 Ingeniero de Proceso de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** en estado estable cuidas **cinco variables por línea**: **nivel de molde (± 5 mm), aceite (15–25 mL/min), agua de molde (caudal y ΔT), velocidad (2.5–3.5 m/min) y agua secundaria (1.5–2.0 L/kg)**, más **dos del distribuidor**: **nivel (700–850 mm) y sobrecalentamiento (20–35 °C)**. Si una sale de rango, actúa según la tabla. Si falla el agua de molde, **es emergencia**.
 
@@ -96,7 +96,7 @@ flowchart LR
 |---|---|---|---|
 | Breakout (fuga de acero bajo el molde) | Metal líquido en la línea y la fosa, incendio, explosión con agua | Nivel y aceite en rango; cierre inmediato de la línea; **nadie bajo la plataforma ni en la fosa sin autorización** (MS-ACE-09) | Rondas; tendencias; acceso a la fosa controlado |
 | Falla del agua de molde | Perforación del tubo; explosión | Agua de emergencia en **≤ 15 s**; cierre de olla y líneas | Prueba semanal (MM-CC-03); alarma probada |
-| Radiación Cs-137 | Exposición | No intervenir dentro del molde con obturador abierto; ESR para cualquier intervención (MS-ACE-07) | Dosímetro; registro del ESR |
+| Radiación Cs-137 | Exposición | ★ No intervenir dentro del molde con obturador abierto; cualquier intervención solo después de que el ESR (C-16) cierre el obturador, ponga su candado y mida < 2 × fondo (MS-ACE-07) | Dosímetro; registro del ESR |
 | Salpicaduras en el molde (chorro abierto) | Quemaduras | Careta y EPP aluminizado en rondas; no asomarse al molde | Observación |
 | Calor radiante y trabajo de 12 h | Estrés térmico | Hidratación, pausas y rotación (MS-ACE-08) | Programa de hidratación |
 | Vapor en la cámara de rociado | Quemaduras, baja visibilidad | Puertas cerradas; extractor de vapor en servicio | Ronda |
@@ -106,6 +106,7 @@ Casco, careta con filtro IR, chamarra aluminizada en la plataforma, ropa retarda
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 - Zona controlada de radiación en la parte alta de los moldes (señalizada).
+- Plataforma de molde (MS-ACE-01, colada estable): zona roja ≤ 3 m del molde, solo S-13 y S-14 con EPP aluminizado seco.
 - Fosa y áreas bajo la plataforma: acceso solo con autorización de C-06 y línea en condición segura.
 - Cualquier trabajo en una línea detenida con las otras colando: LOTO de esa línea (MS-ACE-02) y permiso.
 

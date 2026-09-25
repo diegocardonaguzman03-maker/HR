@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-OLL-02 | 0.1 | Borrador para validación | Nave de ollas — LF-1 / LF-2 a CC1 / CC2 | C-04 Jefe de Turno de Acería | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-OLL-02 | 0.1 | Borrador para validación | Nave de ollas — LF-1 / LF-2 a CC1 / CC2 | C-04 Jefe de Turno de Acería | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 / Mantenimiento lo validen.
 
@@ -93,6 +93,7 @@ flowchart TD
 | Choque con estructuras u otra grúa | Balanceo, derrame | Anticolisión; velocidad reducida; ruta libre | Prueba de anticolisión |
 | Perforación de olla durante el traslado | Derrame sobre la ruta | Termografía; ruta de emergencia; áreas bajo ruta sin agua ni personas | Plan de emergencia MS-ACE-09 |
 | Sobrellenado / derrame por el borde | Quemaduras | Bordo libre ≥ 300 mm; traslado suave | S-06 libera con bordo libre |
+| Sobrecarga de la grúa | Caída de la olla | ★ Peso de olla llena ≤ 240 t en la celda de carga. **[Validar con OEM si los 250 t de la grúa incluyen la traviesa (≈ 15–25 t [Supuesto]); si la incluyen, el límite de olla llena debe bajar a 250 t − traviesa − margen, y no se certifica el paso 7 hasta confirmarlo]** | Celda de carga; placa de la grúa |
 | Pérdida de energía con olla suspendida | Olla detenida en el aire | Frenos a prueba de falla; evacuar debajo; procedimiento OEM de descenso de emergencia [Validar con OEM / Ingeniería de Proceso] | Simulacro anual |
 | Radiación térmica sobre la cabina | Estrés térmico del operador | Cabina aislada y climatizada; pausas | MS-ACE-08 |
 
@@ -100,7 +101,7 @@ flowchart TD
 S-09: ropa ignífuga, casco, lentes, botas; cabina climatizada con extintor. S-13 (señalero): careta con visor dorado, chaqueta aluminizada, guantes, ropa ignífuga, botas metatarsales, radio. Todos en nave de ollas: protección auditiva.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- ★ **Zona de exclusión móvil:** proyección de la olla sobre el piso + margen [Validar con Seguridad: típico ≥ 5 m] durante todo el traslado.
+- ★ **Zona de exclusión móvil (MS-ACE-01):** zona roja = proyección de la ruta ± 5 m; zona amarilla ± 5–15 m; nadie bajo ni junto a la ruta durante todo el traslado. La olla viaja a la altura mínima con ≥ 1 m de holgura sobre el obstáculo más alto (MS-ACE-04). [Supuesto — validar con el estudio de la nave, C-16]
 - Rutas definidas en plano (MS-ACE-04): nunca sobre púlpitos, oficinas, comedores, fosas con agua ni vías peatonales sin protección.
 - Mantenimiento de grúa: LOTO de la alimentación (conductores/barras) y de la grúa vecina (MS-ACE-02); trabajo en altura (MS-ACE-10).
 - Solo S-09 certificado opera; el relevo se hace con la grúa sin carga.
@@ -121,7 +122,7 @@ S-09: ropa ignífuga, casco, lentes, botas; cabina climatizada con extintor. S-1
 | 4 | Despeja la ruta | Bocina; verifica la ruta y el área bajo la trayectoria. | Ruta libre | ★ | S-09 |
 | 5 | Engancha | Baja la traviesa, engancha ambos muñones. | Ambos ganchos enganchados | ★ | S-09 |
 | 6 | Confirma enganche | S-13, desde posición segura, confirma visualmente ambos lados. | "Enganche OK" | ★ | S-13 |
-| 7 | Levanta y prueba frenos | Levanta 100–200 mm, pausa 5 s; observa deslizamiento y peso. | Sin deslizamiento; peso ≤ 240 t | ★ | S-09 |
+| 7 | Levanta y prueba frenos | Levanta 100–200 mm, pausa 5 s; observa deslizamiento y peso. Si el peso supera el límite, asienta y avisa a C-04. | Sin deslizamiento; peso ≤ 240 t [Validar con OEM el peso de la traviesa] | ★ | S-09 |
 | 8 | Traslada | Altura mínima segura; ≤ 50% de velocidad; arranques y frenados suaves. | Sin balanceo | | S-09 |
 | 9 | Aproxima a la torreta | Marcha lenta; alinea muñones con el brazo; señales de S-13. | Alineado | | S-09 / S-13 |
 | 10 | Asienta | Baja suave hasta asentar; S-13 confirma asiento completo. | "Asentada OK" | ★ | S-09 / S-13 |
@@ -132,7 +133,7 @@ S-09: ropa ignífuga, casco, lentes, botas; cabina climatizada con extintor. S-1
 ## 9. Condiciones anormales y respuesta
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
-| Perforación o fuga de olla durante el traslado | Refractario agotado | 🛑 Si es seguro, lleva la olla a la fosa/área de emergencia más cercana por la ruta de emergencia; si no, bájala en el área segura más cercana. Evacua. No uses agua. | C-04, C-16 (MS-ACE-09) |
+| Perforación o fuga de olla durante el traslado | Refractario agotado | 🛑 Si es seguro, lleva la olla a la fosa/área de emergencia seca más cercana por la ruta de emergencia sin pasar sobre personas; si no, bájala en el área segura más cercana. Evacúa a ≥ 25 m. No uses agua. | C-04, C-16 (MS-ACE-09) |
 | Olla deslizándose en la prueba de frenos | Freno desajustado | Baja y asienta; grúa fuera de servicio | C-04, MM-GR-01 |
 | Pérdida de energía con olla suspendida | Falla eléctrica | Frenos retienen; evacua debajo; no intentes descenso sin procedimiento OEM | C-04, S-20 |
 | Actuación de un límite superior | Error de maniobra / falla | Detén; no rearmes el límite de respaldo sin mantenimiento | C-04, S-20 |
@@ -150,9 +151,9 @@ S-09: ropa ignífuga, casco, lentes, botas; cabina climatizada con extintor. S-1
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-09 Operador de Grúa de Colada | 3 | 40 (NOM-006, grúa de colada, metal líquido, emergencias) | 160 h / 60 movimientos con olla llena | Pasos 1, 4, 5, 7, 10 + simulacro de fuga y de pérdida de energía | 24 meses (TD-P07) |
-| S-13 Operador de Plataforma (señalero) | 3 | 16 (señales, NOM-006) | 40 h / 30 movimientos | Pasos 6, 10 | 24 meses |
-| C-04 Jefe de Turno | 4 | 16 + evaluador | — | Decisión en emergencia de olla | 24 meses |
+| S-09 Operador de Grúa de Colada | 3 | 40 (NOM-006, grúa de colada, metal líquido, emergencias) | 160 h / 60 movimientos con olla llena | Pasos 1, 4, 5, 7, 10 + simulacro de fuga y de pérdida de energía | 12 meses (grúas/izaje) |
+| S-13 Operador de Plataforma (señalero) | 3 | 16 (señales, NOM-006) | 40 h / 30 movimientos | Pasos 6, 10 | 12 meses (grúas/izaje) |
+| C-04 Jefe de Turno | 4 | 16 + evaluador | — | Decisión en emergencia de olla | 24 meses (TD-P07) |
 
 Lista corta de verificación de pasos ★:
 1. Realiza la inspección previa al uso y rechaza la grúa con falla.

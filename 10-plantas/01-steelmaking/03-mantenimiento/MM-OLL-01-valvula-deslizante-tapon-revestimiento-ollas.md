@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-OLL-01 | 0.2 | Borrador para validación | Acería · taller de ollas | C-15 Especialista de Refractarios | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-OLL-01 | 0.2 | Borrador para validación | Acería · taller de ollas | C-15 Especialista de Refractarios | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §3 (flota de 10 ollas de 150 t; MgO-C en línea de escoria; Al₂O₃-MgO-C en barril y fondo; vida 60–80 coladas; válvula de 2 o 3 placas; apertura libre ≥ 98 %; precalentamiento 1,000–1,100 °C). Dimensiones de placas, fuerzas de resortes y caudales del tapón: **[Validar con OEM / Ingeniería de Mantenimiento / C-15]**. **Una olla perforada o una válvula que no cierra = derrame de 150 t de acero.**
 

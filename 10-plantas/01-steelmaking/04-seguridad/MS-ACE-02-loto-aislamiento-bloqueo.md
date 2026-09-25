@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-02 | 0.1 | Borrador para validación | Acería (EAF, LF, ollas, CC1, CC2, grúas, patio) | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-02 | 0.2 | Borrador para validación | Acería (EAF, LF, ollas, CC1, CC2, grúas, patio) | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ **Mensaje clave.** **Un candado, una persona, una llave.** Nadie mete el cuerpo en un equipo hasta que TODAS sus energías (eléctrica, hidráulica, neumática, agua, gases, gravedad, térmica y radiación) están aisladas, bloqueadas y **probadas en cero**. Estándar corporativo **CRS-01 LOTO** (`templates/critical-task-certification-checklist.md`).
 
@@ -182,7 +182,7 @@ La **llave cautiva** (enclavamiento por llave atrapada) es un control de **acces
 
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-19, S-21, S-22, S-23, S-24, S-25, S-26 | 3 | 8 (CRS-01 LOTO) | 5 bloqueos supervisados | Pasos 6, 7, 8, 9, 11 | 24 meses (TD-P07) |
+| S-19, S-21, S-22, S-23, S-24, S-25, S-26 | 3 | 8 (CRS-01 LOTO) | 5 bloqueos supervisados | Pasos 5, 6, 7, 8, 9, 11 | 24 meses (TD-P07) |
 | S-20 Electricista | 4 | 8 + 16 (CRS-11 eléctrico, NOM-029, arco eléctrico) | 10 maniobras de AT supervisadas | Pasos 4, 9 (vivo–muerto–vivo) | 12 meses (NOM-029) |
 | S-01, S-12 | 3 | 4 | 3 entregas de equipo | Pasos 3, 9(a); confirmación de enclavamiento de la sección 6.4 | 24 meses (TD-P07) |
 | S-02, S-03, S-06, S-07 (usuarios de llave cautiva) | 2 | 2 (sección 6.4) | 3 accesos supervisados | Condiciones 1–5 de la sección 6.4 | 24 meses (TD-P07) |
@@ -197,7 +197,8 @@ La **llave cautiva** (enclavamiento por llave atrapada) es un control de **acces
 5. ¿Sabe que el agua de molde nunca se cierra con acero en la máquina?
 6. ¿Aplica el orden de reenergización (agua → hidráulica → eléctrica)?
 7. ¿Distingue cuándo basta la llave cautiva (acceso de rutina, sección 6.4) y cuándo se requiere el LOTO completo (intervención en el equipo)?
-8. ¿Cierra el obturador de Cs-137 con candado del ESR (C-16) y confirma < 2 × fondo antes de trabajar en el molde de CC2 (paso 9e)?
+8. ¿Aísla fluidos con doble bloqueo y venteo, y brida ciega si hay ingreso (paso 5)?
+9. ¿Cierra el obturador de Cs-137 con candado del ESR (C-16) y confirma < 2 × fondo antes de trabajar en el molde de CC2 (paso 9e)?
 
 ## 12. Referencias
 

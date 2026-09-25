@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-06 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno sin observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-06 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno sin observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** la buza calibrada **se gasta o se tapa** y la línea te avisa con la **velocidad**: si sube de 3.5 m/min la buza está erosionada; si baja de 2.3 m/min se está tapando. Cámbiala **con el mecanismo de cambio rápido** y una buza **caliente y del diámetro correcto**. Si una línea se vuelve peligrosa (desbordamiento, breakout, sin agua), **ciérrala de inmediato con placa ciega**; el tapón con varilla es el respaldo.
 
@@ -89,7 +89,7 @@ flowchart TD
 | Línea sin control (desbordamiento o breakout) | Derrame de metal | Cierre inmediato con placa ciega; tapón con varilla como respaldo | Simulacro trimestral [Validar] |
 | Taponeo desde arriba del distribuidor | Quemaduras por calor radiante, caída | Careta, chamarra aluminizada, plataforma con barandal (MS-ACE-10) | Inspección de plataforma |
 | Buza usada caliente en el cajón | Quemaduras, incendio | Cajón con arena seca; nadie en la línea de expulsión | Observación |
-| Radiación (Cs-137) al limpiar un molde de una línea cerrada | Exposición | Obturador cerrado por el ESR antes de intervenir el molde (MS-ACE-07) | Registro del ESR |
+| Radiación (Cs-137) al limpiar un molde de una línea cerrada | Exposición | ★ Obturador cerrado por el ESR (C-16), con su candado, y < 2 × fondo medido antes de intervenir el molde (MS-ACE-07) | Registro del ESR |
 
 ### 6.2 EPP obligatorio
 Chamarra, pantalón o polainas aluminizados, careta con visor dorado, casco con barbiquejo, guantes aluminizados, botas de fundidor, ropa retardante a la flama, protección auditiva y dosímetro personal.

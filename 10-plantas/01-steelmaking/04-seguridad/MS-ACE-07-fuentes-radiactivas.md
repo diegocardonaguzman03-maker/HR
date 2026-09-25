@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-07 | 0.1 | Borrador para validación | CC2 (medidores de nivel de Cs-137), patio de chatarra (pórtico), casa de bolsas | C-16 Especialista de Seguridad e Higiene de Acería (con el Encargado de Seguridad Radiológica) | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-07 | 0.2 | Borrador para validación | CC2 (medidores de nivel de Cs-137), patio de chatarra (pórtico), casa de bolsas | C-16 Especialista de Seguridad e Higiene de Acería (con el Encargado de Seguridad Radiológica) | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ **Mensaje clave.** La Acería tiene **dos riesgos radiológicos distintos**: (1) las **fuentes selladas de Cs-137** que miden el nivel del molde en las 6 líneas de CC2, y (2) las **fuentes huérfanas** que pueden llegar escondidas en la chatarra. Si una fuente se funde en el horno, contamina el acero, el polvo de la casa de bolsas y a las personas (caso real en México: Ciudad Juárez, 1983–84, una fuente de Co-60 terminó en varilla corrugada). **Solo el Encargado de Seguridad Radiológica (ESR) manipula el obturador. Nadie descarga un camión que hizo sonar el pórtico.**
 
@@ -161,6 +161,7 @@ El EPP convencional **no protege contra la radiación gamma**. La protección es
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | C-16 en función de ESR | 4 | Curso reconocido por la CNSNS [Verificar] | Según CNSNS | Autorización de la CNSNS + pasos 2, 3, 6 y 10 | Según la licencia CNSNS; evaluación interna 12 meses |
+| C-06, C-11 (solicitantes del trabajo en el molde) | 3 | 2 (MS-ACE-07) | 2 solicitudes con el ESR | Paso 1 (punto 7 en el permiso) | 12 meses (fuentes radiactivas) |
 | POE (S-21, S-25 de CC2) | 3 | 16 (protección radiológica, NOM-012) | 3 tareas con ESR | Pasos 4, 5 + uso del dosímetro | 12 meses (fuentes radiactivas) |
 | S-12, S-13, S-14 de CC2 | 2 | 4 (conciencia radiológica) | — | Reconocer el trébol y el obturador; no intervenir el molde sin la liberación del ESR | 12 meses (fuentes radiactivas) |
 | S-05, C-17 | 3 | 8 (pórtico y fuentes huérfanas) | 5 simulacros de alarma | Pasos 7, 8, 9 | 12 meses |

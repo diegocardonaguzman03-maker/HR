@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-10 | 0.1 | Borrador para validación | Toda la Acería | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-10 | 0.2 | Borrador para validación | Toda la Acería | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ **Mensaje clave.** Desde **1.8 m** de altura se requiere protección contra caídas (NOM-009-STPS-2011). **Anclaje de 22.2 kN (5,000 lb) por persona, arnés de cuerpo completo inspeccionado, línea resistente al calor cerca del horno, y un plan de rescate que baje a la persona en menos de 15 minutos** (el trauma por suspensión puede matar en ese tiempo). Estándar corporativo **CRS-03**, ligado al caso de fatalidad en el laminador.
 

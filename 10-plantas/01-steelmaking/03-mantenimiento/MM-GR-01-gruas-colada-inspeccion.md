@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-GR-01 | 0.2 | Borrador para validación | Acería · nave de ollas | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-GR-01 | 0.2 | Borrador para validación | Acería · nave de ollas | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §6 (**2 grúas de colada de 250/63 t con doble sistema de freno y límites redundantes**). Criterios de rechazo tomados de NOM-006-STPS, ASME B30.2 / B30.10, ISO 4309 y la norma del fabricante; **prevalece el más estricto**. Valores específicos: **[Validar con OEM / Ingeniería de Mantenimiento]**. **Una olla de 150 t de acero líquido suspendida es el riesgo de mayor severidad de la Acería.**
 

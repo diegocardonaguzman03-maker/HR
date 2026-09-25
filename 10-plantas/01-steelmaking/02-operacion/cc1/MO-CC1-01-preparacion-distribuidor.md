@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-01 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-01 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores de referencia tomados de la ficha técnica FT-ACE-001 (§4). Antes de usar en planta, Ingeniería de Proceso (C-08) y Refractarios (C-15) deben validarlos contra los manuales OEM y del proveedor de refractarios.
 
@@ -94,8 +94,8 @@ flowchart TD
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
 | Humedad en el revestimiento, pad, presas, mortero o SEN | Explosión de vapor al recibir acero; proyección de metal | ★ Curado y precalentamiento completos por curva; ningún material mojado o almacenado a la intemperie | Registro de curado firmado; inspección visual sin vapor |
-| Carga suspendida (distribuidor vacío de 30–40 t) | Aplastamiento | Izaje solo con grúa de 50 t, accesorios inspeccionados, nadie bajo la carga (MS-ACE-04) | Inspección pre-uso de grúa y balancín |
-| Ingreso al distribuidor (limpieza, armado) | Estrés térmico, atmósfera deficiente, caída de refractario | Espacio confinado con permiso (MS-ACE-05, NOM-033): temperatura interior ≤ 45 °C, O₂ 19.5–23.5%, vigía | Permiso de espacio confinado y medición de gases |
+| Carga suspendida (distribuidor vacío de 30–40 t) | Aplastamiento | ★ Izaje solo con grúa de 50 t, accesorios inspeccionados, nadie bajo la carga ni a ± 5 m de su proyección (MS-ACE-04) | Inspección pre-uso de grúa y balancín |
+| Ingreso al distribuidor (limpieza, armado) | Estrés térmico, atmósfera deficiente, caída de refractario | ★ Espacio confinado con permiso (MS-ACE-05, NOM-033): temperatura interior ≤ 45 °C; medición O₂ → LEL → CO: O₂ 19.5–23.5 %, < 10 % LEL, CO < 25 ppm (0 % LEL detectable, ≤ 1 % de lectura, para trabajo en caliente); quemadores con aislamiento positivo; vigía y rescate listos | Permiso de espacio confinado y medición de gases |
 | Quemadores de gas natural | Explosión por acumulación de gas | Purga antes de encender, detector de flama, válvula de corte probada (MS-ACE-06) | Lista de encendido de la estación |
 | Superficies calientes (1,100 °C) | Quemaduras graves | Distancia, EPP aluminizado para trabajar junto al distribuidor caliente | Observación del supervisor |
 | Polvo de MgO y fibras | Afectación respiratoria | Respirador P100, ventilación local | Uso de EPP |
@@ -110,7 +110,8 @@ flowchart TD
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 - **Permiso de espacio confinado** (NOM-033-STPS) para entrar al distribuidor; bloqueo de quemadores y del carro (LOTO, MS-ACE-02) antes de entrar.
 - **Permiso de trabajo en caliente** para cortes o soldadura en el casco.
-- **Zona de exclusión** de 3 m alrededor del distribuidor en precalentamiento y bajo cualquier distribuidor suspendido.
+- **Zona de exclusión** de 3 m alrededor del distribuidor en precalentamiento; bajo cualquier distribuidor suspendido y a ± 5 m de su proyección (MS-ACE-04).
+- **Gas natural de quemadores (MS-ACE-06):** 10 % LEL → sal, sin chispas, corta el gas; 20 % LEL → evacuación del sector y corte general.
 
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
@@ -127,7 +128,7 @@ flowchart TD
 | 1 | Recibe el distribuidor del volteo | Verifica que el casco esté < 100 °C para armar [Validar con C-15]. Revisa orejas de izaje y casco | Sin grietas en casco ni orejas | | S-15 |
 | 2 | Inspecciona el revestimiento permanente | Mide desprendimientos con regla; revisa grietas | Desprendimiento ≤ 30 mm; sin grietas pasantes. Si no, avisa a C-15 | | S-15, S-24 |
 | 3 | Limpia el interior | Retira restos de casco, escoria y polvo con aspiradora o aire; nunca con agua | Superficie limpia y seca | | S-15 |
-| 4 | Entra al distribuidor solo con permiso | Mide O₂ (19.5–23.5%) y temperatura (≤ 45 °C); vigía afuera; LOTO de quemadores y carro | Permiso firmado | ★ | S-15, C-06 |
+| 4 | Entra al distribuidor solo con permiso | LOTO de quemadores (con aislamiento positivo del gas) y carro; mide en el orden O₂ (19.5–23.5 %) → LEL (< 10 %) → CO (< 25 ppm) y temperatura (≤ 45 °C); vigía afuera y rescate listo (MS-ACE-05) | Permiso firmado con lecturas | ★ | S-15, C-06 |
 | 5 | Coloca el pad de impacto | Centrado bajo la posición del tubo protector ± 50 mm | Asentado sin holgura | | S-15 |
 | 6 | Arma el revestimiento de trabajo | Coloca el molde (former), vacía y vibra la masa seca de MgO; espesor 40–60 mm | Espesor medido en 8 puntos ≥ 40 mm | | S-15 |
 | 7 | Cura el revestimiento | Calienta el former según la curva del proveedor (típico ≈ 250 °C) y retíralo [Validar con C-15] | Masa endurecida, sin zonas blandas | ★ | S-15 |
@@ -151,7 +152,7 @@ flowchart TD
 |---|---|---|---|
 | Vapor o humedad visible en el distribuidor o SEN | Curado incompleto, material mojado | 🛑 No liberar; regresar al quemador; repetir etapa 1 de la curva | C-06, C-15 |
 | Alarma de pérdida de flama | Falla de gas o de ignición | Corte automático; purga antes de reencender; no reencender sin purga | S-21, C-06 |
-| Olor a gas / detector de gas en alarma | Fuga en línea o válvula | Cierra válvula manual, evacúa 15 m, no uses flama ni equipo eléctrico | C-06, C-16, S-21 |
+| Olor a gas / detector de gas en alarma | Fuga en línea o válvula | Cierra la válvula manual o el ESD; ≥ 10 % LEL: sal del área; ≥ 20 % LEL: evacuación del sector (MS-ACE-06); no uses flama ni operes equipo eléctrico | C-06, C-16, S-21 |
 | Temperatura de cara caliente no sube | Quemador mal ajustado, relación aire–gas | Ajusta relación; revisa quemador | S-21, C-08 |
 | Temperatura > 1,200 °C | Sobrecalentamiento | Baja el fuego; registra; C-15 evalúa daño | C-15 |
 | Grieta en la SEN o el tapón después del precalentamiento | Choque térmico, material defectuoso | Cambia la pieza y repite precalentamiento de esa pieza | C-06, C-15 |
@@ -169,10 +170,10 @@ flowchart TD
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-15 Preparador de Distribuidores | 3 | 16 | 80 h / 10 distribuidores completos | Pasos 4, 7, 10, 13, 14, 15 | ≤ 24 meses (TD-P07) |
+| S-15 Preparador de Distribuidores | 3 | 16 | 80 h / 10 distribuidores completos | Pasos 4, 7, 10, 13, 14, 15 | ≤ 24 meses (TD-P07); entrada al distribuidor (espacio confinado) y señales de izaje 12 meses |
 | S-13 Operador de Plataforma de Colada | 2 (en este proceso) | 4 | 5 recepciones de distribuidor | Paso 13 (verificación de humedad) | ≤ 24 meses |
 | C-06 Supervisor de Colada Continua | 4 (evaluador) | 8 + formación de evaluador | — | Todos | ≤ 24 meses |
-| Operador de grúa de CC y producto | 3 | Curso de grúa (NOM-006) | Según MS-ACE-04 | Paso 14 | ≤ 24 meses |
+| Operador de grúa de CC y producto | 3 | Curso de grúa (NOM-006) | Según MS-ACE-04 | Paso 14 | 12 meses (grúas/izaje) |
 
 **Lista corta de verificación de pasos ★ (evaluación práctica TD-P07; todos deben aprobarse):**
 - [ ] Mide gases y temperatura y aplica LOTO antes de entrar al distribuidor.

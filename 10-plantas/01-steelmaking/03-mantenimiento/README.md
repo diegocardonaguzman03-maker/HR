@@ -10,16 +10,16 @@
 
 | Código | Manual | Dueño | Ejecutan | Figura | Normas clave |
 |---|---|---|---|---|---|
-| MM-EAF-01 | [Fugas en paneles y bóveda enfriados por agua](MM-EAF-01-fugas-paneles-boveda.md) | C-11 | S-19, S-23, S-21 | `mm-panel-enfriado-fuga.svg` | NOM-004, 027, 009, 033 |
-| MM-EAF-02 | [Brazos, columnas, regulación hidráulica y cambio de bóveda/delta](MM-EAF-02-brazos-columnas-regulacion-cambio-boveda.md) | C-11 | S-19, S-22, S-04 | — (mermaid) | NOM-004, 006, 009, 020, 029 |
-| MM-EAF-03 | [Refractario del EAF: solera, bancos, EBT y gunning](MM-EAF-03-refractario-eaf-solera-ebt-gunning.md) | C-15 | S-24, S-03 | `mm-ebt-cambio.svg` | NOM-033, 015, 010, 009 |
+| MM-EAF-01 | [Fugas en paneles y bóveda enfriados por agua](MM-EAF-01-fugas-paneles-boveda.md) | C-11 | S-19, S-23, S-21 | `../img/mm-panel-enfriado-fuga.svg` | NOM-004, 027, 009, 033 |
+| MM-EAF-02 | [Brazos, columnas, regulación hidráulica y cambio de bóveda/delta](MM-EAF-02-brazos-columnas-regulacion-cambio-boveda.md) | C-11 | S-19, S-22, S-20, S-04 | — (mermaid) | NOM-004, 006, 009, 020, 029 |
+| MM-EAF-03 | [Refractario del EAF: solera, bancos, EBT y gunning](MM-EAF-03-refractario-eaf-solera-ebt-gunning.md) | C-15 | S-24, S-03 | `../img/mm-ebt-cambio.svg` | NOM-033, 015, 010, 009 |
 | MM-EAF-04 | [Transformador del horno y maniobras de alta tensión](MM-EAF-04-transformador-maniobras-alta-tension.md) | C-12 | S-20 | — (mermaid unifilar) | NOM-029, NOM-001-SEDE |
 | MM-OLL-01 | [Válvula deslizante, tapón poroso y revestimiento de ollas](MM-OLL-01-valvula-deslizante-tapon-revestimiento-ollas.md) | C-15 | S-24, S-08 | — (mermaid) | NOM-033, 015, 006 |
-| MM-CC-01 | [Moldes: conicidad y desgaste (CC1 placas / CC2 tubos)](MM-CC-01-moldes-conicidad-desgaste.md) | C-11 | S-25, S-19 | `mm-molde-conicidad.svg` | NOM-004, 006, 012 |
-| MM-CC-02 | [Segmentos y guías: gap y alineación](MM-CC-02-segmentos-guias-gap-alineacion.md) | C-11 | S-25, S-19 | `mm-segmento-gap-alineacion.svg` | NOM-004, 006, 020, 033 |
-| MM-CC-03 | [Agua de molde, secundaria y emergencia](MM-CC-03-agua-molde-secundaria-emergencia.md) | C-12 | S-19, S-21 | `mm-agua-emergencia.svg` | NOM-004, 029, 009 |
+| MM-CC-01 | [Moldes: conicidad y desgaste (CC1 placas / CC2 tubos)](MM-CC-01-moldes-conicidad-desgaste.md) | C-11 | S-25, S-19, S-21, S-22 | `../img/mm-molde-conicidad.svg` | NOM-004, 006, 012 |
+| MM-CC-02 | [Segmentos y guías: gap y alineación](MM-CC-02-segmentos-guias-gap-alineacion.md) | C-11 | S-25, S-19, S-21, S-22 | `../img/mm-segmento-gap-alineacion.svg` | NOM-004, 006, 020, 033 |
+| MM-CC-03 | [Agua de molde, secundaria y emergencia](MM-CC-03-agua-molde-secundaria-emergencia.md) | C-12 | S-19, S-21 | `../img/mm-agua-emergencia.svg` | NOM-004, 029, 009 |
 | MM-CC-04 | [Hidráulica de oscilación, nivel, barra tapón y fuente de Cs-137](MM-CC-04-hidraulica-oscilacion-nivel-tapon-fuente-cs137.md) | C-12 | S-22, S-21 | — (mermaid) | NOM-012, 020, 029; licencia CNSNS |
-| MM-GR-01 | [Grúas de colada: ganchos, frenos, cables, límites](MM-GR-01-gruas-colada-inspeccion.md) | C-11 | S-19, S-20 | `mm-gancho-grua-inspeccion.svg` | NOM-006, 009, 029 |
+| MM-GR-01 | [Grúas de colada: ganchos, frenos, cables, límites](MM-GR-01-gruas-colada-inspeccion.md) | C-11 | S-19, S-20, S-09 (checklist diario), S-26 | `../img/mm-gancho-grua-inspeccion.svg` | NOM-006, 009, 029 |
 
 Estructura de cada manual (plantilla de la guía de estilo §3): 1 Objetivo · 2 Roles · 3 Descripción + figura + mermaid · 4 Equipos · **5 Especificaciones, tolerancias y frecuencias** (+ 5.1 rutina preventiva/predictiva) · 6 Seguridad (LOTO y energía cero) · 7 Calidad · 8 Paso a paso con ★ y checklist de liberación · 9 Condiciones anormales · 10 Registros · 11 Competencia (TD-P07) · 12 Referencias · 13 Control de cambios.
 

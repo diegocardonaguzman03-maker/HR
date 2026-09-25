@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-08 | 0.1 | Borrador para validación | Toda la Acería | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-08 | 0.2 | Borrador para validación | Toda la Acería | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ **Mensaje clave.** En la plataforma del horno y en la de colada el calor radiante del acero (≈ 1,630 °C) se suma al calor del verano y al EPP aluminizado, que no deja salir el sudor. El **golpe de calor mata en horas** y antes provoca errores en tareas críticas. **Toma 250 mL de agua cada 15–20 minutos aunque no tengas sed, respeta el régimen trabajo/descanso por índice WBGT y usa el EPP completo y seco.**
 

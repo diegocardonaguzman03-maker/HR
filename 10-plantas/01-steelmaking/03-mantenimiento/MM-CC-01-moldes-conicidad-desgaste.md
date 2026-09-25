@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-CC-01 | 0.2 | Borrador para validación | Acería · CC1, CC2 y taller de moldes | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-CC-01 | 0.2 | Borrador para validación | Acería · CC1, CC2 y taller de moldes | C-11 Supervisor de Mantenimiento Mecánico | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §4 (CC1: placas Cu-Ag con Ni, 900 mm, conicidad caras angostas 1.0–1.2 %/m, ancho 900–1,650 mm × 230 mm) y §5 (CC2: tubo Cu-Ag 1,000 mm, 160 × 160 mm, conicidad 0.8–1.0 %/m, ranura de agua 10–12 m/s, EMS). Espesores, desgastes, torques y presiones de prueba: **[Validar con OEM / Ingeniería de Mantenimiento]**. **El molde es la primera barrera contra el breakout.**
 

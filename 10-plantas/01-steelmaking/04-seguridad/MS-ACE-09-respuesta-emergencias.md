@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-09 | 0.1 | Borrador para validación | Toda la Acería | C-04 Jefe de Turno de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-09 | 0.2 | Borrador para validación | Toda la Acería | C-04 Jefe de Turno de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ **Mensaje clave.** En los primeros 30 segundos, **protégete** (zona verde o refugio) y **da la alarma**; en los primeros 5 minutos, el púlpito **pone el proceso en estado seguro** (arco fuera, olla y distribuidor cerrados, gas cortado) y **C-04 asume el mando como Comandante del Incidente**. Nadie actúa como héroe: **nunca agua sobre metal líquido, nunca rescate sin ERA, nunca bajo una olla.**
 

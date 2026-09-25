@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-02 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-02 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** para sellar la cabeza de la barra falsa metes las manos y herramientas **dentro del molde**, justo donde pasa el haz de la **fuente de Cs-137**. El obturador de la fuente se cierra y se bloquea **antes** de empezar y se abre **solo** cuando ya no hay nadie en el molde. Un sello húmedo o mal hecho provoca una fuga o una explosión en el arranque.
 
@@ -84,7 +84,7 @@ flowchart TD
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
-| Radiación ionizante del Cs-137 | Exposición por encima del límite | **Obturador cerrado, bloqueado con candado y tarjeta del ESR, y tasa de dosis medida antes de meter manos al molde** (MS-ACE-07; NOM-012-STPS-2012; licencia CNSNS) | Registro del ESR con hora y lectura; dosímetro personal puesto |
+| Radiación ionizante del Cs-137 | Exposición por encima del límite | ★ **Obturador cerrado por el ESR (C-16), bloqueado con su candado y tarjeta, y tasa de dosis < 2 × fondo medida en el punto de trabajo antes de meter manos al molde** (MS-ACE-07; NOM-012-STPS-2012; licencia CNSNS) | Registro del ESR con hora y lectura; dosímetro personal puesto |
 | Agua o humedad en el molde | Explosión al arrancar | Prueba de fugas de 5 min; chatarra y cordón secos; molde tapado hasta el arranque | Lista de verificación firmada por S-14 y C-06 |
 | Movimiento de la barra falsa u oscilación con personas en la línea | Atrapamiento, amputación | LOTO de extractores y oscilador antes de trabajar en el molde (MS-ACE-02) | Candados personales en el tablero |
 | Trabajo en la plataforma junto a moldes abiertos | Caída a distinto nivel | Tapas en moldes sin uso; barandales (MS-ACE-10) | Inspección de plataforma |
@@ -139,7 +139,7 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 | Caudal < 1,800 L/min en la prueba | Filtro tapado, válvula, bomba | No liberes; revisa con mantenimiento | C-06, C-12 |
 | La barra falsa no avanza o se atora | Rodillo desalineado, cabeza dañada, restos en la línea | Detén; LOTO; inspecciona la línea con mantenimiento | C-06, C-11 |
 | La cabeza no queda centrada | Cabeza deformada, guía desalineada | Cambia la cabeza; revisa alineación | C-06, S-25 |
-| El obturador no cierra o la dosis es mayor al límite | Falla mecánica del portafuente | 🛑 Nadie entra al molde; acordona; el ESR atiende y reporta a la CNSNS si aplica | C-16 (ESR), C-06 |
+| El obturador no cierra o la dosis es ≥ 2 × fondo | Falla mecánica del portafuente | 🛑 Nadie entra al molde; aléjate ≥ 3 m y acordona; el ESR (C-16) atiende y reporta a la CNSNS si aplica (MS-ACE-07) | C-16 (ESR), C-06 |
 | El nivel no marca "molde vacío" con el obturador abierto | Falla del detector o de la fuente | No liberes la línea; S-21 con el ESR | C-06, S-21, C-16 (ESR) |
 | Chatarra húmeda u oxidada | Almacenamiento inadecuado | Usa otra caja seca; seca en estufa | C-06 |
 
@@ -152,9 +152,9 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 ## 11. Competencia requerida y certificación
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| S-14 Ayudante de Colada | 3 | 16 + 8 de protección radiológica (POE) | 40 h / 12 sellados de línea | Pasos 3, 8, 9, 11, 12, 14, 15, 19 | 24 meses (TD-P07); protección radiológica según la licencia CNSNS [Validar] |
-| S-12 Operador de Púlpito | 3 | 16 + 8 de protección radiológica | 24 h / 6 preparaciones de máquina | Pasos 2, 11, 20 | 24 meses |
-| C-16 (función de ESR) | 4 | Según la CNSNS | — | Acreditación CNSNS vigente | Según la CNSNS |
+| S-14 Ayudante de Colada | 3 | 16 + 8 de protección radiológica (POE) | 40 h / 12 sellados de línea | Pasos 3, 8, 9, 11, 12, 14, 15, 19 | 24 meses (TD-P07); protección radiológica (POE) 12 meses (MS-ACE-07) |
+| S-12 Operador de Púlpito | 3 | 16 + 8 de protección radiológica | 24 h / 6 preparaciones de máquina | Pasos 2, 11, 20 | 24 meses (TD-P07); protección radiológica 12 meses (MS-ACE-07) |
+| C-16 (función de ESR) | 4 | Según la CNSNS | — | Acreditación CNSNS vigente; pasos 8 y 20 | Según la licencia CNSNS; evaluación interna 12 meses |
 
 **Lista corta de verificación de pasos ★ (TD-P07):**
 - [ ] Nunca mete las manos al molde sin el obturador cerrado, bloqueado y medido por el ESR.

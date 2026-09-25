@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-09 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) — Calidad | C-09 Metalurgista de Producto / Ingeniero de Calidad de Acería | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno sin observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-09 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) — Calidad | C-09 Metalurgista de Producto / Ingeniero de Calidad de Acería | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno sin observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno sin observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el inspector:** tu trabajo es que **ninguna palanquilla con defecto de rechazo llegue a Laminación** y que la operación **se entere a tiempo** para corregir. Mide la **romboidad** en cada línea en cada colada: es el primer aviso de un molde gastado o un rociado tapado. Ante la duda, **retén** y deja que C-09 decida por escrito.
 

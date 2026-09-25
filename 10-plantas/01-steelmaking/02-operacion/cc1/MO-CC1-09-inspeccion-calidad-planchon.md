@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-09 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) — Calidad | C-09 Metalurgista de Producto / Ingeniero de Calidad de Acería | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno sin observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-09 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) — Calidad | C-09 Metalurgista de Producto / Ingeniero de Calidad de Acería | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno sin observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno sin observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Los criterios de aceptación, profundidades de escarpeo, clases de segregación y tolerancias dimensionales de este manual son **referencias típicas**: **[Validar con OEM / Ingeniería de Proceso]** y con la especificación de planchón de Laminación en Caliente y de los clientes (automotriz, tubería).
 

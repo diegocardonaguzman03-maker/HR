@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-05 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno sin observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-05 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno sin observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores de referencia de FT-ACE-001 §3 y §4. Tabla nivel–peso del distribuidor, tiempos de giro y criterios de detección de escoria: **[Validar con OEM / Ingeniería de Proceso]**.
 
@@ -104,7 +104,7 @@ flowchart TD
 - Lanceado: aluminizado completo con capucha.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- **Zona de giro de la torreta** y **zona bajo ollas suspendidas**: despejadas en cada cambio.
+- **Zona de giro de la torreta** y **zona bajo ollas suspendidas** (proyección ± 5 m, MS-ACE-01/04): despejadas en cada cambio.
 - **Zona de exclusión bajo el molde**: vigente (MO-CC1-04).
 - Acceso al escorial y al puesto de olla vacía solo con la olla asentada.
 
@@ -145,7 +145,7 @@ flowchart TD
 | Escoria pasa al distribuidor | Cierre tardío, detector fallado | Cierra la olla; marca los planchones; revisa nivel de escoria del distribuidor | C-06, C-09 |
 | Distribuidor < 700 mm | Cambio lento | Baja velocidad (0.6 m/min); a 600 mm 0.4 m/min | C-06 |
 | Falla de giro de la torreta | Accionamiento, energía | Giro de emergencia (hidráulico/neumático) según OEM [Validar con OEM / Ingeniería de Proceso]; si no gira: cierre de secuencia | C-06, S-19 |
-| Olla con fuga por la válvula o perforación | Placas, refractario | ★ Evacúa la zona; gira la olla a posición de emergencia sobre el pote de emergencia; MS-ACE-09 | C-04, C-16 |
+| Olla con fuga por la válvula o perforación | Placas, refractario | ★ Evacúa a ≥ 25 m (MS-ACE-01, MS-ACE-09); gira la olla a posición de emergencia sobre el pote de emergencia seco; nunca agua | C-04, C-16 |
 | Temperatura de la nueva olla fuera de ± 10 °C | LF / espera | Ajusta velocidad con tabla SH | C-07, C-08 |
 | Flama o aire en la junta del tubo protector | Junta dañada, desalineación | Recoloca con junta nueva | C-06 |
 | Rebose del distribuidor | Olla muy abierta, nivel mal leído | Cierra la olla; verifica pesaje | C-06 |
@@ -159,7 +159,7 @@ flowchart TD
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | S-13 Operador de Plataforma de Colada | 3 | 16 | 20 cambios de olla (5 con lanceado simulado) | Pasos 2, 8, 11, 15 | ≤ 24 meses (TD-P07) |
-| S-09 Operador de Grúa de Colada | 3 | Curso grúa de colada (NOM-006) | Según MS-ACE-04 | Pasos 2 y 15 | ≤ 24 meses |
+| S-09 Operador de Grúa de Colada | 3 | Curso grúa de colada (NOM-006) | Según MS-ACE-04 | Pasos 2 y 15 | 12 meses (grúas/izaje) |
 | S-12 Operador de Púlpito de Colada | 3 | 8 | 20 cambios | Aplicación de la tabla nivel–velocidad | ≤ 24 meses |
 | C-06 Supervisor de Colada Continua | 4 (evaluador) | 8 + evaluador | — | Todos | ≤ 24 meses |
 

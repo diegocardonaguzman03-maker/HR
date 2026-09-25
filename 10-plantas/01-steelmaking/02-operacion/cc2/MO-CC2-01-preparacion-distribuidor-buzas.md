@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-01 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-01 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** en la CC2 el acero cae del distribuidor al molde en **chorro abierto** y lo que controla el flujo es el **diámetro de la buza calibrada**. Una buza equivocada, mal asentada o fría echa a perder la línea desde el arranque. Un revestimiento húmedo puede causar una **explosión** al recibir el acero.
 
@@ -98,12 +98,12 @@ C-08 fija en la orden de colada el diámetro según sección, grado y velocidad 
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
-| Humedad en el revestimiento, la buza o el mortero | Explosión vapor–metal al recibir el acero (MS-ACE-03) | Solo se usan distribuidores con curva de secado completa y firmada; buzas guardadas en seco | Tarjeta de secado revisada por S-15 y C-06 |
-| Encendido de quemadores de gas natural | Explosión por acumulación de gas | Purga previa, supervisión de flama y detector de gas (MS-ACE-06) | Lista de encendido; prueba del detector al inicio del turno |
-| Izaje del distribuidor (30 t de tara y más) | Aplastamiento | Grúa inspeccionada, señalero, nadie bajo la carga (MS-ACE-04) | Permiso de izaje y zona acordonada |
+| Humedad en el revestimiento, la buza o el mortero | Explosión vapor–metal al recibir el acero (MS-ACE-03) | ★ Solo se usan distribuidores con curva de secado completa y firmada; buzas guardadas en seco | Tarjeta de secado revisada por S-15 y C-06 |
+| Encendido de quemadores de gas natural | Explosión por acumulación de gas | ★ Purga previa, supervisión de flama y detector de gas: 10 % LEL → sal y corta el gas; 20 % LEL → evacuación del sector (MS-ACE-06) | Lista de encendido; prueba del detector al inicio del turno |
+| Izaje del distribuidor (30 t de tara y más) | Aplastamiento | ★ Grúa de 50 t inspeccionada, señalero, nadie bajo la carga ni a ± 5 m de su proyección (MS-ACE-04) | Permiso de izaje y zona acordonada |
 | Superficies a 1,000 °C | Quemaduras graves | EPP aluminizado y distancia; herramientas de mango largo | Observación del supervisor |
 | Polvo de refractario (MgO, alúmina, ZrO₂) | Daño respiratorio | Respirador media cara P100 al limpiar pozos | Inspección de EPP |
-| Entrada al distribuidor | Atrapamiento, atmósfera pobre o calor | **Prohibido entrar**; si es necesario: espacio confinado MS-ACE-05 con permiso | Permiso de espacio confinado |
+| Entrada al distribuidor | Atrapamiento, atmósfera pobre o calor | **Prohibido entrar**; si es necesario: espacio confinado MS-ACE-05 con permiso, LOTO de quemadores con aislamiento positivo, medición O₂ 19.5–23.5 %, < 10 % LEL, CO < 25 ppm (0 % LEL detectable, ≤ 1 % de lectura, para trabajo en caliente), vigía y rescate | Permiso de espacio confinado con lecturas |
 
 ### 6.2 EPP obligatorio
 Casco con barbiquejo, lentes de seguridad y careta con filtro IR, chamarra y polainas aluminizadas cerca del distribuidor caliente, ropa retardante a la flama (sin sintéticos), guantes de carnaza aluminizados, botas de fundidor sin agujetas con casquillo, protección auditiva y respirador P100 al limpiar refractario (NOM-017-STPS).
@@ -111,7 +111,7 @@ Casco con barbiquejo, lentes de seguridad y careta con filtro IR, chamarra y pol
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 - Permiso de trabajo en caliente y lista de encendido de quemadores.
 - Bloqueo (MS-ACE-02) del carro del distribuidor antes de trabajar bajo él (instalación de buzas y placas).
-- Zona de exclusión de 5 m alrededor del distribuidor durante el izaje y mientras el quemador está encendido [Validar con C-16].
+- Zona de exclusión de 5 m alrededor del distribuidor durante el izaje (± 5 m de la proyección de la carga, MS-ACE-04) y mientras el quemador está encendido [Validar con C-16].
 
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
@@ -147,7 +147,7 @@ Casco con barbiquejo, lentes de seguridad y careta con filtro IR, chamarra y pol
 |---|---|---|---|
 | Tarjeta de secado incompleta o revestimiento húmedo | Secado interrumpido | 🛑 No uses el distribuidor; devuélvelo al taller | C-06, C-15 |
 | Buza fuera de calibre o astillada | Lote defectuoso, golpe | Cámbiala; separa el lote | C-06, C-08 |
-| La flama se apaga o alarma de gas | Falla de suministro o del quemador | Cierra el gas; purga antes de reencender; evacúa si hay alarma de gas | C-06, C-16 |
+| La flama se apaga o alarma de gas | Falla de suministro o del quemador | Cierra el gas; purga antes de reencender; ≥ 10 % LEL: sal del área; ≥ 20 % LEL: evacuación del sector (MS-ACE-06) | C-06, C-16 |
 | No alcanza 1,000 °C en el tiempo | Quemador sucio, presión baja | Revisa el quemador; retrasa la apertura | C-06, mantenimiento |
 | Precalentamiento > 6 h (olla retrasada) | Retraso de EAF / LF | Baja a fuego de mantenimiento [Validar]; consulta a C-15 | C-06, C-15 |
 | El carro no centra (> ± 3 mm) | Rieles, topes o carro desajustados | No abras la olla; corrige con mantenimiento | C-06, C-11 |
@@ -164,7 +164,8 @@ Casco con barbiquejo, lentes de seguridad y careta con filtro IR, chamarra y pol
 |---|---|---|---|---|---|
 | S-15 Preparador de Distribuidores | 3 | 16 | 40 h / 10 preparaciones completas | Pasos 1, 5, 6, 8, 10, 11 | 24 meses (TD-P07) |
 | S-13 Operador de Plataforma | 3 | 8 | 16 h / 5 centrados | Paso 16 | 24 meses (TD-P07) |
-| C-06 Supervisor | 4 | 8 | 5 liberaciones acompañadas | Revisión de la hoja y del paso 1 | 24 meses |
+| C-06 Supervisor | 4 | 8 | 5 liberaciones acompañadas | Revisión de la hoja y del paso 1 | 24 meses (TD-P07) |
+| Operador de grúa de CC (50 t) (hoy S-15; rol S-27 pendiente de catálogo) | 3 | Curso de grúa (NOM-006) | Según MS-ACE-04 | Paso 10 | 12 meses (grúas/izaje) |
 
 **Lista corta de verificación de pasos ★ (TD-P07):**
 - [ ] Rechaza un distribuidor sin tarjeta de secado completa (explica el riesgo de explosión).

@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-04 | 0.1 | Borrador para validación | Nave de hornos, nave de ollas, CC1, CC2, patio de chatarra | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-04 | 0.2 | Borrador para validación | Nave de hornos, nave de ollas, CC1, CC2, patio de chatarra | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ **Mensaje clave.** **Nadie bajo una carga suspendida. Nunca.** Una olla llena de 150 t de acero a 1,630 °C, una canasta de 55–70 t de chatarra o un segmento de colada matan si caen o se balancean. La grúa de colada solo opera con **doble freno probado**, **límites probados**, **un solo señalero** y **ruta despejada**. Estándares corporativos **CRS-04** (cargas suspendidas) y **CRS-05** (grúa viajera).
 
@@ -68,7 +68,7 @@ flowchart TD
 
 | Parámetro | Unidad | Objetivo | Rango normal | Alarma / límite | Acción si está fuera de rango | Dónde se mide |
 |---|---|---|---|---|---|---|
-| Peso de olla llena (150 t acero + escoria + olla con refractario) | t | ≤ 235 [Supuesto: tara de olla 65–70 t, escoria 15–20 t] | ≤ 240 | > 250 t (capacidad de la grúa) | 🛑 No izar; C-04 y C-07 revisan | Báscula / celda de carga |
+| Peso de olla llena (150 t acero + escoria + olla con refractario) | t | ≤ 235 [Supuesto: tara de olla 65–70 t, escoria 15–20 t] | ≤ 240 | > 250 t (capacidad de la grúa) [Validar con OEM si los 250 t incluyen la traviesa (≈ 15–25 t [Supuesto]); si la incluyen, el límite de olla llena baja a 250 t − traviesa − margen] | 🛑 No izar; C-04 y C-07 revisan | Báscula / celda de carga |
 | Carga respecto a capacidad | % | < 90 | ≤ 95 | > 100 % | 🛑 No izar | Limitador de carga |
 | Prueba de freno con carga | mm / s | Levantar 200–300 mm, detener 10 s | Sin deslizamiento | Cualquier deslizamiento | Bajar la carga; fuera de servicio | Visual del operador |
 | Holgura del fondo de la carga sobre el obstáculo más alto de la ruta | m | 1.0 | 1.0–2.0 | < 0.5 m o innecesariamente alta (> 3 m) | Ajusta altura; la carga viaja lo más baja posible | Visual + marcas |

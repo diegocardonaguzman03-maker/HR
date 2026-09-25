@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-07 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-07 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores de referencia de FT-ACE-001 §4. Nivel de cierre del distribuidor, tiempos de "tapado" de la cola, velocidad de salida de cola y apagado de zonas: **[Validar con OEM / Ingeniería de Proceso]**.
 
@@ -111,7 +111,7 @@ flowchart TD
 - S-16: ropa FR, careta sombra 5 para oxicorte, guantes, botas.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- **Zona de exclusión bajo el molde** activa hasta que la cola pase el segmento 3.
+- **Zona de exclusión bajo el molde** activa sin interrupción desde MO-CC1-04 (colada estable) y durante todo el cierre, hasta que la cola pase el segmento 3. No se levanta en ningún momento del cierre; el paso ★ 9 es una reconfirmación antes de extraer la cola.
 - **Zona de la fosa del distribuidor** y **ruta del carro** despejadas.
 - Ingreso a la máquina para inspección solo con la cola fuera, la máquina detenida y **LOTO** (MS-ACE-02).
 
@@ -134,7 +134,7 @@ flowchart TD
 | 6 | Cierra el tapón | A **400 mm** del distribuidor (no menos) | Tapón cerrado sin fuga | ★ | S-13 |
 | 7 | Detén la línea | Velocidad 0; mantén agua de molde y oscilación; activa modo "cola" | Detenida | | S-12 |
 | 8 | Retira el distribuidor | Sube (SEN fuera del molde) y lleva a fosa/volteo | Distribuidor fuera | | S-13 |
-| 9 | Establece la zona de exclusión | Bajo el molde y segmentos 1–3 despejados | Confirmación de C-06 | ★ | C-06 |
+| 9 | Reconfirma la zona de exclusión | La zona de MO-CC1-04 sigue activa desde antes del cierre del tapón (paso 6); C-06 reconfirma por radio y visual que bajo el molde y los segmentos 1–3 no hay nadie antes de extraer la cola | Confirmación de C-06 | ★ | C-06 |
 | 10 | Limpia la superficie de la cola | Retira escoria y polvo con herramienta seca, sin romper la cáscara | Superficie limpia | ★ | S-14 |
 | 11 | Tapa la cola | Espera 3–5 min con la línea detenida; no eches agua sobre acero líquido | Costra superior formada | ★ | S-14, S-12 |
 | 12 | Extrae la cola del molde | 0.3 m/min hasta que la cola salga del molde (≈ 1 m) | Sin alarma BOP ni fuga | ★ | S-12 |
@@ -175,7 +175,8 @@ flowchart TD
 
 **Lista corta de verificación de pasos ★:**
 - [ ] Cierra el tapón a 400 mm, nunca por debajo.
-- [ ] Establece la zona de exclusión antes de extraer la cola.
+- [ ] Mantiene la zona de exclusión bajo el molde activa durante todo el cierre y la reconfirma antes de extraer la cola (paso 9).
+- [ ] Retira la olla sin nadie bajo la carga (paso 3).
 - [ ] Limpia la cola con herramienta seca y no echa agua sobre el acero líquido.
 - [ ] Extrae el primer metro a 0.3 m/min.
 - **Preguntas orales:** ¿Por qué se forma un vórtice bajo 400 mm? ¿Por qué la cola es la parte más débil? ¿Qué haces si la cola no se mueve?

@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-03 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-03 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** el arranque es el momento de **mayor riesgo** de la colada: metal líquido cayendo, moldes llenándose en segundos y gente cerca. Abre las líneas **una por una, en el orden del manual**, arranca la extracción **en el nivel correcto** y sube la velocidad **con la rampa**, no de golpe. Si una línea no arranca bien, **ciérrala**: una línea perdida se recupera; una persona no.
 
@@ -87,7 +87,7 @@ sequenceDiagram
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
-| Salpicaduras y derrame de metal líquido al abrir olla y buzas | Quemaduras graves o fatalidad | Zona de exclusión de la plataforma: solo S-13 y S-14 con EPP aluminizado; nadie frente al chorro (MS-ACE-01) | Barrera física y conteo de personal antes de abrir la olla |
+| Salpicaduras y derrame de metal líquido al abrir olla y buzas | Quemaduras graves o fatalidad | ★ Zona de exclusión de arranque: solo S-12, S-13, S-14 y C-06 en la roja, S-13 y S-14 con EPP aluminizado seco; nadie frente al chorro (MS-ACE-01) | Barrera física y conteo de personal antes de abrir la olla |
 | Agua en contacto con el acero (molde con fuga, chatarra húmeda) | Explosión | Lista de MO-CC2-02 firmada; molde seco | Firma de C-06 antes del arranque |
 | Breakout o fuga en la cabeza al arrancar | Metal líquido en la fosa | **Nadie en la fosa ni bajo la plataforma** durante el arranque | Acordonado y vigía |
 | Desbordamiento del molde | Metal líquido sobre la plataforma | Arranque de extracción al nivel correcto; cierre inmediato de la línea con placa ciega | Observación de S-14 en cada línea |
@@ -99,8 +99,8 @@ sequenceDiagram
 Chamarra, pantalón o polainas aluminizados, careta con visor dorado o filtro IR, casco con barbiquejo, guantes aluminizados, botas de fundidor sin agujetas, ropa retardante a la flama, protección auditiva y dosímetro personal (POE).
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- Zona de exclusión de la plataforma: radio de 10 m alrededor de olla y distribuidor durante la apertura [Validar con C-16]; fosa y área bajo la plataforma cerradas hasta que las 6 líneas estén estables.
-- Aviso por radio y sirena antes de abrir la olla.
+- Zona de exclusión de arranque (MS-ACE-01): zona roja ≤ 10 m del molde, del distribuidor y de la torreta, y todo lo que está bajo la máquina; zona amarilla 10–20 m; solo S-12, S-13, S-14 y C-06 en la roja [Supuesto — validar con el estudio de la nave, C-16]; fosa y área bajo la plataforma cerradas hasta que las 6 líneas estén estables y C-06 libere.
+- Aviso por radio y sirena ≥ 30 s antes de abrir la olla (MS-ACE-01).
 - Rutas de escape despejadas en la plataforma.
 
 ## 7. Calidad
@@ -115,7 +115,7 @@ Chamarra, pantalón o polainas aluminizados, careta con visor dorado o filtro IR
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
 | 1 | Verifica condiciones de arranque | Distribuidor ≥ 1,000 °C; 6 líneas listas; agua de molde a caudal; tanque de emergencia lleno y bombas diésel en automático | Todo en verde en la lista de arranque | ★ | S-12, C-06 |
-| 2 | Establece la zona de exclusión | Conteo de personal; fosa cerrada; aviso por radio y sirena | Solo personal autorizado en la plataforma | ★ | C-06, S-13 |
+| 2 | Establece la zona de exclusión | Conteo de personal; nadie a ≤ 10 m del molde, distribuidor y torreta salvo S-12, S-13, S-14 y C-06; fosa cerrada; aviso por radio y sirena ≥ 30 s (MS-ACE-01) | Solo personal autorizado en la zona roja | ★ | C-06, S-13 |
 | 3 | Recibe la olla en la torreta | S-09 la coloca; verifica peso y temperatura de llegada | Temperatura de llegada según hoja del LF | | S-09, S-13 |
 | 4 | Gira la olla a posición de colada | Torreta a posición; nadie bajo la olla | Olla sobre el distribuidor | ★ | S-13 |
 | 5 | Coloca el tubo protector con argón | Alinea y abre el argón | Sello sin fugas visibles | | S-13 |

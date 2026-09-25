@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC1-08 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC1-08 | 0.1 | Borrador para validación | Colada Continua 1 (planchón) | C-06 Supervisor de Colada Continua | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Valores de referencia de FT-ACE-001 §4 y §6. Presiones de oxicorte, factor de contracción, despuntes, altura de pilas y práctica de enfriamiento lento: **[Validar con OEM / Ingeniería de Proceso]** y con Laminación en Caliente (cliente interno).
 
@@ -92,7 +92,7 @@ Las grúas de 25 t (electroimán, palanquilla de CC2) y de 50 t (distribuidores,
 ### 6.1 Peligros y controles críticos
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
-| Carga suspendida (planchón de hasta 32.8 t, caliente) | Aplastamiento | ★ Grúa con capacidad correcta (50 t para > 17 t netas), tenaza inspeccionada, nadie bajo la carga ni entre pilas (MS-ACE-04, NOM-006) | Verificación de peso vs. grúa antes del izaje |
+| Carga suspendida (planchón de hasta 32.8 t, caliente) | Aplastamiento | ★ Grúa de 45 t con tenaza para todo planchón (13.0–32.8 t + tenaza ≤ 45 t [Validar peso de la tenaza ≤ 12 t con OEM]); la de 25 t y la de 50 t no se usan para planchón (FT-ACE-001 §6); tenaza inspeccionada; nadie bajo la carga, a ± 5 m de su proyección ni entre pilas (MS-ACE-04, NOM-006) | Verificación de peso vs. grúa antes del izaje |
 | Oxicorte (O₂ y gas natural) | Incendio, retroceso de flama, quemaduras, enriquecimiento de O₂ | Arrestaflamas y válvulas de retención; revisión de fugas; ropa sin grasa; NOM-027 | Lista del turno |
 | Planchón caliente (800–1,000 °C) | Quemadura por radiación o contacto | Distancia; EPP; no caminar sobre la mesa | Observación |
 | Mesa de rodillos y carro de transferencia | Atrapamiento, golpe | Guardas; paros de emergencia; LOTO para cualquier intervención (MS-ACE-02) | Prueba de paro |
@@ -105,7 +105,7 @@ Las grúas de 25 t (electroimán, palanquilla de CC2) y de 50 t (distribuidores,
 - S-17 y grúa: casco, lentes, ropa FR, guantes, botas con metatarsal, chaleco de alta visibilidad en patio.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- **Zona de exclusión** bajo la trayectoria de la grúa y entre pilas durante el izaje.
+- **Zona de exclusión** bajo la trayectoria de la grúa (± 5 m de la proyección de la carga) y entre pilas durante el izaje (MS-ACE-04).
 - **LOTO** de mesa, carro de transferencia y oxicorte para cambiar boquillas o retirar planchones atorados.
 - **Permiso de trabajo en caliente** para cortes manuales fuera de la máquina de oxicorte.
 
@@ -167,8 +167,8 @@ Las grúas de 25 t (electroimán, palanquilla de CC2) y de 50 t (distribuidores,
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | S-16 Operador de Corte y Marcado | 3 | 16 (oxicorte, NOM-027, trazabilidad) | 80 h | Pasos 2, 10 | ≤ 24 meses (TD-P07) |
-| S-17 Operador de Mesa de Enfriamiento y Despacho | 3 | 16 (izaje, apilado, MES) | 80 h | Pasos 12, 13 | ≤ 24 meses |
-| Operador de grúa de CC y producto | 3 | Curso de grúa (NOM-006) | Según MS-ACE-04 | Paso 12, 13 | ≤ 24 meses |
+| S-17 Operador de Mesa de Enfriamiento y Despacho | 3 | 16 (izaje, apilado, MES) | 80 h | Pasos 12, 13 | 12 meses (grúas/izaje) |
+| Operador de grúa de CC y producto | 3 | Curso de grúa (NOM-006) | Según MS-ACE-04 | Paso 12, 13 | 12 meses (grúas/izaje) |
 | C-06 Supervisor de Colada Continua | 4 (evaluador) | 4 + evaluador | — | Todos | ≤ 24 meses |
 
 **Lista corta de verificación de pasos ★:**

@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-CC-04 | 0.2 | Borrador para validación | Acería · CC1 y CC2 | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-CC-04 | 0.2 | Borrador para validación | Acería · CC1 y CC2 | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §4 (CC1: oscilación hidráulica 120–200 cpm, carrera 4–8 mm, no senoidal; nivel por corrientes parásitas ±3 mm, alarma ±8 mm; barra tapón con argón 3–8 NL/min) y §5 (CC2: 150–250 cpm, carrera 6–10 mm; **nivel radiométrico con fuente sellada de Cs-137**, ±5 mm). Que la oscilación de CC2 sea hidráulica es **[Supuesto]**. Límites de radiación, periodicidad de pruebas de fuga y actividad de la fuente: **según la licencia CNSNS y el Encargado de Seguridad Radiológica (ESR) [Validar]**.
 

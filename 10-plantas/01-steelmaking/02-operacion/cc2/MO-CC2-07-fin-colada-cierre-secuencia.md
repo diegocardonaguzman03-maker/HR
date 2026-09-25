@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-07 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-07 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** al terminar la secuencia el distribuidor se vacía y **las líneas se cierran de los extremos al centro** conforme baja el nivel. La cola de cada palanquilla se saca **despacio**, y **nunca se echa agua dentro del molde** para "sellar" la cola. El agua de molde sigue encendida hasta que el último tubo esté frío.
 
@@ -84,7 +84,7 @@ flowchart TD
 | Agua sobre el acero en el molde ("sellar la cola con agua") | Explosión | **Prohibido** echar agua al molde; la cola se saca solo con la velocidad de cola (MS-ACE-03) | Observación y certificación |
 | Breakout de cola | Metal líquido en la línea | Velocidad de cola ≤ 1.0 m/min hasta que la cola sale del molde | Tendencia de velocidad |
 | Vaciado del residual del distribuidor | Salpicaduras, explosión con humedad | Caja de escoria **seca**; zona de exclusión (MS-ACE-01) | Inspección de la caja |
-| Radiación durante la inspección de moldes | Exposición | ESR cierra y bloquea obturadores y mide antes de que alguien trabaje en el molde (MS-ACE-07) | Registro del ESR |
+| Radiación durante la inspección de moldes | Exposición | ★ El ESR (C-16) cierra los obturadores, pone su candado y mide < 2 × fondo antes de que alguien trabaje en el molde (MS-ACE-07) | Registro del ESR |
 | Tubos y rodillos calientes | Quemaduras | Esperar enfriamiento; guantes | Observación |
 | Movimiento de equipo durante la inspección | Atrapamiento | LOTO de extractores, oscilador y carro (MS-ACE-02) | Candados |
 
@@ -92,7 +92,7 @@ flowchart TD
 Chamarra y polainas aluminizadas, careta con filtro IR, casco con barbiquejo, guantes aluminizados, botas de fundidor, ropa retardante a la flama, protección auditiva y dosímetro personal.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- Zona de exclusión alrededor de la caja de escoria durante el vaciado.
+- Zona de exclusión alrededor de la caja de escoria durante el vaciado: zona roja ≤ 15 m del punto de volteo, nadie a pie (criterio de MS-ACE-01 para vaciado de escoria); caja seca (MS-ACE-03).
 - LOTO de máquina antes de la inspección; permiso de trabajo para mantenimiento.
 - Zona controlada de radiación hasta que el ESR cierre los obturadores.
 
@@ -145,7 +145,7 @@ Chamarra y polainas aluminizadas, careta con filtro IR, casco con barbiquejo, gu
 | La placa ciega no cierra | Placa fría o mecanismo dañado | Tapón con varilla (MO-CC2-06) | C-06 |
 | La cola se atora en los enderezadores | Cola fría, deformada | Detén; LOTO; mantenimiento la libera | C-06, C-11 |
 | Fin anticipado por emergencia (falla de agua, torreta) | Ver MO-CC2-04 y MO-CC2-05 | Cierra la olla y las 6 líneas; sigue la parte B solo si es seguro | C-04, C-06 |
-| Obturador que no cierra al final | Portafuente dañado por salpicadura | 🛑 Nadie en el molde; ESR atiende | C-16 (ESR) |
+| Obturador que no cierra al final | Portafuente dañado por salpicadura | 🛑 Nadie en el molde; aléjate ≥ 3 m y acordona; el ESR (C-16) atiende (MS-ACE-07) | C-16 (ESR) |
 
 ## 10. Registros
 - Hoja de secuencia CC2: coladas, toneladas, duración, causa del fin, cierres de línea, buzas usadas.
@@ -159,14 +159,16 @@ Chamarra y polainas aluminizadas, careta con filtro IR, casco con barbiquejo, gu
 |---|---|---|---|---|---|
 | S-13 Operador de Plataforma | 3 | 8 | 5 fines de secuencia | Pasos 3, 4, 5, 6, 12 | 24 meses (TD-P07) |
 | S-12 Operador de Púlpito | 3 | 8 | 5 fines de secuencia | Pasos 8, 14 | 24 meses (TD-P07) |
-| S-14 Ayudante de Colada | 3 | 8 + protección radiológica | 5 fines de secuencia | Pasos 8, 15, 16 | 24 meses (TD-P07) |
+| S-14 Ayudante de Colada | 3 | 8 + protección radiológica | 5 fines de secuencia | Pasos 8, 15, 16 | 24 meses (TD-P07); protección radiológica 12 meses (MS-ACE-07) |
 
 **Lista corta de verificación de pasos ★ (TD-P07):**
 - [ ] Cierra la olla sin pasar escoria.
 - [ ] Cierra las líneas de los extremos al centro en los niveles definidos.
 - [ ] Saca la cola a ≤ 1.0 m/min y explica por qué no se usa agua en el molde.
 - [ ] Mantiene el agua de molde ≥ 15 min.
-- [ ] No interviene moldes hasta que el ESR cierra y mide.
+- [ ] No interviene moldes hasta que el ESR (C-16) cierra con su candado y mide < 2 × fondo.
+- [ ] Retira el distribuidor con la caja de escoria seca y nadie en la zona (paso 12).
+- [ ] Aplica LOTO de extractores, oscilador y carro antes de la inspección (paso 16).
 
 ## 12. Referencias
 - FT-ACE-001 §5 · CAT-ACE-001 · MO-CC2-02, MO-CC2-04, MO-CC2-05, MO-CC2-06, MO-CC2-08.

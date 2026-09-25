@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-03 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-03 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
@@ -87,7 +87,7 @@ flowchart TD
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
 | DRI o HBI húmedo | Generación de vapor e H₂: explosión en el horno | ★ Silos y transportadores cerrados; no alimentar DRI mojado; reporte obligatorio de la planta DRI | Registro por lote; VCC |
-| Acumulación de DRI (iceberg) que se funde de golpe | Ebullición violenta, derrame de escoria por la puerta | ★ Consigna ≤ 35 kg/min/MW, arranque con baño plano, T mínima 1,560 °C | Tendencia de T y tasa en nivel 2 |
+| Acumulación de DRI (iceberg) que se funde de golpe | Ebullición violenta, derrame de escoria por la puerta | ★ Consigna ≤ 35 kg/min/MW (≈ 4.2 t/min a 119 MW; ficha 3.5–4.3 t/min), arranque con baño plano, T mínima 1,560 °C. Por encima de 35 kg/min/MW (hasta 5.0 t/min ≈ 42 kg/min/MW) solo con DRI caliente validado por C-07 y análisis de riesgo aprobado por C-16 mediante gestión del cambio; mientras el Director no lo decida, el límite de seguridad es 35 kg/min/MW | Tendencia de T y tasa en nivel 2 |
 | Reoxidación del DRI en silos (calentamiento espontáneo) | Incendio, CO | Silos inertizados; alarma de temperatura [Validar con OEM / Ingeniería de Proceso] | Monitoreo continuo |
 | Nitrógeno de inertización | Asfixia en galerías y cámaras del transportador | ★ Entrada solo con permiso de espacio confinado, purga de N₂ y medición: O₂ 19.5–23.5 %, CO < 25 ppm y < 10 % LEL (0 % LEL detectable, ≤ 1 % de lectura, si hay trabajo en caliente) (MS-ACE-05/06) | Permiso firmado con lecturas |
 | CO en plataforma de la bóveda | Intoxicación | Detector personal multigás: CO 25 ppm → salir; 200 ppm → evacuación del sector [Verificar NOM-010] (MS-ACE-06) | Bump test diario |

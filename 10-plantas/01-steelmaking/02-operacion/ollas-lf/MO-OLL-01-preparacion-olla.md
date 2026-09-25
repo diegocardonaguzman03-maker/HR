@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-OLL-01 | 0.1 | Borrador para validación | Metalurgia secundaria — Taller y estación de preparación de ollas | C-15 Especialista de Refractarios | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-OLL-01 | 0.1 | Borrador para validación | Metalurgia secundaria — Taller y estación de preparación de ollas | C-15 Especialista de Refractarios | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 / C-15 lo validen.
 
@@ -93,20 +93,21 @@ flowchart TD
 | Olla húmeda o fría que recibe acero | Explosión, perforación | ★ Cara caliente ≥ 1,000 °C; regla de olla fría (> 4 h → ≥ 8 h); curva de secado completa en ollas nuevas | Lista de entrega firmada; VCC |
 | Arena o refractario con humedad | Proyección de metal en la CC; explosión | ★ Arena en tolva cerrada; materiales refractarios almacenados secos | Inspección de lote |
 | Reencendido del precalentador sin purga | Explosión de gas | ★ Purga automática antes de encender; detector de flama; nunca reencender a mano sin purga | Prueba del sistema de flama (mantenimiento) |
-| Radiación térmica de la olla caliente | Quemaduras, estrés térmico | EPP aluminizado; tiempos de exposición; hidratación (MS-ACE-08) | Supervisor |
+| Radiación térmica de la olla caliente (incluye el llenado de arena con la olla ya precalentada, paso 11) | Quemaduras, estrés térmico | ★ Llenado desde la posición o plataforma designada con el tubo/embudo de llenado, sin asomarse sobre la boca de la olla; EPP aluminizado; ≤ 2 min frente a la olla por intervención; hidratación (MS-ACE-01, MS-ACE-08) | Supervisor |
 | Lanza de O₂ | Incendio de ropa, quemaduras | Ropa limpia sin grasa; válvula de cierre rápido | Revisión de lanza |
 | Movimiento del mecanismo de la válvula | Atrapamiento de manos | ★ Hidráulica desconectada/bloqueada al cambiar placas (MS-ACE-02) | Verificación por S-24 |
-| Entrada a la olla (reparación) | Atmósfera, calor, caída de refractario | Espacio confinado (MS-ACE-05, NOM-033); olla fría y ventilada | Permiso de entrada |
+| Entrada a la olla (reparación) | Atmósfera, calor, caída de refractario | Espacio confinado (MS-ACE-05, NOM-033); olla fría y ventilada; argón desconectado; entrada con O₂ 19.5–23.5 %, CO < 25 ppm y < 10 % LEL (0 % LEL detectable, ≤ 1 % de lectura, para trabajo en caliente) | Permiso de entrada con lecturas |
 | Olla suspendida | Aplastamiento | Nadie bajo la olla; señalero (MS-ACE-04) | VCC |
 
 ### 6.2 EPP obligatorio
-Casco, careta con visor dorado, chaqueta, polainas y guantes aluminizados junto a olla caliente, ropa ignífuga, botas metatarsales, lentes, protección auditiva, mascarilla para polvo de cromita/refractario (según NOM-010), detector de CO en zona del precalentador.
+Casco, careta con visor dorado, chaqueta, polainas y guantes aluminizados junto a olla caliente, ropa ignífuga, botas metatarsales, lentes, protección auditiva, mascarilla para polvo de cromita/refractario (según NOM-010), detector personal multigás en zona del precalentador (CO 25 ppm → salir, 200 ppm → evacuar [Verificar NOM-010]; GN 10 % LEL → salir, 20 % LEL → evacuar; MS-ACE-06).
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 - Cambio de placas y buzas: hidráulica de la válvula desconectada y bloqueada; olla asentada en su soporte (no suspendida).
 - ★ Nadie bajo una olla suspendida ni en la trayectoria de la grúa.
-- Volteo de escoria: zona de exclusión alrededor de la estación de volteo; fosa seca.
-- Entrada a olla: permiso de espacio confinado y medición de atmósfera (MS-ACE-05).
+- Volteo de escoria: zona roja ≤ 15 m del punto de volteo, amarilla 15–30 m, nadie a pie (MS-ACE-01); fosa seca, sin agua estancada (MS-ACE-03).
+- Entrada a olla: permiso de espacio confinado, aislamiento positivo del argón y medición de atmósfera en el orden O₂ → LEL → CO (MS-ACE-05).
+- ★ Secuencia precalentamiento → arena (pasos 10 y 11): la arena se coloca con la olla ya caliente, justo antes de entregar, para que no se sinterice; el llenado se hace desde la posición protegida con EPP aluminizado y la arena debe estar seca (MS-ACE-03). Visto bueno de seguridad a esta secuencia (revisión 2026-09-25).
 
 ## 7. Calidad
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
@@ -129,7 +130,7 @@ Casco, careta con visor dorado, chaqueta, polainas y guantes aluminizados junto 
 | 8 | Prueba la válvula | Reconecta; ejecuta 3 carreras completas; verifica tiempo y suavidad; deja cerrada. | Carrera completa, cerrada | | S-24 |
 | 9 | Prueba el tapón | Conecta argón; mide caudal a la presión de prueba; confirma burbujeo o caudal. | 100–200 NL/min [Supuesto] | 🔎 | S-08 |
 | 10 | Precalienta | Coloca en el precalentador; purga automática y encendido; controla hasta 1,000–1,100 °C. Olla fría > 4 h: ≥ 8 h. Olla nueva: curva completa. | T de cara caliente en rango | ★ | S-08 |
-| 11 | Llena con arena | Verifica que la arena esté seca; llena la buza superior y forma un cono sobre ella con la cantidad del proveedor. | Cono completo, sin huecos | ★ | S-08 |
+| 11 | Llena con arena | Con la olla caliente y fuera del precalentador: verifica que la arena esté seca; desde la posición designada, con tubo/embudo de llenado y EPP aluminizado, sin asomarte sobre la boca de la olla, llena la buza superior y forma un cono sobre ella con la cantidad del proveedor. | Cono completo, sin huecos; exposición ≤ 2 min | ★ | S-08 |
 | 12 | Verifica antes de entregar | Mide T de cara caliente; revisa arena (no removida), válvula cerrada, conexión de Ar. | Todo conforme | ★ | S-08 |
 | 13 | Entrega | Firma la lista de entrega; la olla va al carro de vaciado (MO-EAF-07) en ≤ 10 min [Supuesto] para no perder temperatura. | Lista firmada | | S-08 / S-09 |
 
@@ -137,7 +138,7 @@ Casco, careta con visor dorado, chaqueta, polainas y guantes aluminizados junto 
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
 | Punto caliente en coraza > 350 °C (en servicio o preparación) | Refractario adelgazado | Retira la olla; C-15 evalúa | C-15, C-04 |
-| Perforación de olla (en cualquier estación) | Refractario agotado | 🛑 Evacua; metal a fosa seca; no uses agua; aplica MS-ACE-09 | C-04, C-16, C-15 |
+| Perforación de olla (en cualquier estación) | Refractario agotado | 🛑 Evacúa a ≥ 25 m; metal a fosa seca; no uses agua; aplica MS-ACE-09 | C-04, C-16, C-15 |
 | Tapón sin paso de argón | Tapón tapado con escoria/metal | Limpieza con O₂ en caliente según práctica; si falla, cambio de tapón o marcar olla "sin Ar" (C-04 decide) | C-15, C-04 |
 | Válvula con carrera incompleta | Costra, resortes, hidráulica | No entregar; S-24 corrige | C-15 |
 | Olla no alcanza 1,000 °C | Precalentador con falla, olla fría | Continuar; si no hay otra olla, C-04 decide ajuste de T de vaciado con C-07 | C-04, C-07 |
@@ -155,9 +156,9 @@ Casco, careta con visor dorado, chaqueta, polainas y guantes aluminizados junto 
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | S-08 Preparador de Ollas | 3 | 24 (refractarios, válvula, tapón, precalentador, agua–metal) | 120 h / 40 ollas | Pasos 2, 10, 11, 12 + criterio de retiro | 24 meses (TD-P07) |
-| S-24 Refractarista | 3 | 24 | 120 h / 30 cambios de placas | Paso 6 con LOTO; prueba de válvula | 24 meses |
-| S-09 Operador de Grúa de Colada | 3 | según MO-OLL-02 | 20 volteos | Paso 2 | 24 meses |
-| C-15 Especialista de Refractarios | 4 | 32 + evaluador | — | Criterios de retiro y curvas de calentamiento | 24 meses |
+| S-24 Refractarista | 3 | 24 | 120 h / 30 cambios de placas | Paso 6 con LOTO; prueba de válvula | 24 meses (TD-P07); entrada a olla (espacio confinado) 12 meses |
+| S-09 Operador de Grúa de Colada | 3 | según MO-OLL-02 | 20 volteos | Paso 2 | 12 meses (grúas/izaje) |
+| C-15 Especialista de Refractarios | 4 | 32 + evaluador | — | Criterios de retiro y curvas de calentamiento | 24 meses (TD-P07) |
 
 Lista corta de verificación de pasos ★:
 1. Aplica la regla de olla fría (> 4 h → ≥ 8 h) y mide la cara caliente ≥ 1,000 °C.
@@ -165,6 +166,8 @@ Lista corta de verificación de pasos ★:
 3. Cambia placas con la hidráulica bloqueada.
 4. Conoce los criterios de retiro (coladas, espesor, termografía).
 5. Nunca reenciende el precalentador sin purga.
+6. Voltea la escoria sobre fosa seca, sin nadie a ≤ 15 m ni bajo la olla (paso 2).
+7. Llena la arena con la olla caliente desde la posición protegida y verifica T, arena y válvula antes de entregar (pasos 11 y 12).
 
 ## 12. Referencias
 - FT-ACE-001 §3; CAT-ACE-001; MO-EAF-07, MO-OLL-02, MO-LF-01; MM-OLL-01.

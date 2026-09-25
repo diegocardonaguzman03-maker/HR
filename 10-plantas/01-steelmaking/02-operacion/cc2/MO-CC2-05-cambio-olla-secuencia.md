@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-CC2-05 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-CC2-05 | 0.1 | Borrador para validación | Colada Continua 2 (palanquilla) | C-06 Supervisor de Colada Continua | sind-servicio-clientes + experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > **Mensaje clave para el operador:** en el cambio de olla la secuencia depende del **nivel del distribuidor**. Súbelo a **850 mm** antes de cerrar la olla vieja, **ciérrala antes de que pase escoria**, gira la torreta **sin nadie bajo las ollas** y abre la nueva **en menos de 3 min**. Nunca dejes bajar el distribuidor de **500 mm**.
 
@@ -87,7 +87,7 @@ flowchart TD
 Chamarra y polainas aluminizadas, careta con visor dorado, casco con barbiquejo, guantes aluminizados, botas de fundidor, ropa retardante a la flama, protección auditiva y dosímetro personal si se trabaja junto a los moldes.
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
-- Zona de exclusión bajo el radio de giro de la torreta y la trayectoria de la grúa; nadie cruza durante el giro.
+- Zona de exclusión bajo el radio de giro de la torreta y la trayectoria de la grúa (proyección ± 5 m, MS-ACE-01/04); nadie cruza durante el giro.
 - Aviso por radio a la plataforma antes de girar.
 - Si la torreta queda detenida con olla llena: solo C-06 autoriza el accionamiento de emergencia.
 
@@ -128,7 +128,7 @@ Chamarra y polainas aluminizadas, careta con visor dorado, casco con barbiquejo,
 | Escoria visible en el distribuidor | Cierre tarde | Cierra la olla; marca las palanquillas; avisa a calidad | C-06, C-09 |
 | La torreta no gira | Falla hidráulica o eléctrica | Accionamiento de emergencia con autorización de C-06; si no: fin de colada | C-06, C-11 |
 | La olla nueva no abre | Arena sinterizada | Lanceo de O₂ (S-13 certificado); si en 3 min no abre: gira de regreso y fin de colada | C-06, S-08 |
-| Punto rojo o fuga en la coraza de la olla | Desgaste del refractario | 🛑 Evacúa; no gires sobre personas; emergencia (MS-ACE-09) | C-04, C-06, C-15 |
+| Punto rojo o fuga en la coraza de la olla | Desgaste del refractario | 🛑 Evacúa a ≥ 25 m (MS-ACE-01, MS-ACE-09); no gires sobre personas; olla a posición de emergencia sobre el pote seco; nunca agua | C-04, C-06, C-15 |
 | Tubo protector roto | Choque térmico o golpe | Cambia el tubo; si no es posible, cuela con chorro libre solo con autorización de C-06 y marca palanquillas | C-06 |
 | Temperatura de la olla nueva fuera de rango | Tratamiento del LF | C-06 decide; > 45 °C de sobrecalentamiento: considera cerrar líneas extremas | C-06, C-07 |
 
@@ -142,7 +142,7 @@ Chamarra y polainas aluminizadas, careta con visor dorado, casco con barbiquejo,
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | S-13 Operador de Plataforma | 3 | 16 | 20 cambios de olla | Pasos 6, 8, 9, 11, 12 | 24 meses (TD-P07) |
-| S-09 Operador de Grúa de Colada | 3 | 40 (grúas de metal líquido) | 80 h | Pasos 2, 17 (certificación de grúa de colada) | 24 meses (TD-P07) |
+| S-09 Operador de Grúa de Colada | 3 | 40 (grúas de metal líquido) | 80 h | Pasos 2, 17 (certificación de grúa de colada) | 12 meses (grúas/izaje) |
 | S-12 Operador de Púlpito | 3 | 8 | 10 cambios | Pasos 9, 12, 16 | 24 meses (TD-P07) |
 
 **Lista corta de verificación de pasos ★ (TD-P07):**

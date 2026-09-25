@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-03 | 0.1 | Borrador para validación | EAF, ollas, LF, CC1, CC2, patio de chatarra | C-07 Ingeniero de Proceso EAF/LF y C-16 Especialista de Seguridad e Higiene | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-03 | 0.2 | Borrador para validación | EAF, ollas, LF, CC1, CC2, patio de chatarra | C-07 Ingeniero de Proceso EAF/LF y C-16 Especialista de Seguridad e Higiene | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ **Mensaje clave.** **1 L de agua atrapada bajo el acero se convierte en ≈ 1,700 L de vapor a 100 °C y en más de 8,000 L a la temperatura del acero (≈ 1,630 °C).** Si ese vapor está confinado (bajo el baño, dentro de un recipiente cerrado, en una fosa), **explota** y proyecta metal líquido a decenas de metros. **Nada húmedo, nada cerrado y nada frío toca el metal líquido.**
 

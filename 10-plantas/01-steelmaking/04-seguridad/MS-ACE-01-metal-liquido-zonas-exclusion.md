@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-01 | 0.1 | Borrador para validación | Acería (EAF, LF, ollas, CC1, CC2, patio) | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-01 | 0.2 | Borrador para validación | Acería (EAF, LF, ollas, CC1, CC2, patio) | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ **Mensaje clave.** El acero líquido está a ≈ 1,630 °C y una olla llena pesa más de 200 t. **Nadie entra a la zona roja sin autorización, sin EPP aluminizado seco y sin una ruta de escape libre.** Las distancias de este manual son valores de referencia **[Supuesto — Validar con C-16 / SSO mediante un estudio de la nave]**; los datos de proceso salen de `../00-ficha-tecnica-acería.md` (FT-ACE-001).
 

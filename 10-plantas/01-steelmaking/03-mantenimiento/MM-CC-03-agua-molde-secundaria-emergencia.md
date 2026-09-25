@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MM-CC-03 | 0.2 | Borrador para validación | Acería · casa de bombas CC1 / CC2 | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MM-CC-03 | 0.2 | Borrador para validación | Acería · casa de bombas CC1 / CC2 | C-12 Supervisor de Mantenimiento Eléctrico e Instrumentación | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ Base: FT-ACE-001 §4–§5. CC1 agua de molde: caras anchas ≈ 4,200 L/min c/u, angostas ≈ 450 L/min c/u, ΔT 6–9 °C, **alarma ΔT > 11 °C o caudal < 90 %**; secundaria 10 zonas, 0.8–1.2 L/kg. CC2: ≈ 2,000 L/min por línea, ranura 10–12 m/s, ΔT 6–10 °C, **alarma ΔT > 12 °C o caudal < 90 %**; secundaria 1.5–2.0 L/kg. **Agua de emergencia: torre elevada + bombas diésel, entrada automática en ≤ 15 s.** Presiones, calidad de agua y tiempos internos: **[Validar con OEM / Ingeniería de Mantenimiento]**.
 

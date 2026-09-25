@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-05 | 0.1 | Borrador para validación | Acería: ollas, distribuidores, EAF, fosas, ductos, casa de bolsas, silos y tolvas | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-05 | 0.2 | Borrador para validación | Acería: ollas, distribuidores, EAF, fosas, ductos, casa de bolsas, silos y tolvas | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
 > ⚠️ **Mensaje clave.** En la Acería los espacios confinados matan por **atmósfera invisible**: argón o nitrógeno que desplazan el oxígeno (tapón poroso de olla), CO en ductos y casa de bolsas, DRI que consume O₂ en silos. **Nadie entra sin permiso, sin medición en el orden O₂ → LEL → tóxicos, sin vigía afuera y sin rescate listo.** Más de la mitad de las víctimas en espacios confinados son **rescatistas improvisados**: el vigía **nunca** entra. Estándar corporativo **CRS-02**.
 
