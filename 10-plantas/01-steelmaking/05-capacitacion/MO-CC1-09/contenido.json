@@ -25,7 +25,7 @@
   "titulos": {
     "objetivos": "Al terminar, clasificas y dispones cada planchón",
     "roles": "S-18 inspecciona y dispone; C-09 decide la degradación",
-    "flujo": "Todo planchón con evento se retiene y se revisa al 100 %",
+    "flujo": "Todo planchón con evento se retiene y revisa al 100 %",
     "figura": "Cada defecto tiene una causa en el proceso",
     "equipos": "Luz, galga y volteador hacen confiable la inspección",
     "parametros": "Espesor, abultamiento y cuña delatan la máquina",
