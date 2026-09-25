@@ -36,6 +36,13 @@ Este repositorio contiene el diseño del departamento de Capacitación y Desarro
 | `conf-procesos` | Célula de Procesos (confianza) | Revisión de talento, sucesión, IDP, evaluación L3/L4, becas, onboarding |
 | `conf-servicio-clientes` | Célula de Servicio a Clientes Internos (confianza) | Atención a direcciones y áreas corporativas: diagnósticos, programas a la medida, reportes |
 
+## Estructura vigente: híbrida (decisión D-001)
+La estructura de expertos + 2 gerencias es la oficial. En ella se acomodaron las plazas del diseño anterior de 64 plazas; el total queda en 67 con 3 expertos nuevos. Cada agente es **custodio** del conocimiento de una parte de la estructura anterior. El detalle, con el acomodo plaza por plaza, está en `equipo-director/estructura-hibrida.md`. Resumen:
+- Experto Documentación y Mejora = ex TD-14; dirige el Centro de Diseño, Plataformas y Datos (TD-02 a TD-07, TD-16, TD-17).
+- Gerente Sindicalizado = ex TD-08; le reportan los superintendentes TD-S01 a S04, TD-09, TD-10 y TD-15.
+- Gerente de Confianza = ex TD-11; le reportan TD-13, TD-12 y TD-S05.
+- Expertos de Seguridad y Salud, Liderazgo y Cambio y Relaciones Laborales = plazas nuevas.
+
 ## Cómo se trabaja (flujo de orquestación)
 1. El Director hace un encargo. La sesión principal identifica qué agentes intervienen y los lanza **en paralelo** cuando sus tareas son independientes.
 2. Los **gerentes** definen el enfoque y reparten el trabajo entre sus células. Los **expertos** revisan la calidad técnica: seguridad, liderazgo, procesos o laboral, según el tema.

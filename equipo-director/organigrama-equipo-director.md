@@ -78,17 +78,6 @@ sequenceDiagram
     G->>C: Plan de acción + registro de la decisión + seguimiento
 ```
 
-## 4. Relación con el diseño de 64 plazas (`03-department-design/org/`)
+## 4. Relación con el diseño de 64 plazas
 
-La estructura v2 reorganiza el departamento **por segmento de cliente** (sindicalizado / confianza) en lugar de por especialidad (4 gerencias). Esta es una propuesta de correspondencia, pendiente de tu decisión:
-
-| Estructura v2 | Plazas del diseño de 64 que absorbe |
-|---|---|
-| Gerente Sindicalizado + células | TD-08 a TD-10 (Academias Técnicas), 24 instructores, superintendentes y coordinadores de sitio (operación), TD-15 |
-| Gerente Confianza + células | TD-11 a TD-13 (Liderazgo y Talento), TD-16 y TD-17 (analítica) |
-| Experto Seguridad y Salud | Línea técnica de los 8 instructores de Seguridad |
-| Experto Liderazgo y Cambio | Rol de staff (nuevo) |
-| Experto Documentación y Mejora | TD-02 a TD-07 (diseño instruccional, LMS, VR) y parte de TD-14 |
-| Experto Relaciones Laborales | Rol de staff (nuevo); parte de TD-14 |
-
-**Decisión requerida del Director:** (A) adoptar la estructura v2 como la estructura oficial y actualizar las descripciones de puesto de `03-department-design/org/`; (B) usar la v2 solo como equipo de dirección y mantener las 4 gerencias operativas; (C) un híbrido.
+**Decidido (D-001): opción C, híbrido.** El acomodo de cada plaza anterior, los custodios del conocimiento de la estructura anterior y el plan de transición están en [estructura-hibrida.md](estructura-hibrida.md).

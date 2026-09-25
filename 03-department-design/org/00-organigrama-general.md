@@ -1,5 +1,7 @@
 # Organigrama General — Academia GASM (64 plazas)
 
+> ⚠️ **Estructura vigente: híbrida (decisión D-001).** Las descripciones de puesto de esta carpeta siguen siendo válidas en cuanto a funciones. Las **líneas de reporte y la pertenencia a las células** cambiaron: ver [`equipo-director/estructura-hibrida.md`](../../equipo-director/estructura-hibrida.md). Este documento se conserva como referencia del diseño anterior.
+
 > Este documento es el índice del organigrama. El detalle de las funciones de **cada miembro del equipo** está en los documentos por área:
 >
 > | # | Documento | Plazas |
