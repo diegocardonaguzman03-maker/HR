@@ -118,7 +118,7 @@ flowchart LR
 | 3 | CC1: mide la capa líquida (alambres) | 8–15 mm; 1 por colada, a 1/4 del ancho | 🔎 |
 | 4 | CC1: retira costras del menisco | Solo si el rim > 10 mm; herramienta seca | |
 | 5 | CC2: ronda de moldes cada 1 h | Chorro compacto; aceite 15–25 mL/min; EMS en servicio | 🔎 |
-| 6 | Ronda de línea desde el pasillo seguro | CC1 cada turno por zona · CC2 cada 2 h: rociado uniforme, palanquilla recta | 🔎 |
+| 6 | Ronda de línea desde el pasillo seguro | CC1 según la ronda asignada por C-06 [Supuesto] · CC2 cada 2 h: rociado uniforme, palanquilla recta | 🔎 |
 | 7 | Reporta boquillas tapadas o marcas | A S-12 por radio | 🔎 |
 
 > **🛑 ALTO — detén y avisa si…**
@@ -127,6 +127,10 @@ flowchart LR
 > - CC2: sin aceite en una línea.
 
 ### Tarea 4 — Apoyar el cambio de SEN, de distribuidor o de buza (MO-CC1-06 / MO-CC2-06)
+```mermaid
+flowchart LR
+  A["CC1: menisco libre alrededor de la SEN"] --> B["Inmersión y centrado"] --> C["CC2: ★ buza ≥ 900 °C"] --> D["★ Colocación ≤ 30 s"] --> E["★ Posición segura"] --> F["Pieza usada a caja seca"]
+```
 | Paso | Qué hago | Cómo verifico (medición) | ★ |
 |---|---|---|---|
 | 1 | CC1: retira el polvo alrededor de la SEN | Paso libre para el cambiador | |

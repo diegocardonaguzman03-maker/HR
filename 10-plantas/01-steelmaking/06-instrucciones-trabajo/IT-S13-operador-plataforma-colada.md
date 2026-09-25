@@ -206,6 +206,10 @@ flowchart LR
 > - El tapón no cierra completo: cierre de emergencia del distribuidor.
 
 ### Tarea 8 — Señales a la grúa de colada (MO-OLL-02)
+```mermaid
+flowchart LR
+  A["Señalero único identificado"] --> B["★ Enganche OK"] --> C["Ruta despejada ± 5 m"] --> D["★ Asentada OK"] --> E["Ganchos libres"]
+```
 | Paso | Qué hago | Cómo verifico (medición) | ★ |
 |---|---|---|---|
 | 1 | Identifícate como señalero único | Chaleco o brazalete; radio de izaje (canal 5 [Supuesto]) | |

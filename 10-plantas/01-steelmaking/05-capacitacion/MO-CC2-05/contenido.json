@@ -1,0 +1,688 @@
+{
+  "code": "MO-CC2-05",
+  "title": "Cambio de olla en secuencia (torreta)",
+  "titulo_corto": "Cambio de olla en torreta",
+  "serie": "Operación",
+  "area": "Colada Continua 2 · palanquilla (6 líneas)",
+  "manual": "02-operacion/cc2/MO-CC2-05-cambio-olla-secuencia.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Cambiar la olla sin parar las 6 líneas: distribuidor a 850 mm, cierre sin escoria y olla nueva abierta en ≤ 3 min",
+  "audiencia": "S-13 Plataforma · S-09 Grúa de Colada · S-12 Púlpito · S-11 Muestrero · C-06",
+  "kpis": [
+    {
+      "value": "16 h",
+      "label": "teoría (S-13)"
+    },
+    {
+      "value": "20",
+      "label": "cambios de olla supervisados"
+    },
+    {
+      "value": "7",
+      "label": "pasos críticos ★"
+    },
+    {
+      "value": "24",
+      "label": "meses de vigencia (TD-P07)"
+    }
+  ],
+  "cadena": [
+    "Olla nueva lista",
+    "Distribuidor a 850 mm",
+    "Cierre con 2–4 t",
+    "Giro sin nadie abajo",
+    "Abrir en ≤ 3 min",
+    "Rastreo y transición"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, cambias la olla sin perder una línea",
+    "roles": "S-13 conduce el cambio; S-09 mueve las ollas",
+    "flujo": "El nivel del distribuidor manda en el cambio",
+    "figura": "La torreta cambia la olla en un solo giro de 180°",
+    "equipos": "Seis equipos en condición antes del giro",
+    "parametros": "Nivel, residual y tiempo definen un cambio limpio",
+    "seguridad": "150 t suspendidas: nadie bajo la olla ni la torreta",
+    "calidad": "Escoria y colada equivocada: los riesgos del cambio",
+    "pasos": "Dieciséis pasos; siete no admiten error",
+    "anormales": "Olla que no llega o no abre: cerrar líneas a tiempo",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del cambio de olla que no se negocian"
+  },
+  "objetivos": [
+    {
+      "titulo": "Preparar el colchón de acero",
+      "detalle": "Subir el distribuidor a 850 mm cuando la olla en curso tenga ≈ 15 t."
+    },
+    {
+      "titulo": "Cerrar sin arrastre de escoria",
+      "detalle": "Cerrar la olla vieja con 2–4 t de residual o al primer indicio de escoria."
+    },
+    {
+      "titulo": "Girar sin exponer a nadie",
+      "detalle": "Aviso por radio y conteo: nadie bajo las ollas ni en el radio de giro de la torreta."
+    },
+    {
+      "titulo": "Abrir a tiempo y trazar la colada",
+      "detalle": "Olla nueva abierta en ≤ 3 min del cierre; distribuidor ≥ 500 mm; cambio registrado en el rastreo."
+    }
+  ],
+  "por_que_importa": "Durante el giro el distribuidor no recibe acero y sus 30 t alimentan 6 líneas a ≈ 3.4 t/min: la reserva dura pocos minutos. Debajo de 500 mm se forma vórtice y pasa escoria al molde. Además, dos coladas se mezclan ≈ 8–9 min y cada palanquilla debe quedar con su colada.",
+  "principio": "Nunca dejes bajar el distribuidor de 500 mm.",
+  "roles": [
+    [
+      "Rol",
+      "Qué hace en el cambio de olla",
+      "RACI"
+    ],
+    [
+      "C-06 Supervisor de Colada Continua",
+      "Autoriza el cambio y los cambios de grado; decide cerrar líneas",
+      "A"
+    ],
+    [
+      "S-13 Operador de Plataforma",
+      "Controla el distribuidor, cierra y abre ollas, cambia el tubo, mide T",
+      "R"
+    ],
+    [
+      "S-09 Operador de Grúa de Colada",
+      "Coloca la olla llena en el brazo libre y retira la vacía",
+      "R"
+    ],
+    [
+      "S-12 Operador de Púlpito",
+      "Gira la torreta si se opera desde el púlpito; registra el rastreo",
+      "R"
+    ],
+    [
+      "S-11 Muestrero",
+      "Toma la muestra química de la nueva colada",
+      "R"
+    ],
+    [
+      "C-09 Metalurgista de Producto",
+      "Define la regla de palanquillas de mezcla en cambio de grado",
+      "C"
+    ],
+    [
+      "C-04 Jefe de Turno de Acería",
+      "Coordina el programa de ollas con EAF y LF",
+      "I"
+    ]
+  ],
+  "flujo": [
+    {
+      "label": "Olla nueva",
+      "desc": "En el brazo libre ≥ 10 min antes"
+    },
+    {
+      "label": "Subir nivel",
+      "desc": "Con ≈ 15 t en la olla: 850 mm"
+    },
+    {
+      "label": "Cerrar vieja",
+      "desc": "Residual 2–4 t o señal de escoria"
+    },
+    {
+      "label": "Despejar",
+      "desc": "Radio y conteo: nadie bajo las ollas"
+    },
+    {
+      "label": "Girar",
+      "desc": "180° en ≤ 60 s [Validar]"
+    },
+    {
+      "label": "Abrir nueva",
+      "desc": "Tubo con Ar; ≤ 3 min desde el cierre"
+    },
+    {
+      "label": "Nivel mínimo",
+      "desc": "≥ 500 mm; < 450 mm cierra L1 y L6"
+    },
+    {
+      "label": "Recuperar",
+      "desc": "700–850 mm; T a 5 min; muestra"
+    },
+    {
+      "label": "Rastreo",
+      "desc": "Cambio de colada; palanquillas T"
+    }
+  ],
+  "flujo_takeaway": "De 850 a 500 mm hay ≈ 13 t de reserva: ≈ 3.8 min a 3.4 t/min. Por eso el cambio dura ≤ 3 min.",
+  "figuras": [
+    {
+      "svg": "cc2-perfil-maquina.svg",
+      "lectura": [
+        "La torreta de 2 brazos (1) gira 180° con la olla llena.",
+        "La olla de 150 t (2) cuela al distribuidor de 30 t (4) por el tubo protector con argón (3).",
+        "Durante el giro no entra acero: el distribuidor alimenta solo a las 6 líneas."
+      ]
+    },
+    {
+      "svg": "cc2-distribuidor-6-lineas.svg",
+      "titulo": "Por debajo de 500 mm el distribuidor arrastra escoria",
+      "lectura": [
+        "Nivel de operación: 700–850 mm.",
+        "500 mm es el mínimo durante el cambio de olla [Validar].",
+        "El tubo protector (6) con argón entra en la zona de impacto (4)."
+      ]
+    }
+  ],
+  "equipos": [
+    [
+      "Equipo",
+      "Función",
+      "Especificación clave",
+      "Verificar antes"
+    ],
+    [
+      "Torreta de ollas",
+      "Intercambia las ollas",
+      "2 brazos; giro ≤ 60 s [Validar OEM]",
+      "Sin alarmas; emergencia disponible"
+    ],
+    [
+      "Grúa de colada 250/63 t",
+      "Coloca y retira ollas",
+      "Doble freno y límites redundantes",
+      "Inspección diaria (MM-GR-01)"
+    ],
+    [
+      "Olla de 150 t",
+      "Contiene el acero",
+      "Válvula deslizante; 60–80 coladas",
+      "T, peso y válvula (MO-OLL-01)"
+    ],
+    [
+      "Tubo protector de olla",
+      "Protege el chorro de la oxidación",
+      "Sello de argón",
+      "Repuesto precalentado disponible"
+    ],
+    [
+      "Celdas de carga",
+      "Miden el nivel del distribuidor",
+      "30 t",
+      "Sin alarma"
+    ],
+    [
+      "Rastreo (nivel 2)",
+      "Asigna la colada a cada palanquilla",
+      "Cambio de colada por línea",
+      "Hora de apertura registrada"
+    ]
+  ],
+  "parametros": [
+    [
+      "Parámetro",
+      "Objetivo",
+      "Rango",
+      "Alarma",
+      "Acción"
+    ],
+    [
+      "Olla nueva en la torreta",
+      "10 min antes",
+      "≥ 10 min",
+      "< 5 min",
+      "Avisa a C-04; prepara cierres"
+    ],
+    [
+      "T de la olla nueva",
+      "Según hoja del LF",
+      "[Validar con C-07]",
+      "Fuera de rango",
+      "C-06 acepta o regresa"
+    ],
+    [
+      "Nivel antes de cerrar",
+      "850 mm",
+      "820–870 mm",
+      "< 800 mm",
+      "Sube el nivel antes de cerrar"
+    ],
+    [
+      "Residual al cerrar",
+      "3 t",
+      "2–4 t [Validar]",
+      "Escoria en el distribuidor",
+      "Cierra de inmediato"
+    ],
+    [
+      "Cierre → apertura",
+      "2 min",
+      "≤ 3 min [Validar]",
+      "> 3 min",
+      "Tabla de cierre de líneas"
+    ],
+    [
+      "Nivel mínimo en el cambio",
+      "≥ 600 mm",
+      "≥ 500 mm [Validar]",
+      "< 450 mm",
+      "Cierra L1-L6; < 350: L2-L5"
+    ],
+    [
+      "Sobrecalentamiento a 5 min",
+      "28 °C",
+      "20–35 °C",
+      "< 20 o > 35 °C",
+      "Igual que en MO-CC2-04"
+    ]
+  ],
+  "parametros_nota": "Argón del tubo protector y giro de la torreta: [Validar OEM]. Tiempo de residencia ≈ 8–9 min con 6 líneas a 3.0 m/min [Validar].",
+  "seguridad": {
+    "controles": [
+      {
+        "titulo": "Nadie bajo la olla ni la torreta",
+        "detalle": "Grúa inspeccionada, señalero y zona ± 5 m de la proyección; conteo antes del giro (MS-ACE-04)."
+      },
+      {
+        "titulo": "Perforación de olla",
+        "detalle": "Coraza sin puntos rojos al llegar; si hay fuga: evacúa a ≥ 25 m, olla al pote seco, nunca agua (MS-ACE-09)."
+      },
+      {
+        "titulo": "Lanceo solo certificado",
+        "detalle": "Si la olla no abre libre en 30 s, lancea solo S-13 certificado (MS-ACE-06)."
+      },
+      {
+        "titulo": "Cero humedad",
+        "detalle": "Tubos protectores y herramientas precalentados y secos; EPP aluminizado seco."
+      }
+    ],
+    "epp": [
+      "Chamarra y polainas aluminizadas",
+      "Careta con visor dorado",
+      "Casco con barbiquejo y guantes aluminizados",
+      "Botas de fundidor y ropa retardante a la flama",
+      "Protección auditiva; dosímetro junto a moldes"
+    ],
+    "figura": "ms-zonas-exclusion-nave.svg",
+    "figura_titulo": "Olla llena en tránsito: roja ± 5 m de la ruta",
+    "figura_lectura": [
+      "Traslado de olla llena: roja en el eje de la ruta ± 5 m; amarilla ± 15 m.",
+      "Nadie cruza bajo el radio de giro de la torreta durante el giro.",
+      "Perforación de olla: fosa de emergencia seca y ≥ 25 m; refugio en ≤ 30 s."
+    ]
+  },
+  "calidad": [
+    [
+      "Variable",
+      "Especificación",
+      "Cómo y cuándo",
+      "Si falla"
+    ],
+    [
+      "Arrastre de escoria",
+      "Cero escoria visible",
+      "Visual y residual por peso, cada cambio",
+      "Inclusiones de escoria; buza tapada"
+    ],
+    [
+      "Nivel mínimo del distribuidor",
+      "≥ 500 mm",
+      "Continuo (tendencia)",
+      "Vórtice, inclusiones"
+    ],
+    [
+      "Asignación de colada",
+      "Cambio registrado por línea",
+      "Cada cambio",
+      "Pérdida de trazabilidad"
+    ],
+    [
+      "Cambio de grado",
+      "Solo compatibles; regla de C-09 [Validar]",
+      "Cada cambio de grado",
+      "Palanquillas fuera de química"
+    ]
+  ],
+  "calidad_takeaway": "Las palanquillas de la zona de mezcla se marcan T y su colada la asigna el rastreo.",
+  "pasos": [
+    {
+      "n": 1,
+      "paso": "Confirma la olla siguiente",
+      "como": "Colada, grado, peso y T del LF contra el programa",
+      "criterio": "Coinciden con el programa",
+      "critico": false,
+      "rol": "S-13, S-12"
+    },
+    {
+      "n": 2,
+      "paso": "Recibe la olla",
+      "como": "S-09 la coloca en el brazo libre; nadie bajo la carga",
+      "criterio": "Olla asentada en el brazo",
+      "critico": true,
+      "rol": "S-09, S-13"
+    },
+    {
+      "n": 3,
+      "paso": "Revisa la olla nueva",
+      "como": "Coraza sin puntos rojos; válvula lista; mide la temperatura",
+      "criterio": "T en rango; sin anomalías",
+      "critico": false,
+      "rol": "S-13"
+    },
+    {
+      "n": 4,
+      "paso": "Sube el nivel y vigila",
+      "como": "Con ≈ 15 t en la olla sube a 850 mm; vigila peso residual y superficie",
+      "criterio": "850 mm; residual 2–4 t",
+      "critico": false,
+      "rol": "S-13"
+    },
+    {
+      "n": 5,
+      "paso": "Cierra la olla vieja",
+      "como": "Válvula deslizante al 0 %; confirma el cierre",
+      "criterio": "Sin flujo ni escoria",
+      "critico": true,
+      "rol": "S-13"
+    },
+    {
+      "n": 6,
+      "paso": "Retira el tubo protector",
+      "como": "Con el manipulador",
+      "criterio": "Tubo fuera; boca libre",
+      "critico": false,
+      "rol": "S-13"
+    },
+    {
+      "n": 7,
+      "paso": "Despeja y avisa",
+      "como": "Radio: giro de torreta; conteo de personal",
+      "criterio": "Nadie bajo las ollas",
+      "critico": true,
+      "rol": "S-13, C-06"
+    },
+    {
+      "n": 8,
+      "paso": "Gira la torreta",
+      "como": "180° en ≤ 60 s [Validar]",
+      "criterio": "Olla nueva sobre el distribuidor",
+      "critico": true,
+      "rol": "S-12 / S-13"
+    },
+    {
+      "n": 9,
+      "paso": "Coloca el tubo con argón",
+      "como": "Tubo precalentado; argón abierto",
+      "criterio": "Sello sin fuga",
+      "critico": false,
+      "rol": "S-13"
+    },
+    {
+      "n": 10,
+      "paso": "Abre la olla nueva",
+      "como": "Válvula al 100 %; si no abre libre en 30 s, lancea (S-13 certificado)",
+      "criterio": "Chorro estable; total ≤ 3 min",
+      "critico": true,
+      "rol": "S-13"
+    },
+    {
+      "n": 11,
+      "paso": "Vigila el nivel mínimo",
+      "como": "Continuo durante el cambio",
+      "criterio": "≥ 500 mm; < 450 cierra L1 y L6",
+      "critico": true,
+      "rol": "S-13, S-12"
+    },
+    {
+      "n": 12,
+      "paso": "Recupera el nivel",
+      "como": "Controla la apertura de la olla",
+      "criterio": "700–850 mm",
+      "critico": false,
+      "rol": "S-13"
+    },
+    {
+      "n": 13,
+      "paso": "Mide T y muestrea",
+      "como": "T a los 5 min; muestra química a los 5–10 min",
+      "criterio": "20–35 °C; muestra enviada",
+      "critico": false,
+      "rol": "S-13, S-11"
+    },
+    {
+      "n": 14,
+      "paso": "Registra en el rastreo",
+      "como": "Hora de apertura; confirma la zona de transición por línea",
+      "criterio": "Rastreo actualizado",
+      "critico": false,
+      "rol": "S-12"
+    },
+    {
+      "n": 15,
+      "paso": "Retira la olla vacía",
+      "como": "S-09 la lleva a la nave de ollas",
+      "criterio": "Olla fuera del brazo",
+      "critico": true,
+      "rol": "S-09"
+    },
+    {
+      "n": 16,
+      "paso": "Registra el cambio",
+      "como": "Residual, tiempo de cambio, nivel mínimo y temperaturas",
+      "criterio": "Hoja completa",
+      "critico": false,
+      "rol": "S-13"
+    }
+  ],
+  "anormales": [
+    [
+      "Síntoma",
+      "Acción inmediata",
+      "Avisar a"
+    ],
+    [
+      "Olla nueva retrasada",
+      "Baja el nivel lo más tarde posible; a 450 mm cierra L1 y L6; si no llega, fin de colada",
+      "C-06, C-04"
+    ],
+    [
+      "Escoria en el distribuidor",
+      "Cierra la olla; marca las palanquillas; avisa a calidad",
+      "C-06, C-09"
+    ],
+    [
+      "La torreta no gira",
+      "Accionamiento de emergencia solo con autorización de C-06; si no, fin de colada",
+      "C-06, C-11"
+    ],
+    [
+      "La olla nueva no abre",
+      "Lanceo (S-13 certificado); si en 3 min no abre, gira de regreso y fin de colada",
+      "C-06, S-08"
+    ],
+    [
+      "Punto rojo o fuga en la olla",
+      "Evacúa a ≥ 25 m; no gires sobre personas; olla al pote seco; nunca agua",
+      "C-04, C-06, C-15"
+    ],
+    [
+      "Tubo protector roto",
+      "Cámbialo; chorro libre solo con autorización de C-06 y palanquillas marcadas",
+      "C-06"
+    ],
+    [
+      "T de la olla fuera de rango",
+      "C-06 decide; con > 45 °C de sobrecalentamiento, cerrar líneas extremas",
+      "C-06, C-07"
+    ]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      [
+        "Rol",
+        "ILUO",
+        "Teoría",
+        "OJT supervisado",
+        "Vigencia"
+      ],
+      [
+        "S-13 Operador de Plataforma",
+        "U",
+        "16 h",
+        "20 cambios de olla",
+        "24 meses"
+      ],
+      [
+        "S-09 Operador de Grúa de Colada",
+        "U",
+        "40 h (metal líquido)",
+        "80 h",
+        "12 meses"
+      ],
+      [
+        "S-12 Operador de Púlpito",
+        "U",
+        "8 h",
+        "10 cambios",
+        "24 meses"
+      ]
+    ],
+    "checklist": [
+      "Sube el distribuidor a 850 mm antes de cerrar la olla",
+      "Cierra la olla por residual, sin arrastre de escoria",
+      "Confirma que no hay nadie bajo las ollas antes de girar",
+      "Abre la olla nueva en ≤ 3 min del cierre",
+      "Cierra líneas extremas si el distribuidor baja de 450 mm"
+    ]
+  },
+  "quiz": [
+    {
+      "pregunta": "¿A qué nivel subes el distribuidor antes de cerrar la olla vieja?",
+      "opciones": [
+        "500 mm",
+        "700 mm",
+        "850 mm"
+      ],
+      "correcta": 2,
+      "explicacion": "850 mm da el colchón de acero para el giro; el mínimo durante el cambio es 500 mm."
+    },
+    {
+      "pregunta": "¿Con cuánto residual se cierra la olla vieja?",
+      "opciones": [
+        "0 t, hasta vaciarla",
+        "2–4 t o al ver escoria",
+        "10–15 t"
+      ],
+      "correcta": 1,
+      "explicacion": "Al vaciarse, la olla forma un remolino que jala la escoria; 2–4 t de residual la retienen."
+    },
+    {
+      "pregunta": "¿Cuánto debe durar el cambio, del cierre a la apertura?",
+      "opciones": [
+        "≤ 3 min",
+        "≤ 8 min",
+        "≤ 15 min"
+      ],
+      "correcta": 0,
+      "explicacion": "Objetivo 2 min, máximo 3 min: de 850 a 500 mm hay ≈ 3.8 min de reserva."
+    },
+    {
+      "pregunta": "El distribuidor baja a 440 mm durante el cambio. ¿Qué haces?",
+      "opciones": [
+        "Nada, espero la olla",
+        "Cierro L1 y L6",
+        "Cierro L3 y L4"
+      ],
+      "correcta": 1,
+      "explicacion": "Con < 450 mm se cierran L1 y L6; si sigue bajando (< 350 mm), L2 y L5."
+    },
+    {
+      "pregunta": "¿Cómo se marcan las palanquillas de la zona de mezcla?",
+      "opciones": [
+        "A",
+        "C",
+        "T"
+      ],
+      "correcta": 2,
+      "explicacion": "T = transición de colada; el rastreo asigna la colada por el tiempo de residencia."
+    }
+  ],
+  "reglas": [
+    {
+      "titulo": "Nadie bajo las ollas",
+      "detalle": "Radio y conteo antes del giro; nadie en el radio de la torreta."
+    },
+    {
+      "titulo": "Distribuidor nunca bajo 500 mm",
+      "detalle": "Con < 450 mm cierra L1 y L6; con < 350 mm, L2 y L5."
+    },
+    {
+      "titulo": "Cierre por residual, no por vaciado",
+      "detalle": "2–4 t de residual o al primer indicio de escoria."
+    },
+    {
+      "titulo": "Olla que fuga: nunca agua",
+      "detalle": "Evacúa a ≥ 25 m y lleva la olla al pote seco."
+    }
+  ],
+  "por_confirmar": [
+    "Tiempo de cambio ≤ 3 min, giro ≤ 60 s y argón del tubo con el OEM",
+    "Residual 2–4 t, niveles mínimos y tiempo de residencia (C-08)",
+    "Regla de palanquillas de mezcla en cambio de grado (C-09)"
+  ],
+  "plan_sesion": [
+    [
+      "Bloque",
+      "Min",
+      "Actividad",
+      "Recurso"
+    ],
+    [
+      "1. Apertura y por qué importa",
+      "30",
+      "Casos de arrastre de escoria y de olla perforada; reglas de oro",
+      "Portada y objetivos"
+    ],
+    [
+      "2. Roles y flujo del proceso",
+      "60",
+      "Recorrido del flujo con la torreta y el distribuidor",
+      "Roles, flujo y figuras"
+    ],
+    [
+      "3. Equipos y parámetros",
+      "90",
+      "Ejercicio: calcular la reserva del distribuidor en minutos",
+      "Equipos y parámetros, calculadora"
+    ],
+    [
+      "4. Seguridad",
+      "60",
+      "Carga suspendida, zonas de exclusión y perforación de olla",
+      "Seguridad y plano de zonas"
+    ],
+    [
+      "5. Calidad y paso a paso",
+      "90",
+      "Lectura guiada de los 16 pasos; pasos ★",
+      "Calidad y paso a paso"
+    ],
+    [
+      "6. Condiciones anormales",
+      "60",
+      "Simulacro de mesa: olla nueva retrasada y olla que no abre",
+      "Condiciones anormales"
+    ],
+    [
+      "7. Evaluación teórica",
+      "60",
+      "Autoevaluación de 5 preguntas y retroalimentación",
+      "Autoevaluación"
+    ],
+    [
+      "8. Cierre y ruta a OJT",
+      "30",
+      "Plan de OJT y certificación",
+      "Competencia y cierre"
+    ]
+  ],
+  "validacion": {
+    "tecnica": "visto bueno — 2026-09-25"
+  }
+}

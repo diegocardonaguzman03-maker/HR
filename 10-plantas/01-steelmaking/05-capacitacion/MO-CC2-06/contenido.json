@@ -1,0 +1,680 @@
+{
+  "code": "MO-CC2-06",
+  "title": "Cambio rápido de buza calibrada y taponeo o cierre de línea",
+  "titulo_corto": "Cambio de buza y cierre",
+  "serie": "Operación",
+  "area": "Colada Continua 2 · palanquilla (6 líneas)",
+  "manual": "02-operacion/cc2/MO-CC2-06-cambio-rapido-buza-cierre-linea.md",
+  "manual_version": "0.1 (visto bueno técnico sin observaciones y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Cambiar la buza en ≤ 2 s sin perder la línea y cerrar en ≤ 10 s una línea que se vuelve peligrosa",
+  "audiencia": "S-13 Plataforma · S-14 Ayudante · S-12 Púlpito · S-15 Preparador · C-06",
+  "kpis": [
+    {
+      "value": "8 h",
+      "label": "teoría (S-13 / S-14)"
+    },
+    {
+      "value": "15",
+      "label": "cambios de buza supervisados"
+    },
+    {
+      "value": "7",
+      "label": "pasos críticos ★"
+    },
+    {
+      "value": "24",
+      "label": "meses de vigencia (TD-P07)"
+    }
+  ],
+  "cadena": [
+    "Velocidad = síntoma",
+    "Buza caliente y Ø",
+    "Posición segura",
+    "Un solo empuje",
+    "Placa ciega ≤ 10 s",
+    "Registro"
+  ],
+  "titulos": {
+    "objetivos": "Al terminar, cambias una buza sin perder la línea",
+    "roles": "S-13 empuja, S-14 trae la buza y S-12 fija la línea",
+    "flujo": "La velocidad te dice cuándo cambiar la buza",
+    "figura": "Un empuje cambia la buza o cierra la línea",
+    "equipos": "Siete elementos listos antes de cada cambio",
+    "parametros": "Velocidad, horas y temperatura deciden el cambio",
+    "seguridad": "Acero bajo el distribuidor: fuera de la expulsión",
+    "calidad": "Buza equivocada, velocidad equivocada",
+    "pasos": "Dieciséis pasos; siete no admiten error",
+    "anormales": "Si el cambio falla: placa ciega o tapón con varilla",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del cambio de buza que no se negocian"
+  },
+  "objetivos": [
+    {
+      "titulo": "Detectar la buza gastada",
+      "detalle": "Más de 3.5 m/min (erosión) o menos de 2.3 m/min (taponamiento); diferencia > 0.4 m/min; vida 8–12 h."
+    },
+    {
+      "titulo": "Usar la buza correcta",
+      "detalle": "Mismo Ø de la orden (160 × 160: 20–24 mm), ≥ 900 °C y en el carril ≤ 30 s después de salir del horno."
+    },
+    {
+      "titulo": "Cambiar sin exponerse",
+      "detalle": "Del lado contrario a la expulsión; un solo empuje continuo en ≤ 2 s."
+    },
+    {
+      "titulo": "Cerrar a tiempo",
+      "detalle": "Placa ciega en ≤ 10 s; tapón con varilla como respaldo; ante breakout, detener la extracción."
+    }
+  ],
+  "por_que_importa": "La buza de ZrO₂ se erosiona o se tapa y la línea te avisa con la velocidad. El cambio rápido corta el chorro 1–2 s; si el mecanismo se detiene a medias, el acero se derrama. Una línea con desbordamiento, breakout o sin agua se vuelve peligrosa en segundos.",
+  "principio": "Si una línea se vuelve peligrosa, ciérrala de inmediato con placa ciega.",
+  "roles": [
+    [
+      "Rol",
+      "Qué hace en el cambio o cierre",
+      "RACI"
+    ],
+    [
+      "C-06 Supervisor de Colada Continua",
+      "Autoriza el cambio y decide el cierre; en emergencia S-13 cierra y avisa",
+      "A"
+    ],
+    [
+      "S-13 Operador de Plataforma",
+      "Ejecuta el cambio de buza y el cierre con placa ciega o tapón",
+      "R"
+    ],
+    [
+      "S-14 Ayudante de Colada",
+      "Trae la buza caliente, vigila molde y chorro, confirma el nivel",
+      "R"
+    ],
+    [
+      "S-12 Operador de Púlpito",
+      "Fija la velocidad, regresa a automático y ajusta la cola de la línea",
+      "R"
+    ],
+    [
+      "C-08 Ingeniero de Proceso",
+      "Analiza la vida de buzas y los taponamientos repetidos",
+      "C"
+    ],
+    [
+      "S-15 Preparador de Distribuidores",
+      "Mantiene el horno de repuesto con buzas calientes",
+      "C"
+    ]
+  ],
+  "flujo": [
+    {
+      "label": "Detectar",
+      "desc": "> 3.5 o < 2.3 m/min, chorro o vida"
+    },
+    {
+      "label": "Autorizar",
+      "desc": "Radio a C-06 y S-12: línea X"
+    },
+    {
+      "label": "Buza lista",
+      "desc": "Ø de la orden; ≥ 900 °C"
+    },
+    {
+      "label": "Velocidad fija",
+      "desc": "S-12 pasa la línea a manual"
+    },
+    {
+      "label": "Empujar",
+      "desc": "Un solo movimiento; ≤ 2 s"
+    },
+    {
+      "label": "Revisar chorro",
+      "desc": "Compacto y centrado"
+    },
+    {
+      "label": "Automático",
+      "desc": "Nivel ± 5 mm en ≤ 30 s"
+    },
+    {
+      "label": "Si falla",
+      "desc": "Placa ciega ≤ 10 s o tapón"
+    },
+    {
+      "label": "Registrar",
+      "desc": "Línea, hora, Ø, horas y causa"
+    }
+  ],
+  "flujo_takeaway": "Si el chorro no queda compacto y el nivel no vuelve a ± 5 mm en ≤ 30 s, la línea se cierra.",
+  "figuras": [
+    {
+      "svg": "cc2-distribuidor-6-lineas.svg",
+      "lectura": [
+        "La buza nueva precalentada empuja a la usada, que sale hacia el cajón receptor.",
+        "Con una placa ciega (sin orificio) la línea queda cerrada.",
+        "El respaldo es el tapón cónico con varilla desde la tapa del distribuidor."
+      ]
+    }
+  ],
+  "equipos": [
+    [
+      "Equipo",
+      "Función",
+      "Especificación clave",
+      "Verificar antes"
+    ],
+    [
+      "Mecanismo de cambio rápido",
+      "Cambia la buza o cierra la línea",
+      "Empuje ≤ 2 s [Validar OEM]",
+      "Carril libre; cilindro operando"
+    ],
+    [
+      "Buzas de repuesto",
+      "Reemplazo",
+      "Ø de la orden (160 × 160: 20–24 mm)",
+      "≥ 900 °C y ≥ 30 min en el horno"
+    ],
+    [
+      "Placas ciegas",
+      "Cierran la línea",
+      "1 por línea + 2 de repuesto",
+      "Precalentadas en el horno"
+    ],
+    [
+      "Horno de buzas",
+      "Mantiene buzas calientes",
+      "≥ 900 °C [Validar OEM]",
+      "Mínimo 6 buzas y 2 placas"
+    ],
+    [
+      "Tenazas para buza",
+      "Manipulan la buza caliente",
+      "Mango ≥ 1.2 m [Validar]",
+      "Sin deformación"
+    ],
+    [
+      "Varilla de taponeo",
+      "Respaldo de cierre desde arriba",
+      "Tapón Ø 15–24 mm; varilla ≥ 3 m",
+      "2 listas y secas por turno"
+    ],
+    [
+      "Cajón receptor",
+      "Recibe la buza usada",
+      "Seco, con arena seca",
+      "Vacío al inicio del turno"
+    ]
+  ],
+  "parametros": [
+    [
+      "Parámetro",
+      "Objetivo",
+      "Rango",
+      "Alarma",
+      "Acción"
+    ],
+    [
+      "Velocidad de la línea",
+      "3.0 m/min",
+      "2.5–3.5 m/min",
+      "> 3.5 o < 2.3 [Validar]",
+      "Cambio de buza"
+    ],
+    [
+      "Diferencia vs. promedio",
+      "0 m/min",
+      "± 0.3 m/min",
+      "> ± 0.4 m/min",
+      "Programa el cambio"
+    ],
+    [
+      "Horas de la buza",
+      "≤ 10 h",
+      "8–12 h [Validar]",
+      "> 12 h",
+      "Cambio programado"
+    ],
+    [
+      "T de la buza de repuesto",
+      "1,000 °C",
+      "≥ 900 °C [Validar OEM]",
+      "< 850 °C",
+      "No la uses; toma otra"
+    ],
+    [
+      "Corte del chorro",
+      "≤ 2 s",
+      "1–2 s [Validar OEM]",
+      "> 5 s",
+      "Revisa el mecanismo"
+    ],
+    [
+      "Recuperación del nivel",
+      "≤ 30 s",
+      "15–30 s",
+      "> 60 s",
+      "Velocidad fija y avisa"
+    ],
+    [
+      "Cierre de emergencia",
+      "≤ 10 s",
+      "5–10 s",
+      "> 30 s",
+      "Usa el tapón con varilla"
+    ],
+    [
+      "Nivel del distribuidor",
+      "700–850 mm",
+      "—",
+      "> 870 mm",
+      "Cierra un poco la olla"
+    ]
+  ],
+  "parametros_nota": "Una buza de 22 mm (≈ 3.0 m/min) que se abre a 23.5 mm lleva la línea a ≈ 3.4 m/min. Vida y tiempos: [Validar con OEM / C-08].",
+  "seguridad": {
+    "controles": [
+      {
+        "titulo": "Fuera de la línea de expulsión",
+        "detalle": "Solo S-13 y S-14 en la posición de cambio, del lado contrario a la salida de la buza; EPP aluminizado (MS-ACE-01)."
+      },
+      {
+        "titulo": "Solo buzas y placas calientes",
+        "detalle": "Del horno de repuesto a ≥ 900 °C: una buza fría o húmeda explota o se congela."
+      },
+      {
+        "titulo": "Cierre con respaldo",
+        "detalle": "Placa ciega en ≤ 10 s; si no cierra, tapón con varilla desde la plataforma con barandal (MS-ACE-10)."
+      },
+      {
+        "titulo": "Molde de línea cerrada con ESR",
+        "detalle": "Obturador cerrado por el ESR (C-16), con su candado y < 2 × fondo medido antes de intervenir el molde (MS-ACE-07)."
+      }
+    ],
+    "epp": [
+      "Chamarra y polainas aluminizadas",
+      "Careta con visor dorado",
+      "Casco con barbiquejo y guantes aluminizados",
+      "Botas de fundidor y ropa retardante a la flama",
+      "Protección auditiva y dosímetro personal"
+    ]
+  },
+  "calidad": [
+    [
+      "Variable",
+      "Especificación",
+      "Cómo y cuándo",
+      "Si falla"
+    ],
+    [
+      "Ø de la buza de repuesto",
+      "El de la orden, ± 0.2 mm",
+      "Calibrador al cargar el horno",
+      "Velocidad fuera de rango"
+    ],
+    [
+      "Chorro después del cambio",
+      "Compacto y centrado",
+      "Visual inmediato",
+      "Salpicaduras, pinholes, romboidad"
+    ],
+    [
+      "Palanquilla del cambio",
+      "Marcada B [Validar]",
+      "La que contiene el cambio",
+      "Marca de nivel, inclusiones"
+    ],
+    [
+      "Causa del cierre de línea",
+      "Registrada",
+      "Cada cierre",
+      "Pérdida de aprendizaje"
+    ]
+  ],
+  "calidad_takeaway": "Taponamientos en varias líneas apuntan a la química (Al alto) o al acero frío: avisa al LF y a C-08.",
+  "pasos": [
+    {
+      "n": 1,
+      "paso": "Confirma la necesidad",
+      "como": "Velocidad, forma del chorro y horas de servicio",
+      "criterio": "Criterio de cambio cumplido",
+      "critico": false,
+      "rol": "S-12, S-13"
+    },
+    {
+      "n": 2,
+      "paso": "Avisa y pide autorización",
+      "como": "Radio a C-06 y S-12: cambio de buza línea X",
+      "criterio": "Autorizado",
+      "critico": false,
+      "rol": "S-13"
+    },
+    {
+      "n": 3,
+      "paso": "Verifica la buza de repuesto",
+      "como": "Ø en la etiqueta y temperatura del horno",
+      "criterio": "Ø correcto; ≥ 900 °C",
+      "critico": true,
+      "rol": "S-14"
+    },
+    {
+      "n": 4,
+      "paso": "Fija la velocidad",
+      "como": "S-12 pasa la línea a velocidad fija",
+      "criterio": "Línea en manual",
+      "critico": false,
+      "rol": "S-12"
+    },
+    {
+      "n": 5,
+      "paso": "Coloca la buza",
+      "como": "Con tenazas, en ≤ 30 s desde que sale del horno",
+      "criterio": "Buza asentada en el carril",
+      "critico": true,
+      "rol": "S-14, S-13"
+    },
+    {
+      "n": 6,
+      "paso": "Toma la posición segura",
+      "como": "Del lado contrario a la expulsión",
+      "criterio": "Nadie en la línea de expulsión",
+      "critico": true,
+      "rol": "S-13, S-14"
+    },
+    {
+      "n": 7,
+      "paso": "Empuja la buza",
+      "como": "Un solo movimiento continuo",
+      "criterio": "≤ 2 s; la usada cae al cajón",
+      "critico": true,
+      "rol": "S-13"
+    },
+    {
+      "n": 8,
+      "paso": "Revisa el chorro",
+      "como": "Compacto y centrado en el molde",
+      "criterio": "Sin abanico ni desviación",
+      "critico": false,
+      "rol": "S-14"
+    },
+    {
+      "n": 9,
+      "paso": "Regresa a automático",
+      "como": "Cuando el nivel esté a ± 10 mm del punto de ajuste",
+      "criterio": "± 5 mm en ≤ 30 s",
+      "critico": false,
+      "rol": "S-12"
+    },
+    {
+      "n": 10,
+      "paso": "Registra y repone",
+      "como": "Línea, hora, Ø, horas de la usada y causa; carga otra buza del mismo Ø",
+      "criterio": "Registro completo; horno con 6",
+      "critico": false,
+      "rol": "S-13, S-15"
+    },
+    {
+      "n": 11,
+      "paso": "Decide el cierre y avisa",
+      "como": "Radio: cierre de línea X; en emergencia actúa y luego avisa",
+      "criterio": "S-12 enterado",
+      "critico": false,
+      "rol": "S-13"
+    },
+    {
+      "n": 12,
+      "paso": "Empuja la placa ciega",
+      "como": "Placa del horno, igual que en los pasos 5–7",
+      "criterio": "Chorro cortado en ≤ 10 s",
+      "critico": true,
+      "rol": "S-13, S-14"
+    },
+    {
+      "n": 13,
+      "paso": "Tapona si no cierra",
+      "como": "Tapón cónico con varilla en la boca de la buza, presión firme 30–60 s [Validar]",
+      "criterio": "Chorro cortado",
+      "critico": true,
+      "rol": "S-13"
+    },
+    {
+      "n": 14,
+      "paso": "Controla la línea cerrada",
+      "como": "Breakout o atoramiento: detén la extracción; si no, cola controlada (MO-CC2-07)",
+      "criterio": "Línea en condición segura",
+      "critico": true,
+      "rol": "S-12"
+    },
+    {
+      "n": 15,
+      "paso": "Compensa el distribuidor",
+      "como": "Cierra un poco la olla; el nivel tiende a subir",
+      "criterio": "700–850 mm",
+      "critico": false,
+      "rol": "S-13"
+    },
+    {
+      "n": 16,
+      "paso": "Marca y reporta",
+      "como": "Última palanquilla de la línea con C; reporte de causa, hora y acciones",
+      "criterio": "Rastreo y reporte a C-06",
+      "critico": false,
+      "rol": "S-16, S-13"
+    }
+  ],
+  "anormales": [
+    [
+      "Síntoma",
+      "Acción inmediata",
+      "Avisar a"
+    ],
+    [
+      "La buza nueva no fluye",
+      "Empuja otra buza caliente; si falla, placa ciega",
+      "C-06"
+    ],
+    [
+      "Mecanismo atorado a medio camino",
+      "Cierra con tapón desde arriba; no fuerces con las manos",
+      "C-06, C-11"
+    ],
+    [
+      "Chorro abierto tras el cambio",
+      "Cierra la línea (bloque asiento dañado o escoria en el pozo)",
+      "C-06, C-08"
+    ],
+    [
+      "La placa ciega no cierra",
+      "Tapón con varilla",
+      "C-06"
+    ],
+    [
+      "Taponamientos en varias líneas",
+      "Avisa al LF (química) y a C-08",
+      "C-06, C-07, C-08"
+    ],
+    [
+      "Distribuidor sube al cerrar líneas",
+      "Cierra la olla parcialmente; con > 870 mm, cierre adicional",
+      "C-06"
+    ],
+    [
+      "Buza expulsada fuera del cajón",
+      "Acordona; deja enfriar; no la toques sin tenazas",
+      "C-06"
+    ]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      [
+        "Rol",
+        "ILUO",
+        "Teoría",
+        "OJT supervisado",
+        "Vigencia"
+      ],
+      [
+        "S-13 Operador de Plataforma",
+        "U",
+        "8 h",
+        "15 cambios + 3 cierres o simulacro",
+        "24 meses"
+      ],
+      [
+        "S-14 Ayudante de Colada",
+        "U",
+        "8 h",
+        "15 cambios de buza",
+        "24 meses"
+      ],
+      [
+        "S-12 Operador de Púlpito",
+        "U",
+        "4 h",
+        "10 cambios",
+        "24 meses"
+      ]
+    ],
+    "checklist": [
+      "Verifica Ø y temperatura de la buza de repuesto antes de usarla",
+      "Se coloca fuera de la línea de expulsión",
+      "Cambia la buza en un solo empuje (≤ 2 s)",
+      "Cierra una línea con placa ciega en ≤ 10 s (simulacro)",
+      "Tapona con varilla como respaldo y detiene la extracción ante un breakout"
+    ]
+  },
+  "quiz": [
+    {
+      "pregunta": "Una línea baja sola a 2.2 m/min. ¿Qué pasa con su buza?",
+      "opciones": [
+        "Se está tapando",
+        "Se está erosionando",
+        "Está bien"
+      ],
+      "correcta": 0,
+      "explicacion": "Menos de 2.3 m/min indica taponamiento (óxidos, Al alto o acero frío): cambio de buza."
+    },
+    {
+      "pregunta": "¿Qué temperatura mínima debe tener la buza de repuesto?",
+      "opciones": [
+        "600 °C",
+        "900 °C",
+        "1,300 °C"
+      ],
+      "correcta": 1,
+      "explicacion": "≥ 900 °C y ≥ 30 min en el horno [Validar OEM]; con < 850 °C no se usa."
+    },
+    {
+      "pregunta": "¿Dónde te colocas al empujar la buza?",
+      "opciones": [
+        "Frente a la expulsión",
+        "Bajo el distribuidor",
+        "Del lado contrario a la expulsión"
+      ],
+      "correcta": 2,
+      "explicacion": "La buza usada sale caliente hacia el cajón; nadie se coloca en la línea de expulsión."
+    },
+    {
+      "pregunta": "La placa ciega no cierra la línea. ¿Qué sigue?",
+      "opciones": [
+        "Tapón cónico con varilla",
+        "Esperar a que se congele",
+        "Cortar el agua de molde"
+      ],
+      "correcta": 0,
+      "explicacion": "El tapón con varilla desde arriba es el respaldo; el agua de molde nunca se corta."
+    },
+    {
+      "pregunta": "¿En cuánto tiempo se cierra una línea en emergencia?",
+      "opciones": [
+        "≤ 2 min",
+        "≤ 10 s",
+        "≤ 5 min"
+      ],
+      "correcta": 1,
+      "explicacion": "5–10 s con placa ciega; si pasa de 30 s, se usa el tapón con varilla."
+    }
+  ],
+  "reglas": [
+    {
+      "titulo": "Buza de la orden y caliente",
+      "detalle": "Mismo Ø de la orden y ≥ 900 °C; nunca una buza fría o húmeda."
+    },
+    {
+      "titulo": "Nadie en la línea de expulsión",
+      "detalle": "El cambio se hace del lado contrario a la salida de la buza usada."
+    },
+    {
+      "titulo": "Un solo empuje",
+      "detalle": "Movimiento continuo; si se atora, tapón desde arriba, nunca las manos."
+    },
+    {
+      "titulo": "Línea peligrosa, línea cerrada",
+      "detalle": "Desbordamiento, breakout o sin agua: placa ciega de inmediato."
+    }
+  ],
+  "por_confirmar": [
+    "Tiempo de empuje, temperatura de buzas y vida de buza con el OEM / C-08",
+    "Taponeo: presión 30–60 s, largo de varilla y mango de tenazas",
+    "Marca B de la palanquilla del cambio, zona de exclusión de 3 m y simulacro trimestral (C-16)"
+  ],
+  "plan_sesion": [
+    [
+      "Bloque",
+      "Min",
+      "Actividad",
+      "Recurso"
+    ],
+    [
+      "1. Apertura y por qué importa",
+      "30",
+      "Casos de derrame en el cambio y de cierre tardío; reglas de oro",
+      "Portada y objetivos"
+    ],
+    [
+      "2. Roles y flujo del proceso",
+      "60",
+      "Recorrido del flujo con el esquema del cambio rápido",
+      "Roles, flujo y figura"
+    ],
+    [
+      "3. Equipos y parámetros",
+      "90",
+      "Ejercicio: diagnosticar la buza con la velocidad por línea",
+      "Equipos y parámetros, tendencias HMI"
+    ],
+    [
+      "4. Seguridad",
+      "60",
+      "Posición segura, línea de expulsión y EPP aluminizado",
+      "Seguridad, EPP físico"
+    ],
+    [
+      "5. Calidad y paso a paso",
+      "90",
+      "Lectura guiada de los 16 pasos; pasos ★",
+      "Calidad y paso a paso"
+    ],
+    [
+      "6. Condiciones anormales",
+      "60",
+      "Simulacro de mesa: placa ciega que no cierra",
+      "Condiciones anormales"
+    ],
+    [
+      "7. Evaluación teórica",
+      "60",
+      "Autoevaluación de 5 preguntas y retroalimentación",
+      "Autoevaluación"
+    ],
+    [
+      "8. Cierre y ruta a OJT",
+      "30",
+      "Plan de OJT, simulacro de cierre y certificación",
+      "Competencia y cierre"
+    ]
+  ],
+  "validacion": {
+    "tecnica": "visto bueno — 2026-09-25"
+  }
+}

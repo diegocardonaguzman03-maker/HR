@@ -134,6 +134,10 @@ flowchart LR
 | Muestra interna | Macro / Baumann 1 por secuencia y grado y en cada arranque | Macro 1 por línea al inicio de secuencia y 1 por colada; siempre A, E, B |
 
 ### Tarea 3 — Pedir la disposición y reportar tendencias (MO-CC1-09 / MO-CC2-09)
+```mermaid
+flowchart LR
+  A["Evidencia: foto, medida, macro"] --> B["Reporte de no conformidad"] --> C["Decisión de C-09 ≤ 24 h"] --> D["Gráficas por línea"] --> E["Resumen a C-06"]
+```
 | Paso | Qué hago | Cómo verifico (medición) | ★ |
 |---|---|---|---|
 | 1 | Envía evidencia a C-09 | Foto, medida y macro con número de colada y pieza | |

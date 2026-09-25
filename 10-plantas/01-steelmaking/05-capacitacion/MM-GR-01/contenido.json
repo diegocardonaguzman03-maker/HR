@@ -1,0 +1,193 @@
+{
+  "code": "MM-GR-01",
+  "title": "Inspección y mantenimiento de grúas de colada (ganchos, frenos, cables, límites)",
+  "titulo_corto": "Grúas de colada",
+  "serie": "Mantenimiento",
+  "area": "Acería · nave de ollas",
+  "manual": "03-mantenimiento/MM-GR-01-gruas-colada-inspeccion.md",
+  "manual_version": "0.2 (borrador para validación; visto bueno de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Que una grúa de 250/63 t nunca deje caer una olla: gancho, cables, frenos dobles y límites en criterio",
+  "audiencia": "S-19 Mecánico · S-20 Electricista · S-09 Operador de Grúa de Colada · S-26 Lubricador · C-11 · C-04",
+  "kpis": [
+    {"value": "24 h", "label": "teoría (S-19 Mecánico grúas)"},
+    {"value": "40 h", "label": "OJT · 4 semanales + 1 anual"},
+    {"value": "11", "label": "pasos críticos ★"},
+    {"value": "12", "label": "meses (grúas, izaje, alturas)"}
+  ],
+  "cadena": ["Bloque apoyado", "LOTO y grúa vecina", "Cables y gancho", "Frenos y límites", "Prueba por freno", "Tarjeta verde"],
+  "titulos": {
+    "objetivos": "Al terminar, detectas lo que tira una olla",
+    "roles": "C-11 retira o libera la grúa; C-04 la recibe",
+    "flujo": "Diaria, semanal, mensual y anual: cuatro filtros",
+    "figura": "Gancho, frenos dobles y cable tienen su rechazo",
+    "equipos": "Siete componentes deciden si la olla se sostiene",
+    "parametros": "Gancho +5 % o cable −5 %: la grúa sale de colada",
+    "seguridad": "Olla de 150 t suspendida: el riesgo más severo",
+    "calidad": "Una grúa detenida enfría la olla y corta la secuencia",
+    "pasos": "Catorce pasos; once no admiten error",
+    "anormales": "Carga que resbala o límite que no corta: fuera",
+    "competencia": "Certificación nivel U, vigencia de 12 meses",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas de las grúas de colada que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Aislar la grúa y su vía", "detalle": "Bloque apoyado, rieles colectores e interruptor bloqueados, radio sin llave y grúa vecina bloqueada o con topes."},
+    {"titulo": "Medir cables y gancho", "detalle": "Ø en 3 puntos y 2 direcciones; alambres rotos; apertura del gancho contra la medida de origen."},
+    {"titulo": "Probar frenos y límites", "detalle": "F1, F2 y F3 uno por uno sostienen ≥ 125 % sin deslizar; límites superiores 1.º y 2.º cortan."},
+    {"titulo": "Retirar o liberar con firma", "detalle": "Cualquier criterio de rechazo saca la grúa de colada; si cumple, checklist y tarjeta verde en cabina."}
+  ],
+  "por_que_importa": "Una olla de 150 t de acero líquido suspendida es el riesgo de mayor severidad de la Acería: si falla el gancho, el cable o el freno, el derrame puede causar múltiples fatalidades. Las grúas se inspeccionan en cuatro niveles y prevalece el criterio más estricto.",
+  "principio": "Cualquier criterio de rechazo deja la grúa fuera de servicio para colada hasta corregir.",
+  "roles": [
+    ["Rol", "Qué hace en la inspección de grúas", "RACI"],
+    ["C-11 Supervisor de Mantenimiento Mecánico", "Dueño; programa inspecciones, libera o retira de servicio", "A"],
+    ["S-19 Mecánico de Acería", "Gancho, balancín, cables, frenos, reductores y estructura", "R"],
+    ["S-20 Electricista", "Motores, variadores, límites, thrusters, colectores y radio", "R"],
+    ["S-09 Operador de Grúa de Colada", "Checklist diario; prueba de límite superior y frenos en vacío", "R"],
+    ["S-26 Lubricador", "Lubricación de cables, reductores y ruedas", "R"],
+    ["S-23 Soldador Calificado", "Reparaciones estructurales con procedimiento aprobado", "R"],
+    ["Inspector END nivel II", "Partículas magnéticas, ultrasonido e inspección periódica", "R (externo)"],
+    ["C-04 Jefe de Turno", "Disponibilidad de grúas; recibe la liberación", "A (operación)"]
+  ],
+  "flujo": [
+    {"label": "Diaria (S-09)", "desc": "Checklist, límite superior, frenos"},
+    {"label": "Semanal", "desc": "Cables, frenos, límites, gancho visual"},
+    {"label": "Mensual", "desc": "Par de cada freno; medición de gancho"},
+    {"label": "Semestral", "desc": "Limitador de carga al 110 %"},
+    {"label": "Anual", "desc": "Inspección periódica y END"},
+    {"label": "Prueba 125 %", "desc": "Tras reparación mayor"},
+    {"label": "Liberar", "desc": "Firma C-11 y C-04; tarjeta verde"}
+  ],
+  "flujo_takeaway": "En cualquier nivel, un criterio de rechazo manda la grúa a tarjeta roja y reparación con LOTO.",
+  "figuras": [
+    {
+      "svg": "mm-gancho-grua-inspeccion.svg",
+      "lectura": [
+        "Gancho laminado: retirar si la apertura entre punzonados crece > 5 %, si hay grieta o remache flojo.",
+        "F1 y F2 frenan cada motor y F3 frena el tambor; cada freno sostiene ≥ 125 % de la carga nominal.",
+        "Cable: retirar con Ø −5 %, 6 alambres rotos en un paso o 3 en un torón, coca o daño por calor."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Ganchos laminados en balancín", "Tomar los muñones de la olla", "250 t", "Apertura, desgaste y END"],
+    ["Balancín y pernos", "Unir ganchos al bloque", "Pernos con seguro", "END anual sin indicaciones"],
+    ["Cables de izaje (IWRC)", "Suspender la carga", "Ø nominal OEM", "Criterios ISO 4309 / B30.2"],
+    ["Frenos de servicio F1/F2", "Sostener la carga", "≥ 125 % par nominal [Validar]", "Prueba de par mensual"],
+    ["Freno de emergencia F3", "Actúa por sobrevelocidad", "Disco en tambor", "Prueba mensual"],
+    ["Límites superiores 1.º y 2.º", "Evitar golpe del bloque", "Redundantes", "Probados"],
+    ["Limitador de carga", "Evitar sobrecarga", "Disparo al 110 % [Validar]", "Calibrado"]
+  ],
+  "parametros": [
+    ["Especificación", "Objetivo", "Tolerancia", "Límite / rechazo", "Frecuencia"],
+    ["Apertura del gancho", "Medida de origen", "≤ +2 %", "> +5 %: retirar", "Mensual (medición)"],
+    ["Desgaste gancho laminado", "0 %", "≤ 3 %", "> 5 %: retirar", "Mensual"],
+    ["Torsión del gancho", "0°", "≤ 5°", "> 10°: retirar", "Mensual"],
+    ["Diámetro del cable", "≥ 98 %", "≥ 96 %", "Reducción ≥ 5 %", "Semanal (3 puntos)"],
+    ["Alambres rotos por paso", "0", "≤ 2", "6 al azar o 3 en torón", "Semanal"],
+    ["Par de cada freno", "≥ 125 %", "—", "< 125 % o desliza", "Mensual"],
+    ["Balatas", "≥ 70 %", "≥ 50 %", "< 50 %", "Semanal"],
+    ["Limitador de carga", "Disparo 110 %", "±5 %", "No dispara", "Semestral"]
+  ],
+  "parametros_nota": "Criterios de NOM-006, ASME B30.2/B30.10, ISO 4309 y OEM: prevalece el más estricto. Entrehierro, pernos y pestañas: [Validar con OEM].",
+  "seguridad": {
+    "controles": [
+      {"titulo": "LOTO de grúa, vía y grúa vecina", "detalle": "Seccionador de colectores, interruptor principal, radio sin llave, frenos y calzas; grúa vecina bloqueada o topes en riel."},
+      {"titulo": "Prueba de energía cero", "detalle": "Detector de tensión en colectores (3 fases); movimiento desde cabina y radio rechazado; bloque apoyado, cables sin tensión."},
+      {"titulo": "Siempre anclado en altura", "detalle": "Línea de vida en pasillos del puente y del carro (NOM-009); permiso de altura."},
+      {"titulo": "Nadie bajo la carga en pruebas", "detalle": "Piso acordonado bajo la grúa; pruebas de freno y de carga sin personas bajo la carga."}
+    ],
+    "epp": [
+      "Casco con barbiquejo y lentes",
+      "Guantes y botas metatarsales",
+      "Arnés de cuerpo completo con línea de vida",
+      "Ropa FR y protección auditiva",
+      "EPP eléctrico según categoría en tableros"
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Disponibilidad de grúa de colada", "≥ 98 % [Supuesto]; 1 siempre", "Mensual en CMMS", "Olla espera: pierde T, corta secuencia"],
+    ["Suavidad de movimientos", "Sin tirones", "Prueba funcional", "Oleaje, derrame, reoxidación"],
+    ["Tiempo de traslado de olla", "Estable", "KPI de operación", "Sobrecalentamiento fuera de 20–30 °C"]
+  ],
+  "calidad_takeaway": "Siempre debe quedar una grúa de colada disponible: la inspección se programa alternando grúas.",
+  "pasos": [
+    {"n": 1, "paso": "Coordina", "como": "Grúa a bahía de reparación sin carga; la otra grúa cubre la operación", "criterio": "Autorización de C-04", "critico": false, "rol": "C-11"},
+    {"n": 2, "paso": "Apoya bloque y balancín", "como": "Balancín en su base; cables sin tensión", "criterio": "Carga cero", "critico": true, "rol": "S-09"},
+    {"n": 3, "paso": "Aplica LOTO", "como": "Colectores, interruptor principal, radio sin llave, frenos y calzas, grúa vecina", "criterio": "Candados puestos", "critico": true, "rol": "S-20, S-19"},
+    {"n": 4, "paso": "Prueba energía cero", "como": "Detector de tensión en colectores; intento de movimiento rechazado", "criterio": "Sin energía", "critico": true, "rol": "S-20, C-11"},
+    {"n": 5, "paso": "Accede anclado", "como": "Línea de vida en pasillos del puente y del carro", "criterio": "Siempre anclado", "critico": true, "rol": "S-19, S-20"},
+    {"n": 6, "paso": "Inspecciona cables", "como": "Ø en 3 puntos (tambor, poleas, bloque) y 2 direcciones; alambres rotos; daño por calor", "criterio": "Dentro de criterio", "critico": true, "rol": "S-19"},
+    {"n": 7, "paso": "Inspecciona gancho", "como": "Visual; apertura entre punzonados (mensual); remaches y balancín", "criterio": "Dentro de criterio", "critico": true, "rol": "S-19"},
+    {"n": 8, "paso": "Inspecciona frenos", "como": "Balatas, entrehierro, tambor o disco, thruster sin fuga", "criterio": "Dentro de criterio", "critico": true, "rol": "S-19, S-20"},
+    {"n": 9, "paso": "Revisa límites y pantallas", "como": "Mecanismo de límites y cableado; pantallas térmicas", "criterio": "Íntegros", "critico": false, "rol": "S-20"},
+    {"n": 10, "paso": "Retira LOTO", "como": "Orden inverso; personal fuera de la grúa", "criterio": "Candados retirados", "critico": true, "rol": "Todos"},
+    {"n": 11, "paso": "Prueba límites superiores", "como": "Baja velocidad: 1.º corta; 2.º corta con 1.º puenteado solo bajo control de C-11", "criterio": "Ambos cortan", "critico": true, "rol": "S-20, S-09"},
+    {"n": 12, "paso": "Prueba frenos (mensual)", "como": "Con carga de prueba o par OEM: un freno a la vez, F1, F2 y F3 por sobrevelocidad", "criterio": "Cada uno sostiene", "critico": true, "rol": "S-19, S-20"},
+    {"n": 13, "paso": "Prueba funcional", "como": "Todos los movimientos, paro de emergencia, radio y anticolisión", "criterio": "Sin anomalías", "critico": false, "rol": "S-09"},
+    {"n": 14, "paso": "Libera", "como": "Checklist firmado por C-11 y C-04; tarjeta verde en cabina", "criterio": "Firmado", "critico": true, "rol": "C-11, C-04"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Carga resbala al detener", "Bajar la olla a su base si es seguro; grúa fuera de servicio", "C-04, C-11"],
+    ["Límite superior no corta", "Grúa fuera de servicio", "C-11"],
+    ["Alambres rotos o daño por calor", "Fuera de servicio para colada hasta cambiar el cable", "C-11"],
+    ["Falla eléctrica con olla suspendida", "Frenos sostienen; evacuar debajo; plan de rescate de carga OEM", "C-04, C-12"],
+    ["Ruido o vibración en reductor", "Terminar la maniobra; inspeccionar", "C-11, C-14"],
+    ["Grieta en END", "Retirar el componente", "C-11, C-10"],
+    ["Golpe del bloque contra el carro", "Inspección completa y END antes de volver a usar", "C-11, C-16"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-19 Mecánico (grúas)", "U", "24 h", "40 h / 4 semanales + 1 anual", "12 meses"],
+      ["S-20 Electricista (grúas)", "U", "NOM-029 + 16 h", "4 inspecciones", "12 meses"],
+      ["S-09 Grúa de Colada", "U", "NOM-006 + checklist", "Evaluación práctica", "12 meses"],
+      ["S-26 Lubricador", "L", "8 h", "4 rutas de lubricación", "12 meses"],
+      ["Quien sube a la grúa", "L", "NOM-009 (8 h)", "—", "12 meses"],
+      ["Inspector END", "Nivel II", "Externo (ISO 9712 / ASNT)", "—", "Según certificación"]
+    ],
+    "checklist": [
+      "Apoya el bloque y bloquea la grúa vecina antes de aplicar LOTO",
+      "Prueba energía cero en colectores con detector y se mantiene anclado en altura",
+      "Mide Ø de cable en 3 puntos y apertura del gancho contra la medida de origen",
+      "Inspecciona balatas, entrehierro y thrusters; retira candados con personal fuera",
+      "Prueba ambos límites (puenteo solo con C-11) y cada freno por separado sin nadie abajo",
+      "Libera con checklist firmado y tarjeta verde en cabina"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Con qué aumento de la apertura del gancho laminado se retira?", "opciones": ["> 1 %", "> 5 %", "> 15 %"], "correcta": 1, "explicacion": "Se compara con la medida de origen entre punzonados: más de +5 % retira el gancho."},
+    {"pregunta": "¿Qué reducción del diámetro del cable obliga a cambiarlo?", "opciones": ["≥ 1 %", "≥ 5 %", "≥ 10 %"], "correcta": 1, "explicacion": "Reducción ≥ 5 % del nominal; se mide en 3 puntos y en 2 direcciones a 90°."},
+    {"pregunta": "¿Cómo se prueban los frenos de la grúa de colada?", "opciones": ["Los tres juntos", "Un freno a la vez", "Solo el F3"], "correcta": 1, "explicacion": "Cada freno por separado (F1, F2 y F3) debe sostener ≥ 125 % sin deslizar, sin nadie bajo la carga."},
+    {"pregunta": "Al detener, la olla resbala. ¿Qué haces?", "opciones": ["Seguir y reportar al final", "Bajarla a su base; grúa fuera", "Subirla más rápido"], "correcta": 1, "explicacion": "Freno desgastado o desajustado: la grúa sale de servicio; avisar a C-04 y C-11."},
+    {"pregunta": "¿Quién controla el puenteo del límite 1.º para probar el 2.º?", "opciones": ["El operador S-09", "C-11", "Nadie, no se prueba"], "correcta": 1, "explicacion": "El 2.º límite se prueba con el 1.º puenteado solo bajo control de C-11, a baja velocidad."}
+  ],
+  "reglas": [
+    {"titulo": "Criterio de rechazo = grúa fuera", "detalle": "Gancho, cable, freno o límite fuera de criterio: tarjeta roja."},
+    {"titulo": "Cada freno sostiene solo", "detalle": "F1, F2 y F3 probados por separado al ≥ 125 % cada mes."},
+    {"titulo": "Grúa vecina bloqueada y siempre anclado", "detalle": "Topes o candado en la vecina; línea de vida en puente y carro."},
+    {"titulo": "Sin LOTO y energía cero no se sube", "detalle": "Colectores, interruptor y radio bloqueados; detector de tensión en 3 fases."}
+  ],
+  "por_confirmar": [
+    "Par de frenos, entrehierro, desgaste de pernos y pestañas con el OEM",
+    "Programa NOM-006 de cada grúa y periodicidad de la prueba de carga",
+    "Disponibilidad de grúa ≥ 98 % (supuesto) y vida de cables 12–24 meses"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de caída de carga y two-blocking", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Inspección escalonada: diaria a anual", "Láminas 3–6"],
+    ["3. Equipos y especificaciones", "90", "Criterios de rechazo de gancho, cable y freno", "Láminas 7–8"],
+    ["4. Seguridad, LOTO y energía cero", "75", "LOTO de vía y grúa vecina; altura", "Láminas 9–10, arnés"],
+    ["5. Calidad y paso a paso", "75", "Lectura guiada de los 14 pasos; pasos ★", "Láminas 11–13"],
+    ["6. Práctica de medición", "75", "Calibre de cable y gancho; conteo de alambres", "Calibrador de cable y plantilla"],
+    ["7. Condiciones anormales", "45", "Simulacro de mesa: carga que resbala", "Lámina 14"],
+    ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 16"],
+    ["9. Cierre y ruta a OJT", "15", "Plan de OJT y certificación", "Lámina 17"]
+  ],
+  "validacion": {}
+}
