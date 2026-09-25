@@ -148,7 +148,7 @@
     ["Sin meseta o lectura errática", "Repetir con otra sonda; limpiar contactos; revisar profundidad", "S-01; C-07 si repite"],
     ["Proyección al inmergir", "Retirar la lanza y alejarse; apartar el lote; no usar sus sondas (MS-ACE-03)", "C-05, C-16"],
     ["Muestra con porosidad o escoria", "Tomar una nueva muestra", "S-11"],
-    ["Lanza manipuladora fuera de servicio", "Mantenimiento; respaldo manual solo con autorización de C-05", "C-05, Mtto"],
+    ["Lanza manipuladora sin servicio", "Mantenimiento; respaldo manual solo con autorización de C-05", "C-05, Mtto"],
     ["Laboratorio > 6 min sin resultado", "S-01 decide con T y O; C-05 autoriza vaciar solo si el grado lo permite", "C-05, C-09"],
     ["T > 30 °C distinta a la esperada", "Repetir la medición; revisar el DRI (MO-EAF-03)", "C-07"],
     ["P > 0.015 %", "No vaciar; aplicar MO-EAF-05", "C-05, C-09"]

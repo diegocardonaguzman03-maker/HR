@@ -1,0 +1,208 @@
+{
+  "code": "MO-EAF-08",
+  "title": "Adición y empalme de electrodos",
+  "titulo_corto": "Empalme de electrodos",
+  "serie": "Operación",
+  "area": "Hornos · EAF-1 / EAF-2",
+  "manual": "02-operacion/eaf/MO-EAF-08-adicion-empalme-electrodos.md",
+  "manual_version": "0.1 (visto bueno técnico y de seguridad con observaciones · 2026-09-25)",
+  "subtitle": "Agregar electrodos de 610 mm con el torque del fabricante y sin holgura, para evitar roturas y caídas",
+  "audiencia": "S-02 Segundo Hornero · S-03 Tercer Hornero · S-04 Grúa de Carga · S-01 Primer Hornero · C-05 Supervisor de Hornos",
+  "kpis": [
+    {"value": "12 h", "label": "teoría (S-02)"},
+    {"value": "30 h", "label": "OJT · 10 empalmes"},
+    {"value": "8", "label": "pasos críticos ★"},
+    {"value": "0.1", "label": "mm: la laina no debe entrar"}
+  ],
+  "cadena": ["Bloqueo", "Columna al soporte", "Tapón al 100 %", "Torque OEM", "Laina 0.1 mm", "Junta fuera de mordaza"],
+  "titulos": {
+    "objetivos": "Al terminar, empalmas sin holgura y sin exponer a nadie",
+    "roles": "S-02 aprieta y verifica; C-05 autoriza y revisa el LOTO",
+    "flujo": "Sin bloqueo no se sube; sin laina no se cierra",
+    "figura": "El niple une dos electrodos con caras en contacto",
+    "equipos": "Siete equipos; tapón y llave calibrada son la clave",
+    "parametros": "Torque y holgura deciden si la junta aguanta",
+    "seguridad": "Energía, carga suspendida y altura: cero tolerancia",
+    "calidad": "Una junta floja termina en rotura y C fuera de rango",
+    "pasos": "Catorce pasos; ocho no admiten error",
+    "anormales": "Junta floja o tapón dudoso: no se iza ni se energiza",
+    "competencia": "Certificación nivel U: demostrar, no asistir",
+    "quiz": "Autoevaluación: cinco preguntas antes del OJT",
+    "cierre": "Reglas del empalme que no se negocian"
+  },
+  "objetivos": [
+    {"titulo": "Bloquear antes de subir", "detalle": "Interruptor abierto e hidráulica bloqueada; llave cautiva por persona (método A) o LOTO completo (método B)."},
+    {"titulo": "Izar sin riesgo de caída", "detalle": "Tapón de izaje con el 100 % de las roscas; grúa en modo fino ≤ 50 mm/s; nadie bajo la carga."},
+    {"titulo": "Apretar y verificar la junta", "detalle": "Torque ≈ 4,500 N·m ± 10 % [Validar con OEM] con llave calibrada; la laina de 0.1 mm no entra."},
+    {"titulo": "Dejar la columna en posición", "detalle": "Junta ≥ 300 mm bajo la mordaza; al retirar bloqueos, conteo de personas = llaves devueltas."}
+  ],
+  "por_que_importa": "Cada electrodo pesa ≈ 1.4 t [Validar con OEM] y la columna conduce la corriente del arco. Una junta floja se calienta, se oxida y se rompe: la punta cae al baño y sube el C. Un tapón mal roscado deja caer el electrodo, y energizar con alguien en la plataforma es una fatalidad.",
+  "principio": "Caras en contacto total: si la laina de 0.1 mm entra, la junta no sirve.",
+  "roles": [
+    ["Rol", "Qué hace en el empalme", "RACI"],
+    ["C-05 Supervisor de Hornos", "Dueño; autoriza el método B y trabajos con columna dañada; verifica el LOTO", "A"],
+    ["S-02 Segundo Hornero", "Prepara, rosca el niple, aplica torque, verifica holgura; señalero de grúa", "R"],
+    ["S-03 Tercer Hornero", "Limpia caras y roscas, coloca el tapón de izaje, apoya la maniobra", "R"],
+    ["S-04 Operador de Grúa de Carga", "Iza y baja electrodos y columnas (120/40 t, gancho auxiliar)", "R"],
+    ["S-01 Primer Hornero", "Desenergiza, bloquea y libera; desliza la columna desde el púlpito", "R"],
+    ["S-19 Mecánico / S-22 Técnico Hidráulico", "Atienden fallas de mordaza o de la llave de torque", "C"]
+  ],
+  "flujo": [
+    {"label": "Programar", "desc": "Entre coladas (MO-EAF-01)"},
+    {"label": "Bloquear", "desc": "Interruptor abierto; llave o LOTO"},
+    {"label": "Al soporte", "desc": "La grúa lleva la columna (método A)"},
+    {"label": "Limpiar", "desc": "Caja y niple con aire seco"},
+    {"label": "Tapón y bajar", "desc": "100 % roscado; ≤ 50 mm/s"},
+    {"label": "Apretar", "desc": "Torque OEM ± 10 %"},
+    {"label": "Laina", "desc": "0.1 mm no entra; si entra, repetir"},
+    {"label": "Deslizar", "desc": "Junta ≥ 300 mm bajo mordaza; conteo"}
+  ],
+  "flujo_takeaway": "El método A en el soporte es el preferente; el B, en el horno y con arnés, solo con autorización de C-05.",
+  "figuras": [
+    {
+      "svg": "eaf-empalme-electrodo.svg",
+      "lectura": [
+        "A: la junta queda ≥ 300 mm bajo la mordaza [Validar con OEM].",
+        "B: caras en contacto; la laina de 0.1 mm no entra; torque ≈ 4,500 N·m ± 10 %.",
+        "C: secuencia en el soporte, de la limpieza con aire seco al registro de torque y serie."
+      ]
+    },
+    {
+      "svg": "eaf-corte-horno.svg",
+      "titulo": "Tres columnas de 610 mm sostenidas por mordazas",
+      "lectura": [
+        "Tres electrodos de grafito UHP de 610 mm (7) llevan la corriente al arco.",
+        "Brazos y mordazas (8) sujetan la columna; los mástiles (9) la mueven con hidráulica.",
+        "Se consumen ≈ 140 mm de columna por colada [Supuesto]."
+      ]
+    }
+  ],
+  "equipos": [
+    ["Equipo", "Función", "Especificación clave", "Verificar antes"],
+    ["Electrodo de grafito UHP", "Conduce la corriente al arco", "610 mm; ≈ 1.4 t [Validar con OEM]", "Sin grietas; seco; cajas limpias"],
+    ["Niple cónico 4TPI", "Une los electrodos", "Mismo fabricante y grado", "Roscas sin daño ni polvo"],
+    ["Tapón de izaje", "Iza el electrodo", "Capacidad ≥ columna [Validar con OEM]", "Roscas sin desgaste; inspección vigente"],
+    ["Soporte de adición", "Sostiene la columna vertical", "Con mordaza de sujeción", "Mordaza cierra; base limpia"],
+    ["Llave de torque", "Aprieta la junta", "Cubre el torque OEM", "Calibración ≤ 12 meses [Supuesto]"],
+    ["Laina de 0.1 mm", "Verifica holgura entre caras", "—", "Íntegra"],
+    ["Grúa de carga", "Maniobra electrodos y columnas", "120/40 t; gancho auxiliar", "Inspección previa al uso"]
+  ],
+  "parametros": [
+    ["Parámetro", "Objetivo", "Rango", "Alarma", "Acción"],
+    ["Torque de apriete", "≈ 4,500 N·m [Validar con OEM]", "± 10 %", "< 90 % o > 110 %", "Re-apretar; no exceder"],
+    ["Holgura entre caras", "0 mm", "< 0.1 mm", "La laina de 0.1 mm entra", "Aflojar, limpiar, re-apretar"],
+    ["Velocidad de bajada", "≤ 50 mm/s [Validar con OEM]", "—", "Golpe entre electrodos", "Detener; revisar roscas"],
+    ["Posición de la junta", "≥ 300 mm [Validar con OEM]", "Bajo la mordaza", "En mordaza o en el delta", "Deslizar a posición"],
+    ["Deslizamiento", "≈ 140 mm [Supuesto]", "120–170 mm/colada", "> 200 mm", "Revisar roturas y oxidación"],
+    ["Consumo de electrodo", "1.4 kg/t", "1.3–1.6 kg/t", "> 1.7 kg/t", "Analizar con C-07"],
+    ["Adición por columna", "≈ 18–20 coladas [Supuesto]", "—", "< 12 coladas", "Investigar el consumo"],
+    ["Tiempo (método A)", "≤ 10 min [Supuesto]", "—", "> 15 min", "Registrar la demora"]
+  ],
+  "parametros_nota": "Torque, velocidad y posición de junta según la tabla del fabricante [Validar con OEM / Ingeniería de Proceso]. Electrodo y niple: mismo fabricante, grado y lote.",
+  "seguridad": {
+    "controles": [
+      {"titulo": "Bloqueo antes de subir", "detalle": "Interruptor abierto; brazos y bóveda bloqueados. Método A: llave cautiva por persona. Método B o destrabe: LOTO completo."},
+      {"titulo": "Nadie bajo la carga", "detalle": "Tapón roscado al 100 %; grúa en modo fino; señalero; nadie bajo la trayectoria ni junto al soporte (MS-ACE-04)."},
+      {"titulo": "Altura en el método B", "detalle": "Arnés con doble cola 100 % conectado, línea de vida y permiso de trabajo en altura (NOM-009, MS-ACE-10)."},
+      {"titulo": "Mordaza con personas arriba", "detalle": "Único movimiento permitido: abrir la mordaza con la columna sujeta por la grúa [Validar con OEM / C-12]."}
+    ],
+    "epp": [
+      "Casco con barbiquejo y lentes",
+      "Careta si la columna está caliente",
+      "Guantes de carnaza o aluminizados",
+      "Ropa ignífuga y botas metatarsales",
+      "Arnés con doble cola en el método B",
+      "Protección auditiva y detector multigás"
+    ],
+    "figura": "ms-loto-puntos-eaf.svg",
+    "figura_titulo": "Puntos de bloqueo antes de subir a la plataforma",
+    "figura_lectura": [
+      "El interruptor de AT se abre y se bloquea: sin energía en los electrodos.",
+      "La unidad hidráulica de brazos y bóveda se bloquea antes de acercarse.",
+      "Caja grupal: un candado personal y tarjeta por trabajador."
+    ]
+  },
+  "calidad": [
+    ["Variable", "Especificación", "Cómo y cuándo", "Si falla"],
+    ["Torque y holgura", "Torque OEM ± 10 %; laina no entra", "Cada empalme", "Junta floja: rotura, punta al baño"],
+    ["Trazabilidad", "Serie de electrodo y niple", "Cada adición", "Sin reclamo posible al proveedor"],
+    ["Consumo de electrodo", "1.3–1.6 kg/t", "Nivel 2, por turno", "Costo"],
+    ["C por rotura", "La punta rota en el baño sube el C", "Muestra después de la rotura", "C fuera de rango en bajo carbono"]
+  ],
+  "calidad_takeaway": "Registrar serie, torque y laina en cada empalme es lo que permite reclamar al proveedor.",
+  "pasos": [
+    {"n": 1, "paso": "Prepara el electrodo nuevo", "como": "En el soporte: revisa grietas y roscas; limpia la caja con aire seco sin aceite", "criterio": "Sin daño ni polvo", "critico": false, "rol": "S-03"},
+    {"n": 2, "paso": "Rosca el niple", "como": "A mano, en la caja superior del electrodo nuevo, hasta el tope", "criterio": "Niple asentado", "critico": false, "rol": "S-02"},
+    {"n": 3, "paso": "Desenergiza y bloquea", "como": "Arco apagado, interruptor abierto, hidráulica bloqueada; A: llave cautiva por persona; B: LOTO completo", "criterio": "Una llave o candado por persona", "critico": true, "rol": "S-01 / C-05"},
+    {"n": 4, "paso": "Retira la columna (A)", "como": "La grúa toma la columna con el tapón; S-01 abre la mordaza; la columna va al soporte", "criterio": "Columna sujeta en el soporte", "critico": true, "rol": "S-04 / S-02"},
+    {"n": 5, "paso": "Limpia la columna", "como": "Caja superior de la columna con aire seco", "criterio": "Rosca limpia", "critico": false, "rol": "S-03"},
+    {"n": 6, "paso": "Coloca el tapón de izaje", "como": "Rosca el tapón al electrodo nuevo con el 100 % de las roscas enganchadas", "criterio": "Tapón a fondo", "critico": true, "rol": "S-03"},
+    {"n": 7, "paso": "Baja y rosca", "como": "Grúa en modo fino ≤ 50 mm/s; alinea el niple con la caja de la columna; rosca sin forzar", "criterio": "Roscado sin golpe", "critico": false, "rol": "S-04 / S-02"},
+    {"n": 8, "paso": "Aprieta", "como": "Aplica el torque OEM con la llave calibrada", "criterio": "Torque ± 10 %", "critico": true, "rol": "S-02"},
+    {"n": 9, "paso": "Verifica la holgura", "como": "Pasa la laina de 0.1 mm alrededor de toda la junta", "criterio": "No entra en ningún punto", "critico": true, "rol": "S-02"},
+    {"n": 10, "paso": "Marca y registra", "como": "Pinta la marca de deslizamiento; registra serie de electrodo y niple, torque y hora", "criterio": "Registro completo", "critico": false, "rol": "S-02"},
+    {"n": 11, "paso": "Regresa la columna", "como": "La grúa lleva la columna a la mordaza; S-01 cierra la mordaza", "criterio": "Columna sujeta", "critico": false, "rol": "S-04 / S-01"},
+    {"n": 12, "paso": "Desliza", "como": "Junta ≥ 300 mm bajo la mordaza; punta a la altura de trabajo", "criterio": "Junta fuera de mordaza y delta", "critico": true, "rol": "S-01"},
+    {"n": 13, "paso": "Retira bloqueos", "como": "Todos bajan; personas = llaves devueltas; cada quien retira su propio candado o llave", "criterio": "Plataforma vacía; tablero completo", "critico": true, "rol": "S-02 / C-05"},
+    {"n": 14, "paso": "Método B (alterno)", "como": "Pasos 1–3, 6–10 y 12–13 con LOTO completo, arnés 100 % conectado y permiso de altura (MS-ACE-10)", "criterio": "Mismos criterios", "critico": true, "rol": "S-02 / S-03"}
+  ],
+  "anormales": [
+    ["Síntoma", "Acción inmediata", "Avisar a"],
+    ["Rotura de electrodo en operación", "Abrir interruptor; la punta en el baño se funde (vigilar C); retirar la columna (método A)", "C-05, C-07"],
+    ["Junta al rojo, chispas o arco", "Abrir interruptor; re-apretar en frío o cambiar", "C-05"],
+    ["Laina entra tras re-apretar", "Cambiar niple o electrodo; registrar el lote", "C-05, proveedor"],
+    ["Tapón de izaje no rosca completo", "No izar; cambiar tapón o electrodo", "C-05"],
+    ["Arco en la mordaza", "Detener; mantenimiento con LOTO", "S-19, S-22"],
+    ["Columna muy corta", "No energizar esa fase; adición inmediata", "C-05"],
+    ["Electrodo con grieta visible", "No usar; separar; reclamo al proveedor", "C-05"],
+    ["Falla de la llave de torque", "No apretar a estimación; usar llave de respaldo calibrada", "C-05"]
+  ],
+  "competencia": {
+    "iluo": "U",
+    "roles": [
+      ["Rol", "ILUO", "Teoría", "OJT supervisado", "Vigencia"],
+      ["S-02 Segundo Hornero", "U", "12 h", "30 h / 10 empalmes", "24 meses; altura 12"],
+      ["S-03 Tercer Hornero", "U", "8 h", "20 h / 10 empalmes", "24 meses; altura 12"],
+      ["S-04 Grúa de Carga", "U", "NOM-006 + grúa", "10 maniobras de electrodo", "12 meses"],
+      ["C-05 Supervisor de Hornos", "O (evaluador)", "8 h + evaluador", "—", "24 meses"]
+    ],
+    "checklist": [
+      "Aplica llave cautiva (A) o LOTO completo (B) según MS-ACE-02 §6.4 y verifica cero energía",
+      "Rosca el tapón de izaje al 100 % y mantiene a todos fuera de la trayectoria",
+      "Aprieta al torque OEM con llave calibrada y verifica con la laina de 0.1 mm",
+      "Deja la junta fuera de la zona de la mordaza",
+      "Retira bloqueos con personas = llaves devueltas; en método B trabaja 100 % conectado"
+    ]
+  },
+  "quiz": [
+    {"pregunta": "¿Cómo verificas que la junta quedó bien apretada?", "opciones": ["Golpeando la junta", "La laina de 0.1 mm no entra", "Por el ruido de la llave"], "correcta": 1, "explicacion": "Caras en contacto total: si la laina entra en algún punto, aflojar, limpiar y re-apretar."},
+    {"pregunta": "¿Cuánto del tapón de izaje debe quedar roscado?", "opciones": ["50 %", "75 %", "100 %"], "correcta": 2, "explicacion": "Con menos del 100 % de las roscas enganchadas el electrodo puede caer."},
+    {"pregunta": "¿Qué necesitas para subir en el método A de rutina?", "opciones": ["Solo avisar a S-01", "Llave cautiva, una por persona", "Permiso de trabajo en altura"], "correcta": 1, "explicacion": "Método A: interruptor abierto y llave cautiva por persona. Método B o destrabe: LOTO completo."},
+    {"pregunta": "¿Dónde debe quedar la junta al deslizar la columna?", "opciones": ["Dentro de la mordaza", "≥ 300 mm bajo la mordaza", "A la altura del delta"], "correcta": 1, "explicacion": "Fuera de la mordaza y del delta [Validar con OEM]; en la mordaza la junta se calienta y se afloja."},
+    {"pregunta": "Falla la llave de torque. ¿Qué haces?", "opciones": ["Apretar a estimación", "Usar llave de respaldo calibrada", "Dejar la junta apretada a mano"], "correcta": 1, "explicacion": "Nunca a estimación: poco torque afloja la junta; demasiado rompe el niple."}
+  ],
+  "reglas": [
+    {"titulo": "Sin bloqueo nadie sube", "detalle": "Interruptor abierto; llave cautiva por persona o LOTO completo."},
+    {"titulo": "Tapón al 100 % o no se iza", "detalle": "Y nadie bajo la trayectoria de la grúa."},
+    {"titulo": "Si la laina entra, la junta no sirve", "detalle": "Aflojar, limpiar y re-apretar; si persiste, cambiar niple o electrodo."},
+    {"titulo": "Personas = llaves antes de energizar", "detalle": "Conteo completo al retirar los bloqueos."}
+  ],
+  "por_confirmar": [
+    "Tabla de torque, peso del electrodo, capacidad del tapón, velocidad de bajada y posición de junta con el OEM",
+    "Apertura de mordaza con personal en la plataforma: confirmar con OEM / C-12 que el sistema de llaves lo permite",
+    "Deslizamiento, frecuencia de adición, tiempo del método A y calibración de la llave (supuestos)"
+  ],
+  "plan_sesion": [
+    ["Bloque", "Min", "Actividad", "Recurso"],
+    ["1. Apertura y por qué importa", "30", "Casos de rotura y caída de electrodo", "Láminas 1–2"],
+    ["2. Roles y flujo del proceso", "45", "Recorrido del flujo con la figura del empalme", "Láminas 3–6"],
+    ["3. Equipos y parámetros", "60", "Electrodos y niples: recepción y almacenamiento", "Láminas 7–8"],
+    ["4. Seguridad", "75", "Llave cautiva vs. LOTO; altura en método B", "Láminas 9–10, EPP y arnés"],
+    ["5. Práctica en el soporte", "90", "Demostración: tapón, torque y laina", "Soporte de adición, laina, llave"],
+    ["6. Calidad y paso a paso", "75", "Lectura guiada de los 14 pasos; pasos ★", "Láminas 11–13"],
+    ["7. Condiciones anormales", "45", "Simulacro: junta al rojo y tapón dañado", "Lámina 14"],
+    ["8. Evaluación teórica", "30", "Autoevaluación de 5 preguntas + retroalimentación", "Lámina 17"],
+    ["9. Cierre y ruta a OJT", "30", "Plan de OJT y certificación", "Láminas 15–16, 18"]
+  ],
+  "validacion": {"tecnica": "visto bueno — 2026-09-25"}
+}
