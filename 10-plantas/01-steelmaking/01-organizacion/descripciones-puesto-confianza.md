@@ -2,9 +2,9 @@
 
 | Código | Versión | Estado | Área | Elaboró | Revisión técnica | Revisión de seguridad | Revisión de liderazgo | Revisión laboral | Revisión documental | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| DP-ACE-C | 0.2 | **Borrador para validación** | Acería — Complejo Acería Norte | gerente-personal-confianza | experto-operativo-metalurgia — pendiente | experto-seguridad-salud — pendiente | experto-liderazgo-cambio — pendiente | experto-relaciones-laborales — visto bueno con observaciones, 2026-09-25 (ver `REVISION-LABORAL.md`) | Criterio de experto-documentacion-mejora aplicado en la revisión laboral; visto bueno formal pendiente | **Pendiente — Director de C&D** (único que aprueba; validación operativa previa con C-01) | 2026-09-25 | 2027-09-25 |
+| DP-ACE-C | 0.3 | **Borrador para validación** | Acería — Complejo Acería Norte | gerente-personal-confianza | experto-operativo-metalurgia — pendiente | experto-seguridad-salud — pendiente | experto-liderazgo-cambio — pendiente | experto-relaciones-laborales — visto bueno con observaciones, 2026-09-25 (ver `REVISION-LABORAL.md`) | Criterio de experto-documentacion-mejora aplicado en la revisión laboral; visto bueno formal pendiente | **Pendiente — Director de C&D** (único que aprueba; validación operativa previa con C-01) | 2026-09-28 | 2027-09-25 |
 
-> **Mensaje clave.** La Acería (EAF-1/2, LF-1/2, ollas, patio de chatarra, CC1 planchón, CC2 palanquilla y su mantenimiento) necesita **60 plazas de confianza** en 17 roles (C-01 a C-17) para operar 24/7 con 4 cuadrillas en rol 4x4 de 12 h. En cada cuadrilla hay **7 mandos de confianza en planta** (1 jefe de turno, 4 supervisores de operación, 1 supervisor de patio y 1 supervisor de mantenimiento de turno). Cada uno de los 49 procesos críticos del catálogo CAT-ACE-001 tiene **dueño asignado** (uno solo, salvo MS-ACE-03, que el catálogo comparte entre C-07 y C-16), aprobador y supervisor en turno. Para el Director de C&D, este documento define qué competencias técnicas y de liderazgo hay que desarrollar: **36 mandos de primera línea** (C-04, C-05, C-06, C-11, C-12, C-17) van a la Escuela de Supervisores **L-1 "Líder de Turno"**, y los **3 superintendentes y el gerente** (C-01, C-02, C-03, C-10) a **L-2 "Líder de Líderes"**; los 4 C-04 siguen después a L-2 como preparación para superintendente.
+> **Mensaje clave.** La Acería (EAF-1/2, LF-1/2, ollas, manejo de materiales —DRI por bandas desde HYL y Midrex, fundentes y retornos internos—, CC1 planchón, CC2 palanquilla y su mantenimiento) necesita **60 plazas de confianza** en 17 roles (C-01 a C-17) para operar 24/7 con 4 cuadrillas en rol 4x4 de 12 h. En cada cuadrilla hay **7 mandos de confianza en planta** (1 jefe de turno, 4 supervisores de operación, 1 supervisor de manejo de materiales y 1 supervisor de mantenimiento de turno). Por la **decisión D-010** (sin chatarra comprada) C-17 pasa a ser **Supervisor de Manejo de Materiales (DRI, fundentes y retornos)**; las 60 plazas de confianza no cambian. Cada uno de los 49 procesos críticos del catálogo CAT-ACE-001 tiene **dueño asignado** (uno solo, salvo MS-ACE-03, que el catálogo comparte entre C-07 y C-16), aprobador y supervisor en turno. Para el Director de C&D, este documento define qué competencias técnicas y de liderazgo hay que desarrollar: **36 mandos de primera línea** (C-04, C-05, C-06, C-11, C-12, C-17) van a la Escuela de Supervisores **L-1 "Líder de Turno"**, y los **3 superintendentes y el gerente** (C-01, C-02, C-03, C-10) a **L-2 "Líder de Líderes"**; los 4 C-04 siguen después a L-2 como preparación para superintendente.
 
 **Fuentes:** `00-ficha-tecnica-acería.md` (FT-ACE-001), `00-catalogo-procesos-y-roles.md` (CAT-ACE-001), `00-guia-de-estilo-y-plantillas.md`, `08-kpis/kpi-scorecard.md`, `05-programs/program-portfolio.md`. Documento hermano: organigrama en `organigrama-acería.md`. Puestos sindicalizados: **DP-ACE-S v0.2** (`descripciones-puesto-sindicalizados.md`; 963 plazas, 159 por turno).
 
@@ -37,7 +37,7 @@
 | Operación | Continua 24/7, 4 cuadrillas (A, B, C, D), rol 4x4 de 12 h | FT-ACE-001 §1 |
 | Producción | 2.2 Mt/año de acero líquido (CC1 ≈ 1.3 Mt; CC2 ≈ 0.9 Mt); ≈ 22–24 coladas por horno al día | FT-ACE-001 §1–2 |
 | Staff de confianza | ≈ 60 | FT-ACE-001 §8 |
-| Sindicalizados | **963**: 380 hornos/LF/ollas/patio · 332 CC1+CC2 · 251 mantenimiento; **159 por turno** (134 de operación + 25 de guardia de mantenimiento) | DP-ACE-S v0.2 §1–2 (conciliado con FT-ACE-001 §8) |
+| Sindicalizados | **905 de diseño**: 322 hornos/LF/ollas/materiales · 332 CC1+CC2 · 251 mantenimiento; **150 por turno** (125 de operación + 25 de guardia de mantenimiento); más **58 plazas en reubicación** de la antigua categoría S-05 (963 mientras se reubican) | DP-ACE-S v0.3 §1–2 (D-010) |
 | Mando en turno | Los puestos de día (C-01 a C-03, C-07 a C-11, C-13 a C-16) cubren noches y fines de semana con una **guardia rotativa por teléfono** y presencia en planta en ≤ 45 min ante una emergencia [Supuesto] | Práctica de acerías eléctricas |
 | Supervisores de mantenimiento de turno | Se cubren con **C-12 en modalidad de turno** (1 por cuadrilla), porque la mayoría de las fallas que paran el EAF y la CC son eléctricas o de instrumentación [Supuesto; ver Decisión 2] | Criterio operativo |
 
@@ -46,7 +46,7 @@
 | Código | Rol | Plazas | Distribución | Banda | Reporta a (sólida · punteada) | Tipo de turno |
 |---|---|---|---|---|---|---|
 | C-01 | Gerente de Acería | 1 | — | A1 | Director del Complejo Acería Norte | Administrativo + disponibilidad 24/7 |
-| C-02 | Superintendente de Hornos (EAF y Metalurgia Secundaria) | 1 | EAF, LF, ollas, patio, refractarios | A2 | C-01 | Administrativo + guardia rotativa |
+| C-02 | Superintendente de Hornos (EAF y Metalurgia Secundaria) | 1 | EAF, LF, ollas, manejo de materiales, refractarios | A2 | C-01 | Administrativo + guardia rotativa |
 | C-03 | Superintendente de Colada Continua (CC1 y CC2) | 1 | CC1, CC2, preparación de distribuidores, despacho | A2 | C-01 | Administrativo + guardia rotativa |
 | C-04 | Jefe de Turno de Acería | 4 | 1 por cuadrilla (A–D) | A3 | C-01 | 4x4 de 12 h |
 | C-05 | Supervisor de Hornos (EAF / LF) | 8 | 2 por cuadrilla: 1 EAF-1/EAF-2 y 1 LF-1/LF-2 + ollas | A4 | C-02 · mando en turno de C-04 | 4x4 de 12 h |
@@ -61,7 +61,7 @@
 | C-14 | Ingeniero de Confiabilidad | 2 | 1 mecánico (vibraciones, grúas, CC) · 1 eléctrico (termografía, transformadores, motores) | A4 | C-10 · Confiabilidad corporativa | Administrativo |
 | C-15 | Especialista de Refractarios | 2 | 1 EAF (solera, bancos, EBT, gunning) · 1 ollas y distribuidores | A3 | C-02 · C-10 (cuadrilla de S-24) | Administrativo + guardia |
 | C-16 | Especialista de Seguridad e Higiene de Acería | 3 | 1 líder (A3) · 1 operación · 1 mantenimiento y contratistas | A3/A4 | C-01 · Gerencia de SSO del Complejo | Administrativo + guardia; cobertura de paros |
-| C-17 | Supervisor de Patio de Chatarra y Materiales | 4 | 1 por cuadrilla | A4 | C-02 · mando en turno de C-04 | 4x4 de 12 h |
+| C-17 | Supervisor de Manejo de Materiales (DRI, fundentes y retornos) | 4 | 1 por cuadrilla | A4 | C-02 · mando en turno de C-04 | 4x4 de 12 h |
 | | **Total** | **60** | En planta por cuadrilla: C-04 ×1, C-05 ×2, C-06 ×2, C-17 ×1, C-12 ×1 = **7** | | | |
 
 **Conciliación con la ficha:** 60 plazas = 4 de gerencia y superintendencias (C-01, C-02, C-03, C-10) + 24 de operación en turno (C-04, C-05, C-06, C-17) + 4 de C-12 de turno + 28 de ingeniería, especialistas y supervisión de día (C-07, C-08, C-09, C-11, C-12 de área, C-13, C-14, C-15, C-16). Coincide con el supuesto de ≈ 60 de FT-ACE-001 §8.
@@ -75,9 +75,9 @@
 | Campo | Valor |
 |---|---|
 | Tipo de personal | Confianza — banda A1 (gerencia de planta) |
-| Área / equipo | Acería completa: EAF-1/2, LF-1/2, ollas, patio de chatarra, CC1, CC2, mantenimiento de Acería |
+| Área / equipo | Acería completa: EAF-1/2, LF-1/2, ollas, manejo de materiales (DRI, fundentes y retornos), CC1, CC2, mantenimiento de Acería |
 | Reporta a | Director del Complejo Acería Norte |
-| Supervisa a | C-02, C-03, C-10, C-04 (×4), C-09 (×4), C-16 (×3). Plantilla total ≈ 1,020 |
+| Supervisa a | C-02, C-03, C-10, C-04 (×4), C-09 (×4), C-16 (×3). Plantilla total ≈ 965 de diseño (≈ 1,023 mientras se reubican 58 plazas de la antigua S-05, D-010) |
 | Plazas (total y por turno) | 1 (sin turno) |
 | Turno | Administrativo (L–V) con disponibilidad 24/7; preside la guardia de mandos |
 
@@ -118,7 +118,7 @@ Sistema de ejecución de manufactura (MES) y nivel 2 de la Acería, tablero de K
 | LTIFR de la Acería | ≤ 2.9 (año 1) → ≤ 2.24 (año 3) | Scorecard [Supuesto: misma meta que el grupo] |
 | Producción de acero líquido | 2.2 Mt/año (≈ 6,000 t/día) | FT-ACE-001 §1 |
 | Disponibilidad del EAF | 86% → 87% (año 1) → 89% (año 3) | Scorecard |
-| Tap-to-tap | ≤ 55 min (arco encendido ≤ 42 min) | FT-ACE-001 §2 |
+| Tap-to-tap | ≈ 60–65 min con ≈ 95–100 % DRI (CV-GASM-001; meta en FT-ACE-001 v0.4) [Supuesto] | FT-ACE-001 §2 |
 | Energía eléctrica | ≤ 590 kWh/t (rango 560–620) | FT-ACE-001 §2 [Supuesto: meta] |
 | Consumo de electrodo | ≤ 1.45 kg/t (rango 1.3–1.6) | FT-ACE-001 §2 [Supuesto: meta] |
 | Rendimiento metálico | +0.1 pp sobre la línea base | Portafolio, Academia de Acería |
@@ -158,9 +158,9 @@ Oficina y nave (≥ 30% del tiempo en planta). Calor radiante, ruido > 90 dB(A),
 | Campo | Valor |
 |---|---|
 | Tipo de personal | Confianza — banda A2 |
-| Área / equipo | EAF-1, EAF-2, LF-1, LF-2, flota de 10 ollas de 150 t, patio de chatarra, refractarios de hornos y ollas |
+| Área / equipo | EAF-1, EAF-2, LF-1, LF-2, flota de 10 ollas de 150 t, manejo de materiales (bandas de DRI, silos de día, fundentes y retornos), refractarios de hornos y ollas |
 | Reporta a | C-01 Gerente de Acería |
-| Supervisa a | C-05 (×8), C-17 (×4), C-07 (×3), C-15 (×2); a través de ellos 353 sindicalizados de hornos, LF, ollas y patio, más 47 S-24 en línea técnica vía C-15 (DP-ACE-S v0.2) |
+| Supervisa a | C-05 (×8), C-17 (×4), C-07 (×3), C-15 (×2); a través de ellos 295 sindicalizados de diseño de hornos, LF, ollas y manejo de materiales (353 mientras se reubican las 58 plazas de la antigua S-05), más 47 S-24 en línea técnica vía C-15 (DP-ACE-S v0.2) |
 | Plazas (total y por turno) | 1 (sin turno) |
 | Turno | Administrativo + guardia rotativa de superintendentes (1 semana de cada 3) |
 
@@ -170,20 +170,20 @@ Producir acero líquido en composición, temperatura y a tiempo para CC1 y CC2, 
 ### Funciones principales (con % del tiempo)
 | # | Función | % |
 |---|---|---|
-| 1 | Seguridad en hornos, ollas y patio: recorridos, VCC de fugas de agua, EBT, grúas de colada y chatarra con humedad o cerrada | 20% |
-| 2 | Programa de hornos y ollas: secuencia EAF → LF → CC con C-03 y C-04, manejo de la flota de ollas, mezcla de carga (60% DRI / 40% chatarra) | 20% |
+| 1 | Seguridad en hornos, ollas y manejo de materiales: recorridos, VCC de fugas de agua, EBT, grúas de colada, DRI húmedo o caliente en bandas y silos | 20% |
+| 2 | Programa de hornos y ollas: secuencia EAF → LF → CC con C-03 y C-04, manejo de la flota de ollas, carga metálica (≈ 95–100 % DRI de HYL y Midrex, retornos internos ≤ 5 %; CV-GASM-001) | 20% |
 | 3 | Desempeño técnico y costos: tap-to-tap, kWh/t, kg electrodo/t, O₂, cal, refractario por tonelada; revisión diaria con C-07 | 20% |
 | 4 | Aprobación de los manuales MO-EAF, MO-OLL, MO-LF y de refractarios; gestión del cambio de proceso | 10% |
 | 5 | Coordinación con mantenimiento: paros de horno (cambio de bóveda, EBT, paneles), plan semanal con C-10 y C-13 | 10% |
 | 6 | Gente: desarrollo de supervisores, certificación TD-P07 de hornos y LF, sucesión de C-05 y C-07, relación con delegados sindicales del área | 15% |
-| 7 | Interfaces con la planta DRI (calidad y temperatura del DRI) y con Compras (chatarra, electrodos, ferroaleaciones) | 5% |
+| 7 | Interfaces con Reducción Directa HYL y Midrex (calidad, temperatura y humedad del DRI; límite de batería de las bandas) y con Compras (electrodos, fundentes, ferroaleaciones) | 5% |
 | | **Total** | **100%** |
 
 ### Procesos críticos que posee, aprueba o supervisa
 | Código | Proceso crítico | Papel | RACI |
 |---|---|---|---|
 | MO-EAF-01 | Preparación del horno entre coladas | Aprueba el manual (1.er nivel) | C |
-| MO-EAF-02 | Carga de chatarra con canasta | Aprueba el manual (1.er nivel) | C |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | Aprueba el manual (1.er nivel) | C |
 | MO-EAF-03 | Alimentación continua de DRI/HBI | Aprueba el manual (1.er nivel) | C |
 | MO-EAF-04 | Fusión: perfil de potencia y regulación de electrodos | Aprueba el manual (1.er nivel) | C |
 | MO-EAF-05 | Escoria espumosa: O₂, carbono y desescoriado | Aprueba el manual (1.er nivel) | C |
@@ -206,7 +206,7 @@ Producir acero líquido en composición, temperatura y a tiempo para CC1 y CC2, 
 
 ### Responsabilidades de seguridad
 - Asegura que ningún horno opere con una alarma de fuga activa (diferencia de caudal > 2%) sin la evaluación de C-05 y C-07, y que el disparo del arco a > 4% nunca se puentee 🛑.
-- Asegura el control de chatarra: sin recipientes cerrados, sin humedad, con liberación del pórtico de radiación (MS-ACE-03, MS-ACE-07).
+- Asegura el control de la carga metálica: DRI seco y sin calentamiento en bandas y silos; retornos internos sin recipientes cerrados ni humedad y revisados con detector (MS-ACE-03, MS-ACE-06, MS-ACE-07).
 - Verifica cada mes las zonas de exclusión del EBT, del LF y del paso de ollas.
 
 ### Responsabilidades de calidad
@@ -220,7 +220,7 @@ Nivel 2 del EAF y del LF, sistema de balance de carga, CMMS, tablero de ollas.
 |---|---|---|
 | LTIFR del área / eventos de alto potencial | ≤ 2.9 (año 1); 0 explosiones agua–metal | Scorecard [Supuesto] |
 | Disponibilidad del EAF | 87% (año 1) → 89% (año 3) | Scorecard |
-| Tap-to-tap | ≤ 55 min | FT-ACE-001 |
+| Tap-to-tap | ≈ 60–65 min con ≈ 95–100 % DRI (CV-GASM-001; meta en FT-ACE-001 v0.4) [Supuesto] | FT-ACE-001 |
 | Coladas por horno al día | ≥ 22 (rango 22–24) | FT-ACE-001 |
 | Energía eléctrica | ≤ 590 kWh/t | [Supuesto: meta] |
 | Consumo de electrodo | ≤ 1.45 kg/t | [Supuesto: meta] |
@@ -369,9 +369,9 @@ Plataforma de colada: calor radiante, metal líquido, vapor, radiación ionizant
 | Campo | Valor |
 |---|---|
 | Tipo de personal | Confianza — banda A3 |
-| Área / equipo | Toda la Acería en su turno (hornos, LF, ollas, patio, CC1, CC2 y mantenimiento de turno) |
+| Área / equipo | Toda la Acería en su turno (hornos, LF, ollas, manejo de materiales, CC1, CC2 y mantenimiento de turno) |
 | Reporta a | C-01 Gerente de Acería (sólida). Recibe lineamientos técnicos de C-02, C-03 y C-10 |
-| Supervisa a | En su turno, con mando operativo: C-05 (×2), C-06 (×2), C-17 (×1), C-12 de turno (×1) y **159 sindicalizados por turno** (134 de operación + 25 de guardia de mantenimiento; DP-ACE-S v0.2 §2) |
+| Supervisa a | En su turno, con mando operativo: C-05 (×2), C-06 (×2), C-17 (×1), C-12 de turno (×1) y **150 sindicalizados por turno** (125 de operación + 25 de guardia de mantenimiento; DP-ACE-S v0.3 §2) |
 | Plazas (total y por turno) | 4 (1 por cuadrilla A–D) |
 | Turno | 4x4 de 12 h (día y noche) |
 
@@ -396,7 +396,7 @@ Ser la **máxima autoridad de la Acería en el turno**: coordinar la secuencia h
 | MO-OLL-02 | Traslado de ollas llenas con grúa de colada | Dueño del proceso | A |
 | MS-ACE-09 | Respuesta a emergencias | Dueño del proceso | A |
 | MO-EAF-01 | Preparación del horno entre coladas | Supervisa / hace cumplir la ejecución | R |
-| MO-EAF-02 | Carga de chatarra con canasta | Supervisa / hace cumplir la ejecución | R |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | Supervisa / hace cumplir la ejecución | R |
 | MO-EAF-07 | Vaciado por EBT y adiciones en olla | Supervisa / hace cumplir la ejecución | R |
 | MO-CC1-03 | Arranque de colada | Supervisa / hace cumplir la ejecución | R |
 | MO-CC1-05 | Cambio de olla en secuencia (torreta) | Supervisa / hace cumplir la ejecución | R |
@@ -441,7 +441,7 @@ Radio y sistema de comunicación de emergencia, MES y nivel 2 (consulta), bitác
 | Lesiones con tiempo perdido en su cuadrilla | 0 | Scorecard |
 | Cumplimiento del programa de coladas del turno | ≥ 95% | [Supuesto] |
 | Secuencias cortadas por falta de acero o de olla | ≤ 1 por mes por cuadrilla | [Supuesto] |
-| Tap-to-tap promedio del turno | ≤ 55 min | FT-ACE-001 |
+| Tap-to-tap promedio del turno | ≈ 60–65 min con ≈ 95–100 % DRI (CV-GASM-001; meta en FT-ACE-001 v0.4) [Supuesto] | FT-ACE-001 |
 | Breakouts en su turno | CC1 ≤ 0.5 · CC2 ≤ 1.0 por 1,000 coladas | [Supuesto] |
 | Simulacros de emergencia con su cuadrilla | ≥ 1 por trimestre | MS-ACE-09 [Supuesto] |
 | Certificación TD-P07 vigente de su cuadrilla | 100% | Scorecard |
@@ -492,7 +492,7 @@ Dirigir en el turno la operación segura y eficiente de los hornos o del horno o
 | 1 | Seguridad: charla de 5 min, análisis de riesgo de tareas no rutinarias, VCC de fugas de agua, EBT, zonas de exclusión, LOTO | 25% |
 | 2 | Conducción del proceso: seguimiento de cada colada (energía, O₂, carbono, temperatura, química), decisiones de vaciado o de tratamiento en LF | 30% |
 | 3 | Preparación de equipos entre coladas: horno (MO-EAF-01), electrodos (MO-EAF-08), ollas listas y precalentadas | 15% |
-| 4 | Coordinación con C-04, C-06 (tiempos de envío), C-17 (canastas) y mantenimiento de turno | 10% |
+| 4 | Coordinación con C-04, C-06 (tiempos de envío), C-17 (DRI en silos de día y retornos) y mantenimiento de turno | 10% |
 | 5 | Gente: asignación de puestos, OJT y evaluación de pasos ★ (TD-P07), retroalimentación, aplicación del CCT | 15% |
 | 6 | Registros: bitácora, reporte de demoras, reporte de desviaciones | 5% |
 | | **Total** | **100%** |
@@ -501,7 +501,7 @@ Dirigir en el turno la operación segura y eficiente de los hornos o del horno o
 | Código | Proceso crítico | Papel | RACI |
 |---|---|---|---|
 | MO-EAF-01 | Preparación del horno entre coladas | Dueño del proceso | A |
-| MO-EAF-02 | Carga de chatarra con canasta | Dueño del proceso | A |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | Dueño del proceso | A |
 | MO-EAF-06 | Medición de temperatura, O activo y muestreo | Dueño del proceso | A |
 | MO-EAF-07 | Vaciado por EBT y adiciones en olla | Dueño del proceso | A |
 | MO-EAF-08 | Adición y empalme de electrodos | Dueño del proceso | A |
@@ -543,7 +543,7 @@ EAF (transformador de 140 MVA, electrodos de 610 mm, quemadores, inyección de c
 | Indicador | Meta | Fuente |
 |---|---|---|
 | Lesiones en su equipo | 0 | Scorecard |
-| Tap-to-tap (EAF) | ≤ 55 min | FT-ACE-001 |
+| Tap-to-tap (EAF) | ≈ 60–65 min con ≈ 95–100 % DRI (CV-GASM-001; meta en FT-ACE-001 v0.4) [Supuesto] | FT-ACE-001 |
 | Energía (EAF) | ≤ 590 kWh/t | [Supuesto: meta] |
 | Consumo de electrodo (EAF) | ≤ 1.45 kg/t; 0 roturas de columna por mala práctica | [Supuesto: meta] |
 | Temperatura de vaciado en rango (EAF) | ≥ 90% de las coladas | [Supuesto] |
@@ -722,7 +722,7 @@ Definir, controlar y mejorar los parámetros de proceso de los hornos y del horn
 | MO-LF-01 | Tratamiento en horno olla | Dueño del proceso | A |
 | MS-ACE-03 | Prevención de explosiones agua–metal líquido | Co-dueño (C-07 / C-16) | A |
 | MO-EAF-01 | Preparación del horno entre coladas | Consultado | C |
-| MO-EAF-02 | Carga de chatarra con canasta | Consultado | C |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | Consultado | C |
 | MO-EAF-06 | Medición de temperatura, O activo y muestreo | Consultado | C |
 | MO-EAF-07 | Vaciado por EBT y adiciones en olla | Consultado | C |
 | MO-EAF-08 | Adición y empalme de electrodos | Consultado | C |
@@ -733,7 +733,7 @@ Definir, controlar y mejorar los parámetros de proceso de los hornos y del horn
 | MS-ACE-09 | Respuesta a emergencias | Consultado | C |
 
 ### Responsabilidades de seguridad
-- Co-dueño de **MS-ACE-03 (explosiones agua–metal):** define los límites de agua de paneles (alarma > 2%, disparo > 4% de diferencia de caudal; salida de panel > 60 °C; presión < 3 bar) y la regla de humedad del DRI y la chatarra.
+- Co-dueño de **MS-ACE-03 (explosiones agua–metal):** define los límites de agua de paneles (alarma > 2%, disparo > 4% de diferencia de caudal; salida de panel > 60 °C; presión < 3 bar) y la regla de humedad del DRI y de los retornos internos.
 - No libera parámetros que debiliten un control crítico; todo cambio pasa por gestión del cambio con C-16.
 
 ### Responsabilidades de calidad
@@ -747,7 +747,7 @@ Nivel 2 de EAF y LF, historiador de proceso, regulación de electrodos, modelo d
 |---|---|---|
 | Energía eléctrica | ≤ 590 kWh/t (rango 560–620) | FT-ACE-001 [Supuesto: meta] |
 | Consumo de electrodo | ≤ 1.45 kg/t | [Supuesto: meta] |
-| Tap-to-tap / arco encendido | ≤ 55 min / ≤ 42 min | FT-ACE-001 |
+| Tap-to-tap | ≈ 60–65 min con ≈ 95–100 % DRI (CV-GASM-001; meta en FT-ACE-001 v0.4) [Supuesto] | FT-ACE-001 |
 | Alimentación de DRI con arco estable | 3.5–5.0 t/min (≈ 30–35 kg/min/MW) | FT-ACE-001 |
 | Escoria en especificación (B2 1.8–2.2; FeO 25–35%; MgO 8–10%) | ≥ 90% de las coladas | [Supuesto: meta] |
 | Rendimiento metálico | +0.1 pp sobre la línea base | Portafolio |
@@ -1540,7 +1540,7 @@ Ser el dueño técnico de los estándares de riesgo crítico de la Acería (MS-A
 | MS-ACE-08 | Estrés térmico, hidratación y EPP | Dueño del proceso | A |
 | MS-ACE-10 | Trabajo en altura | Dueño del proceso | A |
 | MO-EAF-01 | Preparación del horno entre coladas | Consultado | C |
-| MO-EAF-02 | Carga de chatarra con canasta | Consultado | C |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | Consultado | C |
 | MO-EAF-05 | Escoria espumosa: O₂, carbono y desescoriado | Consultado | C |
 | MO-EAF-07 | Vaciado por EBT y adiciones en olla | Consultado | C |
 | MO-EAF-08 | Adición y empalme de electrodos | Consultado | C |
@@ -1566,7 +1566,7 @@ Ser el dueño técnico de los estándares de riesgo crítico de la Acería (MS-A
 
 ### Responsabilidades de seguridad
 - **Autoridad para detener** cualquier trabajo o equipo con un control crítico ausente o dañado 🛑.
-- **Encargado de Seguridad Radiológica (ESR)** — función asignada a C-16 por CAT-ACE-001 como dueño de MS-ACE-07, con licencia de la CNSNS: titular, el líder C-16; se recomienda un suplente con licencia. Alcance: fuente de Cs-137 del nivel de molde de CC2 y detectores del pórtico de chatarra; define quién es POE (S-12, S-13, S-14 de CC2, S-21, S-25) y controla dosimetría — verificar requisitos y licencia con CNSNS / SSO.
+- **Encargado de Seguridad Radiológica (ESR)** — función asignada a C-16 por CAT-ACE-001 como dueño de MS-ACE-07, con licencia de la CNSNS: titular, el líder C-16; se recomienda un suplente con licencia. Alcance: fuente de Cs-137 del nivel de molde de CC2 y detector de retornos internos (ya no hay pórtico de chatarra comprada, D-010); define quién es POE (S-12, S-13, S-14 de CC2, S-21, S-25) y controla dosimetría — verificar requisitos y licencia con CNSNS / SSO.
 - Aprueba, con C-10, cualquier puenteo temporal de enclavamiento.
 
 ### Responsabilidades de calidad
@@ -1610,88 +1610,92 @@ Detectores de gases, dosímetros, monitores de estrés térmico, sistema de gest
 
 ---
 
-## C-17 — Supervisor de Patio de Chatarra y Materiales
+## C-17 — Supervisor de Manejo de Materiales (DRI, fundentes y retornos)
 
 | Campo | Valor |
 |---|---|
 | Tipo de personal | Confianza — banda A4 |
-| Área / equipo | Patio de chatarra (recepción, pórtico de radiación, clasificación, preparación y carga de canastas), almacén de fundentes (cal, dolomita), carbón de inyección y ferroaleaciones |
+| Área / equipo | Manejo de materiales del EAF: bandas cerradas de DRI desde HYL y Midrex, silos de día, tolvas de cal y dolomita, área de retornos internos (despuntes, rechazos, derrames y costras); inventario de fundentes, carbón de inyección y ferroaleaciones |
 | Reporta a | C-02 Superintendente de Hornos (sólida); C-04 Jefe de Turno (mando operativo en turno) |
-| Supervisa a | S-05 Operadores de Patio de Chatarra (16 por turno; 97 plazas en total, DP-ACE-S v0.2); transportistas y contratistas de preparación de chatarra en su turno |
+| Supervisa a | S-05 Operadores de Manejo de DRI y Retornos (7 por turno; 39 plazas [Supuesto], DP-ACE-S v0.3); contratistas de limpieza y de transporte de fundentes en su turno (REPSE) |
 | Plazas (total y por turno) | 4: 1 por cuadrilla |
 | Turno | 4x4 de 12 h |
 
+> **Decisión D-010 (2026-09-28).** El puesto sustituye al "Supervisor de Patio de Chatarra y Materiales": GASM no compra chatarra y el EAF se carga con ≈ 95–100 % DRI de pelet propio que llega por bandas desde HYL y Midrex, más ≤ 5 % de retornos internos (CV-GASM-001).
+
 ### Propósito
-Entregar a los hornos canastas seguras (sin humedad, recipientes cerrados ni fuentes radiactivas), con la mezcla y densidad programadas y a tiempo para el tap-to-tap de 55 min.
+Asegurar que los hornos reciban DRI **seco y en especificación** en los silos de día, fundentes suficientes y retornos internos limpios y revisados, sin demoras al EAF y sin eventos de humedad, calentamiento de silos ni atrapamientos en bandas.
 
 ### Funciones principales (con % del tiempo)
 | # | Función | % |
 |---|---|---|
-| 1 | Seguridad del patio: interacción grúa–vehículo–peatón, electroimán, oxicorte de chatarra pesada, radiación | 25% |
-| 2 | Recepción y control de chatarra: pórtico de radiación, clasificación, humedad, recipientes cerrados, rechazo de lotes | 25% |
-| 3 | Preparación de canastas (90 m³, 55–70 t) según la receta de carga de C-07 | 25% |
-| 4 | Inventario de chatarra, fundentes y ferroaleaciones; coordinación con Compras y con la planta DRI | 10% |
-| 5 | Gente: asignación, OJT, certificación, CCT | 10% |
-| 6 | Registros: bitácora, rechazos, inventarios | 5% |
+| 1 | Seguridad del área: bandas en movimiento (LOTO), galerías y silos con N₂ (espacios confinados), polvo de DRI, equipo móvil en el área de retornos | 25% |
+| 2 | Recepción y control del DRI: coordinación de turno con HYL y Midrex (calidad por lote, temperatura, finos, humedad), inventario de silos de día, aislamiento de lotes dudosos | 25% |
+| 3 | Fundentes y retornos: inventario de cal y dolomita; programa de la canasta ocasional de retornos (≤ 5 %) con C-07 y C-05 | 20% |
+| 4 | Coordinación con C-05 y C-04 (programa de coladas), con Reducción Directa y con mantenimiento de bandas | 10% |
+| 5 | Gente: asignación, OJT, certificación TD-P07, aplicación del CCT; acompañamiento de la recapacitación de la antigua categoría S-05 | 15% |
+| 6 | Registros: bitácora, lotes aislados, inventarios, permisos | 5% |
 | | **Total** | **100%** |
 
 ### Procesos críticos que posee, aprueba o supervisa
 | Código | Proceso crítico | Papel | RACI |
 |---|---|---|---|
-| MO-EAF-02 | Carga de chatarra con canasta | Supervisa / hace cumplir la ejecución | R |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | Supervisa / hace cumplir la ejecución | R |
 | MS-ACE-01 | Trabajo con metal líquido | Supervisa / hace cumplir la ejecución | R |
-| MS-ACE-02 | Aislamiento y bloqueo (LOTO) | Supervisa / hace cumplir la ejecución | R |
-| MS-ACE-03 | Prevención de explosiones agua–metal líquido | Supervisa / hace cumplir la ejecución | R |
+| MS-ACE-02 | Aislamiento y bloqueo (LOTO) | Supervisa / hace cumplir la ejecución (bandas, alimentadores y silos) | R |
+| MS-ACE-03 | Prevención de explosiones agua–metal líquido | Supervisa / hace cumplir la ejecución (DRI y retornos secos) | R |
 | MS-ACE-04 | Izaje con grúas; cargas suspendidas | Supervisa / hace cumplir la ejecución | R |
+| MS-ACE-05 | Espacios confinados | Supervisa / hace cumplir la ejecución (galerías de bandas y silos con N₂) | R |
 | MS-ACE-06 | Gases: CO, O₂, Ar/N₂, gas natural | Supervisa / hace cumplir la ejecución | R |
-| MS-ACE-07 | Fuentes radiactivas | Supervisa / hace cumplir la ejecución | R |
-| MS-ACE-10 | Trabajo en altura | Supervisa / hace cumplir la ejecución (S-05 en grúas y manipuladores del patio) | R |
+| MS-ACE-07 | Fuentes radiactivas | Supervisa / hace cumplir la ejecución (revisión radiométrica de retornos internos) | R |
+| MS-ACE-10 | Trabajo en altura | Supervisa / hace cumplir la ejecución (S-05 en galerías, techos de silos y grúa de retornos) | R |
 | MS-ACE-08 | Estrés térmico, hidratación y EPP | Supervisa / hace cumplir la ejecución | R |
 | MS-ACE-09 | Respuesta a emergencias | Supervisa / hace cumplir la ejecución | R |
-| MO-EAF-03 | Alimentación continua de DRI/HBI | Informado | I |
+| MO-EAF-03 | Alimentación continua de DRI por el 5.º agujero | Consultado (inventario y condición de los silos de día) | C |
 
 ### Responsabilidades de seguridad
-- 🛑 Ninguna carga pasa a canasta sin liberación del pórtico de radiación; ante alarma, aísla el vehículo y avisa a C-16 (MS-ACE-07).
-- 🛑 Rechaza chatarra con agua, hielo, recipientes cerrados o explosivos (MS-ACE-03).
-- Zonas de exclusión bajo el electroimán y separación grúa–peatón (MS-ACE-04).
+- 🛑 Ningún DRI con reporte o evidencia de humedad pasa a los silos de día; aísla el lote y avisa a C-05, C-07 y a Reducción Directa (MS-ACE-03).
+- 🛑 Ante alarma de temperatura u O₂ alto en un silo o ducto, aplica el protocolo y no permite abrir ni entrar; avisa a C-16 (MS-ACE-06).
+- 🛑 Nadie entra a galerías ni silos sin permiso de espacio confinado, purga y medición (MS-ACE-05); nadie interviene una banda sin LOTO (MS-ACE-02).
+- Retornos sin recipientes cerrados ni humedad, revisados con detector antes de la canasta (MS-ACE-03, MS-ACE-07).
 
 ### Responsabilidades de calidad
-Clasificación de chatarra según la especificación de GASM; control de residuales (Cu, Sn, Ni, Cr) en la mezcla para grados de CC1; densidad de canasta para cumplir 1–2 canastas por colada.
+Trazabilidad por lote del DRI (HYL o Midrex, metalización, carbono, finos, temperatura) para que C-07 y el S-01 ajusten la carga; finos segregados; canasta de retornos ≤ 5 % de la carga metálica.
 
 ### Equipos que supervisa
-Grúas de patio con electroimán, cargadores, pórtico de detección de radiación, básculas, canastas de 90 m³, equipos de oxicorte.
+Consola de bandas y silos de día, bandas y transferencias de DRI, colectores de polvo, sistema de inertización con N₂, tolvas de cal y dolomita, cargador y grúa con electroimán del área de retornos, canasta de 90 m³, detector de radiación, equipo de oxicorte.
 
 ### Indicadores de desempeño (con meta)
 | Indicador | Meta | Fuente |
 |---|---|---|
-| Lesiones y eventos grúa–peatón | 0 | Scorecard |
-| Canastas entregadas a tiempo (sin demora al EAF) | ≥ 98% | [Supuesto] |
-| Canastas por colada | ≤ 2 (objetivo 1–2) | FT-ACE-001 |
-| Eventos de chatarra peligrosa que llegan al horno | 0 | MS-ACE-03 |
-| Exactitud de inventario de chatarra | ± 2% | [Supuesto] |
-| Rendimiento metálico (contribución por mezcla) | +0.1 pp | Portafolio |
+| Lesiones y eventos en bandas o equipo móvil | 0 | Scorecard |
+| Coladas sin demora por falta de DRI o fundentes | ≥ 99 % [Supuesto] | MES |
+| Eventos de DRI húmedo que llegan al horno | 0 | MS-ACE-03 |
+| Alarmas de silo atendidas con el protocolo | 100 % | Historial de alarmas |
+| Exactitud de inventario de silos y fundentes | ± 2 % [Supuesto] | Sistema de inventario |
+| Trabajadores de la antigua categoría S-05 recapacitados o reubicados en el plazo acordado | 100 % | C&D / Relaciones Laborales |
 
 ### Perfil
-- **Escolaridad:** Ingeniería industrial o metalúrgica; o técnico con ≥ 10 años como S-05 (escalafón).
-- **Experiencia:** 3–5 años en patio de chatarra o logística de materias primas.
-- **Conocimientos:** Clasificación de chatarra, detección de radiación, grúas con electroimán, inventarios.
-- **Certificaciones:** ERC de izaje, interacción vehículo–peatón, radiación, trabajos en caliente; evaluador TD-P07.
+- **Escolaridad:** Ingeniería industrial, metalúrgica o mecánica; o técnico con ≥ 10 años en el escalafón con certificación vigente (equivalencia, §0).
+- **Experiencia:** 3–5 años en manejo de materiales a granel, bandas, reducción directa o logística de materias primas.
+- **Conocimientos:** Propiedades del DRI (reoxidación, humedad, finos), bandas y enclavamientos, inertización con N₂, espacios confinados, inventarios.
+- **Certificaciones:** ERC de LOTO, espacios confinados, izaje y vehículo–peatón; evaluador TD-P07.
 
 ### Ruta de progresión
 S-05 (escalafón) o Ingeniero en Desarrollo → **C-17** → C-05 o C-04.
 
 ### Condiciones de trabajo y riesgos
-Exterior (sol, lluvia), polvo, ruido, electroimán, oxicorte, tránsito pesado.
+Galerías de bandas y silos (polvo, N₂, CO), exterior (sol, lluvia), ruido, partes en movimiento, equipo móvil.
 
 ### Plan de formación para el puesto
 | Etapa | Contenido | Duración | Programa |
 |---|---|---|---|
-| Inducción | ERC de izaje, vehículo–peatón, radiación, trabajos en caliente | 32 h | Escuela de Seguridad |
+| Inducción | ERC de LOTO, espacios confinados, izaje, vehículo–peatón | 32 h | Escuela de Seguridad |
 | Liderazgo | **Escuela de Supervisores L-1 "Líder de Turno"** | 96 h / 6 meses | Escuela de Liderazgo |
-| Técnica | **Ruta Chatarra y materias primas** (clasificación, detección de radiación, calidad y rendimiento; app de reconocimiento por foto) | 40 h | Academia de Acería |
-| Grúas | Grúas y manejo de ollas / electroimán (simulador de grúa) para supervisar | 16 h | Academia de Acería |
+| Técnica | **Ruta DRI y manejo de materiales** (propiedades del DRI, bandas y silos, inertización, fundentes, retornos; visita de 2 turnos a HYL y Midrex) [Supuesto] | 40 h | Academia de Acería |
+| Cambio | Gestión del cambio y comunicación con la cuadrilla durante la reubicación de la antigua categoría S-05 | 8 h | Escuela de Liderazgo |
 | Certificación | Evaluador TD-P07 | 16 h | TD-P07 |
-| Vigencia | **12 meses:** alturas (MS-ACE-10); grúas/izaje (MS-ACE-04); fuentes radiactivas (MS-ACE-07). **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
+| Vigencia | **12 meses:** espacios confinados (MS-ACE-05); alturas (MS-ACE-10); grúas/izaje (MS-ACE-04); fuentes radiactivas (MS-ACE-07). **≤ 24 meses:** ERC, evaluador TD-P07 y demás certificaciones | Recertificación | Criterio unificado de seguridad (§0) |
 
 ---
 
@@ -1704,8 +1708,8 @@ Exterior (sol, lluvia), polvo, ruido, electroimán, oxicorte, tránsito pesado.
 | Proceso | C-01 | C-02 | C-03 | C-04 | C-05 | C-06 | C-07 | C-08 | C-09 | C-10 | C-11 | C-12 | C-13 | C-14 | C-15 | C-16 | C-17 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | MO-EAF-01 Preparación del horno entre coladas | AF | Ap |  | S | **D** |  | C |  |  |  | C | C |  |  | C | C |  |
-| MO-EAF-02 Carga de chatarra con canasta | AF | Ap |  | S | **D** |  | C |  |  |  |  |  |  |  |  | C | S |
-| MO-EAF-03 Alimentación continua de DRI/HBI | AF | Ap |  | I | S |  | **D** |  | I |  |  | C |  |  |  |  | I |
+| MO-EAF-02 Recepción de DRI por bandas, silos de día y carga de retornos internos | AF | Ap |  | S | **D** |  | C |  |  |  |  |  |  |  |  | C | S |
+| MO-EAF-03 Alimentación continua de DRI/HBI | AF | Ap |  | I | S |  | **D** |  | I |  |  | C |  |  |  |  | C |
 | MO-EAF-04 Fusión: perfil de potencia y regulación de electrodos | AF | Ap |  | I | S |  | **D** |  |  |  |  | C |  | I |  |  |  |
 | MO-EAF-05 Escoria espumosa: O₂, carbono y desescoriado | AF | Ap |  | I | S |  | **D** |  |  |  |  |  |  |  | C | C |  |
 | MO-EAF-06 Medición de temperatura, O activo y muestreo | AF | Ap |  | I | **D** |  | C |  | C |  |  |  |  |  |  |  |  |
@@ -1766,7 +1770,7 @@ Exterior (sol, lluvia), polvo, ruido, electroimán, oxicorte, tránsito pesado.
 | MS-ACE-02 Aislamiento y bloqueo (LOTO) | AF | C | C | S | S | S |  |  |  | C | S | S | C |  | S | **D** | S |
 | MS-ACE-03 Prevención de explosiones agua–metal líquido | AF | C | C | S | S | S | **D** | C |  |  | C | C |  |  | C | **D** | S |
 | MS-ACE-04 Izaje con grúas; cargas suspendidas | AF |  |  | S | S | S |  |  |  | C | S | S |  |  |  | **D** | S |
-| MS-ACE-05 Espacios confinados | AF |  |  |  | S | S |  |  |  |  | S | S | C |  | S | **D** |  |
+| MS-ACE-05 Espacios confinados | AF |  |  |  | S | S |  |  |  |  | S | S | C |  | S | **D** | S |
 | MS-ACE-06 Gases: CO, O₂, Ar/N₂, gas natural | AF |  |  | S | S | S | C | C |  |  | S | C |  |  |  | **D** | S |
 | MS-ACE-07 Fuentes radiactivas (dueño: C-16 como ESR) | AF |  | C |  |  | S |  | C |  |  | S | S |  |  |  | **D** | S |
 | MS-ACE-08 Estrés térmico, hidratación y EPP | AF |  |  | S | S | S |  |  |  |  | S | S |  |  | S | **D** | S |
@@ -1794,7 +1798,7 @@ Exterior (sol, lluvia), polvo, ruido, electroimán, oxicorte, tránsito pesado.
 | C-14 | 0 | 0 | 0 | — |
 | C-15 | 3 | 0 | 5 | MO-OLL-01, MM-EAF-03, MM-OLL-01 |
 | C-16 | 9 | 0 | 0 | MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-04, MS-ACE-05, MS-ACE-06, MS-ACE-07, MS-ACE-08, MS-ACE-10 |
-| C-17 | 0 | 0 | 10 | — |
+| C-17 | 0 | 0 | 11 | — |
 
 ---
 
@@ -1825,3 +1829,4 @@ Exterior (sol, lluvia), polvo, ruido, electroimán, oxicorte, tránsito pesado.
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Versión inicial: 17 roles de confianza, 60 plazas, matriz rol × proceso de los 49 procesos críticos | gerente-personal-confianza |
 | 0.2 | 2026-09-25 | Revisión laboral y documental: cifras sindicalizadas conciliadas con DP-ACE-S v0.2 (963; 159 por turno); convenciones de mando (art. 9), uso de evaluaciones, vigencias 12/24 meses y escolaridad; C-16 como ESR (CAT-ACE-001); C-11 supervisa MS-ACE-04 y MS-ACE-07, C-12 MS-ACE-04 y C-17 MS-ACE-10 por los ejecutores nuevos del catálogo; fila "Vigencia" en los 17 planes; encabezado con revisores | experto-relaciones-laborales |
+| 0.3 | 2026-09-28 | Decisión D-010 (sin chatarra comprada): C-17 redefinido como "Supervisor de Manejo de Materiales (DRI, fundentes y retornos)" (supervisa 7 S-05 por turno; suma MS-ACE-05; MO-EAF-03 como C); C-01, C-02, C-04, C-05 y C-07 sin patio de chatarra; MO-EAF-02 renombrado; cifras sindicalizadas con DP-ACE-S v0.3 (905 de diseño + 58 en reubicación; 150 por turno) | experto-relaciones-laborales |

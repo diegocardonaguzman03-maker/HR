@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-08 | 0.2 | Borrador para validación | Toda la Acería | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-08 | 0.3 | Borrador para validación | Toda la Acería, incluidos bandas, torres y silos de DRI | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-28 | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
 > ⚠️ **Mensaje clave.** En la plataforma del horno y en la de colada el calor radiante del acero (≈ 1,630 °C) se suma al calor del verano y al EPP aluminizado, que no deja salir el sudor. El **golpe de calor mata en horas** y antes provoca errores en tareas críticas. **Toma 250 mL de agua cada 15–20 minutos aunque no tengas sed, respeta el régimen trabajo/descanso por índice WBGT y usa el EPP completo y seco.**
 
@@ -10,7 +10,7 @@
 
 **Objetivo:** prevenir enfermedades por calor (calambres, agotamiento, golpe de calor) y quemaduras, mediante la evaluación del índice WBGT, el régimen trabajo/descanso de la NOM-015-STPS-2001, la hidratación, la aclimatación, la vigilancia médica y el uso correcto del EPP (NOM-017-STPS-2008).
 
-**Aplica a:** todo el personal propio y contratista de la Acería, con énfasis en: muestreo y temperatura (S-02, S-06, S-11), preparación de horno y reparación de refractario (S-03, S-24), preparación de ollas y distribuidores (S-08, S-15), plataforma de colada (S-13, S-14), mantenimiento en caliente (S-19, S-23) y trabajo dentro de ollas o del EAF recién enfriados (MS-ACE-05).
+**Aplica a:** todo el personal propio y contratista de la Acería, con énfasis en: muestreo y temperatura (S-02, S-06, S-11), preparación de horno y reparación de refractario (S-03, S-24), preparación de ollas y distribuidores (S-08, S-15), plataforma de colada (S-13, S-14), mantenimiento en caliente (S-19, S-23), trabajo dentro de ollas o del EAF recién enfriados (MS-ACE-05) y, con la carga de DRI por banda (D-010), recorridos y limpieza en bandas, torres de transferencia y techos de silos de día (S-05, S-19, S-26): calor del verano en galerías y techos, polvo de DRI y ropa que puede atraparse en una banda.
 
 ## 2. Roles y responsabilidades
 
@@ -93,6 +93,8 @@ Límite máximo de exposición en **°C WBGT** (índice de temperatura de globo 
 | Quemadura por vapor (EPP húmedo) | Lesión | EPP seco; cambiar el que se moja | Inspección previa |
 | Ropa sintética | Se funde sobre la piel | Solo FR o 100 % algodón | Inspección de ingreso a nave |
 | Ruido | Pérdida auditiva | Protección auditiva; conservación auditiva NOM-011 | Audiometrías |
+| Ropa suelta, cabello largo, joyas o trapos cerca de una banda en movimiento | Atrapamiento, amputación | Ropa ajustada, sin objetos colgantes, cabello recogido; guardas; nunca tocar una banda en movimiento (MS-ACE-02 §6.5) | Inspección de ingreso a galerías |
+| Polvo y finos de DRI en transferencias y limpieza | Irritación respiratoria y ocular | Respirador P100 y goggles según la evaluación de C-16 (MS-ACE-06) | Evaluación NOM-010 |
 
 ### 6.2 EPP obligatorio (ver Figura 1)
 
@@ -107,8 +109,10 @@ Límite máximo de exposición en **°C WBGT** (índice de temperatura de globo 
 | 7 | Polainas aluminizadas | Sobre el pantalón y la bota | Zona roja |
 | 8 | Botas metatarsales | Casquillo, metatarsal, suela resistente al calor (≥ 300 °C [Supuesto]), liberación rápida | Toda la nave |
 | 9 | Protección auditiva | Tapón; doble (tapón + orejera) si ≥ 105 dB(A) | Toda la nave |
-| 10 | Detector personal CO/O₂ | ≤ 30 cm de nariz y boca (MS-ACE-06) | Hornos, LF, torreta, fosas |
-| 11 | Dosímetro personal | Solo POE (MS-ACE-07) | CC2 |
+| 10 | Detector personal CO/O₂ | ≤ 30 cm de nariz y boca (MS-ACE-06); en silos y torres de DRI, configurado para leer H₂ en el LEL | Hornos, LF, torreta, fosas, techos de silos y torres de DRI |
+| 11 | Dosímetro personal | Solo POE (MS-ACE-07) | CC2 y silos de día con medidor radiométrico |
+| 12 | Respirador con filtro P100 y goggles | Según la evaluación de higiene de C-16 (MS-ACE-06) [Verificar NOM-010 / NOM-017] | Torres de transferencia, cribas, manejo de finos y limpieza de derrames de DRI |
+| 13 | Ropa ajustada (FR o algodón), sin objetos colgantes; cabello recogido | Sin cordones, trapos ni gafetes colgando | Galerías de bandas y torres de transferencia |
 | — | Lentes de seguridad; sombra 3–5 ante el arco | Para ver el arco o el baño | Púlpitos y puerta del horno |
 
 ### 6.3 Permisos, bloqueos y zonas de exclusión
@@ -189,3 +193,4 @@ Límite máximo de exposición en **°C WBGT** (índice de temperatura de globo 
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
 | 0.2 | 2026-09-25 | Revisión cruzada: pasos ★ 1, 3, 6 y 7 en la lista de verificación | experto-seguridad-salud |
+| 0.3 | 2026-09-28 | D-010: alcance a bandas, torres y silos de DRI; peligros de atrapamiento de ropa y de polvo de DRI; EPP 12 (P100 y goggles) y 13 (ropa ajustada); detector con H₂ y dosímetro en silos con medidor radiométrico. La Figura 1 (`ms-epp-acería.svg`) queda pendiente de actualizar con la fila de bandas y silos | experto-seguridad-salud |

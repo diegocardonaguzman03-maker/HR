@@ -2,15 +2,15 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-04 | 0.2 | Borrador para validación | Nave de hornos, nave de ollas, CC1, CC2, patio de chatarra | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-04 | 0.3 | Borrador para validación | Nave de hornos, nave de ollas, CC1, CC2, patio de retornos internos, torres de transferencia y silos de DRI (maniobras de mantenimiento) | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-28 | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
-> ⚠️ **Mensaje clave.** **Nadie bajo una carga suspendida. Nunca.** Una olla llena de 150 t de acero a 1,630 °C, una canasta de 55–70 t de chatarra o un segmento de colada matan si caen o se balancean. La grúa de colada solo opera con **doble freno probado**, **límites probados**, **un solo señalero** y **ruta despejada**. Estándares corporativos **CRS-04** (cargas suspendidas) y **CRS-05** (grúa viajera).
+> ⚠️ **Mensaje clave.** **Nadie bajo una carga suspendida. Nunca.** Una olla llena de 150 t de acero a 1,630 °C, una olla de escoria, una canasta de retornos o un segmento de colada matan si caen o se balancean. Con la decisión D-010 el EAF se carga con DRI por banda: **la canasta ya no se iza en cada colada** (solo la canasta ocasional de retornos internos), pero **aumentan las maniobras de ollas de escoria** (≈ 150–180 kg/t) y aparecen las **maniobras de mantenimiento de bandas** (poleas, rodillos, rollos de banda) en torres y galerías. La grúa de colada solo opera con **doble freno probado**, **límites probados**, **un solo señalero** y **ruta despejada**. Estándares corporativos **CRS-04** (cargas suspendidas) y **CRS-05** (grúa viajera).
 
 ## 1. Objetivo y alcance
 
 **Objetivo:** prevenir la caída, el golpe o el balanceo de cargas y la exposición de personas bajo cargas suspendidas en la Acería.
 
-**Aplica a:** grúas de colada 2 × 250/63 t (ollas llenas y vacías), grúas de carga 2 × 120/40 t (canastas, bóveda, electrodos), grúas de CC y de producto 2 × 50 t + 2 × 25 t (distribuidores, segmentos, planchón, palanquilla, electroimán y tenaza) y grúa/electroimán del patio de chatarra. Incluye inspección previa al uso, maniobras con accesorios (eslingas, estrobos, grilletes, vigas de izaje) y señalización.
+**Aplica a:** grúas de colada 2 × 250/63 t (ollas llenas y vacías), grúas de carga 2 × 120/40 t (bóveda, electrodos, canasta ocasional de retornos internos, ollas de escoria si aplica), grúas de CC y de producto 2 × 50 t + 2 × 25 t (distribuidores, segmentos, planchón, palanquilla, electroimán y tenaza), grúa o electroimán del patio de retornos internos, y polipastos y monorrieles de torres de transferencia, galerías de bandas y techos de silos de DRI (poleas, motorreductores, rodillos, rollos de banda) [Validar inventario con C-11]. Incluye inspección previa al uso, maniobras con accesorios (eslingas, estrobos, grilletes, vigas de izaje) y señalización.
 
 **Relación:** mantenimiento de grúas en MM-GR-01; trabajo en la grúa (pasillos, puente) en MS-ACE-10; bloqueo en MS-ACE-02.
 
@@ -22,7 +22,7 @@
 | C-04 Jefe de Turno | Autoriza izajes críticos (> 75 % de capacidad o sobre áreas ocupadas) [Supuesto] | R |
 | S-09 Operador de Grúa de Colada | Inspección previa, prueba de frenos y límites, traslado de ollas | R |
 | S-04 Operador de Grúa de Carga | Canastas, bóveda, electrodos | R |
-| S-05 Operador de Patio | Electroimán y carga de canastas | R |
+| S-05 Operador de Recepción de DRI y Silos de Día [denominación pendiente de `01-organizacion`] | Electroimán y canasta ocasional de retornos internos | R |
 | S-13 Operador de Plataforma de Colada | Señalero en la torreta (colocación de olla) | R |
 | S-03 / S-08 / S-14 / S-15 | Enganche y señalero en su área (solo si están certificados como maniobristas) | R |
 | C-11 Supervisor de Mantenimiento Mecánico / S-19, S-20 | Inspección periódica, frenos, cables, ganchos, límites (MM-GR-01) | R |
@@ -54,7 +54,8 @@ flowchart TD
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|
 | Grúas de colada (2) | Ollas llenas de acero | 250/63 t; **doble sistema de freno** en elevación principal; límites redundantes (FT-ACE-001) | Prueba de ambos frenos y de límites superior/inferior cada turno |
-| Grúas de carga (2) | Canastas de chatarra, bóveda, electrodos | 120/40 t | Inspección previa por turno |
+| Grúas de carga (2) | Bóveda, electrodos, canasta ocasional de retornos internos | 120/40 t | Inspección previa por turno |
+| Polipastos y monorrieles de torres de transferencia y galerías de bandas | Poleas, motorreductores, rodillos, rollos de banda | Capacidad marcada [Validar con C-11 / OEM] | Inspección previa; LOTO de la banda (MS-ACE-02 §6.5) |
 | Grúas de CC y producto (4) | Distribuidores (30–45 t), segmentos, planchón, palanquilla | 2 × 50 t + 2 × 25 t, electroimán o tenaza | Inspección previa; prueba de retención del electroimán |
 | Gancho de olla (viga de izaje con 2 ganchos) | Toma los muñones de la olla | Sin fisuras; apertura de garganta sin aumento > 5 %; torsión < 10° [Verificar ASME B30.10 / OEM] | Visual por turno; END según MM-GR-01 |
 | Cable de acero de elevación | Sostiene la carga | Criterio de retiro: 12 alambres rotos en un paso o 4 en un torón, reducción de diámetro > 5 %, deformación, calor [Verificar ASME B30.2 / OEM] | Visual por turno; inspección detallada mensual |
@@ -74,7 +75,7 @@ flowchart TD
 | Holgura del fondo de la carga sobre el obstáculo más alto de la ruta | m | 1.0 | 1.0–2.0 | < 0.5 m o innecesariamente alta (> 3 m) | Ajusta altura; la carga viaja lo más baja posible | Visual + marcas |
 | Distancia horizontal de personas a la carga en traslado | m | > 15 | Zona amarilla ≥ 5 m de la proyección | < 5 m (zona roja) | 🛑 Detén el traslado | Visual + CCTV |
 | Velocidad de traslado con olla llena | — | Lenta (1.ª–2.ª velocidad) [Validar con OEM] | Sin balanceo | Balanceo visible | Detén y estabiliza | Operador |
-| Velocidad del viento (grúas a la intemperie en patio) | km/h | < 30 | < 40 [Supuesto] | ≥ 50 km/h [Validar con OEM] | Suspender maniobras | Anemómetro |
+| Velocidad del viento (grúas a la intemperie en el patio de retornos) | km/h | < 30 | < 40 [Supuesto] | ≥ 50 km/h [Validar con OEM] | Suspender maniobras | Anemómetro |
 | Inclinación del gancho (tiro lateral) | ° | 0 | ≤ 2 [Supuesto] | > 5° | 🛑 No arrastrar ni tirar en diagonal | Visual |
 
 ## 6. Seguridad
@@ -90,7 +91,9 @@ flowchart TD
 | Rotura de cable o accesorio | Caída de carga | Criterios de retiro; inspección | Registro de inspección |
 | Balanceo de canasta o segmento | Golpe | Velocidad reducida; cuerdas guía (vientos) de ≥ 3 m | Visual |
 | Calor radiante sobre la grúa (ganchos, cables) | Pérdida de resistencia | Blindajes térmicos; tiempo sobre olla limitado [Validar con OEM] | Inspección mensual |
-| Caída del electroimán o pérdida de imán | Caída de chatarra | Respaldo de batería del electroimán; nadie bajo el imán | Prueba por turno |
+| Caída del electroimán o pérdida de imán | Caída de retornos (despuntes, rechazos) | Respaldo de batería del electroimán; nadie bajo el imán | Prueba por turno |
+| Maniobra en torre de transferencia o galería de banda (espacio reducido, piso con aberturas, banda vecina en operación) | Golpe, atrapamiento, caída de la carga por la abertura | Plan de izaje; LOTO de las bandas del tramo (MS-ACE-02 §6.5); aberturas cubiertas o delimitadas abajo; trabajo en altura (MS-ACE-10) | Permiso firmado |
+| Liberación de la tensión de la banda al izar o cortar un rollo | Latigazo, golpe | Abrazaderas de banda y contrapeso asegurado antes de izar (MS-ACE-02 §6.5) | Visual + permiso |
 
 ### 6.2 EPP obligatorio
 
@@ -151,8 +154,8 @@ Operador de grúa: casco, lentes, protección auditiva, ropa FR o algodón; cabi
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | S-09 Grúa de colada | 4 | 24 (CRS-05, NOM-006) + simulador de grúa ≥ 16 h | 120 h + 50 traslados de olla llena | Pasos 1, 2, 3, 4, 5, 7, 8, 9 | 12 meses (grúas/izaje) [Verificar calendario regulatorio] |
-| S-04 Grúa de carga | 4 | 24 + simulador ≥ 12 h | 80 h + 40 cargas de canasta | Pasos 1, 2, 5, 7, 8 | 12 meses |
-| S-05 Patio (electroimán) | 3 | 16 | 40 h | Pasos 1, 5, 8 | 12 meses |
+| S-04 Grúa de carga | 4 | 24 + simulador ≥ 12 h | 80 h + 40 maniobras (bóveda, electrodos y canasta de retornos; al menos 5 canastas reales y el resto en simulador, porque la canasta ya es ocasional) [Supuesto] | Pasos 1, 2, 5, 7, 8 | 12 meses |
+| S-05 Recepción de DRI y retornos (electroimán) | 3 | 16 | 40 h | Pasos 1, 5, 8 | 12 meses |
 | Señaleros y maniobristas (S-03, S-08, S-13, S-14, S-15, S-19) | 3 | 16 (CRS-04, señales NOM-006) | 20 maniobras | Pasos 4, 6, 9 | 12 meses (grúas/izaje) |
 | C-04, C-05, C-06 | 3 | 8 (planeación de izaje crítico) | 5 planes de izaje | Paso 4 + plan de izaje | 12 meses (grúas/izaje) |
 | Operador de grúa de CC y producto (hoy S-15 / S-17; rol S-27 pendiente de catálogo) | 4 | 24 + simulador ≥ 8 h | 40 h + 30 maniobras (distribuidor, segmento, planchón con tenaza, palanquilla con electroimán) | Pasos 1, 2, 4, 5, 7, 8, 9 | 12 meses (grúas/izaje) |
@@ -170,6 +173,7 @@ Operador de grúa: casco, lentes, protección auditiva, ropa FR o algodón; cabi
 
 - NOM-006-STPS-2014 (manejo y almacenamiento de materiales), NOM-004-STPS-1999, NOM-009-STPS-2011, NOM-017-STPS-2008, NOM-026-STPS-2008 [Verificar con la NOM vigente / SSO].
 - ASME B30.2 (grúas puente), ASME B30.9 (eslingas), ASME B30.10 (ganchos), ASME B30.20 (dispositivos bajo el gancho), CMAA 70 y AIST TR-6 (grúas para metal líquido) como referencias técnicas.
+- CV-GASM-001 §5 (canasta solo para retornos).
 - FT-ACE-001 sección 6; MO-OLL-02, MO-CC1-05, MO-CC2-05, MO-EAF-02, MO-EAF-08, MM-GR-01; MS-ACE-01, 02, 09, 10.
 
 ## 13. Control de cambios
@@ -178,3 +182,4 @@ Operador de grúa: casco, lentes, protección auditiva, ropa FR o algodón; cabi
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
 | 0.2 | 2026-09-25 | Revisión cruzada: vigencia de 12 meses para todas las certificaciones de grúas e izaje (incluye señaleros y planeación); fila del operador de grúa de CC y producto; pasos ★ 4, 6 y 9 en la lista | experto-seguridad-salud |
+| 0.3 | 2026-09-28 | D-010: sale la canasta de chatarra en cada colada (queda la canasta ocasional de retornos) y el patio de chatarra; entran los polipastos de torres y galerías de bandas, el peligro de tensión de banda y el aumento de maniobras de ollas de escoria; OJT de S-04 con la misma exigencia (40 maniobras) y canastas complementadas en simulador [Supuesto] | experto-seguridad-salud |

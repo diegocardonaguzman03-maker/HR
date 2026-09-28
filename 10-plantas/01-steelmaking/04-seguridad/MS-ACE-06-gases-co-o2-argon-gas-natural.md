@@ -1,16 +1,18 @@
-# MS-ACE-06 — Gases: CO, enriquecimiento de O₂, argón y N₂ (asfixia) y gas natural
+# MS-ACE-06 — Gases y polvo: CO, enriquecimiento de O₂, argón y N₂ (asfixia), gas natural, H₂ y polvo de DRI
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-06 | 0.2 | Borrador para validación | Toda la Acería | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-06 | 0.3 | Borrador para validación | Toda la Acería, incluidos bandas, torres y silos de día de DRI | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-28 | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
 > ⚠️ **Mensaje clave.** Ninguno de estos gases se ve y casi ninguno se huele. **Tu detector es tu nariz.** Lleva el detector personal encendido y probado, y obedece sus alarmas: **CO 25 ppm → sal del área; CO 200 ppm → evacuación del sector [Verificar NOM-010]; O₂ < 19.5 % o > 23.5 % → sal; gas natural ≥ 10 % LEL → sal y sin chispas; ≥ 20 % LEL → evacuación del sector.** Para entrar a un espacio confinado: < 10 % LEL; para trabajo en caliente: 0 % LEL detectable (≤ 1 % de lectura) (MS-ACE-05). [Verificar con la NOM vigente / SSO — ver justificación en 5.1]
+>
+> **Con la carga de ≈ 95–100 % DRI (D-010)** aparecen en la Acería tres fuentes nuevas: el **N₂ de inertización** de silos de día y chutes (asfixia en techos de silo, venteos y torres cerradas), el **H₂ y el CO** que libera el DRI húmedo o que se reoxida, y el **polvo y los finos de DRI**. El H₂ usa el mismo criterio de LEL que el gas natural (10 % / 20 % LEL), **pero el detector debe estar preparado para leer H₂** (5.1).
 
 ## 1. Objetivo y alcance
 
 **Objetivo:** prevenir intoxicación por CO, asfixia por argón o nitrógeno, incendios por enriquecimiento de oxígeno e incendios o explosiones por gas natural, mediante detección, aislamiento, ventilación y respuesta.
 
-**Aplica a:** EAF (lanzas y quemadores de O₂ y gas natural, humos con CO, 4.º agujero, cámara de combustión y casa de bolsas), LF (argón 50–600 NL/min), ollas (tapón poroso, precalentadores de gas natural), CC1/CC2 (argón del tubo protector, de la barra tapón y de la SEN; oxicorte con O₂ + gas natural; precalentadores de distribuidor), redes y estaciones de válvulas, cilindros y cuartos de gases, y patio (cortes con oxígeno).
+**Aplica a:** recepción de DRI (bandas cerradas, torres de transferencia, silos de día con inertización con N₂, alimentadores, 5.º agujero y manejo de finos), EAF (lanzas y quemadores de O₂ y gas natural, humos con CO, 4.º agujero, cámara de combustión y casa de bolsas), LF (argón 50–600 NL/min), ollas (tapón poroso, precalentadores de gas natural), CC1/CC2 (argón del tubo protector, de la barra tapón y de la SEN; oxicorte con O₂ + gas natural; precalentadores de distribuidor), redes y estaciones de válvulas, cilindros y cuartos de gases, y patio de retornos internos (cortes con oxígeno). **Fuera de alcance:** el gas de proceso (H₂/CO a presión), el reformador y los compresores de HYL y Midrex, que están en los manuales de `10-plantas/03-reduccion-directa/`; el personal de la Acería que cruce la frontera sigue las reglas de RD.
 
 ## 2. Roles y responsabilidades
 
@@ -22,17 +24,19 @@
 | S-01, S-06, S-12 (púlpitos) | Vigilan alarmas de detectores fijos y cortan el suministro de gas | R |
 | Todo el personal de nave | Porta detector personal probado; obedece alarmas | R |
 | S-16 Operador de Corte | Mantiene sin fugas el oxicorte; revisa mangueras | R |
+| S-05 / C-17 Recepción de DRI y silos [denominaciones pendientes de `01-organizacion`] | Vigilan la inertización y los detectores de O₂, CO y H₂ de silos y torres; controlan el polvo en bandas | R |
 | C-07 / C-08 Ingenieros de Proceso | Ajustes de proceso que reducen emisiones (presión del horno −5 a −15 Pa) | C |
 
 ## 3. Descripción del proceso
 
 | Gas | Dónde aparece en la Acería | Densidad relativa al aire | Peligro | Cómo se detecta |
 |---|---|---|---|---|
-| **CO** (monóxido de carbono) | Humos del EAF y del LF, fugas en ductos, cámara de combustión, casa de bolsas, ollas de escoria, fosas, oxicorte | 0.97 (se mezcla) | Tóxico: se une a la hemoglobina | Sensor electroquímico de CO |
+| **CO** (monóxido de carbono) | Humos del EAF y del LF, fugas en ductos, cámara de combustión, casa de bolsas, ollas de escoria, fosas, oxicorte; **espacio superior de silos de DRI** (autocalentamiento; el DRI de HYL tiene 3.0–4.5 % de carbono [Supuesto]); retroceso de gases por el 5.º agujero con presión positiva del horno | 0.97 (se mezcla) | Tóxico: se une a la hemoglobina | Sensor electroquímico de CO |
 | **O₂** (oxígeno, enriquecimiento) | Lanzas y quemadores (4 × 2,500 Nm³/h por horno), oxicorte, cilindros | 1.1 | Hace que la ropa y la grasa ardan con violencia | Sensor de O₂ (> 23.5 %) |
-| **Ar / N₂** (argón, nitrógeno) | LF (400–600 NL/min en agitación fuerte), tapón poroso, tubo protector, SEN (3–8 NL/min), purgas | Ar 1.38 (se acumula abajo) / N₂ 0.97 | Asfixia sin aviso: desplazan el O₂ | Sensor de O₂ (< 19.5 %) |
+| **Ar / N₂** (argón, nitrógeno) | LF (400–600 NL/min en agitación fuerte), tapón poroso, tubo protector, SEN (3–8 NL/min), purgas; **inertización de silos de día y chutes de DRI** (venteos, techos de silo, torres cerradas) [Validar con OEM] | Ar 1.38 (se acumula abajo) / N₂ 0.97 | Asfixia sin aviso: desplazan el O₂ | Sensor de O₂ (< 19.5 %) |
 | **Gas natural** (CH₄) | Quemadores del EAF, precalentadores de olla y distribuidor, oxicorte | 0.55 (sube) | Incendio y explosión; LEL = 5 % vol | Sensor LEL |
-| **H₂** (hidrógeno) | Agua en contacto con metal o DRI caliente | 0.07 (sube rápido) | Explosión; LEL = 4 % vol | Sensor LEL (catalítico) |
+| **H₂** (hidrógeno) | Agua en contacto con metal; **DRI húmedo o mojado** en bandas, torres y silos (Fe + H₂O → FeO + H₂) (MS-ACE-03) | 0.07 (sube rápido: se acumula en techos de silo y torres) | Explosión; LEL = 4 % vol | Sensor LEL calibrado o corregido para H₂, o sensor específico de H₂ [Validar con OEM del detector] |
+| **Polvo y finos de DRI** (no es gas; se trata aquí por la ruta respiratoria) | Puntos de transferencia de bandas, cribas, manejo de finos, limpieza de derrames | — | Irritación respiratoria y exposición a partículas; los finos de DRI son **reactivos**: se calientan y pueden encenderse en acumulaciones [Validar con OEM]; polvo combustible en colectores | Evaluación de higiene (C-16); inspección de acumulaciones |
 
 ![Figura 1. Árbol de decisión de emergencias (rama E: fuga de gas)](../img/ms-emergencia-arbol-decision.svg)
 
@@ -73,8 +77,9 @@ flowchart TD
 | CO | ppm | VLE-PPT 25 ppm (NOM-010-STPS-2014) [Verificar con la NOM vigente / SSO]; IDLH 1,200 ppm (NIOSH) | **25 ppm: sal a zona verde**, avisa; no reingreses hasta < 25 ppm | **200 ppm: evacuación del sector** por C-04; solo brigada con ERA [Verificar NOM-010] | A1 = VLE-PPT para no acumular dosis; A2 = valor techo de NIOSH (200 ppm) que no debe superarse ni un instante |
 | O₂ bajo | % vol | 19.5 % (NOM-033-STPS-2015) | **< 19.5 %: sal** | < 19.5 % en detector fijo: evacuación del área | Por debajo de 16 % el juicio se altera; < 10 % inconsciencia |
 | O₂ alto | % vol | 23.5 % (NOM-033-STPS-2015) | **> 23.5 %: sal, sin chispas** | > 23.5 % en fijo: aislar O₂ y evacuar | La ropa enriquecida arde con violencia |
-| Gas natural / H₂ | % LEL | 10 % LEL como límite de trabajo (NOM-033) | **10 % LEL: sal, sin chispas, corta el gas** | **20 % LEL: evacuación del sector y corte general** | 10 % LEL de CH₄ = 0.5 % vol; margen amplio antes de la mezcla explosiva |
+| Gas natural / H₂ | % LEL | 10 % LEL como límite de trabajo (NOM-033) | **10 % LEL: sal, sin chispas, corta el gas** (H₂ en silos: aumenta la inertización y busca la fuente de agua) | **20 % LEL: evacuación del sector y corte general** (H₂ en silos: evacuación del área de silos y de la torre) | 10 % LEL de CH₄ = 0.5 % vol; 10 % LEL de H₂ = 0.4 % vol. **El sensor catalítico calibrado con metano no lee igual el H₂:** usar el factor de corrección del fabricante o un sensor específico de H₂ en silos y torres [Validar con OEM del detector] |
 | Humos metálicos (Mn, Fe₂O₃) | mg/m³ | VLE de NOM-010-STPS-2014 [Verificar] | Evaluación de higiene (C-16) | — | Exposición crónica; control por extracción y respirador |
+| Polvo de DRI y finos (partículas de hierro y óxidos de hierro) | mg/m³ | VLE de NOM-010-STPS-2014 para partículas y óxido de hierro [Verificar con la NOM vigente / SSO] | Evaluación de higiene (C-16) en transferencias, cribas y manejo de finos | — | Control en la fuente (cubiertas, colectores), limpieza por aspiración (no con agua ni con aire comprimido) y respirador P100 según la evaluación |
 
 **Efectos del CO (referencia de capacitación):** 25 ppm = límite de 8 h; 200 ppm = dolor de cabeza en 2–3 h; 400 ppm = dolor intenso en 1–2 h; 800 ppm = mareo y náusea en 45 min, inconsciencia en 2 h; 1,600 ppm = muerte en < 2 h.
 
@@ -87,6 +92,8 @@ flowchart TD
 | Calibración del detector | días | Según fabricante | Vigente | Vencida | Fuera de uso | Etiqueta |
 | Argón en agitación fuerte (LF) | NL/min | Según receta | 400–600 | Fuga en conexiones | Aísla y repara; mide O₂ en la zona | HMI del LF |
 | Presión de gas natural en la estación | bar | Según OEM | [Validar con OEM] | Baja o alta | Corte por ESD | HMI |
+| Caudal de N₂ de inertización de silos de día | Nm³/h | Según OEM | [Validar con OEM] | Bajo (riesgo de reoxidación) o fuga en zona ocupada (O₂ < 19.5 %) | Bajo: avisa a C-17 y C-07 (MS-ACE-03); fuga: sal y aísla | HMI de silos + detector de O₂ |
+| O₂, CO y H₂ en techos de silo y torres de transferencia (zonas ocupadas) | %, ppm, % LEL | O₂ 20.9 %; CO 0; 0 % LEL | Umbrales de 5.1 | A1 / A2 de 5.1 | Tabla 5.1 | Detectores fijos [Supuesto: a instalar si no existen] |
 
 ## 6. Seguridad
 
@@ -100,6 +107,10 @@ flowchart TD
 | Fuga de gas natural | Incendio, explosión | Detectores LEL; ESD; arrestaflamas | Prueba mensual |
 | Retroceso de llama en oxicorte o precalentador | Explosión en la línea | Arrestaflamas y antirretorno; secuencia de encendido OEM | Inspección |
 | Rescate sin ERA | Víctimas múltiples | Solo la brigada con ERA | Simulacro |
+| N₂ en techos de silo, venteos y torres cerradas | Asfixia | Venteos de N₂ dirigidos a zona segura; detector de O₂ fijo y personal; torre cerrada tratada como espacio confinado si no tiene ventilación permanente | Lectura de O₂ |
+| H₂ acumulado en silo o torre (DRI mojado) | Explosión | Detección con sensor válido para H₂; control de ignición; MS-ACE-03 | Detector fijo |
+| CO en el espacio superior del silo o retroceso por el 5.º agujero | Intoxicación | Detector fijo; presión negativa del horno; sellos del 5.º agujero | HMI |
+| Polvo y finos de DRI (exposición y acumulaciones reactivas) | Enfermedad respiratoria; incendio de finos | Cubiertas y colectores; limpieza por aspiración; retirar acumulaciones por turno | Recorrido de S-05; evaluación NOM-010 |
 
 ### 6.2 EPP obligatorio
 
@@ -110,6 +121,7 @@ Detector personal multigás encendido y en la **zona respiratoria (≤ 30 cm de 
 - Trabajos en líneas de gas: LOTO con doble bloqueo y purga (MS-ACE-02) y permiso de trabajo en caliente (NOM-027) si aplica.
 - Área de estación de válvulas y cuartos de gases: **acceso restringido** y señalizado; prohibido fumar y llamas.
 - Zonas bajas donde se acumula argón (fosas, sótanos del LF y de CC): tratadas como espacio confinado cuando no tienen ventilación permanente.
+- Techos de silos de día y torres de transferencia de DRI: acceso restringido y señalizado ("ATMÓSFERA CON NITRÓGENO — DETECTOR OBLIGATORIO"); fuentes de ignición solo con permiso NOM-027.
 
 ## 7. Calidad
 
@@ -123,7 +135,7 @@ Detector personal multigás encendido y en la **zona respiratoria (≤ 30 cm de 
 
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
-| 1 | Recoge y prueba tu detector | Bump test en la estación; revisa batería (≥ 12 h) y fecha de calibración | Pasa la prueba | ★ | Todo el personal |
+| 1 | Recoge y prueba tu detector | Bump test en la estación; revisa batería (≥ 12 h) y fecha de calibración; si trabajas en silos o torres de DRI, usa el detector configurado para H₂ | Pasa la prueba | ★ | Todo el personal |
 | 2 | Pórtalo bien | Enciéndelo en aire limpio (autocero); colócalo a ≤ 30 cm de la nariz y boca, sin cubrirlo con ropa | Detector visible y encendido | ★ | Todo el personal |
 | 3 | Revisa los detectores fijos en HMI | Al inicio del turno: sin fallas ni alarmas activas | Todos en línea | | S-01, S-06, S-12 |
 | 4 | Vigila la presión del horno | −5 a −15 Pa; si es positiva, aleja al personal de la puerta y de la bóveda | Presión negativa | ★ | S-01 |
@@ -160,6 +172,7 @@ Detector personal multigás encendido y en la **zona respiratoria (≤ 30 cm de 
 | Todo el personal de nave | 2 | 4 (gases de la Acería, uso de detector) | Demostración | Pasos 1, 2, 5, 7 | 12 meses |
 | S-01, S-06, S-12 | 3 | 6 | 5 eventos o simulador | Pasos 4, 6 | 24 meses (TD-P07) |
 | S-16, S-15, S-08 | 3 | 6 (oxicorte y gas natural, CRS-10, NOM-027) | 10 encendidos | Paso 9 | 24 meses |
+| S-05, C-17 (silos y torres de DRI) | 3 | 6 (N₂, H₂, CO y polvo de DRI; CRS-10) [Supuesto] | 5 recorridos con lectura de detectores | Pasos 1, 2, 5, 7 + respuesta a H₂ y a bajo caudal de N₂ | 24 meses (TD-P07) |
 | S-21 (detectores) | 4 | 16 (calibración) | 10 calibraciones | Mantenimiento de detectores | 24 meses |
 | C-04, C-16 | 4 | 8 | Simulacro | Pasos 6, 8 | 24 meses |
 
@@ -170,12 +183,14 @@ Detector personal multigás encendido y en la **zona respiratoria (≤ 30 cm de 
 4. ¿Se niega a rescatar sin ERA y activa la alarma?
 5. ¿Revisa arrestaflamas, antirretornos y mangueras antes de encender oxicorte o precalentadores (paso 9)?
 6. ¿El púlpito vigila la presión del horno y aleja al personal si es positiva (paso 4)?
+7. ¿Sabe que el N₂ de inertización de los silos asfixia sin aviso y que el H₂ del DRI mojado se acumula arriba?
+8. ¿Usa en silos y torres un detector que lee H₂ correctamente?
 
 ## 12. Referencias
 
 - NOM-010-STPS-2014 (agentes químicos contaminantes), NOM-005-STPS-1998, NOM-018-STPS-2015 (comunicación de peligros, SGA), NOM-033-STPS-2015, NOM-027-STPS-2008, NOM-020-STPS-2011, NOM-017-STPS-2008 [Verificar con la NOM vigente / SSO]. NIOSH Pocket Guide (CO: techo 200 ppm, IDLH 1,200 ppm) como referencia.
 - CRS-10 Sistemas de gas e hidrógeno; hojas de datos de seguridad (HDS) de O₂, Ar, N₂, gas natural y CO.
-- FT-ACE-001 (O₂, gas natural, argón, humos); MS-ACE-05, 09.
+- FT-ACE-001 (O₂, gas natural, argón, humos); CV-GASM-001 §4.2 y §5; MS-ACE-03, 05, 09.
 
 ## 13. Control de cambios
 
@@ -183,3 +198,4 @@ Detector personal multigás encendido y en la **zona respiratoria (≤ 30 cm de 
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
 | 0.2 | 2026-09-25 | Revisión cruzada: umbrales únicos (CO 25/200 ppm, O₂ 19.5–23.5 %, GN 10/20 % LEL) y criterio de reingreso alineado con MS-ACE-05; pasos ★ 4 y 9 en la lista de verificación | experto-seguridad-salud |
+| 0.3 | 2026-09-28 | D-010: N₂ de inertización de silos, H₂ del DRI húmedo (mismo criterio 10/20 % LEL con sensor válido para H₂), CO de silos y del 5.º agujero, polvo y finos de DRI (VLE de NOM-010 por verificar); alcance excluye el gas de proceso de RD; competencias de S-05 y C-17; ítems 7 y 8 | experto-seguridad-salud |

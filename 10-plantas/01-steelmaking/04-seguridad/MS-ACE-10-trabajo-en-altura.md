@@ -1,8 +1,8 @@
-# MS-ACE-10 — Trabajo en altura (bóveda, plataformas, grúas)
+# MS-ACE-10 — Trabajo en altura (bóveda, plataformas, grúas, galerías de bandas y silos de DRI)
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-10 | 0.2 | Borrador para validación | Toda la Acería | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-10 | 0.3 | Borrador para validación | Toda la Acería, incluidos galerías de bandas, torres de transferencia y techos de silos de DRI | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-28 | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
 > ⚠️ **Mensaje clave.** Desde **1.8 m** de altura se requiere protección contra caídas (NOM-009-STPS-2011). **Anclaje de 22.2 kN (5,000 lb) por persona, arnés de cuerpo completo inspeccionado, línea resistente al calor cerca del horno, y un plan de rescate que baje a la persona en menos de 15 minutos** (el trauma por suspensión puede matar en ese tiempo). Estándar corporativo **CRS-03**, ligado al caso de fatalidad en el laminador.
 
@@ -10,7 +10,7 @@
 
 **Objetivo:** prevenir caídas de personas y de objetos al trabajar a 1.8 m o más, o cerca de bordes, aberturas o fosas.
 
-**Aplica a:** bóveda y plataforma de electrodos del EAF (adición y empalme de electrodos, cambio de delta, 5.º agujero), plataforma del LF, torreta y plataforma de colada, distribuidores sobre carro, puentes y pasillos de grúas (mantenimiento, cambio de cable), casa de bolsas y ductos, silos y tolvas, andamios, escaleras marinas y portátiles, plataformas de elevación móviles, bordes de fosas.
+**Aplica a:** bóveda y plataforma de electrodos del EAF (adición y empalme de electrodos, cambio de delta, 5.º agujero), plataforma del LF, torreta y plataforma de colada, distribuidores sobre carro, puentes y pasillos de grúas (mantenimiento, cambio de cable), casa de bolsas y ductos, silos y tolvas, **galerías elevadas de bandas de DRI, torres de transferencia y techos de silos de día** (D-010), andamios, escaleras marinas y portátiles, plataformas de elevación móviles, bordes de fosas.
 
 ## 2. Roles y responsabilidades
 
@@ -18,7 +18,7 @@
 |---|---|---|
 | C-16 Especialista de Seguridad e Higiene | Dueño; inventario de puntos de anclaje certificados; aprueba el plan de rescate | A |
 | C-11 / C-12 / C-05 / C-06 (emisor) | Emite el permiso de trabajo en altura; verifica anclaje, equipo y rescate | R |
-| Trabajador autorizado (S-19, S-20, S-22, S-23, S-24, S-02, S-03, contratistas) | Inspecciona su equipo; se mantiene 100 % conectado | R |
+| Trabajador autorizado (S-19, S-20, S-22, S-23, S-24, S-26, S-02, S-03, S-05, contratistas) | Inspecciona su equipo; se mantiene 100 % conectado | R |
 | Supervisor de la tarea / observador | Vigila; activa el rescate | R |
 | Brigada de rescate en altura | Rescata en < 15 min | R |
 | Ingeniería / C-14 | Certifica puntos de anclaje y líneas de vida fijas | R |
@@ -90,6 +90,8 @@ flowchart TD
 | Trauma por suspensión | Pérdida de conciencia, muerte | Rescate < 15 min; correas de alivio en el arnés | Simulacro |
 | Caída de objetos | Golpe a personas abajo | Herramientas amarradas; delimitación | Visual |
 | Caída en aberturas o fosas | Lesión grave | Tapas y barandales; señalización | Recorrido por turno |
+| Trabajo fuera de barandal en galería de banda o torre de transferencia **con la banda en operación** | Atrapamiento que jala a la persona y la hace caer | LOTO de la banda (MS-ACE-02 §6.5); nunca anclarse a la estructura de una banda en movimiento | Permiso + LOTO |
+| Techo de silo de día: venteos de N₂, CO o H₂; escotillas abiertas | Asfixia en altura; caída al silo (sepultamiento) | Detector personal con H₂ (MS-ACE-06); escotillas con rejilla o barandal; anclaje certificado; nunca pisar una escotilla o tapa sin verificar | Recorrido; permiso |
 | Andamio mal armado | Colapso | Tarjeta verde por persona competente | Tarjeta |
 
 ### 6.2 EPP obligatorio
@@ -101,6 +103,7 @@ Casco **con barbiquejo**, lentes, guantes, botas, ropa FR o algodón, arnés de 
 - **Permiso de trabajo en altura** con: tarea, altura, anclaje identificado, cálculo de distancia libre, equipo inspeccionado, plan de rescate y firma del emisor.
 - LOTO cuando el trabajo está en o sobre equipos (bóveda, grúas, torreta, segmentos): MS-ACE-02.
 - Zona delimitada abajo con cinta y letrero "TRABAJO EN ALTURA — NO PASAR".
+- Galerías de bandas y techos de silos: si el trabajo toca el punto de frontera con HYL/Midrex, permiso firmado también por RD (MS-ACE-02 §6.5).
 
 ## 7. Calidad
 
@@ -133,6 +136,8 @@ Casco **con barbiquejo**, lentes, guantes, botas, ropa FR o algodón, arnés de 
 | Equipo con indicador de impacto activado | Caída previa | Retirar de servicio | Almacén, C-16 |
 | Anclaje sin placa o dañado | Falta de certificación | No usar; reportar | C-16, C-14 |
 | Grúa se mueve con persona en la vía | LOTO incompleto | Alarma y paro de emergencia; revisión del bloqueo | C-04, C-16 |
+| Banda arranca con una persona trabajando en la galería | LOTO incompleto o ausente | Cable de paro; alarma; revisión del bloqueo (MS-ACE-02 §6.5) | C-17, C-16 |
+| Alarma del detector en el techo del silo | Venteo de N₂, CO o H₂ | Baja por la ruta más corta sin desconectarte en el borde; avisa | C-17, C-16 |
 | Calor radiante inesperado (horno energizado, olla cerca) | Falta de coordinación | Bajar; revisar LOTO y programa de ollas | C-04 |
 | Viento fuerte o tormenta | Clima | Suspender y bajar | Emisor |
 
@@ -167,7 +172,7 @@ Casco **con barbiquejo**, lentes, guantes, botas, ropa FR o algodón, arnés de 
 
 - NOM-009-STPS-2011 (trabajos en altura), NOM-017-STPS-2008, NOM-006-STPS-2014, NOM-004-STPS-1999, NOM-029-STPS-2011 [Verificar con la NOM vigente / SSO]. ANSI/ASSP Z359 y EN 361/EN 355 como referencias de equipo.
 - CRS-03 Trabajo en alturas; S-05 Brigadas (rescate).
-- MO-EAF-08, MM-EAF-02, MM-GR-01; MS-ACE-02, 04, 08, 09.
+- MO-EAF-08, MM-EAF-02, MM-GR-01; MS-ACE-02, 04, 05, 06, 08, 09.
 
 ## 13. Control de cambios
 
@@ -175,3 +180,4 @@ Casco **con barbiquejo**, lentes, guantes, botas, ropa FR o algodón, arnés de 
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
 | 0.2 | 2026-09-25 | Revisión cruzada: vigencia de 12 meses para emisor y armador de andamios; criterio de llave cautiva frente a LOTO (MS-ACE-02 §6.4); pasos ★ 1, 2 y 10 en la lista | experto-seguridad-salud |
+| 0.3 | 2026-09-28 | D-010: alcance a galerías de bandas, torres de transferencia y techos de silos de DRI; peligros de banda en operación y de atmósfera y escotillas en el techo del silo; S-05 y S-26 como trabajadores autorizados | experto-seguridad-salud |

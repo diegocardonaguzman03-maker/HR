@@ -1,16 +1,16 @@
-# MS-ACE-09 — Respuesta a emergencias: fuga de agua en el horno, perforación de olla, breakout, falla de agua de molde o apagón, fuga de gas y derrame
+# MS-ACE-09 — Respuesta a emergencias: fuga de agua en el horno, perforación de olla, breakout, falla de agua de molde o apagón, fuga de gas, derrame, evento de DRI en silo o banda y atrapamiento en banda
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-09 | 0.2 | Borrador para validación | Toda la Acería | C-04 Jefe de Turno de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-09 | 0.3 | Borrador para validación | Toda la Acería, incluidos bandas, torres y silos de DRI | C-04 Jefe de Turno de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-28 | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
-> ⚠️ **Mensaje clave.** En los primeros 30 segundos, **protégete** (zona verde o refugio) y **da la alarma**; en los primeros 5 minutos, el púlpito **pone el proceso en estado seguro** (arco fuera, olla y distribuidor cerrados, gas cortado) y **C-04 asume el mando como Comandante del Incidente**. Nadie actúa como héroe: **nunca agua sobre metal líquido, nunca rescate sin ERA, nunca bajo una olla.**
+> ⚠️ **Mensaje clave.** En los primeros 30 segundos, **protégete** (zona verde o refugio) y **da la alarma**; en los primeros 5 minutos, el púlpito **pone el proceso en estado seguro** (arco fuera, olla y distribuidor cerrados, gas cortado) y **C-04 asume el mando como Comandante del Incidente**. Nadie actúa como héroe: **nunca agua sobre metal líquido ni sobre DRI caliente, nunca rescate sin ERA, nunca bajo una olla.** Si la emergencia está en silos o bandas de DRI, el CI pide al púlpito de HYL/Midrex **detener el envío de DRI**.
 
 ## 1. Objetivo y alcance
 
 **Objetivo:** responder de forma rápida y ordenada a las emergencias mayores de la Acería para proteger a las personas, contener el evento y recuperar la operación con seguridad.
 
-**Escenarios cubiertos:** (A) fuga de agua en el EAF; (B) perforación de olla o fuga por la válvula; (C) breakout en CC1/CC2; (D) pérdida de agua de molde o apagón general; (E) fuga de gas (CO, O₂, Ar/N₂, gas natural); (F) derrame de metal o escoria e incendio asociado; (G) evento radiológico (MS-ACE-07); (H) lesionado grave, golpe de calor o persona atrapada. Complementa el Plan de Atención a Emergencias del centro de trabajo (NOM-002-STPS-2010) [por referenciar].
+**Escenarios cubiertos:** (A) fuga de agua en el EAF; (B) perforación de olla o fuga por la válvula; (C) breakout en CC1/CC2; (D) pérdida de agua de molde o apagón general; (E) fuga de gas (CO, O₂, Ar/N₂, gas natural); (F) derrame de metal o escoria e incendio asociado; (G) evento radiológico con una fuente sellada de medición o un objeto sospechoso en retornos (MS-ACE-07); (H) lesionado grave, golpe de calor o persona atrapada; **(I) evento de DRI: autocalentamiento, incendio, H₂ o DRI mojado en silo, torre o banda** (MS-ACE-03); **(J) persona atrapada en una banda transportadora** (MS-ACE-02 §6.5). Con la decisión D-010 sale el escenario de alarma del pórtico de chatarra. Complementa el Plan de Atención a Emergencias del centro de trabajo (NOM-002-STPS-2010) [por referenciar].
 
 ## 2. Roles y responsabilidades
 
@@ -25,6 +25,8 @@
 | Servicio médico | Atención y traslado de lesionados | R |
 | C-12 / S-20 | Energía: aislamientos eléctricos y arranque de respaldos | R |
 | ESR | Evento radiológico | R |
+| C-17 Supervisor de Manejo de DRI, Silos y Retornos [denominación pendiente de `01-organizacion`] | Líder de sector de silos y bandas: detiene bandas, aumenta la inertización, cuenta a su personal | R |
+| Púlpito de HYL / Midrex [código de rol según `10-plantas/03-reduccion-directa/`] | Detiene o desvía el envío de DRI a pedido del CI; informa si la emergencia puede afectar a RD | R (interfaz) |
 | Vigilancia / control de acceso | Controla la entrada; guía a bomberos y ambulancias externas; entrega listas de personal y contratistas | R |
 | C-01 Gerente de Acería | Enlace con la dirección; comunicación externa (solo por los canales autorizados) | C |
 | C-07 / C-08 Ingenieros de Proceso | Asesoran al CI en la estabilización y en el reinicio | C |
@@ -68,6 +70,8 @@ sequenceDiagram
 | ERA | Rescate e ingreso a atmósferas peligrosas | ≥ 30 min | Presión ≥ 90 % |
 | Botiquines, camilla, DEA, estación de quemados | Primeros auxilios | Según servicio médico | Revisión mensual |
 | Arena seca, polvo químico seco, agentes para metal | Control de derrames e incendios | Sin agua | Revisión mensual |
+| Paro de emergencia por cable (pull cord) y botones de paro de bandas | Detienen la banda en una emergencia | A lo largo de toda la banda, accesible desde el pasillo [Validar con OEM] | Prueba mensual [Supuesto] |
+| Inertización de emergencia de silos con N₂ | Sofoca el autocalentamiento del DRI | Caudal de emergencia según OEM [Validar con OEM] | Prueba según OEM |
 
 ## 5. Parámetros de operación
 
@@ -79,7 +83,7 @@ sequenceDiagram
 | Llegada de la brigada al punto | min | ≤ 3 | ≤ 5 [Supuesto] | > 5 min | Revisar ubicación y turnos de brigada | Simulacro |
 | Entrada del agua de emergencia de CC | s | ≤ 10 | ≤ 15 | > 15 s | Cierre inmediato de olla y distribuidor | HMI de CC |
 | Umbrales de gas para evacuar | ppm / % | — | — | CO ≥ 200 ppm [Verificar NOM-010]; ≥ 20 % LEL; O₂ < 19.5 % o > 23.5 % en detector fijo (MS-ACE-06). Umbral individual de salida: CO 25 ppm, 10 % LEL, O₂ fuera de 19.5–23.5 % | Evacuación del sector | Detectores |
-| Radio de evacuación inicial | m | — | — | Fuga EAF ≥ 25 m; perforación de olla ≥ 25 m; breakout: bajo la máquina y ≥ 20 m; gas: sector completo | Ajuste por C-16 | CI |
+| Radio de evacuación inicial | m | — | — | Fuga EAF ≥ 25 m; perforación de olla ≥ 25 m; breakout: bajo la máquina y ≥ 20 m; gas: sector completo; evento de DRI en silo: techo del silo, torre y área de silos [Supuesto — Validar con C-16] | Ajuste por C-16 | CI |
 | Frecuencia de simulacros | — | Ver 6.3 | — | Simulacro no realizado | Reprogramar en ≤ 30 días | Programa anual |
 
 ## 6. Seguridad
@@ -94,8 +98,10 @@ sequenceDiagram
 | **D. Pérdida de agua de molde / apagón** | Caudal < 90 %; ΔT alto; disparo de bombas; apagón | Verificar agua de emergencia ≤ 15 s; si no entra: cierre inmediato de olla y distribuidor; evacuar plataforma de molde ≥ 10 m | Reintroducir agua a un molde sobrecalentado sin autorización de C-06/C-08 |
 | **E. Fuga de gas** | Alarma de detector; olor a gas; sonido; persona inconsciente | A1: salir; A2: evacuar sector; ESD de gas; sin chispas | Rescatar sin ERA; operar interruptores en la zona |
 | **F. Derrame de metal o escoria / incendio** | Metal fuera de la olla, del canal o del molde; fuego en hidráulica o cables | Evacuar; dejar solidificar; contener con arena seca; aislar hidráulica y energía por el púlpito; brigada contra incendio | Agua sobre metal; pisar escoria "fría" (puede estar líquida por dentro) |
-| **G. Radiológico** | Alarma de pórtico o de polvo; contenedor dañado | MS-ACE-07 sección 8B | Tocar o mover objetos sospechosos |
+| **G. Radiológico** | Contenedor de fuente dañado (CC2 o silo); objeto con trébol en retornos; fuente no localizada; alarma de radiación en polvo o acero | Alejarse ≥ 3 m; delimitar; ESR (MS-ACE-07 secciones 8B y 9) | Tocar o mover objetos sospechosos |
 | **H. Lesionado, golpe de calor, atrapado** | Persona caída; quemadura; confusión | Proteger la escena; primeros auxilios; servicio médico; rescate técnico | Mover al lesionado en zona roja sin protección |
+| **I. Evento de DRI en silo, torre o banda** | Temperatura o CO del silo en aumento; humo; H₂ ≥ 10 % LEL; DRI mojado; DRI encendido en banda | Detén las bandas hacia el silo; el CI pide a RD detener el envío; aumenta la inertización con N₂; evacúa el techo del silo y la torre (≥ 20 % LEL o humo: área de silos completa); sin fuentes de ignición; C-07 decide vaciar el silo (MS-ACE-03 §9) | **Agua o espuma sobre DRI**; abrir el silo o entrar; rescate sin ERA |
+| **J. Atrapamiento en banda** | Grito, banda que se detiene, persona que no responde en la galería | Jala el cable de paro o el botón de paro; avisa; **bloquea la banda (LOTO) antes de liberar a la persona**; en la frontera, pide a RD bloquear su banda; primeros auxilios y rescate técnico | Liberar a la persona con la banda solo "parada por cable"; invertir la banda sin la brigada |
 
 ### 6.2 EPP obligatorio
 
@@ -103,9 +109,9 @@ Para la respuesta: EPP de la zona donde se interviene (MS-ACE-08) y **ERA** en a
 
 ### 6.3 Comunicación, puntos de reunión y simulacros
 
-**Mensaje de alarma por radio (formato único):** "**EMERGENCIA, EMERGENCIA, EMERGENCIA** — [lugar] — [tipo: fuga de agua / olla / breakout / agua de molde / gas / derrame / radiológico / lesionado] — [personas afectadas] — [quién llama]". Mientras dure la emergencia, **el canal es solo para el CI y los líderes de sector**.
+**Mensaje de alarma por radio (formato único):** "**EMERGENCIA, EMERGENCIA, EMERGENCIA** — [lugar] — [tipo: fuga de agua / olla / breakout / agua de molde / gas / derrame / radiológico / lesionado / silo de DRI / banda] — [personas afectadas] — [quién llama]". Mientras dure la emergencia, **el canal es solo para el CI y los líderes de sector**.
 
-**Puntos de reunión (Figura 2):** PR1 nave de hornos y patio; PR2 nave de ollas y LF; PR3 CC1 y CC2. Cada líder de sector cuenta a su gente con la lista del turno; vigilancia entrega la lista de contratistas y visitantes del control de acceso.
+**Puntos de reunión (Figura 2):** PR1 nave de hornos, silos de día, bandas y patio de retornos [Validar la ubicación con C-16: los silos pueden requerir un punto propio]; PR2 nave de ollas y LF; PR3 CC1 y CC2. Cada líder de sector cuenta a su gente con la lista del turno; vigilancia entrega la lista de contratistas y visitantes del control de acceso.
 
 **Programa de simulacros** [Verificar frecuencia mínima con NOM-002-STPS-2010 vigente / SSO]:
 
@@ -116,7 +122,9 @@ Para la respuesta: EPP de la zona donde se interviene (MS-ACE-08) y **ERA** en a
 | Ejercicio de mesa (tabletop) del CI | Mensual por cuadrilla | C-04, C-05, C-06, C-16 | Acta |
 | Rescate en espacio confinado y en altura | ≥ 2 al año por brigada | Brigada de rescate | Tiempo de rescate (altura < 15 min) |
 | Prueba real del agua de emergencia de CC | Mensual | Mantenimiento + CC | Registro MM-CC-03 |
-| Simulacro radiológico (pórtico) | ≥ 1 al año | S-05, C-17, ESR | Acta |
+| Simulacro radiológico (contenedor dañado en CC2 o en silo; objeto sospechoso en retornos) | ≥ 1 al año | ESR, S-21, S-12, S-05, C-17 | Acta |
+| Simulacro de evento de DRI en silo (escenario I) con la interfaz de RD | ≥ 1 al año por cuadrilla [Supuesto] | C-17, S-05, S-01, púlpito de HYL/Midrex, brigada | Acta; tiempo de paro del envío de DRI |
+| Rescate de persona atrapada en banda (escenario J) | ≥ 1 al año por brigada [Supuesto] | Brigada de rescate, S-05, S-20 | Acta; tiempo hasta banda bloqueada |
 
 ## 7. Calidad
 
@@ -132,7 +140,7 @@ Para la respuesta: EPP de la zona donde se interviene (MS-ACE-08) y **ERA** en a
 |---|---|---|---|---|---|
 | 1 | Protégete | Aléjate de la fuente hacia la zona verde o el refugio más cercano (≤ 30 s), por la ruta de escape; no regreses por herramientas | A salvo | ★ | Testigo / todos |
 | 2 | Da la alarma | Botón de alarma + radio con el formato único | Mensaje completo | ★ | Testigo |
-| 3 | Pon el proceso en estado seguro | Según escenario (6.1): arco fuera, olla/distribuidor cerrados, ESD de gas, olla a la fosa | Estado seguro ≤ 2 min | ★ | S-01, S-06, S-09, S-12 |
+| 3 | Pon el proceso en estado seguro | Según escenario (6.1): arco fuera y alimentación de DRI detenida, olla/distribuidor cerrados, ESD de gas, olla a la fosa, bandas detenidas y envío de RD detenido, inertización de emergencia | Estado seguro ≤ 2 min | ★ | S-01, S-05, S-06, S-09, S-12 |
 | 4 | Reporta al CI | Púlpito informa a C-04: qué, dónde, personas, acciones hechas | Reporte ≤ 1 min | ★ | Púlpito |
 | 5 | Asume el mando | C-04 se identifica por radio como CI, fija puesto de mando en zona segura, activa brigadas y servicio médico | CI identificado | ★ | C-04 |
 | 6 | Evacúa y cuenta | Líderes de sector llevan a su gente al punto de reunión y cuentan; reportan faltantes al CI | Conteo completo ≤ 10 min | ★ | C-05, C-06 |
@@ -169,13 +177,14 @@ Para la respuesta: EPP de la zona donde se interviene (MS-ACE-08) y **ERA** en a
 | C-05, C-06 | 4 | 12 | 2 simulacros como líder de sector | Pasos 3, 6 | 24 meses |
 | S-01, S-06, S-12 | 4 | 8 + simulador EAF/colada (escenarios de emergencia) | 4 simulacros | Pasos 2, 3, 4 | 24 meses |
 | S-09 | 4 | 4 (olla perforada) + simulador de grúa | 2 simulacros | Paso 3 (olla a la fosa) | 12 meses |
+| S-05, C-17 (silos y bandas de DRI) | 4 | 6 (escenarios I y J; interfaz con RD) [Supuesto] | 2 simulacros | Pasos 2, 3, 4 (C-17: paso 6 como líder de sector) | 24 meses (TD-P07) |
 | Todo el personal | 2 | 2 (inducción + árbol de decisión) | 2 simulacros al año | Pasos 1, 2 | 12 meses |
 | Brigadistas | 3–4 | 24–80 (S-05 Brigadas, NOM-002) | Prácticas mensuales [Supuesto] | Pasos 7, 8 | 12 meses |
 
 **Lista corta de verificación de pasos ★:**
 1. ¿Se protege primero y da la alarma con el formato único?
-2. ¿El púlpito conoce la acción inmediata de su escenario (A–E)?
-3. ¿Sabe lo prohibido (agua sobre metal, bascular con agua, rescate sin ERA)?
+2. ¿El púlpito conoce la acción inmediata de su escenario (A–E, I y J)?
+3. ¿Sabe lo prohibido (agua sobre metal o sobre DRI caliente, bascular con agua, rescate sin ERA, liberar a un atrapado con la banda solo parada por cable)?
 4. ¿C-04 asume el mando y logra el conteo en ≤ 10 min?
 5. ¿El púlpito reporta al CI en ≤ 1 min (paso 4)?
 6. ¿La brigada interviene solo por orden del CI, con EPP y ERA, y atiende quemaduras con agua lejos del metal líquido (pasos 7 y 8)?
@@ -184,6 +193,7 @@ Para la respuesta: EPP de la zona donde se interviene (MS-ACE-08) y **ERA** en a
 ## 12. Referencias
 
 - NOM-002-STPS-2010 (prevención y protección contra incendios; brigadas y simulacros), NOM-019-STPS-2011, NOM-030-STPS-2009, NOM-005-STPS-1998, NOM-033-STPS-2015, NOM-009-STPS-2011, NOM-012-STPS-2012 [Verificar con la NOM vigente / SSO]. Ley General de Protección Civil (referencia).
+- CV-GASM-001 §5 (riesgos que cambian con D-010).
 - FT-ACE-001 (alarmas de agua del EAF, BOP, agua de emergencia ≤ 15 s); MS-ACE-01 a 08 y 10; MO-EAF-07, MO-CC1-04, MO-CC2-04, MM-CC-03.
 - S-05 Brigadas del programa Escuela de Seguridad.
 
@@ -193,3 +203,4 @@ Para la respuesta: EPP de la zona donde se interviene (MS-ACE-08) y **ERA** en a
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
 | 0.2 | 2026-09-25 | Revisión cruzada: radio de evacuación de fuga del EAF expresado como ≥ 25 m; umbrales de gas alineados con MS-ACE-05/06; pasos ★ 4, 7, 8 y 9 en la lista | experto-seguridad-salud |
+| 0.3 | 2026-09-28 | D-010: nuevos escenarios I (evento de DRI en silo, torre o banda) y J (atrapamiento en banda); escenario G sin pórtico; interfaz con el púlpito de HYL/Midrex; simulacros de silo, banda y radiológico redefinidos; competencias de S-05 y C-17 | experto-seguridad-salud |

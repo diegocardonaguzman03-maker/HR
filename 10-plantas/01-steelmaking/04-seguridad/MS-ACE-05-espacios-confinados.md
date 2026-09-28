@@ -1,10 +1,10 @@
-# MS-ACE-05 — Espacios confinados (ollas, distribuidores, fosas, ductos de humos, casa de bolsas)
+# MS-ACE-05 — Espacios confinados (ollas, distribuidores, fosas, ductos de humos, casa de bolsas, silos de día y torres de DRI)
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-05 | 0.2 | Borrador para validación | Acería: ollas, distribuidores, EAF, fosas, ductos, casa de bolsas, silos y tolvas | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-05 | 0.3 | Borrador para validación | Acería: ollas, distribuidores, EAF, fosas, ductos, casa de bolsas, silos de día de DRI inertizados, torres de transferencia, chutes y tolvas | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-28 | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
-> ⚠️ **Mensaje clave.** En la Acería los espacios confinados matan por **atmósfera invisible**: argón o nitrógeno que desplazan el oxígeno (tapón poroso de olla), CO en ductos y casa de bolsas, DRI que consume O₂ en silos. **Nadie entra sin permiso, sin medición en el orden O₂ → LEL → tóxicos, sin vigía afuera y sin rescate listo.** Más de la mitad de las víctimas en espacios confinados son **rescatistas improvisados**: el vigía **nunca** entra. Estándar corporativo **CRS-02**.
+> ⚠️ **Mensaje clave.** En la Acería los espacios confinados matan por **atmósfera invisible**: argón o nitrógeno que desplazan el oxígeno (tapón poroso de olla), CO en ductos y casa de bolsas y, con la carga de ≈ 95–100 % DRI (decisión D-010), los **silos de día de DRI**: **N₂ de inertización** y DRI que se reoxida y **consume el O₂**, CO y H₂ en el espacio superior, y DRI colgado que puede **sepultar** a una persona. **Nadie entra sin permiso, sin medición en el orden O₂ → LEL → tóxicos, sin vigía afuera y sin rescate listo.** Más de la mitad de las víctimas en espacios confinados son **rescatistas improvisados**: el vigía **nunca** entra. Estándar corporativo **CRS-02**.
 
 ## 1. Objetivo y alcance
 
@@ -23,7 +23,9 @@
 | Fosas de vaciado, de escoria, de cascarilla (scale pit) de CC | Deficiencia de O₂, agua, lodo, H₂S por descomposición [Supuesto], CO |
 | Ductos de humos, cámara de combustión, 4.º agujero | **CO**, calor, polvo, caída de incrustaciones |
 | Casa de bolsas (compartimentos y tolvas) | CO, polvo, O₂ bajo, atrapamiento en tolva |
-| Silos de DRI/HBI, cal y tolvas de ferroaleaciones | **O₂ bajo por oxidación del DRI**, H₂/CO, sepultamiento |
+| **Silos de día de DRI** (inertizados con N₂ [Validar con OEM]) | **O₂ bajo por el N₂ de inertización y por la oxidación del DRI** (la atmósfera puede ser mortal desde la primera respiración); CO y H₂ en el espacio superior; **puenteo y sepultamiento**; DRI caliente; polvo y finos; medidor de nivel radiométrico si existe (MS-ACE-07) |
+| Torres de transferencia cerradas, chutes y tolvas de finos de DRI | O₂ bajo (N₂), H₂/CO, atrapamiento con la banda (MS-ACE-02 §6.5), polvo, material colgado |
+| Silos de cal y tolvas de ferroaleaciones | Sepultamiento, polvo |
 | Tanques y pozos de agua, torres de enfriamiento | Ahogamiento, químicos de tratamiento, O₂ bajo |
 | Cámara de rociado de CC (con máquina parada) | Vapor, calor, lodo, energía (LOTO) |
 
@@ -36,8 +38,9 @@
 | Medidor autorizado (S-21 Instrumentista o C-16) | Mide la atmósfera en el orden y las alturas definidas | R |
 | Vigía (persona certificada) | Permanece afuera todo el tiempo; controla entradas; comunica; activa rescate | R |
 | Entrantes (S-08, S-15, S-24, S-19, S-23, contratistas) | Usan detector personal; salen al primer aviso | R |
-| Brigada de rescate de espacios confinados (programa de formación S-05 Brigadas; no confundir con el rol S-05 Operador de Patio) | Rescate con equipo en ≤ 10 min [Supuesto] | R |
+| Brigada de rescate de espacios confinados (programa de formación S-05 Brigadas; no confundir con el rol S-05 Operador de Recepción de DRI y Silos de Día) | Rescate con equipo en ≤ 10 min [Supuesto] | R |
 | C-15 Especialista de Refractarios | Criterios de enfriamiento y estabilidad del refractario en ollas y distribuidores | C |
+| C-17 Supervisor de Manejo de DRI, Silos y Retornos [denominación pendiente de `01-organizacion`] / C-07 | Emisor o co-firmante del permiso de silos, torres y chutes de DRI; confirman silo vacío, inertización aislada y condición del DRI residual | R |
 
 ## 3. Descripción del proceso
 
@@ -92,6 +95,14 @@ flowchart TD
 
 > **Criterio único de LEL de la Acería** (lo citan todos los manuales MO, MM y MS): **entrada permitida con < 10 % LEL**; **trabajo en caliente solo con 0 % LEL detectable (≤ 1 % de lectura del equipo)**; **salir a ≥ 10 % LEL y evacuar el sector a ≥ 20 % LEL**. No se exige 0 % LEL para entrar: esa exigencia se reserva al trabajo en caliente.
 
+**Silos de día y chutes de DRI — reglas adicionales** [Validar con OEM de los silos y con C-16]:
+- **Primero, no entrar:** inspección con cámara, puertas de inspección y herramientas desde afuera. La entrada es el último recurso y la autoriza C-16 con C-07 y C-17.
+- **Silo vacío.** No se entra con DRI dentro (salvo rescate con la brigada). **Nunca** se entra ni se para nadie sobre el DRI para desatascar un puenteo: se derriba desde afuera con el método aprobado.
+- **Aislamiento positivo del N₂ de inertización** (brida ciega o desconexión física) + LOTO de alimentadores, vibradores, cañones de aire y bandas (MS-ACE-02 §6.5) + obturador del medidor de nivel cerrado por el ESR si existe (MS-ACE-07).
+- **Al ventilar con aire, el DRI residual vuelve a oxidarse:** vigilar la temperatura y el CO del silo durante todo el trabajo; si suben, salir y avisar a C-07 (MS-ACE-03 §9).
+- El detector del entrante y del medidor debe leer **H₂** en el canal de LEL (sensor catalítico calibrado o con factor de corrección para H₂, o sensor específico de H₂) [Validar con OEM del detector].
+- Los criterios de atmósfera son los mismos de la tabla (O₂ 19.5–23.5 %, < 10 % LEL, CO < 25 ppm); no hay criterio más permisivo por ser silo.
+
 **Orden y forma de medir (obligatorio):**
 1. **O₂ primero** (un O₂ bajo invalida la lectura del sensor catalítico de LEL y es el peligro más rápido).
 2. **LEL segundo** (inflamables).
@@ -108,7 +119,9 @@ flowchart TD
 |---|---|---|---|
 | Argón del tapón poroso de la olla | Asfixia sin aviso (1–2 respiraciones en O₂ < 10 %) | Desconexión y brida ciega o tapón en la línea de argón + LOTO; detector de O₂ continuo | Firma en el permiso; lectura de O₂ |
 | CO en ductos, cámara de combustión, casa de bolsas | Intoxicación, muerte | LOTO del ventilador y de compuertas; ventilación; medición | Lectura CO < 25 ppm |
-| O₂ bajo en silo de DRI | Asfixia | Purga, ventilación, medición a varias alturas; arnés con línea de rescate | Lecturas registradas |
+| O₂ bajo en silo o chute de DRI (N₂ de inertización, oxidación del DRI) | Asfixia sin aviso | Aislamiento positivo del N₂; ventilación con aire; medición a varias alturas y continua; arnés con línea de rescate y trípode | Lecturas registradas; brida ciega anotada |
+| H₂ o CO en el espacio superior del silo o en la torre | Explosión, intoxicación | Medición con sensor válido para H₂; sin fuentes de ignición; permiso NOM-027 para trabajo en caliente con ≤ 1 % de lectura de LEL | Lecturas registradas |
+| Reoxidación del DRI residual al ventilar con aire | Calentamiento, CO, incendio del DRI | Silo vacío; vigilar temperatura y CO durante el trabajo; salir si suben | Tendencia en HMI + detector |
 | Sepultamiento en silo o tolva (material colgado) | Asfixia mecánica | Silo vacío; material colgado se derriba desde afuera; nunca pararse sobre material | Visual + permiso |
 | Enriquecimiento de O₂ (fuga de lanza/quemador) | Incendio violento de ropa | Brida ciega en O₂; O₂ ≤ 23.5 % | Lectura de O₂ |
 | Calor residual del refractario | Golpe de calor, quemadura | Enfriamiento; WBGT; relevos | MS-ACE-08 |
@@ -126,6 +139,7 @@ Casco con barbiquejo, lentes, botas, guantes, ropa FR o algodón, protección au
 - LOTO completo con **aislamiento positivo** (brida ciega, desconexión física o doble bloqueo y purga) de argón, N₂, O₂, gas natural, agua y vapor.
 - Acceso señalizado: "ESPACIO CONFINADO — ENTRADA SOLO CON PERMISO".
 - Trabajo en caliente dentro: permiso adicional NOM-027 y 0 % LEL detectable sostenido (≤ 1 % de lectura del equipo), con monitoreo continuo.
+- **Silos, torres y chutes de DRI:** firma de C-16 y de C-07 o C-17; firma del ESR si hay medidor radiométrico; si el trabajo toca el punto de frontera con HYL/Midrex, firma también de RD (MS-ACE-02 §6.5).
 
 ## 7. Calidad
 
@@ -140,7 +154,7 @@ Casco con barbiquejo, lentes, botas, guantes, ropa FR o algodón, protección au
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
 | 1 | Identifica el espacio y sus peligros | Consulta el inventario; llena el análisis de riesgo con peligros específicos (Ar, CO, O₂ bajo, calor, sepultamiento) | Análisis firmado por C-16 | ★ | Emisor |
-| 2 | Aísla todas las energías y gases | LOTO (MS-ACE-02) + brida ciega o desconexión de Ar/N₂/O₂/GN; en ollas, desconecta la manguera del tapón poroso y tapa | Aislamiento positivo anotado | ★ | S-19, S-22, S-20 |
+| 2 | Aísla todas las energías y gases | LOTO (MS-ACE-02) + brida ciega o desconexión de Ar/N₂/O₂/GN; en ollas, desconecta la manguera del tapón poroso y tapa; en silos y chutes de DRI, brida ciega del N₂ de inertización, LOTO de bandas, alimentadores y cañones de aire, silo vacío y obturador del medidor cerrado por el ESR | Aislamiento positivo anotado | ★ | S-19, S-22, S-20 (ESR en silo) |
 | 3 | Ventila | Ventilación forzada con aire limpio ≥ 15 min antes de medir [Supuesto]; nunca con oxígeno | Ventilador operando | | S-19 |
 | 4 | Prueba el detector | Bump test con gas de prueba; verifica fecha de calibración | Detector responde en las 4 celdas | ★ | Medidor |
 | 5 | Mide desde afuera | Orden O₂ → LEL → CO/H₂S; arriba, en medio y abajo; espera el tiempo de respuesta en cada punto | Lecturas dentro del rango de la tabla 5 | ★ | Medidor |
@@ -166,6 +180,7 @@ Casco con barbiquejo, lentes, botas, guantes, ropa FR o algodón, protección au
 | Entrante no responde | Asfixia, golpe de calor, lesión | Alarma; malacate desde afuera; brigada con ERA | C-04, servicio médico |
 | Detector falla o batería baja | Mantenimiento | Salir; sustituir detector | Emisor |
 | Material colgado en silo | Puente de material | Salir; derribar desde afuera con método aprobado | C-16 |
+| Temperatura o CO en aumento dentro del silo de DRI durante el trabajo | Reoxidación del DRI residual | Salir; no reingresar; C-07 decide reinertizar o retirar el residuo (MS-ACE-03 §9) | C-07, C-16 |
 
 ## 10. Registros
 
@@ -178,10 +193,10 @@ Casco con barbiquejo, lentes, botas, guantes, ropa FR o algodón, protección au
 
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
-| Entrante (S-03, S-08, S-15, S-19, S-23, S-24, contratistas) | 3 | 8 (CRS-02, NOM-033) | 3 entradas supervisadas | Pasos 8, 9, 10 | 12 meses [Verificar calendario regulatorio] |
+| Entrante (S-03, S-05, S-08, S-15, S-19, S-23, S-24, contratistas) | 3 | 8 (CRS-02, NOM-033) + 2 de silos de DRI para quien entra a silos o chutes | 3 entradas supervisadas | Pasos 8, 9, 10 | 12 meses [Verificar calendario regulatorio] |
 | Vigía | 3 | 8 + 4 (funciones del vigía, rescate sin entrada) | 3 vigilancias supervisadas | Pasos 7, 9, 11 | 12 meses |
 | Medidor autorizado | 4 | 8 (detección de gases) | 10 mediciones | Pasos 4, 5 | 12 meses |
-| Emisor del permiso (C-04, C-11, C-15) | 4 | 12 | 5 permisos con tutor | Pasos 1, 2, 6 | 12 meses (espacios confinados) |
+| Emisor del permiso (C-04, C-11, C-15, C-17) | 4 | 12 (+ 2 de silos de DRI e interfaz con RD para C-17) | 5 permisos con tutor | Pasos 1, 2, 6 | 12 meses (espacios confinados) |
 | Brigada de rescate | 4 | 24 (S-05 Brigadas) + ERA | 2 simulacros al año | Rescate en ≤ 10 min | 12 meses |
 
 **Lista corta de verificación de pasos ★:**
@@ -191,12 +206,13 @@ Casco con barbiquejo, lentes, botas, guantes, ropa FR o algodón, protección au
 4. ¿El vigía permanece afuera y sabe activar el rescate sin entrar?
 5. ¿Sale al primer aviso sin terminar la tarea?
 6. ¿Confirma el rescate listo (≤ 10 min), el aislamiento positivo y el vigía dedicado antes de firmar la entrada?
+7. ¿En un silo de DRI exige silo vacío, brida ciega del N₂, detector válido para H₂ y vigilancia de temperatura y CO, y nunca se para sobre el DRI para desatascar?
 
 ## 12. Referencias
 
 - NOM-033-STPS-2015 (espacios confinados), NOM-010-STPS-2014 (agentes químicos), NOM-005-STPS-1998, NOM-009-STPS-2011, NOM-017-STPS-2008, NOM-027-STPS-2008, NOM-015-STPS-2001 [Verificar con la NOM vigente / SSO].
 - CRS-02 Entrada a espacios confinados; S-05 Brigadas (rescate).
-- FT-ACE-001 (argón, humos, DRI); MM-OLL-01, MM-EAF-03; MS-ACE-02, 06, 08, 09, 10.
+- FT-ACE-001 (argón, humos, DRI); CV-GASM-001 §4.2 (silos de día con inertización); MM-OLL-01, MM-EAF-03; MS-ACE-02, 03, 06, 07, 08, 09, 10.
 
 ## 13. Control de cambios
 
@@ -204,3 +220,4 @@ Casco con barbiquejo, lentes, botas, guantes, ropa FR o algodón, protección au
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
 | 0.2 | 2026-09-25 | Revisión cruzada: criterio único de LEL (entrada < 10 %, caliente ≤ 1 % de lectura, evacuación ≥ 20 %); emisor a 12 meses; S-03 como entrante (MM-EAF-03); aclaración del programa S-05 Brigadas | experto-seguridad-salud |
+| 0.3 | 2026-09-28 | D-010: silos de día de DRI inertizados con N₂, torres y chutes en el inventario; reglas adicionales para silos (no entrar como primera opción, silo vacío, brida ciega del N₂, H₂ en el LEL, reoxidación al ventilar); C-17 como emisor; S-05 como entrante; ítem 7 en la lista | experto-seguridad-salud |

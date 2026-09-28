@@ -2,15 +2,15 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-01 | 0.2 | Borrador para validación | Acería (EAF, LF, ollas, CC1, CC2, patio) | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MS-ACE-01 | 0.3 | Borrador para validación | Acería (EAF con alimentación de DRI por el 5.º agujero, LF, ollas, CC1, CC2, patio de retornos) | C-16 Especialista de Seguridad e Higiene de Acería | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-28 | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
-> ⚠️ **Mensaje clave.** El acero líquido está a ≈ 1,630 °C y una olla llena pesa más de 200 t. **Nadie entra a la zona roja sin autorización, sin EPP aluminizado seco y sin una ruta de escape libre.** Las distancias de este manual son valores de referencia **[Supuesto — Validar con C-16 / SSO mediante un estudio de la nave]**; los datos de proceso salen de `../00-ficha-tecnica-acería.md` (FT-ACE-001).
+> ⚠️ **Mensaje clave.** El acero líquido está a ≈ 1,630 °C y una olla llena pesa más de 200 t. **Nadie entra a la zona roja sin autorización, sin EPP aluminizado seco y sin una ruta de escape libre.** Las distancias de este manual son valores de referencia **[Supuesto — Validar con C-16 / SSO mediante un estudio de la nave]**; los datos de proceso salen de `../00-ficha-tecnica-acería.md` (FT-ACE-001). Con la decisión D-010 el EAF funde **≈ 95–100 % DRI** alimentado en continuo por el 5.º agujero: hay **más escoria (≈ 150–180 kg/t)** y el riesgo de **ebullición y desborde de escoria espumosa por la puerta** sustituye a la carga de canasta en cada colada (`../../00-cadena-de-valor/CV-GASM-001-cadena-de-valor.md`).
 
 ## 1. Objetivo y alcance
 
 **Objetivo:** evitar quemaduras, fatalidades y lesiones por contacto, salpicadura, derrame o proyección de acero y escoria líquidos, mediante zonas de exclusión, control de acceso y EPP aluminizado.
 
-**Aplica a:** vaciado por EBT del EAF-1/EAF-2; medición de temperatura, oxígeno y muestreo (EAF y LF); desescoriado y manejo de ollas de escoria; traslado de ollas llenas (carro y grúa de colada); torreta, distribuidor y arranque de CC1/CC2; carga de canasta sobre talón líquido. Aplica a todo el personal propio, contratistas y visitantes.
+**Aplica a:** vaciado por EBT del EAF-1/EAF-2; alimentación continua de DRI por el 5.º agujero con escoria espumosa (puerta de escoria y foso de escoria); medición de temperatura, oxígeno y muestreo (EAF y LF); desescoriado y manejo de ollas de escoria (mayor frecuencia por el volumen de escoria); traslado de ollas llenas (carro y grúa de colada); torreta, distribuidor y arranque de CC1/CC2; carga **ocasional** de canasta de retornos internos sobre talón líquido. Aplica a todo el personal propio, contratistas y visitantes.
 
 **No cubre:** bloqueo de energías (MS-ACE-02), explosiones agua–metal (MS-ACE-03), izaje (MS-ACE-04) y respuesta a emergencias (MS-ACE-09); este manual los referencia.
 
@@ -78,7 +78,8 @@ flowchart TD
 | Operación | Zona ROJA | Zona AMARILLA | Personal permitido en ROJA | Dónde se verifica |
 |---|---|---|---|---|
 | Vaciado por EBT (150 t) | ≤ 10 m de la olla y del EBT; foso de vaciado | 10–25 m | Nadie a pie; mando desde púlpito. S-02 solo para adiciones desde la posición protegida | Marcas de piso + CCTV |
-| Carga con canasta sobre talón líquido (20–30 t) | ≤ 15 m del horno; plataforma del horno despejada | 15–30 m | Nadie; señalero en refugio | Visual C-05 + CCTV |
+| Carga ocasional de canasta de retornos internos sobre talón líquido (20–30 t) | ≤ 15 m del horno; plataforma del horno despejada | 15–30 m | Nadie; señalero en refugio | Visual C-05 + CCTV |
+| Alimentación de DRI por el 5.º agujero con escoria espumosa (puerta de escoria y foso de escoria) | ≤ 10 m frente a la puerta de escoria y alrededor del foso de escoria [Supuesto] | 10–25 m [Supuesto] | Nadie frente a la puerta mientras hay alimentación de DRI, salvo el muestreo del paso 9 con la alimentación reducida según C-05 | Marcas de piso + CCTV de la puerta |
 | Muestreo / temperatura en EAF y LF | ≤ 5 m de la puerta o del agujero de muestreo | 5–15 m | Solo el ejecutor (S-02, S-06, S-11) y su acompañante, ≥ 1.5 m de la puerta | Visual C-05 |
 | Traslado de olla llena con grúa de colada | Proyección de la ruta ± 5 m | ± 5–15 m | Nadie bajo ni junto a la ruta | Ruta pintada + CCTV |
 | Traslado de olla en carro (EAF → LF) | Vía del carro ± 5 m | ± 5–15 m | Nadie; cruce solo por paso autorizado con semáforo | Semáforo de vía |
@@ -111,6 +112,8 @@ flowchart TD
 | Calor radiante | Quemadura, golpe de calor | EPP aluminizado; tiempo limitado; relevo | MS-ACE-08 |
 | Salpicadura en arranque o breakout de CC | Quemadura, fatalidad | Zona roja en arranque; nadie bajo la máquina | Lista de arranque |
 | Escoria líquida en olla de escoria | Explosión si hay humedad; quemadura | Olla de escoria seca; zona roja en volteo | Inspección por turno |
+| **Ebullición violenta o desborde de escoria espumosa por la puerta** (DRI acumulado sin fundir, tasa de alimentación excesiva, DRI con metalización < 92 % o húmedo) | Proyección de escoria, quemadura grave, fatalidad | Tasa de alimentación de DRI dentro del límite de FT-ACE-001 (35 kg/min/MW mientras siga vigente la decisión D-1 de `REVISION-SEGURIDAD.md`); lote liberado por C-17 (MS-ACE-03); zona roja frente a la puerta; S-01 detiene la alimentación ante señales | Tendencia de alimentación en HMI; CCTV de la puerta |
+| Más ollas de escoria por colada (≈ 150–180 kg/t de escoria) | Más movimientos de portaollas y de grúa cerca de metal y escoria | Programa de cambio de ollas de escoria; olla de escoria de reserva seca y en posición; rutas de S-10 despejadas | Registro de ollas de escoria |
 
 ### 6.2 EPP obligatorio
 
@@ -158,6 +161,7 @@ Ver la Figura 1 de MS-ACE-08 (`../img/ms-epp-acería.svg`). En **zona roja**: ca
 | Punto rojo o humo en la coraza de la olla | Desgaste refractario, perforación inminente | Evacúa ruta y zona ≥ 25 m; grúa lleva la olla a la fosa (MS-ACE-09) | C-04, C-15 |
 | Fuga por la válvula deslizante | Placas dañadas, arena de sello | No te acerques; olla a la fosa o a posición segura | C-04, S-08 |
 | Ebullición violenta o salpicadura en el vaciado | Humedad, reacción de escoria (FeO + C) | Detén el vaciado si es posible desde el púlpito; evacúa | C-05, C-07 |
+| Escoria espumosa que desborda por la puerta o ebullición súbita durante la alimentación de DRI | DRI acumulado sin fundir, alimentación excesiva, DRI húmedo o poco metalizado | Detén la alimentación de DRI; reduce O₂ y carbono según C-05; nadie frente a la puerta; verifica la olla de escoria; C-07 revisa el lote (MS-ACE-03) | C-05, C-07 |
 | Sirena o semáforo sin funcionar | Falla eléctrica | 🛑 No vacíes ni arranques; aviso de viva voz + radio solo con autorización de C-04 | C-04, C-12 |
 | EPP húmedo o dañado | Lluvia, sudor, desgaste | 🛑 No entres a roja; cámbialo | C-05 / C-06 |
 | Refugio bloqueado | Material almacenado | Despeja antes del evento | C-04 |
@@ -192,6 +196,7 @@ Ver la Figura 1 de MS-ACE-08 (`../img/ms-epp-acería.svg`). En **zona roja**: ca
 8. ¿Cierra todos los accesos con barreras y letrero antes del evento (paso 5)?
 9. ¿El operador de grúa traslada solo por la ruta pintada, a la altura mínima con ≥ 1 m de holgura, y se detiene si alguien cruza (paso 10)?
 10. ¿En el arranque de CC solo están S-12, S-13, S-14 y C-06 en roja, y nadie bajo la máquina hasta la liberación de C-06 (paso 11)?
+11. ¿Reconoce las señales de ebullición o desborde de escoria durante la alimentación de DRI, detiene la alimentación y despeja el frente de la puerta (paso 12)?
 
 ## 12. Referencias
 
@@ -207,3 +212,4 @@ Ver la Figura 1 de MS-ACE-08 (`../img/ms-epp-acería.svg`). En **zona roja**: ca
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
 | 0.2 | 2026-09-25 | Revisión cruzada: pasos ★ 1, 2, 5, 10 y 11 agregados a la lista de verificación; distancias de esta tabla adoptadas como criterio único para los manuales MO y MM | experto-seguridad-salud |
+| 0.3 | 2026-09-28 | D-010 (≈ 95–100 % DRI): la canasta pasa a ser ocasional (retornos internos); nueva zona de la puerta de escoria durante la alimentación de DRI [Supuesto]; peligros de ebullición y desborde de escoria espumosa y de mayor volumen de escoria; ítem 11 en la lista de verificación | experto-seguridad-salud |

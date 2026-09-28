@@ -2,7 +2,7 @@
 
 | Código | Versión | Estado | Custodios |
 |---|---|---|---|
-| CAT-ACE-001 | 0.1 | Borrador para validación | Experto Operativo y Metalurgia (procesos) · Gerente Sindicalizado / Gerente de Confianza (roles) |
+| CAT-ACE-001 | 0.2 (D-010: manejo de DRI en lugar de patio de chatarra) | Borrador para validación | Experto Operativo y Metalurgia (procesos) · Gerente Sindicalizado / Gerente de Confianza (roles) |
 
 Este catálogo fija los **códigos** que usan todos los documentos de la Acería: descripciones de puesto, manuales, matriz rol–proceso y capacitación. No se crean procesos ni roles nuevos sin añadirlos aquí.
 
@@ -27,7 +27,7 @@ Este catálogo fija los **códigos** que usan todos los documentos de la Acería
 | C-14 | Ingeniero de Confiabilidad | Mantenimiento |
 | C-15 | Especialista de Refractarios | Hornos / Ollas |
 | C-16 | Especialista de Seguridad e Higiene de Acería | Seguridad |
-| C-17 | Supervisor de Patio de Chatarra y Materiales | Hornos |
+| C-17 | Supervisor de Manejo de Materiales (DRI, fundentes y retornos) | Hornos |
 
 ### 1.2 Personal sindicalizado (S)
 | Código | Rol | Área |
@@ -35,8 +35,8 @@ Este catálogo fija los **códigos** que usan todos los documentos de la Acería
 | S-01 | Operador de Púlpito de Horno (Primer Hornero) | EAF |
 | S-02 | Operador de Horno de Piso (Segundo Hornero) | EAF |
 | S-03 | Ayudante de Horno (Tercer Hornero) | EAF |
-| S-04 | Operador de Grúa de Carga (nave de hornos) | EAF |
-| S-05 | Operador de Patio de Chatarra (canastas, electroimán, pórtico de radiación) | Patio |
+| S-04 | Operador de Grúa de Carga (nave de hornos): canasta solo para retornos internos, electrodos y maniobras de mantenimiento | EAF |
+| S-05 | Operador de Manejo de DRI y Retornos (bandas de DRI desde HYL/Midrex, silos de día, tolvas de cal/dolomita, retornos internos) | Manejo de materiales |
 | S-06 | Operador de Horno Olla | LF |
 | S-07 | Ayudante de Horno Olla / Alimentación de Alambre | LF |
 | S-08 | Preparador de Ollas (Ollero) | Ollas |
@@ -67,8 +67,8 @@ Criterio de "crítico": un error en el proceso puede causar una fatalidad o lesi
 | Código | Proceso crítico | Rol dueño | Roles que ejecutan |
 |---|---|---|---|
 | MO-EAF-01 | Preparación del horno entre coladas (inspección, reparación de puerta y solera, llenado del EBT, verificación de agua) | C-05 | S-01, S-02, S-03 |
-| MO-EAF-02 | Carga de chatarra con canasta | C-05 | S-04, S-05, S-01 |
-| MO-EAF-03 | Alimentación continua de DRI/HBI | C-07 | S-01 |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-17 | S-05, S-04, S-01 |
+| MO-EAF-03 | Alimentación continua de DRI por el 5.º agujero | C-07 | S-01, S-05 |
 | MO-EAF-04 | Fusión: perfil de potencia y regulación de electrodos | C-07 | S-01 |
 | MO-EAF-05 | Escoria espumosa: inyección de O₂ y carbono, desescoriado | C-07 | S-01, S-02, S-10 |
 | MO-EAF-06 | Medición de temperatura, oxígeno activo y muestreo | C-05 | S-02, S-11 |
@@ -127,11 +127,11 @@ Criterio de "crítico": un error en el proceso puede causar una fatalidad o lesi
 |---|---|---|---|
 | MS-ACE-01 | Trabajo con metal líquido: zonas de exclusión, EPP aluminizado, distancias | C-16 | Todos los roles de planta |
 | MS-ACE-02 | Aislamiento y bloqueo (LOTO) para ingresar al EAF, al LF, a la CC y a sus equipos | C-16 | Operación y mantenimiento |
-| MS-ACE-03 | Prevención de explosiones por contacto agua–metal líquido | C-07 / C-16 | EAF, ollas, CC, patio |
+| MS-ACE-03 | Prevención de explosiones por contacto agua–metal líquido (incluye DRI húmedo y retornos mojados) | C-07 / C-16 | EAF, ollas, CC, manejo de DRI y retornos |
 | MS-ACE-04 | Izaje con grúas de colada y de carga; cargas suspendidas | C-16 | S-04, S-09, S-13, mantenimiento |
 | MS-ACE-05 | Espacios confinados (ollas, distribuidores, fosas, ductos de humos, casa de bolsas) | C-16 | S-08, S-15, S-24, mantenimiento |
 | MS-ACE-06 | Gases: CO, enriquecimiento de O₂, argón y N₂ (asfixia), gas natural | C-16 | Todos |
-| MS-ACE-07 | Fuentes radiactivas (nivel de molde de CC2, detección de chatarra) | C-16 (función de Encargado de Seguridad Radiológica, ESR, con licencia de la CNSNS) | S-05, S-12, S-13, S-14, S-21, S-25 |
+| MS-ACE-07 | Fuentes radiactivas (nivel de molde de CC2, verificación de retornos internos; ya no hay chatarra comprada) | C-16 (función de Encargado de Seguridad Radiológica, ESR, con licencia de la CNSNS) | S-05, S-12, S-13, S-14, S-21, S-25 |
 | MS-ACE-08 | Estrés térmico, hidratación y EPP | C-16 | Todos |
 | MS-ACE-09 | Respuesta a emergencias: fuga de agua en el horno, perforación de olla, breakout en CC, falla de agua de molde o apagón, derrame | C-04 | Todos |
 | MS-ACE-10 | Trabajo en altura (bóveda, plataformas, grúas) | C-16 | Operación y mantenimiento |
@@ -144,3 +144,12 @@ Criterio de "crítico": un error en el proceso puede causar una fatalidad o lesi
 
 ## 4. Nomenclatura de imágenes (`img/`)
 Prefijos: `eaf-`, `lf-`, `olla-`, `cc1-`, `cc2-`, `mm-`, `ms-`, `org-`. Formato **SVG** (ver la guía de estilo).
+
+## 5. Cambios por la decisión D-010 (v0.2, 2026-09-28)
+GASM no compra chatarra: el EAF se carga con ≈ 95–100 % DRI de pelet propio que llega por bandas desde HYL y Midrex (FT-ACE-001 v0.4). En este catálogo:
+- **S-05** deja de ser "Operador de Patio de Chatarra" y pasa a **"Operador de Manejo de DRI y Retornos"**: vigila la llegada de las bandas de DRI desde la torre de transferencia, los 4 silos de día (inertización, temperatura, nivel), las básculas dosificadoras, las tolvas de cal y dolomita, y prepara y carga los retornos internos.
+- **C-17** deja de ser "Supervisor de Patio de Chatarra y Materiales" y pasa a **"Supervisor de Manejo de Materiales (DRI, fundentes y retornos)"**. Es el dueño de MO-EAF-02 y el enlace en turno con Reducción Directa (calidad y flujo de DRI).
+- **S-04** se mantiene. La canasta se usa solo para retornos internos (1 cada 2–4 coladas, y arranque en frío), electrodos y maniobras de mantenimiento.
+- **MO-EAF-02** pasa de "Carga de chatarra con canasta" a **"Recepción de DRI por bandas, silos de día y carga de retornos internos"**; dueño C-17 (antes C-05). **MO-EAF-03** queda como "Alimentación continua de DRI por el 5.º agujero"; S-05 participa porque opera silos y dosificadores.
+- **Límite con Reducción Directa:** la torre de transferencia a la entrada de la nave de silos [Supuesto; validar con RD]. La operación de las plantas HYL y Midrex se documenta en `10-plantas/03-reduccion-directa/`.
+- La plantilla de S-05 baja de ≈ 97 a ≈ 30 plazas [Supuesto, FT-ACE-001 §8]. El ajuste de plazas, la reubicación y el escalafón los analiza experto-relaciones-laborales y los decide el Director.

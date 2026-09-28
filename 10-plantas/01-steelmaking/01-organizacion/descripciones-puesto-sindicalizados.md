@@ -2,9 +2,9 @@
 
 | Código | Versión | Estado | Área | Elaboró | Revisión laboral | Revisión técnica | Revisión de seguridad | Revisión documental | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| DP-ACE-S | 0.2 | **Borrador para validación** | Acería (Steelmaking), Complejo Acería Norte | gerente-personal-sindicalizado | experto-relaciones-laborales — visto bueno con observaciones, 2026-09-25 (ver `REVISION-LABORAL.md`) | experto-operativo-metalurgia — pendiente | experto-seguridad-salud — pendiente | Criterio de experto-documentacion-mejora aplicado en la revisión laboral; visto bueno formal pendiente | **Pendiente — Director de C&D** (único que aprueba; antes: validación operativa con C-01 y presentación a la CMCAP y al sindicato) | 2026-09-25 | 2027-09-25 |
+| DP-ACE-S | 0.3 | **Borrador para validación** | Acería (Steelmaking), Complejo Acería Norte | gerente-personal-sindicalizado | experto-relaciones-laborales — visto bueno con observaciones, 2026-09-25 (ver `REVISION-LABORAL.md`) | experto-operativo-metalurgia — pendiente | experto-seguridad-salud — pendiente | Criterio de experto-documentacion-mejora aplicado en la revisión laboral; visto bueno formal pendiente | **Pendiente — Director de C&D** (único que aprueba; antes: validación operativa con C-01 y presentación a la CMCAP y al sindicato) | 2026-09-28 | 2027-09-25 |
 
-> **Mensaje clave para el Director.** La Acería necesita **963 plazas sindicalizadas** en **26 roles** (S-01 a S-26) para operar 24/7 en rol 4x4 de 12 h: **380** en Hornos EAF + LF + ollas + patio, **332** en Colada Continua (CC1 + CC2) y **251** en Mantenimiento. Las cifras cuadran con los supuestos de la ficha técnica FT-ACE-001 (≈ 380 / ≈ 330 / ≈ 250). Se proponen **5 líneas de escalafón de operación y 1 de mantenimiento con 8 niveles (N-1 a N-8)**, en las que la **certificación interna TD-P07 de los procesos críticos del puesto destino y sus DC-3 acreditan la aptitud** para el ascenso; entre los trabajadores aptos asciende el de mayor antigüedad (LFT art. 159) y cualquiera puede acreditar la aptitud por examen de suficiencia sin cursar la ruta completa (art. 153-U). Antes de usar este documento hay que validar con el sindicato, con la CMCAP y con Jurídico Laboral la vinculación "certificación ↔ ascenso" y el tabulador por niveles (ver §6 y la sección de decisión).
+> **Mensaje clave para el Director.** La Acería necesita **905 plazas sindicalizadas de diseño** en **26 roles** (S-01 a S-26) para operar 24/7 en rol 4x4 de 12 h: **322** en Hornos EAF + LF + ollas + manejo de materiales, **332** en Colada Continua (CC1 + CC2) y **251** en Mantenimiento. Además hay **58 plazas en reubicación** de la antigua categoría S-05 "Operador de Patio de Chatarra" (963 en total mientras se reubican, **sin despidos**): por la **decisión D-010** GASM no compra chatarra, el EAF se carga con ≈ 95–100 % DRI de pelet propio que llega por bandas desde HYL y Midrex, y el patio de chatarra desaparece. S-05 se redefine como **Operador de Manejo de DRI y Retornos** (39 plazas [Supuesto]). El destino de las 58 plazas lo decide el Director (ver `organigrama-acería.md` §7). Colada y Mantenimiento cuadran con la ficha FT-ACE-001 (≈ 330 / ≈ 250); el bloque de hornos baja de ≈ 380 a 322 y la ficha debe reflejarlo. Se proponen **5 líneas de escalafón de operación y 1 de mantenimiento con 8 niveles (N-1 a N-8)**, en las que la **certificación interna TD-P07 de los procesos críticos del puesto destino y sus DC-3 acreditan la aptitud** para el ascenso; entre los trabajadores aptos asciende el de mayor antigüedad (LFT art. 159) y cualquiera puede acreditar la aptitud por examen de suficiencia sin cursar la ruta completa (art. 153-U). Antes de usar este documento hay que validar con el sindicato, con la CMCAP y con Jurídico Laboral la vinculación "certificación ↔ ascenso" y el tabulador por niveles (ver §6 y la sección de decisión).
 
 **Fuentes:** `00-ficha-tecnica-acería.md` (FT-ACE-001, datos técnicos y supuestos de plantilla), `00-catalogo-procesos-y-roles.md` (CAT-ACE-001, códigos de roles y procesos), `00-guia-de-estilo-y-plantillas.md` (plantilla §4 y estilo SVG), `04-processes/process-manual.md` (TD-P07 certificación, TD-P08 inducción, TD-P09 DC-3), `03-department-design/training-and-development-policy.md` ("sin certificación no hay tarea crítica"; vigencia general de 24 meses, ajustada por el **criterio unificado de seguridad**: 12 meses para alturas, espacios confinados, grúas/izaje, eléctrico y fuentes radiactivas, ver §4). Los valores técnicos son **de referencia** y deben validarse con OEM / Ingeniería de Proceso antes de usarse en planta. Los niveles de escalafón, plazas, antigüedades y horas de formación son **[Supuesto]** de este borrador. **No se incluyen salarios**: el tabulador en pesos lo define el CCT.
 
@@ -22,17 +22,17 @@
 
 | Código | Rol | Área (catálogo) | Bloque de plantilla | Línea de escalafón | Nivel propuesto [Supuesto] | Puestos por turno (24/7) | Puestos de día | Cálculo | **Plazas totales** |
 |---|---|---|---|---|---|---|---|---|---|
-| S-01 | Operador de Púlpito de Horno (Primer Hornero) | EAF | Hornos EAF + LF + ollas + patio | 1 Hornos EAF | N-8 | 4 | 0 | 4×4+2 | **18** |
-| S-02 | Operador de Horno de Piso (Segundo Hornero) | EAF | Hornos EAF + LF + ollas + patio | 1 Hornos EAF | N-6 | 4 | 0 | 4×4+2 | **18** |
-| S-03 | Ayudante de Horno (Tercer Hornero) | EAF | Hornos EAF + LF + ollas + patio | 1 Hornos EAF | N-3 | 14 | 12 | 4×14+7 + ⌈1.1×12⌉ | **77** |
-| S-04 | Operador de Grúa de Carga (nave de hornos) | EAF | Hornos EAF + LF + ollas + patio | 3 Grúas y patio | N-5 | 3 | 0 | 4×3+2 | **14** |
-| S-05 | Operador de Patio de Chatarra (canastas, electroimán, pórtico de radiación) | Patio | Hornos EAF + LF + ollas + patio | 3 Grúas y patio | N-3 | 16 | 22 | 4×16+8 + ⌈1.1×22⌉ | **97** |
-| S-06 | Operador de Horno Olla | LF | Hornos EAF + LF + ollas + patio | 2 LF y ollas | N-7 | 2 | 0 | 4×2+1 | **9** |
-| S-07 | Ayudante de Horno Olla / Alimentación de Alambre | LF | Hornos EAF + LF + ollas + patio | 2 LF y ollas | N-4 | 6 | 0 | 4×6+3 | **27** |
-| S-08 | Preparador de Ollas (Ollero) | Ollas | Hornos EAF + LF + ollas + patio | 2 LF y ollas | N-3 | 9 | 6 | 4×9+5 + ⌈1.1×6⌉ | **48** |
-| S-09 | Operador de Grúa de Colada (nave de ollas) | Ollas | Hornos EAF + LF + ollas + patio | 3 Grúas y patio | N-6 | 4 | 0 | 4×4+2 | **18** |
-| S-10 | Operador de Manejo de Escoria (portaollas de escoria) | EAF / LF | Hornos EAF + LF + ollas + patio | Rama de 1 y 3 | N-4 | 6 | 0 | 4×6+3 | **27** |
-| S-11 | Muestrero / Analista de Laboratorio de Acería | Calidad | Hornos EAF + LF + ollas + patio | 5 Calidad | N-4 | 5 | 3 | 4×5+3 + ⌈1.1×3⌉ | **27** |
+| S-01 | Operador de Púlpito de Horno (Primer Hornero) | EAF | Hornos EAF + LF + ollas + materiales | 1 Hornos EAF | N-8 | 4 | 0 | 4×4+2 | **18** |
+| S-02 | Operador de Horno de Piso (Segundo Hornero) | EAF | Hornos EAF + LF + ollas + materiales | 1 Hornos EAF | N-6 | 4 | 0 | 4×4+2 | **18** |
+| S-03 | Ayudante de Horno (Tercer Hornero) | EAF | Hornos EAF + LF + ollas + materiales | 1 Hornos EAF | N-3 | 14 | 12 | 4×14+7 + ⌈1.1×12⌉ | **77** |
+| S-04 | Operador de Grúa de Carga (nave de hornos) | EAF | Hornos EAF + LF + ollas + materiales | 3 Grúas y manejo de materiales | N-5 | 3 | 0 | 4×3+2 | **14** |
+| S-05 | Operador de Manejo de DRI y Retornos (bandas de DRI, silos de día, fundentes, retornos internos) | Materiales | Hornos EAF + LF + ollas + materiales | 3 Grúas y manejo de materiales | N-3 | 7 | 6 | 4×7+4 + ⌈1.1×6⌉ | **39** [Supuesto] |
+| S-06 | Operador de Horno Olla | LF | Hornos EAF + LF + ollas + materiales | 2 LF y ollas | N-7 | 2 | 0 | 4×2+1 | **9** |
+| S-07 | Ayudante de Horno Olla / Alimentación de Alambre | LF | Hornos EAF + LF + ollas + materiales | 2 LF y ollas | N-4 | 6 | 0 | 4×6+3 | **27** |
+| S-08 | Preparador de Ollas (Ollero) | Ollas | Hornos EAF + LF + ollas + materiales | 2 LF y ollas | N-3 | 9 | 6 | 4×9+5 + ⌈1.1×6⌉ | **48** |
+| S-09 | Operador de Grúa de Colada (nave de ollas) | Ollas | Hornos EAF + LF + ollas + materiales | 3 Grúas y manejo de materiales | N-6 | 4 | 0 | 4×4+2 | **18** |
+| S-10 | Operador de Manejo de Escoria (portaollas de escoria) | EAF / LF | Hornos EAF + LF + ollas + materiales | Rama de 1 y 3 | N-4 | 6 | 0 | 4×6+3 | **27** |
+| S-11 | Muestrero / Analista de Laboratorio de Acería | Calidad | Hornos EAF + LF + ollas + materiales | 5 Calidad | N-4 | 5 | 3 | 4×5+3 + ⌈1.1×3⌉ | **27** |
 | S-12 | Operador de Púlpito de Colada (CC1 / CC2) | Colada | Colada CC1 + CC2 | 4 Colada | N-8 | 4 | 0 | 4×4+2 | **18** |
 | S-13 | Operador de Plataforma de Colada (olla y distribuidor) | Colada | Colada CC1 + CC2 | 4 Colada | N-6 | 8 | 0 | 4×8+4 | **36** |
 | S-14 | Ayudante de Colada (molde y línea) | Colada | Colada CC1 + CC2 | 4 Colada | N-4 | 13 | 0 | 4×13+7 | **59** |
@@ -48,10 +48,12 @@
 | S-24 | Refractarista | Mantenimiento / Ollas | Mantenimiento | Mantenimiento | C N-4 / B N-5 / A N-6 | 4 | 26 | 4×4+2 + ⌈1.1×26⌉ | **47** |
 | S-25 | Mecánico de Taller de Moldes y Segmentos | Mantenimiento | Mantenimiento | Mantenimiento | C N-5 / B N-6 / A N-7 | 0 | 16 | ⌈1.1×16⌉ | **18** |
 | S-26 | Lubricador | Mantenimiento | Mantenimiento | Mantenimiento | N-3 | 1 | 4 | 4×1+1 + ⌈1.1×4⌉ | **10** |
-| | **Subtotal Hornos EAF + LF + ollas + patio** | | | | | **73** | **43** | | **380** |
+| | **Subtotal Hornos EAF + LF + ollas + materiales** | | | | | **64** | **27** | | **322** |
 | | **Subtotal Colada CC1 + CC2** | | | | | **61** | **50** | | **332** |
 | | **Subtotal Mantenimiento** | | | | | **25** | **121** | | **251** |
-| | **Total sindicalizado Acería** | | | | | **159** | **214** | | **963** |
+| | **Total sindicalizado Acería (diseño)** | | | | | **150** | **198** | | **905** |
+| | **Plazas en reubicación** (ex S-05 "Operador de Patio de Chatarra", D-010; transitorias, sin despidos) | | | | | — | — | | **58** |
+| | **Plantilla sindicalizada total mientras se reubica** | | | | | | | | **963** |
 
 ### 1.1 Cómo se calcularon las plazas
 
@@ -67,7 +69,7 @@
    | Permisos sindicales, permisos con goce, otros | ≈ 2.5 | CCT [Supuesto] |
    | **Total de ausencias** | **≈ 19.5 (≈ 11%)** | 4 ÷ (1 − 0.11) ≈ **4.5** |
 
-3. **Puesto administrativo (día).** Talleres, cuadrillas de día, patio de preparación de chatarra, despacho y el revestimiento de ollas y distribuidores trabajan en jornada diurna (lunes a sábado, 8 h) **[Supuesto]**; se multiplica por **1.1** para cubrir vacaciones y ausencias.
+3. **Puesto administrativo (día).** Talleres, cuadrillas de día, limpieza de bandas y preparación de retornos internos, despacho y el revestimiento de ollas y distribuidores trabajan en jornada diurna (lunes a sábado, 8 h) **[Supuesto]**; se multiplica por **1.1** para cubrir vacaciones y ausencias.
 4. **Fórmula por rol:** Plazas = 4 × (puestos continuos por turno) + ⌈0.5 × puestos continuos⌉ + ⌈1.1 × puestos administrativos⌉.
 5. **Mantenimiento** tiene una **guardia 24/7 de 25 puestos por turno** (atiende fallas y paros cortos) y **121 puestos en horario administrativo** (preventivo, talleres, paros programados). Los paros mayores (cambio de revestimiento del EAF, overhaul de grúas) se refuerzan con contratistas REPSE, fuera de esta plantilla.
 6. **Ubicación de los roles de Calidad:** S-11 (laboratorio y muestreo) se cuenta en el bloque de Hornos porque trabaja en la nave de hornos y el LF; S-18 (inspección de semiterminado) se cuenta en Colada. S-24 Refractarista se cuenta en Mantenimiento, como indica la ficha.
@@ -76,20 +78,20 @@
 
 | Bloque | Supuesto de la ficha | Propuesta de este documento | Diferencia |
 |---|---|---|---|
-| Hornos EAF + LF + ollas + patio de chatarra (S-01 a S-11) | ≈ 380 | **380** | 0 |
+| Hornos EAF + LF + ollas + manejo de materiales (S-01 a S-11) | ≈ 380 (FT-ACE-001 v0.3, con patio de chatarra) | **322** | −58 (D-010: sin patio de chatarra; las 58 plazas se reubican, ver `organigrama-acería.md` §7) |
 | CC1 + CC2, incluye distribuidores y despacho (S-12 a S-18) | ≈ 330 | **332** | +2 (+0.6%) |
 | Mantenimiento de Acería (S-19 a S-26) | ≈ 250 | **251** | +1 (+0.4%) |
-| **Total sindicalizado** | ≈ 960 | **963** | +3 |
+| **Total sindicalizado** | ≈ 960 | **905** de diseño (+ 58 en reubicación = 963) | −55 de diseño |
 | Staff de confianza (C-01 a C-17), fuera de este documento | ≈ 60 | — | — |
-| **Total Steelmaking** | ≈ 1,020 | **≈ 1,023** | |
+| **Total Steelmaking** | ≈ 1,020 | **≈ 965** de diseño (≈ 1,023 mientras se reubica) | |
 
 ---
 
 ## 2. Dotación por turno y por puesto de trabajo
 
-Tabla de "quién está en cada puesto" en **un turno** (una cuadrilla), más las plazas de día. Una cuadrilla de operación tiene **134 personas** (73 en Hornos y 61 en Colada) y la guardia de mantenimiento **25**, es decir, **159 sindicalizados en planta en cada turno de 12 h**, además de **214 plazas de día** (121 de ellas de mantenimiento).
+Tabla de "quién está en cada puesto" en **un turno** (una cuadrilla), más las plazas de día. Una cuadrilla de operación tiene **125 personas** (64 en Hornos y 61 en Colada) y la guardia de mantenimiento **25**, es decir, **150 sindicalizados en planta en cada turno de 12 h**, además de **198 plazas de día** (121 de ellas de mantenimiento). Antes de la decisión D-010 eran 159 por turno y 214 de día (16 y 22 del patio de chatarra).
 
-### 2.1 Hornos EAF + LF + ollas + patio
+### 2.1 Hornos EAF + LF + ollas + materiales
 
 | Puesto de trabajo | Rol | En planta por turno (24/7) | Plazas de día | Plazas equivalentes (4.5 × turno + 1.1 × día) |
 |---|---|---|---|---|
@@ -99,13 +101,15 @@ Tabla de "quién está en cada puesto" en **un turno** (una cuadrilla), más las
 | Piso EAF-1 (puerta, EBT, plataforma) | S-03 Ayudante de Horno (Tercer Hornero) | 5 | — | 22.5 |
 | Piso EAF-2 (puerta, EBT, plataforma) | S-02 Operador de Horno de Piso (Segundo Hornero) | 2 | — | 9.0 |
 | Piso EAF-2 (puerta, EBT, plataforma) | S-03 Ayudante de Horno (Tercer Hornero) | 5 | — | 22.5 |
-| Sistemas de materiales (silos, DRI, 5.º agujero, rondín DES) | S-03 Ayudante de Horno (Tercer Hornero) | 4 | — | 18.0 |
+| Sistemas de materiales en la nave (del silo de día al horno: alimentadores con báscula, 5.º agujero, tolvas de adiciones, rondín DES) | S-03 Ayudante de Horno (Tercer Hornero) | 4 | — | 18.0 |
 | Cuadrilla de día de hornos (limpieza de fosas, preparación de bóveda y delta, apoyo a paros) | S-03 Ayudante de Horno (Tercer Hornero) | — | 12 | 13.2 |
 | Grúas de carga, nave de hornos (2 × 120/40 t) | S-04 Operador de Grúa de Carga (nave de hornos) | 3 | — | 13.5 |
-| Patio de chatarra: recepción y pórtico de radiación | S-05 Operador de Patio de Chatarra (canastas, electroimán, pórtico de radiación) | 2 | — | 9.0 |
-| Patio de chatarra: grúas y manipuladores con electroimán | S-05 Operador de Patio de Chatarra (canastas, electroimán, pórtico de radiación) | 8 | — | 36.0 |
-| Patio de chatarra: carros portacanastas y armado de canastas | S-05 Operador de Patio de Chatarra (canastas, electroimán, pórtico de radiación) | 4 | — | 18.0 |
-| Patio de chatarra: preparación y oxicorte de chatarra pesada | S-05 Operador de Patio de Chatarra (canastas, electroimán, pórtico de radiación) | 2 | 22 | 33.2 |
+| Consola de manejo de materiales: bandas de DRI (HYL y Midrex) y silos de día [Supuesto] | S-05 Operador de Manejo de DRI y Retornos | 1 | — | 4.5 |
+| Recorrido de bandas de DRI, transferencias y colectores de polvo [Supuesto] | S-05 Operador de Manejo de DRI y Retornos | 2 | — | 9.0 |
+| Silos de día: temperatura, inertización con N₂, niveles y finos de DRI [Supuesto] | S-05 Operador de Manejo de DRI y Retornos | 1 | — | 4.5 |
+| Fundentes: recepción y llenado de tolvas de cal y dolomita [Supuesto] | S-05 Operador de Manejo de DRI y Retornos | 1 | — | 4.5 |
+| Retornos internos: área de retornos, cargador o grúa con electroimán, revisión radiométrica, canasta ocasional [Supuesto] | S-05 Operador de Manejo de DRI y Retornos | 2 | — | 9.0 |
+| Cuadrilla de día: limpieza programada de derrames y bandas, preparación de retornos por oxicorte [Supuesto] | S-05 Operador de Manejo de DRI y Retornos | — | 6 | 6.6 |
 | Manejo de escoria (portaollas EAF-1/2, LF, patio de escoria) | S-10 Operador de Manejo de Escoria (portaollas de escoria) | 6 | — | 27.0 |
 | Estación LF-1 | S-06 Operador de Horno Olla | 1 | — | 4.5 |
 | Estación LF-1 | S-07 Ayudante de Horno Olla / Alimentación de Alambre | 3 | — | 13.5 |
@@ -114,7 +118,9 @@ Tabla de "quién está en cada puesto" en **un turno** (una cuadrilla), más las
 | Área de preparación de ollas (válvula, arena, tapón, precalentadores) | S-08 Preparador de Ollas (Ollero) | 9 | 6 | 47.1 |
 | Grúas de colada, nave de ollas (2 × 250/63 t) | S-09 Operador de Grúa de Colada (nave de ollas) | 4 | — | 18.0 |
 | Laboratorio de acería y muestreo (EAF, LF, distribuidor) | S-11 Muestrero / Analista de Laboratorio de Acería | 5 | 3 | 25.8 |
-| **Total en planta por turno / de día** | | **73** | **43** | **375.8** (en §1 se redondea por rol) |
+| **Total en planta por turno / de día** | | **64** | **27** | **317.7** (en §1 se redondea por rol) |
+
+> **Manejo de materiales (D-010) [Supuesto]:** la dotación de S-05 (7 por turno y 6 de día) la propone experto-relaciones-laborales a partir de CV-GASM-001; la validan C-02, C-07 y experto-operativo-metalurgia contra el diseño real de bandas y silos. **Frontera de tareas:** de la planta HYL/Midrex al silo de día (incluido), S-05; del silo de día al horno (alimentadores, 5.º agujero, tolvas de adiciones), S-03 y S-01. El punto exacto de entrega con Reducción Directa ("límite de batería") se fija por escrito con esa planta.
 
 ### 2.2 Colada CC1 + CC2
 
@@ -186,7 +192,7 @@ Tabla de "quién está en cada puesto" en **un turno** (una cuadrilla), más las
 - **Vigencia de las certificaciones (criterio unificado de seguridad):** **12 meses** para alturas (MS-ACE-10, NOM-009), espacios confinados (MS-ACE-05, NOM-033), grúas e izaje (MS-ACE-04, MO-OLL-02, MM-GR-01, NOM-006), trabajo eléctrico (MM-EAF-04, NOM-029) y fuentes radiactivas (MS-ACE-07, NOM-012); **24 meses como máximo** para las demás certificaciones TD-P07. Si la norma o la licencia exigen menos, manda la norma.
 - **Suspensión preventiva tras un incidente grave del titular:** es una **medida de seguridad de tarea crítica, no una sanción**. El trabajador pasa a tarea no crítica de su misma categoría sin perder salario ni antigüedad y se reevalúa en ≤ 15 días **[Supuesto; validar con la CMCAP y el CCT]**. Si la investigación (ICAM) concluye que hubo un acto inseguro deliberado, la medida disciplinaria sigue el Reglamento Interior y el CCT, con derecho de audiencia y representación sindical — verificar con Jurídico Laboral.
 
-### 3.2 Operación: Hornos EAF, Horno Olla y ollas, grúas y patio, Colada y Calidad
+### 3.2 Operación: Hornos EAF, Horno Olla y ollas, grúas y manejo de materiales, Colada y Calidad
 
 ![Figura 1. Escaleras de escalafón de operación de la Acería (niveles N-3 a N-8)](../img/org-escalafon-operacion.svg)
 
@@ -198,8 +204,8 @@ Tabla de "quién está en cada puesto" en **un turno** (una cuadrilla), más las
 | 4 | Ingreso | S-08 Preparador de Ollas (N-3) | Periodo de prueba | MS-ACE-01, MS-ACE-05 (básico) | NOM-017, NOM-033 (espacios confinados, como entrante y vigía) | Inducción de 40 h |
 | 5 | S-08 (N-3) | S-07 Ayudante de Horno Olla (N-4) | 18 meses | MO-OLL-01 completo; MO-LF-01 (pasos de ayudante: alambre, muestreo, argón) | NOM-020 (gases a presión), NOM-018 (hojas de seguridad), NOM-009 | — |
 | 6 | S-07 (N-4) | S-06 Operador de Horno Olla (N-7) | 36 meses | MO-LF-01 (como A), MO-EAF-06 (mediciones); simulador LF ≥ 24 h | DC-3 del programa interno "Metalurgia secundaria — Operador LF" | Evaluación teórica de metalurgia secundaria ≥ 80% |
-| 7 | Ingreso | S-05 Operador de Patio de Chatarra (N-3) | Periodo de prueba | MO-EAF-02 (armado de canasta); MS-ACE-07 (pórtico de radiación, nivel usuario) | NOM-006 (grúa con electroimán), NOM-012 (conciencia radiológica), NOM-027 (oxicorte) | Licencia interna de equipo móvil |
-| 8 | S-05 (N-3) | S-04 Operador de Grúa de Carga (N-5) | 24 meses | MO-EAF-02 (izaje de canasta), MO-EAF-08 (izaje de electrodos), MS-ACE-04; simulador de grúa ≥ 24 h | NOM-006 (grúa viajera), NOM-009 (acceso a cabina) | Examen visual (profundidad y colores) |
+| 7 | Ingreso | S-05 Operador de Manejo de DRI y Retornos (N-3) | Periodo de prueba | MO-EAF-02 (recepción de DRI por bandas, silos de día y retornos internos); MS-ACE-03 (DRI húmedo); MS-ACE-05 y MS-ACE-06 (N₂ en silos y galerías, como vigía); MS-ACE-07 (revisión radiométrica de retornos, nivel usuario) | NOM-004 (bandas y maquinaria), NOM-006 (cargador o grúa de retornos), NOM-033 (vigía), NOM-010 (polvo), NOM-012 (conciencia radiológica), NOM-027 (oxicorte, cuadrilla de día) | Licencia interna de equipo móvil. Los trabajadores de la antigua categoría S-05 conservan categoría, nivel y antigüedad y acreditan lo que ya saben por examen de suficiencia (art. 153-U) |
+| 8 | S-05 (N-3) | S-04 Operador de Grúa de Carga (N-5) | 24 meses | MO-EAF-02 (izaje de canasta de retornos), MO-EAF-08 (izaje de electrodos), MS-ACE-04; simulador de grúa ≥ 40 h [Supuesto: sube de 24 h porque el nuevo S-05 opera menos grúa] | NOM-006 (grúa viajera), NOM-009 (acceso a cabina) | Examen visual (profundidad y colores) |
 | 9 | S-04 (N-5) | S-09 Operador de Grúa de Colada (N-6) | 24 meses | MO-OLL-02, MO-EAF-07 (retiro de olla), MO-CC1-05 / MO-CC2-05 (colocación en torreta); simulador de grúa con olla llena y falla de freno | NOM-006 (grúa de metal líquido) | Sin incidentes de izaje **atribuibles a su operación** en 12 meses, según investigación ICAM (requisito de seguridad de tarea crítica; validar con la CMCAP) |
 | 10 | S-03 o S-05 (N-3) | S-10 Operador de Manejo de Escoria (N-4) | 12 meses | MO-EAF-05 (posicionamiento de portaollas), MS-ACE-03 | Licencia interna de equipo móvil pesado; NOM-004 | Rama lateral de las líneas 1 y 3 |
 | 11 | Ingreso (bachillerato técnico en química o equivalencia, ver §4) | S-11 Muestrero / Analista (N-4) | Periodo de prueba | MO-EAF-06 y MO-LF-01 (muestreo y análisis) | NOM-017, NOM-010 (polvos y humos), NOM-018 | Evaluación de repetibilidad en el espectrómetro |
@@ -261,7 +267,7 @@ Cada descripción sigue la plantilla §4 de la guía de estilo. Las tablas de "P
 - **Sin funciones de mando (LFT art. 9):** ningún puesto sindicalizado dirige, vigila, fiscaliza ni sanciona a otros trabajadores. Donde el documento dice "coordina técnicamente", "guía" o "da el liberado" se refiere a la secuencia técnica de la tarea y a la señal de seguridad; la asignación de trabajo, la disciplina y la evaluación de desempeño son del supervisor de confianza (C-xx).
 - **Escolaridad y equivalencias (no discriminación, LFT arts. 3 y 133):** la escolaridad de cada perfil es **referencia, no filtro excluyente**. Se acredita con cualquiera de estas vías: (a) certificado oficial; (b) acreditación de conocimientos por experiencia laboral ante la SEP (Acuerdo 286 / CENEVAL); (c) estándar de competencia CONOCER del oficio; o (d) examen de suficiencia (art. 153-U) más la certificación TD-P07 del puesto. En ascensos, la experiencia en la categoría inmediata inferior con certificación vigente **sustituye** la escolaridad. No se sustituyen los requisitos legales de licencia (p. ej. POE de NOM-012, calificación de soldador, licencia de maniobra de alta tensión) — verificar con Jurídico Laboral.
 
-## 4.1 Hornos EAF, Horno Olla, ollas, patio de chatarra y laboratorio
+## 4.1 Hornos EAF, Horno Olla, ollas, manejo de materiales (DRI, fundentes y retornos) y laboratorio
 
 ## S-01 — Operador de Púlpito de Horno (Primer Hornero)
 | Campo | Valor |
@@ -274,7 +280,7 @@ Cada descripción sigue la plantilla §4 de la guía de estilo. Las tablas de "P
 | Turno | 4x4 de 12 h; alterna cada 4 h entre titular del horno y consola de DRI y adiciones |
 
 ### Propósito
-Conducir la fusión del EAF de colada a colada (150 t, tap-to-tap de 55 min) de forma segura, con la energía, el consumo de electrodo y la química de vaciado dentro de la especificación, y detener el horno ante cualquier riesgo de contacto agua–metal.
+Conducir la fusión del EAF de colada a colada (150 t, tap-to-tap de ≈ 60–65 min con ≈ 95–100 % DRI, CV-GASM-001 §4.3 [Supuesto hasta validación de C-07]) de forma segura, con la energía, el consumo de electrodo y la química de vaciado dentro de la especificación, y detener el horno ante cualquier riesgo de contacto agua–metal.
 
 ### Funciones principales (con % del tiempo)
 | # | Función | % |
@@ -282,7 +288,7 @@ Conducir la fusión del EAF de colada a colada (150 t, tap-to-tap de 55 min) de 
 | 1 | Conducir la fusión: perfil de potencia, derivaciones del transformador y regulación de electrodos (MO-EAF-04) | 30 |
 | 2 | Controlar la alimentación continua de DRI/HBI y las adiciones de cal, dolomita y carbón (MO-EAF-03) | 20 |
 | 3 | Controlar la escoria espumosa con O₂ y carbono e indicar el momento del desescoriado (MO-EAF-05) | 15 |
-| 4 | Liberar la carga de canastas y el vaciado por EBT (MO-EAF-02, MO-EAF-07) | 15 |
+| 4 | Confirmar el DRI de los silos de día, liberar la carga ocasional de retornos internos con canasta y el vaciado por EBT (MO-EAF-02, MO-EAF-07) | 15 |
 | 5 | Vigilar el sistema de agua de paneles y bóveda, la presión del horno y la casa de bolsas; responder a alarmas | 10 |
 | 6 | Registrar la colada en el sistema de nivel 2 / MES, entregar el turno y guiar en OJT a S-02 en formación | 10 |
 | | **Total** | **100** |
@@ -291,7 +297,7 @@ Conducir la fusión del EAF de colada a colada (150 t, tap-to-tap de 55 min) de 
 | Código | Proceso crítico | Dueño | R/A/C/I | Qué le toca |
 |---|---|---|---|---|
 | MO-EAF-01 | Preparación del horno entre coladas (inspección, reparación de puerta y solera, llenado del EBT, verificación de agua) | C-05 | **A** | Libera el horno para cargar: revisa el check-list entre coladas, caudales y ΔT de paneles en la HMI y confirma que el EBT quedó lleno y cerrado. |
-| MO-EAF-02 | Carga de chatarra con canasta | C-05 | **A** | Autoriza la carga: horno sin potencia, electrodos arriba, bóveda girada, zona despejada; da la señal a S-04 y verifica el talón líquido de 20–30 t. |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-05 | **A** | Confirma con S-05 el inventario y la condición de los silos de día (DRI seco, temperatura sin alarma) antes de la colada. Si hay canasta de retornos (≤ 5 %), autoriza la carga con horno sin potencia, electrodos arriba, bóveda girada y zona despejada, y da la señal a S-04. |
 | MO-EAF-03 | Alimentación continua de DRI/HBI | C-07 | **A** | Ajusta la tasa de DRI a 3.5–5.0 t/min (≈ 30–35 kg/min/MW) según arco estable y escoria espumosa; la detiene ante arco inestable o baño frío. |
 | MO-EAF-04 | Fusión: perfil de potencia y regulación de electrodos | C-07 | **A** | Selecciona el perfil de potencia y la derivación (OLTC); vigila la regulación de electrodos, kWh/t y tiempo de arco (42 min objetivo). |
 | MO-EAF-05 | Escoria espumosa: inyección de O₂ y carbono, desescoriado | C-07 | **A** | Dosifica O₂ (30–40 Nm³/t) y carbono (8–12 kg/t) para escoria espumosa; da la señal de desescoriado a S-02 y S-10. |
@@ -309,7 +315,7 @@ Conducir la fusión del EAF de colada a colada (150 t, tap-to-tap de 55 min) de 
 ### Responsabilidades de seguridad
 - ★ **Agua–metal (MS-ACE-03):** corta el arco y levanta electrodos si la diferencia de caudal entrada–salida supera **4%** (el sistema dispara; si no dispara, lo hace manual); con **> 2%** o temperatura de salida de panel **> 60 °C**, reduce potencia, avisa a C-05 y a mantenimiento y **no vacía ni inclina el horno** hasta que se confirme la causa. Presión de agua **< 3 bar**: 🛑 sin arco.
 - ★ **Zona de exclusión (MS-ACE-01):** no energiza, no carga y no vacía si hay personas en la zona de exclusión del horno, de la canasta o del carro de olla.
-- ★ **Carga de canasta:** solo autoriza la carga con horno sin potencia, electrodos arriba, bóveda girada y talón líquido sin humedad visible en la chatarra (MO-EAF-02).
+- ★ **DRI seco y carga de retornos:** no alimenta DRI con reporte de humedad ni con alarma de temperatura del silo de día; la canasta de retornos solo se carga con horno sin potencia, electrodos arriba, bóveda girada y retornos sin humedad visible (MO-EAF-02, MO-EAF-03).
 - **Gases (MS-ACE-06):** mantiene la presión del horno en **−5 a −15 Pa**; si es positiva, reduce O₂ y avisa. Vigila alarmas de CO en el púlpito.
 - **LOTO (MS-ACE-02):** entrega el horno en estado de energía cero (disyuntor de alta tensión abierto y bloqueado por S-20) antes de cualquier ingreso.
 - **Emergencias (MS-ACE-09):** primer respondiente del horno: activa el plan de fuga de agua, perforación y derrame y evacua el piso.
@@ -335,8 +341,8 @@ Conducir la fusión del EAF de colada a colada (150 t, tap-to-tap de 55 min) de 
 ### Indicadores de desempeño (con meta)
 | Indicador | Meta | Fuente |
 |---|---|---|
-| Tap-to-tap | ≤ 55 min (arco 42 min) | Nivel 2 / MES |
-| Energía eléctrica | ≤ 590 kWh/t (rango 560–620) [Supuesto de meta] | Nivel 2 |
+| Tap-to-tap | ≈ 60–65 min con ≈ 95–100 % DRI (CV-GASM-001 §4.3; la meta la fija FT-ACE-001 v0.4) [Supuesto] | Nivel 2 / MES |
+| Energía eléctrica | ≈ 620–680 kWh/t con ≈ 95–100 % DRI (CV-GASM-001 §4.3) [Supuesto hasta validación de C-07] | Nivel 2 |
 | Consumo de electrodo | ≤ 1.45 kg/t | Nivel 2 / almacén |
 | Coladas con temperatura de vaciado en rango (± 15 °C) | ≥ 90% | Nivel 2 |
 | Coladas con P ≤ 0.015% | ≥ 98% | LIMS |
@@ -404,7 +410,7 @@ Dejar el horno listo entre coladas, medir y muestrear el baño, controlar el des
 | MO-EAF-07 | Vaciado por EBT y adiciones en olla | C-05 | **R** | Abre el EBT, vigila el chorro y el llenado de la olla, confirma adiciones en olla y cierra el EBT. |
 | MM-EAF-01 | Detección y reparación de fugas en paneles y bóveda enfriados por agua | C-11 | **C** | Apoya la localización de la fuga y el aislamiento en campo. |
 | MM-EAF-03 | Reparación de refractario del EAF: solera, bancos, EBT (cambio de tubo/bloque) y proyección (gunning) | C-15 | **C** | Indica las zonas dañadas de solera y bancos para la reparación. |
-| MO-EAF-02 | Carga de chatarra con canasta | C-05 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-05 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-EAF-03 | Alimentación continua de DRI/HBI | C-07 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-EAF-04 | Fusión: perfil de potencia y regulación de electrodos | C-07 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-06, MS-ACE-08, MS-ACE-09, MS-ACE-10; **C:** MS-ACE-04; **I:** MS-ACE-05 |
@@ -482,7 +488,7 @@ Apoyar la preparación, el vaciado y el mantenimiento operativo del horno, prepa
 | 2 | Preparar electrodos y niples y apoyar su empalme (MO-EAF-08) | 15 |
 | 3 | Preparar la olla en el carro y la tolva de adiciones (MO-EAF-07) | 15 |
 | 4 | Apoyar al S-24 en proyección (gunning) y reparación del EBT (MM-EAF-03) | 15 |
-| 5 | Rondín de silos de cal/carbón, alimentación de DRI y casa de bolsas; reportar anomalías | 15 |
+| 5 | Rondín de alimentadores del 5.º agujero, tolvas de adiciones y casa de bolsas; reportar anomalías (las bandas y los silos de día son de S-05) | 15 |
 | 6 | Limpieza de fosas, orden del piso y apoyo en paros | 15 |
 | | **Total** | **100** |
 
@@ -493,7 +499,7 @@ Apoyar la preparación, el vaciado y el mantenimiento operativo del horno, prepa
 | MO-EAF-07 | Vaciado por EBT y adiciones en olla | C-05 | **R** | Prepara y verifica la tolva de adiciones a la olla y el carro de olla; apoya al S-02 fuera de la zona de exclusión. |
 | MO-EAF-08 | Adición y empalme de electrodos | C-05 | **R** | Prepara electrodos y niples en el soporte de empalme, limpia roscas y engancha con el dispositivo de izaje. |
 | MM-EAF-03 | Reparación de refractario del EAF: solera, bancos, EBT (cambio de tubo/bloque) y proyección (gunning) | C-15 | **R** | Apoya al S-24 en proyección (gunning) y cambio de tubo/bloque del EBT. |
-| MO-EAF-02 | Carga de chatarra con canasta | C-05 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-05 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-EAF-05 | Escoria espumosa: inyección de O₂ y carbono, desescoriado | C-07 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-EAF-06 | Medición de temperatura, oxígeno activo y muestreo | C-05 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MM-EAF-01 | Detección y reparación de fugas en paneles y bóveda enfriados por agua | C-11 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
@@ -553,7 +559,7 @@ Calor radiante, polvo, ruido, proyecciones, humos, esfuerzo físico, altura, esp
 ## S-04 — Operador de Grúa de Carga (nave de hornos)
 | Campo | Valor |
 |---|---|
-| Tipo de personal | Sindicalizado — línea 3 (Grúas y patio), **nivel N-5** |
+| Tipo de personal | Sindicalizado — línea 3 (Grúas y manejo de materiales), **nivel N-5** |
 | Área / equipo | Nave de hornos: 2 grúas de 120/40 t |
 | Reporta a | C-05 Supervisor de Hornos |
 | Supervisa a | No aplica |
@@ -561,22 +567,22 @@ Calor radiante, polvo, ruido, proyecciones, humos, esfuerzo físico, altura, esp
 | Turno | 4x4 de 12 h, rotación de cabina cada 2 h |
 
 ### Propósito
-Cargar el horno con canastas de chatarra y mover electrodos, bóveda y componentes con precisión y sin exponer a nadie bajo la carga.
+Mover electrodos, bóveda y componentes de la nave de hornos y, cuando se programa, cargar la canasta de retornos internos (≤ 5 % de la carga metálica), con precisión y sin exponer a nadie bajo la carga. Por la decisión D-010 ya no hay canasta de chatarra en cada colada.
 
 ### Funciones principales (con % del tiempo)
 | # | Función | % |
 |---|---|---|
-| 1 | Izar, trasladar y descargar canastas de 55–70 t en el horno (MO-EAF-02) | 45 |
-| 2 | Izar columnas de electrodos para adición y empalme (MO-EAF-08) | 15 |
-| 3 | Izajes de mantenimiento: bóveda, delta, brazos (MM-EAF-02) | 15 |
+| 1 | Izar, trasladar y descargar la canasta ocasional de retornos internos en el horno (MO-EAF-02) | 15 [Supuesto] |
+| 2 | Izar columnas de electrodos para adición y empalme (MO-EAF-08) | 25 |
+| 3 | Izajes de mantenimiento: bóveda, delta, brazos, paneles (MM-EAF-02) | 25 |
 | 4 | Inspección pre-uso de la grúa y reporte de fallas (MM-GR-01) | 10 |
-| 5 | Movimientos de materiales en la nave y apoyo a señalero | 15 |
+| 5 | Movimientos de materiales en la nave (refractarios, electrodos, adiciones) y apoyo a señalero | 25 |
 | | **Total** | **100** |
 
 ### Procesos críticos que ejecuta o supervisa (códigos del catálogo, R/A/C/I)
 | Código | Proceso crítico | Dueño | R/A/C/I | Qué le toca |
 |---|---|---|---|---|
-| MO-EAF-02 | Carga de chatarra con canasta | C-05 | **R** | Iza la canasta (55–70 t), la posiciona sobre el horno y la abre a la señal del S-01; nunca sobre personas. |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-05 | **R** | Iza la canasta de retornos internos (peso según el programa, ≤ 70 t), la posiciona sobre el horno y la abre a la señal del S-01; nunca sobre personas. |
 | MO-EAF-08 | Adición y empalme de electrodos | C-05 | **R** | Iza la columna de electrodos con el dispositivo de izaje hasta el soporte y el portaelectrodo. |
 | MM-EAF-02 | Mantenimiento de brazos portaelectrodos, columnas, regulación hidráulica y cambio de bóveda / delta | C-11 | **R** | Realiza los izajes de bóveda, delta y brazos durante el mantenimiento. |
 | MM-GR-01 | Inspección y mantenimiento de grúas de colada (ganchos, frenos, cables, límites) | C-11 | **C** | Hace la inspección pre-uso de la grúa y reporta fallas de frenos, límites y cables. |
@@ -597,7 +603,7 @@ Cargar el horno con canastas de chatarra y mover electrodos, bóveda y component
 | Equipo | Especificación clave |
 |---|---|
 | Grúa viajera de carga | 120/40 t; cabina con control y radio |
-| Balancín de canasta | Canasta de 90 m³, carga de 55–70 t |
+| Balancín de canasta | Canasta de 90 m³ solo para retornos internos; peso según el programa, ≤ 70 t [Validar con C-07] |
 | Dispositivo de izaje de electrodos | Electrodo de 610 mm |
 
 ### Indicadores de desempeño (con meta)
@@ -611,7 +617,7 @@ Cargar el horno con canastas de chatarra y mover electrodos, bóveda y component
 | Requisito | Detalle |
 |---|---|
 | Escolaridad | Secundaria (preferente bachillerato) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
-| Experiencia | ≥ 2 años como S-05 con grúa de electroimán |
+| Experiencia | ≥ 2 años como S-05 (con licencia de cargador o grúa de retornos) o experiencia equivalente en grúa acreditada por examen de suficiencia (art. 153-U) |
 | Conocimientos | Mecánica de la grúa, señales de mano, capacidades y centros de gravedad |
 | DC-3 / NOM | NOM-006 (grúas viajeras), NOM-009 (acceso a cabina), NOM-017, NOM-015 |
 | Certificación interna TD-P07 | MO-EAF-02, MO-EAF-08 (izaje), MS-ACE-04; simulador de grúa ≥ 24 h |
@@ -628,96 +634,105 @@ Cabina en altura con calor y polvo, vibración, humos de carga; alta concentraci
 |---|---|---|
 | Inducción | Común | 40 |
 | Ruta técnica | Operación de grúa viajera, señales, eslingado, inspección pre-uso | 40 |
-| Simulador de grúa | Carga de canasta y movimientos de precisión | 24 |
+| Simulador de grúa | Canasta de retornos, izaje de electrodos y bóveda, movimientos de precisión | 40 [Supuesto] |
 | OJT supervisado | 20 turnos con operador certificado | 240 |
 | Certificación TD-P07 | Pasos ★ de izaje | 4 |
 | Refresco anual | Simulador + inspección | 8/año |
 | Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); grúas/izaje (MS-ACE-04, NOM-006). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
-## S-05 — Operador de Patio de Chatarra (canastas, electroimán, pórtico de radiación)
+## S-05 — Operador de Manejo de DRI y Retornos (bandas de DRI, silos de día, fundentes y retornos internos)
 | Campo | Valor |
 |---|---|
-| Tipo de personal | Sindicalizado — línea 3 (Grúas y patio), **nivel N-3** |
-| Área / equipo | Patio de chatarra: recepción y pórtico de radiación, grúas y manipuladores con electroimán, carros portacanastas, preparación y oxicorte |
-| Reporta a | C-17 Supervisor de Patio de Chatarra y Materiales |
-| Supervisa a | No aplica |
-| Plazas (total y por turno) | **97 plazas** (16 por turno × 4 cuadrillas = 64 + 8 de relevo; 22 puestos de día × 1.1 = 25) |
-| Turno | 4x4 de 12 h (recepción, grúas, canastas) y administrativo (preparación y oxicorte de chatarra pesada) |
+| Tipo de personal | Sindicalizado — línea 3 (Grúas y manejo de materiales), **nivel N-3** [Supuesto; ver nota de valuación en `organigrama-acería.md` §7] |
+| Área / equipo | Manejo de materiales del EAF: bandas cerradas de DRI desde HYL y Midrex, silos de día del EAF, tolvas de cal y dolomita, área de retornos internos (despuntes, rechazos, derrames y costras) |
+| Reporta a | C-17 Supervisor de Manejo de Materiales (DRI, fundentes y retornos) |
+| Supervisa a | No aplica — sin funciones de mando (LFT art. 9) |
+| Plazas (total y por turno) | **39 plazas** [Supuesto] (7 por turno × 4 cuadrillas = 28 + 4 de relevo; 6 puestos de día × 1.1 = 7). Sustituye a las 97 plazas de la antigua categoría "Operador de Patio de Chatarra"; las 58 restantes están **en reubicación, sin despidos** (decisión D-010, ver `organigrama-acería.md` §7) |
+| Turno | 4x4 de 12 h (consola, bandas, silos, fundentes y retornos) y administrativo (limpieza programada de derrames y bandas, preparación de retornos por oxicorte) |
+
+> **Decisión D-010 (2026-09-28).** GASM no compra chatarra: el EAF se carga con ≈ 95–100 % DRI de pelet propio y ≤ 5 % de retornos internos. El DRI llega por bandas transportadoras directas desde HYL y Midrex a los silos de día (CV-GASM-001 §4.2–4.3). Esta ficha sustituye a la del "Operador de Patio de Chatarra". Los valores técnicos son de CV-GASM-001 y de MO-EAF-02 v0.2 (en reescritura por experto-operativo-metalurgia) y se validan con C-07.
 
 ### Propósito
-Recibir, revisar, clasificar y cargar la chatarra en canastas según la receta de carga, sin fuentes radiactivas, recipientes cerrados ni humedad que puedan causar una explosión en el horno.
+Asegurar que el horno reciba DRI **seco, frío o tibio y en especificación**, y fundentes suficientes, sin interrupciones, y que los retornos internos lleguen limpios, secos y revisados. Un DRI húmedo o reoxidado genera vapor e H₂ y puede causar una explosión en el horno o un incendio en el silo.
 
 ### Funciones principales (con % del tiempo)
 | # | Función | % |
 |---|---|---|
-| 1 | Armar canastas según la receta (tipo, densidad, capas) con grúa o manipulador con electroimán (MO-EAF-02) | 40 |
-| 2 | Recibir camiones y góndolas, pasar por el pórtico de radiación y atender sus alarmas (MS-ACE-07) | 15 |
-| 3 | Clasificar chatarra y retirar prohibidos (recipientes cerrados, tanques, materiales con agua o hielo, no ferrosos) (MS-ACE-03) | 15 |
-| 4 | Preparar chatarra pesada por oxicorte (cuadrilla de día) | 15 |
-| 5 | Mover carros portacanastas y entregar la canasta a la nave | 10 |
-| 6 | Inventario de pilas por tipo y registro en el sistema | 5 |
+| 1 | Operar desde la consola el arranque, la secuencia y el paro de las bandas de DRI de HYL y Midrex hacia los silos de día; vigilar niveles, tasa y alarmas (MO-EAF-02) | 25 |
+| 2 | Recorrer bandas, transferencias, sellos y colectores de polvo; detectar humedad, derrames, calentamiento y fugas de N₂ (MO-EAF-02, MS-ACE-03, MS-ACE-06) | 20 |
+| 3 | Vigilar los silos de día: temperatura, inertización con N₂, niveles y separación de finos de DRI; avisar al S-01 y a la planta de Reducción Directa ante cualquier desviación (MO-EAF-02, MO-EAF-03) | 15 |
+| 4 | Recibir cal y dolomita y llenar sus tolvas; registrar inventario | 10 |
+| 5 | Recibir, revisar (humedad, recipientes cerrados, revisión radiométrica) y acomodar los retornos internos; armar la canasta ocasional de retornos cuando C-17 la programa (MO-EAF-02, MS-ACE-07) | 20 |
+| 6 | Limpieza programada de derrames de DRI y fundentes, orden del área y registros | 10 |
 | | **Total** | **100** |
 
 ### Procesos críticos que ejecuta o supervisa (códigos del catálogo, R/A/C/I)
 | Código | Proceso crítico | Dueño | R/A/C/I | Qué le toca |
 |---|---|---|---|---|
-| MO-EAF-02 | Carga de chatarra con canasta | C-05 | **R** | Arma las canastas según la receta de carga (densidad, capas, sin recipientes cerrados ni humedad) y las entrega en el carro. |
-| MO-EAF-03 | Alimentación continua de DRI/HBI | C-07 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
-| MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-04, MS-ACE-06, MS-ACE-07, MS-ACE-08, MS-ACE-09, MS-ACE-10; **I:** MS-ACE-05 |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-05 | **R** | Opera las bandas y los silos de día, confirma al S-01 inventario y condición del DRI, y prepara la canasta ocasional de retornos (seca, sin recipientes cerrados, revisada con el detector). |
+| MO-EAF-03 | Alimentación continua de DRI por el 5.º agujero | C-07 | **C** | Consultado: informa nivel, temperatura y finos de los silos de día; detiene el llenado del silo afectado si hay humedad o alarma. |
+| MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-04, MS-ACE-06, MS-ACE-07, MS-ACE-08, MS-ACE-09, MS-ACE-10; **C:** MS-ACE-05 (vigía en galerías y silos) |
 
 ### Responsabilidades de seguridad
-- ★ **Alarma del pórtico de radiación (MS-ACE-07, NOM-012):** detiene el vehículo, no descarga, aísla el área y avisa a C-17 y al encargado de seguridad radiológica; nunca manipula la pieza sospechosa.
-- ★ **Prohibidos en canasta (MS-ACE-03):** recipientes cerrados, cilindros, chatarra con agua, nieve o aceite en exceso; si los detecta, retira el material o 🛑 no entrega la canasta.
-- ★ Nadie en el radio de trabajo del electroimán; zona delimitada (MS-ACE-04).
-- **Oxicorte (NOM-027):** permiso de trabajo en caliente, revisión de mangueras y arrestaflamas, vigía de fuego.
-- **Autoridad:** rechaza cargas de proveedores que no cumplan y detiene el armado de canasta dudosa.
+- ★ **DRI húmedo = no pasa (MS-ACE-03):** si ve agua, vapor, lodo o DRI mojado en bandas, transferencias o silos, 🛑 detiene la banda, aísla el lote y avisa a C-17, al S-01 y a la planta de Reducción Directa.
+- ★ **Temperatura y N₂ en silos (MS-ACE-06):** ante alarma de temperatura alta o de O₂ alto en un silo o ducto, sigue el protocolo, no abre registros y no entra; avisa a C-17 y a C-16.
+- ★ **Galerías y silos con N₂ (MS-ACE-05):** nunca entra sin permiso de espacio confinado, purga y medición (O₂ 19.5–23.5 %, CO < 25 ppm, < 10 % LEL); participa como vigía.
+- ★ **Bandas en movimiento (MS-ACE-02):** limpia, destraba o quita material solo con LOTO; nunca con la banda en marcha ni cruzando por debajo sin paso protegido.
+- **Retornos internos (MS-ACE-03, MS-ACE-07):** sin recipientes cerrados ni humedad; revisión radiométrica de cada lote (fuentes selladas de medición de la propia planta) [Validar con el ESR (C-16)].
+- **Equipo móvil y grúa de retornos (MS-ACE-04):** inspección pre-uso; nadie en el radio del electroimán o del cucharón.
+- **Autoridad:** detiene la banda, el llenado del silo o la entrega de retornos ante cualquier condición insegura, sin represalia.
 
 ### Responsabilidades de calidad
-- 🔎 Receta de carga correcta (mezcla y densidad) para cumplir peso de canasta de 55–70 t y química residual (Cu, Sn, Cr, Ni) dentro de la especificación del grado.
-- Registra origen, tipo y peso de cada canasta.
+- 🔎 Segregar los finos de DRI (< 3 mm) según la práctica de C-07; los finos no van al 5.º agujero (CV-GASM-001 §4.2).
+- 🔎 Registrar por lote el origen del DRI (HYL o Midrex), temperatura en banda (≤ 80 °C [Supuesto]) y alarmas, para que el S-01 ajuste el carbono de carga.
+- 🔎 Retornos clasificados por tipo (despuntes, rechazos, costras, derrames) y pesados; canasta de retornos ≤ 5 % de la carga metálica.
 
 ### Equipos que opera
 | Equipo | Especificación clave |
 |---|---|
-| Grúas y manipuladores de patio con electroimán o pulpo | Capacidad según placa [Validar con OEM — no están en la ficha] |
-| Pórtico de detección de radiación | Umbral de alarma según Seguridad Radiológica [Validar] |
-| Carro portacanastas | Canasta de 90 m³, 55–70 t |
-| Equipo de oxicorte | O₂ + gas; NOM-027 |
-| Báscula de camiones | Registro de peso |
+| Consola (HMI) de bandas de DRI y silos de día | Arranque en secuencia, enclavamientos, niveles, tasas y alarmas [Validar con OEM] |
+| Bandas cerradas de DRI desde HYL y Midrex, transferencias y colectores de polvo | DRI 4–20 mm; finos < 3 mm ≤ 5 %; ≤ 80 °C en banda [Supuesto] (CV-GASM-001 §4.2) |
+| Silos de día del EAF | Inertización con N₂ y medición de temperatura [Validar con OEM] |
+| Tolvas de cal y dolomita | Llenado neumático o por banda [Validar con OEM] |
+| Cargador frontal o grúa con electroimán del área de retornos; canasta de 90 m³ | Capacidad según placa [Validar con OEM]; licencia interna |
+| Detector de radiación para retornos | Umbral según el ESR [Validar con C-16] |
+| Equipo de oxicorte (cuadrilla de día) | O₂ + gas; NOM-027 |
 
 ### Indicadores de desempeño (con meta)
 | Indicador | Meta | Fuente |
 |---|---|---|
-| Canastas dentro del peso objetivo (55–70 t) | ≥ 95% | Báscula / MES |
-| Canastas entregadas a tiempo al horno | ≥ 98% | MES |
-| Alarmas de radiación atendidas con el protocolo | 100% | Registro de Seguridad Radiológica |
-| Explosiones o proyecciones en el horno atribuibles a la carga | 0 | Reporte de incidentes |
+| Coladas sin demora por falta de DRI en silos de día | ≥ 99 % [Supuesto] | MES |
+| Eventos de DRI húmedo que llegan al horno | 0 | Reporte de incidentes |
+| Alarmas de temperatura / O₂ en silos atendidas con el protocolo | 100 % | Historial de alarmas |
+| Lotes de retornos revisados con el detector antes de la canasta | 100 % | Registro de retornos |
+| Derrames de DRI limpiados en el mismo turno | ≥ 95 % [Supuesto] | Bitácora |
 
 ### Perfil
 | Requisito | Detalle |
 |---|---|
-| Escolaridad | Secundaria (preferente bachillerato) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
-| Experiencia | No indispensable; licencia interna de equipo móvil en los primeros 6 meses |
-| Conocimientos | Tipos de chatarra y prohibidos, receta de carga, operación de electroimán, oxicorte |
-| DC-3 / NOM | NOM-006 (grúa/manipulador), NOM-012 (conciencia radiológica), NOM-027 (corte), NOM-017, NOM-015 |
-| Certificación interna TD-P07 | MO-EAF-02 (armado de canasta), MS-ACE-03, MS-ACE-07 |
-| Condición física y médica | Apto para operar equipo móvil (visión, audición); trabajo a la intemperie |
+| Escolaridad | Secundaria (preferente bachillerato técnico) · **Equivalencia:** experiencia o certificación (ver §4, Escolaridad y equivalencias) |
+| Experiencia | No indispensable; licencia interna de equipo móvil en los primeros 6 meses. **Trabajadores de la antigua categoría S-05:** su experiencia en grúa, electroimán, oxicorte y detección de radiación se reconoce por examen de suficiencia (LFT art. 153-U) |
+| Conocimientos | Propiedades del DRI (reoxidación, humedad, finos), bandas y enclavamientos, inertización con N₂, fundentes, clasificación de retornos |
+| DC-3 / NOM | NOM-004 (maquinaria y bandas), NOM-006 (cargador o grúa de retornos), NOM-033 (vigía de espacio confinado), NOM-010 (polvo), NOM-012 (conciencia radiológica), NOM-027 (oxicorte), NOM-017, NOM-015 — verificar versiones con SSO |
+| Certificación interna TD-P07 | MO-EAF-02 (recepción de DRI, silos de día y retornos), MS-ACE-03, MS-ACE-05 (vigía), MS-ACE-06, MS-ACE-07 (usuario) |
+| Condición física y médica | Apto para operar equipo móvil (visión, audición); trabajo a la intemperie y en galerías con polvo (evaluación individual) |
 
 ### Ruta de progresión
 Ingreso → **S-05 (N-3)** → S-04 (N-5) → S-09 (N-6). Lateral: S-10 (N-4).
 
 ### Condiciones de trabajo y riesgos
-Intemperie (sol, lluvia, calor ambiental de Nuevo León), polvo, ruido, carga suspendida, vehículos en movimiento, oxicorte.
+Galerías de bandas y silos con polvo de DRI y posible atmósfera con N₂ o CO; partes en movimiento de bandas; intemperie (calor de Nuevo León); equipo móvil y carga suspendida en el área de retornos; oxicorte en la cuadrilla de día.
 
 ### Plan de formación para el puesto
 | Etapa | Contenido | Horas |
 |---|---|---|
 | Inducción | Común | 40 |
-| Ruta técnica | Clasificación de chatarra y prohibidos, receta de carga, radiación (usuario), electroimán, oxicorte | 40 |
-| OJT supervisado | 20 turnos por puesto (recepción, grúa, carro) | 240 |
-| Certificación TD-P07 | Pasos ★ de MO-EAF-02 y MS-ACE-07 | 4 |
-| Refresco anual | Simulacro de alarma radiológica | 8/año |
-| Vigencia de certificaciones | **12 meses:** alturas (MS-ACE-10, NOM-009); grúas/izaje (MS-ACE-04, NOM-006); fuentes radiactivas (MS-ACE-07, NOM-012). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
+| Ruta técnica | DRI (reoxidación, humedad, finos, H₂), bandas y enclavamientos, silos e inertización con N₂, fundentes, retornos internos y revisión radiométrica, LOTO en bandas | 48 [Supuesto] |
+| OJT supervisado | 10 turnos por puesto (consola, bandas, silos, fundentes, retornos) | 240 |
+| Certificación TD-P07 | Pasos ★ de MO-EAF-02 v0.2, MS-ACE-03, MS-ACE-05 (vigía), MS-ACE-06 y MS-ACE-07 (usuario) | 6 |
+| Recapacitación de la antigua categoría S-05 (una vez) | Ruta técnica completa + OJT de 120 h; examen de suficiencia (art. 153-U) para lo que ya dominan (grúa, electroimán, oxicorte, radiación) | 48 + 120 OJT [Supuesto] |
+| Refresco anual | Simulacro de DRI húmedo / calentamiento de silo y rescate en galería | 8/año |
+| Vigencia de certificaciones | **12 meses:** espacios confinados (MS-ACE-05, NOM-033); grúas/izaje (MS-ACE-04, NOM-006); alturas (MS-ACE-10, NOM-009); fuentes radiactivas (MS-ACE-07, NOM-012). **≤ 24 meses:** demás certificaciones TD-P07 del puesto (criterio unificado de seguridad, §4) | — |
 
 ## S-06 — Operador de Horno Olla
 | Campo | Valor |
@@ -980,7 +995,7 @@ Calor radiante de ollas vacías a > 1,000 °C, polvo de refractario (sílice cri
 ## S-09 — Operador de Grúa de Colada (nave de ollas)
 | Campo | Valor |
 |---|---|
-| Tipo de personal | Sindicalizado — línea 3 (Grúas y patio), **nivel N-6** |
+| Tipo de personal | Sindicalizado — línea 3 (Grúas y manejo de materiales), **nivel N-6** |
 | Área / equipo | Nave de ollas: 2 grúas de colada de 250/63 t con doble freno y límites redundantes |
 | Reporta a | C-04 Jefe de Turno de Acería (dueño de MO-OLL-02), vía C-05 |
 | Supervisa a | No aplica |
@@ -2258,7 +2273,7 @@ Alta presión, calor, riesgo de incendio por fluido, altura, radiación (CC2).
 | Campo | Valor |
 |---|---|
 | Tipo de personal | Sindicalizado — escalafón de Mantenimiento, **Técnico C N-5 / B N-6 / A N-7** |
-| Área / equipo | Paneles y bóveda enfriados por agua, estructura, canastas, ollas (coraza), pailería |
+| Área / equipo | Paneles y bóveda enfriados por agua, estructura, canastas de retornos, chutes y estructura de bandas y silos de DRI, ollas (coraza), pailería |
 | Reporta a | C-11 Supervisor de Mantenimiento Mecánico |
 | Supervisa a | No aplica — sin funciones de mando (LFT art. 9) |
 | Plazas (total y por turno) | **25 plazas** (2 por turno × 4 cuadrillas = 8 + 1 de relevo; 14 puestos de día × 1.1 = 16) |
@@ -2271,7 +2286,7 @@ Reparar por soldadura, con procedimientos calificados, los componentes cuya fall
 | # | Función | % |
 |---|---|---|
 | 1 | Reparar paneles y tubos de bóveda con WPS calificado (MM-EAF-01) | 30 |
-| 2 | Reparar canastas, corazas de olla y estructura | 25 |
+| 2 | Reparar corazas de olla, canastas de retornos, chutes de DRI (desgaste por abrasión) y estructura | 25 |
 | 3 | Pailería y fabricación en taller | 20 |
 | 4 | Atención de fallas en guardia | 15 |
 | 5 | Registro de soldaduras y control de consumibles | 10 |
@@ -2598,7 +2613,7 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 | S-02 | R | I | I | I | R | A | R | A |  |  |  |
 | S-03 | R | I |  |  | I | I | R | R |  |  |  |
 | S-04 |  | R |  |  |  |  |  | R |  |  |  |
-| S-05 |  | R | I |  |  |  |  |  |  |  |  |
+| S-05 |  | R | C |  |  |  |  |  |  |  |  |
 | S-06 |  |  |  |  |  |  | I |  | I | C | A |
 | S-07 |  |  |  |  |  |  |  |  |  |  | R |
 | S-08 |  |  |  |  |  |  | C |  | A | I | I |
@@ -2694,7 +2709,7 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 | S-02 | R | R | R | C | I | R |  | R | R | R |
 | S-03 | R | R | R | R | C | R |  | R | R | R |
 | S-04 | R | R | R | R | I | R | I | R | R | R |
-| S-05 | R | R | R | R | I | R | R | R | R | R |
+| S-05 | R | R | R | R | C | R | R | R | R | R |
 | S-06 | R | R | R | C | I | R |  | R | R | R |
 | S-07 | R | R | R | C | I | R |  | R | R | R |
 | S-08 | R | R | R | C | R | R |  | R | R | R |
@@ -2734,13 +2749,14 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 | 7 | **Capacitación fuera de jornada** (refrescos, simulador, recertificaciones de 12 meses) en rol 4x4 | La capacitación se imparte en horas de jornada salvo que se pacte otra cosa (art. 153-A; la CMCAP es el art. 153-E) — verificar numeral con Jurídico Laboral. Con vigencias de 12 meses sube la carga de recertificación | Se programa en jornada o en días de descanso con pago según el CCT | CMCAP + Jurídico. **Verificar con Jurídico Laboral** | Horas extra no presupuestadas o baja asistencia |
 | 8 | **Cambio lateral entre líneas** (S-06 ↔ S-01, S-19 → S-22/S-23/S-25, S-08/S-03 → S-24) | Depende del CCT (escalafón departamental o general) | Permitido con certificación y conservando antigüedad de empresa | Sindicato / CCT | Conflicto entre líneas por derechos escalafonarios |
 | 9 | **Condición médica** | No discriminación (arts. 3, 133); exámenes médicos del trabajador (art. 134 fr. X) | Aptitud por capacidad funcional individual con ajustes razonables | Jurídico + Medicina del Trabajo | Discriminación por salud; datos personales sensibles |
-| 10 | **Personal ocupacionalmente expuesto (POE) a radiación** (S-12, S-13 y S-14 de CC2, S-21, S-25; S-05 como usuario del pórtico) | NOM-012-STPS-2012 y reglamento de seguridad radiológica: capacitación, dosimetría y vigilancia médica; recertificación de 12 meses | S-21 como POE; S-12/S-13/S-14 de CC2 y S-25 según el análisis del ESR (C-16) | SSO + ESR. **Verificar con Jurídico Laboral / SSO** | Incumplimiento con la autoridad nuclear y la STPS |
+| 10 | **Personal ocupacionalmente expuesto (POE) a radiación** (S-12, S-13 y S-14 de CC2, S-21, S-25; S-05 como usuario del detector de retornos internos) | NOM-012-STPS-2012 y reglamento de seguridad radiológica: capacitación, dosimetría y vigilancia médica; recertificación de 12 meses | S-21 como POE; S-12/S-13/S-14 de CC2 y S-25 según el análisis del ESR (C-16) | SSO + ESR. **Verificar con Jurídico Laboral / SSO** | Incumplimiento con la autoridad nuclear y la STPS |
 | 11 | **Coordinación técnica sin mando** (S-01, S-06, S-12, S-13, técnicos A, evaluadores sindicalizados) | Art. 9: son de confianza las funciones de dirección, inspección, vigilancia y fiscalización de carácter general; se define por la función, no por el nombre del puesto | "Supervisa a: No aplica" en los 26 roles; "coordina técnicamente / guía / da el liberado" = secuencia técnica y señal de seguridad; asignación de trabajo, disciplina y evaluación de desempeño = C-xx; el evaluador sindicalizado evalúa pasos ★ en pareja y no dictamina (§3.3). En campo, los tramos altos de C-05 y C-06 no deben cubrirse delegando mando en S-01 o S-12 | Sindicato; **verificar con Jurídico Laboral** | Que la función real se vuelva de confianza (pérdida de la plaza sindical, reclamos de pago o de categoría) |
 | 12 | **Paso a confianza** (S → C-05, C-06, C-11, C-12) | Art. 9 (trabajador de confianza) y cláusulas del CCT | Por concurso y Escuela de Supervisores; renuncia a la plaza sindical según el CCT | Jurídico + Gerencia de Confianza | Derechos de regreso a la plaza |
 | 13 | **Evidencias TD-P07 para decisiones disciplinarias** | Uso proporcional, derecho de audiencia y protección de datos | La evaluación se usa para formar, certificar y acreditar aptitud; **no es sanción**. Excepción única: acto inseguro deliberado en tarea crítica de seguridad, por la vía del Reglamento Interior y el CCT. La suspensión preventiva de la certificación tras un incidente grave es medida de seguridad, sin pérdida de salario ni antigüedad (§3.1) | Sindicato / Jurídico. **Verificar con Jurídico Laboral** | Rechazo a las evaluaciones; nulidad de sanciones |
 | 14 | **Versiones de las NOM citadas** | Las NOM se actualizan (p. ej. NOM-006, NOM-017) | Se citan por número; la versión vigente la confirma SSO | experto-seguridad-salud. **Verificar con Jurídico Laboral / SSO** | DC-3 con referencia normativa vencida |
 | 15 | **Escolaridad como requisito** | No discriminación (arts. 3 y 133); art. 153-U | Escolaridad = referencia; equivalencia por experiencia (Acuerdo 286 SEP / CENEVAL), CONOCER o examen de suficiencia + TD-P07 (§4) | Jurídico + CMCAP. **Verificar con Jurídico Laboral** | Exclusión de trabajadores con experiencia y sin certificado escolar; queja por discriminación |
 | 16 | **Vigencias de 12 meses** (alturas, confinados, izaje, eléctrico, radiactivas) | Obligación de capacitar (art. 153-A) y NOM aplicables | Recertificación anual en jornada; plan DC-2 con la carga adicional | CMCAP + SSO | Certificaciones vencidas que dejan puestos sin cubrir; horas extra |
+| 17 | **Redefinición de S-05 y 58 plazas en reubicación (D-010)** | Categorías, funciones y tabulador están en el CCT: cambiarlos requiere convenio con el sindicato y, si modifica el CCT, depósito y consulta a los trabajadores (arts. 390 Bis, 391 y 400 Bis). No se puede reducir el salario ni cambiar condiciones de forma unilateral (art. 51 fr. IV). La vía de "reajuste por nuevos procedimientos" (art. 439) implica indemnización y conflicto, y **no se propone**. Obligación de capacitar para puestos nuevos o cambios de tecnología (arts. 153-A y 153-F); vacantes y puestos de nueva creación por escalafón (art. 159) | S-05 cambia de funciones y conserva nivel N-3, antigüedad y salario; 39 plazas se quedan como S-05 con recapacitación; 58 se reubican por movimientos laterales en N-3 y vacantes, sin despidos (`organigrama-acería.md` §7) | Sindicato, CMCAP y Jurídico. **Verificar con Jurídico Laboral** | Reclamos por cambio de condiciones; conflicto por "materia de trabajo" de bandas con Reducción Directa; demandas si se reduce salario o categoría |
 
 ---
 
@@ -2748,7 +2764,7 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 
 | Revisor | Qué revisa | Por qué |
 |---|---|---|
-| `experto-relaciones-laborales` | §3 escalafón, §6 notas laborales, niveles y suplencias — **hecho en v0.2: visto bueno con observaciones** (`REVISION-LABORAL.md`) | Afecta a 963 trabajadores sindicalizados y al CCT |
+| `experto-relaciones-laborales` | §3 escalafón, §6 notas laborales, niveles y suplencias — **hecho en v0.2: visto bueno con observaciones** (`REVISION-LABORAL.md`) | Afecta a 963 plazas sindicalizadas (905 de diseño + 58 en reubicación, D-010) y al CCT |
 | `experto-seguridad-salud` | Responsabilidades de seguridad, NOM y DC-3 de cada puesto, aptitud médica, POE | Riesgo físico crítico (metal líquido, grúas, AT, radiación) |
 | `experto-operativo-metalurgia` | Parámetros de cada puesto, KPIs y metas, asignación R/A/C/I | Documento técnico de planta; valores de FT-ACE-001 |
 | `experto-documentacion-mejora` | Control documental DP-ACE-S y coherencia con CAT-ACE-001 | Documento controlado nuevo; propone cambios al catálogo |
@@ -2766,6 +2782,8 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 
 **Recomendación:** opción **B**. **Fecha límite sugerida para decidir:** 2026-10-16, para que la etapa 1 quede validada antes de cerrar la DNC y el plan DC-2 2027.
 
+> **Decisión D-010 (v0.3):** el destino de las 58 plazas de la antigua categoría S-05 y la negociación de la redefinición del puesto con el sindicato y la CMCAP se deciden en `organigrama-acería.md` §7 ("Decisión requerida del Director", tema 4).
+
 > **Decisiones adicionales derivadas de la revisión laboral (v0.2):** jornada 4x4 frente a la reforma de 40 h, vigencias de 12 meses en el plan DC-2 y pendientes de catálogo (S-27 grúas de CC y producto, escarpeo). Ver `REVISION-LABORAL.md`, sección "Decisión requerida del Director".
 
 ---
@@ -2776,3 +2794,4 @@ Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación: 26 descripciones de puesto, dotación, escalafón, matriz rol × proceso y notas laborales | gerente-personal-sindicalizado |
 | 0.2 | 2026-09-25 | Revisión laboral y documental: §3.1 reescrito con arts. 153-U y 154–159 (aptitud ≠ orden; antigüedad entre aptos; examen de suficiencia); uso no disciplinario de las evaluaciones; "Supervisa a: No aplica" (art. 9) en los 26 roles; equivalencias de escolaridad; vigencias de 12 / 24 meses y fila "Vigencia" en los 26 planes; ejecutores nuevos de CAT-ACE-001 (S-20 MM-EAF-02; S-21/S-22 MM-CC-01/02; S-09/S-26 MM-GR-01; S-13/S-25 MS-ACE-07) en matriz y fichas; nota de jornada 4x4 (arts. 59–61, 66–68, reforma de 40 h); encabezado con revisores | experto-relaciones-laborales |
+| 0.3 | 2026-09-28 | Decisión D-010 (sin chatarra comprada; EAF con ≈ 95–100 % DRI por bandas desde HYL y Midrex): S-05 redefinido como "Operador de Manejo de DRI y Retornos" (39 plazas [Supuesto], 7 por turno); 58 plazas en reubicación sin despidos; S-01, S-03, S-04 y S-23 sin canasta de chatarra; MO-EAF-02 renombrado; matriz S-05 (MO-EAF-03 C, MS-ACE-05 C); nota laboral 17; subtotales 322 / 905 (963 con reubicación); 150 por turno | experto-relaciones-laborales |
