@@ -31,7 +31,7 @@
 | RC-16 | Ingeniero de Confiabilidad (equipo rotativo y compresores) | Común | Mantenimiento | 2 | — |
 | RC-17 | Ingeniero de Integridad Mecánica (recipientes a presión, tuberías, reformador y calentador) | Común | Mantenimiento | 1 | — |
 | RC-18 | Especialista de Seguridad de Procesos e Higiene de RD | Común | Seguridad | 3 | guardia |
-| RC-19 | Ingeniero de Control de Proceso y Sistemas Instrumentados de Seguridad (DCS/SIS) | Común | Ingeniería | 2 | guardia |
+| RC-19 | Ingeniero de Control de Proceso y Sistemas Instrumentados de Seguridad (DCS/SIS) | Común | Mantenimiento (control y SIS) | 2 | guardia |
 | | **Total confianza** | | | **47** | **5 mandos** (RC-05, RC-06, RC-07, RC-08, RC-14) + guardia telefónica |
 
 ### 1.2 Personal sindicalizado (RS)

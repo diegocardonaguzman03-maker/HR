@@ -317,13 +317,13 @@ Detalle en [ORG-RD-001](01-organizacion/organigrama-reduccion-directa.md) y cód
 
 | Área | Confianza | Sindicalizados | Total |
 |---|---|---|---|
-| Gerencia y staff (calidad, seguridad de procesos, control y SIS) | 8 | — | 8 |
+| Gerencia y staff (calidad, seguridad de procesos) | 6 | — | 6 |
 | Jefatura de turno | 4 | — | 4 |
 | Planta HYL (operación) | 7 | 37 | 44 |
 | Planta Midrex (operación) | 7 | 37 | 44 |
 | Manejo de materiales y servicios (patio de pelet, bandas de DRI, briquetas, agua, N₂) | 4 | 111 | 115 |
 | Laboratorio de RD | (RC-11) | 14 | 14 |
-| Mantenimiento (mecánico, rotativo, E&I, soldadura, refractario, bandas, planeación, confiabilidad, integridad) | 17 | 162 | 179 |
+| Mantenimiento (mecánico, rotativo, E&I, soldadura, refractario, bandas, planeación, confiabilidad, integridad, control y SIS) | 19 | 162 | 181 |
 | **Total Reducción Directa** | **47** | **361** | **408** |
 
 Operación continua 24/7 en **rol 4x4 de 12 h** con 4 cuadrillas. En cada turno hay **5 mandos de confianza y 53 sindicalizados** en planta. Los 408 están dentro de las 3,900 personas del Complejo Acería Norte (perfil de empresa §2) y se comparan con la cartera de TD-C-ACN-01 "Área DRI" (≈ 450). Paros mayores (cambio de tubos o de catalizador, campañas de refractario) usan contratistas REPSE.
