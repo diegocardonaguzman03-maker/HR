@@ -27,6 +27,7 @@ export function validate(p, titles, ace) {
     if (r.it && !fs.readdirSync(path.join(ace, '06-instrucciones-trabajo')).some((f) => f.startsWith(r.it + '-'))) e.push(`no existe la instrucción ${r.it}`);
   }
   if (!p.roles.some((r) => r.raci === 'A')) e.push('ningún rol tiene A (dueño)');
+  if (p.glossary.length < 5 || p.glossary.length > 14) e.push(`glosario con ${p.glossary.length} términos (debe tener 5–14)`);
   if (p.goldenRules.length !== 3) e.push('deben ser exactamente 3 reglas de oro');
   for (const x of p.epp) if (!isEpp(x)) e.push(`EPP desconocido ${x}`);
   for (const h of p.hazards ?? []) if (!isIcon(h.icon)) e.push(`icono de peligro desconocido ${h.icon}`);

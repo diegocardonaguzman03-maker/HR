@@ -66,7 +66,9 @@ function swimlane(p, laneColor) {
     if (s.decision) rows.push({ kind: 'dec', s, h: 58 });
   }
   let y = HEAD + 10;
-  const gap = 16;
+  const dense = rows.length > 20;
+  const gap = dense ? 8 : rows.length > 16 ? 12 : 16;
+  if (dense) for (const r of rows) r.h = r.kind === 'dec' ? 46 : Math.max(32, r.h - 6);
   for (const r of rows) { r.y = y; y += r.h + gap; }
   const H = y + 6;
   const cx = (role) => G + laneW * lanes.indexOf(role) + laneW / 2;
@@ -197,6 +199,7 @@ section { margin-bottom: 10px; }
 .band .code { font-size: 9pt; opacity:.85; margin-left:8px; letter-spacing:.05em; }
 .band h1 { font-size: 20pt; margin: 6px 0 2px; line-height:1.15; }
 .band .sub { font-size: 8.5pt; opacity:.9; }
+.band .ctl { font-size: 7.6pt; opacity:.85; margin-top:3px; }
 .band .for { position:absolute; right:14px; top:12px; text-align:right; font-size:8pt; opacity:.95; }
 .band .for b { display:block; font-size:10.5pt; }
 .intro { display:grid; grid-template-columns: 1.05fr 1fr; gap: 10px; padding: 10px 12px; }
@@ -279,6 +282,7 @@ tr:nth-child(even) td { background:#f5f7f8; }
     <span class="areachip">${esc(area.name.toUpperCase())}</span><span class="code">${esc(p.pov)} · basado en ${esc(p.code)} · v${esc(p.version)} · Borrador para validación</span>
     <h1>${esc(p.title)}</h1>
     <div class="sub">Procedimiento Operativo Visual · ${esc(p.areaName)}</div>
+    <div class="ctl">Dueño: ${esc(ownerLabel)} · Emisión: ${esc(p.issued ?? '2026-09-28')} · Próxima revisión: ${esc(p.nextReview ?? '2027-09-28')} · Refleja: ${esc(p.code)} v${esc(p.manualVersion ?? '0.1')} y FT-ACE-001 v0.3</div>
   </div>
   <div class="intro">
     <div>
@@ -337,8 +341,8 @@ tr:nth-child(even) td { background:#f5f7f8; }
   ${p.abnormal.map((a) => `<div class="ab"><div class="if">${icon(a.icon, { size: 18, color: '#e65100' })}<div><small>Si pasa esto</small>${esc(a.if)}</div></div><div class="do"><small>Haz esto</small>${esc(a.do)}</div><div class="call"><small>Avisa a</small>${esc(a.call)}</div></div>`).join('')}
 </section>
 
-<section class="pb">
-  <h2><span class="n">6</span>Registros y certificación</h2>
+<section>
+  <h2 style="margin-top:12px"><span class="n">6</span>Registros y certificación</h2>
   <table><tr><th>Registro</th><th>Cuándo</th><th>Dónde</th></tr>${p.records.map((r) => `<tr><td>${esc(r.what)}</td><td>${esc(r.when)}</td><td>${esc(r.where)}</td></tr>`).join('')}</table>
   <table style="margin-top:8px"><tr><th>Puesto</th><th>Nivel</th><th>Teoría</th><th>Práctica en el puesto (OJT)</th><th>Qué te evalúan</th><th>Vigencia</th></tr>${p.certification.map((c) => `<tr><td><b>${esc(c.role)}</b></td><td>${esc(c.level)}</td><td>${esc(c.theory)}</td><td>${esc(c.ojt)}</td><td>${esc(c.evaluated)}</td><td>${esc(c.validity)}</td></tr>`).join('')}</table>
   <div class="two" style="margin-top:8px">
@@ -358,7 +362,12 @@ tr:nth-child(even) td { background:#f5f7f8; }
   <div class="gold" style="margin-top:8px">${p.goldenRules.map((g, i) => `<div><span>${['①', '②', '③'][i] ?? '★'}</span>${esc(g)}</div>`).join('')}</div>
   <h2 style="margin-top:12px"><span class="n">8</span>Revisión y aprobación</h2>
   <table><tr><th>Revisión</th><th>Quién</th><th>Resultado</th><th>Fecha</th></tr>${p.review.map((r) => `<tr><td>${esc(r.area)}</td><td>${esc(r.who)}</td><td>${esc(r.status)}</td><td>${esc(r.date)}</td></tr>`).join('')}
-  <tr><td>Aprobación</td><td>Director de Capacitación y Desarrollo</td><td>Pendiente</td><td>—</td></tr></table>
+  <tr><td>Aprobación del proceso</td><td>${esc(ownerLabel)} y Gerente de Acería (C-01)</td><td>Pendiente</td><td>—</td></tr>
+  <tr><td>Aprobación de C&amp;D</td><td>Director de Capacitación y Desarrollo</td><td>Pendiente</td><td>—</td></tr></table>
+  <h4 style="margin:8px 0 3px;font-size:9pt">Control de cambios</h4>
+  <table><tr><th>Versión</th><th>Fecha</th><th>Cambio</th></tr>
+  <tr><td>0.1</td><td>2026-09-28</td><td>Emisión inicial desde ${esc(p.code)}: pasos, carriles por puesto y pictogramas.</td></tr>
+  ${p.review.length > 1 ? `<tr><td>0.1</td><td>2026-09-28</td><td>Revisión cruzada: ${esc(p.review.filter((r) => r.area !== 'Elaboró').map((r) => r.area).join(', '))}.</td></tr>` : ''}</table>
   <p class="note">Documento de capacitación, borrador para validación. Los valores técnicos provienen del manual ${esc(p.code)} y de la ficha FT-ACE-001 v0.3; lo marcado [Supuesto] o [Validar con OEM] se confirma con Ingeniería de Proceso antes de usarse en planta. Copia impresa = copia no controlada.</p>
 </section>
 </body></html>`;

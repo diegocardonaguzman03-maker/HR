@@ -48,10 +48,12 @@ function chainSvg(list, color) {
     const { x, y } = pos[i];
     if (i > 0) {
       const a = pos[i - 1];
+      const linked = list[i - 1].next.includes(p.code) || p.previous.includes(list[i - 1].code);
+      const st = linked ? 'stroke="#546e7a" stroke-width="2.2"' : 'stroke="#b0bec5" stroke-width="1.6" stroke-dasharray="4 3"';
       if (a.y === y) {
         const fx = a.x < x ? a.x + cw : a.x, tx = a.x < x ? x : x + cw;
-        o += `<path d="M${fx},${y + ch / 2} L${tx},${y + ch / 2}" stroke="#78909c" stroke-width="2" marker-end="url(#m)"/>`;
-      } else o += `<path d="M${a.x + cw / 2},${a.y + ch} L${x + cw / 2},${y}" stroke="#78909c" stroke-width="2" marker-end="url(#m)"/>`;
+        o += `<path d="M${fx},${y + ch / 2} L${tx},${y + ch / 2}" ${st} marker-end="url(#m)"/>`;
+      } else o += `<path d="M${a.x + cw / 2},${a.y + ch} L${x + cw / 2},${y}" ${st} marker-end="url(#m)"/>`;
     }
     o += `<rect x="${x}" y="${y}" width="${cw}" height="${ch}" rx="8" fill="#fff" stroke="${color}" stroke-width="2"/>`;
     o += `<rect x="${x}" y="${y}" width="${cw}" height="18" rx="8" fill="${color}"/><rect x="${x}" y="${y + 10}" width="${cw}" height="8" fill="${color}"/>`;
@@ -91,7 +93,7 @@ function section(sec) {
       ${hrs(rc, mine)}<div class="rf">${crit ? `${crit} pasos críticos ★ a certificar en esta área` : rc.startsWith('C') ? 'Supervisa, autoriza y responde por el resultado' : 'Sin pasos críticos propios en esta área'}</div></div>`;
   }).join('');
   return `<section class="pb"><div class="sh" style="background:${sec.color}">${esc(sec.title)}</div>
-  <h2>Cadena de procesos</h2><p class="note">Cada tarjeta es un Procedimiento Operativo Visual (POV). Las flechas indican el orden típico de una colada; algunos procesos (por ejemplo, cambio de electrodos o de buza) ocurren cuando se necesitan.</p>
+  <h2>Cadena de procesos</h2><p class="note">Cada tarjeta es un Procedimiento Operativo Visual (POV). Flecha sólida: un proceso sigue directamente al otro. Flecha punteada: solo orden de lectura; ese proceso ocurre cuando se necesita (por ejemplo, cambio de electrodos o de buza).</p>
   ${chainSvg(list, sec.color)}
   <table class="lst"><tr><th>POV</th><th>Proceso</th><th>Dueño (A)</th><th>Quién lo hace (R)</th><th>Pasos / ★</th><th>Archivo</th></tr>
   ${list.map((p) => `<tr><td><b>${esc(p.pov)}</b></td><td>${esc(p.title)}</td><td>${esc(p.roles.filter((r) => r.raci === 'A').map((r) => r.code).join(', '))}</td><td>${esc(p.roles.filter((r) => r.raci === 'R').map((r) => r.code).join(', '))}</td><td>${p.steps.length} / ${p.steps.filter((s) => s.critical).length}</td><td class="f">${esc(fileName(p))}</td></tr>`).join('')}</table>
@@ -107,7 +109,7 @@ function areaFlow() {
   const box = (x, y, w, t, sub, color) => `<rect x="${x}" y="${y}" width="${w}" height="58" rx="9" fill="#fff" stroke="${color}" stroke-width="2.5"/><rect x="${x}" y="${y}" width="8" height="58" rx="4" fill="${color}"/><text x="${x + w / 2 + 4}" y="${y + 25}" text-anchor="middle" font-size="12" font-weight="700" fill="#263238">${t}</text><text x="${x + w / 2 + 4}" y="${y + 42}" text-anchor="middle" font-size="9.5" fill="#607d8b">${sub}</text>`;
   const ar = (x1, y1, x2, y2) => `<path d="M${x1},${y1} L${x2},${y2}" stroke="#90a4ae" stroke-width="2.5" marker-end="url(#fa)"/>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 170" width="100%" font-family="Arial"><defs><marker id="fa" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#90a4ae"/></marker></defs>
-  ${box(0, 56, 110, 'Patio', 'chatarra y HRD', '#795548')}${ar(110, 85, 136, 85)}
+  ${box(0, 56, 110, 'Patio', 'chatarra y DRI', '#795548')}${ar(110, 85, 136, 85)}
   ${box(138, 56, 140, 'Hornos EAF', `${n(['EAF'])} POV`, AREAS.EAF.color)}${ar(278, 85, 304, 85)}
   ${box(306, 56, 150, 'Ollas · Horno Olla', `${n(['OLL', 'LF'])} POV`, AREAS.LF.color)}${ar(456, 78, 492, 38)}${ar(456, 92, 492, 132)}
   ${box(494, 6, 206, 'CC1 · Planchón', `${n(['CC1'])} POV`, AREAS.CC1.color)}
