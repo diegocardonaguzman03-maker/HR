@@ -28,24 +28,6 @@
       "op": "append",
       "path": "glossary",
       "value": {
-        "term": "LOTO",
-        "def": "Bloqueo y etiquetado: cada persona pone su candado y tarjeta para que ninguna energía mueva el equipo."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "Llave cautiva",
-        "def": "Llave personal que solo sale del tablero con el interruptor abierto; sin todas las llaves el horno no se energiza."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
         "term": "HMI",
         "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
       },

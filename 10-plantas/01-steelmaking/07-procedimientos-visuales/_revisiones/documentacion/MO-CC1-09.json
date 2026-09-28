@@ -50,15 +50,6 @@
         "def": "Producto de la CC1: bloque de acero de 230 mm de espesor, 900–1,650 mm de ancho y 8–11 m de largo."
       },
       "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "MES",
-        "def": "Sistema de planta que guarda la identidad, el estado y la ubicación de cada pieza."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
     }
   ]
 }

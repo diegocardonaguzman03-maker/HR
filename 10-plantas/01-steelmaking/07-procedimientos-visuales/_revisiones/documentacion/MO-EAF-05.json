@@ -46,15 +46,6 @@
       "op": "append",
       "path": "glossary",
       "value": {
-        "term": "Zona roja",
-        "def": "Área donde nadie puede estar a pie mientras dura la tarea; la marca y la libera el responsable del paso."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
         "term": "HMI",
         "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
       },

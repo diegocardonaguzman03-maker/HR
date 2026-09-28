@@ -23,24 +23,6 @@
       "path": "steps[4].check",
       "value": "La HMI confirma modo inserción; área despejada.",
       "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "Segmentos",
-        "def": "Tramos de rodillos bajo el molde que guían y enfrían el planchón; el 1 es el más cercano al molde."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "HMI",
-        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
     }
   ]
 }

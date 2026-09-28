@@ -77,15 +77,6 @@
       "op": "append",
       "path": "glossary",
       "value": {
-        "term": "HMI",
-        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
         "term": "DRI (HRD)",
         "def": "Hierro de reducción directa que se alimenta al horno; se detiene antes de vaciar."
       },

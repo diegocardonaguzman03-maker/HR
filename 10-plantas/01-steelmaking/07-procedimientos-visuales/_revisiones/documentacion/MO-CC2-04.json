@@ -28,15 +28,6 @@
       "op": "append",
       "path": "glossary",
       "value": {
-        "term": "Rotámetro",
-        "def": "Medidor de flujo del aceite de lubricación del molde, en mL/min."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
         "term": "Línea (L1–L6)",
         "def": "Cada uno de los 6 moldes de la CC2 con su vía de extracción; L1 y L6 son las de los extremos."
       },

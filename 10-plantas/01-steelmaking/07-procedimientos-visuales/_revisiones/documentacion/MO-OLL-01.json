@@ -28,15 +28,6 @@
       "op": "append",
       "path": "glossary",
       "value": {
-        "term": "Olla",
-        "def": "Recipiente de acero con refractario que recibe ≈ 150 t de acero líquido del horno y lo lleva al horno olla y a la colada continua."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
         "term": "Lista de entrega de la olla",
         "def": "Formato de MO-OLL-01 que firma S-08: T de cara caliente, horas de precalentamiento, placas, tapón y arena."
       },

@@ -63,26 +63,8 @@
       "op": "append",
       "path": "glossary",
       "value": {
-        "term": "Escoria espumosa",
-        "def": "Escoria inflada con burbujas de CO que cubre el arco y protege paneles y bóveda."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
         "term": "Oxígeno activo",
         "def": "Oxígeno disuelto en el acero (ppm); se mide con la sonda para calcular el aluminio de la olla."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "HMI",
-        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
       },
       "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
     }

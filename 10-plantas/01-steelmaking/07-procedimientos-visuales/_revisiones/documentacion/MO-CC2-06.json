@@ -41,24 +41,6 @@
       "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien. \"Condición segura\" no es observable."
     },
     {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "Línea (L1–L6)",
-        "def": "Cada uno de los 6 moldes de la CC2 con su vía de extracción; L1 y L6 son las de los extremos."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "Rastreo (tracking)",
-        "def": "Registro en nivel 2 / MES que sigue cada planchón o palanquilla desde su colada; ahí se marcan los eventos."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
       "op": "set",
       "path": "steps[2].check",
       "value": "Ø correcto; buza ≥ 900 °C [Validar con OEM].",

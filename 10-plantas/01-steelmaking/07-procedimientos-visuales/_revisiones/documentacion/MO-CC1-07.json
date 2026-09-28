@@ -37,15 +37,6 @@
         "MO-CC1-09"
       ],
       "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. El distribuidor usado va a MO-CC1-01, que cita a MO-CC1-07 como anterior."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "Segmentos",
-        "def": "Tramos de rodillos bajo el molde que guían y enfrían el planchón; el 1 es el más cercano al molde."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
     }
   ]
 }

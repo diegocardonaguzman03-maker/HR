@@ -34,24 +34,6 @@
       "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
     },
     {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "Nivel 2",
-        "def": "Sistema de cómputo de proceso donde se registran los datos de cada colada."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "HMI",
-        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
-      },
-      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
-    },
-    {
       "op": "set",
       "path": "steps[2].check",
       "value": "La HMI muestra \"contacto OK\".",
