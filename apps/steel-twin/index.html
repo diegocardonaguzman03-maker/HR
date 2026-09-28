@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="es-MX">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Steel Learning Twin</title>
+    <title>Acería Virtual</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 rx=%273%27 fill=%27%2315181d%27/%3E%3Crect x=%274%27 y=%273%27 width=%272%27 height=%2710%27 fill=%27%23ffb020%27/%3E%3Crect x=%277%27 y=%276%27 width=%275%27 height=%277%27 fill=%27%23ff7a1a%27/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oxanium:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div id="root"><div style="display:flex;height:100%;align-items:center;justify-content:center;background:#15181d;font:600 13px/1.4 Oxanium,system-ui,sans-serif;letter-spacing:.3em;color:#ffc043">LOADING THE MELT SHOP…</div></div>
+    <div id="root"><div style="display:flex;height:100%;align-items:center;justify-content:center;background:#15181d;font:600 13px/1.4 Oxanium,system-ui,sans-serif;letter-spacing:.3em;color:#ffc043">CARGANDO LA ACERÍA…</div></div>
     <script>
       // If the app cannot start, show the reason instead of an empty page.
       window.addEventListener('error', function (e) {
         var r = document.getElementById('root');
-        if (r && !r.dataset.started) r.innerHTML = '<div style="padding:32px 16px;font:14px/1.5 system-ui,sans-serif;color:#e4e4e7;background:#15181d;height:100%;box-sizing:border-box">The 3D learning twin could not start.<br><span style="color:#a1a1aa">' + String(e.message || 'Script error').replace(/</g, '&lt;') + '</span></div>';
+        if (r && !r.dataset.started) r.innerHTML = '<div style="padding:32px 16px;font:14px/1.5 system-ui,sans-serif;color:#e4e4e7;background:#15181d;height:100%;box-sizing:border-box">No se pudo iniciar la acería virtual.<br><span style="color:#a1a1aa">' + String(e.message || 'Error de script').replace(/</g, '&lt;') + '</span></div>';
       });
     </script>
     <script type="module" src="/src/main.tsx"></script>

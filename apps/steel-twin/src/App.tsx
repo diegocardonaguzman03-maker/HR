@@ -7,6 +7,7 @@ import { Timeline } from './ui/Timeline';
 import { HoverTooltip, MaterialStrip, SolidificationPanel, TemperatureLegend } from './ui/ViewportOverlays';
 import { ControlsHint, HelpOverlay, LayersDrawer, Minimap, MissionCard, StartScreen, StepBanner } from './ui/game/HUD';
 import { useGameInput } from './ui/game/input';
+import { MissionCompleteOverlay, Narrator, ProgressChip, QuizOverlay } from './ui/game/Evaluation';
 import { useAppStore } from './store/useAppStore';
 
 class SceneErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
@@ -19,8 +20,8 @@ class SceneErrorBoundary extends Component<{ children: ReactNode }, { error: Err
       return (
         <div className="flex h-full items-center justify-center p-8 text-center text-sm text-zinc-400">
           <div>
-            <div className="mb-2 font-semibold text-zinc-200">The 3D view could not start.</div>
-            <div>WebGL may be disabled in this browser. {this.state.error.message}</div>
+            <div className="mb-2 font-semibold text-zinc-200">No se pudo iniciar la vista 3D.</div>
+            <div>Puede que WebGL esté desactivado en este navegador. {this.state.error.message}</div>
           </div>
         </div>
       );
@@ -42,7 +43,7 @@ export default function App() {
       </div>
 
       {started && (
-        <div className="pointer-events-none absolute inset-0 flex flex-col">
+        <div className="pointer-events-none absolute inset-0 z-30 flex flex-col">
           <TopBar />
           <div className="relative flex min-h-0 flex-1 flex-col gap-2 px-3 pb-2 md:flex-row md:gap-3">
             {/* left column */}
@@ -60,6 +61,7 @@ export default function App() {
             </div>
             {/* right column */}
             <div className="flex min-h-0 flex-1 flex-col items-stretch gap-2 md:flex-none md:shrink-0 md:items-end">
+              <ProgressChip />
               <LayersDrawer />
               <InfoPanel />
               <div className="hidden flex-1 md:block" />
@@ -72,7 +74,10 @@ export default function App() {
         </div>
       )}
 
+      <Narrator />
       <StepBanner />
+      <MissionCompleteOverlay />
+      <QuizOverlay />
       <HoverTooltip />
       <HelpOverlay />
       <StartScreen />

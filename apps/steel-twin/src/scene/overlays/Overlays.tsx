@@ -10,6 +10,9 @@ import { clock } from '../../sim/clock';
 import { LAYER_MARKERS } from '../../data/layerMarkers';
 import { useAppStore } from '../../store/useAppStore';
 import { MATERIAL_STATE_LABEL } from '../../ui/labels';
+import { EQUIPMENT } from '../../data/equipment';
+import { equipmentRegistry } from '../common/EquipmentGroup';
+import type { EquipmentId } from '../../types/equipment';
 
 /** PROCESS FLOW layer: stations linked by an arrowed path. */
 export function ProcessFlowPath() {
@@ -68,7 +71,7 @@ export function SteelMarker() {
     }
     if (label.current) {
       const snap = simulationProvider.getSnapshot(pose.state, pose.p);
-      label.current.textContent = `STEEL · ${MATERIAL_STATE_LABEL[snap.materialState]} · ${Math.round(snap.steelTemperature.value)} °C`;
+      label.current.textContent = `ACERO · ${MATERIAL_STATE_LABEL[snap.materialState]} · ${Math.round(snap.steelTemperature.value)} °C`;
     }
   });
   return (
@@ -80,7 +83,7 @@ export function SteelMarker() {
       <Html position={[0, 2.4, 0]} center zIndexRange={[20, 0]}>
         <div className="pointer-events-none flex items-center gap-1.5 whitespace-nowrap rounded-sm border border-amber-400/60 bg-[#12151a]/85 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-amber-300 shadow">
           <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-          <span ref={label}>STEEL</span>
+          <span ref={label}>ACERO</span>
         </div>
       </Html>
     </group>
@@ -105,7 +108,7 @@ export function LayerMarkers() {
       {markers.map((m) => {
         const open = focus?.id === m.id;
         return (
-          <Html key={m.id} position={m.position} center zIndexRange={[30, 0]}>
+          <Html key={m.id} position={m.position} center zIndexRange={[28, 0]}>
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -139,9 +142,54 @@ export function SectionPlane() {
       </mesh>
       <Html position={[0, 1.2, 0]} center zIndexRange={[25, 0]}>
         <div className="pointer-events-none whitespace-nowrap rounded-sm border border-sky-400/60 bg-[#12151a]/85 px-1.5 py-0.5 text-[10px] text-sky-200">
-          Section at {s.toFixed(1)} m
+          Sección a {s.toFixed(1)} m
         </div>
       </Html>
     </group>
+  );
+}
+
+/**
+ * Floating name tags above every machine (game-style markers). They follow moving
+ * equipment (crane, ladle) and open the info panel when clicked.
+ */
+export function EquipmentLabels() {
+  const show = useAppStore((s) => s.layers.equipment && s.started && !s.componentMode);
+  const selected = useAppStore((s) => s.selected);
+  const refs = useRef<Partial<Record<EquipmentId, THREE.Group | null>>>({});
+  const box = useMemo(() => new THREE.Box3(), []);
+  const tick = useRef(0);
+  useFrame((_, dt) => {
+    tick.current += dt;
+    if (tick.current < 0.1) return;
+    tick.current = 0;
+    for (const id of Object.keys(EQUIPMENT) as EquipmentId[]) {
+      const g = refs.current[id];
+      const obj = equipmentRegistry.get(id);
+      if (!g || !obj) continue;
+      box.setFromObject(obj);
+      if (box.isEmpty()) continue;
+      g.position.set((box.min.x + box.max.x) / 2, box.max.y + 1.2, (box.min.z + box.max.z) / 2);
+    }
+  });
+  if (!show) return null;
+  return (
+    <>
+      {(Object.keys(EQUIPMENT) as EquipmentId[]).map((id) => (
+        <group key={id} ref={(g) => { refs.current[id] = g; }}>
+          <Html center zIndexRange={[15, 0]} style={{ pointerEvents: 'auto' }}>
+            <button
+              onClick={() => useAppStore.getState().select(id)}
+              className={`whitespace-nowrap border px-2 py-0.5 font-hud text-[10px] font-semibold uppercase tracking-[0.14em] shadow-lg backdrop-blur-sm transition hover:scale-105 ${
+                selected === id ? 'border-amber-300 bg-amber-400 text-zinc-900' : 'border-white/25 bg-[#0d1015]/75 text-zinc-100 hover:border-amber-300'
+              }`}
+              style={{ clipPath: 'polygon(5px 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) 100%,0 100%,0 5px)' }}
+            >
+              {EQUIPMENT[id].shortName}
+            </button>
+          </Html>
+        </group>
+      ))}
+    </>
   );
 }

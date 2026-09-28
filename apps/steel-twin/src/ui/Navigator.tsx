@@ -15,7 +15,7 @@ export function Navigator() {
 
   return (
     <aside className="hud-panel animate-slide pointer-events-auto flex max-h-full w-64 flex-col">
-      <div className="px-4 pb-2 pt-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">Process navigator</div>
+      <div className="px-4 pb-2 pt-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">Etapas del proceso</div>
       <ol className="flex-1 overflow-y-auto px-2 pb-3">
         {NAVIGATOR_GROUPS.map((g, gi) => {
           const groupSteps = all.map((s, i) => ({ s, i })).filter((x) => x.s.navigatorGroup === g.id);
@@ -52,7 +52,7 @@ export function Navigator() {
         })}
       </ol>
       <div className="border-t border-white/10 px-4 py-2 text-[10px] leading-relaxed text-zinc-500">
-        Optional operations (e.g. vacuum degassing) are configured in <span className="font-mono text-zinc-400">processConfig.ts</span>.
+        Las operaciones opcionales (por ejemplo, desgasificado al vacío) se configuran en <span className="font-mono text-zinc-400">processConfig.ts</span>.
       </div>
     </aside>
   );

@@ -65,15 +65,15 @@ export function Timeline() {
 
       {/* controls */}
       <div className="mt-2.5 flex flex-wrap items-center gap-2">
-        <Btn label="Restart" onClick={() => st.restart()}>⟲</Btn>
-        <Btn label="Previous step" onClick={() => st.prev()} disabled={stepIndex === 0}>◀◀</Btn>
+        <Btn label="Reiniciar" onClick={() => st.restart()}>⟲</Btn>
+        <Btn label="Paso anterior" onClick={() => st.prev()} disabled={stepIndex === 0}>◀◀</Btn>
         <button
           onClick={() => st.togglePlay()}
           className={`font-hud flex h-9 w-28 items-center justify-center gap-1.5 text-sm font-bold tracking-[0.15em] ${playing ? 'border border-white/25 text-zinc-100' : 'bg-gradient-to-r from-amber-300 to-orange-500 text-zinc-900'}`} style={{ clipPath: 'polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)' }}
         >
-          {playing ? '❚❚ PAUSE' : '▶ PLAY'}
+          {playing ? '❚❚ PAUSA' : '▶ PLAY'}
         </button>
-        <Btn label="Next step" onClick={() => st.next()} disabled={stepIndex >= total - 1}>▶▶</Btn>
+        <Btn label="Paso siguiente" onClick={() => st.next()} disabled={stepIndex >= total - 1}>▶▶</Btn>
         <div className="flex items-center gap-1 rounded-sm border md:ml-2 border-white/10 p-0.5">
           {SPEEDS.map((s) => (
             <button key={s} onClick={() => st.setSpeed(s)} className={`h-7 rounded-sm px-2 font-mono text-[11px] ${speed === s ? 'bg-white/15 text-zinc-50' : 'text-zinc-400 hover:text-zinc-200'}`}>
@@ -83,7 +83,7 @@ export function Timeline() {
         </div>
         <div className="order-first w-full min-w-0 md:order-none md:ml-3 md:w-auto md:flex-1">
           <div className="truncate text-xs text-zinc-200">
-            <span className="font-mono text-amber-300">STEP {String(stepIndex + 1).padStart(2, '0')}/{String(total).padStart(2, '0')}</span>
+            <span className="font-mono text-amber-300">PASO {String(stepIndex + 1).padStart(2, '0')}/{String(total).padStart(2, '0')}</span>
             <span className="mx-2 text-zinc-600">|</span>
             {step.title}
           </div>
@@ -93,11 +93,11 @@ export function Timeline() {
         </div>
         {mode === 'explore' ? (
           <button onClick={() => st.setMode('guided')} className="hud-btn-primary !flex-row !items-center !px-4 !py-2 text-xs">
-            <span className="hidden sm:inline">START PROCESS</span><span className="sm:hidden">GUIDED</span>
+            <span className="hidden sm:inline">INICIAR RECORRIDO</span><span className="sm:hidden">GUIADO</span>
           </button>
         ) : (
           <button onClick={() => st.setMode('explore')} className="h-8 rounded-sm border border-white/20 px-4 text-xs font-semibold tracking-wide text-zinc-100 hover:border-white/40">
-            EXIT<span className="hidden sm:inline"> {mode === 'guided' ? 'GUIDED MODE' : 'FOLLOW MODE'}</span>
+            SALIR<span className="hidden sm:inline"> DEL {mode === 'guided' ? 'RECORRIDO' : 'SEGUIMIENTO'}</span>
           </button>
         )}
       </div>

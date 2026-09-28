@@ -1,71 +1,71 @@
 import type { EquipmentData } from '../../types/equipment';
 
 /**
- * Slab (product) and runout area.
- * Reference configuration: FT-ACE-001 v0.3 §4 (230 mm × 900–1,650 mm × 8–11 m).
- * Runout, cross-transfer and yard layout are ASSUMPTION / PLANT_SPECIFIC.
+ * Planchón (producto) y área de salida.
+ * Configuración de referencia: FT-ACE-001 v0.3 §4 (230 mm × 900–1,650 mm × 8–11 m).
+ * La mesa de salida, la transferencia lateral y el arreglo del patio son ASSUMPTION / PLANT_SPECIFIC.
  */
 export const slab: EquipmentData = {
   id: 'slab',
-  name: 'Slab and Runout Area',
-  shortName: 'Slab',
+  name: 'Planchón y área de salida',
+  shortName: 'Planchón',
   category: 'product',
   processStages: ['CUTTING', 'COMPLETE'],
-  tooltip: 'The final product: a solid steel slab, identified and moved to the slab yard.',
+  tooltip: 'El producto final: un planchón de acero sólido, identificado y enviado al patio de planchones.',
   description:
-    'The slab is the product of the caster: a solid block of steel (230 mm thick, 900–1,650 mm wide, 8–11 m long in the reference configuration). After cutting it travels on the runout table, is identified, transferred sideways and stored or sent hot to the rolling mill.',
+    'El planchón es el producto de la máquina de colada: un bloque sólido de acero (230 mm de espesor, 900–1,650 mm de ancho y 8–11 m de largo en la configuración de referencia). Después del corte avanza por la mesa de salida, se identifica, se transfiere de lado y se almacena o se manda caliente al molino de laminación.',
   purpose:
-    'Deliver identified, traceable slabs with the right dimensions and quality to the hot strip mill, and allow inspection and conditioning when needed.',
+    'Entregar al molino de laminación en caliente planchones identificados y trazables, con las dimensiones y la calidad correctas, y permitir inspección y acondicionamiento cuando se necesite.',
   howItWorks: [
-    'After cutting, the slab is carried on the runout table rollers away from the cutter at a higher speed than casting, creating a gap to the strand.',
-    'Each slab is marked with its identity (heat, sequence, slab number). This links it to steel chemistry, casting conditions and any quality events recorded during casting.',
-    'A cross-transfer (pusher or transfer car) moves slabs sideways onto cooling beds, stacks or directly towards the reheating furnace (hot charging), depending on plant logistics.',
-    'In the slab yard slabs are stacked, cooled if required and, when quality events suggest it, inspected or conditioned (e.g., scarfing) before rolling.',
+    'Después del corte, los rodillos de la mesa de salida alejan el planchón del oxicorte a una velocidad mayor que la de colada, para abrir un espacio con la barra.',
+    'Cada planchón se marca con su identificación (colada, secuencia, número de planchón). Esto lo liga con la química del acero, las condiciones de colada y cualquier evento de calidad registrado durante la colada.',
+    'Una transferencia lateral (empujador o carro de transferencia) mueve los planchones de lado hacia camas de enfriamiento, estibas o directo al horno de recalentamiento (carga en caliente), según la logística de la planta.',
+    'En el patio de planchones se estiban, se enfrían si hace falta y, cuando los eventos de calidad lo indican, se inspeccionan o se acondicionan (por ejemplo, escarpado) antes de laminar.',
   ],
-  inputs: ['Cut slab from the torch cutter', 'Identification data from the tracking system'],
-  outputs: ['Identified slab in the yard or to the mill', 'Quality and traceability records'],
+  inputs: ['Planchón cortado que viene del oxicorte', 'Datos de identificación del sistema de seguimiento'],
+  outputs: ['Planchón identificado en el patio o hacia el molino', 'Registros de calidad y trazabilidad'],
   components: [
-    { id: 'runoutTable', name: 'Runout Table', function: 'Driven roller table that moves cut slabs away from the cutter.', failureModes: ['Seized rollers', 'Drive failure'], inspectionPoints: ['Roller rotation', 'Drive function'], maintenanceConsiderations: ['Hot slab contact; roller cooling.'], processConsequence: 'Slabs cannot be cleared → casting must slow or stop.' },
-    { id: 'slabId', name: 'Slab Identification', function: 'Marking and tracking that assigns each slab its identity.', failureModes: ['Illegible marks', 'Tracking mismatch'], inspectionPoints: ['Mark legibility', 'Tracking data vs physical slab'], maintenanceConsiderations: ['Traceability underpins quality release.'], processConsequence: 'Wrong slab allocation, quality claims.' },
-    { id: 'crossTransfer', name: 'Cross-Transfer', function: 'Pushers / transfer cars that move slabs sideways off the runout.', failureModes: ['Pusher failure', 'Misalignment'], inspectionPoints: ['Stroke and alignment', 'Hydraulics'], maintenanceConsiderations: ['Heavy loads, pinch points.'], processConsequence: 'Runout congestion.' },
-    { id: 'slabYard', name: 'Slab Yard', function: 'Storage, cooling, inspection and conditioning area before rolling.', failureModes: ['Stacking instability', 'Crane unavailability'], inspectionPoints: ['Stack condition', 'Crane availability'], maintenanceConsiderations: ['Layout and cooling practice are plant-specific.'], processConsequence: 'Logistics delays; cooling cracks in sensitive grades if cooled incorrectly.' },
+    { id: 'runoutTable', name: 'Mesa de salida', function: 'Mesa de rodillos motrices que aleja los planchones cortados del oxicorte.', failureModes: ['Rodillos trabados', 'Falla de motor'], inspectionPoints: ['Giro de rodillos', 'Funcionamiento de motores'], maintenanceConsiderations: ['Contacto con planchón caliente; enfriamiento de rodillos.'], processConsequence: 'No se pueden desalojar los planchones → hay que bajar la velocidad o detener la colada.' },
+    { id: 'slabId', name: 'Identificación del planchón', function: 'Marcado y seguimiento que asignan a cada planchón su identidad.', failureModes: ['Marcas ilegibles', 'Datos de seguimiento que no coinciden'], inspectionPoints: ['Legibilidad de la marca', 'Datos de seguimiento contra planchón físico'], maintenanceConsiderations: ['La trazabilidad es la base de la liberación de calidad.'], processConsequence: 'Asignación equivocada de planchones, reclamaciones de calidad.' },
+    { id: 'crossTransfer', name: 'Transferencia lateral', function: 'Empujadores / carros de transferencia que mueven los planchones de lado fuera de la mesa de salida.', failureModes: ['Falla del empujador', 'Desalineación'], inspectionPoints: ['Carrera y alineación', 'Hidráulica'], maintenanceConsiderations: ['Cargas pesadas, puntos de atrapamiento.'], processConsequence: 'Congestión en la mesa de salida.' },
+    { id: 'slabYard', name: 'Patio de planchones', function: 'Área de almacenamiento, enfriamiento, inspección y acondicionamiento antes de laminar.', failureModes: ['Estibas inestables', 'Grúa no disponible'], inspectionPoints: ['Estado de las estibas', 'Disponibilidad de grúas'], maintenanceConsiderations: ['El arreglo y la práctica de enfriamiento son propios de cada planta.'], processConsequence: 'Retrasos de logística; grietas por enfriamiento en grados sensibles si se enfrían mal.' },
   ],
   processVariables: [
-    { key: 'cutter.slabLength', name: 'Slab length', unit: 'm', role: 'Ordered length / weight for the mill.', trainingRange: '8–11 m', classification: 'CONFIGURABLE' },
-    { key: 'slab.width', name: 'Slab width', unit: 'mm', role: 'Set by the mold narrow faces.', trainingRange: '900–1,650 mm', classification: 'CONFIGURABLE' },
-    { key: 'slab.thickness', name: 'Slab thickness', unit: 'mm', role: 'Mold section thickness.', trainingRange: '230 mm', classification: 'CONFIGURABLE' },
-    { key: 'slab.surfaceTemp', name: 'Slab surface temperature at runout', unit: '°C', role: 'Relevant for hot charging and cooling practice.', classification: 'PLANT_SPECIFIC' },
+    { key: 'cutter.slabLength', name: 'Longitud del planchón', unit: 'm', role: 'Longitud / peso pedidos para el molino.', trainingRange: '8–11 m', classification: 'CONFIGURABLE' },
+    { key: 'slab.width', name: 'Ancho del planchón', unit: 'mm', role: 'Lo fijan las caras angostas del molde.', trainingRange: '900–1,650 mm', classification: 'CONFIGURABLE' },
+    { key: 'slab.thickness', name: 'Espesor del planchón', unit: 'mm', role: 'Espesor de la sección del molde.', trainingRange: '230 mm', classification: 'CONFIGURABLE' },
+    { key: 'slab.surfaceTemp', name: 'Temperatura superficial del planchón en la mesa de salida', unit: '°C', role: 'Importa para la carga en caliente y la práctica de enfriamiento.', classification: 'PLANT_SPECIFIC' },
   ],
   whatCanGoWrong: [
-    { event: 'Identification error', consequence: 'Traceability lost; slab may be rolled to the wrong order.', typicalResponse: 'Reconcile physical slab with tracking data before release.' },
-    { event: 'Surface defects found (cracks, depressions)', consequence: 'Conditioning or downgrade.', typicalResponse: 'Link to casting events (level, BOP, speed changes) for root cause.' },
-    { event: 'Internal defects (segregation, cracks)', consequence: 'Downgrade for demanding applications.', typicalResponse: 'Sampling (e.g., sulphur print / macro-etch) per quality plan.' },
-    { event: 'Runout congestion', consequence: 'Caster must slow or stop.', typicalResponse: 'Coordinate yard crane and transfer.' },
+    { event: 'Error de identificación', consequence: 'Se pierde la trazabilidad; el planchón puede laminarse para la orden equivocada.', typicalResponse: 'Conciliar el planchón físico con los datos de seguimiento antes de liberarlo.' },
+    { event: 'Defectos superficiales detectados (grietas, depresiones)', consequence: 'Acondicionamiento o degradación.', typicalResponse: 'Relacionarlos con eventos de colada (nivel, BOP, cambios de velocidad) para la causa raíz.' },
+    { event: 'Defectos internos (segregación, grietas)', consequence: 'Degradación para aplicaciones exigentes.', typicalResponse: 'Muestreo (por ejemplo, impresión de azufre Baumann / macroataque) según el plan de calidad.' },
+    { event: 'Congestión en la mesa de salida', consequence: 'La máquina de colada debe bajar la velocidad o detenerse.', typicalResponse: 'Coordinar la grúa del patio y la transferencia.' },
   ],
   impact: {
-    safety: 'Hot, heavy slabs; crane handling and stacking hazards.',
-    quality: 'The slab carries all upstream quality history; identification ties it to the data.',
-    reliability: 'Runout and transfer must keep pace with the caster.',
-    productivity: 'Hot charging reduces reheating energy; yield depends on crop and conditioning losses.',
+    safety: 'Planchones calientes y pesados; peligros por manejo con grúa y estibado.',
+    quality: 'El planchón trae toda la historia de calidad de los procesos anteriores; la identificación lo liga con los datos.',
+    reliability: 'La mesa de salida y la transferencia deben seguir el ritmo de la máquina de colada.',
+    productivity: 'La carga en caliente reduce la energía de recalentamiento; el rendimiento depende de las pérdidas por despunte y acondicionamiento.',
   },
   qualityImpact: [
-    { variable: 'Casting history of the slab', mechanism: 'Slab quality is the combined result of chemistry, superheat, mold level stability, casting speed changes, secondary cooling, oscillation, powder and roll alignment. No single parameter explains a defect; casting event tracking helps attribute defects to their contributing causes.', possibleDefects: ['Longitudinal / transverse cracks', 'Inclusions / slivers', 'Central segregation', 'Depressions', 'Porosity / pinholes'] },
+    { variable: 'Historial de colado del planchón', mechanism: 'La calidad del planchón es el resultado combinado de la química, el sobrecalentamiento, la estabilidad del nivel del molde, los cambios de velocidad de colada, el enfriamiento secundario, la oscilación, el polvo de molde y la alineación de rodillos. Ningún parámetro por sí solo explica un defecto; el seguimiento de eventos de colada ayuda a atribuir los defectos a sus causas.', possibleDefects: ['Grietas longitudinales / transversales', 'Inclusiones / astillas (slivers)', 'Segregación central', 'Depresiones', 'Porosidad / pinholes'] },
   ],
   safetyHazards: [
-    { category: 'high-temperature', description: 'Hot slabs radiating heat.' },
-    { category: 'suspended-loads', description: 'Slab handling by crane.' },
-    { category: 'moving-machinery', description: 'Roller tables and transfer equipment.' },
-    { category: 'pinch-points', description: 'Between slabs, rollers and pushers.' },
+    { category: 'high-temperature', description: 'Planchones calientes que irradian calor.' },
+    { category: 'suspended-loads', description: 'Manejo de planchones con grúa.' },
+    { category: 'moving-machinery', description: 'Mesas de rodillos y equipos de transferencia.' },
+    { category: 'pinch-points', description: 'Entre planchones, rodillos y empujadores.' },
   ],
   maintenancePoints: [
-    { component: 'Runout rollers', function: 'Slab transport', failureMode: 'Seizure', inspectionPoints: ['Rotation', 'Drives'], considerations: 'Hot service.', processConsequence: 'Congestion / caster stop.' },
-    { component: 'Cross-transfer', function: 'Side transfer', failureMode: 'Hydraulic/mechanical fault', inspectionPoints: ['Stroke', 'Alignment'], considerations: 'Heavy loads.', processConsequence: 'Runout congestion.' },
+    { component: 'Rodillos de la mesa de salida', function: 'Transporte de planchones', failureMode: 'Trabado', inspectionPoints: ['Giro', 'Motores'], considerations: 'Servicio en caliente.', processConsequence: 'Congestión / paro de la máquina de colada.' },
+    { component: 'Transferencia lateral', function: 'Transferencia lateral', failureMode: 'Falla hidráulica/mecánica', inspectionPoints: ['Carrera', 'Alineación'], considerations: 'Cargas pesadas.', processConsequence: 'Congestión en la mesa de salida.' },
   ],
   specifications: [
-    { label: 'Section', value: '230 mm × 900–1,650 mm', classification: 'CONFIGURABLE' },
-    { label: 'Length', value: '8–11 m', classification: 'CONFIGURABLE' },
-    { label: 'Runout / yard layout, hot charging', value: 'Per plant logistics', classification: 'PLANT_SPECIFIC' },
-    { label: 'Slab weight (230 × 1,650 × 11,000 mm, ρ ≈ 7.8 t/m³)', value: '≈ 32.6 t (max, calculated)', classification: 'ASSUMPTION' },
+    { label: 'Sección', value: '230 mm × 900–1,650 mm', classification: 'CONFIGURABLE' },
+    { label: 'Longitud', value: '8–11 m', classification: 'CONFIGURABLE' },
+    { label: 'Arreglo de mesa de salida / patio, carga en caliente', value: 'Según la logística de la planta', classification: 'PLANT_SPECIFIC' },
+    { label: 'Peso del planchón (230 × 1,650 × 11,000 mm, ρ ≈ 7.8 t/m³)', value: '≈ 32.6 t (máximo, calculado)', classification: 'ASSUMPTION' },
   ],
-  references: ['FT-ACE-001 v0.3 §4 (reference configuration)', 'docs/assumptions/caster.md'],
+  references: ['FT-ACE-001 v0.3 §4 (configuración de referencia)', 'docs/assumptions/caster.md'],
 };

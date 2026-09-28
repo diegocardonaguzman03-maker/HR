@@ -2,17 +2,17 @@ import type { MaterialState } from '../types/process';
 import type { Classification, HazardCategory } from '../types/equipment';
 
 export const MATERIAL_STATE_LABEL: Record<MaterialState, string> = {
-  SOLID_RAW_MATERIAL: 'Solid raw material',
-  PARTIALLY_MELTED: 'Partially melted',
-  LIQUID_STEEL: 'Liquid steel',
-  REFINED_LIQUID_STEEL: 'Refined liquid steel',
-  LIQUID_IN_LADLE: 'Liquid steel in ladle',
-  LIQUID_IN_TUNDISH: 'Liquid steel in tundish',
-  LIQUID_IN_MOLD: 'Liquid steel in mold',
-  THIN_SHELL_LIQUID_CORE: 'Thin shell + liquid core',
-  THICK_SHELL_REDUCED_CORE: 'Thick shell + reduced core',
-  FINAL_SOLIDIFICATION: 'Final solidification',
-  SOLID_SLAB: 'Solid slab',
+  SOLID_RAW_MATERIAL: 'Materia prima sólida',
+  PARTIALLY_MELTED: 'Parcialmente fundido',
+  LIQUID_STEEL: 'Acero líquido',
+  REFINED_LIQUID_STEEL: 'Acero líquido afinado',
+  LIQUID_IN_LADLE: 'Acero líquido en olla',
+  LIQUID_IN_TUNDISH: 'Acero líquido en distribuidor',
+  LIQUID_IN_MOLD: 'Acero líquido en molde',
+  THIN_SHELL_LIQUID_CORE: 'Costra delgada + núcleo líquido',
+  THICK_SHELL_REDUCED_CORE: 'Costra gruesa + núcleo reducido',
+  FINAL_SOLIDIFICATION: 'Solidificación final',
+  SOLID_SLAB: 'Planchón sólido',
 };
 
 /** Ordered visual state model (brief §7) — used by the state strip. */
@@ -37,24 +37,24 @@ export const MATERIAL_STATE_COLOR: Record<MaterialState, string> = {
 };
 
 export const CLASSIFICATION_LABEL: Record<Classification, { label: string; cls: string }> = {
-  INDUSTRY_STANDARD: { label: 'Industry standard', cls: 'text-emerald-300 border-emerald-400/40' },
+  INDUSTRY_STANDARD: { label: 'Estándar de la industria', cls: 'text-emerald-300 border-emerald-400/40' },
   CONFIGURABLE: { label: 'Configurable', cls: 'text-sky-300 border-sky-400/40' },
-  PLANT_SPECIFIC: { label: 'Plant-specific · confirm', cls: 'text-amber-300 border-amber-400/40' },
-  ASSUMPTION: { label: 'Assumption', cls: 'text-zinc-300 border-zinc-400/40' },
+  PLANT_SPECIFIC: { label: 'Propio de planta · confirmar', cls: 'text-amber-300 border-amber-400/40' },
+  ASSUMPTION: { label: 'Supuesto', cls: 'text-zinc-300 border-zinc-400/40' },
 };
 
 export const HAZARD_LABEL: Record<HazardCategory, string> = {
-  'molten-metal': 'Molten metal',
-  'high-temperature': 'High temperature',
-  electrical: 'Electrical energy',
-  'moving-machinery': 'Moving machinery',
-  'stored-energy': 'Stored energy',
-  oxygen: 'Oxygen',
+  'molten-metal': 'Metal fundido',
+  'high-temperature': 'Alta temperatura',
+  electrical: 'Energía eléctrica',
+  'moving-machinery': 'Maquinaria en movimiento',
+  'stored-energy': 'Energía almacenada',
+  oxygen: 'Oxígeno',
   gas: 'Gas',
-  'water-molten-metal': 'Water / molten metal',
-  'suspended-loads': 'Suspended loads',
-  hydraulic: 'Hydraulic systems',
-  'pinch-points': 'Pinch points',
-  radiation: 'Radiation',
-  'noise-dust': 'Noise / dust',
+  'water-molten-metal': 'Agua / metal fundido',
+  'suspended-loads': 'Cargas suspendidas',
+  hydraulic: 'Sistemas hidráulicos',
+  'pinch-points': 'Puntos de atrapamiento',
+  radiation: 'Radiación',
+  'noise-dust': 'Ruido / polvo',
 };

@@ -1,25 +1,41 @@
 import { useEffect, useState } from 'react';
 import { EQUIPMENT, equipmentName } from '../data/equipment';
 import { LAYER_MARKERS } from '../data/layerMarkers';
-import { useAppStore } from '../store/useAppStore';
+import { LAYERS, useAppStore } from '../store/useAppStore';
 import type { EquipmentData } from '../types/equipment';
 import { CLASSIFICATION_LABEL, HAZARD_LABEL, MATERIAL_STATE_LABEL } from './labels';
+import { PROCESS_STEPS } from '../config/processConfig';
+import type { EquipmentCategory } from '../types/equipment';
 import { fmt, useSnapshot } from './useSnapshot';
 
 type Tab = 'what' | 'how' | 'variables' | 'wrong' | 'impact' | 'components' | 'safety' | 'quality' | 'maintenance' | 'specs';
 
 const TABS: { id: Tab; label: string; level: number }[] = [
-  { id: 'what', label: 'What is this?', level: 1 },
-  { id: 'components', label: 'Components', level: 1 },
-  { id: 'how', label: 'How it works', level: 2 },
+  { id: 'what', label: '¿Qué es?', level: 1 },
+  { id: 'components', label: 'Componentes', level: 1 },
+  { id: 'how', label: 'Cómo funciona', level: 2 },
   { id: 'variables', label: 'Variables', level: 3 },
-  { id: 'wrong', label: 'What can go wrong', level: 4 },
-  { id: 'impact', label: 'Impact', level: 5 },
-  { id: 'safety', label: 'Safety', level: 1 },
-  { id: 'quality', label: 'Quality', level: 3 },
-  { id: 'maintenance', label: 'Maintenance', level: 3 },
-  { id: 'specs', label: 'Specifications', level: 3 },
+  { id: 'wrong', label: 'Qué puede fallar', level: 4 },
+  { id: 'impact', label: 'Impacto', level: 5 },
+  { id: 'safety', label: 'Seguridad', level: 1 },
+  { id: 'quality', label: 'Calidad', level: 3 },
+  { id: 'maintenance', label: 'Mantenimiento', level: 3 },
+  { id: 'specs', label: 'Especificaciones', level: 3 },
 ];
+
+const CATEGORY_LABEL: Record<EquipmentCategory, string> = {
+  'raw-materials': 'Materias primas',
+  steelmaking: 'Aceración',
+  'secondary-metallurgy': 'Metalurgia secundaria',
+  handling: 'Manejo de materiales',
+  casting: 'Colada continua',
+  cooling: 'Enfriamiento',
+  cutting: 'Corte',
+  product: 'Producto',
+};
+const IMPACT_LABEL = { safety: 'Seguridad', quality: 'Calidad', reliability: 'Confiabilidad', productivity: 'Productividad' } as const;
+const LAYER_NAME: Record<string, string> = Object.fromEntries(LAYERS.map((l) => [l.id, l.label.toLowerCase()]));
+const stageTitle = (state: string) => PROCESS_STEPS.find((p) => p.state === state)?.title ?? state;
 
 const H = ({ children }: { children: React.ReactNode }) => (
   <h4 className="mb-1.5 mt-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500 first:mt-0">{children}</h4>
@@ -28,7 +44,7 @@ const H = ({ children }: { children: React.ReactNode }) => (
 function SimValues({ keys }: { keys?: string[] }) {
   const { snap } = useSnapshot();
   const entries = Object.entries(snap.variables).filter(([k]) => !keys || keys.includes(k));
-  if (!entries.length) return <p className="text-xs text-zinc-500">No live values at this process stage.</p>;
+  if (!entries.length) return <p className="text-xs text-zinc-500">Sin valores en vivo en esta etapa del proceso.</p>;
   return (
     <div className="grid grid-cols-2 gap-1.5">
       {entries.map(([k, v]) => (
@@ -65,10 +81,10 @@ function EquipmentPanel({ eq }: { eq: EquipmentData }) {
       <div className="border-b border-white/10 px-4 pb-3 pt-3">
         <div className="flex items-start justify-between gap-2">
           <div>
-            <div className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">{eq.category.replace('-', ' ')}</div>
+            <div className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">{CATEGORY_LABEL[eq.category]}</div>
             <h2 className="text-base font-semibold text-zinc-50">{eq.name}</h2>
           </div>
-          <button onClick={() => st.select(null)} className="rounded-sm border border-white/10 px-2 py-0.5 text-xs text-zinc-400 hover:text-zinc-100" aria-label="Close">
+          <button onClick={() => st.select(null)} className="rounded-sm border border-white/10 px-2 py-0.5 text-xs text-zinc-400 hover:text-zinc-100" aria-label="Cerrar">
             ✕
           </button>
         </div>
@@ -78,18 +94,18 @@ function EquipmentPanel({ eq }: { eq: EquipmentData }) {
             onClick={() => st.setComponentMode(!componentMode)}
             className={`h-7 rounded-sm px-3 text-[11px] font-semibold tracking-wide ${componentMode ? 'bg-amber-400 text-zinc-900' : 'border border-white/15 text-zinc-200 hover:border-white/35'}`}
           >
-            {componentMode ? 'EXIT MACHINE VIEW' : 'EXPLORE MACHINE'}
+            {componentMode ? 'SALIR DE LA VISTA DE EQUIPO' : 'EXPLORAR EQUIPO'}
           </button>
           {componentMode && (
             <label className="flex items-center gap-2 text-[11px] text-zinc-400">
-              Exploded
+              Vista explosionada
               <input type="range" min={0} max={1} step={0.01} value={explode} onChange={(e) => st.setExplode(Number(e.target.value))} className="w-24 accent-amber-400" />
             </label>
           )}
         </div>
         <div className="mt-2 grid grid-cols-2 gap-2 text-[11px]">
-          <div><span className="text-zinc-500">Inputs:</span> <span className="text-zinc-300">{eq.inputs.join(', ')}</span></div>
-          <div><span className="text-zinc-500">Outputs:</span> <span className="text-zinc-300">{eq.outputs.join(', ')}</span></div>
+          <div><span className="text-zinc-500">Entradas:</span> <span className="text-zinc-300">{eq.inputs.join(', ')}</span></div>
+          <div><span className="text-zinc-500">Salidas:</span> <span className="text-zinc-300">{eq.outputs.join(', ')}</span></div>
         </div>
       </div>
 
@@ -108,27 +124,27 @@ function EquipmentPanel({ eq }: { eq: EquipmentData }) {
       <div className="flex-1 overflow-y-auto px-4 py-3 text-[12.5px] leading-relaxed text-zinc-300">
         {tab === 'what' && (
           <>
-            <H>Level 1 · What is this?</H>
+            <H>Nivel 1 · ¿Qué es?</H>
             <p>{eq.description}</p>
-            <H>Process stages</H>
+            <H>Etapas del proceso</H>
             <div className="flex flex-wrap gap-1">
               {eq.processStages.map((s) => (
-                <span key={s} className="rounded-sm border border-white/10 px-1.5 py-0.5 font-mono text-[10px] text-zinc-400">{s}</span>
+                <span key={s} className="rounded-sm border border-white/10 px-1.5 py-0.5 text-[10px] text-zinc-400">{stageTitle(s)}</span>
               ))}
             </div>
           </>
         )}
         {tab === 'components' && (
           <>
-            {!componentMode && <p className="mb-2 text-xs text-zinc-500">Tip: press <b className="text-zinc-300">Explore machine</b> to isolate the equipment and click its parts in 3D.</p>}
+            {!componentMode && <p className="mb-2 text-xs text-zinc-500">Tip: presiona <b className="text-zinc-300">Explorar equipo</b> para aislarlo y haz clic en sus partes en 3D.</p>}
             {comp && (
               <div className="mb-3 rounded-sm border border-amber-400/40 bg-amber-400/[0.06] p-2.5">
-                <div className="text-[10px] uppercase tracking-widest text-amber-300">Selected component</div>
+                <div className="text-[10px] uppercase tracking-widest text-amber-300">Componente seleccionado</div>
                 <div className="font-semibold text-zinc-50">{comp.name}</div>
                 <p className="mt-1 text-xs">{comp.function}</p>
-                {comp.failureModes?.length ? <p className="mt-1 text-xs"><span className="text-zinc-500">Failure modes:</span> {comp.failureModes.join('; ')}</p> : null}
-                {comp.inspectionPoints?.length ? <p className="mt-1 text-xs"><span className="text-zinc-500">Inspection points:</span> {comp.inspectionPoints.join('; ')}</p> : null}
-                {comp.processConsequence && <p className="mt-1 text-xs"><span className="text-zinc-500">Process consequence:</span> {comp.processConsequence}</p>}
+                {comp.failureModes?.length ? <p className="mt-1 text-xs"><span className="text-zinc-500">Modos de falla:</span> {comp.failureModes.join('; ')}</p> : null}
+                {comp.inspectionPoints?.length ? <p className="mt-1 text-xs"><span className="text-zinc-500">Puntos de inspección:</span> {comp.inspectionPoints.join('; ')}</p> : null}
+                {comp.processConsequence && <p className="mt-1 text-xs"><span className="text-zinc-500">Consecuencia en el proceso:</span> {comp.processConsequence}</p>}
               </div>
             )}
             <ul className="space-y-1">
@@ -151,7 +167,7 @@ function EquipmentPanel({ eq }: { eq: EquipmentData }) {
         )}
         {tab === 'how' && (
           <>
-            <H>Level 2 · How does it work?</H>
+            <H>Nivel 2 · ¿Cómo funciona?</H>
             {eq.howItWorks.map((p, i) => (
               <p key={i} className="mb-2">{p}</p>
             ))}
@@ -159,9 +175,9 @@ function EquipmentPanel({ eq }: { eq: EquipmentData }) {
         )}
         {tab === 'variables' && (
           <>
-            <H>Live values · simulated training data</H>
+            <H>Valores en vivo · datos simulados de capacitación</H>
             <SimValues keys={liveKeys} />
-            <H>Level 3 · Controlling variables</H>
+            <H>Nivel 3 · Variables de control</H>
             <ul className="space-y-2">
               {eq.processVariables.map((v) => (
                 <li key={v.key} className="rounded-sm border border-white/[0.07] p-2">
@@ -170,7 +186,7 @@ function EquipmentPanel({ eq }: { eq: EquipmentData }) {
                     <span className="font-mono text-[10px] text-zinc-500">{v.unit}</span>
                   </div>
                   <p className="text-xs text-zinc-400">{v.role}</p>
-                  {v.trainingRange && <p className="mt-0.5 text-[11px]"><span className="text-zinc-500">Training range:</span> <span className="font-mono text-zinc-300">{v.trainingRange}</span></p>}
+                  {v.trainingRange && <p className="mt-0.5 text-[11px]"><span className="text-zinc-500">Rango de capacitación:</span> <span className="font-mono text-zinc-300">{v.trainingRange}</span></p>}
                   <Badge c={v.classification} />
                 </li>
               ))}
@@ -179,25 +195,25 @@ function EquipmentPanel({ eq }: { eq: EquipmentData }) {
         )}
         {tab === 'wrong' && (
           <>
-            <H>Level 4 · What can go wrong?</H>
+            <H>Nivel 4 · ¿Qué puede fallar?</H>
             <ul className="space-y-2">
               {eq.whatCanGoWrong.map((w, i) => (
                 <li key={i} className="rounded-sm border border-white/[0.07] p-2">
                   <div className="font-semibold text-zinc-100">{w.event}</div>
-                  <p className="text-xs"><span className="text-zinc-500">Consequence:</span> {w.consequence}</p>
-                  <p className="text-xs"><span className="text-zinc-500">Typical response:</span> {w.typicalResponse}</p>
+                  <p className="text-xs"><span className="text-zinc-500">Consecuencia:</span> {w.consequence}</p>
+                  <p className="text-xs"><span className="text-zinc-500">Respuesta típica:</span> {w.typicalResponse}</p>
                 </li>
               ))}
             </ul>
-            <p className="mt-3 text-[11px] text-zinc-500">Generic industry responses. Plant-specific procedures are integrated separately.</p>
+            <p className="mt-3 text-[11px] text-zinc-500">Respuestas genéricas de la industria. Los procedimientos de la planta se integran por separado.</p>
           </>
         )}
         {tab === 'impact' && (
           <>
-            <H>Level 5 · Impact</H>
+            <H>Nivel 5 · Impacto</H>
             {(['safety', 'quality', 'reliability', 'productivity'] as const).map((k) => (
               <div key={k} className="mb-2">
-                <div className="text-[11px] font-semibold uppercase tracking-wider text-zinc-400">{k}</div>
+                <div className="text-[11px] font-semibold uppercase tracking-wider text-zinc-400">{IMPACT_LABEL[k]}</div>
                 <p>{eq.impact[k]}</p>
               </div>
             ))}
@@ -205,7 +221,7 @@ function EquipmentPanel({ eq }: { eq: EquipmentData }) {
         )}
         {tab === 'safety' && (
           <>
-            <H>Principal hazards</H>
+            <H>Peligros principales</H>
             <ul className="space-y-1.5">
               {eq.safetyHazards.map((h, i) => (
                 <li key={i} className="rounded-sm border border-red-400/20 bg-red-500/[0.04] p-2">
@@ -214,19 +230,19 @@ function EquipmentPanel({ eq }: { eq: EquipmentData }) {
                 </li>
               ))}
             </ul>
-            <p className="mt-3 text-[11px] text-zinc-500">Hazard categories only — plant safety procedures are integrated separately.</p>
+            <p className="mt-3 text-[11px] text-zinc-500">Solo categorías de peligro. Los procedimientos de seguridad de la planta se integran por separado.</p>
           </>
         )}
         {tab === 'quality' && (
           <>
-            <H>Quality relationships</H>
-            <p className="mb-2 text-[11px] text-zinc-500">Product quality usually depends on several interacting process parameters.</p>
+            <H>Relación con la calidad</H>
+            <p className="mb-2 text-[11px] text-zinc-500">La calidad del producto casi siempre depende de varios parámetros del proceso que interactúan.</p>
             <ul className="space-y-2">
               {eq.qualityImpact.map((q, i) => (
                 <li key={i} className="rounded-sm border border-violet-300/20 p-2">
-                  <div className="font-semibold text-zinc-100">{q.variable}</div>
+                  <div className="font-semibold text-zinc-100">{eq.processVariables.find((v) => v.key === q.variable)?.name ?? q.variable}</div>
                   <p className="text-xs">{q.mechanism}</p>
-                  <p className="mt-0.5 text-[11px] text-violet-200">Possible defects: {q.possibleDefects.join(', ')}</p>
+                  <p className="mt-0.5 text-[11px] text-violet-200">Posibles defectos: {q.possibleDefects.join(', ')}</p>
                 </li>
               ))}
             </ul>
@@ -236,15 +252,15 @@ function EquipmentPanel({ eq }: { eq: EquipmentData }) {
           <ul className="space-y-2">
             {eq.maintenancePoints.map((m, i) => (
               <li key={i} className="rounded-sm border border-sky-300/20 p-2 text-xs">
-                <div className="text-sm font-semibold text-zinc-100">{m.component}</div>
-                <p><span className="text-zinc-500">Function:</span> {m.function}</p>
-                <p><span className="text-zinc-500">Failure mode:</span> {m.failureMode}</p>
-                <p><span className="text-zinc-500">Inspection points:</span> {m.inspectionPoints.join('; ')}</p>
-                <p><span className="text-zinc-500">Considerations:</span> {m.considerations}</p>
-                <p><span className="text-zinc-500">Process consequence:</span> {m.processConsequence}</p>
+                <div className="text-sm font-semibold text-zinc-100">{eq.components.find((c) => c.id === m.component)?.name ?? m.component}</div>
+                <p><span className="text-zinc-500">Función:</span> {m.function}</p>
+                <p><span className="text-zinc-500">Modo de falla:</span> {m.failureMode}</p>
+                <p><span className="text-zinc-500">Puntos de inspección:</span> {m.inspectionPoints.join('; ')}</p>
+                <p><span className="text-zinc-500">Consideraciones:</span> {m.considerations}</p>
+                <p><span className="text-zinc-500">Consecuencia en el proceso:</span> {m.processConsequence}</p>
               </li>
             ))}
-            <li className="text-[11px] text-zinc-500">No maintenance frequencies are shown: they are plant- and OEM-specific.</li>
+            <li className="text-[11px] text-zinc-500">No se muestran frecuencias de mantenimiento: dependen de la planta y del fabricante.</li>
           </ul>
         )}
         {tab === 'specs' && (
@@ -262,7 +278,7 @@ function EquipmentPanel({ eq }: { eq: EquipmentData }) {
             </table>
             {eq.references.length > 0 && (
               <>
-                <H>References</H>
+                <H>Referencias</H>
                 <ul className="list-disc pl-4 text-[11px] text-zinc-400">
                   {eq.references.map((r, i) => (
                     <li key={i}>{r}</li>
@@ -287,13 +303,13 @@ export function StagePanel() {
   const st = useAppStore.getState();
   return (
     <div className="flex h-full flex-col overflow-y-auto px-4 py-3 text-[12.5px] leading-relaxed text-zinc-300">
-      <div className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">Current operation</div>
+      <div className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">Operación actual</div>
       <h2 className="text-base font-semibold text-zinc-50">{step.title}</h2>
-      <H>What is happening</H>
+      <H>Qué está pasando</H>
       <p>{step.whatHappens}</p>
-      <H>Why it is necessary</H>
+      <H>Por qué es necesario</H>
       <p>{step.why}</p>
-      <H>Equipment operating</H>
+      <H>Equipos en operación</H>
       <div className="flex flex-wrap gap-1.5">
         {step.activeEquipment.map((id) => (
           <button key={id} onClick={() => st.select(id)} className="rounded-sm border border-white/15 px-2 py-1 text-xs text-zinc-100 hover:border-amber-400/60">
@@ -301,18 +317,18 @@ export function StagePanel() {
           </button>
         ))}
       </div>
-      <H>Process values · simulated training data</H>
+      <H>Valores de proceso · datos simulados</H>
       <SimValues />
-      <H>Steel state</H>
+      <H>Estado del acero</H>
       <p>{MATERIAL_STATE_LABEL[snap.materialState]} · {fmt(snap.steelTemperature.value)} °C</p>
       {next && (
         <>
-          <H>Next</H>
+          <H>Sigue</H>
           <p>{next.title}</p>
         </>
       )}
       <p className="mt-4 border-t border-white/10 pt-3 text-[11px] text-zinc-500">
-        Click any machine in the 3D view to inspect it. Values are educational and do not represent operating limits of a real plant.
+        Haz clic en cualquier equipo en 3D para verlo. Los valores son educativos y no representan límites de operación de una planta real.
       </p>
     </div>
   );
@@ -324,11 +340,11 @@ function MarkerPanel({ id }: { id: string }) {
   if (!m) return null;
   return (
     <div className="px-4 py-3 text-[12.5px] text-zinc-300">
-      <div className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">{m.layer} layer</div>
+      <div className="text-[10px] uppercase tracking-[0.18em] text-zinc-500">Capa de {LAYER_NAME[m.layer] ?? m.layer}</div>
       <h2 className="text-base font-semibold text-zinc-50">{m.title}</h2>
       <p className="mt-2">{m.text}</p>
       <button onClick={() => st.select(m.equipment)} className="mt-3 rounded-sm border border-white/15 px-2 py-1 text-xs text-zinc-100 hover:border-amber-400/60">
-        Open {equipmentName(m.equipment)} ›
+        Abrir {equipmentName(m.equipment)} ›
       </button>
     </div>
   );

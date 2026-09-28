@@ -1,4 +1,4 @@
-# Steel Learning Twin: from scrap to steel slab
+# Acería Virtual (Steel Learning Twin): de la chatarra al planchón
 
 An interactive 3D learning twin of an EAF melt shop and a continuous slab caster, for the Academia GASM. It follows one heat through the whole route:
 
@@ -32,6 +32,12 @@ npm run typecheck
 | Space · N · B · R | Play/pause · next · previous · restart |
 | X · T · L · V · C · M · Tab · H | X-ray · temperature · layers · views · solidification · minimap · stage list · help |
 | 1 – 0 | Camera presets |
+
+## Novedades v2 (español)
+- Toda la interfaz y las 12 fichas técnicas en español de México (glosario de acería: HAE, horno olla, distribuidor, barra, planchón…), traducidas y revisadas por `experto-operativo-metalurgia`.
+- Gráficos 3D renovados: iluminación de estudio generada localmente, oclusión ambiental (N8AO), bloom en acero líquido y arcos, tone mapping AgX, sombras de contacto, materiales PBR más claros y etiquetas flotantes sobre cada equipo. En celular se desactiva la oclusión ambiental para mantener fluidez.
+- Evaluación final de 12 preguntas (aprobación 80%) con retroalimentación y botón "Ver en 3D".
+- Pantalla de misión completada, progreso de equipos inspeccionados (x/12) y narración por voz de cada paso (tecla O).
 
 ## Features (MVP)
 - Plant overview with 12 selectable equipment groups, hover tooltip and click-to-inspect info panel with 5 learning depths (what / how / variables / what can go wrong / safety·quality·reliability·productivity).

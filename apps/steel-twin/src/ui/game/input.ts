@@ -24,6 +24,7 @@ export function useGameInput() {
     const down = (e: KeyboardEvent) => {
       if (isTyping(e)) return;
       const st = useAppStore.getState();
+      if ((st.quizOpen || st.missionComplete) && e.code !== 'Escape') return;
       if (!st.started && (e.code === 'Enter' || e.code === 'Space')) {
         e.preventDefault();
         st.startGame('guided');
@@ -52,11 +53,15 @@ export function useGameInput() {
         case 'KeyV': st.setSection(st.sectionS, !st.sectionOpen); break;
         case 'KeyC': if (st.selected) st.setComponentMode(!st.componentMode); break;
         case 'KeyM': st.togglePanel('minimap'); break;
+        case 'KeyO': st.setNarration(!st.narration); break;
+        case 'KeyY': st.setQuizOpen(!st.quizOpen); break;
         case 'Tab': e.preventDefault(); st.togglePanel('navigator'); break;
         case 'KeyH': case 'Slash': st.togglePanel('help'); break;
         case 'KeyR': st.requestCamera({ kind: 'preset', preset: 'overview' }); break;
         case 'Escape':
-          if (st.panels.help) st.togglePanel('help');
+          if (st.quizOpen) st.setQuizOpen(false);
+          else if (st.missionComplete) st.dismissMission();
+          else if (st.panels.help) st.togglePanel('help');
           else if (st.componentMode) st.setComponentMode(false);
           else if (st.selected || st.markerFocus) { st.select(null); st.setMarkerFocus(null); }
           else if (st.mode !== 'explore') st.setMode('explore');
@@ -78,26 +83,28 @@ export function useGameInput() {
 }
 
 export const CONTROLS: [string, string][] = [
-  ['Mouse drag', 'Orbit camera'],
-  ['Right drag / Shift+drag', 'Pan'],
-  ['Wheel', 'Zoom'],
-  ['W A S D / arrows', 'Move camera'],
-  ['Q / E', 'Down / up'],
-  ['Shift', 'Move faster'],
-  ['Click machine', 'Inspect equipment'],
-  ['Space', 'Play / pause process'],
-  ['N / B', 'Next / previous step'],
-  ['G', 'Guided tour'],
-  ['F', 'Follow the steel'],
-  ['X', 'X-ray view'],
-  ['V', 'Solidification viewer'],
-  ['T', 'Temperature layer'],
-  ['L', 'Layers'],
-  ['C', 'Explore selected machine'],
-  ['1 – 0', 'Camera views'],
-  ['R', 'Reset camera'],
-  ['Tab', 'Stage list'],
-  ['M', 'Minimap'],
-  ['H', 'Help'],
-  ['Esc', 'Back / close'],
+  ['Arrastrar con el mouse', 'Girar la vista'],
+  ['Clic derecho / Shift + arrastrar', 'Desplazar'],
+  ['Rueda', 'Acercar / alejar'],
+  ['W A S D / flechas', 'Mover la cámara'],
+  ['Q / E', 'Bajar / subir'],
+  ['Shift', 'Moverse más rápido'],
+  ['Clic en un equipo', 'Inspeccionar equipo'],
+  ['Espacio', 'Reproducir / pausar'],
+  ['N / B', 'Paso siguiente / anterior'],
+  ['G', 'Recorrido guiado'],
+  ['F', 'Seguir el acero'],
+  ['X', 'Rayos X'],
+  ['V', 'Visor de solidificación'],
+  ['T', 'Capa de temperatura'],
+  ['L', 'Capas'],
+  ['C', 'Explorar el equipo seleccionado'],
+  ['O', 'Narración por voz'],
+  ['Y', 'Evaluación'],
+  ['1 – 0', 'Vistas de cámara'],
+  ['R', 'Reiniciar cámara'],
+  ['Tab', 'Lista de etapas'],
+  ['M', 'Minimapa'],
+  ['H', 'Ayuda'],
+  ['Esc', 'Regresar / cerrar'],
 ];

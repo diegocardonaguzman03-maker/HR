@@ -18,16 +18,16 @@ export type LayerId =
   | 'temperature';
 
 export const LAYERS: { id: LayerId; label: string }[] = [
-  { id: 'processFlow', label: 'Process flow' },
-  { id: 'equipment', label: 'Equipment' },
-  { id: 'steelFlow', label: 'Steel flow' },
-  { id: 'cooling', label: 'Cooling system' },
-  { id: 'electrical', label: 'Electrical / energy' },
-  { id: 'gas', label: 'Gas / oxygen' },
-  { id: 'safety', label: 'Safety' },
-  { id: 'quality', label: 'Quality' },
-  { id: 'maintenance', label: 'Maintenance' },
-  { id: 'temperature', label: 'Temperature' },
+  { id: 'processFlow', label: 'Flujo del proceso' },
+  { id: 'equipment', label: 'Equipos' },
+  { id: 'steelFlow', label: 'Flujo del acero' },
+  { id: 'cooling', label: 'Sistema de enfriamiento' },
+  { id: 'electrical', label: 'Eléctrico / energía' },
+  { id: 'gas', label: 'Gas / oxígeno' },
+  { id: 'safety', label: 'Seguridad' },
+  { id: 'quality', label: 'Calidad' },
+  { id: 'maintenance', label: 'Mantenimiento' },
+  { id: 'temperature', label: 'Temperatura' },
 ];
 
 export interface CameraRequest {
@@ -85,6 +85,16 @@ interface AppState {
   toggleLayer(id: LayerId): void;
   requestCamera(r: Omit<CameraRequest, 'nonce'>): void;
   setMarkerFocus(m: AppState['markerFocus']): void;
+  /** Equipment the learner has opened at least once (game progress). */
+  inspected: EquipmentId[];
+  /** Guided / follow run reached the finished slab. */
+  missionComplete: boolean;
+  dismissMission(): void;
+  quizOpen: boolean;
+  setQuizOpen(open: boolean): void;
+  /** Spoken narration of each step (browser speech synthesis). */
+  narration: boolean;
+  setNarration(on: boolean): void;
 }
 
 const defaultLayers: Record<LayerId, boolean> = {
@@ -175,6 +185,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   },
   restart() {
     clock.elapsed = 0;
+    set({ missionComplete: false });
     get().goToStep(0);
   },
   syncFromClock() {
@@ -183,10 +194,16 @@ export const useAppStore = create<AppState>((set, get) => ({
       set({ stepIndex: clock.stepIndex, uiTime: clock.stepTime });
       if (st.mode === 'guided') get().requestCamera({ kind: 'preset', preset: steps()[clock.stepIndex].camera });
     } else set({ uiTime: clock.stepTime });
-    if (!clock.playing && st.playing) set({ playing: false });
+    if (!clock.playing && st.playing) {
+      set({ playing: false });
+      const s = steps();
+      const finished = clock.stepIndex === s.length - 1 && clock.stepTime >= s[s.length - 1].duration;
+      if (finished && st.mode !== 'explore') set({ missionComplete: true });
+    }
   },
   select(id, component = null) {
     set({ selected: id, selectedComponent: component, markerFocus: null });
+    if (id && !get().inspected.includes(id)) set({ inspected: [...get().inspected, id] });
     if (id && !component) get().requestCamera({ kind: 'equipment', equipment: id });
     if (!id) set({ componentMode: false, explode: 0 });
   },
@@ -213,5 +230,19 @@ export const useAppStore = create<AppState>((set, get) => ({
   },
   setMarkerFocus(m) {
     set({ markerFocus: m });
+  },
+  inspected: [],
+  missionComplete: false,
+  dismissMission() {
+    set({ missionComplete: false });
+  },
+  quizOpen: false,
+  setQuizOpen(open) {
+    if (open) get().pause();
+    set({ quizOpen: open, missionComplete: false });
+  },
+  narration: false,
+  setNarration(on) {
+    set({ narration: on });
   },
 }));

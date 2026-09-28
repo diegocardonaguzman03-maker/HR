@@ -1,7 +1,9 @@
-import { Suspense, useEffect, useRef } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { CameraControls, AdaptiveDpr, Grid } from '@react-three/drei';
+import { CameraControls, AdaptiveDpr, Grid, Environment, Lightformer, ContactShadows, PerformanceMonitor } from '@react-three/drei';
+import { EffectComposer, Bloom, N8AO, Vignette, SMAA, ToneMapping } from '@react-three/postprocessing';
+import { ToneMappingMode } from 'postprocessing';
 import type CameraControlsImpl from 'camera-controls';
 import { useAppStore } from '../store/useAppStore';
 import { CAMERA_PRESETS } from '../config/layout';
@@ -18,7 +20,7 @@ import { Crane, Turret } from './equipment/CraneAndTurret';
 import { Mold, Tundish } from './equipment/TundishMold';
 import { StrandGuide } from './equipment/Strand';
 import { CoolingSystem, SlabLine, TorchCutter } from './equipment/CoolingCutterSlab';
-import { LayerMarkers, ProcessFlowPath, SectionPlane, SteelMarker } from './overlays/Overlays';
+import { LayerMarkers, ProcessFlowPath, SectionPlane, SteelMarker , EquipmentLabels } from './overlays/Overlays';
 
 /** Advances the deterministic simulation clock and mirrors it to the UI at ~10 Hz. */
 /** Portrait screens (phones) get a wider lens so camera presets keep the machine in frame. */
@@ -163,7 +165,16 @@ function Ground() {
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-4, -0.01, 0]} receiveShadow material={MAT.concrete} userData={{ noPick: true }}>
         <planeGeometry args={[170, 70]} />
       </mesh>
-      <Grid position={[-4, 0.005, 0]} args={[170, 70]} cellSize={2} cellThickness={0.4} cellColor="#2b3037" sectionSize={10} sectionThickness={0.8} sectionColor="#363c45" fadeDistance={140} infiniteGrid={false} />
+      <Grid position={[-4, 0.005, 0]} args={[170, 70]} cellSize={2} cellThickness={0.35} cellColor="#39414b" sectionSize={10} sectionThickness={0.9} sectionColor="#4a5360" fadeDistance={150} fadeStrength={1.5} infiniteGrid={false} />
+      {/* safety walkway markings along the process line */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-4, 0.012, 8.5]} userData={{ noPick: true }}>
+        <planeGeometry args={[150, 0.25]} />
+        <meshBasicMaterial color="#c9a227" />
+      </mesh>
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-4, 0.012, 10.5]} userData={{ noPick: true }}>
+        <planeGeometry args={[150, 0.25]} />
+        <meshBasicMaterial color="#c9a227" />
+      </mesh>
     </>
   );
 }
@@ -206,6 +217,7 @@ function Plant() {
       {layers.processFlow && <ProcessFlowPath />}
       {layers.steelFlow && <SteelMarker />}
       <LayerMarkers />
+      <EquipmentLabels />
       <SectionPlane />
     </>
   );
@@ -219,13 +231,43 @@ function ClearSelectionOnMiss() {
   return null;
 }
 
+/** Studio-style image-based lighting built locally (no external HDR download). */
+function StudioEnvironment() {
+  return (
+    <Environment resolution={256} frames={1} background={false}>
+      <color attach="background" args={['#0f1318']} />
+      <Lightformer form="rect" intensity={2.2} color="#ffffff" position={[0, 40, 0]} rotation-x={Math.PI / 2} scale={[120, 40, 1]} />
+      <Lightformer form="rect" intensity={1.4} color="#cfe0ff" position={[-60, 18, 30]} rotation-y={Math.PI / 3} scale={[60, 12, 1]} />
+      <Lightformer form="rect" intensity={1.1} color="#ffd9b0" position={[60, 14, -30]} rotation-y={-Math.PI / 2.5} scale={[60, 10, 1]} />
+      <Lightformer form="ring" intensity={3} color="#ff9a4a" position={[-38, 6, 12]} scale={6} />
+      <Lightformer form="rect" intensity={0.6} color="#ffffff" position={[0, 8, 60]} scale={[140, 8, 1]} />
+    </Environment>
+  );
+}
+
+/** Post-processing: ambient occlusion for depth, bloom for molten steel and arcs, vignette, SMAA. */
+function Effects({ quality }: { quality: 'high' | 'low' }) {
+  return (
+    <EffectComposer multisampling={0} enableNormalPass={false}>
+      {quality === 'high' ? <N8AO aoRadius={2.2} intensity={2.4} distanceFalloff={1.2} halfRes /> : <></>}
+      <Bloom mipmapBlur luminanceThreshold={1} luminanceSmoothing={0.2} intensity={0.9} radius={0.7} />
+      <ToneMapping mode={ToneMappingMode.AGX} />
+      <Vignette eskil={false} offset={0.22} darkness={0.55} />
+      <SMAA />
+    </EffectComposer>
+  );
+}
+
 export function Experience() {
+  const [quality, setQuality] = useState<'high' | 'low'>(() =>
+    typeof window !== 'undefined' && window.matchMedia?.('(pointer: coarse)').matches ? 'low' : 'high',
+  );
   return (
     <Canvas
-      shadows
+      shadows="soft"
       dpr={[1, 1.75]}
       camera={{ position: [-10, 42, 62], fov: 42, near: 0.1, far: 600 }}
-      gl={{ antialias: true, powerPreference: 'high-performance' }}
+      gl={{ antialias: false, powerPreference: 'high-performance', toneMapping: THREE.NoToneMapping }}
       onPointerMissed={(e) => {
         if (e.button === 0) {
           const st = useAppStore.getState();
@@ -234,31 +276,38 @@ export function Experience() {
         }
       }}
     >
-      <color attach="background" args={['#15181d']} />
-      <fog attach="fog" args={['#15181d', 90, 220]} />
-      <hemisphereLight args={['#cfd8e3', '#20242a', 0.9]} />
+      <PerformanceMonitor onDecline={() => setQuality('low')} />
+      <color attach="background" args={['#1b2129']} />
+      <fog attach="fog" args={['#1b2129', 110, 260]} />
+      <hemisphereLight args={['#dfe8f3', '#2a2f36', 0.55]} />
       <directionalLight
-        position={[30, 60, 35]}
-        intensity={1.6}
+        position={[35, 70, 40]}
+        intensity={2.2}
+        color="#fff4e6"
         castShadow
         shadow-mapSize={[2048, 2048]}
-        shadow-camera-left={-80}
-        shadow-camera-right={80}
-        shadow-camera-top={40}
-        shadow-camera-bottom={-40}
-        shadow-camera-far={200}
+        shadow-bias={-0.0004}
+        shadow-normalBias={0.04}
+        shadow-camera-left={-85}
+        shadow-camera-right={85}
+        shadow-camera-top={45}
+        shadow-camera-bottom={-45}
+        shadow-camera-far={220}
       />
-      <directionalLight position={[-40, 30, -30]} intensity={0.45} />
+      <directionalLight position={[-50, 30, -35]} intensity={0.7} color="#b9d2ff" />
       <Suspense fallback={null}>
+        <StudioEnvironment />
         <Ground />
         <Building />
         <Plant />
+        <ContactShadows position={[-4, 0.02, 0]} scale={[170, 70]} resolution={1024} blur={2.2} opacity={0.55} far={12} frames={1} />
       </Suspense>
       <SimulationDriver />
       <ResponsiveLens />
       <CameraRig />
       <ClearSelectionOnMiss />
       <AdaptiveDpr pixelated />
+      <Effects quality={quality} />
     </Canvas>
   );
 }

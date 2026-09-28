@@ -239,7 +239,7 @@ export function SlabLine() {
         </mesh>
         <Html position={[0, 1.1, 0]} center distanceFactor={18} zIndexRange={[10, 0]}>
           <div ref={label} className="pointer-events-none whitespace-nowrap rounded border border-white/15 bg-black/70 px-2 py-1 font-mono text-[10px] text-white/90">
-            HEAT 26-4718 · SLAB 01 · 230×1500×10 000 mm
+            COLADA 26-4718 · PLANCHÓN 01 · 230×1500×10 000 mm
           </div>
         </Html>
       </group>

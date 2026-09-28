@@ -9,8 +9,8 @@ import { fmt, useSnapshot } from '../useSnapshot';
 import { CONTROLS } from './input';
 import type { CameraPresetId } from '../../types/process';
 
-const DESKTOP_HINTS = [['Drag', 'rotate'], ['W A S D', 'move'], ['Space', 'play / pause'], ['Click', 'inspect machine'], ['X', 'X-ray'], ['H', 'all controls']];
-const TOUCH_HINTS = [['Drag', 'rotate'], ['Pinch', 'zoom'], ['2-finger drag', 'pan'], ['Tap', 'inspect machine'], ['X-RAY', 'see inside'], ['?', 'all controls']];
+const DESKTOP_HINTS = [['Arrastrar', 'girar vista'], ['W A S D', 'moverse'], ['Espacio', 'reproducir / pausa'], ['Clic', 'inspeccionar equipo'], ['X', 'rayos X'], ['H', 'todos los controles']];
+const TOUCH_HINTS = [['Arrastrar', 'girar vista'], ['Pellizcar', 'acercar'], ['Dos dedos', 'desplazar'], ['Tocar', 'inspeccionar equipo'], ['RAYOS X', 'ver por dentro'], ['?', 'todos los controles']];
 
 /** True on phones and tablets (coarse pointer). */
 export function useTouch() {
@@ -27,27 +27,31 @@ export function StartScreen() {
   return (
     <div className="absolute inset-0 z-40 flex items-center bg-gradient-to-r from-[#0b0d11]/95 via-[#0b0d11]/70 to-transparent">
       <div className="mx-4 max-h-full max-w-[620px] animate-[fadeUp_.8s_ease-out] overflow-y-auto py-6 md:ml-[7vw]">
-        <div className="font-hud text-xs tracking-[0.5em] text-amber-400">INTERACTIVE LEARNING TWIN</div>
+        <div className="font-hud text-xs tracking-[0.5em] text-amber-400">GEMELO DE APRENDIZAJE · ACERÍA</div>
         <h1 className="font-hud mt-3 text-4xl sm:text-5xl font-bold leading-[1.05] tracking-wide text-zinc-50 md:text-6xl">
-          FROM SCRAP
+          DE LA CHATARRA
           <br />
-          <span className="bg-gradient-to-r from-amber-300 via-orange-400 to-red-500 bg-clip-text text-transparent">TO STEEL SLAB</span>
+          <span className="bg-gradient-to-r from-amber-300 via-orange-400 to-red-500 bg-clip-text text-transparent">AL PLANCHÓN</span>
         </h1>
         <p className="mt-4 max-w-[520px] text-sm leading-relaxed text-zinc-400">
-          Walk through an electric arc furnace melt shop and a continuous slab caster. Watch solid charge become liquid steel — and liquid steel become a solid slab.
+          Recorre una acería con horno de arco eléctrico y una máquina de colada continua de planchón. Mira cómo la carga sólida se vuelve acero líquido y cómo el acero líquido se vuelve un planchón sólido.
         </p>
-        <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
+        <div className="mt-6 grid grid-cols-1 gap-3 sm:mt-8 sm:grid-cols-2">
           <button onClick={() => startGame('guided')} className="hud-btn-primary group">
-            <span className="font-hud text-lg tracking-[0.2em]">▶ START MISSION</span>
-            <span className="text-[11px] font-normal normal-case tracking-normal text-zinc-800">Guided tour · 18 steps · recommended</span>
+            <span className="font-hud text-lg tracking-[0.2em]">▶ INICIAR MISIÓN</span>
+            <span className="text-[11px] font-normal normal-case tracking-normal text-zinc-800">Recorrido guiado · 18 pasos · recomendado</span>
           </button>
           <button onClick={() => startGame('explore')} className="hud-btn-secondary">
-            <span className="font-hud tracking-[0.2em]">FREE EXPLORE</span>
-            <span className="text-[11px] font-normal normal-case tracking-normal text-zinc-400">Fly around, click any machine</span>
+            <span className="font-hud tracking-[0.2em]">EXPLORAR LIBRE</span>
+            <span className="text-[11px] font-normal normal-case tracking-normal text-zinc-400">Recorre la planta y abre cualquier equipo</span>
           </button>
           <button onClick={() => startGame('follow')} className="hud-btn-secondary">
-            <span className="font-hud tracking-[0.2em]">FOLLOW THE STEEL</span>
-            <span className="text-[11px] font-normal normal-case tracking-normal text-zinc-400">Camera rides with one heat</span>
+            <span className="font-hud tracking-[0.2em]">SEGUIR EL ACERO</span>
+            <span className="text-[11px] font-normal normal-case tracking-normal text-zinc-400">La cámara acompaña a una colada</span>
+          </button>
+          <button onClick={() => { startGame('explore'); useAppStore.getState().setQuizOpen(true); }} className="hud-btn-secondary">
+            <span className="font-hud tracking-[0.2em]">EVALUACIÓN</span>
+            <span className="text-[11px] font-normal normal-case tracking-normal text-zinc-400">12 preguntas · aprueba con 80%</span>
           </button>
         </div>
         <div className="mt-6 grid max-w-[560px] grid-cols-2 gap-2 text-[11px] text-zinc-400 sm:mt-8 sm:grid-cols-3">
@@ -55,7 +59,7 @@ export function StartScreen() {
             <div key={k} className="hud-chip"><span className="font-hud text-zinc-100">{k}</span> {v}</div>
           ))}
         </div>
-        <div className="mt-6 text-[10px] uppercase tracking-[0.25em] text-zinc-600">{touch ? 'Tap a mode to start' : 'Press Enter to start'} · Simulated training data</div>
+        <div className="mt-6 text-[10px] uppercase tracking-[0.25em] text-zinc-600">{touch ? 'Toca un modo para empezar' : 'Presiona Enter para empezar'} · Datos simulados de capacitación</div>
       </div>
     </div>
   );
@@ -69,8 +73,8 @@ export function MissionCard() {
   return (
     <div className="hud-panel pointer-events-auto w-full p-3 md:w-[370px] md:p-3.5">
       <div className="flex items-center justify-between">
-        <span className="font-hud text-[11px] tracking-[0.3em] text-amber-400">MISSION {String(stepIndex + 1).padStart(2, '0')}/{total}</span>
-        <button onClick={() => setOpen((o) => !o)} className="text-[10px] uppercase tracking-widest text-zinc-500 hover:text-zinc-200">{open ? 'Hide' : 'Show'}</button>
+        <span className="font-hud text-[11px] tracking-[0.3em] text-amber-400">MISIÓN {String(stepIndex + 1).padStart(2, '0')}/{total}</span>
+        <button onClick={() => setOpen((o) => !o)} className="text-[10px] uppercase tracking-widest text-zinc-500 hover:text-zinc-200">{open ? 'Ocultar' : 'Ver'}</button>
       </div>
       <div className="font-hud mt-0.5 text-lg font-semibold md:text-xl uppercase tracking-wide text-zinc-50">{step.title}</div>
       <div className="mt-2 h-1 overflow-hidden bg-white/10">
@@ -79,20 +83,20 @@ export function MissionCard() {
       {open && (
         <div className="mt-3 space-y-2 text-[12px] leading-snug">
           <div className="grid grid-cols-3 gap-1.5">
-            <Stat k="Steel at" v={snap.location} />
-            <Stat k="State" v={MATERIAL_STATE_LABEL[snap.materialState]} />
+            <Stat k="Acero en" v={snap.location} />
+            <Stat k="Estado" v={MATERIAL_STATE_LABEL[snap.materialState]} />
             <Stat k="Temp." v={`${fmt(snap.steelTemperature.value)} °C`} mono />
           </div>
           <div>
-            <span className="text-[10px] uppercase tracking-widest text-zinc-500">Objective · </span>
+            <span className="text-[10px] uppercase tracking-widest text-zinc-500">Objetivo · </span>
             <span className="text-zinc-200">{step.whatHappens}</span>
           </div>
           <div>
-            <span className="text-[10px] uppercase tracking-widest text-zinc-500">Why · </span>
+            <span className="text-[10px] uppercase tracking-widest text-zinc-500">Por qué · </span>
             <span className="text-zinc-400">{step.why}</span>
           </div>
           <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-[10px] uppercase tracking-widest text-zinc-500">Operating</span>
+            <span className="text-[10px] uppercase tracking-widest text-zinc-500">En operación</span>
             {step.activeEquipment.map((id) => (
               <button key={id} onClick={() => select(id)} className="hud-chip hover:border-amber-400/70 hover:text-amber-200">
                 {equipmentName(id)}
@@ -101,7 +105,7 @@ export function MissionCard() {
           </div>
           {next && (
             <div className="text-[11px] text-zinc-500">
-              NEXT ▸ <span className="text-zinc-300">{next.title}</span> <span className="text-zinc-600">(N)</span>
+              SIGUE ▸ <span className="text-zinc-300">{next.title}</span> <span className="text-zinc-600">(N)</span>
             </div>
           )}
           <div className="text-[10px] text-zinc-600">{snap.heatId}</div>
@@ -136,7 +140,7 @@ export function StepBanner() {
   const s = steps()[stepIndex];
   return (
     <div key={stepIndex} className="pointer-events-none absolute left-1/2 top-[22%] z-30 -translate-x-1/2 animate-[banner_1.9s_ease-in-out] text-center">
-      <div className="font-hud text-sm tracking-[0.5em] text-amber-400">STEP {String(stepIndex + 1).padStart(2, '0')}</div>
+      <div className="font-hud text-sm tracking-[0.5em] text-amber-400">PASO {String(stepIndex + 1).padStart(2, '0')}</div>
       <div className="font-hud mt-1 px-4 text-2xl font-bold md:text-4xl uppercase tracking-wider text-zinc-50 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">{s.title}</div>
       <div className="mx-auto mt-2 h-px w-64 bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
     </div>
@@ -156,20 +160,20 @@ export function Minimap() {
   const sz = (z: number) => ((z - Z0) / (Z1 - Z0)) * H;
   const steel = heatPosition(currentPose());
   const stations: { id: CameraPresetId; x: number; label: string }[] = [
-    { id: 'rawMaterials', x: LAYOUT.rawMaterials.position[0], label: 'SCRAP' },
-    { id: 'eaf', x: LAYOUT.eaf.position[0], label: 'EAF' },
-    { id: 'secondary', x: LAYOUT.ladleFurnace.position[0], label: 'LF' },
-    { id: 'tundish', x: LAYOUT.tundish.position[0] - 3, label: 'CASTER' },
-    { id: 'strand', x: 24, label: 'STRAND' },
-    { id: 'cutting', x: 38.8, label: 'CUT' },
-    { id: 'slab', x: LAYOUT.slabYard[0], label: 'SLAB' },
+    { id: 'rawMaterials', x: LAYOUT.rawMaterials.position[0], label: 'CHATARRA' },
+    { id: 'eaf', x: LAYOUT.eaf.position[0], label: 'HAE' },
+    { id: 'secondary', x: LAYOUT.ladleFurnace.position[0], label: 'H. OLLA' },
+    { id: 'tundish', x: LAYOUT.tundish.position[0] - 3, label: 'COLADA' },
+    { id: 'strand', x: 24, label: 'BARRA' },
+    { id: 'cutting', x: 38.8, label: 'CORTE' },
+    { id: 'slab', x: LAYOUT.slabYard[0], label: 'PLANCHÓN' },
   ];
   const activeCam = steps()[stepIndex].camera;
   return (
     <div className="hud-panel pointer-events-auto hidden p-2 md:block">
       <div className="mb-1 flex justify-between text-[9px] uppercase tracking-[0.25em] text-zinc-500">
-        <span>Plant map</span>
-        <span className="text-amber-400">● steel</span>
+        <span>Mapa de planta</span>
+        <span className="text-amber-400">● acero</span>
       </div>
       <svg width={W} height={H} className="block">
         <rect x={0} y={0} width={W} height={H} fill="#0e1116" />
@@ -183,7 +187,7 @@ export function Minimap() {
         <circle cx={sx(steel[0])} cy={sz(steel[2])} r={4.5} fill="#ffb020">
           <animate attributeName="r" values="3.5;6;3.5" dur="1.2s" repeatCount="indefinite" />
         </circle>
-        <text x={4} y={10} fontSize={8} fill="#5d6570" fontFamily="Oxanium, sans-serif">click a station to fly there</text>
+        <text x={4} y={10} fontSize={8} fill="#5d6570" fontFamily="Oxanium, sans-serif">haz clic en una estación para ir</text>
       </svg>
     </div>
   );
@@ -198,7 +202,7 @@ export function HelpOverlay() {
     <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm" onClick={() => toggle('help', false)}>
       <div className="hud-panel max-h-[90%] w-[min(640px,calc(100vw-32px))] overflow-y-auto p-5 md:p-6" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between">
-          <div className="font-hud text-lg tracking-[0.3em] text-amber-400">CONTROLS</div>
+          <div className="font-hud text-lg tracking-[0.3em] text-amber-400">CONTROLES</div>
           <button onClick={() => toggle('help', false)} className="text-zinc-400 hover:text-white">✕</button>
         </div>
         <div className="mt-4 grid grid-cols-1 gap-x-8 gap-y-1.5 md:grid-cols-2">
@@ -209,7 +213,7 @@ export function HelpOverlay() {
             </div>
           ))}
         </div>
-        <p className="mt-4 text-[11px] text-zinc-500">All process values are simulated training data — not operating limits of a real plant.</p>
+        <p className="mt-4 text-[11px] text-zinc-500">Todos los valores del proceso son datos simulados de capacitación, no límites de operación de una planta real.</p>
       </div>
     </div>
   );
@@ -225,7 +229,7 @@ export function LayersDrawer() {
   return (
     <div className="hud-panel pointer-events-auto w-[230px] p-3">
       <div className="mb-2 flex items-center justify-between">
-        <span className="font-hud text-[11px] tracking-[0.3em] text-amber-400">LAYERS</span>
+        <span className="font-hud text-[11px] tracking-[0.3em] text-amber-400">CAPAS</span>
         <button onClick={() => toggle('layers', false)} className="text-xs text-zinc-500 hover:text-zinc-200">✕</button>
       </div>
       {LAYERS.map((l) => (
@@ -245,7 +249,7 @@ export function ControlsHint() {
   if (!started) return null;
   return (
     <div className="pointer-events-none hidden text-[10px] uppercase tracking-[0.2em] text-zinc-500 md:block">
-      Drag rotate · WASD move · Wheel zoom · Space play · <span className="text-zinc-300">H help</span>
+      Arrastrar girar · WASD moverse · Rueda acercar · Espacio reproducir · <span className="text-zinc-300">H ayuda</span>
     </div>
   );
 }

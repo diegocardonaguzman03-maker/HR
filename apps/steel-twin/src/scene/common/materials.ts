@@ -2,18 +2,18 @@ import * as THREE from 'three';
 
 /** Shared, realistic-leaning industrial materials (no cartoon colours). */
 export const MAT = {
-  steel: new THREE.MeshStandardMaterial({ color: '#8b929a', metalness: 0.75, roughness: 0.42 }),
-  darkSteel: new THREE.MeshStandardMaterial({ color: '#4b5159', metalness: 0.7, roughness: 0.5 }),
-  structure: new THREE.MeshStandardMaterial({ color: '#5f6873', metalness: 0.45, roughness: 0.62 }),
-  paintYellow: new THREE.MeshStandardMaterial({ color: '#b08d2c', metalness: 0.3, roughness: 0.6 }),
-  concrete: new THREE.MeshStandardMaterial({ color: '#3a3d42', metalness: 0.05, roughness: 0.92 }),
-  refractory: new THREE.MeshStandardMaterial({ color: '#8d6e63', metalness: 0.05, roughness: 0.95 }),
-  copper: new THREE.MeshStandardMaterial({ color: '#b87333', metalness: 0.85, roughness: 0.32 }),
-  graphite: new THREE.MeshStandardMaterial({ color: '#2d2f33', metalness: 0.2, roughness: 0.75 }),
-  scrap: new THREE.MeshStandardMaterial({ color: '#6b5a4e', metalness: 0.6, roughness: 0.7 }),
-  dri: new THREE.MeshStandardMaterial({ color: '#3d3a38', metalness: 0.3, roughness: 0.9 }),
-  molten: new THREE.MeshStandardMaterial({ color: '#ff7a1a', emissive: '#ff5500', emissiveIntensity: 2.2, roughness: 0.35, toneMapped: false }),
-  moltenCore: new THREE.MeshStandardMaterial({ color: '#ffb347', emissive: '#ff7b00', emissiveIntensity: 2.6, roughness: 0.3, toneMapped: false, transparent: true, opacity: 0.95 }),
+  steel: new THREE.MeshStandardMaterial({ color: '#a9b1ba', metalness: 0.85, roughness: 0.32, envMapIntensity: 1.2 }),
+  darkSteel: new THREE.MeshStandardMaterial({ color: '#5d6570', metalness: 0.8, roughness: 0.4, envMapIntensity: 1.1 }),
+  structure: new THREE.MeshStandardMaterial({ color: '#4f6b88', metalness: 0.35, roughness: 0.5, envMapIntensity: 1 }),
+  paintYellow: new THREE.MeshStandardMaterial({ color: '#e0a82e', metalness: 0.25, roughness: 0.45, envMapIntensity: 1 }),
+  concrete: new THREE.MeshStandardMaterial({ color: '#343a42', metalness: 0.15, roughness: 0.62, envMapIntensity: 0.5 }),
+  refractory: new THREE.MeshStandardMaterial({ color: '#a27a64', metalness: 0.05, roughness: 0.9 }),
+  copper: new THREE.MeshStandardMaterial({ color: '#d4834a', metalness: 0.95, roughness: 0.25, envMapIntensity: 1.3 }),
+  graphite: new THREE.MeshStandardMaterial({ color: '#3a3d42', metalness: 0.35, roughness: 0.55 }),
+  scrap: new THREE.MeshStandardMaterial({ color: '#7d6453', metalness: 0.7, roughness: 0.55 }),
+  dri: new THREE.MeshStandardMaterial({ color: '#56504b', metalness: 0.4, roughness: 0.8 }),
+  molten: new THREE.MeshStandardMaterial({ color: '#ff7a1a', emissive: '#ff5a00', emissiveIntensity: 3.2, roughness: 0.35, toneMapped: false }),
+  moltenCore: new THREE.MeshStandardMaterial({ color: '#ffb347', emissive: '#ff7b00', emissiveIntensity: 3.4, roughness: 0.3, toneMapped: false, transparent: true, opacity: 0.95 }),
   slag: new THREE.MeshStandardMaterial({ color: '#5a463a', emissive: '#3a1a08', emissiveIntensity: 0.5, roughness: 0.95 }),
   moldPowder: new THREE.MeshStandardMaterial({ color: '#2a2a2a', roughness: 1 }),
   water: new THREE.MeshStandardMaterial({ color: '#4d8fe0', transparent: true, opacity: 0.35, roughness: 0.2, depthWrite: false }),
@@ -23,7 +23,7 @@ export const MAT = {
   oxygenJet: new THREE.MeshStandardMaterial({ color: '#dff6ff', emissive: '#9fdcff', emissiveIntensity: 1.5, transparent: true, opacity: 0.55, toneMapped: false, depthWrite: false }),
   flame: new THREE.MeshStandardMaterial({ color: '#9fd4ff', emissive: '#5ab0ff', emissiveIntensity: 3, transparent: true, opacity: 0.8, toneMapped: false, depthWrite: false }),
   arc: new THREE.MeshStandardMaterial({ color: '#ffffff', emissive: '#cfe8ff', emissiveIntensity: 6, toneMapped: false }),
-  rubber: new THREE.MeshStandardMaterial({ color: '#1f2226', roughness: 0.9 }),
+  rubber: new THREE.MeshStandardMaterial({ color: '#25292e', roughness: 0.8 }),
 };
 
 /** Temperature → colour for the TEMPERATURE layer (false colour, °C). */

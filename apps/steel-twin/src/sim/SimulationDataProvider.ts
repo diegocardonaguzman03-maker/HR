@@ -28,26 +28,26 @@ const TEMP: Partial<Record<SimState, [number, number]>> = {
 };
 
 const LOCATION: Record<SimState, string> = {
-  IDLE: 'Not started',
-  RAW_MATERIALS: 'Scrap yard & DRI silo',
-  CHARGING: 'Charging bucket → EAF',
-  ARC_IGNITION: 'Inside the EAF',
-  MELTING: 'Inside the EAF',
-  REFINING: 'EAF bath under foamy slag',
-  TAPPING: 'EBT stream → ladle',
-  SECONDARY_METALLURGY: 'Ladle at the ladle furnace',
-  VACUUM_TREATMENT: 'Ladle at the vacuum station',
-  TRANSFER: 'Ladle on the casting crane',
-  TURRET: 'Ladle on the turret',
-  TUNDISH_FILL: 'Ladle shroud → tundish',
-  MOLD_FILL: 'SEN → mold',
-  SHELL_FORMATION: 'Copper mold',
-  SECONDARY_COOLING: 'Strand — spray zones',
-  SOLIDIFICATION: 'Strand — bow',
-  STRAIGHTENING: 'Strand — straightening zone',
-  FINAL_SOLIDIFICATION: 'Strand — horizontal segments',
-  CUTTING: 'Torch cutting machine',
-  COMPLETE: 'Run-out table → slab yard',
+  IDLE: 'Sin iniciar',
+  RAW_MATERIALS: 'Patio de chatarra y silo de HRD',
+  CHARGING: 'Canasta de carga → horno',
+  ARC_IGNITION: 'Dentro del horno',
+  MELTING: 'Dentro del horno',
+  REFINING: 'Baño bajo escoria espumosa',
+  TAPPING: 'Chorro de piquera EBT → olla',
+  SECONDARY_METALLURGY: 'Olla en el horno olla',
+  VACUUM_TREATMENT: 'Olla en la estación de vacío',
+  TRANSFER: 'Olla en la grúa de colada',
+  TURRET: 'Olla en la torreta',
+  TUNDISH_FILL: 'Tubo protector → distribuidor',
+  MOLD_FILL: 'Buza sumergida → molde',
+  SHELL_FORMATION: 'Molde de cobre',
+  SECONDARY_COOLING: 'Barra: zonas de aspersión',
+  SOLIDIFICATION: 'Barra: arco',
+  STRAIGHTENING: 'Barra: zona de enderezado',
+  FINAL_SOLIDIFICATION: 'Barra: segmentos horizontales',
+  CUTTING: 'Máquina de oxicorte',
+  COMPLETE: 'Mesa de salida → patio de planchones',
 };
 
 const EQUIPMENT: Record<SimState, EquipmentId | null> = {
@@ -76,7 +76,7 @@ function materialState(state: SimState, p: number, headS: number): MaterialState
 
 export class SimulationDataProvider implements ProcessDataProvider {
   readonly id = 'simulation';
-  readonly label = 'Simulated training data';
+  readonly label = 'Datos simulados de capacitación';
   readonly simulated = true;
 
   getSnapshot(state: SimState, progress: number): ProcessSnapshot {
@@ -98,62 +98,62 @@ export class SimulationDataProvider implements ProcessDataProvider {
     const powerOn = { ARC_IGNITION: lerp(0, 2, p), MELTING: lerp(2, 32, p), REFINING: lerp(32, 42, p) } as Partial<Record<SimState, number>>;
     if (['CHARGING', 'ARC_IGNITION', 'MELTING', 'REFINING', 'TAPPING'].includes(state)) {
       const pon = powerOn[state] ?? (state === 'TAPPING' ? 42 : 0);
-      vars['eaf.power'] = v('Active power', state === 'ARC_IGNITION' ? lerp(20, 70, p) : state === 'MELTING' ? 118 : state === 'REFINING' ? 112 : 0, 'MW');
-      vars['eaf.powerOnTime'] = v('Power-on time', pon, 'min');
-      vars['eaf.energy'] = v('Specific energy', (pon / 42) * 560, 'kWh/t');
-      vars['eaf.bathTemperature'] = v('Bath temperature', steelT, '°C');
-      vars['eaf.meltedFraction'] = v('Melted fraction', melt * 100, '%');
-      vars['eaf.carbon'] = v('Bath carbon', state === 'REFINING' ? lerp(0.25, 0.06, p) : state === 'TAPPING' ? 0.06 : lerp(1.8, 0.25, melt), '%', 2);
-      vars['eaf.oxygen'] = v('Oxygen injected', state === 'REFINING' ? lerp(24, 36, p) : lerp(0, 24, melt), 'Nm³/t', 1);
+      vars['eaf.power'] = v('Potencia activa', state === 'ARC_IGNITION' ? lerp(20, 70, p) : state === 'MELTING' ? 118 : state === 'REFINING' ? 112 : 0, 'MW');
+      vars['eaf.powerOnTime'] = v('Tiempo con arco', pon, 'min');
+      vars['eaf.energy'] = v('Energía específica', (pon / 42) * 560, 'kWh/t');
+      vars['eaf.bathTemperature'] = v('Temperatura del baño', steelT, '°C');
+      vars['eaf.meltedFraction'] = v('Fracción fundida', melt * 100, '%');
+      vars['eaf.carbon'] = v('Carbono del baño', state === 'REFINING' ? lerp(0.25, 0.06, p) : state === 'TAPPING' ? 0.06 : lerp(1.8, 0.25, melt), '%', 2);
+      vars['eaf.oxygen'] = v('Oxígeno inyectado', state === 'REFINING' ? lerp(24, 36, p) : lerp(0, 24, melt), 'Nm³/t', 1);
     }
     // ── Ladle / LF
     if (['TAPPING', 'SECONDARY_METALLURGY', 'VACUUM_TREATMENT', 'TRANSFER', 'TURRET', 'TUNDISH_FILL'].includes(state)) {
       const w = state === 'TAPPING' ? lerp(0, 150, (p - 0.2) / 0.7) : state === 'TUNDISH_FILL' ? lerp(150, 110, p) : 150;
-      vars['ladle.steelWeight'] = v('Steel in ladle', w, 't');
-      vars['ladle.temperature'] = v('Ladle temperature', steelT, '°C');
+      vars['ladle.steelWeight'] = v('Acero en la olla', w, 't');
+      vars['ladle.temperature'] = v('Temperatura en olla', steelT, '°C');
     }
     if (state === 'SECONDARY_METALLURGY') {
-      vars['lf.temperature'] = v('LF temperature', steelT, '°C');
-      vars['lf.treatmentTime'] = v('Treatment time', lerp(0, 40, p), 'min');
-      vars['lf.sulfur'] = v('Sulfur', lerp(0.03, 0.008, p), '%', 3);
-      vars['lf.aluminium'] = v('Soluble aluminium', lerp(0.01, 0.035, p), '%', 3);
-      vars['lf.argonFlow'] = v('Argon flow', p < 0.7 ? 450 : 100, 'NL/min');
+      vars['lf.temperature'] = v('Temperatura en horno olla', steelT, '°C');
+      vars['lf.treatmentTime'] = v('Tiempo de tratamiento', lerp(0, 40, p), 'min');
+      vars['lf.sulfur'] = v('Azufre', lerp(0.03, 0.008, p), '%', 3);
+      vars['lf.aluminium'] = v('Aluminio soluble', lerp(0.01, 0.035, p), '%', 3);
+      vars['lf.argonFlow'] = v('Flujo de argón', p < 0.7 ? 450 : 100, 'NL/min');
     }
     // ── Tundish / mold / strand
     if (['TUNDISH_FILL', 'MOLD_FILL', 'SHELL_FORMATION', 'SECONDARY_COOLING', 'SOLIDIFICATION', 'STRAIGHTENING', 'FINAL_SOLIDIFICATION', 'CUTTING'].includes(state)) {
       const castingOn = state !== 'TUNDISH_FILL';
-      vars['tundish.weight'] = v('Tundish weight', state === 'TUNDISH_FILL' ? lerp(0, 42, p) : 42, 't');
-      vars['tundish.temperature'] = v('Tundish temperature', state === 'TUNDISH_FILL' ? steelT : 1550, '°C');
-      vars['cc.superheat'] = v('Superheat', (state === 'TUNDISH_FILL' ? steelT : 1550) - 1525, '°C');
-      vars['cc.castingSpeed'] = v('Casting speed', !castingOn ? 0 : state === 'MOLD_FILL' ? 0 : state === 'SHELL_FORMATION' ? lerp(0.3, 1.0, p) : SOLID_MODEL.castingSpeed, 'm/min', 2);
+      vars['tundish.weight'] = v('Peso en distribuidor', state === 'TUNDISH_FILL' ? lerp(0, 42, p) : 42, 't');
+      vars['tundish.temperature'] = v('Temperatura en distribuidor', state === 'TUNDISH_FILL' ? steelT : 1550, '°C');
+      vars['cc.superheat'] = v('Sobrecalentamiento', (state === 'TUNDISH_FILL' ? steelT : 1550) - 1525, '°C');
+      vars['cc.castingSpeed'] = v('Velocidad de colada', !castingOn ? 0 : state === 'MOLD_FILL' ? 0 : state === 'SHELL_FORMATION' ? lerp(0.3, 1.0, p) : SOLID_MODEL.castingSpeed, 'm/min', 2);
       if (castingOn) {
-        vars['mold.level'] = v('Mold level deviation', state === 'MOLD_FILL' ? lerp(-60, 0, p) : 1.2 * Math.sin(p * 40), 'mm', 1);
-        vars['mold.waterDeltaT'] = v('Mold water ΔT', state === 'MOLD_FILL' ? lerp(0, 6, p) : 7.5, '°C', 1);
-        vars['mold.oscillationFreq'] = v('Oscillation frequency', state === 'MOLD_FILL' ? 0 : 160, 'cpm');
-        vars['cc.shellThicknessMoldExit'] = v('Shell at mold exit', shellThickness(0.8), 'mm');
+        vars['mold.level'] = v('Desviación de nivel en molde', state === 'MOLD_FILL' ? lerp(-60, 0, p) : 1.2 * Math.sin(p * 40), 'mm', 1);
+        vars['mold.waterDeltaT'] = v('ΔT del agua del molde', state === 'MOLD_FILL' ? lerp(0, 6, p) : 7.5, '°C', 1);
+        vars['mold.oscillationFreq'] = v('Frecuencia de oscilación', state === 'MOLD_FILL' ? 0 : 160, 'cpm');
+        vars['cc.shellThicknessMoldExit'] = v('Costra a la salida del molde', shellThickness(0.8), 'mm');
       }
       if (headS > 1) {
-        vars['cc.specificWater'] = v('Specific water', 1.0, 'L/kg', 2);
-        vars['cc.surfaceTemp'] = v('Surface temp. at strand head', surfaceTemperature(headS), '°C');
-        vars['cc.shellAtHead'] = v('Shell thickness at strand head', shellThickness(headS) * 2 >= 230 ? 115 : shellThickness(headS), 'mm');
-        vars['cc.solidificationProgress'] = v('Solidified along strand', Math.min(100, (headS / lm) * 100), '%');
-        vars['cc.metallurgicalLength'] = v('Metallurgical length', lm, 'm', 1);
+        vars['cc.specificWater'] = v('Agua específica', 1.0, 'L/kg', 2);
+        vars['cc.surfaceTemp'] = v('Temp. superficial en la cabeza', surfaceTemperature(headS), '°C');
+        vars['cc.shellAtHead'] = v('Espesor de costra en la cabeza', shellThickness(headS) * 2 >= 230 ? 115 : shellThickness(headS), 'mm');
+        vars['cc.solidificationProgress'] = v('Solidificado a lo largo de la barra', Math.min(100, (headS / lm) * 100), '%');
+        vars['cc.metallurgicalLength'] = v('Longitud metalúrgica', lm, 'm', 1);
       }
     }
     if (state === 'CUTTING' || state === 'COMPLETE') {
-      vars['cutter.slabLength'] = v('Slab length', 10, 'm', 1);
-      vars['cc.castingSpeed'] = v('Casting speed', SOLID_MODEL.castingSpeed, 'm/min', 2);
-      vars['slab.weight'] = v('Slab weight (230 × 1,500 mm)', 0.23 * 1.5 * 10 * 7.8, 't', 1);
+      vars['cutter.slabLength'] = v('Largo del planchón', 10, 'm', 1);
+      vars['cc.castingSpeed'] = v('Velocidad de colada', SOLID_MODEL.castingSpeed, 'm/min', 2);
+      vars['slab.weight'] = v('Peso del planchón (230 × 1,500 mm)', 0.23 * 1.5 * 10 * 7.8, 't', 1);
     }
 
     return {
       state,
       progress: p,
-      heatId: 'HEAT 26-4718 (simulated)',
+      heatId: 'COLADA 26-4718 (simulada)',
       materialState: materialState(state, p, headS),
       location: LOCATION[state],
       currentEquipment: EQUIPMENT[state],
-      steelTemperature: v('Steel temperature', steelT, '°C'),
+      steelTemperature: v('Temperatura del acero', steelT, '°C'),
       variables: vars,
       strand: { castLength, solidificationFront: Math.min(castLength, lm), cutCount: state === 'COMPLETE' || (state === 'CUTTING' && p > 0.85) ? 1 : 0 },
     };
