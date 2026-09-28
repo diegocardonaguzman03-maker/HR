@@ -12,6 +12,7 @@ export type Classification =
 
 export type EquipmentCategory =
   | 'raw-materials'
+  | 'direct-reduction'
   | 'steelmaking'
   | 'secondary-metallurgy'
   | 'handling'
@@ -125,6 +126,9 @@ export interface EquipmentData {
 }
 
 export type EquipmentId =
+  | 'pelletYard'
+  | 'hyl'
+  | 'midrex'
   | 'rawMaterials'
   | 'eaf'
   | 'ladle'

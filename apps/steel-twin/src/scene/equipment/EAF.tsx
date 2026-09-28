@@ -76,12 +76,12 @@ export function EAF() {
   const layers = useAppStore((s) => s.layers);
 
   const scrap = useMemo(() => {
-    const m = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), MAT.scrap, 70);
+    const m = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), MAT.scrap, 24);
     m.userData.steel = true;
     return m;
   }, []);
   const scrapSeeds = useMemo(
-    () => Array.from({ length: 70 }, (_, i) => {
+    () => Array.from({ length: 24 }, (_, i) => {
       const r = 2.9 * Math.sqrt(((Math.sin(i * 7.1) + 1) / 2));
       const a = i * 2.39996;
       return { x: Math.cos(a) * r, z: Math.sin(a) * r, y: 0.5 + ((i * 37) % 23) / 8, s: 0.4 + ((i * 13) % 10) / 12, rot: i };

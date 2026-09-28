@@ -8,7 +8,11 @@ import type { CameraPresetId } from '../types/process';
 type V3 = [number, number, number];
 
 export const LAYOUT = {
-  rawMaterials: { position: [-60, 0, 0] as V3, driSilo: [-50, 0, -9] as V3 },
+  rawMaterials: { position: [-60, 0, 0] as V3, driSilo: [-50, 0, -9] as V3, silos: [[-51, 0, -12], [-51, 0, -6]] as V3[] },
+  /** Upstream: pellet yard and the two direct-reduction plants (HYL and Midrex) feeding the EAF by belt. */
+  pelletYard: { position: [-112, 0, 0] as V3 },
+  hyl: { position: [-92, 0, -17] as V3, discharge: [-88, 3, -17] as V3 },
+  midrex: { position: [-92, 0, 17] as V3, discharge: [-88, 3, 17] as V3 },
   eaf: {
     position: [-38, 0, 0] as V3,
     platformHeight: 5,
@@ -46,8 +50,9 @@ export interface CameraPreset {
 }
 
 export const CAMERA_PRESETS: Record<CameraPresetId, CameraPreset> = {
-  overview: { position: [-2, 58, 88], target: [-4, 4, 0], label: 'Vista general de la planta' },
-  rawMaterials: { position: [-80, 22, 34], target: [-55, 3, -2], label: 'Materias primas' },
+  overview: { position: [-14, 66, 104], target: [-18, 4, 0], label: 'Vista general de la planta' },
+  reduction: { position: [-58, 52, 84], target: [-94, 8, 0], label: 'Pelet y reducción directa (HYL · Midrex)' },
+  rawMaterials: { position: [-70, 22, 34], target: [-55, 5, -4], label: 'Silos de DRI y retornos' },
   eaf: { position: [-27, 16, 17], target: [-37, 7, 0], label: 'Horno de arco eléctrico' },
   secondary: { position: [-4, 15, 22], target: [-18, 4, 0], label: 'Metalurgia secundaria' },
   transfer: { position: [-6, 32, 46], target: [-6, 11, 0], label: 'Traslado de olla' },

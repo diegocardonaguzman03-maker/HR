@@ -141,7 +141,7 @@ export function QuizOverlay() {
             </div>
             <p className="mx-auto mt-2 max-w-[440px] text-sm text-zinc-400">
               {pct >= QUIZ_PASS * 100
-                ? 'Conoces el recorrido del acero de la chatarra al planchón.'
+                ? 'Conoces el recorrido del hierro del pelet al planchón.'
                 : `Necesitas ${Math.round(QUIZ_PASS * 100)}% para aprobar. Repasa el recorrido guiado y vuelve a intentarlo.`}
             </p>
             {best !== null && <div className="mt-2 text-xs text-zinc-500">Mejor resultado en este dispositivo: {best}%</div>}
@@ -172,7 +172,7 @@ export function MissionCompleteOverlay() {
       <div className="hud-panel w-full max-w-[520px] animate-[fadeUp_.5s_ease-out] p-6 text-center">
         <div className="font-hud text-xs tracking-[0.5em] text-amber-400">MISIÓN COMPLETADA</div>
         <h2 className="font-hud mt-2 text-3xl font-bold uppercase tracking-wide text-zinc-50">¡Planchón terminado!</h2>
-        <p className="mt-2 text-sm text-zinc-400">Seguiste la colada desde la chatarra hasta el planchón de 230 × 1,500 mm.</p>
+        <p className="mt-2 text-sm text-zinc-400">Seguiste el hierro desde el pelet y el DRI hasta el planchón de 230 × 1,500 mm.</p>
         <div className="mt-5 grid grid-cols-3 gap-2">
           {[
             [String(steps().length), 'pasos'],

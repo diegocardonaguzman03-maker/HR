@@ -25,6 +25,7 @@ const TABS: { id: Tab; label: string; level: number }[] = [
 
 const CATEGORY_LABEL: Record<EquipmentCategory, string> = {
   'raw-materials': 'Materias primas',
+  'direct-reduction': 'Reducción directa',
   steelmaking: 'Aceración',
   'secondary-metallurgy': 'Metalurgia secundaria',
   handling: 'Manejo de materiales',

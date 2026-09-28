@@ -1,8 +1,8 @@
-# Acería Virtual (Steel Learning Twin): de la chatarra al planchón
+# Acería Virtual (Steel Learning Twin): del pelet al planchón
 
 An interactive 3D learning twin of an EAF melt shop and a continuous slab caster, for the Academia GASM. It follows one heat through the whole route:
 
-**scrap and DRI → electric arc furnace → tapping → ladle furnace → transfer and turret → tundish → mold → strand (secondary cooling, solidification, straightening) → torch cutting → slab.**
+**pellet (own mines) → direct reduction in the HYL and Midrex plants → DRI by direct belt conveyors → electric arc furnace (≈ 95–100 % DRI, internal returns ≤ 5 %, no purchased scrap; decision D-010) → tapping → ladle furnace → transfer and turret → tundish → mold → strand (secondary cooling, solidification, straightening) → torch cutting → slab.**
 
 All process values are **SIMULATED TRAINING DATA**. They are educational references, not operating limits of any real plant.
 

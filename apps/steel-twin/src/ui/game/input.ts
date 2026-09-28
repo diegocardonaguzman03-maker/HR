@@ -9,7 +9,7 @@ import type { CameraPresetId } from '../../types/process';
 export const keys = new Set<string>();
 
 const PRESET_KEYS: Record<string, CameraPresetId> = {
-  Digit1: 'overview', Digit2: 'rawMaterials', Digit3: 'eaf', Digit4: 'secondary', Digit5: 'caster',
+  Digit1: 'overview', Digit2: 'reduction', Digit3: 'eaf', Digit4: 'secondary', Digit5: 'caster',
   Digit6: 'tundish', Digit7: 'mold', Digit8: 'strand', Digit9: 'cutting', Digit0: 'slab',
 };
 

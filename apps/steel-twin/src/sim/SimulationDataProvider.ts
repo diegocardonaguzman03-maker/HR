@@ -29,8 +29,8 @@ const TEMP: Partial<Record<SimState, [number, number]>> = {
 
 const LOCATION: Record<SimState, string> = {
   IDLE: 'Sin iniciar',
-  RAW_MATERIALS: 'Patio de chatarra y silo de HRD',
-  CHARGING: 'Canasta de carga → horno',
+  RAW_MATERIALS: 'Plantas HYL/Midrex → bandas → silos de día',
+  CHARGING: 'Pie líquido + canasta de retornos',
   ARC_IGNITION: 'Dentro del horno',
   MELTING: 'Dentro del horno',
   REFINING: 'Baño bajo escoria espumosa',
@@ -51,7 +51,7 @@ const LOCATION: Record<SimState, string> = {
 };
 
 const EQUIPMENT: Record<SimState, EquipmentId | null> = {
-  IDLE: null, RAW_MATERIALS: 'rawMaterials', CHARGING: 'eaf', ARC_IGNITION: 'eaf', MELTING: 'eaf', REFINING: 'eaf',
+  IDLE: null, RAW_MATERIALS: 'hyl', CHARGING: 'eaf', ARC_IGNITION: 'eaf', MELTING: 'eaf', REFINING: 'eaf',
   TAPPING: 'eaf', SECONDARY_METALLURGY: 'ladleFurnace', VACUUM_TREATMENT: 'ladle', TRANSFER: 'crane', TURRET: 'turret',
   TUNDISH_FILL: 'tundish', MOLD_FILL: 'mold', SHELL_FORMATION: 'mold', SECONDARY_COOLING: 'coolingSystem',
   SOLIDIFICATION: 'segments', STRAIGHTENING: 'segments', FINAL_SOLIDIFICATION: 'segments', CUTTING: 'torchCutter', COMPLETE: 'slab',
@@ -96,6 +96,12 @@ export class SimulationDataProvider implements ProcessDataProvider {
     // ── EAF
     const melt = state === 'MELTING' ? p : ['REFINING', 'TAPPING'].includes(state) ? 1 : state === 'ARC_IGNITION' ? 0.03 * p : 0;
     const powerOn = { ARC_IGNITION: lerp(0, 2, p), MELTING: lerp(2, 32, p), REFINING: lerp(32, 42, p) } as Partial<Record<SimState, number>>;
+    if (['RAW_MATERIALS', 'CHARGING', 'ARC_IGNITION', 'MELTING', 'REFINING'].includes(state)) {
+      vars['rd.metallization'] = v('Metalización del DRI', 93.5, '%', 1);
+      vars['rd.carbon'] = v('Carbono de la mezcla de DRI', 2.6, '%', 1);
+      vars['rd.beltRate'] = v('DRI por bandas (HYL + Midrex)', 310, 't/h');
+      if (state === 'MELTING' || state === 'REFINING') vars['eaf.driFeedRate'] = v('Alimentación de DRI al horno', 3.9, 't/min', 1);
+    }
     if (['CHARGING', 'ARC_IGNITION', 'MELTING', 'REFINING', 'TAPPING'].includes(state)) {
       const pon = powerOn[state] ?? (state === 'TAPPING' ? 42 : 0);
       vars['eaf.power'] = v('Potencia activa', state === 'ARC_IGNITION' ? lerp(20, 70, p) : state === 'MELTING' ? 118 : state === 'REFINING' ? 112 : 0, 'MW');

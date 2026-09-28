@@ -18,11 +18,24 @@ export interface QuizQuestion {
 
 export const QUIZ: QuizQuestion[] = [
   {
+    id: 'iron-source',
+    question: '¿De dónde viene el hierro que se funde en el horno eléctrico de GASM?',
+    options: [
+      'De chatarra comprada a terceros',
+      'Del DRI que producen las plantas HYL y Midrex con pelet de nuestras minas',
+      'De arrabio de alto horno',
+      'De lingotes importados',
+    ],
+    answer: 1,
+    explanation: 'GASM es minero-siderúrgica: Mina → Peletizadora → HYL y Midrex (DRI) → horno eléctrico. El DRI llega por bandas directas; solo se recirculan retornos internos (máximo 5 %).',
+    step: 'RAW_MATERIALS',
+  },
+  {
     id: 'hot-heel',
     question: '¿Qué se deja dentro del horno de una colada a la siguiente para proteger la solera y acelerar la fusión?',
     options: ['El pie líquido de acero y escoria', 'Una capa de polvo de molde', 'La barra falsa', 'Agua de enfriamiento'],
     answer: 0,
-    explanation: 'El pie líquido recibe la chatarra de la siguiente carga, protege la solera del impacto y acelera la fusión.',
+    explanation: 'El pie líquido recibe el DRI desde el primer minuto, protege la solera y acelera la fusión.',
     step: 'CHARGING',
   },
   {
@@ -63,7 +76,7 @@ export const QUIZ: QuizQuestion[] = [
     id: 'ladle-furnace',
     question: '¿Cuál es la función principal del horno olla?',
     options: [
-      'Fundir la chatarra',
+      'Fundir el DRI',
       'Cortar el planchón',
       'Ajustar la química y la temperatura final, desulfurar y controlar inclusiones',
       'Enfriar el acero hasta solidificarlo',

@@ -29,12 +29,12 @@ export function StartScreen() {
       <div className="mx-4 max-h-full max-w-[620px] animate-[fadeUp_.8s_ease-out] overflow-y-auto py-6 md:ml-[7vw]">
         <div className="font-hud text-xs tracking-[0.5em] text-amber-400">GEMELO DE APRENDIZAJE · ACERÍA</div>
         <h1 className="font-hud mt-3 text-4xl sm:text-5xl font-bold leading-[1.05] tracking-wide text-zinc-50 md:text-6xl">
-          DE LA CHATARRA
+          DEL PELET
           <br />
           <span className="bg-gradient-to-r from-amber-300 via-orange-400 to-red-500 bg-clip-text text-transparent">AL PLANCHÓN</span>
         </h1>
         <p className="mt-4 max-w-[520px] text-sm leading-relaxed text-zinc-400">
-          Recorre una acería con horno de arco eléctrico y una máquina de colada continua de planchón. Mira cómo la carga sólida se vuelve acero líquido y cómo el acero líquido se vuelve un planchón sólido.
+          Sigue el hierro de nuestras minas: el pelet se reduce a DRI en las plantas HYL y Midrex, viaja por banda al horno eléctrico, se funde, se afina y se cuela en un planchón. Sin chatarra comprada.
         </p>
         <div className="mt-6 grid grid-cols-1 gap-3 sm:mt-8 sm:grid-cols-2">
           <button onClick={() => startGame('guided')} className="hud-btn-primary group">
@@ -51,7 +51,7 @@ export function StartScreen() {
           </button>
           <button onClick={() => { startGame('explore'); useAppStore.getState().setQuizOpen(true); }} className="hud-btn-secondary">
             <span className="font-hud tracking-[0.2em]">EVALUACIÓN</span>
-            <span className="text-[11px] font-normal normal-case tracking-normal text-zinc-400">12 preguntas · aprueba con 80%</span>
+            <span className="text-[11px] font-normal normal-case tracking-normal text-zinc-400">13 preguntas · aprueba con 80%</span>
           </button>
         </div>
         <div className="mt-6 grid max-w-[560px] grid-cols-2 gap-2 text-[11px] text-zinc-400 sm:mt-8 sm:grid-cols-3">
@@ -154,17 +154,17 @@ export function Minimap() {
   const stepIndex = useAppStore((s) => s.stepIndex);
   useAppStore((s) => s.uiTime);
   if (!open) return null;
-  const X0 = -70, X1 = 62, Z0 = -14, Z1 = 14;
+  const X0 = -120, X1 = 62, Z0 = -14, Z1 = 14;
   const W = 300, H = 72;
   const sx = (x: number) => ((x - X0) / (X1 - X0)) * W;
   const sz = (z: number) => ((z - Z0) / (Z1 - Z0)) * H;
   const steel = heatPosition(currentPose());
   const stations: { id: CameraPresetId; x: number; label: string }[] = [
-    { id: 'rawMaterials', x: LAYOUT.rawMaterials.position[0], label: 'CHATARRA' },
+    { id: 'reduction', x: LAYOUT.hyl.position[0], label: 'HYL·MIDREX' },
+    { id: 'rawMaterials', x: LAYOUT.rawMaterials.position[0] + 4, label: 'SILOS DRI' },
     { id: 'eaf', x: LAYOUT.eaf.position[0], label: 'HAE' },
     { id: 'secondary', x: LAYOUT.ladleFurnace.position[0], label: 'H. OLLA' },
     { id: 'tundish', x: LAYOUT.tundish.position[0] - 3, label: 'COLADA' },
-    { id: 'strand', x: 24, label: 'BARRA' },
     { id: 'cutting', x: 38.8, label: 'CORTE' },
     { id: 'slab', x: LAYOUT.slabYard[0], label: 'PLANCHÓN' },
   ];
@@ -177,7 +177,7 @@ export function Minimap() {
       </div>
       <svg width={W} height={H} className="block">
         <rect x={0} y={0} width={W} height={H} fill="#0e1116" />
-        <line x1={sx(-70)} y1={sz(0)} x2={sx(60)} y2={sz(0)} stroke="#2b3139" strokeWidth={10} />
+        <line x1={sx(-115)} y1={sz(0)} x2={sx(60)} y2={sz(0)} stroke="#2b3139" strokeWidth={10} />
         {stations.map((s) => (
           <g key={s.id} className="cursor-pointer" onClick={() => requestCamera({ kind: 'preset', preset: s.id })}>
             <rect x={sx(s.x) - 9} y={sz(0) - 9} width={18} height={18} fill={activeCam === s.id ? '#3a2d12' : '#1c2128'} stroke={activeCam === s.id ? '#ffb020' : '#48505b'} />

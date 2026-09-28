@@ -6,7 +6,7 @@
 import type { NavigatorGroup, ProcessStepConfig, SimState } from '../types/process';
 
 export const NAVIGATOR_GROUPS: NavigatorGroup[] = [
-  { id: 'raw', number: '01', label: 'Materia prima', timelineLabel: 'Materia prima' },
+  { id: 'raw', number: '01', label: 'Pelet y DRI', timelineLabel: 'Pelet · DRI' },
   { id: 'melting', number: '02', label: 'Fusión', timelineLabel: 'HAE' },
   { id: 'refining', number: '03', label: 'Afinación', timelineLabel: 'Afinación' },
   { id: 'tapping', number: '04', label: 'Vaciado', timelineLabel: 'Vaciado' },
@@ -33,28 +33,28 @@ export const STRAND_RANGE: Partial<Record<SimState, [number, number]>> = {
 
 export const PROCESS_STEPS: ProcessStepConfig[] = [
   {
-    state: 'RAW_MATERIALS', title: 'Preparación de materia prima', navigatorGroup: 'raw', enabled: true, duration: 7,
-    camera: 'rawMaterials', activeEquipment: ['rawMaterials'], materialStates: ['SOLID_RAW_MATERIAL'],
-    whatHappens: 'La chatarra se clasifica y se carga en la canasta; el HRD (DRI) está en el silo; la cal y la dolomita están listas en las tolvas de fundentes.',
-    why: 'La carga metálica y los fundentes definen cuánta energía se necesita y qué elementos residuales terminan en el acero.',
+    state: 'RAW_MATERIALS', title: 'Del pelet al DRI (HYL y Midrex)', navigatorGroup: 'raw', enabled: true, duration: 9,
+    camera: 'reduction', activeEquipment: ['pelletYard', 'hyl', 'midrex', 'rawMaterials'], materialStates: ['SOLID_RAW_MATERIAL'],
+    whatHappens: 'El pelet de nuestra Peletizadora se reduce con gas (H₂ + CO) en las plantas HYL y Midrex y se vuelve DRI: hierro metálico sólido. Dos bandas cerradas lo llevan a los silos de día del horno.',
+    why: 'GASM no compra chatarra: el hierro viene de sus minas. La metalización y el carbono del DRI definen cuánta energía y cuánta escoria tendrá la colada.',
   },
   {
-    state: 'CHARGING', title: 'Carga del horno', navigatorGroup: 'raw', enabled: true, duration: 8,
+    state: 'CHARGING', title: 'Retornos y pie líquido', navigatorGroup: 'raw', enabled: true, duration: 8,
     camera: 'eaf', activeEquipment: ['crane', 'eaf'], materialStates: ['SOLID_RAW_MATERIAL'],
-    whatHappens: 'La bóveda gira y se abre; la grúa vacía la canasta de chatarra dentro del horno, sobre el pie líquido.',
-    why: 'Una carga controlada protege la solera del horno y forma la cama que los arcos van a fundir.',
+    whatHappens: 'La bóveda se abre y la grúa vacía una canasta pequeña de retornos internos (despuntes y rechazos de la propia Acería) sobre el pie líquido. En muchas coladas no hay canasta: el horno arranca solo con pie líquido y DRI.',
+    why: 'El pie líquido permite fundir el DRI desde el primer minuto; los retornos aprovechan el acero de la planta (máximo 5 % de la carga).',
   },
   {
     state: 'ARC_IGNITION', title: 'Encendido del arco', navigatorGroup: 'melting', enabled: true, duration: 6,
     camera: 'eaf', activeEquipment: ['eaf'], materialStates: ['SOLID_RAW_MATERIAL', 'PARTIALLY_MELTED'],
-    whatHappens: 'La bóveda se cierra, bajan los tres electrodos de grafito y los arcos encienden sobre la chatarra: la energía eléctrica se convierte en calor.',
+    whatHappens: 'La bóveda se cierra, bajan los tres electrodos de grafito y los arcos encienden sobre el pie líquido. Empieza a entrar el DRI por el 5.º agujero.',
     why: 'Los arcos, a varios miles de grados, son la principal fuente de energía del horno de arco eléctrico.',
   },
   {
     state: 'MELTING', title: 'Fusión', navigatorGroup: 'melting', enabled: true, duration: 10,
     camera: 'eaf', activeEquipment: ['eaf'], materialStates: ['PARTIALLY_MELTED', 'LIQUID_STEEL'],
-    whatHappens: 'Los electrodos perforan la chatarra; el baño crece mientras el HRD entra de forma continua por la bóveda y los quemadores y el oxígeno aportan energía química.',
-    why: 'Toda la carga sólida debe convertirse en un baño líquido homogéneo antes de afinar.',
+    whatHappens: 'El DRI entra de forma continua por el 5.º agujero al ritmo de la potencia y se funde en el baño; el oxígeno y el carbono aportan energía química.',
+    why: 'Todo el DRI debe fundirse sin formar icebergs; su ganga se vuelve escoria que hay que controlar con cal.',
   },
   {
     state: 'REFINING', title: 'Afinación y escoria espumosa', navigatorGroup: 'refining', enabled: true, duration: 9,

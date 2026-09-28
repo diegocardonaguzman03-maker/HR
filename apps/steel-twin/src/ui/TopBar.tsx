@@ -19,7 +19,7 @@ export const LEVELS: { id: LearningLevel; label: string }[] = [
   { id: 5, label: 'Seguridad · calidad · confiabilidad · productividad' },
 ];
 
-const VIEWS: CameraPresetId[] = ['overview', 'rawMaterials', 'eaf', 'secondary', 'caster', 'tundish', 'mold', 'strand', 'straightener', 'cutting', 'slab'];
+const VIEWS: CameraPresetId[] = ['overview', 'reduction', 'rawMaterials', 'eaf', 'secondary', 'caster', 'tundish', 'mold', 'strand', 'straightener', 'cutting', 'slab'];
 
 function Menu({ label, children, active }: { label: string; children: React.ReactNode; active?: boolean }) {
   const [open, setOpen] = useState(false);
@@ -134,7 +134,7 @@ export function TopBar() {
       <button className="hud-icon-btn" data-on={narration} onClick={() => setNarration(!narration)} title="Narración por voz de cada paso (O)">
         {narration ? '🔊' : '🔈'}<span className="hidden 2xl:inline"> VOZ</span>
       </button>
-      <button className="hud-icon-btn" onClick={() => setQuizOpen(true)} title="Evaluación de 12 preguntas (Y)"><span className="2xl:hidden">EVAL.</span><span className="hidden 2xl:inline">EVALUACIÓN</span></button>
+      <button className="hud-icon-btn" onClick={() => setQuizOpen(true)} title="Evaluación de 13 preguntas (Y)"><span className="2xl:hidden">EVAL.</span><span className="hidden 2xl:inline">EVALUACIÓN</span></button>
       <button className="hud-icon-btn" data-on={panels.help} onClick={() => togglePanel('help')} title="Controles (H)">?</button>
       </div>
     </header>

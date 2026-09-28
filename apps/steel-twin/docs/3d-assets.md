@@ -5,7 +5,8 @@ Every machine is built from three.js primitives in `src/scene/equipment/*.tsx`. 
 
 | Asset | File | Moving parts |
 |---|---|---|
-| Scrap yard, bucket, DRI silo, conveyor, flux bins | RawMaterials.tsx | bucket, DRI particles |
+| Pellet yard, HYL plant, Midrex plant | DirectReduction.tsx | — (static proxies; pellet bed visible in X-ray) |
+| DRI belts from HYL/Midrex, day silos, roof conveyor, flux bins, internal-returns bay and bucket | RawMaterials.tsx | DRI particles on belts, returns bucket |
 | EAF, electrodes, roof, transformer | EAF.tsx | tilt, roof swing, electrode stroke, arcs, bath level, foamy slag |
 | Ladle and car | Ladle.tsx | fill level, argon bubbles |
 | Ladle furnace | LadleFurnace.tsx | electrodes, arc |

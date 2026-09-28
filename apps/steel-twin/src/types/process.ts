@@ -39,6 +39,7 @@ export type MaterialState =
 
 export type CameraPresetId =
   | 'overview'
+  | 'reduction'
   | 'rawMaterials'
   | 'eaf'
   | 'secondary'

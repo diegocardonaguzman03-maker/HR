@@ -13,6 +13,7 @@ import { equipmentRegistry } from './common/EquipmentGroup';
 import { keys } from '../ui/game/input';
 import { MAT } from './common/materials';
 import { RawMaterials } from './equipment/RawMaterials';
+import { HYLPlant, MidrexPlant, PelletYard } from './equipment/DirectReduction';
 import { EAF } from './equipment/EAF';
 import { HeatLadle } from './equipment/Ladle';
 import { LadleFurnace } from './equipment/LadleFurnace';
@@ -162,10 +163,10 @@ function CameraRig() {
 function Ground() {
   return (
     <>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-4, -0.01, 0]} receiveShadow material={MAT.concrete} userData={{ noPick: true }}>
-        <planeGeometry args={[170, 70]} />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-22, -0.01, 0]} receiveShadow material={MAT.concrete} userData={{ noPick: true }}>
+        <planeGeometry args={[210, 76]} />
       </mesh>
-      <Grid position={[-4, 0.005, 0]} args={[170, 70]} cellSize={2} cellThickness={0.35} cellColor="#39414b" sectionSize={10} sectionThickness={0.9} sectionColor="#4a5360" fadeDistance={150} fadeStrength={1.5} infiniteGrid={false} />
+      <Grid position={[-22, 0.005, 0]} args={[210, 76]} cellSize={2} cellThickness={0.35} cellColor="#39414b" sectionSize={10} sectionThickness={0.9} sectionColor="#4a5360" fadeDistance={150} fadeStrength={1.5} infiniteGrid={false} />
       {/* safety walkway markings along the process line */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-4, 0.012, 8.5]} userData={{ noPick: true }}>
         <planeGeometry args={[150, 0.25]} />
@@ -183,7 +184,7 @@ function Ground() {
 function Building() {
   // Cut-away building: columns only on the far side so the view stays open.
   const cols: number[] = [];
-  for (let x = -70; x <= 60; x += 12) cols.push(x);
+  for (let x = -118; x <= 60; x += 12) cols.push(x);
   return (
     <group>
       {cols.map((x) => (
@@ -191,8 +192,8 @@ function Building() {
           <boxGeometry args={[0.6, 26, 0.6]} />
         </mesh>
       ))}
-      <mesh position={[-5, 26.2, -14]} material={MAT.structure} userData={{ noPick: true }}>
-        <boxGeometry args={[131, 0.5, 0.5]} />
+      <mesh position={[-29, 26.2, -14]} material={MAT.structure} userData={{ noPick: true }}>
+        <boxGeometry args={[179, 0.5, 0.5]} />
       </mesh>
     </group>
   );
@@ -202,6 +203,9 @@ function Plant() {
   const layers = useAppStore((s) => s.layers);
   return (
     <>
+      <PelletYard />
+      <HYLPlant />
+      <MidrexPlant />
       <RawMaterials />
       <EAF />
       <HeatLadle />
@@ -300,7 +304,7 @@ export function Experience() {
         <Ground />
         <Building />
         <Plant />
-        <ContactShadows position={[-4, 0.02, 0]} scale={[170, 70]} resolution={1024} blur={2.2} opacity={0.55} far={12} frames={1} />
+        <ContactShadows position={[-22, 0.02, 0]} scale={[210, 76]} resolution={1024} blur={2.2} opacity={0.55} far={12} frames={1} />
       </Suspense>
       <SimulationDriver />
       <ResponsiveLens />

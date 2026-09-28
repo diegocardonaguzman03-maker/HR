@@ -2,7 +2,7 @@ import type { MaterialState } from '../types/process';
 import type { Classification, HazardCategory } from '../types/equipment';
 
 export const MATERIAL_STATE_LABEL: Record<MaterialState, string> = {
-  SOLID_RAW_MATERIAL: 'Materia prima sólida',
+  SOLID_RAW_MATERIAL: 'DRI sólido',
   PARTIALLY_MELTED: 'Parcialmente fundido',
   LIQUID_STEEL: 'Acero líquido',
   REFINED_LIQUID_STEEL: 'Acero líquido afinado',
