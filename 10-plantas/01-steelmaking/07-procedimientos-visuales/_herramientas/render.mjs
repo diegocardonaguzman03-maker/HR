@@ -5,11 +5,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { icon, EPP, isIcon, isEpp } from './icons.mjs';
 import { validate } from './validate.mjs';
-import { catalogTitles } from './catalog.mjs';
+import { catalogTitles, ACE, POV } from './catalog.mjs';
 
 const here = path.dirname(new URL(import.meta.url).pathname);
-const POV = path.resolve(here, '..');
-const ACE = path.resolve(POV, '..'); // 10-plantas/01-steelmaking
 const JSON_DIR = path.join(POV, 'json');
 const OUT = path.join(POV, 'pdf');
 const BUILD = path.join(POV, '_build');
@@ -20,6 +18,10 @@ export const AREAS = {
   LF: { name: 'Horno Olla', color: '#ef6c00' },
   CC1: { name: 'Colada Continua 1 · Planchón', color: '#1565c0' },
   CC2: { name: 'Colada Continua 2 · Palanquilla', color: '#00838f' },
+  PEL: { name: 'Peletizadora', color: '#8d4e2a' },
+  RD: { name: 'Reducción Directa', color: '#5e35b1' },
+  HYL: { name: 'Planta HYL', color: '#3949ab' },
+  MDX: { name: 'Planta Midrex', color: '#00897b' },
 };
 const LANE_COLORS = ['#1565c0', '#2e7d32', '#6a1b9a', '#00838f', '#c62828', '#ad1457', '#5d4037', '#455a64'];
 

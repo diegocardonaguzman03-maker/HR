@@ -9,7 +9,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const here = path.dirname(new URL(import.meta.url).pathname);
-const POV = path.resolve(here, '..');
+const POV = process.env.PLANTA ? path.join(path.resolve(process.env.PLANTA), '07-procedimientos-visuales') : path.resolve(here, '..');
 const ORDER = ['documentacion', 'usuario', 'laboral', 'seguridad', 'tecnica'];
 const dry = process.argv.includes('--dry');
 

@@ -5,11 +5,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { AREAS, fileName } from './render.mjs';
-import { ACE } from './catalog.mjs';
+import { ACE, POV } from './catalog.mjs';
 import { icon } from './icons.mjs';
 
 const here = path.dirname(new URL(import.meta.url).pathname);
-const POV = path.resolve(here, '..');
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const RACI_COLOR = { R: '#2e7d32', A: '#0d47a1', C: '#6a1b9a', I: '#90a4ae' };
 const ORDER = ['EAF', 'OLL', 'LF', 'CC1', 'CC2'];

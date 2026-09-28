@@ -3,12 +3,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { isIcon, isEpp } from './icons.mjs';
-import { catalogTitles } from './catalog.mjs';
+import { catalogTitles, ACE, POV } from './catalog.mjs';
 import { laneMetrics, wrap } from './render.mjs';
 
 const REQUIRED = ['code', 'pov', 'title', 'area', 'areaName', 'version', 'owner', 'manual', 'purpose', 'whyItMatters', 'startsWhen', 'endsWhen',
   'previous', 'next', 'heroFigure', 'roles', 'goldenRules', 'epp', 'phases', 'steps', 'abnormal', 'records', 'certification', 'glossary', 'review'];
-const AREAS = ['EAF', 'OLL', 'LF', 'CC1', 'CC2'];
+const AREAS = ['EAF', 'OLL', 'LF', 'CC1', 'CC2', 'PEL', 'RD', 'HYL', 'MDX'];
 
 export function validate(p, titles, ace) {
   const e = [];
@@ -22,9 +22,9 @@ export function validate(p, titles, ace) {
   for (const f of figs) if (!fs.existsSync(path.join(ace, f.file))) e.push(`no existe la figura ${f.file}`);
   const roleCodes = p.roles.map((r) => r.code);
   for (const r of p.roles) {
-    if (!/^[SC]-\d\d$/.test(r.code)) e.push(`código de rol inválido ${r.code}`);
+    if (!/^[PR]?[SC]-\d\d$/.test(r.code)) e.push(`código de rol inválido ${r.code}`);
     if (!['R', 'A', 'C', 'I'].includes(r.raci)) e.push(`RACI inválido en ${r.code}`);
-    if (r.it && !fs.readdirSync(path.join(ace, '06-instrucciones-trabajo')).some((f) => f.startsWith(r.it + '-'))) e.push(`no existe la instrucción ${r.it}`);
+    if (r.it && fs.existsSync(path.join(ace, '06-instrucciones-trabajo')) && !fs.readdirSync(path.join(ace, '06-instrucciones-trabajo')).some((f) => f.startsWith(r.it + '-'))) e.push(`no existe la instrucción ${r.it}`);
   }
   if (!p.roles.some((r) => r.raci === 'A')) e.push('ningún rol tiene A (dueño)');
   if (p.glossary.length < 5 || p.glossary.length > 14) e.push(`glosario con ${p.glossary.length} términos (debe tener 5–14)`);
@@ -65,8 +65,8 @@ export function validate(p, titles, ace) {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const here = path.dirname(new URL(import.meta.url).pathname);
-  const dir = path.resolve(here, '../json');
-  const ace = path.resolve(here, '../..');
+  const dir = path.join(POV, 'json');
+  const ace = ACE;
   const titles = catalogTitles();
   let bad = 0;
   for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) {
