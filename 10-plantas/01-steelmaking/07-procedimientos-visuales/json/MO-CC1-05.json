@@ -8,8 +8,8 @@
   "owner": "C-06",
   "manual": "02-operacion/cc1/MO-CC1-05-cambio-olla-secuencia.md",
   "deck": "05-capacitacion/MO-CC1-05",
-  "purpose": "Cambiar la olla vacía por la olla llena sin parar la colada, sin pasar escoria al distribuidor y sin bajar el distribuidor de 700 mm.",
-  "whyItMatters": "Un buen cambio mantiene la secuencia y la limpieza del acero. Un mal cambio mete escoria e inclusiones al planchón, obliga a cerrar la secuencia o expone a la gente a una olla suspendida de 150 t.",
+  "purpose": "Cambiar la olla vacía por la olla llena sin parar la colada, sin pasar escoria al distribuidor y sin que el nivel del distribuidor baje de 700 mm.",
+  "whyItMatters": "Un mal cambio mete escoria e inclusiones al planchón u obliga a cerrar la secuencia. También expone a la gente a una olla suspendida de 150 t.",
   "startsWhen": "La olla siguiente llega a la torreta desde el horno olla (MO-LF-01, MO-OLL-02) mientras la máquina cuela en estado estable (MO-CC1-04).",
   "endsWhen": "La nueva olla cuela con tubo protector sellado, el distribuidor regresa a 1,000 mm y la olla vacía sale al escorial.",
   "previous": [
@@ -20,7 +20,8 @@
   "next": [
     "MO-CC1-04",
     "MO-CC1-06",
-    "MO-CC1-07"
+    "MO-CC1-07",
+    "MO-OLL-01"
   ],
   "heroFigure": {
     "file": "img/cc1-perfil-maquina.svg",
@@ -84,7 +85,7 @@
   "goldenRules": [
     "Nadie bajo la olla suspendida ni en su trayectoria (± 5 m), ni en el radio de giro de la torreta.",
     "Cierra la olla al primer signo de escoria o con 4 t residuales. La escoria no pasa al distribuidor.",
-    "El distribuidor no baja de 700 mm. A 500 mm sin abrir la olla, se cierra la secuencia."
+    "Mantén el distribuidor arriba de 700 mm. Si llega a 500 mm sin abrir la olla, se cierra la secuencia."
   ],
   "epp": [
     "casco",
@@ -135,7 +136,7 @@
       "role": "S-12",
       "icon": "hmi",
       "title": "Confirma la olla siguiente",
-      "action": "Revisa en el HMI grado, peso, temperatura de envío y hora de llegada. La olla debe estar en la torreta al menos 10 min antes de que termine la actual.",
+      "action": "Revisa en la HMI grado, peso, temperatura de envío y hora de llegada. La olla debe estar en la torreta al menos 10 min antes de que termine la actual.",
       "check": "Peso 145–155 t y llegada ≥ 10 min antes del final."
     },
     {
@@ -155,8 +156,8 @@
       "role": "S-13",
       "icon": "inspeccionar",
       "title": "Revisa la olla nueva",
-      "action": "Revisa que el mecanismo de la válvula esté conectado, la arena de sello se vea y el cilindro hidráulico esté acoplado.",
-      "check": "Lista de la olla OK."
+      "action": "Revisa que el mecanismo de la válvula esté conectado y el cilindro hidráulico acoplado. Revisa que la arena de sello se vea.",
+      "check": "Válvula conectada, cilindro acoplado y arena de sello visible."
     },
     {
       "n": 4,
@@ -235,11 +236,11 @@
       "phase": 1,
       "role": "S-13",
       "icon": "oxigeno",
-      "title": "Si no abre: lancea con O₂",
-      "action": "Con autorización de C-06: retira el tubo y lancea desde un costado, con aluminizado completo y lanza seca. S-12 baja la velocidad con la tabla nivel–velocidad.",
+      "title": "Lancea con O₂ si la olla no abre",
+      "action": "Con autorización de C-06: retira el tubo y lancea desde un costado, con aluminizado completo, lanza seca y vigía. S-12 baja la velocidad con la tabla nivel–velocidad.",
       "check": "La olla abre antes de que el distribuidor baje a 500 mm.",
       "critical": true,
-      "stop": "El distribuidor llega a 500 mm y la olla no abre.",
+      "stop": "El distribuidor llega a 500 mm y la olla no abre, o falta vigía, lanza seca o aluminizado completo.",
       "decision": {
         "question": "¿Abrió antes de 500 mm?",
         "no": "C-06 ordena el cierre de secuencia (MO-CC1-07)."
@@ -328,8 +329,8 @@
     {
       "icon": "flujo",
       "if": "El distribuidor rebosa",
-      "do": "Cierra la olla y verifica el pesaje del distribuidor.",
-      "call": "C-06"
+      "do": "Cierra la olla. Aléjate del acero derramado y deja que solidifique; nunca uses agua. Verifica el pesaje del distribuidor.",
+      "call": "C-06 y C-04"
     }
   ],
   "records": [
@@ -355,8 +356,8 @@
       "level": "3",
       "theory": "16 h",
       "ojt": "20 cambios de olla (5 con lanceado simulado)",
-      "evaluated": "Pasos 2, 8, 11 y 15",
-      "validity": "≤ 24 meses (TD-P07)"
+      "evaluated": "Pasos 8 y 11; pasos 2 y 15 como señalero de la grúa",
+      "validity": "≤ 24 meses (TD-P07); señales de izaje 12 meses (NOM-006, MO-OLL-02)"
     },
     {
       "role": "S-09",
@@ -389,8 +390,8 @@
       "def": "Soporte giratorio con dos brazos: uno cuela y el otro recibe la olla siguiente."
     },
     {
-      "term": "Distribuidor",
-      "def": "Recipiente entre la olla y el molde; guarda la reserva de acero durante el cambio."
+      "term": "Distribuidor (tundish)",
+      "def": "Recipiente refractario de 45 t entre la olla y el molde. Calma el acero y guarda reserva para el cambio de olla."
     },
     {
       "term": "Peso residual",
@@ -409,8 +410,28 @@
       "def": "Dice cuánto bajar la velocidad según el nivel del distribuidor (800 mm: 0.9; 700 mm: 0.6; 600 mm: 0.4 m/min)."
     },
     {
-      "term": "SH (sobrecalentamiento)",
-      "def": "Grados por arriba de la temperatura de líquidus del acero."
+      "term": "Sobrecalentamiento (SH)",
+      "def": "Grados que el acero está arriba de su temperatura de líquidus en el distribuidor."
+    },
+    {
+      "term": "Rastreo (tracking)",
+      "def": "Registro en nivel 2 / MES que sigue cada planchón o palanquilla desde su colada; ahí se marcan los eventos."
+    },
+    {
+      "term": "Escorial",
+      "def": "Área donde se vacía la escoria de las ollas."
+    },
+    {
+      "term": "Tracking",
+      "def": "Tracking (rastreo): sistema de nivel 2 que sigue cada pieza, su colada y sus eventos."
+    },
+    {
+      "term": "Detector de escoria",
+      "def": "Sensor que avisa cuando empieza a salir escoria de la olla."
+    },
+    {
+      "term": "Manipulador",
+      "def": "Brazo mecánico que pone y quita el tubo protector sin exponer al operador."
     }
   ],
   "review": [
@@ -418,6 +439,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

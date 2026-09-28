@@ -8,86 +8,492 @@
   "owner": "C-06",
   "manual": "02-operacion/cc2/MO-CC2-07-fin-colada-cierre-secuencia.md",
   "deck": "05-capacitacion/MO-CC2-07",
-  "purpose": "Terminar la secuencia cerrando las líneas de los extremos al centro, sacar las colas despacio y dejar la máquina fría, bloqueada y segura para la inspección.",
+  "purpose": "Terminar la secuencia cerrando las líneas de los extremos al centro y sacar las colas despacio. Dejar la máquina fría, bloqueada y segura para la inspección.",
   "whyItMatters": "Un cierre tarde pasa escoria a las palanquillas. Una cola rápida rompe la piel y derrama acero. Echar agua al molde puede causar una explosión. Apagar el agua de molde antes de tiempo deforma los tubos.",
   "startsWhen": "C-06 avisa \"última olla\" o decide terminar la secuencia por una falla (MO-CC2-04 o MO-CC2-05).",
   "endsWhen": "El distribuidor está fuera, las 6 colas cortadas y la máquina bloqueada y entregada para inspección y preparación (MO-CC2-02, MM-CC-01).",
-  "previous": ["MO-CC2-04", "MO-CC2-05"],
-  "next": ["MO-CC2-08", "MO-CC2-02", "MM-CC-01"],
-  "heroFigure": {"file": "img/cc2-distribuidor-6-lineas.svg", "caption": "Niveles del distribuidor y orden de cierre de las líneas: L1-L6 → L2-L5 → L3-L4."},
+  "previous": [
+    "MO-CC2-04",
+    "MO-CC2-05",
+    "MO-CC2-06"
+  ],
+  "next": [
+    "MO-CC2-08",
+    "MO-CC2-01",
+    "MO-CC2-02",
+    "MM-CC-01"
+  ],
+  "heroFigure": {
+    "file": "img/cc2-distribuidor-6-lineas.svg",
+    "caption": "Niveles del distribuidor y orden de cierre de las líneas: L1-L6 → L2-L5 → L3-L4."
+  },
   "figures": [
-    {"file": "img/ms-loto-puntos-cc.svg", "caption": "Puntos de bloqueo (LOTO) de la CC2 antes de la inspección."}
+    {
+      "file": "img/ms-loto-puntos-cc.svg",
+      "caption": "Puntos de bloqueo (LOTO) de la CC2 antes de la inspección."
+    }
   ],
   "roles": [
-    {"code": "C-06", "name": "Supervisor de Colada Continua", "raci": "A", "does": "Dueño del proceso. Decide el fin de secuencia y el orden de cierre; entrega la máquina.", "it": "IT-C06"},
-    {"code": "S-13", "name": "Operador de Plataforma de Colada", "raci": "R", "does": "Cierra la olla, cierra las líneas con placa ciega y retira el distribuidor.", "it": "IT-S13"},
-    {"code": "S-12", "name": "Operador de Púlpito de Colada", "raci": "R", "does": "Controla la cola de cada línea: velocidad, oscilación, EMS y rociado.", "it": "IT-S12"},
-    {"code": "S-14", "name": "Ayudante de Colada", "raci": "R", "does": "Vigila cada molde durante la cola y prepara la inspección de moldes.", "it": "IT-S14"},
-    {"code": "S-16", "name": "Operador de Corte y Marcado", "raci": "R", "does": "Corta y marca las colas \"C\".", "it": "IT-S16"},
-    {"code": "S-09", "name": "Operador de Grúa de Colada", "raci": "R", "does": "Lleva la olla vacía a la nave de ollas (manual §8, paso 13).", "it": "IT-S09"},
-    {"code": "C-16", "name": "Especialista de Seguridad e Higiene (función de ESR)", "raci": "R", "does": "Cierra y bloquea los obturadores de Cs-137 y mide antes de la inspección de moldes."},
-    {"code": "S-25", "name": "Mecánico de Taller de Moldes y Segmentos", "raci": "C", "does": "Inspecciona tubos y conicidad (MM-CC-01).", "it": "IT-S25"}
+    {
+      "code": "C-06",
+      "name": "Supervisor de Colada Continua",
+      "raci": "A",
+      "does": "Dueño del proceso. Decide el fin de secuencia y el orden de cierre; entrega la máquina.",
+      "it": "IT-C06"
+    },
+    {
+      "code": "S-13",
+      "name": "Operador de Plataforma de Colada",
+      "raci": "R",
+      "does": "Cierra la olla, cierra las líneas con placa ciega y retira el distribuidor.",
+      "it": "IT-S13"
+    },
+    {
+      "code": "S-12",
+      "name": "Operador de Púlpito de Colada",
+      "raci": "R",
+      "does": "Controla la cola de cada línea: velocidad, oscilación, EMS y rociado.",
+      "it": "IT-S12"
+    },
+    {
+      "code": "S-14",
+      "name": "Ayudante de Colada",
+      "raci": "R",
+      "does": "Vigila cada molde durante la cola y prepara la inspección de moldes.",
+      "it": "IT-S14"
+    },
+    {
+      "code": "S-16",
+      "name": "Operador de Corte y Marcado",
+      "raci": "R",
+      "does": "Corta y marca las colas \"C\".",
+      "it": "IT-S16"
+    },
+    {
+      "code": "S-09",
+      "name": "Operador de Grúa de Colada",
+      "raci": "R",
+      "does": "Lleva la olla vacía a la nave de ollas (manual §8, paso 13).",
+      "it": "IT-S09"
+    },
+    {
+      "code": "C-16",
+      "name": "Especialista de Seguridad e Higiene (función de ESR)",
+      "raci": "R",
+      "does": "Cierra y bloquea los obturadores de Cs-137 y mide antes de la inspección de moldes."
+    },
+    {
+      "code": "S-25",
+      "name": "Mecánico de Taller de Moldes y Segmentos",
+      "raci": "C",
+      "does": "Inspecciona tubos y conicidad (MM-CC-01).",
+      "it": "IT-S25"
+    }
   ],
-  "goldenRules": ["Nunca eches agua dentro del molde para \"sellar\" la cola: puede explotar.", "Cierra las líneas de los extremos al centro y nunca dejes bajar el distribuidor de 250 mm.", "Nadie trabaja en el molde hasta que el ESR (C-16) cierra, pone su candado y mide."],
-  "epp": ["casco", "careta_dorada", "aluminizado", "guantes", "botas", "ropa_fr", "auditiva", "dosimetro"],
-  "dangerZone": {"red": "Zona roja: ≤ 15 m del punto de volteo de la caja de escoria mientras se vacía el distribuidor. Nadie a pie; caja seca.", "yellow": "Zona controlada de radiación en los moldes hasta que el ESR (C-16) cierre los obturadores.", "rule": "LOTO de extractores, oscilador y carro antes de la inspección. Permiso de trabajo para mantenimiento."},
+  "goldenRules": [
+    "Nunca eches agua dentro del molde para \"sellar\" la cola: puede explotar.",
+    "Cierra las líneas de los extremos al centro y nunca dejes bajar el distribuidor de 250 mm.",
+    "Nadie trabaja en el molde hasta que el ESR (C-16) cierra, pone su candado y mide."
+  ],
+  "epp": [
+    "casco",
+    "careta_dorada",
+    "aluminizado",
+    "guantes",
+    "botas",
+    "ropa_fr",
+    "auditiva",
+    "dosimetro"
+  ],
+  "dangerZone": {
+    "red": "Zona roja: ≤ 15 m del punto de volteo de la caja de escoria mientras se vacía el distribuidor. Nadie a pie; caja seca.",
+    "yellow": "Zona controlada de radiación en los moldes hasta que el ESR (C-16) cierre los obturadores.",
+    "rule": "LOTO de extractores, oscilador y carro antes de la inspección. Permiso de trabajo para mantenimiento."
+  },
   "hazards": [
-    {"icon": "agua", "text": "Agua sobre el acero en el molde: explosión."},
-    {"icon": "fuego", "text": "Breakout de cola y vaciado del residual del distribuidor: metal líquido y salpicaduras."},
-    {"icon": "alarma", "text": "Radiación Cs-137 durante la inspección de moldes."},
-    {"icon": "calor", "text": "Tubos y rodillos calientes: quemaduras."},
-    {"icon": "bloqueo", "text": "Movimiento de equipo durante la inspección: atrapamiento."}
+    {
+      "icon": "agua",
+      "text": "Agua sobre el acero en el molde: explosión."
+    },
+    {
+      "icon": "fuego",
+      "text": "Breakout de cola y vaciado del residual del distribuidor: metal líquido y salpicaduras."
+    },
+    {
+      "icon": "alarma",
+      "text": "Radiación Cs-137 durante la inspección de moldes."
+    },
+    {
+      "icon": "calor",
+      "text": "Tubos y rodillos calientes: quemaduras."
+    },
+    {
+      "icon": "bloqueo",
+      "text": "Movimiento de equipo durante la inspección: atrapamiento."
+    }
   ],
-  "phases": ["Fin de secuencia", "Cola de cada línea", "Cierre de máquina"],
+  "phases": [
+    "Fin de secuencia",
+    "Cola de cada línea",
+    "Cierre de máquina"
+  ],
   "steps": [
-    {"n": 1, "phase": 0, "role": "C-06", "icon": "radio", "title": "Confirma la última olla", "action": "Avisa a todo el equipo por radio que es la última olla de la secuencia.", "check": "Todos enterados."},
-    {"n": 2, "phase": 0, "role": "S-14", "icon": "refractario", "title": "Prepara las placas ciegas", "action": "Revisa que haya 6 placas ciegas calientes en el horno y 2 varillas de taponeo listas.", "check": "6 placas calientes listas."},
-    {"n": 3, "phase": 0, "role": "S-13", "icon": "detener", "title": "Cierra la última olla", "action": "Cierra por residual (2–4 t [Validar]) o al ver escoria.", "check": "Sin escoria en el distribuidor.", "critical": true, "stop": "Aparece escoria en el distribuidor."},
-    {"n": 4, "phase": 0, "role": "S-13", "icon": "alto", "title": "Cierra L1 y L6", "action": "Cuando el distribuidor baje a 450 mm (430–470 [Validar]), empuja la placa ciega en L1 y L6.", "check": "Chorro cortado en L1 y L6.", "critical": true, "decision": {"question": "¿Cortó el chorro?", "no": "Tapón con varilla (MO-CC2-06)."}},
-    {"n": 5, "phase": 0, "role": "S-13", "icon": "alto", "title": "Cierra L2 y L5", "action": "A 350 mm (330–370 [Validar]), empuja la placa ciega en L2 y L5.", "check": "Chorro cortado en L2 y L5.", "critical": true},
-    {"n": 6, "phase": 0, "role": "S-13", "icon": "alto", "title": "Cierra L3 y L4", "action": "A 300 mm (280–320 [Validar]), empuja la placa ciega en L3 y L4. Nunca bajes de 250 mm.", "check": "Chorro cortado en L3 y L4; nivel ≥ 300 mm.", "critical": true, "stop": "El nivel del distribuidor llega a 250 mm (vórtice y escoria)."},
-    {"n": 7, "phase": 1, "role": "S-12", "icon": "nivel", "title": "Deja bajar el menisco", "action": "Con la velocidad en fijo, deja bajar el menisco 80–150 mm [Validar].", "check": "Menisco bajando sin fuga."},
-    {"n": 8, "phase": 1, "role": "S-12", "icon": "tiempo", "title": "Aplica la velocidad de cola", "action": "Saca la cola a 0.5–1.0 m/min [Validar OEM]. No eches agua al molde.", "check": "La cola sale del molde sin fuga.", "critical": true, "stop": "La velocidad pasa de 1.5 m/min con la cola en el molde, o alguien echa agua al molde."},
-    {"n": 9, "phase": 1, "role": "S-12", "icon": "detener", "title": "Apaga oscilación y EMS", "action": "Apágalos cuando la cola salga del molde y pase el EMS.", "check": "Oscilación y EMS apagados sin alarmas."},
-    {"n": 10, "phase": 1, "role": "S-12", "icon": "rociar", "title": "Deja que el rociado siga la cola", "action": "Usa el seguimiento de cola automático: las zonas de rociado se apagan una por una detrás de la cola.", "check": "Zonas apagadas detrás de la cola."},
-    {"n": 11, "phase": 1, "role": "S-16", "icon": "cortar", "title": "Corta y marca la cola", "action": "Corta y marca la palanquilla de cola con \"C\". Si mide menos de 6 m, va a chatarra.", "check": "Cola \"C\" identificada; ≥ 6 m [Validar con Laminación].", "quality": true},
-    {"n": 12, "phase": 2, "role": "S-13", "icon": "carro", "title": "Retira el distribuidor", "action": "Lleva el carro a desescoriado y vacía el residual en la caja de escoria seca.", "check": "Distribuidor fuera; nadie en la zona.", "critical": true, "stop": "La caja de escoria está húmeda o hay alguien a ≤ 15 m del volteo."},
-    {"n": 13, "phase": 2, "role": "S-09", "icon": "grua", "title": "Retira la olla vacía", "action": "Lleva la olla vacía a la nave de ollas. Nadie bajo la carga.", "check": "Torreta libre."},
-    {"n": 14, "phase": 2, "role": "S-12", "icon": "agua", "title": "Mantén el agua de molde", "action": "Deja el agua de molde encendida al menos 15 min después de la última cola.", "check": "≥ 15 min [Validar OEM]; tubos fríos.", "critical": true},
-    {"n": 15, "phase": 2, "role": "S-14", "icon": "bloqueo", "title": "Pide al ESR cerrar obturadores", "action": "Pide a C-16 (ESR) cerrar y bloquear los obturadores de las 6 líneas y medir. No te acerques al molde antes.", "check": "Registro del ESR: < 2 × fondo en las 6 líneas.", "critical": true, "stop": "Un obturador no cierra.", "decision": {"question": "¿Obturadores cerrados?", "no": "Nadie al molde. Aléjate ≥ 3 m; avisa al ESR."}},
-    {"n": 16, "phase": 2, "role": "S-14", "icon": "bloqueo", "title": "Aplica LOTO a la máquina", "action": "Bloquea extractores, oscilador y carro (MS-ACE-02).", "check": "Candados puestos.", "critical": true},
-    {"n": 17, "phase": 2, "role": "S-14", "icon": "inspeccionar", "title": "Inspecciona moldes y línea", "action": "Revisa rayas, desgaste, restos de acero y boquillas. Avisa a S-25 para la inspección de tubos y conicidad.", "check": "Hallazgos registrados.", "quality": true},
-    {"n": 18, "phase": 2, "role": "S-12", "icon": "registrar", "title": "Registra la secuencia", "action": "Anota con C-06 el número de coladas, duración, causa del fin y cierres de línea.", "check": "Hoja de secuencia CC2 completa."}
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "C-06",
+      "icon": "radio",
+      "title": "Confirma la última olla",
+      "action": "Avisa a todo el equipo por radio que es la última olla de la secuencia.",
+      "check": "Púlpito, plataforma, corte y grúa confirman \"última olla\" por radio."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-14",
+      "icon": "refractario",
+      "title": "Prepara las placas ciegas",
+      "action": "Revisa que haya 6 placas ciegas calientes en el horno y 2 varillas de taponeo listas.",
+      "check": "6 placas calientes listas."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-13",
+      "icon": "detener",
+      "title": "Cierra la última olla",
+      "action": "Cierra por residual (2–4 t [Validar]) o al ver escoria.",
+      "check": "Sin escoria en el distribuidor.",
+      "critical": true,
+      "stop": "Aparece escoria en el distribuidor."
+    },
+    {
+      "n": 4,
+      "phase": 0,
+      "role": "S-13",
+      "icon": "alto",
+      "title": "Cierra L1 y L6",
+      "action": "Cuando el distribuidor baje a 450 mm (430–470 [Validar]), empuja la placa ciega en L1 y L6.",
+      "check": "Chorro cortado en L1 y L6.",
+      "critical": true,
+      "decision": {
+        "question": "¿Cortó el chorro?",
+        "no": "Tapón con varilla (MO-CC2-06)."
+      }
+    },
+    {
+      "n": 5,
+      "phase": 0,
+      "role": "S-13",
+      "icon": "alto",
+      "title": "Cierra L2 y L5",
+      "action": "A 350 mm (330–370 [Validar]), empuja la placa ciega en L2 y L5.",
+      "check": "Chorro cortado en L2 y L5.",
+      "critical": true
+    },
+    {
+      "n": 6,
+      "phase": 0,
+      "role": "S-13",
+      "icon": "alto",
+      "title": "Cierra L3 y L4",
+      "action": "A 300 mm (280–320 [Validar]), empuja la placa ciega en L3 y L4. Nunca bajes de 250 mm.",
+      "check": "Chorro cortado en L3 y L4; nivel ≥ 300 mm.",
+      "critical": true,
+      "stop": "El nivel del distribuidor llega a 250 mm (vórtice y escoria)."
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-12",
+      "icon": "nivel",
+      "title": "Deja bajar el menisco",
+      "action": "Con la velocidad en fijo, deja bajar el menisco 80–150 mm [Validar].",
+      "check": "Menisco bajando sin fuga."
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-12",
+      "icon": "tiempo",
+      "title": "Aplica la velocidad de cola",
+      "action": "Saca la cola a 0.5–1.0 m/min [Validar con OEM]. No eches agua al molde.",
+      "check": "La cola sale del molde sin fuga.",
+      "critical": true,
+      "stop": "La velocidad pasa de 1.5 m/min con la cola en el molde, o alguien echa agua al molde."
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-12",
+      "icon": "detener",
+      "title": "Apaga oscilación y EMS",
+      "action": "Apágalos cuando la cola salga del molde y pase el EMS.",
+      "check": "Oscilación y EMS apagados sin alarmas."
+    },
+    {
+      "n": 10,
+      "phase": 1,
+      "role": "S-12",
+      "icon": "rociar",
+      "title": "Deja que el rociado siga la cola",
+      "action": "Usa el seguimiento de cola automático: las zonas de rociado se apagan una por una detrás de la cola.",
+      "check": "Zonas apagadas detrás de la cola."
+    },
+    {
+      "n": 11,
+      "phase": 1,
+      "role": "S-16",
+      "icon": "cortar",
+      "title": "Corta y marca la cola",
+      "action": "Corta y marca la palanquilla de cola con \"C\". Si mide menos de 6 m, va a chatarra.",
+      "check": "Cola \"C\" identificada; ≥ 6 m [Validar con Laminación].",
+      "quality": true
+    },
+    {
+      "n": 12,
+      "phase": 2,
+      "role": "S-13",
+      "icon": "carro",
+      "title": "Retira el distribuidor",
+      "action": "Lleva el carro a desescoriado y vacía el residual en la caja de escoria seca.",
+      "check": "Distribuidor fuera; nadie en la zona.",
+      "critical": true,
+      "stop": "La caja de escoria está húmeda o hay alguien a ≤ 15 m del volteo."
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-09",
+      "icon": "grua",
+      "title": "Retira la olla vacía",
+      "action": "Lleva la olla vacía a la nave de ollas. Nadie bajo la carga.",
+      "check": "Torreta libre.",
+      "stop": "Hay alguien bajo la olla o en su trayectoria."
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "S-12",
+      "icon": "agua",
+      "title": "Mantén el agua de molde",
+      "action": "Deja el agua de molde encendida al menos 15 min después de la última cola.",
+      "check": "≥ 15 min [Validar con OEM]; tubos fríos.",
+      "critical": true
+    },
+    {
+      "n": 15,
+      "phase": 2,
+      "role": "S-14",
+      "icon": "bloqueo",
+      "title": "Pide al ESR cerrar obturadores",
+      "action": "Pide a C-16 (ESR) cerrar y bloquear los obturadores de las 6 líneas y medir. No te acerques al molde antes.",
+      "check": "Registro del ESR: < 2 × fondo en las 6 líneas.",
+      "critical": true,
+      "stop": "Un obturador no cierra.",
+      "decision": {
+        "question": "¿Obturadores cerrados?",
+        "no": "Nadie al molde. Aléjate ≥ 3 m; avisa al ESR."
+      }
+    },
+    {
+      "n": 16,
+      "phase": 2,
+      "role": "S-14",
+      "icon": "bloqueo",
+      "title": "Aplica LOTO a la máquina",
+      "action": "Bloquea extractores, oscilador y carro con tu candado y haz la prueba de arranque (MS-ACE-02).",
+      "check": "Candados puestos.",
+      "critical": true,
+      "stop": "Algún equipo se mueve en la prueba de arranque."
+    },
+    {
+      "n": 17,
+      "phase": 2,
+      "role": "S-14",
+      "icon": "inspeccionar",
+      "title": "Inspecciona moldes y línea",
+      "action": "Revisa rayas, desgaste, restos de acero y boquillas. Avisa a S-25 para la inspección de tubos y conicidad.",
+      "check": "Hallazgos registrados.",
+      "quality": true,
+      "stop": "No hay registro del ESR con < 2 × fondo, tu candado no está puesto o los tubos siguen calientes."
+    },
+    {
+      "n": 18,
+      "phase": 2,
+      "role": "S-12",
+      "icon": "registrar",
+      "title": "Registra la secuencia",
+      "action": "Anota con C-06 el número de coladas, duración, causa del fin y cierres de línea.",
+      "check": "Hoja de secuencia CC2 completa."
+    }
   ],
   "abnormal": [
-    {"icon": "peligro", "if": "Escoria en el distribuidor antes de cerrar las líneas centrales", "do": "Cierra de inmediato todas las líneas restantes. Marca las colas.", "call": "C-06 y C-09"},
-    {"icon": "fuego", "if": "Breakout de cola", "do": "Detén la extracción de esa línea. Mantén el agua de molde y la secundaria. Evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09). El ESR revisa el Cs-137.", "call": "C-06, C-04 y C-16 (ESR)"},
-    {"icon": "alto", "if": "La placa ciega no cierra", "do": "Tapón con varilla (MO-CC2-06).", "call": "C-06"},
-    {"icon": "bloqueo", "if": "La cola se atora en los enderezadores", "do": "Detén. LOTO. Mantenimiento la libera.", "call": "C-06 y C-11"},
-    {"icon": "salida", "if": "Fin anticipado por emergencia (falla de agua, torreta)", "do": "Cierra la olla y las 6 líneas. Sigue los pasos de cola solo si es seguro.", "call": "C-04 y C-06"},
-    {"icon": "alarma", "if": "Un obturador no cierra al final", "do": "Nadie en el molde. Aléjate ≥ 3 m y acordona. El ESR atiende (MS-ACE-07).", "call": "C-16 (ESR)"}
+    {
+      "icon": "peligro",
+      "if": "Escoria en el distribuidor antes de cerrar las líneas centrales",
+      "do": "Cierra de inmediato todas las líneas restantes. Marca las colas.",
+      "call": "C-06 y C-09"
+    },
+    {
+      "icon": "fuego",
+      "if": "Breakout de cola",
+      "do": "Detén la extracción de esa línea. Mantén el agua de molde y la secundaria. Evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09). El ESR revisa el Cs-137.",
+      "call": "C-06, C-04 y C-16 (ESR)"
+    },
+    {
+      "icon": "alto",
+      "if": "La placa ciega no cierra",
+      "do": "Tapón con varilla (MO-CC2-06).",
+      "call": "C-06"
+    },
+    {
+      "icon": "bloqueo",
+      "if": "La cola se atora en los enderezadores",
+      "do": "Detén. LOTO. Mantenimiento la libera.",
+      "call": "C-06 y C-11"
+    },
+    {
+      "icon": "salida",
+      "if": "Fin anticipado por emergencia (falla de agua, torreta)",
+      "do": "Cierra la olla y las 6 líneas. Sigue los pasos de cola solo si es seguro.",
+      "call": "C-04 y C-06"
+    },
+    {
+      "icon": "alarma",
+      "if": "Un obturador no cierra al final",
+      "do": "Nadie en el molde. Aléjate ≥ 3 m y acordona. El ESR atiende (MS-ACE-07).",
+      "call": "C-16 (ESR)"
+    }
   ],
   "records": [
-    {"what": "Hoja de secuencia CC2 (coladas, toneladas, duración, causa del fin, cierres de línea, buzas usadas)", "when": "Cada secuencia", "where": "Hoja de secuencia CC2"},
-    {"what": "Colas \"C\" por línea", "when": "Cada cola", "where": "Sistema de rastreo"},
-    {"what": "Cierre de obturadores", "when": "Cada fin de secuencia", "where": "Registro del ESR"},
-    {"what": "Inspección de moldes y línea", "when": "Cada fin de secuencia", "where": "Registro del taller de moldes"}
+    {
+      "what": "Hoja de secuencia CC2 (coladas, toneladas, duración, causa del fin, cierres de línea, buzas usadas)",
+      "when": "Cada secuencia",
+      "where": "Hoja de secuencia CC2"
+    },
+    {
+      "what": "Colas \"C\" por línea",
+      "when": "Cada cola",
+      "where": "Sistema de rastreo"
+    },
+    {
+      "what": "Cierre de obturadores",
+      "when": "Cada fin de secuencia",
+      "where": "Registro del ESR"
+    },
+    {
+      "what": "Inspección de moldes y línea",
+      "when": "Cada fin de secuencia",
+      "where": "Registro del taller de moldes"
+    }
   ],
   "certification": [
-    {"role": "S-13", "level": "3", "theory": "8 h", "ojt": "5 fines de secuencia", "evaluated": "Pasos 3, 4, 5, 6 y 12", "validity": "24 meses (TD-P07)"},
-    {"role": "S-12", "level": "3", "theory": "8 h", "ojt": "5 fines de secuencia", "evaluated": "Pasos 8 y 14", "validity": "24 meses (TD-P07)"},
-    {"role": "S-14", "level": "3", "theory": "8 h + protección radiológica", "ojt": "5 fines de secuencia", "evaluated": "Pasos 8, 15 y 16", "validity": "24 meses (TD-P07); protección radiológica 12 meses (MS-ACE-07)"}
+    {
+      "role": "S-13",
+      "level": "3",
+      "theory": "8 h",
+      "ojt": "5 fines de secuencia",
+      "evaluated": "Pasos 3, 4, 5, 6 y 12",
+      "validity": "24 meses (TD-P07)"
+    },
+    {
+      "role": "S-12",
+      "level": "3",
+      "theory": "8 h",
+      "ojt": "5 fines de secuencia",
+      "evaluated": "Pasos 8 y 14",
+      "validity": "24 meses (TD-P07)"
+    },
+    {
+      "role": "S-14",
+      "level": "3",
+      "theory": "8 h + protección radiológica",
+      "ojt": "5 fines de secuencia",
+      "evaluated": "Pasos 8, 15 y 16",
+      "validity": "24 meses (TD-P07); protección radiológica 12 meses (MS-ACE-07)"
+    }
   ],
   "glossary": [
-    {"term": "Secuencia", "def": "Serie de coladas seguidas sin parar la máquina."},
-    {"term": "Cola", "def": "Último tramo de cada palanquilla al cerrar la línea; se saca despacio y se marca \"C\"."},
-    {"term": "Placa ciega", "def": "Placa sin orificio que se empuja en el cambio rápido para cerrar la línea."},
-    {"term": "Vórtice", "def": "Remolino sobre las buzas con el distribuidor bajo (≤ 300 mm) que arrastra escoria."},
-    {"term": "Obturador", "def": "Cierre de la fuente de Cs-137 del medidor de nivel; solo lo opera el ESR."},
-    {"term": "ESR", "def": "Encargado de Seguridad Radiológica (función de C-16)."},
-    {"term": "LOTO", "def": "Bloqueo y etiquetado de energías antes de trabajar en el equipo."}
+    {
+      "term": "Secuencia",
+      "def": "Serie de coladas seguidas sin parar la máquina."
+    },
+    {
+      "term": "Cola",
+      "def": "Último tramo de cada palanquilla al cerrar la línea; se saca despacio y se marca \"C\"."
+    },
+    {
+      "term": "Placa ciega",
+      "def": "Placa sin orificio que se empuja en el cambio rápido para cerrar la línea."
+    },
+    {
+      "term": "Vórtice",
+      "def": "Remolino sobre las buzas con el distribuidor bajo (≤ 300 mm) que arrastra escoria."
+    },
+    {
+      "term": "Obturador",
+      "def": "Cierre de la fuente de Cs-137 del medidor de nivel; solo lo opera el ESR."
+    },
+    {
+      "term": "ESR",
+      "def": "Encargado de Seguridad Radiológica (función de C-16)."
+    },
+    {
+      "term": "LOTO",
+      "def": "Bloqueo y etiquetado de energías antes de trabajar en el equipo."
+    },
+    {
+      "term": "Línea (L1–L6)",
+      "def": "Cada uno de los 6 moldes de la CC2 con su vía de extracción; L1 y L6 son las de los extremos."
+    },
+    {
+      "term": "L1 a L6",
+      "def": "Las 6 líneas de la CC2, numeradas de un extremo al otro. L3 y L4 son las del centro; L1 y L6, las de los extremos."
+    },
+    {
+      "term": "Menisco",
+      "def": "Superficie del acero líquido dentro del molde."
+    },
+    {
+      "term": "EMS",
+      "def": "Agitador electromagnético del molde."
+    },
+    {
+      "term": "Cs-137",
+      "def": "Fuente radiactiva que mide el nivel del acero en el molde. Solo el ESR (C-16) abre, cierra o bloquea su obturador."
+    }
   ],
   "review": [
-    {"area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28"}
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    }
   ]
 }

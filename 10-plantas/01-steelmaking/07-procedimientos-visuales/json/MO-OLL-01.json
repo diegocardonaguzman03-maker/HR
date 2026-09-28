@@ -8,7 +8,7 @@
   "owner": "C-15",
   "manual": "02-operacion/ollas-lf/MO-OLL-01-preparacion-olla.md",
   "deck": "05-capacitacion/MO-OLL-01",
-  "purpose": "Entregar al horno una olla de 150 t seca, caliente (1,000–1,100 °C), con refractario vigente, válvula probada y cerrada, tapón con argón y arena de sello.",
+  "purpose": "Entregar al horno una olla de 150 t seca y caliente (1,000–1,100 °C). Con refractario vigente, válvula probada y cerrada, tapón con argón y arena de sello.",
   "whyItMatters": "Una olla fría o húmeda puede explotar o perforarse con 150 t de acero dentro. Una arena mal puesta hace que la olla no abra en la colada continua.",
   "startsWhen": "La olla vacía regresa de la colada continua (fin de olla en MO-CC1-05 / MO-CC2-05, traslado MO-OLL-02).",
   "endsWhen": "La lista de entrega está firmada y la olla llega al carro de vaciado del EAF (MO-EAF-07).",
@@ -139,7 +139,7 @@
       "role": "S-08",
       "icon": "inspeccionar",
       "title": "Revisa la fosa de volteo",
-      "action": "Revisa que la fosa de volteo esté seca y que nadie esté a 15 m o menos del punto de volteo.",
+      "action": "Revisa que la fosa de volteo esté seca. Confirma que nadie esté a 15 m o menos del punto de volteo.",
       "check": "Fosa seca, sin agua estancada; zona roja de 15 m libre.",
       "critical": true,
       "stop": "Hay agua en la fosa o alguien a menos de 15 m."
@@ -152,7 +152,8 @@
       "title": "Voltea escoria y costra",
       "action": "Con la grúa de colada, voltea la olla en la estación, sobre la fosa seca. Nadie bajo la olla.",
       "check": "Olla limpia, sin costra en fondo ni asiento.",
-      "critical": true
+      "critical": true,
+      "stop": "La fosa tiene agua, hay alguien a 15 m o menos del punto de volteo o bajo la olla."
     },
     {
       "n": 4,
@@ -171,7 +172,7 @@
       "icon": "autorizar",
       "title": "Decide si la olla sigue o se retira",
       "action": "Si falla un criterio, decide retirar la olla a reparación (MM-OLL-01) y registra la decisión. Avisa a C-04 para reasignar ollas.",
-      "check": "Decisión registrada en el registro de ollas.",
+      "check": "Decisión (sigue o se retira) anotada y firmada por C-15 en el Registro de ollas.",
       "critical": true,
       "decision": {
         "question": "¿Olla sigue en servicio?",
@@ -185,7 +186,8 @@
       "icon": "oxigeno",
       "title": "Limpia el asiento de la buza",
       "action": "Con la lanza de O₂, desde arriba, limpia el asiento de la buza superior sin dañar el bloque. Usa ropa limpia, sin grasa.",
-      "check": "Asiento limpio, sin costra."
+      "check": "Asiento limpio, sin costra.",
+      "stop": "Tu ropa tiene grasa o aceite, o la válvula de la lanza no cierra rápido."
     },
     {
       "n": 7,
@@ -279,7 +281,8 @@
       "icon": "grua",
       "title": "Lleva la olla al carro de vaciado",
       "action": "Lleva la olla al carro de vaciado del EAF (MO-EAF-07) sin perder tiempo. Nadie bajo la olla.",
-      "check": "Olla en el carro en ≤ 10 min [Supuesto]."
+      "check": "Olla en el carro en ≤ 10 min [Supuesto].",
+      "stop": "Hay alguien bajo la olla o en su ruta."
     }
   ],
   "abnormal": [
@@ -315,9 +318,9 @@
     },
     {
       "icon": "alarma",
-      "if": "Falla de flama del precalentador",
-      "do": "El gas se corta solo. Purga antes de reencender. Pide mantenimiento.",
-      "call": "Mantenimiento"
+      "if": "Falla de flama del precalentador, olor a gas o tu detector suena",
+      "do": "El gas se corta solo. No reenciendas sin purga. Con CO 25 ppm o 10 % LEL, sal a zona verde y avisa; con CO 200 ppm o 20 % LEL, C-04 evacúa el sector.",
+      "call": "Mantenimiento y C-04 (MS-ACE-06)"
     },
     {
       "icon": "agua",
@@ -414,6 +417,26 @@
     {
       "term": "Coladas del refractario",
       "def": "Número de coladas que lleva el revestimiento; se retira a las 60–80."
+    },
+    {
+      "term": "Lista de entrega de la olla",
+      "def": "Formato de MO-OLL-01 que firma S-08: T de cara caliente, horas de precalentamiento, placas, tapón y arena."
+    },
+    {
+      "term": "Buza",
+      "def": "Pieza refractaria con orificio en el fondo de la olla por donde sale el acero."
+    },
+    {
+      "term": "Pirómetro",
+      "def": "Instrumento que mide la temperatura a distancia, sin tocar la pieza."
+    },
+    {
+      "term": "Termografía",
+      "def": "Imagen de temperatura de la coraza tomada con cámara infrarroja."
+    },
+    {
+      "term": "NL/min",
+      "def": "Unidad de caudal de gas (argón): litros por minuto medidos en condiciones normales."
     }
   ],
   "review": [
@@ -421,6 +444,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

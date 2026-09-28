@@ -32,12 +32,6 @@
     },
     {
       "op": "set",
-      "path": "steps[9].action",
-      "value": "Escarpea solo si estás certificado [Supuesto: S-18 o contratista REPSE]. Usa permiso en caliente y arrestaflamas; 3–5 mm por pasada. HSLA con Nb: planchón a ≥ 150 °C [Validar con OEM / Ingeniería de Proceso].",
-      "reason": "Lenguaje: imperativo; se aclara que los ≥ 150 °C son del planchón y se recupera la marca [Validar…] del manual §7."
-    },
-    {
-      "op": "set",
       "path": "steps[15].check",
       "value": "Resumen de turno enviado a C-06 y Pareto semanal a C-08.",
       "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."

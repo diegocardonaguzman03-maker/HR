@@ -8,8 +8,8 @@
   "owner": "C-08",
   "manual": "02-operacion/cc1/MO-CC1-04-colada-estado-estable.md",
   "deck": "05-capacitacion/MO-CC1-04",
-  "purpose": "Mantener la colada estable y segura: nivel de molde ± 3 mm, velocidad según sobrecalentamiento y ancho, agua y enfriamiento en rango, polvo con capa líquida de 8–15 mm y respuesta correcta a alarmas.",
-  "whyItMatters": "Un nivel inestable, una velocidad mal elegida o una alarma mal atendida causan grietas, inclusiones o un breakout: acero líquido fuera de la máquina.",
+  "purpose": "Mantener la colada estable y segura: nivel de molde ± 3 mm y velocidad según sobrecalentamiento y ancho. Agua, enfriamiento y polvo en rango, y respuesta correcta a alarmas.",
+  "whyItMatters": "Un nivel inestable, una velocidad mal elegida o una alarma mal atendida causan grietas o inclusiones. También pueden causar un breakout: acero líquido fuera de la máquina.",
   "startsWhen": "La máquina llega a velocidad nominal después del arranque (MO-CC1-03).",
   "endsWhen": "Empieza el fin de colada (MO-CC1-07). Los cambios de olla y de SEN siguen MO-CC1-05 y MO-CC1-06.",
   "previous": [
@@ -36,21 +36,21 @@
       "code": "S-12",
       "name": "Operador de Púlpito de Colada",
       "raci": "R",
-      "does": "Velocidad, nivel automático, enfriamiento, oscilación, BOP, alarmas y registros.",
+      "does": "Controla desde el púlpito velocidad, nivel automático, enfriamiento y oscilación; atiende alarmas y BOP y registra.",
       "it": "IT-S12"
     },
     {
       "code": "S-13",
       "name": "Operador de Plataforma de Colada",
       "raci": "R",
-      "does": "Nivel y temperatura del distribuidor, argón, flux, SEN y estado de la olla.",
+      "does": "Cuida nivel y temperatura del distribuidor, argón, flux, SEN y el estado de la olla.",
       "it": "IT-S13"
     },
     {
       "code": "S-14",
       "name": "Ayudante de Colada",
       "raci": "R",
-      "does": "Polvo de molde, capa líquida, observación del menisco y retiro de costras.",
+      "does": "Pone polvo de molde, mide la capa líquida, observa el menisco y retira costras.",
       "it": "IT-S14"
     },
     {
@@ -69,8 +69,8 @@
     {
       "code": "C-06",
       "name": "Supervisor de Colada Continua",
-      "raci": "A",
-      "does": "Responsable del turno (A del turno): dirige, decide ante anormales y autoriza el acceso bajo el molde.",
+      "raci": "R",
+      "does": "Supervisa el turno: dirige al personal, decide ante condiciones anormales y autoriza el acceso bajo el molde.",
       "it": "IT-C06"
     },
     {
@@ -90,7 +90,7 @@
   "goldenRules": [
     "Nadie bajo el molde ni en segmentos 1–3 mientras hay colada; el acceso solo lo autoriza C-06.",
     "Vapor, \"reventones\" o gotas en el menisco: cierra el tapón de inmediato y avisa.",
-    "Nunca pases de 1.6 m/min. Breakout: tapón → extracción → olla → evacúa."
+    "Nunca pases de 1.6 m/min. Si hay breakout: cierra el tapón, para la extracción, cierra la olla y evacúa."
   ],
   "epp": [
     "casco",
@@ -143,7 +143,7 @@
       "role": "S-14",
       "icon": "barrera",
       "title": "Verifica la zona bajo el molde",
-      "action": "Al inicio del turno y tras cada evento, revisa barreras y que nadie esté bajo el molde ni en segmentos 1–3. Confirma a C-06.",
+      "action": "Al inicio del turno y tras cada evento, revisa las barreras. Verifica que nadie esté bajo el molde ni en segmentos 1–3. Confirma a C-06.",
       "check": "Zona despejada; confirmación a C-06.",
       "critical": true,
       "stop": "Hay alguien bajo el molde o en segmentos 1–3."
@@ -173,7 +173,7 @@
       "role": "S-12",
       "icon": "tendencia",
       "title": "Ajusta la velocidad por SH y ancho",
-      "action": "Aplica la tabla velocidad–SH–ancho [Validar con OEM]. Cambia ≤ 0.1 m/min por minuto. Peritécticos (HSLA): −0.2 m/min.",
+      "action": "Aplica la tabla velocidad–SH–ancho [Validar con OEM]. Cambia ≤ 0.1 m/min por minuto. En aceros peritécticos (HSLA), cuela 0.2 m/min abajo de la tabla.",
       "check": "Velocidad dentro de la tabla; nunca más de 1.6 m/min."
     },
     {
@@ -267,7 +267,7 @@
       "role": "S-11",
       "icon": "muestra",
       "title": "Toma la muestra de producto",
-      "action": "A la mitad de la colada, toma la muestra del distribuidor e identifícala. S-13 te apoya.",
+      "action": "A la mitad de la colada, toma la muestra del distribuidor con herramienta seca, acompañado por S-13, e identifícala.",
       "check": "Muestra identificada y enviada al laboratorio."
     },
     {
@@ -423,7 +423,7 @@
       "theory": "40 h",
       "ojt": "—",
       "evaluated": "Análisis de alarmas y ajustes de tabla",
-      "validity": "—"
+      "validity": "≤ 24 meses (TD-P07)"
     }
   ],
   "glossary": [
@@ -452,12 +452,36 @@
       "def": "Polvo fundido sobre el acero (8–15 mm) que lubrica el molde."
     },
     {
-      "term": "SH",
-      "def": "Sobrecalentamiento: grados arriba del líquidus en el distribuidor (20–30 °C)."
+      "term": "Sobrecalentamiento (SH)",
+      "def": "Grados que el acero está arriba de su temperatura de líquidus en el distribuidor."
     },
     {
       "term": "Enfriamiento secundario",
       "def": "Rociado aire–agua de 10 zonas que termina de solidificar el planchón."
+    },
+    {
+      "term": "Segmentos",
+      "def": "Tramos de rodillos bajo el molde que guían y enfrían el planchón; el 1 es el más cercano al molde."
+    },
+    {
+      "term": "HMI",
+      "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+    },
+    {
+      "term": "HSLA",
+      "def": "Acero de alta resistencia y baja aleación (por ejemplo, para tubería). Es más delicado de colar y de enfriar."
+    },
+    {
+      "term": "Peritéctico",
+      "def": "Acero peritéctico: tipo de acero (muchos HSLA) que tiende a agrietarse en el molde; se cuela más lento."
+    },
+    {
+      "term": "Rim",
+      "def": "Costra de polvo solidificado en el borde del menisco; se retira solo si pasa de 10 mm."
+    },
+    {
+      "term": "ΔT de agua de molde",
+      "def": "Diferencia de temperatura entre la salida y la entrada del agua del molde."
     }
   ],
   "review": [
@@ -465,6 +489,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

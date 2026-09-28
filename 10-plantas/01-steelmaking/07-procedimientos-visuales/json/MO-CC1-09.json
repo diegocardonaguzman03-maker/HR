@@ -8,7 +8,7 @@
   "owner": "C-09",
   "manual": "02-operacion/cc1/MO-CC1-09-inspeccion-calidad-planchon.md",
   "deck": "05-capacitacion/MO-CC1-09",
-  "purpose": "Que ningún planchón con defecto llegue a Laminación sin decisión: encontrar, medir y clasificar los defectos y decidir si se acepta, se escarpea, se degrada o se rechaza.",
+  "purpose": "Que ningún planchón con defecto llegue a Laminación sin decisión. Encontrar, medir y clasificar los defectos y decidir: aceptar, escarpear, degradar o rechazar.",
   "whyItMatters": "Un defecto que se escapa llega al cliente (automotriz, tubería). Una mala clasificación tira producto bueno. Inspeccionar junto a una grúa o un volteador en movimiento puede aplastar al inspector.",
   "startsWhen": "El planchón llega al área de inspección o a la pila con su ID y sus eventos en el MES (MO-CC1-08).",
   "endsWhen": "El planchón queda liberado o retenido en el MES, con su disposición marcada, y las tendencias se reportan a C-06 y C-08.",
@@ -28,7 +28,7 @@
       "code": "S-18",
       "name": "Inspector de Calidad de Semiterminado",
       "raci": "R",
-      "does": "Inspecciona caras, cantos y medidas; clasifica y marca defectos; registra; re-inspecciona después del escarpeo.",
+      "does": "Inspecciona caras, cantos y medidas; clasifica con la tabla y marca defectos; registra; re-inspecciona tras el escarpeo. Escarpea solo si está certificado [Supuesto].",
       "it": "IT-S18"
     },
     {
@@ -80,7 +80,8 @@
     "respirador",
     "chaleco",
     "careta_facial",
-    "proteccion_quimica"
+    "proteccion_quimica",
+    "careta_oxicorte"
   ],
   "dangerZone": {
     "red": "Zona roja: bajo la grúa y junto al volteador mientras se mueven planchones de hasta 33 t. Nadie entre pilas.",
@@ -130,7 +131,7 @@
       "role": "S-18",
       "icon": "seguro",
       "title": "Confirma condiciones seguras",
-      "action": "Confirma con S-17 o con la grúa que el planchón está asentado, la grúa fuera de la zona y la pila estable.",
+      "action": "Confirma con S-17 o con la grúa que el planchón está asentado. La grúa debe estar fuera de la zona y la pila estable.",
       "check": "Confirmación verbal con S-17 o la grúa.",
       "critical": true,
       "stop": "La grúa o el volteador se mueven cerca, o la pila se ve inestable.",
@@ -166,7 +167,7 @@
       "icon": "inspeccionar",
       "title": "Inspecciona cantos y extremos",
       "action": "Revisa grietas de esquina, rechupe en los extremos y rebaba.",
-      "check": "Hallazgos registrados.",
+      "check": "Grietas de esquina, rechupe y rebaba anotados en el MES.",
       "quality": true
     },
     {
@@ -176,7 +177,7 @@
       "icon": "girar",
       "title": "Inspecciona la cara inferior",
       "action": "Pide a S-17 voltear el planchón según la frecuencia. Aléjate del volteador mientras se mueve y luego revisa la cara.",
-      "check": "1 por colada; 100 % si tiene evento o es HSLA de tubería.",
+      "check": "Cara inferior revisada: 1 planchón por colada y 100 % si tiene evento o es HSLA de tubería.",
       "critical": true,
       "stop": "Hay alguien junto al volteador mientras se mueve."
     },
@@ -204,9 +205,9 @@
       "phase": 2,
       "role": "S-18",
       "icon": "calidad",
-      "title": "Clasifica y dispone",
-      "action": "Aplica la tabla del manual: aceptar, escarpear (superficial ≤ 5 mm), degradar o rechazar (> 10 mm, interno severo o medida fuera).",
-      "check": "Disposición registrada en el MES."
+      "title": "Clasifica con la tabla",
+      "action": "Aplica la tabla del manual y registra la clasificación: aceptar o escarpear (superficial ≤ 5 mm). Si toca degradar o rechazar (> 10 mm, interno severo o medida fuera), retén y pasa la evidencia a C-09.",
+      "check": "Clasificación registrada en el MES."
     },
     {
       "n": 10,
@@ -214,10 +215,10 @@
       "role": "S-18",
       "icon": "oxigeno",
       "title": "Escarpea si aplica",
-      "action": "Escarpador certificado [Supuesto: S-18 o contratista REPSE]. Con permiso en caliente y arrestaflamas: 3–5 mm por pasada. HSLA con Nb a ≥ 150 °C.",
+      "action": "Solo con certificación de escarpeo [Supuesto: función de S-18, pendiente de decisión del Director]. Con permiso en caliente y arrestaflamas: 3–5 mm por pasada. HSLA con Nb a ≥ 150 °C.",
       "check": "≤ 10 mm por cara; espesor final ≥ 220 mm.",
       "critical": true,
-      "stop": "No hay permiso de trabajo en caliente o falta el arrestaflamas."
+      "stop": "No hay permiso de trabajo en caliente, falta el arrestaflamas o hay combustibles en el área."
     },
     {
       "n": 11,
@@ -250,7 +251,8 @@
       "title": "Prepara las muestras internas",
       "action": "Toma la rebanada según la frecuencia y prepara el macroataque o la impresión Baumann con campana y EPP químico.",
       "check": "Clase de segregación y grietas internas reportada a C-09.",
-      "quality": true
+      "quality": true,
+      "stop": "La campana no extrae, o la regadera o el lavaojos no funcionan."
     },
     {
       "n": 14,
@@ -266,9 +268,9 @@
       "phase": 2,
       "role": "S-18",
       "icon": "registrar",
-      "title": "Libera o retén en el MES",
-      "action": "Cambia el estado a liberado o retenido. Solo los liberados se pueden despachar.",
-      "check": "MES actualizado."
+      "title": "Registra el estado en el MES",
+      "action": "Marca \"liberado\" solo si el planchón cumple la tabla sin desviación. Cualquier otro caso queda \"retenido\" hasta la firma de C-09. Solo los liberados se despachan.",
+      "check": "MES actualizado; los retenidos solo salen con firma de C-09."
     },
     {
       "n": 16,
@@ -277,7 +279,7 @@
       "icon": "tendencia",
       "title": "Reporta tendencias",
       "action": "Envía resumen de turno a C-06 y Pareto semanal de defectos a C-08 para corregir el proceso.",
-      "check": "Reporte emitido."
+      "check": "Resumen de turno enviado a C-06 y Pareto semanal a C-08."
     }
   ],
   "abnormal": [
@@ -316,6 +318,12 @@
       "if": "Planchón inestable en la pila",
       "do": "Aléjate y avisa a la grúa.",
       "call": "S-17 y C-16"
+    },
+    {
+      "icon": "primeros_auxilios",
+      "if": "Te salpica ácido en la piel o los ojos",
+      "do": "Ve de inmediato a la regadera o al lavaojos y enjuaga. Pide primeros auxilios.",
+      "call": "C-09 y servicio médico"
     }
   ],
   "records": [
@@ -350,13 +358,13 @@
       "role": "S-18",
       "level": "3",
       "theory": "32 h (defectos, causas, criterios, metrología, MES)",
-      "ojt": "160 h / 300 planchones verificados por un inspector nivel 4",
+      "ojt": "160 h / 300 planchones verificados por un evaluador nivel 4 (TD-P07)",
       "evaluated": "Pasos 2 y 6; concordancia con el catálogo de defectos ≥ 90 %",
       "validity": "≤ 24 meses (TD-P07)"
     },
     {
       "role": "S-18",
-      "level": "3 (escarpador [Supuesto])",
+      "level": "3 (escarpeo) [Supuesto: pendiente de decisión del Director]",
       "theory": "16 h (NOM-027, escarpeo)",
       "ojt": "40 h",
       "evaluated": "Paso 10",
@@ -376,7 +384,7 @@
       "theory": "24 h",
       "ojt": "—",
       "evaluated": "Todos; decisiones de degradación",
-      "validity": "—"
+      "validity": "≤ 24 meses (TD-P07)"
     }
   ],
   "glossary": [
@@ -407,6 +415,26 @@
     {
       "term": "Galga",
       "def": "Instrumento para medir la profundidad de un defecto."
+    },
+    {
+      "term": "Planchón",
+      "def": "Producto de la CC1: bloque de acero de 230 mm de espesor, 900–1,650 mm de ancho y 8–11 m de largo."
+    },
+    {
+      "term": "Volteador",
+      "def": "Equipo que gira el planchón para revisar la cara de abajo. Nadie a su lado mientras se mueve."
+    },
+    {
+      "term": "Permiso de trabajo en caliente",
+      "def": "Permiso de trabajo en caliente: autorización escrita para trabajar con flama o chispa (oxicorte, escarpeo)."
+    },
+    {
+      "term": "HSLA",
+      "def": "Acero de alta resistencia y baja aleación (por ejemplo, para tubería). Es más delicado de colar y de enfriar."
+    },
+    {
+      "term": "MES",
+      "def": "Sistema donde se registra cada planchón: grado, eventos, peso, ubicación y estado (liberado o retenido)."
     }
   ],
   "review": [
@@ -414,6 +442,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

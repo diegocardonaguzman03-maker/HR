@@ -41,6 +41,8 @@ for (const f of fs.readdirSync(path.join(POV, 'json')).filter((x) => x.endsWith(
     const rf = path.join(POV, '_revisiones', rev, f);
     if (!fs.existsSync(rf)) continue;
     const r = JSON.parse(fs.readFileSync(rf, 'utf8'));
+    // idempotente: si la firma de este revisor ya está en el POV, sus cambios ya se aplicaron
+    if (r.review && p.review.some((x) => x.area === r.review.area)) continue;
     // borrados al final y de índice mayor a menor para no mover índices
     const changes = [...(r.changes ?? [])].sort((a, b) => (a.op === 'delete') - (b.op === 'delete') || (b.op === 'delete' ? b.path.localeCompare(a.path, undefined, { numeric: true }) : 0));
     for (const ch of changes) {
@@ -52,5 +54,18 @@ for (const f of fs.readdirSync(path.join(POV, 'json')).filter((x) => x.endsWith(
   p.steps.forEach((s, i) => { s.n = i + 1; });
   if (!dry) fs.writeFileSync(path.join(POV, 'json', f), JSON.stringify(p, null, 2) + '\n');
 }
-fs.writeFileSync(path.join(POV, '_revisiones', 'cambios-aplicados.tsv'), 'proceso\trevisor\toperación\truta\tmotivo\n' + log.join('\n') + '\n');
+// Bitácora completa de todas las correcciones registradas por los revisores (no depende de la corrida)
+if (!dry) {
+  const all = [];
+  for (const rev of ORDER) {
+    const dir = path.join(POV, '_revisiones', rev);
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) {
+      const r = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+      for (const ch of r.changes ?? []) all.push(`${f.replace('.json', '')}\t${rev}\t${ch.op ?? 'set'}\t${ch.path}\t${String(ch.reason ?? '').replace(/\s+/g, ' ')}`);
+    }
+  }
+  fs.writeFileSync(path.join(POV, '_revisiones', 'cambios-aplicados.tsv'), 'proceso\trevisor\toperación\truta\tmotivo\n' + all.join('\n') + '\n');
+}
+for (const l of log.filter((x) => x.includes('\tERROR\t'))) console.log(l);
 console.log(`${total} cambios aplicados${dry ? ' (simulación)' : ''}; errores: ${log.filter((l) => l.includes('\tERROR\t')).length}`);

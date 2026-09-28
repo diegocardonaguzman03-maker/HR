@@ -8,80 +8,443 @@
   "owner": "C-09",
   "manual": "02-operacion/cc2/MO-CC2-09-inspeccion-calidad-palanquilla.md",
   "deck": "05-capacitacion/MO-CC2-09",
-  "purpose": "Inspeccionar la palanquilla de 160 × 160 mm contra los límites de aceptación, separar la que tiene defectos y avisar a la operación a tiempo para que corrija la línea.",
-  "whyItMatters": "Una palanquilla con defecto de rechazo que llega a Laminación se convierte en varilla defectuosa. La romboidad es el primer aviso de un molde gastado o un rociado tapado: si no se avisa, siguen las grietas.",
+  "purpose": "Inspeccionar la palanquilla de 160 × 160 mm contra los límites de aceptación y separar la que tiene defectos. Avisar a tiempo a la operación para que corrija la línea.",
+  "whyItMatters": "La romboidad es el primer aviso de un molde gastado o un rociado tapado. Si no se avisa, siguen las grietas.",
   "startsWhen": "La palanquilla llega al lecho de enfriamiento y a la zona de inspección (MO-CC2-08).",
   "endsWhen": "Cada palanquilla queda aceptada, retenida o rechazada con disposición firmada por C-09, y la operación recibió los avisos.",
-  "previous": ["MO-CC2-08"],
-  "next": ["MO-CC2-04"],
-  "heroFigure": {"file": "img/cc2-defectos-palanquilla.svg", "caption": "Defectos de la palanquilla de 160 × 160 mm y límites de aceptación."},
+  "previous": [
+    "MO-CC2-08"
+  ],
+  "next": [
+    "MO-CC2-04"
+  ],
+  "heroFigure": {
+    "file": "img/cc2-defectos-palanquilla.svg",
+    "caption": "Defectos de la palanquilla de 160 × 160 mm y límites de aceptación."
+  },
   "figures": [],
   "roles": [
-    {"code": "C-09", "name": "Metalurgista de Producto / Ingeniero de Calidad", "raci": "A", "does": "Dueño del proceso. Define límites y plan de muestreo; firma la disposición de retenidas y rechazos."},
-    {"code": "S-18", "name": "Inspector de Calidad de Semiterminado", "raci": "R", "does": "Inspecciona, mide, toma muestras de macro, etiqueta, registra y avisa.", "it": "IT-S18"},
-    {"code": "S-11", "name": "Muestrero / Analista de Laboratorio", "raci": "R", "does": "Prepara y ataca las muestras de macro; reporta la química.", "it": "IT-S11"},
-    {"code": "S-17", "name": "Operador de Mesa de Enfriamiento y Despacho", "raci": "R", "does": "Aparta las palanquillas a inspeccionar y separa las retenidas.", "it": "IT-S17"},
-    {"code": "C-06", "name": "Supervisor de Colada Continua", "raci": "C", "does": "Recibe los avisos y corrige la operación de la línea.", "it": "IT-C06"},
-    {"code": "C-08", "name": "Ingeniero de Proceso de Colada Continua", "raci": "C", "does": "Analiza las tendencias por línea (romboidad, grietas, porosidad)."}
+    {
+      "code": "C-09",
+      "name": "Metalurgista de Producto / Ingeniero de Calidad",
+      "raci": "A",
+      "does": "Dueño del proceso. Define límites y plan de muestreo; firma la disposición de retenidas y rechazos."
+    },
+    {
+      "code": "S-18",
+      "name": "Inspector de Calidad de Semiterminado",
+      "raci": "R",
+      "does": "Inspecciona, mide, toma muestras de macro, etiqueta, registra y avisa.",
+      "it": "IT-S18"
+    },
+    {
+      "code": "S-11",
+      "name": "Muestrero / Analista de Laboratorio",
+      "raci": "R",
+      "does": "Prepara y ataca las muestras de macro; reporta la química.",
+      "it": "IT-S11"
+    },
+    {
+      "code": "S-17",
+      "name": "Operador de Mesa de Enfriamiento y Despacho",
+      "raci": "R",
+      "does": "Aparta las palanquillas a inspeccionar y separa las retenidas.",
+      "it": "IT-S17"
+    },
+    {
+      "code": "C-06",
+      "name": "Supervisor de Colada Continua",
+      "raci": "C",
+      "does": "Recibe los avisos y corrige la operación de la línea.",
+      "it": "IT-C06"
+    },
+    {
+      "code": "C-08",
+      "name": "Ingeniero de Proceso de Colada Continua",
+      "raci": "C",
+      "does": "Analiza las tendencias por línea (romboidad, grietas, porosidad)."
+    }
   ],
-  "goldenRules": ["Ante la duda, retén con etiqueta roja \"R\". Liberar por presión de producción es una falta grave.", "Mide la romboidad de cada línea en cada colada y avisa a C-06 en ≤ 15 min si pasa de 6 mm.", "Inspecciona solo desde la pasarela o con el lecho detenido. Nadie sobre el lecho en movimiento."],
-  "epp": ["casco", "lentes", "ropa_fr", "guantes", "botas", "auditiva"],
-  "dangerZone": {"red": "Zona roja: lecho de enfriamiento en movimiento y recorrido de la grúa. Nadie sobre el lecho; para medir sobre él, LOTO.", "yellow": "Zona de inspección delimitada fuera del recorrido de la grúa. Área de retenidas separada y señalizada (etiqueta roja).", "rule": "En el laboratorio: careta, guantes y mandil para ácido, campana encendida, regadera y lavaojos probados."},
+  "goldenRules": [
+    "Ante la duda, retén con etiqueta roja \"R\" y avisa. Nadie libera por presión de producción.",
+    "Mide la romboidad de cada línea en cada colada y avisa a C-06 en ≤ 15 min si pasa de 6 mm.",
+    "Inspecciona solo desde la pasarela o con el lecho detenido. Nadie sobre el lecho en movimiento."
+  ],
+  "epp": [
+    "casco",
+    "lentes",
+    "ropa_fr",
+    "guantes",
+    "botas",
+    "auditiva",
+    "careta_facial",
+    "proteccion_quimica",
+    "chaleco"
+  ],
+  "dangerZone": {
+    "red": "Zona roja: lecho de enfriamiento en movimiento y recorrido de la grúa. Nadie sobre el lecho; para medir sobre él, LOTO.",
+    "yellow": "Zona de inspección delimitada fuera del recorrido de la grúa. Área de retenidas separada y señalizada (etiqueta roja).",
+    "rule": "En el laboratorio: careta, guantes y mandil para ácido, campana encendida, regadera y lavaojos probados."
+  },
   "hazards": [
-    {"icon": "calor", "text": "Palanquilla a más de 500 °C y en movimiento: quemaduras y atrapamiento."},
-    {"icon": "grua", "text": "Carga suspendida al mover muestras y retenidas."},
-    {"icon": "peligro", "text": "Ácido clorhídrico caliente del macroataque: quemaduras químicas y vapores."},
-    {"icon": "cortar", "text": "Corte de muestras y esmerilado: cortes, proyecciones y ruido."}
+    {
+      "icon": "calor",
+      "text": "Palanquilla a más de 500 °C y en movimiento: quemaduras y atrapamiento."
+    },
+    {
+      "icon": "grua",
+      "text": "Carga suspendida al mover muestras y retenidas."
+    },
+    {
+      "icon": "peligro",
+      "text": "Ácido clorhídrico caliente del macroataque: quemaduras químicas y vapores."
+    },
+    {
+      "icon": "cortar",
+      "text": "Corte de muestras y esmerilado: cortes, proyecciones y ruido."
+    }
   ],
-  "phases": ["Preparar la inspección", "Medir y muestrear", "Disponer y avisar"],
+  "phases": [
+    "Preparar la inspección",
+    "Medir y muestrear",
+    "Disponer y avisar"
+  ],
   "steps": [
-    {"n": 1, "phase": 0, "role": "S-18", "icon": "checklist", "title": "Revisa la hoja de colada", "action": "Busca las anomalías del turno: palanquillas A, T, B, E y C, sobrecalentamiento > 35 °C y cierres de línea.", "check": "Lista de palanquillas a inspeccionar."},
-    {"n": 2, "phase": 0, "role": "S-18", "icon": "inspeccionar", "title": "Inspecciona visualmente", "action": "Desde la pasarela revisa las caras visibles y los extremos del 100 % de las palanquillas al pasar por el lecho.", "check": "Sin defectos de rechazo visibles.", "quality": true, "decision": {"question": "¿Sin defecto visible?", "no": "Etiqueta roja \"R\" y separa (paso 12)."}},
-    {"n": 3, "phase": 0, "role": "S-17", "icon": "grua", "title": "Aparta las palanquillas de muestra", "action": "Lleva a la zona de inspección 1 palanquilla por línea por colada y las marcadas que pida S-18. Nadie bajo la carga.", "check": "Palanquillas en la zona de inspección."},
-    {"n": 4, "phase": 1, "role": "S-18", "icon": "medir", "title": "Mide los lados", "action": "Mide 2 lados a 1 m de cada extremo con el calibrador.", "check": "160 ± 3 mm [Validar].", "quality": true, "stop": "El lecho está en movimiento o la palanquilla está en el recorrido de la grúa."},
-    {"n": 5, "phase": 1, "role": "S-18", "icon": "medir", "title": "Mide las diagonales", "action": "Mide D1 y D2 en los mismos puntos y calcula ΔD = D1 − D2.", "check": "ΔD ≤ 6 mm (objetivo ≤ 3 mm).", "critical": true, "decision": {"question": "¿ΔD ≤ 6 mm?", "no": "> 6 y ≤ 11: retén \"R\". > 11: rechazo. Avisa a C-06."}},
-    {"n": 6, "phase": 1, "role": "S-18", "icon": "medir", "title": "Mide rectitud y largo", "action": "Mide la flecha con regla o hilo tenso y el largo con cinta.", "check": "Flecha ≤ 5 mm/m y ≤ 40 mm; largo 12,000 ± 50 mm [Validar].", "quality": true},
-    {"n": 7, "phase": 1, "role": "S-18", "icon": "medir", "title": "Mide las marcas de oscilación", "action": "Mide con la galga en 3 puntos por cara.", "check": "Profundidad ≤ 0.6 mm.", "quality": true},
-    {"n": 8, "phase": 1, "role": "S-18", "icon": "cortar", "title": "Corta la rebanada para macro", "action": "Según el plan de muestreo, corta la rebanada con guardas y permiso de trabajo en caliente. Identifícala con la marca.", "check": "Rebanada identificada."},
-    {"n": 9, "phase": 1, "role": "S-11", "icon": "muestra", "title": "Ataca y clasifica la macro", "action": "Ataca con ácido (HCl 1:1 a 70–80 °C [Validar]) en la campana o haz la impresión de azufre. Compara con la carta de grados junto con S-18.", "check": "Grado registrado con foto; grietas en diagonal ≤ 1; porosidad central ≤ 1.5.", "quality": true, "stop": "La campana no extrae o la regadera y el lavaojos no funcionan."},
-    {"n": 10, "phase": 1, "role": "S-18", "icon": "hmi", "title": "Revisa la química", "action": "Consulta en el LIMS el grado y el carbono equivalente.", "check": "Dentro de especificación; CE ≤ 0.55 en varilla."},
-    {"n": 11, "phase": 2, "role": "S-18", "icon": "calidad", "title": "Clasifica la palanquilla", "action": "Con los límites de la figura, clasifica: aceptada, retenida (etiqueta roja \"R\") o para rechazo. El rechazo lo firma C-09.", "check": "Estado registrado en el rastreo.", "critical": true},
-    {"n": 12, "phase": 2, "role": "S-17", "icon": "barrera", "title": "Separa las retenidas", "action": "Lleva las retenidas al área de retenidas. S-18 pone la etiqueta con colada, línea y defecto.", "check": "Retenidas separadas y trazables.", "critical": true},
-    {"n": 13, "phase": 2, "role": "S-18", "icon": "radio", "title": "Avisa a la operación", "action": "Con romboidad > 6 mm, grietas o macro de rechazo, avisa por radio a C-06 de inmediato.", "check": "C-06 enterado en ≤ 15 min.", "critical": true},
-    {"n": 14, "phase": 2, "role": "C-09", "icon": "autorizar", "title": "Firma la disposición", "action": "Con el reporte de no conformidad de S-18, decide: esmerilar y reinspeccionar, degradar o rechazar.", "check": "Disposición escrita en ≤ 24 h [Validar]. Sin firma, la palanquilla sigue retenida."},
-    {"n": 15, "phase": 2, "role": "S-18", "icon": "tendencia", "title": "Actualiza la gráfica por línea", "action": "Anota la romboidad y los grados de macro en la gráfica de control de cada línea.", "check": "Tendencias al día."}
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-18",
+      "icon": "checklist",
+      "title": "Revisa la hoja de colada",
+      "action": "Busca las anomalías del turno: palanquillas A, T, B, E y C, sobrecalentamiento > 35 °C y cierres de línea.",
+      "check": "Lista de palanquillas a inspeccionar."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-18",
+      "icon": "inspeccionar",
+      "title": "Inspecciona visualmente",
+      "action": "Desde la pasarela revisa las caras visibles y los extremos del 100 % de las palanquillas al pasar por el lecho.",
+      "check": "Sin defectos de rechazo visibles.",
+      "quality": true,
+      "decision": {
+        "question": "¿Sin defecto visible?",
+        "no": "Etiqueta roja \"R\" y separa (paso 12)."
+      }
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-17",
+      "icon": "grua",
+      "title": "Aparta las palanquillas de muestra",
+      "action": "Lleva a la zona de inspección 1 palanquilla por línea por colada y las marcadas que pida S-18. Nadie bajo la carga.",
+      "check": "Palanquillas en la zona de inspección.",
+      "stop": "Hay alguien bajo la carga o en su trayectoria."
+    },
+    {
+      "n": 4,
+      "phase": 1,
+      "role": "S-18",
+      "icon": "medir",
+      "title": "Mide los lados",
+      "action": "Mide 2 lados a 1 m de cada extremo con el calibrador.",
+      "check": "160 ± 3 mm [Validar].",
+      "quality": true,
+      "stop": "El lecho está en movimiento o la palanquilla está en el recorrido de la grúa."
+    },
+    {
+      "n": 5,
+      "phase": 1,
+      "role": "S-18",
+      "icon": "medir",
+      "title": "Mide las diagonales",
+      "action": "Mide D1 y D2 en los mismos puntos y calcula ΔD = D1 − D2.",
+      "check": "ΔD ≤ 6 mm (objetivo ≤ 3 mm).",
+      "critical": true,
+      "decision": {
+        "question": "¿ΔD ≤ 6 mm?",
+        "no": "> 6 mm: retén \"R\". > 11: retén para rechazo (C-09)."
+      }
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "S-18",
+      "icon": "medir",
+      "title": "Mide rectitud y largo",
+      "action": "Mide la flecha con regla o hilo tenso y el largo con cinta.",
+      "check": "Flecha ≤ 5 mm/m y ≤ 40 mm; largo 12,000 ± 50 mm [Validar].",
+      "quality": true
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-18",
+      "icon": "medir",
+      "title": "Mide las marcas de oscilación",
+      "action": "Mide con la galga en 3 puntos por cara.",
+      "check": "Profundidad ≤ 0.6 mm.",
+      "quality": true
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-18",
+      "icon": "cortar",
+      "title": "Corta la rebanada para macro",
+      "action": "Según el plan de muestreo, corta la rebanada con guardas y permiso de trabajo en caliente. Identifícala con la marca.",
+      "check": "Rebanada identificada.",
+      "stop": "No hay permiso de trabajo en caliente o las guardas no están puestas."
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-11",
+      "icon": "muestra",
+      "title": "Ataca y clasifica la macro",
+      "action": "Ataca con ácido (HCl 1:1 a 70–80 °C [Validar]) en la campana o haz la impresión de azufre. Compara con la carta de grados junto con S-18.",
+      "check": "Grado registrado con foto; grietas en diagonal ≤ 1; porosidad central ≤ 1.5.",
+      "quality": true,
+      "stop": "La campana no extrae o la regadera y el lavaojos no funcionan."
+    },
+    {
+      "n": 10,
+      "phase": 1,
+      "role": "S-18",
+      "icon": "hmi",
+      "title": "Revisa la química",
+      "action": "Consulta en el LIMS el grado y el carbono equivalente.",
+      "check": "Dentro de especificación; CE ≤ 0.55 en varilla."
+    },
+    {
+      "n": 11,
+      "phase": 2,
+      "role": "S-18",
+      "icon": "calidad",
+      "title": "Clasifica la palanquilla",
+      "action": "Con los límites de la figura, clasifica: aceptada, retenida (etiqueta roja \"R\") o para rechazo. El rechazo lo firma C-09.",
+      "check": "Estado (aceptada, retenida \"R\" o rechazo) registrado en el rastreo.",
+      "critical": true
+    },
+    {
+      "n": 12,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "barrera",
+      "title": "Separa las retenidas",
+      "action": "Lleva las retenidas al área de retenidas. S-18 pone la etiqueta con colada, línea y defecto.",
+      "check": "Retenidas separadas y trazables.",
+      "critical": true,
+      "stop": "Hay alguien bajo la carga o en su trayectoria."
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-18",
+      "icon": "radio",
+      "title": "Avisa a la operación",
+      "action": "Con romboidad > 6 mm, grietas o macro de rechazo, avisa por radio a C-06 de inmediato.",
+      "check": "C-06 enterado por radio de inmediato (máximo 15 min).",
+      "critical": true
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "C-09",
+      "icon": "autorizar",
+      "title": "Firma la disposición",
+      "action": "Con el reporte de no conformidad de S-18, decide: esmerilar y reinspeccionar, degradar o rechazar.",
+      "check": "Disposición escrita en ≤ 24 h [Validar]. Sin firma, la palanquilla sigue retenida."
+    },
+    {
+      "n": 15,
+      "phase": 2,
+      "role": "S-18",
+      "icon": "tendencia",
+      "title": "Actualiza la gráfica por línea",
+      "action": "Anota la romboidad y los grados de macro en la gráfica de control de cada línea.",
+      "check": "Romboidad y grado de macro de la colada anotados en la gráfica de cada línea."
+    }
   ],
   "abnormal": [
-    {"icon": "tendencia", "if": "Romboidad > 6 mm en 2 coladas seguidas de la misma línea", "do": "Retén la línea desde la última buena. C-06 revisa la línea y se propone cambio de molde.", "call": "C-06, C-08 y S-25"},
-    {"icon": "buscar", "if": "Grietas de esquina repetidas", "do": "Retén y pide macro adicional.", "call": "C-06 y C-08"},
-    {"icon": "rechazar", "if": "Macro con grietas en la diagonal ≥ 3", "do": "Retén toda la colada de esa línea. Macro de la siguiente colada.", "call": "C-08 y C-09"},
-    {"icon": "calidad", "if": "Porosidad o rechupe central ≥ 2.5", "do": "Retén. Revisa en la hoja el sobrecalentamiento y el EMS.", "call": "C-08 y C-09"},
-    {"icon": "peligro", "if": "Sopladuras abiertas o química fuera de grado", "do": "Retén la colada completa. Revisa aceite y desoxidación en el LF.", "call": "C-06, C-07 y C-09"},
-    {"icon": "marcar", "if": "Palanquilla sin marca o con marca dudosa", "do": "Retén \"R\". Identificación por química si hace falta.", "call": "C-06 y C-09"},
-    {"icon": "alto", "if": "Palanquilla doblada", "do": "Para rechazo si no entra al horno de Laminación. Avisa.", "call": "C-06 y C-11"}
+    {
+      "icon": "tendencia",
+      "if": "Romboidad > 6 mm en 2 coladas seguidas de la misma línea",
+      "do": "Retén la línea desde la última buena. C-06 revisa la línea y se propone cambio de molde.",
+      "call": "C-06, C-08 y S-25"
+    },
+    {
+      "icon": "buscar",
+      "if": "Grietas de esquina repetidas",
+      "do": "Retén y pide macro adicional.",
+      "call": "C-06 y C-08"
+    },
+    {
+      "icon": "rechazar",
+      "if": "Macro con grietas en la diagonal ≥ 3",
+      "do": "Retén toda la colada de esa línea. Macro de la siguiente colada.",
+      "call": "C-08 y C-09"
+    },
+    {
+      "icon": "calidad",
+      "if": "Porosidad o rechupe central ≥ 2.5",
+      "do": "Retén. Revisa en la hoja el sobrecalentamiento y el EMS.",
+      "call": "C-08 y C-09"
+    },
+    {
+      "icon": "peligro",
+      "if": "Sopladuras abiertas o química fuera de grado",
+      "do": "Retén la colada completa. Revisa aceite y desoxidación en el LF.",
+      "call": "C-06, C-07 y C-09"
+    },
+    {
+      "icon": "marcar",
+      "if": "Palanquilla sin marca o con marca dudosa",
+      "do": "Retén \"R\". Identificación por química si hace falta.",
+      "call": "C-06 y C-09"
+    },
+    {
+      "icon": "primeros_auxilios",
+      "if": "Te salpica ácido en la piel o los ojos",
+      "do": "Ve de inmediato a la regadera o al lavaojos y enjuaga. Pide primeros auxilios.",
+      "call": "C-09 y servicio médico"
+    }
   ],
   "records": [
-    {"what": "Registro de inspección por colada y línea (lados, diagonales, ΔD, flecha, largo, marcas, visual)", "when": "Cada colada", "where": "Registro de inspección"},
-    {"what": "Registro de macro con foto y grado", "when": "Según plan de muestreo", "where": "Laboratorio"},
-    {"what": "Reporte de no conformidad y disposición firmada por C-09", "when": "Cada retención", "where": "Sistema de calidad"},
-    {"what": "Gráficas de control por línea (romboidad, macro)", "when": "Cada colada", "where": "Sistema de calidad"},
-    {"what": "Certificado de calidad por colada", "when": "Cada colada", "where": "Entrega a Laminación"}
+    {
+      "what": "Registro de inspección por colada y línea (lados, diagonales, ΔD, flecha, largo, marcas, visual)",
+      "when": "Cada colada",
+      "where": "Registro de inspección"
+    },
+    {
+      "what": "Registro de macro con foto y grado",
+      "when": "Según plan de muestreo",
+      "where": "Laboratorio"
+    },
+    {
+      "what": "Reporte de no conformidad y disposición firmada por C-09",
+      "when": "Cada retención",
+      "where": "Sistema de calidad"
+    },
+    {
+      "what": "Gráficas de control por línea (romboidad, macro)",
+      "when": "Cada colada",
+      "where": "Sistema de calidad"
+    },
+    {
+      "what": "Certificado de calidad por colada",
+      "when": "Cada colada",
+      "where": "Entrega a Laminación"
+    }
   ],
   "certification": [
-    {"role": "S-18", "level": "3", "theory": "24 h (defectos, metrología, macro, disposición)", "ojt": "80 h / 20 coladas; 20 macros", "evaluated": "Pasos 5, 11, 12 y 13; 10 macros con ≥ 90 % de acuerdo con C-09 [Validar]", "validity": "24 meses (TD-P07)"},
-    {"role": "S-11", "level": "3", "theory": "16 h (ataque ácido, seguridad química)", "ojt": "20 macros", "evaluated": "Paso 9 con seguridad química", "validity": "24 meses (TD-P07)"},
-    {"role": "C-09", "level": "4", "theory": "—", "ojt": "—", "evaluated": "Calibración anual de la carta de grados", "validity": "12 meses [Validar]"}
+    {
+      "role": "S-18",
+      "level": "3",
+      "theory": "24 h (defectos, metrología, macro y clasificación)",
+      "ojt": "80 h / 20 coladas; 20 macros",
+      "evaluated": "Pasos 5, 11, 12 y 13; 10 macros con ≥ 90 % de acuerdo con C-09 [Validar]",
+      "validity": "24 meses (TD-P07)"
+    },
+    {
+      "role": "S-11",
+      "level": "3",
+      "theory": "16 h (ataque ácido, seguridad química)",
+      "ojt": "20 macros",
+      "evaluated": "Paso 9 con seguridad química",
+      "validity": "24 meses (TD-P07)"
+    },
+    {
+      "role": "C-09",
+      "level": "4",
+      "theory": "—",
+      "ojt": "—",
+      "evaluated": "Calibración anual de la carta de grados",
+      "validity": "12 meses [Validar]"
+    }
   ],
   "glossary": [
-    {"term": "Romboidad (ΔD)", "def": "Diferencia entre las dos diagonales; nominal ≈ 226 mm. Aceptable ≤ 6 mm."},
-    {"term": "Macro", "def": "Corte transversal atacado con ácido que muestra grietas internas, porosidad y rechupe."},
-    {"term": "Retenida \"R\"", "def": "Palanquilla detenida con etiqueta roja hasta que C-09 decide."},
-    {"term": "Rechupe central", "def": "Hueco en el centro de la palanquilla por la contracción al solidificar."},
-    {"term": "Pinholes / sopladuras", "def": "Poros de gas cerca de la superficie (aceite húmedo o desoxidación pobre)."},
-    {"term": "Marcas de oscilación", "def": "Surcos transversales que deja la oscilación del molde; máximo 0.6 mm."},
-    {"term": "CE", "def": "Carbono equivalente; en varilla ≤ 0.55."}
+    {
+      "term": "Romboidad (ΔD)",
+      "def": "Diferencia entre las dos diagonales; nominal ≈ 226 mm. Aceptable ≤ 6 mm."
+    },
+    {
+      "term": "Macro",
+      "def": "Corte transversal atacado con ácido que muestra grietas internas, porosidad y rechupe."
+    },
+    {
+      "term": "Retenida \"R\"",
+      "def": "Palanquilla detenida con etiqueta roja hasta que C-09 decide."
+    },
+    {
+      "term": "Rechupe central",
+      "def": "Hueco en el centro de la palanquilla por la contracción al solidificar."
+    },
+    {
+      "term": "Pinholes / sopladuras",
+      "def": "Poros de gas cerca de la superficie (aceite húmedo o desoxidación pobre)."
+    },
+    {
+      "term": "Marcas de oscilación",
+      "def": "Surcos transversales que deja la oscilación del molde; máximo 0.6 mm."
+    },
+    {
+      "term": "CE",
+      "def": "Carbono equivalente; en varilla ≤ 0.55."
+    },
+    {
+      "term": "Palanquilla",
+      "def": "Producto de la CC2: barra cuadrada de 160 × 160 mm (o 130 × 130 mm) y 12 m de largo."
+    },
+    {
+      "term": "Galga",
+      "def": "Instrumento para medir la profundidad de un defecto o de una marca."
+    },
+    {
+      "term": "Flecha",
+      "def": "Qué tanto se curva la palanquilla a lo largo."
+    },
+    {
+      "term": "LIMS",
+      "def": "Sistema del laboratorio donde se registran y consultan los análisis químicos."
+    },
+    {
+      "term": "Permiso de trabajo en caliente",
+      "def": "Permiso de trabajo en caliente: autorización escrita para trabajar con flama o chispa (oxicorte, escarpeo)."
+    }
   ],
   "review": [
-    {"area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28"}
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    }
   ]
 }

@@ -8,88 +8,450 @@
   "owner": "C-07",
   "manual": "02-operacion/eaf/MO-EAF-05-escoria-espumosa-oxigeno-carbono.md",
   "deck": "05-capacitacion/MO-EAF-05",
-  "purpose": "Formar una escoria espumosa que cubra el arco (B2 1.8–2.2, FeO 25–35 %, MgO 8–10 %) y sacar la escoria por la puerta de forma controlada, sin exponer a nadie.",
+  "purpose": "Formar una escoria espumosa que tape el arco y proteja el horno, y sacar la escoria por la puerta de forma controlada, sin exponer a nadie. Objetivo: B2 1.8–2.2, FeO 25–35 %, MgO 8–10 %.",
   "whyItMatters": "Sin espuma el arco quema paneles y bóveda. Escoria sobre agua explota, y una ebullición violenta proyecta escoria y metal por la puerta.",
   "startsWhen": "El baño está plano (canasta ≥ 70 % fundida) y arranca el DRI (MO-EAF-03, MO-EAF-04 etapa 3).",
   "endsWhen": "Termina el afino, la olla de escoria sale llena por la ruta y los consumos quedan registrados.",
-  "previous": ["MO-EAF-04"],
-  "next": ["MO-EAF-06", "MO-EAF-07"],
-  "heroFigure": { "file": "img/eaf-corte-horno.svg", "caption": "Corte del horno: lanzas de pared, inyector de carbono, puerta de escoria y olla de escoria bajo la puerta." },
+  "previous": [
+    "MO-EAF-04",
+    "MO-EAF-03"
+  ],
+  "next": [
+    "MO-EAF-06",
+    "MO-EAF-07"
+  ],
+  "heroFigure": {
+    "file": "img/eaf-corte-horno.svg",
+    "caption": "Corte del horno: lanzas de pared, inyector de carbono, puerta de escoria y olla de escoria bajo la puerta."
+  },
   "figures": [
-    { "file": "img/ms-zonas-exclusion-nave.svg", "caption": "Zonas de exclusión: ≤ 5 m de la puerta de escoria y ≤ 15 m del punto de volteo de la olla de escoria." }
+    {
+      "file": "img/ms-zonas-exclusion-nave.svg",
+      "caption": "Zonas de exclusión: ≤ 5 m de la puerta de escoria y ≤ 15 m del punto de volteo de la olla de escoria."
+    }
   ],
   "roles": [
-    { "code": "S-01", "name": "Primer Hornero (púlpito)", "raci": "R", "does": "Opera quemadores, lanzas e inyección de carbono; ajusta según espuma, temperatura y análisis.", "it": "IT-S01" },
-    { "code": "S-02", "name": "Segundo Hornero (piso)", "raci": "R", "does": "Observa la puerta, controla el flujo de escoria, toma la muestra de escoria y limpia la puerta.", "it": "IT-S02" },
-    { "code": "S-10", "name": "Operador de Manejo de Escoria", "raci": "R", "does": "Coloca la olla de escoria seca bajo la puerta, la retira llena y la vacía en el patio.", "it": "IT-S10" },
-    { "code": "C-07", "name": "Ingeniero de Proceso EAF / LF", "raci": "A", "does": "Dueño. Define los programas de O₂, gas y carbono por etapa y la química objetivo de la escoria." },
-    { "code": "S-11", "name": "Muestrero / Analista de Laboratorio", "raci": "C", "does": "Analiza la escoria: CaO, SiO₂, FeO, MgO y P₂O₅.", "it": "IT-S11" },
-    { "code": "C-05", "name": "Supervisor de Hornos", "raci": "C", "does": "Autoriza desviaciones y detiene el desescoriado ante riesgo.", "it": "IT-C05" }
+    {
+      "code": "S-01",
+      "name": "Primer Hornero (púlpito)",
+      "raci": "R",
+      "does": "Opera quemadores, lanzas e inyección de carbono; ajusta según espuma, temperatura y análisis.",
+      "it": "IT-S01"
+    },
+    {
+      "code": "S-02",
+      "name": "Segundo Hornero (piso)",
+      "raci": "R",
+      "does": "Observa la puerta, controla el flujo de escoria, toma la muestra de escoria y limpia la puerta.",
+      "it": "IT-S02"
+    },
+    {
+      "code": "S-10",
+      "name": "Operador de Manejo de Escoria",
+      "raci": "R",
+      "does": "Coloca la olla de escoria seca bajo la puerta, la retira llena y la vacía en el patio.",
+      "it": "IT-S10"
+    },
+    {
+      "code": "C-07",
+      "name": "Ingeniero de Proceso EAF / LF",
+      "raci": "A",
+      "does": "Dueño. Define los programas de O₂, gas y carbono por etapa y la química objetivo de la escoria."
+    },
+    {
+      "code": "S-11",
+      "name": "Muestrero / Analista de Laboratorio",
+      "raci": "C",
+      "does": "Analiza la escoria: CaO, SiO₂, FeO, MgO y P₂O₅.",
+      "it": "IT-S11"
+    },
+    {
+      "code": "C-05",
+      "name": "Supervisor de Hornos",
+      "raci": "R",
+      "does": "Supervisa al personal del horno en el turno. Autoriza desviaciones y detiene el desescoriado ante riesgo.",
+      "it": "IT-C05"
+    }
   ],
   "goldenRules": [
     "Olla de escoria o fosa con agua = no se desescoria. Escoria sobre agua explota.",
     "Nadie frente ni bajo la puerta mientras sale escoria: zona roja de 5 m.",
     "Ante ebullición: corta el carbono, reduce el O₂ y saca a todos del frente de la puerta."
   ],
-  "epp": ["casco", "careta_dorada", "aluminizado", "guantes", "ropa_fr", "botas", "auditiva", "detector_gas"],
+  "epp": [
+    "casco",
+    "careta_dorada",
+    "aluminizado",
+    "guantes",
+    "ropa_fr",
+    "botas",
+    "auditiva",
+    "detector_gas"
+  ],
   "dangerZone": {
     "red": "Zona roja: ≤ 5 m frente y bajo la puerta de escoria mientras sale escoria, y ≤ 15 m del punto de volteo de la olla de escoria.",
     "yellow": "Zona amarilla: de 5 a 15 m de la puerta de escoria.",
     "rule": "Solo el portaollas en posición; peatones fuera. Si hay agua en la olla o en la fosa, no se desescoria (MS-ACE-01, MS-ACE-03)."
   },
   "hazards": [
-    { "icon": "agua", "text": "Escoria sobre agua u olla de escoria húmeda: explosión." },
-    { "icon": "flujo", "text": "Ebullición violenta: escoria y metal proyectados por la puerta." },
-    { "icon": "oxigeno", "text": "Enriquecimiento de O₂ y retroceso de llama: incendio y quemaduras." },
-    { "icon": "gas", "text": "Monóxido de carbono (CO) por la puerta." },
-    { "icon": "carro", "text": "Tránsito del portaollas de escoria: atropellamiento." }
+    {
+      "icon": "agua",
+      "text": "Escoria sobre agua u olla de escoria húmeda: explosión."
+    },
+    {
+      "icon": "flujo",
+      "text": "Ebullición violenta: escoria y metal proyectados por la puerta."
+    },
+    {
+      "icon": "oxigeno",
+      "text": "Enriquecimiento de O₂ y retroceso de llama: incendio y quemaduras."
+    },
+    {
+      "icon": "gas",
+      "text": "Monóxido de carbono (CO) por la puerta."
+    },
+    {
+      "icon": "carro",
+      "text": "Tránsito del portaollas de escoria: atropellamiento."
+    }
   ],
-  "phases": ["Formar la espuma", "Desescoriar", "Al terminar"],
+  "phases": [
+    "Formar la espuma",
+    "Desescoriar",
+    "Al terminar"
+  ],
   "steps": [
-    { "n": 1, "phase": 0, "role": "S-01", "icon": "verificar", "title": "Verifica los equipos", "action": "Revisa agua de los bloques de quemador, presiones de O₂, gas y aire de transporte de carbono, y nivel de silos.", "check": "Sin alarmas." },
-    { "n": 2, "phase": 0, "role": "S-01", "icon": "fuego", "title": "Opera en modo quemador", "action": "En la fusión de canasta usa O₂:gas ≈ 2:1, de 1,500 a 2,500 Nm³/h por quemador.", "check": "Chatarra frente al quemador fundida." },
-    { "n": 3, "phase": 0, "role": "S-01", "icon": "oxigeno", "title": "Cambia a modo lanza", "action": "Con baño plano pasa las lanzas al programa de la etapa (1,800–2,500 Nm³/h).", "check": "Transición sin retroceso de llama." },
-    { "n": 4, "phase": 0, "role": "S-01", "icon": "flujo", "title": "Inicia la inyección de carbono", "action": "Inyecta 40–60 kg/min en total [Supuesto] y ajusta según la espuma.", "check": "Espuma visible en la puerta o la cámara; arco silencioso.", "decision": { "question": "¿La espuma cubre el arco?", "no": "Seca: más O₂, revisa B2 y MgO. Fluida: más C y cal." } },
-    { "n": 5, "phase": 0, "role": "S-01", "icon": "material", "title": "Agrega los fundentes", "action": "Agrega cal y dolomita junto con el DRI (MO-EAF-03).", "check": "Cal 30–45 kg/t y dolomita 10–15 kg/t; B2 y MgO en rango.", "quality": true },
-    { "n": 6, "phase": 1, "role": "S-10", "icon": "olla", "title": "Coloca la olla de escoria seca", "action": "Coloca la olla bajo la puerta. Revisa que no tenga agua de lluvia ni hielo. Confirma \"olla seca\" por radio.", "check": "Olla seca y en posición.", "critical": true, "stop": "La olla tiene agua o hielo." },
-    { "n": 7, "phase": 1, "role": "S-02", "icon": "inspeccionar", "title": "Confirma olla y fosa secas", "action": "Revisa la olla y la fosa bajo la puerta: sin charcos, sin agua estancada y sin tuberías con fuga.", "check": "\"Olla seca\" confirmada por radio.", "critical": true, "stop": "Hay agua en la olla o en la fosa.", "decision": { "question": "¿Olla y fosa secas?", "no": "No desescories. Controla nivel con O₂/C y cambia la olla." } },
-    { "n": 8, "phase": 1, "role": "S-02", "icon": "barrera", "title": "Despeja el frente de la puerta", "action": "Saca a las personas del frente y de bajo la puerta. Suena la bocina.", "check": "Nadie a ≤ 5 m de la puerta.", "critical": true, "stop": "Hay alguien frente o bajo la puerta." },
-    { "n": 9, "phase": 1, "role": "S-01", "icon": "girar", "title": "Desescoria con flujo controlado", "action": "Inclina hacia la puerta (−3 a −8° [Validar con OEM]). Deja salir la escoria a flujo continuo, sin arrastrar metal.", "check": "Flujo continuo, sin gotas de metal en la escoria." },
-    { "n": 10, "phase": 1, "role": "S-02", "icon": "muestra", "title": "Toma la muestra de escoria", "action": "En el afino toma la muestra con cuchara o probador desde posición protegida y envíala al laboratorio.", "check": "Muestra enviada; S-11 reporta B2, FeO y MgO.", "quality": true },
-    { "n": 11, "phase": 1, "role": "S-01", "icon": "ajustar", "title": "Corrige la química de la escoria", "action": "FeO > 38 %: más C y menos O₂. B2 < 1.8: más cal. MgO < 8 %: agrega dolomita.", "check": "B2 1.8–2.2, FeO 25–35 % y MgO 8–10 % en la siguiente muestra." },
-    { "n": 12, "phase": 1, "role": "S-01", "icon": "alarma", "title": "Vigila la ebullición", "action": "Busca subida súbita de espuma, llama larga en la puerta o CO alto. Si aparece: corta el C, reduce el O₂, detén el DRI y saca a todos del frente.", "check": "Sin ebullición.", "critical": true, "stop": "La espuma sube de golpe con llama larga en la puerta.", "decision": { "question": "¿Sin ebullición violenta?", "no": "Corta C, reduce O₂, detén DRI. Todos fuera del frente." } },
-    { "n": 13, "phase": 2, "role": "S-10", "icon": "carro", "title": "Retira la olla de escoria", "action": "Retira la olla llena por la ruta señalizada, con los peatones fuera.", "check": "Llenado ≤ 80 % [Supuesto] y sin derrame." },
-    { "n": 14, "phase": 2, "role": "S-01", "icon": "registrar", "title": "Registra consumos y análisis", "action": "Registra O₂, carbono, cal, dolomita, análisis de escoria y eventos.", "check": "O₂ 30–40 Nm³/t y C 8–12 kg/t; registro completo." }
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-01",
+      "icon": "verificar",
+      "title": "Verifica los equipos",
+      "action": "Revisa el agua de los bloques de quemador y el nivel de los silos. Revisa las presiones de O₂, gas y aire de transporte de carbono.",
+      "check": "La HMI no tiene alarmas de agua, O₂, gas ni carbono; los silos tienen material."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-01",
+      "icon": "fuego",
+      "title": "Opera en modo quemador",
+      "action": "En la fusión de canasta usa O₂:gas ≈ 2:1, de 1,500 a 2,500 Nm³/h por quemador.",
+      "check": "Chatarra frente al quemador fundida."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-01",
+      "icon": "oxigeno",
+      "title": "Cambia a modo lanza",
+      "action": "Con baño plano pasa las lanzas al programa de la etapa (1,800–2,500 Nm³/h).",
+      "check": "Transición sin retroceso de llama."
+    },
+    {
+      "n": 4,
+      "phase": 0,
+      "role": "S-01",
+      "icon": "flujo",
+      "title": "Inicia la inyección de carbono",
+      "action": "Inyecta 40–60 kg/min en total [Supuesto] y ajusta según la espuma.",
+      "check": "Espuma visible en la puerta o la cámara; arco silencioso.",
+      "decision": {
+        "question": "¿La espuma cubre el arco?",
+        "no": "Seca: más O₂, revisa B2 y MgO. Fluida: más C y cal."
+      }
+    },
+    {
+      "n": 5,
+      "phase": 0,
+      "role": "S-01",
+      "icon": "material",
+      "title": "Agrega los fundentes",
+      "action": "Agrega cal y dolomita junto con el DRI (MO-EAF-03).",
+      "check": "Cal 30–45 kg/t y dolomita 10–15 kg/t; B2 y MgO en rango.",
+      "quality": true
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "S-10",
+      "icon": "olla",
+      "title": "Coloca la olla de escoria seca",
+      "action": "Coloca la olla bajo la puerta. Revisa que no tenga agua de lluvia ni hielo. Confirma \"olla seca\" por radio.",
+      "check": "Olla seca y en posición.",
+      "critical": true,
+      "stop": "La olla tiene agua o hielo."
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-02",
+      "icon": "inspeccionar",
+      "title": "Confirma olla y fosa secas",
+      "action": "Revisa la olla y la fosa bajo la puerta: sin charcos, sin agua estancada y sin tuberías con fuga.",
+      "check": "\"Olla seca\" confirmada por radio.",
+      "critical": true,
+      "stop": "Hay agua en la olla o en la fosa.",
+      "decision": {
+        "question": "¿Olla y fosa secas?",
+        "no": "No desescories. Controla nivel con O₂/C y cambia la olla."
+      }
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-02",
+      "icon": "barrera",
+      "title": "Despeja el frente de la puerta",
+      "action": "Saca a las personas del frente y de bajo la puerta. Suena la bocina.",
+      "check": "Nadie a ≤ 5 m de la puerta.",
+      "critical": true,
+      "stop": "Hay alguien frente o bajo la puerta."
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-01",
+      "icon": "girar",
+      "title": "Desescoria con flujo controlado",
+      "action": "Inclina hacia la puerta (−3 a −8° [Validar con OEM]). Deja salir la escoria a flujo continuo, sin arrastrar metal.",
+      "check": "Flujo continuo, sin gotas de metal en la escoria.",
+      "stop": "S-02 no ha confirmado por radio \"olla seca\" y \"zona libre\"."
+    },
+    {
+      "n": 10,
+      "phase": 1,
+      "role": "S-02",
+      "icon": "muestra",
+      "title": "Toma la muestra de escoria",
+      "action": "En el afino toma la muestra con cuchara o probador desde posición protegida: de lado a la puerta, a ≥ 1.5 m y máximo 2 min en zona roja. Envíala al laboratorio.",
+      "check": "Muestra enviada; S-11 reporta B2, FeO y MgO.",
+      "quality": true
+    },
+    {
+      "n": 11,
+      "phase": 1,
+      "role": "S-01",
+      "icon": "ajustar",
+      "title": "Corrige la química de la escoria",
+      "action": "FeO > 38 %: más C y menos O₂. B2 < 1.8: más cal. MgO < 8 %: agrega dolomita.",
+      "check": "B2 1.8–2.2, FeO 25–35 % y MgO 8–10 % en la siguiente muestra."
+    },
+    {
+      "n": 12,
+      "phase": 1,
+      "role": "S-01",
+      "icon": "alarma",
+      "title": "Vigila la ebullición",
+      "action": "Busca subida súbita de espuma, llama larga en la puerta o CO alto. Si aparece: corta el C, reduce el O₂, detén el DRI y saca a todos del frente.",
+      "check": "Sin ebullición.",
+      "critical": true,
+      "stop": "La espuma sube de golpe con llama larga en la puerta.",
+      "decision": {
+        "question": "¿Sin ebullición violenta?",
+        "no": "Corta C, reduce O₂, detén DRI. Todos fuera del frente."
+      }
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-10",
+      "icon": "carro",
+      "title": "Retira la olla de escoria",
+      "action": "Retira la olla llena por la ruta señalizada, con los peatones fuera.",
+      "check": "Llenado ≤ 80 % [Supuesto] y sin derrame.",
+      "stop": "Hay peatones en la ruta del portaollas."
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "registrar",
+      "title": "Registra consumos y análisis",
+      "action": "Registra O₂, carbono, cal, dolomita, análisis de escoria y eventos.",
+      "check": "O₂ 30–40 Nm³/t y C 8–12 kg/t; registro completo."
+    }
   ],
   "abnormal": [
-    { "icon": "flujo", "if": "Ebullición violenta: escoria saliendo en masa", "do": "Corta C, reduce O₂ y detén DRI. Todos fuera del frente de la puerta. No inclines más.", "call": "C-05 y C-04" },
-    { "icon": "electrico", "if": "Escoria plana y arco ruidoso", "do": "Más C y más cal. Baja el tap.", "call": "C-07" },
-    { "icon": "material", "if": "Escoria seca o espesa", "do": "Más O₂, menos cal. Revisa la temperatura.", "call": "C-07" },
-    { "icon": "agua", "if": "Olla de escoria húmeda o fosa con agua", "do": "No desescories. Controla el nivel con O₂/C. Cambia la olla.", "call": "C-05" },
-    { "icon": "fuego", "if": "Retroceso de llama o alarma de quemador", "do": "Corta ese quemador y purga. Mantenimiento.", "call": "C-05" },
-    { "icon": "agua", "if": "Fuga de agua de un bloque de quemador", "do": "Corta el O₂ y el agua del bloque. Aplica MO-EAF-01 §9.", "call": "C-05 y Mantenimiento" },
-    { "icon": "calidad", "if": "P > 0.015 % antes de vaciar", "do": "Más desescoriado, cal y O₂. C-05 decide si se vacía.", "call": "C-05 y C-09" }
+    {
+      "icon": "flujo",
+      "if": "Ebullición violenta: escoria saliendo en masa",
+      "do": "Corta C, reduce O₂ y detén DRI. Todos fuera del frente de la puerta, a zona verde o refugio. No inclines más.",
+      "call": "C-05 y C-04"
+    },
+    {
+      "icon": "electrico",
+      "if": "Escoria plana y arco ruidoso",
+      "do": "Más C y más cal. Baja el tap.",
+      "call": "C-07"
+    },
+    {
+      "icon": "material",
+      "if": "Escoria seca o espesa",
+      "do": "Más O₂, menos cal. Revisa la temperatura.",
+      "call": "C-07"
+    },
+    {
+      "icon": "agua",
+      "if": "Olla de escoria húmeda o fosa con agua",
+      "do": "No desescories. Controla el nivel con O₂/C. Cambia la olla.",
+      "call": "C-05"
+    },
+    {
+      "icon": "fuego",
+      "if": "Retroceso de llama o alarma de quemador",
+      "do": "Corta ese quemador y purga. Mantenimiento.",
+      "call": "C-05"
+    },
+    {
+      "icon": "agua",
+      "if": "Fuga de agua de un bloque de quemador",
+      "do": "Corta el O₂ y el agua del bloque. Aplica MO-EAF-01 §9.",
+      "call": "C-05 y Mantenimiento"
+    },
+    {
+      "icon": "gas",
+      "if": "Tu detector suena frente a la puerta (CO 25 ppm)",
+      "do": "Sal a zona verde y avisa por radio con lugar y lectura. Con CO 200 ppm, C-04 evacúa el sector. S-01 revisa que la presión del horno sea negativa.",
+      "call": "C-05 y C-04 (MS-ACE-06)"
+    }
   ],
   "records": [
-    { "what": "Consumos: O₂, gas natural, carbono, cal, dolomita", "when": "Cada colada", "where": "Nivel 2" },
-    { "what": "Análisis de escoria (B2, FeO, MgO, P₂O₅)", "when": "Cada colada", "where": "Laboratorio / nivel 2" },
-    { "what": "Ollas de escoria: número, estado seco, llenado", "when": "Cada olla", "where": "Registro de escoria" },
-    { "what": "Eventos de ebullición y retrocesos de llama", "when": "Cuando ocurre", "where": "Bitácora del horno" }
+    {
+      "what": "Consumos: O₂, gas natural, carbono, cal, dolomita",
+      "when": "Cada colada",
+      "where": "Nivel 2"
+    },
+    {
+      "what": "Análisis de escoria (B2, FeO, MgO, P₂O₅)",
+      "when": "Cada colada",
+      "where": "Laboratorio / nivel 2"
+    },
+    {
+      "what": "Ollas de escoria: número, estado seco, llenado",
+      "when": "Cada olla",
+      "where": "Registro de escoria"
+    },
+    {
+      "what": "Eventos de ebullición y retrocesos de llama",
+      "when": "Cuando ocurre",
+      "where": "Bitácora del horno"
+    }
   ],
   "certification": [
-    { "role": "S-01", "level": "3", "theory": "24 h (química de escoria, O₂, C)", "ojt": "120 h / 50 coladas", "evaluated": "Vigilar ebullición y corregir la química; escenario de boiling", "validity": "24 meses" },
-    { "role": "S-02", "level": "3", "theory": "12 h", "ojt": "60 h / 30 desescoriados", "evaluated": "Olla y fosa secas, zona libre, muestra de escoria, ebullición", "validity": "24 meses" },
-    { "role": "S-10", "level": "3", "theory": "16 h (portaollas, rutas, escoria–agua)", "ojt": "60 h / 40 ollas", "evaluated": "Olla y fosa secas; rutas", "validity": "24 meses" }
+    {
+      "role": "S-01",
+      "level": "3",
+      "theory": "24 h (química de escoria, O₂, C)",
+      "ojt": "120 h / 50 coladas",
+      "evaluated": "Vigilar ebullición y corregir la química; escenario de boiling",
+      "validity": "24 meses"
+    },
+    {
+      "role": "S-02",
+      "level": "3",
+      "theory": "12 h",
+      "ojt": "60 h / 30 desescoriados",
+      "evaluated": "Olla y fosa secas, zona libre, muestra de escoria, ebullición",
+      "validity": "24 meses"
+    },
+    {
+      "role": "S-10",
+      "level": "3",
+      "theory": "16 h (portaollas, rutas, escoria–agua)",
+      "ojt": "60 h / 40 ollas",
+      "evaluated": "Olla y fosa secas; rutas",
+      "validity": "24 meses"
+    }
   ],
   "glossary": [
-    { "term": "Escoria espumosa", "def": "Escoria inflada con burbujas de CO que cubre el arco." },
-    { "term": "Basicidad B2", "def": "Relación CaO/SiO₂ de la escoria; objetivo 1.8–2.2." },
-    { "term": "FeO", "def": "Óxido de hierro en la escoria; objetivo 25–35 %." },
-    { "term": "Modo quemador / modo lanza", "def": "Quemador: O₂ + gas para fundir chatarra. Lanza: chorro de O₂ para afinar y espumar." },
-    { "term": "Desescoriado", "def": "Sacar la escoria por la puerta inclinando el horno hacia la olla de escoria." },
-    { "term": "Ebullición violenta (boiling)", "def": "Reacción súbita de FeO con carbono que saca escoria y metal por la puerta." }
+    {
+      "term": "Escoria espumosa",
+      "def": "Escoria inflada con burbujas de CO que cubre el arco."
+    },
+    {
+      "term": "Basicidad B2",
+      "def": "Relación CaO/SiO₂ de la escoria; objetivo 1.8–2.2."
+    },
+    {
+      "term": "FeO",
+      "def": "Óxido de hierro en la escoria; objetivo 25–35 %."
+    },
+    {
+      "term": "Modo quemador / modo lanza",
+      "def": "Quemador: O₂ + gas para fundir chatarra. Lanza: chorro de O₂ para afinar y espumar."
+    },
+    {
+      "term": "Desescoriado",
+      "def": "Sacar la escoria por la puerta inclinando el horno hacia la olla de escoria."
+    },
+    {
+      "term": "Ebullición violenta (boiling)",
+      "def": "Reacción súbita de FeO con carbono que saca escoria y metal por la puerta."
+    },
+    {
+      "term": "Olla de escoria",
+      "def": "Recipiente que recibe la escoria bajo la puerta del horno; siempre debe estar seca."
+    },
+    {
+      "term": "HMI",
+      "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+    },
+    {
+      "term": "Fundentes",
+      "def": "Cal y dolomita que se agregan para formar la escoria y proteger el refractario."
+    },
+    {
+      "term": "MgO",
+      "def": "Óxido de magnesio: material refractario de las reparaciones; en la escoria protege las paredes del horno."
+    },
+    {
+      "term": "Afino",
+      "def": "Última etapa en el horno: con la carga fundida se ajustan temperatura, carbono y oxígeno antes de vaciar."
+    },
+    {
+      "term": "Nm³/h",
+      "def": "Unidad de caudal de gas (oxígeno, gas natural): metros cúbicos por hora en condiciones normales."
+    },
+    {
+      "term": "Zona roja",
+      "def": "Zona roja o de exclusión: área donde nadie puede estar a pie mientras hay metal líquido o una carga en movimiento."
+    },
+    {
+      "term": "Baño plano",
+      "def": "Momento en que la chatarra ya se fundió y el arco trabaja sobre acero líquido."
+    }
   ],
   "review": [
-    { "area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28" }
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    }
   ]
 }

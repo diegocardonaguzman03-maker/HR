@@ -8,7 +8,7 @@
   "owner": "C-06",
   "manual": "02-operacion/cc1/MO-CC1-06-cambio-sen-y-distribuidor.md",
   "deck": "05-capacitacion/MO-CC1-06",
-  "purpose": "Atender el taponamiento (clogging) de la buza sumergida (SEN) y cambiar la SEN o el distribuidor sin perder la secuencia, sin rebose en el molde y sin exponer a nadie al metal líquido.",
+  "purpose": "Atender el taponamiento (clogging) de la buza sumergida (SEN) sin perder la secuencia. Cambiar la SEN o el distribuidor sin rebose y sin exponer a nadie al metal líquido.",
   "whyItMatters": "Una SEN tapada o rota da grietas, inclusiones y pérdida de nivel. Un cambio mal hecho puede derramar acero, romper la unión bajo el molde (breakout) o cerrar la secuencia.",
   "startsWhen": "La tendencia del tapón indica clogging, la SEN está gastada o rota, o el distribuidor llega al fin de su vida o hay cambio de grado incompatible, con la máquina colando (MO-CC1-04).",
   "endsWhen": "La colada sigue a velocidad de tabla, el planchón del cambio o de unión está marcado y la zona bajo el molde se levanta con autorización de C-06.",
@@ -19,6 +19,7 @@
   ],
   "next": [
     "MO-CC1-04",
+    "MO-CC1-07",
     "MO-CC1-08",
     "MO-CC1-09"
   ],
@@ -131,8 +132,8 @@
   ],
   "phases": [
     "Clogging",
-    "Cambio de SEN",
-    "Cambio de distribuidor"
+    "Opción A: cambio de SEN",
+    "Opción B: cambio de distribuidor"
   ],
   "steps": [
     {
@@ -290,8 +291,9 @@
       "check": "Sin derrame; SEN centrada ± 5 mm, inmersión 120–160 mm.",
       "decision": {
         "question": "¿Detenida ≤ 3 min?",
-        "no": "S-14 pone la grapa [Validar OEM]. > 5 min: cierre."
-      }
+        "no": "3 a 5 min: grapa (S-14) [Validar OEM]. Más de 5 min: cierre."
+      },
+      "stop": "Hay alguien en la ruta de los carros o entre ellos, o la fosa del distribuidor tiene agua."
     },
     {
       "n": 16,
@@ -354,6 +356,12 @@
       "if": "Distribuidor nuevo con vapor o SEN fría",
       "do": "No lo uses. Si no hay otro: cierre de secuencia.",
       "call": "C-06 y C-15"
+    },
+    {
+      "icon": "alto",
+      "if": "El cambiador de SEN no acciona",
+      "do": "No dejes el tapón cerrado más de 15 s: reabre con la SEN vieja y baja la velocidad.",
+      "call": "C-06 y S-22"
     }
   ],
   "records": [
@@ -384,7 +392,7 @@
       "level": "3",
       "theory": "16 h",
       "ojt": "6 cambios de SEN + 4 cambios de distribuidor",
-      "evaluated": "Pasos 4, 5, 7, 11, 12, 14, 16 y 18 (B1, B2, B6, C1, C3, C5, C11, C13 del manual)",
+      "evaluated": "Pasos que ejecuta: 2, 7, 8, 14, 15 y 16; conoce la zona roja de los pasos 5, 12 y 18 (B1, B2, B6, C1, C3, C5, C11, C13 del manual)",
       "validity": "≤ 24 meses (TD-P07)"
     },
     {
@@ -439,7 +447,27 @@
     },
     {
       "term": "BOP",
-      "def": "Sistema de predicción de breakout del molde."
+      "def": "Sistema de termopares del molde que predice un breakout: avisa y baja la velocidad."
+    },
+    {
+      "term": "Rastreo (tracking)",
+      "def": "Registro en nivel 2 / MES que sigue cada planchón o palanquilla desde su colada; ahí se marcan los eventos."
+    },
+    {
+      "term": "Tracking",
+      "def": "Tracking (rastreo): sistema de nivel 2 que sigue cada pieza, su colada y sus eventos."
+    },
+    {
+      "term": "Menisco",
+      "def": "Superficie del acero líquido dentro del molde; su nivel se mantiene en ± 3 mm."
+    },
+    {
+      "term": "Zona roja",
+      "def": "Zona roja o de exclusión: área donde nadie puede estar a pie mientras hay metal líquido o una carga en movimiento."
+    },
+    {
+      "term": "Inmersión de la SEN",
+      "def": "Qué tan metida está la punta de la SEN bajo el menisco (120–160 mm)."
     }
   ],
   "review": [
@@ -447,6 +475,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

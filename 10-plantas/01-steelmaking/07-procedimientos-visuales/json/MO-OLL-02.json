@@ -8,7 +8,7 @@
   "owner": "C-04",
   "manual": "02-operacion/ollas-lf/MO-OLL-02-traslado-ollas-grua-colada.md",
   "deck": "05-capacitacion/MO-OLL-02",
-  "purpose": "Llevar la olla con ≈ 150 t de acero líquido del horno olla a la torreta de CC1 o CC2, y regresar la olla vacía, sin nadie bajo la carga, sin choques y a tiempo.",
+  "purpose": "Llevar la olla llena (≈ 150 t) del horno olla a la torreta de CC1 o CC2 y regresar la vacía. Sin nadie bajo la carga, sin choques y a tiempo.",
   "whyItMatters": "Si la olla cae, se voltea o se derrama, puede matar a quien esté cerca. Un traslado lento enfría el acero y afecta la colada.",
   "startsWhen": "El operador del horno olla libera la olla tratada (MO-LF-01).",
   "endsWhen": "La olla queda asentada en la torreta (MO-CC1-03 o MO-CC1-05 / MO-CC2-05) y la olla vacía llega a preparación (MO-OLL-01).",
@@ -18,6 +18,7 @@
   "next": [
     "MO-CC1-03",
     "MO-CC1-05",
+    "MO-CC2-03",
     "MO-CC2-05",
     "MO-OLL-01"
   ],
@@ -40,7 +41,7 @@
       "code": "S-09",
       "name": "Operador de Grúa de Colada",
       "raci": "R",
-      "does": "Inspecciona la grúa, iza, traslada y asienta. Puede negarse a mover una olla insegura.",
+      "does": "Inspecciona la grúa, iza, traslada y asienta. Si la olla o la grúa no son seguras, no la mueve y avisa a C-04.",
       "it": "IT-S09"
     },
     {
@@ -54,7 +55,7 @@
       "code": "S-06",
       "name": "Operador de Horno Olla",
       "raci": "R",
-      "does": "Libera la olla: temperatura, química, argón suave cumplido, bordo libre y sin fuga.",
+      "does": "Confirma por radio que la olla está lista: temperatura, química, argón suave cumplido, bordo libre y sin fuga.",
       "it": "IT-S06"
     },
     {
@@ -160,9 +161,10 @@
       "phase": 0,
       "role": "S-06",
       "icon": "radio",
-      "title": "Libera la olla por radio",
-      "action": "Confirma por radio a S-09: colada, temperatura, química, argón suave cumplido, bordo libre y que no hay fuga ni punto caliente.",
-      "check": "Liberación por radio; bordo libre ≥ 300 mm [Supuesto]."
+      "title": "Confirma la olla lista por radio",
+      "action": "Confirma por radio a S-09: colada, temperatura, química y argón suave cumplido. Confirma el bordo libre y que no hay fuga ni punto caliente.",
+      "check": "Confirmación por radio; bordo libre ≥ 300 mm [Supuesto].",
+      "stop": "Ves fuga o punto caliente en la coraza, o el bordo libre es menor de 300 mm [Supuesto]."
     },
     {
       "n": 3,
@@ -233,7 +235,8 @@
       "title": "Traslada por la ruta definida",
       "action": "Viaja a la altura mínima segura, ≥ 1 m sobre el obstáculo más alto. Máximo 50 % de velocidad [Validar con OEM]. Arranca y frena suave.",
       "check": "Sin balanceo; LF → torreta en ≤ 8 min [Supuesto].",
-      "quality": true
+      "quality": true,
+      "stop": "Una persona entra a la ruta o la olla se balancea."
     },
     {
       "n": 9,
@@ -252,7 +255,8 @@
       "title": "Asienta la olla",
       "action": "Baja suave hasta que la olla asiente completa en el brazo de la torreta.",
       "check": "Olla asentada sin golpe.",
-      "critical": true
+      "critical": true,
+      "stop": "Pierdes de vista a S-13 o sus señales."
     },
     {
       "n": 11,
@@ -271,7 +275,8 @@
       "icon": "grua",
       "title": "Libera los ganchos",
       "action": "Baja la traviesa, desengancha, sube y retira la grúa.",
-      "check": "Ganchos libres; olla en la torreta."
+      "check": "Ganchos libres; olla en la torreta.",
+      "stop": "S-13 no ha dado \"asentada OK\" por radio."
     },
     {
       "n": 13,
@@ -289,7 +294,7 @@
       "icon": "registrar",
       "title": "Registra el movimiento",
       "action": "Anota hora, olla, colada, origen, destino, peso y eventos.",
-      "check": "Registro de movimientos completo."
+      "check": "Registro con hora, olla, colada, origen, destino, peso y eventos."
     }
   ],
   "abnormal": [
@@ -381,7 +386,7 @@
       "theory": "16 h + evaluador",
       "ojt": "—",
       "evaluated": "Decisión en emergencia de olla",
-      "validity": "24 meses"
+      "validity": "12 meses (decisión en emergencias de izaje, MO-OLL-02)"
     }
   ],
   "glossary": [
@@ -412,6 +417,30 @@
     {
       "term": "Celda de carga",
       "def": "Sensor de la grúa que indica el peso de la olla."
+    },
+    {
+      "term": "Olla",
+      "def": "Recipiente de acero con refractario que recibe ≈ 150 t de acero líquido del horno y lo lleva al horno olla y a la colada continua."
+    },
+    {
+      "term": "LF (horno olla)",
+      "def": "Estación donde se calienta y ajusta la química del acero en la olla antes de colar (MO-LF-01)."
+    },
+    {
+      "term": "Anticolisión",
+      "def": "Sistema que frena la grúa antes de chocar con otra grúa o con el final del recorrido."
+    },
+    {
+      "term": "Límite superior",
+      "def": "Interruptor que detiene el gancho antes de que pegue arriba."
+    },
+    {
+      "term": "Zona roja",
+      "def": "Zona roja o de exclusión: área donde nadie puede estar a pie mientras hay metal líquido o una carga en movimiento."
+    },
+    {
+      "term": "Horno olla (LF)",
+      "def": "Horno olla (LF): estación donde se ajustan la química y la temperatura del acero antes de colar."
     }
   ],
   "review": [
@@ -419,6 +448,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

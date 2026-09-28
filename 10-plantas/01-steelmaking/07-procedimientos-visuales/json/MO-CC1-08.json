@@ -8,7 +8,7 @@
   "owner": "C-06",
   "manual": "02-operacion/cc1/MO-CC1-08-corte-marcado-mesa-enfriamiento.md",
   "deck": "05-capacitacion/MO-CC1-08",
-  "purpose": "Cortar el planchón a la longitud pedida (8–11 m, ± 15 mm), marcarlo bien para no perder su identidad y apilarlo sin accidentes ni daño, listo para inspección y despacho.",
+  "purpose": "Cortar el planchón a la longitud pedida (8–11 m, ± 15 mm) y marcarlo para no perder su identidad. Apilarlo sin accidentes ni daño, listo para inspección y despacho.",
   "whyItMatters": "Un planchón mal marcado pierde su trazabilidad y se retiene. Un izaje con la grúa equivocada o una pila mal hecha puede aplastar a alguien. Un grado sensible enfriado con agua se agrieta.",
   "startsWhen": "El planchón sale del último segmento de la máquina en colada (MO-CC1-03, MO-CC1-04).",
   "endsWhen": "El planchón queda en pila o en carga caliente con su identificación y estado en el MES; solo se despachan los liberados por inspección (MO-CC1-09).",
@@ -42,7 +42,7 @@
       "code": "S-17",
       "name": "Operador de Mesa de Enfriamiento y Despacho",
       "raci": "R",
-      "does": "Pesa, separa por destino, apila, cubre las pilas de enfriamiento lento y despacha. Hoy también cubre el izaje con la grúa de producto.",
+      "does": "Pesa, separa por destino, apila, cubre las pilas de enfriamiento lento y despacha. Mientras se decide el rol S-27, también opera la grúa de producto de 45 t.",
       "it": "IT-S17"
     },
     {
@@ -86,7 +86,8 @@
     "botas",
     "auditiva",
     "respirador",
-    "chaleco"
+    "chaleco",
+    "careta_oxicorte"
   ],
   "dangerZone": {
     "red": "Zona roja: bajo la trayectoria de la grúa (± 5 m de la proyección de la carga) y entre pilas durante el izaje.",
@@ -139,7 +140,7 @@
       "action": "Revisa presiones de O₂ y gas, arrestaflamas y válvulas de retención. Busca fugas, limpia boquillas y haz la prueba de flama.",
       "check": "Flama estable; sin fugas; arrestaflamas en su lugar.",
       "critical": true,
-      "stop": "Hay fuga de O₂ o de gas, o falta un arrestaflamas."
+      "stop": "Hay fuga de O₂ o de gas, falta un arrestaflamas o tu ropa tiene grasa."
     },
     {
       "n": 3,
@@ -166,7 +167,7 @@
       "role": "S-16",
       "icon": "cortar",
       "title": "Corta cada planchón",
-      "action": "En automático, la máquina se sujeta al planchón, viaja con él y corta con 2 sopletes de los bordes al centro.",
+      "action": "Corta en automático: la máquina se sujeta al planchón y viaja con él. Corta con 2 sopletes, de los bordes al centro.",
       "check": "Corte completo a la longitud en caliente del nivel 2."
     },
     {
@@ -277,7 +278,7 @@
       "icon": "registrar",
       "title": "Actualiza el MES",
       "action": "Registra la ubicación de la pila y el estado: liberado o retenido.",
-      "check": "MES al día."
+      "check": "El MES muestra la ubicación de la pila y el estado: liberado o retenido."
     },
     {
       "n": 16,
@@ -396,8 +397,8 @@
       "def": "Máquina que corta el planchón con oxígeno y gas natural mientras viaja con él."
     },
     {
-      "term": "Arrestaflamas",
-      "def": "Dispositivo que impide que la flama regrese por la manguera."
+      "term": "Arrestaflamas (antirretorno de llama)",
+      "def": "Válvula que impide que la flama regrese por la manguera de O₂ o de gas."
     },
     {
       "term": "Despunte",
@@ -418,6 +419,30 @@
     {
       "term": "Tenaza",
       "def": "Accesorio de la grúa de 45 t que sujeta el planchón."
+    },
+    {
+      "term": "Planchón",
+      "def": "Producto de la CC1: bloque de acero de 230 mm de espesor, 900–1,650 mm de ancho y 8–11 m de largo."
+    },
+    {
+      "term": "Carga caliente",
+      "def": "Envío directo del planchón caliente a Laminación, sin pasar por el patio."
+    },
+    {
+      "term": "Escuadra",
+      "def": "Qué tan recto (a 90°) quedó el corte."
+    },
+    {
+      "term": "Puente de corte",
+      "def": "Parte que el soplete no cortó y deja unidos los dos pedazos."
+    },
+    {
+      "term": "Calzas",
+      "def": "Separadores que se ponen entre planchones para que la pila asiente estable."
+    },
+    {
+      "term": "Trazabilidad",
+      "def": "Trazabilidad: poder saber de qué colada y línea viene cada pieza y qué le pasó."
     }
   ],
   "review": [
@@ -425,6 +450,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

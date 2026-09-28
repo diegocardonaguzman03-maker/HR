@@ -8,7 +8,7 @@
   "owner": "C-06",
   "manual": "02-operacion/cc2/MO-CC2-02-insercion-barra-falsa-rigida.md",
   "deck": "05-capacitacion/MO-CC2-02",
-  "purpose": "Dejar las 6 líneas listas para arrancar: agua, rociado, oscilación y EMS probados, y la barra falsa dentro del molde a la altura correcta, sellada, seca y con chatarra de enfriamiento.",
+  "purpose": "Dejar las 6 líneas listas para arrancar, con agua, rociado, oscilación y EMS probados. La barra falsa queda en el molde a la altura correcta, sellada, seca y con chatarra.",
   "whyItMatters": "Para sellar metes las manos al molde, donde pasa el haz de la fuente de Cs-137. Un sello húmedo o mal hecho provoca una fuga de acero o una explosión en el arranque.",
   "startsWhen": "Mantenimiento entrega la máquina o termina la secuencia anterior (MO-CC2-07). También para rearrancar una línea durante la secuencia.",
   "endsWhen": "El ESR abre el obturador, el nivel marca \"molde vacío\" y C-06 libera las 6 líneas para el arranque (MO-CC2-03).",
@@ -153,7 +153,7 @@
       "stop": "Hay gotas, humedad o vapor dentro del molde.",
       "decision": {
         "question": "¿Molde seco?",
-        "no": "No liberes. Cambio de molde (MM-CC-01)."
+        "no": "Alto: avisa a C-06. Cambio de molde (MM-CC-01)."
       }
     },
     {
@@ -182,7 +182,7 @@
       "role": "C-16",
       "icon": "bloqueo",
       "title": "Cierra y bloquea el obturador",
-      "action": "A pedido de S-14 y con permiso firmado, el ESR cierra el obturador, pone candado y tarjeta y mide en el punto de trabajo y a 1 m.",
+      "action": "A pedido de S-14 y con permiso firmado, cierra el obturador y pon tu candado y tarjeta. Mide la dosis en el punto de trabajo y a 1 m.",
       "check": "Tasa de dosis < 2 × fondo; registro firmado.",
       "critical": true,
       "stop": "El obturador no cierra o la dosis es ≥ 2 × fondo.",
@@ -197,9 +197,10 @@
       "role": "S-14",
       "icon": "bloqueo",
       "title": "Bloquea el oscilador",
-      "action": "Pon tu candado personal al oscilador y haz la prueba de arranque.",
+      "action": "Pon tu candado personal al oscilador y haz la prueba de arranque: intenta arrancarlo y confirma que no se mueve.",
       "check": "Prueba de arranque sin movimiento.",
-      "critical": true
+      "critical": true,
+      "stop": "El oscilador se mueve en la prueba de arranque."
     },
     {
       "n": 8,
@@ -207,7 +208,7 @@
       "role": "S-12",
       "icon": "subir_bajar",
       "title": "Inserta la barra falsa",
-      "action": "En el HMI, modo inserción a ≤ 3 m/min. Los últimos 2 m a ≤ 0.5 m/min.",
+      "action": "En la HMI, modo inserción a ≤ 3 m/min. Los últimos 2 m a ≤ 0.5 m/min.",
       "check": "La cabeza para sin golpe.",
       "stop": "Hay alguien en la fosa o bajo la plataforma."
     },
@@ -229,7 +230,8 @@
       "title": "Bloquea los extractores",
       "action": "Pon tu candado personal a los extractores-enderezadores de esa línea.",
       "check": "Sin movimiento posible.",
-      "critical": true
+      "critical": true,
+      "stop": "Los extractores se mueven en la prueba de arranque o tu candado no está puesto."
     },
     {
       "n": 11,
@@ -296,7 +298,7 @@
       "role": "C-16",
       "icon": "autorizar",
       "title": "Abre el obturador",
-      "action": "El ESR retira su candado y abre el obturador. S-12 revisa la lectura de \"molde vacío\".",
+      "action": "Retira tu candado y abre el obturador. S-12 revisa en la HMI la lectura de \"molde vacío\".",
       "check": "El nivel indica vacío, sin alarma.",
       "critical": true,
       "decision": {
@@ -311,7 +313,7 @@
       "icon": "certificado",
       "title": "Libera las líneas",
       "action": "Revisa y firma la lista de verificación de máquina.",
-      "check": "6 líneas en \"listo para colar\" en el HMI."
+      "check": "6 líneas en \"listo para colar\" en la HMI."
     }
   ],
   "abnormal": [
@@ -438,6 +440,26 @@
     {
       "term": "Fondo natural",
       "def": "Radiación normal del ambiente (≈ 0.1–0.3 µSv/h)."
+    },
+    {
+      "term": "Línea (L1–L6)",
+      "def": "Cada uno de los 6 moldes de la CC2 con su vía de extracción; L1 y L6 son las de los extremos."
+    },
+    {
+      "term": "Prueba de arranque",
+      "def": "Prueba de arranque (LOTO): intentar arrancar el equipo ya bloqueado para comprobar que no se mueve. No es el arranque de colada."
+    },
+    {
+      "term": "LOTO",
+      "def": "Bloqueo y etiquetado: cada persona pone su propio candado y tarjeta para que el equipo no se mueva ni se energice."
+    },
+    {
+      "term": "Cs-137",
+      "def": "Fuente radiactiva que mide el nivel del acero en el molde. Solo el ESR (C-16) abre, cierra o bloquea su obturador."
+    },
+    {
+      "term": "Cebar",
+      "def": "Llenar las líneas de aceite hasta que salga parejo por todas las ranuras."
     }
   ],
   "review": [
@@ -445,6 +467,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

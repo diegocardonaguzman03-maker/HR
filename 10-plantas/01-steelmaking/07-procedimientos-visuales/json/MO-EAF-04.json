@@ -8,87 +8,433 @@
   "owner": "C-07",
   "manual": "02-operacion/eaf/MO-EAF-04-fusion-perfil-potencia-electrodos.md",
   "deck": "05-capacitacion/MO-EAF-04",
-  "purpose": "Fundir la carga en ≈ 42–44 min de arco con 560 kWh/t, arco estable y sin dañar bóveda, paneles ni electrodos, siguiendo el perfil de potencia de cada etapa.",
+  "purpose": "Fundir la carga en ≈ 42–44 min de arco con 560 kWh/t. Mantener el arco estable, sin dañar bóveda, paneles ni electrodos, con el perfil de cada etapa.",
   "whyItMatters": "Energizar con alguien en la plataforma electrocuta. Un arco largo sin cubrir perfora los paneles y provoca fugas de agua; un colapso mal atendido rompe electrodos.",
   "startsWhen": "La bóveda cierra sobre la carga (MO-EAF-02).",
   "endsWhen": "La temperatura y el oxígeno están en la ventana (MO-EAF-06) y S-01 apaga el arco para el vaciado (MO-EAF-07).",
-  "previous": ["MO-EAF-02"],
-  "next": ["MO-EAF-06", "MO-EAF-07"],
-  "heroFigure": { "file": "img/eaf-perfil-potencia.svg", "caption": "Perfil de potencia: perforación (tap 10), fusión de canasta (tap 15), baño plano con DRI (tap 15, ≈ 119 MW) y afino (tap 14)." },
+  "previous": [
+    "MO-EAF-02"
+  ],
+  "next": [
+    "MO-EAF-03",
+    "MO-EAF-05",
+    "MO-EAF-06",
+    "MO-EAF-07"
+  ],
+  "heroFigure": {
+    "file": "img/eaf-perfil-potencia.svg",
+    "caption": "Perfil de potencia: perforación (tap 10), fusión de canasta (tap 15), baño plano con DRI (tap 15, ≈ 119 MW) y afino (tap 14)."
+  },
   "figures": [
-    { "file": "img/eaf-ciclo-colada.svg", "caption": "Ciclo de colada de 55 min: ≈ 42–44 min son de arco encendido." }
+    {
+      "file": "img/eaf-ciclo-colada.svg",
+      "caption": "Ciclo de colada de 55 min: ≈ 42–44 min son de arco encendido."
+    }
   ],
   "roles": [
-    { "code": "S-01", "name": "Primer Hornero (púlpito)", "raci": "R", "does": "Selecciona el perfil, energiza, vigila la regulación, cambia de etapa y responde a alarmas.", "it": "IT-S01" },
-    { "code": "C-07", "name": "Ingeniero de Proceso EAF / LF", "raci": "A", "does": "Dueño. Define los perfiles de potencia por receta, las consignas de impedancia y los límites." },
-    { "code": "C-05", "name": "Supervisor de Hornos", "raci": "C", "does": "Autoriza desviaciones del perfil y operar con una fase en falla.", "it": "IT-C05" },
-    { "code": "S-20", "name": "Electricista de Acería", "raci": "C", "does": "Atiende fallas del interruptor, del cambiador de taps (OLTC) y del transformador.", "it": "IT-S20" },
-    { "code": "S-21", "name": "Instrumentista", "raci": "C", "does": "Atiende fallas de la regulación de electrodos y de la medición.", "it": "IT-S21" },
-    { "code": "S-02", "name": "Segundo Hornero (piso)", "raci": "I", "does": "Informa lo que ve en el horno (colapso, arco expuesto, escoria) y mide T y O en el afino.", "it": "IT-S02" }
+    {
+      "code": "S-01",
+      "name": "Primer Hornero (púlpito)",
+      "raci": "R",
+      "does": "Selecciona el perfil, energiza, vigila la regulación, cambia de etapa y responde a alarmas.",
+      "it": "IT-S01"
+    },
+    {
+      "code": "C-07",
+      "name": "Ingeniero de Proceso EAF / LF",
+      "raci": "A",
+      "does": "Dueño. Define los perfiles de potencia por receta, las consignas de impedancia y los límites."
+    },
+    {
+      "code": "C-05",
+      "name": "Supervisor de Hornos",
+      "raci": "R",
+      "does": "Supervisa al personal del horno en el turno. Autoriza desviaciones del perfil y operar con una fase en falla.",
+      "it": "IT-C05"
+    },
+    {
+      "code": "S-20",
+      "name": "Electricista de Acería",
+      "raci": "C",
+      "does": "Atiende fallas del interruptor, del cambiador de taps (OLTC) y del transformador.",
+      "it": "IT-S20"
+    },
+    {
+      "code": "S-21",
+      "name": "Instrumentista",
+      "raci": "C",
+      "does": "Atiende fallas de la regulación de electrodos y de la medición.",
+      "it": "IT-S21"
+    },
+    {
+      "code": "S-02",
+      "name": "Segundo Hornero (piso)",
+      "raci": "I",
+      "does": "Informa lo que ve en el horno (colapso, arco expuesto, escoria). La medición de T y O la hace en MO-EAF-06.",
+      "it": "IT-S02"
+    }
   ],
   "goldenRules": [
     "Nunca cierres el interruptor con alguien en una plataforma o con una llave cautiva fuera del tablero.",
     "Tap alto solo con arco cubierto (chatarra o espuma). Con T de panel > 60 °C, baja el tap.",
     "Tras un disparo por fuga de agua no rearmes, no inclines ni muevas electrodos."
   ],
-  "epp": ["ropa_fr", "botas", "casco", "careta_dorada", "aluminizado", "guantes", "auditiva", "detector_gas"],
+  "epp": [
+    "ropa_fr",
+    "botas",
+    "casco",
+    "careta_dorada",
+    "aluminizado",
+    "guantes",
+    "auditiva",
+    "detector_gas"
+  ],
   "dangerZone": {
     "red": "Plataformas de bóveda y de electrodos: nadie sube con el interruptor cerrado. Toda subida = interruptor abierto + llave cautiva o LOTO (MS-ACE-02 §6.4).",
     "yellow": "Zona de barras (bus) y transformador: solo S-20 con permiso eléctrico (NOM-029).",
     "rule": "Con disparo por fuga de agua: nadie a menos de 25 m del horno hasta que C-05 y C-07 autoricen (MS-ACE-03)."
   },
   "hazards": [
-    { "icon": "electrico", "text": "Energizar con personas en la plataforma: electrocución y quemadura por arco." },
-    { "icon": "agua", "text": "Arco con fuga de agua: explosión." },
-    { "icon": "calor", "text": "Arco expuesto con tap alto: perfora paneles y causa fugas." },
-    { "icon": "peligro", "text": "Rotura de electrodo por colapso de chatarra: caída de trozos y proyección." },
-    { "icon": "alarma", "text": "Ruido > 100 dB(A), radiación UV/IR y campo magnético (marcapasos)." }
+    {
+      "icon": "electrico",
+      "text": "Energizar con personas en la plataforma: electrocución y quemadura por arco."
+    },
+    {
+      "icon": "agua",
+      "text": "Arco con fuga de agua: explosión."
+    },
+    {
+      "icon": "calor",
+      "text": "Arco expuesto con tap alto: perfora paneles y causa fugas."
+    },
+    {
+      "icon": "peligro",
+      "text": "Rotura de electrodo por colapso de chatarra: caída de trozos y proyección."
+    },
+    {
+      "icon": "alarma",
+      "text": "Ruido > 100 dB(A), radiación UV/IR y campo magnético (marcapasos)."
+    }
   ],
-  "phases": ["Antes de energizar", "Fusión de canasta", "Baño plano y afino"],
+  "phases": [
+    "Antes de energizar",
+    "Fusión de canasta",
+    "Baño plano y afino"
+  ],
   "steps": [
-    { "n": 1, "phase": 0, "role": "S-01", "icon": "checklist", "title": "Verifica los permisivos", "action": "Revisa en el HMI: bóveda asentada, horno a 0° ± 2°, agua (Δ ≤ 2 %, P ≥ 3 bar), hidráulica en presión, presión del horno negativa y llaves cautivas completas.", "check": "Todos los permisivos en verde.", "critical": true, "decision": { "question": "¿Permisivos en verde?", "no": "No energices. Corrige la causa primero." } },
-    { "n": 2, "phase": 0, "role": "S-01", "icon": "hmi", "title": "Selecciona el perfil de potencia", "action": "Elige en nivel 2 el perfil de la receta del grado y del número de canastas.", "check": "Perfil correcto en nivel 2." },
-    { "n": 3, "phase": 0, "role": "S-01", "icon": "electrico", "title": "Energiza el horno", "action": "Confirma por cámara y radio plataformas vacías y todas las llaves cautivas en el tablero. Avisa por radio \"arco en 10 s\" y cierra el interruptor.", "check": "Arco en las 3 fases.", "critical": true, "stop": "Hay alguien en una plataforma o falta una llave en el tablero." },
-    { "n": 4, "phase": 1, "role": "S-01", "icon": "arrancar", "title": "Perfora la carga", "action": "Trabaja en tap 10 (≈ 1,000 V, ≈ 50 kA) con regulación automática. Vigila cortocircuitos y desbalance.", "check": "Electrodos penetran en ≈ 2 min; ≤ 2 cortocircuitos/min.", "decision": { "question": "¿Arco cubierto?", "no": "Sigue en tap 10 hasta que penetren." } },
-    { "n": 5, "phase": 1, "role": "S-01", "icon": "electrico", "title": "Pasa a fusión en tap 15", "action": "Sube a tap 15 (1,200 V) solo con el arco cubierto por chatarra. Quemadores en modo quemador (MO-EAF-05).", "check": "≈ 66 kA y ≈ 117 MW." },
-    { "n": 6, "phase": 1, "role": "S-01", "icon": "tendencia", "title": "Vigila los colapsos de chatarra", "action": "Si la corriente se dispara o cae de golpe: sube los electrodos, baja el tap y confirma que ningún electrodo se rompió.", "check": "Sin rotura de electrodo; desbalance ≤ 10 %.", "critical": true, "decision": { "question": "¿Sin colapso ni arco raro?", "no": "Sube electrodos, baja tap y revisa electrodos." } },
-    { "n": 7, "phase": 1, "role": "S-01", "icon": "ok", "title": "Detecta el baño plano", "action": "Busca corriente estable, menos ruido de arco y energía acumulada suficiente.", "check": "≥ 150 kWh/t y canasta fundida ≥ 70 %.", "quality": true, "decision": { "question": "¿Canasta ≥ 70 % fundida?", "no": "Sigue en fusión de canasta (tap 15)." } },
-    { "n": 8, "phase": 2, "role": "S-01", "icon": "flujo", "title": "Inicia DRI y escoria espumosa", "action": "Arranca MO-EAF-03 y MO-EAF-05. Mantén tap 15 solo si la espuma cubre el arco.", "check": "T de salida de panel ≤ 60 °C; ≈ 119 MW (límite).", "critical": true },
-    { "n": 9, "phase": 2, "role": "S-01", "icon": "ajustar", "title": "Ajusta el tap según la espuma", "action": "Espuma baja: baja a tap 12–13 y corrige O₂/C. Espuma estable: tap 15.", "check": "Arco estable y ruido bajo.", "decision": { "question": "¿Espuma estable y paneles OK?", "no": "Baja a tap 12–13 y ajusta O₂/C." } },
-    { "n": 10, "phase": 2, "role": "S-01", "icon": "temperatura", "title": "Afina y pide medir T y O", "action": "Con el DRI detenido trabaja en tap 14 y pide a S-02 medir T y O (MO-EAF-06).", "check": "T 1,630 ± 15 °C y O activo 500–900 ppm.", "quality": true },
-    { "n": 11, "phase": 2, "role": "S-01", "icon": "detener", "title": "Apaga el arco", "action": "Abre el interruptor y sube los electrodos a posición de vaciado.", "check": "Interruptor abierto; pasa a MO-EAF-07." },
-    { "n": 12, "phase": 2, "role": "S-01", "icon": "registrar", "title": "Registra la colada", "action": "Registra kWh/t, minutos de arco, MW promedio, roturas y alarmas.", "check": "560 kWh/t (520–600) y 42–44 min de arco." }
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-01",
+      "icon": "checklist",
+      "title": "Verifica los permisivos",
+      "action": "Revisa en la HMI: bóveda asentada, horno a 0° ± 2° e hidráulica en presión. Revisa agua (Δ ≤ 2 %, P ≥ 3 bar), presión del horno negativa y llaves cautivas completas.",
+      "check": "Todos los permisivos en verde.",
+      "critical": true,
+      "decision": {
+        "question": "¿Permisivos en verde?",
+        "no": "No energices. Corrige la causa primero."
+      }
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-01",
+      "icon": "hmi",
+      "title": "Selecciona el perfil de potencia",
+      "action": "Elige en nivel 2 el perfil de la receta del grado y del número de canastas.",
+      "check": "Perfil correcto en nivel 2."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-01",
+      "icon": "electrico",
+      "title": "Energiza el horno",
+      "action": "Confirma por cámara y radio plataformas vacías y todas las llaves cautivas en el tablero. Avisa por radio \"arco en 10 s\" y cierra el interruptor.",
+      "check": "Arco en las 3 fases.",
+      "critical": true,
+      "stop": "Hay alguien en una plataforma o falta una llave en el tablero."
+    },
+    {
+      "n": 4,
+      "phase": 1,
+      "role": "S-01",
+      "icon": "arrancar",
+      "title": "Perfora la carga",
+      "action": "Trabaja en tap 10 (≈ 1,000 V, ≈ 50 kA) con regulación automática. Vigila cortocircuitos y desbalance.",
+      "check": "Electrodos penetran en ≈ 2 min; ≤ 2 cortocircuitos/min.",
+      "decision": {
+        "question": "¿Ya penetraron los electrodos?",
+        "no": "Sigue en tap 10 hasta que penetren."
+      }
+    },
+    {
+      "n": 5,
+      "phase": 1,
+      "role": "S-01",
+      "icon": "electrico",
+      "title": "Pasa a fusión en tap 15",
+      "action": "Sube a tap 15 (1,200 V) solo con el arco cubierto por chatarra. Quemadores en modo quemador (MO-EAF-05).",
+      "check": "≈ 66 kA y ≈ 117 MW."
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "S-01",
+      "icon": "tendencia",
+      "title": "Vigila los colapsos de chatarra",
+      "action": "Si la corriente se dispara o cae de golpe, sube los electrodos y baja el tap. Confirma que ningún electrodo se rompió.",
+      "check": "Sin rotura de electrodo; desbalance ≤ 10 %.",
+      "critical": true,
+      "decision": {
+        "question": "¿Sin colapso ni arco raro?",
+        "no": "Sube electrodos, baja tap y revisa electrodos."
+      }
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-01",
+      "icon": "ok",
+      "title": "Detecta el baño plano",
+      "action": "Busca corriente estable, menos ruido de arco y energía acumulada suficiente.",
+      "check": "≥ 150 kWh/t y canasta fundida ≥ 70 %.",
+      "quality": true,
+      "decision": {
+        "question": "¿Canasta ≥ 70 % fundida?",
+        "no": "Sigue en fusión de canasta (tap 15)."
+      }
+    },
+    {
+      "n": 8,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "flujo",
+      "title": "Inicia DRI y escoria espumosa",
+      "action": "Arranca MO-EAF-03 y MO-EAF-05. Mantén tap 15 solo si la espuma cubre el arco.",
+      "check": "T de salida de panel ≤ 60 °C; ≈ 119 MW (límite).",
+      "critical": true,
+      "stop": "La T de salida de un panel pasa de 60 °C."
+    },
+    {
+      "n": 9,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "ajustar",
+      "title": "Ajusta el tap según la espuma",
+      "action": "Espuma baja: baja a tap 12–13 y corrige O₂/C. Espuma estable: tap 15.",
+      "check": "Arco estable y ruido bajo.",
+      "decision": {
+        "question": "¿Espuma estable y paneles OK?",
+        "no": "Baja a tap 12–13 y ajusta O₂/C."
+      }
+    },
+    {
+      "n": 10,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "temperatura",
+      "title": "Afina y pide medir T y oxígeno",
+      "action": "Con el DRI detenido, trabaja en tap 14. Pide a S-02 medir T y oxígeno activo (MO-EAF-06).",
+      "check": "T 1,630 ± 15 °C y oxígeno activo 500–900 ppm.",
+      "quality": true
+    },
+    {
+      "n": 11,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "detener",
+      "title": "Apaga el arco",
+      "action": "Abre el interruptor y sube los electrodos a posición de vaciado.",
+      "check": "Interruptor abierto; pasa a MO-EAF-07."
+    },
+    {
+      "n": 12,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "registrar",
+      "title": "Registra la colada",
+      "action": "Registra kWh/t, minutos de arco, MW promedio, roturas y alarmas.",
+      "check": "Registro completo en nivel 2. Referencia: 560 kWh/t (520–600) y 42–44 min de arco."
+    }
   ],
   "abnormal": [
-    { "icon": "electrico", "if": "Arco inestable: corriente oscilante, ruido alto", "do": "Baja el tap 2 posiciones. Corrige O₂/C y baja la tasa de DRI.", "call": "C-07" },
-    { "icon": "peligro", "if": "Rotura de electrodo", "do": "Abre el interruptor. Un trozo en el baño se funde; si la columna queda corta, aplica MO-EAF-08.", "call": "C-05" },
-    { "icon": "agua", "if": "Disparo por fuga de agua (> 4 %)", "do": "No rearmes. No inclines ni muevas electrodos. Evacúa a ≥ 25 m (MS-ACE-03, MO-EAF-01 §9, MS-ACE-09).", "call": "C-05, C-04, C-07 y Mantenimiento" },
-    { "icon": "calor", "if": "T de salida de panel > 60 °C", "do": "Baja el tap y mejora la espuma. Si no baja, aísla el panel con C-05.", "call": "C-05" },
-    { "icon": "tendencia", "if": "Desbalance de corriente > 10 % por > 30 s", "do": "Revisa longitudes de electrodo. Pasa la fase a manual solo con autorización de C-05.", "call": "C-05 y S-21" },
-    { "icon": "alarma", "if": "Disparo de sobrecorriente o del interruptor", "do": "No rearmes más de 1 vez sin revisar. S-20 investiga.", "call": "S-20 y C-05" },
-    { "icon": "bloqueo", "if": "Un electrodo baja solo (deriva hidráulica)", "do": "Abre el interruptor y bloquea la hidráulica. LOTO completo: no basta la llave cautiva.", "call": "S-22 y C-05" }
+    {
+      "icon": "electrico",
+      "if": "Arco inestable: corriente oscilante, ruido alto",
+      "do": "Baja el tap 2 posiciones. Corrige O₂/C y baja la tasa de DRI.",
+      "call": "C-07"
+    },
+    {
+      "icon": "peligro",
+      "if": "Rotura de electrodo",
+      "do": "Abre el interruptor. Un trozo en el baño se funde; si la columna queda corta, aplica MO-EAF-08.",
+      "call": "C-05"
+    },
+    {
+      "icon": "agua",
+      "if": "Alarma de fuga de agua (Δ caudal > 2 %) o disparo (> 4 %)",
+      "do": "> 2 %: reduce potencia y busca vapor, llama amarilla o chisporroteo. Disparo > 4 % o agua visible: no rearmes, no inclines ni muevas electrodos y evacúa a ≥ 25 m (MS-ACE-03, MS-ACE-09).",
+      "call": "C-05, C-04, C-07 y Mantenimiento"
+    },
+    {
+      "icon": "calor",
+      "if": "T de salida de panel > 60 °C",
+      "do": "Baja el tap y mejora la espuma. Si no baja, aísla el panel con C-05.",
+      "call": "C-05"
+    },
+    {
+      "icon": "tendencia",
+      "if": "Desbalance de corriente > 10 % por > 30 s",
+      "do": "Revisa longitudes de electrodo. Pasa la fase a manual solo con autorización de C-05.",
+      "call": "C-05 y S-21"
+    },
+    {
+      "icon": "alarma",
+      "if": "Disparo de sobrecorriente o del interruptor",
+      "do": "No rearmes más de 1 vez sin revisar. S-20 investiga.",
+      "call": "S-20 y C-05"
+    },
+    {
+      "icon": "bloqueo",
+      "if": "Un electrodo baja solo (deriva hidráulica)",
+      "do": "Abre el interruptor y bloquea la hidráulica. LOTO completo: no basta la llave cautiva.",
+      "call": "S-22 y C-05"
+    }
   ],
   "records": [
-    { "what": "Perfil ejecutado: taps, kA, MW, kWh/t, min de arco, cortocircuitos", "when": "Cada colada", "where": "Nivel 2" },
-    { "what": "Consumo de electrodos y roturas", "when": "Cada turno", "where": "Bitácora del horno" },
-    { "what": "Alarmas y disparos eléctricos con causa", "when": "Cuando ocurre", "where": "Bitácora del horno" },
-    { "what": "Operaciones del OLTC y del interruptor", "when": "Continuo", "where": "Registro de mantenimiento" }
+    {
+      "what": "Perfil ejecutado: taps, kA, MW, kWh/t, min de arco, cortocircuitos",
+      "when": "Cada colada",
+      "where": "Nivel 2"
+    },
+    {
+      "what": "Consumo de electrodos y roturas",
+      "when": "Cada turno",
+      "where": "Bitácora del horno"
+    },
+    {
+      "what": "Alarmas y disparos eléctricos con causa",
+      "when": "Cuando ocurre",
+      "where": "Bitácora del horno"
+    },
+    {
+      "what": "Operaciones del OLTC y del interruptor",
+      "when": "Continuo",
+      "where": "Registro de mantenimiento"
+    }
   ],
   "certification": [
-    { "role": "S-01", "level": "3", "theory": "32 h (eléctrica del EAF, regulación, perfiles, escoria)", "ojt": "160 h / 60 coladas + simulador", "evaluated": "Pasos 1, 3, 6 y 8; escenarios de disparo por agua y arco inestable", "validity": "24 meses" },
-    { "role": "C-05", "level": "4", "theory": "32 h + evaluador", "ojt": "—", "evaluated": "Perfiles y respuesta a anormalidades", "validity": "24 meses" },
-    { "role": "C-07", "level": "4", "theory": "40 h", "ojt": "—", "evaluated": "Diseño de perfil y análisis energético", "validity": "24 meses" }
+    {
+      "role": "S-01",
+      "level": "3",
+      "theory": "32 h (eléctrica del EAF, regulación, perfiles, escoria)",
+      "ojt": "160 h / 60 coladas + simulador",
+      "evaluated": "Pasos 1, 3, 6 y 8; escenarios de disparo por agua y arco inestable",
+      "validity": "24 meses"
+    },
+    {
+      "role": "C-05",
+      "level": "4",
+      "theory": "32 h + evaluador",
+      "ojt": "—",
+      "evaluated": "Perfiles y respuesta a anormalidades",
+      "validity": "24 meses"
+    },
+    {
+      "role": "C-07",
+      "level": "4",
+      "theory": "40 h",
+      "ojt": "—",
+      "evaluated": "Diseño de perfil y análisis energético",
+      "validity": "24 meses"
+    }
   ],
   "glossary": [
-    { "term": "Tap", "def": "Posición del cambiador del transformador; fija el voltaje y la longitud del arco." },
-    { "term": "OLTC", "def": "Cambiador de taps bajo carga del transformador de 140 MVA." },
-    { "term": "Arco cubierto", "def": "Arco tapado por chatarra o por escoria espumosa; su calor va al baño y no a los paneles." },
-    { "term": "Perforación (bore-in)", "def": "Primeros ≈ 2 min en que los electrodos penetran la chatarra con tap bajo." },
-    { "term": "Colapso", "def": "Derrumbe de chatarra sobre los electrodos durante la fusión." },
-    { "term": "Impedancia de consigna", "def": "Valor V/I que la regulación mantiene moviendo cada brazo." },
-    { "term": "Permisivos", "def": "Condiciones que deben estar en verde para que el interruptor pueda cerrar." }
+    {
+      "term": "Tap",
+      "def": "Posición del cambiador del transformador; fija el voltaje y la longitud del arco."
+    },
+    {
+      "term": "OLTC",
+      "def": "Cambiador de taps bajo carga del transformador de 140 MVA."
+    },
+    {
+      "term": "Arco cubierto",
+      "def": "Arco tapado por chatarra o por escoria espumosa; su calor va al baño y no a los paneles."
+    },
+    {
+      "term": "Perforación (bore-in)",
+      "def": "Primeros ≈ 2 min en que los electrodos penetran la chatarra con tap bajo."
+    },
+    {
+      "term": "Colapso",
+      "def": "Derrumbe de chatarra sobre los electrodos durante la fusión."
+    },
+    {
+      "term": "Impedancia de consigna",
+      "def": "Valor V/I que la regulación mantiene moviendo cada brazo."
+    },
+    {
+      "term": "Permisivos",
+      "def": "Condiciones que deben estar en verde para que el interruptor pueda cerrar."
+    },
+    {
+      "term": "Oxígeno activo",
+      "def": "Oxígeno disuelto en el acero (ppm); se mide con la sonda para calcular el aluminio de la olla."
+    },
+    {
+      "term": "Llave cautiva",
+      "def": "Llave personal que solo sale del tablero con el interruptor abierto; mientras falte una, el horno no se energiza."
+    },
+    {
+      "term": "Afino",
+      "def": "Última etapa en el horno: con la carga fundida se ajustan temperatura, carbono y oxígeno antes de vaciar."
+    },
+    {
+      "term": "Desbalance de corriente",
+      "def": "Diferencia de corriente entre las 3 fases; si pasa de 10 %, algo anda mal en un electrodo."
+    },
+    {
+      "term": "HMI",
+      "def": "Pantalla de operación (en el púlpito o en campo) donde ves valores, estados y alarmas del equipo."
+    },
+    {
+      "term": "Escoria espumosa",
+      "def": "Escoria inflada con burbujas que tapa el arco y protege paneles y bóveda (POV-EAF-05)."
+    }
   ],
   "review": [
-    { "area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28" }
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    }
   ]
 }

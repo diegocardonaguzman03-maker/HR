@@ -8,7 +8,7 @@
   "owner": "C-05",
   "manual": "02-operacion/eaf/MO-EAF-08-adicion-empalme-electrodos.md",
   "deck": "05-capacitacion/MO-EAF-08",
-  "purpose": "Mantener cada columna de electrodos (610 mm, niple 4TPI) con longitud suficiente, agregando electrodos con un empalme apretado al torque del fabricante y sin holgura.",
+  "purpose": "Mantener cada columna de electrodos (610 mm, niple 4TPI) con longitud suficiente. Agregar electrodos con el empalme apretado al torque del fabricante y sin holgura.",
   "whyItMatters": "Una junta floja se calienta, se oxida y se rompe. Una columna mal izada cae y aplasta; energizar con alguien en la plataforma electrocuta.",
   "startsWhen": "La longitud bajo la mordaza no alcanza para la siguiente colada y se programa la adición entre coladas (MO-EAF-01).",
   "endsWhen": "La columna está en la mordaza con la junta fuera de la zona de contacto, los bloqueos retirados con conteo y el empalme registrado.",
@@ -54,7 +54,7 @@
       "code": "S-01",
       "name": "Primer Hornero (púlpito)",
       "raci": "R",
-      "does": "Desenergiza, bloquea y libera el horno; abre y cierra la mordaza y hace el deslizamiento.",
+      "does": "Desenergiza y bloquea el horno; abre y cierra la mordaza y hace el deslizamiento.",
       "it": "IT-S01"
     },
     {
@@ -98,7 +98,7 @@
   "dangerZone": {
     "red": "Bajo la trayectoria de la grúa y alrededor del soporte de adición: nadie bajo la carga (MS-ACE-04).",
     "yellow": "Plataforma de electrodos: solo con interruptor abierto y llave cautiva (método A) o LOTO completo (método B).",
-    "rule": "Abrir la mordaza es el único movimiento permitido con personal en la plataforma, desde el mando designado y con la columna sujeta por la grúa."
+    "rule": "Abrir la mordaza es el único movimiento permitido con personal en la plataforma, desde el mando designado y con la columna sujeta por la grúa [Validar con OEM / C-12]."
   },
   "hazards": [
     {
@@ -155,7 +155,7 @@
       "role": "S-01",
       "icon": "bloqueo",
       "title": "Desenergiza y bloquea el horno",
-      "action": "Apaga el arco, abre el interruptor y bloquea la hidráulica y el giro de bóveda. Método A: llave cautiva, una por persona, confirmada en el HMI. Método B: LOTO completo.",
+      "action": "Apaga el arco, abre el interruptor y bloquea la hidráulica y el giro de bóveda. Método A: llave cautiva, una por persona, confirmada en la HMI. Método B: LOTO completo.",
       "check": "Una llave o candado por persona (MS-ACE-02 §6.4).",
       "critical": true,
       "decision": {
@@ -186,7 +186,7 @@
       "action": "Toma la columna con el tapón de izaje. S-01 abre la mordaza y llevas la columna al soporte. Nadie bajo la carga.",
       "check": "Columna en el soporte y mordaza del soporte cerrada.",
       "critical": true,
-      "stop": "Hay alguien bajo la carga o en la trayectoria."
+      "stop": "Hay alguien bajo la carga o en la trayectoria, o el tapón de izaje no está roscado a fondo en la columna."
     },
     {
       "n": 6,
@@ -250,7 +250,7 @@
       "icon": "marcar",
       "title": "Marca y registra el empalme",
       "action": "Pinta la marca de deslizamiento. Registra serie de electrodo y niple, torque y hora.",
-      "check": "Registro completo.",
+      "check": "Registro con serie de electrodo y niple, torque y hora; marca de deslizamiento visible.",
       "quality": true
     },
     {
@@ -280,7 +280,8 @@
       "title": "Retira los bloqueos con conteo",
       "action": "Todos bajan. Cada quien retira su propio candado o llave. C-05 confirma el conteo.",
       "check": "Plataforma vacía; personas = llaves devueltas; tablero completo.",
-      "critical": true
+      "critical": true,
+      "stop": "Las llaves o candados devueltos no coinciden con las personas que subieron."
     },
     {
       "n": 15,
@@ -288,7 +289,7 @@
       "role": "S-02",
       "icon": "seguro",
       "title": "Aplica el método B solo con permiso",
-      "action": "Con autorización de C-05: haz los pasos 1–4, 7–11, 13 y 14 sobre la columna en el horno, con LOTO completo, arnés 100 % conectado y permiso de altura (MS-ACE-10).",
+      "action": "Solo con autorización de C-05. Haz los pasos 1–4, 7–11, 13 y 14 sobre la columna en el horno. Usa LOTO completo, arnés 100 % conectado y permiso de altura (MS-ACE-10).",
       "check": "Mismos criterios de torque, laina y posición de la junta.",
       "critical": true,
       "stop": "Falta el LOTO completo, el arnés conectado o el permiso de altura."
@@ -340,7 +341,7 @@
   ],
   "records": [
     {
-      "what": "Registro de empalme: horno, fase, fecha, hora, serie de electrodo y niple, torque, laina, responsable",
+      "what": "Registro de empalme: horno, fase, fecha, hora, serie de electrodo y niple, torque, laina y quién lo ejecutó",
       "when": "Cada empalme",
       "where": "Registro de empalme"
     },
@@ -367,7 +368,7 @@
       "theory": "12 h (electrodos, niples, torque, LOTO)",
       "ojt": "30 h / 10 empalmes",
       "evaluated": "Bloqueo, tapón, torque, laina, deslizamiento, retiro de bloqueos y método B",
-      "validity": "24 meses; alturas (método B) 12 meses"
+      "validity": "24 meses; alturas (método B) y señales de izaje (NOM-006) 12 meses"
     },
     {
       "role": "S-03",
@@ -391,7 +392,7 @@
       "theory": "8 h + evaluador",
       "ojt": "—",
       "evaluated": "Verificación de LOTO y de llave cautiva",
-      "validity": "24 meses"
+      "validity": "24 meses; autorización del método B (alturas) 12 meses"
     }
   ],
   "glossary": [
@@ -422,6 +423,30 @@
     {
       "term": "Mordaza",
       "def": "Abrazadera del brazo que sujeta la columna y le pasa la corriente."
+    },
+    {
+      "term": "HMI",
+      "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+    },
+    {
+      "term": "LOTO",
+      "def": "Bloqueo y etiquetado: cada persona pone su propio candado y tarjeta para que el equipo no se mueva ni se energice."
+    },
+    {
+      "term": "Llave cautiva",
+      "def": "Llave personal que solo sale del tablero con el interruptor abierto; mientras falte una, el horno no se energiza."
+    },
+    {
+      "term": "Torque",
+      "def": "Fuerza de apriete de la junta; se mide con la llave de torque calibrada, nunca a estimación."
+    },
+    {
+      "term": "Delta",
+      "def": "Zona entre las tres columnas donde pasa la corriente; la junta debe quedar fuera de ella."
+    },
+    {
+      "term": "Señalero",
+      "def": "Persona que guía a la grúa con señales; en este proceso es S-02."
     }
   ],
   "review": [
@@ -429,6 +454,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

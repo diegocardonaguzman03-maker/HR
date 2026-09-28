@@ -19,6 +19,12 @@
       "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
     },
     {
+      "op": "set",
+      "path": "steps[13].action",
+      "value": "Desconecta el argón y sube la bóveda. Confirma por radio a S-09 y S-12: olla, colada, temperatura, destino, bordo libre y sin fuga.",
+      "reason": "Coherencia de la cadena: POV-OLL-02 paso 2 pide a S-06 confirmar también bordo libre y ausencia de fuga al liberar la olla."
+    },
+    {
       "op": "append",
       "path": "glossary",
       "value": {

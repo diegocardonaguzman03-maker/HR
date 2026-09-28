@@ -41,7 +41,7 @@
       "code": "S-01",
       "name": "Primer Hornero (púlpito)",
       "raci": "R",
-      "does": "Pide la medición en el momento correcto, decide ajustes y la hora de vaciado.",
+      "does": "Pide la medición en el momento correcto, ajusta dentro de la consigna y confirma la hora de vaciado.",
       "it": "IT-S01"
     },
     {
@@ -148,7 +148,7 @@
       "icon": "conectar",
       "title": "Monta la sonda",
       "action": "Coloca la sonda en el portasondas de la lanza hasta el tope.",
-      "check": "El HMI muestra \"contacto OK\"."
+      "check": "La HMI muestra \"contacto OK\"."
     },
     {
       "n": 4,
@@ -177,7 +177,8 @@
       "icon": "temperatura",
       "title": "Inmerge la sonda",
       "action": "Ejecuta el ciclo automático de la lanza: 300–400 mm bajo la escoria [Validar con OEM]. T: 4–6 s. O: 8–12 s.",
-      "check": "Ciclo completo, nunca más de 15 s."
+      "check": "Ciclo completo, nunca más de 15 s.",
+      "stop": "S-01 no confirmó por radio la potencia reducida o hay alguien frente a la puerta."
     },
     {
       "n": 7,
@@ -185,7 +186,7 @@
       "role": "S-02",
       "icon": "tendencia",
       "title": "Valida la curva",
-      "action": "Busca una meseta estable en la curva del HMI. Si no es válida, repite con otra sonda.",
+      "action": "Busca una meseta estable en la curva de la HMI. Si no es válida, repite con otra sonda.",
       "check": "Variación ≤ 2 °C por ≥ 1.5 s [Supuesto].",
       "quality": true,
       "decision": {
@@ -219,7 +220,7 @@
       "role": "S-01",
       "icon": "objetivo",
       "title": "Compara con la ventana de vaciado",
-      "action": "Compara T, O, C y P con la ventana del grado. Decide el ajuste o la hora de vaciado.",
+      "action": "Compara T, O, C y P con la ventana del grado. En ventana: confirma la hora de vaciado. Fuera de ventana: ajusta según la consigna y vuelve a medir.",
       "check": "T 1,630 ± 15 °C, O 500–900 ppm, C 0.04–0.08 %, P ≤ 0.015 %.",
       "decision": {
         "question": "¿T, O, C y P en ventana?",
@@ -242,7 +243,7 @@
       "icon": "autorizar",
       "title": "Autoriza el respaldo manual",
       "action": "Solo si falla la lanza manipuladora: da permiso verbal y regístralo. Confirma arco apagado y que un segundo trabajador verifique el EPP.",
-      "check": "Autorización registrada.",
+      "check": "Autorización con hora anotada en la bitácora de turno; arco apagado confirmado.",
       "critical": true
     },
     {
@@ -251,10 +252,10 @@
       "role": "S-02",
       "icon": "manual",
       "title": "Mide a mano solo con permiso",
-      "action": "Con arco apagado y EPP aluminizado completo: un solo intento, de lado a la puerta, a ≥ 1.5 m, máximo 2 min en zona roja y con observador.",
-      "check": "Lectura válida sin exposición prolongada.",
+      "action": "Con arco apagado y EPP aluminizado completo: un solo intento [Supuesto], de lado a la puerta, a ≥ 1.5 m, máximo 2 min en zona roja y con observador.",
+      "check": "Meseta válida en un solo intento; ≤ 2 min en zona roja.",
       "critical": true,
-      "stop": "No hay autorización de C-05 o el arco está encendido."
+      "stop": "No hay autorización de C-05, el arco está encendido, no hay observador o tu EPP aluminizado no está completo y seco."
     }
   ],
   "abnormal": [
@@ -377,6 +378,30 @@
     {
       "term": "Ventana de vaciado",
       "def": "Rango de T, O, C y P en el que se puede vaciar."
+    },
+    {
+      "term": "M1 / M2 / M3",
+      "def": "Mediciones de T y O: M1 a mitad del DRI, M2 al inicio del afino y M3 antes de vaciar."
+    },
+    {
+      "term": "M1, M2 y M3",
+      "def": "Los tres momentos de medición: M1 a mitad del DRI (solo T), M2 al inicio del afino (T, O y muestra) y M3 antes de vaciar (T y O)."
+    },
+    {
+      "term": "ppm",
+      "def": "Partes por millón: unidad para cantidades muy pequeñas, como el oxígeno disuelto en el acero."
+    },
+    {
+      "term": "HMI",
+      "def": "Pantalla de operación (en el púlpito o en campo) donde ves valores, estados y alarmas del equipo."
+    },
+    {
+      "term": "Nivel 2",
+      "def": "Sistema de cómputo de proceso donde se registran y consultan los datos de cada colada."
+    },
+    {
+      "term": "Zona roja",
+      "def": "Zona roja o de exclusión: área donde nadie puede estar a pie mientras hay metal líquido o una carga en movimiento."
     }
   ],
   "review": [
@@ -384,6 +409,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

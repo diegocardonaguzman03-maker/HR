@@ -8,10 +8,10 @@
   "owner": "C-07",
   "manual": "02-operacion/ollas-lf/MO-LF-01-tratamiento-horno-olla.md",
   "deck": "05-capacitacion/MO-LF-01",
-  "purpose": "Entregar a la colada continua, en 35–45 min, acero en la química del grado, limpio y a la temperatura de envío, con ≥ 8 min de argón suave al final.",
+  "purpose": "Entregar a la colada continua, en 35–45 min, acero limpio y en la química del grado. Debe salir a la temperatura de envío, tras ≥ 8 min de argón suave.",
   "whyItMatters": "Un mal tratamiento da acero fuera de grado, buzas tapadas (clogging) o una temperatura que causa breakout en la colada. Agua o energía mal controladas pueden causar una explosión o una electrocución.",
   "startsWhen": "La olla llega del vaciado del EAF (MO-EAF-07) a la estación del horno olla.",
-  "endsWhen": "La olla queda liberada a la grúa de colada con química y temperatura en rango (MO-OLL-02).",
+  "endsWhen": "La olla queda entregada a la grúa de colada con química y temperatura en rango (MO-OLL-02).",
   "previous": [
     "MO-EAF-07"
   ],
@@ -33,7 +33,7 @@
       "code": "S-06",
       "name": "Operador de Horno Olla",
       "raci": "R",
-      "does": "Opera el horno olla: argón, arco, adiciones y ajustes; libera la olla.",
+      "does": "Opera el horno olla: argón, arco, adiciones y ajustes dentro de la práctica; entrega la olla lista a la grúa.",
       "it": "IT-S06"
     },
     {
@@ -65,8 +65,8 @@
     {
       "code": "C-05",
       "name": "Supervisor de Hornos",
-      "raci": "C",
-      "does": "Supervisa el turno y decide en condiciones anormales.",
+      "raci": "R",
+      "does": "Supervisa al personal del horno olla en el turno y decide en condiciones anormales.",
       "it": "IT-C05"
     },
     {
@@ -80,7 +80,7 @@
   "goldenRules": [
     "Nunca subas a la plataforma de electrodos con el interruptor cerrado: llave cautiva o LOTO.",
     "Adiciones y alambre siempre secos. Alarma de agua en la bóveda: arco fuera y evacúa a ≥ 25 m.",
-    "No liberes la olla sin ≥ 8 min de argón suave, sin arco y sin adiciones."
+    "No entregues la olla sin ≥ 8 min de argón suave, sin arco y sin adiciones."
   ],
   "epp": [
     "casco",
@@ -166,7 +166,7 @@
       "role": "S-07",
       "icon": "muestra",
       "title": "Mide y toma la muestra 1",
-      "action": "Tras 2–3 min de argón, mide temperatura y oxígeno (si aplica), toma la muestra y mide el espesor de escoria.",
+      "action": "Tras 2–3 min de argón, mide temperatura y oxígeno (si aplica), toma la muestra y mide la escoria. Usa lanza seca, de lado a la ventana, a ≥ 1.5 m y máximo 2 min en zona roja.",
       "check": "Lecturas válidas; escoria 40–100 mm.",
       "critical": true,
       "quality": true
@@ -177,9 +177,9 @@
       "role": "S-06",
       "icon": "electrico",
       "title": "Baja la bóveda y calienta",
-      "action": "Baja los electrodos y usa el tap de la práctica, con argón a 100–200 NL/min. Agrega cal y aluminato de calcio para formar la escoria reductora.",
+      "action": "Baja la bóveda y los electrodos y usa el tap de la práctica, con argón a 100–200 NL/min. Agrega cal y aluminato de calcio para formar la escoria reductora.",
       "check": "Calienta 4–5 °C/min con el arco cubierto.",
-      "stop": "Suena la alarma de fuga de agua de la bóveda."
+      "stop": "Hay alguien en la plataforma de electrodos o suena la alarma de fuga de agua de la bóveda."
     },
     {
       "n": 6,
@@ -204,7 +204,8 @@
       "action": "Arco apagado. Argón fuerte a 400–600 NL/min por 8–12 min. Vigila salpicaduras y bordo libre. Nadie a ≤ 5 m de la ventana.",
       "check": "S ≤ 0.010 % en la muestra 2.",
       "critical": true,
-      "quality": true
+      "quality": true,
+      "stop": "El bordo libre es menor de 300 mm o hay alguien a 5 m o menos de la ventana."
     },
     {
       "n": 8,
@@ -226,7 +227,7 @@
       "role": "S-07",
       "icon": "flujo",
       "title": "Inyecta CaSi con alambre",
-      "action": "Después del Al final y con T cerca de envío: alambre de CaSi 0.3–0.5 kg/t [Supuesto] a 150–250 m/min [Supuesto], con argón suave. Bóveda abajo; nadie frente a la ventana.",
+      "action": "Después del Al final y con T cerca de envío, inyecta el CaSi con argón suave. Usa 0.3–0.5 kg/t [Supuesto] a 150–250 m/min [Supuesto]. Bóveda abajo; nadie frente a la ventana.",
       "check": "Metros inyectados según el cálculo.",
       "critical": true,
       "stop": "Hay alguien frente a la ventana o la bóveda está arriba."
@@ -257,7 +258,7 @@
       "role": "S-07",
       "icon": "muestra",
       "title": "Mide T y toma la muestra final",
-      "action": "Mide la temperatura y toma la muestra final.",
+      "action": "Mide la temperatura y toma la muestra final con lanza seca, de lado a la ventana, a ≥ 1.5 m y máximo 2 min en zona roja.",
       "check": "T ± 5 °C del objetivo; química en rango; S ≤ 0.010 % (CC1).",
       "critical": true,
       "quality": true,
@@ -280,9 +281,9 @@
       "phase": 2,
       "role": "S-06",
       "icon": "ok",
-      "title": "Libera la olla",
-      "action": "Desconecta el argón y sube la bóveda. Confirma a S-09 y S-12: olla, colada, temperatura y destino.",
-      "check": "Liberación registrada en nivel 2; tratamiento de 35–45 min."
+      "title": "Entrega la olla lista",
+      "action": "Desconecta el argón y sube la bóveda. Confirma por radio a S-09 y S-12: olla, colada, temperatura, destino, bordo libre y sin fuga.",
+      "check": "Entrega registrada en nivel 2; tratamiento de 35–45 min."
     }
   ],
   "abnormal": [
@@ -319,14 +320,14 @@
     {
       "icon": "bloqueo",
       "if": "El alambre no entra o se atasca",
-      "do": "Detén el alimentador. Desatasca solo con LOTO y reanuda.",
+      "do": "Detén el alimentador. Nadie en la trayectoria del alambre. Desatasca solo con LOTO y reanuda.",
       "call": "C-05"
     },
     {
-      "icon": "tiempo",
-      "if": "El tratamiento pasa de 50 min",
-      "do": "Avisa a S-12 y registra la causa. C-04 ajusta la secuencia.",
-      "call": "C-04"
+      "icon": "gas",
+      "if": "Tu detector suena o alarma el monitor de O₂ de la fosa",
+      "do": "Sal a zona verde y avisa por radio con lugar y lectura. No entres a la fosa del carro ni a túneles de argón. Si alguien cae, no entres a rescatarlo: da la alarma; solo la brigada con ERA.",
+      "call": "C-04 y C-16 (MS-ACE-05, MS-ACE-06)"
     }
   ],
   "records": [
@@ -417,6 +418,30 @@
     {
       "term": "Llave cautiva",
       "def": "Llave que solo sale del tablero con el interruptor abierto; una por persona."
+    },
+    {
+      "term": "Bordo libre",
+      "def": "Distancia del acero y la escoria al borde de la olla; mínimo 300 mm [Supuesto]."
+    },
+    {
+      "term": "Olla",
+      "def": "Recipiente de acero con refractario que recibe ≈ 150 t de acero líquido del horno y lo lleva al horno olla y a la colada continua."
+    },
+    {
+      "term": "Breakout",
+      "def": "Fuga de acero líquido en la colada continua cuando la piel del acero se rompe bajo el molde."
+    },
+    {
+      "term": "HSLA",
+      "def": "Acero de alta resistencia y baja aleación (por ejemplo, para tubería). Es más delicado de colar y de enfriar."
+    },
+    {
+      "term": "Bajo C calmado al Al",
+      "def": "Acero de bajo carbono desoxidado con aluminio; es el grado más común de CC1."
+    },
+    {
+      "term": "NL/min",
+      "def": "Unidad de caudal de gas (argón): litros por minuto medidos en condiciones normales."
     }
   ],
   "review": [
@@ -424,6 +449,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

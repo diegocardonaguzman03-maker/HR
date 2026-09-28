@@ -8,97 +8,498 @@
   "owner": "C-06",
   "manual": "02-operacion/cc1/MO-CC1-02-insercion-sellado-barra-falsa.md",
   "deck": "05-capacitacion/MO-CC1-02",
-  "purpose": "Dejar la máquina CC1 lista para arrancar: línea limpia y seca, molde al ancho del programa, barra falsa en el molde con la cabeza sellada y seca, y todos los sistemas probados.",
+  "purpose": "Dejar la máquina CC1 lista para arrancar, con la línea limpia y seca y el molde al ancho del programa. La barra falsa queda sellada y seca, y todo probado.",
   "whyItMatters": "Si la cabeza no queda sellada, el acero se fuga al arrancar. Si hay agua, aceite u óxido, el acero puede explotar al tocarlos. Meter las manos sin LOTO puede costar una mano.",
   "startsWhen": "Termina la salida de la cola de la secuencia anterior (MO-CC1-07) o el paro de mantenimiento.",
   "endsWhen": "C-06 firma la lista de verificación previa al arranque y la máquina queda lista para el arranque (MO-CC1-03).",
-  "previous": ["MO-CC1-07"],
-  "next": ["MO-CC1-03"],
-  "heroFigure": { "file": "img/cc1-arranque-barra-falsa.svg", "caption": "Cabeza de barra falsa a ≈ 650 mm bajo el borde del molde, holguras selladas de 2–5 mm y capa de chatarra de 50–80 mm." },
+  "previous": [
+    "MO-CC1-07"
+  ],
+  "next": [
+    "MO-CC1-03"
+  ],
+  "heroFigure": {
+    "file": "img/cc1-arranque-barra-falsa.svg",
+    "caption": "Cabeza de barra falsa a ≈ 650 mm bajo el borde del molde, holguras selladas de 2–5 mm y capa de chatarra de 50–80 mm."
+  },
   "figures": [
-    { "file": "img/cc1-perfil-maquina.svg", "caption": "Perfil de la máquina CC1: molde, segmentos 1–14, zonas de enfriamiento y desconexión de la barra falsa." },
-    { "file": "img/ms-loto-puntos-cc.svg", "caption": "Puntos de bloqueo (LOTO) de la colada continua: barra falsa, segmentos, oscilación." }
+    {
+      "file": "img/cc1-perfil-maquina.svg",
+      "caption": "Perfil de la máquina CC1: molde, segmentos 1–14, zonas de enfriamiento y desconexión de la barra falsa."
+    },
+    {
+      "file": "img/ms-loto-puntos-cc.svg",
+      "caption": "Puntos de bloqueo (LOTO) de la colada continua: barra falsa, segmentos, oscilación."
+    }
   ],
   "roles": [
-    { "code": "S-12", "name": "Operador de Púlpito de Colada", "raci": "R", "does": "Desde la HMI prueba boquillas, ajusta ancho, inserta la barra falsa y prueba los sistemas.", "it": "IT-S12" },
-    { "code": "S-14", "name": "Ayudante de Colada", "raci": "R", "does": "Limpia y seca el molde, sella la cabeza, pone la chatarra y verifica a la vista.", "it": "IT-S14" },
-    { "code": "C-06", "name": "Supervisor de Colada Continua", "raci": "A", "does": "Dueño del proceso. Revisa y firma la lista previa y autoriza el arranque.", "it": "IT-C06" },
-    { "code": "S-13", "name": "Operador de Plataforma de Colada", "raci": "C", "does": "Apoya la revisión del molde y del equipo y materiales de arranque.", "it": "IT-S13" },
-    { "code": "S-21", "name": "Instrumentista", "raci": "C", "does": "Calibra el sensor de nivel y revisa los termopares BOP.", "it": "IT-S21" },
-    { "code": "C-08", "name": "Ingeniero de Proceso de CC", "raci": "C", "does": "Define ancho, conicidad y práctica de arranque por grado." },
-    { "code": "S-19", "name": "Mecánico de Acería", "raci": "I", "does": "Atiende fallas de segmentos y oscilación.", "it": "IT-S19" },
-    { "code": "S-22", "name": "Técnico Hidráulico", "raci": "I", "does": "Atiende fallas de hidráulica y oscilación.", "it": "IT-S22" }
+    {
+      "code": "S-12",
+      "name": "Operador de Púlpito de Colada",
+      "raci": "R",
+      "does": "Desde la HMI prueba boquillas, ajusta ancho, inserta la barra falsa y prueba los sistemas.",
+      "it": "IT-S12"
+    },
+    {
+      "code": "S-14",
+      "name": "Ayudante de Colada",
+      "raci": "R",
+      "does": "Limpia y seca el molde, sella la cabeza, pone la chatarra y verifica a la vista.",
+      "it": "IT-S14"
+    },
+    {
+      "code": "C-06",
+      "name": "Supervisor de Colada Continua",
+      "raci": "A",
+      "does": "Dueño del proceso. Revisa y firma la lista previa y autoriza el arranque.",
+      "it": "IT-C06"
+    },
+    {
+      "code": "S-13",
+      "name": "Operador de Plataforma de Colada",
+      "raci": "C",
+      "does": "Apoya la revisión del molde y del equipo y materiales de arranque.",
+      "it": "IT-S13"
+    },
+    {
+      "code": "S-21",
+      "name": "Instrumentista",
+      "raci": "C",
+      "does": "Calibra el sensor de nivel y revisa los termopares BOP.",
+      "it": "IT-S21"
+    },
+    {
+      "code": "C-08",
+      "name": "Ingeniero de Proceso de CC",
+      "raci": "C",
+      "does": "Define ancho, conicidad y práctica de arranque por grado."
+    },
+    {
+      "code": "S-19",
+      "name": "Mecánico de Acería",
+      "raci": "I",
+      "does": "Atiende fallas de segmentos y oscilación.",
+      "it": "IT-S19"
+    },
+    {
+      "code": "S-22",
+      "name": "Técnico Hidráulico",
+      "raci": "I",
+      "does": "Atiende fallas de hidráulica y oscilación.",
+      "it": "IT-S22"
+    }
   ],
   "goldenRules": [
     "Todo seco: molde, cabeza, chatarra y herramientas. Agua o aceite bajo el acero = explosión.",
     "Nunca metas manos ni herramientas al molde sin tu candado y la prueba de arranque.",
     "Sin agua de molde ≥ 95 % y agua de emergencia lista, no se arranca."
   ],
-  "epp": ["casco", "lentes", "ropa_fr", "botas", "guantes", "respirador", "arnes"],
+  "epp": [
+    "casco",
+    "lentes",
+    "ropa_fr",
+    "botas",
+    "guantes",
+    "respirador",
+    "arnes"
+  ],
   "dangerZone": {
     "red": "Cámara de rociado y bajo la plataforma del molde durante la prueba de boquillas y la inserción: nadie.",
     "yellow": "Plataforma del molde: arnés y línea de vida si trabajas fuera de barandales (MS-ACE-10).",
     "rule": "LOTO de barra falsa, segmentos, oscilación y ajuste de ancho antes de sellar. Cada candado lo retira su dueño."
   },
   "hazards": [
-    { "icon": "bloqueo", "text": "Movimiento de la barra falsa o de la oscilación con manos en el molde: atrapamiento, amputación." },
-    { "icon": "agua", "text": "Humedad, aceite u óxido en molde, cabeza o chatarra: explosión al arrancar." },
-    { "icon": "peligro", "text": "Caída al molde o desde la plataforma." },
-    { "icon": "rociar", "text": "Rociadores en prueba: vapor, quemadura y resbalón." },
-    { "icon": "gas", "text": "Fibra cerámica: irritación respiratoria y de piel (respirador P100)." }
+    {
+      "icon": "bloqueo",
+      "text": "Movimiento de la barra falsa o de la oscilación con manos en el molde: atrapamiento, amputación."
+    },
+    {
+      "icon": "agua",
+      "text": "Humedad, aceite u óxido en molde, cabeza o chatarra: explosión al arrancar."
+    },
+    {
+      "icon": "peligro",
+      "text": "Caída al molde o desde la plataforma."
+    },
+    {
+      "icon": "rociar",
+      "text": "Rociadores en prueba: vapor, quemadura y resbalón."
+    },
+    {
+      "icon": "gas",
+      "text": "Fibra cerámica: irritación respiratoria y de piel (respirador P100)."
+    }
   ],
-  "phases": ["Preparar la línea", "Sellar la cabeza", "Probar y firmar"],
+  "phases": [
+    "Preparar la línea",
+    "Sellar la cabeza",
+    "Probar y firmar"
+  ],
   "steps": [
-    { "n": 1, "phase": 0, "role": "S-14", "icon": "inspeccionar", "title": "Recorre e inspecciona la línea", "action": "Busca restos de acero o costra en rodillos, rodillos trabados y boquillas dañadas. Avisa al púlpito lo que encuentres.", "check": "Línea libre." },
-    { "n": 2, "phase": 0, "role": "S-12", "icon": "rociar", "title": "Prueba las boquillas", "action": "Con nadie en la cámara de rociado, activa las 10 zonas en modo prueba y revisa el patrón. Pide cambiar las tapadas.", "check": "≤ 2 % de boquillas tapadas por zona [Validar con OEM].", "quality": true, "stop": "Hay alguien dentro de la cámara de rociado." },
-    { "n": 3, "phase": 0, "role": "S-14", "icon": "agua", "title": "Seca la línea", "action": "Con el agua de rociadores cortada, sopla con aire 10–15 min. Revisa el molde y los rodillos superiores.", "check": "Sin agua visible en el molde ni en los segmentos 1–3.", "critical": true, "stop": "Ves agua en el molde o en los segmentos 1–3." },
-    { "n": 4, "phase": 0, "role": "S-12", "icon": "medir", "title": "Ajusta ancho y conicidad", "action": "Carga el ancho del programa en la HMI. S-14 mide arriba y abajo del molde con regla.", "check": "Ancho ± 1 mm; conicidad 1.0–1.2 %/m.", "quality": true },
-    { "n": 5, "phase": 0, "role": "S-12", "icon": "hmi", "title": "Pon la línea en modo inserción", "action": "Pasa los segmentos a modo inserción, presión baja [Validar con OEM]. Confirma que el área esté despejada.", "check": "Modo inserción confirmado en la HMI." },
-    { "n": 6, "phase": 0, "role": "S-12", "icon": "subir_bajar", "title": "Inserta la barra falsa", "action": "Avanza a 3–5 m/min. A 2 m del molde baja a 0.3 m/min.", "check": "Sin sobrecarga de motores.", "stop": "Hay sobrecarga de motores: no fuerces la barra." },
-    { "n": 7, "phase": 0, "role": "S-12", "icon": "ubicacion", "title": "Posiciona la cabeza", "action": "Detén la cabeza bajo el borde del molde. S-14 confirma la posición con regla.", "check": "Cabeza a ≈ 650 mm ± 10 mm bajo el borde.", "quality": true },
-    { "n": 8, "phase": 1, "role": "S-14", "icon": "bloqueo", "title": "Aplica LOTO", "action": "Bloquea barra falsa, segmentos, oscilación y ajuste de ancho con tu candado personal. Haz la prueba de arranque.", "check": "Candados puestos; prueba sin movimiento.", "critical": true, "stop": "Algún equipo se mueve en la prueba de arranque." },
-    { "n": 9, "phase": 1, "role": "S-14", "icon": "inspeccionar", "title": "Revisa fugas de agua del molde", "action": "Con el agua de molde a caudal nominal, observa placas y esquinas 5 min con lámpara.", "check": "Sin gotas ni humedad en 5 min.", "critical": true, "stop": "Hay gotas o humedad en las placas del molde." },
-    { "n": 10, "phase": 1, "role": "S-14", "icon": "herramienta", "title": "Limpia la cabeza y el molde", "action": "Retira polvo y restos con aire seco. Nunca uses agua ni aceite.", "check": "Superficies limpias y secas." },
-    { "n": 11, "phase": 1, "role": "S-14", "icon": "herramienta", "title": "Sella las holguras", "action": "Comprime el cordón de fibra cerámica en las holguras cabeza–placa y en las esquinas. Cubre con sellador seco. Usa respirador P100.", "check": "Holgura de 2–5 mm por lado; sin holguras visibles.", "critical": true },
-    { "n": 12, "phase": 1, "role": "S-14", "icon": "material", "title": "Coloca la chatarra de enfriamiento", "action": "Pon 15–25 kg de clavos, rondanas o recortes limpios y secos, en capa uniforme. No tapes el gancho en exceso.", "check": "Capa de 50–80 mm; material seco, sin óxido ni aceite.", "critical": true, "stop": "La chatarra está mojada, oxidada o con aceite." },
-    { "n": 13, "phase": 2, "role": "S-14", "icon": "personas", "title": "Retira herramientas, personas y LOTO", "action": "Cuenta herramientas y personas y pon la tapa del molde. Cada dueño retira su candado. Avisa al púlpito por radio.", "check": "Conteo completo; candados retirados." },
-    { "n": 14, "phase": 2, "role": "S-12", "icon": "tendencia", "title": "Prueba la oscilación", "action": "Arranca la oscilación a la frecuencia y carrera de arranque y mide.", "check": "Frecuencia ± 2 %; carrera ± 0.5 mm del ajuste (4–8 mm)." },
-    { "n": 15, "phase": 2, "role": "S-12", "icon": "agua", "title": "Prueba el agua de molde", "action": "Pon caudal nominal en las 4 caras. Revisa que las alarmas de caudal y ΔT estén activas.", "check": "≥ 95 % del nominal (anchas 4,200 L/min; angostas 450 L/min).", "critical": true, "stop": "El caudal está debajo del 90 % en alguna cara." },
-    { "n": 16, "phase": 2, "role": "S-12", "icon": "alarma", "title": "Verifica el agua de emergencia", "action": "Revisa el nivel de la torre y que las bombas diésel estén en automático. Revisa la fecha de la última prueba.", "check": "Estado \"listo\" en la HMI; última prueba ≤ 7 días.", "critical": true, "stop": "La prueba de agua de emergencia está vencida o falló." },
-    { "n": 17, "phase": 2, "role": "S-12", "icon": "hmi", "title": "Verifica nivel, BOP, corte y salida", "action": "Sensor de nivel calibrado (S-21) y todos los termopares BOP con lectura. Oxicorte probado, mesa de salida libre y desconexión de barra falsa lista.", "check": "Sin fallas activas; corte y salida listos." },
-    { "n": 18, "phase": 2, "role": "C-06", "icon": "autorizar", "title": "Revisa y firma la lista previa", "action": "Confirma con S-13 el equipo de emergencia en la plataforma: lanzas de O₂, cajas de rebose, pote de emergencia y herramientas secas. Revisa todos los puntos y firma.", "check": "Lista de verificación previa al arranque firmada.", "decision": { "question": "¿Lista completa?", "no": "Corrige el faltante y repite la prueba." } }
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-14",
+      "icon": "inspeccionar",
+      "title": "Recorre e inspecciona la línea",
+      "action": "Busca restos de acero o costra en rodillos, rodillos trabados y boquillas dañadas. Avisa al púlpito lo que encuentres.",
+      "check": "Línea libre.",
+      "stop": "Para revisar tienes que meter manos o herramientas entre rodillos: primero LOTO (paso 8)."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-12",
+      "icon": "rociar",
+      "title": "Prueba las boquillas",
+      "action": "Con nadie en la cámara de rociado, activa las 10 zonas en modo prueba y revisa el patrón. Pide cambiar las tapadas.",
+      "check": "≤ 2 % de boquillas tapadas por zona [Validar con OEM].",
+      "quality": true,
+      "stop": "Hay alguien dentro de la cámara de rociado."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-14",
+      "icon": "agua",
+      "title": "Seca la línea",
+      "action": "Con el agua de rociadores cortada, sopla con aire 10–15 min. Revisa el molde y los rodillos superiores.",
+      "check": "Sin agua visible en el molde ni en los segmentos 1–3.",
+      "critical": true,
+      "stop": "Ves agua en el molde o en los segmentos 1–3."
+    },
+    {
+      "n": 4,
+      "phase": 0,
+      "role": "S-12",
+      "icon": "medir",
+      "title": "Ajusta ancho y conicidad",
+      "action": "Carga el ancho del programa en la HMI. S-14 mide arriba y abajo del molde con regla.",
+      "check": "Ancho ± 1 mm; conicidad 1.0–1.2 %/m.",
+      "quality": true
+    },
+    {
+      "n": 5,
+      "phase": 0,
+      "role": "S-12",
+      "icon": "hmi",
+      "title": "Pon la línea en modo inserción",
+      "action": "Pasa los segmentos a modo inserción, presión baja [Validar con OEM]. Confirma que el área esté despejada.",
+      "check": "La HMI confirma modo inserción; área despejada."
+    },
+    {
+      "n": 6,
+      "phase": 0,
+      "role": "S-12",
+      "icon": "subir_bajar",
+      "title": "Inserta la barra falsa",
+      "action": "Avanza a 3–5 m/min. A 2 m del molde baja a 0.3 m/min.",
+      "check": "Sin sobrecarga de motores.",
+      "stop": "Hay sobrecarga de motores, o alguien en la cámara de rociado o bajo la plataforma del molde."
+    },
+    {
+      "n": 7,
+      "phase": 0,
+      "role": "S-12",
+      "icon": "ubicacion",
+      "title": "Posiciona la cabeza",
+      "action": "Detén la cabeza bajo el borde del molde. S-14 confirma la posición con regla.",
+      "check": "Cabeza a ≈ 650 mm ± 10 mm bajo el borde.",
+      "quality": true
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "bloqueo",
+      "title": "Aplica LOTO",
+      "action": "Bloquea barra falsa, segmentos, oscilación y ajuste de ancho con tu candado personal. Haz la prueba de arranque: intenta arrancar cada equipo y confirma que no se mueve.",
+      "check": "Candados puestos; prueba sin movimiento.",
+      "critical": true,
+      "stop": "Algún equipo se mueve en la prueba de arranque."
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "inspeccionar",
+      "title": "Revisa fugas de agua del molde",
+      "action": "Con el agua de molde a caudal nominal, observa placas y esquinas 5 min con lámpara.",
+      "check": "Sin gotas ni humedad en 5 min.",
+      "critical": true,
+      "stop": "Hay gotas o humedad en las placas del molde."
+    },
+    {
+      "n": 10,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "herramienta",
+      "title": "Limpia la cabeza y el molde",
+      "action": "Retira polvo y restos con aire seco. Nunca uses agua ni aceite.",
+      "check": "Superficies limpias y secas."
+    },
+    {
+      "n": 11,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "herramienta",
+      "title": "Sella las holguras",
+      "action": "Comprime el cordón de fibra cerámica en las holguras cabeza–placa y en las esquinas. Cubre con sellador seco. Usa respirador P100.",
+      "check": "Holgura de 2–5 mm por lado; sin holguras visibles.",
+      "critical": true
+    },
+    {
+      "n": 12,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "material",
+      "title": "Coloca la chatarra de enfriamiento",
+      "action": "Pon 15–25 kg de clavos, rondanas o recortes limpios y secos, en capa uniforme. No tapes el gancho en exceso.",
+      "check": "Capa de 50–80 mm; material seco, sin óxido ni aceite.",
+      "critical": true,
+      "stop": "La chatarra está mojada, oxidada o con aceite."
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-14",
+      "icon": "personas",
+      "title": "Retira herramientas, personas y LOTO",
+      "action": "Cuenta herramientas y personas y pon la tapa del molde. Cada dueño retira su candado. Avisa al púlpito por radio.",
+      "check": "Conteo completo; candados retirados.",
+      "stop": "Falta una persona o una herramienta en el conteo."
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "S-12",
+      "icon": "tendencia",
+      "title": "Prueba la oscilación",
+      "action": "Arranca la oscilación a la frecuencia y carrera de arranque y mide.",
+      "check": "Frecuencia ± 2 %; carrera ± 0.5 mm del ajuste (4–8 mm)."
+    },
+    {
+      "n": 15,
+      "phase": 2,
+      "role": "S-12",
+      "icon": "agua",
+      "title": "Prueba el agua de molde",
+      "action": "Pon caudal nominal en las 4 caras. Revisa que las alarmas de caudal y ΔT estén activas.",
+      "check": "≥ 95 % del nominal (anchas 4,200 L/min; angostas 450 L/min).",
+      "critical": true,
+      "stop": "El caudal está debajo del 90 % en alguna cara."
+    },
+    {
+      "n": 16,
+      "phase": 2,
+      "role": "S-12",
+      "icon": "alarma",
+      "title": "Verifica el agua de emergencia",
+      "action": "Revisa el nivel de la torre y que las bombas diésel estén en automático. Revisa la fecha de la última prueba.",
+      "check": "Estado \"listo\" en la HMI; última prueba ≤ 7 días.",
+      "critical": true,
+      "stop": "La prueba de agua de emergencia está vencida o falló."
+    },
+    {
+      "n": 17,
+      "phase": 2,
+      "role": "S-12",
+      "icon": "hmi",
+      "title": "Verifica nivel, BOP, corte y salida",
+      "action": "Sensor de nivel calibrado (S-21) y todos los termopares BOP con lectura. Oxicorte probado, mesa de salida libre y desconexión de barra falsa lista.",
+      "check": "Sin fallas activas; corte y salida listos."
+    },
+    {
+      "n": 18,
+      "phase": 2,
+      "role": "C-06",
+      "icon": "autorizar",
+      "title": "Revisa y firma la lista previa",
+      "action": "Confirma con S-13 el equipo de emergencia en la plataforma: lanzas de O₂, cajas de rebose, pote y herramientas secas. Revisa todos los puntos y firma.",
+      "check": "Lista de verificación previa al arranque firmada.",
+      "decision": {
+        "question": "¿Lista completa?",
+        "no": "Corrige el faltante y repite la prueba."
+      }
+    }
   ],
   "abnormal": [
-    { "icon": "alto", "if": "Sobrecarga de motores al insertar", "do": "Detén. Inspecciona con LOTO; no fuerces la barra.", "call": "C-06 y S-19" },
-    { "icon": "agua", "if": "Gotas de agua en las placas del molde", "do": "No se arranca. Reparación según MM-CC-01.", "call": "C-06 y C-11" },
-    { "icon": "medir", "if": "Holgura cabeza–placa mayor de 10 mm", "do": "Revisa el ancho; cambia la cabeza si aplica.", "call": "C-06 y C-08" },
-    { "icon": "material", "if": "Chatarra de enfriamiento mojada u oxidada", "do": "Reemplázala con material seco del almacén cubierto.", "call": "C-06" },
-    { "icon": "alarma", "if": "Prueba de agua de emergencia vencida o fallida", "do": "No se arranca hasta probarla (MM-CC-03).", "call": "C-06 y C-12" },
-    { "icon": "tendencia", "if": "Termopares BOP fallados arriba del criterio", "do": "Se reparan antes de arrancar, o C-08 autoriza con restricción de velocidad [Validar con OEM].", "call": "S-21 y C-08" },
-    { "icon": "nivel", "if": "Sensor de nivel inestable", "do": "Recalibra. Sin nivel automático no se arranca.", "call": "S-21" }
+    {
+      "icon": "alto",
+      "if": "Sobrecarga de motores al insertar",
+      "do": "Detén. Inspecciona con LOTO; no fuerces la barra.",
+      "call": "C-06 y S-19"
+    },
+    {
+      "icon": "agua",
+      "if": "Gotas de agua en las placas del molde",
+      "do": "No se arranca. Reparación según MM-CC-01.",
+      "call": "C-06 y C-11"
+    },
+    {
+      "icon": "medir",
+      "if": "Holgura cabeza–placa mayor de 10 mm",
+      "do": "Revisa el ancho; cambia la cabeza si aplica.",
+      "call": "C-06 y C-08"
+    },
+    {
+      "icon": "material",
+      "if": "Chatarra de enfriamiento mojada u oxidada",
+      "do": "Reemplázala con material seco del almacén cubierto.",
+      "call": "C-06"
+    },
+    {
+      "icon": "alarma",
+      "if": "Prueba de agua de emergencia vencida o fallida",
+      "do": "No se arranca hasta probarla (MM-CC-03).",
+      "call": "C-06 y C-12"
+    },
+    {
+      "icon": "tendencia",
+      "if": "Termopares BOP fallados arriba del criterio",
+      "do": "Se reparan antes de arrancar, o C-08 autoriza con restricción de velocidad [Validar con OEM].",
+      "call": "S-21 y C-08"
+    },
+    {
+      "icon": "nivel",
+      "if": "Sensor de nivel inestable",
+      "do": "Recalibra. Sin nivel automático no se arranca.",
+      "call": "S-21"
+    }
   ],
   "records": [
-    { "what": "Lista de verificación previa al arranque (21 puntos) firmada por C-06", "when": "Cada arranque", "where": "Lista previa / nivel 2" },
-    { "what": "Prueba de boquillas (boquillas cambiadas por zona)", "when": "Cada arranque", "where": "Registro de boquillas" },
-    { "what": "Ancho y conicidad medidos", "when": "Cada arranque", "where": "Lista previa" },
-    { "what": "Registro LOTO del sellado", "when": "Cada sellado", "where": "Sistema de SSO" },
-    { "what": "Última prueba de agua de emergencia", "when": "Semanal", "where": "MM-CC-03" }
+    {
+      "what": "Lista de verificación previa al arranque (21 puntos) firmada por C-06",
+      "when": "Cada arranque",
+      "where": "Lista previa / nivel 2"
+    },
+    {
+      "what": "Prueba de boquillas (boquillas cambiadas por zona)",
+      "when": "Cada arranque",
+      "where": "Registro de boquillas"
+    },
+    {
+      "what": "Ancho y conicidad medidos",
+      "when": "Cada arranque",
+      "where": "Lista previa"
+    },
+    {
+      "what": "Registro LOTO del sellado",
+      "when": "Cada sellado",
+      "where": "Sistema de SSO"
+    },
+    {
+      "what": "Última prueba de agua de emergencia",
+      "when": "Semanal",
+      "where": "MM-CC-03"
+    }
   ],
   "certification": [
-    { "role": "S-14", "level": "3", "theory": "12 h", "ojt": "40 h / 8 sellados", "evaluated": "Pasos 3, 8, 9, 11 y 12", "validity": "24 meses" },
-    { "role": "S-12", "level": "3", "theory": "16 h", "ojt": "60 h / 8 preparaciones", "evaluated": "Pasos 3, 8, 15 y 16", "validity": "24 meses" },
-    { "role": "C-06", "level": "4 (evaluador)", "theory": "8 h + evaluador", "ojt": "—", "evaluated": "Todos los pasos", "validity": "24 meses" }
+    {
+      "role": "S-14",
+      "level": "3",
+      "theory": "12 h",
+      "ojt": "40 h / 8 sellados",
+      "evaluated": "Pasos 3, 8, 9, 11 y 12",
+      "validity": "24 meses"
+    },
+    {
+      "role": "S-12",
+      "level": "3",
+      "theory": "16 h",
+      "ojt": "60 h / 8 preparaciones",
+      "evaluated": "Pasos 3, 8, 15 y 16",
+      "validity": "24 meses"
+    },
+    {
+      "role": "C-06",
+      "level": "4 (evaluador)",
+      "theory": "8 h + evaluador",
+      "ojt": "—",
+      "evaluated": "Todos los pasos",
+      "validity": "24 meses"
+    }
   ],
   "glossary": [
-    { "term": "Barra falsa", "def": "Cadena de eslabones que entra por abajo hasta el molde y jala el primer planchón." },
-    { "term": "Cabeza (cola de milano)", "def": "Extremo de la barra falsa donde solidifica el primer acero y queda enganchado." },
-    { "term": "Chatarra de enfriamiento", "def": "Clavos, rondanas o recortes limpios y secos que enfrían el primer acero sobre la cabeza." },
-    { "term": "Conicidad", "def": "Inclinación de las caras angostas del molde (1.0–1.2 %/m) para seguir la contracción del acero." },
-    { "term": "BOP", "def": "Sistema de termopares del molde que avisa antes de un breakout." },
-    { "term": "LOTO", "def": "Bloqueo y etiquetado con candado personal para que ningún equipo se mueva." },
-    { "term": "Agua de emergencia", "def": "Torre y bombas diésel que enfrían el molde si falla el agua normal; entra en ≤ 15 s." }
+    {
+      "term": "Barra falsa",
+      "def": "Cadena de eslabones que entra por abajo hasta el molde y jala el primer planchón."
+    },
+    {
+      "term": "Cabeza (cola de milano)",
+      "def": "Extremo de la barra falsa donde solidifica el primer acero y queda enganchado."
+    },
+    {
+      "term": "Chatarra de enfriamiento",
+      "def": "Clavos, rondanas o recortes limpios y secos que enfrían el primer acero sobre la cabeza."
+    },
+    {
+      "term": "Conicidad",
+      "def": "Inclinación de las caras angostas del molde (1.0–1.2 %/m) para seguir la contracción del acero."
+    },
+    {
+      "term": "BOP",
+      "def": "Sistema de termopares del molde que avisa antes de un breakout."
+    },
+    {
+      "term": "LOTO",
+      "def": "Bloqueo y etiquetado con candado personal para que ningún equipo se mueva."
+    },
+    {
+      "term": "Agua de emergencia",
+      "def": "Torre y bombas diésel que enfrían el molde si falla el agua normal; entra en ≤ 15 s."
+    },
+    {
+      "term": "Prueba de arranque",
+      "def": "Prueba de arranque (LOTO): intentar arrancar el equipo ya bloqueado para comprobar que no se mueve. No es el arranque de colada."
+    },
+    {
+      "term": "Segmentos",
+      "def": "Tramos de rodillos bajo el molde que guían y enfrían la pieza. Los segmentos 1–3 son los más cercanos al molde."
+    },
+    {
+      "term": "Oscilación",
+      "def": "Movimiento arriba-abajo del molde para que el acero no se pegue a sus paredes."
+    },
+    {
+      "term": "Cámara de rociado",
+      "def": "Zona cerrada bajo el molde donde las boquillas rocían agua y aire. Nadie entra con la máquina en operación."
+    },
+    {
+      "term": "HMI",
+      "def": "Pantalla de operación (en el púlpito o en campo) donde ves valores, estados y alarmas del equipo."
+    }
   ],
   "review": [
-    { "area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28" }
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    }
   ]
 }

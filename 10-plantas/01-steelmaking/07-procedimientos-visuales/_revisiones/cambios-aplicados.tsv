@@ -4,70 +4,21 @@ MO-CC1-01	documentacion	set	steps[13].action	Lenguaje: frase de más de 20 palab
 MO-CC1-01	documentacion	set	steps[17].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
 MO-CC1-01	documentacion	set	glossary[0].def	Glosario: definición canónica de CC1 (igual en POV-CC1-05).
 MO-CC1-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC1-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-01	laboral	set	roles[0].does	S-27 no existe en el catálogo; la cobertura por S-15 es provisional y depende de una decisión del Director.
-MO-CC1-01	laboral	set	certification[0].validity	La operación de la grúa pasa a su propia fila (abajo).
-MO-CC1-01	laboral	append	certification	El manual §11 exige esta certificación al "operador de grúa de CC"; el POV la había omitido aunque S-15 hace el izaje (paso 12). Mismo criterio que MO-CC2-01.
-MO-CC1-01	laboral	set	certification[1].evaluated	El paso 11 lo ejecuta S-15. Una certificación de escalafón debe evaluar los pasos del propio puesto (TD-P07; LFT art. 153-U).
-MO-CC1-01	seguridad	set	steps[1].stop	El manual pone la limpieza (paso 3) antes del permiso de entrada (paso 4). Si la limpieza exige entrar, aplica espacio confinado (MS-ACE-05). Se reporta el orden del manual como hallazgo.
-MO-CC1-01	seguridad	set	steps[2].stop	Manual §6.1 (≤ 45 °C) y MS-ACE-05 §8 pasos 6–7: rescate listo antes de entrar.
-MO-CC1-01	seguridad	set	steps[15].stop	Manual §6.1 (carro de distribuidor en movimiento: área despejada).
 MO-CC1-02	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC1-02	documentacion	set	steps[17].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC1-02	documentacion	set	steps[4].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
-MO-CC1-02	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC1-02	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC1-02	usuario	set	steps[7].action	Un nuevo confunde "prueba de arranque" (LOTO) con el arranque de colada.
-MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-02	seguridad	set	steps[0].stop	Manual §6.1 ★: LOTO antes de meter manos o herramientas. El recorrido inicial se hace sin LOTO; la persona nueva debe saber que solo mira.
-MO-CC1-02	seguridad	set	steps[5].stop	Manual §6.3: zona de exclusión durante la inserción.
-MO-CC1-02	seguridad	set	steps[12].stop	Manual §6.3: retiro de candados solo con conteo completo de personas y herramientas.
 MO-CC1-03	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC1-03	documentacion	set	steps[1].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC1-03	documentacion	set	steps[6].title	Título: debe empezar con verbo (ESPECIFICACION).
 MO-CC1-03	documentacion	set	steps[11].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC1-03	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC1-03	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC1-03	usuario	set	roles[1].does	La descripción no tenía verbo: un nuevo no sabe qué hace el puesto.
-MO-CC1-03	usuario	set	roles[2].does	La descripción no tenía verbo.
-MO-CC1-03	usuario	set	roles[3].does	La descripción no tenía verbo; es el puesto de mayor rotación de ingreso en colada.
-MO-CC1-03	usuario	set	steps[10].check	"Cabeza → menisco −60 mm" es una notación que un nuevo no lee; mismo valor.
-MO-CC1-03	usuario	set	steps[12].action	Misma aclaración de la notación "menisco −60 mm".
-MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-03	seguridad	set	steps[3].stop	Manual §6.1 (olla suspendida) y MS-ACE-04.
-MO-CC1-03	seguridad	set	steps[4].stop	Manual §6.1 y §6.3: zona de giro despejada durante el giro.
-MO-CC1-03	seguridad	set	steps[5].stop	Abrir la olla es el inicio de la exposición; el ALTO se liga al paso ★ 2 y a MS-ACE-01 (aviso ≥ 30 s).
-MO-CC1-03	seguridad	set	steps[17].stop	Manual §9 (barra falsa no se desconecta). No cabía otra condición anormal; se pone como ALTO del paso.
-MO-CC1-03	seguridad	set	abnormal[4].do	Manual MO-CC1-04 §9 y MS-ACE-09 escenario C: mantener el agua de molde y no acercarse; el POV decía solo 'detén y evacúa'.
 MO-CC1-04	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC1-04	documentacion	set	whyItMatters	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC1-04	documentacion	set	steps[0].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC1-04	documentacion	set	glossary[6]	Término único: "Sobrecalentamiento (SH)", como en POV-CC1-03 y POV-CC1-05.
 MO-CC1-04	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC1-04	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC1-04	usuario	set	roles[0].does	La descripción no tenía verbo.
-MO-CC1-04	usuario	set	roles[1].does	La descripción no tenía verbo.
-MO-CC1-04	usuario	set	roles[2].does	La descripción no tenía verbo.
-MO-CC1-04	usuario	set	steps[3].action	"Peritécticos (HSLA): −0.2 m/min" es una abreviatura; mismo valor.
-MO-CC1-04	usuario	set	goldenRules[2]	Las flechas no se memorizan; se escribe en frases con el mismo orden.
-MO-CC1-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-04	laboral	set	roles[5].raci	Doble A (C-08 y C-06). Catálogo y DP-ACE-C: dueño C-08; C-06 = S (supervisa y hace cumplir en el turno). El manual §2 dice "A (turno)": ajustar a R.
-MO-CC1-04	laboral	set	roles[5].does	Mando de C-06 sobre S-12, S-13, S-14 y S-11 (LFT art. 9).
-MO-CC1-04	laboral	set	certification[4].validity	La vigencia estaba vacía ("—"); toda certificación TD-P07 tiene vigencia máxima de 24 meses.
-MO-CC1-04	seguridad	set	steps[13].action	MS-ACE-01 §2 (S-11 entra a roja solo acompañado y autorizado) y MS-ACE-03 (herramienta seca).
 MO-CC1-05	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC1-05	documentacion	set	whyItMatters	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC1-05	documentacion	set	steps[0].action	Término: "la HMI" (Guía de estilo).
@@ -78,89 +29,26 @@ MO-CC1-05	documentacion	set	glossary[1]	Glosario: definición canónica de CC1 (
 MO-CC1-05	documentacion	set	glossary[6]	Término único: "Sobrecalentamiento (SH)".
 MO-CC1-05	documentacion	set	next	Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. La olla vacía va a preparación; MO-OLL-01 cita a MO-CC1-05 como anterior (igual que CC2-05).
 MO-CC1-05	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC1-05	usuario	set	purpose	Redacción más clara; mismo valor.
-MO-CC1-05	usuario	set	goldenRules[2]	"No baja de 700" y "a 500 mm" en la misma frase confunde; mismos valores.
-MO-CC1-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-05	laboral	set	certification[0].evaluated	En los pasos 2 y 15 S-13 no ejecuta: da las señales a S-09.
-MO-CC1-05	laboral	set	certification[0].validity	Criterio unificado: izaje y señales 12 meses (DP-ACE-S §4).
-MO-CC1-05	seguridad	set	steps[10].action	Manual §6.1 ★ (lanceado con O₂): vigía obligatorio; faltaba en el POV.
-MO-CC1-05	seguridad	set	steps[10].stop	Manual §6.1: condiciones del lanceado como ALTO observable.
-MO-CC1-05	seguridad	set	abnormal[5].do	El rebose deja acero sobre la plataforma: MS-ACE-09 escenario F (evacuar, dejar solidificar, nunca agua).
-MO-CC1-05	seguridad	set	abnormal[5].call	Derrame de metal: C-04 es el comandante de incidente (MS-ACE-09).
 MO-CC1-06	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC1-06	documentacion	set	glossary[6]	Glosario: definición canónica de BOP (igual en CC1-02, CC1-04, CC1-07).
 MO-CC1-06	documentacion	set	next	Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. El paso 3 puede terminar en cierre; MO-CC1-07 cita a MO-CC1-06 como anterior.
 MO-CC1-06	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC1-06	documentacion	set	steps[14].decision.no	Marca estándar "[Validar con OEM]" (Guía de estilo §1).
-MO-CC1-06	usuario	set	phases[1]	Las fases 2 y 3 son alternativas, no pasos seguidos; un nuevo creería que siempre se hacen las dos.
-MO-CC1-06	usuario	set	phases[2]	Igual que la fase anterior.
-MO-CC1-06	usuario	set	steps[14].decision.no	El texto no decía qué pasa entre 3 y 5 min; mismos valores.
-MO-CC1-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-06	laboral	set	certification[0].evaluated	La lista anterior incluía pasos de S-15 y C-06 como si los ejecutara S-13. La certificación debe distinguir lo que el puesto ejecuta de lo que solo debe conocer (TD-P07). Revisión técnica: confirmar la equivalencia con los códigos del manual.
-MO-CC1-06	seguridad	set	steps[14].stop	Manual §6.1: carros en movimiento (nadie entre carros) y distribuidor viejo con ≈ 14 t de acero residual (fosa seca).
-MO-CC1-06	seguridad	append	abnormal	Manual §9: condición anormal no incluida; evita congelar o desbordar el molde con personas en el frente.
 MO-CC1-07	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC1-07	documentacion	set	steps[8].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC1-07	documentacion	set	glossary[5]	Glosario: definición canónica de BOP.
 MO-CC1-07	documentacion	set	next	Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. El distribuidor usado va a MO-CC1-01, que cita a MO-CC1-07 como anterior.
-MO-CC1-07	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC1-07	usuario	set	steps[11].decision.no	"Sin O₂" es ambiguo; se escribe como instrucción.
-MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-07	seguridad	append	epp	Manual §6.2: S-16 usa careta sombra 5 para el oxicorte del último planchón (paso 15).
-MO-CC1-07	seguridad	set	steps[7].stop	Manual §6.1: distribuidor con ≈ 14 t de residuo; ruta despejada y fosa seca.
-MO-CC1-07	seguridad	set	steps[15].action	Manual §6.3: ingreso a la máquina solo con cola fuera, máquina detenida y LOTO; la prueba de energía cero es parte del LOTO (MS-ACE-02 paso 9).
-MO-CC1-07	seguridad	set	steps[15].stop	MS-ACE-02 §9: equipo que se mueve en la prueba = detén todo.
-MO-CC1-07	seguridad	set	steps[16].stop	Manual §6.3: ingreso solo con cola fuera y LOTO personal.
-MO-CC1-07	seguridad	set	abnormal[1].do	MO-CC1-04 §9 y MS-ACE-09 escenario C: mantener el agua de molde y no acercarse.
 MO-CC1-08	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC1-08	documentacion	set	steps[4].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico. Imperativo y segunda persona.
 MO-CC1-08	documentacion	set	steps[14].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
 MO-CC1-08	documentacion	set	glossary[1]	Término único con CC2 ("antirretorno de llama" en POV-CC2-08).
 MO-CC1-08	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-08	laboral	set	roles[1].does	S-27 no existe en el catálogo; la cobertura por S-17 es provisional y depende de una decisión del Director.
-MO-CC1-08	seguridad	append	epp	Manual §6.2: S-16 usa careta de oxicorte o lentes sombra 5; faltaba en el POV.
-MO-CC1-08	seguridad	set	steps[1].stop	Manual §6.1 (oxicorte: ropa sin grasa por enriquecimiento de O₂) y MS-ACE-06.
 MO-CC1-09	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC1-09	documentacion	set	steps[1].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC1-09	documentacion	set	steps[4].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
 MO-CC1-09	documentacion	set	steps[5].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
-MO-CC1-09	documentacion	set	steps[9].action	Lenguaje: imperativo; se aclara que los ≥ 150 °C son del planchón y se recupera la marca [Validar…] del manual §7.
 MO-CC1-09	documentacion	set	steps[15].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
 MO-CC1-09	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC1-09	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC1-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-09	laboral	set	roles[0].does	El escarpeo (paso 10) lo ejecuta S-18 como supuesto pendiente de decisión.
-MO-CC1-09	laboral	set	steps[8].title	S-18 no dispone (LFT art. 9 y especificación): aplica un criterio aprobado; degradar o rechazar lo decide C-09. Igual que MO-CC2-09.
-MO-CC1-09	laboral	set	steps[8].action	Separa la clasificación (S-18) de la disposición (C-09).
-MO-CC1-09	laboral	set	steps[8].check	Consistencia con el título.
-MO-CC1-09	laboral	set	steps[9].action	El escarpador no tiene código en CAT-ACE-001. Se quita "contratista REPSE" del material para el trabajador: es materia de trabajo en negociación y la subcontratación de una actividad del objeto social está prohibida (LFT arts. 12–15, verificar con Jurídico Laboral).
-MO-CC1-09	laboral	set	steps[14].title	S-18 no libera producto por decisión propia: registra el resultado de la tabla.
-MO-CC1-09	laboral	set	steps[14].action	Deja la disposición de excepciones en C-09 (dueño, confianza), igual que MO-CC2-09.
-MO-CC1-09	laboral	set	steps[14].check	Consistencia con la acción.
-MO-CC1-09	laboral	set	certification[0].ojt	"Inspector nivel 4" podría ser un sindicalizado evaluando a otro; el evaluador sindicalizado solo aplica la lista en pareja y no emite dictamen (DP-ACE-S §3.3).
-MO-CC1-09	laboral	set	certification[1].level	El escarpador no tiene código; la asignación a S-18 es un supuesto.
-MO-CC1-09	laboral	set	certification[3].validity	La vigencia estaba vacía ("—").
-MO-CC1-09	seguridad	append	epp	Manual §6.2: el escarpeo exige careta sombra 5–6; faltaba en el POV.
-MO-CC1-09	seguridad	set	steps[9].stop	Manual §6.1 ★: área libre de combustibles.
-MO-CC1-09	seguridad	set	steps[12].stop	Manual §6.1 (ácidos del macroataque): campana, regadera y lavaojos son los controles.
-MO-CC1-09	seguridad	append	abnormal	Manual §6.1 lista regadera y lavaojos como control, pero el POV no decía qué hacer ante una salpicadura. El manual no fija el tiempo de enjuague: se reporta como hueco.
 MO-CC2-01	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC2-01	documentacion	set	steps[2].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC2-01	documentacion	set	steps[4].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico. Término: "la HMI".
@@ -169,29 +57,12 @@ MO-CC2-01	documentacion	set	glossary[0].def	Glosario: definición canónica de C
 MO-CC2-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC2-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC2-01	documentacion	set	steps[13].action	Término: "la HMI" (Guía de estilo §1).
-MO-CC2-01	usuario	set	steps[15].decision.no	C-11 no está en la lista de roles del POV; el nuevo no sabe a quién llamar.
-MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-01	seguridad	set	steps[6].stop	Manual §6.3: bloqueo del carro del distribuidor antes de trabajar bajo él (instalación de buzas y placas). El POV no lo mencionaba.
-MO-CC2-01	seguridad	set	steps[7].stop	Manual §6.3: mismo control para colocar las placas ciegas.
 MO-CC2-02	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC2-02	documentacion	set	steps[5].action	Lenguaje: el paso lo hace C-16 (ESR); se escribe en segunda persona y en frases ≤ 20 palabras.
 MO-CC2-02	documentacion	set	steps[16].action	Lenguaje: el paso lo hace C-16 (ESR); segunda persona.
 MO-CC2-02	documentacion	set	steps[7].action	Término: "la HMI" (Guía de estilo).
 MO-CC2-02	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC2-02	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC2-02	documentacion	set	steps[17].check	Término: "la HMI" (Guía de estilo §1).
-MO-CC2-02	usuario	set	steps[6].action	Un nuevo confunde "prueba de arranque" (LOTO) con el arranque de colada.
-MO-CC2-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-02	laboral	set	steps[2].decision.no	"No liberes" sugiere que S-14 libera la línea; la liberación es de C-06 (paso 18).
-MO-CC2-02	seguridad	set	steps[6].stop	Paso ★ de LOTO sin ALTO; MS-ACE-02 §9 (equipo que se mueve en la prueba = detén todo).
-MO-CC2-02	seguridad	set	steps[9].stop	Paso ★ de LOTO sin ALTO; MS-ACE-02 §8 pasos 7 y 9.
 MO-CC2-03	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC2-03	documentacion	set	whyItMatters	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC2-03	documentacion	set	startsWhen	Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next.
@@ -202,55 +73,22 @@ MO-CC2-03	documentacion	append	glossary	Glosario: término que usa el POV y que 
 MO-CC2-03	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC2-03	documentacion	set	steps[9].action	Marca estándar "[Validar con OEM]" (Guía de estilo §1).
 MO-CC2-03	documentacion	set	steps[10].action	Marca estándar "[Validar con OEM]" (Guía de estilo §1).
-MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-03	laboral	set	steps[1].stop	S-13 detiene y avisa; no ejerce vigilancia sobre otros trabajadores (LFT art. 9). Quién puede estar en la zona lo confirma C-06 (paso 3). Se cambia el ALTO y no la acción para no chocar con la revisión de Seguridad.
-MO-CC2-03	seguridad	set	steps[1].action	Manual §6.3: rutas de escape despejadas en la plataforma.
-MO-CC2-03	seguridad	set	steps[4].stop	Manual §6.1 (lanceo de O₂): solo S-13 certificado, lanza ≥ 3 m, sin grasa en guantes.
 MO-CC2-04	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC2-04	documentacion	set	whyItMatters	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC2-04	documentacion	set	steps[4].action	Lenguaje: imperativo; la primera frase era descriptiva.
 MO-CC2-04	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC2-04	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-04	laboral	set	roles[1].raci	Doble A (C-08 y C-06). Catálogo y DP-ACE-C: dueño C-08; C-06 = S (supervisa el turno). El manual §2 dice "A (turno)": ajustar a R.
-MO-CC2-04	laboral	set	roles[1].does	Mando de C-06 sobre S-12, S-13, S-14 y S-11 (LFT art. 9).
-MO-CC2-04	seguridad	set	steps[13].check	Manual §9 (breakout): el ESR inspecciona el contenedor de Cs-137 antes de intervenir (MS-ACE-07 §9, contenedor con metal encima).
-MO-CC2-04	seguridad	set	steps[13].action	Manual §9 y MS-ACE-09 escenario C: prohibido cortar el agua de molde.
 MO-CC2-05	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC2-05	documentacion	set	steps[5].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC2-05	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC2-05	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC2-05	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC2-05	usuario	set	purpose	Aclara qué no debe bajar de 500 mm; mismo valor.
-MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-05	seguridad	set	steps[8].stop	El giro lo ejecuta S-12 (otro puesto); su ALTO debe ligarse a la confirmación del paso ★ 8 (manual §6.3).
-MO-CC2-05	seguridad	set	steps[10].stop	Manual §6.1 (solo S-13 certificado) y MS-ACE-03 §6.2 (EPP seco).
 MO-CC2-06	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC2-06	documentacion	set	previous	Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. startsWhen ya cita a MO-CC2-03.
 MO-CC2-06	documentacion	set	steps[2].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC2-06	documentacion	set	steps[9].action	Registro: la palanquilla "B" está en los registros del POV y del manual §7, pero ningún paso decía quién la marca.
 MO-CC2-06	documentacion	set	steps[13].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien. "Condición segura" no es observable.
-MO-CC2-06	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC2-06	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC2-06	documentacion	set	steps[2].check	Marca estándar "[Validar con OEM]" (Guía de estilo §1).
 MO-CC2-06	documentacion	set	steps[6].check	Marca estándar "[Validar con OEM]" (Guía de estilo §1).
-MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-06	seguridad	set	steps[11].stop	El paso repite la maniobra de los pasos 6–7 (★); manual §6.3: zona de exclusión en la línea de expulsión.
-MO-CC2-06	seguridad	set	steps[12].stop	Manual §6.1 (taponeo desde arriba: caída) y MS-ACE-10.
 MO-CC2-07	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC2-07	documentacion	set	steps[0].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien. Igual que POV-CC1-07 paso 1.
 MO-CC2-07	documentacion	set	previous	Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. POV-CC2-06 termina en MO-CC2-07 cuando se cierra una línea.
@@ -258,116 +96,35 @@ MO-CC2-07	documentacion	set	next	Trazabilidad de la cadena: el proceso vecino ya
 MO-CC2-07	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC2-07	documentacion	set	steps[7].action	Marca estándar "[Validar con OEM]" (Guía de estilo §1).
 MO-CC2-07	documentacion	set	steps[13].check	Marca estándar "[Validar con OEM]" (Guía de estilo §1).
-MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-07	seguridad	set	steps[12].stop	MS-ACE-04: nadie bajo la carga; el paso lo menciona pero no tenía ALTO.
-MO-CC2-07	seguridad	set	steps[15].action	MS-ACE-02 §8 paso 9: la prueba de energía cero es parte del LOTO.
-MO-CC2-07	seguridad	set	steps[15].stop	Paso ★ de LOTO sin ALTO; MS-ACE-02 §9.
-MO-CC2-07	seguridad	set	steps[16].stop	Manual §6.1: radiación (ESR antes de trabajar en el molde), movimiento de equipo (LOTO) y tubos calientes (esperar enfriamiento).
 MO-CC2-08	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC2-08	documentacion	set	steps[5].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC2-08	documentacion	set	steps[6].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC2-08	documentacion	set	steps[13].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
 MO-CC2-08	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-CC2-08	documentacion	append	glossary	Término único con CC1 ("arrestaflamas" en POV-CC1-08 y CC1-09).
-MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-08	laboral	set	roles[2].does	S-27 no existe en el catálogo; la cobertura por S-17 es provisional y depende de una decisión del Director.
-MO-CC2-08	seguridad	append	epp	Manual §6.2: careta para el área de corte (oxicorte de S-16).
-MO-CC2-08	seguridad	append	epp	Manual §6.2: chaleco de alta visibilidad en el patio (S-17, grúa).
 MO-CC2-09	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-CC2-09	documentacion	set	whyItMatters	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-CC2-09	documentacion	set	steps[10].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
 MO-CC2-09	documentacion	set	steps[12].check	Coherencia: la acción dice "de inmediato" y el check decía "≤ 15 min".
 MO-CC2-09	documentacion	set	steps[14].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
 MO-CC2-09	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC2-09	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-CC2-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-09	laboral	set	goldenRules[0]	"Es una falta grave" asigna responsabilidad disciplinaria en un material de capacitación; la sanción solo procede por el Reglamento Interior y el CCT (DP-ACE-S §4).
-MO-CC2-09	laboral	set	steps[4].decision.no	S-18 no rechaza: retiene y el rechazo lo firma C-09 (paso 14).
-MO-CC2-09	laboral	set	certification[0].theory	S-18 clasifica; la disposición es de C-09.
-MO-CC2-09	seguridad	append	epp	Manual §6.2: careta para esmerilado y ataque ácido.
-MO-CC2-09	seguridad	append	epp	Manual §6.2: mandil y guantes de neopreno o PVC para el ataque con HCl caliente.
-MO-CC2-09	seguridad	append	epp	Manual §6.2: chaleco de alta visibilidad (zona de lecho y grúa).
-MO-CC2-09	seguridad	set	steps[2].stop	Manual §6.1 (carga suspendida) y MS-ACE-04.
-MO-CC2-09	seguridad	set	steps[7].stop	Manual §6.1 (corte de muestras): guardas y permiso en caliente (NOM-027).
-MO-CC2-09	seguridad	set	steps[11].stop	MS-ACE-04: traslado de retenidas con grúa.
-MO-CC2-09	seguridad	set	abnormal[6]	El ácido clorhídrico caliente es peligro principal del POV sin respuesta en 'Si algo sale mal'. Se sustituye 'Palanquilla doblada' (calidad; sigue en el manual §9 y en POV-CC2-08) para respetar el máximo de 7. El manual no fija tiempo de enjuague: se reporta como hueco.
 MO-EAF-01	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-EAF-01	documentacion	set	steps[2].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-EAF-01	documentacion	set	steps[3].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-EAF-01	documentacion	set	next	Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. El paso 15 programa MO-EAF-08 cuando falta electrodo y MO-EAF-08 cita a MO-EAF-01 como anterior.
-MO-EAF-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-EAF-01	documentacion	set	steps[0].action	Término: "la HMI" (Guía de estilo §1).
 MO-EAF-01	documentacion	set	steps[1].title	Término: "la HMI" (Guía de estilo §1).
 MO-EAF-01	documentacion	set	steps[10].check	Término: "la HMI" (Guía de estilo §1).
-MO-EAF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-01	usuario	set	steps[14].check	Aclara de qué presión se habla; mismo valor.
-MO-EAF-01	laboral	set	roles[0].does	Lenguaje: "libera" suena a autorización. El sindicalizado confirma y avisa; las liberaciones con desviación son de C-05 (LFT art. 9).
-MO-EAF-01	laboral	set	steps[16].title	Lenguaje sin función de autorización para S-01 (LFT art. 9).
-MO-EAF-01	laboral	set	steps[16].action	El manual §8 paso 18 avisa también a S-05 (patio); el POV lo había omitido.
-MO-EAF-01	laboral	append	roles	S-05 recibe el aviso del paso 18 del manual. Falta en el manual §2, en el catálogo y en DP-ACE-S (se reporta).
-MO-EAF-01	seguridad	set	steps[7].stop	Paso ★ sin ALTO; manual §6.1: proyección solo sobre refractario, nunca sobre el baño ni formando charcos.
-MO-EAF-01	seguridad	set	steps[9].stop	Manual §6.1 (caída de costras): nadie en la trayectoria.
-MO-EAF-01	seguridad	set	steps[10].action	MS-ACE-02 §6.4 condición 3: una llave por persona; si faltan llaves, LOTO.
-MO-EAF-01	seguridad	set	steps[10].stop	MS-ACE-02 §6.4: sistema en falla o prueba mensual vencida exige LOTO completo.
-MO-EAF-01	seguridad	set	steps[11].stop	Manual §6.1 (enriquecimiento de O₂ al limpiar el EBT): ropa sin grasa y válvula de cierre rápido.
-MO-EAF-01	seguridad	set	steps[15].stop	Paso ★ de retiro; manual §8 paso 17 (conteo de personas = conteo de llaves).
-MO-EAF-01	seguridad	set	abnormal[0].do	Manual §9 y MS-ACE-03 §9: la espera de evaporación con el horno quieto es parte de la respuesta segura.
-MO-EAF-01	seguridad	set	abnormal[6].if	El POV lista CO como peligro pero no dice qué hacer; manual §6.1 y MS-ACE-06. Se combina con la condición de presión para no pasar de 7 anormales.
-MO-EAF-01	seguridad	set	abnormal[6].do	MS-ACE-06 §5.1 y §8 pasos 4–6.
-MO-EAF-01	seguridad	set	abnormal[6].call	La evacuación del sector la ordena C-04.
 MO-EAF-02	documentacion	set	steps[6].check	Coherencia entre POV: misma frase de aviso que el paso 17 de POV-EAF-01.
 MO-EAF-02	documentacion	set	steps[9].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-EAF-02	documentacion	set	steps[11].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-EAF-02	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-EAF-02	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-02	usuario	set	steps[15].action	"Pasa a MO-EAF-04" no dice a un nuevo qué documento abrir ni por dónde empezar.
-MO-EAF-02	laboral	set	roles[4].raci	Doble A (C-05 y C-17). Catálogo y DP-ACE-C: dueño único C-05; C-17 = S (supervisa el patio). Un solo A por proceso.
-MO-EAF-02	laboral	set	roles[4].does	Congruente con R: supervisa y hace cumplir en el patio; el dueño del proceso es C-05.
-MO-EAF-02	seguridad	append	epp	Manual §6.2: chaleco de alta visibilidad en patio (tránsito de camiones y grúa).
-MO-EAF-02	seguridad	set	steps[2].stop	Manual §6.1 (explosivos: rechazo y protocolo con autoridades). El manual no dice cómo se separa un explosivo; una persona nueva no debe manipularlo. Se reporta como hueco del manual.
-MO-EAF-02	seguridad	set	steps[12].stop	Manual §6.1: conteo y bocina antes de abrir la canasta (momento de flama y proyección).
-MO-EAF-02	seguridad	set	abnormal[1].do	MS-ACE-03 §9: atender lesionados y retener el lote; MS-ACE-09: no mover lesionados dentro de la zona roja sin protección.
-MO-EAF-02	seguridad	append	abnormal	MS-ACE-04 §9: persona entra a la ruta; el POV no tenía respuesta para la carga suspendida.
 MO-EAF-03	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-EAF-03	documentacion	set	whyItMatters	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-EAF-03	documentacion	set	steps[1].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
 MO-EAF-03	documentacion	set	steps[7].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-EAF-03	documentacion	set	glossary[0].def	Término único: los manuales dicen DRI; POV-EAF-07 y el mapa decían "HRD". Se deja el sinónimo para que una persona nueva los relacione.
-MO-EAF-03	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-03	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-03	laboral	set	roles[3].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
-MO-EAF-03	laboral	set	roles[3].does	Mando visible del supervisor sobre S-01 y S-02.
-MO-EAF-03	seguridad	set	dangerZone.yellow	Manual §6.1 y criterio único de LEL (MS-ACE-05 §5): faltaba el límite de inflamables.
-MO-EAF-03	seguridad	append	hazards	Manual §6.1: CO en plataforma de bóveda es peligro del proceso y no estaba en el POV.
-MO-EAF-03	seguridad	set	abnormal[4].if	Manual §6.1 (CO en plataforma: 25 ppm salir, 200 ppm evacuación). Se combina con la condición de gases para no pasar de 7 anormales.
-MO-EAF-03	seguridad	set	abnormal[4].do	MS-ACE-06 §8 pasos 5–6.
-MO-EAF-03	seguridad	set	abnormal[4].call	La evacuación del sector la ordena C-04 (MS-ACE-06).
-MO-EAF-03	seguridad	set	abnormal[2].do	Primero proteger personas: el POV debe decir a dónde se retira la persona (MS-ACE-01 §9).
 MO-EAF-04	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-EAF-04	documentacion	set	steps[0].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-EAF-04	documentacion	set	steps[5].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
@@ -377,59 +134,18 @@ MO-EAF-04	documentacion	set	steps[9].check	Término: "O" → "oxígeno activo" (
 MO-EAF-04	documentacion	set	steps[11].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien. El valor es la referencia del registro, no la condición del paso.
 MO-EAF-04	documentacion	set	next	Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. El paso 8 arranca MO-EAF-03 y MO-EAF-05, que citan a MO-EAF-04 como anterior.
 MO-EAF-04	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-04	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-04	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-04	usuario	set	steps[3].decision.question	La pregunta debe coincidir con lo que se revisa en el paso y con la respuesta "No".
-MO-EAF-04	laboral	set	roles[5].does	S-02 es I en el catálogo, el manual §2 y DP-ACE-S; no ejecuta pasos en este POV. El texto anterior le asignaba una ejecución (medir) que contradice la I.
-MO-EAF-04	laboral	set	roles[2].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
-MO-EAF-04	laboral	set	roles[2].does	Mando visible del supervisor sobre S-01.
-MO-EAF-04	seguridad	set	steps[7].stop	Paso ★ sin ALTO; manual §6.1 (tap alto solo con arco cubierto; bajar tap con T de panel > 60 °C) y MS-ACE-03 §5.
-MO-EAF-04	seguridad	set	abnormal[2].if	MS-ACE-03 §5 y §8 paso 5: la alarma de 2 % exige respuesta del púlpito antes del disparo; el POV solo cubría el disparo.
-MO-EAF-04	seguridad	set	abnormal[2].do	MS-ACE-03 §8 paso 5 y §9.
 MO-EAF-05	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-EAF-05	documentacion	set	steps[0].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-EAF-05	documentacion	set	steps[0].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
 MO-EAF-05	documentacion	set	previous	Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. startsWhen ya cita a MO-EAF-03.
 MO-EAF-05	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-EAF-05	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-05	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-05	usuario	set	purpose	Primero lo que se logra en palabras de operador; los valores se conservan al final.
-MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-05	laboral	set	roles[5].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
-MO-EAF-05	laboral	set	roles[5].does	Mando visible del supervisor sobre S-01, S-02 y S-10.
-MO-EAF-05	seguridad	set	steps[8].stop	El paso que expone (inclinar hacia la puerta) debe depender de los pasos ★ 6 y 7 del manual; ALTO observable.
-MO-EAF-05	seguridad	set	steps[9].action	MS-ACE-01 §8 paso 9 (muestreo en la puerta): posición, distancia y tiempo en roja.
-MO-EAF-05	seguridad	set	steps[12].stop	Manual §6.1 (atropellamiento del portaollas): peatones fuera de la ruta.
-MO-EAF-05	seguridad	set	abnormal[0].do	Primero proteger personas: indicar a dónde se retira la persona (MS-ACE-01 §9).
-MO-EAF-05	seguridad	set	abnormal[6]	CO por la puerta es peligro principal del POV sin respuesta. Se sustituye 'P > 0.015 % antes de vaciar' (calidad; sigue en el manual §9 y en POV-EAF-06) para respetar el máximo de 7 anormales.
 MO-EAF-06	documentacion	set	steps[11].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien. Liga el paso con el registro "Autorizaciones de medición manual".
 MO-EAF-06	documentacion	set	steps[12].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
 MO-EAF-06	documentacion	set	steps[12].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien. "Sin exposición prolongada" no es medible.
 MO-EAF-06	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-06	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-06	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-EAF-06	documentacion	set	steps[2].check	Término: "la HMI" (Guía de estilo §1).
 MO-EAF-06	documentacion	set	steps[6].action	Término: "la HMI" (Guía de estilo §1).
-MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-06	laboral	set	roles[1].does	Lenguaje: "decide" se reserva a C-xx (especificación, LFT art. 9). El ajuste dentro de consigna es ejecución técnica.
-MO-EAF-06	laboral	set	steps[9].action	Mismo contenido técnico sin "decide"; las desviaciones son de C-05 (paso 12 y anormales).
-MO-EAF-06	seguridad	set	steps[5].stop	El paso de inmersión es el de mayor exposición; su ALTO debe ligarse a los pasos 4 y 5 (confirmación por radio y puerta libre).
-MO-EAF-06	seguridad	set	steps[12].stop	Manual §6.1 y §6.3: las cuatro condiciones de la medición manual; MS-ACE-03 §6.2 (EPP seco).
-MO-EAF-06	seguridad	set	steps[12].action	Se conserva la marca [Supuesto] del manual §6.1 (máx. 1 intento por persona).
 MO-EAF-07	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
 MO-EAF-07	documentacion	set	steps[0].action	Término único: "lista de entrega de la olla", igual que POV-OLL-01 paso 14.
 MO-EAF-07	documentacion	set	steps[0].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
@@ -441,12 +157,329 @@ MO-EAF-07	documentacion	set	records[2]	Registro: mismo nombre y lugar que en POV
 MO-EAF-07	documentacion	set	records[3].what	Registro: se explica la sigla VCC.
 MO-EAF-07	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
 MO-EAF-07	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-07	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
+MO-EAF-08	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
+MO-EAF-08	documentacion	set	steps[10].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
+MO-EAF-08	documentacion	set	steps[14].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico. Los números de paso ya corresponden al POV (manual: 1–3, 6–10 y 12–13).
+MO-EAF-08	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
+MO-EAF-08	documentacion	set	steps[2].action	Término: "la HMI" (Guía de estilo §1).
+MO-LF-01	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
+MO-LF-01	documentacion	set	steps[8].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
+MO-LF-01	documentacion	set	steps[13].action	Coherencia de la cadena: POV-OLL-02 paso 2 pide a S-06 confirmar también bordo libre y ausencia de fuga al liberar la olla.
+MO-LF-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
+MO-LF-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
+MO-OLL-01	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
+MO-OLL-01	documentacion	set	steps[1].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
+MO-OLL-01	documentacion	set	steps[4].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
+MO-OLL-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
+MO-OLL-02	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
+MO-OLL-02	documentacion	set	steps[1].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
+MO-OLL-02	documentacion	set	steps[13].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
+MO-OLL-02	documentacion	set	next	Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. POV-CC2-03 recibe la primera olla de la secuencia igual que POV-CC1-03.
+MO-OLL-02	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
+MO-OLL-02	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
+MO-CC1-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-02	usuario	set	steps[7].action	Un nuevo confunde "prueba de arranque" (LOTO) con el arranque de colada.
+MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-03	usuario	set	roles[1].does	La descripción no tenía verbo: un nuevo no sabe qué hace el puesto.
+MO-CC1-03	usuario	set	roles[2].does	La descripción no tenía verbo.
+MO-CC1-03	usuario	set	roles[3].does	La descripción no tenía verbo; es el puesto de mayor rotación de ingreso en colada.
+MO-CC1-03	usuario	set	steps[10].check	"Cabeza → menisco −60 mm" es una notación que un nuevo no lee; mismo valor.
+MO-CC1-03	usuario	set	steps[12].action	Misma aclaración de la notación "menisco −60 mm".
+MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-04	usuario	set	roles[0].does	La descripción no tenía verbo.
+MO-CC1-04	usuario	set	roles[1].does	La descripción no tenía verbo.
+MO-CC1-04	usuario	set	roles[2].does	La descripción no tenía verbo.
+MO-CC1-04	usuario	set	steps[3].action	"Peritécticos (HSLA): −0.2 m/min" es una abreviatura; mismo valor.
+MO-CC1-04	usuario	set	goldenRules[2]	Las flechas no se memorizan; se escribe en frases con el mismo orden.
+MO-CC1-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-05	usuario	set	purpose	Redacción más clara; mismo valor.
+MO-CC1-05	usuario	set	goldenRules[2]	"No baja de 700" y "a 500 mm" en la misma frase confunde; mismos valores.
+MO-CC1-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-06	usuario	set	phases[1]	Las fases 2 y 3 son alternativas, no pasos seguidos; un nuevo creería que siempre se hacen las dos.
+MO-CC1-06	usuario	set	phases[2]	Igual que la fase anterior.
+MO-CC1-06	usuario	set	steps[14].decision.no	El texto no decía qué pasa entre 3 y 5 min; mismos valores.
+MO-CC1-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-07	usuario	set	steps[11].decision.no	"Sin O₂" es ambiguo; se escribe como instrucción.
+MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-01	usuario	set	steps[15].decision.no	C-11 no está en la lista de roles del POV; el nuevo no sabe a quién llamar.
+MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-02	usuario	set	steps[6].action	Un nuevo confunde "prueba de arranque" (LOTO) con el arranque de colada.
+MO-CC2-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-05	usuario	set	purpose	Aclara qué no debe bajar de 500 mm; mismo valor.
+MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC2-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-01	usuario	set	steps[14].check	Aclara de qué presión se habla; mismo valor.
+MO-EAF-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-02	usuario	set	steps[15].action	"Pasa a MO-EAF-04" no dice a un nuevo qué documento abrir ni por dónde empezar.
+MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-04	usuario	set	steps[3].decision.question	La pregunta debe coincidir con lo que se revisa en el paso y con la respuesta "No".
+MO-EAF-05	usuario	set	purpose	Primero lo que se logra en palabras de operador; los valores se conservan al final.
+MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-EAF-07	usuario	set	steps[5].action	"HRD" no aparece en ningún otro POV ni en el glosario; se usa el mismo nombre que en POV-EAF-03.
 MO-EAF-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-EAF-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-EAF-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-EAF-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-EAF-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-LF-01	usuario	set	steps[4].action	El título dice "Baja la bóveda" y la acción solo mencionaba los electrodos; un nuevo no sabe cuándo baja la bóveda.
+MO-LF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-LF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-LF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-LF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-OLL-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-OLL-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-OLL-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-OLL-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
+MO-CC1-01	laboral	set	roles[0].does	S-27 no existe en el catálogo; la cobertura por S-15 es provisional y depende de una decisión del Director.
+MO-CC1-01	laboral	set	certification[0].validity	La operación de la grúa pasa a su propia fila (abajo).
+MO-CC1-01	laboral	append	certification	El manual §11 exige esta certificación al "operador de grúa de CC"; el POV la había omitido aunque S-15 hace el izaje (paso 12). Mismo criterio que MO-CC2-01.
+MO-CC1-01	laboral	set	certification[1].evaluated	El paso 11 lo ejecuta S-15. Una certificación de escalafón debe evaluar los pasos del propio puesto (TD-P07; LFT art. 153-U).
+MO-CC1-04	laboral	set	roles[5].raci	Doble A (C-08 y C-06). Catálogo y DP-ACE-C: dueño C-08; C-06 = S (supervisa y hace cumplir en el turno). El manual §2 dice "A (turno)": ajustar a R.
+MO-CC1-04	laboral	set	roles[5].does	Mando de C-06 sobre S-12, S-13, S-14 y S-11 (LFT art. 9).
+MO-CC1-04	laboral	set	certification[4].validity	La vigencia estaba vacía ("—"); toda certificación TD-P07 tiene vigencia máxima de 24 meses.
+MO-CC1-05	laboral	set	certification[0].evaluated	En los pasos 2 y 15 S-13 no ejecuta: da las señales a S-09.
+MO-CC1-05	laboral	set	certification[0].validity	Criterio unificado: izaje y señales 12 meses (DP-ACE-S §4).
+MO-CC1-06	laboral	set	certification[0].evaluated	La lista anterior incluía pasos de S-15 y C-06 como si los ejecutara S-13. La certificación debe distinguir lo que el puesto ejecuta de lo que solo debe conocer (TD-P07). Revisión técnica: confirmar la equivalencia con los códigos del manual.
+MO-CC1-08	laboral	set	roles[1].does	S-27 no existe en el catálogo; la cobertura por S-17 es provisional y depende de una decisión del Director.
+MO-CC1-09	laboral	set	roles[0].does	El escarpeo (paso 10) lo ejecuta S-18 como supuesto pendiente de decisión.
+MO-CC1-09	laboral	set	steps[8].title	S-18 no dispone (LFT art. 9 y especificación): aplica un criterio aprobado; degradar o rechazar lo decide C-09. Igual que MO-CC2-09.
+MO-CC1-09	laboral	set	steps[8].action	Separa la clasificación (S-18) de la disposición (C-09).
+MO-CC1-09	laboral	set	steps[8].check	Consistencia con el título.
+MO-CC1-09	laboral	set	steps[9].action	El escarpador no tiene código en CAT-ACE-001. Se quita "contratista REPSE" del material para el trabajador: es materia de trabajo en negociación y la subcontratación de una actividad del objeto social está prohibida (LFT arts. 12–15, verificar con Jurídico Laboral).
+MO-CC1-09	laboral	set	steps[14].title	S-18 no libera producto por decisión propia: registra el resultado de la tabla.
+MO-CC1-09	laboral	set	steps[14].action	Deja la disposición de excepciones en C-09 (dueño, confianza), igual que MO-CC2-09.
+MO-CC1-09	laboral	set	steps[14].check	Consistencia con la acción.
+MO-CC1-09	laboral	set	certification[0].ojt	"Inspector nivel 4" podría ser un sindicalizado evaluando a otro; el evaluador sindicalizado solo aplica la lista en pareja y no emite dictamen (DP-ACE-S §3.3).
+MO-CC1-09	laboral	set	certification[1].level	El escarpador no tiene código; la asignación a S-18 es un supuesto.
+MO-CC1-09	laboral	set	certification[3].validity	La vigencia estaba vacía ("—").
+MO-CC2-02	laboral	set	steps[2].decision.no	"No liberes" sugiere que S-14 libera la línea; la liberación es de C-06 (paso 18).
+MO-CC2-03	laboral	set	steps[1].stop	S-13 detiene y avisa; no ejerce vigilancia sobre otros trabajadores (LFT art. 9). Quién puede estar en la zona lo confirma C-06 (paso 3). Se cambia el ALTO y no la acción para no chocar con la revisión de Seguridad.
+MO-CC2-04	laboral	set	roles[1].raci	Doble A (C-08 y C-06). Catálogo y DP-ACE-C: dueño C-08; C-06 = S (supervisa el turno). El manual §2 dice "A (turno)": ajustar a R.
+MO-CC2-04	laboral	set	roles[1].does	Mando de C-06 sobre S-12, S-13, S-14 y S-11 (LFT art. 9).
+MO-CC2-08	laboral	set	roles[2].does	S-27 no existe en el catálogo; la cobertura por S-17 es provisional y depende de una decisión del Director.
+MO-CC2-09	laboral	set	goldenRules[0]	"Es una falta grave" asigna responsabilidad disciplinaria en un material de capacitación; la sanción solo procede por el Reglamento Interior y el CCT (DP-ACE-S §4).
+MO-CC2-09	laboral	set	steps[4].decision.no	S-18 no rechaza: retiene y el rechazo lo firma C-09 (paso 14).
+MO-CC2-09	laboral	set	certification[0].theory	S-18 clasifica; la disposición es de C-09.
+MO-EAF-01	laboral	set	roles[0].does	Lenguaje: "libera" suena a autorización. El sindicalizado confirma y avisa; las liberaciones con desviación son de C-05 (LFT art. 9).
+MO-EAF-01	laboral	set	steps[16].title	Lenguaje sin función de autorización para S-01 (LFT art. 9).
+MO-EAF-01	laboral	set	steps[16].action	El manual §8 paso 18 avisa también a S-05 (patio); el POV lo había omitido.
+MO-EAF-01	laboral	append	roles	S-05 recibe el aviso del paso 18 del manual. Falta en el manual §2, en el catálogo y en DP-ACE-S (se reporta).
+MO-EAF-02	laboral	set	roles[4].raci	Doble A (C-05 y C-17). Catálogo y DP-ACE-C: dueño único C-05; C-17 = S (supervisa el patio). Un solo A por proceso.
+MO-EAF-02	laboral	set	roles[4].does	Congruente con R: supervisa y hace cumplir en el patio; el dueño del proceso es C-05.
+MO-EAF-03	laboral	set	roles[3].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
+MO-EAF-03	laboral	set	roles[3].does	Mando visible del supervisor sobre S-01 y S-02.
+MO-EAF-04	laboral	set	roles[5].does	S-02 es I en el catálogo, el manual §2 y DP-ACE-S; no ejecuta pasos en este POV. El texto anterior le asignaba una ejecución (medir) que contradice la I.
+MO-EAF-04	laboral	set	roles[2].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
+MO-EAF-04	laboral	set	roles[2].does	Mando visible del supervisor sobre S-01.
+MO-EAF-05	laboral	set	roles[5].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
+MO-EAF-05	laboral	set	roles[5].does	Mando visible del supervisor sobre S-01, S-02 y S-10.
+MO-EAF-06	laboral	set	roles[1].does	Lenguaje: "decide" se reserva a C-xx (especificación, LFT art. 9). El ajuste dentro de consigna es ejecución técnica.
+MO-EAF-06	laboral	set	steps[9].action	Mismo contenido técnico sin "decide"; las desviaciones son de C-05 (paso 12 y anormales).
+MO-EAF-08	laboral	set	roles[3].does	Lenguaje: "libera el horno" suena a autorización; la verificación del bloqueo y el método B son de C-05.
+MO-EAF-08	laboral	set	records[0].what	"Responsable" puede leerse como responsabilidad disciplinaria; el registro es de trazabilidad.
+MO-EAF-08	laboral	set	certification[0].validity	S-02 es el señalero de la grúa (paso 8). Criterio unificado: izaje y señales 12 meses (DP-ACE-S §3.1 y §4; escalafón fila 2 exige NOM-006 señalero).
+MO-EAF-08	laboral	set	certification[3].validity	DP-ACE-C §0: los mandos que autorizan permisos de alturas se recertifican a 12 meses.
+MO-LF-01	laboral	set	roles[0].does	Lenguaje: "libera la olla" suena a disposición; las desviaciones las decide C-09.
+MO-LF-01	laboral	set	steps[13].title	Lenguaje sin función de disposición para S-06.
+MO-LF-01	laboral	set	steps[13].check	Consistencia con el título.
+MO-LF-01	laboral	set	goldenRules[2]	Consistencia de lenguaje (≤ 110 caracteres).
+MO-LF-01	laboral	set	endsWhen	Consistencia de lenguaje.
+MO-LF-01	laboral	set	roles[5].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
+MO-LF-01	laboral	set	roles[5].does	Mando visible del supervisor sobre S-06 y S-07.
+MO-OLL-02	laboral	set	roles[0].does	Redacción "detiene, avisa y escala" (LFT art. 9); mismo derecho de alto al trabajo del manual.
+MO-OLL-02	laboral	set	roles[2].does	Lenguaje: "libera" suena a disposición; S-06 confirma condiciones medidas. Las desviaciones son de C-09 / C-04.
+MO-OLL-02	laboral	set	steps[1].title	Lenguaje sin función de disposición para S-06.
+MO-OLL-02	laboral	set	steps[1].check	Consistencia con el título.
+MO-OLL-02	laboral	set	certification[2].validity	DP-ACE-C §0: los mandos que evalúan tareas de izaje se recertifican a 12 meses; MO-OLL-02 está en la lista de 12 meses.
+MO-CC1-01	seguridad	set	steps[1].stop	El manual pone la limpieza (paso 3) antes del permiso de entrada (paso 4). Si la limpieza exige entrar, aplica espacio confinado (MS-ACE-05). Se reporta el orden del manual como hallazgo.
+MO-CC1-01	seguridad	set	steps[2].stop	Manual §6.1 (≤ 45 °C) y MS-ACE-05 §8 pasos 6–7: rescate listo antes de entrar.
+MO-CC1-01	seguridad	set	steps[15].stop	Manual §6.1 (carro de distribuidor en movimiento: área despejada).
+MO-CC1-02	seguridad	set	steps[0].stop	Manual §6.1 ★: LOTO antes de meter manos o herramientas. El recorrido inicial se hace sin LOTO; la persona nueva debe saber que solo mira.
+MO-CC1-02	seguridad	set	steps[5].stop	Manual §6.3: zona de exclusión durante la inserción.
+MO-CC1-02	seguridad	set	steps[12].stop	Manual §6.3: retiro de candados solo con conteo completo de personas y herramientas.
+MO-CC1-03	seguridad	set	steps[3].stop	Manual §6.1 (olla suspendida) y MS-ACE-04.
+MO-CC1-03	seguridad	set	steps[4].stop	Manual §6.1 y §6.3: zona de giro despejada durante el giro.
+MO-CC1-03	seguridad	set	steps[5].stop	Abrir la olla es el inicio de la exposición; el ALTO se liga al paso ★ 2 y a MS-ACE-01 (aviso ≥ 30 s).
+MO-CC1-03	seguridad	set	steps[17].stop	Manual §9 (barra falsa no se desconecta). No cabía otra condición anormal; se pone como ALTO del paso.
+MO-CC1-03	seguridad	set	abnormal[4].do	Manual MO-CC1-04 §9 y MS-ACE-09 escenario C: mantener el agua de molde y no acercarse; el POV decía solo 'detén y evacúa'.
+MO-CC1-04	seguridad	set	steps[13].action	MS-ACE-01 §2 (S-11 entra a roja solo acompañado y autorizado) y MS-ACE-03 (herramienta seca).
+MO-CC1-05	seguridad	set	steps[10].action	Manual §6.1 ★ (lanceado con O₂): vigía obligatorio; faltaba en el POV.
+MO-CC1-05	seguridad	set	steps[10].stop	Manual §6.1: condiciones del lanceado como ALTO observable.
+MO-CC1-05	seguridad	set	abnormal[5].do	El rebose deja acero sobre la plataforma: MS-ACE-09 escenario F (evacuar, dejar solidificar, nunca agua).
+MO-CC1-05	seguridad	set	abnormal[5].call	Derrame de metal: C-04 es el comandante de incidente (MS-ACE-09).
+MO-CC1-06	seguridad	set	steps[14].stop	Manual §6.1: carros en movimiento (nadie entre carros) y distribuidor viejo con ≈ 14 t de acero residual (fosa seca).
+MO-CC1-06	seguridad	append	abnormal	Manual §9: condición anormal no incluida; evita congelar o desbordar el molde con personas en el frente.
+MO-CC1-07	seguridad	append	epp	Manual §6.2: S-16 usa careta sombra 5 para el oxicorte del último planchón (paso 15).
+MO-CC1-07	seguridad	set	steps[7].stop	Manual §6.1: distribuidor con ≈ 14 t de residuo; ruta despejada y fosa seca.
+MO-CC1-07	seguridad	set	steps[15].action	Manual §6.3: ingreso a la máquina solo con cola fuera, máquina detenida y LOTO; la prueba de energía cero es parte del LOTO (MS-ACE-02 paso 9).
+MO-CC1-07	seguridad	set	steps[15].stop	MS-ACE-02 §9: equipo que se mueve en la prueba = detén todo.
+MO-CC1-07	seguridad	set	steps[16].stop	Manual §6.3: ingreso solo con cola fuera y LOTO personal.
+MO-CC1-07	seguridad	set	abnormal[1].do	MO-CC1-04 §9 y MS-ACE-09 escenario C: mantener el agua de molde y no acercarse.
+MO-CC1-08	seguridad	append	epp	Manual §6.2: S-16 usa careta de oxicorte o lentes sombra 5; faltaba en el POV.
+MO-CC1-08	seguridad	set	steps[1].stop	Manual §6.1 (oxicorte: ropa sin grasa por enriquecimiento de O₂) y MS-ACE-06.
+MO-CC1-09	seguridad	append	epp	Manual §6.2: el escarpeo exige careta sombra 5–6; faltaba en el POV.
+MO-CC1-09	seguridad	set	steps[9].stop	Manual §6.1 ★: área libre de combustibles.
+MO-CC1-09	seguridad	set	steps[12].stop	Manual §6.1 (ácidos del macroataque): campana, regadera y lavaojos son los controles.
+MO-CC1-09	seguridad	append	abnormal	Manual §6.1 lista regadera y lavaojos como control, pero el POV no decía qué hacer ante una salpicadura. El manual no fija el tiempo de enjuague: se reporta como hueco.
+MO-CC2-01	seguridad	set	steps[6].stop	Manual §6.3: bloqueo del carro del distribuidor antes de trabajar bajo él (instalación de buzas y placas). El POV no lo mencionaba.
+MO-CC2-01	seguridad	set	steps[7].stop	Manual §6.3: mismo control para colocar las placas ciegas.
+MO-CC2-02	seguridad	set	steps[6].stop	Paso ★ de LOTO sin ALTO; MS-ACE-02 §9 (equipo que se mueve en la prueba = detén todo).
+MO-CC2-02	seguridad	set	steps[9].stop	Paso ★ de LOTO sin ALTO; MS-ACE-02 §8 pasos 7 y 9.
+MO-CC2-03	seguridad	set	steps[1].action	Manual §6.3: rutas de escape despejadas en la plataforma.
+MO-CC2-03	seguridad	set	steps[4].stop	Manual §6.1 (lanceo de O₂): solo S-13 certificado, lanza ≥ 3 m, sin grasa en guantes.
+MO-CC2-04	seguridad	set	steps[13].check	Manual §9 (breakout): el ESR inspecciona el contenedor de Cs-137 antes de intervenir (MS-ACE-07 §9, contenedor con metal encima).
+MO-CC2-04	seguridad	set	steps[13].action	Manual §9 y MS-ACE-09 escenario C: prohibido cortar el agua de molde.
+MO-CC2-05	seguridad	set	steps[8].stop	El giro lo ejecuta S-12 (otro puesto); su ALTO debe ligarse a la confirmación del paso ★ 8 (manual §6.3).
+MO-CC2-05	seguridad	set	steps[10].stop	Manual §6.1 (solo S-13 certificado) y MS-ACE-03 §6.2 (EPP seco).
+MO-CC2-06	seguridad	set	steps[11].stop	El paso repite la maniobra de los pasos 6–7 (★); manual §6.3: zona de exclusión en la línea de expulsión.
+MO-CC2-06	seguridad	set	steps[12].stop	Manual §6.1 (taponeo desde arriba: caída) y MS-ACE-10.
+MO-CC2-07	seguridad	set	steps[12].stop	MS-ACE-04: nadie bajo la carga; el paso lo menciona pero no tenía ALTO.
+MO-CC2-07	seguridad	set	steps[15].action	MS-ACE-02 §8 paso 9: la prueba de energía cero es parte del LOTO.
+MO-CC2-07	seguridad	set	steps[15].stop	Paso ★ de LOTO sin ALTO; MS-ACE-02 §9.
+MO-CC2-07	seguridad	set	steps[16].stop	Manual §6.1: radiación (ESR antes de trabajar en el molde), movimiento de equipo (LOTO) y tubos calientes (esperar enfriamiento).
+MO-CC2-08	seguridad	append	epp	Manual §6.2: careta para el área de corte (oxicorte de S-16).
+MO-CC2-08	seguridad	append	epp	Manual §6.2: chaleco de alta visibilidad en el patio (S-17, grúa).
+MO-CC2-09	seguridad	append	epp	Manual §6.2: careta para esmerilado y ataque ácido.
+MO-CC2-09	seguridad	append	epp	Manual §6.2: mandil y guantes de neopreno o PVC para el ataque con HCl caliente.
+MO-CC2-09	seguridad	append	epp	Manual §6.2: chaleco de alta visibilidad (zona de lecho y grúa).
+MO-CC2-09	seguridad	set	steps[2].stop	Manual §6.1 (carga suspendida) y MS-ACE-04.
+MO-CC2-09	seguridad	set	steps[7].stop	Manual §6.1 (corte de muestras): guardas y permiso en caliente (NOM-027).
+MO-CC2-09	seguridad	set	steps[11].stop	MS-ACE-04: traslado de retenidas con grúa.
+MO-CC2-09	seguridad	set	abnormal[6]	El ácido clorhídrico caliente es peligro principal del POV sin respuesta en 'Si algo sale mal'. Se sustituye 'Palanquilla doblada' (calidad; sigue en el manual §9 y en POV-CC2-08) para respetar el máximo de 7. El manual no fija tiempo de enjuague: se reporta como hueco.
+MO-EAF-01	seguridad	set	steps[7].stop	Paso ★ sin ALTO; manual §6.1: proyección solo sobre refractario, nunca sobre el baño ni formando charcos.
+MO-EAF-01	seguridad	set	steps[9].stop	Manual §6.1 (caída de costras): nadie en la trayectoria.
+MO-EAF-01	seguridad	set	steps[10].action	MS-ACE-02 §6.4 condición 3: una llave por persona; si faltan llaves, LOTO.
+MO-EAF-01	seguridad	set	steps[10].stop	MS-ACE-02 §6.4: sistema en falla o prueba mensual vencida exige LOTO completo.
+MO-EAF-01	seguridad	set	steps[11].stop	Manual §6.1 (enriquecimiento de O₂ al limpiar el EBT): ropa sin grasa y válvula de cierre rápido.
+MO-EAF-01	seguridad	set	steps[15].stop	Paso ★ de retiro; manual §8 paso 17 (conteo de personas = conteo de llaves).
+MO-EAF-01	seguridad	set	abnormal[0].do	Manual §9 y MS-ACE-03 §9: la espera de evaporación con el horno quieto es parte de la respuesta segura.
+MO-EAF-01	seguridad	set	abnormal[6].if	El POV lista CO como peligro pero no dice qué hacer; manual §6.1 y MS-ACE-06. Se combina con la condición de presión para no pasar de 7 anormales.
+MO-EAF-01	seguridad	set	abnormal[6].do	MS-ACE-06 §5.1 y §8 pasos 4–6.
+MO-EAF-01	seguridad	set	abnormal[6].call	La evacuación del sector la ordena C-04.
+MO-EAF-02	seguridad	append	epp	Manual §6.2: chaleco de alta visibilidad en patio (tránsito de camiones y grúa).
+MO-EAF-02	seguridad	set	steps[2].stop	Manual §6.1 (explosivos: rechazo y protocolo con autoridades). El manual no dice cómo se separa un explosivo; una persona nueva no debe manipularlo. Se reporta como hueco del manual.
+MO-EAF-02	seguridad	set	steps[12].stop	Manual §6.1: conteo y bocina antes de abrir la canasta (momento de flama y proyección).
+MO-EAF-02	seguridad	set	abnormal[1].do	MS-ACE-03 §9: atender lesionados y retener el lote; MS-ACE-09: no mover lesionados dentro de la zona roja sin protección.
+MO-EAF-02	seguridad	append	abnormal	MS-ACE-04 §9: persona entra a la ruta; el POV no tenía respuesta para la carga suspendida.
+MO-EAF-03	seguridad	set	dangerZone.yellow	Manual §6.1 y criterio único de LEL (MS-ACE-05 §5): faltaba el límite de inflamables.
+MO-EAF-03	seguridad	append	hazards	Manual §6.1: CO en plataforma de bóveda es peligro del proceso y no estaba en el POV.
+MO-EAF-03	seguridad	set	abnormal[4].if	Manual §6.1 (CO en plataforma: 25 ppm salir, 200 ppm evacuación). Se combina con la condición de gases para no pasar de 7 anormales.
+MO-EAF-03	seguridad	set	abnormal[4].do	MS-ACE-06 §8 pasos 5–6.
+MO-EAF-03	seguridad	set	abnormal[4].call	La evacuación del sector la ordena C-04 (MS-ACE-06).
+MO-EAF-03	seguridad	set	abnormal[2].do	Primero proteger personas: el POV debe decir a dónde se retira la persona (MS-ACE-01 §9).
+MO-EAF-04	seguridad	set	steps[7].stop	Paso ★ sin ALTO; manual §6.1 (tap alto solo con arco cubierto; bajar tap con T de panel > 60 °C) y MS-ACE-03 §5.
+MO-EAF-04	seguridad	set	abnormal[2].if	MS-ACE-03 §5 y §8 paso 5: la alarma de 2 % exige respuesta del púlpito antes del disparo; el POV solo cubría el disparo.
+MO-EAF-04	seguridad	set	abnormal[2].do	MS-ACE-03 §8 paso 5 y §9.
+MO-EAF-05	seguridad	set	steps[8].stop	El paso que expone (inclinar hacia la puerta) debe depender de los pasos ★ 6 y 7 del manual; ALTO observable.
+MO-EAF-05	seguridad	set	steps[9].action	MS-ACE-01 §8 paso 9 (muestreo en la puerta): posición, distancia y tiempo en roja.
+MO-EAF-05	seguridad	set	steps[12].stop	Manual §6.1 (atropellamiento del portaollas): peatones fuera de la ruta.
+MO-EAF-05	seguridad	set	abnormal[0].do	Primero proteger personas: indicar a dónde se retira la persona (MS-ACE-01 §9).
+MO-EAF-05	seguridad	set	abnormal[6]	CO por la puerta es peligro principal del POV sin respuesta. Se sustituye 'P > 0.015 % antes de vaciar' (calidad; sigue en el manual §9 y en POV-EAF-06) para respetar el máximo de 7 anormales.
+MO-EAF-06	seguridad	set	steps[5].stop	El paso de inmersión es el de mayor exposición; su ALTO debe ligarse a los pasos 4 y 5 (confirmación por radio y puerta libre).
+MO-EAF-06	seguridad	set	steps[12].stop	Manual §6.1 y §6.3: las cuatro condiciones de la medición manual; MS-ACE-03 §6.2 (EPP seco).
+MO-EAF-06	seguridad	set	steps[12].action	Se conserva la marca [Supuesto] del manual §6.1 (máx. 1 intento por persona).
 MO-EAF-07	seguridad	set	steps[0].stop	ALTO observable con el valor del manual (§6.3, MS-ACE-03 §5): 'fría' no es medible.
 MO-EAF-07	seguridad	set	steps[4].action	El manual y MS-ACE-01 piden aviso ≥ 30 s, no exactamente 30 s.
 MO-EAF-07	seguridad	set	steps[4].stop	MS-ACE-01 §4 y §9: sin sirena o semáforo no hay vaciado.
@@ -456,77 +489,21 @@ MO-EAF-07	seguridad	set	dangerZone.red	Manual §6.3 y MS-ACE-01 §5: la única e
 MO-EAF-07	seguridad	set	dangerZone.rule	Manual §6.3: la exclusión inicia cuando la olla entra, no 30 s antes de abrir.
 MO-EAF-07	seguridad	set	abnormal[0].do	Manual §6.1 y §9: EPP completo, quién lancea y la marca [Validar con OEM].
 MO-EAF-07	seguridad	append	abnormal	El POV lista CO como peligro pero no dice qué hacer; manual §6.1 y MS-ACE-06 §8 pasos 5–6.
-MO-EAF-08	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
-MO-EAF-08	documentacion	set	steps[10].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
-MO-EAF-08	documentacion	set	steps[14].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico. Los números de paso ya corresponden al POV (manual: 1–3, 6–10 y 12–13).
-MO-EAF-08	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-08	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-08	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-EAF-08	documentacion	set	steps[2].action	Término: "la HMI" (Guía de estilo §1).
-MO-EAF-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-08	laboral	set	roles[3].does	Lenguaje: "libera el horno" suena a autorización; la verificación del bloqueo y el método B son de C-05.
-MO-EAF-08	laboral	set	records[0].what	"Responsable" puede leerse como responsabilidad disciplinaria; el registro es de trazabilidad.
-MO-EAF-08	laboral	set	certification[0].validity	S-02 es el señalero de la grúa (paso 8). Criterio unificado: izaje y señales 12 meses (DP-ACE-S §3.1 y §4; escalafón fila 2 exige NOM-006 señalero).
-MO-EAF-08	laboral	set	certification[3].validity	DP-ACE-C §0: los mandos que autorizan permisos de alturas se recertifican a 12 meses.
 MO-EAF-08	seguridad	set	steps[4].stop	Manual §6.1 (caída de columna por tapón mal roscado): control crítico antes de abrir la mordaza.
 MO-EAF-08	seguridad	set	steps[13].stop	Paso ★ de retiro sin ALTO; manual §8 paso 13 (conteo de personas = llaves).
 MO-EAF-08	seguridad	set	dangerZone.rule	Se conserva la marca del manual §6.3: falta confirmar que el sistema de llaves solo permita ese movimiento.
-MO-LF-01	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
-MO-LF-01	documentacion	set	steps[8].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
-MO-LF-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-LF-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-LF-01	usuario	set	steps[4].action	El título dice "Baja la bóveda" y la acción solo mencionaba los electrodos; un nuevo no sabe cuándo baja la bóveda.
-MO-LF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-LF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-LF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-LF-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-LF-01	laboral	set	roles[0].does	Lenguaje: "libera la olla" suena a disposición; las desviaciones las decide C-09.
-MO-LF-01	laboral	set	steps[13].title	Lenguaje sin función de disposición para S-06.
-MO-LF-01	laboral	set	steps[13].check	Consistencia con el título.
-MO-LF-01	laboral	set	goldenRules[2]	Consistencia de lenguaje (≤ 110 caracteres).
-MO-LF-01	laboral	set	endsWhen	Consistencia de lenguaje.
-MO-LF-01	laboral	set	roles[5].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
-MO-LF-01	laboral	set	roles[5].does	Mando visible del supervisor sobre S-06 y S-07.
 MO-LF-01	seguridad	set	steps[3].action	MS-ACE-01 §8 paso 9 (muestreo y temperatura en LF) y MS-ACE-03 (lanza seca).
 MO-LF-01	seguridad	set	steps[4].stop	Manual §6.1 y regla de oro 1: nadie en la plataforma con el interruptor cerrado.
 MO-LF-01	seguridad	set	steps[6].stop	Paso ★ sin ALTO; manual §6.1 (agitación fuerte con bordo libre bajo) y §6.3 (zona roja ≤ 5 m).
 MO-LF-01	seguridad	set	steps[11].action	MS-ACE-01 §8 paso 9.
 MO-LF-01	seguridad	set	abnormal[5].do	Manual §6.1 (latigazo o rotura de alambre: nadie en la trayectoria).
 MO-LF-01	seguridad	set	abnormal[6]	Argón y CO son peligros principales del POV sin respuesta en 'Si algo sale mal'. Se sustituye la condición 'tratamiento > 50 min' (coordinación de producción, sigue en el manual §9) para respetar el máximo de 7 anormales.
-MO-OLL-01	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
-MO-OLL-01	documentacion	set	steps[1].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
-MO-OLL-01	documentacion	set	steps[4].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
-MO-OLL-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-OLL-01	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-OLL-01	seguridad	set	steps[2].stop	Paso ★ de exposición (volteo con grúa) sin ALTO propio; manual §6.3 y MS-ACE-03.
 MO-OLL-01	seguridad	set	steps[5].stop	Manual §6.1 (lanza de O₂: ropa sin grasa, válvula de cierre rápido).
 MO-OLL-01	seguridad	set	steps[14].stop	Manual §6.3 ★ y MS-ACE-04: nadie bajo una olla suspendida ni en la trayectoria.
 MO-OLL-01	seguridad	set	abnormal[5].if	Manual §6.2: detector en la zona del precalentador con umbrales de CO y gas natural; el POV no decía qué hacer.
 MO-OLL-01	seguridad	set	abnormal[5].do	Manual §6.2 y MS-ACE-06 §5.1.
 MO-OLL-01	seguridad	set	abnormal[5].call	La evacuación la ordena C-04.
-MO-OLL-02	documentacion	set	purpose	Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido.
-MO-OLL-02	documentacion	set	steps[1].action	Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico.
-MO-OLL-02	documentacion	set	steps[13].check	Check medible/observable: dice qué evidencia confirma que el paso quedó bien.
-MO-OLL-02	documentacion	set	next	Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. POV-CC2-03 recibe la primera olla de la secuencia igual que POV-CC1-03.
-MO-OLL-02	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-OLL-02	documentacion	append	glossary	Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV).
-MO-OLL-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-OLL-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-OLL-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-OLL-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-OLL-02	laboral	set	roles[0].does	Redacción "detiene, avisa y escala" (LFT art. 9); mismo derecho de alto al trabajo del manual.
-MO-OLL-02	laboral	set	roles[2].does	Lenguaje: "libera" suena a disposición; S-06 confirma condiciones medidas. Las desviaciones son de C-09 / C-04.
-MO-OLL-02	laboral	set	steps[1].title	Lenguaje sin función de disposición para S-06.
-MO-OLL-02	laboral	set	steps[1].check	Consistencia con el título.
-MO-OLL-02	laboral	set	certification[2].validity	DP-ACE-C §0: los mandos que evalúan tareas de izaje se recertifican a 12 meses; MO-OLL-02 está en la lista de 12 meses.
 MO-OLL-02	seguridad	set	steps[1].stop	Manual §6.1 y §9: la olla con fuga, punto caliente o bordo libre bajo no se libera para traslado normal.
 MO-OLL-02	seguridad	set	steps[7].stop	MS-ACE-04 §9: persona en la ruta o balanceo excesivo = detén el traslado. El POV no tenía respuesta a una persona en la ruta durante el traslado.
 MO-OLL-02	seguridad	set	steps[9].stop	MS-ACE-04 §8 paso 9: el señalero único guía el depósito.

@@ -8,7 +8,7 @@
   "owner": "C-06",
   "manual": "02-operacion/cc1/MO-CC1-01-preparacion-distribuidor.md",
   "deck": "05-capacitacion/MO-CC1-01",
-  "purpose": "Entregar a la plataforma de colada un distribuidor de 45 t seco, limpio, bien armado y precalentado, con barra tapón y SEN alineadas y probadas.",
+  "purpose": "Entregar a la plataforma de colada un distribuidor de 45 t seco, limpio, bien armado y precalentado. La barra tapón y la SEN quedan alineadas y probadas.",
   "whyItMatters": "Un distribuidor húmedo explota al recibir acero. Uno mal armado ensucia el acero, tapa la SEN o da grietas en el planchón.",
   "startsWhen": "El distribuidor usado sale del volteo, descostrado, al terminar la secuencia (MO-CC1-07).",
   "endsWhen": "El distribuidor queda centrado en posición de colada y S-13 lo recibe para el arranque (MO-CC1-03) o el cambio en caliente (MO-CC1-06).",
@@ -29,7 +29,7 @@
       "code": "S-15",
       "name": "Preparador de Distribuidores",
       "raci": "R",
-      "does": "Arma revestimiento, pad, presas, tapón y SEN; precalienta y registra. Hoy también cubre el izaje con la grúa de 50 t.",
+      "does": "Arma revestimiento, pad, presas, tapón y SEN; precalienta y registra. Mientras se decide el rol S-27, también opera la grúa de 50 t.",
       "it": "IT-S15"
     },
     {
@@ -142,7 +142,8 @@
       "icon": "herramienta",
       "title": "Limpia el interior en seco",
       "action": "Retira restos de casco, escoria y polvo con aspiradora o aire. Nunca uses agua.",
-      "check": "Superficie limpia y seca."
+      "check": "Superficie limpia y seca.",
+      "stop": "Para limpiar tienes que meter el cuerpo al distribuidor y aún no hay permiso ni LOTO (paso 3)."
     },
     {
       "n": 3,
@@ -153,7 +154,7 @@
       "action": "LOTO de quemadores (aislamiento positivo del gas) y del carro. Mide O₂ → LEL → CO y temperatura. Vigía afuera y rescate listo (MS-ACE-05).",
       "check": "Permiso firmado: O₂ 19.5–23.5 %, LEL < 10 %, CO < 25 ppm, ≤ 45 °C.",
       "critical": true,
-      "stop": "Una lectura está fuera de rango o no hay vigía afuera."
+      "stop": "Una lectura está fuera de rango, el interior pasa de 45 °C, o no hay vigía afuera y rescate listo."
     },
     {
       "n": 4,
@@ -265,7 +266,7 @@
       "role": "S-15",
       "icon": "temperatura",
       "title": "Precalienta por curva",
-      "action": "Fuego bajo hasta ≈ 300 °C; rampa sin pasar de ≈ 8 °C/min; sostén con tapón y SEN en el quemador [Validar con C-15]. Registra la T cada 30 min.",
+      "action": "Usa fuego bajo hasta ≈ 300 °C. Sube sin pasar de ≈ 8 °C/min y sostén con tapón y SEN en el quemador [Validar con C-15]. Registra la T cada 30 min.",
       "check": "Cara caliente 1,100 ± 50 °C; SEN ≥ 1,000 °C; 2.5–4 h.",
       "quality": true,
       "decision": {
@@ -291,7 +292,7 @@
       "action": "Apaga los quemadores y mueve el carro. Cuenta el tiempo sin fuego hasta abrir la olla.",
       "check": "≤ 10 min sin quemador (objetivo ≤ 5 min).",
       "quality": true,
-      "stop": "Pasan más de 10 min sin fuego antes de abrir la olla."
+      "stop": "Hay alguien en la ruta del carro, o pasan más de 10 min sin fuego antes de abrir la olla."
     },
     {
       "n": 17,
@@ -309,7 +310,7 @@
       "icon": "registrar",
       "title": "Recibe y registra la entrega",
       "action": "Con S-15, registra la hora, la temperatura final y el número de distribuidor.",
-      "check": "Registro completo."
+      "check": "Registro con hora, T final y número de distribuidor, firmado por S-13 y S-15."
     }
   ],
   "abnormal": [
@@ -390,14 +391,14 @@
       "theory": "16 h",
       "ojt": "80 h / 10 distribuidores completos",
       "evaluated": "Pasos 3, 6, 9, 11, 12 y 13",
-      "validity": "24 meses; espacio confinado y señales de izaje 12 meses"
+      "validity": "≤ 24 meses (TD-P07); entrada al distribuidor (espacio confinado) 12 meses"
     },
     {
       "role": "S-13",
       "level": "2 (en este proceso)",
       "theory": "4 h",
       "ojt": "5 recepciones de distribuidor",
-      "evaluated": "Paso 11 (verificación de humedad)",
+      "evaluated": "Recepción (pasos 16 a 18): sin vapor ni humedad antes de colar, ≤ 10 min sin fuego y centrado",
       "validity": "24 meses"
     },
     {
@@ -407,12 +408,20 @@
       "ojt": "—",
       "evaluated": "Todos los pasos",
       "validity": "24 meses"
+    },
+    {
+      "role": "S-15",
+      "level": "3 (grúa de CC de 50 t, mientras no exista S-27)",
+      "theory": "Curso de grúa (NOM-006)",
+      "ojt": "Según MS-ACE-04",
+      "evaluated": "Paso 12",
+      "validity": "12 meses (grúas e izaje)"
     }
   ],
   "glossary": [
     {
       "term": "Distribuidor (tundish)",
-      "def": "Recipiente refractario de 45 t entre la olla y el molde; calma y limpia el acero."
+      "def": "Recipiente refractario de 45 t entre la olla y el molde. Calma el acero y guarda reserva para el cambio de olla."
     },
     {
       "term": "SEN",
@@ -441,6 +450,26 @@
     {
       "term": "Aislamiento positivo",
       "def": "Corte seguro del gas de los quemadores para que no llegue al interior mientras hay alguien dentro (MS-ACE-05)."
+    },
+    {
+      "term": "LOTO",
+      "def": "Bloqueo y etiquetado: cada persona pone su candado y tarjeta para que ninguna energía mueva el equipo."
+    },
+    {
+      "term": "Casco del distribuidor",
+      "def": "Coraza metálica exterior del distribuidor. No confundir con el casco de tu EPP."
+    },
+    {
+      "term": "LEL",
+      "def": "Límite inferior de explosividad del gas; el detector lo mide en %. A 10 % LEL o más, sal y corta el gas."
+    },
+    {
+      "term": "Vigía",
+      "def": "Persona que se queda afuera de un espacio confinado, vigila al que entra y activa el rescate si hace falta."
+    },
+    {
+      "term": "Espacio confinado",
+      "def": "Lugar cerrado con entrada limitada (como el interior del distribuidor) donde puede faltar oxígeno o juntarse gas."
     }
   ],
   "review": [
@@ -448,6 +477,30 @@
       "area": "Elaboró",
       "who": "experto-operativo-metalurgia",
       "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }
   ]

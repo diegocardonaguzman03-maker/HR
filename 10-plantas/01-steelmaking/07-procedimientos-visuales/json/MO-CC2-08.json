@@ -8,80 +8,437 @@
   "owner": "C-06",
   "manual": "02-operacion/cc2/MO-CC2-08-corte-marcado-lecho-enfriamiento.md",
   "deck": "05-capacitacion/MO-CC2-08",
-  "purpose": "Cortar cada palanquilla a 12,000 mm en frío, marcarla con su identidad, enfriarla sin doblarla y despacharla a Laminación o al patio sin mezclar coladas.",
+  "purpose": "Cortar cada palanquilla a 12,000 mm en frío y marcarla con su identidad. Enfriarla sin doblarla y despacharla a Laminación o al patio sin mezclar coladas.",
   "whyItMatters": "Una palanquilla corta no entra al horno de Laminación. Una marca ilegible hace perder la trazabilidad y la palanquilla se retiene. Una palanquilla de 2.4 t que cae del electroimán puede aplastar a una persona.",
   "startsWhen": "La palanquilla enderezada (> 800 °C) llega al oxicorte de su línea (MO-CC2-04, MO-CC2-05, MO-CC2-07).",
   "endsWhen": "La palanquilla se entrega a Laminación en carga caliente o queda estibada en el patio por colada; la inspección sigue en MO-CC2-09.",
-  "previous": ["MO-CC2-04", "MO-CC2-05", "MO-CC2-07"],
-  "next": ["MO-CC2-09"],
-  "heroFigure": {"file": "img/cc2-perfil-maquina.svg", "caption": "Perfil de la CC2: oxicorte, marcadora y lecho de enfriamiento al final de la línea."},
+  "previous": [
+    "MO-CC2-04",
+    "MO-CC2-05",
+    "MO-CC2-07"
+  ],
+  "next": [
+    "MO-CC2-09"
+  ],
+  "heroFigure": {
+    "file": "img/cc2-perfil-maquina.svg",
+    "caption": "Perfil de la CC2: oxicorte, marcadora y lecho de enfriamiento al final de la línea."
+  },
   "figures": [
-    {"file": "img/cc2-defectos-palanquilla.svg", "caption": "Palanquilla de 160 × 160 mm: la rectitud y la longitud se revisan en el lecho (MO-CC2-09)."}
+    {
+      "file": "img/cc2-defectos-palanquilla.svg",
+      "caption": "Palanquilla de 160 × 160 mm: la rectitud y la longitud se revisan en el lecho (MO-CC2-09)."
+    }
   ],
   "roles": [
-    {"code": "C-06", "name": "Supervisor de Colada Continua", "raci": "A", "does": "Dueño del proceso. Autoriza cambios de longitud y la disposición de palanquillas sin marca.", "it": "IT-C06"},
-    {"code": "S-16", "name": "Operador de Corte y Marcado", "raci": "R", "does": "Opera los 6 oxicortes, la desbarbadora y la marcadora; verifica longitud y marca.", "it": "IT-S16"},
-    {"code": "S-17", "name": "Operador de Mesa de Enfriamiento y Despacho", "raci": "R", "does": "Opera la transferencia y el lecho, forma lotes, opera la grúa de producto (hoy sin código propio) y despacha.", "it": "IT-S17"},
-    {"code": "S-12", "name": "Operador de Púlpito de Colada", "raci": "C", "does": "Vigila el rastreo (colada por línea) y las alarmas de corte.", "it": "IT-S12"},
-    {"code": "S-18", "name": "Inspector de Calidad de Semiterminado", "raci": "C", "does": "Toma muestras e inspecciona (MO-CC2-09).", "it": "IT-S18"},
-    {"code": "C-09", "name": "Metalurgista de Producto", "raci": "I", "does": "Define la disposición de las palanquillas retenidas."}
+    {
+      "code": "C-06",
+      "name": "Supervisor de Colada Continua",
+      "raci": "A",
+      "does": "Dueño del proceso. Autoriza cambios de longitud y la disposición de palanquillas sin marca.",
+      "it": "IT-C06"
+    },
+    {
+      "code": "S-16",
+      "name": "Operador de Corte y Marcado",
+      "raci": "R",
+      "does": "Opera los 6 oxicortes, la desbarbadora y la marcadora; verifica longitud y marca.",
+      "it": "IT-S16"
+    },
+    {
+      "code": "S-17",
+      "name": "Operador de Mesa de Enfriamiento y Despacho",
+      "raci": "R",
+      "does": "Opera la transferencia y el lecho, forma lotes y despacha. Mientras se decide el rol S-27, también opera la grúa de producto de 25 t.",
+      "it": "IT-S17"
+    },
+    {
+      "code": "S-12",
+      "name": "Operador de Púlpito de Colada",
+      "raci": "C",
+      "does": "Vigila el rastreo (colada por línea) y las alarmas de corte.",
+      "it": "IT-S12"
+    },
+    {
+      "code": "S-18",
+      "name": "Inspector de Calidad de Semiterminado",
+      "raci": "C",
+      "does": "Toma muestras e inspecciona (MO-CC2-09).",
+      "it": "IT-S18"
+    },
+    {
+      "code": "C-09",
+      "name": "Metalurgista de Producto",
+      "raci": "I",
+      "does": "Define la disposición de las palanquillas retenidas."
+    }
   ],
-  "goldenRules": ["Nadie en el camino de rodillos ni en el lecho: cruza solo por las pasarelas.", "Electroimán solo hasta 600 °C; más caliente, tenaza. Nadie bajo la carga.", "Sin marca legible o si no coincide con el rastreo, la palanquilla se retiene \"R\"."],
-  "epp": ["casco", "lentes", "ropa_fr", "guantes", "botas", "auditiva"],
-  "dangerZone": {"red": "Zona roja: lecho de enfriamiento, camino de rodillos y proyección de la carga de la grúa ± 5 m en el patio. Nadie a pie.", "yellow": "Área de corte: careta y ropa retardante; chaleco de alta visibilidad en el patio.", "rule": "LOTO del oxicorte y del camino de rodillos antes de cambiar boquillas o liberar palanquillas atoradas. Permiso de trabajo en caliente para cortes manuales."},
+  "goldenRules": [
+    "Nadie en el camino de rodillos ni en el lecho: cruza solo por las pasarelas.",
+    "Electroimán solo hasta 600 °C; más caliente, tenaza. Nadie bajo la carga.",
+    "Sin marca legible o si no coincide con el rastreo, la palanquilla se retiene \"R\"."
+  ],
+  "epp": [
+    "casco",
+    "lentes",
+    "ropa_fr",
+    "guantes",
+    "botas",
+    "auditiva",
+    "careta_oxicorte",
+    "chaleco"
+  ],
+  "dangerZone": {
+    "red": "Zona roja: lecho de enfriamiento, camino de rodillos y proyección de la carga de la grúa ± 5 m en el patio. Nadie a pie.",
+    "yellow": "Área de corte: careta y ropa retardante; chaleco de alta visibilidad en el patio.",
+    "rule": "LOTO del oxicorte y del camino de rodillos antes de cambiar boquillas o liberar palanquillas atoradas. Permiso de trabajo en caliente para cortes manuales."
+  },
   "hazards": [
-    {"icon": "oxigeno", "text": "Oxígeno y gas natural del oxicorte: retroceso de llama, incendio."},
-    {"icon": "calor", "text": "Palanquilla a más de 800 °C en movimiento: golpe, atrapamiento y quemaduras."},
-    {"icon": "grua", "text": "Carga suspendida: 2.4 t por palanquilla, varias por izaje."},
-    {"icon": "iman", "text": "Arriba de 600 °C el electroimán puede soltar la palanquilla."},
-    {"icon": "peligro", "text": "Estiba inestable en el patio: caída de palanquillas."}
+    {
+      "icon": "oxigeno",
+      "text": "Oxígeno y gas natural del oxicorte: retroceso de llama, incendio."
+    },
+    {
+      "icon": "calor",
+      "text": "Palanquilla a más de 800 °C en movimiento: golpe, atrapamiento y quemaduras."
+    },
+    {
+      "icon": "grua",
+      "text": "Carga suspendida: 2.4 t por palanquilla, varias por izaje."
+    },
+    {
+      "icon": "iman",
+      "text": "Arriba de 600 °C el electroimán puede soltar la palanquilla."
+    },
+    {
+      "icon": "peligro",
+      "text": "Estiba inestable en el patio: caída de palanquillas."
+    }
   ],
-  "phases": ["Al iniciar el turno", "Corte y marcado", "Lecho y despacho"],
+  "phases": [
+    "Al iniciar el turno",
+    "Corte y marcado",
+    "Lecho y despacho"
+  ],
   "steps": [
-    {"n": 1, "phase": 0, "role": "S-16", "icon": "fuego", "title": "Prueba los oxicortes", "action": "Haz la prueba de fugas, revisa los antirretornos de llama y prende la flama de precalentamiento. Sin grasa en las conexiones de O₂.", "check": "Sin fugas; antirretornos instalados; flama estable.", "critical": true, "stop": "Hay una fuga de gas u oxígeno o falta un antirretorno."},
-    {"n": 2, "phase": 0, "role": "S-16", "icon": "hmi", "title": "Verifica el ajuste de longitud", "action": "Revisa que el punto de corte en caliente esté cargado para el grado y la sección.", "check": "12,150 mm en caliente [Validar] para 12,000 mm en frío."},
-    {"n": 3, "phase": 0, "role": "S-16", "icon": "medir", "title": "Verifica la medición", "action": "Mide con cinta una palanquilla fría por línea y compárala con el encoder.", "check": "± 10 mm contra el encoder.", "quality": true},
-    {"n": 4, "phase": 1, "role": "S-16", "icon": "cortar", "title": "Vigila el corte", "action": "Observa que el soplete corte completo y a escuadra, sin arrastrar el carro.", "check": "Corte completo en 35–55 s; escuadra ≤ 5 mm [Validar].", "stop": "El corte queda incompleto y la palanquilla arrastra el carro."},
-    {"n": 5, "phase": 1, "role": "S-16", "icon": "herramienta", "title": "Desbarba", "action": "Revisa que la desbarbadora quite la escoria de corte.", "check": "Rebaba ≤ 3 mm."},
-    {"n": 6, "phase": 1, "role": "S-16", "icon": "marcar", "title": "Marca la palanquilla", "action": "Marca con la marcadora: colada · línea · secuencia · consecutivo (CCCCCC-L-SS-NN [Supuesto]) y la letra de condición si aplica (A, T, B, E, C, R).", "check": "Marca legible que coincide con el rastreo.", "critical": true},
-    {"n": 7, "phase": 1, "role": "S-16", "icon": "verificar", "title": "Verifica la identidad", "action": "Compara con el rastreo la primera y la última palanquilla de cada colada por línea y el cambio de colada en la zona de transición.", "check": "Marca = rastreo.", "critical": true, "decision": {"question": "¿Marca legible y = rastreo?", "no": "Retén \"R\" las palanquillas dudosas y avisa a C-06."}},
-    {"n": 8, "phase": 2, "role": "S-17", "icon": "ruta", "title": "Transfiere al lecho", "action": "Pasa la palanquilla al lecho con la mesa de transferencia, con separación uniforme.", "check": "Sin choques ni doblez.", "stop": "Una palanquilla se dobla o se atora en el camino o el lecho."},
-    {"n": 9, "phase": 2, "role": "S-17", "icon": "calidad", "title": "Aparta las de inspección", "action": "Lleva a la zona de inspección las que pida S-18 y las marcadas A, T, B, E, C y R.", "check": "Palanquillas en la zona de inspección.", "quality": true},
-    {"n": 10, "phase": 2, "role": "S-17", "icon": "temperatura", "title": "Mide la temperatura para despacho", "action": "Mide con el pirómetro al final del lecho.", "check": "≥ 600 °C [Validar] para carga caliente (objetivo ≥ 650 °C).", "decision": {"question": "¿≥ 600 °C?", "no": "Envía la colada al patio (paso 13)."}},
-    {"n": 11, "phase": 2, "role": "S-17", "icon": "carro", "title": "Despacha a carga caliente o patio", "action": "Despacha por colada completa y avisa a Laminación.", "check": "Lote de una sola colada."},
-    {"n": 12, "phase": 2, "role": "S-17", "icon": "iman", "title": "Iza con electroimán o tenaza", "action": "Mide antes del izaje: electroimán solo hasta 600 °C; más caliente, usa tenaza. Nadie bajo la carga.", "check": "Izaje sin personas en la zona.", "critical": true, "stop": "La palanquilla pasa de 600 °C con electroimán, o hay alguien bajo la carga."},
-    {"n": 13, "phase": 2, "role": "S-17", "icon": "material", "title": "Estiba en el patio", "action": "Estiba en capas cruzadas con separadores. Pon la etiqueta de estiba con la colada.", "check": "Altura ≤ 2.5 m [Validar con C-16]; una colada por estiba.", "stop": "La estiba está inestable o pasa de 2.5 m."},
-    {"n": 14, "phase": 2, "role": "S-17", "icon": "registrar", "title": "Registra el despacho", "action": "Anota palanquillas por colada, destino y retenidas.", "check": "Registro de despacho completo."}
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-16",
+      "icon": "fuego",
+      "title": "Prueba los oxicortes",
+      "action": "Haz la prueba de fugas, revisa los antirretornos de llama y prende la flama de precalentamiento. Sin grasa en las conexiones de O₂.",
+      "check": "Sin fugas; antirretornos instalados; flama estable.",
+      "critical": true,
+      "stop": "Hay una fuga de gas u oxígeno o falta un antirretorno."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-16",
+      "icon": "hmi",
+      "title": "Verifica el ajuste de longitud",
+      "action": "Revisa que el punto de corte en caliente esté cargado para el grado y la sección.",
+      "check": "12,150 mm en caliente [Validar] para 12,000 mm en frío."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-16",
+      "icon": "medir",
+      "title": "Verifica la medición",
+      "action": "Mide con cinta una palanquilla fría por línea y compárala con el encoder.",
+      "check": "± 10 mm contra el encoder.",
+      "quality": true
+    },
+    {
+      "n": 4,
+      "phase": 1,
+      "role": "S-16",
+      "icon": "cortar",
+      "title": "Vigila el corte",
+      "action": "Observa que el soplete corte completo y a escuadra, sin arrastrar el carro.",
+      "check": "Corte completo en 35–55 s; escuadra ≤ 5 mm [Validar].",
+      "stop": "El corte queda incompleto y la palanquilla arrastra el carro."
+    },
+    {
+      "n": 5,
+      "phase": 1,
+      "role": "S-16",
+      "icon": "herramienta",
+      "title": "Desbarba",
+      "action": "Revisa que la desbarbadora quite la escoria de corte.",
+      "check": "Rebaba ≤ 3 mm."
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "S-16",
+      "icon": "marcar",
+      "title": "Marca la palanquilla",
+      "action": "Marca con la marcadora: colada · línea · secuencia · consecutivo (CCCCCC-L-SS-NN [Supuesto]). Agrega la letra de condición si aplica: A, T, B, E, C o R.",
+      "check": "Marca legible que coincide con el rastreo.",
+      "critical": true
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-16",
+      "icon": "verificar",
+      "title": "Verifica la identidad",
+      "action": "Compara con el rastreo la primera y la última palanquilla de cada colada por línea. Revisa también el cambio de colada en la zona de transición.",
+      "check": "Marca = rastreo.",
+      "critical": true,
+      "decision": {
+        "question": "¿Marca legible y = rastreo?",
+        "no": "Retén \"R\" las palanquillas dudosas y avisa a C-06."
+      }
+    },
+    {
+      "n": 8,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "ruta",
+      "title": "Transfiere al lecho",
+      "action": "Pasa la palanquilla al lecho con la mesa de transferencia, con separación uniforme.",
+      "check": "Sin choques ni doblez.",
+      "stop": "Una palanquilla se dobla o se atora en el camino o el lecho."
+    },
+    {
+      "n": 9,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "calidad",
+      "title": "Aparta las de inspección",
+      "action": "Lleva a la zona de inspección las que pida S-18 y las marcadas A, T, B, E, C y R.",
+      "check": "Palanquillas en la zona de inspección.",
+      "quality": true
+    },
+    {
+      "n": 10,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "temperatura",
+      "title": "Mide la temperatura para despacho",
+      "action": "Mide con el pirómetro al final del lecho.",
+      "check": "≥ 600 °C [Validar] para carga caliente (objetivo ≥ 650 °C).",
+      "decision": {
+        "question": "¿≥ 600 °C?",
+        "no": "Envía la colada al patio (paso 13)."
+      }
+    },
+    {
+      "n": 11,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "carro",
+      "title": "Despacha a carga caliente o patio",
+      "action": "Despacha por colada completa y avisa a Laminación.",
+      "check": "Lote de una sola colada."
+    },
+    {
+      "n": 12,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "iman",
+      "title": "Iza con electroimán o tenaza",
+      "action": "Mide antes del izaje: electroimán solo hasta 600 °C; más caliente, usa tenaza. Nadie bajo la carga.",
+      "check": "Izaje sin personas en la zona.",
+      "critical": true,
+      "stop": "La palanquilla pasa de 600 °C con electroimán, o hay alguien bajo la carga."
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "material",
+      "title": "Estiba en el patio",
+      "action": "Estiba en capas cruzadas con separadores. Pon la etiqueta de estiba con la colada.",
+      "check": "Altura ≤ 2.5 m [Validar con C-16]; una colada por estiba.",
+      "stop": "La estiba está inestable o pasa de 2.5 m."
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "registrar",
+      "title": "Registra el despacho",
+      "action": "Anota palanquillas por colada, destino y retenidas.",
+      "check": "Registro con palanquillas por colada, destino, temperatura y retenidas."
+    }
   ],
   "abnormal": [
-    {"icon": "cortar", "if": "Corte incompleto: la palanquilla arrastra el carro", "do": "Detén la línea de corte y avisa: C-06 decide bajar la velocidad. Corte manual solo con permiso.", "call": "C-06 y S-12"},
-    {"icon": "fuego", "if": "Retroceso de llama o fuga de gas", "do": "Cierra O₂ y gas en la válvula general. Evacúa. No reenciendas sin revisión.", "call": "C-06 y C-16"},
-    {"icon": "medir", "if": "Longitud fuera de tolerancia", "do": "Ajusta. Retén las palanquillas desde el último control bueno.", "call": "C-06 y S-18"},
-    {"icon": "marcar", "if": "Marca ilegible o marcadora fuera de servicio", "do": "Marca a mano con crayón térmico y verifica contra el rastreo. Pide reparar la marcadora.", "call": "C-06"},
-    {"icon": "rechazar", "if": "La marca no coincide con el rastreo", "do": "Retén \"R\" todas las palanquillas dudosas. C-09 decide.", "call": "C-06 y C-09"},
-    {"icon": "bloqueo", "if": "Palanquilla doblada o atorada en el camino o el lecho", "do": "Detén la transferencia. LOTO. Se libera con grúa o corte manual. Nadie entre rodillos.", "call": "C-06 y C-11"},
-    {"icon": "iman", "if": "Una palanquilla cae del electroimán", "do": "Acordona. No te acerques hasta que esté asentada. Revisa el electroimán.", "call": "C-06 y C-16"}
+    {
+      "icon": "cortar",
+      "if": "Corte incompleto: la palanquilla arrastra el carro",
+      "do": "Detén la línea de corte y avisa: C-06 decide bajar la velocidad. Corte manual solo con permiso.",
+      "call": "C-06 y S-12"
+    },
+    {
+      "icon": "fuego",
+      "if": "Retroceso de llama o fuga de gas",
+      "do": "Cierra O₂ y gas en la válvula general. Evacúa. No reenciendas sin revisión.",
+      "call": "C-06 y C-16"
+    },
+    {
+      "icon": "medir",
+      "if": "Longitud fuera de tolerancia",
+      "do": "Ajusta. Retén las palanquillas desde el último control bueno.",
+      "call": "C-06 y S-18"
+    },
+    {
+      "icon": "marcar",
+      "if": "Marca ilegible o marcadora fuera de servicio",
+      "do": "Marca a mano con crayón térmico y verifica contra el rastreo. Pide reparar la marcadora.",
+      "call": "C-06"
+    },
+    {
+      "icon": "rechazar",
+      "if": "La marca no coincide con el rastreo",
+      "do": "Retén \"R\" todas las palanquillas dudosas. C-09 decide.",
+      "call": "C-06 y C-09"
+    },
+    {
+      "icon": "bloqueo",
+      "if": "Palanquilla doblada o atorada en el camino o el lecho",
+      "do": "Detén la transferencia. LOTO. Se libera con grúa o corte manual. Nadie entre rodillos.",
+      "call": "C-06 y C-11"
+    },
+    {
+      "icon": "iman",
+      "if": "Una palanquilla cae del electroimán",
+      "do": "Acordona. No te acerques hasta que esté asentada. Revisa el electroimán.",
+      "call": "C-06 y C-16"
+    }
   ],
   "records": [
-    {"what": "Registro de corte por línea (longitud, escuadra, rebaba, ajustes)", "when": "1 por línea por turno y cada ajuste", "where": "Registro de corte"},
-    {"what": "Identidad de cada palanquilla y letras de condición", "when": "Cada palanquilla", "where": "Sistema de rastreo"},
-    {"what": "Registro de despacho (colada, número de palanquillas, destino, temperatura)", "when": "Cada despacho", "where": "Registro de despacho"},
-    {"what": "Etiqueta de estiba", "when": "Cada estiba", "where": "Patio"}
+    {
+      "what": "Registro de corte por línea (longitud, escuadra, rebaba, ajustes)",
+      "when": "1 por línea por turno y cada ajuste",
+      "where": "Registro de corte"
+    },
+    {
+      "what": "Identidad de cada palanquilla y letras de condición",
+      "when": "Cada palanquilla",
+      "where": "Sistema de rastreo"
+    },
+    {
+      "what": "Registro de despacho (colada, número de palanquillas, destino, temperatura)",
+      "when": "Cada despacho",
+      "where": "Registro de despacho"
+    },
+    {
+      "what": "Etiqueta de estiba",
+      "when": "Cada estiba",
+      "where": "Patio"
+    }
   ],
   "certification": [
-    {"role": "S-16", "level": "3", "theory": "16 h (oxicorte, gases, rastreo)", "ojt": "80 h / 10 coladas", "evaluated": "Pasos 1, 6 y 7", "validity": "24 meses (TD-P07)"},
-    {"role": "S-17", "level": "3", "theory": "16 h + 40 h de grúa de producto si la opera", "ojt": "80 h / 10 coladas", "evaluated": "Paso 12", "validity": "12 meses (grúas e izaje)"}
+    {
+      "role": "S-16",
+      "level": "3",
+      "theory": "16 h (oxicorte, gases, rastreo)",
+      "ojt": "80 h / 10 coladas",
+      "evaluated": "Pasos 1, 6 y 7",
+      "validity": "24 meses (TD-P07)"
+    },
+    {
+      "role": "S-17",
+      "level": "3",
+      "theory": "16 h + 40 h de grúa de producto si la opera",
+      "ojt": "80 h / 10 coladas",
+      "evaluated": "Paso 12",
+      "validity": "12 meses (grúas e izaje)"
+    }
   ],
   "glossary": [
-    {"term": "Oxicorte", "def": "Soplete de oxígeno y gas natural que viaja con la palanquilla mientras la corta."},
-    {"term": "Dilatación", "def": "El acero caliente mide ≈ 1.2 % más: 12 m en frío son ≈ 12.15 m en caliente."},
-    {"term": "Encoder", "def": "Rodillo que mide la longitud de la palanquilla para el punto de corte."},
-    {"term": "Rebaba", "def": "Escoria de corte pegada al extremo; máximo 3 mm."},
-    {"term": "Carga caliente", "def": "Envío directo a Laminación con la palanquilla a ≥ 600 °C."},
-    {"term": "Letras de condición", "def": "A arranque, T transición, B cambio de buza, E EMS apagado, C cola, R retenida."},
-    {"term": "Lecho de enfriamiento", "def": "Mesa donde la palanquilla se enfría pareja para no doblarse."}
+    {
+      "term": "Oxicorte",
+      "def": "Soplete de oxígeno y gas natural que viaja con la palanquilla mientras la corta."
+    },
+    {
+      "term": "Dilatación",
+      "def": "El acero caliente mide ≈ 1.2 % más: 12 m en frío son ≈ 12.15 m en caliente."
+    },
+    {
+      "term": "Encoder",
+      "def": "Rodillo que mide la longitud de la palanquilla para el punto de corte."
+    },
+    {
+      "term": "Rebaba",
+      "def": "Escoria de corte pegada al extremo; máximo 3 mm."
+    },
+    {
+      "term": "Carga caliente",
+      "def": "Envío directo a Laminación con la palanquilla a ≥ 600 °C."
+    },
+    {
+      "term": "Letras de condición",
+      "def": "A arranque, T transición, B cambio de buza, E EMS apagado, C cola, R retenida."
+    },
+    {
+      "term": "Lecho de enfriamiento",
+      "def": "Mesa donde la palanquilla se enfría pareja para no doblarse."
+    },
+    {
+      "term": "Palanquilla",
+      "def": "Producto de la CC2: barra cuadrada de 160 × 160 mm (o 130 × 130 mm) y 12 m de largo."
+    },
+    {
+      "term": "Arrestaflamas (antirretorno de llama)",
+      "def": "Válvula que impide que la flama regrese por la manguera de O₂ o de gas."
+    },
+    {
+      "term": "Antirretorno de llama",
+      "def": "Dispositivo (arrestaflamas) que impide que la flama regrese por la manguera."
+    },
+    {
+      "term": "Electroimán",
+      "def": "Imán de la grúa que levanta el acero; pierde fuerza con el acero muy caliente (más de 600 °C)."
+    },
+    {
+      "term": "Estiba",
+      "def": "Pila ordenada de piezas en el patio, con separadores y etiqueta de colada."
+    },
+    {
+      "term": "Pirómetro",
+      "def": "Instrumento que mide la temperatura a distancia, sin tocar la pieza."
+    },
+    {
+      "term": "Trazabilidad",
+      "def": "Trazabilidad: poder saber de qué colada y línea viene cada pieza y qué le pasó."
+    }
   ],
   "review": [
-    {"area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28"}
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Documentación",
+      "who": "experto-documentacion-mejora",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Usuario nuevo ingreso",
+      "who": "gerente-personal-sindicalizado",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Laboral",
+      "who": "experto-relaciones-laborales",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Seguridad",
+      "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    }
   ]
 }
