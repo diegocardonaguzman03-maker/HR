@@ -6,8 +6,12 @@ An interactive 3D learning twin of an EAF melt shop and a continuous slab caster
 
 All process values are **SIMULATED TRAINING DATA**. They are educational references, not operating limits of any real plant.
 
-## Shareable link
-The app is published as a single-file web page: https://claude.ai/artifact/WHMRHneTGWGYcHBT5NrJZN (it opens in any modern browser on desktop, tablet or phone; the owner shares it from the page's Share menu).
+## Shareable links
+- **Public web page** (anyone, any browser, no login): `web/index.html` served by githack. Link pattern:
+  `https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/<commit>/apps/steel-twin/web/index.html`
+  Rebuild with `npm run build:web`, commit, and use the new commit hash.
+- **Claude artifact** (private until shared from its Share menu): https://claude.ai/artifact/WHMRHneTGWGYcHBT5NrJZN, built with `npm run build:share`.
+- **GitHub Pages** (optional, permanent URL): Settings → Pages → Deploy from branch → select this branch and `/ (root)`; the app is then at `https://diegocardonaguzman03-maker.github.io/HR/apps/steel-twin/web/`.
 
 ## Run locally
 ```bash
