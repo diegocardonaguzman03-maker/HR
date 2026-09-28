@@ -10,7 +10,7 @@
 
 **Objetivo:** controlar la liberación inesperada de energía durante inspección, mantenimiento, limpieza, cambio de refractario o destrabe en los equipos de la Acería.
 
-**Aplica a:** **sistema de alimentación de DRI** (bandas transportadoras de la Acería desde el punto de frontera con HYL/Midrex, torres de transferencia y chutes, silos de día con su inertización con N₂, cañones de aire o vibradores, alimentadores y conducto del 5.º agujero; manejo de finos), EAF-1/EAF-2 (transformador de 140 MVA, brazos y columnas, bóveda, basculamiento, paneles de agua, quemadores de O₂/gas natural, inyección de carbono), LF-1/LF-2 (transformador de 25 MVA, argón, alimentador de alambre), ollas (válvula deslizante, tapón poroso), CC1/CC2 (agua de molde y secundaria, oscilación, segmentos y extractores, barra falsa, torreta, carro de distribuidor, oxicorte, fuente de Cs-137 de CC2), grúas y equipos del patio de retornos internos. (D-010: ya no hay patio de chatarra externo.)
+**Aplica a:** **sistema de alimentación de DRI** (bandas transportadoras de la Acería desde el punto de frontera con HYL/Midrex, torres de transferencia y chutes, silos de día con su inertización con N₂, cañones de aire o vibradores, alimentadores, básculas dosificadoras, banda del 5.º agujero y tolva de compensación en la bóveda; criba y tolva de finos; tolvas de cal y dolomita), EAF-1/EAF-2 (transformador de 140 MVA, brazos y columnas, bóveda, basculamiento, paneles de agua, quemadores de O₂/gas natural, inyección de carbono), LF-1/LF-2 (transformador de 25 MVA, argón, alimentador de alambre), ollas (válvula deslizante, tapón poroso), CC1/CC2 (agua de molde y secundaria, oscilación, segmentos y extractores, barra falsa, torreta, carro de distribuidor, oxicorte, fuente de Cs-137 de CC2), grúas y equipos del patio de retornos internos. (D-010: ya no hay patio de chatarra externo.)
 
 **Excepción:** ajustes que por diseño requieren energía (p. ej., calibración con equipo energizado) solo con **método alterno aprobado por C-16 y C-12** y análisis de riesgo escrito.
 
@@ -29,8 +29,8 @@
 | C-16 en función de ESR (Encargado de Seguridad Radiológica, con licencia de la CNSNS) | Cierra el obturador de Cs-137, pone su candado y mide < 2 × fondo (MS-ACE-07) | R |
 | S-02, S-03, S-06, S-07 (usuarios de llave cautiva) | Usan la llave cautiva solo para el acceso de rutina de la sección 6.4; nunca para intervenir el equipo | R |
 | C-07 / C-08 Ingenieros de Proceso | Confirman el estado de proceso (horno vacío, máquina vacía, silo vacío o con inventario aceptado) | C |
-| C-17 Supervisor de Manejo de DRI, Silos y Retornos [denominación pendiente de `01-organizacion`] | Entrega bandas y silos en condición segura; coordina con el púlpito de HYL/Midrex el bloqueo de interfaz (6.5) | R |
-| S-05 Operador de Recepción de DRI y Silos de Día [denominación pendiente de `01-organizacion`] | Para y vacía las bandas; opera la inertización; hace la prueba de arranque local de bandas | R |
+| C-17 Supervisor de Manejo de Materiales (DRI, fundentes y retornos) | Entrega bandas y silos en condición segura; coordina con el púlpito de HYL/Midrex el bloqueo de interfaz (6.5) | R |
+| S-05 Operador de Manejo de DRI y Retornos | Para y vacía las bandas; opera la inertización; hace la prueba de arranque local de bandas | R |
 | Púlpito y emisor de permisos de HYL / Midrex [código de rol según `10-plantas/03-reduccion-directa/`] | Bloquea las bandas y compuertas de su lado de la frontera; firma el permiso de interfaz | R (interfaz) |
 
 ## 3. Descripción del proceso
@@ -156,7 +156,7 @@ La **llave cautiva** (enclavamiento por llave atrapada) es un control de **acces
 | Zona | Quién bloquea | Candados requeridos | Quién firma el permiso |
 |---|---|---|---|
 | Bandas, compuertas y equipos **aguas arriba** del punto de frontera (dentro de HYL/Midrex) | RD | Candados de RD según su manual | RD |
-| **Punto de frontera** (torre de transferencia donde la banda de RD descarga en la banda de la Acería, y su chute) | **RD y Acería** | Candado de RD en la banda y la compuerta de descarga de RD **+** candado de la Acería en la banda receptora **+** candado personal de cada trabajador en la caja grupal de la Acería (RD deposita la llave de su candado de equipo en esa caja, o se usa caja grupal doble) [Validar con el acuerdo de interfaz] | RD **y** Acería (C-04 o C-11/C-12) |
+| **Punto de frontera**: torre de transferencia a la entrada de la nave de silos (límite de batería de FT-ACE-001 §2.1), donde las bandas de HYL y de Midrex descargan, y sus chutes | **RD y Acería** | Candado de RD en la banda y la compuerta de descarga de RD **+** candado de la Acería en la banda receptora **+** candado personal de cada trabajador en la caja grupal de la Acería (RD deposita la llave de su candado de equipo en esa caja, o se usa caja grupal doble) [Validar con el acuerdo de interfaz] | RD **y** Acería (C-04 o C-11/C-12) |
 | Bandas, torres, silos de día, alimentadores y conducto del 5.º agujero **aguas abajo** del punto de frontera | Acería | Candados de equipo de la Acería + candado personal | Acería |
 
 **Energías de una banda o un silo que se deben aislar:**

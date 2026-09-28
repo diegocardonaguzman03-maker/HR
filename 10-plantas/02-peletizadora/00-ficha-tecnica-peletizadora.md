@@ -298,13 +298,13 @@ El detalle está en `01-organizacion/organigrama-peletizadora.md` (ORG-PEL-001).
 
 | Área | Plazas sindicalizadas [Supuesto] | Plazas de confianza [Supuesto] |
 |---|---|---|
-| Línea húmeda: filtrado, aditivos, mezcla y discos | 120 | 11 (PC-02, PC-05 ×4, PC-08 ×2, PC-21 ×2, parte proporcional) |
+| Línea húmeda: filtrado, aditivos, mezcla y discos | 120 | 9 (PC-02, PC-05 ×4, PC-08 ×2, PC-21 ×2) |
 | Endurecimiento y producto (parrilla, horno, enfriador, cribado, recubrimiento, servicios) | 107 | 6 (PC-06 ×4, PC-09 ×2) |
 | Manejo de materiales y embarques (recepción, patios, trenes, puerto) | 110 | 7 (PC-03, PC-07 ×4, PC-20 ×2) |
 | Laboratorio y calidad | 29 | 3 (PC-10) |
-| Mantenimiento | 315 | 21 (PC-11, PC-12 ×5, PC-13 ×3, PC-14 ×4, PC-15 ×3, PC-16 ×2, PC-17 ×1, y PC-21 con línea técnica) |
+| Mantenimiento | 315 | 19 (PC-11, PC-12 ×5, PC-13 ×3, PC-14 ×4, PC-15 ×3, PC-16 ×2, PC-17) |
 | Gerencia, jefatura de turno, seguridad y medio ambiente | — | 10 (PC-01, PC-04 ×4, PC-18 ×3, PC-19 ×2) |
-| **Subtotal de planta** | **681** | **54** (los 2 PC-21 se cuentan en la línea húmeda) |
+| **Subtotal de planta** | **681** | **54** |
 | Funciones de apoyo del sitio (RH, C&D, finanzas, abastecimiento y almacén, TI/OT, servicio médico, sistemas de gestión, comunidad y puerto, proyectos) | ≈ 65 (sindicalizados y de confianza) [Supuesto] | |
 | **Total de la unidad** | **≈ 800** | Coincide con el perfil de empresa |
 | Contratistas (REPSE) | ≈ 400 (puerto, limpieza industrial, refractario en paros, ferrocarril, vigilancia) | `03-department-design/org/04-equipos-de-sitio.md` |

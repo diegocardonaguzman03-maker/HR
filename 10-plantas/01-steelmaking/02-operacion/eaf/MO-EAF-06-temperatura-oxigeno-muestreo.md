@@ -2,9 +2,9 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-06 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-06 | 0.2 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno técnico v0.2, 2026-09-28 | experto-seguridad-salud — v0.1 con observaciones, 2026-09-25; v0.2 pendiente (cambios menores por D-010) | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.4. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
 **Objetivo:** obtener lecturas **confiables** de temperatura (T) y oxígeno activo (O) y una **muestra representativa** del acero para decidir el vaciado dentro de la ventana: **T 1,630 ± 15 °C (según grado), O activo 500–900 ppm, C 0.04–0.08%, P ≤ 0.015%**, sin exponer al personal.
@@ -28,7 +28,7 @@ La lanza manipuladora entra por la puerta de escoria (o por el puerto de medici�
 **Momentos de medición (referencia, Figura 3):**
 | # | Momento | Qué se mide | Para qué |
 |---|---|---|---|
-| M1 | Mitad de la alimentación de DRI (≈ min 24–26 de arco, mitad de la etapa 3 de MO-EAF-04) | T | Ajustar kg/min/MW (MO-EAF-03) |
+| M1 | Mitad de la alimentación de DRI (≈ min 24–26 de arco, mitad de la etapa 2 de MO-EAF-04) | T | Ajustar kg/min/MW (MO-EAF-03) |
 | M2 | Inicio del afino (DRI detenido) | T + O + muestra | Química (C, P, S, Cu, Ni, Cr, Mo) y energía faltante |
 | M3 | 1–2 min antes de vaciar | T + O | Confirmar ventana de vaciado y calcular Al/aleaciones de la olla (MO-EAF-07) |
 
@@ -162,7 +162,7 @@ Lista corta de verificación de pasos ★:
 4. Conoce las condiciones para la medición manual y no la hace sin autorización.
 
 ## 12. Referencias
-- FT-ACE-001 §2; CAT-ACE-001; MO-EAF-03, MO-EAF-05, MO-EAF-07; MO-LF-01.
+- FT-ACE-001 v0.4 §2; CAT-ACE-001 v0.2; MO-EAF-03, MO-EAF-05, MO-EAF-07; MO-LF-01.
 - MS-ACE-01, MS-ACE-03, MS-ACE-08 (estrés térmico).
 - NOM-017-STPS, NOM-015-STPS — verificar con Jurídico Laboral / SSO.
 - Manual OEM de la lanza manipuladora y fichas técnicas de sondas [por referenciar]; procedimiento de laboratorio de acería [por referenciar].
@@ -173,3 +173,4 @@ Lista corta de verificación de pasos ★:
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: momento M1 expresado en minutos de arco, coherente con el perfil de MO-EAF-04. | experto-operativo-metalurgia |
+| 0.2 | 2026-09-28 | Decisión D-010: M1 referido a la etapa 2 (baño plano con DRI) del nuevo perfil de MO-EAF-04; valores de FT-ACE-001 v0.4. Con DRI los residuales (Cu, Ni, Cr) de M2 salen muy bajos: un valor alto indica retornos mal segregados (MO-EAF-02) | experto-operativo-metalurgia |

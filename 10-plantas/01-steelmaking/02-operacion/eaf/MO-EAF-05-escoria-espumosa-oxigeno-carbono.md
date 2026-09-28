@@ -2,15 +2,17 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-05 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno sin observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-05 | 0.2 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-07 Ingeniero de Proceso EAF / LF | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno técnico v0.2, 2026-09-28 | experto-seguridad-salud — **pendiente para v0.2** (v0.1 con observaciones, 2026-09-25) | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.4 (§2). Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
-**Objetivo:** formar y mantener una **escoria espumosa** que cubra el arco durante el baño plano, con **B2 (CaO/SiO₂) 1.8–2.2, FeO 25–35% y MgO 8–10%**, usando **O₂ 30–40 Nm³/t** y **carbono 8–12 kg/t**, y retirar la escoria por la puerta de forma controlada, sin exponer a nadie y sin contacto con agua.
+**Objetivo:** formar y mantener una **escoria espumosa** que cubra el arco durante el baño plano, con **B2 (CaO/SiO₂) 1.8–2.2, FeO 25–35% y MgO 8–10%**, usando **O₂ 28–38 Nm³/t** y **carbono inyectado 4–8 kg/t** (el resto del carbono lo trae el DRI), y retirar por la puerta **160–200 kg/t de escoria** (≈ 27 t por colada, ≈ 1 olla de escoria por colada) de forma controlada, sin exponer a nadie y sin contacto con agua.
+
+> **Cambio de v0.2 (D-010):** con ≈ 95–100 % DRI hay **más escoria** (la ganga del DRI: SiO₂ + Al₂O₃) y **más carbono en la carga** (DRI HYL 3.0–4.5 % C; Midrex 1.5–2.5 %). Se necesita más cal, menos carbono inyectado y un desescoriado casi continuo. La espuma se forma **desde el arranque**: no hay chatarra que cubra el arco.
 
 **Alcance:** operación de los 4 quemadores/lanzas de pared (modo quemador y modo lanza), inyección de carbono, adición de cal y dolomita, control de espuma y desescoriado hacia la olla de escoria; incluye la coordinación con S-10 para el retiro de la olla de escoria.
-**No incluye:** manejo de la escoria fuera de la nave (patio de escoria) ni el mantenimiento de lanzas.
+**No incluye:** manejo de la escoria fuera de la nave (patio de escoria) ni el mantenimiento de lanzas. El carbono de la mezcla HYL/Midrex se fija en MO-EAF-03.
 
 ## 2. Roles y responsabilidades
 | Rol | Responsabilidad en este proceso | R/A/C/I |
@@ -23,7 +25,9 @@
 | C-05 Supervisor de Hornos | Autoriza desviaciones y detiene el desescoriado ante riesgo. | C |
 
 ## 3. Descripción del proceso
-El **O₂** oxida parte del hierro a FeO; el **carbono** inyectado reduce ese FeO y forma **CO**, cuyas burbujas hacen crecer ("espumar") la escoria. Con la basicidad y el MgO correctos, la escoria tiene la viscosidad para retener el gas y **cubrir el arco**: el arco transfiere su energía al baño y no a paredes y bóveda. Al subir el nivel, la escoria sale por la puerta a la olla de escoria (desescoriado), lo que además retira P.
+El **O₂** oxida parte del hierro a FeO y quema el **carbono que trae el DRI**; ese carbono y el inyectado reducen el FeO (también el FeO que el DRI trae sin reducir, 6–9 %) y forman **CO**, cuyas burbujas hacen crecer ("espumar") la escoria. Con la basicidad y el MgO correctos, la escoria tiene la viscosidad para retener el gas y **cubrir el arco**: el arco transfiere su energía al baño y no a paredes y bóveda. Al subir el nivel, la escoria sale por la puerta a la olla de escoria (desescoriado), lo que además retira P. Con 100 % DRI entra ganga todo el tiempo junto con el DRI, así que la escoria crece durante toda la colada y **el desescoriado es casi continuo** desde la mitad del baño plano.
+
+**Balance de escoria de referencia (por t de acero)** [Supuesto; valida C-07]: ≈ 1.13 t de DRI con ≈ 3.5–4.5 % de ganga ácida → ≈ 40–50 kg de SiO₂ + Al₂O₃; para B2 = 2.0 hacen falta ≈ 65–80 kg de CaO (cal 45–65 kg/t + CaO de la dolomita y del DRI); con MgO de saturación y FeO de 25–35 %, la escoria total da **≈ 160–200 kg/t**.
 
 ![Figura 2. Corte del EAF: lanzas (14), inyector de C (15), puerta (13), olla de escoria (17)](../../img/eaf-corte-horno.svg)
 
@@ -31,13 +35,13 @@ El **O₂** oxida parte del hierro a FeO; el **carbono** inyectado reduce ese Fe
 
 | Etapa | Modo | O₂ por quemador | O₂ acumulado | Carbono |
 |---|---|---|---|---|
-| Fusión de canasta | Quemador (O₂ + gas natural, relación ≈ 2:1) | 1,500–2,500 Nm³/h | ≈ 8 Nm³/t | Opcional, bajo |
-| Baño plano con DRI | Lanza (jet coherente) | 1,800–2,500 Nm³/h | ≈ 30 Nm³/t | 40–60 kg/min total [Supuesto] |
-| Afino | Lanza, flujo reducido | 1,000–2,000 Nm³/h | ≈ 35 Nm³/t | Según O activo |
+| Arranque sobre pie líquido (0–3 min de arco) | Lanza suave (modo quemador solo con canasta de retornos o arranque en frío) | 1,000–1,500 Nm³/h | ≈ 2 Nm³/t | 15–25 kg/min total para iniciar la espuma [Supuesto] |
+| Baño plano con DRI (3–46 min) | Lanza (jet coherente) | 1,800–2,500 Nm³/h | ≈ 28 Nm³/t | 15–25 kg/min total [Supuesto]; más con mezcla rica en Midrex (C bajo) |
+| Afino (46–50 min) | Lanza, flujo reducido | 1,000–2,000 Nm³/h | ≈ 32 Nm³/t | Según O activo |
 
 ```mermaid
 flowchart TD
-    A["Baño plano (canasta ≥ 70% fundida)"] --> B["Quemadores a modo lanza<br/>inicia inyección de C"]
+    A["Arranque sobre pie líquido<br/>DRI en rampa (MO-EAF-03)"] --> B["Lanzas en modo lanza suave<br/>inicia inyección de C"]
     B --> C{"¿Espuma cubre el arco?<br/>ruido bajo, T paneles ≤ 60 °C"}
     C -- "No, escoria seca/espesa" --> D["Cal/dolomita en exceso o T baja:<br/>más O₂, revisar B2 y MgO"]
     C -- "No, escoria fluida/plana" --> E["FeO alto o B2 baja:<br/>más C, más cal"]
@@ -55,27 +59,28 @@ flowchart TD
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|
-| Quemadores/lanzas de pared (4) | Fundir chatarra (quemador) y afinar/espumar (lanza) | Hasta 2,500 Nm³/h de O₂ cada uno; gas natural para modo quemador | Bloque de cobre con agua normal; boquilla libre; purga de N₂/aire en espera |
+| Quemadores/lanzas de pared (4) | Afinar/espumar (lanza); modo quemador solo con canasta de retornos, arranque en frío o puntos fríos | Hasta 2,500 Nm³/h de O₂ cada uno; gas natural para modo quemador | Bloque de cobre con agua normal; boquilla libre; purga de N₂/aire en espera |
 | Estación de válvulas O₂ / gas natural | Regula flujos | Presión de O₂ y gas según OEM [Validar con OEM / Ingeniería de Proceso] | Sin fugas; válvulas de corte rápido probadas |
-| Inyectores de carbono | Inyectan finos de coque/antracita | 8–12 kg/t | Silo con nivel; transporte neumático sin tapones |
-| Tolvas de cal y dolomita | Fundentes | Cal 30–45 kg/t; dolomita 10–15 kg/t | Material seco |
+| Inyectores de carbono | Inyectan finos de coque/antracita | 4–8 kg/t | Silo con nivel; transporte neumático sin tapones |
+| Tolvas de cal y dolomita | Fundentes (entran con el DRI por el 5.º agujero, MO-EAF-03) | Cal 45–65 kg/t; dolomita calcinada 15–25 kg/t | Material seco |
 | Puerta de escoria | Salida de escoria y acceso para medición | — | Umbral libre de costras |
-| Olla de escoria y portaollas | Recibe la escoria | ≈ 20 m³ [Supuesto] | ★ Seca, sin agua ni hielo; recubierta con cal/polvo si aplica |
+| Olla de escoria y portaollas | Recibe la escoria | ≈ 20 m³ [Supuesto]; ≈ 1 olla por colada (≈ 27 t de escoria) | ★ Seca, sin agua ni hielo; recubierta con cal/polvo si aplica |
 | Fosa/zona bajo la puerta | Aloja la olla de escoria | — | ★ Seca, sin charcos ni tuberías con fuga |
 
 ## 5. Parámetros de operación
 | Parámetro | Unidad | Objetivo | Rango normal | Alarma / límite | Acción si está fuera de rango | Dónde se mide |
 |---|---|---|---|---|---|---|
-| Consumo de O₂ | Nm³/t | 35 | 30–40 | > 42 | Sobreoxidación: revisa O activo y FeO; reduce | Nivel 2 |
+| Consumo de O₂ | Nm³/t | 32 | 28–38 | > 40 | Sobreoxidación: revisa O activo y FeO; reduce. < 28 con mezcla rica en HYL: C alto al vaciado | Nivel 2 |
 | Flujo por quemador/lanza | Nm³/h | según etapa | ≤ 2,500 | > 2,500 | Limitado por válvula; revisa control | HMI |
-| Inyección de carbono | kg/t | 10 | 8–12 | < 7 o > 14 | Ajusta según espuma y FeO | Nivel 2 |
-| Cal | kg/t | 38 | 30–45 | < 28 o > 50 | Ajusta relación con DRI (MO-EAF-03) | Nivel 2 |
-| Dolomita | kg/t | 12 | 10–15 | < 8 | MgO bajo: agrega | Nivel 2 |
+| Inyección de carbono | kg/t | 6 | 4–8 | < 3 o > 10 | Ajusta según espuma, FeO y carbono de la mezcla (MO-EAF-03) | Nivel 2 |
+| Cal | kg/t | 55 | 45–65 | < 40 o > 70 | Ajusta relación cal/DRI (40–60 kg/t de DRI) según ganga del lote (MO-EAF-03) | Nivel 2 |
+| Dolomita calcinada | kg/t | 20 | 15–25 | < 12 | MgO bajo: agrega | Nivel 2 |
 | Basicidad B2 = CaO/SiO₂ | — | 2.0 | 1.8–2.2 | < 1.6 o > 2.5 | < 1.6: más cal (ataque al refractario, mala desfosforación); > 2.5: escoria seca, no espuma → revisa exceso de cal | Análisis de escoria |
 | FeO en escoria | % | 30 | 25–35 | > 38 o < 20 | > 38: más C, menos O₂ (pérdida de Fe); < 20: más O₂ (espuma pobre, poca desfosforación) | Análisis de escoria |
 | MgO en escoria | % | 9 | 8–10 (saturación) | < 7 | Más dolomita (protege refractario) | Análisis de escoria |
 | Altura de espuma | — | Cubre el arco | ≥ longitud de arco [Validar con OEM / Ingeniería de Proceso] | Arco expuesto (ruido, T panel) | Más C; baja tap (MO-EAF-04) | Ruido, THD, T de panel, cámara |
-| Cantidad de escoria | kg/t | 110 [Supuesto] | 100–130 | > 150 | Revisa ganga del DRI y cal | Balance nivel 2 |
+| Cantidad de escoria | kg/t | 180 [Supuesto] | 160–200 | > 220 | Revisa ganga del lote de DRI (C-17 / RD) y exceso de cal; programa ollas de escoria extra | Balance nivel 2 |
+| Al₂O₃ en escoria | % | 6 [Supuesto] | 5–8 | > 10 | Ganga alta en el DRI: revisa lote; ajusta cal (la escoria se vuelve fluida) | Análisis de escoria |
 | P₂O₅ en escoria | % | según balance | [Validar con Ingeniería de Proceso] | P en acero > 0.015% | Más desescoriado; FeO y B2 en rango; T no excesiva | Análisis |
 
 **Diagnóstico rápido de la escoria por observación (en la puerta o la cámara)** [Validar con C-07]:
@@ -120,9 +125,9 @@ S-02 en la puerta: careta con visor dorado, capucha y chaqueta aluminizadas, pol
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
 | 1 | Verifica equipos | Agua de bloques de quemador normal; presiones de O₂, gas y aire de transporte de C; silos con nivel. | Sin alarmas | | S-01 |
-| 2 | Opera en modo quemador | Durante la fusión de canasta, relación O₂:gas ≈ 2:1, 1,500–2,500 Nm³/h. | Chatarra frente a quemador fundida | | S-01 |
-| 3 | Cambia a modo lanza | Con baño plano; lanzas al programa de la etapa. | Transición sin retroceso de llama | | S-01 |
-| 4 | Inicia carbono | Inyección 40–60 kg/min total; ajusta según espuma. | Espuma visible en puerta/cámara | | S-01 |
+| 2 | Arranca las lanzas | En el arranque sobre pie líquido, lanza suave 1,000–1,500 Nm³/h. Modo quemador (O₂:gas ≈ 2:1) solo con canasta de retornos o arranque en frío. | Llama estable, sin retroceso | | S-01 |
+| 3 | Pasa al programa de baño plano | Con el DRI a tasa plena; lanzas a 1,800–2,500 Nm³/h. | Transición sin retroceso de llama | | S-01 |
+| 4 | Inicia carbono | Inyección 15–25 kg/min total desde el arranque; ajusta según espuma y carbono de la mezcla. | Espuma visible en puerta/cámara | | S-01 |
 | 5 | Agrega fundentes | Cal y dolomita con el DRI (MO-EAF-03). | B2 y MgO en rango | 🔎 | S-01 |
 | 6 | Verifica olla de escoria | S-10 coloca la olla; S-02 confirma seca y fosa sin agua. | "Olla seca" confirmada | ★ | S-10 / S-02 |
 | 7 | Despeja la zona | Frente y bajo la puerta sin personas; bocina. | Zona libre | ★ | S-02 |
@@ -130,13 +135,13 @@ S-02 en la puerta: careta con visor dorado, capucha y chaqueta aluminizadas, pol
 | 9 | Toma muestra de escoria | Con cuchara o probador desde posición protegida, en el afino. | Muestra enviada | 🔎 | S-02 / S-11 |
 | 10 | Corrige la química | FeO > 38%: más C / menos O₂; B2 < 1.8: más cal; MgO < 8%: dolomita. | En rango en la siguiente muestra | | S-01 |
 | 11 | Vigila ebullición | Subida súbita de espuma, llama larga en la puerta, CO alto: aplica §9. | Sin ebullición | ★ | S-01 / S-02 |
-| 12 | Retira la olla de escoria | Llena ≤ 80% [Supuesto]; S-10 la retira por la ruta. | Sin derrame | | S-10 |
+| 12 | Retira la olla de escoria | Llena ≤ 80 % [Supuesto]; S-10 la retira por la ruta y deja otra olla seca lista (≈ 1 olla por colada). | Sin derrame | | S-10 |
 | 13 | Registra | O₂, C, cal, dolomita, análisis de escoria, eventos. | Registro completo | | S-01 |
 
 ## 9. Condiciones anormales y respuesta
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
-| Ebullición violenta (boiling), escoria saliendo en masa | Acumulación de FeO + C; iceberg de DRI fundiendo | 🛑 Corta C, reduce O₂, detén DRI; todos fuera del frente de la puerta; no inclines más | C-05, C-04 |
+| Ebullición violenta (boiling), escoria saliendo en masa | Acumulación de FeO + C; iceberg de DRI fundiendo; carbono de la mezcla > 3.2 % | 🛑 Corta C, reduce O₂, detén DRI; todos fuera del frente de la puerta; no inclines más | C-05, C-04 |
 | Escoria plana, arco ruidoso | FeO alto / B2 baja / T alta | Más C, más cal; baja tap | C-07 |
 | Escoria seca o espesa | Cal en exceso, T baja, MgO alto | Más O₂, menos cal, revisa T | C-07 |
 | Olla de escoria húmeda o fosa con agua | Lluvia, fuga de tubería | 🛑 No desescoriar; controla el nivel con O₂/C; cambia olla | C-05 |
@@ -157,7 +162,7 @@ S-02 en la puerta: careta con visor dorado, capucha y chaqueta aluminizadas, pol
 |---|---|---|---|---|---|
 | S-01 Primer Hornero | 3 | 24 (química de escoria, O₂, C) | 120 h / 50 coladas | Pasos 11 y control químico (10) + escenario de boiling | 24 meses (TD-P07) |
 | S-02 Segundo Hornero | 3 | 12 | 60 h / 30 desescoriados | Pasos 6, 7, 9, 11 | 24 meses |
-| S-10 Operador de Escoria | 3 | 16 (portaollas, rutas, escoria–agua) | 60 h / 40 ollas | Paso 6 (olla y fosa secas) y rutas | 24 meses |
+| S-10 Operador de Escoria | 3 | 16 (portaollas, rutas, escoria–agua; ≈ 1 olla por colada) | 60 h / 40 ollas | Paso 6 (olla y fosa secas) y rutas | 24 meses |
 
 Lista corta de verificación de pasos ★:
 1. Confirma olla de escoria y fosa secas antes de desescoriar.
@@ -166,7 +171,7 @@ Lista corta de verificación de pasos ★:
 4. Interpreta B2, FeO y MgO y elige la corrección correcta.
 
 ## 12. Referencias
-- FT-ACE-001 §2; CAT-ACE-001; MO-EAF-03, MO-EAF-04, MO-EAF-06.
+- FT-ACE-001 v0.4 §2; CAT-ACE-001 v0.2; MO-EAF-03, MO-EAF-04, MO-EAF-06.
 - MS-ACE-01, MS-ACE-03, MS-ACE-06 (O₂, CO, gas natural), MS-ACE-09.
 - NOM-017-STPS, NOM-015-STPS, NOM-010-STPS, NOM-006-STPS (portaollas), NOM-020-STPS (sistemas a presión) — verificar con Jurídico Laboral / SSO.
 - Manual OEM de quemadores/lanzas y sistema de inyección [por referenciar].
@@ -177,3 +182,4 @@ Lista corta de verificación de pasos ★:
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: sin cambios de contenido (solo referencia a la ficha v0.3). | experto-operativo-metalurgia |
+| 0.2 | 2026-09-28 | **Decisión D-010 (≈ 95–100 % DRI):** O₂ 28–38 Nm³/t; carbono inyectado 4–8 kg/t (el DRI aporta el resto); cal 45–65 kg/t y dolomita calcinada 15–25 kg/t; escoria 160–200 kg/t (≈ 1 olla por colada) con balance de referencia; Al₂O₃ en escoria; espuma desde el arranque; modo quemador solo con retornos o arranque en frío; programa de O₂ por etapa según el nuevo perfil de MO-EAF-04. Requiere nueva revisión de seguridad | experto-operativo-metalurgia |

@@ -38,9 +38,9 @@
 | Medidor autorizado (S-21 Instrumentista o C-16) | Mide la atmósfera en el orden y las alturas definidas | R |
 | Vigía (persona certificada) | Permanece afuera todo el tiempo; controla entradas; comunica; activa rescate | R |
 | Entrantes (S-08, S-15, S-24, S-19, S-23, contratistas) | Usan detector personal; salen al primer aviso | R |
-| Brigada de rescate de espacios confinados (programa de formación S-05 Brigadas; no confundir con el rol S-05 Operador de Recepción de DRI y Silos de Día) | Rescate con equipo en ≤ 10 min [Supuesto] | R |
+| Brigada de rescate de espacios confinados (programa de formación S-05 Brigadas; no confundir con el rol S-05 Operador de Manejo de DRI y Retornos) | Rescate con equipo en ≤ 10 min [Supuesto] | R |
 | C-15 Especialista de Refractarios | Criterios de enfriamiento y estabilidad del refractario en ollas y distribuidores | C |
-| C-17 Supervisor de Manejo de DRI, Silos y Retornos [denominación pendiente de `01-organizacion`] / C-07 | Emisor o co-firmante del permiso de silos, torres y chutes de DRI; confirman silo vacío, inertización aislada y condición del DRI residual | R |
+| C-17 Supervisor de Manejo de Materiales (DRI, fundentes y retornos) / C-07 | Emisor o co-firmante del permiso de silos, torres y chutes de DRI; confirman silo vacío, inertización aislada y condición del DRI residual | R |
 
 ## 3. Descripción del proceso
 

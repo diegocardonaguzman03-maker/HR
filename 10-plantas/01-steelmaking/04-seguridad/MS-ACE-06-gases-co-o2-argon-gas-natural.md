@@ -24,7 +24,7 @@
 | S-01, S-06, S-12 (púlpitos) | Vigilan alarmas de detectores fijos y cortan el suministro de gas | R |
 | Todo el personal de nave | Porta detector personal probado; obedece alarmas | R |
 | S-16 Operador de Corte | Mantiene sin fugas el oxicorte; revisa mangueras | R |
-| S-05 / C-17 Recepción de DRI y silos [denominaciones pendientes de `01-organizacion`] | Vigilan la inertización y los detectores de O₂, CO y H₂ de silos y torres; controlan el polvo en bandas | R |
+| S-05 Operador de Manejo de DRI y Retornos / C-17 Supervisor de Manejo de Materiales | Vigilan la inertización y los detectores de O₂, CO y H₂ de silos y torres; controlan el polvo en bandas | R |
 | C-07 / C-08 Ingenieros de Proceso | Ajustes de proceso que reducen emisiones (presión del horno −5 a −15 Pa) | C |
 
 ## 3. Descripción del proceso

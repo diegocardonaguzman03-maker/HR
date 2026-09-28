@@ -12,7 +12,7 @@
 
 **Qué queda (aplica):**
 - 6 medidores de nivel de molde de CC2 con **fuente sellada de Cs-137** (FT-ACE-001 §5); actividad por fuente según la licencia [Validar con ESR / OEM].
-- **Medidores de nivel radiométricos de los silos de día de DRI**, si el diseño los usa (fuente sellada típica de Cs-137 o Co-60) [Supuesto — Validar con el ESR, el OEM de los silos y la licencia CNSNS; si los silos usan radar o celdas de carga, esta parte no aplica y el ESR lo anota en el inventario].
+- **Silos de día de DRI:** FT-ACE-001 v0.4 §2.1 indica **nivel por radar (sin fuente radiactiva)** [Validar con OEM]. Si el OEM o el ESR confirman algún medidor radiométrico (nivel, densidad o flujo) en silos, tolvas o básculas, se agrega al inventario y se le aplica el procedimiento A; mientras tanto, esta parte **no aplica**.
 - **Control de retornos internos** (despuntes, rechazos, derrames ≤ 5 %): que ningún contenedor de fuente, medidor dado de baja o material contaminado entre a la canasta.
 - Monitoreo del polvo de la casa de bolsas y de muestras de acero como detección tardía de una fuente fundida [Supuesto — Validar con C-16 / ESR].
 - CC1 usa sensor de corrientes parásitas (sin fuente radiactiva).
@@ -30,7 +30,7 @@
 | C-12 / S-21 Instrumentista (POE) | Mantenimiento de los medidores de CC2 y de silos con el obturador cerrado y con el ESR | R |
 | S-12 / S-13 / S-14 Púlpito, Plataforma y Ayudante de Colada (CC2) | Respetan la señalización; no intervienen el molde sin la liberación del ESR; avisan al ESR de daños al contenedor | R |
 | S-25 Taller de moldes | Cambio de molde de CC2 solo con el obturador cerrado y verificado | R |
-| S-05 Operador de Recepción de DRI y Silos de Día / C-17 Supervisor de Manejo de DRI, Silos y Retornos [denominaciones pendientes de `01-organizacion`] | Respetan la zona controlada de los medidores de silo; no entran ni trabajan en el techo o la pared del silo junto al medidor sin liberación del ESR; revisan que la canasta de retornos no lleve equipos ni contenedores con trébol | R |
+| S-05 Operador de Manejo de DRI y Retornos / C-17 Supervisor de Manejo de Materiales (DRI, fundentes y retornos) | Respetan la zona controlada de los medidores de silo; no entran ni trabajan en el techo o la pared del silo junto al medidor sin liberación del ESR; revisan que la canasta de retornos no lleve equipos ni contenedores con trébol | R |
 | C-11 / C-13 Mantenimiento y planeación | Ningún medidor, contenedor o componente con trébol se desmonta, se desecha ni se manda a chatarra sin el ESR | R |
 | C-04 Jefe de Turno | Comandante del incidente en un evento radiológico (MS-ACE-09) | R |
 | C-01 Gerente de Acería | Titular de la licencia ante la CNSNS [Supuesto] | A (legal) |

@@ -22,7 +22,7 @@
 | C-04 Jefe de Turno | Autoriza izajes críticos (> 75 % de capacidad o sobre áreas ocupadas) [Supuesto] | R |
 | S-09 Operador de Grúa de Colada | Inspección previa, prueba de frenos y límites, traslado de ollas | R |
 | S-04 Operador de Grúa de Carga | Canastas, bóveda, electrodos | R |
-| S-05 Operador de Recepción de DRI y Silos de Día [denominación pendiente de `01-organizacion`] | Electroimán y canasta ocasional de retornos internos | R |
+| S-05 Operador de Manejo de DRI y Retornos | Electroimán y canasta ocasional de retornos internos | R |
 | S-13 Operador de Plataforma de Colada | Señalero en la torreta (colocación de olla) | R |
 | S-03 / S-08 / S-14 / S-15 | Enganche y señalero en su área (solo si están certificados como maniobristas) | R |
 | C-11 Supervisor de Mantenimiento Mecánico / S-19, S-20 | Inspección periódica, frenos, cables, ganchos, límites (MM-GR-01) | R |
@@ -155,7 +155,7 @@ Operador de grúa: casco, lentes, protección auditiva, ropa FR o algodón; cabi
 |---|---|---|---|---|---|
 | S-09 Grúa de colada | 4 | 24 (CRS-05, NOM-006) + simulador de grúa ≥ 16 h | 120 h + 50 traslados de olla llena | Pasos 1, 2, 3, 4, 5, 7, 8, 9 | 12 meses (grúas/izaje) [Verificar calendario regulatorio] |
 | S-04 Grúa de carga | 4 | 24 + simulador ≥ 12 h | 80 h + 40 maniobras (bóveda, electrodos y canasta de retornos; al menos 5 canastas reales y el resto en simulador, porque la canasta ya es ocasional) [Supuesto] | Pasos 1, 2, 5, 7, 8 | 12 meses |
-| S-05 Recepción de DRI y retornos (electroimán) | 3 | 16 | 40 h | Pasos 1, 5, 8 | 12 meses |
+| S-05 Manejo de DRI y Retornos (electroimán) | 3 | 16 | 40 h | Pasos 1, 5, 8 | 12 meses |
 | Señaleros y maniobristas (S-03, S-08, S-13, S-14, S-15, S-19) | 3 | 16 (CRS-04, señales NOM-006) | 20 maniobras | Pasos 4, 6, 9 | 12 meses (grúas/izaje) |
 | C-04, C-05, C-06 | 3 | 8 (planeación de izaje crítico) | 5 planes de izaje | Paso 4 + plan de izaje | 12 meses (grúas/izaje) |
 | Operador de grúa de CC y producto (hoy S-15 / S-17; rol S-27 pendiente de catálogo) | 4 | 24 + simulador ≥ 8 h | 40 h + 30 maniobras (distribuidor, segmento, planchón con tenaza, palanquilla con electroimán) | Pasos 1, 2, 4, 5, 7, 8, 9 | 12 meses (grúas/izaje) |

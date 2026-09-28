@@ -28,8 +28,8 @@
 |---|---|---|
 | C-07 Ingeniero de Proceso EAF/LF | Co-dueño: límites de humedad, metalización, temperatura y finos del DRI; criterio de reanudación tras una fuga o un lote mojado | A |
 | C-16 Especialista de Seguridad e Higiene | Co-dueño: auditoría de controles (VCC), investigación de eventos, criterios de H₂/CO/O₂ en silos (MS-ACE-05 y 06) | A |
-| C-17 Supervisor de Manejo de DRI, Silos y Retornos (antes Supervisor de Patio de Chatarra y Materiales) [denominación pendiente de `01-organizacion`] | Libera o rechaza lotes de DRI; controla silos, bandas y retornos; coordina con el púlpito de HYL/Midrex | R |
-| S-05 Operador de Recepción de DRI y Silos de Día (antes Operador de Patio de Chatarra) [denominación pendiente de `01-organizacion`] | Recorre bandas, torres y silos; vigila temperatura, humedad y gases; prepara la canasta ocasional de retornos | R |
+| C-17 Supervisor de Manejo de Materiales (DRI, fundentes y retornos) (antes Supervisor de Patio de Chatarra y Materiales; CAT-ACE-001) | Libera o rechaza lotes de DRI; controla silos, bandas y retornos; coordina con el púlpito de HYL/Midrex | R |
+| S-05 Operador de Manejo de DRI y Retornos (antes Operador de Patio de Chatarra; CAT-ACE-001) | Recorre bandas, torres y silos; vigila temperatura, humedad y gases; prepara la canasta ocasional de retornos | R |
 | Púlpito de HYL / Midrex [código de rol según `10-plantas/03-reduccion-directa/`] | Envía DRI dentro de especificación; detiene o desvía el envío a pedido de C-17 o del púlpito del EAF | R (interfaz) |
 | S-01 Operador de Púlpito de Horno | Vigila la alarma de fuga (Δ caudal) y la alimentación de DRI; corta el arco y la alimentación | R |
 | S-02 / S-03 Hornero de piso y ayudante | Herramientas secas y precalentadas; inspección visual de agua en el horno | R |
@@ -73,7 +73,7 @@ flowchart LR
     B1 & B2 & B3 & B4 & B5 & B6 & B7 --> R["Sin contacto<br/>agua–metal ni H₂ acumulado"]
 ```
 
-**Cómo se mueve el DRI (CV-GASM-001 §4.2 y §4.3):** HYL y Midrex → banda cerrada directa → punto de frontera → bandas de la Acería → silos de día (inertizados con N₂ [Validar con OEM]) → alimentador → 5.º agujero del EAF, en continuo. Los finos < 3 mm (≤ 5 %) van a manejo separado y **no** entran por el 5.º agujero.
+**Cómo se mueve el DRI (CV-GASM-001 §4.2–4.3; FT-ACE-001 §2.1):** HYL y Midrex → 2 bandas cerradas directas → **torre de transferencia a la entrada de la nave de silos** (límite de batería RD / Acería) → criba de finos → 4 silos de día inertizados con N₂ → alimentador y báscula dosificadora → banda del 5.º agujero → tolva de compensación → EAF, en continuo. Los finos < 3 mm (≤ 5 %) van a su tolva y **no** entran por el 5.º agujero.
 
 ![Figura 1. Árbol de decisión de emergencias (rama A: fuga de agua en el EAF)](../img/ms-emergencia-arbol-decision.svg)
 
@@ -83,7 +83,7 @@ flowchart LR
 |---|---|---|---|
 | Bandas transportadoras cerradas y torres de transferencia de DRI | Llevan el DRI sin exposición a lluvia ni agua | Cubierta y sellos completos; sin boquillas de agua ni rociadores de agua sobre el DRI [Validar con C-16 y el diseño contra incendio] | Recorrido por turno: cubiertas cerradas, sin goteras ni charcos |
 | Termómetros o escáner de temperatura en banda | Detectan DRI caliente o reoxidándose | ≤ 80 °C en banda (CV-GASM-001) [Supuesto] | Lectura en HMI; prueba según OEM |
-| Silos de día de DRI | Almacenamiento de horas antes del EAF | Inertización con N₂; termopares a varias alturas; detectores de CO, H₂ y O₂ en el espacio superior [Validar con OEM] | Inertización en línea; temperaturas y gases en HMI |
+| Silos de día de DRI (4, 2 por EAF, ≈ 1,000 t c/u; ≈ 12 h de autonomía) | Almacenamiento de horas antes del EAF | Cerrados y secos; inertización con N₂; termopares a varios niveles; CO, H₂ y O₂ en el domo; nivel por radar (FT-ACE-001 §2.1) [Validar con OEM] | Inertización en línea; temperaturas y gases en HMI |
 | Sistema de inertización con N₂ | Evita la reoxidación del DRI en silo | Caudal y presión según OEM [Validar con OEM] | Alarma de bajo caudal en HMI |
 | Medición de humedad y metalización del DRI | Verifica la especificación del lote | Certificado de lote de RD + muestra de la Acería [Validar con C-07] | Resultado antes de liberar a silo |
 | Área techada de rechazo de DRI [Supuesto — por definir con C-07 y RD] | Recibe el DRI mojado o fuera de especificación | Techada, seca, piso sin encharcamiento, en capa delgada | Libre y señalizada |
@@ -104,7 +104,7 @@ flowchart LR
 |---|---|---|---|---|---|---|
 | Humedad del DRI | % | ≤ 0.5 [Supuesto] | ≤ 1 [Supuesto] | > 1 % o DRI visiblemente mojado | 🛑 El lote no entra al silo ni al horno; desvío al área de rechazo; avisa a C-07 y al púlpito de RD | Laboratorio / certificado de lote |
 | Temperatura del DRI en banda | °C | ≤ 60 [Supuesto] | ≤ 80 (CV-GASM-001) [Supuesto] | > 80 °C | Avisa a RD; detén el envío si sigue subiendo; no llenes el silo con DRI caliente sin autorización de C-07 | Escáner o termómetro de banda |
-| Temperatura del DRI dentro del silo de día | °C | Estable | ≤ 80 [Supuesto] | > 80 °C o aumento sostenido (tendencia) [Validar con OEM] | Aumenta la inertización con N₂; vacía el silo al EAF o al área de rechazo según OEM; **nunca agua** | Termopares del silo |
+| Temperatura del DRI dentro del silo de día | °C | Estable | ≤ 80 | **> 90 °C o subida > 5 °C/h** en cualquier nivel (FT-ACE-001 §2.1) [Validar con OEM] | Inertiza con N₂; no cargues más a ese silo; vacíalo al EAF con prioridad (o al área de rechazo si C-07 lo decide); **nunca agua** (sección 6.4) | Termopares del silo |
 | H₂ en el espacio superior del silo y en torres cerradas | % LEL | 0 | < 10 % LEL | A1 10 % LEL · A2 20 % LEL (criterio único de MS-ACE-05) | 10 %: sin ignición, busca la fuente de agua, aumenta la inertización; 20 %: evacuación del sector (MS-ACE-06) | Detector fijo [Validar con OEM] |
 | CO en el espacio superior del silo | ppm | 0 | < 25 | Tendencia en aumento = autocalentamiento; A1 25 ppm · A2 200 ppm en zonas ocupadas (MS-ACE-06) [Verificar NOM-010] | Trata como autocalentamiento: sección 9 | Detector fijo |
 | Metalización del DRI | % | ≥ 93 | ≥ 92 (CV-GASM-001) | < 92 % | Avisa a C-07: más FeO, más reacción en el baño y riesgo de ebullición de escoria (MS-ACE-01) | Certificado de lote |
@@ -150,6 +150,19 @@ EPP de zona roja en toda tarea frente a metal líquido (MS-ACE-01 y MS-ACE-08). 
 - **Materiales prohibidos en la canasta de retornos** (lista mínima): cualquier retorno mojado, con hielo, lodo o escoria húmeda; chatarra de mantenimiento (tubos, cilindros, extintores, amortiguadores, recipientes, baterías); equipos con fuente radiactiva o dados de baja sin liberación del ESR (MS-ACE-07); materiales ajenos a la Acería.
 - La reparación de fugas de panel requiere LOTO (MS-ACE-02) y el procedimiento MM-EAF-01. La reparación de una gotera o fuga de agua sobre bandas o silos requiere LOTO de la banda (MS-ACE-02 §6.5).
 - Tras una fuga con agua en el baño, la zona roja se amplía a **25 m** alrededor del horno (nadie a menos de 25 m) hasta que C-05 y C-07 autoricen. Este criterio y los de humedad de esta sección son los únicos válidos para todos los manuales MO y MM.
+
+### 6.4 Agente de extinción y control de incendios de DRI (criterio único de la Acería)
+
+FT-ACE-001 §2.1 deja a este manual la definición del agente de extinción. Criterio [Validar con el OEM de los silos, los licenciantes HYL/Midrex y la brigada]:
+
+| Situación | Qué se hace | Qué está prohibido |
+|---|---|---|
+| Autocalentamiento en silo (> 90 °C o > 5 °C/h; CO en aumento) | Inertización con N₂ (caudal de emergencia); no cargar más a ese silo; vaciarlo al EAF con prioridad o al área de rechazo si C-07 lo decide; vigilar H₂ y CO | Agua, espuma o vapor; abrir escotillas para "ventilar"; entrar al silo |
+| DRI encendido o humeante en una banda o un derrame | Detener y bloquear la banda (MS-ACE-02 §6.5); pedir a RD detener el envío si la banda viene de la frontera; retirar el DRI caliente y extenderlo en capa delgada sobre piso seco, o cubrirlo con arena seca o agente para metales (clase D) | Agua o espuma; apilar DRI caliente; barrer con aire comprimido |
+| Incendio de la banda (hule) o de equipo eléctrico, sin DRI caliente | Polvo químico seco o CO₂ de extintor según la clase de fuego; brigada contra incendio | Chorro de agua sobre DRI cercano |
+| H₂ ≥ 20 % LEL en silo o torre | Evacuación del sector; sin ignición; inertización; MS-ACE-09 escenario I | Operar interruptores en la zona; entrar sin ERA |
+
+> Cualquier sistema fijo de rociadores de agua sobre bandas o silos de DRI debe revisarse con C-16 y el área de protección contra incendio (NOM-002) antes de la operación con 100 % DRI [Verificar con la NOM vigente / SSO].
 
 ## 7. Calidad
 

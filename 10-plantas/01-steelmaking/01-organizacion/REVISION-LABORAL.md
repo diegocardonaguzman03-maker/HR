@@ -102,3 +102,17 @@ Preparo la posición; **no se comprometió nada**. Cada punto se lleva solo con 
 **Archivos modificados:** `descripciones-puesto-sindicalizados.md` (v0.2), `descripciones-puesto-confianza.md` (v0.2), `organigrama-acería.md` (v0.2). **Creado:** `REVISION-LABORAL.md`.
 
 **Decisiones pendientes del Director:** D-1 a D-5 (sección 6) y aprobación de las tres versiones 0.2 ("Aprobó" pendiente).
+
+## 8. Adenda por la decisión D-010 (2026-09-28): sin chatarra comprada
+
+**Mensaje clave.** La Acería ya no tiene patio de chatarra: el EAF se carga con ≈ 95–100 % DRI por bandas desde HYL y Midrex (CV-GASM-001). Se actualizaron DP-ACE-S, DP-ACE-C y ORG-ACE-001 a **v0.3**. **Visto bueno laboral con observaciones**, sujeto a la decisión del Director sobre las 58 plazas.
+
+| # | Hallazgo | Corrección en v0.3 | Pendiente |
+|---|---|---|---|
+| H-D010-1 | S-05 "Operador de Patio de Chatarra" (97 plazas) sin materia de trabajo | S-05 redefinido como **Operador de Manejo de DRI y Retornos**, 39 plazas [Supuesto], mismo nivel N-3 | Valuación del puesto de consola (Compensaciones); convenio con el sindicato |
+| H-D010-2 | 58 plazas sin puesto | Ruta de reubicación sin despidos en `organigrama-acería.md` §6.3 | Decisión del Director (tema 4 de §8 del organigrama); paso 0: confirmar si las plazas están ocupadas |
+| H-D010-3 | C-17 con tramo bajo (7 por turno) | Nombre nuevo; opción de sumar S-10 (tema 5), que también atiende D-4 de esta revisión | Validación de C-02 y experto-operativo-metalurgia |
+| H-D010-4 | Escalafón de la línea 3 con requisitos de chatarra | Filas 7 y 8 de DP-ACE-S §3.2 reescritas; regla transitoria para los S-05 actuales | Comisión mixta de escalafón |
+| H-D010-5 | Plan DC-2 con la ruta de chatarra | Ruta DRI (48 h + OJT) y rutas de destino de los reubicados | Sesión extraordinaria de la CMCAP |
+
+**Verificar con Jurídico Laboral (J-6):** vía del convenio modificatorio de la categoría S-05 (arts. 391 y 400 Bis), garantía de salario y antigüedad en los movimientos laterales (art. 51), exclusión de la vía del art. 439, materia de trabajo de las bandas con Reducción Directa y cierre de contratos REPSE de preparación de chatarra.

@@ -2,12 +2,12 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-08 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-08 | 0.2 | Borrador para validación | Hornos — EAF-1 / EAF-2 | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno técnico v0.2, 2026-09-28 | experto-seguridad-salud — v0.1 con observaciones, 2026-09-25; v0.2 pendiente (cambios menores por D-010) | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.4. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
-**Objetivo:** mantener cada columna de electrodos (grafito UHP **610 mm**, niple cónico **4TPI**) con la longitud necesaria, agregando electrodos con un **empalme apretado al torque del fabricante** y **sin holgura entre caras**, para evitar roturas, juntas flojas y caídas, con el consumo dentro de **1.3–1.6 kg/t**.
+**Objetivo:** mantener cada columna de electrodos (grafito UHP **610 mm**, niple cónico **4TPI**) con la longitud necesaria, agregando electrodos con un **empalme apretado al torque del fabricante** y **sin holgura entre caras**, para evitar roturas, juntas flojas y caídas, con el consumo dentro de **1.4–1.7 kg/t** (FT-ACE-001 v0.4: más minutos de arco con 100 % DRI).
 
 **Alcance:** (A) **método preferente:** adición en el soporte de adición (stand) del piso de hornos, cambiando la columna completa con la grúa de carga; (B) **método alterno:** adición sobre la columna en el horno, con personal en la plataforma de electrodos. Incluye el deslizamiento (slipping) de columnas y la respuesta a roturas.
 **No incluye:** mantenimiento de brazos, mordazas e hidráulica (MM-EAF-02).
@@ -18,7 +18,7 @@
 | C-05 Supervisor de Hornos | Dueño. Autoriza el método B y cualquier trabajo con columna dañada. Verifica el LOTO. | A |
 | S-02 Segundo Hornero | Prepara el electrodo, rosca el niple, aplica el torque, verifica la holgura y registra. Señalero de la grúa. | R |
 | S-03 Tercer Hornero | Limpia caras y roscas, coloca el tapón de izaje, apoya la maniobra. | R |
-| S-04 Operador de Grúa de Carga | Iza y baja electrodos y columnas (grúa 120/40 t, gancho auxiliar). | R |
+| S-04 Operador de Grúa de Carga | Iza y baja electrodos y columnas (grúa 120/40 t, gancho auxiliar). Con 100 % DRI es una de sus tareas principales, junto con la canasta de retornos. | R |
 | S-01 Primer Hornero | Desenergiza, bloquea y libera el horno; ejecuta el deslizamiento desde el púlpito. | R |
 | S-19 Mecánico / S-22 Técnico Hidráulico | Atienden fallas de mordaza o de la llave de torque. | C |
 
@@ -66,7 +66,7 @@ flowchart TD
 | Velocidad de bajada al roscar | mm/s | ≤ 50 [Validar con OEM / Ingeniería de Proceso] | — | Golpe entre electrodos | Detén; inspecciona roscas | Grúa (modo fino) |
 | Posición de la junta | mm bajo la mordaza | ≥ 300 [Validar con OEM / Ingeniería de Proceso] | — | Junta en la zona de mordaza o en el delta | Desliza hasta posición correcta | Marca de deslizamiento |
 | Deslizamiento por colada | mm | ≈ 140 [Supuesto] | 120–170 | > 200 | Revisa roturas y oxidación | Marca / nivel 2 |
-| Consumo de electrodo | kg/t | 1.4 | 1.3–1.6 | > 1.7 | Análisis con C-07 (roturas, oxidación, corriente) | Nivel 2 |
+| Consumo de electrodo | kg/t | 1.5 | 1.4–1.7 | > 1.8 | Análisis con C-07 (roturas, oxidación, corriente) | Nivel 2 |
 | Frecuencia de adición por columna | coladas | ≈ 18–20 [Supuesto] | — | < 12 | Investiga consumo anormal | Registro |
 | Tiempo de adición (método A) | min | ≤ 10 [Supuesto] | — | > 15 | Registra la demora | Bitácora |
 
@@ -106,7 +106,7 @@ Casco con barbiquejo, lentes, careta si hay columna caliente, guantes de carnaza
 |---|---|---|---|---|
 | Torque y holgura | Torque OEM ± 10%; laina 0.1 mm no entra | Cada empalme | Registro de empalme | Junta floja → rotura, pérdida de punta al baño |
 | Trazabilidad | Número de serie de electrodo y niple | Cada adición | Registro | Sin trazabilidad para reclamo al proveedor |
-| Consumo | 1.3–1.6 kg/t | Por turno | Nivel 2 | Costo |
+| Consumo | 1.4–1.7 kg/t | Por turno | Nivel 2 | Costo |
 | Carbono en acero por rotura | Punta rota en baño aumenta C | Muestra después de rotura | Laboratorio | C fuera de rango en grados bajo C |
 
 ## 8. Procedimiento paso a paso
@@ -130,7 +130,7 @@ Casco con barbiquejo, lentes, careta si hay columna caliente, guantes de carnaza
 ## 9. Condiciones anormales y respuesta
 | Síntoma / alarma | Causa probable | Acción inmediata | A quién avisar |
 |---|---|---|---|
-| Rotura de electrodo en operación | Colapso de chatarra, junta floja, pieza pesada | Abre interruptor; si la punta cayó al baño, déjala fundir (vigila C); retira la columna dañada con método A | C-05, C-07 |
+| Rotura de electrodo en operación | Colapso de retornos (canasta o arranque en frío), junta floja | Abre interruptor; si la punta cayó al baño, déjala fundir (vigila C); retira la columna dañada con método A | C-05, C-07 |
 | Junta al rojo, chispas o arco en la junta | Junta floja, torque insuficiente | Abre interruptor; revisa y re-aprieta en frío o cambia | C-05 |
 | Laina entra tras re-aprietar | Rosca dañada, niple defectuoso | Cambia niple o electrodo; registra lote | C-05, proveedor |
 | Tapón de izaje no rosca completo | Rosca dañada | 🛑 No izar; cambia tapón o electrodo | C-05 |
@@ -161,7 +161,7 @@ Lista corta de verificación de pasos ★:
 5. Retira bloqueos con conteo de personas = llaves devueltas (paso 13); en método B trabaja 100 % conectado (paso 14).
 
 ## 12. Referencias
-- FT-ACE-001 §2 y §6; CAT-ACE-001; MO-EAF-01, MO-EAF-04; MM-EAF-02; MM-GR-01.
+- FT-ACE-001 v0.4 §2 y §6; CAT-ACE-001; MO-EAF-01, MO-EAF-04; MM-EAF-02; MM-GR-01.
 - MS-ACE-02 (LOTO), MS-ACE-04 (izaje), MS-ACE-10 (altura).
 - NOM-009-STPS (altura), NOM-006-STPS (manejo de materiales), NOM-004-STPS, NOM-029-STPS, NOM-017-STPS — verificar con Jurídico Laboral / SSO.
 - Manual del fabricante de electrodos (tabla de torque, manejo, almacenamiento) [por referenciar].
@@ -172,3 +172,4 @@ Lista corta de verificación de pasos ★:
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: nota sobre el alcance de MM-GR-01 para la grúa de carga. | experto-operativo-metalurgia |
+| 0.2 | 2026-09-28 | Decisión D-010: consumo de electrodo 1.4–1.7 kg/t (objetivo 1.5, alarma > 1.8); roturas por colapso de retornos en lugar de chatarra. Valores de FT-ACE-001 v0.4 | experto-operativo-metalurgia |

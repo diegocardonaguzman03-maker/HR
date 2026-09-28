@@ -2,12 +2,12 @@
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MO-EAF-07 | 0.1 | Borrador para validación | Hornos — EAF-1 / EAF-2 y fosa de vaciado | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno con observaciones, 2026-09-25 | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
+| MO-EAF-07 | 0.2 | Borrador para validación | Hornos — EAF-1 / EAF-2 y fosa de vaciado | C-05 Supervisor de Hornos | experto-operativo-metalurgia | experto-operativo-metalurgia — visto bueno técnico v0.2, 2026-09-28 | experto-seguridad-salud — v0.1 con observaciones, 2026-09-25; v0.2 pendiente (cambios menores por D-010) | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
-> Valores técnicos tomados de `FT-ACE-001` v0.3. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
+> Valores técnicos tomados de `FT-ACE-001` v0.4. Lo marcado **[Validar con OEM / Ingeniería de Proceso]** o **[Supuesto]** no se usa en planta hasta que C-07 lo valide.
 
 ## 1. Objetivo y alcance
-**Objetivo:** vaciar **150 t** de acero a una olla precalentada, **dentro de la ventana** (T 1,630 ± 15 °C, O activo 500–900 ppm, C 0.04–0.08%, P ≤ 0.015%), con **desoxidación y aleación** correctas para el grado, **arrastre mínimo de escoria** (≤ 5 kg/t [Supuesto]) y **retención del talón de 20–30 t**, con **nadie dentro de la zona de exclusión**.
+**Objetivo:** vaciar **150 t** de acero a una olla precalentada, **dentro de la ventana** (T 1,630 ± 15 °C, O activo 500–900 ppm, C 0.04–0.08%, P ≤ 0.015%), con **desoxidación y aleación** correctas para el grado, **arrastre mínimo de escoria** (≤ 5 kg/t [Supuesto]) y **retención del talón de 30–40 t** (indispensable para arrancar la siguiente colada con DRI), con **nadie dentro de la zona de exclusión**.
 
 **Alcance:** desde la liberación de la ventana de vaciado (MO-EAF-06) y la recepción de la olla preparada (MO-OLL-01) hasta el cierre del EBT y la salida del carro de olla hacia el horno olla (MO-LF-01).
 **No incluye:** llenado del EBT (MO-EAF-01) ni el traslado con grúa (MO-OLL-02).
@@ -25,7 +25,7 @@
 | C-09 Metalurgista de Producto | Define la práctica de adiciones por grado. | C |
 
 ## 3. Descripción del proceso
-Con el arco apagado, el horno se inclina hacia el EBT (3–5°). Se abre la compuerta inferior: la arena cae y el acero sale libre por el agujero excéntrico a la olla (apertura libre). S-01 aumenta la inclinación (hasta 12–15°) para mantener la carga hidrostática y la escoria lejos del agujero. Entre el 20% (≈ 30 t) y el 80% (≈ 120 t) del peso en la olla se agregan desoxidantes, ferroaleaciones y formadores de escoria, con argón agitando por el tapón poroso. Al llegar a 150 t o al detectar escoria, el horno **retroinclina de inmediato**: quedan en el horno el talón (20–30 t) y la escoria oxidada, que tiene P y FeO altos.
+Con el arco apagado, el horno se inclina hacia el EBT (3–5°). Se abre la compuerta inferior: la arena cae y el acero sale libre por el agujero excéntrico a la olla (apertura libre). S-01 aumenta la inclinación (hasta 12–15°) para mantener la carga hidrostática y la escoria lejos del agujero. Entre el 20% (≈ 30 t) y el 80% (≈ 120 t) del peso en la olla se agregan desoxidantes, ferroaleaciones y formadores de escoria, con argón agitando por el tapón poroso. Al llegar a 150 t o al detectar escoria, el horno **retroinclina de inmediato**: quedan en el horno el talón (30–40 t) y la escoria oxidada, que tiene P y FeO altos. Con DRI la escoria es abundante (160–200 kg/t): vigila el arrastre desde el inicio del vaciado.
 
 ![Figura 5. Secuencia de vaciado por EBT](../../img/eaf-vaciado-ebt.svg)
 
@@ -45,7 +45,7 @@ flowchart TD
     H --> I["Adiciones de 30 t a 120 t"]
     I --> J{"150 t en báscula<br/>o detección de escoria"}
     J -- "No" --> H
-    J -- "Sí" --> K["Retroinclinación inmediata a −3°<br/>talón 20–30 t retenido"]
+    J -- "Sí" --> K["Retroinclinación inmediata a −3°<br/>talón 30–40 t retenido"]
     K --> L["Muestra/T en olla · registro<br/>carro a LF (MO-LF-01)"]
 ```
 
@@ -68,7 +68,7 @@ flowchart TD
 | O activo | ppm | 700 | 500–900 | > 1,000 | Recalcula Al; avisa a LF | Sonda M3 |
 | C / P | % | C 0.06 / P ≤ 0.012 | C 0.04–0.08 / P ≤ 0.015 | P > 0.015 | No vaciar sin decisión de C-05/C-09 | OES |
 | Peso vaciado | t | 150 | 145–152 | > 153 (bordo libre) | Cierre inmediato | Báscula del carro |
-| Talón retenido | t | 25 | 20–30 | < 20 | Cierra antes; informa (MO-EAF-01) | Balance nivel 2 |
+| Talón retenido | t | 35 | 30–40 | < 30 | Cierra antes; informa (MO-EAF-01): con talón bajo la siguiente colada arranca lento o en frío | Balance nivel 2 |
 | Tiempo de vaciado | min | 4 | 3–5 [Validar con OEM / Ingeniería de Proceso] | < 2.5 o > 6 | < 2.5: agujero desgastado, programa cambio de tubo; > 6: agujero cerrado/costra, limpiar | Nivel 2 |
 | Apertura libre del EBT | % de coladas | ≥ 95 [Supuesto] | — | < 90% en el turno | Revisa arena y práctica de llenado con C-15 | Registro |
 | Ángulo máximo de inclinación | ° | 12 | 10–15 [Validar con OEM / Ingeniería de Proceso] | > 15 | Riesgo de escoria al agujero | HMI |
@@ -131,7 +131,7 @@ En piso de vaciado y plataforma de adiciones: casco, careta con visor dorado, ca
 | 8 | Vacía | Aumenta la inclinación progresivamente (hasta 12–15°) para mantener el chorro compacto. | Chorro compacto, sin escoria | | S-01 |
 | 9 | Agrega | Inicia adiciones a ≈ 30 t y termina antes de 120 t; Ar 200–400 NL/min. | Adiciones completas en ventana | 🔎 | S-02 |
 | 10 | Vigila escoria | Observa la cámara/detector y el peso. | Sin escoria | 🔎 | S-01 |
-| 11 | Cierra | A 150 t o al primer indicio de escoria: retroinclinación inmediata a −3°. | Talón 20–30 t; escoria en el horno | ★ | S-01 |
+| 11 | Cierra | A 150 t o al primer indicio de escoria: retroinclinación inmediata a −3°. | Talón 30–40 t; escoria en el horno | ★ | S-01 |
 | 12 | Confirma cierre | Chorro detenido; horno estable; EBT listo para preparación. | Sin flujo | | S-01 |
 | 13 | Libera la zona | Carro sale hacia LF; se levanta la exclusión. | Carro fuera | | S-02 |
 | 14 | Registra | Peso, tiempo de vaciado, apertura libre (sí/no), adiciones reales, argón, arrastre estimado. | Registro completo | | S-01 |
@@ -170,7 +170,7 @@ Lista corta de verificación de pasos ★:
 5. Responde a EBT que no abre sin exponer a nadie.
 
 ## 12. Referencias
-- FT-ACE-001 §2, §3 y §7; CAT-ACE-001; MO-EAF-01, MO-EAF-06, MO-OLL-01, MO-OLL-02, MO-LF-01; MM-EAF-03.
+- FT-ACE-001 v0.4 §2, §3 y §7; CAT-ACE-001; MO-EAF-01, MO-EAF-06, MO-OLL-01, MO-OLL-02, MO-LF-01; MM-EAF-03.
 - MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-09.
 - NOM-017-STPS, NOM-015-STPS, NOM-006-STPS — verificar con Jurídico Laboral / SSO.
 - Manual OEM del EBT y del sistema de inclinación; práctica de refractario del EBT [por referenciar].
@@ -181,3 +181,4 @@ Lista corta de verificación de pasos ★:
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: límite de Al soluble ≤ 0.005% para grados de CC2 (colada abierta), igual que MO-LF-01 y MO-CC2-04. | experto-operativo-metalurgia |
+| 0.2 | 2026-09-28 | Decisión D-010 (≈ 95–100 % DRI): talón retenido 30–40 t; nota sobre mayor volumen de escoria y arrastre. Valores de FT-ACE-001 v0.4 | experto-operativo-metalurgia |

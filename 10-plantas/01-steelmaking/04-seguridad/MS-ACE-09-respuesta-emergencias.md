@@ -25,7 +25,7 @@
 | Servicio médico | Atención y traslado de lesionados | R |
 | C-12 / S-20 | Energía: aislamientos eléctricos y arranque de respaldos | R |
 | ESR | Evento radiológico | R |
-| C-17 Supervisor de Manejo de DRI, Silos y Retornos [denominación pendiente de `01-organizacion`] | Líder de sector de silos y bandas: detiene bandas, aumenta la inertización, cuenta a su personal | R |
+| C-17 Supervisor de Manejo de Materiales (DRI, fundentes y retornos) | Líder de sector de silos y bandas: detiene bandas, aumenta la inertización, cuenta a su personal | R |
 | Púlpito de HYL / Midrex [código de rol según `10-plantas/03-reduccion-directa/`] | Detiene o desvía el envío de DRI a pedido del CI; informa si la emergencia puede afectar a RD | R (interfaz) |
 | Vigilancia / control de acceso | Controla la entrada; guía a bomberos y ambulancias externas; entrega listas de personal y contratistas | R |
 | C-01 Gerente de Acería | Enlace con la dirección; comunicación externa (solo por los canales autorizados) | C |
