@@ -1,0 +1,96 @@
+{
+  "code": "MO-CC2-03",
+  "pov": "POV-CC2-03",
+  "title": "Arranque de colada por línea",
+  "area": "CC2",
+  "areaName": "Colada Continua 2 — palanquilla, 6 líneas",
+  "version": "0.1",
+  "owner": "C-06",
+  "manual": "02-operacion/cc2/MO-CC2-03-arranque-colada-por-linea.md",
+  "deck": "05-capacitacion/MO-CC2-03",
+  "purpose": "Abrir la olla, llenar el distribuidor y arrancar las 6 líneas una por una, del centro a los extremos, hasta colar a ≥ 2.5 m/min con el nivel de molde en automático (± 5 mm).",
+  "whyItMatters": "El arranque es el momento de mayor riesgo de la colada. Un molde que desborda, una cabeza que fuga o una rampa rápida causan derrames de metal líquido, breakouts y líneas perdidas.",
+  "startsWhen": "Los 6 moldes están sellados (MO-CC2-02), el distribuidor está caliente y centrado (MO-CC2-01) y llega la primera olla a la torreta.",
+  "endsWhen": "Las 6 líneas cuelan en estado estable y la barra falsa está estacionada: sigue la colada en estado estable (MO-CC2-04).",
+  "previous": ["MO-CC2-01", "MO-CC2-02"],
+  "next": ["MO-CC2-04"],
+  "heroFigure": {"file": "img/cc2-perfil-maquina.svg", "caption": "Perfil de una línea de la CC2: torreta, olla, distribuidor, molde, enfriamiento, enderezadores y corte."},
+  "figures": [
+    {"file": "img/cc2-distribuidor-6-lineas.svg", "caption": "Distribuidor de 30 t de 6 líneas: orden de apertura L3-L4 → L2-L5 → L1-L6 y cambio rápido de buza."}
+  ],
+  "roles": [
+    {"code": "C-06", "name": "Supervisor de Colada Continua", "raci": "A", "does": "Dueño del proceso. Da la orden de arranque y decide cerrar o rearrancar una línea.", "it": "IT-C06"},
+    {"code": "S-12", "name": "Operador de Púlpito de Colada", "raci": "R", "does": "Controla extracción, rampa, nivel automático, agua secundaria y EMS; vigila alarmas.", "it": "IT-S12"},
+    {"code": "S-13", "name": "Operador de Plataforma de Colada", "raci": "R", "does": "Abre la olla, controla nivel y temperatura del distribuidor y abre las buzas.", "it": "IT-S13"},
+    {"code": "S-14", "name": "Ayudante de Colada", "raci": "R", "does": "Vigila el llenado de cada molde, el aceite y el chorro; cierra la línea si hay fuga.", "it": "IT-S14"},
+    {"code": "S-09", "name": "Operador de Grúa de Colada", "raci": "R", "does": "Coloca la olla en la torreta (izaje).", "it": "IT-S09"},
+    {"code": "S-11", "name": "Muestrero / Analista de Laboratorio", "raci": "R", "does": "Toma la muestra química del distribuidor en la primera colada.", "it": "IT-S11"},
+    {"code": "S-16", "name": "Operador de Corte y Marcado", "raci": "R", "does": "Corta la cabeza (despunte) y marca las palanquillas de arranque \"A\".", "it": "IT-S16"},
+    {"code": "C-08", "name": "Ingeniero de Proceso de Colada Continua", "raci": "C", "does": "Define temperaturas y tabla de rampa; analiza los arranques fallidos."}
+  ],
+  "goldenRules": ["Nadie frente al chorro ni en la fosa: en la zona roja solo S-12, S-13, S-14 y C-06.", "Abre las líneas del centro a los extremos y arranca la extracción a ≈ 150 mm bajo el borde.", "Si una línea desborda, fuga o hace breakout, ciérrala con placa ciega. Una línea se recupera."],
+  "epp": ["casco", "careta_dorada", "aluminizado", "guantes", "ropa_fr", "botas", "auditiva", "dosimetro"],
+  "dangerZone": {"red": "Zona roja: 10 m alrededor del molde, del distribuidor y de la torreta, y todo lo que está bajo la máquina. Solo S-12, S-13, S-14 y C-06 [Supuesto — validar con C-16].", "yellow": "Zona amarilla: de 10 a 20 m. Solo personal autorizado con EPP completo.", "rule": "Aviso por radio y sirena ≥ 30 s antes de abrir la olla. Fosa y área bajo la plataforma cerradas hasta que las 6 líneas estén estables y C-06 libere."},
+  "hazards": [
+    {"icon": "fuego", "text": "Metal líquido al abrir la olla y las buzas: salpicaduras, derrames y desbordamiento del molde."},
+    {"icon": "agua", "text": "Agua en contacto con el acero (molde con fuga, chatarra húmeda): explosión."},
+    {"icon": "peligro", "text": "Breakout o fuga en la cabeza al arrancar: metal líquido en la fosa."},
+    {"icon": "oxigeno", "text": "Lanceo de oxígeno para abrir la olla: quemaduras y retroceso de llama."},
+    {"icon": "alarma", "text": "Fuente radiactiva Cs-137 del nivel de molde: no intervengas el molde; solo el ESR (C-16)."}
+  ],
+  "phases": ["Antes de abrir", "Olla y distribuidor", "Líneas y rampa", "Al estabilizar"],
+  "steps": [
+    {"n": 1, "phase": 0, "role": "S-12", "icon": "checklist", "title": "Verifica condiciones", "action": "Revisa la lista de arranque: distribuidor ≥ 1,000 °C, 6 líneas listas, agua de molde a caudal, tanque de emergencia lleno y bombas diésel en automático.", "check": "Todo en verde en la lista de arranque.", "critical": true, "stop": "El tanque de emergencia no está lleno o las bombas diésel no están en automático.", "decision": {"question": "¿Todo en verde?", "no": "No arranques. Avisa a C-06."}},
+    {"n": 2, "phase": 0, "role": "S-13", "icon": "barrera", "title": "Establece la exclusión", "action": "Cuenta al personal. Nadie a ≤ 10 m del molde, distribuidor y torreta, salvo S-12, S-13, S-14 y C-06. Cierra la fosa. Avisa por radio y sirena ≥ 30 s antes.", "check": "Solo personal autorizado en la zona roja; fosa vacía y cerrada.", "critical": true, "stop": "Hay una persona no autorizada en la zona roja o alguien en la fosa."},
+    {"n": 3, "phase": 0, "role": "C-06", "icon": "autorizar", "title": "Da la orden de arranque", "action": "Confirma la lista de MO-CC2-02 firmada, la zona libre y la temperatura de la olla. Da la orden por radio.", "check": "Lista firmada y orden de arranque dada por radio.", "decision": {"question": "¿Zona libre y firma?", "no": "No se abre la olla. Corrige y confirma."}},
+    {"n": 4, "phase": 1, "role": "S-13", "icon": "grua", "title": "Recibe la olla y gira la torreta", "action": "S-09 coloca la olla en la torreta. Verifica peso y temperatura de llegada. Gira la torreta a posición de colada con nadie bajo la olla.", "check": "Olla sobre el distribuidor; temperatura según la hoja del LF.", "critical": true, "stop": "Hay alguien bajo la olla o en el radio de giro de la torreta."},
+    {"n": 5, "phase": 1, "role": "S-13", "icon": "vaciar", "title": "Coloca el tubo y abre la olla", "action": "Alinea el tubo protector y abre el argón. Abre la válvula deslizante al 100 %. Si no abre libre en 30 s, lancea con O₂ (solo S-13 certificado).", "check": "Sello sin fugas visibles; chorro estable al distribuidor.", "critical": true, "decision": {"question": "¿La olla abrió libre?", "no": "Lancea con O₂; 3 min sin abrir: avisa a C-06."}},
+    {"n": 6, "phase": 1, "role": "S-13", "icon": "temperatura", "title": "Llena el distribuidor y mide", "action": "Controla la apertura de la olla hasta ≥ 400 mm. A los 3–5 min mide con la lanza a 300 mm de profundidad [Validar], lejos de la zona de impacto.", "check": "Nivel ≥ 400 mm. Sobrecalentamiento 20–35 °C (1.ª colada de secuencia: 25–40 °C).", "quality": true, "stop": "El sobrecalentamiento es menor de 15 °C (riesgo de buza congelada)."},
+    {"n": 7, "phase": 2, "role": "S-14", "icon": "flujo", "title": "Arranca el aceite en L3 y L4", "action": "Abre el aceite a 25 mL/min y revisa el flujo en el rotámetro de cada línea.", "check": "Flujo en todas las ranuras; 20–25 mL/min.", "stop": "No hay flujo de aceite en el rotámetro: esa línea no se abre."},
+    {"n": 8, "phase": 2, "role": "S-13", "icon": "cambiar", "title": "Abre L3 y L4", "action": "Empuja la buza en lugar de la placa ciega. Revisa que el chorro caiga centrado y compacto.", "check": "Chorro centrado, sin abrirse.", "critical": true, "decision": {"question": "¿Chorro centrado?", "no": "Cambia la buza (MO-CC2-06) y avisa a C-06."}},
+    {"n": 9, "phase": 2, "role": "S-14", "icon": "nivel", "title": "Vigila el llenado de cada molde", "action": "Observa el llenado y avisa al púlpito cuando el nivel se acerque a ≈ 150 mm bajo el borde. Nadie se asoma al molde.", "check": "Molde lleno en 25–40 s.", "stop": "El nivel llega a 60 mm bajo el borde y sigue subiendo, o sale acero bajo el molde."},
+    {"n": 10, "phase": 2, "role": "S-12", "icon": "arrancar", "title": "Arranca la extracción", "action": "A ≈ 150 mm bajo el borde (140–160 mm [Validar OEM]) arranca a 0.5 m/min con oscilación. Pasa el nivel a automático cuando esté a ± 10 mm del punto.", "check": "Sin fuga en la cabeza; nivel ± 5 mm en ≤ 60 s.", "critical": true, "stop": "Hay fuga de acero bajo el molde: se cierra la línea con placa ciega."},
+    {"n": 11, "phase": 2, "role": "S-12", "icon": "tendencia", "title": "Aplica la rampa y el EMS", "action": "Rampa automática: 1.5 m/min en 60 s y luego ≥ 2.5 m/min en 60 s [Validar OEM]. No aceleres a mano. Al pasar 1.5 m/min enciende el EMS: 250–400 A, 2–5 Hz.", "check": "Sin alarmas de nivel (± 10 mm); EMS en servicio.", "critical": true},
+    {"n": 12, "phase": 2, "role": "S-13", "icon": "cambiar", "title": "Abre L2 y L5, luego L1 y L6", "action": "Repite los pasos 7 a 11 en cada línea. Deja 15–30 s entre líneas. L1 y L6 no esperan más de 3 min con la buza cubierta.", "check": "Las 6 líneas abiertas en ≤ 3 min.", "critical": true, "decision": {"question": "¿La buza fluye?", "no": "Cambia la buza; si falla, placa ciega."}},
+    {"n": 13, "phase": 3, "role": "S-13", "icon": "nivel", "title": "Completa el nivel del distribuidor", "action": "Sube el nivel a 700–850 mm y agrega la capa de cubierta.", "check": "Nivel de operación 700–850 mm; acero cubierto."},
+    {"n": 14, "phase": 3, "role": "S-12", "icon": "hmi", "title": "Vigila el desacople de la barra", "action": "Sigue la cabeza en los enderezadores. La barra falsa se desacopla y sube a su estacionamiento.", "check": "Desacople sin golpe; barra estacionada.", "stop": "La barra falsa no se desacopla."},
+    {"n": 15, "phase": 3, "role": "S-16", "icon": "cortar", "title": "Despunta y marca \"A\"", "action": "Corta la cabeza (≈ 1,000 mm; 800–1,200 mm [Validar]) a chatarra. Marca la primera palanquilla de cada línea con \"A\".", "check": "Despunte fuera; palanquilla \"A\" identificada en el rastreo.", "quality": true},
+    {"n": 16, "phase": 3, "role": "S-11", "icon": "muestra", "title": "Toma la muestra química", "action": "En la primera colada toma la muestra del distribuidor a los 5–10 min y envíala al laboratorio.", "check": "Muestra enviada al laboratorio (LIMS)."},
+    {"n": 17, "phase": 3, "role": "C-06", "icon": "ok", "title": "Libera la zona de exclusión", "action": "Cuando las 6 líneas estén estables, autoriza abrir la fosa y retirar la zona roja.", "check": "6 líneas estables (≤ 10 min [Validar]); fosa abierta solo con autorización."},
+    {"n": 18, "phase": 3, "role": "S-12", "icon": "registrar", "title": "Registra el arranque", "action": "Anota hora de apertura de la olla y de cada línea, temperaturas, tiempo de llenado por línea, velocidad alcanzada y anomalías.", "check": "Hoja de arranque CC2 completa."}
+  ],
+  "abnormal": [
+    {"icon": "oxigeno", "if": "La olla no abre libre", "do": "S-13 certificado lancea con O₂. Si en 3 min no abre, avisa: la olla regresa.", "call": "C-06 y S-08"},
+    {"icon": "cambiar", "if": "La buza no fluye al abrir (L1 o L6) o el chorro sale en abanico", "do": "Cambio rápido por una buza caliente (MO-CC2-06). Si falla, cierra la línea con placa ciega.", "call": "C-06"},
+    {"icon": "nivel", "if": "El nivel sube sin control o el molde está por desbordar", "do": "Sube la velocidad. Si llega a 60 mm bajo el borde, cierra la línea con placa ciega.", "call": "C-06"},
+    {"icon": "fuego", "if": "Fuga en la cabeza o breakout al arrancar (acero bajo el molde)", "do": "Cierra la línea y detén su extracción. Mantén agua de molde y secundaria. Evacúa bajo la máquina y a ≥ 20 m (MS-ACE-09). El ESR revisa el Cs-137.", "call": "C-06, C-04 y C-16 (ESR)"},
+    {"icon": "agua", "if": "Falla de agua de molde o apagón", "do": "Verifica que entre el agua de emergencia en ≤ 15 s. Cierra la olla y las 6 líneas con placa ciega. Evacúa la plataforma a ≥ 10 m. No metas agua a un molde sobrecalentado sin autorización.", "call": "C-04 y C-06"},
+    {"icon": "temperatura", "if": "Sobrecalentamiento menor de 15 °C", "do": "Avisa. C-06 decide arrancar menos líneas o regresar la olla.", "call": "C-06 y C-07"},
+    {"icon": "detener", "if": "La barra falsa no se desacopla", "do": "Detén la línea antes del estacionamiento. Mantenimiento la libera.", "call": "C-06 y C-11"}
+  ],
+  "records": [
+    {"what": "Hoja de arranque CC2 (apertura de olla y de cada línea, temperaturas, llenado, velocidad, anomalías)", "when": "Cada arranque", "where": "Hoja de arranque CC2"},
+    {"what": "Despuntes y palanquillas \"A\"", "when": "Cada arranque", "where": "Registro de despuntes y sistema de rastreo"},
+    {"what": "Lanceo de olla", "when": "Si aplica", "where": "Registro de lanceo"},
+    {"what": "Tendencias de nivel y velocidad por línea", "when": "Automático", "where": "Nivel 2"}
+  ],
+  "certification": [
+    {"role": "S-12", "level": "3", "theory": "24 h (incluye simulador de arranque [Validar])", "ojt": "10 arranques acompañados", "evaluated": "Pasos 1, 10, 11 y 12: condiciones, extracción, rampa y apertura de líneas", "validity": "24 meses (TD-P07)"},
+    {"role": "S-13", "level": "3", "theory": "24 h", "ojt": "10 arranques; 3 lanceos de olla", "evaluated": "Pasos 2, 4, 5, 8 y 12: zona, torreta, apertura de olla y de líneas", "validity": "24 meses (TD-P07)"},
+    {"role": "S-14", "level": "3", "theory": "16 h", "ojt": "10 arranques", "evaluated": "Pasos 8 y 12: apertura de líneas; cierre con placa ciega", "validity": "24 meses (TD-P07)"},
+    {"role": "C-06", "level": "4", "theory": "16 h", "ojt": "5 arranques dirigidos", "evaluated": "Pasos 1 y 2 y decisión de cierre de línea", "validity": "24 meses"}
+  ],
+  "glossary": [
+    {"term": "Colada abierta", "def": "Colada sin barra tapón: el caudal lo fija la buza calibrada y la altura del distribuidor."},
+    {"term": "Buza calibrada", "def": "Buza de ZrO₂ con un orificio de diámetro fijo (160 × 160 mm: 20–24 mm) que alimenta cada molde."},
+    {"term": "Placa ciega", "def": "Placa sin orificio que se empuja en el cambio rápido para cerrar una línea."},
+    {"term": "Sobrecalentamiento", "def": "Grados que el acero está por encima de su temperatura de líquidus (≈ 1,505 °C en varilla)."},
+    {"term": "Rampa", "def": "Subida gradual de la velocidad de extracción para no romper la piel recién formada."},
+    {"term": "Menisco", "def": "Superficie del acero líquido dentro del molde; su nivel se controla a ± 5 mm."},
+    {"term": "EMS", "def": "Agitador electromagnético del molde; mejora el centro de la palanquilla."},
+    {"term": "Palanquilla \"A\"", "def": "Primera palanquilla de cada línea; lleva el acero del arranque y se inspecciona aparte."}
+  ],
+  "review": [
+    {"area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28"}
+  ]
+}

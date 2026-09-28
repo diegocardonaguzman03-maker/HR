@@ -1,0 +1,103 @@
+{
+  "code": "MO-CC1-07",
+  "pov": "POV-CC1-07",
+  "title": "Fin de colada y cierre de secuencia",
+  "area": "CC1",
+  "areaName": "Colada Continua 1 — máquina de planchón (plataforma, púlpito y oxicorte)",
+  "version": "0.1",
+  "owner": "C-06",
+  "manual": "02-operacion/cc1/MO-CC1-07-fin-colada-cierre-secuencia.md",
+  "deck": "05-capacitacion/MO-CC1-07",
+  "purpose": "Terminar la secuencia, planeada o no, sin pasar escoria al molde, sin que la cola se rompa y sin nadie expuesto al metal líquido, y dejar la máquina vacía y lista para prepararla.",
+  "whyItMatters": "La cola es la parte más débil del planchón. Si se extrae rápido o sin tapar, sale acero bajo el molde (breakout). Si se baja el distribuidor de 400 mm, entra escoria al último planchón.",
+  "startsWhen": "Se abre la última olla de la secuencia o C-06 decide un cierre no planeado (MO-CC1-05, MO-CC1-06, MO-CC1-04).",
+  "endsWhen": "La cola sale de la máquina, se corta el último planchón, la máquina queda bloqueada e inspeccionada y lista para MO-CC1-02.",
+  "previous": ["MO-CC1-04", "MO-CC1-05", "MO-CC1-06"],
+  "next": ["MO-CC1-08", "MO-CC1-02", "MO-CC1-09"],
+  "heroFigure": { "file": "img/cc1-perfil-maquina.svg", "caption": "Perfil de la máquina CC1: la cola recorre ≈ 32 m del molde al oxicorte." },
+  "figures": [
+    { "file": "img/cc1-distribuidor.svg", "caption": "Distribuidor: el tapón se cierra a 400 mm; más abajo se forma un vórtice que arrastra escoria." }
+  ],
+  "roles": [
+    { "code": "S-13", "name": "Operador de Plataforma de Colada", "raci": "R", "does": "Cierra la última olla y el tapón, vigila el nivel del distribuidor y lo retira.", "it": "IT-S13" },
+    { "code": "S-12", "name": "Operador de Púlpito de Colada", "raci": "R", "does": "Baja la velocidad por nivel, detiene la línea, saca la cola y apaga el enfriamiento por zonas.", "it": "IT-S12" },
+    { "code": "S-14", "name": "Ayudante de Colada", "raci": "R", "does": "Limpia la superficie de la cola en el molde, la tapa y apoya el bloqueo e inspección de la máquina.", "it": "IT-S14" },
+    { "code": "S-16", "name": "Operador de Corte y Marcado", "raci": "R", "does": "Corta el último planchón y el despunte de cola.", "it": "IT-S16" },
+    { "code": "S-09", "name": "Operador de Grúa de Colada", "raci": "R", "does": "Retira la última olla al escorial (izaje).", "it": "IT-S09" },
+    { "code": "C-06", "name": "Supervisor de Colada Continua", "raci": "A", "does": "Dueño del proceso. Decide el cierre (planeado o de emergencia) y dirige la salida de la cola.", "it": "IT-C06" },
+    { "code": "C-08", "name": "Ingeniero de Proceso de CC", "raci": "C", "does": "Define los parámetros de salida de cola y analiza los cierres no planeados." },
+    { "code": "C-04", "name": "Jefe de Turno de Acería", "raci": "I", "does": "Recibe el aviso del cierre y sus causas.", "it": "IT-C04" }
+  ],
+  "goldenRules": [
+    "Cierra el tapón a 400 mm del distribuidor, nunca por debajo.",
+    "Nadie bajo el molde ni en los segmentos 1–3 hasta que la cola pase el segmento 3.",
+    "Nunca eches agua sobre la cola líquida. Tapa 3–5 min y saca el primer metro a 0.3 m/min."
+  ],
+  "epp": ["casco", "careta_dorada", "aluminizado", "ropa_fr", "guantes", "botas", "auditiva", "detector_gas"],
+  "dangerZone": {
+    "red": "Zona de exclusión bajo el molde y en los segmentos 1–3: activa desde la colada estable y durante todo el cierre. Nadie a pie.",
+    "yellow": "Fosa del distribuidor, ruta del carro y trayectoria de la olla suspendida: despejadas.",
+    "rule": "C-06 reconfirma la zona antes de extraer la cola y la levanta solo cuando la cola pasa el segmento 3. Para entrar a la máquina: cola fuera, máquina detenida y LOTO (MS-ACE-02)."
+  },
+  "hazards": [
+    { "icon": "fuego", "text": "Breakout de la cola al salir del molde: fuga de acero bajo el molde." },
+    { "icon": "agua", "text": "Agua sobre acero líquido en la cola: explosión de vapor." },
+    { "icon": "peligro", "text": "Vórtice bajo 400 mm: escoria al molde y salpicaduras." },
+    { "icon": "grua", "text": "Olla con residuo suspendida y distribuidor con ≈ 14 t de residuo en traslado." },
+    { "icon": "calor", "text": "Retiro de escoria de la cola en el molde: quemaduras." }
+  ],
+  "phases": ["Última olla", "Tapado y salida", "Al terminar"],
+  "steps": [
+    { "n": 1, "phase": 0, "role": "C-06", "icon": "radio", "title": "Anuncia la última olla", "action": "Avisa por radio a púlpito, plataforma, corte y grúa que es la última olla. Ajusta el programa de corte.", "check": "Todos confirman \"última olla\"." },
+    { "n": 2, "phase": 0, "role": "S-13", "icon": "detener", "title": "Cierra la última olla", "action": "Cierra al primer signo de escoria o con 4 t residuales o menos. Retira el tubo protector.", "check": "Olla cerrada con 2–5 t residuales.", "decision": { "question": "¿Escoria o ≤ 4 t?", "no": "Sigue colando y vigila." } },
+    { "n": 3, "phase": 0, "role": "S-13", "icon": "grua", "title": "Retira la olla", "action": "Gira la torreta y da señales a S-09 para llevar la olla al escorial. Nadie bajo la carga.", "check": "Olla fuera de la torreta.", "critical": true, "stop": "Hay una persona bajo la olla o en su trayectoria." },
+    { "n": 4, "phase": 0, "role": "S-12", "icon": "nivel", "title": "Drena el distribuidor", "action": "Baja la velocidad según el nivel del distribuidor: 800 mm → 0.9; 700 mm → 0.6; 600 mm → 0.4 m/min.", "check": "Nivel de molde ± 3 mm." },
+    { "n": 5, "phase": 0, "role": "S-13", "icon": "temperatura", "title": "Mide la temperatura final", "action": "Mide la temperatura del distribuidor cuando llegue a ≈ 600 mm.", "check": "Sobrecalentamiento (SH) ≥ 15 °C.", "quality": true },
+    { "n": 6, "phase": 0, "role": "S-13", "icon": "detener", "title": "Cierra el tapón a 400 mm", "action": "Cierra el tapón cuando el distribuidor llegue a 400 mm (≈ 14 t). No bajes de ahí.", "check": "Tapón cerrado sin fuga a 400–450 mm.", "critical": true, "stop": "El distribuidor está por debajo de 400 mm o ves escoria en el molde." },
+    { "n": 7, "phase": 1, "role": "S-12", "icon": "detener", "title": "Detén la línea", "action": "Pon la velocidad en 0. Mantén el agua de molde y la oscilación. Activa el modo \"cola\".", "check": "Línea detenida; agua de molde ≥ 95 %." },
+    { "n": 8, "phase": 1, "role": "S-13", "icon": "subir_bajar", "title": "Retira el distribuidor", "action": "Sube el distribuidor (SEN fuera del molde) y llévalo a la fosa o volteo seca por la ruta despejada.", "check": "Distribuidor fuera sin derrame." },
+    { "n": 9, "phase": 1, "role": "C-06", "icon": "barrera", "title": "Reconfirma la zona de exclusión", "action": "Confirma por radio y a la vista que no hay nadie bajo el molde ni en los segmentos 1–3 antes de sacar la cola.", "check": "Confirmación de C-06 por radio.", "critical": true, "stop": "Hay alguien bajo el molde o en los segmentos 1–3." },
+    { "n": 10, "phase": 1, "role": "S-14", "icon": "herramienta", "title": "Limpia la superficie de la cola", "action": "Retira escoria y polvo con herramienta seca, sin romper la cáscara.", "check": "Superficie limpia y cáscara entera.", "critical": true, "stop": "La herramienta está mojada o hay agua cerca de la cola." },
+    { "n": 11, "phase": 1, "role": "S-14", "icon": "esperar", "title": "Tapa la cola", "action": "Espera 3–5 min con la línea detenida para que se forme la costra de arriba. Nunca eches agua sobre el acero líquido.", "check": "Costra formada; tapado de 3–5 min (máx. 8 min).", "critical": true },
+    { "n": 12, "phase": 1, "role": "S-12", "icon": "arrancar", "title": "Extrae la cola del molde", "action": "Saca la cola a 0.3 m/min hasta que salga del molde (≈ 1 m).", "check": "Sin alarma BOP ni fuga de acero.", "critical": true, "stop": "Sale acero bajo el molde o suena la alarma BOP.", "decision": { "question": "¿La cola se mueve?", "no": "Mantén oscilación; avisa a C-06. Sin O₂." } },
+    { "n": 13, "phase": 1, "role": "S-12", "icon": "tendencia", "title": "Sube a velocidad de salida", "action": "Rampa ≤ 0.2 m/min por minuto hasta ≈ 1.0 m/min. Las zonas de enfriamiento se apagan al paso de la cola. Deja el agua de molde ≥ 10 min.", "check": "Sin abombamiento; nunca más de 1.2 m/min." },
+    { "n": 14, "phase": 1, "role": "C-06", "icon": "autorizar", "title": "Levanta la zona de exclusión", "action": "Levanta la zona solo cuando la cola pase el segmento 3.", "check": "Cola después del segmento 3; autorización de C-06." },
+    { "n": 15, "phase": 2, "role": "S-16", "icon": "cortar", "title": "Corta el último planchón", "action": "Corta según el programa y despunta la cola hasta zona sana, sin rechupe.", "check": "Despunte de cola 500–1,000 mm; corte sano.", "quality": true },
+    { "n": 16, "phase": 2, "role": "S-14", "icon": "bloqueo", "title": "Bloquea la máquina", "action": "Con la máquina detenida, pon tu candado para inspección y limpieza (MS-ACE-02).", "check": "Candados puestos; prueba sin movimiento." },
+    { "n": 17, "phase": 2, "role": "S-14", "icon": "inspeccionar", "title": "Inspecciona la máquina", "action": "Revisa rodillos, boquillas, molde (desgaste y grietas) y restos de acero.", "check": "Reporte entregado para MO-CC1-02 y mantenimiento." },
+    { "n": 18, "phase": 2, "role": "S-12", "icon": "registrar", "title": "Registra la secuencia", "action": "Anota número de coladas, toneladas, causa del cierre, residuos de olla y distribuidor, vida del distribuidor y de la SEN.", "check": "Hoja de secuencia completa." }
+  ],
+  "abnormal": [
+    { "icon": "alarma", "if": "Breakout, fuga de agua en el molde, rebose, falla de agua sin agua de emergencia o de oscilación > 60 s", "do": "Cierre no planeado: cierra olla y tapón sin esperar 400 mm. Aplica MO-CC1-04 §9. Si la línea se mueve, sigue desde el paso 7.", "call": "C-06 y C-04" },
+    { "icon": "fuego", "if": "Sale acero al extraer la cola (breakout de cola)", "do": "Detén la línea y evacúa. Respuesta a breakout (MO-CC1-04 §9).", "call": "C-04, C-06 y C-16" },
+    { "icon": "detener", "if": "La cola no se mueve (pegada)", "do": "Mantén la oscilación. Sube el par poco a poco según el fabricante. No uses oxígeno en el molde sin autorización.", "call": "C-06 y C-08" },
+    { "icon": "peligro", "if": "Escoria visible en el molde al final", "do": "Cierra el tapón, marca el planchón y aumenta el despunte de cola.", "call": "C-06 y C-09" },
+    { "icon": "reparar", "if": "El tapón no cierra completo", "do": "Cierre de emergencia del distribuidor (subirlo) según el fabricante [Validar con OEM / Ingeniería de Proceso].", "call": "C-06" },
+    { "icon": "agua", "if": "Falla el agua de molde durante el tapado", "do": "Debe entrar el agua de emergencia en ≤ 15 s. Si no entra, evacúa.", "call": "C-04 y C-12" },
+    { "icon": "tendencia", "if": "Cola abombada entre rodillos o una zona no se apaga", "do": "Baja la velocidad y revisa el agua. Apaga la zona en manual.", "call": "C-08 y S-12" }
+  ],
+  "records": [
+    { "what": "Hoja de secuencia: coladas, toneladas, hora y causa del cierre, nivel de cierre del distribuidor, residuos", "when": "Cada secuencia", "where": "Nivel 2" },
+    { "what": "Registro de salida de cola: tiempo de tapado y velocidades", "when": "Cada secuencia", "where": "Nivel 2" },
+    { "what": "Registro de despunte de cola", "when": "Cada secuencia", "where": "Registro de corte / MES" },
+    { "what": "Reporte de inspección de la máquina", "when": "Al terminar la secuencia", "where": "Bitácora de turno y mantenimiento" }
+  ],
+  "certification": [
+    { "role": "S-13", "level": "3", "theory": "8 h", "ojt": "6 cierres de secuencia", "evaluated": "Pasos 3 y 6", "validity": "≤ 24 meses (TD-P07)" },
+    { "role": "S-12", "level": "3", "theory": "8 h", "ojt": "6 cierres (1 no planeado en simulador)", "evaluated": "Pasos 11 y 12", "validity": "≤ 24 meses" },
+    { "role": "S-14", "level": "3", "theory": "6 h", "ojt": "6 cierres", "evaluated": "Pasos 10 y 11", "validity": "≤ 24 meses" },
+    { "role": "C-06", "level": "4 (evaluador)", "theory": "8 h + evaluador", "ojt": "—", "evaluated": "Paso 9 y decisión de cierre no planeado", "validity": "≤ 24 meses" }
+  ],
+  "glossary": [
+    { "term": "Cola", "def": "Último tramo del acero en la máquina; es la parte más débil." },
+    { "term": "Tapado de cola", "def": "Esperar 3–5 min con la línea detenida para que se forme la costra de arriba." },
+    { "term": "Vórtice", "def": "Remolino que se forma bajo 400 mm y jala escoria y flux al molde." },
+    { "term": "Despunte", "def": "Pedazo que se corta en la punta para quitar el rechupe y la escoria." },
+    { "term": "Rechupe", "def": "Hueco que queda al final del planchón cuando el acero se contrae." },
+    { "term": "BOP", "def": "Sistema de predicción de breakout del molde." },
+    { "term": "LOTO", "def": "Bloqueo con candado y tarjeta de la energía de un equipo antes de trabajar en él." }
+  ],
+  "review": [
+    { "area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28" }
+  ]
+}

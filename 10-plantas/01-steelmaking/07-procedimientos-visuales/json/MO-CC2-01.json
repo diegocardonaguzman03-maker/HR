@@ -1,0 +1,101 @@
+{
+  "code": "MO-CC2-01",
+  "pov": "POV-CC2-01",
+  "title": "Preparación del distribuidor y las buzas calibradas",
+  "area": "CC2",
+  "areaName": "Colada Continua 2 — máquina de palanquilla de 6 líneas (preparación de distribuidores)",
+  "version": "0.1",
+  "owner": "C-06",
+  "manual": "02-operacion/cc2/MO-CC2-01-preparacion-distribuidor-buzas.md",
+  "deck": "05-capacitacion/MO-CC2-01",
+  "purpose": "Entregar a la plataforma un distribuidor de 30 t seco, íntegro, precalentado a 1,100 ± 50 °C y con 6 buzas del diámetro de la orden, cerradas con placa ciega y centradas sobre los 6 moldes.",
+  "whyItMatters": "En la CC2 el diámetro de la buza controla el flujo. Una buza equivocada, mal asentada o fría echa a perder la línea desde el arranque. Un revestimiento húmedo puede explotar al recibir el acero.",
+  "startsWhen": "El distribuidor sale revestido y secado del taller de distribuidores (lo reviste S-24 con C-15).",
+  "endsWhen": "El distribuidor está en posición de colada, centrado y liberado por C-06, listo para abrir la olla (MO-CC2-03).",
+  "previous": ["MO-CC2-07"],
+  "next": ["MO-CC2-03"],
+  "heroFigure": { "file": "img/cc2-distribuidor-6-lineas.svg", "caption": "Distribuidor de 30 t para 6 líneas: planta, corte A–A y mecanismo de cambio rápido de buza." },
+  "figures": [
+    { "file": "img/cc2-molde-tubo.svg", "caption": "El chorro de cada buza debe caer al centro del molde de tubo (± 3 mm)." }
+  ],
+  "roles": [
+    { "code": "S-15", "name": "Preparador de Distribuidores", "raci": "R", "does": "Inspecciona el revestimiento, instala y verifica las buzas, precalienta y registra. Hoy también cubre el izaje con la grúa de CC de 50 t.", "it": "IT-S15" },
+    { "code": "S-13", "name": "Operador de Plataforma de Colada", "raci": "R", "does": "Recibe el distribuidor, verifica el carro, lo traslada y centra el chorro sobre cada molde.", "it": "IT-S13" },
+    { "code": "C-06", "name": "Supervisor de Colada Continua (CC2)", "raci": "A", "does": "Dueño del proceso. Libera el distribuidor para colar y autoriza desviaciones.", "it": "IT-C06" },
+    { "code": "S-12", "name": "Operador de Púlpito de Colada", "raci": "C", "does": "Confirma en el HMI la tara de las celdas, el diámetro de buza por línea y la hora de apertura.", "it": "IT-S12" },
+    { "code": "C-15", "name": "Especialista de Refractarios", "raci": "C", "does": "Dictamina daños del revestimiento y excesos de tiempo de precalentamiento." },
+    { "code": "C-08", "name": "Ingeniero de Proceso de Colada Continua", "raci": "C", "does": "Fija en la orden de colada el diámetro de buza por grado y velocidad." },
+    { "code": "C-16", "name": "Especialista de Seguridad e Higiene", "raci": "I", "does": "Verifica los controles de gas natural, izaje y polvo." }
+  ],
+  "goldenRules": [
+    "Sin tarjeta de secado completa y firmada, el distribuidor no se usa. La humedad explota.",
+    "El diámetro de buza lo fija la orden de colada. Tú lo verificas con calibrador; no lo eliges.",
+    "Quemadores: purga y prueba de flama antes de encender. A 10 % LEL sal y corta el gas."
+  ],
+  "epp": ["casco", "careta_dorada", "aluminizado", "ropa_fr", "guantes", "botas", "auditiva", "respirador", "detector_gas"],
+  "dangerZone": {
+    "red": "Zona roja: 5 m alrededor del distribuidor durante el izaje (± 5 m de la proyección de la carga). Nadie bajo la carga.",
+    "yellow": "5 m alrededor del distribuidor con el quemador encendido [Validar con C-16].",
+    "rule": "Prohibido entrar al distribuidor. Si es indispensable: espacio confinado (MS-ACE-05) con permiso, LOTO de quemadores y medición de atmósfera."
+  },
+  "hazards": [
+    { "icon": "agua", "text": "Humedad en el revestimiento, la buza o el mortero: explosión al recibir el acero." },
+    { "icon": "gas", "text": "Encendido de quemadores de gas natural: explosión por gas acumulado." },
+    { "icon": "grua", "text": "Izaje del distribuidor (30 t de tara o más): aplastamiento." },
+    { "icon": "calor", "text": "Superficies a 1,000 °C: quemaduras graves." },
+    { "icon": "material", "text": "Polvo de refractario (MgO, alúmina, ZrO₂): daño respiratorio." }
+  ],
+  "phases": ["Preparación en frío", "Precalentamiento", "Posición de colada"],
+  "steps": [
+    { "n": 1, "phase": 0, "role": "S-15", "icon": "checklist", "title": "Revisa la tarjeta del distribuidor", "action": "Revisa número, fecha de revestimiento y que la curva de secado esté completa y firmada.", "check": "Tarjeta completa y firmada.", "critical": true, "stop": "La tarjeta de secado está incompleta o el revestimiento se ve húmedo.", "decision": { "question": "¿Tarjeta de secado completa?", "no": "No lo uses. Regrésalo al taller; avisa a C-06 y C-15." } },
+    { "n": 2, "phase": 0, "role": "S-15", "icon": "medir", "title": "Inspecciona el revestimiento", "action": "Revisa con lámpara y mide el espesor en 6 puntos: fondo, paredes y zona de impacto.", "check": "25–40 mm; sin grietas > 3 mm ni desprendimientos." },
+    { "n": 3, "phase": 0, "role": "S-15", "icon": "inspeccionar", "title": "Verifica almohadilla y presas", "action": "Revisa que la almohadilla de impacto y las presas estén en su lugar según el plano del fabricante y sin daños.", "check": "Íntegras y en su posición." },
+    { "n": 4, "phase": 0, "role": "S-15", "icon": "herramienta", "title": "Limpia los 6 pozos de buza", "action": "Aspira o sopla con aire seco. Usa respirador P100.", "check": "Sin escoria ni restos de mortero." },
+    { "n": 5, "phase": 0, "role": "S-15", "icon": "hmi", "title": "Confirma el diámetro de la orden", "action": "Compara la orden de colada con el HMI (S-12 confirma) y con la tabla: 160 × 160 mm → 20–24 mm; 130 × 130 mm → 15–17 mm.", "check": "Mismo diámetro en la orden, el HMI y la caja de buzas.", "critical": true },
+    { "n": 6, "phase": 0, "role": "S-15", "icon": "medir", "title": "Verifica cada buza con calibrador", "action": "Usa el calibrador pasa/no pasa de ± 0.2 mm. Revisa grietas y astillas en la entrada.", "check": "Pasa el nominal y no pasa el de + 0.2 mm.", "critical": true, "decision": { "question": "¿Pasa el calibrador?", "no": "Cambia la buza y separa el lote. Avisa a C-06." } },
+    { "n": 7, "phase": 0, "role": "S-15", "icon": "ajustar", "title": "Asienta bloque y buza", "action": "Asienta según el fabricante (mortero seco o junta). Revisa la verticalidad con escuadra.", "check": "Desviación ≤ 1 mm; sin juego." },
+    { "n": 8, "phase": 0, "role": "S-15", "icon": "bloqueo", "title": "Coloca placas ciegas en L1–L6", "action": "Empuja la placa ciega en el mecanismo de cambio rápido de cada línea.", "check": "6 líneas cerradas; mecanismo sin juego.", "critical": true },
+    { "n": 9, "phase": 0, "role": "S-15", "icon": "temperatura", "title": "Carga el horno de buzas de repuesto", "action": "Mete mínimo 6 buzas del diámetro de la orden y 2 placas ciegas.", "check": "Horno ≥ 900 °C [Validar con OEM]." },
+    { "n": 10, "phase": 1, "role": "S-15", "icon": "grua", "title": "Iza el distribuidor a la estación", "action": "Con señalero, lleva el distribuidor a la estación de precalentamiento. Nadie bajo la carga. Asiéntalo en los apoyos.", "check": "Asentado y nivelado.", "critical": true, "stop": "Hay alguien bajo la carga o a menos de 5 m de su proyección." },
+    { "n": 11, "phase": 1, "role": "S-15", "icon": "fuego", "title": "Enciende los quemadores", "action": "Haz la purga completa y la prueba de flama. Enciende en fuego bajo.", "check": "Flama estable; detector de gas sin alarma.", "critical": true, "stop": "El detector marca 10 % LEL o más, o la flama se apaga." },
+    { "n": 12, "phase": 1, "role": "S-15", "icon": "tiempo", "title": "Sigue la curva de precalentamiento", "action": "Fuego bajo 30 min [Validar], luego alto hasta 1,050–1,150 °C. Registra la temperatura cada 30 min.", "check": "≥ 2 h a temperatura; total ≤ 6 h.", "decision": { "question": "¿2 a 6 h de precalentado?", "no": "Exceso de tiempo: consulta a C-15 antes de usarlo." } },
+    { "n": 13, "phase": 1, "role": "S-15", "icon": "temperatura", "title": "Mide la temperatura de las buzas", "action": "Mide con pirómetro por abajo de cada buza.", "check": "≥ 900 °C en las 6 buzas.", "quality": true },
+    { "n": 14, "phase": 2, "role": "S-13", "icon": "carro", "title": "Verifica el carro del distribuidor", "action": "Prueba traslación y elevación. Confirma con S-12 la tara de las celdas de carga en el HMI.", "check": "Tara 0.0 ± 0.2 t; sin alarmas." },
+    { "n": 15, "phase": 2, "role": "S-13", "icon": "ruta", "title": "Traslada a posición de colada", "action": "Retira los quemadores no más de 5 min antes de abrir la olla y mueve el carro.", "check": "Tiempo sin fuego ≤ 5 min; cara caliente ≥ 1,000 °C." },
+    { "n": 16, "phase": 2, "role": "S-13", "icon": "objetivo", "title": "Centra el distribuidor", "action": "Revisa con plomada o láser el chorro de cada una de las 6 líneas contra el centro del molde.", "check": "Centro del chorro a ± 3 mm del centro del molde.", "critical": true, "decision": { "question": "¿Centrado ± 3 mm?", "no": "No abras la olla. Corrige con mantenimiento (C-11)." } },
+    { "n": 17, "phase": 2, "role": "C-06", "icon": "autorizar", "title": "Libera el distribuidor", "action": "Revisa la hoja de preparación que llenó S-15 y firma la liberación.", "check": "Hoja completa y firmada." }
+  ],
+  "abnormal": [
+    { "icon": "agua", "if": "Tarjeta de secado incompleta o revestimiento húmedo", "do": "No uses el distribuidor. Devuélvelo al taller.", "call": "C-06 y C-15" },
+    { "icon": "rechazar", "if": "Buza fuera de calibre o astillada", "do": "Cámbiala y separa el lote.", "call": "C-06 y C-08" },
+    { "icon": "gas", "if": "La flama se apaga o suena la alarma de gas", "do": "Cierra el gas y purga antes de reencender. ≥ 10 % LEL: sal del área. ≥ 20 % LEL: evacuación del sector (MS-ACE-06).", "call": "C-06 y C-16" },
+    { "icon": "temperatura", "if": "No llega a 1,000 °C a tiempo", "do": "Revisa el quemador y retrasa la apertura de la olla.", "call": "C-06 y mantenimiento" },
+    { "icon": "tiempo", "if": "Precalentamiento de más de 6 h (olla retrasada)", "do": "Baja a fuego de mantenimiento [Validar] y consulta a C-15.", "call": "C-06 y C-15" },
+    { "icon": "objetivo", "if": "El carro no centra (> ± 3 mm)", "do": "No abras la olla. Corrige con mantenimiento.", "call": "C-06 y C-11" },
+    { "icon": "reparar", "if": "Mecanismo de cambio rápido duro o atorado", "do": "Limpia o cambia el mecanismo antes de colar.", "call": "C-06" }
+  ],
+  "records": [
+    { "what": "Hoja de preparación del distribuidor: diámetro por línea, calibrador, alineación, firmas", "when": "Cada distribuidor", "where": "Formato de preparación" },
+    { "what": "Registro de precalentamiento: encendido, temperatura cada 30 min, tiempo total", "when": "Cada distribuidor", "where": "Registro de precalentamiento" },
+    { "what": "Tarjeta de secado del taller", "when": "Cada distribuidor", "where": "Taller de distribuidores" },
+    { "what": "Lista de encendido de quemadores y prueba del detector de gas", "when": "Cada encendido / inicio de turno", "where": "Formato de encendido" }
+  ],
+  "certification": [
+    { "role": "S-15", "level": "3", "theory": "16 h", "ojt": "40 h / 10 preparaciones completas", "evaluated": "Pasos 1, 5, 6, 8, 10 y 11", "validity": "24 meses (TD-P07)" },
+    { "role": "S-15", "level": "3 (grúa de CC 50 t)", "theory": "Curso de grúa (NOM-006)", "ojt": "Según MS-ACE-04", "evaluated": "Paso 10", "validity": "12 meses (grúas e izaje)" },
+    { "role": "S-13", "level": "3", "theory": "8 h", "ojt": "16 h / 5 centrados", "evaluated": "Paso 16", "validity": "24 meses (TD-P07)" },
+    { "role": "C-06", "level": "4", "theory": "8 h", "ojt": "5 liberaciones acompañadas", "evaluated": "Revisión de la hoja y del paso 1", "validity": "24 meses (TD-P07)" }
+  ],
+  "glossary": [
+    { "term": "Distribuidor (tundish)", "def": "Recipiente de 30 t que reparte el acero de la olla entre las 6 líneas." },
+    { "term": "Buza calibrada", "def": "Buza de zirconia con un orificio de diámetro exacto que fija el flujo de cada línea." },
+    { "term": "Placa ciega", "def": "Placa que se empuja en el mecanismo para cerrar una línea." },
+    { "term": "Calibrador pasa/no pasa", "def": "Herramienta que confirma que el orificio de la buza está dentro de ± 0.2 mm." },
+    { "term": "Tarjeta de secado", "def": "Registro firmado de que el revestimiento se secó completo en el taller." },
+    { "term": "LEL", "def": "Límite inferior de explosividad del gas; el detector lo mide en %." },
+    { "term": "Buza congelada", "def": "Buza tapada por acero solidificado; pasa si la buza está fría, sobre todo en L1 y L6." }
+  ],
+  "review": [
+    { "area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28" }
+  ]
+}

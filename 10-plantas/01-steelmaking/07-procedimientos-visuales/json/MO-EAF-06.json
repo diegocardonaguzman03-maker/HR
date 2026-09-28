@@ -1,0 +1,390 @@
+{
+  "code": "MO-EAF-06",
+  "pov": "POV-EAF-06",
+  "title": "Medición de temperatura, oxígeno activo y muestreo",
+  "area": "EAF",
+  "areaName": "Hornos — EAF-1 / EAF-2 (puerta de escoria y laboratorio)",
+  "version": "0.1",
+  "owner": "C-05",
+  "manual": "02-operacion/eaf/MO-EAF-06-temperatura-oxigeno-muestreo.md",
+  "deck": "05-capacitacion/MO-EAF-06",
+  "purpose": "Obtener lecturas confiables de temperatura y oxígeno activo y una muestra representativa para decidir el vaciado: T 1,630 ± 15 °C, O 500–900 ppm, C 0.04–0.08 %, P ≤ 0.015 %.",
+  "whyItMatters": "Una sonda húmeda proyecta metal por la puerta. Una lectura falsa hace vaciar frío, caliente o fuera de química, y el aluminio de la olla sale mal calculado.",
+  "startsWhen": "S-01 pide la medición: a mitad del DRI (M1, MO-EAF-03), al inicio del afino (M2) o 1–2 min antes de vaciar (M3, MO-EAF-04).",
+  "endsWhen": "T, O, C y P están en la ventana y S-01 envía los datos para el vaciado (MO-EAF-07) y al horno olla.",
+  "previous": [
+    "MO-EAF-03",
+    "MO-EAF-04"
+  ],
+  "next": [
+    "MO-EAF-07"
+  ],
+  "heroFigure": {
+    "file": "img/eaf-corte-horno.svg",
+    "caption": "Corte del horno: la lanza manipuladora entra por la puerta de escoria e inmerge la sonda a través de la escoria hasta el acero."
+  },
+  "figures": [
+    {
+      "file": "img/eaf-ciclo-colada.svg",
+      "caption": "Momentos de medición en el ciclo: M1 (mitad del DRI), M2 (inicio del afino) y M3 (antes de vaciar)."
+    }
+  ],
+  "roles": [
+    {
+      "code": "S-02",
+      "name": "Segundo Hornero (piso)",
+      "raci": "R",
+      "does": "Monta la sonda, opera la lanza manipuladora, valida la curva y envía la muestra.",
+      "it": "IT-S02"
+    },
+    {
+      "code": "S-01",
+      "name": "Primer Hornero (púlpito)",
+      "raci": "R",
+      "does": "Pide la medición en el momento correcto, decide ajustes y la hora de vaciado.",
+      "it": "IT-S01"
+    },
+    {
+      "code": "S-11",
+      "name": "Muestrero / Analista de Laboratorio",
+      "raci": "R",
+      "does": "Recibe y analiza la muestra en el espectrómetro y reporta el resultado.",
+      "it": "IT-S11"
+    },
+    {
+      "code": "C-05",
+      "name": "Supervisor de Hornos",
+      "raci": "A",
+      "does": "Dueño. Autoriza la medición manual de respaldo y el vaciado con datos incompletos.",
+      "it": "IT-C05"
+    },
+    {
+      "code": "C-07",
+      "name": "Ingeniero de Proceso EAF / LF",
+      "raci": "C",
+      "does": "Define los momentos de medición, los tipos de sonda y las reglas de validación."
+    },
+    {
+      "code": "C-09",
+      "name": "Metalurgista de Producto",
+      "raci": "C",
+      "does": "Define los límites químicos por grado."
+    }
+  ],
+  "goldenRules": [
+    "Sonda húmeda, rota o golpeada no entra al horno: se desecha.",
+    "Nadie frente a la puerta ni en la trayectoria de la lanza mientras está dentro del horno.",
+    "La medición manual solo se hace con autorización de C-05, arco apagado y un observador."
+  ],
+  "epp": [
+    "casco",
+    "careta_dorada",
+    "aluminizado",
+    "guantes",
+    "ropa_fr",
+    "botas",
+    "auditiva",
+    "detector_gas",
+    "lentes"
+  ],
+  "dangerZone": {
+    "red": "Zona roja: ≤ 5 m de la puerta mientras la lanza está dentro del horno.",
+    "yellow": "Zona amarilla: de 5 a 15 m de la puerta.",
+    "rule": "Medición manual: solo el ejecutor y su observador, de lado a la puerta, a ≥ 1.5 m y máximo 2 min en zona roja (MS-ACE-01)."
+  },
+  "hazards": [
+    {
+      "icon": "agua",
+      "text": "Sonda o muestreador húmedo: explosión y proyección de metal por la puerta."
+    },
+    {
+      "icon": "calor",
+      "text": "Radiación térmica y salpicaduras en la puerta durante la inmersión."
+    },
+    {
+      "icon": "electrico",
+      "text": "Arco encendido durante la medición: arco a la lanza."
+    },
+    {
+      "icon": "fuego",
+      "text": "Muestra caliente al retirarla: quemaduras."
+    }
+  ],
+  "phases": [
+    "Preparar",
+    "Medir",
+    "Decidir",
+    "Si falla el robot"
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-01",
+      "icon": "radio",
+      "title": "Pide la medición a tiempo",
+      "action": "Pide a S-02 la medición en el momento que toca: M1 a mitad del DRI (min 24–26), M2 al inicio del afino o M3 1–2 min antes de vaciar.",
+      "check": "Momento correcto: M1 (T), M2 (T + O + muestra) o M3 (T + O)."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-02",
+      "icon": "inspeccionar",
+      "title": "Prepara una sonda seca",
+      "action": "Toma del almacén seco el tipo requerido (T, T + O o muestreador). Revisa que el cartón no esté húmedo, roto ni golpeado.",
+      "check": "Sonda íntegra y seca.",
+      "critical": true,
+      "stop": "La sonda está húmeda, rota o golpeada.",
+      "decision": {
+        "question": "¿Sonda seca y sin daño?",
+        "no": "Deséchala y toma otra."
+      }
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-02",
+      "icon": "conectar",
+      "title": "Monta la sonda",
+      "action": "Coloca la sonda en el portasondas de la lanza hasta el tope.",
+      "check": "El HMI muestra \"contacto OK\"."
+    },
+    {
+      "n": 4,
+      "phase": 0,
+      "role": "S-01",
+      "icon": "electrico",
+      "title": "Reduce la potencia",
+      "action": "Reduce la potencia o apaga el arco según la práctica [Validar con OEM]. En M2 y M3 el DRI debe estar detenido. Confirma por radio.",
+      "check": "Confirmación por radio al piso."
+    },
+    {
+      "n": 5,
+      "phase": 0,
+      "role": "S-02",
+      "icon": "barrera",
+      "title": "Despeja la puerta",
+      "action": "Revisa que nadie esté frente a la puerta ni en la trayectoria de la lanza.",
+      "check": "Nadie a ≤ 5 m de la puerta.",
+      "critical": true,
+      "stop": "Hay alguien frente a la puerta o en la trayectoria de la lanza."
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "S-02",
+      "icon": "temperatura",
+      "title": "Inmerge la sonda",
+      "action": "Ejecuta el ciclo automático de la lanza: 300–400 mm bajo la escoria [Validar con OEM]. T: 4–6 s. O: 8–12 s.",
+      "check": "Ciclo completo, nunca más de 15 s."
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-02",
+      "icon": "tendencia",
+      "title": "Valida la curva",
+      "action": "Busca una meseta estable en la curva del HMI. Si no es válida, repite con otra sonda.",
+      "check": "Variación ≤ 2 °C por ≥ 1.5 s [Supuesto].",
+      "quality": true,
+      "decision": {
+        "question": "¿Curva válida?",
+        "no": "Repite con otra sonda (máx. 2 intentos)."
+      }
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-02",
+      "icon": "muestra",
+      "title": "Retira y envía la muestra",
+      "action": "Retira la paleta sin golpearla. Déjala enfriar en posición protegida y envíala por tubo neumático con su identificación.",
+      "check": "Muestra en el laboratorio con número de colada.",
+      "quality": true
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-11",
+      "icon": "calidad",
+      "title": "Analiza la muestra",
+      "action": "Prepara la superficie, analiza en el espectrómetro y reporta en nivel 2. Si la paleta tiene poros o escoria, pide otra.",
+      "check": "Resultado en ≤ 4 min [Supuesto].",
+      "quality": true
+    },
+    {
+      "n": 10,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "objetivo",
+      "title": "Compara con la ventana de vaciado",
+      "action": "Compara T, O, C y P con la ventana del grado. Decide el ajuste o la hora de vaciado.",
+      "check": "T 1,630 ± 15 °C, O 500–900 ppm, C 0.04–0.08 %, P ≤ 0.015 %.",
+      "decision": {
+        "question": "¿T, O, C y P en ventana?",
+        "no": "Ajusta y mide otra vez. Con P alto no vacíes: avisa a C-05."
+      }
+    },
+    {
+      "n": 11,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "radio",
+      "title": "Informa a la olla y al LF",
+      "action": "Envía T y O finales para calcular las adiciones de la olla (MO-EAF-07) y al horno olla.",
+      "check": "Datos transmitidos."
+    },
+    {
+      "n": 12,
+      "phase": 3,
+      "role": "C-05",
+      "icon": "autorizar",
+      "title": "Autoriza el respaldo manual",
+      "action": "Solo si falla la lanza manipuladora: da permiso verbal y regístralo. Confirma arco apagado y que un segundo trabajador verifique el EPP.",
+      "check": "Autorización registrada.",
+      "critical": true
+    },
+    {
+      "n": 13,
+      "phase": 3,
+      "role": "S-02",
+      "icon": "manual",
+      "title": "Mide a mano solo con permiso",
+      "action": "Con arco apagado y EPP aluminizado completo: un solo intento, de lado a la puerta, a ≥ 1.5 m, máximo 2 min en zona roja y con observador.",
+      "check": "Lectura válida sin exposición prolongada.",
+      "critical": true,
+      "stop": "No hay autorización de C-05 o el arco está encendido."
+    }
+  ],
+  "abnormal": [
+    {
+      "icon": "tendencia",
+      "if": "Sin meseta o lectura errática",
+      "do": "Repite con otra sonda. Limpia contactos y revisa la profundidad.",
+      "call": "S-01; C-07 si se repite en el lote"
+    },
+    {
+      "icon": "agua",
+      "if": "Proyección al inmergir (sonda húmeda)",
+      "do": "Retira la lanza y aléjate de la puerta. Aparta el lote y no lo uses hasta que se seque o se deseche.",
+      "call": "C-05 y C-16"
+    },
+    {
+      "icon": "muestra",
+      "if": "Muestra con porosidad o escoria",
+      "do": "Toma una nueva muestra.",
+      "call": "S-11"
+    },
+    {
+      "icon": "reparar",
+      "if": "Lanza manipuladora fuera de servicio",
+      "do": "Pide mantenimiento. Respaldo manual solo con autorización (paso 12).",
+      "call": "C-05 y Mantenimiento"
+    },
+    {
+      "icon": "tiempo",
+      "if": "Laboratorio sin resultado en más de 6 min",
+      "do": "S-01 decide con T y O. C-05 autoriza vaciar solo si el grado lo permite.",
+      "call": "C-05 y C-09"
+    },
+    {
+      "icon": "temperatura",
+      "if": "T muy distinta a la esperada (> 30 °C)",
+      "do": "Repite la medición. Revisa el DRI (iceberg, MO-EAF-03).",
+      "call": "C-07"
+    },
+    {
+      "icon": "rechazar",
+      "if": "P > 0.015 %",
+      "do": "No vacíes. Aplica MO-EAF-05 §9 (más desescoriado, cal y O₂).",
+      "call": "C-05 y C-09"
+    }
+  ],
+  "records": [
+    {
+      "what": "Lecturas M1, M2, M3: T, O, hora, lote de sonda, válida / no válida",
+      "when": "Cada colada",
+      "where": "Nivel 2"
+    },
+    {
+      "what": "Análisis químico con número de colada",
+      "when": "Cada muestra",
+      "where": "Laboratorio / nivel 2"
+    },
+    {
+      "what": "Consumo de sondas y lecturas fallidas por lote",
+      "when": "Cada lote",
+      "where": "Control de calidad del proveedor"
+    },
+    {
+      "what": "Autorizaciones de medición manual",
+      "when": "Cuando ocurre",
+      "where": "Bitácora de turno"
+    }
+  ],
+  "certification": [
+    {
+      "role": "S-02",
+      "level": "3",
+      "theory": "12 h (sondas, curvas, ventana de vaciado)",
+      "ojt": "40 h / 50 mediciones",
+      "evaluated": "Sonda seca, puerta despejada, respaldo manual + interpretación de 5 curvas",
+      "validity": "24 meses"
+    },
+    {
+      "role": "S-11",
+      "level": "3",
+      "theory": "24 h (OES, preparación, trazabilidad)",
+      "ojt": "80 h / 100 análisis",
+      "evaluated": "Preparación y reporte; muestra no representativa",
+      "validity": "24 meses"
+    },
+    {
+      "role": "S-01",
+      "level": "3",
+      "theory": "8 h",
+      "ojt": "20 decisiones de vaciado",
+      "evaluated": "Decisión con T, O, C y P",
+      "validity": "24 meses"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Lanza manipuladora",
+      "def": "Robot que mete la sonda al horno por la puerta sin exponer al operador."
+    },
+    {
+      "term": "Sonda combinada",
+      "def": "Sonda desechable que mide temperatura y oxígeno activo (celda de ZrO₂)."
+    },
+    {
+      "term": "Meseta",
+      "def": "Parte plana de la curva de temperatura; indica una lectura válida."
+    },
+    {
+      "term": "Oxígeno activo",
+      "def": "Oxígeno disuelto en el acero (ppm); sirve para estimar el C y calcular el Al de la olla."
+    },
+    {
+      "term": "Paleta",
+      "def": "Muestra de acero que viaja al laboratorio por tubo neumático."
+    },
+    {
+      "term": "OES (espectrómetro)",
+      "def": "Equipo del laboratorio que da la química de la muestra."
+    },
+    {
+      "term": "Ventana de vaciado",
+      "def": "Rango de T, O, C y P en el que se puede vaciar."
+    }
+  ],
+  "review": [
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    }
+  ]
+}

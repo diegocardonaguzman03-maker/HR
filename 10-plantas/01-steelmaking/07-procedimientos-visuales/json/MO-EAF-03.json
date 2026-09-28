@@ -1,0 +1,91 @@
+{
+  "code": "MO-EAF-03",
+  "pov": "POV-EAF-03",
+  "title": "Alimentación continua de DRI/HBI",
+  "area": "EAF",
+  "areaName": "Hornos — EAF-1 / EAF-2 (5.º agujero)",
+  "version": "0.1",
+  "owner": "C-07",
+  "manual": "02-operacion/eaf/MO-EAF-03-alimentacion-continua-dri.md",
+  "deck": "05-capacitacion/MO-EAF-03",
+  "purpose": "Fundir ≈ 100 t de DRI/HBI por colada alimentándolo al ritmo que la potencia puede fundir (30–35 kg/min/MW), sin acumulaciones y sin DRI húmedo.",
+  "whyItMatters": "DRI húmedo genera vapor e hidrógeno y explota. Alimentar más rápido de lo que se funde forma un \"iceberg\" que hierve de golpe y saca escoria por la puerta.",
+  "startsWhen": "La canasta está fundida ≥ 70 %, con baño plano y escoria espumosa formándose (MO-EAF-04, etapa 3).",
+  "endsWhen": "El DRI se detiene 3–5 min antes del vaciado o al llegar al total, y el horno pasa al afino.",
+  "previous": ["MO-EAF-04"],
+  "next": ["MO-EAF-05", "MO-EAF-06"],
+  "heroFigure": { "file": "img/eaf-corte-horno.svg", "caption": "Corte del horno: el DRI cae por el 5.º agujero de la bóveda al centro del baño, entre los electrodos." },
+  "figures": [
+    { "file": "img/eaf-perfil-potencia.svg", "caption": "Perfil de potencia: el DRI se alimenta en la etapa 3 (min 12–38 de arco, ≈ 119 MW)." }
+  ],
+  "roles": [
+    { "code": "S-01", "name": "Primer Hornero (púlpito)", "raci": "R", "does": "Arranca, ajusta y detiene la alimentación; vigila temperatura, escoria y señales de acumulación.", "it": "IT-S01" },
+    { "code": "S-02", "name": "Segundo Hornero (piso)", "raci": "R", "does": "Mide la temperatura durante la alimentación y observa el baño por la puerta o la cámara.", "it": "IT-S02" },
+    { "code": "C-07", "name": "Ingeniero de Proceso EAF / LF", "raci": "A", "does": "Dueño. Define consignas de kg/min/MW, rampas, relación cal/DRI y límites de temperatura." },
+    { "code": "C-05", "name": "Supervisor de Hornos", "raci": "C", "does": "Autoriza cambios de consigna fuera de rango y alimentar con DRI de calidad dudosa.", "it": "IT-C05" }
+  ],
+  "goldenRules": [
+    "DRI o HBI húmedo no entra al horno: vapor + hidrógeno = explosión.",
+    "Nunca pases de 35 kg/min/MW: el exceso forma icebergs que hierven de golpe.",
+    "No arranques el DRI sin baño plano: canasta fundida ≥ 70 % y ≥ 150 kWh/t."
+  ],
+  "epp": ["casco", "lentes", "ropa_fr", "guantes", "botas", "auditiva", "detector_gas", "respirador"],
+  "dangerZone": {
+    "red": "Zona bajo el 5.º agujero en la plataforma de bóveda: sin personas durante la alimentación.",
+    "yellow": "Galerías y cámaras del transportador de DRI: solo con permiso de espacio confinado, purga de N₂ y medición (O₂ 19.5–23.5 %, CO < 25 ppm).",
+    "rule": "Con ebullición violenta (boiling): todos fuera del frente de la puerta de escoria."
+  },
+  "hazards": [
+    { "icon": "agua", "text": "DRI o HBI húmedo: vapor e hidrógeno, explosión en el horno." },
+    { "icon": "flujo", "text": "Iceberg de DRI que se funde de golpe: ebullición y escoria por la puerta." },
+    { "icon": "gas", "text": "Nitrógeno de inertización en galerías del transportador: asfixia." },
+    { "icon": "fuego", "text": "Reoxidación del DRI en silos y polvo de DRI: incendio y CO." }
+  ],
+  "phases": ["Antes de arrancar", "Durante la alimentación", "Al terminar"],
+  "steps": [
+    { "n": 1, "phase": 0, "role": "S-01", "icon": "calidad", "title": "Revisa la calidad del lote de DRI", "action": "Lee en nivel 2 metalización, carbono, finos, temperatura y el reporte de humedad de la planta DRI.", "check": "Metalización ≥ 91 % (objetivo ≥ 93 % [Supuesto]), finos ≤ 5 % y sin reporte de humedad.", "critical": true, "stop": "Hay reporte o evidencia de humedad en el DRI.", "decision": { "question": "¿DRI seco y en especificación?", "no": "No alimentes. Aísla el lote; avisa a C-05, C-07 y planta DRI." } },
+    { "n": 2, "phase": 0, "role": "S-01", "icon": "hmi", "title": "Verifica el sistema de alimentación", "action": "Revisa inventario en tolvas para la colada, alimentador sin alarmas, ducto del 5.º agujero libre y cal disponible.", "check": "Sin alarmas." },
+    { "n": 3, "phase": 0, "role": "S-01", "icon": "verificar", "title": "Confirma la condición de arranque", "action": "Revisa la energía acumulada, la corriente estable (baño plano) y la escoria espumosa formándose.", "check": "≥ 150 kWh/t y canasta fundida ≥ 70 %." },
+    { "n": 4, "phase": 1, "role": "S-01", "icon": "arrancar", "title": "Arranca el DRI con rampa", "action": "Inicia a 25 kg/min/MW y sube a 32 kg/min/MW en 2–3 min.", "check": "Tasa estable ≈ 3.8 t/min a ≈ 119 MW (rango 3.5–4.3 t/min)." },
+    { "n": 5, "phase": 1, "role": "S-01", "icon": "material", "title": "Arranca la cal y la dolomita", "action": "Alimenta la cal con la relación cal/DRI de C-07 y la dolomita según el MgO objetivo.", "check": "Relación cal/DRI en consigna (50–65 kg/t de DRI [Supuesto]).", "quality": true },
+    { "n": 6, "phase": 1, "role": "S-02", "icon": "temperatura", "title": "Mide la temperatura a mitad de carga", "action": "A pedido de S-01, mide con la lanza manipuladora cerca del min 24–26 de arco (MO-EAF-06).", "check": "1,570–1,610 °C [Supuesto].", "quality": true },
+    { "n": 7, "phase": 1, "role": "S-01", "icon": "ajustar", "title": "Ajusta la consigna con la temperatura", "action": "Si T < 1,560 °C, baja la tasa 10–20 %. Si T > 1,630 °C, súbela 5–10 % sin pasar 35 kg/min/MW.", "check": "T en rango y consigna ≤ 35 kg/min/MW.", "decision": { "question": "¿T de 1,570 a 1,610 °C?", "no": "Ajusta la tasa y vuelve a medir." } },
+    { "n": 8, "phase": 1, "role": "S-01", "icon": "buscar", "title": "Vigila las señales de iceberg", "action": "Vigila caída de T, arco inestable en una fase, montón visible bajo el 5.º agujero y caída de CO en humos. S-02 te avisa lo que ve por la puerta.", "check": "Sin señales de acumulación.", "critical": true, "decision": { "question": "¿Baño sin iceberg?", "no": "Ve al paso 9: corrige el iceberg." } },
+    { "n": 9, "phase": 1, "role": "S-01", "icon": "oxigeno", "title": "Corrige el iceberg", "action": "Detén el DRI, dirige O₂ a la zona, pon potencia plena y pide medir T. Reanuda a 25 kg/min/MW cuando el montón se funda.", "check": "Montón fundido y T ≥ 1,580 °C.", "critical": true, "stop": "Sale escoria en masa por la puerta (ebullición violenta)." },
+    { "n": 10, "phase": 1, "role": "S-01", "icon": "tendencia", "title": "Controla el total de DRI", "action": "Sigue el acumulado contra el objetivo que calcula nivel 2.", "check": "≈ 100 t ± 5 t.", "quality": true, "decision": { "question": "¿DRI objetivo cargado?", "no": "Sigue alimentando y midiendo T." } },
+    { "n": 11, "phase": 2, "role": "S-01", "icon": "detener", "title": "Detén la alimentación", "action": "Detén el DRI 3–5 min antes del vaciado (fin de la etapa 3) o al llegar al total.", "check": "DRI detenido; el horno pasa al afino." },
+    { "n": 12, "phase": 2, "role": "S-01", "icon": "registrar", "title": "Registra la alimentación", "action": "Registra total de DRI, tasa promedio, kg/min/MW promedio, temperaturas medidas y eventos.", "check": "Registro completo en nivel 2." }
+  ],
+  "abnormal": [
+    { "icon": "agua", "if": "Reporte o evidencia de humedad en el DRI", "do": "Detén el DRI. Aísla el lote. No se usa hasta que C-07 y la planta DRI lo liberen.", "call": "C-05, C-07 y planta DRI" },
+    { "icon": "temperatura", "if": "La T cae > 20 °C en 5 min o queda < 1,560 °C", "do": "Baja o detén el DRI. Potencia plena y O₂ a la zona.", "call": "C-07" },
+    { "icon": "flujo", "if": "Ebullición violenta: escoria saliendo por la puerta", "do": "Detén DRI y carbono. Baja el O₂. Todos fuera del frente de la puerta. No agregues carbono en masa.", "call": "C-05 y C-04" },
+    { "icon": "detener", "if": "Alimentador atascado o tasa cero", "do": "Cambia a DRI frío/HBI si hay. Mantenimiento con LOTO.", "call": "C-05 y Mantenimiento" },
+    { "icon": "gas", "if": "Alarma de O₂ alto o temperatura alta en silo o transportador", "do": "Protocolo de la planta DRI y purga de N₂. No entres.", "call": "C-05 y C-16" },
+    { "icon": "buscar", "if": "Humo o finos excesivos en el 4.º agujero (finos > 5 %)", "do": "Baja la tasa y avisa a la planta DRI.", "call": "C-07" },
+    { "icon": "alto", "if": "Fuga de agua (Δ caudal > 2 %)", "do": "El DRI se detiene. Con disparo (> 4 %) o agua visible: arco fuera, no inclines, evacúa a ≥ 25 m (MO-EAF-01 §9).", "call": "C-05 y C-04" }
+  ],
+  "records": [
+    { "what": "Calidad por lote de DRI (metalización, C, finos, T, humedad)", "when": "Cada lote", "where": "Nivel 2" },
+    { "what": "Tendencia de tasa, kg/min/MW, MW y T", "when": "Cada colada", "where": "Nivel 2" },
+    { "what": "Eventos de iceberg, paros de alimentación y humedad", "when": "Cuando ocurre", "where": "Bitácora del horno" },
+    { "what": "Permisos de espacio confinado en galerías", "when": "Cada entrada", "where": "Sistema de permisos (MS-ACE-05)" }
+  ],
+  "certification": [
+    { "role": "S-01", "level": "3", "theory": "20 h (balance de masa y energía, DRI, escoria)", "ojt": "120 h / 40 coladas", "evaluated": "Pasos 1, 8 y 9 + simulador de iceberg", "validity": "24 meses" },
+    { "role": "S-02", "level": "2", "theory": "8 h", "ojt": "20 coladas", "evaluated": "Paso 6 y reconocimiento de señales de iceberg", "validity": "24 meses" },
+    { "role": "C-07", "level": "4", "theory": "24 h", "ojt": "—", "evaluated": "Diseño de consignas y análisis de desviación", "validity": "24 meses" }
+  ],
+  "glossary": [
+    { "term": "DRI / HBI", "def": "Hierro de reducción directa (en pellet) y su versión briqueteada en caliente." },
+    { "term": "kg/min/MW", "def": "Consigna de alimentación: kilos de DRI por minuto por cada MW de potencia activa." },
+    { "term": "Iceberg", "def": "Montón de DRI sin fundir que se acumula bajo el 5.º agujero." },
+    { "term": "5.º agujero", "def": "Abertura de la bóveda por donde cae el DRI al centro del baño." },
+    { "term": "Metalización", "def": "Porcentaje del hierro del DRI que ya está como metal." },
+    { "term": "Baño plano", "def": "Momento en que la chatarra ya se fundió y el arco trabaja sobre acero líquido." },
+    { "term": "Basicidad B2", "def": "Relación CaO/SiO₂ de la escoria; objetivo 1.8–2.2." }
+  ],
+  "review": [
+    { "area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28" }
+  ]
+}

@@ -1,0 +1,427 @@
+{
+  "code": "MO-OLL-01",
+  "pov": "POV-OLL-01",
+  "title": "Preparación de olla: válvula, arena, tapón y precalentamiento",
+  "area": "OLL",
+  "areaName": "Nave de ollas — taller y estación de preparación de ollas",
+  "version": "0.1",
+  "owner": "C-15",
+  "manual": "02-operacion/ollas-lf/MO-OLL-01-preparacion-olla.md",
+  "deck": "05-capacitacion/MO-OLL-01",
+  "purpose": "Entregar al horno una olla de 150 t seca, caliente (1,000–1,100 °C), con refractario vigente, válvula probada y cerrada, tapón con argón y arena de sello.",
+  "whyItMatters": "Una olla fría o húmeda puede explotar o perforarse con 150 t de acero dentro. Una arena mal puesta hace que la olla no abra en la colada continua.",
+  "startsWhen": "La olla vacía regresa de la colada continua (fin de olla en MO-CC1-05 / MO-CC2-05, traslado MO-OLL-02).",
+  "endsWhen": "La lista de entrega está firmada y la olla llega al carro de vaciado del EAF (MO-EAF-07).",
+  "previous": [
+    "MO-OLL-02",
+    "MO-CC1-05",
+    "MO-CC2-05"
+  ],
+  "next": [
+    "MO-EAF-07",
+    "MM-OLL-01"
+  ],
+  "heroFigure": {
+    "file": "img/olla-corte-valvula-tapon.svg",
+    "caption": "Corte de la olla de 150 t: refractario, cara caliente, válvula deslizante (buza, placas, arena de cromita) y tapón poroso."
+  },
+  "figures": [
+    {
+      "file": "img/it-S08-puesto.svg",
+      "caption": "Área de preparación de ollas: volteo, estación de preparación, precalentador y entrega."
+    }
+  ],
+  "roles": [
+    {
+      "code": "S-08",
+      "name": "Preparador de Ollas (Ollero)",
+      "raci": "R",
+      "does": "Prepara la olla, hace las pruebas, precalienta, pone la arena y firma la lista de entrega.",
+      "it": "IT-S08"
+    },
+    {
+      "code": "S-09",
+      "name": "Operador de Grúa de Colada",
+      "raci": "R",
+      "does": "Mueve la olla entre volteo, preparación, precalentador y carro de vaciado.",
+      "it": "IT-S09"
+    },
+    {
+      "code": "S-24",
+      "name": "Refractarista",
+      "raci": "R",
+      "does": "Cambia placas, buzas y tapón; repara línea de escoria y zona de impacto.",
+      "it": "IT-S24"
+    },
+    {
+      "code": "C-15",
+      "name": "Especialista de Refractarios",
+      "raci": "A",
+      "does": "Dueño del proceso. Define criterios de retiro y curvas de calentamiento; decide el retiro de una olla."
+    },
+    {
+      "code": "C-04",
+      "name": "Jefe de Turno de Acería",
+      "raci": "C",
+      "does": "Asigna ollas a coladas según la secuencia y la disponibilidad.",
+      "it": "IT-C04"
+    },
+    {
+      "code": "S-02",
+      "name": "Segundo Hornero",
+      "raci": "I",
+      "does": "Recibe la olla y revisa la lista de entrega (MO-EAF-07).",
+      "it": "IT-S02"
+    }
+  ],
+  "goldenRules": [
+    "Nunca entregues una olla bajo 1,000 °C. Olla fría (más de 4 h fuera de ciclo): precalienta ≥ 8 h.",
+    "Arena seca, con la olla ya caliente, desde la posición protegida y justo antes de entregar.",
+    "Nadie bajo una olla suspendida. Nunca reenciendas el precalentador sin purga."
+  ],
+  "epp": [
+    "casco",
+    "careta_dorada",
+    "aluminizado",
+    "ropa_fr",
+    "guantes",
+    "botas",
+    "lentes",
+    "auditiva",
+    "respirador",
+    "detector_gas"
+  ],
+  "dangerZone": {
+    "red": "Volteo de escoria: zona roja ≤ 15 m del punto de volteo, nadie a pie. Nadie bajo una olla suspendida ni en la trayectoria de la grúa.",
+    "yellow": "Zona amarilla: de 15 a 30 m del punto de volteo. Solo personal autorizado con EPP completo.",
+    "rule": "La fosa de volteo debe estar seca. El cambio de placas se hace con la olla asentada y la hidráulica de la válvula bloqueada."
+  },
+  "hazards": [
+    {
+      "icon": "agua",
+      "text": "Olla, arena o refractario húmedos: explosión o perforación al recibir acero."
+    },
+    {
+      "icon": "calor",
+      "text": "Olla a 1,000–1,100 °C: radiación térmica y quemaduras (máx. 2 min frente a la olla)."
+    },
+    {
+      "icon": "gas",
+      "text": "Precalentador de gas natural: explosión si se reenciende sin purga; CO."
+    },
+    {
+      "icon": "grua",
+      "text": "Olla suspendida: aplastamiento."
+    },
+    {
+      "icon": "bloqueo",
+      "text": "Mecanismo de la válvula: atrapamiento de manos al cambiar placas."
+    }
+  ],
+  "phases": [
+    "Limpiar e inspeccionar",
+    "Válvula y tapón",
+    "Calentar y entregar"
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-08",
+      "icon": "registrar",
+      "title": "Recibe la olla vacía",
+      "action": "Anota el número de olla, las coladas acumuladas y lo que reporta la colada continua: apertura libre y flujo.",
+      "check": "Registro de olla con número y coladas."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-08",
+      "icon": "inspeccionar",
+      "title": "Revisa la fosa de volteo",
+      "action": "Revisa que la fosa de volteo esté seca y que nadie esté a 15 m o menos del punto de volteo.",
+      "check": "Fosa seca, sin agua estancada; zona roja de 15 m libre.",
+      "critical": true,
+      "stop": "Hay agua en la fosa o alguien a menos de 15 m."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-09",
+      "icon": "vaciar",
+      "title": "Voltea escoria y costra",
+      "action": "Con la grúa de colada, voltea la olla en la estación, sobre la fosa seca. Nadie bajo la olla.",
+      "check": "Olla limpia, sin costra en fondo ni asiento.",
+      "critical": true
+    },
+    {
+      "n": 4,
+      "phase": 0,
+      "role": "S-08",
+      "icon": "inspeccionar",
+      "title": "Inspecciona el refractario",
+      "action": "Revisa y mide línea de escoria, barril, fondo, zona de impacto, asiento de buza y tapón. Revisa la termografía del ciclo anterior. S-24 te apoya.",
+      "check": "Línea de escoria ≥ 50 mm y barril ≥ 40 mm [Supuesto]; coraza ≤ 350 °C [Supuesto]; menos de 80 coladas.",
+      "quality": true
+    },
+    {
+      "n": 5,
+      "phase": 0,
+      "role": "C-15",
+      "icon": "autorizar",
+      "title": "Decide si la olla sigue o se retira",
+      "action": "Si falla un criterio, decide retirar la olla a reparación (MM-OLL-01) y registra la decisión. Avisa a C-04 para reasignar ollas.",
+      "check": "Decisión registrada en el registro de ollas.",
+      "critical": true,
+      "decision": {
+        "question": "¿Olla sigue en servicio?",
+        "no": "Retiro a reparación (MM-OLL-01)."
+      }
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "S-08",
+      "icon": "oxigeno",
+      "title": "Limpia el asiento de la buza",
+      "action": "Con la lanza de O₂, desde arriba, limpia el asiento de la buza superior sin dañar el bloque. Usa ropa limpia, sin grasa.",
+      "check": "Asiento limpio, sin costra."
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-24",
+      "icon": "bloqueo",
+      "title": "Bloquea y revisa las placas",
+      "action": "Con la olla asentada, desconecta y bloquea la hidráulica de la válvula (MS-ACE-02). Revisa orificio y superficie de las placas; cámbialas según criterio OEM y conteo.",
+      "check": "Candado puesto; placas vigentes (2–5 coladas por juego [Validar con OEM]).",
+      "critical": true,
+      "stop": "La olla está suspendida o la hidráulica no está bloqueada."
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-24",
+      "icon": "cambiar",
+      "title": "Cambia la buza colectora",
+      "action": "Si la buza colectora está erosionada o tiene costra, cámbiala por una nueva.",
+      "check": "Buza nueva o íntegra."
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-24",
+      "icon": "verificar",
+      "title": "Prueba la válvula",
+      "action": "Reconecta la hidráulica. Haz 3 carreras completas y revisa tiempo y suavidad. Deja la válvula cerrada.",
+      "check": "3 carreras completas sin traba; válvula cerrada.",
+      "critical": true
+    },
+    {
+      "n": 10,
+      "phase": 1,
+      "role": "S-08",
+      "icon": "gas",
+      "title": "Prueba el tapón poroso",
+      "action": "Conecta el argón y mide el caudal a la presión de prueba. Confirma burbujeo o caudal.",
+      "check": "100–200 NL/min [Supuesto] a la presión de prueba.",
+      "quality": true
+    },
+    {
+      "n": 11,
+      "phase": 2,
+      "role": "S-08",
+      "icon": "temperatura",
+      "title": "Precalienta la olla",
+      "action": "Mete la olla al precalentador; la purga automática va antes de encender. Calienta a 1,000–1,100 °C. Olla fría (> 4 h fuera): ≥ 8 h. Olla nueva o revestida: curva completa.",
+      "check": "Cara caliente 1,000–1,100 °C con pirómetro; horas cumplidas en el registro.",
+      "critical": true,
+      "stop": "Se apagó la flama y no hubo purga antes de reencender.",
+      "decision": {
+        "question": "¿Cara caliente ≥ 1,000 °C?",
+        "no": "Sigue precalentando. Olla fría: ≥ 8 h."
+      }
+    },
+    {
+      "n": 12,
+      "phase": 2,
+      "role": "S-08",
+      "icon": "material",
+      "title": "Llena la buza con arena",
+      "action": "Con la olla caliente y fuera del precalentador, revisa que la arena esté seca. Desde la posición designada, con tubo o embudo y EPP aluminizado, llena la buza y forma el cono. No te asomes.",
+      "check": "Cono completo sin huecos; arena ≤ 0.2 % de humedad [Supuesto]; ≤ 2 min frente a la olla.",
+      "critical": true,
+      "stop": "La arena está húmeda o la tolva estaba abierta."
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-08",
+      "icon": "checklist",
+      "title": "Verifica antes de entregar",
+      "action": "Mide la cara caliente. Revisa que la arena no se haya removido, que la válvula esté cerrada y la conexión de argón.",
+      "check": "Cara caliente ≥ 1,000 °C; arena, válvula y argón conformes.",
+      "critical": true
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "S-08",
+      "icon": "marcar",
+      "title": "Firma la lista de entrega",
+      "action": "Llena y firma la lista de entrega de la olla: T de cara caliente, horas de precalentamiento, placas, tapón y lote de arena.",
+      "check": "Lista de entrega firmada."
+    },
+    {
+      "n": 15,
+      "phase": 2,
+      "role": "S-09",
+      "icon": "grua",
+      "title": "Lleva la olla al carro de vaciado",
+      "action": "Lleva la olla al carro de vaciado del EAF (MO-EAF-07) sin perder tiempo. Nadie bajo la olla.",
+      "check": "Olla en el carro en ≤ 10 min [Supuesto]."
+    }
+  ],
+  "abnormal": [
+    {
+      "icon": "calor",
+      "if": "Punto caliente en la coraza > 350 °C [Supuesto]",
+      "do": "Retira la olla del ciclo. C-15 la evalúa.",
+      "call": "C-15 y C-04"
+    },
+    {
+      "icon": "fuego",
+      "if": "Perforación de olla (en cualquier estación)",
+      "do": "Evacúa a ≥ 25 m. El metal va a la fosa seca. Nunca uses agua. Aplica MS-ACE-09.",
+      "call": "C-04, C-16 y C-15"
+    },
+    {
+      "icon": "gas",
+      "if": "El tapón no pasa argón",
+      "do": "Limpieza con O₂ en caliente según práctica. Si falla, cambio de tapón o C-04 decide marcar la olla \"sin Ar\".",
+      "call": "C-15 y C-04"
+    },
+    {
+      "icon": "rechazar",
+      "if": "La válvula no hace la carrera completa",
+      "do": "No entregues la olla. S-24 corrige.",
+      "call": "C-15"
+    },
+    {
+      "icon": "temperatura",
+      "if": "La olla no llega a 1,000 °C",
+      "do": "Sigue precalentando. Si no hay otra olla, C-04 decide con C-07 el ajuste de temperatura de vaciado.",
+      "call": "C-04 y C-07"
+    },
+    {
+      "icon": "alarma",
+      "if": "Falla de flama del precalentador",
+      "do": "El gas se corta solo. Purga antes de reencender. Pide mantenimiento.",
+      "call": "Mantenimiento"
+    },
+    {
+      "icon": "agua",
+      "if": "Arena húmeda",
+      "do": "No la uses. Cambia el lote y revisa cómo se guarda.",
+      "call": "C-15 y C-17"
+    }
+  ],
+  "records": [
+    {
+      "what": "Registro de olla por ciclo (número, coladas, inspección, placas, buzas, tapón, lote de arena, T de cara caliente, horas de precalentamiento, firma de entrega)",
+      "when": "Cada ciclo de olla",
+      "where": "Registro de ollas"
+    },
+    {
+      "what": "Registro de apertura libre por olla",
+      "when": "Cada colada",
+      "where": "Registro de CC"
+    },
+    {
+      "what": "Retiros y reparaciones de olla",
+      "when": "Cuando ocurre",
+      "where": "MM-OLL-01"
+    },
+    {
+      "what": "Termografía de coraza",
+      "when": "Cada ciclo",
+      "where": "Registro de termografía"
+    }
+  ],
+  "certification": [
+    {
+      "role": "S-08",
+      "level": "3",
+      "theory": "24 h",
+      "ojt": "120 h / 40 ollas",
+      "evaluated": "Pasos 2–3 (volteo), 11, 12 y 13 + criterios de retiro",
+      "validity": "24 meses"
+    },
+    {
+      "role": "S-24",
+      "level": "3",
+      "theory": "24 h",
+      "ojt": "120 h / 30 cambios de placas",
+      "evaluated": "Paso 7 con LOTO; paso 9 (prueba de válvula)",
+      "validity": "24 meses; entrada a olla (espacio confinado) 12 meses"
+    },
+    {
+      "role": "S-09",
+      "level": "3",
+      "theory": "Según MO-OLL-02",
+      "ojt": "20 volteos",
+      "evaluated": "Paso 3 (volteo)",
+      "validity": "12 meses (grúas e izaje)"
+    },
+    {
+      "role": "C-15",
+      "level": "4",
+      "theory": "32 h + evaluador",
+      "ojt": "—",
+      "evaluated": "Criterios de retiro y curvas de calentamiento",
+      "validity": "24 meses"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Cara caliente",
+      "def": "Superficie interior del refractario que toca el acero."
+    },
+    {
+      "term": "Válvula deslizante",
+      "def": "Placas en el fondo de la olla que abren y cierran el chorro en la colada continua."
+    },
+    {
+      "term": "Tapón poroso",
+      "def": "Pieza refractaria del fondo por donde entra el argón para agitar el acero."
+    },
+    {
+      "term": "Arena de sello (cromita)",
+      "def": "Arena seca que llena la buza para que el acero no se solidifique en ella."
+    },
+    {
+      "term": "Apertura libre",
+      "def": "La olla abre sola al correr la válvula, sin lancear. Meta: ≥ 98 % de las coladas."
+    },
+    {
+      "term": "Olla fría",
+      "def": "Olla que estuvo más de 4 h fuera de ciclo; se precalienta ≥ 8 h."
+    },
+    {
+      "term": "Purga",
+      "def": "Barrido de aire del precalentador antes de encender, para sacar el gas acumulado."
+    },
+    {
+      "term": "Coladas del refractario",
+      "def": "Número de coladas que lleva el revestimiento; se retira a las 60–80."
+    }
+  ],
+  "review": [
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    }
+  ]
+}

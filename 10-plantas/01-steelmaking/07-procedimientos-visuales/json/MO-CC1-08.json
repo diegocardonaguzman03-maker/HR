@@ -1,0 +1,430 @@
+{
+  "code": "MO-CC1-08",
+  "pov": "POV-CC1-08",
+  "title": "Corte, marcado y manejo en mesa de enfriamiento",
+  "area": "CC1",
+  "areaName": "Colada Continua 1 — oxicorte, marcado, mesa de enfriamiento y patio de planchón",
+  "version": "0.1",
+  "owner": "C-06",
+  "manual": "02-operacion/cc1/MO-CC1-08-corte-marcado-mesa-enfriamiento.md",
+  "deck": "05-capacitacion/MO-CC1-08",
+  "purpose": "Cortar el planchón a la longitud pedida (8–11 m, ± 15 mm), marcarlo bien para no perder su identidad y apilarlo sin accidentes ni daño, listo para inspección y despacho.",
+  "whyItMatters": "Un planchón mal marcado pierde su trazabilidad y se retiene. Un izaje con la grúa equivocada o una pila mal hecha puede aplastar a alguien. Un grado sensible enfriado con agua se agrieta.",
+  "startsWhen": "El planchón sale del último segmento de la máquina en colada (MO-CC1-03, MO-CC1-04).",
+  "endsWhen": "El planchón queda en pila o en carga caliente con su identificación y estado en el MES; solo se despachan los liberados por inspección (MO-CC1-09).",
+  "previous": [
+    "MO-CC1-03",
+    "MO-CC1-04",
+    "MO-CC1-07"
+  ],
+  "next": [
+    "MO-CC1-09"
+  ],
+  "heroFigure": {
+    "file": "img/cc1-perfil-maquina.svg",
+    "caption": "Perfil de la máquina CC1: oxicorte (9) y mesa de salida (10) al final de la línea."
+  },
+  "figures": [
+    {
+      "file": "img/cc1-defectos-planchon.svg",
+      "caption": "Mapa de defectos del planchón: lo que se separa para inspección (MO-CC1-09)."
+    }
+  ],
+  "roles": [
+    {
+      "code": "S-16",
+      "name": "Operador de Corte y Marcado",
+      "raci": "R",
+      "does": "Carga el programa de longitudes, opera el oxicorte, hace despuntes y muestras, marca y verifica la identificación.",
+      "it": "IT-S16"
+    },
+    {
+      "code": "S-17",
+      "name": "Operador de Mesa de Enfriamiento y Despacho",
+      "raci": "R",
+      "does": "Pesa, separa por destino, apila, cubre las pilas de enfriamiento lento y despacha. Hoy también cubre el izaje con la grúa de producto.",
+      "it": "IT-S17"
+    },
+    {
+      "code": "C-06",
+      "name": "Supervisor de Colada Continua",
+      "raci": "A",
+      "does": "Dueño del proceso. Asegura el programa de corte y la trazabilidad; autoriza cortes manuales.",
+      "it": "IT-C06"
+    },
+    {
+      "code": "S-18",
+      "name": "Inspector de Calidad de Semiterminado",
+      "raci": "C",
+      "does": "Recibe los planchones para inspección y retiene los que tienen evento.",
+      "it": "IT-S18"
+    },
+    {
+      "code": "S-12",
+      "name": "Operador de Púlpito de Colada",
+      "raci": "C",
+      "does": "Envía los datos de la colada y los eventos al tracking.",
+      "it": "IT-S12"
+    },
+    {
+      "code": "C-09",
+      "name": "Metalurgista de Producto",
+      "raci": "C",
+      "does": "Define qué planchones van a enfriamiento lento o a retención."
+    }
+  ],
+  "goldenRules": [
+    "Planchón solo con grúa de 45 t con tenaza. Nunca con la de 25 t ni la de 50 t. Nadie bajo la carga.",
+    "La ID marcada debe ser igual a la del MES. Si no coincide, remarca y retén el planchón.",
+    "Grados sensibles (HSLA con Nb) se enfrían lento en pila cubierta. Nunca con agua."
+  ],
+  "epp": [
+    "casco",
+    "lentes",
+    "ropa_fr",
+    "guantes",
+    "botas",
+    "auditiva",
+    "respirador"
+  ],
+  "dangerZone": {
+    "red": "Zona roja: bajo la trayectoria de la grúa (± 5 m de la proyección de la carga) y entre pilas durante el izaje.",
+    "yellow": "Mesa de rodillos, carro de transferencia y oxicorte: nadie camina sobre la mesa; LOTO para intervenir.",
+    "rule": "Corte manual fuera de la máquina de oxicorte solo con permiso de trabajo en caliente."
+  },
+  "hazards": [
+    {
+      "icon": "grua",
+      "text": "Planchón suspendido de hasta 32.8 t y caliente: aplastamiento."
+    },
+    {
+      "icon": "oxigeno",
+      "text": "Oxicorte con O₂ y gas natural: incendio, retroceso de flama, quemaduras."
+    },
+    {
+      "icon": "calor",
+      "text": "Planchón a 800–1,000 °C: quemadura por radiación o contacto."
+    },
+    {
+      "icon": "girar",
+      "text": "Mesa de rodillos y carro de transferencia: atrapamiento o golpe."
+    },
+    {
+      "icon": "material",
+      "text": "Caída de planchones de una pila mal hecha."
+    }
+  ],
+  "phases": [
+    "Antes de cortar",
+    "Corte y marcado",
+    "Manejo y despacho"
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-16",
+      "icon": "hmi",
+      "title": "Revisa el programa de corte",
+      "action": "Revisa las longitudes por orden y ajusta el final de la secuencia para cortar lo menos posible.",
+      "check": "Programa cargado; longitudes de 8–11 m."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-16",
+      "icon": "oxigeno",
+      "title": "Verifica el oxicorte",
+      "action": "Revisa presiones de O₂ y gas, arrestaflamas y válvulas de retención. Busca fugas, limpia boquillas y haz la prueba de flama.",
+      "check": "Flama estable; sin fugas; arrestaflamas en su lugar.",
+      "critical": true,
+      "stop": "Hay fuga de O₂ o de gas, o falta un arrestaflamas."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-16",
+      "icon": "marcar",
+      "title": "Prueba el marcado",
+      "action": "Haz una marca de prueba en la placa.",
+      "check": "Marca legible."
+    },
+    {
+      "n": 4,
+      "phase": 1,
+      "role": "S-16",
+      "icon": "cortar",
+      "title": "Despunta la cabeza",
+      "action": "Al inicio de la secuencia, después de soltar la barra falsa, corta la cabeza del primer planchón.",
+      "check": "Despunte de 300–500 mm; cabeza sana.",
+      "quality": true
+    },
+    {
+      "n": 5,
+      "phase": 1,
+      "role": "S-16",
+      "icon": "cortar",
+      "title": "Corta cada planchón",
+      "action": "En automático, la máquina se sujeta al planchón, viaja con él y corta con 2 sopletes de los bordes al centro.",
+      "check": "Corte completo a la longitud en caliente del nivel 2."
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "S-16",
+      "icon": "inspeccionar",
+      "title": "Verifica el corte",
+      "action": "Revisa que el corte pase completo, a escuadra y sin puentes.",
+      "check": "Escuadra ≤ 5 mm; sin puentes.",
+      "quality": true,
+      "decision": {
+        "question": "¿Corte completo y a escuadra?",
+        "no": "Detén la mesa. C-06 autoriza el recorte manual con permiso."
+      }
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-16",
+      "icon": "muestra",
+      "title": "Corta muestras si toca",
+      "action": "Corta la rebanada transversal según el plan de C-09 e identifícala.",
+      "check": "Muestra de 20–30 mm identificada [Validar con OEM / Ingeniería de Proceso]."
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-16",
+      "icon": "herramienta",
+      "title": "Desbarba",
+      "action": "Quita la rebaba del corte en automático o a mano con herramienta.",
+      "check": "Sin rebaba."
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-17",
+      "icon": "pesar",
+      "title": "Pesa y mide",
+      "action": "Pesa el planchón y compáralo con el peso teórico (0.23 × ancho × largo × 7.85).",
+      "check": "Diferencia real contra teórico ≤ 2 %.",
+      "quality": true
+    },
+    {
+      "n": 10,
+      "phase": 1,
+      "role": "S-16",
+      "icon": "marcar",
+      "title": "Marca el planchón",
+      "action": "Marca la ID (CC1 + colada + número de planchón) en la cara indicada y compárala con el MES.",
+      "check": "Marca legible e igual al MES.",
+      "critical": true,
+      "decision": {
+        "question": "¿ID legible e igual al MES?",
+        "no": "Remarca a mano, corrige el MES y retén el planchón."
+      }
+    },
+    {
+      "n": 11,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "ruta",
+      "title": "Separa por destino",
+      "action": "Con evento → área de inspección. Grado sensible → enfriamiento lento. Normal → pila o carga caliente.",
+      "check": "Destino correcto en el MES.",
+      "quality": true
+    },
+    {
+      "n": 12,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "peso",
+      "title": "Verifica grúa y peso",
+      "action": "Antes de izar, compara el peso del MES más la tenaza con la capacidad de la grúa. Usa solo la grúa de 45 t con tenaza.",
+      "check": "Planchón (13.0–32.8 t) + tenaza (≤ 12 t [Validar con OEM]) ≤ 45 t.",
+      "critical": true,
+      "stop": "Te asignan la grúa de 25 t o la de 50 t, o no hay tenaza de planchón.",
+      "decision": {
+        "question": "¿Grúa de 45 t con tenaza?",
+        "no": "No ices. Pide la grúa de 45 t y avisa a C-06."
+      }
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "grua",
+      "title": "Apila",
+      "action": "Pon calzas alineadas. Una colada por pila cuando se pueda. Nadie bajo la carga ni entre pilas.",
+      "check": "Pila estable de ≤ 2.5 m.",
+      "critical": true,
+      "stop": "Hay alguien bajo la carga o entre pilas, o la pila se inclina."
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "tiempo",
+      "title": "Cubre las pilas de enfriamiento lento",
+      "action": "Cubre los grados sensibles al menos 48 h y anota la hora de entrada. Nunca los enfríes con agua.",
+      "check": "≥ 48 h cubierto hasta < 300 °C [Validar con OEM / Ingeniería de Proceso]."
+    },
+    {
+      "n": 15,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "registrar",
+      "title": "Actualiza el MES",
+      "action": "Registra la ubicación de la pila y el estado: liberado o retenido.",
+      "check": "MES al día."
+    },
+    {
+      "n": 16,
+      "phase": 2,
+      "role": "S-16",
+      "icon": "cortar",
+      "title": "Despunta la cola",
+      "action": "Al fin de la secuencia, despunta la cola del último planchón hasta que el corte se vea sano.",
+      "check": "Despunte de 500–1,000 mm; sin rechupe.",
+      "quality": true
+    },
+    {
+      "n": 17,
+      "phase": 2,
+      "role": "S-17",
+      "icon": "carro",
+      "title": "Despacha",
+      "action": "Despacha solo los planchones liberados por inspección (MO-CC1-09).",
+      "check": "Lista de despacho con planchones liberados."
+    }
+  ],
+  "abnormal": [
+    {
+      "icon": "cortar",
+      "if": "Corte incompleto (queda un puente)",
+      "do": "Detén la mesa antes de la transferencia. Recorte manual con permiso de trabajo en caliente.",
+      "call": "C-06"
+    },
+    {
+      "icon": "fuego",
+      "if": "Retroceso de flama o fuga de O₂ o gas",
+      "do": "Cierra O₂ y gas. Ventila y no prendas flama. No reenciendas sin revisar el arrestaflamas.",
+      "call": "C-06, C-16 y S-21"
+    },
+    {
+      "icon": "marcar",
+      "if": "Marca ilegible o ID distinta al MES",
+      "do": "Remarca a mano, corrige el MES y retén hasta verificar.",
+      "call": "C-06 y S-18"
+    },
+    {
+      "icon": "bloqueo",
+      "if": "Planchón atorado en la mesa",
+      "do": "Detén la mesa. Aplica LOTO antes de intervenir.",
+      "call": "C-06 y S-19"
+    },
+    {
+      "icon": "material",
+      "if": "Pila inestable o inclinada",
+      "do": "Detén los izajes cerca. Reacomoda solo con la grúa de 45 t con tenaza.",
+      "call": "C-06 y C-16"
+    },
+    {
+      "icon": "detener",
+      "if": "Falla el oxicorte con la colada en curso",
+      "do": "Avisa a C-06: baja la velocidad de colada para ganar tiempo; corte manual autorizado o cierre (MO-CC1-07).",
+      "call": "C-06"
+    }
+  ],
+  "records": [
+    {
+      "what": "Programa y registro de corte: longitudes, despuntes, muestras",
+      "when": "Cada planchón",
+      "where": "Nivel 2 / MES"
+    },
+    {
+      "what": "Registro de pesaje por planchón",
+      "when": "Cada planchón",
+      "where": "MES"
+    },
+    {
+      "what": "ID, grado, eventos, ubicación, estado de inspección y destino",
+      "when": "Cada planchón",
+      "where": "MES"
+    },
+    {
+      "what": "Registro de pilas de enfriamiento lento (entrada, salida, temperatura)",
+      "when": "Cada pila",
+      "where": "MES"
+    },
+    {
+      "what": "Lista de verificación del oxicorte",
+      "when": "Cada turno",
+      "where": "Formato del turno"
+    }
+  ],
+  "certification": [
+    {
+      "role": "S-16",
+      "level": "3",
+      "theory": "16 h (oxicorte, NOM-027, trazabilidad)",
+      "ojt": "80 h",
+      "evaluated": "Pasos 2 y 10",
+      "validity": "≤ 24 meses (TD-P07)"
+    },
+    {
+      "role": "S-17",
+      "level": "3",
+      "theory": "16 h (izaje, apilado, MES) + curso de grúa (NOM-006)",
+      "ojt": "80 h; grúa según MS-ACE-04",
+      "evaluated": "Pasos 12 y 13",
+      "validity": "12 meses (grúas e izaje)"
+    },
+    {
+      "role": "C-06",
+      "level": "4 (evaluador)",
+      "theory": "4 h + evaluador",
+      "ojt": "—",
+      "evaluated": "Todos los pasos",
+      "validity": "≤ 24 meses"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Oxicorte",
+      "def": "Máquina que corta el planchón con oxígeno y gas natural mientras viaja con él."
+    },
+    {
+      "term": "Arrestaflamas",
+      "def": "Dispositivo que impide que la flama regrese por la manguera."
+    },
+    {
+      "term": "Despunte",
+      "def": "Pedazo que se corta en la cabeza o en la cola para quitar la parte no sana."
+    },
+    {
+      "term": "ID del planchón",
+      "def": "Código 1-AAAAAA-NN: CC1, número de colada y número de planchón [Supuesto]."
+    },
+    {
+      "term": "MES",
+      "def": "Sistema donde se registra cada planchón: grado, eventos, peso, ubicación y estado."
+    },
+    {
+      "term": "Enfriamiento lento",
+      "def": "Dejar el planchón cubierto en pila ≥ 48 h para que no se agriete."
+    },
+    {
+      "term": "Tenaza",
+      "def": "Accesorio de la grúa de 45 t que sujeta el planchón."
+    }
+  ],
+  "review": [
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    }
+  ]
+}

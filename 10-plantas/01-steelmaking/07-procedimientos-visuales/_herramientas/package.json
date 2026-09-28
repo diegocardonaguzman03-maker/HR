@@ -1,0 +1,9 @@
+{
+  "name": "pov-render",
+  "private": true,
+  "type": "module",
+  "description": "Genera los Procedimientos Operativos Visuales (POV) en PDF a partir de json/*.json",
+  "dependencies": {
+    "@tabler/icons": "3.24.0"
+  }
+}

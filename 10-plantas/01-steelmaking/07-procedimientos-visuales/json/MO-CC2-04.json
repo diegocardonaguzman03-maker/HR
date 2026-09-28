@@ -1,0 +1,91 @@
+{
+  "code": "MO-CC2-04",
+  "pov": "POV-CC2-04",
+  "title": "Colada en estado estable",
+  "area": "CC2",
+  "areaName": "Colada Continua 2 — palanquilla, 6 líneas",
+  "version": "0.1",
+  "owner": "C-08",
+  "manual": "02-operacion/cc2/MO-CC2-04-colada-estado-estable.md",
+  "deck": "05-capacitacion/MO-CC2-04",
+  "purpose": "Mantener las 6 líneas produciendo palanquilla de 160 × 160 mm dentro de especificación: nivel de molde, aceite, agua, velocidad y distribuidor en rango, sin breakouts.",
+  "whyItMatters": "Si el nivel, el aceite o el agua de molde se salen de rango aparecen pinholes, inclusiones y romboidad, y puede venir un breakout. Si falla el agua de molde, es una emergencia con riesgo de explosión.",
+  "startsWhen": "Las 6 líneas están estables y la barra falsa estacionada (fin de MO-CC2-03).",
+  "endsWhen": "Llega el cambio de olla (MO-CC2-05), un cambio de buza o cierre de línea (MO-CC2-06) o el fin de colada (MO-CC2-07).",
+  "previous": ["MO-CC2-03"],
+  "next": ["MO-CC2-05", "MO-CC2-06", "MO-CC2-07"],
+  "heroFigure": {"file": "img/cc2-molde-tubo.svg", "caption": "Molde de tubo 160 × 160 mm: agua de molde, aceite, EMS y medición de nivel con Cs-137."},
+  "figures": [
+    {"file": "img/mm-agua-emergencia.svg", "caption": "Agua de molde y sistema de agua de emergencia: entrada automática en ≤ 15 s."}
+  ],
+  "roles": [
+    {"code": "C-08", "name": "Ingeniero de Proceso de Colada Continua", "raci": "A", "does": "Dueño de parámetros y tablas (rampa, oscilación, rociado, buzas); analiza desviaciones."},
+    {"code": "C-06", "name": "Supervisor de Colada Continua", "raci": "A", "does": "Responsable del turno: decide cerrar líneas y bajar la velocidad.", "it": "IT-C06"},
+    {"code": "S-12", "name": "Operador de Púlpito de Colada", "raci": "R", "does": "Vigila en la HMI nivel, velocidad, agua, EMS y alarmas; ajusta dentro de rangos.", "it": "IT-S12"},
+    {"code": "S-13", "name": "Operador de Plataforma de Colada", "raci": "R", "does": "Controla nivel y temperatura del distribuidor y la capa de cubierta.", "it": "IT-S13"},
+    {"code": "S-14", "name": "Ayudante de Colada", "raci": "R", "does": "Hace rondas en moldes y línea: chorro, aceite, rociado y estado de la palanquilla.", "it": "IT-S14"},
+    {"code": "S-11", "name": "Muestrero / Analista de Laboratorio", "raci": "R", "does": "Toma las muestras químicas del distribuidor.", "it": "IT-S11"},
+    {"code": "C-09", "name": "Metalurgista de Producto", "raci": "I", "does": "Recibe las desviaciones que afectan la calidad."},
+    {"code": "C-16", "name": "Especialista de Seguridad e Higiene (función de ESR)", "raci": "C", "does": "Autoriza cualquier intervención en la zona controlada de radiación del molde."}
+  ],
+  "goldenRules": ["Si falla el agua de molde, confirma el agua de emergencia en ≤ 15 s. Si no entra, se cierran olla y 6 líneas.", "Nadie bajo la plataforma ni en la fosa sin autorización de C-06.", "No intervengas un molde con el obturador abierto: primero el ESR (C-16) cierra, bloquea y mide."],
+  "epp": ["casco", "careta_dorada", "aluminizado", "ropa_fr", "guantes", "botas", "auditiva", "dosimetro"],
+  "dangerZone": {"red": "Plataforma de molde: zona roja a ≤ 3 m del molde. Solo S-13 y S-14 con EPP aluminizado seco.", "yellow": "Zona controlada de radiación en la parte alta de los moldes (señalizada). Fosa y bajo la plataforma: solo con autorización de C-06.", "rule": "Una línea detenida con las otras colando no se interviene sin LOTO de esa línea (MS-ACE-02) y permiso."},
+  "hazards": [
+    {"icon": "fuego", "text": "Breakout: acero líquido bajo el molde, en la línea y en la fosa."},
+    {"icon": "agua", "text": "Falla del agua de molde: el tubo se perfora y puede haber explosión."},
+    {"icon": "alarma", "text": "Radiación Cs-137 del medidor de nivel de molde."},
+    {"icon": "calor", "text": "Calor radiante y turno de 12 h: estrés térmico. Hidrátate y toma pausas."},
+    {"icon": "rociar", "text": "Vapor en la cámara de rociado: quemaduras y poca visibilidad."}
+  ],
+  "phases": ["Al recibir el turno", "Vigilancia continua", "Rondas y registro", "Si algo falla"],
+  "steps": [
+    {"n": 1, "phase": 0, "role": "S-12", "icon": "hmi", "title": "Recibe el turno en la HMI", "action": "Revisa alarmas activas, velocidad y nivel por línea y el estado del agua de emergencia. Firma la entrega con los pendientes.", "check": "Entrega firmada con pendientes."},
+    {"n": 2, "phase": 0, "role": "S-12", "icon": "agua", "title": "Verifica el agua de emergencia", "action": "Revisa el nivel del tanque y que las bombas diésel estén en automático.", "check": "Todo en verde: tanque lleno y bombas diésel en automático.", "critical": true, "stop": "El tanque no está lleno o las bombas diésel no están en automático."},
+    {"n": 3, "phase": 1, "role": "S-12", "icon": "nivel", "title": "Vigila el nivel de molde", "action": "Vigila las 6 líneas todo el tiempo. Atiende toda alarma de ± 10 mm: revisa chorro y buza.", "check": "Nivel de molde ± 5 mm en las 6 líneas.", "critical": true, "decision": {"question": "¿Nivel en ± 5 mm?", "no": "Revisa chorro y buza. > ± 10 mm por 1 min: velocidad fija y cambio de buza."}},
+    {"n": 4, "phase": 1, "role": "S-12", "icon": "agua", "title": "Vigila el agua de molde", "action": "Revisa caudal y ΔT de cada línea. Caudal < 1,800 L/min o ΔT > 12 °C: revisa filtro, válvula e incrustación y avisa.", "check": "Caudal ≥ 1,800 L/min (objetivo 2,000); ΔT 6–10 °C.", "critical": true, "stop": "Caudal < 1,600 L/min (80 %) o ΔT > 15 °C en una línea [Validar]: se cierra esa línea."},
+    {"n": 5, "phase": 1, "role": "S-12", "icon": "tendencia", "title": "Compara la velocidad entre líneas", "action": "La velocidad es un síntoma de la buza. Una diferencia > 0.4 m/min entre líneas indica buza tapada o erosionada.", "check": "Velocidad 2.5–3.5 m/min (objetivo 3.0); tendencia estable.", "decision": {"question": "¿Velocidad en rango?", "no": "< 2.3: buza tapándose. > 3.5: buza erosionada. Cambio de buza (MO-CC2-06)."}},
+    {"n": 6, "phase": 1, "role": "S-13", "icon": "temperatura", "title": "Mide la temperatura del distribuidor", "action": "Mide con la lanza cada 15 min y a la mitad de cada olla. Si está < 20 °C o > 35 °C, avisa a C-06.", "check": "Sobrecalentamiento 20–35 °C (objetivo 28 °C).", "quality": true, "stop": "Sobrecalentamiento mayor de 45 °C."},
+    {"n": 7, "phase": 1, "role": "S-13", "icon": "nivel", "title": "Controla el nivel del distribuidor", "action": "Ajusta la apertura de la olla. Si baja de 600 mm, revisa la olla; si pasa de 870 mm, cierra un poco la olla.", "check": "Nivel 700–850 mm (objetivo 775 mm).", "stop": "El nivel del distribuidor baja de 450 mm: se cierran L1 y L6."},
+    {"n": 8, "phase": 1, "role": "S-13", "icon": "material", "title": "Mantén la capa de cubierta", "action": "Agrega polvo cubridor donde veas acero descubierto.", "check": "Sin acero expuesto en el distribuidor."},
+    {"n": 9, "phase": 2, "role": "S-14", "icon": "inspeccionar", "title": "Haz la ronda de moldes (cada 1 h)", "action": "En cada línea revisa la forma del chorro, el aceite en el rotámetro, las salpicaduras y el EMS. No te asomes al molde.", "check": "Chorro compacto y centrado; aceite 15–25 mL/min.", "quality": true, "stop": "Una línea está sin flujo de aceite."},
+    {"n": 10, "phase": 2, "role": "S-14", "icon": "ruta", "title": "Haz la ronda de línea (cada 2 h)", "action": "Desde el pasillo seguro revisa el rociado, la forma de la palanquilla y los ruidos de rodillos. No entres a la cámara de rociado.", "check": "Rociado uniforme; palanquilla recta.", "quality": true},
+    {"n": 11, "phase": 2, "role": "S-11", "icon": "muestra", "title": "Toma la muestra química", "action": "Toma 1 muestra por colada del distribuidor y envíala al laboratorio.", "check": "Muestra enviada y resultado recibido (LIMS)."},
+    {"n": 12, "phase": 2, "role": "S-12", "icon": "registrar", "title": "Registra la colada", "action": "Llena la hoja de colada con S-13: temperaturas, niveles, velocidades, alarmas y acciones.", "check": "Hoja de colada CC2 completa por colada."},
+    {"n": 13, "phase": 3, "role": "S-12", "icon": "alarma", "title": "Responde a una falla de agua", "action": "Caudal < 80 %, baja presión o apagón: confirma que entra el agua de emergencia. Si no entra, avisa: se cierran la olla y las 6 líneas y se evacúa la plataforma a ≥ 10 m.", "check": "Agua de emergencia en ≤ 15 s.", "critical": true, "stop": "El agua de emergencia no entra en 15 s."},
+    {"n": 14, "phase": 3, "role": "S-13", "icon": "alto", "title": "Cierra la línea ante un breakout", "action": "Empuja la placa ciega (o tapona). S-12 detiene la extracción de esa línea. Mantén el agua de molde y la secundaria. Evacúa bajo la máquina y a ≥ 20 m.", "check": "Línea cerrada; nadie bajo la máquina; C-06 avisado.", "critical": true, "stop": "Sale acero bajo el molde o hay chispas o fuego en la cámara."}
+  ],
+  "abnormal": [
+    {"icon": "nivel", "if": "Pérdida de nivel (lectura errática o sin señal)", "do": "Velocidad fija y control visual solo si C-06 lo autoriza. Si no se recupera en 5 min [Validar], se cierra la línea. No toques el portafuente.", "call": "C-06, S-21 y C-16 (ESR)"},
+    {"icon": "subir_bajar", "if": "El nivel sube sin control (buza erosionada o quebrada)", "do": "Sube la velocidad al máximo. Si no alcanza: cambio de buza o cierre de la línea antes de que desborde.", "call": "C-06"},
+    {"icon": "tendencia", "if": "El nivel baja y la velocidad cae < 2.3 m/min", "do": "Buza tapándose: cambio de buza (MO-CC2-06). Avisa al LF si es por química (Al alto).", "call": "C-06 y C-07"},
+    {"icon": "temperatura", "if": "ΔT del agua de molde > 12 °C en una línea", "do": "Revisa el caudal. Si ΔT > 15 °C [Validar], se cierra la línea.", "call": "C-06 y S-25"},
+    {"icon": "electrico", "if": "Falla o disparo del EMS", "do": "Sigue colando. Marca las palanquillas \"E\" desde la hora del disparo.", "call": "C-06, S-20 y C-09"},
+    {"icon": "bloqueo", "if": "Palanquilla doblada o atorada en enderezadores o camino", "do": "Detén esa línea: cierra la buza y para la extracción. LOTO para liberar. Nadie entre rodillos en movimiento.", "call": "C-06 y C-11"},
+    {"icon": "flujo", "if": "Una línea sin aceite", "do": "Baja la velocidad a 2.0 m/min [Validar]. Si pasan > 5 min sin aceite, se cierra la línea.", "call": "C-06"}
+  ],
+  "records": [
+    {"what": "Hoja de colada CC2 (temperaturas, nivel del distribuidor, velocidades, aceite, agua, EMS, alarmas y acciones)", "when": "Cada colada", "where": "Hoja de colada CC2"},
+    {"what": "Hoja de rondas de moldes y de línea", "when": "Cada ronda (1 h y 2 h)", "where": "Hoja de rondas"},
+    {"what": "Tendencias de nivel, velocidad, agua y ΔT", "when": "Automático", "where": "Nivel 2"},
+    {"what": "Reporte de incidente (breakout, falla de agua o cierre de línea)", "when": "Cuando ocurre", "where": "Sistema de SSO (MS-ACE-09)"}
+  ],
+  "certification": [
+    {"role": "S-12", "level": "3", "theory": "32 h (proceso, lazos de control, alarmas, simulador [Validar])", "ojt": "160 h / 20 coladas", "evaluated": "Pasos 2, 3, 4 y 13; simulacros de falla de agua (≤ 15 s) y de breakout", "validity": "24 meses (TD-P07)"},
+    {"role": "S-13", "level": "3", "theory": "24 h", "ojt": "120 h / 20 coladas", "evaluated": "Pasos 6 y 14: temperatura y respuesta a breakout", "validity": "24 meses (TD-P07)"},
+    {"role": "S-14", "level": "3", "theory": "16 h", "ojt": "120 h / 20 coladas", "evaluated": "Pasos 9 y 10 (rondas) y simulacro de breakout", "validity": "24 meses (TD-P07)"},
+    {"role": "C-06", "level": "4", "theory": "24 h", "ojt": "10 turnos acompañados", "evaluated": "Dirección de simulacros", "validity": "24 meses"}
+  ],
+  "glossary": [
+    {"term": "Colada abierta", "def": "Sin barra tapón: el caudal lo fijan la buza calibrada y la altura del distribuidor."},
+    {"term": "Nivel de molde", "def": "Altura del menisco en el molde; se mide con Cs-137 y se controla a ± 5 mm moviendo la velocidad."},
+    {"term": "ΔT de agua de molde", "def": "Diferencia de temperatura entre la salida y la entrada del agua; normal 6–10 °C."},
+    {"term": "Agua específica", "def": "Litros de agua de rociado por kg de acero; 1.5–2.0 L/kg."},
+    {"term": "Breakout", "def": "Ruptura de la piel bajo el molde: el acero líquido sale a la línea."},
+    {"term": "EMS", "def": "Agitador electromagnético del molde (250–400 A, 2–5 Hz); mejora el centro de la palanquilla."},
+    {"term": "ESR", "def": "Encargado de Seguridad Radiológica (función de C-16); controla la fuente de Cs-137."}
+  ],
+  "review": [
+    {"area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28"}
+  ]
+}

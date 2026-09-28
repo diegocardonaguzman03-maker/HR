@@ -1,0 +1,425 @@
+{
+  "code": "MO-OLL-02",
+  "pov": "POV-OLL-02",
+  "title": "Traslado de ollas llenas con grúa de colada",
+  "area": "OLL",
+  "areaName": "Nave de ollas — LF-1 / LF-2 a CC1 / CC2",
+  "version": "0.1",
+  "owner": "C-04",
+  "manual": "02-operacion/ollas-lf/MO-OLL-02-traslado-ollas-grua-colada.md",
+  "deck": "05-capacitacion/MO-OLL-02",
+  "purpose": "Llevar la olla con ≈ 150 t de acero líquido del horno olla a la torreta de CC1 o CC2, y regresar la olla vacía, sin nadie bajo la carga, sin choques y a tiempo.",
+  "whyItMatters": "Si la olla cae, se voltea o se derrama, puede matar a quien esté cerca. Un traslado lento enfría el acero y afecta la colada.",
+  "startsWhen": "El operador del horno olla libera la olla tratada (MO-LF-01).",
+  "endsWhen": "La olla queda asentada en la torreta (MO-CC1-03 o MO-CC1-05 / MO-CC2-05) y la olla vacía llega a preparación (MO-OLL-01).",
+  "previous": [
+    "MO-LF-01"
+  ],
+  "next": [
+    "MO-CC1-03",
+    "MO-CC1-05",
+    "MO-CC2-05",
+    "MO-OLL-01"
+  ],
+  "heroFigure": {
+    "file": "img/it-S09-puesto.svg",
+    "caption": "Grúa de colada 250/63 t: prueba de frenos a 100–200 mm, ruta con holgura ≥ 1 m, torreta de destino y señalero S-13."
+  },
+  "figures": [
+    {
+      "file": "img/olla-corte-valvula-tapon.svg",
+      "caption": "Olla de 150 t: muñones de izaje y bordo libre ≥ 300 mm [Supuesto]."
+    },
+    {
+      "file": "img/mm-gancho-grua-inspeccion.svg",
+      "caption": "Gancho, frenos dobles y cables de la grúa de colada: qué revisar antes de usarla."
+    }
+  ],
+  "roles": [
+    {
+      "code": "S-09",
+      "name": "Operador de Grúa de Colada",
+      "raci": "R",
+      "does": "Inspecciona la grúa, iza, traslada y asienta. Puede negarse a mover una olla insegura.",
+      "it": "IT-S09"
+    },
+    {
+      "code": "S-13",
+      "name": "Operador de Plataforma de Colada (señalero)",
+      "raci": "R",
+      "does": "Da las señales y confirma el enganche de ambos muñones y el asiento en la torreta.",
+      "it": "IT-S13"
+    },
+    {
+      "code": "S-06",
+      "name": "Operador de Horno Olla",
+      "raci": "R",
+      "does": "Libera la olla: temperatura, química, argón suave cumplido, bordo libre y sin fuga.",
+      "it": "IT-S06"
+    },
+    {
+      "code": "C-04",
+      "name": "Jefe de Turno de Acería",
+      "raci": "A",
+      "does": "Dueño del proceso. Prioriza movimientos, autoriza rutas alternas y decide en emergencias.",
+      "it": "IT-C04"
+    },
+    {
+      "code": "S-12",
+      "name": "Operador de Púlpito de Colada",
+      "raci": "C",
+      "does": "Confirma la torreta de destino y el brazo libre.",
+      "it": "IT-S12"
+    },
+    {
+      "code": "S-19",
+      "name": "Mecánico de Acería",
+      "raci": "C",
+      "does": "Atiende fallas mecánicas de la grúa.",
+      "it": "IT-S19"
+    },
+    {
+      "code": "S-20",
+      "name": "Electricista de Acería",
+      "raci": "C",
+      "does": "Atiende fallas eléctricas de la grúa y de límites.",
+      "it": "IT-S20"
+    },
+    {
+      "code": "C-16",
+      "name": "Especialista de Seguridad e Higiene",
+      "raci": "C",
+      "does": "Define rutas y zonas de exclusión con C-04."
+    }
+  ],
+  "goldenRules": [
+    "Nadie bajo la olla ni junto a la ruta: zona roja de ± 5 m de la proyección de la ruta.",
+    "No levantes sin \"enganche OK\" de ambos muñones ni sin probar frenos a 100–200 mm.",
+    "Grúa con falla = grúa fuera de servicio. Si la olla no es segura, no la muevas y avisa a C-04."
+  ],
+  "epp": [
+    "casco",
+    "ropa_fr",
+    "lentes",
+    "botas",
+    "careta_dorada",
+    "aluminizado",
+    "guantes",
+    "auditiva"
+  ],
+  "dangerZone": {
+    "red": "Zona roja móvil: proyección de la ruta ± 5 m. Nadie bajo ni junto a la ruta durante todo el traslado.",
+    "yellow": "Zona amarilla: de ± 5 a ± 15 m de la ruta [Supuesto — validar con C-16].",
+    "rule": "La olla viaja a la altura mínima, ≥ 1 m sobre el obstáculo más alto. Nunca sobre púlpitos, oficinas, comedores, fosas con agua ni pasillos sin protección."
+  },
+  "hazards": [
+    {
+      "icon": "grua",
+      "text": "Caída o volteo de la olla por falla de freno, límite o enganche incompleto."
+    },
+    {
+      "icon": "personas",
+      "text": "Personas bajo la olla o en la ruta: fatalidad."
+    },
+    {
+      "icon": "fuego",
+      "text": "Perforación o derrame de acero durante el traslado."
+    },
+    {
+      "icon": "electrico",
+      "text": "Pérdida de energía con la olla suspendida."
+    },
+    {
+      "icon": "calor",
+      "text": "Radiación térmica sobre la cabina y el señalero."
+    }
+  ],
+  "phases": [
+    "Antes de mover",
+    "Izar y trasladar",
+    "Asentar y regresar"
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-09",
+      "icon": "checklist",
+      "title": "Inspecciona la grúa antes de usarla",
+      "action": "Prueba frenos sin carga y ambos límites superiores. Revisa anticolisión, ganchos y seguros, cables, celda de carga, radio, bocina y luces.",
+      "check": "Lista de inspección previa al uso sin pendientes.",
+      "critical": true,
+      "stop": "Un freno o un límite no actúa, o ves grietas en ganchos o cables dañados.",
+      "decision": {
+        "question": "¿Grúa en condición?",
+        "no": "Grúa fuera de servicio (MM-GR-01). Avisa a C-04."
+      }
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-06",
+      "icon": "radio",
+      "title": "Libera la olla por radio",
+      "action": "Confirma por radio a S-09: colada, temperatura, química, argón suave cumplido, bordo libre y que no hay fuga ni punto caliente.",
+      "check": "Liberación por radio; bordo libre ≥ 300 mm [Supuesto]."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-09",
+      "icon": "ubicacion",
+      "title": "Confirma el destino",
+      "action": "Pide a S-12 que confirme la torreta (CC1 o CC2) y el brazo libre. Revisa número de olla y colada.",
+      "check": "Destino confirmado por S-12; olla correcta a la máquina correcta.",
+      "quality": true
+    },
+    {
+      "n": 4,
+      "phase": 0,
+      "role": "S-09",
+      "icon": "barrera",
+      "title": "Despeja la ruta",
+      "action": "Toca la bocina. Revisa la ruta y el área bajo la trayectoria.",
+      "check": "Ruta libre; nadie en ± 5 m de la proyección de la ruta.",
+      "critical": true,
+      "stop": "Hay una persona bajo la ruta o en la zona roja.",
+      "decision": {
+        "question": "¿Ruta libre?",
+        "no": "Espera y despeja. No muevas la olla."
+      }
+    },
+    {
+      "n": 5,
+      "phase": 1,
+      "role": "S-09",
+      "icon": "grua",
+      "title": "Engancha ambos muñones",
+      "action": "Baja la traviesa y engancha los dos muñones de la olla.",
+      "check": "Los dos ganchos enganchados.",
+      "critical": true
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "S-13",
+      "icon": "inspeccionar",
+      "title": "Confirma el enganche",
+      "action": "Desde una posición segura, revisa con la vista los dos lados. Da la señal \"enganche OK\" por radio.",
+      "check": "\"Enganche OK\" de ambos muñones.",
+      "critical": true,
+      "stop": "Un gancho no asienta completo en su muñón."
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-09",
+      "icon": "pesar",
+      "title": "Levanta y prueba frenos",
+      "action": "Levanta 100–200 mm y pausa 5 s. Observa si la olla se desliza y lee el peso en la celda de carga.",
+      "check": "Sin deslizamiento; peso ≤ 240 t [Validar con OEM el peso de la traviesa].",
+      "critical": true,
+      "stop": "La olla se desliza o el peso pasa de 240 t.",
+      "decision": {
+        "question": "¿Olla estable y en peso?",
+        "no": "Baja y asienta. Avisa a C-04."
+      }
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-09",
+      "icon": "ruta",
+      "title": "Traslada por la ruta definida",
+      "action": "Viaja a la altura mínima segura, ≥ 1 m sobre el obstáculo más alto. Máximo 50 % de velocidad [Validar con OEM]. Arranca y frena suave.",
+      "check": "Sin balanceo; LF → torreta en ≤ 8 min [Supuesto].",
+      "quality": true
+    },
+    {
+      "n": 9,
+      "phase": 2,
+      "role": "S-09",
+      "icon": "ubicacion",
+      "title": "Aproxima a la torreta",
+      "action": "En marcha lenta, alinea los muñones con el brazo libre de la torreta. Sigue las señales de S-13.",
+      "check": "Muñones alineados con el brazo."
+    },
+    {
+      "n": 10,
+      "phase": 2,
+      "role": "S-09",
+      "icon": "subir_bajar",
+      "title": "Asienta la olla",
+      "action": "Baja suave hasta que la olla asiente completa en el brazo de la torreta.",
+      "check": "Olla asentada sin golpe.",
+      "critical": true
+    },
+    {
+      "n": 11,
+      "phase": 2,
+      "role": "S-13",
+      "icon": "ok",
+      "title": "Confirma el asiento",
+      "action": "Desde una posición segura, revisa que la olla asentó completa. Da la señal \"asentada OK\".",
+      "check": "\"Asentada OK\" por radio.",
+      "critical": true
+    },
+    {
+      "n": 12,
+      "phase": 2,
+      "role": "S-09",
+      "icon": "grua",
+      "title": "Libera los ganchos",
+      "action": "Baja la traviesa, desengancha, sube y retira la grúa.",
+      "check": "Ganchos libres; olla en la torreta."
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-09",
+      "icon": "olla",
+      "title": "Regresa la olla vacía",
+      "action": "Cuando la colada continua libera la olla vacía, repite los pasos 4 a 12 hacia volteo y preparación (MO-OLL-01).",
+      "check": "Olla vacía en preparación."
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "S-09",
+      "icon": "registrar",
+      "title": "Registra el movimiento",
+      "action": "Anota hora, olla, colada, origen, destino, peso y eventos.",
+      "check": "Registro de movimientos completo."
+    }
+  ],
+  "abnormal": [
+    {
+      "icon": "fuego",
+      "if": "Fuga, perforación o punto caliente en la coraza durante el traslado",
+      "do": "Si es seguro, lleva la olla por la ruta de emergencia a la fosa seca, sin pasar sobre personas; si no, bájala en el área segura más cercana. Evacúa a ≥ 25 m. Nunca uses agua.",
+      "call": "C-04, C-16 y C-15 (MS-ACE-09)"
+    },
+    {
+      "icon": "alto",
+      "if": "La olla se desliza en la prueba de frenos",
+      "do": "Baja y asienta. La grúa queda fuera de servicio.",
+      "call": "C-04 (MM-GR-01)"
+    },
+    {
+      "icon": "electrico",
+      "if": "Se va la energía con la olla suspendida",
+      "do": "Los frenos retienen. Evacúa debajo. No intentes bajar sin el procedimiento del fabricante.",
+      "call": "C-04 y S-20"
+    },
+    {
+      "icon": "alarma",
+      "if": "Actúa un límite superior",
+      "do": "Detén. No rearmes el límite de respaldo sin mantenimiento.",
+      "call": "C-04 y S-20"
+    },
+    {
+      "icon": "peligro",
+      "if": "Choque o balanceo fuerte",
+      "do": "Detén y estabiliza. Revisa si hay derrame o daños.",
+      "call": "C-04"
+    },
+    {
+      "icon": "nivel",
+      "if": "Bordo libre menor de 300 mm",
+      "do": "No traslades la olla sin decisión de C-04.",
+      "call": "C-04"
+    },
+    {
+      "icon": "esperar",
+      "if": "La torreta no está disponible",
+      "do": "La olla se queda en el horno olla con argón suave, cuidando la temperatura.",
+      "call": "C-04 y S-12"
+    }
+  ],
+  "records": [
+    {
+      "what": "Lista de inspección previa al uso de la grúa",
+      "when": "Cada turno y operador",
+      "where": "Lista del operador"
+    },
+    {
+      "what": "Registro de movimientos (olla, colada, origen, destino, hora, peso)",
+      "when": "Cada movimiento",
+      "where": "Registro de movimientos / nivel 2"
+    },
+    {
+      "what": "Fallas y eventos de la grúa",
+      "when": "Cuando ocurre",
+      "where": "Bitácora de la grúa"
+    },
+    {
+      "what": "Simulacro de emergencia de olla",
+      "when": "Anual [Supuesto]",
+      "where": "Sistema de SSO"
+    }
+  ],
+  "certification": [
+    {
+      "role": "S-09",
+      "level": "3",
+      "theory": "40 h",
+      "ojt": "160 h / 60 movimientos con olla llena",
+      "evaluated": "Pasos 1, 4, 5, 7 y 10 + simulacro de fuga y de pérdida de energía",
+      "validity": "12 meses (grúas e izaje)"
+    },
+    {
+      "role": "S-13",
+      "level": "3",
+      "theory": "16 h",
+      "ojt": "40 h / 30 movimientos",
+      "evaluated": "Pasos 6 y 11 (señales, enganche y asiento)",
+      "validity": "12 meses (grúas e izaje)"
+    },
+    {
+      "role": "C-04",
+      "level": "4",
+      "theory": "16 h + evaluador",
+      "ojt": "—",
+      "evaluated": "Decisión en emergencia de olla",
+      "validity": "24 meses"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Muñones",
+      "def": "Los dos ejes laterales de la olla de donde la toma la grúa."
+    },
+    {
+      "term": "Traviesa",
+      "def": "Viga de la grúa con los dos ganchos laminares que toman los muñones."
+    },
+    {
+      "term": "Bordo libre",
+      "def": "Distancia del acero y la escoria al borde de la olla; mínimo 300 mm [Supuesto]."
+    },
+    {
+      "term": "Prueba de frenos con carga",
+      "def": "Levantar 100–200 mm y esperar 5 s para ver que la olla no se desliza."
+    },
+    {
+      "term": "Torreta",
+      "def": "Brazo giratorio de la colada continua que recibe y sostiene las ollas."
+    },
+    {
+      "term": "Señalero",
+      "def": "Persona que guía a la grúa con señales y confirma enganche y asiento (S-13)."
+    },
+    {
+      "term": "Celda de carga",
+      "def": "Sensor de la grúa que indica el peso de la olla."
+    }
+  ],
+  "review": [
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "code": "MO-CC1-06",
+  "pov": "POV-CC1-06",
+  "title": "Cambio de SEN y de distribuidor en caliente",
+  "area": "CC1",
+  "areaName": "Colada Continua 1 — máquina de planchón (distribuidor y molde)",
+  "version": "0.1",
+  "owner": "C-06",
+  "manual": "02-operacion/cc1/MO-CC1-06-cambio-sen-y-distribuidor.md",
+  "deck": "05-capacitacion/MO-CC1-06",
+  "purpose": "Atender el taponamiento (clogging) de la buza sumergida (SEN) y cambiar la SEN o el distribuidor sin perder la secuencia, sin rebose en el molde y sin exponer a nadie al metal líquido.",
+  "whyItMatters": "Una SEN tapada o rota da grietas, inclusiones y pérdida de nivel. Un cambio mal hecho puede derramar acero, romper la unión bajo el molde (breakout) o cerrar la secuencia.",
+  "startsWhen": "La tendencia del tapón indica clogging, la SEN está gastada o rota, o el distribuidor llega al fin de su vida o hay cambio de grado incompatible, con la máquina colando (MO-CC1-04).",
+  "endsWhen": "La colada sigue a velocidad de tabla, el planchón del cambio o de unión está marcado y la zona bajo el molde se levanta con autorización de C-06.",
+  "previous": [
+    "MO-CC1-04",
+    "MO-CC1-01",
+    "MO-CC1-05"
+  ],
+  "next": [
+    "MO-CC1-04",
+    "MO-CC1-08",
+    "MO-CC1-09"
+  ],
+  "heroFigure": {
+    "file": "img/cc1-distribuidor.svg",
+    "caption": "Distribuidor de CC1: barra tapón, buza sumergida (SEN) y niveles de operación."
+  },
+  "figures": [
+    {
+      "file": "img/cc1-molde-nivel.svg",
+      "caption": "Molde: inmersión de la SEN de 120–160 mm y control de nivel."
+    }
+  ],
+  "roles": [
+    {
+      "code": "S-13",
+      "name": "Operador de Plataforma de Colada",
+      "raci": "R",
+      "does": "Opera el argón y el tapón, el cambiador de SEN, los carros del distribuidor y la olla.",
+      "it": "IT-S13"
+    },
+    {
+      "code": "S-14",
+      "name": "Ayudante de Colada",
+      "raci": "R",
+      "does": "Pone polvo de molde, observa el menisco, revisa centrado e inmersión de la SEN y retira costras.",
+      "it": "IT-S14"
+    },
+    {
+      "code": "S-12",
+      "name": "Operador de Púlpito de Colada",
+      "raci": "R",
+      "does": "Vigila la tendencia del tapón, maneja velocidad, nivel automático o manual, detención y rampa; marca eventos.",
+      "it": "IT-S12"
+    },
+    {
+      "code": "S-15",
+      "name": "Preparador de Distribuidores",
+      "raci": "R",
+      "does": "Entrega el distribuidor nuevo y la SEN de repuesto precalentados (MO-CC1-01).",
+      "it": "IT-S15"
+    },
+    {
+      "code": "C-06",
+      "name": "Supervisor de Colada Continua",
+      "raci": "A",
+      "does": "Dueño del proceso. Decide el cambio, dirige la maniobra y la zona de exclusión.",
+      "it": "IT-C06"
+    },
+    {
+      "code": "C-08",
+      "name": "Ingeniero de Proceso de CC",
+      "raci": "C",
+      "does": "Define los criterios de clogging y la vida de la SEN y del distribuidor."
+    },
+    {
+      "code": "C-07",
+      "name": "Ingeniero de Proceso EAF / LF",
+      "raci": "C",
+      "does": "Ajusta el tratamiento con calcio en el horno olla si el clogging se repite."
+    },
+    {
+      "code": "C-09",
+      "name": "Metalurgista de Producto",
+      "raci": "I",
+      "does": "Decide qué hacer con los planchones de unión y con evento."
+    }
+  ],
+  "goldenRules": [
+    "Solo SEN y distribuidor precalentados y liberados: SEN ≥ 1,000 °C, distribuidor 1,100 ± 50 °C.",
+    "En el frente del molde solo S-13 y S-14; nadie bajo el molde hasta que la unión pase el segmento 3.",
+    "Cierra el tapón del distribuidor viejo a 400 mm y reanuda a 0.3 m/min con rampa lenta."
+  ],
+  "epp": [
+    "casco",
+    "careta_dorada",
+    "aluminizado",
+    "ropa_fr",
+    "guantes",
+    "botas",
+    "auditiva",
+    "detector_gas"
+  ],
+  "dangerZone": {
+    "red": "Zona roja: frente del molde durante la maniobra. Solo S-13 y S-14 con aluminizado completo.",
+    "yellow": "Zona de exclusión bajo el molde, ruta de los carros y fosa del distribuidor: despejadas.",
+    "rule": "La zona bajo el molde se mantiene hasta que la unión o el planchón del cambio de SEN pasa el segmento 3 y C-06 autoriza levantarla."
+  },
+  "hazards": [
+    {
+      "icon": "fuego",
+      "text": "Salpicadura o derrame al retirar la SEN o el distribuidor: quemaduras graves."
+    },
+    {
+      "icon": "peligro",
+      "text": "La unión se rompe al reanudar (breakout): acero bajo el molde."
+    },
+    {
+      "icon": "carro",
+      "text": "Movimiento de los carros del distribuidor: golpe o atrapamiento."
+    },
+    {
+      "icon": "agua",
+      "text": "Distribuidor o SEN húmedos o fríos: explosión."
+    },
+    {
+      "icon": "flujo",
+      "text": "Rebose del molde al abrir el tapón de golpe."
+    }
+  ],
+  "phases": [
+    "Clogging",
+    "Cambio de SEN",
+    "Cambio de distribuidor"
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-12",
+      "icon": "tendencia",
+      "title": "Detecta el clogging",
+      "action": "Vigila la posición del tapón con velocidad y ancho constantes. Si el tapón pasa de 80 % de apertura, baja la velocidad 0.1 m/min por paso.",
+      "check": "Tapón sube > 10 % en 15 min = clogging. Nivel de molde ± 3 mm.",
+      "quality": true
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-13",
+      "icon": "gas",
+      "title": "Sube el argón del tapón",
+      "action": "Sube el argón 1 NL/min cada 5 min, máximo 8 NL/min. Vigila el burbujeo del menisco. Pulsa el tapón solo si el fabricante lo permite [Validar con OEM / Ingeniería de Proceso].",
+      "check": "Tapón estable; argón ≤ 8 NL/min."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "C-06",
+      "icon": "autorizar",
+      "title": "Decide el cambio de SEN",
+      "action": "Si el tapón no se recupera en 15 min o el flujo es asimétrico, ordena el cambio de SEN. Pide a C-08 y C-07 la muestra de Ca/Al y el ajuste en el horno olla.",
+      "check": "ΔT entre caras anchas > 2 °C o 15 min sin recuperar = cambio.",
+      "decision": {
+        "question": "¿Hay cambiador y SEN lista?",
+        "no": "Cambia el distribuidor (paso 11) o cierra."
+      }
+    },
+    {
+      "n": 4,
+      "phase": 1,
+      "role": "S-15",
+      "icon": "temperatura",
+      "title": "Prepara la SEN nueva",
+      "action": "Entrega la SEN de repuesto precalentada. Revisa que no tenga grietas y que los puertos estén libres.",
+      "check": "SEN ≥ 1,000 °C (objetivo ≥ 1,050 °C), sin grietas.",
+      "critical": true,
+      "stop": "La SEN marca menos de 1,000 °C o tiene grietas."
+    },
+    {
+      "n": 5,
+      "phase": 1,
+      "role": "C-06",
+      "icon": "barrera",
+      "title": "Despeja la zona",
+      "action": "Deja solo a S-13 y S-14 en el frente del molde. Despeja la zona bajo el molde. Confirma por radio.",
+      "check": "Zona confirmada por C-06.",
+      "critical": true,
+      "stop": "Hay alguien más en el frente o bajo el molde."
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "S-12",
+      "icon": "hmi",
+      "title": "Baja la velocidad a 0.5 m/min",
+      "action": "Baja con rampa a 0.5 m/min. Pasa el nivel a manual o al modo \"cambio de SEN\".",
+      "check": "Velocidad estable en 0.4–0.6 m/min."
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-13",
+      "icon": "cambiar",
+      "title": "Cierra el tapón y cambia la SEN",
+      "action": "Con el paso libre de polvo y costras (S-14), mete la SEN nueva en la guía. Cierra el tapón y acciona el cambiador: la nueva empuja a la vieja.",
+      "check": "≤ 10 s sin flujo (objetivo ≤ 5 s).",
+      "critical": true,
+      "decision": {
+        "question": "¿Cambió en ≤ 15 s?",
+        "no": "Reabre con la SEN vieja y avisa a C-06."
+      }
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-13",
+      "icon": "flujo",
+      "title": "Abre el tapón poco a poco",
+      "action": "Abre el tapón de forma progresiva. Lleva el nivel a 0 mm y S-12 pasa a automático.",
+      "check": "Nivel ± 3 mm en ≤ 60 s; nunca debajo de −30 mm."
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "medir",
+      "title": "Revisa inmersión y centrado",
+      "action": "Mide la inmersión y el centrado de la SEN nueva. Lleva la SEN vieja a una caja seca, nunca al piso mojado.",
+      "check": "Inmersión 120–160 mm; centrada ± 5 mm."
+    },
+    {
+      "n": 10,
+      "phase": 1,
+      "role": "S-12",
+      "icon": "marcar",
+      "title": "Recupera velocidad y marca",
+      "action": "Sube la velocidad con rampa ≤ 0.2 m/min por minuto. Marca \"cambio de SEN\" en el tracking con la hora y la vida de la SEN.",
+      "check": "Velocidad de tabla; planchón marcado."
+    },
+    {
+      "n": 11,
+      "phase": 2,
+      "role": "S-15",
+      "icon": "verificar",
+      "title": "Confirma el distribuidor nuevo",
+      "action": "Deja el distribuidor nuevo liberado (MO-CC1-01) en el carro 2, a 1,100 ± 50 °C y con SEN ≥ 1,000 °C. C-06 firma la liberación.",
+      "check": "Firma de liberación; sin vapor.",
+      "critical": true,
+      "stop": "El distribuidor tiene vapor o la SEN está fría."
+    },
+    {
+      "n": 12,
+      "phase": 2,
+      "role": "C-06",
+      "icon": "barrera",
+      "title": "Coordina y pon la zona roja",
+      "action": "La olla actual cierra normal (MO-CC1-05) y la nueva queda en la torreta sin abrir. Deja solo a S-13 y S-14 en el frente; nadie bajo el molde.",
+      "check": "Coordinación y zona confirmadas por radio.",
+      "critical": true,
+      "stop": "Hay alguien en la zona roja o bajo el molde."
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-12",
+      "icon": "nivel",
+      "title": "Drena el distribuidor viejo",
+      "action": "Baja la velocidad según el nivel del distribuidor: 800 mm → 0.9; 700 mm → 0.6; 600 mm → 0.4 m/min.",
+      "check": "El nivel baja controlado."
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "S-13",
+      "icon": "detener",
+      "title": "Cierra el tapón a 400 mm",
+      "action": "A 400 mm cierra el tapón. S-12 detiene la extracción (velocidad 0). Mantén oscilación y agua de molde.",
+      "check": "Línea detenida; hora registrada; tapón cerrado a 400–450 mm.",
+      "critical": true
+    },
+    {
+      "n": 15,
+      "phase": 2,
+      "role": "S-13",
+      "icon": "cambiar",
+      "title": "Cambia el distribuidor",
+      "action": "S-14 cubre el menisco con polvo. Sube el viejo y llévalo a la fosa seca con el carro 1. Pon el nuevo con el carro 2 y centra la SEN.",
+      "check": "Sin derrame; SEN centrada ± 5 mm, inmersión 120–160 mm.",
+      "decision": {
+        "question": "¿Detenida ≤ 3 min?",
+        "no": "S-14 pone la grapa [Validar OEM]. > 5 min: cierre."
+      }
+    },
+    {
+      "n": 16,
+      "phase": 2,
+      "role": "S-13",
+      "icon": "flujo",
+      "title": "Abre la olla y el tapón",
+      "action": "Abre la olla nueva con tubo protector y argón. Llena a 500 mm y agrega flux. Abre el tapón poco a poco hasta −60 mm de nivel en el molde.",
+      "check": "Distribuidor a 500 mm en ≈ 3 min; sin rebose.",
+      "critical": true
+    },
+    {
+      "n": 17,
+      "phase": 2,
+      "role": "S-12",
+      "icon": "arrancar",
+      "title": "Reanuda y marca la unión",
+      "action": "Arranca a 0.3 m/min con nivel automático y rampa ≤ 0.2 m/min por minuto. Marca el planchón de unión en el tracking.",
+      "check": "Sin alarma de breakout (BOP); unión marcada.",
+      "quality": true
+    },
+    {
+      "n": 18,
+      "phase": 2,
+      "role": "C-06",
+      "icon": "barrera",
+      "title": "Mantén la zona bajo el molde",
+      "action": "No levantes la exclusión hasta que la unión pase el segmento 3 (≈ 5 m). Luego autoriza por radio.",
+      "check": "Unión después del segmento 3; C-06 autoriza.",
+      "critical": true
+    }
+  ],
+  "abnormal": [
+    {
+      "icon": "peligro",
+      "if": "SEN rota: burbujeo, flama, nivel errático o aspiración de aire",
+      "do": "Cambio de SEN inmediato. Sin cambiador: cambio de distribuidor o cierre.",
+      "call": "C-06 y C-08"
+    },
+    {
+      "icon": "tiempo",
+      "if": "Detención de más de 5 min en el cambio de distribuidor",
+      "do": "Cierre de secuencia y salida de cola (MO-CC1-07).",
+      "call": "C-06 y C-04"
+    },
+    {
+      "icon": "fuego",
+      "if": "Breakout en la unión (sale acero bajo el molde)",
+      "do": "Respuesta a breakout (MO-CC1-04 §9). Aléjate de la zona.",
+      "call": "C-04, C-06 y C-16"
+    },
+    {
+      "icon": "flujo",
+      "if": "El molde rebosa al reanudar",
+      "do": "Cierra el tapón y recupera el nivel en manual.",
+      "call": "C-06"
+    },
+    {
+      "icon": "agua",
+      "if": "Distribuidor nuevo con vapor o SEN fría",
+      "do": "No lo uses. Si no hay otro: cierre de secuencia.",
+      "call": "C-06 y C-15"
+    }
+  ],
+  "records": [
+    {
+      "what": "Registro de clogging: tendencia del tapón, argón, acciones, resultado y muestra Ca/Al",
+      "when": "Cada evento",
+      "where": "Nivel 2 y bitácora de turno"
+    },
+    {
+      "what": "Registro de cambio de SEN: hora, vida, tiempo sin flujo, nivel mínimo",
+      "when": "Cada cambio",
+      "where": "Nivel 2"
+    },
+    {
+      "what": "Registro de cambio de distribuidor: vida del viejo, detención y reanudación, grapa, nivel mínimo",
+      "when": "Cada cambio",
+      "where": "Nivel 2"
+    },
+    {
+      "what": "Planchón del cambio de SEN y planchón de unión",
+      "when": "Cada cambio",
+      "where": "Tracking / MES"
+    }
+  ],
+  "certification": [
+    {
+      "role": "S-13",
+      "level": "3",
+      "theory": "16 h",
+      "ojt": "6 cambios de SEN + 4 cambios de distribuidor",
+      "evaluated": "Pasos 4, 5, 7, 11, 12, 14, 16 y 18 (B1, B2, B6, C1, C3, C5, C11, C13 del manual)",
+      "validity": "≤ 24 meses (TD-P07)"
+    },
+    {
+      "role": "S-14",
+      "level": "3",
+      "theory": "8 h",
+      "ojt": "6 + 4 eventos",
+      "evaluated": "Zona roja, centrado e inmersión (paso 9), grapa",
+      "validity": "≤ 24 meses"
+    },
+    {
+      "role": "S-12",
+      "level": "3",
+      "theory": "12 h",
+      "ojt": "6 + 4 eventos (o simulador)",
+      "evaluated": "Detención, reanudación y rampa; diagnóstico de clogging",
+      "validity": "≤ 24 meses"
+    },
+    {
+      "role": "C-06",
+      "level": "4 (evaluador)",
+      "theory": "8 h + evaluador",
+      "ojt": "—",
+      "evaluated": "Todos los pasos",
+      "validity": "≤ 24 meses"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "SEN",
+      "def": "Buza sumergida: tubo refractario que lleva el acero del distribuidor al molde."
+    },
+    {
+      "term": "Clogging",
+      "def": "Taponamiento de la SEN por alúmina (Al₂O₃) pegada por dentro."
+    },
+    {
+      "term": "Barra tapón",
+      "def": "Barra que abre y cierra el paso del acero del distribuidor a la SEN."
+    },
+    {
+      "term": "Cambiador de SEN",
+      "def": "Mecanismo que empuja una SEN nueva y saca la vieja en segundos [Supuesto en CC1]."
+    },
+    {
+      "term": "Planchón de unión",
+      "def": "Planchón donde se juntan el acero del distribuidor viejo y del nuevo; se marca e inspecciona."
+    },
+    {
+      "term": "Grapa de unión",
+      "def": "Pieza que refuerza la unión si la línea estuvo detenida más de 3 min."
+    },
+    {
+      "term": "BOP",
+      "def": "Sistema de predicción de breakout del molde."
+    }
+  ],
+  "review": [
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "code": "MO-EAF-02",
+  "pov": "POV-EAF-02",
+  "title": "Carga de chatarra con canasta",
+  "area": "EAF",
+  "areaName": "Patio de chatarra y nave de hornos — EAF-1 / EAF-2",
+  "version": "0.1",
+  "owner": "C-05",
+  "manual": "02-operacion/eaf/MO-EAF-02-carga-chatarra-canasta.md",
+  "deck": "05-capacitacion/MO-EAF-02",
+  "purpose": "Cargar al horno una canasta de 55–70 t de chatarra seca, sin materiales prohibidos y bien acomodada, en ≤ 3 min y sin nadie expuesto.",
+  "whyItMatters": "Agua, contenedores cerrados o explosivos en la chatarra explotan al tocar el talón líquido. Una fuente radiactiva contamina el acero y la planta.",
+  "startsWhen": "Entra chatarra al patio por el pórtico de radiación y el horno se prepara para recibir la carga (MO-EAF-01).",
+  "endsWhen": "La bóveda cierra sobre la carga y S-01 inicia la perforación (MO-EAF-04).",
+  "previous": [
+    "MO-EAF-01"
+  ],
+  "next": [
+    "MO-EAF-04"
+  ],
+  "heroFigure": {
+    "file": "img/eaf-flujo-acería.svg",
+    "caption": "Flujo de la Acería: la chatarra del patio entra al horno en canasta; el DRI entra en continuo."
+  },
+  "figures": [
+    {
+      "file": "img/ms-zonas-exclusion-nave.svg",
+      "caption": "Zonas de exclusión de la nave: zona roja ≤ 15 m del horno y ruta de la canasta ± 5 m."
+    }
+  ],
+  "roles": [
+    {
+      "code": "S-05",
+      "name": "Operador de Patio de Chatarra",
+      "raci": "R",
+      "does": "Atiende el pórtico de radiación, inspecciona y segrega, arma la canasta por capas, pesa y registra.",
+      "it": "IT-S05"
+    },
+    {
+      "code": "S-04",
+      "name": "Operador de Grúa de Carga",
+      "raci": "R",
+      "does": "Traslada la canasta con la grúa de 120/40 t, la centra sobre el horno y la abre.",
+      "it": "IT-S04"
+    },
+    {
+      "code": "S-01",
+      "name": "Primer Hornero (púlpito)",
+      "raci": "R",
+      "does": "Prepara el horno (arco apagado, electrodos arriba, bóveda girada) y confirma la zona despejada.",
+      "it": "IT-S01"
+    },
+    {
+      "code": "C-05",
+      "name": "Supervisor de Hornos",
+      "raci": "A",
+      "does": "Dueño. Autoriza cargas con desviación de peso o mezcla y detiene la carga ante duda de humedad o material prohibido.",
+      "it": "IT-C05"
+    },
+    {
+      "code": "C-17",
+      "name": "Supervisor de Patio de Chatarra y Materiales",
+      "raci": "A",
+      "does": "Dueño en el patio: asegura la receta, la inspección y la cuarentena de rechazos; libera canastas escurridas.",
+      "it": "IT-C17"
+    },
+    {
+      "code": "C-16",
+      "name": "Especialista de Seguridad e Higiene (ESR)",
+      "raci": "C",
+      "does": "Atiende como Encargado de Seguridad Radiológica las alarmas del pórtico (MS-ACE-07)."
+    },
+    {
+      "code": "C-07",
+      "name": "Ingeniero de Proceso EAF / LF",
+      "raci": "C",
+      "does": "Define la receta de carga y los límites de residuales (Cu, Sn, Ni, Cr)."
+    }
+  ],
+  "goldenRules": [
+    "Nunca se carga chatarra mojada, con contenedores cerrados o explosivos, ni una canasta que gotea.",
+    "Alarma del pórtico = detén, aísla a 10 m y avisa al ESR. El material nunca se toca ni se carga.",
+    "Nadie a pie a ≤ 15 m del horno ni bajo la ruta de la canasta desde que se levanta hasta que cierra la bóveda."
+  ],
+  "epp": [
+    "casco",
+    "lentes",
+    "guantes",
+    "botas",
+    "auditiva",
+    "ropa_fr",
+    "careta_dorada",
+    "aluminizado",
+    "dosimetro"
+  ],
+  "dangerZone": {
+    "red": "Zona roja: ≤ 15 m del horno con la plataforma despejada y ruta de la canasta ± 5 m. Nadie a pie; el señalero en el refugio.",
+    "yellow": "Zona amarilla: de 15 a 30 m del horno. Rechazo del pórtico: perímetro de 10 m alrededor del camión.",
+    "rule": "La zona roja se activa con bocina desde que la canasta se levanta hasta que la bóveda cierra (MS-ACE-01)."
+  },
+  "hazards": [
+    {
+      "icon": "agua",
+      "text": "Humedad, líquidos o contenedores cerrados en la carga: explosión al tocar el talón."
+    },
+    {
+      "icon": "peligro",
+      "text": "Explosivos, municiones o fuentes radiactivas en la chatarra."
+    },
+    {
+      "icon": "grua",
+      "text": "Canasta suspendida de hasta ≈ 105 t [Supuesto]: aplastamiento."
+    },
+    {
+      "icon": "fuego",
+      "text": "Flama y proyecciones al abrir la canasta sobre el horno."
+    },
+    {
+      "icon": "electrico",
+      "text": "Arco o movimiento con la bóveda abierta."
+    }
+  ],
+  "phases": [
+    "En el patio",
+    "Preparar el horno",
+    "Cargar"
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-05",
+      "icon": "verificar",
+      "title": "Prueba el pórtico de radiación",
+      "action": "Al inicio del turno prueba el pórtico con la fuente de verificación y registra la prueba.",
+      "check": "El pórtico responde a la fuente.",
+      "critical": true,
+      "stop": "El pórtico no responde: no recibas chatarra y avisa al ESR (C-16)."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-05",
+      "icon": "alarma",
+      "title": "Pasa cada camión por el pórtico",
+      "action": "Pasa a ≤ 8 km/h [Validar con OEM] y espera el \"libre\". Con alarma: segunda pasada. Si confirma: detén, aísla a 10 m, no descargues y avisa a C-16 y C-17.",
+      "check": "Sin alarma.",
+      "critical": true,
+      "stop": "La alarma se confirma en la segunda pasada.",
+      "decision": {
+        "question": "¿Pórtico sin alarma?",
+        "no": "Aísla a 10 m. No descargues ni toques. Avisa a C-16."
+      }
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-05",
+      "icon": "buscar",
+      "title": "Inspecciona la chatarra",
+      "action": "Busca contenedores cerrados, líquidos, explosivos, humedad y no ferrosos. Separa lo prohibido en el área de rechazo.",
+      "check": "Sin material prohibido.",
+      "critical": true,
+      "decision": {
+        "question": "¿Chatarra limpia y seca?",
+        "no": "Prohibido: rechaza y registra. Húmeda: escurre y seca bajo techo."
+      }
+    },
+    {
+      "n": 4,
+      "phase": 0,
+      "role": "S-05",
+      "icon": "inspeccionar",
+      "title": "Revisa la canasta vacía",
+      "action": "Revisa concha cerrada, seguros y orejas, sin agua acumulada en el fondo. Una canasta que gotea no se traslada: se escurre y C-17 la libera.",
+      "check": "Canasta seca y sin daño.",
+      "critical": true,
+      "stop": "La canasta gotea o tiene agua en el fondo."
+    },
+    {
+      "n": 5,
+      "phase": 0,
+      "role": "S-05",
+      "icon": "material",
+      "title": "Arma la canasta por capas",
+      "action": "Ligera al fondo (10–15 %), pesada al centro (≤ 20 %) lejos de las paredes, luego media y ligera arriba. Nunca pesados arriba.",
+      "check": "Receta cumplida y nada sobre el borde.",
+      "quality": true
+    },
+    {
+      "n": 6,
+      "phase": 0,
+      "role": "S-05",
+      "icon": "pesar",
+      "title": "Pesa y registra la canasta",
+      "action": "Pon la báscula en cero, pesa y registra número de canasta, peso y mezcla.",
+      "check": "55–70 t (objetivo 65 t).",
+      "quality": true,
+      "decision": {
+        "question": "¿Peso 55–70 t?",
+        "no": "Rearma: retira o completa material."
+      }
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-04",
+      "icon": "radio",
+      "title": "Espera el aviso de horno listo",
+      "action": "Espera a que S-01 avise por radio que la preparación (MO-EAF-01) está completa.",
+      "check": "Aviso \"horno listo\" recibido."
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-01",
+      "icon": "detener",
+      "title": "Prepara el horno para la carga",
+      "action": "Detén el DRI, apaga el arco y abre el interruptor. Sube los electrodos al tope, levanta y gira la bóveda.",
+      "check": "HMI: interruptor abierto, electrodos arriba y bóveda girada.",
+      "critical": true
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-01",
+      "icon": "inspeccionar",
+      "title": "Verifica que no hay agua",
+      "action": "Con el horno abierto observa: sin chorros de agua, sin vapor y talón cubierto de escoria.",
+      "check": "Sin evidencia de agua.",
+      "critical": true,
+      "stop": "Ves agua, vapor o chorros dentro del horno."
+    },
+    {
+      "n": 10,
+      "phase": 1,
+      "role": "S-01",
+      "icon": "barrera",
+      "title": "Despeja la zona de exclusión",
+      "action": "Suena la bocina. Confirma por radio y cámara que nadie está a ≤ 15 m del horno ni a ± 5 m de la ruta de la canasta.",
+      "check": "S-01 y S-04 confirman \"zona libre\" por radio.",
+      "critical": true,
+      "stop": "Alguien está en la zona roja o en la ruta.",
+      "decision": {
+        "question": "¿Horno listo y zona libre?",
+        "no": "Espera. No levantes la canasta."
+      }
+    },
+    {
+      "n": 11,
+      "phase": 2,
+      "role": "S-04",
+      "icon": "grua",
+      "title": "Traslada la canasta",
+      "action": "Levanta a la altura mínima segura, a velocidad reducida y por la ruta definida. Nunca pases sobre personas, púlpitos ni pasillos.",
+      "check": "Ruta libre durante todo el traslado.",
+      "critical": true,
+      "stop": "Hay una persona bajo la canasta o en su ruta."
+    },
+    {
+      "n": 12,
+      "phase": 2,
+      "role": "S-04",
+      "icon": "objetivo",
+      "title": "Centra y baja la canasta",
+      "action": "Centra la canasta sobre el centro del horno con el fondo a 0.5–1.0 m sobre el borde de la coraza [Validar con OEM].",
+      "check": "Canasta centrada; nunca a más de 1.5 m."
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-04",
+      "icon": "vaciar",
+      "title": "Abre la concha",
+      "action": "Abre con el gancho auxiliar de forma controlada. Observa la flama y las proyecciones.",
+      "check": "Toda la carga cae dentro del horno."
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "S-04",
+      "icon": "subir_bajar",
+      "title": "Retira la canasta",
+      "action": "Sube y retira la canasta por la ruta. Revisa que no quede material colgado.",
+      "check": "Canasta vacía."
+    },
+    {
+      "n": 15,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "ok",
+      "title": "Cierra la bóveda",
+      "action": "Gira y baja la bóveda. Revisa que no haya chatarra sobre el borde de la coraza.",
+      "check": "Bóveda asentada y enclavamiento OK.",
+      "stop": "La bóveda no asienta por chatarra sobre el borde."
+    },
+    {
+      "n": 16,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "arrancar",
+      "title": "Inicia la perforación",
+      "action": "Pasa a MO-EAF-04 con tap bajo.",
+      "check": "Arco estable; carga en ≤ 3 min (alarma > 5 min)."
+    },
+    {
+      "n": 17,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "cambiar",
+      "title": "Carga la 2.ª canasta si aplica",
+      "action": "Cuando la 1.ª esté fundida ≥ 70 % y haya volumen [Validar con Ingeniería de Proceso], repite los pasos 7 a 16.",
+      "check": "Mismos criterios que la 1.ª canasta.",
+      "critical": true
+    }
+  ],
+  "abnormal": [
+    {
+      "icon": "alarma",
+      "if": "Alarma del pórtico de radiación",
+      "do": "Detén el vehículo y haz segunda pasada ≤ 8 km/h. Si confirma: no descargues, camión a la zona de aislamiento, perímetro de 10 m [Validar con el ESR], chofer fuera, registra placas.",
+      "call": "C-16 (ESR), C-17 y C-04"
+    },
+    {
+      "icon": "peligro",
+      "if": "Explosión o proyección fuerte al abrir la canasta",
+      "do": "Todos fuera de la zona. No se abre otra canasta. Revisa daños: agua, electrodos, bóveda.",
+      "call": "C-05, C-04 y C-16"
+    },
+    {
+      "icon": "electrico",
+      "if": "Colapso de chatarra sobre los electrodos en la perforación",
+      "do": "Sube electrodos, baja el tap y revisa corriente y electrodos. Electrodo roto: MO-EAF-08.",
+      "call": "C-05"
+    },
+    {
+      "icon": "alto",
+      "if": "La bóveda no cierra (chatarra sobre el borde)",
+      "do": "No energices. Empuja o retira con equipo desde fuera, nunca a mano.",
+      "call": "C-05"
+    },
+    {
+      "icon": "grua",
+      "if": "La concha no abre o abre a medias",
+      "do": "Retira la canasta sobre una zona segura. Nadie se acerca. Revisión con LOTO de la grúa.",
+      "call": "C-05 y Mantenimiento"
+    },
+    {
+      "icon": "agua",
+      "if": "Chatarra mojada o canasta que gotea",
+      "do": "No cargues. Escurre y seca bajo techo; C-17 libera la canasta. Prioriza chatarra seca.",
+      "call": "C-17"
+    }
+  ],
+  "records": [
+    {
+      "what": "Registro del pórtico: prueba diaria, alarmas, rechazos y actas con el ESR",
+      "when": "Cada turno y cada alarma",
+      "where": "Consola del pórtico y registro de C-16"
+    },
+    {
+      "what": "Inspección y rechazos de chatarra (tipo, origen, proveedor)",
+      "when": "Cada descarga",
+      "where": "Registro de patio"
+    },
+    {
+      "what": "Registro de canasta: número, peso, mezcla, hora, horno y colada",
+      "when": "Cada canasta",
+      "where": "Nivel 2"
+    },
+    {
+      "what": "Inspección previa de la grúa de carga",
+      "when": "Cada turno",
+      "where": "Bitácora de la grúa"
+    },
+    {
+      "what": "Reporte de incidente o casi-accidente",
+      "when": "Si aplica",
+      "where": "Sistema de SSO"
+    }
+  ],
+  "certification": [
+    {
+      "role": "S-05",
+      "level": "3",
+      "theory": "16 h (4 h de radiación con el ESR)",
+      "ojt": "60 h / 40 canastas",
+      "evaluated": "Pórtico, alarma, inspección de chatarra y canasta seca; material prohibido con muestras",
+      "validity": "24 meses; pórtico y fuentes 12 meses"
+    },
+    {
+      "role": "S-04",
+      "level": "3",
+      "theory": "24 h (NOM-006 + grúa)",
+      "ojt": "80 h / 40 cargas",
+      "evaluated": "Zona libre, traslado sin pasar sobre personas, 2.ª canasta; inspección previa de la grúa",
+      "validity": "12 meses (grúas e izaje)"
+    },
+    {
+      "role": "S-01",
+      "level": "3",
+      "theory": "8 h",
+      "ojt": "20 cargas",
+      "evaluated": "Preparar el horno, horno sin agua, zona libre, 2.ª canasta",
+      "validity": "24 meses"
+    },
+    {
+      "role": "C-17",
+      "level": "4 (evaluador)",
+      "theory": "16 h + evaluador",
+      "ojt": "—",
+      "evaluated": "Respuesta a alarma del pórtico",
+      "validity": "12 meses (fuentes radiactivas)"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Canasta",
+      "def": "Recipiente de 90 m³ con fondo que se abre en concha (clamshell) para descargar la chatarra en el horno."
+    },
+    {
+      "term": "Pórtico de radiación",
+      "def": "Detector por el que pasa cada camión o góndola para encontrar fuentes radiactivas."
+    },
+    {
+      "term": "ESR",
+      "def": "Encargado de Seguridad Radiológica, con licencia de la CNSNS (función de C-16)."
+    },
+    {
+      "term": "Chatarra prohibida",
+      "def": "Contenedores cerrados, líquidos, explosivos, fuentes radiactivas, baterías, hielo, lodo, llantas y plásticos en exceso."
+    },
+    {
+      "term": "Receta de carga",
+      "def": "Tipos y porcentajes de chatarra que define C-07 según el grado."
+    },
+    {
+      "term": "Perforación",
+      "def": "Primeros minutos de arco en que los electrodos penetran la chatarra (MO-EAF-04)."
+    }
+  ],
+  "review": [
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "code": "MO-CC2-02",
+  "pov": "POV-CC2-02",
+  "title": "Inserción y sellado de la barra falsa rígida (6 líneas)",
+  "area": "CC2",
+  "areaName": "Colada Continua 2 — máquina de palanquilla de 6 líneas (moldes y línea)",
+  "version": "0.1",
+  "owner": "C-06",
+  "manual": "02-operacion/cc2/MO-CC2-02-insercion-barra-falsa-rigida.md",
+  "deck": "05-capacitacion/MO-CC2-02",
+  "purpose": "Dejar las 6 líneas listas para arrancar: agua, rociado, oscilación y EMS probados, y la barra falsa dentro del molde a la altura correcta, sellada, seca y con chatarra de enfriamiento.",
+  "whyItMatters": "Para sellar metes las manos al molde, donde pasa el haz de la fuente de Cs-137. Un sello húmedo o mal hecho provoca una fuga de acero o una explosión en el arranque.",
+  "startsWhen": "Mantenimiento entrega la máquina o termina la secuencia anterior (MO-CC2-07). También para rearrancar una línea durante la secuencia.",
+  "endsWhen": "El ESR abre el obturador, el nivel marca \"molde vacío\" y C-06 libera las 6 líneas para el arranque (MO-CC2-03).",
+  "previous": [
+    "MO-CC2-07",
+    "MM-CC-01",
+    "MM-CC-02"
+  ],
+  "next": [
+    "MO-CC2-03"
+  ],
+  "heroFigure": {
+    "file": "img/cc2-molde-tubo.svg",
+    "caption": "Molde de tubo de CC2: agua, aceite, EMS y fuente de Cs-137 que cruza el molde a la altura del menisco."
+  },
+  "figures": [
+    {
+      "file": "img/ms-loto-puntos-cc.svg",
+      "caption": "Puntos de bloqueo de la CC, incluido el obturador de la fuente (punto 7)."
+    }
+  ],
+  "roles": [
+    {
+      "code": "S-12",
+      "name": "Operador de Púlpito de Colada",
+      "raci": "R",
+      "does": "Inserta la barra falsa desde el HMI y prueba agua, rociado, oscilación y EMS.",
+      "it": "IT-S12"
+    },
+    {
+      "code": "S-14",
+      "name": "Ayudante de Colada (molde y línea)",
+      "raci": "R",
+      "does": "Inspecciona el molde, bloquea, centra la cabeza, sella y pone la chatarra de enfriamiento.",
+      "it": "IT-S14"
+    },
+    {
+      "code": "C-16",
+      "name": "Especialista de Seguridad e Higiene (función ESR)",
+      "raci": "R",
+      "does": "Como Encargado de Seguridad Radiológica: cierra, bloquea y abre el obturador de Cs-137 y mide la dosis. También verifica radiación y LOTO."
+    },
+    {
+      "code": "C-06",
+      "name": "Supervisor de Colada Continua",
+      "raci": "A",
+      "does": "Dueño del proceso. Recibe la máquina, confirma que no hay nadie en los moldes y libera las líneas.",
+      "it": "IT-C06"
+    },
+    {
+      "code": "S-25",
+      "name": "Mecánico de Taller de Moldes",
+      "raci": "C",
+      "does": "Atiende desgaste, conicidad y alineación del molde (MM-CC-01, MM-CC-02).",
+      "it": "IT-S25"
+    },
+    {
+      "code": "S-21",
+      "name": "Instrumentista",
+      "raci": "C",
+      "does": "Atiende fallas del medidor de nivel, caudalímetros y termopares.",
+      "it": "IT-S21"
+    }
+  ],
+  "goldenRules": [
+    "Nunca metas las manos al molde sin el obturador cerrado, bloqueado y medido por el ESR (< 2 × fondo).",
+    "Molde seco: 5 min con agua a caudal pleno sin una gota. Cordón y chatarra secos y sin aceite.",
+    "LOTO de oscilador y extractores antes de sellar. Nadie en los moldes antes de abrir el obturador."
+  ],
+  "epp": [
+    "casco",
+    "lentes",
+    "guantes",
+    "ropa_fr",
+    "botas",
+    "auditiva",
+    "respirador",
+    "dosimetro"
+  ],
+  "dangerZone": {
+    "red": "Zona controlada de radiación: parte alta de los moldes, señalizada con el trébol. Solo personal ocupacionalmente expuesto (POE) o acompañado por el ESR.",
+    "yellow": "Fosa y bajo la plataforma: nadie mientras se mueve la barra falsa.",
+    "rule": "Candado del ESR en el obturador de la línea donde se trabaja + candado personal de S-14. LOTO de extractores y oscilador durante el sellado."
+  },
+  "hazards": [
+    {
+      "icon": "peligro",
+      "text": "Radiación del Cs-137: el haz cruza el molde a la altura del menisco."
+    },
+    {
+      "icon": "agua",
+      "text": "Agua o humedad en el molde, el cordón o la chatarra: explosión en el arranque."
+    },
+    {
+      "icon": "bloqueo",
+      "text": "Movimiento de la barra falsa o de la oscilación con manos en la línea: atrapamiento o amputación."
+    },
+    {
+      "icon": "barrera",
+      "text": "Caída junto a moldes abiertos en la plataforma."
+    },
+    {
+      "icon": "material",
+      "text": "Fibra cerámica del cordón: irritación respiratoria."
+    }
+  ],
+  "phases": [
+    "Pruebas de máquina",
+    "Inserción y sellado",
+    "Liberación"
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "C-06",
+      "icon": "checklist",
+      "title": "Recibe la máquina",
+      "action": "Revisa la bitácora de mantenimiento y que los permisos de trabajo estén cerrados.",
+      "check": "Sin permisos abiertos en la CC2."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-12",
+      "icon": "agua",
+      "title": "Arranca el agua de molde",
+      "action": "Abre el agua de molde en las 6 líneas a caudal pleno por al menos 5 min.",
+      "check": "1,800–2,200 L/min por línea.",
+      "critical": true,
+      "stop": "Una línea marca menos de 1,800 L/min."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-14",
+      "icon": "buscar",
+      "title": "Revisa fugas en cada molde",
+      "action": "Con lámpara, busca gotas, humedad o vapor dentro de cada molde.",
+      "check": "Molde totalmente seco.",
+      "critical": true,
+      "stop": "Hay gotas, humedad o vapor dentro del molde.",
+      "decision": {
+        "question": "¿Molde seco?",
+        "no": "No liberes. Cambio de molde (MM-CC-01)."
+      }
+    },
+    {
+      "n": 4,
+      "phase": 0,
+      "role": "S-12",
+      "icon": "rociar",
+      "title": "Prueba rociado, oscilación y EMS",
+      "action": "Prueba el rociado zona por zona a caudal de arranque. Prueba la oscilación en vacío a 200 cpm y energiza el EMS 1 min. S-14 revisa las boquillas.",
+      "check": "≥ 95 % de boquillas OK y esquinas cubiertas; carrera 6–10 mm; sin alarmas.",
+      "quality": true
+    },
+    {
+      "n": 5,
+      "phase": 0,
+      "role": "S-14",
+      "icon": "inspeccionar",
+      "title": "Revisa el tubo y la alineación",
+      "action": "Revisa rayas, desgaste y deformación del tubo. Mide la alineación molde–pie de rodillos con la plantilla (con S-25).",
+      "check": "Sin rayas > 0.5 mm; alineación ± 0.5 mm.",
+      "quality": true
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "C-16",
+      "icon": "bloqueo",
+      "title": "Cierra y bloquea el obturador",
+      "action": "A pedido de S-14 y con permiso firmado, el ESR cierra el obturador, pone candado y tarjeta y mide en el punto de trabajo y a 1 m.",
+      "check": "Tasa de dosis < 2 × fondo; registro firmado.",
+      "critical": true,
+      "stop": "El obturador no cierra o la dosis es ≥ 2 × fondo.",
+      "decision": {
+        "question": "¿Dosis < 2 × fondo?",
+        "no": "Nadie entra al molde. Aléjate ≥ 3 m; el ESR atiende."
+      }
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "bloqueo",
+      "title": "Bloquea el oscilador",
+      "action": "Pon tu candado personal al oscilador y haz la prueba de arranque.",
+      "check": "Prueba de arranque sin movimiento.",
+      "critical": true
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-12",
+      "icon": "subir_bajar",
+      "title": "Inserta la barra falsa",
+      "action": "En el HMI, modo inserción a ≤ 3 m/min. Los últimos 2 m a ≤ 0.5 m/min.",
+      "check": "La cabeza para sin golpe.",
+      "stop": "Hay alguien en la fosa o bajo la plataforma."
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "medir",
+      "title": "Ajusta la altura de la cabeza",
+      "action": "Mide desde el borde del tubo. Pide a S-12 ajustar en modo lento si hace falta.",
+      "check": "Cabeza a 700 ± 20 mm bajo el borde.",
+      "critical": true
+    },
+    {
+      "n": 10,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "bloqueo",
+      "title": "Bloquea los extractores",
+      "action": "Pon tu candado personal a los extractores-enderezadores de esa línea.",
+      "check": "Sin movimiento posible.",
+      "critical": true
+    },
+    {
+      "n": 11,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "objetivo",
+      "title": "Centra la cabeza",
+      "action": "Mide con galgas en los 4 lados y centra la cabeza.",
+      "check": "Holgura de 2–4 mm, uniforme."
+    },
+    {
+      "n": 12,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "herramienta",
+      "title": "Sella con cordón cerámico",
+      "action": "Empaca el cordón de fibra cerámica en todo el perímetro, apretado con espátula. Usa respirador P100.",
+      "check": "Sin huecos visibles con lámpara.",
+      "critical": true
+    },
+    {
+      "n": 13,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "material",
+      "title": "Coloca la chatarra de enfriamiento",
+      "action": "Pon 1.5–3 kg de recortes limpios, secos y sin aceite, en capa de 30–50 mm.",
+      "check": "Cubre toda la cabeza.",
+      "critical": true,
+      "stop": "La chatarra está húmeda, oxidada o con aceite."
+    },
+    {
+      "n": 14,
+      "phase": 1,
+      "role": "S-14",
+      "icon": "checklist",
+      "title": "Tapa y repite en las 6 líneas",
+      "action": "Tapa el molde con una tapa metálica seca. Repite desde el paso 6 en cada línea, una a la vez.",
+      "check": "6 líneas selladas y tapadas."
+    },
+    {
+      "n": 15,
+      "phase": 2,
+      "role": "S-14",
+      "icon": "flujo",
+      "title": "Ceba el aceite",
+      "action": "Verifica que el aceite salga por todas las ranuras y déjalo en espera.",
+      "check": "Salida uniforme."
+    },
+    {
+      "n": 16,
+      "phase": 2,
+      "role": "S-14",
+      "icon": "personas",
+      "title": "Retira LOTO y cuenta al personal",
+      "action": "Cuenta a las personas con C-06 y retira tu candado.",
+      "check": "Plataforma, moldes y fosa despejados.",
+      "critical": true,
+      "stop": "Hay alguien en un molde, la plataforma o la fosa."
+    },
+    {
+      "n": 17,
+      "phase": 2,
+      "role": "C-16",
+      "icon": "autorizar",
+      "title": "Abre el obturador",
+      "action": "El ESR retira su candado y abre el obturador. S-12 revisa la lectura de \"molde vacío\".",
+      "check": "El nivel indica vacío, sin alarma.",
+      "critical": true,
+      "decision": {
+        "question": "¿Marca molde vacío?",
+        "no": "No liberes. S-21 revisa con el ESR."
+      }
+    },
+    {
+      "n": 18,
+      "phase": 2,
+      "role": "C-06",
+      "icon": "certificado",
+      "title": "Libera las líneas",
+      "action": "Revisa y firma la lista de verificación de máquina.",
+      "check": "6 líneas en \"listo para colar\" en el HMI."
+    }
+  ],
+  "abnormal": [
+    {
+      "icon": "agua",
+      "if": "Gotas o humedad dentro del molde",
+      "do": "No liberes la línea. Cambio de molde.",
+      "call": "C-06 y S-25"
+    },
+    {
+      "icon": "flujo",
+      "if": "Caudal de agua < 1,800 L/min en la prueba",
+      "do": "No liberes. Revisa con mantenimiento.",
+      "call": "C-06 y C-12"
+    },
+    {
+      "icon": "detener",
+      "if": "La barra falsa no avanza o se atora",
+      "do": "Detén, aplica LOTO e inspecciona la línea con mantenimiento.",
+      "call": "C-06 y C-11"
+    },
+    {
+      "icon": "objetivo",
+      "if": "La cabeza no queda centrada",
+      "do": "Cambia la cabeza y revisa la alineación.",
+      "call": "C-06 y S-25"
+    },
+    {
+      "icon": "peligro",
+      "if": "El obturador no cierra o la dosis es ≥ 2 × fondo",
+      "do": "Nadie entra al molde. Aléjate ≥ 3 m y acordona. El ESR atiende y reporta a la CNSNS si aplica (MS-ACE-07).",
+      "call": "C-16 (ESR) y C-06"
+    },
+    {
+      "icon": "nivel",
+      "if": "El nivel no marca \"molde vacío\" con el obturador abierto",
+      "do": "No liberes la línea.",
+      "call": "C-06, S-21 y C-16 (ESR)"
+    },
+    {
+      "icon": "material",
+      "if": "Chatarra húmeda u oxidada",
+      "do": "Usa otra caja seca o sécala en estufa.",
+      "call": "C-06"
+    }
+  ],
+  "records": [
+    {
+      "what": "Lista de verificación de máquina por línea: agua, fugas, rociado, oscilación, EMS, tubo, alineación, altura de cabeza, sellado",
+      "when": "Cada preparación",
+      "where": "Formato de máquina"
+    },
+    {
+      "what": "Registro del ESR: cierre y apertura del obturador, hora, tasa de dosis, firmas",
+      "when": "Cada línea intervenida",
+      "where": "Registro del ESR"
+    },
+    {
+      "what": "Dosimetría personal",
+      "when": "Continuo",
+      "where": "Registro del ESR"
+    },
+    {
+      "what": "Registro de LOTO",
+      "when": "Cada bloqueo",
+      "where": "Tablero / registro de LOTO"
+    }
+  ],
+  "certification": [
+    {
+      "role": "S-14",
+      "level": "3",
+      "theory": "16 h + 8 h de protección radiológica (POE)",
+      "ojt": "40 h / 12 sellados de línea",
+      "evaluated": "Pasos 3, 6, 7, 9, 10, 12, 13 y 16 (3, 8, 9, 11, 12, 14, 15 y 19 del manual)",
+      "validity": "24 meses (TD-P07); protección radiológica 12 meses"
+    },
+    {
+      "role": "S-12",
+      "level": "3",
+      "theory": "16 h + 8 h de protección radiológica",
+      "ojt": "24 h / 6 preparaciones de máquina",
+      "evaluated": "Pasos 2, 9 y 17 (2, 11 y 20 del manual)",
+      "validity": "24 meses (TD-P07); protección radiológica 12 meses"
+    },
+    {
+      "role": "C-16",
+      "level": "4 (ESR)",
+      "theory": "Según la CNSNS",
+      "ojt": "—",
+      "evaluated": "Acreditación CNSNS vigente; pasos 6 y 17 (8 y 20 del manual)",
+      "validity": "Según licencia CNSNS; evaluación interna 12 meses"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Barra falsa rígida",
+      "def": "Barra curva (radio 9 m) que cierra el fondo del molde y jala la primera palanquilla."
+    },
+    {
+      "term": "Cabeza",
+      "def": "Punta de la barra falsa en forma de gancho donde se ancla el primer acero."
+    },
+    {
+      "term": "Chatarra de enfriamiento",
+      "def": "Recortes limpios y secos sobre la cabeza para que el primer acero solidifique rápido."
+    },
+    {
+      "term": "Obturador",
+      "def": "Cierre de la fuente de Cs-137 que bloquea el haz de radiación."
+    },
+    {
+      "term": "ESR",
+      "def": "Encargado de Seguridad Radiológica, con licencia de la CNSNS (función de C-16)."
+    },
+    {
+      "term": "POE",
+      "def": "Personal ocupacionalmente expuesto a radiación; usa dosímetro."
+    },
+    {
+      "term": "EMS",
+      "def": "Agitador electromagnético del acero en el molde."
+    },
+    {
+      "term": "Fondo natural",
+      "def": "Radiación normal del ambiente (≈ 0.1–0.3 µSv/h)."
+    }
+  ],
+  "review": [
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "code": "MO-CC2-06",
+  "pov": "POV-CC2-06",
+  "title": "Cambio rápido de buza y cierre de línea",
+  "area": "CC2",
+  "areaName": "Colada Continua 2 — palanquilla, 6 líneas",
+  "version": "0.1",
+  "owner": "C-06",
+  "manual": "02-operacion/cc2/MO-CC2-06-cambio-rapido-buza-cierre-linea.md",
+  "deck": "05-capacitacion/MO-CC2-06",
+  "purpose": "Cambiar una buza calibrada gastada o tapada sin perder la línea (chorro cortado ≤ 2 s) y cerrar una línea en forma segura y rápida cuando hay un problema.",
+  "whyItMatters": "Una buza erosionada acelera la línea y una tapada la frena: aparecen defectos y breakouts. Una línea con desbordamiento, breakout o sin agua se vuelve peligrosa en segundos si no se cierra.",
+  "startsWhen": "La velocidad de una línea sale de 2.3–3.5 m/min, el chorro se abre, la buza llega a su vida o hay una condición de cierre durante la colada (MO-CC2-03 o MO-CC2-04).",
+  "endsWhen": "La línea vuelve a nivel automático con la buza nueva, o la línea queda cerrada y su cola sigue MO-CC2-07.",
+  "previous": ["MO-CC2-04", "MO-CC2-01"],
+  "next": ["MO-CC2-04", "MO-CC2-07"],
+  "heroFigure": {"file": "img/cc2-distribuidor-6-lineas.svg", "caption": "Distribuidor de 30 t, corte A–A y mecanismo de cambio rápido de buza calibrada."},
+  "figures": [
+    {"file": "img/cc2-molde-tubo.svg", "caption": "Molde de tubo: el chorro de la buza debe caer compacto y centrado."}
+  ],
+  "roles": [
+    {"code": "C-06", "name": "Supervisor de Colada Continua", "raci": "A", "does": "Dueño del proceso. Autoriza el cambio de buza y decide el cierre de línea (en emergencia, S-13 cierra y avisa).", "it": "IT-C06"},
+    {"code": "S-13", "name": "Operador de Plataforma de Colada", "raci": "R", "does": "Hace el cambio de buza y el cierre con placa ciega o con tapón.", "it": "IT-S13"},
+    {"code": "S-14", "name": "Ayudante de Colada", "raci": "R", "does": "Trae la buza caliente del horno, vigila el molde y el chorro y confirma el nivel.", "it": "IT-S14"},
+    {"code": "S-12", "name": "Operador de Púlpito de Colada", "raci": "R", "does": "Pasa la línea a velocidad fija, la regresa a automático y controla la cola de la línea cerrada.", "it": "IT-S12"},
+    {"code": "S-16", "name": "Operador de Corte y Marcado", "raci": "R", "does": "Marca con \"C\" la última palanquilla de la línea cerrada (manual §8, paso 17).", "it": "IT-S16"},
+    {"code": "S-15", "name": "Preparador de Distribuidores", "raci": "C", "does": "Mantiene el horno con buzas calientes y repone la buza usada con otra del mismo diámetro.", "it": "IT-S15"},
+    {"code": "C-08", "name": "Ingeniero de Proceso de Colada Continua", "raci": "C", "does": "Analiza la vida de las buzas y los taponamientos repetidos."}
+  ],
+  "goldenRules": ["Usa solo buzas y placas del horno de repuesto: diámetro de la orden y ≥ 900 °C.", "Nadie en la línea de expulsión de la buza usada. Empuja en un solo movimiento.", "Línea con desbordamiento, breakout o sin agua: ciérrala de inmediato con placa ciega y avisa."],
+  "epp": ["casco", "careta_dorada", "aluminizado", "guantes", "botas", "ropa_fr", "auditiva", "dosimetro"],
+  "dangerZone": {"red": "Zona roja: 3 m [Validar con C-16] en la línea de expulsión de la buza usada. Nadie.", "yellow": "Posición de cambio bajo el distribuidor: solo S-13 y S-14, del lado contrario a la expulsión, con EPP aluminizado completo.", "rule": "Aviso por radio a S-12 antes de cada cambio o cierre. Una línea cerrada no se interviene sin LOTO y, en el molde, sin el ESR (C-16)."},
+  "hazards": [
+    {"icon": "fuego", "text": "Acero líquido y salpicaduras bajo el distribuidor durante el cambio."},
+    {"icon": "agua", "text": "Buza o placa húmeda o fría: explosión o buza congelada."},
+    {"icon": "calor", "text": "Taponeo desde arriba del distribuidor: calor radiante y riesgo de caída."},
+    {"icon": "peligro", "text": "Buza usada caliente expulsada al cajón: quemaduras e incendio."},
+    {"icon": "alarma", "text": "Radiación Cs-137 al limpiar el molde de una línea cerrada: solo con el ESR."}
+  ],
+  "phases": ["Cambio rápido de buza", "Cierre de línea"],
+  "steps": [
+    {"n": 1, "phase": 0, "role": "S-12", "icon": "tendencia", "title": "Confirma la necesidad del cambio", "action": "Revisa la velocidad, el chorro y las horas de la buza. Cambio si: > 3.5 o < 2.3 m/min, diferencia > ± 0.4 m/min, chorro abierto o > 12 h de servicio.", "check": "Criterio de cambio cumplido.", "decision": {"question": "¿Basta con cambiar la buza?", "no": "Desborde, breakout o sin agua: cierra la línea (paso 11)."}},
+    {"n": 2, "phase": 0, "role": "S-13", "icon": "radio", "title": "Avisa y pide autorización", "action": "Avisa por radio a C-06 y S-12: \"cambio de buza línea X\".", "check": "Cambio autorizado por C-06."},
+    {"n": 3, "phase": 0, "role": "S-14", "icon": "temperatura", "title": "Verifica la buza de repuesto", "action": "Revisa en la etiqueta que el diámetro sea el de la orden (160 × 160: 20–24 mm, nominal 22) y que el horno esté a ≥ 900 °C.", "check": "Ø correcto; buza ≥ 900 °C [Validar OEM].", "critical": true, "stop": "La buza está a menos de 850 °C, húmeda o con otro diámetro."},
+    {"n": 4, "phase": 0, "role": "S-12", "icon": "hmi", "title": "Pasa la línea a velocidad fija", "action": "Fija la velocidad actual de la línea en la HMI.", "check": "Línea en manual."},
+    {"n": 5, "phase": 0, "role": "S-14", "icon": "herramienta", "title": "Coloca la buza en el mecanismo", "action": "Con tenazas, coloca la buza en el carril antes de 30 s desde que sale del horno.", "check": "Buza asentada en el carril en ≤ 30 s.", "critical": true},
+    {"n": 6, "phase": 0, "role": "S-13", "icon": "ubicacion", "title": "Colócate en la posición segura", "action": "Párate del lado contrario a la salida de la buza usada, en la posición marcada en el piso.", "check": "Nadie en la línea de expulsión.", "critical": true, "stop": "Hay alguien en la línea de expulsión de la buza usada."},
+    {"n": 7, "phase": 0, "role": "S-13", "icon": "cambiar", "title": "Empuja la buza", "action": "Empuja en un solo movimiento continuo. La buza usada cae al cajón con arena seca.", "check": "Cambio en ≤ 2 s [Validar OEM].", "critical": true, "stop": "El mecanismo se atora a medio camino: no fuerces con las manos."},
+    {"n": 8, "phase": 0, "role": "S-14", "icon": "inspeccionar", "title": "Revisa el chorro", "action": "Observa el chorro en el molde desde tu posición. No te asomes.", "check": "Chorro compacto y centrado, sin abanico ni desviación.", "quality": true, "decision": {"question": "¿Chorro compacto?", "no": "Cierra la línea con placa ciega (paso 12)."}},
+    {"n": 9, "phase": 0, "role": "S-12", "icon": "nivel", "title": "Regresa a nivel automático", "action": "Pasa a automático cuando el nivel esté a ± 10 mm del punto.", "check": "Nivel ± 5 mm en ≤ 30 s."},
+    {"n": 10, "phase": 0, "role": "S-13", "icon": "registrar", "title": "Registra el cambio", "action": "Anota línea, hora, Ø, horas de la buza usada y causa. Avisa a S-15 para reponer el horno.", "check": "Registro de buzas completo; horno con 6 buzas."},
+    {"n": 11, "phase": 1, "role": "S-13", "icon": "radio", "title": "Avisa el cierre de línea", "action": "Avisa por radio \"cierre de línea X\". En emergencia primero cierra y luego avisa.", "check": "S-12 y C-06 enterados."},
+    {"n": 12, "phase": 1, "role": "S-13", "icon": "alto", "title": "Empuja la placa ciega", "action": "Toma la placa del horno y empújala como en los pasos 5 a 7, con S-14.", "check": "Chorro cortado en ≤ 10 s.", "critical": true, "decision": {"question": "¿Se cortó el chorro?", "no": "Tapona desde arriba con la varilla (paso 13)."}},
+    {"n": 13, "phase": 1, "role": "S-13", "icon": "herramienta", "title": "Tapona desde arriba si no cerró", "action": "Mete el tapón cónico con la varilla en la boca de la buza. Presiona firme 30–60 s [Validar] hasta que se congele. Usa careta y chamarra; plataforma con barandal.", "check": "Chorro cortado.", "critical": true},
+    {"n": 14, "phase": 1, "role": "S-12", "icon": "detener", "title": "Controla la línea cerrada", "action": "Con breakout o atoramiento, detén la extracción. Si no, saca la cola controlada (MO-CC2-07, pasos de cola).", "check": "Línea en condición segura.", "critical": true, "stop": "Sale acero bajo el molde o la palanquilla está atorada."},
+    {"n": 15, "phase": 1, "role": "S-13", "icon": "nivel", "title": "Compensa el distribuidor", "action": "Cierra un poco la olla: al cerrar líneas el nivel tiende a subir. Arriba de 870 mm, cierra más.", "check": "Nivel 700–850 mm."},
+    {"n": 16, "phase": 1, "role": "S-16", "icon": "marcar", "title": "Marca la cola \"C\"", "action": "Marca la última palanquilla de la línea cerrada con \"C\" (cola).", "check": "Palanquilla \"C\" identificada en el rastreo.", "quality": true},
+    {"n": 17, "phase": 1, "role": "S-13", "icon": "avisar", "title": "Reporta el cierre", "action": "Informa causa, hora y acciones. Si hubo breakout o derrame, se hace el reporte de incidente.", "check": "Reporte de cierre entregado a C-06."}
+  ],
+  "abnormal": [
+    {"icon": "cambiar", "if": "La buza nueva no fluye", "do": "Empuja otra buza caliente. Si falla, cierra con placa ciega.", "call": "C-06"},
+    {"icon": "bloqueo", "if": "El mecanismo se atora a medio camino", "do": "Cierra con el tapón desde arriba. No fuerces con las manos.", "call": "C-06 y C-11"},
+    {"icon": "flujo", "if": "El chorro sigue abierto después del cambio", "do": "Cierra la línea.", "call": "C-06 y C-08"},
+    {"icon": "alto", "if": "La placa ciega no cierra", "do": "Tapona con la varilla.", "call": "C-06"},
+    {"icon": "tendencia", "if": "Taponamientos repetidos en varias líneas", "do": "Avisa al LF (química: Al alto, acero frío) y a C-08.", "call": "C-06, C-07 y C-08"},
+    {"icon": "nivel", "if": "El nivel del distribuidor sube al cerrar varias líneas", "do": "Cierra la olla en parte. Arriba de 870 mm, cierre adicional.", "call": "C-06"},
+    {"icon": "barrera", "if": "La buza expulsada cae fuera del cajón", "do": "Acordona y deja enfriar. No la toques sin tenazas.", "call": "C-06"}
+  ],
+  "records": [
+    {"what": "Registro de buzas por línea (hora, Ø, horas de servicio, causa)", "when": "Cada cambio", "where": "Registro de buzas"},
+    {"what": "Reporte de cierre de línea (causa, hora, método, acciones)", "when": "Cada cierre", "where": "Reporte de cierre"},
+    {"what": "Palanquillas \"B\" (cambio de buza) y \"C\" (cola)", "when": "Cada cambio o cierre", "where": "Sistema de rastreo"},
+    {"what": "Reporte de incidente", "when": "Si hubo derrame o breakout", "where": "Sistema de SSO (MS-ACE-09)"}
+  ],
+  "certification": [
+    {"role": "S-13", "level": "3", "theory": "8 h", "ojt": "15 cambios de buza + 3 cierres (o simulacro)", "evaluated": "Pasos 6, 7, 12 y 13; con S-14 el paso 5", "validity": "24 meses (TD-P07)"},
+    {"role": "S-14", "level": "3", "theory": "8 h", "ojt": "15 cambios de buza", "evaluated": "Pasos 3 y 5, posición segura (paso 6) y placa ciega (paso 12)", "validity": "24 meses (TD-P07)"},
+    {"role": "S-12", "level": "3", "theory": "4 h", "ojt": "10 cambios", "evaluated": "Paso 14: control de la línea cerrada", "validity": "24 meses (TD-P07)"}
+  ],
+  "glossary": [
+    {"term": "Buza calibrada", "def": "Buza de ZrO₂ con orificio fijo (160 × 160 mm: 20–24 mm) que fija el caudal de cada línea."},
+    {"term": "Cambio rápido", "def": "Mecanismo bajo el distribuidor: al empujar una buza nueva, la usada sale a un cajón."},
+    {"term": "Placa ciega", "def": "Placa sin orificio que se empuja para cerrar la línea en ≤ 10 s."},
+    {"term": "Tapón con varilla", "def": "Tapón cónico que se mete desde arriba del distribuidor como respaldo para cerrar."},
+    {"term": "Erosión", "def": "Desgaste de la buza: el diámetro crece y la línea acelera."},
+    {"term": "Taponamiento", "def": "Óxidos pegados en la buza (Al alto, acero frío): el paso baja y la línea frena."}
+  ],
+  "review": [
+    {"area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28"}
+  ]
+}

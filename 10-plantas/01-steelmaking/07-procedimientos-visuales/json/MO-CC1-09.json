@@ -1,0 +1,97 @@
+{
+  "code": "MO-CC1-09",
+  "pov": "POV-CC1-09",
+  "title": "Inspección de calidad del planchón y disposición",
+  "area": "CC1",
+  "areaName": "Colada Continua 1 — área de inspección, patio de planchón y laboratorio",
+  "version": "0.1",
+  "owner": "C-09",
+  "manual": "02-operacion/cc1/MO-CC1-09-inspeccion-calidad-planchon.md",
+  "deck": "05-capacitacion/MO-CC1-09",
+  "purpose": "Que ningún planchón con defecto llegue a Laminación sin decisión: encontrar, medir y clasificar los defectos y decidir si se acepta, se escarpea, se degrada o se rechaza.",
+  "whyItMatters": "Un defecto que se escapa llega al cliente (automotriz, tubería). Una mala clasificación tira producto bueno. Inspeccionar junto a una grúa o un volteador en movimiento puede aplastar al inspector.",
+  "startsWhen": "El planchón llega al área de inspección o a la pila con su ID y sus eventos en el MES (MO-CC1-08).",
+  "endsWhen": "El planchón queda liberado o retenido en el MES, con su disposición marcada, y las tendencias se reportan a C-06 y C-08.",
+  "previous": ["MO-CC1-08"],
+  "next": ["MO-CC1-04"],
+  "heroFigure": { "file": "img/cc1-defectos-planchon.svg", "caption": "Mapa de defectos del planchón de CC1: grietas, depresiones, inclusiones, poros, marcas de oscilación y defectos internos." },
+  "figures": [],
+  "roles": [
+    { "code": "S-18", "name": "Inspector de Calidad de Semiterminado", "raci": "R", "does": "Inspecciona caras, cantos y medidas; clasifica y marca defectos; registra; re-inspecciona después del escarpeo.", "it": "IT-S18" },
+    { "code": "S-11", "name": "Muestrero / Analista de Laboratorio", "raci": "R", "does": "Prepara y ataca las muestras internas (macroataque o impresión Baumann).", "it": "IT-S11" },
+    { "code": "S-17", "name": "Operador de Mesa de Enfriamiento y Despacho", "raci": "R", "does": "Mueve, voltea y separa los planchones; ejecuta la disposición física.", "it": "IT-S17" },
+    { "code": "C-09", "name": "Metalurgista de Producto / Ingeniero de Calidad", "raci": "A", "does": "Dueño de los criterios. Decide degradación y rechazo y analiza tendencias." },
+    { "code": "C-08", "name": "Ingeniero de Proceso de CC", "raci": "C", "does": "Recibe la retroalimentación y corrige el proceso." },
+    { "code": "C-06", "name": "Supervisor de Colada Continua", "raci": "I", "does": "Recibe el resumen de defectos del turno.", "it": "IT-C06" }
+  ],
+  "goldenRules": [
+    "Inspecciona solo con el planchón asentado, la grúa fuera y nadie junto al volteador en movimiento.",
+    "Un planchón con evento no se libera sin inspección reforzada. Solo los liberados se despachan.",
+    "Escarpeo con permiso en caliente: 3–5 mm por pasada, ≤ 10 mm por cara y espesor final ≥ 220 mm."
+  ],
+  "epp": ["casco", "lentes", "ropa_fr", "guantes", "botas", "auditiva", "respirador"],
+  "dangerZone": {
+    "red": "Zona roja: bajo la grúa y junto al volteador mientras se mueven planchones de hasta 33 t. Nadie entre pilas.",
+    "yellow": "Área de escarpeo: libre de combustibles, con permiso de trabajo en caliente.",
+    "rule": "Confirma con S-17 o con la grúa que el planchón está asentado antes de acercarte. LOTO del volteador para cualquier intervención mecánica."
+  },
+  "hazards": [
+    { "icon": "grua", "text": "Planchones en pila o en el volteador (hasta 33 t): aplastamiento." },
+    { "icon": "oxigeno", "text": "Escarpeo con O₂: quemaduras, retroceso de flama y ruido > 100 dB(A)." },
+    { "icon": "gas", "text": "Humos de escarpeo y vapores del ácido del macroataque." },
+    { "icon": "calor", "text": "Superficies calientes: mide la temperatura antes de tocar." },
+    { "icon": "peligro", "text": "Caídas al caminar sobre planchones: usa escaleras, no brinques." }
+  ],
+  "phases": ["Antes de inspeccionar", "Inspección y medición", "Disposición y cierre"],
+  "steps": [
+    { "n": 1, "phase": 0, "role": "S-18", "icon": "hmi", "title": "Revisa la lista de planchones", "action": "En el MES revisa IDs, grado, eventos de proceso y retenciones. Los planchones con evento llevan inspección reforzada.", "check": "Lista del turno con eventos identificados." },
+    { "n": 2, "phase": 0, "role": "S-18", "icon": "seguro", "title": "Confirma condiciones seguras", "action": "Confirma con S-17 o con la grúa que el planchón está asentado, la grúa fuera de la zona y la pila estable.", "check": "Confirmación verbal con S-17 o la grúa.", "critical": true, "stop": "La grúa o el volteador se mueven cerca, o la pila se ve inestable.", "decision": { "question": "¿Asentado y grúa fuera?", "no": "No te acerques. Espera y confirma otra vez." } },
+    { "n": 3, "phase": 0, "role": "S-18", "icon": "verificar", "title": "Verifica la ID", "action": "Compara el marcado del planchón con el MES.", "check": "Marca legible e igual al MES.", "quality": true },
+    { "n": 4, "phase": 1, "role": "S-18", "icon": "buscar", "title": "Inspecciona la cara superior", "action": "Recorre toda la cara con luz. Busca grietas, depresiones, inclusiones, poros y marcas profundas. Marca cada defecto con pintura.", "check": "Defectos marcados con pintura.", "quality": true },
+    { "n": 5, "phase": 1, "role": "S-18", "icon": "inspeccionar", "title": "Inspecciona cantos y extremos", "action": "Revisa grietas de esquina, rechupe en los extremos y rebaba.", "check": "Hallazgos registrados.", "quality": true },
+    { "n": 6, "phase": 1, "role": "S-18", "icon": "girar", "title": "Inspecciona la cara inferior", "action": "Pide a S-17 voltear el planchón según la frecuencia. Aléjate del volteador mientras se mueve y luego revisa la cara.", "check": "1 por colada; 100 % si tiene evento o es HSLA de tubería.", "critical": true, "stop": "Hay alguien junto al volteador mientras se mueve." },
+    { "n": 7, "phase": 1, "role": "S-18", "icon": "medir", "title": "Mide dimensiones", "action": "Mide espesor (3 puntos por extremo), ancho (cabeza, centro y cola), largo, sable y escuadra.", "check": "Espesor 230 ± 3 mm; largo ± 15 mm; sable ≤ 15 mm/10 m; escuadra ≤ 5 mm.", "quality": true },
+    { "n": 8, "phase": 1, "role": "S-18", "icon": "medir", "title": "Mide la profundidad de defectos", "action": "Usa la galga o un escarpeo de prueba para medir cada defecto marcado.", "check": "Profundidad registrada (resolución 0.1 mm)." },
+    { "n": 9, "phase": 2, "role": "S-18", "icon": "calidad", "title": "Clasifica y dispone", "action": "Aplica la tabla del manual: aceptar, escarpear (superficial ≤ 5 mm), degradar o rechazar (> 10 mm, interno severo o medida fuera).", "check": "Disposición registrada en el MES." },
+    { "n": 10, "phase": 2, "role": "S-18", "icon": "oxigeno", "title": "Escarpea si aplica", "action": "Escarpador certificado [Supuesto: S-18 o contratista REPSE]. Con permiso en caliente y arrestaflamas: 3–5 mm por pasada. HSLA con Nb a ≥ 150 °C.", "check": "≤ 10 mm por cara; espesor final ≥ 220 mm.", "critical": true, "stop": "No hay permiso de trabajo en caliente o falta el arrestaflamas." },
+    { "n": 11, "phase": 2, "role": "S-18", "icon": "buscar", "title": "Re-inspecciona", "action": "Revisa la zona escarpeada: no debe quedar defecto.", "check": "Sin defecto remanente.", "quality": true, "decision": { "question": "¿Defecto eliminado?", "no": "Otra pasada (máx. 2). Si persiste: rechazo (C-09)." } },
+    { "n": 12, "phase": 2, "role": "S-18", "icon": "avisar", "title": "Solicita la decisión de degradación", "action": "Envía a C-09 la evidencia: foto, medida y macro. C-09 decide degradar o rechazar.", "check": "Decisión documentada y firmada por C-09." },
+    { "n": 13, "phase": 2, "role": "S-11", "icon": "muestra", "title": "Prepara las muestras internas", "action": "Toma la rebanada según la frecuencia y prepara el macroataque o la impresión Baumann con campana y EPP químico.", "check": "Clase de segregación y grietas internas reportada a C-09.", "quality": true },
+    { "n": 14, "phase": 2, "role": "S-18", "icon": "marcar", "title": "Marca la disposición física", "action": "Pinta el código de colores de la disposición en el planchón.", "check": "Marca igual a la disposición del MES." },
+    { "n": 15, "phase": 2, "role": "S-18", "icon": "registrar", "title": "Libera o retén en el MES", "action": "Cambia el estado a liberado o retenido. Solo los liberados se pueden despachar.", "check": "MES actualizado." },
+    { "n": 16, "phase": 2, "role": "C-09", "icon": "tendencia", "title": "Reporta tendencias", "action": "Envía resumen de turno a C-06 y Pareto semanal de defectos a C-08 para corregir el proceso.", "check": "Reporte emitido." }
+  ],
+  "abnormal": [
+    { "icon": "alarma", "if": "2 o más planchones seguidos con grieta longitudinal", "do": "Retén la colada completa y avisa de inmediato a CC1 para acción en línea.", "call": "C-06, C-08 y C-09" },
+    { "icon": "peligro", "if": "Grietas transversales en HSLA", "do": "Retén y pide revisar la temperatura de enderezado.", "call": "C-08 y C-09" },
+    { "icon": "medir", "if": "Espesor o ancho fuera de tolerancia", "do": "Retén. Espesor: C-08 pide medir el gap de segmentos (MM-CC-02). Ancho: avisa a CC1 (MO-CC1-04).", "call": "C-06, C-08 y C-09" },
+    { "icon": "marcar", "if": "ID ilegible o duplicada", "do": "Retén hasta identificarlo por colada y posición.", "call": "C-06 y C-09" },
+    { "icon": "fuego", "if": "Retroceso de flama en el escarpeo", "do": "Cierra las válvulas y revisa el arrestaflamas.", "call": "C-16" },
+    { "icon": "material", "if": "Planchón inestable en la pila", "do": "Aléjate y avisa a la grúa.", "call": "S-17 y C-16" }
+  ],
+  "records": [
+    { "what": "Inspección por planchón: defectos, ubicación, profundidad, dimensiones, disposición, inspector", "when": "Cada planchón", "where": "MES" },
+    { "what": "Registro de escarpeo: profundidad, área y re-inspección", "when": "Cada escarpeo", "where": "MES" },
+    { "what": "Reporte de macroataque / Baumann con foto", "when": "Según frecuencia", "where": "Laboratorio / MES" },
+    { "what": "Decisiones de degradación firmadas por C-09", "when": "Cada caso", "where": "MES / archivo de calidad" },
+    { "what": "Pareto semanal y SPC (tasas, Cpk)", "when": "Semanal", "where": "Tablero de calidad" }
+  ],
+  "certification": [
+    { "role": "S-18", "level": "3", "theory": "32 h (defectos, causas, criterios, metrología, MES)", "ojt": "160 h / 300 planchones verificados por un inspector nivel 4", "evaluated": "Pasos 2 y 6; concordancia con el catálogo de defectos ≥ 90 %", "validity": "≤ 24 meses (TD-P07)" },
+    { "role": "S-18", "level": "3 (escarpador [Supuesto])", "theory": "16 h (NOM-027, escarpeo)", "ojt": "40 h", "evaluated": "Paso 10", "validity": "≤ 24 meses" },
+    { "role": "S-11", "level": "3", "theory": "16 h (macroataque, Baumann, seguridad química)", "ojt": "20 muestras", "evaluated": "Paso 13", "validity": "≤ 24 meses" },
+    { "role": "C-09", "level": "4 (evaluador)", "theory": "24 h", "ojt": "—", "evaluated": "Todos; decisiones de degradación", "validity": "—" }
+  ],
+  "glossary": [
+    { "term": "Evento de proceso", "def": "Algo que pasó en la colada (nivel ± 8 mm, cambio de SEN, unión, arranque, fin de secuencia) y retiene el planchón." },
+    { "term": "Escarpeo", "def": "Quitar con soplete de oxígeno una capa delgada de la superficie para eliminar un defecto." },
+    { "term": "Degradar", "def": "Asignar el planchón a un grado o uso menos exigente." },
+    { "term": "Macroataque / Baumann", "def": "Pruebas en una rebanada del planchón que muestran la calidad interna." },
+    { "term": "Segregación central", "def": "Concentración de elementos en el centro del espesor; se califica por clase." },
+    { "term": "Sable (camber)", "def": "Curvatura del planchón a lo largo, en mm por cada 10 m." },
+    { "term": "Galga", "def": "Instrumento para medir la profundidad de un defecto." }
+  ],
+  "review": [
+    { "area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28" }
+  ]
+}

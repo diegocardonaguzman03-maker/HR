@@ -1,0 +1,435 @@
+{
+  "code": "MO-EAF-08",
+  "pov": "POV-EAF-08",
+  "title": "Adición y empalme de electrodos",
+  "area": "EAF",
+  "areaName": "Hornos — EAF-1 / EAF-2 (plataforma de electrodos y soporte de adición)",
+  "version": "0.1",
+  "owner": "C-05",
+  "manual": "02-operacion/eaf/MO-EAF-08-adicion-empalme-electrodos.md",
+  "deck": "05-capacitacion/MO-EAF-08",
+  "purpose": "Mantener cada columna de electrodos (610 mm, niple 4TPI) con longitud suficiente, agregando electrodos con un empalme apretado al torque del fabricante y sin holgura.",
+  "whyItMatters": "Una junta floja se calienta, se oxida y se rompe. Una columna mal izada cae y aplasta; energizar con alguien en la plataforma electrocuta.",
+  "startsWhen": "La longitud bajo la mordaza no alcanza para la siguiente colada y se programa la adición entre coladas (MO-EAF-01).",
+  "endsWhen": "La columna está en la mordaza con la junta fuera de la zona de contacto, los bloqueos retirados con conteo y el empalme registrado.",
+  "previous": [
+    "MO-EAF-01"
+  ],
+  "next": [
+    "MO-EAF-02"
+  ],
+  "heroFigure": {
+    "file": "img/eaf-empalme-electrodo.svg",
+    "caption": "Columna de electrodos: niple cónico, caras en contacto total y marca de deslizamiento."
+  },
+  "figures": [
+    {
+      "file": "img/ms-loto-puntos-eaf.svg",
+      "caption": "Puntos de bloqueo del EAF: interruptor, hidráulica de brazos y giro de bóveda."
+    }
+  ],
+  "roles": [
+    {
+      "code": "S-02",
+      "name": "Segundo Hornero (piso)",
+      "raci": "R",
+      "does": "Rosca el niple, aplica el torque, verifica la holgura y registra. Es el señalero de la grúa.",
+      "it": "IT-S02"
+    },
+    {
+      "code": "S-03",
+      "name": "Tercer Hornero",
+      "raci": "R",
+      "does": "Limpia caras y roscas, coloca el tapón de izaje y apoya la maniobra.",
+      "it": "IT-S03"
+    },
+    {
+      "code": "S-04",
+      "name": "Operador de Grúa de Carga",
+      "raci": "R",
+      "does": "Iza y baja electrodos y columnas con la grúa 120/40 t y el gancho auxiliar.",
+      "it": "IT-S04"
+    },
+    {
+      "code": "S-01",
+      "name": "Primer Hornero (púlpito)",
+      "raci": "R",
+      "does": "Desenergiza, bloquea y libera el horno; abre y cierra la mordaza y hace el deslizamiento.",
+      "it": "IT-S01"
+    },
+    {
+      "code": "C-05",
+      "name": "Supervisor de Hornos",
+      "raci": "A",
+      "does": "Dueño. Verifica el bloqueo, autoriza el método B y cualquier trabajo con columna dañada.",
+      "it": "IT-C05"
+    },
+    {
+      "code": "S-19",
+      "name": "Mecánico de Acería",
+      "raci": "C",
+      "does": "Atiende fallas de la mordaza.",
+      "it": "IT-S19"
+    },
+    {
+      "code": "S-22",
+      "name": "Técnico Hidráulico",
+      "raci": "C",
+      "does": "Atiende fallas de la mordaza hidráulica o de la llave de torque.",
+      "it": "IT-S22"
+    }
+  ],
+  "goldenRules": [
+    "Nadie sube a la plataforma sin interruptor abierto, hidráulica bloqueada y su propia llave o candado.",
+    "Tapón de izaje roscado al 100 % y nadie bajo la carga.",
+    "Torque del fabricante con llave calibrada y laina de 0.1 mm que no entra en ningún punto."
+  ],
+  "epp": [
+    "casco",
+    "lentes",
+    "careta_dorada",
+    "guantes",
+    "ropa_fr",
+    "botas",
+    "auditiva",
+    "arnes",
+    "detector_gas"
+  ],
+  "dangerZone": {
+    "red": "Bajo la trayectoria de la grúa y alrededor del soporte de adición: nadie bajo la carga (MS-ACE-04).",
+    "yellow": "Plataforma de electrodos: solo con interruptor abierto y llave cautiva (método A) o LOTO completo (método B).",
+    "rule": "Abrir la mordaza es el único movimiento permitido con personal en la plataforma, desde el mando designado y con la columna sujeta por la grúa."
+  },
+  "hazards": [
+    {
+      "icon": "electrico",
+      "text": "Energización con personas en la plataforma: electrocución y arco."
+    },
+    {
+      "icon": "grua",
+      "text": "Caída del electrodo o columna por tapón mal roscado: aplastamiento."
+    },
+    {
+      "icon": "girar",
+      "text": "Movimiento de brazos o bóveda con personas cerca."
+    },
+    {
+      "icon": "peligro",
+      "text": "Trabajo en altura en el método B: caída."
+    },
+    {
+      "icon": "calor",
+      "text": "Columna caliente: quemaduras."
+    }
+  ],
+  "phases": [
+    "Preparar y bloquear",
+    "Empalmar",
+    "Regresar y liberar",
+    "Método B (alterno)"
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-03",
+      "icon": "inspeccionar",
+      "title": "Prepara el electrodo nuevo",
+      "action": "En el soporte revisa grietas y roscas. Limpia la caja con aire seco sin aceite.",
+      "check": "Sin daño ni polvo.",
+      "quality": true,
+      "stop": "El electrodo tiene una grieta visible."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-02",
+      "icon": "herramienta",
+      "title": "Rosca el niple",
+      "action": "Rosca el niple a mano en la caja superior del electrodo nuevo hasta el tope.",
+      "check": "Niple asentado."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-01",
+      "icon": "bloqueo",
+      "title": "Desenergiza y bloquea el horno",
+      "action": "Apaga el arco, abre el interruptor y bloquea la hidráulica y el giro de bóveda. Método A: llave cautiva, una por persona, confirmada en el HMI. Método B: LOTO completo.",
+      "check": "Una llave o candado por persona (MS-ACE-02 §6.4).",
+      "critical": true,
+      "decision": {
+        "question": "¿Arco apagado y bloqueado?",
+        "no": "No inicies. Nadie sube a la plataforma."
+      }
+    },
+    {
+      "n": 4,
+      "phase": 0,
+      "role": "C-05",
+      "icon": "autorizar",
+      "title": "Verifica el bloqueo",
+      "action": "Verifica la ausencia de energía y el LOTO o las llaves. Define el método: A en el soporte (preferente) o B sobre la columna en el horno, que solo tú autorizas.",
+      "check": "Ausencia de energía verificada y método definido.",
+      "critical": true,
+      "decision": {
+        "question": "¿Se usa el método A?",
+        "no": "Método B: ve al paso 15 (LOTO y arnés)."
+      }
+    },
+    {
+      "n": 5,
+      "phase": 1,
+      "role": "S-04",
+      "icon": "grua",
+      "title": "Retira la columna al soporte",
+      "action": "Toma la columna con el tapón de izaje. S-01 abre la mordaza y llevas la columna al soporte. Nadie bajo la carga.",
+      "check": "Columna en el soporte y mordaza del soporte cerrada.",
+      "critical": true,
+      "stop": "Hay alguien bajo la carga o en la trayectoria."
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "S-03",
+      "icon": "herramienta",
+      "title": "Limpia la caja de la columna",
+      "action": "Limpia la caja superior de la columna con aire seco sin aceite.",
+      "check": "Rosca limpia."
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-03",
+      "icon": "conectar",
+      "title": "Coloca el tapón de izaje",
+      "action": "Rosca el tapón al electrodo nuevo con el 100 % de las roscas enganchadas.",
+      "check": "Tapón a fondo.",
+      "critical": true,
+      "stop": "El tapón no rosca completo."
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-04",
+      "icon": "subir_bajar",
+      "title": "Baja y rosca el electrodo",
+      "action": "Usa la grúa en modo fino, ≤ 50 mm/s [Validar con OEM]. S-02 es tu señalero: alinea el niple con la caja de la columna y rosca sin forzar.",
+      "check": "Roscado sin golpe.",
+      "stop": "Hay golpe entre electrodos."
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-02",
+      "icon": "herramienta",
+      "title": "Aprieta al torque del fabricante",
+      "action": "Aplica el torque con la llave calibrada. Nunca aprietes a estimación.",
+      "check": "≈ 4,500 N·m ± 10 % [Validar con OEM].",
+      "critical": true,
+      "stop": "La llave de torque falla o no tiene calibración vigente."
+    },
+    {
+      "n": 10,
+      "phase": 1,
+      "role": "S-02",
+      "icon": "medir",
+      "title": "Verifica la holgura con laina",
+      "action": "Pasa la laina de 0.1 mm alrededor de toda la junta.",
+      "check": "La laina no entra en ningún punto.",
+      "critical": true,
+      "decision": {
+        "question": "¿Junta sin holgura?",
+        "no": "Afloja, limpia y re-aprieta. Si sigue, cambia el niple."
+      }
+    },
+    {
+      "n": 11,
+      "phase": 1,
+      "role": "S-02",
+      "icon": "marcar",
+      "title": "Marca y registra el empalme",
+      "action": "Pinta la marca de deslizamiento. Registra serie de electrodo y niple, torque y hora.",
+      "check": "Registro completo.",
+      "quality": true
+    },
+    {
+      "n": 12,
+      "phase": 2,
+      "role": "S-04",
+      "icon": "grua",
+      "title": "Regresa la columna a la mordaza",
+      "action": "Lleva la columna a la mordaza del brazo. S-01 cierra la mordaza.",
+      "check": "Columna sujeta."
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-01",
+      "icon": "subir_bajar",
+      "title": "Desliza la columna",
+      "action": "Ajusta la posición desde el púlpito: junta abajo de la mordaza y punta a la altura de trabajo.",
+      "check": "Junta ≥ 300 mm bajo la mordaza [Validar con OEM], fuera del delta.",
+      "critical": true
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "S-02",
+      "icon": "personas",
+      "title": "Retira los bloqueos con conteo",
+      "action": "Todos bajan. Cada quien retira su propio candado o llave. C-05 confirma el conteo.",
+      "check": "Plataforma vacía; personas = llaves devueltas; tablero completo.",
+      "critical": true
+    },
+    {
+      "n": 15,
+      "phase": 3,
+      "role": "S-02",
+      "icon": "seguro",
+      "title": "Aplica el método B solo con permiso",
+      "action": "Con autorización de C-05: haz los pasos 1–4, 7–11, 13 y 14 sobre la columna en el horno, con LOTO completo, arnés 100 % conectado y permiso de altura (MS-ACE-10).",
+      "check": "Mismos criterios de torque, laina y posición de la junta.",
+      "critical": true,
+      "stop": "Falta el LOTO completo, el arnés conectado o el permiso de altura."
+    }
+  ],
+  "abnormal": [
+    {
+      "icon": "peligro",
+      "if": "Rotura de electrodo en operación",
+      "do": "Abre el interruptor. Si la punta cayó al baño, déjala fundir y vigila el C. Retira la columna dañada con el método A.",
+      "call": "C-05 y C-07"
+    },
+    {
+      "icon": "calor",
+      "if": "Junta al rojo, chispas o arco en la junta",
+      "do": "Abre el interruptor. Revisa y re-aprieta en frío o cambia.",
+      "call": "C-05"
+    },
+    {
+      "icon": "medir",
+      "if": "La laina entra después de re-apretar",
+      "do": "Cambia el niple o el electrodo. Registra el lote.",
+      "call": "C-05 y proveedor"
+    },
+    {
+      "icon": "alto",
+      "if": "El tapón de izaje no rosca completo",
+      "do": "No izes. Cambia el tapón o el electrodo.",
+      "call": "C-05"
+    },
+    {
+      "icon": "electrico",
+      "if": "Arco en la mordaza (quemadura de mordaza)",
+      "do": "Detén. Mantenimiento con LOTO.",
+      "call": "S-19 y S-22"
+    },
+    {
+      "icon": "tiempo",
+      "if": "Columna muy corta (no alcanza)",
+      "do": "No energices esa fase. Adición inmediata.",
+      "call": "C-05"
+    },
+    {
+      "icon": "herramienta",
+      "if": "Falla la llave de torque",
+      "do": "No aprietes a estimación. Usa la llave de respaldo calibrada.",
+      "call": "C-05"
+    }
+  ],
+  "records": [
+    {
+      "what": "Registro de empalme: horno, fase, fecha, hora, serie de electrodo y niple, torque, laina, responsable",
+      "when": "Cada empalme",
+      "where": "Registro de empalme"
+    },
+    {
+      "what": "Consumo de electrodos (kg/t) y roturas con causa",
+      "when": "Cada turno",
+      "where": "Nivel 2 / bitácora"
+    },
+    {
+      "what": "LOTO / llaves cautivas y permiso de altura (método B)",
+      "when": "Cada adición",
+      "where": "Registro MS-ACE-02 y MS-ACE-10"
+    },
+    {
+      "what": "Certificado de calibración de la llave de torque",
+      "when": "Vigente",
+      "where": "Archivo de mantenimiento"
+    }
+  ],
+  "certification": [
+    {
+      "role": "S-02",
+      "level": "3",
+      "theory": "12 h (electrodos, niples, torque, LOTO)",
+      "ojt": "30 h / 10 empalmes",
+      "evaluated": "Bloqueo, tapón, torque, laina, deslizamiento, retiro de bloqueos y método B",
+      "validity": "24 meses; alturas (método B) 12 meses"
+    },
+    {
+      "role": "S-03",
+      "level": "3",
+      "theory": "8 h",
+      "ojt": "20 h / 10 empalmes",
+      "evaluated": "Preparar el electrodo, tapón de izaje y método B",
+      "validity": "24 meses; alturas (método B) 12 meses"
+    },
+    {
+      "role": "S-04",
+      "level": "3",
+      "theory": "NOM-006 + grúa",
+      "ojt": "10 maniobras de electrodo",
+      "evaluated": "Retiro de columna y bajada en modo fino; nadie bajo la carga",
+      "validity": "12 meses (grúas e izaje)"
+    },
+    {
+      "role": "C-05",
+      "level": "4",
+      "theory": "8 h + evaluador",
+      "ojt": "—",
+      "evaluated": "Verificación de LOTO y de llave cautiva",
+      "validity": "24 meses"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Columna",
+      "def": "Electrodos de grafito empalmados que cuelgan de la mordaza de cada brazo."
+    },
+    {
+      "term": "Niple",
+      "def": "Pieza de doble cono roscado (4TPI) que une dos electrodos."
+    },
+    {
+      "term": "Tapón de izaje",
+      "def": "Pieza roscada que se pone en el electrodo para levantarlo con la grúa."
+    },
+    {
+      "term": "Laina (galga) de 0.1 mm",
+      "def": "Lámina delgada para comprobar que no hay holgura entre caras."
+    },
+    {
+      "term": "Deslizamiento (slipping)",
+      "def": "Bajar la columna dentro de la mordaza para dejar la punta en posición."
+    },
+    {
+      "term": "Método A / Método B",
+      "def": "A: empalme en el soporte del piso (preferente). B: empalme sobre la columna en el horno, con arnés y LOTO."
+    },
+    {
+      "term": "Mordaza",
+      "def": "Abrazadera del brazo que sujeta la columna y le pasa la corriente."
+    }
+  ],
+  "review": [
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    }
+  ]
+}

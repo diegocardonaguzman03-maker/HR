@@ -1,0 +1,95 @@
+{
+  "code": "MO-EAF-07",
+  "pov": "POV-EAF-07",
+  "title": "Vaciado por EBT y adiciones en olla",
+  "area": "EAF",
+  "areaName": "Hornos — EAF-1 / EAF-2 y fosa de vaciado",
+  "version": "0.1",
+  "owner": "C-05",
+  "manual": "02-operacion/eaf/MO-EAF-07-vaciado-ebt-adiciones.md",
+  "deck": "05-capacitacion/MO-EAF-07",
+  "purpose": "Pasar 150 t de acero del horno a una olla precalentada, a la temperatura y química correctas, sin escoria y sin nadie en la zona de peligro.",
+  "whyItMatters": "Un buen vaciado cuida la química y la limpieza del acero. Un mal vaciado puede causar una explosión, un derrame de metal líquido o una colada rechazada.",
+  "startsWhen": "El horno tiene la ventana de vaciado liberada (MO-EAF-06) y llega la olla preparada (MO-OLL-01).",
+  "endsWhen": "El EBT está cerrado, el talón quedó en el horno y el carro de olla sale hacia el horno olla (MO-LF-01).",
+  "previous": ["MO-EAF-06", "MO-OLL-01"],
+  "next": ["MO-LF-01", "MO-EAF-01"],
+  "heroFigure": { "file": "img/eaf-vaciado-ebt.svg", "caption": "Secuencia de vaciado por EBT: el horno se inclina, el acero cae a la olla y el horno regresa antes de que pase la escoria." },
+  "figures": [
+    { "file": "img/olla-corte-valvula-tapon.svg", "caption": "Corte de la olla: válvula deslizante y tapón poroso de argón." }
+  ],
+  "roles": [
+    { "code": "S-01", "name": "Primer Hornero (púlpito)", "raci": "R", "does": "Revisa permisivos, inclina el horno, abre y cierra el EBT, vigila peso y escoria.", "it": "IT-S01" },
+    { "code": "S-02", "name": "Segundo Hornero (piso)", "raci": "R", "does": "Recibe la olla, revisa la fosa, despeja la zona de exclusión y opera las adiciones.", "it": "IT-S02" },
+    { "code": "S-03", "name": "Tercer Hornero", "raci": "R", "does": "Prepara las adiciones en tolvas y conecta el argón de la olla.", "it": "IT-S03" },
+    { "code": "S-09", "name": "Operador de Grúa de Colada", "raci": "R", "does": "Coloca la olla en el carro cuando aplica y queda disponible para emergencia.", "it": "IT-S09" },
+    { "code": "C-05", "name": "Supervisor de Hornos", "raci": "A", "does": "Dueño del proceso. Autoriza vaciar fuera de ventana y las acciones si el EBT no abre.", "it": "IT-C05" },
+    { "code": "S-08", "name": "Preparador de Ollas", "raci": "C", "does": "Entrega la olla con su lista de verificación firmada (MO-OLL-01).", "it": "IT-S08" },
+    { "code": "S-06", "name": "Operador de Horno Olla", "raci": "I", "does": "Recibe los datos del vaciado: temperatura, oxígeno, adiciones y escoria.", "it": "IT-S06" }
+  ],
+  "goldenRules": [
+    "Nunca vacíes con alguien dentro de la zona roja: 10 m alrededor de la olla y del EBT.",
+    "Olla fría, húmeda o fosa con agua = no se vacía. El agua bajo el metal líquido explota.",
+    "Al llegar a 150 t o al ver escoria, regresa el horno de inmediato."
+  ],
+  "epp": ["casco", "careta_dorada", "aluminizado", "guantes", "ropa_fr", "botas", "auditiva", "detector_gas"],
+  "dangerZone": {
+    "red": "Zona roja: 10 m alrededor de la olla y del EBT, la fosa, debajo del horno y la vía del carro ± 5 m. Nadie a pie.",
+    "yellow": "Zona amarilla: de 10 a 25 m. Solo personal autorizado con EPP completo.",
+    "rule": "La zona se activa con sirena y semáforo rojo 30 s antes de abrir y termina cuando el EBT cierra y el carro sale."
+  },
+  "hazards": [
+    { "icon": "fuego", "text": "Metal líquido a más de 1,600 °C: salpicaduras y derrames." },
+    { "icon": "agua", "text": "Agua o humedad en la olla, las adiciones o la fosa: explosión." },
+    { "icon": "gas", "text": "Humos y monóxido de carbono (CO) en la fosa." },
+    { "icon": "grua", "text": "Cargas suspendidas: la grúa no pasa sobre la fosa durante el vaciado." }
+  ],
+  "phases": ["Antes de vaciar", "Durante el vaciado", "Al terminar"],
+  "steps": [
+    { "n": 1, "phase": 0, "role": "S-02", "icon": "verificar", "title": "Recibe la olla", "action": "Revisa la lista de MO-OLL-01: cara caliente ≥ 1,000 °C, válvula cerrada, arena de sello, tapón probado, número de olla.", "check": "Lista completa y firmada.", "critical": true, "stop": "La olla está fría, húmeda o sin lista firmada.", "decision": { "question": "¿Olla lista?", "no": "No vacíes. Pide otra olla (MO-OLL-01)." } },
+    { "n": 2, "phase": 0, "role": "S-03", "icon": "conectar", "title": "Posiciona y conecta argón", "action": "Deja el carro en posición de vaciado, conecta el argón y pon la báscula en cero con la olla vacía.", "check": "Hay flujo de argón y la báscula marca cero." },
+    { "n": 3, "phase": 0, "role": "S-03", "icon": "pesar", "title": "Prepara las adiciones", "action": "Carga las tolvas con la tabla del grado y el aluminio calculado con el oxígeno medido. Usa solo material seco.", "check": "Pesos correctos ± 1 %. Material seco y cubierto.", "critical": true },
+    { "n": 4, "phase": 0, "role": "S-02", "icon": "inspeccionar", "title": "Inspecciona la fosa", "action": "Revisa que la fosa esté seca, sin agua estancada ni metal suelto.", "check": "Fosa seca y limpia.", "critical": true, "stop": "Hay agua en la fosa." },
+    { "n": 5, "phase": 0, "role": "S-02", "icon": "barrera", "title": "Despeja la zona de exclusión", "action": "Coloca barreras, cuenta a las personas y revisa la cámara. Activa sirena y semáforo rojo 30 s antes de abrir.", "check": "Confirmas \"zona libre\" por radio al púlpito.", "critical": true, "stop": "Alguien está a menos de 10 m de la olla o del EBT.", "decision": { "question": "¿Zona libre?", "no": "Espera y despeja. No abras el EBT." } },
+    { "n": 6, "phase": 0, "role": "S-01", "icon": "detener", "title": "Prepara el horno", "action": "Apaga el arco y abre el interruptor. Detén HRD, oxígeno y carbono. Sube los electrodos.", "check": "El HMI muestra arco apagado y alimentaciones detenidas." },
+    { "n": 7, "phase": 1, "role": "S-01", "icon": "girar", "title": "Inclina y abre el EBT", "action": "Inclina el horno de 3 a 5° y abre la compuerta del EBT.", "check": "Sale un chorro libre.", "decision": { "question": "¿Abrió libre?", "no": "Regresa el horno a 0°/−3° y avisa a C-05. Nadie se asoma." } },
+    { "n": 8, "phase": 1, "role": "S-01", "icon": "vaciar", "title": "Vacía", "action": "Aumenta la inclinación poco a poco, hasta 12–15°, para mantener el chorro compacto.", "check": "Chorro compacto y sin escoria." },
+    { "n": 9, "phase": 1, "role": "S-02", "icon": "material", "title": "Agrega las adiciones", "action": "Empieza las adiciones con ≈ 30 t en la olla y termina antes de 120 t. Argón a 200–400 NL/min.", "check": "Adiciones completas dentro de la ventana 30–120 t.", "quality": true },
+    { "n": 10, "phase": 1, "role": "S-01", "icon": "camara", "title": "Vigila peso y escoria", "action": "Observa la cámara o el detector de escoria y la báscula del carro.", "check": "No aparece escoria en el chorro.", "quality": true },
+    { "n": 11, "phase": 1, "role": "S-01", "icon": "alto", "title": "Cierra a tiempo", "action": "Al llegar a 150 t o al primer indicio de escoria, regresa el horno de inmediato a −3°.", "check": "Talón de 20–30 t y la escoria quedan en el horno.", "critical": true },
+    { "n": 12, "phase": 2, "role": "S-01", "icon": "ok", "title": "Confirma el cierre", "action": "Verifica que el chorro se detuvo y el horno está estable.", "check": "Sin flujo de acero." },
+    { "n": 13, "phase": 2, "role": "S-02", "icon": "carro", "title": "Libera la zona", "action": "El carro sale hacia el horno olla. Retira la exclusión solo cuando el carro está fuera.", "check": "Carro fuera de la zona y semáforo en verde." },
+    { "n": 14, "phase": 2, "role": "S-01", "icon": "registrar", "title": "Registra el vaciado", "action": "Registra peso, tiempo, apertura libre, adiciones reales, argón y escoria estimada. Avisa los datos al horno olla.", "check": "Registro completo en nivel 2." }
+  ],
+  "abnormal": [
+    { "icon": "alto", "if": "El EBT no abre (no sale chorro)", "do": "Regresa el horno a 0°/−3°. Nadie se asoma. Solo con autorización de C-05 se lancea desde la posición protegida (máx. 2 intentos).", "call": "C-05 Supervisor de Hornos" },
+    { "icon": "peligro", "if": "Aparece escoria antes de 150 t", "do": "Cierra de inmediato, anota el peso y avisa al horno olla para desescoriar.", "call": "S-06 y C-05" },
+    { "icon": "fuego", "if": "Perforación de olla (sale metal por la coraza o el fondo)", "do": "Regresa el horno de inmediato, evacúa a más de 25 m y deja caer el metal a la fosa seca. Nunca uses agua.", "call": "C-05, C-04 y C-16 (MS-ACE-09)" },
+    { "icon": "flujo", "if": "La olla hierve o se agita con violencia", "do": "Detén adiciones y, si puedes desde el púlpito, el vaciado. Evacúa a zona verde o refugio en menos de 30 s.", "call": "C-05 y C-07" },
+    { "icon": "gas", "if": "Sin argón en la olla", "do": "Continúa el vaciado y avisa al horno olla.", "call": "S-06" },
+    { "icon": "presion", "if": "El horno regresa lento o falla la hidráulica", "do": "Cierre de emergencia del EBT según el fabricante y evacúa.", "call": "C-05 y S-22" }
+  ],
+  "records": [
+    { "what": "Registro de vaciado por colada", "when": "Cada colada", "where": "Nivel 2" },
+    { "what": "Registro de eventos (EBT que no abre, lanceo, escoria, perforación)", "when": "Cuando ocurre", "where": "Nivel 2 y bitácora de turno" },
+    { "what": "Lista de verificación de la olla recibida", "when": "Cada olla", "where": "Formato MO-OLL-01" },
+    { "what": "Verificación de zona de exclusión (VCC)", "when": "Mensual", "where": "Sistema de SSO" }
+  ],
+  "certification": [
+    { "role": "S-01", "level": "3", "theory": "16 h", "ojt": "80 h / 40 vaciados", "evaluated": "Pasos 3 y 11; escenarios de escoria y de EBT que no abre", "validity": "24 meses" },
+    { "role": "S-02", "level": "3", "theory": "16 h", "ojt": "80 h / 40 vaciados", "evaluated": "Pasos 1, 4 y 5; lanceo simulado en posición protegida", "validity": "24 meses" },
+    { "role": "S-03", "level": "3", "theory": "8 h", "ojt": "40 h / 20 vaciados", "evaluated": "Paso 3: pesos y materiales secos", "validity": "24 meses" },
+    { "role": "S-09", "level": "3", "theory": "Según MO-OLL-02", "ojt": "—", "evaluated": "Respuesta a emergencia de olla", "validity": "12 meses (grúas e izaje)" }
+  ],
+  "glossary": [
+    { "term": "EBT", "def": "Piquera excéntrica en el fondo del horno por donde sale el acero." },
+    { "term": "Talón (pie líquido)", "def": "Acero y escoria que se quedan en el horno para la siguiente colada (20–30 t)." },
+    { "term": "Arrastre de escoria", "def": "Escoria del horno que cae a la olla; daña la química del acero." },
+    { "term": "Adiciones", "def": "Desoxidantes, ferroaleaciones y cal que se agregan a la olla." },
+    { "term": "Zona de exclusión", "def": "Área donde nadie puede estar a pie mientras hay metal líquido en movimiento." },
+    { "term": "Nivel 2", "def": "Sistema de cómputo de proceso donde se registran los datos de cada colada." }
+  ],
+  "review": [
+    { "area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28" }
+  ]
+}
