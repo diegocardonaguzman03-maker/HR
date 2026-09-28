@@ -21,6 +21,17 @@ import { CoolingSystem, SlabLine, TorchCutter } from './equipment/CoolingCutterS
 import { LayerMarkers, ProcessFlowPath, SectionPlane, SteelMarker } from './overlays/Overlays';
 
 /** Advances the deterministic simulation clock and mirrors it to the UI at ~10 Hz. */
+/** Portrait screens (phones) get a wider lens so camera presets keep the machine in frame. */
+function ResponsiveLens() {
+  const camera = useThree((s) => s.camera) as THREE.PerspectiveCamera;
+  const aspect = useThree((s) => s.size.width / s.size.height);
+  useEffect(() => {
+    camera.fov = aspect >= 1.2 ? 42 : Math.min(70, 42 * (1.2 / aspect) * 0.6 + 42 * 0.4);
+    camera.updateProjectionMatrix();
+  }, [camera, aspect]);
+  return null;
+}
+
 function SimulationDriver() {
   const acc = useRef(0);
   useFrame((_, dt) => {
@@ -244,6 +255,7 @@ export function Experience() {
         <Plant />
       </Suspense>
       <SimulationDriver />
+      <ResponsiveLens />
       <CameraRig />
       <ClearSelectionOnMiss />
       <AdaptiveDpr pixelated />
