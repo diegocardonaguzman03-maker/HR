@@ -1,0 +1,7 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[8].stop", "value": "S-13 no ha confirmado por radio que nadie está bajo las ollas ni en el radio de giro.", "reason": "El giro lo ejecuta S-12 (otro puesto); su ALTO debe ligarse a la confirmación del paso ★ 8 (manual §6.3)." },
+    { "op": "set", "path": "steps[10].stop", "value": "Para lancear: no eres S-13 certificado o tu EPP aluminizado no está completo y seco.", "reason": "Manual §6.1 (solo S-13 certificado) y MS-ACE-03 §6.2 (EPP seco)." }
+  ]
+}

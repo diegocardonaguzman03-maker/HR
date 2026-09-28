@@ -1,0 +1,7 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[1].action", "value": "Cuenta al personal. Nadie a ≤ 10 m del molde, distribuidor y torreta, salvo S-12, S-13, S-14 y C-06. Cierra la fosa y revisa que las rutas de escape estén libres. Avisa por radio y sirena ≥ 30 s antes.", "reason": "Manual §6.3: rutas de escape despejadas en la plataforma." },
+    { "op": "set", "path": "steps[4].stop", "value": "Para lancear: no eres S-13 certificado, la lanza mide menos de 3 m o tus guantes tienen grasa.", "reason": "Manual §6.1 (lanceo de O₂): solo S-13 certificado, lanza ≥ 3 m, sin grasa en guantes." }
+  ]
+}

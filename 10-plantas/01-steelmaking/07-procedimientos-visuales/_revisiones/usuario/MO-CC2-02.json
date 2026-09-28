@@ -1,0 +1,52 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[6].action",
+      "value": "Pon tu candado personal al oscilador y haz la prueba de arranque: intenta arrancarlo y confirma que no se mueve.",
+      "reason": "Un nuevo confunde \"prueba de arranque\" (LOTO) con el arranque de colada."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Prueba de arranque",
+        "def": "Prueba de arranque (LOTO): intentar arrancar el equipo ya bloqueado para comprobar que no se mueve. No es el arranque de colada."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LOTO",
+        "def": "Bloqueo y etiquetado: cada persona pone su propio candado y tarjeta para que el equipo no se mueva ni se energice."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Cs-137",
+        "def": "Fuente radiactiva que mide el nivel del acero en el molde. Solo el ESR (C-16) abre, cierra o bloquea su obturador."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Cebar",
+        "def": "Llenar las líneas de aceite hasta que salga parejo por todas las ranuras."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Buza",
+        "def": "Pieza refractaria con orificio en el fondo de la olla por donde sale el acero."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Pirómetro",
+        "def": "Instrumento que mide la temperatura a distancia, sin tocar la pieza."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Termografía",
+        "def": "Imagen de temperatura de la coraza tomada con cámara infrarroja."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "NL/min",
+        "def": "Unidad de caudal de gas (argón): litros por minuto medidos en condiciones normales."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Anticolisión",
+        "def": "Sistema que frena la grúa antes de chocar con otra grúa o con el final del recorrido."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Límite superior",
+        "def": "Interruptor que detiene el gancho antes de que pegue arriba."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Zona roja",
+        "def": "Zona roja o de exclusión: área donde nadie puede estar a pie mientras hay metal líquido o una carga en movimiento."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Horno olla (LF)",
+        "def": "Horno olla (LF): estación donde se ajustan la química y la temperatura del acero antes de colar."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

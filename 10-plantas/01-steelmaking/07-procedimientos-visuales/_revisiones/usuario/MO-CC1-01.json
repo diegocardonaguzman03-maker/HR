@@ -1,0 +1,46 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Casco del distribuidor",
+        "def": "Coraza metálica exterior del distribuidor. No confundir con el casco de tu EPP."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LEL",
+        "def": "Límite inferior de explosividad del gas; el detector lo mide en %. A 10 % LEL o más, sal y corta el gas."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Vigía",
+        "def": "Persona que se queda afuera de un espacio confinado, vigila al que entra y activa el rescate si hace falta."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Espacio confinado",
+        "def": "Lugar cerrado con entrada limitada (como el interior del distribuidor) donde puede faltar oxígeno o juntarse gas."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

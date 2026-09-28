@@ -159,6 +159,8 @@ export function buildHtml(p, titles) {
   const lane = swimlane(p, area.color);
   const chip = (code) => `<span class="pchip"><b>${esc(code)}</b> ${esc(titles[code] ?? '')}</span>`;
   const critical = p.steps.filter((s) => s.critical);
+  const own = p.roles.find((r) => r.code === p.owner) ?? p.roles.find((r) => r.raci === 'A');
+  const ownerLabel = own ? `${own.code} ${own.name}` : 'tu supervisor';
   const stepCard = (s) => {
     const col = laneColorOf(p, s.role);
     const rn = p.roles.find((r) => r.code === s.role)?.name ?? '';
@@ -170,7 +172,7 @@ export function buildHtml(p, titles) {
           <div class="srole" style="background:${col}">${esc(s.role)} · ${esc(rn)}</div></div></div>
         <div class="sact"><b>Qué haces:</b> ${esc(s.action)}</div>
         <div class="schk">${icon('ok', { size: 13, color: '#2e7d32', stroke: 2.2 })} <b>Está bien si:</b> ${esc(s.check)}</div>
-        ${s.stop ? `<div class="sstop">${icon('alto', { size: 13, color: '#fff', stroke: 2.2 })} <b>ALTO si:</b> ${esc(s.stop)} Detén y avisa.</div>` : ''}
+        ${s.stop ? `<div class="sstop">${icon('alto', { size: 13, color: '#fff', stroke: 2.2 })} <b>ALTO si:</b> ${esc(s.stop)} Detén la tarea y avisa a ${esc(ownerLabel)}.</div>` : ''}
         ${s.figure ? img(s.figure.file, s.figure.caption, 'sfig') : ''}
       </div></div>`;
   };
@@ -320,7 +322,7 @@ tr:nth-child(even) td { background:#f5f7f8; }
 
 <section class="pb">
   <h2><span class="n">4</span>Paso a paso</h2>
-  <p class="note" style="margin:0 0 4px">Sigue los pasos en orden. Los pasos ★ son críticos: se evalúan en tu certificación y nunca se saltan. Si se cumple una condición de ALTO, detén la tarea y avisa a tu supervisor.</p>
+  <p class="note" style="margin:0 0 4px">Sigue los pasos en orden. Los pasos ★ son críticos: se evalúan en tu certificación y nunca se saltan. Si se cumple una condición de ALTO, detén la tarea y avisa a ${esc(ownerLabel)}. ¿No conoces una palabra? Búscala en la sección 6 (Palabras que vas a escuchar). Un valor marcado [Supuesto] o [Validar con OEM] es de referencia: en planta usa el valor que te confirme tu supervisor.</p>
   ${phaseBlocks}
 
   <h2 style="margin-top:12px"><span class="n">5</span>Si algo sale mal</h2>

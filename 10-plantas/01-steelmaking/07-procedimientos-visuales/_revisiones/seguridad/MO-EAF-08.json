@@ -1,0 +1,8 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[4].stop", "value": "Hay alguien bajo la carga o en la trayectoria, o el tapón de izaje no está roscado a fondo en la columna.", "reason": "Manual §6.1 (caída de columna por tapón mal roscado): control crítico antes de abrir la mordaza." },
+    { "op": "set", "path": "steps[13].stop", "value": "Las llaves o candados devueltos no coinciden con las personas que subieron.", "reason": "Paso ★ de retiro sin ALTO; manual §8 paso 13 (conteo de personas = llaves)." },
+    { "op": "set", "path": "dangerZone.rule", "value": "Abrir la mordaza es el único movimiento permitido con personal en la plataforma, desde el mando designado y con la columna sujeta por la grúa [Validar con OEM / C-12].", "reason": "Se conserva la marca del manual §6.3: falta confirmar que el sistema de llaves solo permita ese movimiento." }
+  ]
+}

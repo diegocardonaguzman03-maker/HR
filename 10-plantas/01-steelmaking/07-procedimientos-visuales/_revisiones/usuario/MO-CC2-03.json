@@ -1,0 +1,46 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "L1 a L6",
+        "def": "Las 6 líneas de la CC2, numeradas de un extremo al otro. L3 y L4 son las del centro; L1 y L6, las de los extremos."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Lancear",
+        "def": "Abrir con una lanza de oxígeno una olla que no abrió sola. Solo lo hace personal certificado, con EPP aluminizado."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Rotámetro",
+        "def": "Medidor de flujo con un flotador dentro de un tubo; en la CC2 muestra el aceite de cada molde."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Zona roja",
+        "def": "Zona roja o de exclusión: área donde nadie puede estar a pie mientras hay metal líquido o una carga en movimiento."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

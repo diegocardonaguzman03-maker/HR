@@ -1,0 +1,7 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "append", "path": "epp", "value": "careta_oxicorte", "reason": "Manual §6.2: S-16 usa careta de oxicorte o lentes sombra 5; faltaba en el POV." },
+    { "op": "set", "path": "steps[1].stop", "value": "Hay fuga de O₂ o de gas, falta un arrestaflamas o tu ropa tiene grasa.", "reason": "Manual §6.1 (oxicorte: ropa sin grasa por enriquecimiento de O₂) y MS-ACE-06." }
+  ]
+}

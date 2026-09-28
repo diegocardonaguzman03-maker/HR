@@ -1,0 +1,55 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "M1, M2 y M3",
+        "def": "Los tres momentos de medición: M1 a mitad del DRI (solo T), M2 al inicio del afino (T, O y muestra) y M3 antes de vaciar (T y O)."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "ppm",
+        "def": "Partes por millón: unidad para cantidades muy pequeñas, como el oxígeno disuelto en el acero."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación (en el púlpito o en campo) donde ves valores, estados y alarmas del equipo."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Nivel 2",
+        "def": "Sistema de cómputo de proceso donde se registran y consultan los datos de cada colada."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Zona roja",
+        "def": "Zona roja o de exclusión: área donde nadie puede estar a pie mientras hay metal líquido o una carga en movimiento."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

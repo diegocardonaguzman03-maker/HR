@@ -1,0 +1,61 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[15].decision.no",
+      "value": "No abras la olla. Corrige con Mant. Mecánico (C-11).",
+      "reason": "C-11 no está en la lista de roles del POV; el nuevo no sabe a quién llamar."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "L1 a L6",
+        "def": "Las 6 líneas de la CC2, numeradas de un extremo al otro. L3 y L4 son las del centro; L1 y L6, las de los extremos."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Pozo de buza",
+        "def": "Hueco del fondo del distribuidor donde se asienta cada buza."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Tara",
+        "def": "Poner la báscula en cero con el recipiente vacío."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Pirómetro",
+        "def": "Instrumento que mide la temperatura a distancia, sin tocar la pieza."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Plomada",
+        "def": "Pesa con hilo para comprobar que algo está vertical o centrado."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

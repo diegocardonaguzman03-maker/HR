@@ -1,0 +1,76 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "roles[1].does",
+      "value": "Opera desde el púlpito el nivel automático, la velocidad, la rampa, la oscilación y el enfriamiento; vigila el BOP.",
+      "reason": "La descripción no tenía verbo: un nuevo no sabe qué hace el puesto."
+    },
+    {
+      "op": "set",
+      "path": "roles[2].does",
+      "value": "Coloca el tubo protector, abre la olla, lancea si hace falta, cuida nivel y temperatura del distribuidor y abre el tapón.",
+      "reason": "La descripción no tenía verbo."
+    },
+    {
+      "op": "set",
+      "path": "roles[3].does",
+      "value": "Pone el polvo de arranque y el de molde, observa el molde y apoya en la plataforma.",
+      "reason": "La descripción no tenía verbo; es el puesto de mayor rotación de ingreso en colada."
+    },
+    {
+      "op": "set",
+      "path": "steps[10].check",
+      "value": "El nivel sube de la cabeza a −60 mm del menisco de trabajo en 40–60 s, sin rebose.",
+      "reason": "\"Cabeza → menisco −60 mm\" es una notación que un nuevo no lee; mismo valor."
+    },
+    {
+      "op": "set",
+      "path": "steps[12].action",
+      "value": "Cuando el nivel llegue a −60 mm del menisco de trabajo: nivel automático, extracción a 0.3 m/min, oscilación y enfriamiento secundario en automático.",
+      "reason": "Misma aclaración de la notación \"menisco −60 mm\"."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Líquidus",
+        "def": "Temperatura a la que el acero empieza a solidificar. El sobrecalentamiento se mide a partir de ella."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Flux de cobertura",
+        "def": "Polvo que cubre el acero del distribuidor para que no se oxide ni pierda calor."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Nivel automático",
+        "def": "Control que mantiene solo el nivel del acero en el molde, moviendo el tapón o la velocidad."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Despunte",
+        "def": "Pedazo que se corta en la cabeza o en la cola para quitar la parte no sana."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[5].action",
+      "value": "Apaga el arco y abre el interruptor. Detén el DRI (HRD), el oxígeno y el carbono. Sube los electrodos.",
+      "reason": "\"HRD\" no aparece en ningún otro POV ni en el glosario; se usa el mismo nombre que en POV-EAF-03."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Argón",
+        "def": "Gas inerte que entra por el fondo de la olla para mezclar el acero y las adiciones."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación (en el púlpito o en campo) donde ves valores, estados y alarmas del equipo."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Fosa",
+        "def": "Hueco bajo el horno donde queda el carro de olla; debe estar seca siempre."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Permisivos",
+        "def": "Condiciones que deben estar en verde para que el equipo pueda moverse o energizarse."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

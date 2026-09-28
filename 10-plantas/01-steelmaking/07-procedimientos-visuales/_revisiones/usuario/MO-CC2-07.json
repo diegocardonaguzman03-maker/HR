@@ -1,0 +1,46 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "L1 a L6",
+        "def": "Las 6 líneas de la CC2, numeradas de un extremo al otro. L3 y L4 son las del centro; L1 y L6, las de los extremos."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Menisco",
+        "def": "Superficie del acero líquido dentro del molde."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "EMS",
+        "def": "Agitador electromagnético del molde."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Cs-137",
+        "def": "Fuente radiactiva que mide el nivel del acero en el molde. Solo el ESR (C-16) abre, cierra o bloquea su obturador."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

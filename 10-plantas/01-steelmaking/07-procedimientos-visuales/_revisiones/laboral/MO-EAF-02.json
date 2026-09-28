@@ -1,0 +1,31 @@
+{
+  "review": {
+    "area": "Laboral",
+    "who": "experto-relaciones-laborales",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "roles[4].raci",
+      "value": "R",
+      "reason": "Doble A (C-05 y C-17). Catálogo y DP-ACE-C: dueño único C-05; C-17 = S (supervisa el patio). Un solo A por proceso."
+    },
+    {
+      "op": "set",
+      "path": "roles[4].does",
+      "value": "Supervisa el patio: asegura la receta, la inspección y la cuarentena de rechazos; libera las canastas escurridas.",
+      "reason": "Congruente con R: supervisa y hace cumplir en el patio; el dueño del proceso es C-05."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Certificación (TD-P07)",
+        "def": "Prueba práctica de los pasos ★ de tu puesto con un evaluador certificado. Se registra con constancia DC-3. Si no apruebas, recibes retroalimentación y reentrenamiento: no es una sanción."
+      },
+      "reason": "Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP."
+    }
+  ]
+}

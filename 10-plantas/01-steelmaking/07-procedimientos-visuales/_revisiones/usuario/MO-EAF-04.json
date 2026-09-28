@@ -1,0 +1,61 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Llave cautiva",
+        "def": "Llave personal que solo sale del tablero con el interruptor abierto; mientras falte una, el horno no se energiza."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Afino",
+        "def": "Última etapa en el horno: con la carga fundida se ajustan temperatura, carbono y oxígeno antes de vaciar."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Desbalance de corriente",
+        "def": "Diferencia de corriente entre las 3 fases; si pasa de 10 %, algo anda mal en un electrodo."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación (en el púlpito o en campo) donde ves valores, estados y alarmas del equipo."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Escoria espumosa",
+        "def": "Escoria inflada con burbujas que tapa el arco y protege paneles y bóveda (POV-EAF-05)."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "set",
+      "path": "steps[3].decision.question",
+      "value": "¿Ya penetraron los electrodos?",
+      "reason": "La pregunta debe coincidir con lo que se revisa en el paso y con la respuesta \"No\"."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "append", "path": "epp", "value": "chaleco", "reason": "Manual §6.2: chaleco de alta visibilidad en patio (tránsito de camiones y grúa)." },
+    { "op": "set", "path": "steps[2].stop", "value": "Encuentras un posible explosivo o munición: no lo muevas, aleja a las personas y avisa a C-17.", "reason": "Manual §6.1 (explosivos: rechazo y protocolo con autoridades). El manual no dice cómo se separa un explosivo; una persona nueva no debe manipularlo. Se reporta como hueco del manual." },
+    { "op": "set", "path": "steps[12].stop", "value": "La bocina no sonó o hay alguien a 15 m o menos del horno.", "reason": "Manual §6.1: conteo y bocina antes de abrir la canasta (momento de flama y proyección)." },
+    { "op": "set", "path": "abnormal[1].do", "value": "Todos fuera de la zona. Atiende lesionados solo fuera de la zona roja. No se abre otra canasta. Retén el lote para investigación. Revisa daños: agua, electrodos, bóveda.", "reason": "MS-ACE-03 §9: atender lesionados y retener el lote; MS-ACE-09: no mover lesionados dentro de la zona roja sin protección." },
+    { "op": "append", "path": "abnormal", "value": { "icon": "grua", "if": "Una persona entra a la ruta de la canasta", "do": "Detén el traslado, toca la bocina y espera a que salga. No pases la carga sobre nadie.", "call": "C-05 (MS-ACE-04)" }, "reason": "MS-ACE-04 §9: persona entra a la ruta; el POV no tenía respuesta para la carga suspendida." }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "review": {
+    "area": "Laboral",
+    "who": "experto-relaciones-laborales",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "roles[0].does",
+      "value": "Opera el horno olla: argón, arco, adiciones y ajustes dentro de la práctica; entrega la olla lista a la grúa.",
+      "reason": "Lenguaje: \"libera la olla\" suena a disposición; las desviaciones las decide C-09."
+    },
+    {
+      "op": "set",
+      "path": "steps[13].title",
+      "value": "Entrega la olla lista",
+      "reason": "Lenguaje sin función de disposición para S-06."
+    },
+    {
+      "op": "set",
+      "path": "steps[13].check",
+      "value": "Entrega registrada en nivel 2; tratamiento de 35–45 min.",
+      "reason": "Consistencia con el título."
+    },
+    {
+      "op": "set",
+      "path": "goldenRules[2]",
+      "value": "No entregues la olla sin ≥ 8 min de argón suave, sin arco y sin adiciones.",
+      "reason": "Consistencia de lenguaje (≤ 110 caracteres)."
+    },
+    {
+      "op": "set",
+      "path": "endsWhen",
+      "value": "La olla queda entregada a la grúa de colada con química y temperatura en rango (MO-OLL-02).",
+      "reason": "Consistencia de lenguaje."
+    },
+    {
+      "op": "set",
+      "path": "roles[5].raci",
+      "value": "R",
+      "reason": "LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual."
+    },
+    {
+      "op": "set",
+      "path": "roles[5].does",
+      "value": "Supervisa al personal del horno olla en el turno y decide en condiciones anormales.",
+      "reason": "Mando visible del supervisor sobre S-06 y S-07."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Certificación (TD-P07)",
+        "def": "Prueba práctica de los pasos ★ de tu puesto con un evaluador certificado. Se registra con constancia DC-3. Si no apruebas, recibes retroalimentación y reentrenamiento: no es una sanción."
+      },
+      "reason": "Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP."
+    }
+  ]
+}

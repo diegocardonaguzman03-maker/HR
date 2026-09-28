@@ -1,0 +1,11 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "append", "path": "epp", "value": "careta_oxicorte", "reason": "Manual §6.2: S-16 usa careta sombra 5 para el oxicorte del último planchón (paso 15)." },
+    { "op": "set", "path": "steps[7].stop", "value": "Hay alguien en la ruta del carro o la fosa tiene agua.", "reason": "Manual §6.1: distribuidor con ≈ 14 t de residuo; ruta despejada y fosa seca." },
+    { "op": "set", "path": "steps[15].action", "value": "Con la cola fuera y la máquina detenida, pon tu candado para inspección y limpieza y haz la prueba de arranque (MS-ACE-02).", "reason": "Manual §6.3: ingreso a la máquina solo con cola fuera, máquina detenida y LOTO; la prueba de energía cero es parte del LOTO (MS-ACE-02 paso 9)." },
+    { "op": "set", "path": "steps[15].stop", "value": "Algún equipo se mueve en la prueba de arranque.", "reason": "MS-ACE-02 §9: equipo que se mueve en la prueba = detén todo." },
+    { "op": "set", "path": "steps[16].stop", "value": "No tienes tu candado puesto o la cola no ha salido de la máquina.", "reason": "Manual §6.3: ingreso solo con cola fuera y LOTO personal." },
+    { "op": "set", "path": "abnormal[1].do", "value": "Detén la línea y evacúa. Mantén el agua de molde. Nadie se acerca sin autorización de C-06. Respuesta a breakout (MO-CC1-04 §9).", "reason": "MO-CC1-04 §9 y MS-ACE-09 escenario C: mantener el agua de molde y no acercarse." }
+  ]
+}

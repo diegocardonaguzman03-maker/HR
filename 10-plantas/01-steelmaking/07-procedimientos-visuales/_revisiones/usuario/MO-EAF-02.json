@@ -1,0 +1,52 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Bóveda",
+        "def": "Tapa del horno por donde entran los electrodos; se levanta y gira para cargar."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Tap",
+        "def": "Posición del cambiador del transformador; fija el voltaje y la longitud del arco."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Zona de exclusión",
+        "def": "Zona roja o de exclusión: área donde nadie puede estar a pie mientras hay metal líquido o una carga en movimiento."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LOTO",
+        "def": "Bloqueo y etiquetado: cada persona pone su propio candado y tarjeta para que el equipo no se mueva ni se energice."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "set",
+      "path": "steps[15].action",
+      "value": "Sigue el POV-EAF-04 (fusión) desde su primer paso. La perforación arranca con tap bajo.",
+      "reason": "\"Pasa a MO-EAF-04\" no dice a un nuevo qué documento abrir ni por dónde empezar."
+    }
+  ]
+}

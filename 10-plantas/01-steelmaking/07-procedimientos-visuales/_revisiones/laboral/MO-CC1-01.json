@@ -1,0 +1,50 @@
+{
+  "review": {
+    "area": "Laboral",
+    "who": "experto-relaciones-laborales",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "roles[0].does",
+      "value": "Arma revestimiento, pad, presas, tapón y SEN; precalienta y registra. Mientras se decide el rol S-27, también opera la grúa de 50 t.",
+      "reason": "S-27 no existe en el catálogo; la cobertura por S-15 es provisional y depende de una decisión del Director."
+    },
+    {
+      "op": "set",
+      "path": "certification[0].validity",
+      "value": "≤ 24 meses (TD-P07); entrada al distribuidor (espacio confinado) 12 meses",
+      "reason": "La operación de la grúa pasa a su propia fila (abajo)."
+    },
+    {
+      "op": "append",
+      "path": "certification",
+      "value": {
+        "role": "S-15",
+        "level": "3 (grúa de CC de 50 t, mientras no exista S-27)",
+        "theory": "Curso de grúa (NOM-006)",
+        "ojt": "Según MS-ACE-04",
+        "evaluated": "Paso 12",
+        "validity": "12 meses (grúas e izaje)"
+      },
+      "reason": "El manual §11 exige esta certificación al \"operador de grúa de CC\"; el POV la había omitido aunque S-15 hace el izaje (paso 12). Mismo criterio que MO-CC2-01."
+    },
+    {
+      "op": "set",
+      "path": "certification[1].evaluated",
+      "value": "Recepción (pasos 16 a 18): sin vapor ni humedad antes de colar, ≤ 10 min sin fuego y centrado",
+      "reason": "El paso 11 lo ejecuta S-15. Una certificación de escalafón debe evaluar los pasos del propio puesto (TD-P07; LFT art. 153-U)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Certificación (TD-P07)",
+        "def": "Prueba práctica de los pasos ★ de tu puesto con un evaluador certificado. Se registra con constancia DC-3. Si no apruebas, recibes retroalimentación y reentrenamiento: no es una sanción."
+      },
+      "reason": "Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP."
+    }
+  ]
+}

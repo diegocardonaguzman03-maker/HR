@@ -1,0 +1,55 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Romboidad",
+        "def": "Romboidad: diferencia entre las dos diagonales de la palanquilla; es aviso de molde gastado o rociado tapado."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Pinholes",
+        "def": "Poros de gas cerca de la superficie de la palanquilla."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Placa ciega",
+        "def": "Placa sin orificio que se empuja en el mecanismo de cambio rápido para cerrar una línea."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Rotámetro",
+        "def": "Medidor de flujo con un flotador dentro de un tubo; en la CC2 muestra el aceite de cada molde."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LIMS",
+        "def": "Sistema del laboratorio donde se registran y consultan los análisis químicos."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

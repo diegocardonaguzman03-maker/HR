@@ -1,0 +1,9 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[10].action", "value": "Con autorización de C-06: retira el tubo y lancea desde un costado, con aluminizado completo, lanza seca y vigía. S-12 baja la velocidad con la tabla nivel–velocidad.", "reason": "Manual §6.1 ★ (lanceado con O₂): vigía obligatorio; faltaba en el POV." },
+    { "op": "set", "path": "steps[10].stop", "value": "El distribuidor llega a 500 mm y la olla no abre, o falta vigía, lanza seca o aluminizado completo.", "reason": "Manual §6.1: condiciones del lanceado como ALTO observable." },
+    { "op": "set", "path": "abnormal[5].do", "value": "Cierra la olla. Aléjate del acero derramado y deja que solidifique; nunca uses agua. Verifica el pesaje del distribuidor.", "reason": "El rebose deja acero sobre la plataforma: MS-ACE-09 escenario F (evacuar, dejar solidificar, nunca agua)." },
+    { "op": "set", "path": "abnormal[5].call", "value": "C-06 y C-04", "reason": "Derrame de metal: C-04 es el comandante de incidente (MS-ACE-09)." }
+  ]
+}

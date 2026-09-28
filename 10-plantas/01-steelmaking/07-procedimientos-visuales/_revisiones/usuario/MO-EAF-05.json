@@ -1,0 +1,70 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Formar una escoria espumosa que tape el arco y proteja el horno, y sacar la escoria por la puerta de forma controlada, sin exponer a nadie. Objetivo: B2 1.8–2.2, FeO 25–35 %, MgO 8–10 %.",
+      "reason": "Primero lo que se logra en palabras de operador; los valores se conservan al final."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Fundentes",
+        "def": "Cal y dolomita que se agregan para formar la escoria y proteger el refractario."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "MgO",
+        "def": "Óxido de magnesio: material refractario de las reparaciones; en la escoria protege las paredes del horno."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Afino",
+        "def": "Última etapa en el horno: con la carga fundida se ajustan temperatura, carbono y oxígeno antes de vaciar."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Nm³/h",
+        "def": "Unidad de caudal de gas (oxígeno, gas natural): metros cúbicos por hora en condiciones normales."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Zona roja",
+        "def": "Zona roja o de exclusión: área donde nadie puede estar a pie mientras hay metal líquido o una carga en movimiento."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Baño plano",
+        "def": "Momento en que la chatarra ya se fundió y el arco trabaja sobre acero líquido."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

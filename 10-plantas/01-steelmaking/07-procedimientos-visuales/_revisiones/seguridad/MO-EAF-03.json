@@ -1,0 +1,11 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "dangerZone.yellow", "value": "Galerías y cámaras del transportador de DRI: solo con permiso de espacio confinado, purga de N₂ y medición (O₂ 19.5–23.5 %, CO < 25 ppm y < 10 % LEL).", "reason": "Manual §6.1 y criterio único de LEL (MS-ACE-05 §5): faltaba el límite de inflamables." },
+    { "op": "append", "path": "hazards", "value": { "icon": "gas", "text": "Monóxido de carbono (CO) en la plataforma de la bóveda." }, "reason": "Manual §6.1: CO en plataforma de bóveda es peligro del proceso y no estaba en el POV." },
+    { "op": "set", "path": "abnormal[4].if", "value": "Alarma de O₂ alto o T alta en silo o transportador, o tu detector suena (CO 25 ppm)", "reason": "Manual §6.1 (CO en plataforma: 25 ppm salir, 200 ppm evacuación). Se combina con la condición de gases para no pasar de 7 anormales." },
+    { "op": "set", "path": "abnormal[4].do", "value": "No entres a galerías ni silos: protocolo de la planta DRI y purga de N₂. Si tu detector suena, sal a zona verde y avisa; con CO 200 ppm, C-04 evacúa el sector.", "reason": "MS-ACE-06 §8 pasos 5–6." },
+    { "op": "set", "path": "abnormal[4].call", "value": "C-05, C-16 y C-04", "reason": "La evacuación del sector la ordena C-04 (MS-ACE-06)." },
+    { "op": "set", "path": "abnormal[2].do", "value": "Detén DRI y carbono. Baja el O₂. Todos fuera del frente de la puerta, a zona verde o refugio. No agregues carbono en masa.", "reason": "Primero proteger personas: el POV debe decir a dónde se retira la persona (MS-ACE-01 §9)." }
+  ]
+}

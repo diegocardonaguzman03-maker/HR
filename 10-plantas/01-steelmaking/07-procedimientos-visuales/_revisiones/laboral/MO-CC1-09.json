@@ -1,0 +1,85 @@
+{
+  "review": {
+    "area": "Laboral",
+    "who": "experto-relaciones-laborales",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "roles[0].does",
+      "value": "Inspecciona caras, cantos y medidas; clasifica con la tabla y marca defectos; registra; re-inspecciona tras el escarpeo. Escarpea solo si está certificado [Supuesto].",
+      "reason": "El escarpeo (paso 10) lo ejecuta S-18 como supuesto pendiente de decisión."
+    },
+    {
+      "op": "set",
+      "path": "steps[8].title",
+      "value": "Clasifica con la tabla",
+      "reason": "S-18 no dispone (LFT art. 9 y especificación): aplica un criterio aprobado; degradar o rechazar lo decide C-09. Igual que MO-CC2-09."
+    },
+    {
+      "op": "set",
+      "path": "steps[8].action",
+      "value": "Aplica la tabla del manual y registra la clasificación: aceptar o escarpear (superficial ≤ 5 mm). Si toca degradar o rechazar (> 10 mm, interno severo o medida fuera), retén y pasa la evidencia a C-09.",
+      "reason": "Separa la clasificación (S-18) de la disposición (C-09)."
+    },
+    {
+      "op": "set",
+      "path": "steps[8].check",
+      "value": "Clasificación registrada en el MES.",
+      "reason": "Consistencia con el título."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].action",
+      "value": "Solo con certificación de escarpeo [Supuesto: función de S-18, pendiente de decisión del Director]. Con permiso en caliente y arrestaflamas: 3–5 mm por pasada. HSLA con Nb a ≥ 150 °C.",
+      "reason": "El escarpador no tiene código en CAT-ACE-001. Se quita \"contratista REPSE\" del material para el trabajador: es materia de trabajo en negociación y la subcontratación de una actividad del objeto social está prohibida (LFT arts. 12–15, verificar con Jurídico Laboral)."
+    },
+    {
+      "op": "set",
+      "path": "steps[14].title",
+      "value": "Registra el estado en el MES",
+      "reason": "S-18 no libera producto por decisión propia: registra el resultado de la tabla."
+    },
+    {
+      "op": "set",
+      "path": "steps[14].action",
+      "value": "Marca \"liberado\" solo si el planchón cumple la tabla sin desviación. Cualquier otro caso queda \"retenido\" hasta la firma de C-09. Solo los liberados se despachan.",
+      "reason": "Deja la disposición de excepciones en C-09 (dueño, confianza), igual que MO-CC2-09."
+    },
+    {
+      "op": "set",
+      "path": "steps[14].check",
+      "value": "MES actualizado; los retenidos solo salen con firma de C-09.",
+      "reason": "Consistencia con la acción."
+    },
+    {
+      "op": "set",
+      "path": "certification[0].ojt",
+      "value": "160 h / 300 planchones verificados por un evaluador nivel 4 (TD-P07)",
+      "reason": "\"Inspector nivel 4\" podría ser un sindicalizado evaluando a otro; el evaluador sindicalizado solo aplica la lista en pareja y no emite dictamen (DP-ACE-S §3.3)."
+    },
+    {
+      "op": "set",
+      "path": "certification[1].level",
+      "value": "3 (escarpeo) [Supuesto: pendiente de decisión del Director]",
+      "reason": "El escarpador no tiene código; la asignación a S-18 es un supuesto."
+    },
+    {
+      "op": "set",
+      "path": "certification[3].validity",
+      "value": "≤ 24 meses (TD-P07)",
+      "reason": "La vigencia estaba vacía (\"—\")."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Certificación (TD-P07)",
+        "def": "Prueba práctica de los pasos ★ de tu puesto con un evaluador certificado. Se registra con constancia DC-3. Si no apruebas, recibes retroalimentación y reentrenamiento: no es una sanción."
+      },
+      "reason": "Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP."
+    }
+  ]
+}

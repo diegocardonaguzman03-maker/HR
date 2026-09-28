@@ -1,0 +1,31 @@
+{
+  "review": {
+    "area": "Laboral",
+    "who": "experto-relaciones-laborales",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "certification[0].evaluated",
+      "value": "Pasos 8 y 11; pasos 2 y 15 como señalero de la grúa",
+      "reason": "En los pasos 2 y 15 S-13 no ejecuta: da las señales a S-09."
+    },
+    {
+      "op": "set",
+      "path": "certification[0].validity",
+      "value": "≤ 24 meses (TD-P07); señales de izaje 12 meses (NOM-006, MO-OLL-02)",
+      "reason": "Criterio unificado: izaje y señales 12 meses (DP-ACE-S §4)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Certificación (TD-P07)",
+        "def": "Prueba práctica de los pasos ★ de tu puesto con un evaluador certificado. Se registra con constancia DC-3. Si no apruebas, recibes retroalimentación y reentrenamiento: no es una sanción."
+      },
+      "reason": "Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP."
+    }
+  ]
+}

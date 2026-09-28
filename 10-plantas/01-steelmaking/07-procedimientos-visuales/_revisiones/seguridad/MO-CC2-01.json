@@ -1,0 +1,7 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[6].stop", "value": "Tienes que trabajar bajo el distribuidor y el carro no está bloqueado con tu candado (MS-ACE-02).", "reason": "Manual §6.3: bloqueo del carro del distribuidor antes de trabajar bajo él (instalación de buzas y placas). El POV no lo mencionaba." },
+    { "op": "set", "path": "steps[7].stop", "value": "Tienes que trabajar bajo el distribuidor y el carro no está bloqueado con tu candado (MS-ACE-02).", "reason": "Manual §6.3: mismo control para colocar las placas ciegas." }
+  ]
+}

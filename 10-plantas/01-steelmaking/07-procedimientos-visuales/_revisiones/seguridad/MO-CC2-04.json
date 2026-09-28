@@ -1,0 +1,7 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[13].check", "value": "Línea cerrada; nadie bajo la máquina; C-06 avisado; después, el ESR revisa el contenedor de Cs-137 de esa línea.", "reason": "Manual §9 (breakout): el ESR inspecciona el contenedor de Cs-137 antes de intervenir (MS-ACE-07 §9, contenedor con metal encima)." },
+    { "op": "set", "path": "steps[13].action", "value": "Empuja la placa ciega (o tapona). S-12 detiene la extracción de esa línea. Mantén el agua de molde y la secundaria; nunca la cortes. Evacúa bajo la máquina y a ≥ 20 m.", "reason": "Manual §9 y MS-ACE-09 escenario C: prohibido cortar el agua de molde." }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[14].stop", "value": "Hay alguien en la ruta de los carros o entre ellos, o la fosa del distribuidor tiene agua.", "reason": "Manual §6.1: carros en movimiento (nadie entre carros) y distribuidor viejo con ≈ 14 t de acero residual (fosa seca)." },
+    { "op": "append", "path": "abnormal", "value": { "icon": "alto", "if": "El cambiador de SEN no acciona", "do": "No dejes el tapón cerrado más de 15 s: reabre con la SEN vieja y baja la velocidad.", "call": "C-06 y S-22" }, "reason": "Manual §9: condición anormal no incluida; evita congelar o desbordar el molde con personas en el frente." }
+  ]
+}

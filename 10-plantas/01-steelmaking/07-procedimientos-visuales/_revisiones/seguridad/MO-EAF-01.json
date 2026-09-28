@@ -1,0 +1,15 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[7].stop", "value": "La mezcla caería sobre el baño líquido o empieza a formar charco.", "reason": "Paso ★ sin ALTO; manual §6.1: proyección solo sobre refractario, nunca sobre el baño ni formando charcos." },
+    { "op": "set", "path": "steps[9].stop", "value": "Hay una persona en la trayectoria de caída de las costras.", "reason": "Manual §6.1 (caída de costras): nadie en la trayectoria." },
+    { "op": "set", "path": "steps[10].action", "value": "Pide a S-01 abrir el interruptor e inhibir inclinación y bóveda. Cada persona que sube retira y lleva su propia llave cautiva. Para intervenir el equipo o si hay más personas que llaves: LOTO completo.", "reason": "MS-ACE-02 §6.4 condición 3: una llave por persona; si faltan llaves, LOTO." },
+    { "op": "set", "path": "steps[10].stop", "value": "S-01 no confirma interruptor abierto, no tienes tu propia llave o el sistema de llaves está en falla o con prueba vencida.", "reason": "MS-ACE-02 §6.4: sistema en falla o prueba mensual vencida exige LOTO completo." },
+    { "op": "set", "path": "steps[11].stop", "value": "Tu ropa tiene grasa o aceite, o la válvula de la lanza no cierra rápido.", "reason": "Manual §6.1 (enriquecimiento de O₂ al limpiar el EBT): ropa sin grasa y válvula de cierre rápido." },
+    { "op": "set", "path": "steps[15].stop", "value": "Las llaves devueltas no coinciden con las personas que subieron: el horno no se libera.", "reason": "Paso ★ de retiro; manual §8 paso 17 (conteo de personas = conteo de llaves)." },
+    { "op": "set", "path": "abnormal[0].do", "value": "Arco bloqueado. No inclines ni muevas electrodos. Cierra el agua del circuito desde el púlpito. Evacúa a ≥ 25 m. Deja el horno quieto hasta que no haya vapor (≥ 30 min [Supuesto]). Reanuda solo con C-05 y C-07.", "reason": "Manual §9 y MS-ACE-03 §9: la espera de evaporación con el horno quieto es parte de la respuesta segura." },
+    { "op": "set", "path": "abnormal[6].if", "value": "Presión del horno positiva o tu detector suena (CO 25 ppm)", "reason": "El POV lista CO como peligro pero no dice qué hacer; manual §6.1 y MS-ACE-06. Se combina con la condición de presión para no pasar de 7 anormales." },
+    { "op": "set", "path": "abnormal[6].do", "value": "No cargues hasta restablecer (damper del 4.º agujero, casa de bolsas). Si tu detector suena, sal a zona verde y avisa; con CO 200 ppm, C-04 evacúa el sector.", "reason": "MS-ACE-06 §5.1 y §8 pasos 4–6." },
+    { "op": "set", "path": "abnormal[6].call", "value": "C-05, Mantenimiento y C-04 (MS-ACE-06)", "reason": "La evacuación del sector la ordena C-04." }
+  ]
+}

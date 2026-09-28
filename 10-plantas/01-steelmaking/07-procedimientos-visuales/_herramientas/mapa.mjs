@@ -65,6 +65,13 @@ function chainSvg(list, color) {
   return o + '</svg>';
 }
 
+const num = (t) => { const m = String(t ?? '').match(/(\d+(?:\.\d+)?)\s*h/); return m ? Number(m[1]) : 0; };
+function hrs(rc, list) {
+  const rows = list.flatMap((p) => p.certification.filter((c) => c.role === rc));
+  const th = rows.reduce((a, c) => a + num(c.theory), 0), oj = rows.reduce((a, c) => a + num(c.ojt), 0);
+  return th || oj ? `<div class="rh2">Formación de referencia en esta área: <b>${th} h</b> de teoría y <b>${oj} h</b> de práctica en el puesto (OJT) · DC-3 al certificarte</div>` : '';
+}
+
 function section(sec) {
   const list = procs.filter((p) => sec.areas.includes(p.area)).sort((a, b) => ORDER.indexOf(a.area) - ORDER.indexOf(b.area) || a.code.localeCompare(b.code));
   if (!list.length) return '';
@@ -78,10 +85,10 @@ function section(sec) {
     const mine = list.filter((p) => p.roles.some((r) => r.code === rc && ['R', 'A'].includes(r.raci)));
     const crit = mine.reduce((n, p) => n + p.steps.filter((s) => s.role === rc && s.critical).length, 0);
     return `<div class="route"><div class="rh"><b>${esc(rc)}</b> ${esc(roleName[rc] ?? '')}</div>
-      <ol><li>Lee tu instrucción de trabajo <b>${esc(roleIt[rc] ?? '—')}</b> (tu turno completo).</li>
+      <ol><li><b>Primero tu seguridad:</b> MS-ACE-01 (metal líquido) y los MS que cita cada POV.</li><li>Lee tu instrucción de trabajo <b>${esc(roleIt[rc] ?? '—')}</b> (tu turno completo).</li>
       ${mine.map((p) => `<li><b>${esc(p.pov)}</b> ${esc(p.title)} <span class="pill">${p.roles.find((r) => r.code === rc).raci === 'A' ? 'eres dueño' : p.steps.some((s) => s.role === rc) ? `${p.steps.filter((s) => s.role === rc).length} pasos tuyos` : 'participas'}</span></li>`).join('')}
-      <li>Seguridad crítica: MS-ACE-01 (metal líquido) y los MS citados en cada POV.</li></ol>
-      <div class="rf">${crit ? `${crit} pasos críticos ★ a certificar en esta área` : rc.startsWith('C') ? 'Supervisa, autoriza y responde por el resultado' : 'Sin pasos críticos propios en esta área'}</div></div>`;
+      </ol>
+      ${hrs(rc, mine)}<div class="rf">${crit ? `${crit} pasos críticos ★ a certificar en esta área` : rc.startsWith('C') ? 'Supervisa, autoriza y responde por el resultado' : 'Sin pasos críticos propios en esta área'}</div></div>`;
   }).join('');
   return `<section class="pb"><div class="sh" style="background:${sec.color}">${esc(sec.title)}</div>
   <h2>Cadena de procesos</h2><p class="note">Cada tarjeta es un Procedimiento Operativo Visual (POV). Las flechas indican el orden típico de una colada; algunos procesos (por ejemplo, cambio de electrodos o de buza) ocurren cuando se necesitan.</p>
@@ -137,6 +144,7 @@ th { background:#455a64; color:#fff; padding:3px 4px; text-align:left; } td { bo
 .route { border:1px solid #cfd8dc; border-radius:6px; padding:6px 8px; break-inside: avoid; font-size:8.3pt; }
 .route .rh { font-size:9.4pt; color:#0d47a1; margin-bottom:2px; } .route ol { margin:2px 0 2px 16px; padding:0; } .route li { margin-bottom:1px; }
 .pill { font-size:7pt; background:#eceff1; border-radius:8px; padding:0 5px; color:#455a64; white-space:nowrap; }
+.rh2 { font-size:7.6pt; color:#37474f; margin-top:2px; }
 .rf { font-size:7.6pt; color:#E65100; font-weight:700; }
 .idx td { font-size:8pt; }
 </style></head><body>
@@ -145,7 +153,7 @@ th { background:#455a64; color:#fff; padding:3px 4px; text-align:left; } td { bo
 <div class="stats"><div><b>${total}</b>procesos operativos</div><div><b>${steps}</b>pasos dibujados</div><div><b>${crit}</b>pasos críticos ★</div><div><b>${allRoles.length}</b>puestos ligados</div></div></div>
 <div class="how">
 <div>${icon('personas', { size: 26, color: '#0d47a1' })}<b>1 · Busca tu puesto</b>Encuentra tu código (S-xx o C-xx) en la matriz de tu área o en el índice final.</div>
-<div>${icon('ruta', { size: 26, color: '#0d47a1' })}<b>2 · Sigue tu ruta</b>Lee tu instrucción de trabajo (IT) y los POV donde eres R o A, en el orden de la cadena.</div>
+<div>${icon('ruta', { size: 26, color: '#0d47a1' })}<b>2 · Sigue tu ruta</b>Empieza por seguridad crítica, luego tu instrucción de trabajo (IT) y los POV donde eres R o A, en el orden de la cadena.</div>
 <div>${icon('certificado', { size: 26, color: '#0d47a1' })}<b>3 · Certifícate</b>Los pasos ★ de cada POV son los que te evalúan en tu certificación (TD-P07).</div></div>
 <h2>Así fluye el acero por las áreas</h2>${areaFlow()}
 <h2>Documentos que se usan juntos</h2>

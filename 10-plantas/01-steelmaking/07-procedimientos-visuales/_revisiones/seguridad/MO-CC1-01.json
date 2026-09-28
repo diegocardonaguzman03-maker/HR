@@ -1,0 +1,8 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[1].stop", "value": "Para limpiar tienes que meter el cuerpo al distribuidor y aún no hay permiso ni LOTO (paso 3).", "reason": "El manual pone la limpieza (paso 3) antes del permiso de entrada (paso 4). Si la limpieza exige entrar, aplica espacio confinado (MS-ACE-05). Se reporta el orden del manual como hallazgo." },
+    { "op": "set", "path": "steps[2].stop", "value": "Una lectura está fuera de rango, el interior pasa de 45 °C, o no hay vigía afuera y rescate listo.", "reason": "Manual §6.1 (≤ 45 °C) y MS-ACE-05 §8 pasos 6–7: rescate listo antes de entrar." },
+    { "op": "set", "path": "steps[15].stop", "value": "Hay alguien en la ruta del carro, o pasan más de 10 min sin fuego antes de abrir la olla.", "reason": "Manual §6.1 (carro de distribuidor en movimiento: área despejada)." }
+  ]
+}

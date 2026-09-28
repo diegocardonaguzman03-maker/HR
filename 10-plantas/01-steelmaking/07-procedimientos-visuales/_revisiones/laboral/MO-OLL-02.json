@@ -1,0 +1,49 @@
+{
+  "review": {
+    "area": "Laboral",
+    "who": "experto-relaciones-laborales",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "roles[0].does",
+      "value": "Inspecciona la grúa, iza, traslada y asienta. Si la olla o la grúa no son seguras, no la mueve y avisa a C-04.",
+      "reason": "Redacción \"detiene, avisa y escala\" (LFT art. 9); mismo derecho de alto al trabajo del manual."
+    },
+    {
+      "op": "set",
+      "path": "roles[2].does",
+      "value": "Confirma por radio que la olla está lista: temperatura, química, argón suave cumplido, bordo libre y sin fuga.",
+      "reason": "Lenguaje: \"libera\" suena a disposición; S-06 confirma condiciones medidas. Las desviaciones son de C-09 / C-04."
+    },
+    {
+      "op": "set",
+      "path": "steps[1].title",
+      "value": "Confirma la olla lista por radio",
+      "reason": "Lenguaje sin función de disposición para S-06."
+    },
+    {
+      "op": "set",
+      "path": "steps[1].check",
+      "value": "Confirmación por radio; bordo libre ≥ 300 mm [Supuesto].",
+      "reason": "Consistencia con el título."
+    },
+    {
+      "op": "set",
+      "path": "certification[2].validity",
+      "value": "12 meses (decisión en emergencias de izaje, MO-OLL-02)",
+      "reason": "DP-ACE-C §0: los mandos que evalúan tareas de izaje se recertifican a 12 meses; MO-OLL-02 está en la lista de 12 meses."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Certificación (TD-P07)",
+        "def": "Prueba práctica de los pasos ★ de tu puesto con un evaluador certificado. Se registra con constancia DC-3. Si no apruebas, recibes retroalimentación y reentrenamiento: no es una sanción."
+      },
+      "reason": "Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP."
+    }
+  ]
+}

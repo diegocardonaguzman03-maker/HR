@@ -1,0 +1,55 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Antirretorno de llama",
+        "def": "Dispositivo (arrestaflamas) que impide que la flama regrese por la manguera."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Electroimán",
+        "def": "Imán de la grúa que levanta el acero; pierde fuerza con el acero muy caliente (más de 600 °C)."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Estiba",
+        "def": "Pila ordenada de piezas en el patio, con separadores y etiqueta de colada."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Pirómetro",
+        "def": "Instrumento que mide la temperatura a distancia, sin tocar la pieza."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Trazabilidad",
+        "def": "Trazabilidad: poder saber de qué colada y línea viene cada pieza y qué le pasó."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

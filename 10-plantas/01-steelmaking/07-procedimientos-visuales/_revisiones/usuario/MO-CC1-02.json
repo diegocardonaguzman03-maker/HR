@@ -1,0 +1,61 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[7].action",
+      "value": "Bloquea barra falsa, segmentos, oscilación y ajuste de ancho con tu candado personal. Haz la prueba de arranque: intenta arrancar cada equipo y confirma que no se mueve.",
+      "reason": "Un nuevo confunde \"prueba de arranque\" (LOTO) con el arranque de colada."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Prueba de arranque",
+        "def": "Prueba de arranque (LOTO): intentar arrancar el equipo ya bloqueado para comprobar que no se mueve. No es el arranque de colada."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Segmentos",
+        "def": "Tramos de rodillos bajo el molde que guían y enfrían la pieza. Los segmentos 1–3 son los más cercanos al molde."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Oscilación",
+        "def": "Movimiento arriba-abajo del molde para que el acero no se pegue a sus paredes."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Cámara de rociado",
+        "def": "Zona cerrada bajo el molde donde las boquillas rocían agua y aire. Nadie entra con la máquina en operación."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación (en el púlpito o en campo) donde ves valores, estados y alarmas del equipo."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "review": {
+    "area": "Laboral",
+    "who": "experto-relaciones-laborales",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "goldenRules[0]",
+      "value": "Ante la duda, retén con etiqueta roja \"R\" y avisa. Nadie libera por presión de producción.",
+      "reason": "\"Es una falta grave\" asigna responsabilidad disciplinaria en un material de capacitación; la sanción solo procede por el Reglamento Interior y el CCT (DP-ACE-S §4)."
+    },
+    {
+      "op": "set",
+      "path": "steps[4].decision.no",
+      "value": "> 6 mm: retén \"R\". > 11: retén para rechazo (C-09).",
+      "reason": "S-18 no rechaza: retiene y el rechazo lo firma C-09 (paso 14)."
+    },
+    {
+      "op": "set",
+      "path": "certification[0].theory",
+      "value": "24 h (defectos, metrología, macro y clasificación)",
+      "reason": "S-18 clasifica; la disposición es de C-09."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Certificación (TD-P07)",
+        "def": "Prueba práctica de los pasos ★ de tu puesto con un evaluador certificado. Se registra con constancia DC-3. Si no apruebas, recibes retroalimentación y reentrenamiento: no es una sanción."
+      },
+      "reason": "Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP."
+    }
+  ]
+}

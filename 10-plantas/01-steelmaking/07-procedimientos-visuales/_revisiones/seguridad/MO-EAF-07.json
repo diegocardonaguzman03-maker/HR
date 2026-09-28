@@ -1,0 +1,14 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[0].stop", "value": "La cara caliente marca menos de 1,000 °C, la olla está húmeda o no trae lista firmada.", "reason": "ALTO observable con el valor del manual (§6.3, MS-ACE-03 §5): 'fría' no es medible." },
+    { "op": "set", "path": "steps[4].action", "value": "Coloca barreras, cuenta a las personas y revisa la cámara. Activa sirena y semáforo rojo al menos 30 s antes de abrir.", "reason": "El manual y MS-ACE-01 piden aviso ≥ 30 s, no exactamente 30 s." },
+    { "op": "set", "path": "steps[4].stop", "value": "Alguien está a menos de 10 m de la olla o del EBT, o la sirena o el semáforo no funcionan.", "reason": "MS-ACE-01 §4 y §9: sin sirena o semáforo no hay vaciado." },
+    { "op": "set", "path": "steps[6].stop", "value": "No recibiste \"zona libre\" por radio de S-02 o el semáforo no está en rojo.", "reason": "El paso que expone (abrir el EBT) debe tener su ALTO ligado a la confirmación del paso 5 (criterio del manual: 'zona libre' por radio)." },
+    { "op": "set", "path": "steps[10].action", "value": "Al llegar a 150 t o al primer indicio de escoria, regresa el horno de inmediato a −3°. Si la báscula falla, cierra por nivel visual.", "reason": "Manual §9 (olla se llena en exceso por báscula fallada): riesgo de derrame por el borde." },
+    { "op": "set", "path": "dangerZone.red", "value": "Zona roja: 10 m alrededor de la olla y del EBT, la fosa, debajo del horno y la vía del carro ± 5 m. Nadie a pie; solo S-02 para adiciones, desde la posición protegida.", "reason": "Manual §6.3 y MS-ACE-01 §5: la única excepción es S-02 en la posición protegida; la persona nueva debe saber dónde se para." },
+    { "op": "set", "path": "dangerZone.rule", "value": "Activa desde que la olla entra hasta que el EBT cierra y el carro sale. Sirena y semáforo rojo al menos 30 s antes de abrir.", "reason": "Manual §6.3: la exclusión inicia cuando la olla entra, no 30 s antes de abrir." },
+    { "op": "set", "path": "abnormal[0].do", "value": "Regresa el horno a 0°/−3°. Nadie se asoma. Solo con autorización de C-05, S-02 lancea con O₂ desde la posición protegida, con EPP completo [Validar con OEM]. Máx. 2 intentos; luego decide C-05.", "reason": "Manual §6.1 y §9: EPP completo, quién lancea y la marca [Validar con OEM]." },
+    { "op": "append", "path": "abnormal", "value": { "icon": "gas", "if": "Tu detector suena en la fosa o el piso de vaciado (CO 25 ppm)", "do": "Sal a zona verde por la ruta de escape y avisa por radio con lugar y lectura. Con CO 200 ppm, C-04 evacúa el sector. No regreses hasta < 25 ppm.", "call": "C-05 y C-04 (MS-ACE-06)" }, "reason": "El POV lista CO como peligro pero no dice qué hacer; manual §6.1 y MS-ACE-06 §8 pasos 5–6." }
+  ]
+}

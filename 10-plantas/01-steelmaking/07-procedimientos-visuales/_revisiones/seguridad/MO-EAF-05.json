@@ -1,0 +1,45 @@
+{
+  "review": {
+    "area": "Seguridad",
+    "who": "experto-seguridad-salud",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[8].stop",
+      "value": "S-02 no ha confirmado por radio \"olla seca\" y \"zona libre\".",
+      "reason": "El paso que expone (inclinar hacia la puerta) debe depender de los pasos ★ 6 y 7 del manual; ALTO observable."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].action",
+      "value": "En el afino toma la muestra con cuchara o probador desde posición protegida: de lado a la puerta, a ≥ 1.5 m y máximo 2 min en zona roja. Envíala al laboratorio.",
+      "reason": "MS-ACE-01 §8 paso 9 (muestreo en la puerta): posición, distancia y tiempo en roja."
+    },
+    {
+      "op": "set",
+      "path": "steps[12].stop",
+      "value": "Hay peatones en la ruta del portaollas.",
+      "reason": "Manual §6.1 (atropellamiento del portaollas): peatones fuera de la ruta."
+    },
+    {
+      "op": "set",
+      "path": "abnormal[0].do",
+      "value": "Corta C, reduce O₂ y detén DRI. Todos fuera del frente de la puerta, a zona verde o refugio. No inclines más.",
+      "reason": "Primero proteger personas: indicar a dónde se retira la persona (MS-ACE-01 §9)."
+    },
+    {
+      "op": "set",
+      "path": "abnormal[6]",
+      "value": {
+        "icon": "gas",
+        "if": "Tu detector suena frente a la puerta (CO 25 ppm)",
+        "do": "Sal a zona verde y avisa por radio con lugar y lectura. Con CO 200 ppm, C-04 evacúa el sector. S-01 revisa que la presión del horno sea negativa.",
+        "call": "C-05 y C-04 (MS-ACE-06)"
+      },
+      "reason": "CO por la puerta es peligro principal del POV sin respuesta. Se sustituye 'P > 0.015 % antes de vaciar' (calidad; sigue en el manual §9 y en POV-EAF-06) para respetar el máximo de 7 anormales."
+    }
+  ]
+}

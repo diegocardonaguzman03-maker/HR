@@ -1,0 +1,8 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[0].stop", "value": "Para revisar tienes que meter manos o herramientas entre rodillos: primero LOTO (paso 8).", "reason": "Manual §6.1 ★: LOTO antes de meter manos o herramientas. El recorrido inicial se hace sin LOTO; la persona nueva debe saber que solo mira." },
+    { "op": "set", "path": "steps[5].stop", "value": "Hay sobrecarga de motores, o alguien en la cámara de rociado o bajo la plataforma del molde.", "reason": "Manual §6.3: zona de exclusión durante la inserción." },
+    { "op": "set", "path": "steps[12].stop", "value": "Falta una persona o una herramienta en el conteo.", "reason": "Manual §6.3: retiro de candados solo con conteo completo de personas y herramientas." }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[3].action", "value": "Tras 2–3 min de argón, mide temperatura y oxígeno (si aplica), toma la muestra y mide la escoria. Usa lanza seca, de lado a la ventana, a ≥ 1.5 m y máximo 2 min en zona roja.", "reason": "MS-ACE-01 §8 paso 9 (muestreo y temperatura en LF) y MS-ACE-03 (lanza seca)." },
+    { "op": "set", "path": "steps[4].stop", "value": "Hay alguien en la plataforma de electrodos o suena la alarma de fuga de agua de la bóveda.", "reason": "Manual §6.1 y regla de oro 1: nadie en la plataforma con el interruptor cerrado." },
+    { "op": "set", "path": "steps[6].stop", "value": "El bordo libre es menor de 300 mm o hay alguien a 5 m o menos de la ventana.", "reason": "Paso ★ sin ALTO; manual §6.1 (agitación fuerte con bordo libre bajo) y §6.3 (zona roja ≤ 5 m)." },
+    { "op": "set", "path": "steps[11].action", "value": "Mide la temperatura y toma la muestra final con lanza seca, de lado a la ventana, a ≥ 1.5 m y máximo 2 min en zona roja.", "reason": "MS-ACE-01 §8 paso 9." },
+    { "op": "set", "path": "abnormal[5].do", "value": "Detén el alimentador. Nadie en la trayectoria del alambre. Desatasca solo con LOTO y reanuda.", "reason": "Manual §6.1 (latigazo o rotura de alambre: nadie en la trayectoria)." },
+    { "op": "set", "path": "abnormal[6]", "value": { "icon": "gas", "if": "Tu detector suena o alarma el monitor de O₂ de la fosa", "do": "Sal a zona verde y avisa por radio con lugar y lectura. No entres a la fosa del carro ni a túneles de argón. Si alguien cae, no entres a rescatarlo: da la alarma; solo la brigada con ERA.", "call": "C-04 y C-16 (MS-ACE-05, MS-ACE-06)" }, "reason": "Argón y CO son peligros principales del POV sin respuesta en 'Si algo sale mal'. Se sustituye la condición 'tratamiento > 50 min' (coordinación de producción, sigue en el manual §9) para respetar el máximo de 7 anormales." }
+  ]
+}

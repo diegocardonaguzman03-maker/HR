@@ -1,0 +1,52 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[11].decision.no",
+      "value": "Mantén oscilación y avisa a C-06. No uses O₂.",
+      "reason": "\"Sin O₂\" es ambiguo; se escribe como instrucción."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Escorial",
+        "def": "Área donde se vacía la escoria de las ollas."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Segmentos",
+        "def": "Tramos de rodillos bajo el molde que guían y enfrían la pieza. Los segmentos 1–3 son los más cercanos al molde."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Abombamiento",
+        "def": "Deformación hacia afuera del planchón entre rodillos por la presión del acero líquido del centro."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Zona de exclusión",
+        "def": "Zona roja o de exclusión: área donde nadie puede estar a pie mientras hay metal líquido o una carga en movimiento."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

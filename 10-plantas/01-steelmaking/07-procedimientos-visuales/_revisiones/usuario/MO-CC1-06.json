@@ -1,0 +1,64 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "phases[1]",
+      "value": "Opción A: cambio de SEN",
+      "reason": "Las fases 2 y 3 son alternativas, no pasos seguidos; un nuevo creería que siempre se hacen las dos."
+    },
+    {
+      "op": "set",
+      "path": "phases[2]",
+      "value": "Opción B: cambio de distribuidor",
+      "reason": "Igual que la fase anterior."
+    },
+    {
+      "op": "set",
+      "path": "steps[14].decision.no",
+      "value": "3 a 5 min: grapa (S-14) [Validar OEM]. Más de 5 min: cierre.",
+      "reason": "El texto no decía qué pasa entre 3 y 5 min; mismos valores."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Tracking",
+        "def": "Tracking (rastreo): sistema de nivel 2 que sigue cada pieza, su colada y sus eventos."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Menisco",
+        "def": "Superficie del acero líquido dentro del molde; su nivel se mantiene en ± 3 mm."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Zona roja",
+        "def": "Zona roja o de exclusión: área donde nadie puede estar a pie mientras hay metal líquido o una carga en movimiento."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Inmersión de la SEN",
+        "def": "Qué tan metida está la punta de la SEN bajo el menisco (120–160 mm)."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

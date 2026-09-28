@@ -1,0 +1,7 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[6].stop", "value": "El oscilador se mueve en la prueba de arranque.", "reason": "Paso ★ de LOTO sin ALTO; MS-ACE-02 §9 (equipo que se mueve en la prueba = detén todo)." },
+    { "op": "set", "path": "steps[9].stop", "value": "Los extractores se mueven en la prueba de arranque o tu candado no está puesto.", "reason": "Paso ★ de LOTO sin ALTO; MS-ACE-02 §8 pasos 7 y 9." }
+  ]
+}

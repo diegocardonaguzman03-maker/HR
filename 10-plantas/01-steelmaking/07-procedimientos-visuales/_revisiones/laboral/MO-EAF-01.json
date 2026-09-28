@@ -1,0 +1,49 @@
+{
+  "review": {
+    "area": "Laboral",
+    "who": "experto-relaciones-laborales",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "roles[0].does",
+      "value": "Verifica agua, presiones y temperaturas en el HMI, mueve inclinación y bóveda y avisa que el horno está listo para la carga.",
+      "reason": "Lenguaje: \"libera\" suena a autorización. El sindicalizado confirma y avisa; las liberaciones con desviación son de C-05 (LFT art. 9)."
+    },
+    {
+      "op": "set",
+      "path": "steps[16].title",
+      "value": "Avisa que el horno está listo",
+      "reason": "Lenguaje sin función de autorización para S-01 (LFT art. 9)."
+    },
+    {
+      "op": "set",
+      "path": "steps[16].action",
+      "value": "Registra la lista de preparación en nivel 2. Avisa por radio a S-04 y S-05: \"EAF-x listo para carga\".",
+      "reason": "El manual §8 paso 18 avisa también a S-05 (patio); el POV lo había omitido."
+    },
+    {
+      "op": "append",
+      "path": "roles",
+      "value": {
+        "code": "S-05",
+        "name": "Operador de Patio de Chatarra",
+        "raci": "I",
+        "does": "Recibe el aviso de horno listo para tener la canasta pesada y seca.",
+        "it": "IT-S05"
+      },
+      "reason": "S-05 recibe el aviso del paso 18 del manual. Falta en el manual §2, en el catálogo y en DP-ACE-S (se reporta)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Certificación (TD-P07)",
+        "def": "Prueba práctica de los pasos ★ de tu puesto con un evaluador certificado. Se registra con constancia DC-3. Si no apruebas, recibes retroalimentación y reentrenamiento: no es una sanción."
+      },
+      "reason": "Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP."
+    }
+  ]
+}

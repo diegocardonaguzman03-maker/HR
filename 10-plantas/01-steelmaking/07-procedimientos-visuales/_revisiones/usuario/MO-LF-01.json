@@ -1,0 +1,52 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[4].action",
+      "value": "Baja la bóveda y los electrodos y usa el tap de la práctica, con argón a 100–200 NL/min. Agrega cal y aluminato de calcio para formar la escoria reductora.",
+      "reason": "El título dice \"Baja la bóveda\" y la acción solo mencionaba los electrodos; un nuevo no sabe cuándo baja la bóveda."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Breakout",
+        "def": "Fuga de acero líquido en la colada continua cuando la piel del acero se rompe bajo el molde."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HSLA",
+        "def": "Acero de alta resistencia y baja aleación (por ejemplo, para tubería). Es más delicado de colar y de enfriar."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Bajo C calmado al Al",
+        "def": "Acero de bajo carbono desoxidado con aluminio; es el grado más común de CC1."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "NL/min",
+        "def": "Unidad de caudal de gas (argón): litros por minuto medidos en condiciones normales."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

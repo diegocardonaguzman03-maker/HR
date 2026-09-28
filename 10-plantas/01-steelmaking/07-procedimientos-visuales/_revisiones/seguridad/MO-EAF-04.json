@@ -1,0 +1,8 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[7].stop", "value": "La T de salida de un panel pasa de 60 °C.", "reason": "Paso ★ sin ALTO; manual §6.1 (tap alto solo con arco cubierto; bajar tap con T de panel > 60 °C) y MS-ACE-03 §5." },
+    { "op": "set", "path": "abnormal[2].if", "value": "Alarma de fuga de agua (Δ caudal > 2 %) o disparo (> 4 %)", "reason": "MS-ACE-03 §5 y §8 paso 5: la alarma de 2 % exige respuesta del púlpito antes del disparo; el POV solo cubría el disparo." },
+    { "op": "set", "path": "abnormal[2].do", "value": "> 2 %: reduce potencia y busca vapor, llama amarilla o chisporroteo. Disparo > 4 % o agua visible: no rearmes, no inclines ni muevas electrodos y evacúa a ≥ 25 m (MS-ACE-03, MS-ACE-09).", "reason": "MS-ACE-03 §8 paso 5 y §9." }
+  ]
+}

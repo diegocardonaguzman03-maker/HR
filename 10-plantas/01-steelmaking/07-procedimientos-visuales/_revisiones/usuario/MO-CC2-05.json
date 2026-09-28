@@ -1,0 +1,61 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Cambiar la olla vacía por una llena sin parar las 6 líneas, sin pasar escoria al distribuidor, sin que el distribuidor baje de 500 mm y con la colada bien asignada en cada línea.",
+      "reason": "Aclara qué no debe bajar de 500 mm; mismo valor."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Horno olla (LF)",
+        "def": "Horno olla (LF): estación donde se ajustan la química y la temperatura del acero antes de colar."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Lancear",
+        "def": "Abrir con una lanza de oxígeno una olla que no abrió sola. Solo lo hace personal certificado, con EPP aluminizado."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Radio de giro",
+        "def": "Área que barren la torreta y las ollas al girar; nadie puede estar dentro."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Nave de ollas",
+        "def": "Área donde se vacían, reparan y preparan las ollas."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Señalero",
+        "def": "Persona que guía a la grúa con señales y confirma que la olla asentó."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

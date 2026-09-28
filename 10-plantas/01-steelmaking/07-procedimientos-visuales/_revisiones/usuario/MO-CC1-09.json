@@ -1,0 +1,46 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Volteador",
+        "def": "Equipo que gira el planchón para revisar la cara de abajo. Nadie a su lado mientras se mueve."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Permiso de trabajo en caliente",
+        "def": "Permiso de trabajo en caliente: autorización escrita para trabajar con flama o chispa (oxicorte, escarpeo)."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HSLA",
+        "def": "Acero de alta resistencia y baja aleación (por ejemplo, para tubería). Es más delicado de colar y de enfriar."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "MES",
+        "def": "Sistema donde se registra cada planchón: grado, eventos, peso, ubicación y estado (liberado o retenido)."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[3].stop", "value": "Hay alguien bajo la olla o en su trayectoria.", "reason": "Manual §6.1 (olla suspendida) y MS-ACE-04." },
+    { "op": "set", "path": "steps[4].stop", "value": "Hay alguien en la zona de giro de la torreta.", "reason": "Manual §6.1 y §6.3: zona de giro despejada durante el giro." },
+    { "op": "set", "path": "steps[5].stop", "value": "C-06 no ha confirmado \"zona libre\" o la sirena no sonó al menos 30 s antes.", "reason": "Abrir la olla es el inicio de la exposición; el ALTO se liga al paso ★ 2 y a MS-ACE-01 (aviso ≥ 30 s)." },
+    { "op": "set", "path": "steps[17].stop", "value": "La barra no se desconecta sola: detén antes del oxicorte; la desconexión manual es solo con LOTO.", "reason": "Manual §9 (barra falsa no se desconecta). No cabía otra condición anormal; se pone como ALTO del paso." },
+    { "op": "set", "path": "abnormal[4].do", "value": "Cierra tapón y olla, detén la extracción, evacúa y cuenta al personal. Mantén el agua de molde. Nadie se acerca sin autorización de C-06 (MO-CC1-04).", "reason": "Manual MO-CC1-04 §9 y MS-ACE-09 escenario C: mantener el agua de molde y no acercarse; el POV decía solo 'detén y evacúa'." }
+  ]
+}

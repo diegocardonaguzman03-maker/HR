@@ -1,0 +1,11 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[2].stop", "value": "La fosa tiene agua, hay alguien a 15 m o menos del punto de volteo o bajo la olla.", "reason": "Paso ★ de exposición (volteo con grúa) sin ALTO propio; manual §6.3 y MS-ACE-03." },
+    { "op": "set", "path": "steps[5].stop", "value": "Tu ropa tiene grasa o aceite, o la válvula de la lanza no cierra rápido.", "reason": "Manual §6.1 (lanza de O₂: ropa sin grasa, válvula de cierre rápido)." },
+    { "op": "set", "path": "steps[14].stop", "value": "Hay alguien bajo la olla o en su ruta.", "reason": "Manual §6.3 ★ y MS-ACE-04: nadie bajo una olla suspendida ni en la trayectoria." },
+    { "op": "set", "path": "abnormal[5].if", "value": "Falla de flama del precalentador, olor a gas o tu detector suena", "reason": "Manual §6.2: detector en la zona del precalentador con umbrales de CO y gas natural; el POV no decía qué hacer." },
+    { "op": "set", "path": "abnormal[5].do", "value": "El gas se corta solo. No reenciendas sin purga. Con CO 25 ppm o 10 % LEL, sal a zona verde y avisa; con CO 200 ppm o 20 % LEL, C-04 evacúa el sector.", "reason": "Manual §6.2 y MS-ACE-06 §5.1." },
+    { "op": "set", "path": "abnormal[5].call", "value": "Mantenimiento y C-04 (MS-ACE-06)", "reason": "La evacuación la ordena C-04." }
+  ]
+}

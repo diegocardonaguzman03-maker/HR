@@ -1,0 +1,6 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[13].action", "value": "A la mitad de la colada, toma la muestra del distribuidor con herramienta seca, acompañado por S-13, e identifícala.", "reason": "MS-ACE-01 §2 (S-11 entra a roja solo acompañado y autorizado) y MS-ACE-03 (herramienta seca)." }
+  ]
+}

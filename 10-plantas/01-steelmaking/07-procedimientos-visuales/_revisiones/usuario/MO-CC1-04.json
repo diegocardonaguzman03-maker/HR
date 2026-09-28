@@ -1,0 +1,76 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "roles[0].does",
+      "value": "Controla desde el púlpito velocidad, nivel automático, enfriamiento y oscilación; atiende alarmas y BOP y registra.",
+      "reason": "La descripción no tenía verbo."
+    },
+    {
+      "op": "set",
+      "path": "roles[1].does",
+      "value": "Cuida nivel y temperatura del distribuidor, argón, flux, SEN y el estado de la olla.",
+      "reason": "La descripción no tenía verbo."
+    },
+    {
+      "op": "set",
+      "path": "roles[2].does",
+      "value": "Pone polvo de molde, mide la capa líquida, observa el menisco y retira costras.",
+      "reason": "La descripción no tenía verbo."
+    },
+    {
+      "op": "set",
+      "path": "steps[3].action",
+      "value": "Aplica la tabla velocidad–SH–ancho [Validar con OEM]. Cambia ≤ 0.1 m/min por minuto. En aceros peritécticos (HSLA), cuela 0.2 m/min abajo de la tabla.",
+      "reason": "\"Peritécticos (HSLA): −0.2 m/min\" es una abreviatura; mismo valor."
+    },
+    {
+      "op": "set",
+      "path": "goldenRules[2]",
+      "value": "Nunca pases de 1.6 m/min. Si hay breakout: cierra el tapón, para la extracción, cierra la olla y evacúa.",
+      "reason": "Las flechas no se memorizan; se escribe en frases con el mismo orden."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HSLA",
+        "def": "Acero de alta resistencia y baja aleación (por ejemplo, para tubería). Es más delicado de colar y de enfriar."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Peritéctico",
+        "def": "Acero peritéctico: tipo de acero (muchos HSLA) que tiende a agrietarse en el molde; se cuela más lento."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Rim",
+        "def": "Costra de polvo solidificado en el borde del menisco; se retira solo si pasa de 10 mm."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "ΔT de agua de molde",
+        "def": "Diferencia de temperatura entre la salida y la entrada del agua del molde."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[12].stop", "value": "Hay alguien bajo la olla o en su trayectoria.", "reason": "MS-ACE-04: nadie bajo la carga; el paso lo menciona pero no tenía ALTO." },
+    { "op": "set", "path": "steps[15].action", "value": "Bloquea extractores, oscilador y carro con tu candado y haz la prueba de arranque (MS-ACE-02).", "reason": "MS-ACE-02 §8 paso 9: la prueba de energía cero es parte del LOTO." },
+    { "op": "set", "path": "steps[15].stop", "value": "Algún equipo se mueve en la prueba de arranque.", "reason": "Paso ★ de LOTO sin ALTO; MS-ACE-02 §9." },
+    { "op": "set", "path": "steps[16].stop", "value": "No hay registro del ESR con < 2 × fondo, tu candado no está puesto o los tubos siguen calientes.", "reason": "Manual §6.1: radiación (ESR antes de trabajar en el molde), movimiento de equipo (LOTO) y tubos calientes (esperar enfriamiento)." }
+  ]
+}

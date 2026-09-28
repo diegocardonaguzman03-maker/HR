@@ -1,0 +1,34 @@
+{
+  "review": {
+    "area": "Seguridad",
+    "who": "experto-seguridad-salud",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[1].stop",
+      "value": "Ves fuga o punto caliente en la coraza, o el bordo libre es menor de 300 mm [Supuesto].",
+      "reason": "Manual §6.1 y §9: la olla con fuga, punto caliente o bordo libre bajo no se libera para traslado normal."
+    },
+    {
+      "op": "set",
+      "path": "steps[7].stop",
+      "value": "Una persona entra a la ruta o la olla se balancea.",
+      "reason": "MS-ACE-04 §9: persona en la ruta o balanceo excesivo = detén el traslado. El POV no tenía respuesta a una persona en la ruta durante el traslado."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].stop",
+      "value": "Pierdes de vista a S-13 o sus señales.",
+      "reason": "MS-ACE-04 §8 paso 9: el señalero único guía el depósito."
+    },
+    {
+      "op": "set",
+      "path": "steps[11].stop",
+      "value": "S-13 no ha dado \"asentada OK\" por radio.",
+      "reason": "MS-ACE-04 §8 paso 10: se desengancha solo cuando el señalero confirma el asiento."
+    }
+  ]
+}

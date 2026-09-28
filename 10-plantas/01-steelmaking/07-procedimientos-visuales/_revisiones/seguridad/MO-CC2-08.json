@@ -1,0 +1,7 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "append", "path": "epp", "value": "careta_oxicorte", "reason": "Manual §6.2: careta para el área de corte (oxicorte de S-16)." },
+    { "op": "append", "path": "epp", "value": "chaleco", "reason": "Manual §6.2: chaleco de alta visibilidad en el patio (S-17, grúa)." }
+  ]
+}

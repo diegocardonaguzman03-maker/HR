@@ -1,0 +1,12 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "append", "path": "epp", "value": "careta_facial", "reason": "Manual §6.2: careta para esmerilado y ataque ácido." },
+    { "op": "append", "path": "epp", "value": "proteccion_quimica", "reason": "Manual §6.2: mandil y guantes de neopreno o PVC para el ataque con HCl caliente." },
+    { "op": "append", "path": "epp", "value": "chaleco", "reason": "Manual §6.2: chaleco de alta visibilidad (zona de lecho y grúa)." },
+    { "op": "set", "path": "steps[2].stop", "value": "Hay alguien bajo la carga o en su trayectoria.", "reason": "Manual §6.1 (carga suspendida) y MS-ACE-04." },
+    { "op": "set", "path": "steps[7].stop", "value": "No hay permiso de trabajo en caliente o las guardas no están puestas.", "reason": "Manual §6.1 (corte de muestras): guardas y permiso en caliente (NOM-027)." },
+    { "op": "set", "path": "steps[11].stop", "value": "Hay alguien bajo la carga o en su trayectoria.", "reason": "MS-ACE-04: traslado de retenidas con grúa." },
+    { "op": "set", "path": "abnormal[6]", "value": { "icon": "primeros_auxilios", "if": "Te salpica ácido en la piel o los ojos", "do": "Ve de inmediato a la regadera o al lavaojos y enjuaga. Pide primeros auxilios.", "call": "C-09 y servicio médico" }, "reason": "El ácido clorhídrico caliente es peligro principal del POV sin respuesta en 'Si algo sale mal'. Se sustituye 'Palanquilla doblada' (calidad; sigue en el manual §9 y en POV-CC2-08) para respetar el máximo de 7. El manual no fija tiempo de enjuague: se reporta como hueco." }
+  ]
+}

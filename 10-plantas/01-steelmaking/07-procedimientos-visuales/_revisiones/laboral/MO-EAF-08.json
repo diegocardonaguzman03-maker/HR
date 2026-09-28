@@ -1,0 +1,43 @@
+{
+  "review": {
+    "area": "Laboral",
+    "who": "experto-relaciones-laborales",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "roles[3].does",
+      "value": "Desenergiza y bloquea el horno; abre y cierra la mordaza y hace el deslizamiento.",
+      "reason": "Lenguaje: \"libera el horno\" suena a autorización; la verificación del bloqueo y el método B son de C-05."
+    },
+    {
+      "op": "set",
+      "path": "records[0].what",
+      "value": "Registro de empalme: horno, fase, fecha, hora, serie de electrodo y niple, torque, laina y quién lo ejecutó",
+      "reason": "\"Responsable\" puede leerse como responsabilidad disciplinaria; el registro es de trazabilidad."
+    },
+    {
+      "op": "set",
+      "path": "certification[0].validity",
+      "value": "24 meses; alturas (método B) y señales de izaje (NOM-006) 12 meses",
+      "reason": "S-02 es el señalero de la grúa (paso 8). Criterio unificado: izaje y señales 12 meses (DP-ACE-S §3.1 y §4; escalafón fila 2 exige NOM-006 señalero)."
+    },
+    {
+      "op": "set",
+      "path": "certification[3].validity",
+      "value": "24 meses; autorización del método B (alturas) 12 meses",
+      "reason": "DP-ACE-C §0: los mandos que autorizan permisos de alturas se recertifican a 12 meses."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Certificación (TD-P07)",
+        "def": "Prueba práctica de los pasos ★ de tu puesto con un evaluador certificado. Se registra con constancia DC-3. Si no apruebas, recibes retroalimentación y reentrenamiento: no es una sanción."
+      },
+      "reason": "Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP."
+    }
+  ]
+}

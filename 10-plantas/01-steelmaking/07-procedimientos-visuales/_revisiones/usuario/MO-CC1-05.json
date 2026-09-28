@@ -1,0 +1,58 @@
+{
+  "review": {
+    "area": "Usuario nuevo ingreso",
+    "who": "gerente-personal-sindicalizado",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Cambiar la olla vacía por la olla llena sin parar la colada, sin pasar escoria al distribuidor y sin que el nivel del distribuidor baje de 700 mm.",
+      "reason": "Redacción más clara; mismo valor."
+    },
+    {
+      "op": "set",
+      "path": "goldenRules[2]",
+      "value": "Mantén el distribuidor arriba de 700 mm. Si llega a 500 mm sin abrir la olla, se cierra la secuencia.",
+      "reason": "\"No baja de 700\" y \"a 500 mm\" en la misma frase confunde; mismos valores."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Escorial",
+        "def": "Área donde se vacía la escoria de las ollas."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Tracking",
+        "def": "Tracking (rastreo): sistema de nivel 2 que sigue cada pieza, su colada y sus eventos."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Detector de escoria",
+        "def": "Sensor que avisa cuando empieza a salir escoria de la olla."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Manipulador",
+        "def": "Brazo mecánico que pone y quita el tubo protector sin exponer al operador."
+      },
+      "reason": "Término que aparece en los pasos y un trabajador nuevo no conoce."
+    }
+  ]
+}

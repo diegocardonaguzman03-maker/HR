@@ -1,0 +1,9 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "append", "path": "epp", "value": "careta_oxicorte", "reason": "Manual §6.2: el escarpeo exige careta sombra 5–6; faltaba en el POV." },
+    { "op": "set", "path": "steps[9].stop", "value": "No hay permiso de trabajo en caliente, falta el arrestaflamas o hay combustibles en el área.", "reason": "Manual §6.1 ★: área libre de combustibles." },
+    { "op": "set", "path": "steps[12].stop", "value": "La campana no extrae, o la regadera o el lavaojos no funcionan.", "reason": "Manual §6.1 (ácidos del macroataque): campana, regadera y lavaojos son los controles." },
+    { "op": "append", "path": "abnormal", "value": { "icon": "primeros_auxilios", "if": "Te salpica ácido en la piel o los ojos", "do": "Ve de inmediato a la regadera o al lavaojos y enjuaga. Pide primeros auxilios.", "call": "C-09 y servicio médico" }, "reason": "Manual §6.1 lista regadera y lavaojos como control, pero el POV no decía qué hacer ante una salpicadura. El manual no fija el tiempo de enjuague: se reporta como hueco." }
+  ]
+}

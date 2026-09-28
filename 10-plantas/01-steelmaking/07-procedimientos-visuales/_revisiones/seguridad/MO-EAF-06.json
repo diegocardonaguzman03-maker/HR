@@ -1,0 +1,8 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[5].stop", "value": "S-01 no confirmó por radio la potencia reducida o hay alguien frente a la puerta.", "reason": "El paso de inmersión es el de mayor exposición; su ALTO debe ligarse a los pasos 4 y 5 (confirmación por radio y puerta libre)." },
+    { "op": "set", "path": "steps[12].stop", "value": "No hay autorización de C-05, el arco está encendido, no hay observador o tu EPP aluminizado no está completo y seco.", "reason": "Manual §6.1 y §6.3: las cuatro condiciones de la medición manual; MS-ACE-03 §6.2 (EPP seco)." },
+    { "op": "set", "path": "steps[12].action", "value": "Con arco apagado y EPP aluminizado completo: un solo intento [Supuesto], de lado a la puerta, a ≥ 1.5 m, máximo 2 min en zona roja y con observador.", "reason": "Se conserva la marca [Supuesto] del manual §6.1 (máx. 1 intento por persona)." }
+  ]
+}

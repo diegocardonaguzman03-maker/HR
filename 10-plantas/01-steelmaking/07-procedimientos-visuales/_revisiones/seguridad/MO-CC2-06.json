@@ -1,0 +1,7 @@
+{
+  "review": { "area": "Seguridad", "who": "experto-seguridad-salud", "status": "Visto bueno con observaciones", "date": "2026-09-28" },
+  "changes": [
+    { "op": "set", "path": "steps[11].stop", "value": "Hay alguien en la línea de expulsión de la placa o de la buza usada.", "reason": "El paso repite la maniobra de los pasos 6–7 (★); manual §6.3: zona de exclusión en la línea de expulsión." },
+    { "op": "set", "path": "steps[12].stop", "value": "La plataforma sobre el distribuidor no tiene barandal completo.", "reason": "Manual §6.1 (taponeo desde arriba: caída) y MS-ACE-10." }
+  ]
+}
