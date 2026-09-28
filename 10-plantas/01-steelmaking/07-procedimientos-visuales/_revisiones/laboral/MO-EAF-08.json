@@ -29,15 +29,6 @@
       "path": "certification[3].validity",
       "value": "24 meses; autorización del método B (alturas) 12 meses",
       "reason": "DP-ACE-C §0: los mandos que autorizan permisos de alturas se recertifican a 12 meses."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "Certificación (TD-P07)",
-        "def": "Prueba práctica de los pasos ★ de tu puesto con un evaluador certificado. Se registra con constancia DC-3. Si no apruebas, recibes retroalimentación y reentrenamiento: no es una sanción."
-      },
-      "reason": "Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP."
     }
   ]
 }

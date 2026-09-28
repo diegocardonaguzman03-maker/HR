@@ -7,7 +7,6 @@ MO-CC1-01	laboral	set	roles[0].does	S-27 no existe en el catálogo; la cobertura
 MO-CC1-01	laboral	set	certification[0].validity	La operación de la grúa pasa a su propia fila (abajo).
 MO-CC1-01	laboral	append	certification	El manual §11 exige esta certificación al "operador de grúa de CC"; el POV la había omitido aunque S-15 hace el izaje (paso 12). Mismo criterio que MO-CC2-01.
 MO-CC1-01	laboral	set	certification[1].evaluated	El paso 11 lo ejecuta S-15. Una certificación de escalafón debe evaluar los pasos del propio puesto (TD-P07; LFT art. 153-U).
-MO-CC1-01	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC1-01	seguridad	set	steps[1].stop	El manual pone la limpieza (paso 3) antes del permiso de entrada (paso 4). Si la limpieza exige entrar, aplica espacio confinado (MS-ACE-05). Se reporta el orden del manual como hallazgo.
 MO-CC1-01	seguridad	set	steps[2].stop	Manual §6.1 (≤ 45 °C) y MS-ACE-05 §8 pasos 6–7: rescate listo antes de entrar.
 MO-CC1-01	seguridad	set	steps[15].stop	Manual §6.1 (carro de distribuidor en movimiento: área despejada).
@@ -17,7 +16,6 @@ MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC1-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-02	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC1-02	seguridad	set	steps[0].stop	Manual §6.1 ★: LOTO antes de meter manos o herramientas. El recorrido inicial se hace sin LOTO; la persona nueva debe saber que solo mira.
 MO-CC1-02	seguridad	set	steps[5].stop	Manual §6.3: zona de exclusión durante la inserción.
 MO-CC1-02	seguridad	set	steps[12].stop	Manual §6.3: retiro de candados solo con conteo completo de personas y herramientas.
@@ -30,7 +28,6 @@ MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC1-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-03	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC1-03	seguridad	set	steps[3].stop	Manual §6.1 (olla suspendida) y MS-ACE-04.
 MO-CC1-03	seguridad	set	steps[4].stop	Manual §6.1 y §6.3: zona de giro despejada durante el giro.
 MO-CC1-03	seguridad	set	steps[5].stop	Abrir la olla es el inicio de la exposición; el ALTO se liga al paso ★ 2 y a MS-ACE-01 (aviso ≥ 30 s).
@@ -48,7 +45,6 @@ MO-CC1-04	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC1-04	laboral	set	roles[5].raci	Doble A (C-08 y C-06). Catálogo y DP-ACE-C: dueño C-08; C-06 = S (supervisa y hace cumplir en el turno). El manual §2 dice "A (turno)": ajustar a R.
 MO-CC1-04	laboral	set	roles[5].does	Mando de C-06 sobre S-12, S-13, S-14 y S-11 (LFT art. 9).
 MO-CC1-04	laboral	set	certification[4].validity	La vigencia estaba vacía ("—"); toda certificación TD-P07 tiene vigencia máxima de 24 meses.
-MO-CC1-04	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC1-04	seguridad	set	steps[13].action	MS-ACE-01 §2 (S-11 entra a roja solo acompañado y autorizado) y MS-ACE-03 (herramienta seca).
 MO-CC1-05	usuario	set	purpose	Redacción más clara; mismo valor.
 MO-CC1-05	usuario	set	goldenRules[2]	"No baja de 700" y "a 500 mm" en la misma frase confunde; mismos valores.
@@ -58,7 +54,6 @@ MO-CC1-05	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC1-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC1-05	laboral	set	certification[0].evaluated	En los pasos 2 y 15 S-13 no ejecuta: da las señales a S-09.
 MO-CC1-05	laboral	set	certification[0].validity	Criterio unificado: izaje y señales 12 meses (DP-ACE-S §4).
-MO-CC1-05	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC1-05	seguridad	set	steps[10].action	Manual §6.1 ★ (lanceado con O₂): vigía obligatorio; faltaba en el POV.
 MO-CC1-05	seguridad	set	steps[10].stop	Manual §6.1: condiciones del lanceado como ALTO observable.
 MO-CC1-05	seguridad	set	abnormal[5].do	El rebose deja acero sobre la plataforma: MS-ACE-09 escenario F (evacuar, dejar solidificar, nunca agua).
@@ -71,7 +66,6 @@ MO-CC1-06	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC1-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC1-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC1-06	laboral	set	certification[0].evaluated	La lista anterior incluía pasos de S-15 y C-06 como si los ejecutara S-13. La certificación debe distinguir lo que el puesto ejecuta de lo que solo debe conocer (TD-P07). Revisión técnica: confirmar la equivalencia con los códigos del manual.
-MO-CC1-06	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC1-06	seguridad	set	steps[14].stop	Manual §6.1: carros en movimiento (nadie entre carros) y distribuidor viejo con ≈ 14 t de acero residual (fosa seca).
 MO-CC1-06	seguridad	append	abnormal	Manual §9: condición anormal no incluida; evita congelar o desbordar el molde con personas en el frente.
 MO-CC1-07	usuario	set	steps[11].decision.no	"Sin O₂" es ambiguo; se escribe como instrucción.
@@ -79,7 +73,6 @@ MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC1-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC1-07	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC1-07	seguridad	append	epp	Manual §6.2: S-16 usa careta sombra 5 para el oxicorte del último planchón (paso 15).
 MO-CC1-07	seguridad	set	steps[7].stop	Manual §6.1: distribuidor con ≈ 14 t de residuo; ruta despejada y fosa seca.
 MO-CC1-07	seguridad	set	steps[15].action	Manual §6.3: ingreso a la máquina solo con cola fuera, máquina detenida y LOTO; la prueba de energía cero es parte del LOTO (MS-ACE-02 paso 9).
@@ -92,7 +85,6 @@ MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC1-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC1-08	laboral	set	roles[1].does	S-27 no existe en el catálogo; la cobertura por S-17 es provisional y depende de una decisión del Director.
-MO-CC1-08	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC1-08	seguridad	append	epp	Manual §6.2: S-16 usa careta de oxicorte o lentes sombra 5; faltaba en el POV.
 MO-CC1-08	seguridad	set	steps[1].stop	Manual §6.1 (oxicorte: ropa sin grasa por enriquecimiento de O₂) y MS-ACE-06.
 MO-CC1-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
@@ -110,7 +102,6 @@ MO-CC1-09	laboral	set	steps[14].check	Consistencia con la acción.
 MO-CC1-09	laboral	set	certification[0].ojt	"Inspector nivel 4" podría ser un sindicalizado evaluando a otro; el evaluador sindicalizado solo aplica la lista en pareja y no emite dictamen (DP-ACE-S §3.3).
 MO-CC1-09	laboral	set	certification[1].level	El escarpador no tiene código; la asignación a S-18 es un supuesto.
 MO-CC1-09	laboral	set	certification[3].validity	La vigencia estaba vacía ("—").
-MO-CC1-09	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC1-09	seguridad	append	epp	Manual §6.2: el escarpeo exige careta sombra 5–6; faltaba en el POV.
 MO-CC1-09	seguridad	set	steps[9].stop	Manual §6.1 ★: área libre de combustibles.
 MO-CC1-09	seguridad	set	steps[12].stop	Manual §6.1 (ácidos del macroataque): campana, regadera y lavaojos son los controles.
@@ -121,7 +112,6 @@ MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-01	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC2-01	seguridad	set	steps[6].stop	Manual §6.3: bloqueo del carro del distribuidor antes de trabajar bajo él (instalación de buzas y placas). El POV no lo mencionaba.
 MO-CC2-01	seguridad	set	steps[7].stop	Manual §6.3: mismo control para colocar las placas ciegas.
 MO-CC2-02	usuario	set	steps[6].action	Un nuevo confunde "prueba de arranque" (LOTO) con el arranque de colada.
@@ -130,15 +120,13 @@ MO-CC2-02	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC2-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-02	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-02	laboral	set	steps[2].decision.no	"No liberes" sugiere que S-14 libera la línea; la liberación es de C-06 (paso 18).
-MO-CC2-02	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC2-02	seguridad	set	steps[6].stop	Paso ★ de LOTO sin ALTO; MS-ACE-02 §9 (equipo que se mueve en la prueba = detén todo).
 MO-CC2-02	seguridad	set	steps[9].stop	Paso ★ de LOTO sin ALTO; MS-ACE-02 §8 pasos 7 y 9.
 MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-03	laboral	set	steps[1].action	S-13 detiene y avisa; no ejerce vigilancia sobre otros trabajadores (LFT art. 9). Quién puede estar en la zona lo define C-06 (paso 3).
-MO-CC2-03	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
+MO-CC2-03	laboral	set	steps[1].stop	S-13 detiene y avisa; no ejerce vigilancia sobre otros trabajadores (LFT art. 9). Quién puede estar en la zona lo confirma C-06 (paso 3). Se cambia el ALTO y no la acción para no chocar con la revisión de Seguridad.
 MO-CC2-03	seguridad	set	steps[1].action	Manual §6.3: rutas de escape despejadas en la plataforma.
 MO-CC2-03	seguridad	set	steps[4].stop	Manual §6.1 (lanceo de O₂): solo S-13 certificado, lanza ≥ 3 m, sin grasa en guantes.
 MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
@@ -148,7 +136,6 @@ MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC2-04	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-04	laboral	set	roles[1].raci	Doble A (C-08 y C-06). Catálogo y DP-ACE-C: dueño C-08; C-06 = S (supervisa el turno). El manual §2 dice "A (turno)": ajustar a R.
 MO-CC2-04	laboral	set	roles[1].does	Mando de C-06 sobre S-12, S-13, S-14 y S-11 (LFT art. 9).
-MO-CC2-04	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC2-04	seguridad	set	steps[13].check	Manual §9 (breakout): el ESR inspecciona el contenedor de Cs-137 antes de intervenir (MS-ACE-07 §9, contenedor con metal encima).
 MO-CC2-04	seguridad	set	steps[13].action	Manual §9 y MS-ACE-09 escenario C: prohibido cortar el agua de molde.
 MO-CC2-05	usuario	set	purpose	Aclara qué no debe bajar de 500 mm; mismo valor.
@@ -157,21 +144,18 @@ MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-05	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC2-05	seguridad	set	steps[8].stop	El giro lo ejecuta S-12 (otro puesto); su ALTO debe ligarse a la confirmación del paso ★ 8 (manual §6.3).
 MO-CC2-05	seguridad	set	steps[10].stop	Manual §6.1 (solo S-13 certificado) y MS-ACE-03 §6.2 (EPP seco).
 MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-06	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC2-06	seguridad	set	steps[11].stop	El paso repite la maniobra de los pasos 6–7 (★); manual §6.3: zona de exclusión en la línea de expulsión.
 MO-CC2-06	seguridad	set	steps[12].stop	Manual §6.1 (taponeo desde arriba: caída) y MS-ACE-10.
 MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-CC2-07	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC2-07	seguridad	set	steps[12].stop	MS-ACE-04: nadie bajo la carga; el paso lo menciona pero no tenía ALTO.
 MO-CC2-07	seguridad	set	steps[15].action	MS-ACE-02 §8 paso 9: la prueba de energía cero es parte del LOTO.
 MO-CC2-07	seguridad	set	steps[15].stop	Paso ★ de LOTO sin ALTO; MS-ACE-02 §9.
@@ -182,7 +166,6 @@ MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-08	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-CC2-08	laboral	set	roles[2].does	S-27 no existe en el catálogo; la cobertura por S-17 es provisional y depende de una decisión del Director.
-MO-CC2-08	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC2-08	seguridad	append	epp	Manual §6.2: careta para el área de corte (oxicorte de S-16).
 MO-CC2-08	seguridad	append	epp	Manual §6.2: chaleco de alta visibilidad en el patio (S-17, grúa).
 MO-CC2-09	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
@@ -192,7 +175,6 @@ MO-CC2-09	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-CC2-09	laboral	set	goldenRules[0]	"Es una falta grave" asigna responsabilidad disciplinaria en un material de capacitación; la sanción solo procede por el Reglamento Interior y el CCT (DP-ACE-S §4).
 MO-CC2-09	laboral	set	steps[4].decision.no	S-18 no rechaza: retiene y el rechazo lo firma C-09 (paso 14).
 MO-CC2-09	laboral	set	certification[0].theory	S-18 clasifica; la disposición es de C-09.
-MO-CC2-09	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-CC2-09	seguridad	append	epp	Manual §6.2: careta para esmerilado y ataque ácido.
 MO-CC2-09	seguridad	append	epp	Manual §6.2: mandil y guantes de neopreno o PVC para el ataque con HCl caliente.
 MO-CC2-09	seguridad	append	epp	Manual §6.2: chaleco de alta visibilidad (zona de lecho y grúa).
@@ -210,7 +192,6 @@ MO-EAF-01	laboral	set	roles[0].does	Lenguaje: "libera" suena a autorización. El
 MO-EAF-01	laboral	set	steps[16].title	Lenguaje sin función de autorización para S-01 (LFT art. 9).
 MO-EAF-01	laboral	set	steps[16].action	El manual §8 paso 18 avisa también a S-05 (patio); el POV lo había omitido.
 MO-EAF-01	laboral	append	roles	S-05 recibe el aviso del paso 18 del manual. Falta en el manual §2, en el catálogo y en DP-ACE-S (se reporta).
-MO-EAF-01	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-EAF-01	seguridad	set	steps[7].stop	Paso ★ sin ALTO; manual §6.1: proyección solo sobre refractario, nunca sobre el baño ni formando charcos.
 MO-EAF-01	seguridad	set	steps[9].stop	Manual §6.1 (caída de costras): nadie en la trayectoria.
 MO-EAF-01	seguridad	set	steps[10].action	MS-ACE-02 §6.4 condición 3: una llave por persona; si faltan llaves, LOTO.
@@ -228,7 +209,6 @@ MO-EAF-02	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-EAF-02	usuario	set	steps[15].action	"Pasa a MO-EAF-04" no dice a un nuevo qué documento abrir ni por dónde empezar.
 MO-EAF-02	laboral	set	roles[4].raci	Doble A (C-05 y C-17). Catálogo y DP-ACE-C: dueño único C-05; C-17 = S (supervisa el patio). Un solo A por proceso.
 MO-EAF-02	laboral	set	roles[4].does	Congruente con R: supervisa y hace cumplir en el patio; el dueño del proceso es C-05.
-MO-EAF-02	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-EAF-02	seguridad	append	epp	Manual §6.2: chaleco de alta visibilidad en patio (tránsito de camiones y grúa).
 MO-EAF-02	seguridad	set	steps[2].stop	Manual §6.1 (explosivos: rechazo y protocolo con autoridades). El manual no dice cómo se separa un explosivo; una persona nueva no debe manipularlo. Se reporta como hueco del manual.
 MO-EAF-02	seguridad	set	steps[12].stop	Manual §6.1: conteo y bocina antes de abrir la canasta (momento de flama y proyección).
@@ -241,7 +221,6 @@ MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-EAF-03	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-EAF-03	laboral	set	roles[3].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
 MO-EAF-03	laboral	set	roles[3].does	Mando visible del supervisor sobre S-01 y S-02.
-MO-EAF-03	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-EAF-03	seguridad	set	dangerZone.yellow	Manual §6.1 y criterio único de LEL (MS-ACE-05 §5): faltaba el límite de inflamables.
 MO-EAF-03	seguridad	append	hazards	Manual §6.1: CO en plataforma de bóveda es peligro del proceso y no estaba en el POV.
 MO-EAF-03	seguridad	set	abnormal[4].if	Manual §6.1 (CO en plataforma: 25 ppm salir, 200 ppm evacuación). Se combina con la condición de gases para no pasar de 7 anormales.
@@ -257,7 +236,6 @@ MO-EAF-04	usuario	set	steps[3].decision.question	La pregunta debe coincidir con 
 MO-EAF-04	laboral	set	roles[5].does	S-02 es I en el catálogo, el manual §2 y DP-ACE-S; no ejecuta pasos en este POV. El texto anterior le asignaba una ejecución (medir) que contradice la I.
 MO-EAF-04	laboral	set	roles[2].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
 MO-EAF-04	laboral	set	roles[2].does	Mando visible del supervisor sobre S-01.
-MO-EAF-04	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-EAF-04	seguridad	set	steps[7].stop	Paso ★ sin ALTO; manual §6.1 (tap alto solo con arco cubierto; bajar tap con T de panel > 60 °C) y MS-ACE-03 §5.
 MO-EAF-04	seguridad	set	abnormal[2].if	MS-ACE-03 §5 y §8 paso 5: la alarma de 2 % exige respuesta del púlpito antes del disparo; el POV solo cubría el disparo.
 MO-EAF-04	seguridad	set	abnormal[2].do	MS-ACE-03 §8 paso 5 y §9.
@@ -270,7 +248,6 @@ MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-EAF-05	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-EAF-05	laboral	set	roles[5].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
 MO-EAF-05	laboral	set	roles[5].does	Mando visible del supervisor sobre S-01, S-02 y S-10.
-MO-EAF-05	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-EAF-05	seguridad	set	steps[8].stop	El paso que expone (inclinar hacia la puerta) debe depender de los pasos ★ 6 y 7 del manual; ALTO observable.
 MO-EAF-05	seguridad	set	steps[9].action	MS-ACE-01 §8 paso 9 (muestreo en la puerta): posición, distancia y tiempo en roja.
 MO-EAF-05	seguridad	set	steps[12].stop	Manual §6.1 (atropellamiento del portaollas): peatones fuera de la ruta.
@@ -283,7 +260,6 @@ MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-EAF-06	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-EAF-06	laboral	set	roles[1].does	Lenguaje: "decide" se reserva a C-xx (especificación, LFT art. 9). El ajuste dentro de consigna es ejecución técnica.
 MO-EAF-06	laboral	set	steps[9].action	Mismo contenido técnico sin "decide"; las desviaciones son de C-05 (paso 12 y anormales).
-MO-EAF-06	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-EAF-06	seguridad	set	steps[5].stop	El paso de inmersión es el de mayor exposición; su ALTO debe ligarse a los pasos 4 y 5 (confirmación por radio y puerta libre).
 MO-EAF-06	seguridad	set	steps[12].stop	Manual §6.1 y §6.3: las cuatro condiciones de la medición manual; MS-ACE-03 §6.2 (EPP seco).
 MO-EAF-06	seguridad	set	steps[12].action	Se conserva la marca [Supuesto] del manual §6.1 (máx. 1 intento por persona).
@@ -292,7 +268,6 @@ MO-EAF-07	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-EAF-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-EAF-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-EAF-07	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-EAF-07	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-EAF-07	seguridad	set	steps[0].stop	ALTO observable con el valor del manual (§6.3, MS-ACE-03 §5): 'fría' no es medible.
 MO-EAF-07	seguridad	set	steps[4].action	El manual y MS-ACE-01 piden aviso ≥ 30 s, no exactamente 30 s.
 MO-EAF-07	seguridad	set	steps[4].stop	MS-ACE-01 §4 y §9: sin sirena o semáforo no hay vaciado.
@@ -311,7 +286,6 @@ MO-EAF-08	laboral	set	roles[3].does	Lenguaje: "libera el horno" suena a autoriza
 MO-EAF-08	laboral	set	records[0].what	"Responsable" puede leerse como responsabilidad disciplinaria; el registro es de trazabilidad.
 MO-EAF-08	laboral	set	certification[0].validity	S-02 es el señalero de la grúa (paso 8). Criterio unificado: izaje y señales 12 meses (DP-ACE-S §3.1 y §4; escalafón fila 2 exige NOM-006 señalero).
 MO-EAF-08	laboral	set	certification[3].validity	DP-ACE-C §0: los mandos que autorizan permisos de alturas se recertifican a 12 meses.
-MO-EAF-08	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-EAF-08	seguridad	set	steps[4].stop	Manual §6.1 (caída de columna por tapón mal roscado): control crítico antes de abrir la mordaza.
 MO-EAF-08	seguridad	set	steps[13].stop	Paso ★ de retiro sin ALTO; manual §8 paso 13 (conteo de personas = llaves).
 MO-EAF-08	seguridad	set	dangerZone.rule	Se conserva la marca del manual §6.3: falta confirmar que el sistema de llaves solo permita ese movimiento.
@@ -327,7 +301,6 @@ MO-LF-01	laboral	set	goldenRules[2]	Consistencia de lenguaje (≤ 110 caracteres
 MO-LF-01	laboral	set	endsWhen	Consistencia de lenguaje.
 MO-LF-01	laboral	set	roles[5].raci	LFT art. 9 / DP-ACE-C §0: el ingeniero dueño (A) no tiene mando sobre el personal; el supervisor que dirige al personal sindicalizado debe aparecer como R (hace cumplir la ejecución), igual que en la matriz DP-ACE-C (S = supervisa). El manual §2 lo tiene como C: ajustar el manual.
 MO-LF-01	laboral	set	roles[5].does	Mando visible del supervisor sobre S-06 y S-07.
-MO-LF-01	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-LF-01	seguridad	set	steps[3].action	MS-ACE-01 §8 paso 9 (muestreo y temperatura en LF) y MS-ACE-03 (lanza seca).
 MO-LF-01	seguridad	set	steps[4].stop	Manual §6.1 y regla de oro 1: nadie en la plataforma con el interruptor cerrado.
 MO-LF-01	seguridad	set	steps[6].stop	Paso ★ sin ALTO; manual §6.1 (agitación fuerte con bordo libre bajo) y §6.3 (zona roja ≤ 5 m).
@@ -338,7 +311,6 @@ MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabaja
 MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
 MO-OLL-01	usuario	append	glossary	Término que aparece en los pasos y un trabajador nuevo no conoce.
-MO-OLL-01	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-OLL-01	seguridad	set	steps[2].stop	Paso ★ de exposición (volteo con grúa) sin ALTO propio; manual §6.3 y MS-ACE-03.
 MO-OLL-01	seguridad	set	steps[5].stop	Manual §6.1 (lanza de O₂: ropa sin grasa, válvula de cierre rápido).
 MO-OLL-01	seguridad	set	steps[14].stop	Manual §6.3 ★ y MS-ACE-04: nadie bajo una olla suspendida ni en la trayectoria.
@@ -354,7 +326,6 @@ MO-OLL-02	laboral	set	roles[2].does	Lenguaje: "libera" suena a disposición; S-0
 MO-OLL-02	laboral	set	steps[1].title	Lenguaje sin función de disposición para S-06.
 MO-OLL-02	laboral	set	steps[1].check	Consistencia con el título.
 MO-OLL-02	laboral	set	certification[2].validity	DP-ACE-C §0: los mandos que evalúan tareas de izaje se recertifican a 12 meses; MO-OLL-02 está en la lista de 12 meses.
-MO-OLL-02	laboral	append	glossary	Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP.
 MO-OLL-02	seguridad	set	steps[1].stop	Manual §6.1 y §9: la olla con fuga, punto caliente o bordo libre bajo no se libera para traslado normal.
 MO-OLL-02	seguridad	set	steps[7].stop	MS-ACE-04 §9: persona en la ruta o balanceo excesivo = detén el traslado. El POV no tenía respuesta a una persona en la ruta durante el traslado.
 MO-OLL-02	seguridad	set	steps[9].stop	MS-ACE-04 §8 paso 9: el señalero único guía el depósito.

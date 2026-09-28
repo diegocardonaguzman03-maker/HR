@@ -252,6 +252,10 @@ h3.phase span { display:inline-block; color:#fff; border-radius:50%; width:18px;
 .zone .g { background:#eceff1; color:#263238; }
 .hz { display:flex; gap:6px; align-items:center; border-bottom:1px dashed #e0e0e0; padding:4px 0; font-size:8.6pt; }
 .hz svg { min-width: 20px; }
+.emerg { border:2px solid #c62828; border-radius:6px; overflow:hidden; margin: 0 0 7px; break-inside: avoid; }
+.emerg .eh { background:#c62828; color:#fff; font-weight:700; font-size:9pt; padding:4px 8px; display:flex; gap:6px; align-items:center; }
+.emerg .eg { display:grid; grid-template-columns: repeat(4,1fr); } .emerg .eg div { padding:4px 6px; font-size:8pt; border-right:1px solid #ffcdd2; background:#fff5f5; } .emerg .eg b { display:block; color:#b71c1c; }
+.emerg .ef { font-size:8pt; padding:4px 8px; background:#ffebee; }
 .ab { display:grid; grid-template-columns: 1.1fr 1.6fr 0.9fr; border:1px solid #cfd8dc; border-radius:6px; overflow:hidden; margin-bottom:5px; break-inside: avoid; }
 .ab > div { padding:5px 8px; font-size:8.5pt; }
 .ab .if { background:#fff8e1; font-weight:700; display:flex; gap:6px; align-items:flex-start; }
@@ -327,6 +331,9 @@ tr:nth-child(even) td { background:#f5f7f8; }
 
   <h2 style="margin-top:12px"><span class="n">5</span>Si algo sale mal</h2>
   <p class="note" style="margin:0 0 4px">Primero tu seguridad y la de tus compañeros. El personal sindicalizado detiene, avisa y escala; la decisión es del supervisor.</p>
+  <div class="emerg"><div class="eh">${icon('alarma', { size: 18, color: '#fff' })} EN CUALQUIER EMERGENCIA · Tu detector personal de gases manda (MS-ACE-06)</div>
+    <div class="eg"><div><b>CO ≥ 25 ppm</b> Sal a zona verde y avisa por radio.</div><div><b>CO ≥ 200 ppm</b> Evacuación del sector [Verificar NOM-010].</div><div><b>O₂ &lt; 19.5 % o &gt; 23.5 %</b> Sal. Nadie entra a rescatar sin equipo de respiración.</div><div><b>Gas natural ≥ 10 % LEL</b> Sal y no operes interruptores; ≥ 20 % LEL evacuación.</div></div>
+    <div class="ef">Metal fuera de control, incendio o lesionado: aléjate a zona verde, avisa por radio al canal de emergencia y sigue a tu supervisor (MS-ACE-09). Nunca uses agua sobre metal líquido.</div></div>
   ${p.abnormal.map((a) => `<div class="ab"><div class="if">${icon(a.icon, { size: 18, color: '#e65100' })}<div><small>Si pasa esto</small>${esc(a.if)}</div></div><div class="do"><small>Haz esto</small>${esc(a.do)}</div><div class="call"><small>Avisa a</small>${esc(a.call)}</div></div>`).join('')}
 </section>
 

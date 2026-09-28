@@ -11,15 +11,6 @@
       "path": "steps[2].decision.no",
       "value": "Alto: avisa a C-06. Cambio de molde (MM-CC-01).",
       "reason": "\"No liberes\" sugiere que S-14 libera la línea; la liberación es de C-06 (paso 18)."
-    },
-    {
-      "op": "append",
-      "path": "glossary",
-      "value": {
-        "term": "Certificación (TD-P07)",
-        "def": "Prueba práctica de los pasos ★ de tu puesto con un evaluador certificado. Se registra con constancia DC-3. Si no apruebas, recibes retroalimentación y reentrenamiento: no es una sanción."
-      },
-      "reason": "Aclara al personal de nuevo ingreso qué es la certificación y que no se usa como sanción (TD-P07; DP-ACE-S §4). No menciona el escalafón porque la liga certificación–escalafón está pendiente de decisión del Director y de la CMCAP."
     }
   ]
 }
