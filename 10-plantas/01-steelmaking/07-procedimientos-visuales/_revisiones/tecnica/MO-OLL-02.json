@@ -1,0 +1,16 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "startsWhen",
+      "value": "S-06 entrega la olla tratada y confirma por radio que está lista (MO-LF-01).",
+      "reason": "Coherencia con POV-LF-01 (fin: \"olla entregada\") y con el paso 2 de este POV."
+    }
+  ]
+}

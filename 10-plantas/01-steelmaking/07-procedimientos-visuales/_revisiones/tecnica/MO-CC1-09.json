@@ -1,0 +1,34 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[6].check",
+      "value": "Espesor 230 ± 3 mm; ancho −5/+15 mm del pedido; largo ± 15 mm; sable ≤ 15 mm/10 m; escuadra ≤ 5 mm.",
+      "reason": "Manual §5: faltaba la tolerancia de ancho."
+    },
+    {
+      "op": "set",
+      "path": "steps[8].action",
+      "value": "Aplica la tabla del manual. Aceptar o escarpear: defecto superficial ≤ 5 mm. Retén y pasa la evidencia a C-09 si mide 5–10 mm o más, es interno severo o la medida está fuera.",
+      "reason": "Manual §5: la banda de 5–10 mm (escarpeo profundo solo con autorización de C-09) quedaba sin instrucción. Se conserva la separación de Laboral: S-18 clasifica y C-09 dispone."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].action",
+      "value": "Solo con certificación de escarpeo [Supuesto: función de S-18, pendiente de decisión del Director]. Con permiso en caliente y arrestaflamas: 3–5 mm por pasada. HSLA con Nb a ≥ 150 °C [Validar con OEM / Ingeniería de Proceso].",
+      "reason": "Se repone la marca del manual §5 (límites del escarpeo), que se perdió en el cambio de Laboral (observación de Documentación)."
+    },
+    {
+      "op": "set",
+      "path": "certification[0].level",
+      "value": "3 (inspección)",
+      "reason": "Distingue las dos filas de S-18 (inspección y escarpeo [Supuesto]): son competencias distintas."
+    }
+  ]
+}

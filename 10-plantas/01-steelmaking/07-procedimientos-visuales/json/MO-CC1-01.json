@@ -141,7 +141,7 @@
       "role": "S-15",
       "icon": "herramienta",
       "title": "Limpia el interior en seco",
-      "action": "Retira restos de casco, escoria y polvo con aspiradora o aire. Nunca uses agua.",
+      "action": "Retira restos de costra (acero y escoria pegados), escoria suelta y polvo con aspiradora o aire. Nunca uses agua.",
       "check": "Superficie limpia y seca.",
       "stop": "Para limpiar tienes que meter el cuerpo al distribuidor y aún no hay permiso ni LOTO (paso 3)."
     },
@@ -387,7 +387,7 @@
   "certification": [
     {
       "role": "S-15",
-      "level": "3",
+      "level": "3 (preparación de distribuidor)",
       "theory": "16 h",
       "ojt": "80 h / 10 distribuidores completos",
       "evaluated": "Pasos 3, 6, 9, 11, 12 y 13",
@@ -500,6 +500,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

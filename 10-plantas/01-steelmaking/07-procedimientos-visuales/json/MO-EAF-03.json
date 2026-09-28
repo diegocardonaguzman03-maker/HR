@@ -319,7 +319,7 @@
       "level": "2",
       "theory": "8 h",
       "ojt": "20 coladas",
-      "evaluated": "Paso 6 y reconocimiento de señales de iceberg",
+      "evaluated": "Paso 6 y reconocimiento de señales de iceberg (paso 8)",
       "validity": "24 meses"
     },
     {
@@ -409,6 +409,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

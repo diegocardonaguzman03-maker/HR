@@ -175,7 +175,7 @@
       "icon": "medir",
       "title": "Mide rectitud y largo",
       "action": "Mide la flecha con regla o hilo tenso y el largo con cinta.",
-      "check": "Flecha ≤ 5 mm/m y ≤ 40 mm; largo 12,000 ± 50 mm [Validar].",
+      "check": "Flecha ≤ 5 mm/m y ≤ 40 mm; largo 12,000 ± 50 mm [Validar]. Palanquilla doblada: retén \"R\" para rechazo (C-09).",
       "quality": true
     },
     {
@@ -443,6 +443,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

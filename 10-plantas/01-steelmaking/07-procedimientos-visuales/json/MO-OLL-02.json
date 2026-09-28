@@ -10,7 +10,7 @@
   "deck": "05-capacitacion/MO-OLL-02",
   "purpose": "Llevar la olla llena (≈ 150 t) del horno olla a la torreta de CC1 o CC2 y regresar la vacía. Sin nadie bajo la carga, sin choques y a tiempo.",
   "whyItMatters": "Si la olla cae, se voltea o se derrama, puede matar a quien esté cerca. Un traslado lento enfría el acero y afecta la colada.",
-  "startsWhen": "El operador del horno olla libera la olla tratada (MO-LF-01).",
+  "startsWhen": "S-06 entrega la olla tratada y confirma por radio que está lista (MO-LF-01).",
   "endsWhen": "La olla queda asentada en la torreta (MO-CC1-03 o MO-CC1-05 / MO-CC2-05) y la olla vacía llega a preparación (MO-OLL-01).",
   "previous": [
     "MO-LF-01"
@@ -471,6 +471,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

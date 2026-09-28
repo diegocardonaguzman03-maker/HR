@@ -1,0 +1,28 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[5].stop",
+      "value": "El distribuidor baja de 400 mm o ves escoria en el molde: cierra el tapón de inmediato.",
+      "reason": "Manual §5 (< 400 mm: cierra de inmediato). Sin la acción, \"detén la tarea\" se podía leer como no cerrar el tapón."
+    },
+    {
+      "op": "set",
+      "path": "next",
+      "value": [
+        "MO-CC1-08",
+        "MO-CC1-01",
+        "MO-CC1-02",
+        "MO-CC1-09",
+        "MO-OLL-01"
+      ],
+      "reason": "La última olla vacía (paso 3) va a preparación (MO-OLL-01)."
+    }
+  ]
+}

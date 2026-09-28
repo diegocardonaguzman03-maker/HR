@@ -127,10 +127,10 @@
       "role": "S-16",
       "icon": "fuego",
       "title": "Prueba los oxicortes",
-      "action": "Haz la prueba de fugas, revisa los antirretornos de llama y prende la flama de precalentamiento. Sin grasa en las conexiones de O₂.",
-      "check": "Sin fugas; antirretornos instalados; flama estable.",
+      "action": "Haz la prueba de fugas, revisa los arrestaflamas (antirretorno de llama) y prende la flama de precalentamiento. Sin grasa en las conexiones de O₂.",
+      "check": "Sin fugas; arrestaflamas instalados; flama estable.",
       "critical": true,
-      "stop": "Hay una fuga de gas u oxígeno o falta un antirretorno."
+      "stop": "Hay una fuga de gas u oxígeno o falta un arrestaflamas."
     },
     {
       "n": 2,
@@ -437,6 +437,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

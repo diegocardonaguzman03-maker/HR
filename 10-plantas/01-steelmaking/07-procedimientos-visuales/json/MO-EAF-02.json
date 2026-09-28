@@ -312,8 +312,8 @@
       "role": "S-01",
       "icon": "cambiar",
       "title": "Carga la 2.ª canasta si aplica",
-      "action": "Cuando la 1.ª esté fundida ≥ 70 % y haya volumen [Validar con Ingeniería de Proceso], repite los pasos 7 a 16.",
-      "check": "Mismos criterios que la 1.ª canasta.",
+      "action": "Con la 1.ª canasta fundida ≥ 70 % y volumen libre [Validar con Ingeniería de Proceso], repite los pasos 8 a 16 con la 2.ª canasta ya armada y pesada (pasos 3 a 6). El aviso a S-04 es la \"zona libre\" del paso 10.",
+      "check": "Mismos criterios que la 1.ª canasta; no se espera el aviso de MO-EAF-01.",
       "critical": true
     }
   ],
@@ -394,7 +394,7 @@
       "level": "3",
       "theory": "16 h (4 h de radiación con el ESR)",
       "ojt": "60 h / 40 canastas",
-      "evaluated": "Pórtico, alarma, inspección de chatarra y canasta seca; material prohibido con muestras",
+      "evaluated": "Pasos 1, 2, 3 y 4 + identificación de material prohibido con muestras",
       "validity": "24 meses; pórtico y fuentes 12 meses"
     },
     {
@@ -402,7 +402,7 @@
       "level": "3",
       "theory": "24 h (NOM-006 + grúa)",
       "ojt": "80 h / 40 cargas",
-      "evaluated": "Zona libre, traslado sin pasar sobre personas, 2.ª canasta; inspección previa de la grúa",
+      "evaluated": "Pasos 10, 11 y 17 + inspección previa de la grúa",
       "validity": "12 meses (grúas e izaje)"
     },
     {
@@ -410,7 +410,7 @@
       "level": "3",
       "theory": "8 h",
       "ojt": "20 cargas",
-      "evaluated": "Preparar el horno, horno sin agua, zona libre, 2.ª canasta",
+      "evaluated": "Pasos 8, 9, 10 y 17",
       "validity": "24 meses"
     },
     {
@@ -496,6 +496,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

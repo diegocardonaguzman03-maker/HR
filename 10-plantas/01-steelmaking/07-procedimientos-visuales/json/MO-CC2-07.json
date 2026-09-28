@@ -21,7 +21,8 @@
     "MO-CC2-08",
     "MO-CC2-01",
     "MO-CC2-02",
-    "MM-CC-01"
+    "MM-CC-01",
+    "MO-OLL-01"
   ],
   "heroFigure": {
     "file": "img/cc2-distribuidor-6-lineas.svg",
@@ -198,7 +199,7 @@
       "icon": "alto",
       "title": "Cierra L3 y L4",
       "action": "A 300 mm (280–320 [Validar]), empuja la placa ciega en L3 y L4. Nunca bajes de 250 mm.",
-      "check": "Chorro cortado en L3 y L4; nivel ≥ 300 mm.",
+      "check": "Chorro cortado en L3 y L4 a 280–320 mm; nunca bajo 250 mm.",
       "critical": true,
       "stop": "El nivel del distribuidor llega a 250 mm (vórtice y escoria)."
     },
@@ -492,6 +493,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

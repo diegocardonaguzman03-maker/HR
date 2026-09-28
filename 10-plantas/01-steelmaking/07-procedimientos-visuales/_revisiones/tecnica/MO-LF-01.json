@@ -1,0 +1,34 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[7].action",
+      "value": "Con la muestra 2, calcula y agrega aleaciones a granel (FeMn, FeSi, SiMn, FeNb, C) con los rendimientos de C-07. En CC1, S-07 ajusta el Al con alambre; en CC2 (varilla y barras) no se agrega Al.",
+      "reason": "Manual §5: Al en CC2 ≤ 0.005 % (el Al tapa las buzas calibradas). El texto anterior pedía ajustar Al en todos los grados."
+    },
+    {
+      "op": "set",
+      "path": "steps[7].check",
+      "value": "Química en rango en la muestra 3. Al soluble 0.020–0.045 % en CC1; ≤ 0.005 % en CC2 [Validar con Ingeniería de Proceso].",
+      "reason": "Manual §5: faltaba el límite de Al para CC2."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].action",
+      "value": "Calienta hasta la T de envío más lo que pierde la agitación suave. Primera olla de la secuencia: + 10–15 °C [Validar con C-08]. Si el tratamiento va a pasar de 50 min, avisa a S-12 y a C-04.",
+      "reason": "La condición anormal \"tratamiento > 50 min\" (manual §9) salió de \"Si algo sale mal\" por la sustitución de Seguridad; se conserva aquí, donde se ve la demora."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].check",
+      "value": "T en objetivo: bajo C al Al ≈ 1,585–1,600 °C; HSLA ≈ 1,575–1,595 °C; varilla ≈ 1,560–1,580 °C; barras ≈ 1,570–1,590 °C.",
+      "reason": "Manual §5 (tabla de T de envío): faltaban las familias de CC2."
+    }
+  ]
+}

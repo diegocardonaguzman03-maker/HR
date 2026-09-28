@@ -1,0 +1,16 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[2].action",
+      "value": "Carga las tolvas con la tabla del grado y solo material seco. Grados al Al (CC1): Al calculado con el oxígeno medido. Varilla y barras (CC2): sin Al, porque tapa las buzas.",
+      "reason": "Manual §5 (adiciones por familia): los grados de CC2 van sin Al (Al soluble ≤ 0.005 %). El texto anterior podía llevar a agregar Al a una colada de CC2 y tapar las buzas calibradas."
+    }
+  ]
+}

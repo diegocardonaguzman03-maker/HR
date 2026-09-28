@@ -10,12 +10,14 @@
   "deck": "05-capacitacion/MO-OLL-01",
   "purpose": "Entregar al horno una olla de 150 t seca y caliente (1,000–1,100 °C). Con refractario vigente, válvula probada y cerrada, tapón con argón y arena de sello.",
   "whyItMatters": "Una olla fría o húmeda puede explotar o perforarse con 150 t de acero dentro. Una arena mal puesta hace que la olla no abra en la colada continua.",
-  "startsWhen": "La olla vacía regresa de la colada continua (fin de olla en MO-CC1-05 / MO-CC2-05, traslado MO-OLL-02).",
+  "startsWhen": "La olla vacía regresa de la colada continua: cambio de olla (MO-CC1-05 / MO-CC2-05) o fin de secuencia (MO-CC1-07 / MO-CC2-07), con traslado MO-OLL-02.",
   "endsWhen": "La lista de entrega está firmada y la olla llega al carro de vaciado del EAF (MO-EAF-07).",
   "previous": [
     "MO-OLL-02",
     "MO-CC1-05",
-    "MO-CC2-05"
+    "MO-CC2-05",
+    "MO-CC1-07",
+    "MO-CC2-07"
   ],
   "next": [
     "MO-EAF-07",
@@ -467,6 +469,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

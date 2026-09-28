@@ -1,0 +1,28 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[0].action",
+      "value": "Haz la prueba de fugas, revisa los arrestaflamas (antirretorno de llama) y prende la flama de precalentamiento. Sin grasa en las conexiones de O₂.",
+      "reason": "Término único con CC1-08 y el glosario (\"arrestaflamas\"); mismo control."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].check",
+      "value": "Sin fugas; arrestaflamas instalados; flama estable.",
+      "reason": "Término único."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].stop",
+      "value": "Hay una fuga de gas u oxígeno o falta un arrestaflamas.",
+      "reason": "Término único (observación de Documentación al campo de Seguridad; el control no cambia)."
+    }
+  ]
+}

@@ -21,7 +21,8 @@
     "MO-CC1-08",
     "MO-CC1-01",
     "MO-CC1-02",
-    "MO-CC1-09"
+    "MO-CC1-09",
+    "MO-OLL-01"
   ],
   "heroFigure": {
     "file": "img/cc1-perfil-maquina.svg",
@@ -200,7 +201,7 @@
       "action": "Cierra el tapón cuando el distribuidor llegue a 400 mm (≈ 14 t). No bajes de ahí.",
       "check": "Tapón cerrado sin fuga a 400–450 mm.",
       "critical": true,
-      "stop": "El distribuidor está por debajo de 400 mm o ves escoria en el molde."
+      "stop": "El distribuidor baja de 400 mm o ves escoria en el molde: cierra el tapón de inmediato."
     },
     {
       "n": 7,
@@ -500,6 +501,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

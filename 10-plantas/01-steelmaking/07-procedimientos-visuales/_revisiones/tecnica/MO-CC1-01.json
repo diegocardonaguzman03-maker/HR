@@ -1,0 +1,22 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[1].action",
+      "value": "Retira restos de costra (acero y escoria pegados), escoria suelta y polvo con aspiradora o aire. Nunca uses agua.",
+      "reason": "Duda técnica: \"restos de casco\" se confunde con el casco (coraza) del distribuidor, definido así en el glosario. Lo que se retira es costra y escoria del volteo."
+    },
+    {
+      "op": "set",
+      "path": "certification[0].level",
+      "value": "3 (preparación de distribuidor)",
+      "reason": "Distingue las dos filas de S-15 (preparación y grúa): son competencias distintas con vigencias distintas."
+    }
+  ]
+}

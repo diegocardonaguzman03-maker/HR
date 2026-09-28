@@ -329,7 +329,7 @@
     {
       "icon": "temperatura",
       "if": "ΔT de agua de molde > 11 °C, caudal < 90 % o falla del bombeo",
-      "do": "Baja a 0.8 m/min. Sin bombeo: el agua de emergencia debe entrar en ≤ 15 s; si no entra, cierra tapón y olla, detén y evacúa.",
+      "do": "ΔT > 11 °C o caudal < 90 %: baja a 0.8 m/min. Sin bombeo: confirma el agua de emergencia en ≤ 15 s; si entra, baja a 0.3–0.5 m/min y prepara el cierre; si no entra, cierra tapón y olla, detén y evacúa.",
       "call": "C-04, C-06 y C-12"
     },
     {
@@ -512,6 +512,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

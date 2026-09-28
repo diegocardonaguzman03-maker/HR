@@ -206,7 +206,7 @@
       "icon": "cambiar",
       "title": "Cierra el tapón y cambia la SEN",
       "action": "Con el paso libre de polvo y costras (S-14), mete la SEN nueva en la guía. Cierra el tapón y acciona el cambiador: la nueva empuja a la vieja.",
-      "check": "≤ 10 s sin flujo (objetivo ≤ 5 s).",
+      "check": "Sin flujo ≤ 10 s (objetivo ≤ 5 s). Con el tapón cerrado, nunca más de 15 s.",
       "critical": true,
       "decision": {
         "question": "¿Cambió en ≤ 15 s?",
@@ -220,7 +220,7 @@
       "icon": "flujo",
       "title": "Abre el tapón poco a poco",
       "action": "Abre el tapón de forma progresiva. Lleva el nivel a 0 mm y S-12 pasa a automático.",
-      "check": "Nivel ± 3 mm en ≤ 60 s; nunca debajo de −30 mm."
+      "check": "Nivel ± 3 mm en ≤ 60 s; durante el cambio, entre 0 y −30 mm (alarma < −40 mm)."
     },
     {
       "n": 9,
@@ -392,7 +392,7 @@
       "level": "3",
       "theory": "16 h",
       "ojt": "6 cambios de SEN + 4 cambios de distribuidor",
-      "evaluated": "Pasos que ejecuta: 2, 7, 8, 14, 15 y 16; conoce la zona roja de los pasos 5, 12 y 18 (B1, B2, B6, C1, C3, C5, C11, C13 del manual)",
+      "evaluated": "Pasos 2, 7, 8, 14, 15 y 16 (ejecuta); paso 4: recibe y verifica la SEN nueva; pasos 5, 12 y 18: respeta la zona roja. Manual: B1, B2, B6, C3, C5, C11 y C13",
       "validity": "≤ 24 meses (TD-P07)"
     },
     {
@@ -400,7 +400,7 @@
       "level": "3",
       "theory": "8 h",
       "ojt": "6 + 4 eventos",
-      "evaluated": "Zona roja, centrado e inmersión (paso 9), grapa",
+      "evaluated": "Zona roja, centrado e inmersión (paso 9) y grapa (paso 15)",
       "validity": "≤ 24 meses"
     },
     {
@@ -408,7 +408,7 @@
       "level": "3",
       "theory": "12 h",
       "ojt": "6 + 4 eventos (o simulador)",
-      "evaluated": "Detención, reanudación y rampa; diagnóstico de clogging",
+      "evaluated": "Diagnóstico de clogging (paso 1); detención, reanudación y rampa (pasos 6, 10, 13 y 17)",
       "validity": "≤ 24 meses"
     },
     {
@@ -498,6 +498,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

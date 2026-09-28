@@ -500,6 +500,12 @@
       "who": "experto-seguridad-salud",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
+      "status": "Visto bueno",
+      "date": "2026-09-28"
     }
   ]
 }

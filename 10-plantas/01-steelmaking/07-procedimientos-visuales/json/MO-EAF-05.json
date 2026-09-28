@@ -10,7 +10,7 @@
   "deck": "05-capacitacion/MO-EAF-05",
   "purpose": "Formar una escoria espumosa que tape el arco y proteja el horno, y sacar la escoria por la puerta de forma controlada, sin exponer a nadie. Objetivo: B2 1.8–2.2, FeO 25–35 %, MgO 8–10 %.",
   "whyItMatters": "Sin espuma el arco quema paneles y bóveda. Escoria sobre agua explota, y una ebullición violenta proyecta escoria y metal por la puerta.",
-  "startsWhen": "El baño está plano (canasta ≥ 70 % fundida) y arranca el DRI (MO-EAF-03, MO-EAF-04 etapa 3).",
+  "startsWhen": "Se energiza el horno: los quemadores trabajan en modo quemador en la fusión de canasta (MO-EAF-04). La espuma se forma con baño plano y DRI (MO-EAF-03).",
   "endsWhen": "Termina el afino, la olla de escoria sale llena por la ruta y los consumos quedan registrados.",
   "previous": [
     "MO-EAF-04",
@@ -344,7 +344,7 @@
       "level": "3",
       "theory": "24 h (química de escoria, O₂, C)",
       "ojt": "120 h / 50 coladas",
-      "evaluated": "Vigilar ebullición y corregir la química; escenario de boiling",
+      "evaluated": "Pasos 11 (química) y 12 (ebullición) + escenario de boiling",
       "validity": "24 meses"
     },
     {
@@ -352,7 +352,7 @@
       "level": "3",
       "theory": "12 h",
       "ojt": "60 h / 30 desescoriados",
-      "evaluated": "Olla y fosa secas, zona libre, muestra de escoria, ebullición",
+      "evaluated": "Pasos 7, 8, 10 y 12: olla y fosa secas, zona libre, muestra de escoria y ebullición",
       "validity": "24 meses"
     },
     {
@@ -360,7 +360,7 @@
       "level": "3",
       "theory": "16 h (portaollas, rutas, escoria–agua)",
       "ojt": "60 h / 40 ollas",
-      "evaluated": "Olla y fosa secas; rutas",
+      "evaluated": "Paso 6 (olla seca) y paso 13 (ruta del portaollas)",
       "validity": "24 meses"
     }
   ],
@@ -450,6 +450,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

@@ -390,7 +390,7 @@
       "level": "3",
       "theory": "16 h",
       "ojt": "80 h / 30 preparaciones",
-      "evaluated": "Pasos de agua (2 y 4) y retiro de bloqueo; escenario de fuga simulada",
+      "evaluated": "Pasos 2, 4 y 16 + escenario de fuga simulada",
       "validity": "24 meses"
     },
     {
@@ -398,7 +398,7 @@
       "level": "3",
       "theory": "16 h",
       "ojt": "80 h / 30 preparaciones",
-      "evaluated": "Agua a la vista, proyección, bloqueo, compuerta y arena del EBT, retiro de bloqueo",
+      "evaluated": "Pasos 3, 8, 11, 13, 14 y 16",
       "validity": "24 meses"
     },
     {
@@ -406,7 +406,7 @@
       "level": "2 (3 para suplir a S-02)",
       "theory": "12 h",
       "ojt": "40 h / 15 preparaciones",
-      "evaluated": "Bloqueo, llenado del EBT y retiro de bloqueo, bajo supervisión",
+      "evaluated": "Pasos 11, 14 y 16, bajo supervisión",
       "validity": "24 meses"
     },
     {
@@ -496,6 +496,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

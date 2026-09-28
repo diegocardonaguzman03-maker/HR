@@ -1,0 +1,28 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[12].action",
+      "value": "Con arco apagado y EPP aluminizado completo, haz un solo intento [Supuesto] con observador. Párate de lado a la puerta, a ≥ 1.5 m, máximo 2 min en zona roja.",
+      "reason": "Mismo contenido de Seguridad (manual §6.1 y MS-ACE-01 §8 paso 9) en frases de ≤ 20 palabras (observación de Documentación)."
+    },
+    {
+      "op": "set",
+      "path": "certification[0].evaluated",
+      "value": "Pasos 2, 5 y 13 + interpretación de 5 curvas (paso 7)",
+      "reason": "Manual §11 (1, 4 y 11) con la numeración del POV."
+    },
+    {
+      "op": "set",
+      "path": "certification[2].evaluated",
+      "value": "Paso 10: decisión con T, O, C y P",
+      "reason": "Manual §11 con número de paso del POV."
+    }
+  ]
+}

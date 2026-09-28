@@ -1,0 +1,40 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[6].check",
+      "value": "Sin flujo ≤ 10 s (objetivo ≤ 5 s). Con el tapón cerrado, nunca más de 15 s.",
+      "reason": "Duda técnica: 10 s es el criterio de aceptación y 15 s el límite (manual §5 y §9, \"mantén el tapón cerrado ≤ 15 s\"). La pregunta \"¿Cambió en ≤ 15 s?\" es correcta: decide cuándo reabrir con la SEN vieja."
+    },
+    {
+      "op": "set",
+      "path": "steps[7].check",
+      "value": "Nivel ± 3 mm en ≤ 60 s; durante el cambio, entre 0 y −30 mm (alarma < −40 mm).",
+      "reason": "Manual §5: rango 0 a −30 mm y alarma < −40 mm; \"nunca debajo de −30 mm\" no era el límite del manual."
+    },
+    {
+      "op": "set",
+      "path": "certification[0].evaluated",
+      "value": "Pasos 2, 7, 8, 14, 15 y 16 (ejecuta); paso 4: recibe y verifica la SEN nueva; pasos 5, 12 y 18: respeta la zona roja. Manual: B1, B2, B6, C3, C5, C11 y C13",
+      "reason": "Equivalencia con el manual: B1 = paso 4, B2 = 5, B6 = 7, C1 = 11 (lo firma C-06), C3 = 12, C5 = 14, C11 = 16, C13 = 18. Faltaba la verificación de la SEN (≥ 1,000 °C) antes de meterla al cambiador."
+    },
+    {
+      "op": "set",
+      "path": "certification[1].evaluated",
+      "value": "Zona roja, centrado e inmersión (paso 9) y grapa (paso 15)",
+      "reason": "Número de paso del POV."
+    },
+    {
+      "op": "set",
+      "path": "certification[2].evaluated",
+      "value": "Diagnóstico de clogging (paso 1); detención, reanudación y rampa (pasos 6, 10, 13 y 17)",
+      "reason": "Número de paso del POV."
+    }
+  ]
+}

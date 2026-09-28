@@ -508,3 +508,56 @@ MO-OLL-02	seguridad	set	steps[1].stop	Manual §6.1 y §9: la olla con fuga, punt
 MO-OLL-02	seguridad	set	steps[7].stop	MS-ACE-04 §9: persona en la ruta o balanceo excesivo = detén el traslado. El POV no tenía respuesta a una persona en la ruta durante el traslado.
 MO-OLL-02	seguridad	set	steps[9].stop	MS-ACE-04 §8 paso 9: el señalero único guía el depósito.
 MO-OLL-02	seguridad	set	steps[11].stop	MS-ACE-04 §8 paso 10: se desengancha solo cuando el señalero confirma el asiento.
+MO-CC1-01	tecnica	set	steps[1].action	Duda técnica: "restos de casco" se confunde con el casco (coraza) del distribuidor, definido así en el glosario. Lo que se retira es costra y escoria del volteo.
+MO-CC1-01	tecnica	set	certification[0].level	Distingue las dos filas de S-15 (preparación y grúa): son competencias distintas con vigencias distintas.
+MO-CC1-04	tecnica	set	abnormal[2].do	Manual §9 (falla de agua de molde): con el agua de emergencia la velocidad es 0.3–0.5 m/min y se prepara el cierre; el texto anterior dejaba 0.8 m/min, que es la respuesta a ΔT alto.
+MO-CC1-05	tecnica	set	certification[0].evaluated	Duda técnica: el paso 6 (cerrar la olla al primer signo de escoria) es ★ y de S-13, y faltaba. Los pasos 2 y 15 son de S-09; S-13 solo da las señales.
+MO-CC1-06	tecnica	set	steps[6].check	Duda técnica: 10 s es el criterio de aceptación y 15 s el límite (manual §5 y §9, "mantén el tapón cerrado ≤ 15 s"). La pregunta "¿Cambió en ≤ 15 s?" es correcta: decide cuándo reabrir con la SEN vieja.
+MO-CC1-06	tecnica	set	steps[7].check	Manual §5: rango 0 a −30 mm y alarma < −40 mm; "nunca debajo de −30 mm" no era el límite del manual.
+MO-CC1-06	tecnica	set	certification[0].evaluated	Equivalencia con el manual: B1 = paso 4, B2 = 5, B6 = 7, C1 = 11 (lo firma C-06), C3 = 12, C5 = 14, C11 = 16, C13 = 18. Faltaba la verificación de la SEN (≥ 1,000 °C) antes de meterla al cambiador.
+MO-CC1-06	tecnica	set	certification[1].evaluated	Número de paso del POV.
+MO-CC1-06	tecnica	set	certification[2].evaluated	Número de paso del POV.
+MO-CC1-07	tecnica	set	steps[5].stop	Manual §5 (< 400 mm: cierra de inmediato). Sin la acción, "detén la tarea" se podía leer como no cerrar el tapón.
+MO-CC1-07	tecnica	set	next	La última olla vacía (paso 3) va a preparación (MO-OLL-01).
+MO-CC1-09	tecnica	set	steps[6].check	Manual §5: faltaba la tolerancia de ancho.
+MO-CC1-09	tecnica	set	steps[8].action	Manual §5: la banda de 5–10 mm (escarpeo profundo solo con autorización de C-09) quedaba sin instrucción. Se conserva la separación de Laboral: S-18 clasifica y C-09 dispone.
+MO-CC1-09	tecnica	set	steps[9].action	Se repone la marca del manual §5 (límites del escarpeo), que se perdió en el cambio de Laboral (observación de Documentación).
+MO-CC1-09	tecnica	set	certification[0].level	Distingue las dos filas de S-18 (inspección y escarpeo [Supuesto]): son competencias distintas.
+MO-CC2-01	tecnica	set	certification[0].level	Distingue las dos filas de S-15 (preparación y grúa de CC de 50 t).
+MO-CC2-05	tecnica	set	glossary[3].def	Duda técnica del vórtice: el arrastre por vórtice en las buzas de 20–24 mm aparece cerca de 300 mm (MO-CC2-07). Los 500 mm del cambio de olla son reserva (≈ 13 t ≈ 3.8 min) y tiempo de flotación de inclusiones con la olla nueva abriendo. Mismo valor en los dos POV; se corrige MO-CC2-05 §3 en v0.2 [Validar con C-08].
+MO-CC2-07	tecnica	set	steps[5].check	Manual §5: el cierre es a 300 mm (280–320) con límite de 250 mm; "nivel ≥ 300 mm" contradecía el rango.
+MO-CC2-07	tecnica	set	next	La última olla vacía (paso 13) va a preparación (MO-OLL-01).
+MO-CC2-08	tecnica	set	steps[0].action	Término único con CC1-08 y el glosario ("arrestaflamas"); mismo control.
+MO-CC2-08	tecnica	set	steps[0].check	Término único.
+MO-CC2-08	tecnica	set	steps[0].stop	Término único (observación de Documentación al campo de Seguridad; el control no cambia).
+MO-CC2-09	tecnica	set	steps[5].check	La condición "palanquilla doblada" (manual §9) salió de "Si algo sale mal" por la sustitución de Seguridad; su criterio de calidad se conserva en el paso donde se mide.
+MO-EAF-01	tecnica	set	certification[0].evaluated	Numeración del POV: el manual cita 2, 4 y 17; el paso 17 del manual (retiro de bloqueo) es el paso 16 del POV porque los pasos 15 y 16 del manual se unieron.
+MO-EAF-01	tecnica	set	certification[1].evaluated	Manual §11 (3, 8, 11, 13, 14 y 17) con la numeración del POV.
+MO-EAF-01	tecnica	set	certification[2].evaluated	Manual §11 (11, 14 y 17) con la numeración del POV.
+MO-EAF-02	tecnica	set	steps[16].action	Duda técnica: el paso 7 espera el aviso de MO-EAF-01, que no ocurre entre canastas. La 2.ª canasta repite 8 a 16; la canasta se arma y pesa antes en el patio. Se reporta para MO-EAF-02 v0.2 (M-07).
+MO-EAF-02	tecnica	set	steps[16].check	Coherencia con la acción corregida.
+MO-EAF-02	tecnica	set	certification[0].evaluated	Manual §11 con número de paso (igual numeración que el POV).
+MO-EAF-02	tecnica	set	certification[1].evaluated	Manual §11 con número de paso.
+MO-EAF-02	tecnica	set	certification[2].evaluated	Manual §11 con número de paso.
+MO-EAF-03	tecnica	set	certification[1].evaluated	Manual §11 con número de paso.
+MO-EAF-04	tecnica	set	steps[0].action	FT-ACE-001 §2 y MO-EAF-01 paso 2: presión normal 4–6 bar; < 3 bar es la alarma, no el criterio para energizar. Igual que POV-EAF-01.
+MO-EAF-04	tecnica	set	steps[7].stop	Manual §5 y §9: la respuesta a > 60 °C es bajar el tap, no parar el horno. El ALTO de Seguridad se conserva y se le agrega la acción para que no se lea como "detén todo".
+MO-EAF-05	tecnica	set	startsWhen	Los pasos 1 y 2 (modo quemador) ocurren en la fusión de canasta, antes del baño plano; el disparo anterior no los incluía (manual §1, alcance).
+MO-EAF-05	tecnica	set	certification[0].evaluated	Numeración del POV: el paso 6 del manual se separó en los pasos 6 y 7 del POV; los pasos 10 y 11 del manual son 11 y 12.
+MO-EAF-05	tecnica	set	certification[1].evaluated	Manual §11 (6, 7, 9 y 11) con la numeración del POV.
+MO-EAF-05	tecnica	set	certification[2].evaluated	Manual §11 con la numeración del POV.
+MO-EAF-06	tecnica	set	steps[12].action	Mismo contenido de Seguridad (manual §6.1 y MS-ACE-01 §8 paso 9) en frases de ≤ 20 palabras (observación de Documentación).
+MO-EAF-06	tecnica	set	certification[0].evaluated	Manual §11 (1, 4 y 11) con la numeración del POV.
+MO-EAF-06	tecnica	set	certification[2].evaluated	Manual §11 con número de paso del POV.
+MO-EAF-07	tecnica	set	steps[2].action	Manual §5 (adiciones por familia): los grados de CC2 van sin Al (Al soluble ≤ 0.005 %). El texto anterior podía llevar a agregar Al a una colada de CC2 y tapar las buzas calibradas.
+MO-EAF-08	tecnica	set	steps[14].action	Se agrega el paso 6 (limpiar la caja de la columna): en el método B también se rosca sobre la columna y una caja sucia deja holgura en la junta. El manual §8 paso 14 lo omite: se corrige en v0.2.
+MO-EAF-08	tecnica	set	certification[0].evaluated	Manual §11 (3, 6, 8, 9, 12, 13 y 14) con la numeración del POV; distingue lo que S-02 ejecuta de lo que verifica.
+MO-EAF-08	tecnica	set	certification[1].evaluated	Manual §11 (1, 6 y 14) con la numeración del POV.
+MO-EAF-08	tecnica	set	certification[2].evaluated	Manual §11 (4 y 7) con la numeración del POV.
+MO-LF-01	tecnica	set	steps[7].action	Manual §5: Al en CC2 ≤ 0.005 % (el Al tapa las buzas calibradas). El texto anterior pedía ajustar Al en todos los grados.
+MO-LF-01	tecnica	set	steps[7].check	Manual §5: faltaba el límite de Al para CC2.
+MO-LF-01	tecnica	set	steps[9].action	La condición anormal "tratamiento > 50 min" (manual §9) salió de "Si algo sale mal" por la sustitución de Seguridad; se conserva aquí, donde se ve la demora.
+MO-LF-01	tecnica	set	steps[9].check	Manual §5 (tabla de T de envío): faltaban las familias de CC2.
+MO-OLL-01	tecnica	set	startsWhen	Coherencia del flujo: la última olla de cada secuencia también regresa a preparación.
+MO-OLL-01	tecnica	set	previous	Coherencia del flujo con POV-CC1-07 y POV-CC2-07 (retiran la última olla vacía).
+MO-OLL-02	tecnica	set	startsWhen	Coherencia con POV-LF-01 (fin: "olla entregada") y con el paso 2 de este POV.

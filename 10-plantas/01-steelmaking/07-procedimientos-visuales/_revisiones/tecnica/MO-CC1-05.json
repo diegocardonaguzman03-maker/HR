@@ -1,0 +1,16 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "certification[0].evaluated",
+      "value": "Pasos 6, 8 y 11; señales a la grúa en los pasos 2 y 15 (los ejecuta S-09)",
+      "reason": "Duda técnica: el paso 6 (cerrar la olla al primer signo de escoria) es ★ y de S-13, y faltaba. Los pasos 2 y 15 son de S-09; S-13 solo da las señales."
+    }
+  ]
+}

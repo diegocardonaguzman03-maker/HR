@@ -1,0 +1,28 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[5].check",
+      "value": "Chorro cortado en L3 y L4 a 280–320 mm; nunca bajo 250 mm.",
+      "reason": "Manual §5: el cierre es a 300 mm (280–320) con límite de 250 mm; \"nivel ≥ 300 mm\" contradecía el rango."
+    },
+    {
+      "op": "set",
+      "path": "next",
+      "value": [
+        "MO-CC2-08",
+        "MO-CC2-01",
+        "MO-CC2-02",
+        "MM-CC-01",
+        "MO-OLL-01"
+      ],
+      "reason": "La última olla vacía (paso 13) va a preparación (MO-OLL-01)."
+    }
+  ]
+}

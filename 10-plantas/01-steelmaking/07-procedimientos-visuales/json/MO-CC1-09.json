@@ -188,7 +188,7 @@
       "icon": "medir",
       "title": "Mide dimensiones",
       "action": "Mide espesor (3 puntos por extremo), ancho (cabeza, centro y cola), largo, sable y escuadra.",
-      "check": "Espesor 230 ± 3 mm; largo ± 15 mm; sable ≤ 15 mm/10 m; escuadra ≤ 5 mm.",
+      "check": "Espesor 230 ± 3 mm; ancho −5/+15 mm del pedido; largo ± 15 mm; sable ≤ 15 mm/10 m; escuadra ≤ 5 mm.",
       "quality": true
     },
     {
@@ -206,7 +206,7 @@
       "role": "S-18",
       "icon": "calidad",
       "title": "Clasifica con la tabla",
-      "action": "Aplica la tabla del manual y registra la clasificación: aceptar o escarpear (superficial ≤ 5 mm). Si toca degradar o rechazar (> 10 mm, interno severo o medida fuera), retén y pasa la evidencia a C-09.",
+      "action": "Aplica la tabla del manual. Aceptar o escarpear: defecto superficial ≤ 5 mm. Retén y pasa la evidencia a C-09 si mide 5–10 mm o más, es interno severo o la medida está fuera.",
       "check": "Clasificación registrada en el MES."
     },
     {
@@ -215,7 +215,7 @@
       "role": "S-18",
       "icon": "oxigeno",
       "title": "Escarpea si aplica",
-      "action": "Solo con certificación de escarpeo [Supuesto: función de S-18, pendiente de decisión del Director]. Con permiso en caliente y arrestaflamas: 3–5 mm por pasada. HSLA con Nb a ≥ 150 °C.",
+      "action": "Solo con certificación de escarpeo [Supuesto: función de S-18, pendiente de decisión del Director]. Con permiso en caliente y arrestaflamas: 3–5 mm por pasada. HSLA con Nb a ≥ 150 °C [Validar con OEM / Ingeniería de Proceso].",
       "check": "≤ 10 mm por cara; espesor final ≥ 220 mm.",
       "critical": true,
       "stop": "No hay permiso de trabajo en caliente, falta el arrestaflamas o hay combustibles en el área."
@@ -356,7 +356,7 @@
   "certification": [
     {
       "role": "S-18",
-      "level": "3",
+      "level": "3 (inspección)",
       "theory": "32 h (defectos, causas, criterios, metrología, MES)",
       "ojt": "160 h / 300 planchones verificados por un evaluador nivel 4 (TD-P07)",
       "evaluated": "Pasos 2 y 6; concordancia con el catálogo de defectos ≥ 90 %",
@@ -465,6 +465,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

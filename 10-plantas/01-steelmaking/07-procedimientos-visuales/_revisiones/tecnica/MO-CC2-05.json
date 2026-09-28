@@ -1,0 +1,16 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "glossary[3].def",
+      "value": "Remolino sobre las buzas que arrastra escoria de cubierta al molde. En CC2 aparece con el distribuidor bajo (≤ 300 mm); en el cambio de olla se mantiene ≥ 500 mm para tener reserva y acero limpio.",
+      "reason": "Duda técnica del vórtice: el arrastre por vórtice en las buzas de 20–24 mm aparece cerca de 300 mm (MO-CC2-07). Los 500 mm del cambio de olla son reserva (≈ 13 t ≈ 3.8 min) y tiempo de flotación de inclusiones con la olla nueva abriendo. Mismo valor en los dos POV; se corrige MO-CC2-05 §3 en v0.2 [Validar con C-08]."
+    }
+  ]
+}

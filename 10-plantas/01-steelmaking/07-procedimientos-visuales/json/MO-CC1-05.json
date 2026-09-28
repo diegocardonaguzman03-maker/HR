@@ -356,7 +356,7 @@
       "level": "3",
       "theory": "16 h",
       "ojt": "20 cambios de olla (5 con lanceado simulado)",
-      "evaluated": "Pasos 8 y 11; pasos 2 y 15 como señalero de la grúa",
+      "evaluated": "Pasos 6, 8 y 11; señales a la grúa en los pasos 2 y 15 (los ejecuta S-09)",
       "validity": "≤ 24 meses (TD-P07); señales de izaje 12 meses (NOM-006, MO-OLL-02)"
     },
     {
@@ -462,6 +462,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

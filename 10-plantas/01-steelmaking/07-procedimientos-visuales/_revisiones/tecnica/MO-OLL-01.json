@@ -1,0 +1,28 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "startsWhen",
+      "value": "La olla vacía regresa de la colada continua: cambio de olla (MO-CC1-05 / MO-CC2-05) o fin de secuencia (MO-CC1-07 / MO-CC2-07), con traslado MO-OLL-02.",
+      "reason": "Coherencia del flujo: la última olla de cada secuencia también regresa a preparación."
+    },
+    {
+      "op": "set",
+      "path": "previous",
+      "value": [
+        "MO-OLL-02",
+        "MO-CC1-05",
+        "MO-CC2-05",
+        "MO-CC1-07",
+        "MO-CC2-07"
+      ],
+      "reason": "Coherencia del flujo con POV-CC1-07 y POV-CC2-07 (retiran la última olla vacía)."
+    }
+  ]
+}

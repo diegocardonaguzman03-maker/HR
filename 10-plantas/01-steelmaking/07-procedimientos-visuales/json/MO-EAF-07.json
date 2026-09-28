@@ -155,7 +155,7 @@
       "role": "S-03",
       "icon": "pesar",
       "title": "Prepara las adiciones",
-      "action": "Carga las tolvas con la tabla del grado y el aluminio calculado con el oxígeno medido. Usa solo material seco.",
+      "action": "Carga las tolvas con la tabla del grado y solo material seco. Grados al Al (CC1): Al calculado con el oxígeno medido. Varilla y barras (CC2): sin Al, porque tapa las buzas.",
       "check": "Pesos correctos ± 1 %. Material seco y cubierto.",
       "critical": true
     },
@@ -453,6 +453,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

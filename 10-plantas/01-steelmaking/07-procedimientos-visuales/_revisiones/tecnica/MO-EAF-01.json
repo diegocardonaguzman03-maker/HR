@@ -1,0 +1,28 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "certification[0].evaluated",
+      "value": "Pasos 2, 4 y 16 + escenario de fuga simulada",
+      "reason": "Numeración del POV: el manual cita 2, 4 y 17; el paso 17 del manual (retiro de bloqueo) es el paso 16 del POV porque los pasos 15 y 16 del manual se unieron."
+    },
+    {
+      "op": "set",
+      "path": "certification[1].evaluated",
+      "value": "Pasos 3, 8, 11, 13, 14 y 16",
+      "reason": "Manual §11 (3, 8, 11, 13, 14 y 17) con la numeración del POV."
+    },
+    {
+      "op": "set",
+      "path": "certification[2].evaluated",
+      "value": "Pasos 11, 14 y 16, bajo supervisión",
+      "reason": "Manual §11 (11, 14 y 17) con la numeración del POV."
+    }
+  ]
+}

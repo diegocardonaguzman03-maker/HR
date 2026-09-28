@@ -289,7 +289,7 @@
       "role": "S-02",
       "icon": "seguro",
       "title": "Aplica el método B solo con permiso",
-      "action": "Solo con autorización de C-05. Haz los pasos 1–4, 7–11, 13 y 14 sobre la columna en el horno. Usa LOTO completo, arnés 100 % conectado y permiso de altura (MS-ACE-10).",
+      "action": "Solo con autorización de C-05. Haz los pasos 1–4, 6–11, 13 y 14 sobre la columna en el horno. Usa LOTO completo, arnés 100 % conectado y permiso de altura (MS-ACE-10).",
       "check": "Mismos criterios de torque, laina y posición de la junta.",
       "critical": true,
       "stop": "Falta el LOTO completo, el arnés conectado o el permiso de altura."
@@ -367,7 +367,7 @@
       "level": "3",
       "theory": "12 h (electrodos, niples, torque, LOTO)",
       "ojt": "30 h / 10 empalmes",
-      "evaluated": "Bloqueo, tapón, torque, laina, deslizamiento, retiro de bloqueos y método B",
+      "evaluated": "Pasos 9, 10, 14 y 15 (ejecuta); verifica el bloqueo (paso 3), el tapón de izaje (paso 7) y la junta (paso 13); señalero en el paso 8",
       "validity": "24 meses; alturas (método B) y señales de izaje (NOM-006) 12 meses"
     },
     {
@@ -375,7 +375,7 @@
       "level": "3",
       "theory": "8 h",
       "ojt": "20 h / 10 empalmes",
-      "evaluated": "Preparar el electrodo, tapón de izaje y método B",
+      "evaluated": "Pasos 1, 7 y 15",
       "validity": "24 meses; alturas (método B) 12 meses"
     },
     {
@@ -383,7 +383,7 @@
       "level": "3",
       "theory": "NOM-006 + grúa",
       "ojt": "10 maniobras de electrodo",
-      "evaluated": "Retiro de columna y bajada en modo fino; nadie bajo la carga",
+      "evaluated": "Pasos 5 y 8 (modo fino, nadie bajo la carga)",
       "validity": "12 meses (grúas e izaje)"
     },
     {
@@ -477,6 +477,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

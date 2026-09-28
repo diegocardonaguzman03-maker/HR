@@ -1,0 +1,40 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[16].action",
+      "value": "Con la 1.ª canasta fundida ≥ 70 % y volumen libre [Validar con Ingeniería de Proceso], repite los pasos 8 a 16 con la 2.ª canasta ya armada y pesada (pasos 3 a 6). El aviso a S-04 es la \"zona libre\" del paso 10.",
+      "reason": "Duda técnica: el paso 7 espera el aviso de MO-EAF-01, que no ocurre entre canastas. La 2.ª canasta repite 8 a 16; la canasta se arma y pesa antes en el patio. Se reporta para MO-EAF-02 v0.2 (M-07)."
+    },
+    {
+      "op": "set",
+      "path": "steps[16].check",
+      "value": "Mismos criterios que la 1.ª canasta; no se espera el aviso de MO-EAF-01.",
+      "reason": "Coherencia con la acción corregida."
+    },
+    {
+      "op": "set",
+      "path": "certification[0].evaluated",
+      "value": "Pasos 1, 2, 3 y 4 + identificación de material prohibido con muestras",
+      "reason": "Manual §11 con número de paso (igual numeración que el POV)."
+    },
+    {
+      "op": "set",
+      "path": "certification[1].evaluated",
+      "value": "Pasos 10, 11 y 17 + inspección previa de la grúa",
+      "reason": "Manual §11 con número de paso."
+    },
+    {
+      "op": "set",
+      "path": "certification[2].evaluated",
+      "value": "Pasos 8, 9, 10 y 17",
+      "reason": "Manual §11 con número de paso."
+    }
+  ]
+}

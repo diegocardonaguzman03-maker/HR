@@ -213,8 +213,8 @@
       "role": "S-06",
       "icon": "pesar",
       "title": "Ajusta la química",
-      "action": "Con la muestra 2, calcula y agrega aleaciones a granel (FeMn, FeSi, SiMn, FeNb, C) con los rendimientos de C-07. S-07 ajusta el Al con alambre.",
-      "check": "Química en rango en la muestra 3; Al soluble 0.020–0.045 % en CC1.",
+      "action": "Con la muestra 2, calcula y agrega aleaciones a granel (FeMn, FeSi, SiMn, FeNb, C) con los rendimientos de C-07. En CC1, S-07 ajusta el Al con alambre; en CC2 (varilla y barras) no se agrega Al.",
+      "check": "Química en rango en la muestra 3. Al soluble 0.020–0.045 % en CC1; ≤ 0.005 % en CC2 [Validar con Ingeniería de Proceso].",
       "quality": true,
       "decision": {
         "question": "¿Grado CC1 calmado al Al?",
@@ -238,8 +238,8 @@
       "role": "S-06",
       "icon": "temperatura",
       "title": "Ajusta la temperatura de envío",
-      "action": "Calienta hasta la T de envío más lo que pierde la agitación suave. Primera olla de la secuencia: + 10–15 °C [Validar con C-08].",
-      "check": "T en objetivo (bajo C al Al ≈ 1,585–1,600 °C; HSLA ≈ 1,575–1,595 °C)."
+      "action": "Calienta hasta la T de envío más lo que pierde la agitación suave. Primera olla de la secuencia: + 10–15 °C [Validar con C-08]. Si el tratamiento va a pasar de 50 min, avisa a S-12 y a C-04.",
+      "check": "T en objetivo: bajo C al Al ≈ 1,585–1,600 °C; HSLA ≈ 1,575–1,595 °C; varilla ≈ 1,560–1,580 °C; barras ≈ 1,570–1,590 °C."
     },
     {
       "n": 11,
@@ -472,6 +472,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

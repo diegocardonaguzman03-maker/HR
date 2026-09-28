@@ -1,0 +1,16 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "certification[0].level",
+      "value": "3 (preparación de distribuidor)",
+      "reason": "Distingue las dos filas de S-15 (preparación y grúa de CC de 50 t)."
+    }
+  ]
+}

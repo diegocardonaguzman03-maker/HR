@@ -1,0 +1,16 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[5].check",
+      "value": "Flecha ≤ 5 mm/m y ≤ 40 mm; largo 12,000 ± 50 mm [Validar]. Palanquilla doblada: retén \"R\" para rechazo (C-09).",
+      "reason": "La condición \"palanquilla doblada\" (manual §9) salió de \"Si algo sale mal\" por la sustitución de Seguridad; su criterio de calidad se conserva en el paso donde se mide."
+    }
+  ]
+}

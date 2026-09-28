@@ -252,7 +252,7 @@
       "role": "S-02",
       "icon": "manual",
       "title": "Mide a mano solo con permiso",
-      "action": "Con arco apagado y EPP aluminizado completo: un solo intento [Supuesto], de lado a la puerta, a ≥ 1.5 m, máximo 2 min en zona roja y con observador.",
+      "action": "Con arco apagado y EPP aluminizado completo, haz un solo intento [Supuesto] con observador. Párate de lado a la puerta, a ≥ 1.5 m, máximo 2 min en zona roja.",
       "check": "Meseta válida en un solo intento; ≤ 2 min en zona roja.",
       "critical": true,
       "stop": "No hay autorización de C-05, el arco está encendido, no hay observador o tu EPP aluminizado no está completo y seco."
@@ -330,7 +330,7 @@
       "level": "3",
       "theory": "12 h (sondas, curvas, ventana de vaciado)",
       "ojt": "40 h / 50 mediciones",
-      "evaluated": "Sonda seca, puerta despejada, respaldo manual + interpretación de 5 curvas",
+      "evaluated": "Pasos 2, 5 y 13 + interpretación de 5 curvas (paso 7)",
       "validity": "24 meses"
     },
     {
@@ -346,7 +346,7 @@
       "level": "3",
       "theory": "8 h",
       "ojt": "20 decisiones de vaciado",
-      "evaluated": "Decisión con T, O, C y P",
+      "evaluated": "Paso 10: decisión con T, O, C y P",
       "validity": "24 meses"
     }
   ],
@@ -432,6 +432,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

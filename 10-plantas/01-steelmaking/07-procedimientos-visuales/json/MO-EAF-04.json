@@ -128,7 +128,7 @@
       "role": "S-01",
       "icon": "checklist",
       "title": "Verifica los permisivos",
-      "action": "Revisa en la HMI: bóveda asentada, horno a 0° ± 2° e hidráulica en presión. Revisa agua (Δ ≤ 2 %, P ≥ 3 bar), presión del horno negativa y llaves cautivas completas.",
+      "action": "Revisa en la HMI: bóveda asentada, horno a 0° ± 2° e hidráulica en presión. Revisa agua (Δ ≤ 2 %, P 4–6 bar), presión del horno negativa y llaves cautivas completas.",
       "check": "Todos los permisivos en verde.",
       "critical": true,
       "decision": {
@@ -215,7 +215,7 @@
       "action": "Arranca MO-EAF-03 y MO-EAF-05. Mantén tap 15 solo si la espuma cubre el arco.",
       "check": "T de salida de panel ≤ 60 °C; ≈ 119 MW (límite).",
       "critical": true,
-      "stop": "La T de salida de un panel pasa de 60 °C."
+      "stop": "La T de salida de un panel pasa de 60 °C: baja el tap 2 posiciones y mejora la espuma."
     },
     {
       "n": 9,
@@ -433,6 +433,12 @@
     {
       "area": "Seguridad",
       "who": "experto-seguridad-salud",
+      "status": "Visto bueno con observaciones",
+      "date": "2026-09-28"
+    },
+    {
+      "area": "Técnica",
+      "who": "experto-operativo-metalurgia",
       "status": "Visto bueno con observaciones",
       "date": "2026-09-28"
     }

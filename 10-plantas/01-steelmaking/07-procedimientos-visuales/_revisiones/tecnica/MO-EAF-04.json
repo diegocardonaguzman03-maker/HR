@@ -1,0 +1,22 @@
+{
+  "review": {
+    "area": "Técnica",
+    "who": "experto-operativo-metalurgia",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[0].action",
+      "value": "Revisa en la HMI: bóveda asentada, horno a 0° ± 2° e hidráulica en presión. Revisa agua (Δ ≤ 2 %, P 4–6 bar), presión del horno negativa y llaves cautivas completas.",
+      "reason": "FT-ACE-001 §2 y MO-EAF-01 paso 2: presión normal 4–6 bar; < 3 bar es la alarma, no el criterio para energizar. Igual que POV-EAF-01."
+    },
+    {
+      "op": "set",
+      "path": "steps[7].stop",
+      "value": "La T de salida de un panel pasa de 60 °C: baja el tap 2 posiciones y mejora la espuma.",
+      "reason": "Manual §5 y §9: la respuesta a > 60 °C es bajar el tap, no parar el horno. El ALTO de Seguridad se conserva y se le agrega la acción para que no se lea como \"detén todo\"."
+    }
+  ]
+}
