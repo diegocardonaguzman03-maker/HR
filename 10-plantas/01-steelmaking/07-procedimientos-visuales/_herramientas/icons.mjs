@@ -99,6 +99,7 @@ export const EPP = {
   arnes: ['link', 'Arnés y línea de vida'],
   dosimetro: ['device-watch', 'Dosímetro personal'],
   careta_facial: ['shield', 'Careta facial transparente'],
+  careta_oxicorte: ['sunglasses', 'Careta o lentes con filtro sombra 5–6'],
   chaleco: ['shirt', 'Chaleco de alta visibilidad'],
   proteccion_quimica: ['flask', 'Mandil y guantes para químicos'],
 };

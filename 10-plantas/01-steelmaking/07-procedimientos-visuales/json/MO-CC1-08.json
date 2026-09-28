@@ -85,7 +85,8 @@
     "guantes",
     "botas",
     "auditiva",
-    "respirador"
+    "respirador",
+    "chaleco"
   ],
   "dangerZone": {
     "red": "Zona roja: bajo la trayectoria de la grúa (± 5 m de la proyección de la carga) y entre pilas durante el izaje.",

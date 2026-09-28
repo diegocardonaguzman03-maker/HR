@@ -12,88 +12,419 @@
   "whyItMatters": "Un mal tratamiento da acero fuera de grado, buzas tapadas (clogging) o una temperatura que causa breakout en la colada. Agua o energía mal controladas pueden causar una explosión o una electrocución.",
   "startsWhen": "La olla llega del vaciado del EAF (MO-EAF-07) a la estación del horno olla.",
   "endsWhen": "La olla queda liberada a la grúa de colada con química y temperatura en rango (MO-OLL-02).",
-  "previous": ["MO-EAF-07"],
-  "next": ["MO-OLL-02"],
-  "heroFigure": { "file": "img/lf-horno-olla.svg", "caption": "Estación de horno olla: electrodos y bóveda, escoria reductora, argón por el tapón, alimentador de alambre y tolvas." },
+  "previous": [
+    "MO-EAF-07"
+  ],
+  "next": [
+    "MO-OLL-02"
+  ],
+  "heroFigure": {
+    "file": "img/lf-horno-olla.svg",
+    "caption": "Estación de horno olla: electrodos y bóveda, escoria reductora, argón por el tapón, alimentador de alambre y tolvas."
+  },
   "figures": [
-    { "file": "img/olla-corte-valvula-tapon.svg", "caption": "Olla: tapón poroso de argón, válvula deslizante y bordo libre." }
+    {
+      "file": "img/olla-corte-valvula-tapon.svg",
+      "caption": "Olla: tapón poroso de argón, válvula deslizante y bordo libre."
+    }
   ],
   "roles": [
-    { "code": "S-06", "name": "Operador de Horno Olla", "raci": "R", "does": "Opera el horno olla: argón, arco, adiciones y ajustes; libera la olla.", "it": "IT-S06" },
-    { "code": "S-07", "name": "Ayudante de Horno Olla / Alambre", "raci": "R", "does": "Conecta argón, mide temperatura y oxígeno, toma muestras, opera el alimentador de alambre.", "it": "IT-S07" },
-    { "code": "S-11", "name": "Muestrero / Analista", "raci": "R", "does": "Analiza las muestras en ≤ 4 min [Supuesto] y reporta la química.", "it": "IT-S11" },
-    { "code": "C-07", "name": "Ingeniero de Proceso EAF / LF", "raci": "A", "does": "Dueño del proceso. Define las prácticas por grado: escoria, adiciones, argón, CaSi y temperatura de envío." },
-    { "code": "C-09", "name": "Metalurgista de Producto", "raci": "C", "does": "Define los rangos químicos por grado y decide las desviaciones." },
-    { "code": "C-05", "name": "Supervisor de Hornos", "raci": "C", "does": "Supervisa el turno y decide en condiciones anormales.", "it": "IT-C05" },
-    { "code": "S-12", "name": "Operador de Púlpito de Colada", "raci": "I", "does": "Informa la hora en que necesita la olla y la temperatura objetivo del distribuidor.", "it": "IT-S12" }
+    {
+      "code": "S-06",
+      "name": "Operador de Horno Olla",
+      "raci": "R",
+      "does": "Opera el horno olla: argón, arco, adiciones y ajustes; libera la olla.",
+      "it": "IT-S06"
+    },
+    {
+      "code": "S-07",
+      "name": "Ayudante de Horno Olla / Alambre",
+      "raci": "R",
+      "does": "Conecta argón, mide temperatura y oxígeno, toma muestras, opera el alimentador de alambre.",
+      "it": "IT-S07"
+    },
+    {
+      "code": "S-11",
+      "name": "Muestrero / Analista",
+      "raci": "R",
+      "does": "Analiza las muestras en ≤ 4 min [Supuesto] y reporta la química.",
+      "it": "IT-S11"
+    },
+    {
+      "code": "C-07",
+      "name": "Ingeniero de Proceso EAF / LF",
+      "raci": "A",
+      "does": "Dueño del proceso. Define las prácticas por grado: escoria, adiciones, argón, CaSi y temperatura de envío."
+    },
+    {
+      "code": "C-09",
+      "name": "Metalurgista de Producto",
+      "raci": "C",
+      "does": "Define los rangos químicos por grado y decide las desviaciones."
+    },
+    {
+      "code": "C-05",
+      "name": "Supervisor de Hornos",
+      "raci": "C",
+      "does": "Supervisa el turno y decide en condiciones anormales.",
+      "it": "IT-C05"
+    },
+    {
+      "code": "S-12",
+      "name": "Operador de Púlpito de Colada",
+      "raci": "I",
+      "does": "Informa la hora en que necesita la olla y la temperatura objetivo del distribuidor.",
+      "it": "IT-S12"
+    }
   ],
   "goldenRules": [
     "Nunca subas a la plataforma de electrodos con el interruptor cerrado: llave cautiva o LOTO.",
     "Adiciones y alambre siempre secos. Alarma de agua en la bóveda: arco fuera y evacúa a ≥ 25 m.",
     "No liberes la olla sin ≥ 8 min de argón suave, sin arco y sin adiciones."
   ],
-  "epp": ["casco", "careta_dorada", "aluminizado", "ropa_fr", "guantes", "botas", "auditiva", "detector_gas"],
+  "epp": [
+    "casco",
+    "careta_dorada",
+    "careta_facial",
+    "aluminizado",
+    "ropa_fr",
+    "guantes",
+    "botas",
+    "auditiva",
+    "detector_gas"
+  ],
   "dangerZone": {
     "red": "Zona roja: ≤ 5 m de la ventana de adiciones o del agujero de muestreo durante la inyección de CaSi y la agitación fuerte.",
     "yellow": "Zona amarilla: de 5 a 15 m de la ventana.",
     "rule": "El carro solo se mueve con bóveda y electrodos arriba. Fosa del carro y túneles de argón: espacio confinado con permiso y medición (MS-ACE-05)."
   },
   "hazards": [
-    { "icon": "agua", "text": "Fuga de agua de la bóveda o material húmedo: explosión vapor–metal." },
-    { "icon": "electrico", "text": "Energía del horno olla (25 MVA): electrocución en la bóveda y la plataforma de electrodos." },
-    { "icon": "gas", "text": "Argón y CO en fosas, bajo el carro y espacios cerrados: asfixia e intoxicación." },
-    { "icon": "fuego", "text": "Llamarada del CaSi y salpicaduras de escoria o acero al agitar." },
-    { "icon": "peligro", "text": "Latigazo o rotura del alambre del alimentador." }
+    {
+      "icon": "agua",
+      "text": "Fuga de agua de la bóveda o material húmedo: explosión vapor–metal."
+    },
+    {
+      "icon": "electrico",
+      "text": "Energía del horno olla (25 MVA): electrocución en la bóveda y la plataforma de electrodos."
+    },
+    {
+      "icon": "gas",
+      "text": "Argón y CO en fosas, bajo el carro y espacios cerrados: asfixia e intoxicación."
+    },
+    {
+      "icon": "fuego",
+      "text": "Llamarada del CaSi y salpicaduras de escoria o acero al agitar."
+    },
+    {
+      "icon": "peligro",
+      "text": "Latigazo o rotura del alambre del alimentador."
+    }
   ],
-  "phases": ["Recibir y medir", "Calentar y ajustar", "Limpiar y liberar"],
+  "phases": [
+    "Recibir y medir",
+    "Calentar y ajustar",
+    "Limpiar y liberar"
+  ],
   "steps": [
-    { "n": 1, "phase": 0, "role": "S-06", "icon": "hmi", "title": "Recibe los datos de la colada", "action": "Lee en nivel 2 los datos del EAF: T y O de vaciado, adiciones, arrastre de escoria y número de olla. Lee de la colada continua la hora requerida y la T objetivo.", "check": "Datos completos en nivel 2." },
-    { "n": 2, "phase": 0, "role": "S-06", "icon": "inspeccionar", "title": "Revisa bordo libre y coraza", "action": "Con el carro en la estación, revisa el bordo libre y que la coraza no tenga fuga ni punto caliente. S-07 te apoya.", "check": "Bordo libre ≥ 300 mm [Supuesto]; coraza sin fuga ni punto caliente.", "critical": true, "stop": "Ves una fuga de metal o un punto caliente en la coraza." },
-    { "n": 3, "phase": 0, "role": "S-07", "icon": "gas", "title": "Conecta el argón", "action": "Haz la conexión rápida y abre el argón a 100–200 NL/min. Confirma que burbujea.", "check": "Burbujeo visible con 100–200 NL/min.", "critical": true, "decision": { "question": "¿Hay burbujeo?", "no": "Revisa conexión; respaldo o lanza de Ar. Avisa a C-05." } },
-    { "n": 4, "phase": 0, "role": "S-07", "icon": "muestra", "title": "Mide y toma la muestra 1", "action": "Tras 2–3 min de argón, mide temperatura y oxígeno (si aplica), toma la muestra y mide el espesor de escoria.", "check": "Lecturas válidas; escoria 40–100 mm.", "critical": true, "quality": true },
-    { "n": 5, "phase": 1, "role": "S-06", "icon": "electrico", "title": "Baja la bóveda y calienta", "action": "Baja los electrodos y usa el tap de la práctica, con argón a 100–200 NL/min. Agrega cal y aluminato de calcio para formar la escoria reductora.", "check": "Calienta 4–5 °C/min con el arco cubierto.", "stop": "Suena la alarma de fuga de agua de la bóveda." },
-    { "n": 6, "phase": 1, "role": "S-06", "icon": "material", "title": "Desoxida la escoria", "action": "Agrega el desoxidante de escoria de la práctica (Al granulado o CaC₂ [Validar con Ingeniería de Proceso]).", "check": "Escoria clara; FeO + MnO ≤ 1.0 % [Validar con Ingeniería de Proceso].", "quality": true, "decision": { "question": "¿El grado pide S ≤ 0.010 %?", "no": "No desulfures. Pasa al ajuste (paso 8)." } },
-    { "n": 7, "phase": 1, "role": "S-06", "icon": "agitar", "title": "Desulfura con argón fuerte", "action": "Arco apagado. Argón fuerte a 400–600 NL/min por 8–12 min. Vigila salpicaduras y bordo libre. Nadie a ≤ 5 m de la ventana.", "check": "S ≤ 0.010 % en la muestra 2.", "critical": true, "quality": true },
-    { "n": 8, "phase": 1, "role": "S-06", "icon": "pesar", "title": "Ajusta la química", "action": "Con la muestra 2, calcula y agrega aleaciones a granel (FeMn, FeSi, SiMn, FeNb, C) con los rendimientos de C-07. S-07 ajusta el Al con alambre.", "check": "Química en rango en la muestra 3; Al soluble 0.020–0.045 % en CC1.", "quality": true, "decision": { "question": "¿Grado CC1 calmado al Al?", "no": "Sin CaSi. Pasa a la temperatura (paso 10)." } },
-    { "n": 9, "phase": 1, "role": "S-07", "icon": "flujo", "title": "Inyecta CaSi con alambre", "action": "Después del Al final y con T cerca de envío: alambre de CaSi 0.3–0.5 kg/t [Supuesto] a 150–250 m/min [Supuesto], con argón suave. Bóveda abajo; nadie frente a la ventana.", "check": "Metros inyectados según el cálculo.", "critical": true, "stop": "Hay alguien frente a la ventana o la bóveda está arriba." },
-    { "n": 10, "phase": 1, "role": "S-06", "icon": "temperatura", "title": "Ajusta la temperatura de envío", "action": "Calienta hasta la T de envío más lo que pierde la agitación suave. Primera olla de la secuencia: + 10–15 °C [Validar con C-08].", "check": "T en objetivo (bajo C al Al ≈ 1,585–1,600 °C; HSLA ≈ 1,575–1,595 °C)." },
-    { "n": 11, "phase": 2, "role": "S-06", "icon": "agitar", "title": "Agita suave ≥ 8 min", "action": "Arco apagado. Argón a 50–150 NL/min con el ojo ≤ 200 mm [Supuesto]. Sin adiciones durante al menos 8 min.", "check": "≥ 8 min cumplidos en nivel 2.", "critical": true, "quality": true },
-    { "n": 12, "phase": 2, "role": "S-07", "icon": "muestra", "title": "Mide T y toma la muestra final", "action": "Mide la temperatura y toma la muestra final.", "check": "T ± 5 °C del objetivo; química en rango; S ≤ 0.010 % (CC1).", "critical": true, "quality": true, "decision": { "question": "¿Química y T en rango?", "no": "Regresa al ajuste (paso 8). C-09 decide desvíos." } },
-    { "n": 13, "phase": 2, "role": "S-07", "icon": "material", "title": "Cubre el acero", "action": "Agrega la cobertura aislante de la práctica [Validar con Ingeniería de Proceso].", "check": "Superficie cubierta." },
-    { "n": 14, "phase": 2, "role": "S-06", "icon": "ok", "title": "Libera la olla", "action": "Desconecta el argón y sube la bóveda. Confirma a S-09 y S-12: olla, colada, temperatura y destino.", "check": "Liberación registrada en nivel 2; tratamiento de 35–45 min." }
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-06",
+      "icon": "hmi",
+      "title": "Recibe los datos de la colada",
+      "action": "Lee en nivel 2 los datos del EAF: T y O de vaciado, adiciones, arrastre de escoria y número de olla. Lee de la colada continua la hora requerida y la T objetivo.",
+      "check": "Datos completos en nivel 2."
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-06",
+      "icon": "inspeccionar",
+      "title": "Revisa bordo libre y coraza",
+      "action": "Con el carro en la estación, revisa el bordo libre y que la coraza no tenga fuga ni punto caliente. S-07 te apoya.",
+      "check": "Bordo libre ≥ 300 mm [Supuesto]; coraza sin fuga ni punto caliente.",
+      "critical": true,
+      "stop": "Ves una fuga de metal o un punto caliente en la coraza."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-07",
+      "icon": "gas",
+      "title": "Conecta el argón",
+      "action": "Haz la conexión rápida y abre el argón a 100–200 NL/min. Confirma que burbujea.",
+      "check": "Burbujeo visible con 100–200 NL/min.",
+      "critical": true,
+      "decision": {
+        "question": "¿Hay burbujeo?",
+        "no": "Revisa conexión; respaldo o lanza de Ar. Avisa a C-05."
+      }
+    },
+    {
+      "n": 4,
+      "phase": 0,
+      "role": "S-07",
+      "icon": "muestra",
+      "title": "Mide y toma la muestra 1",
+      "action": "Tras 2–3 min de argón, mide temperatura y oxígeno (si aplica), toma la muestra y mide el espesor de escoria.",
+      "check": "Lecturas válidas; escoria 40–100 mm.",
+      "critical": true,
+      "quality": true
+    },
+    {
+      "n": 5,
+      "phase": 1,
+      "role": "S-06",
+      "icon": "electrico",
+      "title": "Baja la bóveda y calienta",
+      "action": "Baja los electrodos y usa el tap de la práctica, con argón a 100–200 NL/min. Agrega cal y aluminato de calcio para formar la escoria reductora.",
+      "check": "Calienta 4–5 °C/min con el arco cubierto.",
+      "stop": "Suena la alarma de fuga de agua de la bóveda."
+    },
+    {
+      "n": 6,
+      "phase": 1,
+      "role": "S-06",
+      "icon": "material",
+      "title": "Desoxida la escoria",
+      "action": "Agrega el desoxidante de escoria de la práctica (Al granulado o CaC₂ [Validar con Ingeniería de Proceso]).",
+      "check": "Escoria clara; FeO + MnO ≤ 1.0 % [Validar con Ingeniería de Proceso].",
+      "quality": true,
+      "decision": {
+        "question": "¿El grado pide S ≤ 0.010 %?",
+        "no": "No desulfures. Pasa al ajuste (paso 8)."
+      }
+    },
+    {
+      "n": 7,
+      "phase": 1,
+      "role": "S-06",
+      "icon": "agitar",
+      "title": "Desulfura con argón fuerte",
+      "action": "Arco apagado. Argón fuerte a 400–600 NL/min por 8–12 min. Vigila salpicaduras y bordo libre. Nadie a ≤ 5 m de la ventana.",
+      "check": "S ≤ 0.010 % en la muestra 2.",
+      "critical": true,
+      "quality": true
+    },
+    {
+      "n": 8,
+      "phase": 1,
+      "role": "S-06",
+      "icon": "pesar",
+      "title": "Ajusta la química",
+      "action": "Con la muestra 2, calcula y agrega aleaciones a granel (FeMn, FeSi, SiMn, FeNb, C) con los rendimientos de C-07. S-07 ajusta el Al con alambre.",
+      "check": "Química en rango en la muestra 3; Al soluble 0.020–0.045 % en CC1.",
+      "quality": true,
+      "decision": {
+        "question": "¿Grado CC1 calmado al Al?",
+        "no": "Sin CaSi. Pasa a la temperatura (paso 10)."
+      }
+    },
+    {
+      "n": 9,
+      "phase": 1,
+      "role": "S-07",
+      "icon": "flujo",
+      "title": "Inyecta CaSi con alambre",
+      "action": "Después del Al final y con T cerca de envío: alambre de CaSi 0.3–0.5 kg/t [Supuesto] a 150–250 m/min [Supuesto], con argón suave. Bóveda abajo; nadie frente a la ventana.",
+      "check": "Metros inyectados según el cálculo.",
+      "critical": true,
+      "stop": "Hay alguien frente a la ventana o la bóveda está arriba."
+    },
+    {
+      "n": 10,
+      "phase": 1,
+      "role": "S-06",
+      "icon": "temperatura",
+      "title": "Ajusta la temperatura de envío",
+      "action": "Calienta hasta la T de envío más lo que pierde la agitación suave. Primera olla de la secuencia: + 10–15 °C [Validar con C-08].",
+      "check": "T en objetivo (bajo C al Al ≈ 1,585–1,600 °C; HSLA ≈ 1,575–1,595 °C)."
+    },
+    {
+      "n": 11,
+      "phase": 2,
+      "role": "S-06",
+      "icon": "agitar",
+      "title": "Agita suave ≥ 8 min",
+      "action": "Arco apagado. Argón a 50–150 NL/min con el ojo ≤ 200 mm [Supuesto]. Sin adiciones durante al menos 8 min.",
+      "check": "≥ 8 min cumplidos en nivel 2.",
+      "critical": true,
+      "quality": true
+    },
+    {
+      "n": 12,
+      "phase": 2,
+      "role": "S-07",
+      "icon": "muestra",
+      "title": "Mide T y toma la muestra final",
+      "action": "Mide la temperatura y toma la muestra final.",
+      "check": "T ± 5 °C del objetivo; química en rango; S ≤ 0.010 % (CC1).",
+      "critical": true,
+      "quality": true,
+      "decision": {
+        "question": "¿Química y T en rango?",
+        "no": "Regresa al ajuste (paso 8). C-09 decide desvíos."
+      }
+    },
+    {
+      "n": 13,
+      "phase": 2,
+      "role": "S-07",
+      "icon": "material",
+      "title": "Cubre el acero",
+      "action": "Agrega la cobertura aislante de la práctica [Validar con Ingeniería de Proceso].",
+      "check": "Superficie cubierta."
+    },
+    {
+      "n": 14,
+      "phase": 2,
+      "role": "S-06",
+      "icon": "ok",
+      "title": "Libera la olla",
+      "action": "Desconecta el argón y sube la bóveda. Confirma a S-09 y S-12: olla, colada, temperatura y destino.",
+      "check": "Liberación registrada en nivel 2; tratamiento de 35–45 min."
+    }
   ],
   "abnormal": [
-    { "icon": "gas", "if": "El tapón no pasa argón (no hay burbujeo)", "do": "Revisa la conexión; aplica presión de respaldo [Validar con OEM]; si falla, usa la lanza de argón superior. Sin agitación no hay desulfuración.", "call": "C-05 y C-07" },
-    { "icon": "fuego", "if": "Perforación o fuga de olla en la estación", "do": "Arco fuera, electrodos y bóveda arriba, corta el argón si la fuga está en el fondo. Evacúa a ≥ 25 m. El metal va a fosa seca; nunca uses agua.", "call": "C-04 y C-16 (MS-ACE-09)" },
-    { "icon": "agua", "if": "Alarma de fuga de agua en la bóveda", "do": "Arco fuera. No muevas la olla si hay agua sobre la escoria. Evacúa a ≥ 25 m y corta el agua del circuito. Solo se reanuda con C-05 y C-07.", "call": "C-05 y Mantenimiento" },
-    { "icon": "flujo", "if": "La escoria espuma fuera de la olla", "do": "Reduce el argón, detén las adiciones y saca el arco.", "call": "C-05" },
-    { "icon": "muestra", "if": "El S no baja de 0.010 % o el Al pasa de 0.045 %", "do": "S alto: desoxida la escoria, agrega cal y repite el argón fuerte. Al alto no se corrige: C-09 decide reasignar.", "call": "C-07 y C-09" },
-    { "icon": "bloqueo", "if": "El alambre no entra o se atasca", "do": "Detén el alimentador. Desatasca solo con LOTO y reanuda.", "call": "C-05" },
-    { "icon": "tiempo", "if": "El tratamiento pasa de 50 min", "do": "Avisa a S-12 y registra la causa. C-04 ajusta la secuencia.", "call": "C-04" }
+    {
+      "icon": "gas",
+      "if": "El tapón no pasa argón (no hay burbujeo)",
+      "do": "Revisa la conexión; aplica presión de respaldo [Validar con OEM]; si falla, usa la lanza de argón superior. Sin agitación no hay desulfuración.",
+      "call": "C-05 y C-07"
+    },
+    {
+      "icon": "fuego",
+      "if": "Perforación o fuga de olla en la estación",
+      "do": "Arco fuera, electrodos y bóveda arriba, corta el argón si la fuga está en el fondo. Evacúa a ≥ 25 m. El metal va a fosa seca; nunca uses agua.",
+      "call": "C-04 y C-16 (MS-ACE-09)"
+    },
+    {
+      "icon": "agua",
+      "if": "Alarma de fuga de agua en la bóveda",
+      "do": "Arco fuera. No muevas la olla si hay agua sobre la escoria. Evacúa a ≥ 25 m y corta el agua del circuito. Solo se reanuda con C-05 y C-07.",
+      "call": "C-05 y Mantenimiento"
+    },
+    {
+      "icon": "flujo",
+      "if": "La escoria espuma fuera de la olla",
+      "do": "Reduce el argón, detén las adiciones y saca el arco.",
+      "call": "C-05"
+    },
+    {
+      "icon": "muestra",
+      "if": "El S no baja de 0.010 % o el Al pasa de 0.045 %",
+      "do": "S alto: desoxida la escoria, agrega cal y repite el argón fuerte. Al alto no se corrige: C-09 decide reasignar.",
+      "call": "C-07 y C-09"
+    },
+    {
+      "icon": "bloqueo",
+      "if": "El alambre no entra o se atasca",
+      "do": "Detén el alimentador. Desatasca solo con LOTO y reanuda.",
+      "call": "C-05"
+    },
+    {
+      "icon": "tiempo",
+      "if": "El tratamiento pasa de 50 min",
+      "do": "Avisa a S-12 y registra la causa. C-04 ajusta la secuencia.",
+      "call": "C-04"
+    }
   ],
   "records": [
-    { "what": "Registro de tratamiento por colada (T y química de cada muestra, adiciones, metros de alambre, argón por etapa, energía, tiempo, T de envío)", "when": "Cada colada", "where": "Nivel 2" },
-    { "what": "Análisis de escoria", "when": "Cuando la práctica lo pide", "where": "Laboratorio" },
-    { "what": "Eventos: tapón sin argón, fugas, desviaciones de química y decisiones de C-09", "when": "Cuando ocurre", "where": "Nivel 2 y bitácora de turno" },
-    { "what": "Permisos de espacio confinado (fosas) y LOTO", "when": "Cada intervención", "where": "Sistema de SSO" }
+    {
+      "what": "Registro de tratamiento por colada (T y química de cada muestra, adiciones, metros de alambre, argón por etapa, energía, tiempo, T de envío)",
+      "when": "Cada colada",
+      "where": "Nivel 2"
+    },
+    {
+      "what": "Análisis de escoria",
+      "when": "Cuando la práctica lo pide",
+      "where": "Laboratorio"
+    },
+    {
+      "what": "Eventos: tapón sin argón, fugas, desviaciones de química y decisiones de C-09",
+      "when": "Cuando ocurre",
+      "where": "Nivel 2 y bitácora de turno"
+    },
+    {
+      "what": "Permisos de espacio confinado (fosas) y LOTO",
+      "when": "Cada intervención",
+      "where": "Sistema de SSO"
+    }
   ],
   "certification": [
-    { "role": "S-06", "level": "3", "theory": "40 h", "ojt": "160 h / 60 tratamientos", "evaluated": "Pasos 2, 7, 9 y 11 + cálculo de aleaciones y temperatura de envío", "validity": "24 meses" },
-    { "role": "S-07", "level": "3", "theory": "24 h", "ojt": "80 h / 40 tratamientos", "evaluated": "Pasos 3, 4, 9 y 12; manejo seguro del alimentador; llave cautiva / LOTO", "validity": "24 meses" },
-    { "role": "S-11", "level": "3", "theory": "24 h", "ojt": "80 h / 100 análisis", "evaluated": "Preparación y reporte de muestras", "validity": "24 meses" },
-    { "role": "C-07", "level": "4", "theory": "40 h", "ojt": "—", "evaluated": "Diseño de prácticas por grado", "validity": "24 meses" }
+    {
+      "role": "S-06",
+      "level": "3",
+      "theory": "40 h",
+      "ojt": "160 h / 60 tratamientos",
+      "evaluated": "Pasos 2, 7, 9 y 11 + cálculo de aleaciones y temperatura de envío",
+      "validity": "24 meses"
+    },
+    {
+      "role": "S-07",
+      "level": "3",
+      "theory": "24 h",
+      "ojt": "80 h / 40 tratamientos",
+      "evaluated": "Pasos 3, 4, 9 y 12; manejo seguro del alimentador; llave cautiva / LOTO",
+      "validity": "24 meses"
+    },
+    {
+      "role": "S-11",
+      "level": "3",
+      "theory": "24 h",
+      "ojt": "80 h / 100 análisis",
+      "evaluated": "Preparación y reporte de muestras",
+      "validity": "24 meses"
+    },
+    {
+      "role": "C-07",
+      "level": "4",
+      "theory": "40 h",
+      "ojt": "—",
+      "evaluated": "Diseño de prácticas por grado",
+      "validity": "24 meses"
+    }
   ],
   "glossary": [
-    { "term": "Escoria reductora", "def": "Escoria con poco óxido de hierro que cubre el arco y atrapa el azufre." },
-    { "term": "Desulfuración", "def": "Pasar el azufre del acero a la escoria con argón fuerte y escoria desoxidada." },
-    { "term": "CaSi", "def": "Alambre de calcio-silicio que vuelve líquidas las inclusiones de alúmina y evita que tapen la buza." },
-    { "term": "Agitación suave", "def": "Argón a 50–150 NL/min, ≥ 8 min al final, para que las inclusiones suban a la escoria." },
-    { "term": "Ojo", "def": "Zona sin escoria que abre el argón en la superficie; debe ser ≤ 200 mm [Supuesto]." },
-    { "term": "Temperatura de envío", "def": "Líquidus + sobrecalentamiento del distribuidor + pérdidas de transporte." },
-    { "term": "Líquidus", "def": "Temperatura a la que el acero empieza a solidificar (bajo C ≈ 1,525 °C)." },
-    { "term": "Llave cautiva", "def": "Llave que solo sale del tablero con el interruptor abierto; una por persona." }
+    {
+      "term": "Escoria reductora",
+      "def": "Escoria con poco óxido de hierro que cubre el arco y atrapa el azufre."
+    },
+    {
+      "term": "Desulfuración",
+      "def": "Pasar el azufre del acero a la escoria con argón fuerte y escoria desoxidada."
+    },
+    {
+      "term": "CaSi",
+      "def": "Alambre de calcio-silicio que vuelve líquidas las inclusiones de alúmina y evita que tapen la buza."
+    },
+    {
+      "term": "Agitación suave",
+      "def": "Argón a 50–150 NL/min, ≥ 8 min al final, para que las inclusiones suban a la escoria."
+    },
+    {
+      "term": "Ojo",
+      "def": "Zona sin escoria que abre el argón en la superficie; debe ser ≤ 200 mm [Supuesto]."
+    },
+    {
+      "term": "Temperatura de envío",
+      "def": "Líquidus + sobrecalentamiento del distribuidor + pérdidas de transporte."
+    },
+    {
+      "term": "Líquidus",
+      "def": "Temperatura a la que el acero empieza a solidificar (bajo C ≈ 1,525 °C)."
+    },
+    {
+      "term": "Llave cautiva",
+      "def": "Llave que solo sale del tablero con el interruptor abierto; una por persona."
+    }
   ],
   "review": [
-    { "area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28" }
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    }
   ]
 }
