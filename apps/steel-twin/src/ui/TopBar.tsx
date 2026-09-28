@@ -56,21 +56,21 @@ export function TopBar() {
 
   return (
     <header className="pointer-events-auto flex min-h-14 shrink-0 flex-wrap items-center gap-1.5 bg-gradient-to-b from-[#0b0d11]/95 via-[#0b0d11]/60 to-transparent px-3 py-2 md:flex-nowrap md:gap-2 md:px-4 md:py-0">
-      <div className="flex items-center gap-2.5">
+      <div className="flex shrink-0 items-center gap-2.5 whitespace-nowrap">
         <div className="h-6 w-1 rounded-sm bg-gradient-to-b from-amber-400 to-orange-600" />
         <div className="leading-tight">
           <div className="font-hud text-[14px] font-semibold tracking-[0.12em] text-zinc-100">STEEL LEARNING TWIN</div>
-          <div className="hidden text-[10px] uppercase tracking-[0.18em] text-zinc-500 md:block">Learning Twin · EAF → LF → Slab caster</div>
+          <div className="hidden text-[10px] uppercase tracking-[0.18em] text-zinc-500 2xl:block">Learning Twin · EAF → LF → Slab caster</div>
         </div>
       </div>
       <span
         title={`Data source: ${dataProvider.label}. Values are educational, not plant operating limits.`}
         className="rounded-sm border border-amber-400/40 bg-amber-400/10 px-2 py-0.5 text-[10px] font-semibold tracking-[0.14em] text-amber-300 md:ml-2"
       >
-        SIMULATED<span className="hidden md:inline"> TRAINING DATA</span>
+        SIMULATED<span className="hidden 2xl:inline"> TRAINING DATA</span>
       </span>
 
-      <nav className="hud-panel order-last flex w-full items-center gap-1 p-1 md:order-none md:ml-auto md:w-auto" aria-label="Mode">
+      <nav className="hud-panel order-last flex w-full items-center gap-1 p-1 md:order-none md:ml-auto md:w-auto md:shrink-0" aria-label="Mode">
         {MODES.map((m) => (
           <button
             key={m.id}
@@ -78,8 +78,8 @@ export function TopBar() {
             onClick={() => setMode(m.id)}
             className={`font-hud h-8 flex-1 px-2 text-[11px] uppercase md:h-7 md:flex-none md:px-3 md:text-xs tracking-[0.12em] transition ${mode === m.id ? 'bg-amber-400 font-semibold text-zinc-900' : 'text-zinc-300 hover:bg-white/5'}`}
           >
-            <span className="md:hidden">{m.short}</span>
-            <span className="hidden md:inline">{m.label}</span>
+            <span className="xl:hidden">{m.short}</span>
+            <span className="hidden xl:inline">{m.label}</span>
           </button>
         ))}
       </nav>
@@ -113,7 +113,7 @@ export function TopBar() {
         title="Strand cross-section and solidification profile"
         className="hud-icon-btn" data-on={sectionOpen}
       >
-        <span className="md:hidden">SOLID.</span><span className="hidden md:inline">SOLIDIFICATION</span>
+        <span className="xl:hidden">SOLID.</span><span className="hidden xl:inline">SOLIDIFICATION</span>
       </button>
 
       <Menu label={`Depth L${level}`}>
