@@ -1,0 +1,52 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Abrir la olla y el distribuidor y llenar el molde sobre la barra falsa, sin fugas ni derrames. Dejar la máquina en nivel automático y a velocidad nominal.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[1].action",
+      "value": "Pon barreras con S-13 y suena la sirena ≥ 30 s. Confirma por radio y a la vista: a ≤ 10 m solo S-12, S-13, S-14 y C-06. Nadie bajo el molde, en segmentos 1–3 ni en la cámara de rociado.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[6].title",
+      "value": "Lancea con O₂ si la olla no abre",
+      "reason": "Título: debe empezar con verbo (ESPECIFICACION)."
+    },
+    {
+      "op": "set",
+      "path": "steps[11].action",
+      "value": "Cuando el acero cubra los puertos de la SEN (≈ 50 mm arriba), pon el polvo en capa uniforme. No dejes acero descubierto.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Segmentos",
+        "def": "Tramos de rodillos bajo el molde que guían y enfrían el planchón; el 1 es el más cercano al molde."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Rastreo (tracking)",
+        "def": "Registro en nivel 2 / MES que sigue cada planchón o palanquilla desde su colada; ahí se marcan los eventos."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

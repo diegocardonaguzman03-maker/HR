@@ -1,0 +1,52 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Cortar cada palanquilla a 12,000 mm en frío y marcarla con su identidad. Enfriarla sin doblarla y despacharla a Laminación o al patio sin mezclar coladas.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[5].action",
+      "value": "Marca con la marcadora: colada · línea · secuencia · consecutivo (CCCCCC-L-SS-NN [Supuesto]). Agrega la letra de condición si aplica: A, T, B, E, C o R.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[6].action",
+      "value": "Compara con el rastreo la primera y la última palanquilla de cada colada por línea. Revisa también el cambio de colada en la zona de transición.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[13].check",
+      "value": "Registro con palanquillas por colada, destino, temperatura y retenidas.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Palanquilla",
+        "def": "Producto de la CC2: barra cuadrada de 160 × 160 mm (o 130 × 130 mm) y 12 m de largo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Arrestaflamas (antirretorno de llama)",
+        "def": "Válvula que impide que la flama regrese por la manguera de O₂ o de gas."
+      },
+      "reason": "Término único con CC1 (\"arrestaflamas\" en POV-CC1-08 y CC1-09)."
+    }
+  ]
+}

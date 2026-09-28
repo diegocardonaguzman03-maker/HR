@@ -1,0 +1,46 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Dejar la máquina CC1 lista para arrancar, con la línea limpia y seca y el molde al ancho del programa. La barra falsa queda sellada y seca, y todo probado.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[17].action",
+      "value": "Confirma con S-13 el equipo de emergencia en la plataforma: lanzas de O₂, cajas de rebose, pote y herramientas secas. Revisa todos los puntos y firma.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[4].check",
+      "value": "La HMI confirma modo inserción; área despejada.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Segmentos",
+        "def": "Tramos de rodillos bajo el molde que guían y enfrían el planchón; el 1 es el más cercano al molde."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

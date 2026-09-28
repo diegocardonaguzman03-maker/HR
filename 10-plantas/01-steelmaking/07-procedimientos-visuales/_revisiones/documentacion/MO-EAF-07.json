@@ -1,0 +1,95 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Pasar 150 t de acero del horno a una olla precalentada, con la temperatura y química correctas. Sin escoria y sin nadie en la zona de peligro.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].action",
+      "value": "Revisa la lista de entrega de la olla (MO-OLL-01): cara caliente ≥ 1,000 °C y válvula cerrada. Revisa arena de sello, tapón probado y número de olla.",
+      "reason": "Término único: \"lista de entrega de la olla\", igual que POV-OLL-01 paso 14."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].check",
+      "value": "Lista de entrega completa y firmada por S-08.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "set",
+      "path": "steps[5].action",
+      "value": "Apaga el arco y abre el interruptor. Detén el DRI, el oxígeno y el carbono. Sube los electrodos.",
+      "reason": "Término: \"HRD\" solo aparecía aquí; los manuales y los demás POV dicen DRI (sinónimo en el glosario)."
+    },
+    {
+      "op": "set",
+      "path": "steps[5].check",
+      "value": "La HMI muestra arco apagado y alimentaciones detenidas.",
+      "reason": "Término: \"la HMI\" (Guía de estilo)."
+    },
+    {
+      "op": "set",
+      "path": "steps[12].action",
+      "value": "Espera a que el carro salga hacia el horno olla. Retira la exclusión solo cuando el carro esté fuera.",
+      "reason": "Lenguaje: imperativo y segunda persona."
+    },
+    {
+      "op": "set",
+      "path": "steps[13].check",
+      "value": "Registro de vaciado completo en nivel 2 y datos avisados a S-06.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "set",
+      "path": "records[2]",
+      "value": {
+        "what": "Lista de entrega de la olla recibida",
+        "when": "Cada olla",
+        "where": "Registro de ollas (formato de MO-OLL-01)"
+      },
+      "reason": "Registro: mismo nombre y lugar que en POV-OLL-01 (registro 1)."
+    },
+    {
+      "op": "set",
+      "path": "records[3].what",
+      "value": "Verificación de control crítico (VCC) de la zona de exclusión",
+      "reason": "Registro: se explica la sigla VCC."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Olla",
+        "def": "Recipiente de acero con refractario que recibe ≈ 150 t de acero líquido del horno y lo lleva al horno olla y a la colada continua."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "DRI (HRD)",
+        "def": "Hierro de reducción directa que se alimenta al horno; se detiene antes de vaciar."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

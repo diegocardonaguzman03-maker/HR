@@ -1,0 +1,84 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Cambiar la olla vacía por la olla llena sin parar la colada. Sin pasar escoria al distribuidor y sin bajarlo de 700 mm.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "whyItMatters",
+      "value": "Un mal cambio mete escoria e inclusiones al planchón u obliga a cerrar la secuencia. También expone a la gente a una olla suspendida de 150 t.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].action",
+      "value": "Revisa en la HMI grado, peso, temperatura de envío y hora de llegada. La olla debe estar en la torreta al menos 10 min antes de que termine la actual.",
+      "reason": "Término: \"la HMI\" (Guía de estilo)."
+    },
+    {
+      "op": "set",
+      "path": "steps[2].action",
+      "value": "Revisa que el mecanismo de la válvula esté conectado y el cilindro hidráulico acoplado. Revisa que la arena de sello se vea.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[2].check",
+      "value": "Válvula conectada, cilindro acoplado y arena de sello visible.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien. \"Lista de la olla OK\" no dice qué se revisó."
+    },
+    {
+      "op": "set",
+      "path": "steps[10].title",
+      "value": "Lancea con O₂ si la olla no abre",
+      "reason": "Título: debe empezar con verbo; igual que POV-CC1-03 paso 7."
+    },
+    {
+      "op": "set",
+      "path": "glossary[1]",
+      "value": {
+        "term": "Distribuidor (tundish)",
+        "def": "Recipiente refractario de 45 t entre la olla y el molde. Calma el acero y guarda reserva para el cambio de olla."
+      },
+      "reason": "Glosario: definición canónica de CC1 (igual en POV-CC1-01)."
+    },
+    {
+      "op": "set",
+      "path": "glossary[6]",
+      "value": {
+        "term": "Sobrecalentamiento (SH)",
+        "def": "Grados que el acero está arriba de su temperatura de líquidus en el distribuidor."
+      },
+      "reason": "Término único: \"Sobrecalentamiento (SH)\"."
+    },
+    {
+      "op": "set",
+      "path": "next",
+      "value": [
+        "MO-CC1-04",
+        "MO-CC1-06",
+        "MO-CC1-07",
+        "MO-OLL-01"
+      ],
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. La olla vacía va a preparación; MO-OLL-01 cita a MO-CC1-05 como anterior (igual que CC2-05)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Rastreo (tracking)",
+        "def": "Registro en nivel 2 / MES que sigue cada planchón o palanquilla desde su colada; ahí se marcan los eventos."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

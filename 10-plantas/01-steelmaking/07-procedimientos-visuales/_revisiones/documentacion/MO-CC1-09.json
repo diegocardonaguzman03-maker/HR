@@ -1,0 +1,64 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Que ningún planchón con defecto llegue a Laminación sin decisión. Encontrar, medir y clasificar los defectos y decidir: aceptar, escarpear, degradar o rechazar.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[1].action",
+      "value": "Confirma con S-17 o con la grúa que el planchón está asentado. La grúa debe estar fuera de la zona y la pila estable.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[4].check",
+      "value": "Grietas de esquina, rechupe y rebaba anotados en el MES.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "set",
+      "path": "steps[5].check",
+      "value": "Cara inferior revisada: 1 planchón por colada y 100 % si tiene evento o es HSLA de tubería.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].action",
+      "value": "Escarpea solo si estás certificado [Supuesto: S-18 o contratista REPSE]. Usa permiso en caliente y arrestaflamas; 3–5 mm por pasada. HSLA con Nb: planchón a ≥ 150 °C [Validar con OEM / Ingeniería de Proceso].",
+      "reason": "Lenguaje: imperativo; se aclara que los ≥ 150 °C son del planchón y se recupera la marca [Validar…] del manual §7."
+    },
+    {
+      "op": "set",
+      "path": "steps[15].check",
+      "value": "Resumen de turno enviado a C-06 y Pareto semanal a C-08.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Planchón",
+        "def": "Producto de la CC1: bloque de acero de 230 mm de espesor, 900–1,650 mm de ancho y 8–11 m de largo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "MES",
+        "def": "Sistema de planta que guarda la identidad, el estado y la ubicación de cada pieza."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

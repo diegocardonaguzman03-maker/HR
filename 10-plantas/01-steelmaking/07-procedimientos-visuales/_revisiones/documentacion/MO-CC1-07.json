@@ -1,0 +1,51 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Terminar la secuencia, planeada o no, sin pasar escoria al molde y sin que la cola se rompa. Dejar la máquina vacía y lista para prepararla, sin nadie expuesto.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[8].action",
+      "value": "Antes de sacar la cola, confirma por radio y a la vista: nadie bajo el molde ni en segmentos 1–3.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "glossary[5]",
+      "value": {
+        "term": "BOP",
+        "def": "Sistema de termopares del molde que predice un breakout: avisa y baja la velocidad."
+      },
+      "reason": "Glosario: definición canónica de BOP."
+    },
+    {
+      "op": "set",
+      "path": "next",
+      "value": [
+        "MO-CC1-08",
+        "MO-CC1-01",
+        "MO-CC1-02",
+        "MO-CC1-09"
+      ],
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. El distribuidor usado va a MO-CC1-01, que cita a MO-CC1-07 como anterior."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Segmentos",
+        "def": "Tramos de rodillos bajo el molde que guían y enfrían el planchón; el 1 es el más cercano al molde."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

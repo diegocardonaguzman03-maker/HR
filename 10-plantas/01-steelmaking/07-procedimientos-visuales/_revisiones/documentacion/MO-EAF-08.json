@@ -1,0 +1,61 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Mantener cada columna de electrodos (610 mm, niple 4TPI) con longitud suficiente. Agregar electrodos con el empalme apretado al torque del fabricante y sin holgura.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[10].check",
+      "value": "Registro con serie de electrodo y niple, torque y hora; marca de deslizamiento visible.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "set",
+      "path": "steps[14].action",
+      "value": "Solo con autorización de C-05. Haz los pasos 1–4, 7–11, 13 y 14 sobre la columna en el horno. Usa LOTO completo, arnés 100 % conectado y permiso de altura (MS-ACE-10).",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico. Los números de paso ya corresponden al POV (manual: 1–3, 6–10 y 12–13)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LOTO",
+        "def": "Bloqueo y etiquetado: cada persona pone su candado y tarjeta para que ninguna energía mueva el equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Llave cautiva",
+        "def": "Llave personal que solo sale del tablero con el interruptor abierto; sin todas las llaves el horno no se energiza."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "set",
+      "path": "steps[2].action",
+      "value": "Apaga el arco, abre el interruptor y bloquea la hidráulica y el giro de bóveda. Método A: llave cautiva, una por persona, confirmada en la HMI. Método B: LOTO completo.",
+      "reason": "Término: \"la HMI\" (Guía de estilo §1)."
+    }
+  ]
+}

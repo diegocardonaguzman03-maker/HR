@@ -1,0 +1,74 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Cambiar una buza calibrada gastada o tapada sin perder la línea (chorro cortado ≤ 2 s). Cerrar una línea en forma segura y rápida cuando hay un problema.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "previous",
+      "value": [
+        "MO-CC2-04",
+        "MO-CC2-03",
+        "MO-CC2-01"
+      ],
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. startsWhen ya cita a MO-CC2-03."
+    },
+    {
+      "op": "set",
+      "path": "steps[2].action",
+      "value": "Revisa en la etiqueta que el diámetro sea el de la orden: 160 × 160 → 20–24 mm (nominal 22). Confirma que el horno esté a ≥ 900 °C.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].action",
+      "value": "Anota línea, hora, Ø, horas de la buza usada y causa. Avisa a S-12 para marcar la palanquilla \"B\" [Validar] y a S-15 para reponer el horno.",
+      "reason": "Registro: la palanquilla \"B\" está en los registros del POV y del manual §7, pero ningún paso decía quién la marca."
+    },
+    {
+      "op": "set",
+      "path": "steps[13].check",
+      "value": "Extracción detenida (breakout o atoramiento) o cola fuera según MO-CC2-07.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien. \"Condición segura\" no es observable."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Línea (L1–L6)",
+        "def": "Cada uno de los 6 moldes de la CC2 con su vía de extracción; L1 y L6 son las de los extremos."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Rastreo (tracking)",
+        "def": "Registro en nivel 2 / MES que sigue cada planchón o palanquilla desde su colada; ahí se marcan los eventos."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "set",
+      "path": "steps[2].check",
+      "value": "Ø correcto; buza ≥ 900 °C [Validar con OEM].",
+      "reason": "Marca estándar \"[Validar con OEM]\" (Guía de estilo §1)."
+    },
+    {
+      "op": "set",
+      "path": "steps[6].check",
+      "value": "Cambio en ≤ 2 s [Validar con OEM].",
+      "reason": "Marca estándar \"[Validar con OEM]\" (Guía de estilo §1)."
+    }
+  ]
+}

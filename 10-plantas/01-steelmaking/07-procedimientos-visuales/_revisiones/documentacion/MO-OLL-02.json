@@ -1,0 +1,58 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Llevar la olla llena (≈ 150 t) del horno olla a la torreta de CC1 o CC2 y regresar la vacía. Sin nadie bajo la carga, sin choques y a tiempo.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[1].action",
+      "value": "Confirma por radio a S-09: colada, temperatura, química y argón suave cumplido. Confirma el bordo libre y que no hay fuga ni punto caliente.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[13].check",
+      "value": "Registro con hora, olla, colada, origen, destino, peso y eventos.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "set",
+      "path": "next",
+      "value": [
+        "MO-CC1-03",
+        "MO-CC1-05",
+        "MO-CC2-03",
+        "MO-CC2-05",
+        "MO-OLL-01"
+      ],
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. POV-CC2-03 recibe la primera olla de la secuencia igual que POV-CC1-03."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Olla",
+        "def": "Recipiente de acero con refractario que recibe ≈ 150 t de acero líquido del horno y lo lleva al horno olla y a la colada continua."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LF (horno olla)",
+        "def": "Estación donde se calienta y ajusta la química del acero en la olla antes de colar (MO-LF-01)."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

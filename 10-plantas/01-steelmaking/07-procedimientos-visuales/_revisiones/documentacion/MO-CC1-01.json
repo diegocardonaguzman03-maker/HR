@@ -1,0 +1,43 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Entregar a la plataforma de colada un distribuidor de 45 t seco, limpio, bien armado y precalentado. La barra tapón y la SEN quedan alineadas y probadas.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[13].action",
+      "value": "Usa fuego bajo hasta ≈ 300 °C. Sube sin pasar de ≈ 8 °C/min y sostén con tapón y SEN en el quemador [Validar con C-15]. Registra la T cada 30 min.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[17].check",
+      "value": "Registro con hora, T final y número de distribuidor, firmado por S-13 y S-15.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "set",
+      "path": "glossary[0].def",
+      "value": "Recipiente refractario de 45 t entre la olla y el molde. Calma el acero y guarda reserva para el cambio de olla.",
+      "reason": "Glosario: definición canónica de CC1 (igual en POV-CC1-05)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LOTO",
+        "def": "Bloqueo y etiquetado: cada persona pone su candado y tarjeta para que ninguna energía mueva el equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

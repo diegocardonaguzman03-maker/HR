@@ -1,0 +1,46 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Entregar al horno una olla de 150 t seca y caliente (1,000–1,100 °C). Con refractario vigente, válvula probada y cerrada, tapón con argón y arena de sello.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[1].action",
+      "value": "Revisa que la fosa de volteo esté seca. Confirma que nadie esté a 15 m o menos del punto de volteo.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[4].check",
+      "value": "Decisión (sigue o se retira) anotada y firmada por C-15 en el Registro de ollas.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Olla",
+        "def": "Recipiente de acero con refractario que recibe ≈ 150 t de acero líquido del horno y lo lleva al horno olla y a la colada continua."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Lista de entrega de la olla",
+        "def": "Formato de MO-OLL-01 que firma S-08: T de cara caliente, horas de precalentamiento, placas, tapón y arena."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Fundir ≈ 100 t de DRI/HBI por colada, sin acumulaciones y sin DRI húmedo. Alimentar al ritmo que la potencia puede fundir: 30–35 kg/min/MW.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "whyItMatters",
+      "value": "DRI húmedo genera vapor e hidrógeno y explota. Si alimentas más rápido de lo que se funde, se forma un \"iceberg\" que hierve de golpe y saca escoria.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[1].check",
+      "value": "La HMI del alimentador no tiene alarmas; hay inventario en tolvas para la colada.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "set",
+      "path": "steps[7].action",
+      "value": "Vigila caída de T, arco inestable en una fase, montón bajo el 5.º agujero y caída de CO en humos. S-02 te avisa lo que ve por la puerta.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "glossary[0].def",
+      "value": "Hierro de reducción directa (HRD): en pellet es DRI y briqueteado en caliente es HBI.",
+      "reason": "Término único: los manuales dicen DRI; POV-EAF-07 y el mapa decían \"HRD\". Se deja el sinónimo para que una persona nueva los relacione."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Nivel 2",
+        "def": "Sistema de cómputo de proceso donde se registran los datos de cada colada."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

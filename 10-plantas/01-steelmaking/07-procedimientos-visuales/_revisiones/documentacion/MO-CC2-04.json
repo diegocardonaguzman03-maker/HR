@@ -1,0 +1,46 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Mantener las 6 líneas produciendo palanquilla de 160 × 160 mm en especificación y sin breakouts. Nivel de molde, aceite, agua, velocidad y distribuidor en rango.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "whyItMatters",
+      "value": "Si el nivel, el aceite o el agua de molde salen de rango, aparecen pinholes, inclusiones y romboidad. Después puede venir un breakout.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[4].action",
+      "value": "Compara la velocidad de las líneas: refleja el estado de la buza. Una diferencia > 0.4 m/min indica buza tapada o erosionada.",
+      "reason": "Lenguaje: imperativo; la primera frase era descriptiva."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Rotámetro",
+        "def": "Medidor de flujo del aceite de lubricación del molde, en mL/min."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Línea (L1–L6)",
+        "def": "Cada uno de los 6 moldes de la CC2 con su vía de extracción; L1 y L6 son las de los extremos."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Entregar a la plataforma un distribuidor de 30 t seco, íntegro y precalentado a 1,100 ± 50 °C. Con 6 buzas del diámetro de la orden, cerradas con placa ciega y centradas.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[2].action",
+      "value": "Revisa que la almohadilla de impacto y las presas estén completas y en su lugar. Usa el plano del fabricante.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[4].action",
+      "value": "Compara el diámetro de la orden con la HMI (S-12 confirma) y con la tabla. 160 × 160 mm: 20–24 mm; 130 × 130 mm: 15–17 mm.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico. Término: \"la HMI\"."
+    },
+    {
+      "op": "set",
+      "path": "steps[4].check",
+      "value": "Mismo diámetro en la orden, la HMI y la caja de buzas.",
+      "reason": "Término: \"la HMI\" (Guía de estilo)."
+    },
+    {
+      "op": "set",
+      "path": "glossary[0].def",
+      "value": "Recipiente refractario de 30 t entre la olla y los moldes; reparte el acero a las 6 líneas.",
+      "reason": "Glosario: definición canónica de CC2 (igual en POV-CC2-05)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Palanquilla",
+        "def": "Producto de la CC2: barra cuadrada de 160 × 160 mm (o 130 × 130 mm) y 12 m de largo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Línea (L1–L6)",
+        "def": "Cada uno de los 6 moldes de la CC2 con su vía de extracción; L1 y L6 son las de los extremos."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "set",
+      "path": "steps[13].action",
+      "value": "Prueba traslación y elevación. Confirma con S-12 la tara de las celdas de carga en la HMI.",
+      "reason": "Término: \"la HMI\" (Guía de estilo §1)."
+    }
+  ]
+}

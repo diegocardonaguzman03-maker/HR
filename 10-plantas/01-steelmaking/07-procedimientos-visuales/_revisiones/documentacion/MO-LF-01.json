@@ -1,0 +1,40 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Entregar a la colada continua, en 35–45 min, acero limpio y en la química del grado. Debe salir a la temperatura de envío, tras ≥ 8 min de argón suave.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[8].action",
+      "value": "Después del Al final y con T cerca de envío, inyecta el CaSi con argón suave. Usa 0.3–0.5 kg/t [Supuesto] a 150–250 m/min [Supuesto]. Bóveda abajo; nadie frente a la ventana.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Bordo libre",
+        "def": "Distancia del acero y la escoria al borde de la olla; mínimo 300 mm [Supuesto]."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Olla",
+        "def": "Recipiente de acero con refractario que recibe ≈ 150 t de acero líquido del horno y lo lleva al horno olla y a la colada continua."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

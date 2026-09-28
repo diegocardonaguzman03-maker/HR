@@ -1,0 +1,51 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Atender el taponamiento (clogging) de la buza sumergida (SEN) sin perder la secuencia. Cambiar la SEN o el distribuidor sin rebose y sin exponer a nadie al metal líquido.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "glossary[6]",
+      "value": {
+        "term": "BOP",
+        "def": "Sistema de termopares del molde que predice un breakout: avisa y baja la velocidad."
+      },
+      "reason": "Glosario: definición canónica de BOP (igual en CC1-02, CC1-04, CC1-07)."
+    },
+    {
+      "op": "set",
+      "path": "next",
+      "value": [
+        "MO-CC1-04",
+        "MO-CC1-07",
+        "MO-CC1-08",
+        "MO-CC1-09"
+      ],
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. El paso 3 puede terminar en cierre; MO-CC1-07 cita a MO-CC1-06 como anterior."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Rastreo (tracking)",
+        "def": "Registro en nivel 2 / MES que sigue cada planchón o palanquilla desde su colada; ahí se marcan los eventos."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "set",
+      "path": "steps[14].decision.no",
+      "value": "S-14 pone la grapa [Validar con OEM]. > 5 min: cierre.",
+      "reason": "Marca estándar \"[Validar con OEM]\" (Guía de estilo §1)."
+    }
+  ]
+}

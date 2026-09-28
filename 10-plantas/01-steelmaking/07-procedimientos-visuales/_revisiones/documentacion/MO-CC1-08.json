@@ -1,0 +1,46 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Cortar el planchón a la longitud pedida (8–11 m, ± 15 mm) y marcarlo para no perder su identidad. Apilarlo sin accidentes ni daño, listo para inspección y despacho.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[4].action",
+      "value": "Corta en automático: la máquina se sujeta al planchón y viaja con él. Corta con 2 sopletes, de los bordes al centro.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico. Imperativo y segunda persona."
+    },
+    {
+      "op": "set",
+      "path": "steps[14].check",
+      "value": "El MES muestra la ubicación de la pila y el estado: liberado o retenido.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "set",
+      "path": "glossary[1]",
+      "value": {
+        "term": "Arrestaflamas (antirretorno de llama)",
+        "def": "Válvula que impide que la flama regrese por la manguera de O₂ o de gas."
+      },
+      "reason": "Término único con CC2 (\"antirretorno de llama\" en POV-CC2-08)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Planchón",
+        "def": "Producto de la CC1: bloque de acero de 230 mm de espesor, 900–1,650 mm de ancho y 8–11 m de largo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Inspeccionar la palanquilla de 160 × 160 mm contra los límites de aceptación y separar la que tiene defectos. Avisar a tiempo a la operación para que corrija la línea.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "whyItMatters",
+      "value": "La romboidad es el primer aviso de un molde gastado o un rociado tapado. Si no se avisa, siguen las grietas.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[10].check",
+      "value": "Estado (aceptada, retenida \"R\" o rechazo) registrado en el rastreo.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "set",
+      "path": "steps[12].check",
+      "value": "C-06 enterado por radio de inmediato (máximo 15 min).",
+      "reason": "Coherencia: la acción dice \"de inmediato\" y el check decía \"≤ 15 min\"."
+    },
+    {
+      "op": "set",
+      "path": "steps[14].check",
+      "value": "Romboidad y grado de macro de la colada anotados en la gráfica de cada línea.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Palanquilla",
+        "def": "Producto de la CC2: barra cuadrada de 160 × 160 mm (o 130 × 130 mm) y 12 m de largo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LIMS",
+        "def": "Sistema del laboratorio donde se consultan los análisis químicos de cada colada."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Formar una escoria espumosa que cubra el arco: B2 1.8–2.2, FeO 25–35 % y MgO 8–10 %. Sacar la escoria por la puerta de forma controlada, sin exponer a nadie.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].action",
+      "value": "Revisa el agua de los bloques de quemador y el nivel de los silos. Revisa las presiones de O₂, gas y aire de transporte de carbono.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].check",
+      "value": "La HMI no tiene alarmas de agua, O₂, gas ni carbono; los silos tienen material.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien."
+    },
+    {
+      "op": "set",
+      "path": "previous",
+      "value": [
+        "MO-EAF-04",
+        "MO-EAF-03"
+      ],
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. startsWhen ya cita a MO-EAF-03."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Olla de escoria",
+        "def": "Recipiente que recibe la escoria bajo la puerta del horno; siempre debe estar seca."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Zona roja",
+        "def": "Área donde nadie puede estar a pie mientras dura la tarea; la marca y la libera el responsable del paso."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[6].check",
+      "value": "Recibes por radio \"EAF-x listo para carga\" (MO-EAF-01).",
+      "reason": "Coherencia entre POV: misma frase de aviso que el paso 17 de POV-EAF-01."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].action",
+      "value": "Suena la bocina. Confirma por radio y cámara: nadie a ≤ 15 m del horno ni cerca de la ruta (± 5 m).",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[11].action",
+      "value": "Centra la canasta sobre el horno. Deja el fondo a 0.5–1.0 m sobre el borde de la coraza [Validar con OEM].",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Cargar al horno una canasta de 55–70 t de chatarra seca, sin materiales prohibidos y bien acomodada. Hacerlo en ≤ 3 min y sin nadie expuesto.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

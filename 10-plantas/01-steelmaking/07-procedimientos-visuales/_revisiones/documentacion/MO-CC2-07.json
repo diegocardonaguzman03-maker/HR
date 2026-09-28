@@ -1,0 +1,64 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Terminar la secuencia cerrando las líneas de los extremos al centro y sacar las colas despacio. Dejar la máquina fría, bloqueada y segura para la inspección.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].check",
+      "value": "Púlpito, plataforma, corte y grúa confirman \"última olla\" por radio.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien. Igual que POV-CC1-07 paso 1."
+    },
+    {
+      "op": "set",
+      "path": "previous",
+      "value": [
+        "MO-CC2-04",
+        "MO-CC2-05",
+        "MO-CC2-06"
+      ],
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. POV-CC2-06 termina en MO-CC2-07 cuando se cierra una línea."
+    },
+    {
+      "op": "set",
+      "path": "next",
+      "value": [
+        "MO-CC2-08",
+        "MO-CC2-01",
+        "MO-CC2-02",
+        "MM-CC-01"
+      ],
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. El distribuidor usado va a MO-CC2-01, que cita a MO-CC2-07 como anterior."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Línea (L1–L6)",
+        "def": "Cada uno de los 6 moldes de la CC2 con su vía de extracción; L1 y L6 son las de los extremos."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "set",
+      "path": "steps[7].action",
+      "value": "Saca la cola a 0.5–1.0 m/min [Validar con OEM]. No eches agua al molde.",
+      "reason": "Marca estándar \"[Validar con OEM]\" (Guía de estilo §1)."
+    },
+    {
+      "op": "set",
+      "path": "steps[13].check",
+      "value": "≥ 15 min [Validar con OEM]; tubos fríos.",
+      "reason": "Marca estándar \"[Validar con OEM]\" (Guía de estilo §1)."
+    }
+  ]
+}

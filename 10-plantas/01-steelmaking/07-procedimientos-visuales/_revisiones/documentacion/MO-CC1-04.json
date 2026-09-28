@@ -1,0 +1,55 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Mantener la colada estable y segura: nivel de molde ± 3 mm y velocidad según sobrecalentamiento y ancho. Agua, enfriamiento y polvo en rango, y respuesta correcta a alarmas.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "whyItMatters",
+      "value": "Un nivel inestable, una velocidad mal elegida o una alarma mal atendida causan grietas o inclusiones. También pueden causar un breakout: acero líquido fuera de la máquina.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].action",
+      "value": "Al inicio del turno y tras cada evento, revisa las barreras. Verifica que nadie esté bajo el molde ni en segmentos 1–3. Confirma a C-06.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "glossary[6]",
+      "value": {
+        "term": "Sobrecalentamiento (SH)",
+        "def": "Grados que el acero está arriba de su temperatura de líquidus en el distribuidor."
+      },
+      "reason": "Término único: \"Sobrecalentamiento (SH)\", como en POV-CC1-03 y POV-CC1-05."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Segmentos",
+        "def": "Tramos de rodillos bajo el molde que guían y enfrían el planchón; el 1 es el más cercano al molde."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

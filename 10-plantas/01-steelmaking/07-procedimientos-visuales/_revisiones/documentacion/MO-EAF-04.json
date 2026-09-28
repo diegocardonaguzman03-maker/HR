@@ -1,0 +1,90 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Fundir la carga en ≈ 42–44 min de arco con 560 kWh/t. Mantener el arco estable, sin dañar bóveda, paneles ni electrodos, con el perfil de cada etapa.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].action",
+      "value": "Revisa en la HMI: bóveda asentada, horno a 0° ± 2° e hidráulica en presión. Revisa agua (Δ ≤ 2 %, P ≥ 3 bar), presión del horno negativa y llaves cautivas completas.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[5].action",
+      "value": "Si la corriente se dispara o cae de golpe, sube los electrodos y baja el tap. Confirma que ningún electrodo se rompió.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].title",
+      "value": "Afina y pide medir T y oxígeno",
+      "reason": "Término: \"O\" suelto no se entiende; se usa \"oxígeno activo\" como en POV-EAF-06."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].action",
+      "value": "Con el DRI detenido, trabaja en tap 14. Pide a S-02 medir T y oxígeno activo (MO-EAF-06).",
+      "reason": "Término: \"O\" suelto no se entiende; se usa \"oxígeno activo\" como en POV-EAF-06."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].check",
+      "value": "T 1,630 ± 15 °C y oxígeno activo 500–900 ppm.",
+      "reason": "Término: \"O\" → \"oxígeno activo\" (glosario de POV-EAF-06)."
+    },
+    {
+      "op": "set",
+      "path": "steps[11].check",
+      "value": "Registro completo en nivel 2. Referencia: 560 kWh/t (520–600) y 42–44 min de arco.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien. El valor es la referencia del registro, no la condición del paso."
+    },
+    {
+      "op": "set",
+      "path": "next",
+      "value": [
+        "MO-EAF-03",
+        "MO-EAF-05",
+        "MO-EAF-06",
+        "MO-EAF-07"
+      ],
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. El paso 8 arranca MO-EAF-03 y MO-EAF-05, que citan a MO-EAF-04 como anterior."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Escoria espumosa",
+        "def": "Escoria inflada con burbujas de CO que cubre el arco y protege paneles y bóveda."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Oxígeno activo",
+        "def": "Oxígeno disuelto en el acero (ppm); se mide con la sonda para calcular el aluminio de la olla."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

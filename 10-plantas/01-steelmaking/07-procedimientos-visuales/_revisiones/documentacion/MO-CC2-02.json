@@ -1,0 +1,58 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Dejar las 6 líneas listas para arrancar, con agua, rociado, oscilación y EMS probados. La barra falsa queda en el molde a la altura correcta, sellada, seca y con chatarra.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[5].action",
+      "value": "A pedido de S-14 y con permiso firmado, cierra el obturador y pon tu candado y tarjeta. Mide la dosis en el punto de trabajo y a 1 m.",
+      "reason": "Lenguaje: el paso lo hace C-16 (ESR); se escribe en segunda persona y en frases ≤ 20 palabras."
+    },
+    {
+      "op": "set",
+      "path": "steps[16].action",
+      "value": "Retira tu candado y abre el obturador. S-12 revisa en la HMI la lectura de \"molde vacío\".",
+      "reason": "Lenguaje: el paso lo hace C-16 (ESR); segunda persona."
+    },
+    {
+      "op": "set",
+      "path": "steps[7].action",
+      "value": "En la HMI, modo inserción a ≤ 3 m/min. Los últimos 2 m a ≤ 0.5 m/min.",
+      "reason": "Término: \"la HMI\" (Guía de estilo)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Línea (L1–L6)",
+        "def": "Cada uno de los 6 moldes de la CC2 con su vía de extracción; L1 y L6 son las de los extremos."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LOTO",
+        "def": "Bloqueo y etiquetado: cada persona pone su candado y tarjeta para que ninguna energía mueva el equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "set",
+      "path": "steps[17].check",
+      "value": "6 líneas en \"listo para colar\" en la HMI.",
+      "reason": "Término: \"la HMI\" (Guía de estilo §1)."
+    }
+  ]
+}

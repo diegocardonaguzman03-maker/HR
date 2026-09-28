@@ -1,0 +1,82 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Dejar el horno seguro y listo para la siguiente carga en 5 minutos. Sin agua, con refractario reparado, EBT cerrado y lleno de arena seca, y talón de 20–30 t.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[2].action",
+      "value": "Con la bóveda cerrada, mira desde posición protegida por la cámara y la puerta. Busca vapor, manchas húmedas en la escoria o llama anormal.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[3].action",
+      "value": "Si hay duda en la HMI o a la vista, no inclines ni gires la bóveda. Deja el arco bloqueado y avisa a C-05. Solo C-05 con C-07 autoriza reanudar.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "next",
+      "value": [
+        "MO-EAF-02",
+        "MO-EAF-08"
+      ],
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. El paso 15 programa MO-EAF-08 cuando falta electrodo y MO-EAF-08 cita a MO-EAF-01 como anterior."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Nivel 2",
+        "def": "Sistema de cómputo de proceso donde se registran los datos de cada colada."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LOTO",
+        "def": "Bloqueo y etiquetado: cada persona pone su candado y tarjeta para que ninguna energía mueva el equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].action",
+      "value": "Revisa en la HMI: EBT cerrado, horno retroinclinado a −3° y carro de olla fuera de la fosa.",
+      "reason": "Término: \"la HMI\" (Guía de estilo §1)."
+    },
+    {
+      "op": "set",
+      "path": "steps[1].title",
+      "value": "Verifica el agua en la HMI",
+      "reason": "Término: \"la HMI\" (Guía de estilo §1)."
+    },
+    {
+      "op": "set",
+      "path": "steps[10].check",
+      "value": "Una llave por persona y S-01 confirma en la HMI (MS-ACE-02 §6.4).",
+      "reason": "Término: \"la HMI\" (Guía de estilo §1)."
+    }
+  ]
+}

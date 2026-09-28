@@ -1,0 +1,49 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Cambiar la olla vacía por una llena sin parar las 6 líneas y sin pasar escoria al distribuidor. No bajar de 500 mm y asignar bien la colada en cada línea.",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "steps[5].action",
+      "value": "Con 2–4 t de residual o a la primera señal de escoria, cierra la válvula deslizante (0 %). Confirma el cierre.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Distribuidor (tundish)",
+        "def": "Recipiente refractario de 30 t entre la olla y los moldes; reparte el acero a las 6 líneas."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LF (horno olla)",
+        "def": "Estación donde se calienta y ajusta la química del acero en la olla antes de colar (MO-LF-01)."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Línea (L1–L6)",
+        "def": "Cada uno de los 6 moldes de la CC2 con su vía de extracción; L1 y L6 son las de los extremos."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    }
+  ]
+}

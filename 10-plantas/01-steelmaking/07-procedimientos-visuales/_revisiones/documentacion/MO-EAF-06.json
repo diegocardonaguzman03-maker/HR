@@ -1,0 +1,67 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "steps[11].check",
+      "value": "Autorización con hora anotada en la bitácora de turno; arco apagado confirmado.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien. Liga el paso con el registro \"Autorizaciones de medición manual\"."
+    },
+    {
+      "op": "set",
+      "path": "steps[12].action",
+      "value": "Con arco apagado y EPP aluminizado completo, haz un solo intento con observador. Párate de lado a la puerta, a ≥ 1.5 m, máximo 2 min en zona roja.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[12].check",
+      "value": "Meseta válida en un solo intento; ≤ 2 min en zona roja.",
+      "reason": "Check medible/observable: dice qué evidencia confirma que el paso quedó bien. \"Sin exposición prolongada\" no es medible."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "M1 / M2 / M3",
+        "def": "Mediciones de T y O: M1 a mitad del DRI, M2 al inicio del afino y M3 antes de vaciar."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Nivel 2",
+        "def": "Sistema de cómputo de proceso donde se registran los datos de cada colada."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "HMI",
+        "def": "Pantalla de operación del púlpito: ahí ves permisivos, alarmas y valores del equipo."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "set",
+      "path": "steps[2].check",
+      "value": "La HMI muestra \"contacto OK\".",
+      "reason": "Término: \"la HMI\" (Guía de estilo §1)."
+    },
+    {
+      "op": "set",
+      "path": "steps[6].action",
+      "value": "Busca una meseta estable en la curva de la HMI. Si no es válida, repite con otra sonda.",
+      "reason": "Término: \"la HMI\" (Guía de estilo §1)."
+    }
+  ]
+}

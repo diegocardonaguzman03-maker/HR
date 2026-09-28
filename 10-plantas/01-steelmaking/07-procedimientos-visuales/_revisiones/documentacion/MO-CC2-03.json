@@ -1,0 +1,80 @@
+{
+  "review": {
+    "area": "Documentación",
+    "who": "experto-documentacion-mejora",
+    "status": "Visto bueno con observaciones",
+    "date": "2026-09-28"
+  },
+  "changes": [
+    {
+      "op": "set",
+      "path": "purpose",
+      "value": "Abrir la olla, llenar el distribuidor y arrancar las 6 líneas una por una, del centro a los extremos. Llegar a ≥ 2.5 m/min con nivel de molde en automático (± 5 mm).",
+      "reason": "Propósito en frases de ≤ 20 palabras (ESPECIFICACION, reglas de redacción); mismo contenido."
+    },
+    {
+      "op": "set",
+      "path": "whyItMatters",
+      "value": "Un molde que desborda, una cabeza que fuga o una rampa rápida causan derrames, breakouts y líneas perdidas.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "startsWhen",
+      "value": "Los 6 moldes están sellados (MO-CC2-02) y el distribuidor, caliente y centrado (MO-CC2-01). Llega la primera olla a la torreta (MO-OLL-02).",
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next."
+    },
+    {
+      "op": "set",
+      "path": "previous",
+      "value": [
+        "MO-CC2-01",
+        "MO-CC2-02",
+        "MO-OLL-02"
+      ],
+      "reason": "Trazabilidad de la cadena: el proceso vecino ya lo cita en startsWhen/endsWhen o en su previous/next. Igual que POV-CC1-03."
+    },
+    {
+      "op": "set",
+      "path": "steps[0].action",
+      "value": "Revisa la lista de arranque: distribuidor ≥ 1,000 °C, 6 líneas listas y agua de molde a caudal. Tanque de emergencia lleno y bombas diésel en automático.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "set",
+      "path": "steps[17].action",
+      "value": "Anota la hora de apertura de la olla y de cada línea y el tiempo de llenado por línea. Anota temperaturas, velocidad alcanzada y anomalías.",
+      "reason": "Lenguaje: frase de más de 20 palabras; se divide sin cambiar el contenido técnico."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "LF (horno olla)",
+        "def": "Estación donde se calienta y ajusta la química del acero en la olla antes de colar (MO-LF-01)."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "append",
+      "path": "glossary",
+      "value": {
+        "term": "Línea (L1–L6)",
+        "def": "Cada uno de los 6 moldes de la CC2 con su vía de extracción; L1 y L6 son las de los extremos."
+      },
+      "reason": "Glosario: término que usa el POV y que una persona nueva no conoce; definición canónica de la Acería (igual en todos los POV)."
+    },
+    {
+      "op": "set",
+      "path": "steps[9].action",
+      "value": "A ≈ 150 mm bajo el borde (140–160 mm [Validar con OEM]) arranca a 0.5 m/min con oscilación. Pasa el nivel a automático cuando esté a ± 10 mm del punto.",
+      "reason": "Marca estándar \"[Validar con OEM]\" (Guía de estilo §1)."
+    },
+    {
+      "op": "set",
+      "path": "steps[10].action",
+      "value": "Rampa automática: 1.5 m/min en 60 s y luego ≥ 2.5 m/min en 60 s [Validar con OEM]. No aceleres a mano. Al pasar 1.5 m/min enciende el EMS: 250–400 A, 2–5 Hz.",
+      "reason": "Marca estándar \"[Validar con OEM]\" (Guía de estilo §1)."
+    }
+  ]
+}
