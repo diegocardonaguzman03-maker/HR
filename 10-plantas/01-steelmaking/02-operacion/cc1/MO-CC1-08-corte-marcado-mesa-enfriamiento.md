@@ -68,7 +68,7 @@ flowchart LR
 | Escuadra del corte | mm | ≤ 5 | ≤ 5 [Validar con OEM / Ingeniería de Proceso] | > 10 | Revisa alineación de sopletes | Escuadra |
 | Velocidad de corte (230 mm) | mm/min | 300 | 250–350 [Validar con OEM / Ingeniería de Proceso] | Corte incompleto | Limpia boquilla; revisa presión de O₂ | HMI del oxicorte |
 | Ancho de sangría (kerf) | mm | 10 | 8–12 | > 15 | Boquilla dañada | Medición |
-| Despunte de cabeza (1.er planchón de la secuencia) | mm | 400 | 300–500 [Validar con OEM / Ingeniería de Proceso] | Cabeza con restos de barra falsa o chatarra | Aumenta despunte | Visual |
+| Despunte de cabeza (1.er planchón de la secuencia) | mm | 400 | 300–500 [Validar con OEM / Ingeniería de Proceso] | Cabeza con restos de barra falsa o material de enfriamiento | Aumenta despunte | Visual |
 | Despunte de cola (último planchón) | mm | 800 | 500–1,000 | Rechupe visible | Aumenta hasta zona sana | Visual |
 | Peso del planchón | t | Teórico = 0.23 × ancho (m) × largo (m) × 7.85 | 13.0 (900 mm × 8 m) a 32.8 (1,650 mm × 11 m) | Diferencia real–teórico > 2% | Revisa medición y báscula | Báscula |
 | Legibilidad de marcado | % | 100 | 100 | Ilegible | Remarca manual (crayón de alta temperatura) | Visual |
@@ -189,3 +189,4 @@ Las grúas de 25 t (electroimán, palanquilla de CC2) y de 50 t (distribuidores,
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: grúas de producto según FT v0.2 §6 (2 × 45 t con tenaza para planchón; 25 t y 50 t no se usan para planchón) y rol del operador referido al pendiente S-27. El §6 aún dice "50 t para > 17 t netas": lo corrige experto-seguridad-salud. | experto-operativo-metalurgia |
+| 0.1 | 2026-09-28 | Cambio editorial por la decisión D-010 (sin cambio técnico): "chatarra de enfriamiento" → "material de enfriamiento"; despuntes, colas y rechazos van a "retornos internos" (FT-ACE-001 v0.4 §2.2). | experto-operativo-metalurgia |

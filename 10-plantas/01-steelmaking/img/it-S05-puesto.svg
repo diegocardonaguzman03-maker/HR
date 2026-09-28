@@ -21,32 +21,36 @@
   <rect x="50" y="195" width="270" height="20" fill="#CFD8DC" stroke="#455A64" stroke-width="1.5"/>
   <line x1="60" y1="205" x2="318" y2="205" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/>
   <text x="70" y="189" font-size="12" text-anchor="start" fill="#212121" font-weight="bold">Banda cerrada de DRI desde Midrex</text>
-  <text x="185" y="242" font-size="12" text-anchor="middle" fill="#212121">4–20 mm · ≤ 80 °C · seco [Supuesto]</text>
-  <rect x="330" y="120" width="80" height="110" fill="#ECEFF1" stroke="#455A64" stroke-width="1.5"/>
-  <text x="370" y="165" font-size="12" text-anchor="middle" fill="#455A64" font-weight="bold">Torre de</text>
-  <text x="370" y="180" font-size="12" text-anchor="middle" fill="#455A64" font-weight="bold">transferencia</text>
-  <text x="370" y="197" font-size="12" text-anchor="middle" fill="#212121">+ colector</text>
+  <text x="185" y="242" font-size="12" text-anchor="middle" fill="#212121">DRI 4–20 mm · ≤ 80 °C · seco</text>
+  <rect x="325" y="120" width="95" height="110" fill="#ECEFF1" stroke="#455A64" stroke-width="1.5"/>
+  <text x="372" y="150" font-size="12" text-anchor="middle" fill="#455A64" font-weight="bold">Torre de</text>
+  <text x="372" y="165" font-size="12" text-anchor="middle" fill="#455A64" font-weight="bold">transferencia</text>
+  <text x="372" y="182" font-size="12" text-anchor="middle" fill="#212121">báscula · criba</text>
+  <text x="372" y="197" font-size="12" text-anchor="middle" fill="#212121">muestreo · T</text>
+  <text x="372" y="222" font-size="11" text-anchor="middle" fill="#C62828">límite de batería</text>
   <path d="M335,262 L405,262 L385,300 L355,300 Z" fill="#BCAAA4" stroke="#455A64" stroke-width="1.5"/>
   <line x1="370" y1="230" x2="370" y2="258" stroke="#455A64" stroke-width="2" marker-end="url(#arrS)"/>
-  <text x="370" y="316" font-size="12" text-anchor="middle" fill="#212121">Finos &lt; 3 mm</text>
-  <text x="370" y="330" font-size="12" text-anchor="middle" fill="#212121">(manejo separado)</text>
-  <line x1="410" y1="150" x2="455" y2="150" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/>
+  <text x="372" y="316" font-size="12" text-anchor="middle" fill="#212121">Finos &lt; 3 mm</text>
+  <text x="372" y="330" font-size="12" text-anchor="middle" fill="#212121">(manejo separado)</text>
+  <line x1="420" y1="150" x2="455" y2="150" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/>
   <rect x="460" y="118" width="70" height="130" rx="10" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2"/>
-  <text x="495" y="112" font-size="12" text-anchor="middle" fill="#212121" font-weight="bold">Silo EAF-1</text>
+  <text x="495" y="112" font-size="12" text-anchor="middle" fill="#212121" font-weight="bold">Silos EAF-1</text>
+  <text x="495" y="140" font-size="11" text-anchor="middle" fill="#212121">2 × ≈1,000 t</text>
   <text x="495" y="176" font-size="12" text-anchor="middle" fill="#1E88E5" font-weight="bold">N₂</text>
   <text x="495" y="194" font-size="12" text-anchor="middle" fill="#C62828" font-weight="bold">T °C</text>
   <text x="495" y="212" font-size="12" text-anchor="middle" fill="#212121">nivel</text>
   <line x1="495" y1="250" x2="495" y2="282" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/>
   <rect x="545" y="118" width="70" height="130" rx="10" fill="url(#hatchRed)" stroke="#C62828" stroke-width="2"/>
-  <text x="580" y="112" font-size="12" text-anchor="middle" fill="#212121" font-weight="bold">Silo EAF-2</text>
+  <text x="580" y="112" font-size="12" text-anchor="middle" fill="#212121" font-weight="bold">Silos EAF-2</text>
+  <text x="580" y="140" font-size="11" text-anchor="middle" fill="#212121">2 × ≈1,000 t</text>
   <text x="580" y="176" font-size="12" text-anchor="middle" fill="#1E88E5" font-weight="bold">N₂</text>
   <text x="580" y="194" font-size="12" text-anchor="middle" fill="#C62828" font-weight="bold">T °C</text>
   <text x="580" y="212" font-size="12" text-anchor="middle" fill="#212121">nivel</text>
   <line x1="580" y1="250" x2="580" y2="282" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/>
-  <rect x="455" y="286" width="170" height="36" fill="#ECEFF1" stroke="#455A64" stroke-width="1.5"/>
-  <text x="540" y="302" font-size="12" text-anchor="middle" fill="#212121">Alimentadores → 5.º agujero</text>
+  <rect x="440" y="286" width="195" height="36" fill="#ECEFF1" stroke="#455A64" stroke-width="1.5"/>
+  <text x="537" y="302" font-size="11" text-anchor="middle" fill="#212121">Básculas dosificadoras → 5.º agujero</text>
   <text x="540" y="316" font-size="12" text-anchor="middle" fill="#455A64">(S-03 / S-01)</text>
-  <line x1="625" y1="304" x2="690" y2="304" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/>
+  <line x1="635" y1="304" x2="690" y2="304" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/>
   <text x="695" y="308" font-size="12" text-anchor="start" fill="#212121" font-weight="bold">Nave de hornos</text>
   <rect x="650" y="118" width="130" height="62" fill="#E3F2FD" stroke="#1E88E5" stroke-width="2"/>
   <text x="715" y="140" font-size="12" text-anchor="middle" fill="#0D47A1" font-weight="bold">Consola</text>
@@ -61,7 +65,7 @@
   <text x="875" y="236" font-size="12" text-anchor="middle" fill="#212121">Camión o neumático</text>
   <text x="875" y="252" font-size="12" text-anchor="middle" fill="#212121">→ llenado de tolvas</text>
   <rect x="60" y="350" width="560" height="160" fill="none" stroke="#455A64" stroke-width="2" stroke-dasharray="6,3"/>
-  <text x="70" y="368" font-size="12" text-anchor="start" fill="#455A64" font-weight="bold">ÁREA DE RETORNOS INTERNOS (≤ 5 % de la carga)</text>
+  <text x="70" y="368" font-size="12" text-anchor="start" fill="#455A64" font-weight="bold">ÁREA TECHADA DE RETORNOS INTERNOS (≤ 5 % de la carga)</text>
   <rect x="75" y="385" width="95" height="40" fill="#E3F2FD" stroke="#1E88E5" stroke-width="2"/>
   <text x="122" y="402" font-size="12" text-anchor="middle" fill="#0D47A1" font-weight="bold">Detector</text>
   <text x="122" y="417" font-size="12" text-anchor="middle" fill="#0D47A1">de radiación</text>
@@ -81,7 +85,7 @@
   <rect x="650" y="400" width="130" height="80" fill="#F5F5F5" stroke="#455A64" stroke-width="1.5"/>
   <path d="M680,420 L750,420 L740,455 L690,455 Z" fill="#455A64" fill-opacity="0.25" stroke="#455A64" stroke-width="2"/>
   <text x="715" y="472" font-size="12" text-anchor="middle" fill="#212121">Canasta de retornos</text>
-  <text x="715" y="393" font-size="12" text-anchor="middle" fill="#212121" font-weight="bold">Ocasional · seca</text>
+  <text x="715" y="393" font-size="12" text-anchor="middle" fill="#212121" font-weight="bold">10–20 t · seca</text>
   <line x1="584" y1="440" x2="645" y2="440" stroke="#455A64" stroke-width="2" marker-end="url(#arrS)"/>
   <line x1="715" y1="382" x2="715" y2="330" stroke="#455A64" stroke-width="3" marker-end="url(#arrS)"/>
   <text x="722" y="358" font-size="12" text-anchor="start" fill="#212121">a la nave (S-04)</text>
@@ -108,9 +112,9 @@
   <circle cx="40" cy="600" r="11" fill="#212121"/><text x="40" y="604" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">1</text>
   <text x="58" y="604" font-size="12" text-anchor="start" fill="#212121">Bandas cerradas de DRI: recorrido; LOTO para limpiar o destrabar</text>
   <circle cx="40" cy="620" r="11" fill="#212121"/><text x="40" y="624" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">2</text>
-  <text x="58" y="624" font-size="12" text-anchor="start" fill="#212121">Torre de transferencia y colector: sin fugas ni humedad</text>
+  <text x="58" y="624" font-size="12" text-anchor="start" fill="#212121">Torre de transferencia: báscula, criba, muestreo, T ≤ 80 °C</text>
   <circle cx="40" cy="640" r="11" fill="#212121"/><text x="40" y="644" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">3</text>
-  <text x="58" y="644" font-size="12" text-anchor="start" fill="#212121">Silos de día: T, N₂ y nivel; no entro (espacio confinado)</text>
+  <text x="58" y="644" font-size="12" text-anchor="start" fill="#212121">Silos de día: T (alarma > 90 °C), N₂, gases; no entro</text>
   <circle cx="40" cy="660" r="11" fill="#212121"/><text x="40" y="664" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">4</text>
   <text x="58" y="664" font-size="12" text-anchor="start" fill="#212121">Consola: arranque en secuencia, alarmas de T y O₂</text>
   <circle cx="40" cy="680" r="11" fill="#212121"/><text x="40" y="684" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">5</text>
@@ -118,11 +122,11 @@
   <circle cx="520" cy="600" r="11" fill="#212121"/><text x="520" y="604" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">6</text>
   <text x="538" y="604" font-size="12" text-anchor="start" fill="#212121">Finos de DRI (&lt; 3 mm): no van al 5.º agujero</text>
   <circle cx="520" cy="620" r="11" fill="#212121"/><text x="520" y="624" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">7</text>
-  <text x="538" y="624" font-size="12" text-anchor="start" fill="#212121">Retornos por tipo; revisión radiométrica de cada lote</text>
+  <text x="538" y="624" font-size="12" text-anchor="start" fill="#212121">Retornos por tipo y grado; detector probado cada turno</text>
   <circle cx="520" cy="640" r="11" fill="#212121"/><text x="520" y="644" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">8</text>
   <text x="538" y="644" font-size="12" text-anchor="start" fill="#212121">Cargador o grúa con electroimán: nadie en su radio</text>
   <circle cx="520" cy="660" r="11" fill="#212121"/><text x="520" y="664" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">9</text>
-  <text x="538" y="664" font-size="12" text-anchor="start" fill="#212121">Canasta de retornos seca, sin recipientes cerrados</text>
+  <text x="538" y="664" font-size="12" text-anchor="start" fill="#212121">Canasta de retornos 10–20 t, seca, sin piezas huecas</text>
   <circle cx="520" cy="680" r="11" fill="#212121"/><text x="520" y="684" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">10</text>
   <text x="538" y="684" font-size="12" text-anchor="start" fill="#212121">Caseta, refugio y punto de reunión</text>
   <text x="30" y="724" font-size="13" text-anchor="start" fill="#212121" font-weight="bold">Zonas:</text>

@@ -130,7 +130,7 @@ Ropa arc-rated de la categoría de la celda, careta/capucha arc-rated, guantes d
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
 |---|---|---|---|---|
 | 🔎 Disponibilidad del perfil de potencia | Todas las derivaciones del OLTC disponibles | Prueba funcional tras mantenimiento | Reporte | Fusión lenta, tap-to-tap > 55 min, temperatura de vaciado fuera de 1,630 ± 15 °C |
-| 🔎 Energía específica | 560–620 kWh/t | KPI diario (C-07) | Tablero | Energía alta por derivación bloqueada o reactor dañado |
+| 🔎 Energía específica | 620–680 kWh/t (objetivo 640; FT-ACE-001 v0.4, ≈ 100 % DRI) | KPI diario (C-07) | Tablero | Energía alta por derivación bloqueada o reactor dañado |
 | Paros no programados del horno | 0 por falla del transformador | Mensual | CMMS | Pérdida de secuencia en CC → cambio de grado o reoxidación |
 
 ## 8. Procedimiento paso a paso (maniobra + pruebas anuales)
@@ -188,3 +188,4 @@ FT-ACE-001 §2 · MM-EAF-02 · MS-ACE-02 · Diagrama unifilar de la subestación
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
 | 0.2 | 2026-09-25 | Revisión cruzada de seguridad: pasos 11 (retiro controlado de tierras) y 15 (energización con conteo de personal) marcados ★; criterio de gases para el tanque (MS-ACE-05); vigencia de 12 meses para todo el trabajo eléctrico NOM-029; lista ★ completa | experto-seguridad-salud |
+| 0.2 | 2026-09-28 | Energía específica de referencia actualizada a 620–680 kWh/t por la carga de ≈ 100 % DRI (D-010, FT-ACE-001 v0.4). Con 100 % DRI el transformador trabaja ≈ 50 min de arco por colada a ≈ 115 MW medios: más horas de carga alta por año; revisar con C-12 la frecuencia de DGA y de mantenimiento del OLTC [Validar con OEM] | experto-operativo-metalurgia |

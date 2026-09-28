@@ -501,7 +501,7 @@ Dirigir en el turno la operación segura y eficiente de los hornos o del horno o
 | Código | Proceso crítico | Papel | RACI |
 |---|---|---|---|
 | MO-EAF-01 | Preparación del horno entre coladas | Dueño del proceso | A |
-| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | Dueño del proceso | A |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | Consultado: programa la canasta de retornos en la secuencia de coladas (dueño desde v0.2: C-17) | C |
 | MO-EAF-06 | Medición de temperatura, O activo y muestreo | Dueño del proceso | A |
 | MO-EAF-07 | Vaciado por EBT y adiciones en olla | Dueño del proceso | A |
 | MO-EAF-08 | Adición y empalme de electrodos | Dueño del proceso | A |
@@ -1640,7 +1640,7 @@ Asegurar que los hornos reciban DRI **seco y en especificación** en los silos d
 ### Procesos críticos que posee, aprueba o supervisa
 | Código | Proceso crítico | Papel | RACI |
 |---|---|---|---|
-| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | Supervisa / hace cumplir la ejecución | R |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | Dueño del proceso (MO-EAF-02 v0.2): libera o retiene lotes, decide el silo en servicio, autoriza cada canasta de retornos con C-05 | A |
 | MS-ACE-01 | Trabajo con metal líquido | Supervisa / hace cumplir la ejecución | R |
 | MS-ACE-02 | Aislamiento y bloqueo (LOTO) | Supervisa / hace cumplir la ejecución (bandas, alimentadores y silos) | R |
 | MS-ACE-03 | Prevención de explosiones agua–metal líquido | Supervisa / hace cumplir la ejecución (DRI y retornos secos) | R |
@@ -1708,7 +1708,7 @@ Galerías de bandas y silos (polvo, N₂, CO), exterior (sol, lluvia), ruido, pa
 | Proceso | C-01 | C-02 | C-03 | C-04 | C-05 | C-06 | C-07 | C-08 | C-09 | C-10 | C-11 | C-12 | C-13 | C-14 | C-15 | C-16 | C-17 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | MO-EAF-01 Preparación del horno entre coladas | AF | Ap |  | S | **D** |  | C |  |  |  | C | C |  |  | C | C |  |
-| MO-EAF-02 Recepción de DRI por bandas, silos de día y carga de retornos internos | AF | Ap |  | S | **D** |  | C |  |  |  |  |  |  |  |  | C | S |
+| MO-EAF-02 Recepción de DRI por bandas, silos de día y carga de retornos internos | AF | Ap |  | S | C |  | C |  |  |  |  |  |  |  |  | C | **D** |
 | MO-EAF-03 Alimentación continua de DRI/HBI | AF | Ap |  | I | S |  | **D** |  | I |  |  | C |  |  |  |  | C |
 | MO-EAF-04 Fusión: perfil de potencia y regulación de electrodos | AF | Ap |  | I | S |  | **D** |  |  |  |  | C |  | I |  |  |  |
 | MO-EAF-05 Escoria espumosa: O₂, carbono y desescoriado | AF | Ap |  | I | S |  | **D** |  |  |  |  |  |  |  | C | C |  |
@@ -1786,7 +1786,7 @@ Galerías de bandas y silos (polvo, N₂, CO), exterior (sol, lluvia), ruido, pa
 | C-02 | 0 | 13 | 1 | — |
 | C-03 | 0 | 16 | 1 | — |
 | C-04 | 2 | 0 | 15 | MO-OLL-02, MS-ACE-09 |
-| C-05 | 5 | 0 | 15 | MO-EAF-01, MO-EAF-02, MO-EAF-06, MO-EAF-07, MO-EAF-08 |
+| C-05 | 4 | 0 | 15 | MO-EAF-01, MO-EAF-06, MO-EAF-07, MO-EAF-08 (MO-EAF-02 pasó a C-17 en v0.3, D-010) |
 | C-06 | 14 | 0 | 15 | MO-CC1-01, MO-CC1-02, MO-CC1-03, MO-CC1-05, MO-CC1-06, MO-CC1-07, MO-CC1-08, MO-CC2-01, MO-CC2-02, MO-CC2-03, MO-CC2-05, MO-CC2-06, MO-CC2-07, MO-CC2-08 |
 | C-07 | 5 | 0 | 0 | MO-EAF-03, MO-EAF-04, MO-EAF-05, MO-LF-01, MS-ACE-03 |
 | C-08 | 2 | 0 | 0 | MO-CC1-04, MO-CC2-04 |
@@ -1798,7 +1798,7 @@ Galerías de bandas y silos (polvo, N₂, CO), exterior (sol, lluvia), ruido, pa
 | C-14 | 0 | 0 | 0 | — |
 | C-15 | 3 | 0 | 5 | MO-OLL-01, MM-EAF-03, MM-OLL-01 |
 | C-16 | 9 | 0 | 0 | MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-04, MS-ACE-05, MS-ACE-06, MS-ACE-07, MS-ACE-08, MS-ACE-10 |
-| C-17 | 0 | 0 | 11 | — |
+| C-17 | 1 | 0 | 10 | MO-EAF-02 |
 
 ---
 
@@ -1829,4 +1829,4 @@ Galerías de bandas y silos (polvo, N₂, CO), exterior (sol, lluvia), ruido, pa
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Versión inicial: 17 roles de confianza, 60 plazas, matriz rol × proceso de los 49 procesos críticos | gerente-personal-confianza |
 | 0.2 | 2026-09-25 | Revisión laboral y documental: cifras sindicalizadas conciliadas con DP-ACE-S v0.2 (963; 159 por turno); convenciones de mando (art. 9), uso de evaluaciones, vigencias 12/24 meses y escolaridad; C-16 como ESR (CAT-ACE-001); C-11 supervisa MS-ACE-04 y MS-ACE-07, C-12 MS-ACE-04 y C-17 MS-ACE-10 por los ejecutores nuevos del catálogo; fila "Vigencia" en los 17 planes; encabezado con revisores | experto-relaciones-laborales |
-| 0.3 | 2026-09-28 | Decisión D-010 (sin chatarra comprada): C-17 redefinido como "Supervisor de Manejo de Materiales (DRI, fundentes y retornos)" (supervisa 7 S-05 por turno; suma MS-ACE-05; MO-EAF-03 como C); C-01, C-02, C-04, C-05 y C-07 sin patio de chatarra; MO-EAF-02 renombrado; cifras sindicalizadas con DP-ACE-S v0.3 (905 de diseño + 58 en reubicación; 150 por turno) | experto-relaciones-laborales |
+| 0.3 | 2026-09-28 | Decisión D-010 (sin chatarra comprada): C-17 redefinido como "Supervisor de Manejo de Materiales (DRI, fundentes y retornos)" (supervisa 7 S-05 por turno; dueño de MO-EAF-02 v0.2 en lugar de C-05; suma MS-ACE-05; MO-EAF-03 como C); C-01, C-02, C-04, C-05 y C-07 sin patio de chatarra; MO-EAF-02 renombrado; cifras sindicalizadas con DP-ACE-S v0.3 (905 de diseño + 58 en reubicación; 150 por turno) | experto-relaciones-laborales |

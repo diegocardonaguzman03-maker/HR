@@ -101,7 +101,7 @@ Tabla de "quién está en cada puesto" en **un turno** (una cuadrilla), más las
 | Piso EAF-1 (puerta, EBT, plataforma) | S-03 Ayudante de Horno (Tercer Hornero) | 5 | — | 22.5 |
 | Piso EAF-2 (puerta, EBT, plataforma) | S-02 Operador de Horno de Piso (Segundo Hornero) | 2 | — | 9.0 |
 | Piso EAF-2 (puerta, EBT, plataforma) | S-03 Ayudante de Horno (Tercer Hornero) | 5 | — | 22.5 |
-| Sistemas de materiales en la nave (del silo de día al horno: alimentadores con báscula, 5.º agujero, tolvas de adiciones, rondín DES) | S-03 Ayudante de Horno (Tercer Hornero) | 4 | — | 18.0 |
+| Sistemas de materiales en la nave (de las básculas dosificadoras al horno: 5.º agujero, tolvas de adiciones, rondín DES) | S-03 Ayudante de Horno (Tercer Hornero) | 4 | — | 18.0 |
 | Cuadrilla de día de hornos (limpieza de fosas, preparación de bóveda y delta, apoyo a paros) | S-03 Ayudante de Horno (Tercer Hornero) | — | 12 | 13.2 |
 | Grúas de carga, nave de hornos (2 × 120/40 t) | S-04 Operador de Grúa de Carga (nave de hornos) | 3 | — | 13.5 |
 | Consola de manejo de materiales: bandas de DRI (HYL y Midrex) y silos de día [Supuesto] | S-05 Operador de Manejo de DRI y Retornos | 1 | — | 4.5 |
@@ -120,7 +120,7 @@ Tabla de "quién está en cada puesto" en **un turno** (una cuadrilla), más las
 | Laboratorio de acería y muestreo (EAF, LF, distribuidor) | S-11 Muestrero / Analista de Laboratorio de Acería | 5 | 3 | 25.8 |
 | **Total en planta por turno / de día** | | **64** | **27** | **317.7** (en §1 se redondea por rol) |
 
-> **Manejo de materiales (D-010) [Supuesto]:** la dotación de S-05 (7 por turno y 6 de día) la propone experto-relaciones-laborales a partir de CV-GASM-001; la validan C-02, C-07 y experto-operativo-metalurgia contra el diseño real de bandas y silos. **Frontera de tareas:** de la planta HYL/Midrex al silo de día (incluido), S-05; del silo de día al horno (alimentadores, 5.º agujero, tolvas de adiciones), S-03 y S-01. El punto exacto de entrega con Reducción Directa ("límite de batería") se fija por escrito con esa planta.
+> **Manejo de materiales (D-010) [Supuesto]:** la dotación de S-05 (7 por turno y 6 de día) la propone experto-relaciones-laborales a partir de CV-GASM-001; la validan C-02, C-07 y experto-operativo-metalurgia contra el diseño real de bandas y silos. **Frontera de tareas:** de la torre de transferencia (límite de batería con Reducción Directa [Supuesto], MO-EAF-02 v0.2) a la salida de los silos de día, S-05; de las básculas dosificadoras al horno (5.º agujero, tolvas de adiciones), S-03 y S-01. El límite de batería se confirma por escrito con HYL y Midrex.
 
 ### 2.2 Colada CC1 + CC2
 
@@ -297,7 +297,7 @@ Conducir la fusión del EAF de colada a colada (150 t, tap-to-tap de ≈ 60–65
 | Código | Proceso crítico | Dueño | R/A/C/I | Qué le toca |
 |---|---|---|---|---|
 | MO-EAF-01 | Preparación del horno entre coladas (inspección, reparación de puerta y solera, llenado del EBT, verificación de agua) | C-05 | **A** | Libera el horno para cargar: revisa el check-list entre coladas, caudales y ΔT de paneles en la HMI y confirma que el EBT quedó lleno y cerrado. |
-| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-05 | **A** | Confirma con S-05 el inventario y la condición de los silos de día (DRI seco, temperatura sin alarma) antes de la colada. Si hay canasta de retornos (≤ 5 %), autoriza la carga con horno sin potencia, electrodos arriba, bóveda girada y zona despejada, y da la señal a S-04. |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-17 | **R** | Confirma con S-05 el silo en servicio para su horno. Cuando C-05 programa la canasta de retornos (10–20 t, 1 de cada 2–4 coladas; 40–60 t en arranque en frío), prepara el horno: DRI detenido, arco apagado, electrodos arriba, bóveda girada; verifica que no hay agua y confirma zona despejada antes de dar la señal a S-04 (MO-EAF-02 v0.2, pasos 16–18). |
 | MO-EAF-03 | Alimentación continua de DRI/HBI | C-07 | **A** | Ajusta la tasa de DRI a 3.5–5.0 t/min (≈ 30–35 kg/min/MW) según arco estable y escoria espumosa; la detiene ante arco inestable o baño frío. |
 | MO-EAF-04 | Fusión: perfil de potencia y regulación de electrodos | C-07 | **A** | Selecciona el perfil de potencia y la derivación (OLTC); vigila la regulación de electrodos, kWh/t y tiempo de arco (42 min objetivo). |
 | MO-EAF-05 | Escoria espumosa: inyección de O₂ y carbono, desescoriado | C-07 | **A** | Dosifica O₂ (30–40 Nm³/t) y carbono (8–12 kg/t) para escoria espumosa; da la señal de desescoriado a S-02 y S-10. |
@@ -410,7 +410,7 @@ Dejar el horno listo entre coladas, medir y muestrear el baño, controlar el des
 | MO-EAF-07 | Vaciado por EBT y adiciones en olla | C-05 | **R** | Abre el EBT, vigila el chorro y el llenado de la olla, confirma adiciones en olla y cierra el EBT. |
 | MM-EAF-01 | Detección y reparación de fugas en paneles y bóveda enfriados por agua | C-11 | **C** | Apoya la localización de la fuga y el aislamiento en campo. |
 | MM-EAF-03 | Reparación de refractario del EAF: solera, bancos, EBT (cambio de tubo/bloque) y proyección (gunning) | C-15 | **C** | Indica las zonas dañadas de solera y bancos para la reparación. |
-| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-05 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-17 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-EAF-03 | Alimentación continua de DRI/HBI | C-07 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-EAF-04 | Fusión: perfil de potencia y regulación de electrodos | C-07 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-06, MS-ACE-08, MS-ACE-09, MS-ACE-10; **C:** MS-ACE-04; **I:** MS-ACE-05 |
@@ -499,7 +499,7 @@ Apoyar la preparación, el vaciado y el mantenimiento operativo del horno, prepa
 | MO-EAF-07 | Vaciado por EBT y adiciones en olla | C-05 | **R** | Prepara y verifica la tolva de adiciones a la olla y el carro de olla; apoya al S-02 fuera de la zona de exclusión. |
 | MO-EAF-08 | Adición y empalme de electrodos | C-05 | **R** | Prepara electrodos y niples en el soporte de empalme, limpia roscas y engancha con el dispositivo de izaje. |
 | MM-EAF-03 | Reparación de refractario del EAF: solera, bancos, EBT (cambio de tubo/bloque) y proyección (gunning) | C-15 | **R** | Apoya al S-24 en proyección (gunning) y cambio de tubo/bloque del EBT. |
-| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-05 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-17 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-EAF-05 | Escoria espumosa: inyección de O₂ y carbono, desescoriado | C-07 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MO-EAF-06 | Medición de temperatura, oxígeno activo y muestreo | C-05 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
 | MM-EAF-01 | Detección y reparación de fugas en paneles y bóveda enfriados por agua | C-11 | **I** | Informado: recibe aviso del estado para coordinar su trabajo y mantener la distancia segura. |
@@ -567,14 +567,14 @@ Calor radiante, polvo, ruido, proyecciones, humos, esfuerzo físico, altura, esp
 | Turno | 4x4 de 12 h, rotación de cabina cada 2 h |
 
 ### Propósito
-Mover electrodos, bóveda y componentes de la nave de hornos y, cuando se programa, cargar la canasta de retornos internos (≤ 5 % de la carga metálica), con precisión y sin exponer a nadie bajo la carga. Por la decisión D-010 ya no hay canasta de chatarra en cada colada.
+Mover electrodos, bóveda y componentes de la nave de hornos y, cuando C-05 la programa (1 de cada 2–4 coladas), cargar la canasta de retornos internos (10–20 t; ≤ 5 % de la carga metálica), con precisión y sin exponer a nadie bajo la carga. Por la decisión D-010 ya no hay canasta de chatarra en cada colada.
 
 ### Funciones principales (con % del tiempo)
 | # | Función | % |
 |---|---|---|
-| 1 | Izar, trasladar y descargar la canasta ocasional de retornos internos en el horno (MO-EAF-02) | 15 [Supuesto] |
+| 1 | Izar, trasladar y descargar la canasta de retornos internos en el horno (MO-EAF-02) | 20 [Supuesto] |
 | 2 | Izar columnas de electrodos para adición y empalme (MO-EAF-08) | 25 |
-| 3 | Izajes de mantenimiento: bóveda, delta, brazos, paneles (MM-EAF-02) | 25 |
+| 3 | Izajes de mantenimiento: bóveda, delta, brazos, paneles (MM-EAF-02) | 20 |
 | 4 | Inspección pre-uso de la grúa y reporte de fallas (MM-GR-01) | 10 |
 | 5 | Movimientos de materiales en la nave (refractarios, electrodos, adiciones) y apoyo a señalero | 25 |
 | | **Total** | **100** |
@@ -582,7 +582,7 @@ Mover electrodos, bóveda y componentes de la nave de hornos y, cuando se progra
 ### Procesos críticos que ejecuta o supervisa (códigos del catálogo, R/A/C/I)
 | Código | Proceso crítico | Dueño | R/A/C/I | Qué le toca |
 |---|---|---|---|---|
-| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-05 | **R** | Iza la canasta de retornos internos (peso según el programa, ≤ 70 t), la posiciona sobre el horno y la abre a la señal del S-01; nunca sobre personas. |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-17 | **R** | Traslada la canasta de retornos internos (10–20 t; 40–60 t en arranque en frío), la centra sobre el horno a 0.5–1.0 m del borde de la coraza y la abre a la señal del S-01 en ≤ 3 min; nunca sobre personas (MO-EAF-02 v0.2, pasos 19–21). |
 | MO-EAF-08 | Adición y empalme de electrodos | C-05 | **R** | Iza la columna de electrodos con el dispositivo de izaje hasta el soporte y el portaelectrodo. |
 | MM-EAF-02 | Mantenimiento de brazos portaelectrodos, columnas, regulación hidráulica y cambio de bóveda / delta | C-11 | **R** | Realiza los izajes de bóveda, delta y brazos durante el mantenimiento. |
 | MM-GR-01 | Inspección y mantenimiento de grúas de colada (ganchos, frenos, cables, límites) | C-11 | **C** | Hace la inspección pre-uso de la grúa y reporta fallas de frenos, límites y cables. |
@@ -593,7 +593,7 @@ Mover electrodos, bóveda y componentes de la nave de hornos y, cuando se progra
 - ★ **Inspección pre-uso** (frenos, límites de izaje y traslación, gancho y seguro, cables, bocina); si algo falla, 🛑 no opera y avisa.
 - ★ Nunca pasa carga sobre personas ni sobre el púlpito; toca la bocina antes de cada movimiento (MS-ACE-04).
 - ★ Descarga la canasta solo con la señal del S-01 y el horno sin potencia (MO-EAF-02).
-- Conoce el peso de la canasta (≤ 70 t) y la capacidad de la grúa (120 t principal / 40 t auxiliar).
+- Conoce el peso de la canasta de retornos (10–20 t de carga; ≈ 55–65 t con tara, hasta ≈ 105 t en arranque en frío [Supuesto], MO-EAF-02 v0.2) y la capacidad de la grúa (120 t principal / 40 t auxiliar).
 - **Autoridad:** rechaza cualquier izaje sin señalero, con carga mal enganchada o sobre la capacidad.
 
 ### Responsabilidades de calidad
@@ -603,7 +603,7 @@ Mover electrodos, bóveda y componentes de la nave de hornos y, cuando se progra
 | Equipo | Especificación clave |
 |---|---|
 | Grúa viajera de carga | 120/40 t; cabina con control y radio |
-| Balancín de canasta | Canasta de 90 m³ solo para retornos internos; peso según el programa, ≤ 70 t [Validar con C-07] |
+| Balancín de canasta | Canasta de 90 m³ solo para retornos internos: 10–20 t por canasta (40–60 t en arranque en frío) (MO-EAF-02 v0.2) |
 | Dispositivo de izaje de electrodos | Electrodo de 610 mm |
 
 ### Indicadores de desempeño (con meta)
@@ -662,14 +662,14 @@ Asegurar que el horno reciba DRI **seco, frío o tibio y en especificación**, y
 | 2 | Recorrer bandas, transferencias, sellos y colectores de polvo; detectar humedad, derrames, calentamiento y fugas de N₂ (MO-EAF-02, MS-ACE-03, MS-ACE-06) | 20 |
 | 3 | Vigilar los silos de día: temperatura, inertización con N₂, niveles y separación de finos de DRI; avisar al S-01 y a la planta de Reducción Directa ante cualquier desviación (MO-EAF-02, MO-EAF-03) | 15 |
 | 4 | Recibir cal y dolomita y llenar sus tolvas; registrar inventario | 10 |
-| 5 | Recibir, revisar (humedad, recipientes cerrados, revisión radiométrica) y acomodar los retornos internos; armar la canasta ocasional de retornos cuando C-17 la programa (MO-EAF-02, MS-ACE-07) | 20 |
+| 5 | Recibir, revisar (humedad, recipientes cerrados, revisión radiométrica) y acomodar los retornos internos; armar y pesar la canasta de retornos (10–20 t) cuando C-05 y C-17 la programan (MO-EAF-02, MS-ACE-07) | 20 |
 | 6 | Limpieza programada de derrames de DRI y fundentes, orden del área y registros | 10 |
 | | **Total** | **100** |
 
 ### Procesos críticos que ejecuta o supervisa (códigos del catálogo, R/A/C/I)
 | Código | Proceso crítico | Dueño | R/A/C/I | Qué le toca |
 |---|---|---|---|---|
-| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-05 | **R** | Opera las bandas y los silos de día, confirma al S-01 inventario y condición del DRI, y prepara la canasta ocasional de retornos (seca, sin recipientes cerrados, revisada con el detector). |
+| MO-EAF-02 | Recepción de DRI por bandas, silos de día y carga de retornos internos | C-17 | **R** | Opera las bandas y los silos de día, confirma al S-01 inventario y condición del DRI, y prepara la canasta ocasional de retornos (seca, sin recipientes cerrados, revisada con el detector). |
 | MO-EAF-03 | Alimentación continua de DRI por el 5.º agujero | C-07 | **C** | Consultado: informa nivel, temperatura y finos de los silos de día; detiene el llenado del silo afectado si hay humedad o alarma. |
 | MS-ACE | Seguridad crítica (§5.4) | C-16 / C-04 / C-07 | — | **R:** MS-ACE-01, MS-ACE-02, MS-ACE-03, MS-ACE-04, MS-ACE-06, MS-ACE-07, MS-ACE-08, MS-ACE-09, MS-ACE-10; **C:** MS-ACE-05 (vigía en galerías y silos) |
 
@@ -685,14 +685,14 @@ Asegurar que el horno reciba DRI **seco, frío o tibio y en especificación**, y
 ### Responsabilidades de calidad
 - 🔎 Segregar los finos de DRI (< 3 mm) según la práctica de C-07; los finos no van al 5.º agujero (CV-GASM-001 §4.2).
 - 🔎 Registrar por lote el origen del DRI (HYL o Midrex), temperatura en banda (≤ 80 °C [Supuesto]) y alarmas, para que el S-01 ajuste el carbono de carga.
-- 🔎 Retornos clasificados por tipo (despuntes, rechazos, costras, derrames) y pesados; canasta de retornos ≤ 5 % de la carga metálica.
+- 🔎 Retornos clasificados por tipo y por la regla de uso por grado de C-07 (MO-EAF-02 v0.2 §5); canasta de 10–20 t; retornos ≤ 5 % de la carga metálica.
 
 ### Equipos que opera
 | Equipo | Especificación clave |
 |---|---|
 | Consola (HMI) de bandas de DRI y silos de día | Arranque en secuencia, enclavamientos, niveles, tasas y alarmas [Validar con OEM] |
 | Bandas cerradas de DRI desde HYL y Midrex, transferencias y colectores de polvo | DRI 4–20 mm; finos < 3 mm ≤ 5 %; ≤ 80 °C en banda [Supuesto] (CV-GASM-001 §4.2) |
-| Silos de día del EAF | Inertización con N₂ y medición de temperatura [Validar con OEM] |
+| Silos de día del EAF | 4 silos de ≈ 1,000 t (2 por horno) [Supuesto]; N₂, termopares por nivel y analizadores de O₂/CO/H₂ en el domo; alarma T > 90 °C o +5 °C/h (MO-EAF-02 v0.2) |
 | Tolvas de cal y dolomita | Llenado neumático o por banda [Validar con OEM] |
 | Cargador frontal o grúa con electroimán del área de retornos; canasta de 90 m³ | Capacidad según placa [Validar con OEM]; licencia interna |
 | Detector de radiación para retornos | Umbral según el ESR [Validar con C-16] |
@@ -701,6 +701,7 @@ Asegurar que el horno reciba DRI **seco, frío o tibio y en especificación**, y
 ### Indicadores de desempeño (con meta)
 | Indicador | Meta | Fuente |
 |---|---|---|
+| Autonomía de silos de día | ≥ 8 h (objetivo 12 h) (MO-EAF-02 v0.2) | HMI de silos |
 | Coladas sin demora por falta de DRI en silos de día | ≥ 99 % [Supuesto] | MES |
 | Eventos de DRI húmedo que llegan al horno | 0 | Reporte de incidentes |
 | Alarmas de temperatura / O₂ en silos atendidas con el protocolo | 100 % | Historial de alarmas |
@@ -727,7 +728,7 @@ Galerías de bandas y silos con polvo de DRI y posible atmósfera con N₂ o CO;
 | Etapa | Contenido | Horas |
 |---|---|---|
 | Inducción | Común | 40 |
-| Ruta técnica | DRI (reoxidación, humedad, finos, H₂), bandas y enclavamientos, silos e inertización con N₂, fundentes, retornos internos y revisión radiométrica, LOTO en bandas | 48 [Supuesto] |
+| Ruta técnica | MO-EAF-02 v0.2 (24 h: DRI, reoxidación, H₂ y N₂; bandas y silos; retornos; 4 h de radiación con el ESR) + espacios confinados como vigía (NOM-033) + LOTO en bandas + equipo móvil | 48 [Supuesto] |
 | OJT supervisado | 10 turnos por puesto (consola, bandas, silos, fundentes, retornos) | 240 |
 | Certificación TD-P07 | Pasos ★ de MO-EAF-02 v0.2, MS-ACE-03, MS-ACE-05 (vigía), MS-ACE-06 y MS-ACE-07 (usuario) | 6 |
 | Recapacitación de la antigua categoría S-05 (una vez) | Ruta técnica completa + OJT de 120 h; examen de suficiencia (art. 153-U) para lo que ya dominan (grúa, electroimán, oxicorte, radiación) | 48 + 120 OJT [Supuesto] |
@@ -2603,13 +2604,13 @@ Altura (grúas, plataformas), cercanía a equipos calientes y en movimiento, lub
 
 ## 5. Matriz rol × proceso crítico
 
-Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO-, 10 MM-, 10 MS-). Celda vacía = el rol no participa. Por su anchura, la matriz se divide en 4 tablas. Validación hecha (v0.2, contra CAT-ACE-001 actualizado): todos los "roles que ejecutan" del catálogo aparecen como R o A —incluidos los ejecutores nuevos S-20 en MM-EAF-02, S-21 y S-22 en MM-CC-01/02, S-09 y S-26 en MM-GR-01 y S-13 y S-25 en MS-ACE-07— y cada proceso MO-/MM- tiene un solo A sindicalizado. Los procesos MS-ACE-07 ahora tienen como dueño a C-16 en su función de Encargado de Seguridad Radiológica (ESR).
+Filas = S-01 a S-26; columnas = los 49 códigos del catálogo CAT-ACE-001 (29 MO-, 10 MM-, 10 MS-). Celda vacía = el rol no participa. Por su anchura, la matriz se divide en 4 tablas. Validación hecha (v0.2, contra CAT-ACE-001 actualizado; en v0.3, MO-EAF-02 v0.2 tiene como dueño a C-17 y sus ejecutores sindicalizados son R —S-01, S-04, S-05—: el liberado lo da C-17): todos los "roles que ejecutan" del catálogo aparecen como R o A —incluidos los ejecutores nuevos S-20 en MM-EAF-02, S-21 y S-22 en MM-CC-01/02, S-09 y S-26 en MM-GR-01 y S-13 y S-25 en MS-ACE-07— y cada proceso MO-/MM- tiene un solo A sindicalizado. Los procesos MS-ACE-07 ahora tienen como dueño a C-16 en su función de Encargado de Seguridad Radiológica (ESR).
 
 ### 5.1 Operación — EAF, ollas y horno olla
 
 | Rol | MO-EAF-01 | MO-EAF-02 | MO-EAF-03 | MO-EAF-04 | MO-EAF-05 | MO-EAF-06 | MO-EAF-07 | MO-EAF-08 | MO-OLL-01 | MO-OLL-02 | MO-LF-01 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| S-01 | A | A | A | A | A | C | A | C | I | I |  |
+| S-01 | A | R | A | A | A | C | A | C | I | I |  |
 | S-02 | R | I | I | I | R | A | R | A |  |  |  |
 | S-03 | R | I |  |  | I | I | R | R |  |  |  |
 | S-04 |  | R |  |  |  |  |  | R |  |  |  |

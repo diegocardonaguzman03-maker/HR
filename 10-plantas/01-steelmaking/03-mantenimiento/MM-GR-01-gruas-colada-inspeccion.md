@@ -9,7 +9,7 @@
 ## 1. Objetivo y alcance
 Mantener las grúas de colada en condición de **no dejar caer nunca una olla**: gancho y balancín íntegros, cables dentro de criterio, dos frenos independientes que sostienen la carga, límites redundantes y protecciones térmicas contra el calor del acero.
 **Incluye:** inspección diaria (operador), frecuente (semanal) y periódica (anual), mediciones de gancho y cable, prueba de frenos, prueba de límites y limitador de carga, END, mantenimiento de reductores, estructura, rieles y sistema eléctrico, prueba de carga y liberación.
-**Aplica también (con criterios equivalentes) a:** grúas de carga 120/40 t y grúas de CC 50/25 t (FT-ACE-001 §6), con sus propios manuales OEM.
+**Aplica también (con criterios equivalentes) a:** grúas de carga 120/40 t (con ≈ 100 % DRI ya no cargan chatarra en cada colada: canasta de retornos 1 de cada 2–4 coladas, electrodos y mantenimiento; FT-ACE-001 v0.4 §6) y grúas de CC 50/25 t (FT-ACE-001 §6), con sus propios manuales OEM.
 **No incluye:** operación de izaje (MO-OLL-02, MS-ACE-04).
 
 ## 2. Roles y responsabilidades
@@ -192,3 +192,4 @@ FT-ACE-001 §6 · MO-OLL-02 · MM-OLL-01 (muñones) · MS-ACE-01, -04, -10 · Ma
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
 | 0.2 | 2026-09-25 | Revisión cruzada de seguridad: S-26 agregado a la sección 11 (catálogo); vigencia de 12 meses para grúas, eléctrico y alturas; lista ★ completa | experto-seguridad-salud |
+| 0.2 | 2026-09-28 | Nota de uso de las grúas de carga con ≈ 100 % DRI (D-010, FT-ACE-001 v0.4 §6). Sin cambio de criterios | experto-operativo-metalurgia |

@@ -9,7 +9,7 @@
 ## 1. Objetivo y alcance
 Mantener exactos y confiables los actuadores que controlan la interfaz acero–molde: **oscilación** (evita el pegado de la cáscara), **nivel de molde** (evita atrapamiento de escoria y breakouts) y **barra tapón** (regula el flujo del distribuidor en CC1); y trabajar con la **fuente radiactiva de CC2** sin exposición innecesaria.
 **Incluye:** unidades hidráulicas (HPU) de CC, servoválvulas, cilindros y resortes de oscilación, análisis de oscilación, sensor de corrientes parásitas, mecanismo y actuador de barra tapón, sistema radiométrico (portafuente, obturador, detector), pruebas y calibraciones.
-**No incluye:** molde (MM-CC-01), agua (MM-CC-03), trabajo con fuentes del pórtico de chatarra (MS-ACE-07).
+**No incluye:** molde (MM-CC-01), agua (MM-CC-03), verificación radiológica de retornos internos (MS-ACE-07; ya no hay pórtico de chatarra comprada).
 
 ## 2. Roles y responsabilidades
 | Rol | Responsabilidad en este proceso | R/A/C/I |
@@ -188,3 +188,4 @@ FT-ACE-001 §4, §5 · MO-CC1-01, MO-CC1-04, MO-CC2-04 · MM-CC-01, MM-CC-03 · 
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
 | 0.2 | 2026-09-25 | Revisión cruzada de seguridad: C-16 como ESR; criterio < 2 × fondo igual que MO-CC2 y MS-ACE-07 (antes "= fondo"); O₂ 19.5–23.5 %; paso 1 marcado ★; vigencias de 12 meses para radiación y eléctrico; lista ★ completa | experto-seguridad-salud |
+| 0.2 | 2026-09-28 | Cambio editorial por la decisión D-010 (sin cambio técnico): "chatarra de enfriamiento" → "material de enfriamiento"; despuntes, colas y rechazos van a "retornos internos" (FT-ACE-001 v0.4 §2.2). | experto-operativo-metalurgia |

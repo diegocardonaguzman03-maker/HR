@@ -51,7 +51,7 @@ sequenceDiagram
 - **Llenado rápido, extracción a tiempo.** El molde de 160 × 160 mm se llena en 25–40 s. Si arrancas tarde, desborda; si arrancas temprano, la cabeza no se ancla y la piel se rompe.
 - **La rampa protege la piel.** En los primeros minutos la piel es delgada; subir de golpe a 3.0 m/min la saca del molde sin espesor suficiente y provoca breakout.
 - **Centro primero.** L3 y L4 están junto a la zona de impacto y reciben acero caliente; L1 y L6 son las más frías. Abrirlas en ≤ 3 min evita que su buza se congele.
-- **La primera palanquilla ("A")** tiene la cabeza, la chatarra de enfriamiento y el acero del arranque: se despunta y se inspecciona aparte.
+- **La primera palanquilla ("A")** tiene la cabeza, el material de enfriamiento y el acero del arranque: se despunta y se inspecciona aparte.
 
 ## 4. Equipos y maquinaria
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
@@ -88,7 +88,7 @@ sequenceDiagram
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
 | Salpicaduras y derrame de metal líquido al abrir olla y buzas | Quemaduras graves o fatalidad | ★ Zona de exclusión de arranque: solo S-12, S-13, S-14 y C-06 en la roja, S-13 y S-14 con EPP aluminizado seco; nadie frente al chorro (MS-ACE-01) | Barrera física y conteo de personal antes de abrir la olla |
-| Agua en contacto con el acero (molde con fuga, chatarra húmeda) | Explosión | Lista de MO-CC2-02 firmada; molde seco | Firma de C-06 antes del arranque |
+| Agua en contacto con el acero (molde con fuga, material de enfriamiento húmedo) | Explosión | Lista de MO-CC2-02 firmada; molde seco | Firma de C-06 antes del arranque |
 | Breakout o fuga en la cabeza al arrancar | Metal líquido en la fosa | **Nadie en la fosa ni bajo la plataforma** durante el arranque | Acordonado y vigía |
 | Desbordamiento del molde | Metal líquido sobre la plataforma | Arranque de extracción al nivel correcto; cierre inmediato de la línea con placa ciega | Observación de S-14 en cada línea |
 | Falla de agua de molde | Perforación del tubo y explosión | Agua de emergencia en ≤ 15 s; paro de colada (MS-ACE-09) | Prueba semanal de la torre y las bombas diésel (MM-CC-03) |
@@ -131,7 +131,7 @@ Chamarra, pantalón o polainas aluminizados, careta con visor dorado o filtro IR
 | 15 | Abre L2 y L5, y después L1 y L6 | Repite los pasos 9–14; 15–30 s entre líneas | Las 6 líneas abiertas en ≤ 3 min | ★ | S-13, S-14, S-12 |
 | 16 | Completa el nivel del distribuidor | Sube a 700–850 mm y agrega la capa de cubierta | Nivel de operación; acero cubierto | | S-13 |
 | 17 | Vigila la cabeza en los enderezadores | La barra falsa se desacopla y sube a su estacionamiento | Desacople sin golpe; barra estacionada | | S-12 |
-| 18 | Despunta y marca | Corta la cabeza (≈ 1,000 mm) a chatarra; marca la primera palanquilla con "A" | Despunte fuera; palanquilla "A" identificada | 🔎 | S-16 |
+| 18 | Despunta y marca | Corta la cabeza (≈ 1,000 mm) a retornos internos; marca la primera palanquilla con "A" | Despunte fuera; palanquilla "A" identificada | 🔎 | S-16 |
 | 19 | Toma la muestra química | Muestra del distribuidor a los 5–10 min (primera colada) | Muestra enviada al laboratorio | | S-11 |
 | 20 | Libera la zona de exclusión | Cuando las 6 líneas estén estables | Fosa abierta solo con autorización | | C-06 |
 | 21 | Registra | Hora de apertura, temperaturas, tiempo de llenado por línea, anomalías | Hoja completa | | S-12, S-13 |
@@ -182,3 +182,4 @@ Chamarra, pantalón o polainas aluminizados, careta con visor dorado o filtro IR
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: sobrecalentamiento de la 1.ª colada de secuencia fijado en 25–40 °C (objetivo 32 °C, +5 °C sobre el rango normal, mismo criterio que CC1) y ESR citado como C-16. | experto-operativo-metalurgia |
+| 0.1 | 2026-09-28 | Cambio editorial por la decisión D-010 (sin cambio técnico): "chatarra de enfriamiento" → "material de enfriamiento"; despuntes, colas y rechazos van a "retornos internos" (FT-ACE-001 v0.4 §2.2). | experto-operativo-metalurgia |

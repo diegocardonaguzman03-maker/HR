@@ -31,7 +31,7 @@ Con 100 % DRI **no hay canasta que fundir antes**: el horno conserva un **pie l�
 
 ![Figura 2. Corte esquemático del EAF (5.º agujero, n.º 12)](../../img/eaf-corte-horno.svg)
 
-![Figura 5. Recepción de DRI por bandas y silos de día](../../img/eaf-manejo-dri-silos.svg)
+![Figura 9. Recepción de DRI por bandas y silos de día](../../img/eaf-manejo-dri-silos.svg)
 
 **Ejemplo de cálculo:** a 117 MW y 32 kg/min/MW → 117 × 32 / 1,000 ≈ **3.7 t/min**. En la etapa 2 del perfil (43 min de baño plano) entran ≈ 160 t; más ≈ 8 t en la rampa de la etapa 1 ≈ **168 t** por colada.
 

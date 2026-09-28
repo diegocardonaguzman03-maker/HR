@@ -38,7 +38,7 @@ Los **retornos internos** (despuntes y colas de CC, planchones y palanquillas re
 
 ![Figura 1. Flujo general de la Acería](../../img/eaf-flujo-acería.svg)
 
-![Figura 5. Recepción de DRI por bandas y silos de día](../../img/eaf-manejo-dri-silos.svg)
+![Figura 9. Recepción de DRI por bandas y silos de día](../../img/eaf-manejo-dri-silos.svg)
 
 ```mermaid
 flowchart TD
@@ -233,4 +233,4 @@ Lista corta de verificación de pasos ★:
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación como "Carga de chatarra con canasta" | experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: C-16 citado como ESR; nota sobre MM-GR-01 para la grúa de carga. | experto-operativo-metalurgia |
-| 0.2 | 2026-09-28 | **Reescritura por la decisión D-010.** Nuevo nombre y archivo (`git mv` desde `MO-EAF-02-carga-chatarra-canasta.md`). Se retiran patio de chatarra, pórtico de camiones, clasificación y chatarra prohibida de compra. Se agregan recepción de DRI por bandas desde HYL y Midrex, silos de día (N₂, T, gases), fundentes, retornos internos por grado y canasta de retornos (10–20 t; arranque en frío 40–60 t). Dueño: C-17 (antes C-05). S-05 = Operador de Manejo de DRI y Retornos. Valores de FT-ACE-001 v0.4. Figura 5 nueva. Requiere nueva revisión de seguridad | experto-operativo-metalurgia |
+| 0.2 | 2026-09-28 | **Reescritura por la decisión D-010.** Nuevo nombre y archivo (`git mv` desde `MO-EAF-02-carga-chatarra-canasta.md`). Se retiran patio de chatarra, pórtico de camiones, clasificación y chatarra prohibida de compra. Se agregan recepción de DRI por bandas desde HYL y Midrex, silos de día (N₂, T, gases), fundentes, retornos internos por grado y canasta de retornos (10–20 t; arranque en frío 40–60 t). Dueño: C-17 (antes C-05). S-05 = Operador de Manejo de DRI y Retornos. Valores de FT-ACE-001 v0.4. Figura 9 nueva (eaf-manejo-dri-silos.svg). Requiere nueva revisión de seguridad | experto-operativo-metalurgia |

@@ -7,7 +7,7 @@
 > **Mensaje clave para el operador:** para sellar la cabeza de la barra falsa metes las manos y herramientas **dentro del molde**, justo donde pasa el haz de la **fuente de Cs-137**. El obturador de la fuente se cierra y se bloquea **antes** de empezar y se abre **solo** cuando ya no hay nadie en el molde. Un sello húmedo o mal hecho provoca una fuga o una explosión en el arranque.
 
 ## 1. Objetivo y alcance
-**Objetivo:** dejar las 6 líneas listas para arrancar: molde, agua, rociado, oscilación y EMS probados; barra falsa rígida insertada con la cabeza a la altura correcta dentro del tubo, **sellada, seca y con chatarra de enfriamiento**; control de nivel radiométrico listo.
+**Objetivo:** dejar las 6 líneas listas para arrancar: molde, agua, rociado, oscilación y EMS probados; barra falsa rígida insertada con la cabeza a la altura correcta dentro del tubo, **sellada, seca y con material de enfriamiento**; control de nivel radiométrico listo.
 
 **Alcance:** desde la entrega de la máquina por mantenimiento (o el fin de la secuencia anterior, MO-CC2-07) hasta la liberación de las 6 líneas para el arranque (MO-CC2-03). Incluye la reinserción de la barra falsa en **una** línea para rearrancarla durante una secuencia.
 
@@ -16,14 +16,14 @@
 |---|---|---|
 | C-06 Supervisor de Colada Continua | Libera las líneas; firma la lista de verificación de máquina | A |
 | S-12 Operador de Púlpito de Colada | Opera la inserción de la barra falsa desde la HMI; hace las pruebas de agua, rociado, oscilación y EMS | R |
-| S-14 Ayudante de Colada (molde y línea) | Inspecciona el molde, centra la cabeza, sella y coloca la chatarra de enfriamiento | R |
+| S-14 Ayudante de Colada (molde y línea) | Inspecciona el molde, centra la cabeza, sella y coloca el material de enfriamiento | R |
 | C-16 Especialista de Seguridad e Higiene de Acería, en función de Encargado de Seguridad Radiológica (ESR) designado en la licencia de la CNSNS (CAT-ACE-001) | Cierra/abre y bloquea el obturador de la fuente de Cs-137; mide la tasa de dosis | R (radiación) |
 | S-25 Mecánico de Taller de Moldes | Atiende hallazgos de desgaste, conicidad y alineación (MM-CC-01, MM-CC-02) | C |
 | S-21 Instrumentista | Atiende fallas del medidor de nivel, caudalímetros y termopares | C |
 | C-16 Especialista de Seguridad e Higiene | Verifica el procedimiento de radiación y LOTO | I |
 
 ## 3. Descripción del proceso
-La CC2 usa **barra falsa rígida** (una por línea): es una barra curva, con el radio de la máquina (9 m), que se guarda arriba del camino de rodillos. Los extractores-enderezadores la empujan en reversa por la línea hasta que su **cabeza** entra al molde por abajo. La cabeza tiene una forma de "gancho" que se ancla en el acero al solidificar. El hueco entre la cabeza y el tubo se sella con **cordón de fibra cerámica** y se cubre con **chatarra de enfriamiento limpia y seca** para que el primer acero solidifique rápido sin fugarse.
+La CC2 usa **barra falsa rígida** (una por línea): es una barra curva, con el radio de la máquina (9 m), que se guarda arriba del camino de rodillos. Los extractores-enderezadores la empujan en reversa por la línea hasta que su **cabeza** entra al molde por abajo. La cabeza tiene una forma de "gancho" que se ancla en el acero al solidificar. El hueco entre la cabeza y el tubo se sella con **cordón de fibra cerámica** y se cubre con **material de enfriamiento limpia y seca** para que el primer acero solidifique rápido sin fugarse.
 
 ![Figura 1. Perfil de una línea de la CC2](../../img/cc2-perfil-maquina.svg)
 
@@ -38,7 +38,7 @@ flowchart TD
     C --> D["Inspección del tubo y alineación<br/>molde–pie de rodillos"]
     D --> E["ESR cierra y bloquea<br/>obturador de Cs-137"]
     E --> F["Inserción de la barra falsa<br/>cabeza a 700 ± 20 mm"]
-    F --> G["Centrado, sellado con cordón<br/>y chatarra de enfriamiento seca"]
+    F --> G["Centrado, sellado con cordón<br/>y material de enfriamiento seco"]
     G --> H{"¿Molde seco y sin fugas?"}
     H -- No --> H1["🛑 Secar o reparar.<br/>No liberar"]
     H -- Sí --> I["Personal fuera del molde"]
@@ -48,7 +48,7 @@ flowchart TD
 
 **Por qué importa (para aprender):**
 - **La cabeza es el "tapón" del molde.** Si el sello falla, el primer acero escurre por el hueco y sale bajo el molde: es una fuga de arranque.
-- **La chatarra de enfriamiento** absorbe calor del primer acero para que solidifique rápido sobre la cabeza y se "enganche" en ella. Si trae humedad, óxido o aceite, genera gas o vapor.
+- **El material de enfriamiento** (recortes limpios de acero) absorbe calor del primer acero para que solidifique rápido sobre la cabeza y se "enganche" en ella. Si trae humedad, óxido o aceite, genera gas o vapor.
 - **El haz del Cs-137 cruza el molde** a la altura del menisco. Con el obturador abierto, quien mete la cabeza o las manos al molde recibe dosis. Cerrado y medido por el ESR, la zona queda en niveles de fondo.
 - **Alineación de 0.5 mm.** Si el molde y el pie de rodillos no están en línea, la piel recién formada se dobla al salir del molde y aparecen romboidad y grietas en la diagonal.
 
@@ -75,7 +75,7 @@ flowchart TD
 | Posición de la cabeza de la barra falsa | mm bajo el borde del tubo | 700 | 680–720 [Validar OEM] | Fuera de rango | Reajusta con la HMI en modo lento | Cinta o calibrador de profundidad |
 | Velocidad de inserción | m/min | 2.0 | ≤ 3.0; últimos 2 m a ≤ 0.5 [Validar OEM] | Golpe en el tope | Detén y revisa la cabeza | HMI |
 | Holgura cabeza–tubo | mm/lado | 3 | 2–4 [Validar OEM] | Holgura desigual > 2 mm entre lados | Centra la cabeza | Galgas |
-| Chatarra de enfriamiento | kg por línea | 2 | 1.5–3 [Validar] | Húmeda, oxidada o con aceite | Cámbiala por chatarra seca y limpia | Báscula y visual |
+| Material de enfriamiento | kg por línea | 2 | 1.5–3 [Validar] | Húmedo, oxidado o con aceite | Cámbialo por material seco y limpio | Báscula y visual |
 | Alineación molde–pie de rodillos | mm | 0 | ± 0.5 [Validar OEM] | > ± 0.5 | No liberes; avisa a S-25 | Plantilla de alineación |
 | Boquillas de rociado abiertas | % | 100 | ≥ 95 [Validar] | < 95% o una boquilla tapada en esquina | Destapa o cambia boquillas | Prueba visual con agua |
 | Tasa de dosis en el punto de trabajo con obturador cerrado | µSv/h | Fondo natural (≈ 0.1–0.3) | < 2 × fondo [Validar con el ESR] (MS-ACE-07) | ≥ 2 × fondo | 🛑 Nadie entra al molde; aléjate ≥ 3 m; el ESR investiga | Medidor portátil del ESR |
@@ -85,7 +85,7 @@ flowchart TD
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
 | Radiación ionizante del Cs-137 | Exposición por encima del límite | ★ **Obturador cerrado por el ESR (C-16), bloqueado con su candado y tarjeta, y tasa de dosis < 2 × fondo medida en el punto de trabajo antes de meter manos al molde** (MS-ACE-07; NOM-012-STPS-2012; licencia CNSNS) | Registro del ESR con hora y lectura; dosímetro personal puesto |
-| Agua o humedad en el molde | Explosión al arrancar | Prueba de fugas de 5 min; chatarra y cordón secos; molde tapado hasta el arranque | Lista de verificación firmada por S-14 y C-06 |
+| Agua o humedad en el molde | Explosión al arrancar | Prueba de fugas de 5 min; material de enfriamiento y cordón secos; molde tapado hasta el arranque | Lista de verificación firmada por S-14 y C-06 |
 | Movimiento de la barra falsa u oscilación con personas en la línea | Atrapamiento, amputación | LOTO de extractores y oscilador antes de trabajar en el molde (MS-ACE-02) | Candados personales en el tablero |
 | Trabajo en la plataforma junto a moldes abiertos | Caída a distinto nivel | Tapas en moldes sin uso; barandales (MS-ACE-10) | Inspección de plataforma |
 | Fibra cerámica | Irritación respiratoria | Respirador P100 y guantes | Inspección de EPP |
@@ -124,7 +124,7 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 | 12 | Aplica LOTO a los extractores de esa línea | Candado personal | Sin movimiento posible | ★ | S-14 |
 | 13 | Centra la cabeza | Galgas en los 4 lados | Holgura 2–4 mm, uniforme | | S-14 |
 | 14 | Sella con cordón de fibra cerámica | Empaca el cordón en todo el perímetro, apretado con espátula | Sin huecos visibles con lámpara | ★ | S-14 |
-| 15 | Coloca la chatarra de enfriamiento | 1.5–3 kg de recortes limpios, **secos y sin aceite**, en capa de 30–50 mm | Cubre toda la cabeza | ★ | S-14 |
+| 15 | Coloca el material de enfriamiento | 1.5–3 kg de recortes limpios, **secos y sin aceite**, en capa de 30–50 mm | Cubre toda la cabeza | ★ | S-14 |
 | 16 | Tapa el molde | Tapa metálica seca hasta el arranque | Tapa colocada | | S-14 |
 | 17 | Repite los pasos 8–16 en las 6 líneas | Una línea a la vez | 6 líneas selladas | | S-14 |
 | 18 | Ceba el aceite | Verifica salida por todas las ranuras; deja en espera | Salida uniforme | | S-14 |
@@ -141,7 +141,7 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 | La cabeza no queda centrada | Cabeza deformada, guía desalineada | Cambia la cabeza; revisa alineación | C-06, S-25 |
 | El obturador no cierra o la dosis es ≥ 2 × fondo | Falla mecánica del portafuente | 🛑 Nadie entra al molde; aléjate ≥ 3 m y acordona; el ESR (C-16) atiende y reporta a la CNSNS si aplica (MS-ACE-07) | C-16 (ESR), C-06 |
 | El nivel no marca "molde vacío" con el obturador abierto | Falla del detector o de la fuente | No liberes la línea; S-21 con el ESR | C-06, S-21, C-16 (ESR) |
-| Chatarra húmeda u oxidada | Almacenamiento inadecuado | Usa otra caja seca; seca en estufa | C-06 |
+| Material de enfriamiento húmedo u oxidado | Almacenamiento inadecuado | Usa otra caja seca; seca en estufa | C-06 |
 
 ## 10. Registros
 - Lista de verificación de máquina por línea (agua, fugas, rociado, oscilación, EMS, tubo, alineación, altura de la cabeza, sellado).
@@ -160,7 +160,7 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 - [ ] Nunca mete las manos al molde sin el obturador cerrado, bloqueado y medido por el ESR.
 - [ ] Verifica que el molde esté seco después de 5 min con agua a caudal pleno.
 - [ ] Aplica LOTO a oscilador y extractores antes de sellar.
-- [ ] Deja la cabeza a 700 ± 20 mm, centrada, sellada y con chatarra seca.
+- [ ] Deja la cabeza a 700 ± 20 mm, centrada, sellada y con material de enfriamiento seco.
 - [ ] Confirma que no hay nadie en el molde antes de pedir la apertura del obturador.
 
 ## 12. Referencias
@@ -174,3 +174,4 @@ Casco, lentes, guantes de carnaza, ropa retardante a la flama, botas de segurida
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: el ESR se cita con su código (C-16, CAT-ACE-001) en roles, columna Rol y competencias. | experto-operativo-metalurgia |
+| 0.1 | 2026-09-28 | Cambio editorial por la decisión D-010 (sin cambio técnico): "chatarra de enfriamiento" → "material de enfriamiento"; despuntes, colas y rechazos van a "retornos internos" (FT-ACE-001 v0.4 §2.2). | experto-operativo-metalurgia |

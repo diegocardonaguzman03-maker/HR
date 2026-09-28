@@ -126,7 +126,7 @@ flowchart TD
 | 3 | Revisa datos de la olla | Grado, peso (145–155 t), temperatura y química de envío del LF; calcula T objetivo del distribuidor | Dentro de programa | | S-12 |
 | 4 | Recibe la olla en la torreta | S-09 baja la olla en el brazo; nadie bajo la carga | Olla asentada, gancho libre | | S-09, S-13 |
 | 5 | Gira la torreta a colada | Alarma sonora; zona de giro despejada | Olla sobre el distribuidor | | S-13 |
-| 6 | Baja la SEN a posición de arranque | Baja el distribuidor; SEN centrada en el molde; puertos ≈ 100–150 mm sobre la chatarra [Validar con OEM / Ingeniería de Proceso] | Centrada ± 5 mm | | S-13 |
+| 6 | Baja la SEN a posición de arranque | Baja el distribuidor; SEN centrada en el molde; puertos ≈ 100–150 mm sobre el material de enfriamiento [Validar con OEM / Ingeniería de Proceso] | Centrada ± 5 mm | | S-13 |
 | 7 | Coloca el tubo protector | Con el manipulador; junta nueva; argón de sello abierto | Tubo sellado | | S-13 |
 | 8 | Abre la olla | Abre la válvula deslizante al 100% | Flujo libre (objetivo ≥ 98% de aperturas libres) | | S-13 |
 | 9 | Si no abre: lancea con O₂ | Retira el tubo protector, lancea desde un costado, máximo 2 intentos en ≤ 5 min; reinstala el tubo al abrir | Olla abierta; si no, aborta (paso 9a) | ★ | S-13 |
@@ -191,3 +191,4 @@ flowchart TD
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: límites de sobrecalentamiento de la 1.ª colada alineados (alarma < +20 / > +40 °C; con > +40 °C máx. 0.8 m/min como MO-CC1-04). | experto-operativo-metalurgia |
+| 0.1 | 2026-09-28 | Cambio editorial por la decisión D-010 (sin cambio técnico): "chatarra de enfriamiento" → "material de enfriamiento"; despuntes, colas y rechazos van a "retornos internos" (FT-ACE-001 v0.4 §2.2). | experto-operativo-metalurgia |

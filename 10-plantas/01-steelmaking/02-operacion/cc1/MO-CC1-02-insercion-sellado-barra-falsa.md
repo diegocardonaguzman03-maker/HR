@@ -10,7 +10,7 @@
 **Objetivo:** dejar la máquina CC1 lista para arrancar: línea de colada limpia y seca, molde al ancho del programa, barra falsa tipo cadena en posición dentro del molde y **cabeza sellada y seca**, con todos los sistemas probados (agua de molde, enfriamiento secundario, oscilación, nivel, BOP, agua de emergencia).
 
 **Alcance:** desde que termina la salida de la cola de la secuencia anterior (MO-CC1-07) o el paro de mantenimiento, hasta la firma de la **lista de verificación previa al arranque**.
-- **Incluye:** prueba de boquillas y secado de la línea, ajuste de ancho y conicidad, inserción por abajo de la barra falsa, posicionamiento de la cabeza, sellado, chatarra de enfriamiento, pruebas de sistemas.
+- **Incluye:** prueba de boquillas y secado de la línea, ajuste de ancho y conicidad, inserción por abajo de la barra falsa, posicionamiento de la cabeza, sellado, material de enfriamiento, pruebas de sistemas.
 - **No incluye:** cambio de molde o segmentos (MM-CC-01/02), mantenimiento de la barra falsa.
 
 ## 2. Roles y responsabilidades
@@ -18,7 +18,7 @@
 |---|---|---|
 | C-06 Supervisor de Colada Continua | Verifica y firma la lista previa al arranque; autoriza el arranque | A |
 | S-12 Operador de Púlpito de Colada | Ejecuta desde la HMI: prueba de boquillas, ajuste de ancho, inserción, pruebas de sistemas | R |
-| S-14 Ayudante de Colada | Limpieza y secado del molde, sellado de la cabeza, chatarra de enfriamiento, verificación visual | R |
+| S-14 Ayudante de Colada | Limpieza y secado del molde, sellado de la cabeza, material de enfriamiento, verificación visual | R |
 | S-13 Operador de Plataforma de Colada | Apoya la verificación del molde y los materiales de arranque | C |
 | S-21 Instrumentista | Calibración del sensor de nivel y verificación de termopares BOP | C |
 | C-08 Ingeniero de Proceso de CC | Define ancho, conicidad y práctica de arranque por grado | C |
@@ -40,7 +40,7 @@ flowchart TD
     E --> F["Inserción de barra falsa<br/>por abajo (modo inserción)"]
     F --> G["Cabeza en posición<br/>≈ 650 mm bajo el borde"]
     G --> H["★ LOTO de línea y oscilación"]
-    H --> I["★ Sellado con fibra cerámica<br/>y chatarra de enfriamiento SECA"]
+    H --> I["★ Sellado con fibra cerámica<br/>y material de enfriamiento SECO"]
     I --> J["Retiro de LOTO y<br/>pruebas de sistemas"]
     J --> K{"Lista previa al arranque<br/>completa y firmada"}
     K -- "No" --> L["Corregir faltante"] --> J
@@ -72,8 +72,8 @@ flowchart TD
 | Velocidad de aproximación final | m/min | 0.3 | 0.2–0.5 | — | — | HMI |
 | Posición de la cabeza | mm bajo el borde superior del molde | ≈ 650 | ± 10 | > ± 10 mm | Reposiciona con el tracking | HMI (encoder) + medición con regla |
 | Holgura cabeza–placa (por lado) | mm | 2–5 | 2–5 | > 5 mm | Rellena más fibra; si > 10 mm revisa ancho | Galga |
-| Chatarra de enfriamiento | kg | 20 | 15–25 [Validar con OEM / Ingeniería de Proceso] | Mojada, oxidada o con aceite | 🛑 Retira y reemplaza | Báscula / cubeta tarada |
-| Capa de chatarra sobre la cabeza | mm | 60 | 50–80 | — | Distribuye uniforme | Regla |
+| Material de enfriamiento | kg | 20 | 15–25 [Validar con OEM / Ingeniería de Proceso] | Mojado, oxidado o con aceite | 🛑 Retira y reemplaza | Báscula / cubeta tarada |
+| Capa de material de enfriamiento sobre la cabeza | mm | 60 | 50–80 | — | Distribuye uniforme | Regla |
 | Caudal de agua de molde (prueba) | L/min | 4,200 (anchas) / 450 (angostas) | ≥ 95% nominal | < 90% | 🛑 No arrancar; avisa a S-21 / MM-CC-03 | HMI |
 | Frecuencia de oscilación (prueba) | cpm | Valor de arranque de la tabla | ± 2% | > ± 5% | Avisa a S-22 | HMI |
 | Carrera de oscilación (prueba) | mm | 6 | 4–8 | > ± 0.5 mm del ajuste | Avisa a S-22 | HMI / indicador de carátula |
@@ -85,7 +85,7 @@ flowchart TD
 |---|---|---|---|
 | Cordón de fibra cerámica | Ø 10–20 mm, clase ≥ 1,260 °C [Validar con OEM / Ingeniería de Proceso] | 2 tramos del perímetro de la cabeza | Seco, en bolsa cerrada |
 | Sellador refractario seco | Polvo o pasta sin agua libre | 1 cubeta | Sin humedad; fecha vigente |
-| Chatarra de enfriamiento | Clavos, rondanas o recortes de acero al carbono limpios | 15–25 kg | Seca, sin óxido suelto, sin aceite ni pintura |
+| Material de enfriamiento | Clavos, rondanas o recortes de acero al carbono limpios | 15–25 kg | Seco, sin óxido suelto, sin aceite ni pintura |
 | Polvo de arranque | Tipo definido por C-08 | Según grado | Sacos cerrados y secos |
 | Herramientas del molde | Varillas, raspadores, cucharas | Juego completo | Secas y precalentadas junto al distribuidor |
 | Lanzas de O₂ | Tubo de lanza | ≥ 4 | Secas; manguera y regulador inspeccionados |
@@ -95,7 +95,7 @@ flowchart TD
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
 | Movimiento de la barra falsa o de la oscilación con manos o herramientas en el molde | Atrapamiento, amputación | ★ LOTO de accionamientos de segmentos, de la barra falsa y de la oscilación antes de meter manos o herramientas (MS-ACE-02) | Candados personales + prueba de arranque |
-| Humedad, aceite u óxido en el molde, la cabeza o la chatarra | Explosión de vapor al arrancar; proyección de metal | ★ Todo material seco y limpio; línea secada con aire; sin gotas de agua en las placas | Inspección visual con lámpara; lista firmada |
+| Humedad, aceite u óxido en el molde, la cabeza o el material de enfriamiento | Explosión de vapor al arrancar; proyección de metal | ★ Todo material seco y limpio; línea secada con aire; sin gotas de agua en las placas | Inspección visual con lámpara; lista firmada |
 | Fuga de agua en placas del molde | Explosión al arrancar | ★ Revisión de fugas con el agua de molde a caudal nominal antes del sellado | Sin gotas ni humedad en 5 min de observación |
 | Caída al molde o desde la plataforma | Caída de altura | Barandales, tapa de molde, arnés si se trabaja fuera de barandal (MS-ACE-10, NOM-009) | Inspección de plataforma |
 | Rociadores del enfriamiento secundario en prueba | Quemadura con vapor, resbalón | Nadie en la cámara de rociado durante la prueba | Aviso y área despejada |
@@ -133,7 +133,7 @@ flowchart TD
 | 9 | Revisa fugas de agua del molde | Agua de molde a caudal nominal; observa placas y esquinas 5 min con lámpara | Sin gotas ni humedad | ★ | S-14 |
 | 10 | Limpia la cabeza y el molde | Retira polvo y restos; nunca uses agua ni aceite; aire seco | Superficies limpias y secas | | S-14 |
 | 11 | Sella las holguras | Comprime cordón de fibra cerámica en las holguras cabeza–placa (2–5 mm) y esquinas; cubre con sellador seco | Sin holguras visibles | ★ | S-14 |
-| 12 | Coloca la chatarra de enfriamiento | 15–25 kg de clavos, rondanas o recortes limpios y secos; capa uniforme 50–80 mm; sin tapar el gancho en exceso | Distribución uniforme; material seco | ★ | S-14 |
+| 12 | Coloca el material de enfriamiento | 15–25 kg de clavos, rondanas o recortes limpios y secos; capa uniforme 50–80 mm; sin tapar el gancho en exceso | Distribución uniforme; material seco | ★ | S-14 |
 | 13 | Retira herramientas y personal | Cuenta herramientas y personas; tapa de molde en su lugar | Conteo completo | | S-14 |
 | 14 | Retira LOTO | Cada dueño retira su candado; avisa por radio al púlpito | Candados retirados | | S-14, S-12 |
 | 15 | Prueba la oscilación | Arranca a la frecuencia y carrera de arranque; mide | ± 2% frecuencia; ± 0.5 mm carrera | | S-12 |
@@ -151,7 +151,7 @@ flowchart TD
 | Cabeza no llega a la posición | Tracking desfasado, patinamiento | Posiciona manual a baja velocidad; recalibra tracking | S-12, S-21 |
 | Gotas de agua en las placas del molde | Fuga en placa o empaque | 🛑 No arrancar; MM-CC-01 | C-06, C-11 |
 | Holgura cabeza–placa > 10 mm | Ancho mal ajustado o cabeza equivocada | Revisa ancho; cambia cabeza si aplica | C-06, C-08 |
-| Chatarra de enfriamiento mojada u oxidada | Almacenamiento inadecuado | Reemplázala con material seco del almacén cubierto | C-06 |
+| Material de enfriamiento mojado u oxidado | Almacenamiento inadecuado | Reemplázalo con material seco del almacén cubierto | C-06 |
 | Prueba de agua de emergencia vencida o fallida | Falta de mantenimiento | 🛑 No arrancar hasta probar (MM-CC-03) | C-06, C-12 |
 | Termopares BOP fallados arriba del criterio | Cable o termopar dañado | Repara antes de arrancar o C-08 autoriza con restricción de velocidad [Validar con OEM / Ingeniería de Proceso] | S-21, C-08 |
 | Sensor de nivel inestable | Calibración, interferencia | Recalibra; sin nivel automático no se arranca | S-21 |
@@ -174,9 +174,9 @@ flowchart TD
 - [ ] Seca la línea y confirma cero agua en molde y segmentos 1–3.
 - [ ] Aplica LOTO a barra falsa, segmentos, oscilación y ajuste de ancho y hace la prueba de arranque.
 - [ ] Revisa fugas del molde con agua a caudal nominal.
-- [ ] Sella holguras sin dejar pasos y coloca chatarra seca de 15–25 kg.
+- [ ] Sella holguras sin dejar pasos y coloca material de enfriamiento seco de 15–25 kg.
 - [ ] Confirma agua de molde ≥ 95% y agua de emergencia lista.
-- **Preguntas orales:** ¿Por qué la chatarra debe estar seca y sin aceite? ¿Qué pasa si la holgura queda abierta? ¿Quién retira cada candado?
+- **Preguntas orales:** ¿Por qué el material de enfriamiento debe estar seco y sin aceite? ¿Qué pasa si la holgura queda abierta? ¿Quién retira cada candado?
 
 ## 12. Referencias
 - FT-ACE-001 §4; CAT-ACE-001; MO-CC1-03; MO-CC1-07; MM-CC-01, MM-CC-02, MM-CC-03, MM-CC-04.
@@ -189,3 +189,4 @@ flowchart TD
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: sin cambios de contenido. | experto-operativo-metalurgia |
+| 0.1 | 2026-09-28 | Cambio editorial por la decisión D-010 (sin cambio técnico): "chatarra de enfriamiento" → "material de enfriamiento"; despuntes, colas y rechazos van a "retornos internos" (FT-ACE-001 v0.4 §2.2). | experto-operativo-metalurgia |

@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | MM-EAF-03 | 0.2 | Borrador para validación | Acería · EAF-1 / EAF-2 | C-15 Especialista de Refractarios | gerente-personal-sindicalizado (Líder Academia de Mantenimiento y Confiabilidad) | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-25 | Pendiente (Gerente de Acería / Director) | 2026-09-25 | 2027-09-25 |
 
-> ⚠️ Base: FT-ACE-001 §2 (EAF de 150 t, coraza Ø 7.3 m, talón 20–30 t, EBT). Espesores, vidas y materiales dependen del proveedor de refractario y del OEM: **[Validar con OEM / Ingeniería de Mantenimiento / C-15]**.
+> ⚠️ Base: FT-ACE-001 §2 (EAF de 150 t, coraza Ø 7.3 m, talón 30–40 t con ≈ 100 % DRI, escoria 160–200 kg/t, EBT). Espesores, vidas y materiales dependen del proveedor de refractario y del OEM: **[Validar con OEM / Ingeniería de Mantenimiento / C-15]**.
 
 ## 1. Objetivo y alcance
 Mantener el revestimiento refractario del EAF con espesor suficiente para evitar la **perforación del horno** (metal o escoria fuera de la coraza, contacto con paneles de agua) y asegurar un vaciado limpio por el EBT, sin arrastre de escoria.
@@ -183,3 +183,4 @@ FT-ACE-001 §2 · MO-EAF-01, MO-EAF-07 · MM-EAF-01 · MS-ACE-03, -05, -08 · Ho
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
 | 0.2 | 2026-09-25 | Revisión cruzada de seguridad: LEL 0 % para entrar sustituido por el criterio único de MS-ACE-05; paso 12 marcado ★; evacuación ≥ 25 m; vigencias de 12 meses (eléctrico, izaje, confinado); lista ★ completa | experto-seguridad-salud |
+| 0.2 | 2026-09-28 | Base actualizada a FT-ACE-001 v0.4 (D-010): talón 30–40 t y escoria 160–200 kg/t con ≈ 100 % DRI. Más escoria y FeO alto aumentan el desgaste de la línea de escoria y los bancos: C-15 debe revisar la frecuencia de gunning y la vida de campaña [Validar con proveedor de refractarios]. Sin impacto de chatarra (ya no hay golpes de canasta en cada colada) | experto-operativo-metalurgia |

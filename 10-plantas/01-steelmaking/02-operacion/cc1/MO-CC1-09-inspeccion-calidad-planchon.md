@@ -40,7 +40,7 @@ flowchart TD
     G -- "Superficial ≤ 5 mm" --> I["ESCARPEAR → re-inspección"]
     I --> G
     G -- "Fuera de límite para el grado,<br/>apto para otro" --> J["DEGRADAR (decide C-09)"]
-    G -- "Profundo > 10 mm, interno severo,<br/>dimensión fuera" --> K["RECHAZAR (chatarra interna)"]
+    G -- "Profundo > 10 mm, interno severo,<br/>dimensión fuera" --> K["RECHAZAR (retorno interno)"]
     H --> L["Registro MES + SPC →<br/>retroalimentación a C-08"]
     J --> L
     K --> L
@@ -196,3 +196,4 @@ flowchart TD
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: sin cambios de contenido; el escarpador sigue pendiente de asignar en CAT-ACE-001 §3. | experto-operativo-metalurgia |
+| 0.1 | 2026-09-28 | Cambio editorial por la decisión D-010 (sin cambio técnico): "chatarra de enfriamiento" → "material de enfriamiento"; despuntes, colas y rechazos van a "retornos internos" (FT-ACE-001 v0.4 §2.2). | experto-operativo-metalurgia |

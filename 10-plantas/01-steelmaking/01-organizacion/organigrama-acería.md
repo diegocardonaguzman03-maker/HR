@@ -318,7 +318,7 @@ Cifras sindicalizadas conciliadas con DP-ACE-S v0.2 (380 / 332 / 251 = 963; 159 
 
 ### 6.2 Dotación propuesta por turno [Supuesto]
 
-Supuestos de cálculo: 2 líneas de bandas cerradas (HYL y Midrex) con arranque en secuencia desde una sola consola; silos de día con inertización y medición de temperatura automáticas; retornos internos ≤ 5 % de la carga metálica (≈ 0.12 Mt/año, ≈ 340 t/día) con una canasta ocasional cada 6–8 coladas por horno [Supuesto]. Los valida C-02, C-07 y experto-operativo-metalurgia contra el diseño real de bandas y silos.
+Supuestos de cálculo (MO-EAF-02 v0.2): 2 bandas cerradas (HYL y Midrex) que llegan a una torre de transferencia con báscula, muestreador y criba; tripper y **4 silos de día** de ≈ 1,000 t (2 por horno) con N₂, termopares y analizadores de gases; una sola consola; retornos internos ≤ 5 % de la carga metálica (≈ 0.12 Mt/año) en canasta de **10–20 t, 1 de cada 2–4 coladas** [Supuesto]. Los valida C-02, C-07 y experto-operativo-metalurgia contra el diseño real de bandas y silos.
 
 | Puesto de trabajo | Rol | Por turno (24/7) | De día | Plazas equivalentes |
 |---|---|---|---|---|
@@ -332,8 +332,8 @@ Supuestos de cálculo: 2 líneas de bandas cerradas (HYL y Midrex) con arranque 
 | Supervisión | C-17 | 1 | — | 4 plazas (sin cambio) |
 
 **Efectos en otros roles [Supuesto; validar con experto-operativo-metalurgia]:**
-- **S-03 (materiales en la nave):** sin cambio de plazas. Frontera de tareas: del silo de día al horno (alimentadores, 5.º agujero, tolvas de adiciones), S-03 y S-01; de HYL/Midrex al silo de día (incluido), S-05.
-- **S-04 Grúa de Carga (14):** se mantiene. Pierde ≈ 30 % de su carga (canasta en cada colada), pero la grúa sigue siendo necesaria para electrodos, bóveda y mantenimiento, y la rotación por calor pide 3 por turno. Revisar en 12 meses con datos reales; **no se propone reducir ahora**.
+- **S-03 (materiales en la nave):** sin cambio de plazas. Frontera de tareas: de la torre de transferencia (límite de batería con Reducción Directa [Supuesto], MO-EAF-02 v0.2) a la salida de los silos de día, S-05; de las básculas dosificadoras al horno (5.º agujero, tolvas de adiciones), S-03 y S-01.
+- **S-04 Grúa de Carga (14):** se mantiene. Pierde ≈ 25 puntos de su carga (de 45 % con 1–2 canastas por colada a ≈ 20 % con una canasta de retornos de 10–20 t cada 2–4 coladas), pero la grúa sigue siendo necesaria para electrodos, bóveda y mantenimiento, y la rotación por calor pide 3 por turno. Revisar en 12 meses con datos reales; **no se propone reducir ahora**.
 - **S-10 Escoria (27):** la escoria sube a ≈ 150–180 kg/t con DRI (CV-GASM-001 §4.3). Podría requerir **+1 por turno (+5 plazas)**, a validar con C-07 y la medición de potes por turno. Es un destino natural para trabajadores de la antigua S-05 (rama lateral ya prevista en el escalafón).
 - **S-23 Soldador:** cambia la mezcla de trabajo (menos canastas, más chutes y bandas por abrasión del DRI); sin cambio de plazas.
 

@@ -38,7 +38,7 @@ flowchart TD
     D --> E{"¿Dentro de límites?"}
     E -- Sí --> F{"¿Toca macro?<br/>(plan o anomalía)"}
     E -- "Retener" --> R
-    E -- "Rechazar" --> X["Rechazo · chatarra o<br/>degradación (firma C-09)"]
+    E -- "Rechazar" --> X["Rechazo · retorno interno o<br/>degradación (firma C-09)"]
     F -- No --> OK["Aceptada → despacho"]
     F -- Sí --> G["Macro: grietas, porosidad,<br/>rechupe, sopladuras"]
     G --> H{"Grado"}
@@ -180,3 +180,4 @@ Casco, lentes y careta, ropa retardante a la flama, guantes de carnaza (y para �
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: sin cambios de contenido. | experto-operativo-metalurgia |
+| 0.1 | 2026-09-28 | Cambio editorial por la decisión D-010 (sin cambio técnico): "chatarra de enfriamiento" → "material de enfriamiento"; despuntes, colas y rechazos van a "retornos internos" (FT-ACE-001 v0.4 §2.2). | experto-operativo-metalurgia |

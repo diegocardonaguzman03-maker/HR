@@ -122,3 +122,11 @@ Alcance de edición: en MM y MS, todo el archivo. En MO, solo la sección 6, las
 5. Quedan 5 decisiones del Director (D-1 a D-5) y las validaciones de OEM, CNSNS y NOM.
 
 **Archivos modificados:** los 49 manuales (MO: solo las secciones permitidas y el encabezado), `03-mantenimiento/README.md` y `04-seguridad/README.md`. **Archivo creado:** este documento.
+
+## 6. Adenda 2026-09-28 — Decisión D-010 (carga ≈ 95–100 % DRI por banda)
+La serie MS-ACE pasó a la versión 0.3. Quedan **sustituidos** los criterios de esta revisión que dependían de la chatarra comprada:
+- Fila 5: la zona de "carga de canasta" aplica solo a la canasta **ocasional** de retornos internos; se agrega la zona de la puerta de escoria durante la alimentación de DRI (MS-ACE-01) [Supuesto].
+- Fila 6: "canasta que gotea" pasa a "retorno húmedo"; se agregan DRI húmedo, reoxidación, H₂ en silos, prohibición de lavar con agua y el agente de extinción del DRI (MS-ACE-03 §6.4).
+- MO-EAF-02 (pórtico, segunda pasada, perímetro de 10 m): **deja de aplicar**; MS-ACE-07 conserva solo las fuentes selladas de CC2 y el control de retornos y de bajas de equipos con fuente.
+- D-1 (DRI caliente): **deja de aplicar**; FT-ACE-001 v0.4 retira el DRI caliente y fija el máximo de 35 kg/min/MW.
+- Nuevos criterios: LOTO de bandas y silos e interfaz con HYL/Midrex (MS-ACE-02 §6.5), silos de DRI como espacio confinado (MS-ACE-05), N₂/H₂/polvo de DRI (MS-ACE-06), escenarios I y J (MS-ACE-09) y Regla que Salva Vidas 14 (bandas). Las decisiones nuevas son D-010-S1 a S4 del `README.md` §5.

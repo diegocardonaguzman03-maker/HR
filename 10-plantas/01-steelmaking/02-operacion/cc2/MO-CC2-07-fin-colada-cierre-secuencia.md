@@ -75,7 +75,7 @@ flowchart TD
 | Velocidad de cola | m/min | 0.8 | 0.5–1.0 [Validar OEM] | > 1.5 con cola en el molde | Baja la velocidad (riesgo de breakout de cola) | HMI |
 | Caída del menisco antes de acelerar la cola | mm | 100 | 80–150 [Validar] | — | — | Radiométrico |
 | Agua de molde después de la última cola | min | 15 | ≥ 15 [Validar OEM] | Apagado antes | No apagues | HMI |
-| Longitud mínima de la palanquilla de cola | m | 6 | ≥ 6 [Validar con Laminación] | < 6 m | A chatarra | Cortadora |
+| Longitud mínima de la palanquilla de cola | m | 6 | ≥ 6 [Validar con Laminación] | < 6 m | A retornos internos (MO-EAF-02) | Cortadora |
 
 ## 6. Seguridad
 ### 6.1 Peligros y controles críticos
@@ -123,7 +123,7 @@ Chamarra y polainas aluminizadas, careta con filtro IR, casco con barbiquejo, gu
 | 8 | Aplica la velocidad de cola | 0.5–1.0 m/min; **no eches agua al molde** | Cola sale del molde sin fuga | ★ | S-12, S-14 |
 | 9 | Apaga oscilación y EMS | Cuando la cola sale del molde y pasa el EMS | Sin alarmas | | S-12 |
 | 10 | Deja que el rociado siga a la cola | Seguimiento de cola automático; apaga zona por zona | Zonas apagadas detrás de la cola | | S-12 |
-| 11 | Corta y marca la cola | Palanquilla "C"; si mide < 6 m, a chatarra | Identificada | 🔎 | S-16 |
+| 11 | Corta y marca la cola | Palanquilla "C"; si mide < 6 m, a retornos internos | Identificada | 🔎 | S-16 |
 
 **C. Cierre de máquina**
 
@@ -181,3 +181,4 @@ Chamarra y polainas aluminizadas, careta con filtro IR, casco con barbiquejo, gu
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: ESR citado como C-16 en roles, columna Rol y avisos. | experto-operativo-metalurgia |
+| 0.1 | 2026-09-28 | Cambio editorial por la decisión D-010 (sin cambio técnico): "chatarra de enfriamiento" → "material de enfriamiento"; despuntes, colas y rechazos van a "retornos internos" (FT-ACE-001 v0.4 §2.2). | experto-operativo-metalurgia |

@@ -1,10 +1,10 @@
-# MS-ACE-07 — Fuentes radiactivas selladas de medición (nivel de molde de CC2 y nivel de silos de día) y control de retornos internos
+# MS-ACE-07 — Fuentes radiactivas selladas de medición (nivel de molde de CC2) y control de retornos internos
 
 | Código | Versión | Estado | Área | Dueño del proceso | Elaboró | Revisión técnica | Revisión de seguridad | Aprobó | Fecha | Próxima revisión |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MS-ACE-07 | 0.3 | Borrador para validación | CC2 (medidores de nivel de molde con Cs-137), silos de día de DRI (medidores de nivel radiométricos, si existen), patio de retornos internos, casa de bolsas | C-16 Especialista de Seguridad e Higiene de Acería (con el Encargado de Seguridad Radiológica) | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-28 | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
+| MS-ACE-07 | 0.3 | Borrador para validación | CC2 (medidores de nivel de molde con Cs-137), patio de retornos internos, casa de bolsas; silos de día solo si el ESR registra una fuente (hoy nivel por radar) | C-16 Especialista de Seguridad e Higiene de Acería (con el Encargado de Seguridad Radiológica) | experto-seguridad-salud | experto-operativo-metalurgia | experto-seguridad-salud — visto bueno con observaciones, 2026-09-28 | Pendiente (Gerente de Acería / Director) | 2026-09-28 | 2027-09-28 |
 
-> ⚠️ **Mensaje clave.** Con la decisión D-010, GASM **ya no compra chatarra**: el EAF se carga con DRI de pelet propio y ≤ 5 % de retornos internos (`../../00-cadena-de-valor/CV-GASM-001-cadena-de-valor.md` §4.3). **Deja de aplicar el riesgo de fuentes huérfanas en chatarra comprada y el pórtico de chatarra.** El riesgo radiológico que **queda** son las **fuentes selladas de medición** de la propia Acería: el Cs-137 de nivel de molde en las 6 líneas de CC2 y, si existen, los medidores de nivel de los silos de día [Validar inventario con el ESR y la licencia CNSNS]. El escenario que ahora debemos evitar es que **una fuente de la planta**, dañada o dada de baja, **termine en los retornos y se funda** (caso real en México: Ciudad Juárez, 1983–84, una fuente de Co-60 terminó en varilla corrugada). **Solo el Encargado de Seguridad Radiológica (ESR) manipula el obturador. Ningún equipo con fuente va a retornos ni a chatarra.**
+> ⚠️ **Mensaje clave.** Con la decisión D-010, GASM **ya no compra chatarra**: el EAF se carga con DRI de pelet propio y ≤ 5 % de retornos internos (`../../00-cadena-de-valor/CV-GASM-001-cadena-de-valor.md` §4.3). **Deja de aplicar el riesgo de fuentes huérfanas en chatarra comprada y el pórtico de chatarra.** El riesgo radiológico que **queda** son las **fuentes selladas de medición** de la propia Acería: el Cs-137 de nivel de molde en las 6 líneas de CC2 (los silos de día miden nivel por radar, sin fuente, según FT-ACE-001 §2.1 [Validar inventario con el ESR y la licencia CNSNS]). El escenario que ahora debemos evitar es que **una fuente de la planta**, dañada o dada de baja, **termine en los retornos y se funda** (caso real en México: Ciudad Juárez, 1983–84, una fuente de Co-60 terminó en varilla corrugada). **Solo el Encargado de Seguridad Radiológica (ESR) manipula el obturador. Ningún equipo con fuente va a retornos ni a chatarra.**
 
 ## 1. Objetivo y alcance
 
@@ -27,10 +27,10 @@
 |---|---|---|
 | **ESR Encargado de Seguridad Radiológica** (función que cumple **C-16**, autorizado por la CNSNS; en su ausencia, un suplente con licencia vigente [Validar con la licencia]) | Custodia de fuentes y llaves del obturador; pruebas de fuga; inventario; dosimetría; reportes a la CNSNS; libera los equipos dados de baja y los retornos sospechosos | A (técnico) |
 | C-16 Especialista de Seguridad e Higiene | Dueño del manual; integra el tema al sistema de SSO; auditoría | A |
-| C-12 / S-21 Instrumentista (POE) | Mantenimiento de los medidores de CC2 y de silos con el obturador cerrado y con el ESR | R |
+| C-12 / S-21 Instrumentista (POE) | Mantenimiento de los medidores de CC2 (y de cualquier otro medidor radiométrico registrado) con el obturador cerrado y con el ESR | R |
 | S-12 / S-13 / S-14 Púlpito, Plataforma y Ayudante de Colada (CC2) | Respetan la señalización; no intervienen el molde sin la liberación del ESR; avisan al ESR de daños al contenedor | R |
 | S-25 Taller de moldes | Cambio de molde de CC2 solo con el obturador cerrado y verificado | R |
-| S-05 Operador de Manejo de DRI y Retornos / C-17 Supervisor de Manejo de Materiales (DRI, fundentes y retornos) | Respetan la zona controlada de los medidores de silo; no entran ni trabajan en el techo o la pared del silo junto al medidor sin liberación del ESR; revisan que la canasta de retornos no lleve equipos ni contenedores con trébol | R |
+| S-05 Operador de Manejo de DRI y Retornos / C-17 Supervisor de Manejo de Materiales (DRI, fundentes y retornos) | Revisan que la canasta de retornos no lleve equipos ni contenedores con trébol; si el ESR llega a registrar un medidor radiométrico en silos o tolvas, respetan su zona controlada | R |
 | C-11 / C-13 Mantenimiento y planeación | Ningún medidor, contenedor o componente con trébol se desmonta, se desecha ni se manda a chatarra sin el ESR | R |
 | C-04 Jefe de Turno | Comandante del incidente en un evento radiológico (MS-ACE-09) | R |
 | C-01 Gerente de Acería | Titular de la licencia ante la CNSNS [Supuesto] | A (legal) |
@@ -41,16 +41,16 @@
 
 ![Figura 1. Detalle del medidor de nivel de CC2 con Cs-137, obturador y candado del ESR (punto 7)](../img/ms-loto-puntos-cc.svg)
 
-> Figura del medidor de nivel de silo: **pendiente** (se agregará a `../img/` cuando el ESR confirme el inventario). La Figura 2 anterior (pórtico del patio de chatarra) queda retirada.
+> La Figura 2 anterior (pórtico del patio de chatarra) queda retirada por D-010.
 
 ```mermaid
 flowchart TD
-    subgraph MED["Fuentes selladas de medición (CC2 y silos de día)"]
-        A1["Trabajo en el molde, en el silo<br/>o en el medidor"] --> A2["ESR cierra obturador<br/>y pone su candado"]
+    subgraph MED["Fuentes selladas de medición (CC2 y otras registradas)"]
+        A1["Trabajo en el molde<br/>o en el medidor"] --> A2["ESR cierra obturador<br/>y pone su candado"]
         A2 --> A3["Medición con medidor de radiación:<br/>punto de trabajo < 2 × fondo"]
         A3 --> A4{"¿Lectura OK?"}
         A4 -- "No" --> A5["🛑 No trabajar. Alejarse ≥ 3 m.<br/>ESR investiga"]
-        A4 -- "Sí" --> A6["Trabajo con LOTO (MS-ACE-02)<br/>y, en silo, permiso de confinado (MS-ACE-05)"]
+        A4 -- "Sí" --> A6["Trabajo con LOTO (MS-ACE-02)"]
         A6 --> A7["ESR abre obturador y<br/>verifica la señal de nivel"]
     end
     subgraph RET["Retornos internos y equipos dados de baja"]
@@ -66,7 +66,6 @@ flowchart TD
 | Equipo / componente | Función | Especificación clave | Condición para operar (verificación) |
 |---|---|---|---|
 | Medidor de nivel radiométrico (6, CC2) | Mide el nivel del acero en el molde | Fuente sellada de Cs-137 en contenedor de plomo con obturador; nivel ± 5 mm | Contenedor íntegro, señalizado, con placa de la fuente |
-| Medidor de nivel radiométrico de silo de día (si existe) | Mide el nivel de DRI en el silo | Fuente sellada en contenedor con obturador, montada en la pared del silo; detector en la pared opuesta [Validar con OEM / ESR] | Contenedor íntegro, señalizado, zona controlada delimitada |
 | Obturador con candado | Bloquea el haz para trabajos | Posiciones "abierto/cerrado" visibles | Candado del ESR cuando está cerrado por trabajo |
 | Medidor de radiación portátil (tasa de dosis) | Verifica obturador, fugas, retornos sospechosos y equipos dados de baja | Lectura en μSv/h; calibración vigente (anual [Verificar]) | Prueba de funcionamiento con fuente de verificación |
 | Dosímetros personales (TLD/OSL) | Dosis acumulada del POE | Lectura periódica por laboratorio acreditado | Portado a la altura del pecho |
@@ -79,10 +78,10 @@ flowchart TD
 |---|---|---|---|---|---|---|
 | Límite de dosis anual del POE | mSv/año | ALARA | Restricción interna ≤ 6 [Supuesto] | Límite legal según RGSR/CNSNS (el RGSR fija 50 mSv/año; ICRP 103 recomienda 20 mSv/año promedio) [Verificar con la NOM vigente / SSO] | Nivel de investigación: > 0.5 mSv en un periodo de lectura [Supuesto] → ESR investiga | Dosímetro |
 | Dosis para personal no POE | mSv/año | ≈ 0 | < 1 (referencia de público) [Verificar con RGSR/CNSNS] | ≥ 1 | Revisar señalización y blindaje | Estudio de áreas |
-| Tasa de dosis en el punto de trabajo con obturador cerrado (molde de CC2 o silo) | μSv/h | Fondo (≈ 0.1–0.3) | < 2 × fondo [Validar con ESR] | ≥ 2 × fondo | 🛑 No trabajar; alejarse ≥ 3 m; ESR | Medidor portátil |
+| Tasa de dosis en el punto de trabajo con obturador cerrado (molde de CC2 u otro medidor registrado) | μSv/h | Fondo (≈ 0.1–0.3) | < 2 × fondo [Validar con ESR] | ≥ 2 × fondo | 🛑 No trabajar; alejarse ≥ 3 m; ESR | Medidor portátil |
 | Tasa de dosis a 1 m del contenedor (obturador abierto) | μSv/h | Según licencia | ≤ valor de la licencia CNSNS [Validar con ESR] | > valor de la licencia | Delimitar; ESR revisa blindaje | Medidor portátil (levantamiento periódico) |
 | Prueba de fuga (frotis) de la fuente sellada | Bq | < límite | Según licencia | ≥ límite de la licencia [Verificar] | Fuente fuera de servicio; aviso a la CNSNS | Laboratorio autorizado, periodicidad según licencia (típico 6–12 meses) [Verificar] |
-| Inventario físico de fuentes (CC2 + silos) | — | 100 % localizado | Mensual [Supuesto] | Fuente o contenedor no localizado | Aviso inmediato al ESR, a C-01 y a la CNSNS | Registro del ESR |
+| Inventario físico de fuentes (CC2 y otras registradas) | — | 100 % localizado | Mensual [Supuesto] | Fuente o contenedor no localizado | Aviso inmediato al ESR, a C-01 y a la CNSNS | Registro del ESR |
 | Retorno o equipo sospechoso (trébol, plomo, placa de fuente) | μSv/h | Fondo | Fondo | Cualquier lectura > 2 × fondo o sin medir | 🛑 No cargar ni desechar; apartar ≥ 3 m; ESR | Medidor portátil |
 
 ## 6. Seguridad
@@ -92,8 +91,8 @@ flowchart TD
 | Peligro | Consecuencia | Control crítico | Verificación |
 |---|---|---|---|
 | Exposición al haz del medidor de CC2 durante trabajos en el molde | Dosis innecesaria | Obturador cerrado + candado del ESR + medición | Registro del ESR en el permiso |
-| Exposición al haz del medidor de silo durante inspección, limpieza, desatasque o entrada al silo | Dosis innecesaria (el haz cruza el silo) | Obturador cerrado + candado del ESR + medición **antes** de cualquier trabajo en la pared, el techo o dentro del silo; punto de aislamiento incluido en el permiso de espacio confinado (MS-ACE-05) [Validar con ESR] | Firma del ESR en el permiso |
-| Contenedor dañado por salpicadura o breakout (CC2), por golpe del material o por calor del DRI (silo) | Fuga de radiación | Inspección del ESR tras breakout, salpicadura, autocalentamiento del silo o golpe | Levantamiento de tasa de dosis |
+| Medidor radiométrico nuevo en silos, tolvas o básculas sin pasar por el ESR (compra o proyecto de ingeniería) | Fuente no inventariada, exposición en espacios confinados | Toda compra o proyecto con fuente radiactiva requiere visto bueno del ESR y alta en la licencia antes de instalarse | Gestión del cambio con firma del ESR |
+| Contenedor dañado por salpicadura o breakout (CC2) o por golpe | Fuga de radiación | Inspección del ESR tras breakout, salpicadura o golpe | Levantamiento de tasa de dosis |
 | **Fuente de la planta que termina en retornos o en chatarra** (medidor dado de baja, contenedor desmontado, molde con el contenedor pegado) | Fusión: acero, polvo y personal contaminados | Ningún componente con trébol sale del inventario sin el ESR; revisión visual de la canasta de retornos; medición del ESR a todo equipo sospechoso; monitoreo del polvo y del acero | Inventario; registro de bajas; registros del ESR |
 | Manipulación por personal no autorizado | Exposición, robo | Solo el ESR; llaves bajo custodia | Inventario |
 | Pérdida o robo de la fuente | Exposición del público | Inventario mensual [Supuesto]; aviso inmediato a la CNSNS | Registro de inventario |
@@ -105,9 +104,8 @@ El EPP convencional **no protege contra la radiación gamma**. La protección es
 ### 6.3 Permisos, bloqueos y zonas de exclusión
 
 - Contenedores y áreas con el **símbolo internacional de radiación (trébol)** y leyenda "PRECAUCIÓN — MATERIAL RADIACTIVO", conforme a la NOM-012-STPS-2012 y la NOM-026-STPS-2008.
-- **Zona controlada** alrededor de cada medidor (CC2 y silos), delimitada por el ESR según el levantamiento [Validar con ESR]; solo POE en tareas con la fuente.
+- **Zona controlada** alrededor de cada medidor, delimitada por el ESR según el levantamiento [Validar con ESR]; solo POE en tareas con la fuente.
 - Todo trabajo en el molde de CC2 (cambio de molde, destrabe tras breakout, mantenimiento del medidor): **permiso de trabajo con firma del ESR** + LOTO (MS-ACE-02, punto 7 de la Figura 1).
-- Todo trabajo en la pared o el techo del silo junto al medidor, o dentro del silo: **permiso con firma del ESR** + LOTO de bandas y silo (MS-ACE-02 §6.5) + permiso de espacio confinado si hay entrada (MS-ACE-05).
 - **Baja de equipos con fuente:** solo el ESR, con registro y aviso a la CNSNS según la licencia [Verificar]. Nunca a chatarra, a retornos ni a venta.
 
 ## 7. Calidad
@@ -115,22 +113,21 @@ El EPP convencional **no protege contra la radiación gamma**. La protección es
 | Variable crítica de calidad | Especificación | Método / frecuencia | Registro | Defecto si falla |
 |---|---|---|---|---|
 | Señal de nivel de molde de CC2 | Nivel ± 5 mm | Verificación tras cada apertura del obturador | Registro del ESR / HMI | Nivel falso: desbordes, marcas de oscilación profundas, breakout |
-| Señal de nivel del silo de día (si es radiométrica) | Según OEM [Validar con OEM] | Verificación tras cada apertura del obturador | Registro del ESR / HMI | Nivel falso: silo sobrellenado o vacío; alimentación de DRI interrumpida |
 | Acero libre de contaminación radiactiva | Sin actividad sobre el fondo | Monitoreo de muestras o del polvo [Supuesto] | Registro del ESR | Producto contaminado: retiro del mercado, aviso a la CNSNS |
 | Retornos sin fuentes | Cero fuentes o contenedores cargados | Revisión de la canasta; control de bajas | Registro de C-17 y del ESR | Fusión de fuente |
 
 ## 8. Procedimiento paso a paso
 
-**A. Trabajo en el molde o en el medidor de CC2, o en el silo de día o su medidor**
+**A. Trabajo en el molde o en el medidor de CC2 (o en otro medidor radiométrico registrado)**
 
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
-| 1 | Solicita al ESR | Incluye en el permiso de trabajo el punto de la fuente (CC2: punto 7; silo: punto del medidor [figura pendiente]) | ESR confirma horario | ★ | C-11 / C-06 / C-17 |
-| 2 | Cierra y bloquea el obturador | El ESR cierra el obturador de la línea o del silo (o de todos si aplica), coloca su candado y tarjeta | Obturador en "cerrado" con candado | ★ | ESR |
+| 1 | Solicita al ESR | Incluye en el permiso de trabajo el punto de la fuente (CC2: punto 7 de la Figura 1) | ESR confirma horario | ★ | C-11 / C-06 |
+| 2 | Cierra y bloquea el obturador | El ESR cierra el obturador de la línea (o de las 6 si aplica), coloca su candado y tarjeta | Obturador en "cerrado" con candado | ★ | ESR |
 | 3 | Mide | El ESR mide en el punto de trabajo y a 1 m: < 2 × fondo | Lecturas anotadas en el permiso | ★ | ESR |
-| 4 | Aplica LOTO del resto de energías | MS-ACE-02 (en silo: §6.5, bandas, alimentadores e inertización con N₂) | Energía cero | ★ | Ejecutores |
+| 4 | Aplica LOTO del resto de energías | MS-ACE-02 | Energía cero | ★ | Ejecutores |
 | 5 | Trabaja sin tocar el contenedor | No desmontes ni golpees el contenedor; si se daña, detente y aléjate ≥ 3 m | Contenedor íntegro | ★ | S-25, S-21, ejecutores |
-| 6 | Devuelve y verifica | El ESR retira su candado, abre el obturador y verifica la señal de nivel con el púlpito | Señal en rango (CC2 ± 5 mm) | ★ | ESR, S-12 / S-05 |
+| 6 | Devuelve y verifica | El ESR retira su candado, abre el obturador y verifica la señal de nivel con el púlpito | Señal ± 5 mm | ★ | ESR, S-12 |
 
 **B. Control de retornos internos y de equipos dados de baja**
 
@@ -148,7 +145,6 @@ El EPP convencional **no protege contra la radiación gamma**. La protección es
 |---|---|---|---|
 | Obturador no cierra o lectura alta con obturador "cerrado" | Obturador trabado | Aléjate ≥ 3 m; delimita; no trabajes | ESR, C-16 |
 | Contenedor golpeado, con metal encima o quemado (CC2) | Breakout, salpicadura | Aléjate; delimita; ESR hace levantamiento | ESR, C-06 |
-| Contenedor del silo golpeado, caliente o con DRI encima | Autocalentamiento del silo, golpe | Aléjate; delimita; ESR hace levantamiento cuando el silo esté controlado (MS-ACE-03 §9) | ESR, C-17 |
 | Objeto con trébol o contenedor en retornos o en chatarra | Baja sin control | Paso B completo | ESR, C-04 |
 | Fuente o contenedor no localizado en el inventario | Robo, pérdida, baja sin control | Aviso inmediato; búsqueda dirigida por el ESR; aviso a la CNSNS | ESR, C-01 |
 | Alarma de radiación en polvo de casa de bolsas o en acero | Fuente fundida | Paro de la extracción según ESR; aislamiento del polvo y del acero; plan de emergencia radiológica | ESR, C-04, C-01 |
@@ -157,7 +153,7 @@ El EPP convencional **no protege contra la radiación gamma**. La protección es
 
 ## 10. Registros
 
-- Licencia de la CNSNS, inventario de fuentes (CC2 y silos) y registro de movimientos y bajas (ESR).
+- Licencia de la CNSNS, inventario de fuentes y registro de movimientos y bajas (ESR).
 - Pruebas de fuga, levantamientos de tasa de dosis y verificación de medidores.
 - Historial de dosis de cada POE (se conserva según la regulación [Verificar]).
 - Registro de objetos sospechosos en retornos y su resolución.
@@ -168,16 +164,16 @@ El EPP convencional **no protege contra la radiación gamma**. La protección es
 | Rol | Nivel requerido (1–4) | Formación teórica (h) | OJT supervisado (h / eventos) | Evaluación (pasos ★) | Vigencia |
 |---|---|---|---|---|---|
 | C-16 en función de ESR | 4 | Curso reconocido por la CNSNS [Verificar] | Según CNSNS | Autorización de la CNSNS + pasos 2, 3, 6, 9 y 10 | Según la licencia CNSNS; evaluación interna 12 meses |
-| C-06, C-11, C-17 (solicitantes del trabajo en el molde o en el silo) | 3 | 2 (MS-ACE-07) | 2 solicitudes con el ESR | Paso 1 (punto de la fuente en el permiso) | 12 meses (fuentes radiactivas) |
+| C-06, C-11 (solicitantes del trabajo en el molde) | 3 | 2 (MS-ACE-07) | 2 solicitudes con el ESR | Paso 1 (punto de la fuente en el permiso) | 12 meses (fuentes radiactivas) |
 | POE (S-21, S-25 de CC2) | 3 | 16 (protección radiológica, NOM-012) | 3 tareas con ESR | Pasos 4, 5 + uso del dosímetro | 12 meses (fuentes radiactivas) |
 | S-12, S-13, S-14 de CC2 | 2 | 4 (conciencia radiológica) | — | Reconocer el trébol y el obturador; no intervenir el molde sin la liberación del ESR | 12 meses (fuentes radiactivas) |
-| S-05, C-17 (silos y retornos) | 2 | 4 (conciencia radiológica: medidores de silo y control de retornos) | 1 simulacro de objeto sospechoso | Pasos 7, 8; no trabajar junto al medidor del silo sin liberación del ESR | 12 meses (fuentes radiactivas) |
+| S-05, C-17 (silos y retornos) | 2 | 4 (conciencia radiológica y control de retornos) | 1 simulacro de objeto sospechoso | Pasos 7, 8 | 12 meses (fuentes radiactivas) |
 | C-13 Planeador (bajas de equipo) | 2 | 1 | — | Paso 10 | 12 meses |
 | Resto del personal | 1 | 1 (inducción) | — | Reconocer el símbolo | 12 meses |
 
 **Lista corta de verificación de pasos ★:**
-1. ¿Sabe que solo el ESR opera el obturador (CC2 y silos)?
-2. ¿Verifica la medición < 2 × fondo antes de trabajar en el molde de CC2 o en el silo?
+1. ¿Sabe que solo el ESR opera el obturador?
+2. ¿Verifica la medición < 2 × fondo antes de trabajar en el molde de CC2?
 3. ¿Aplica tiempo, distancia y blindaje?
 4. ¿Trabaja sin tocar ni golpear el contenedor y se aleja ≥ 3 m si se daña (paso 5)?
 5. ¿El ESR (C-16) retira su candado, abre el obturador y verifica la señal de nivel con el púlpito (paso 6)?
@@ -197,4 +193,4 @@ El EPP convencional **no protege contra la radiación gamma**. La protección es
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
 | 0.2 | 2026-09-25 | Revisión cruzada: C-16 cumple la función de ESR; S-13 agregado como ejecutor (catálogo); vigencias de 12 meses; pasos ★ 5, 6, 9 y 10 en la lista de verificación | experto-seguridad-salud |
-| 0.3 | 2026-09-28 | **Redefinición por D-010:** sale el pórtico de chatarra y el procedimiento de alarma de camiones (fuentes huérfanas en chatarra comprada); quedan las fuentes selladas de CC2; entran los medidores de nivel de silos de día (si existen) y el control de retornos internos y de bajas de equipos con fuente; nuevo procedimiento B y competencias de S-05, C-17 y C-13 | experto-seguridad-salud |
+| 0.3 | 2026-09-28 | **Redefinición por D-010:** sale el pórtico de chatarra y el procedimiento de alarma de camiones (fuentes huérfanas en chatarra comprada); quedan las fuentes selladas de CC2; los silos de día miden nivel por radar (FT-ACE-001 §2.1), por lo que solo entran si el ESR registra una fuente; entran el control de retornos internos y de bajas de equipos con fuente; nuevo procedimiento B y competencias de S-05, C-17 y C-13 | experto-seguridad-salud |

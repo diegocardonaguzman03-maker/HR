@@ -243,7 +243,7 @@ FT-ACE-001 §2.1 deja a este manual la definición del agente de extinción. Cri
 
 - NOM-002-STPS-2010 (prevención de incendios), NOM-005-STPS-1998 (sustancias peligrosas), NOM-010-STPS-2014 (agentes químicos), NOM-033-STPS-2015 (espacios confinados), NOM-027-STPS-2008 (trabajo en caliente), NOM-017-STPS-2008 (EPP), NOM-004-STPS-1999 [Verificar con la NOM vigente / SSO — verificar con Jurídico Laboral / SSO].
 - CV-GASM-001 §4.2 (especificación del DRI), §4.3 (carga del EAF) y §5 (riesgos que cambian).
-- FT-ACE-001 secciones 2 (alarmas de agua del EAF, alimentación de DRI), 3 (precalentamiento de olla), 4 y 5 (agua de molde y de emergencia) [en actualización por D-010].
+- FT-ACE-001 v0.4 secciones 2 (alarmas de agua del EAF, alimentación de DRI ≤ 35 kg/min/MW), 2.1 (manejo de DRI, silos, alarma de temperatura), 2.2 (retornos), 3 (precalentamiento de olla), 4 y 5 (agua de molde y de emergencia).
 - MO-EAF-01, MO-EAF-02, MO-EAF-03, MO-OLL-01, MM-EAF-01, MM-CC-03; MS-ACE-01, 02, 05, 06, 09; CRS-08, CRS-09, CRS-10.
 - Código IMO IMSBC (DRI tipos A, B y C: reacción con agua, H₂ y autocalentamiento) y guías de los licenciantes HYL/Midrex sobre almacenamiento y manejo del DRI, como referencias técnicas [por referenciar; Validar con OEM].
 - Guías sectoriales sobre explosiones por agua–metal (worldsteel, AIST) [por referenciar].

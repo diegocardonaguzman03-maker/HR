@@ -154,7 +154,7 @@ Casco con barbiquejo, lentes, botas, guantes, ropa FR o algodón, protección au
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
 |---|---|---|---|---|---|
 | 1 | Identifica el espacio y sus peligros | Consulta el inventario; llena el análisis de riesgo con peligros específicos (Ar, CO, O₂ bajo, calor, sepultamiento) | Análisis firmado por C-16 | ★ | Emisor |
-| 2 | Aísla todas las energías y gases | LOTO (MS-ACE-02) + brida ciega o desconexión de Ar/N₂/O₂/GN; en ollas, desconecta la manguera del tapón poroso y tapa; en silos y chutes de DRI, brida ciega del N₂ de inertización, LOTO de bandas, alimentadores y cañones de aire, silo vacío y obturador del medidor cerrado por el ESR | Aislamiento positivo anotado | ★ | S-19, S-22, S-20 (ESR en silo) |
+| 2 | Aísla todas las energías y gases | LOTO (MS-ACE-02) + brida ciega o desconexión de Ar/N₂/O₂/GN; en ollas, desconecta la manguera del tapón poroso y tapa; en silos y chutes de DRI, brida ciega del N₂ de inertización, LOTO de bandas, alimentadores y cañones de aire, silo vacío y, si el ESR registra un medidor radiométrico, obturador cerrado | Aislamiento positivo anotado | ★ | S-19, S-22, S-20 (ESR en silo) |
 | 3 | Ventila | Ventilación forzada con aire limpio ≥ 15 min antes de medir [Supuesto]; nunca con oxígeno | Ventilador operando | | S-19 |
 | 4 | Prueba el detector | Bump test con gas de prueba; verifica fecha de calibración | Detector responde en las 4 celdas | ★ | Medidor |
 | 5 | Mide desde afuera | Orden O₂ → LEL → CO/H₂S; arriba, en medio y abajo; espera el tiempo de respuesta en cada punto | Lecturas dentro del rango de la tabla 5 | ★ | Medidor |

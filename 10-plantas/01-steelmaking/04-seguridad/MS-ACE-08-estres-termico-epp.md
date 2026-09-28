@@ -110,7 +110,7 @@ Límite máximo de exposición en **°C WBGT** (índice de temperatura de globo 
 | 8 | Botas metatarsales | Casquillo, metatarsal, suela resistente al calor (≥ 300 °C [Supuesto]), liberación rápida | Toda la nave |
 | 9 | Protección auditiva | Tapón; doble (tapón + orejera) si ≥ 105 dB(A) | Toda la nave |
 | 10 | Detector personal CO/O₂ | ≤ 30 cm de nariz y boca (MS-ACE-06); en silos y torres de DRI, configurado para leer H₂ en el LEL | Hornos, LF, torreta, fosas, techos de silos y torres de DRI |
-| 11 | Dosímetro personal | Solo POE (MS-ACE-07) | CC2 y silos de día con medidor radiométrico |
+| 11 | Dosímetro personal | Solo POE (MS-ACE-07) | CC2 (y otras fuentes que registre el ESR) |
 | 12 | Respirador con filtro P100 y goggles | Según la evaluación de higiene de C-16 (MS-ACE-06) [Verificar NOM-010 / NOM-017] | Torres de transferencia, cribas, manejo de finos y limpieza de derrames de DRI |
 | 13 | Ropa ajustada (FR o algodón), sin objetos colgantes; cabello recogido | Sin cordones, trapos ni gafetes colgando | Galerías de bandas y torres de transferencia |
 | — | Lentes de seguridad; sombra 3–5 ante el arco | Para ver el arco o el baño | Púlpitos y puerta del horno |
@@ -193,4 +193,4 @@ Límite máximo de exposición en **°C WBGT** (índice de temperatura de globo 
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | experto-seguridad-salud (con criterio técnico de experto-operativo-metalurgia) |
 | 0.2 | 2026-09-25 | Revisión cruzada: pasos ★ 1, 3, 6 y 7 en la lista de verificación | experto-seguridad-salud |
-| 0.3 | 2026-09-28 | D-010: alcance a bandas, torres y silos de DRI; peligros de atrapamiento de ropa y de polvo de DRI; EPP 12 (P100 y goggles) y 13 (ropa ajustada); detector con H₂ y dosímetro en silos con medidor radiométrico. La Figura 1 (`ms-epp-acería.svg`) queda pendiente de actualizar con la fila de bandas y silos | experto-seguridad-salud |
+| 0.3 | 2026-09-28 | D-010: alcance a bandas, torres y silos de DRI; peligros de atrapamiento de ropa y de polvo de DRI; EPP 12 (P100 y goggles) y 13 (ropa ajustada); detector con H₂ y dosímetro solo donde el ESR registre una fuente (los silos miden nivel por radar). La Figura 1 (`ms-epp-acería.svg`) queda pendiente de actualizar con la fila de bandas y silos | experto-seguridad-salud |

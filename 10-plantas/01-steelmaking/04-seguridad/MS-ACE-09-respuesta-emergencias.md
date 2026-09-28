@@ -98,7 +98,7 @@ sequenceDiagram
 | **D. Pérdida de agua de molde / apagón** | Caudal < 90 %; ΔT alto; disparo de bombas; apagón | Verificar agua de emergencia ≤ 15 s; si no entra: cierre inmediato de olla y distribuidor; evacuar plataforma de molde ≥ 10 m | Reintroducir agua a un molde sobrecalentado sin autorización de C-06/C-08 |
 | **E. Fuga de gas** | Alarma de detector; olor a gas; sonido; persona inconsciente | A1: salir; A2: evacuar sector; ESD de gas; sin chispas | Rescatar sin ERA; operar interruptores en la zona |
 | **F. Derrame de metal o escoria / incendio** | Metal fuera de la olla, del canal o del molde; fuego en hidráulica o cables | Evacuar; dejar solidificar; contener con arena seca; aislar hidráulica y energía por el púlpito; brigada contra incendio | Agua sobre metal; pisar escoria "fría" (puede estar líquida por dentro) |
-| **G. Radiológico** | Contenedor de fuente dañado (CC2 o silo); objeto con trébol en retornos; fuente no localizada; alarma de radiación en polvo o acero | Alejarse ≥ 3 m; delimitar; ESR (MS-ACE-07 secciones 8B y 9) | Tocar o mover objetos sospechosos |
+| **G. Radiológico** | Contenedor de fuente dañado (CC2); objeto con trébol en retornos; fuente no localizada; alarma de radiación en polvo o acero | Alejarse ≥ 3 m; delimitar; ESR (MS-ACE-07 secciones 8B y 9) | Tocar o mover objetos sospechosos |
 | **H. Lesionado, golpe de calor, atrapado** | Persona caída; quemadura; confusión | Proteger la escena; primeros auxilios; servicio médico; rescate técnico | Mover al lesionado en zona roja sin protección |
 | **I. Evento de DRI en silo, torre o banda** | Temperatura o CO del silo en aumento; humo; H₂ ≥ 10 % LEL; DRI mojado; DRI encendido en banda | Detén las bandas hacia el silo; el CI pide a RD detener el envío; aumenta la inertización con N₂; evacúa el techo del silo y la torre (≥ 20 % LEL o humo: área de silos completa); sin fuentes de ignición; C-07 decide vaciar el silo (MS-ACE-03 §9) | **Agua o espuma sobre DRI**; abrir el silo o entrar; rescate sin ERA |
 | **J. Atrapamiento en banda** | Grito, banda que se detiene, persona que no responde en la galería | Jala el cable de paro o el botón de paro; avisa; **bloquea la banda (LOTO) antes de liberar a la persona**; en la frontera, pide a RD bloquear su banda; primeros auxilios y rescate técnico | Liberar a la persona con la banda solo "parada por cable"; invertir la banda sin la brigada |
@@ -122,7 +122,7 @@ Para la respuesta: EPP de la zona donde se interviene (MS-ACE-08) y **ERA** en a
 | Ejercicio de mesa (tabletop) del CI | Mensual por cuadrilla | C-04, C-05, C-06, C-16 | Acta |
 | Rescate en espacio confinado y en altura | ≥ 2 al año por brigada | Brigada de rescate | Tiempo de rescate (altura < 15 min) |
 | Prueba real del agua de emergencia de CC | Mensual | Mantenimiento + CC | Registro MM-CC-03 |
-| Simulacro radiológico (contenedor dañado en CC2 o en silo; objeto sospechoso en retornos) | ≥ 1 al año | ESR, S-21, S-12, S-05, C-17 | Acta |
+| Simulacro radiológico (contenedor dañado en CC2; objeto sospechoso en retornos) | ≥ 1 al año | ESR, S-21, S-12, S-05, C-17 | Acta |
 | Simulacro de evento de DRI en silo (escenario I) con la interfaz de RD | ≥ 1 al año por cuadrilla [Supuesto] | C-17, S-05, S-01, púlpito de HYL/Midrex, brigada | Acta; tiempo de paro del envío de DRI |
 | Rescate de persona atrapada en banda (escenario J) | ≥ 1 al año por brigada [Supuesto] | Brigada de rescate, S-05, S-20 | Acta; tiempo hasta banda bloqueada |
 

@@ -26,7 +26,7 @@ flowchart LR
     end
     subgraph PEL["5 · Peletizado (por línea)"]
         MEZ --> DIS["Discos peletizadores<br/>Ø 7.5 m"] --> CRV["Criba de rodillos<br/>pelet verde 9–16 mm"]
-        CRV -- "< 9 mm y > 16 mm<br/>(recirculación)" --> MEZ
+        CRV -- "menor de 9 mm y mayor de 16 mm<br/>(recirculación)" --> MEZ
     end
     subgraph GK["6–8 · Endurecimiento grate-kiln (Línea 1 y Línea 2)"]
         CRV --> PAR["Parrilla móvil<br/>secado + precalentamiento"] --> HOR["Horno rotatorio<br/>cocción 1,260–1,310 °C"] --> ENF["Enfriador anular<br/>descarga ≤ 100 °C"]
@@ -36,7 +36,7 @@ flowchart LR
     end
     subgraph PRO["9–12 · Producto"]
         ENF --> CRI["Cribado de<br/>pelet cocido"] --> REC2["Recubrimiento<br/>antipegado"] --> PAT["Patio de pelet<br/>apiladora-recuperadora"]
-        CRI -- "finos < 6.3 mm" --> FIN["Patio de finos"]
+        CRI -- "finos menores de 6.3 mm" --> FIN["Patio de finos"]
         PAT --> TRE["Silo de carga<br/>de trenes"] --> RD["Ferrocarril ≈ 1,000–1,200 km<br/>→ HYL / Midrex"]
         PAT --> PUE["Banda al muelle →<br/>cargador de barcos"] --> VEN["Venta / exportación"]
     end

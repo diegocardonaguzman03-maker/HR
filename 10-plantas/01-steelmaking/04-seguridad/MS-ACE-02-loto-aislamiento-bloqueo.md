@@ -111,7 +111,7 @@ flowchart TD
 | Caída del contrapeso del tensor por gravedad | Aplastamiento | Bajar el contrapeso a su soporte o sujetarlo; nadie bajo el contrapeso | Visual |
 | Material colgado (puenteo) que cae en silo, tolva o chute | Sepultamiento, golpe | LOTO de alimentadores, vibradores y cañones de aire; derribo desde afuera (MS-ACE-05) | Permiso |
 | N₂ de inertización del silo o del chute | Asfixia | Doble bloqueo y venteo; brida ciega si hay ingreso; medición de O₂ | Manómetro 0 bar + multigás |
-| Fuente de nivel del silo abierta (si existe) | Exposición a radiación | Obturador cerrado + candado del ESR (MS-ACE-07) | Medición en μSv/h |
+| Fuente radiométrica en silo o tolva abierta (hoy el nivel es por radar; aplica solo si el ESR registra una fuente) | Exposición a radiación | Obturador cerrado + candado del ESR (MS-ACE-07) | Medición en μSv/h |
 
 ### 6.2 EPP obligatorio
 
@@ -165,7 +165,7 @@ La **llave cautiva** (enclavamiento por llave atrapada) es un control de **acces
 3. **Neumática:** aire de cañones y vibradores; descargar el acumulador a 0 bar.
 4. **Gases:** **N₂ de inertización** de silo y chute (doble bloqueo y venteo; brida ciega si hay ingreso); CO/H₂ que pueda haber en el espacio superior (MS-ACE-05, MS-ACE-06).
 5. **Térmica:** DRI caliente en el silo o en la banda (≤ 50 °C al contacto [Supuesto]).
-6. **Radiación:** medidor de nivel del silo, si es radiométrico (MS-ACE-07).
+6. **Radiación:** solo si el ESR registra un medidor radiométrico en silos o tolvas (FT-ACE-001 §2.1 indica nivel por radar) (MS-ACE-07).
 
 **Reglas de bandas:**
 - El **cable de paro de emergencia (pull cord)** y el botón de paro detienen la banda, **pero no son un bloqueo**. Para meter la mano, la herramienta o el cuerpo: LOTO completo.
@@ -194,7 +194,7 @@ La **llave cautiva** (enclavamiento por llave atrapada) es un control de **acces
 | 6 | Bloquea y etiqueta | Candado de equipo + tarjeta en cada punto; llaves a la caja grupal | Todos los puntos de la lista con candado | ★ | Emisor del permiso |
 | 7 | Candado personal | Cada trabajador pone SU candado en la caja grupal antes de entrar | 1 candado por persona | ★ | Todos los ejecutores |
 | 8 | Libera energía residual | Descarga acumuladores hasta 0 bar; coloca calzas en brazos/columnas, pasador de basculamiento, pasador de barra falsa; en bandas: asegura el contrapeso del tensor y sujeta la banda con abrazaderas si hay tramo inclinado; drena agua; purga gases; deja enfriar a ≤ 50 °C | 0 bar; calzas, pasadores y contrapeso asegurados | ★ | S-22, S-19 |
-| 9 | Prueba energía cero | (a) Intento de arranque desde HMI y mando local: nada se mueve (en la frontera, RD intenta el arranque de su banda); (b) S-20 mide 0 V vivo–muerto–vivo; (c) manómetros 0 bar (incluido el N₂ de inertización); (d) multigás en rango; (e) fuente de CC2 o del silo: tasa < 2 × fondo; regresa los mandos a "apagado" | Todas las pruebas en cero, anotadas en el permiso | ★ | S-20, S-01/S-12/S-05, ejecutor |
+| 9 | Prueba energía cero | (a) Intento de arranque desde HMI y mando local: nada se mueve (en la frontera, RD intenta el arranque de su banda); (b) S-20 mide 0 V vivo–muerto–vivo; (c) manómetros 0 bar (incluido el N₂ de inertización); (d) multigás en rango; (e) fuente de CC2 (u otra registrada por el ESR): tasa < 2 × fondo; regresa los mandos a "apagado" | Todas las pruebas en cero, anotadas en el permiso | ★ | S-20, S-01/S-12/S-05, ejecutor |
 | 10 | Trabaja | Si el trabajo se interrumpe > 2 h o cambia el alcance, repite la prueba del paso 9 | Trabajo sin cambios de condición | | Ejecutores |
 | 11 | Retira ordenadamente | Retira herramientas y calzas; repone guardas (bandas); cuenta al personal; cada quien quita su candado; S-20 retira tierras; en la frontera, RD retira su candado solo después de la Acería y con aviso por radio; operación prueba el equipo (agua primero, luego hidráulica, luego eléctrica; bandas con alarma de pre-arranque) | Personal completo fuera; guardas puestas; caudales de agua normales antes de energizar | ★ | Emisor + C-05 / C-06 / C-17 |
 
@@ -242,7 +242,7 @@ La **llave cautiva** (enclavamiento por llave atrapada) es un control de **acces
 6. ¿Aplica el orden de reenergización (agua → hidráulica → eléctrica)?
 7. ¿Distingue cuándo basta la llave cautiva (acceso de rutina, sección 6.4) y cuándo se requiere el LOTO completo (intervención en el equipo)?
 8. ¿Aísla fluidos con doble bloqueo y venteo, y brida ciega si hay ingreso (paso 5)?
-9. ¿Cierra el obturador de Cs-137 con candado del ESR (C-16) y confirma < 2 × fondo antes de trabajar en el molde de CC2 o en el silo (paso 9e)?
+9. ¿Cierra el obturador de Cs-137 con candado del ESR (C-16) y confirma < 2 × fondo antes de trabajar en el molde de CC2 (paso 9e)?
 10. ¿Sabe que el cable de paro de una banda no es un bloqueo y aplica LOTO completo para meter la mano o el cuerpo?
 11. ¿Asegura el contrapeso del tensor y vacía o sujeta la banda inclinada antes de trabajar (paso 8)?
 12. ¿En el punto de frontera exige el candado de RD y el de la Acería y las dos firmas en el permiso (sección 6.5)?

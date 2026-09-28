@@ -122,7 +122,7 @@ Casco, lentes, careta, guantes de carnaza y nitrilo (hidráulica), ropa FR, bota
 | 🔎 Estabilidad de regulación | Corriente de arco estable, sin oscilación | Tendencia de corriente/impedancia, trimestral | Reporte de prueba | Arco inestable → más kWh/t, temperatura de vaciado fuera de ±15 °C |
 | 🔎 Contacto zapata–electrodo | ΔT ≤ 10 °C | Termografía mensual | Reporte termográfico | Arco en zapata, rotura de electrodo, **caída de punta al baño (C alto)** |
 | 🔎 Holgura electrodo–delta | ≥ 50 mm | Cada cambio | Checklist | Arco a bóveda, rotura, contaminación con refractario |
-| Consumo de electrodo | 1.3–1.6 kg/t | KPI por turno (C-07) | Tablero | Desgaste lateral por mordaza floja |
+| Consumo de electrodo | 1.4–1.7 kg/t (FT-ACE-001 v0.4) | KPI por turno (C-07) | Tablero | Desgaste lateral por mordaza floja |
 
 ## 8. Procedimiento paso a paso (cambio de bóveda / delta + revisión de brazos)
 | # | Paso | Cómo hacerlo (detalle y medición) | Criterio de aceptación | ★ | Rol |
@@ -181,3 +181,4 @@ FT-ACE-001 §2 y §6 · CAT-ACE-001 · MO-EAF-04, MO-EAF-08 · MM-EAF-01, MM-EAF
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Emisión inicial para validación | gerente-personal-sindicalizado |
 | 0.2 | 2026-09-25 | Revisión cruzada de seguridad: vigencias de 12 meses (S-20 eléctrico, S-04 izaje, altura); criterio LEL para trabajo en caliente; llave cautiva no aplica; zona de exclusión de izaje (MS-ACE-04); lista ★ completa | experto-seguridad-salud |
+| 0.2 | 2026-09-28 | Consumo de electrodo de referencia 1.4–1.7 kg/t (FT-ACE-001 v0.4, ≈ 100 % DRI, D-010) | experto-operativo-metalurgia |

@@ -51,6 +51,10 @@ Estructura de cada manual (plantilla de la guía de estilo §3): 1 Objetivo · 2
 | EAF brazos/HPU | Megger de aislamiento de brazos (≥ 1 MΩ) | Prueba | Trimestral | S-20 | 1 h | V2 | MM-EAF-02 |
 | EAF brazos/HPU | Prueba de respuesta de regulación | Prueba | Trimestral | S-21 / S-22 | 2 h | V2 | MM-EAF-02 |
 | EAF bóveda | Cambio de delta / bóveda | Correctivo programado | Por condición (delta 150–300 coladas) | S-19, S-04, S-24 | 4–8 h | V2 | MM-EAF-02 |
+| Bandas de DRI (tramo Acería) | Recorrido de rodillos, guardas, cubiertas y sellos; cordones de paro | Preventivo | Diario | S-19 / S-05 (reporte) | 30 min | V0 | Pendiente MM-DRI-01 [Supuesto] |
+| Silos de día de DRI | Termopares, analizadores O₂/CO/H₂ y radar de nivel: verificación y calibración | Calibración | Mensual | S-21 | 2 h por silo | V0 (silo fuera de servicio) | Pendiente MM-DRI-01 [Supuesto] |
+| Silos de día de DRI | Sistema de inertización N₂: presión, caudal, válvulas | Preventivo | Semanal | S-21 / S-19 | 1 h | V0 | Pendiente MM-DRI-01 [Supuesto] |
+| Básculas dosificadoras y báscula de banda | Calibración con cadena o peso patrón | Calibración | Mensual | S-21 | 2 h | V1 | Pendiente MM-DRI-01 [Supuesto] |
 | EAF refractario | Termografía de coraza | Predictivo | Diario | S-24 / C-15 | 20 min | V0 | MM-EAF-03 |
 | EAF refractario | Escaneo láser de perfil | Predictivo | Semanal | C-15 / S-24 | 30 min | V2 | MM-EAF-03 |
 | EAF refractario | Gunning programado | Preventivo | Semanal | S-24 | 1–2 h | V2 | MM-EAF-03 |
@@ -128,6 +132,7 @@ Estructura de cada manual (plantilla de la guía de estilo §3): 1 Objetivo · 2
 3. Ventanas de paro V1–V4 con C-10 y C-13.
 4. Licencia CNSNS: periodicidad de pruebas de fuga y límites de tasa de dosis (ESR).
 5. Programa NOM-006 de cada grúa y periodicidad de prueba de carga.
+6. **D-010 (2026-09-28):** con ≈ 100 % DRI entran equipos nuevos al mantenimiento de la Acería (bandas del tramo Acería, silos de día con N₂ y analizadores, básculas dosificadoras). Se propone un manual **MM-DRI-01** (dueño C-12; ejecutan S-19, S-21, S-20) que requiere alta en CAT-ACE-001 y decisión del Director. Las filas del plan maestro marcadas "Pendiente MM-DRI-01" son [Supuesto].
 
 ## 7. Revisión cruzada requerida
 - **experto-operativo-metalurgia:** visto bueno técnico (coherencia con FT-ACE-001, variables de calidad).

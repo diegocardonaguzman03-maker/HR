@@ -15,7 +15,7 @@ Máquina **vertical-curva de 1 línea**, radio **9.5 m**, longitud metalúrgica 
 | Código | Proceso crítico | Dueño | Ejecutan | Pasos ★ principales |
 |---|---|---|---|---|
 | [MO-CC1-01](MO-CC1-01-preparacion-distribuidor.md) | Preparación y precalentamiento del distribuidor | C-06 | S-15, S-13 | Humedad del distribuidor, espacio confinado, prueba de asiento del tapón, encendido de quemadores |
-| [MO-CC1-02](MO-CC1-02-insercion-sellado-barra-falsa.md) | Inserción y sellado de la barra falsa | C-06 | S-12, S-14 | LOTO antes de sellar, línea seca, fugas del molde, sellado y chatarra seca, agua de emergencia lista |
+| [MO-CC1-02](MO-CC1-02-insercion-sellado-barra-falsa.md) | Inserción y sellado de la barra falsa | C-06 | S-12, S-14 | LOTO antes de sellar, línea seca, fugas del molde, sellado y material de enfriamiento seco, agua de emergencia lista |
 | [MO-CC1-03](MO-CC1-03-arranque-colada.md) | Arranque de colada | C-06 | S-12, S-13, S-14 | Zona de exclusión bajo el molde, lanceado, apertura del tapón, paso a nivel automático |
 | [MO-CC1-04](MO-CC1-04-colada-estado-estable.md) | Colada en estado estable | C-08 | S-12, S-13, S-14 | Respuesta a sticker y breakout, agua de emergencia ≤ 15 s, agua en el molde |
 | [MO-CC1-05](MO-CC1-05-cambio-olla-secuencia.md) | Cambio de olla en secuencia | C-06 | S-13, S-09, S-12 | Olla suspendida, giro de torreta, lanceado, nivel mínimo 700 mm |
@@ -69,7 +69,7 @@ flowchart LR
 | Corte | 8–11 m ± 15 mm | Planchón máx. ≈ 32.8 t → grúa de 45 t con tenaza (nunca la de 25 t) | FT §4, §6; MO-CC1-08 |
 
 ## 6. Controles críticos transversales (★)
-1. **Cero humedad**: distribuidor, SEN, molde, cabeza de barra falsa, chatarra, herramientas y lanzas secos (MS-ACE-03).
+1. **Cero humedad**: distribuidor, SEN, molde, cabeza de barra falsa, material de enfriamiento, herramientas y lanzas secos (MS-ACE-03).
 2. **Zona de exclusión bajo el molde y segmentos 1–3** en arranque, cambios, fin de colada y durante toda la colada salvo autorización de C-06 (MS-ACE-01).
 3. **Agua de molde**: agua de emergencia en ≤ 15 s; si no entra, cerrar tapón y olla y evacuar.
 4. **Breakout**: tapón → extracción → olla → evacuación → conteo.

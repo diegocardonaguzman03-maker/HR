@@ -75,7 +75,7 @@ flowchart LR
 | Presión de oxígeno de corte | bar | [Validar OEM] | [Validar OEM] | Baja presión | No cortes; revisa el suministro | Manómetro |
 | Presión de gas natural | bar | [Validar OEM] | [Validar OEM] | Alta o baja | Cierra el gas y revisa | Manómetro |
 | Tiempo de corte (160 mm) | s | 45 | 35–55 [Validar] | > 60 s | Revisa la boquilla y el O₂ | HMI |
-| Longitud mínima de palanquilla corta (cola) | m | — | ≥ 6 [Validar] | < 6 m | A chatarra | HMI |
+| Longitud mínima de palanquilla corta (cola) | m | — | ≥ 6 [Validar] | < 6 m | A retornos internos (MO-EAF-02) | HMI |
 | Temperatura para carga caliente | °C | ≥ 650 | ≥ 600 [Validar] | < 600 °C | Envía a patio | Pirómetro a la salida del lecho |
 | Temperatura máxima para electroimán | °C | ≤ 550 | ≤ 600 [Validar OEM] | > 600 °C | Usa tenaza | Pirómetro |
 | Altura de estiba en patio | m | ≤ 2.0 | ≤ 2.5 [Validar con C-16] | > 2.5 m | Reestiba | Visual / regla |
@@ -170,3 +170,4 @@ Casco, lentes, careta para el área de corte, ropa retardante a la flama, guante
 |---|---|---|---|
 | 0.1 | 2026-09-25 | Creación del borrador para validación | sind-servicio-clientes + experto-operativo-metalurgia |
 | 0.1 | 2026-09-25 | Revisión técnica cruzada contra FT-ACE-001 v0.3: rol del operador de grúa de producto referido al pendiente S-27 del catálogo. | experto-operativo-metalurgia |
+| 0.1 | 2026-09-28 | Cambio editorial por la decisión D-010 (sin cambio técnico): "chatarra de enfriamiento" → "material de enfriamiento"; despuntes, colas y rechazos van a "retornos internos" (FT-ACE-001 v0.4 §2.2). | experto-operativo-metalurgia |
