@@ -38,6 +38,16 @@ function wrap(text, max) {
   return lines;
 }
 
+/** Medidas del diagrama (las usa validate.mjs para avisar si un texto no cabe). */
+export function laneMetrics(nLanes) {
+  const laneW = (700 - 26) / nLanes;
+  const boxW = Math.min(laneW - 14, 190);
+  const dw = Math.min(boxW, 150);
+  const nW = Math.min(nLanes === 1 ? 200 : boxW, 200);
+  return { titleChars: Math.max(12, Math.floor((boxW - 34) / 6.3)), questionChars: Math.floor(dw / 8), noChars: Math.floor(nW / 5.6) };
+}
+export { wrap };
+
 /** Diagrama de carriles vertical: una columna por rol, los pasos bajan en orden. */
 function swimlane(p, laneColor) {
   const lanes = [];
@@ -79,9 +89,9 @@ function swimlane(p, laneColor) {
     const col = LANE_COLORS[p.roles.findIndex((r) => r.code === role) % LANE_COLORS.length];
     out += `<line x1="${x}" y1="${HEAD}" x2="${x}" y2="${H}" stroke="#cfd8dc" stroke-dasharray="3 3"/>`;
     out += `<rect x="${x + 3}" y="2" width="${laneW - 6}" height="${HEAD - 8}" rx="5" fill="${col}"/>`;
-    const nl = wrap(roleName(role), Math.floor((laneW - 12) / 5.6)).slice(0, 2);
-    out += `<text x="${x + laneW / 2}" y="17" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">${esc(role)}</text>`;
-    nl.forEach((l, k) => { out += `<text x="${x + laneW / 2}" y="${29 + k * 10}" text-anchor="middle" font-size="8.5" fill="#fff">${esc(l)}</text>`; });
+    const nl = wrap(roleName(role), Math.floor((laneW - 10) / 5)).slice(0, 3);
+    out += `<text x="${x + laneW / 2}" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">${esc(role)}</text>`;
+    nl.forEach((l, k) => { out += `<text x="${x + laneW / 2}" y="${24 + k * 9}" text-anchor="middle" font-size="7.8" fill="#fff">${esc(l)}</text>`; });
   });
   // elementos y flechas
   let prev = null; // {x, yBottom}

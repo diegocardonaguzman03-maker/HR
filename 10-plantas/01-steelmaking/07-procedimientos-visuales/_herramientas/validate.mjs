@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { isIcon, isEpp } from './icons.mjs';
 import { catalogTitles } from './catalog.mjs';
+import { laneMetrics, wrap } from './render.mjs';
 
 const REQUIRED = ['code', 'pov', 'title', 'area', 'areaName', 'version', 'owner', 'manual', 'purpose', 'whyItMatters', 'startsWhen', 'endsWhen',
   'previous', 'next', 'heroFigure', 'roles', 'goldenRules', 'epp', 'phases', 'steps', 'abnormal', 'records', 'certification', 'glossary', 'review'];
@@ -49,6 +50,12 @@ export function validate(p, titles, ace) {
     if (s.decision && s.decision.question.length > 34) e.push(`${tag}: la pregunta de decisión debe tener ≤ 34 caracteres`);
   });
   if (!p.steps.some((s) => s.critical)) e.push('no hay pasos críticos ★');
+  const m = laneMetrics(new Set(p.steps.map((s) => s.role)).size);
+  for (const s of p.steps) {
+    if (wrap(s.title, m.titleChars).length > 3) e.push(`paso ${s.n}: el título no cabe en el diagrama (máx. 3 líneas de ${m.titleChars} caracteres)`);
+    if (s.decision && wrap(s.decision.question, m.questionChars).length > 2) e.push(`paso ${s.n}: la pregunta no cabe en el rombo (máx. 2 líneas de ${m.questionChars} caracteres)`);
+    if (s.decision && wrap(s.decision.no, m.noChars).length > 3) e.push(`paso ${s.n}: el texto "No" no cabe (máx. 3 líneas de ${m.noChars} caracteres)`);
+  }
   const inLanes = new Set(p.steps.map((s) => s.role));
   if (inLanes.size > 6) e.push(`demasiados carriles (${inLanes.size}); máximo 6 puestos ejecutan pasos`);
   for (const c of p.certification) if (!roleCodes.includes(c.role)) e.push(`certificación de rol no listado ${c.role}`);

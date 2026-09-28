@@ -12,90 +12,443 @@
   "whyItMatters": "Un distribuidor húmedo explota al recibir acero. Uno mal armado ensucia el acero, tapa la SEN o da grietas en el planchón.",
   "startsWhen": "El distribuidor usado sale del volteo, descostrado, al terminar la secuencia (MO-CC1-07).",
   "endsWhen": "El distribuidor queda centrado en posición de colada y S-13 lo recibe para el arranque (MO-CC1-03) o el cambio en caliente (MO-CC1-06).",
-  "previous": ["MO-CC1-07"],
-  "next": ["MO-CC1-03", "MO-CC1-06"],
-  "heroFigure": { "file": "img/cc1-distribuidor.svg", "caption": "Distribuidor de CC1 (45 t): revestimiento, pad de impacto, presa y dique, barra tapón, SEN y niveles de operación." },
+  "previous": [
+    "MO-CC1-07"
+  ],
+  "next": [
+    "MO-CC1-03",
+    "MO-CC1-06"
+  ],
+  "heroFigure": {
+    "file": "img/cc1-distribuidor.svg",
+    "caption": "Distribuidor de CC1 (45 t): revestimiento, pad de impacto, presa y dique, barra tapón, SEN y niveles de operación."
+  },
   "figures": [],
   "roles": [
-    { "code": "S-15", "name": "Preparador de Distribuidores", "raci": "R", "does": "Arma revestimiento, pad, presas, tapón y SEN; precalienta y registra. Hoy también cubre el izaje con la grúa de 50 t.", "it": "IT-S15" },
-    { "code": "S-13", "name": "Operador de Plataforma de Colada", "raci": "R", "does": "Recibe el distribuidor en la plataforma; verifica centrado, SEN y temperatura antes de colar.", "it": "IT-S13" },
-    { "code": "C-06", "name": "Supervisor de Colada Continua", "raci": "A", "does": "Dueño del proceso. Firma el distribuidor como \"listo para colar\".", "it": "IT-C06" },
-    { "code": "S-24", "name": "Refractarista", "raci": "C", "does": "Revisa el revestimiento permanente y hace reparaciones menores.", "it": "IT-S24" },
-    { "code": "C-15", "name": "Especialista de Refractarios", "raci": "C", "does": "Define materiales, curvas de secado y precalentamiento y criterios de rechazo." },
-    { "code": "C-08", "name": "Ingeniero de Proceso de CC", "raci": "C", "does": "Define presas, dique, tipo de SEN y de tapón por grado." },
-    { "code": "C-16", "name": "Especialista de Seguridad e Higiene", "raci": "I", "does": "Verifica los controles de espacio confinado y de izaje." }
+    {
+      "code": "S-15",
+      "name": "Preparador de Distribuidores",
+      "raci": "R",
+      "does": "Arma revestimiento, pad, presas, tapón y SEN; precalienta y registra. Hoy también cubre el izaje con la grúa de 50 t.",
+      "it": "IT-S15"
+    },
+    {
+      "code": "S-13",
+      "name": "Operador de Plataforma de Colada",
+      "raci": "R",
+      "does": "Recibe el distribuidor en la plataforma; verifica centrado, SEN y temperatura antes de colar.",
+      "it": "IT-S13"
+    },
+    {
+      "code": "C-06",
+      "name": "Supervisor de Colada Continua",
+      "raci": "A",
+      "does": "Dueño del proceso. Firma el distribuidor como \"listo para colar\".",
+      "it": "IT-C06"
+    },
+    {
+      "code": "S-24",
+      "name": "Refractarista",
+      "raci": "C",
+      "does": "Revisa el revestimiento permanente y hace reparaciones menores.",
+      "it": "IT-S24"
+    },
+    {
+      "code": "C-15",
+      "name": "Especialista de Refractarios",
+      "raci": "C",
+      "does": "Define materiales, curvas de secado y precalentamiento y criterios de rechazo."
+    },
+    {
+      "code": "C-08",
+      "name": "Ingeniero de Proceso de CC",
+      "raci": "C",
+      "does": "Define presas, dique, tipo de SEN y de tapón por grado."
+    },
+    {
+      "code": "C-16",
+      "name": "Especialista de Seguridad e Higiene",
+      "raci": "I",
+      "does": "Verifica los controles de espacio confinado y de izaje."
+    }
   ],
   "goldenRules": [
     "Nada húmedo entra al distribuidor. Con vapor visible no se libera: humedad = explosión.",
     "Nunca entres al distribuidor sin permiso, LOTO de quemadores y carro, gases medidos y vigía.",
     "Nunca reenciendas los quemadores sin purga. Nadie bajo el distribuidor suspendido."
   ],
-  "epp": ["casco", "lentes", "ropa_fr", "botas", "guantes", "aluminizado", "careta_dorada", "respirador", "auditiva", "detector_gas"],
+  "epp": [
+    "casco",
+    "lentes",
+    "ropa_fr",
+    "botas",
+    "guantes",
+    "aluminizado",
+    "careta_dorada",
+    "respirador",
+    "auditiva",
+    "detector_gas"
+  ],
   "dangerZone": {
     "red": "3 m alrededor del distribuidor en precalentamiento; bajo cualquier distribuidor suspendido y ± 5 m de su proyección.",
     "yellow": "Dentro del distribuidor: espacio confinado. Solo con permiso, medición de gases, vigía y rescate (NOM-033).",
     "rule": "Gas natural de quemadores: 10 % LEL → sal, sin chispas y corta el gas; 20 % LEL → evacuación del sector (MS-ACE-06)."
   },
   "hazards": [
-    { "icon": "agua", "text": "Humedad en revestimiento, pad, presas, mortero o SEN: explosión al recibir acero." },
-    { "icon": "grua", "text": "Distribuidor vacío suspendido (30–40 t): aplastamiento." },
-    { "icon": "gas", "text": "Interior del distribuidor: atmósfera peligrosa y calor (espacio confinado); gas natural." },
-    { "icon": "calor", "text": "Superficies a 1,100 °C: quemaduras graves." },
-    { "icon": "peligro", "text": "Polvo de MgO y fibra cerámica: afectación respiratoria (respirador P100)." }
+    {
+      "icon": "agua",
+      "text": "Humedad en revestimiento, pad, presas, mortero o SEN: explosión al recibir acero."
+    },
+    {
+      "icon": "grua",
+      "text": "Distribuidor vacío suspendido (30–40 t): aplastamiento."
+    },
+    {
+      "icon": "gas",
+      "text": "Interior del distribuidor: atmósfera peligrosa y calor (espacio confinado); gas natural."
+    },
+    {
+      "icon": "calor",
+      "text": "Superficies a 1,100 °C: quemaduras graves."
+    },
+    {
+      "icon": "peligro",
+      "text": "Polvo de MgO y fibra cerámica: afectación respiratoria (respirador P100)."
+    }
   ],
-  "phases": ["Armar", "Precalentar", "Liberar y entregar"],
+  "phases": [
+    "Armar",
+    "Precalentar",
+    "Liberar y entregar"
+  ],
   "steps": [
-    { "n": 1, "phase": 0, "role": "S-15", "icon": "inspeccionar", "title": "Recibe e inspecciona el distribuidor", "action": "Revisa casco y orejas de izaje; para armar, el casco debe estar < 100 °C [Validar con C-15]. Mide los desprendimientos del revestimiento permanente y busca grietas.", "check": "Casco y orejas sin grietas; desprendimiento ≤ 30 mm; sin grietas pasantes.", "decision": { "question": "¿Revestimiento OK?", "no": "Avisa a C-15. Reparan C-15 / S-24." } },
-    { "n": 2, "phase": 0, "role": "S-15", "icon": "herramienta", "title": "Limpia el interior en seco", "action": "Retira restos de casco, escoria y polvo con aspiradora o aire. Nunca uses agua.", "check": "Superficie limpia y seca." },
-    { "n": 3, "phase": 0, "role": "S-15", "icon": "bloqueo", "title": "Entra solo con permiso y LOTO", "action": "LOTO de quemadores (aislamiento positivo del gas) y del carro. Mide O₂ → LEL → CO y temperatura. Vigía afuera y rescate listo (MS-ACE-05).", "check": "Permiso firmado: O₂ 19.5–23.5 %, LEL < 10 %, CO < 25 ppm, ≤ 45 °C.", "critical": true, "stop": "Una lectura está fuera de rango o no hay vigía afuera." },
-    { "n": 4, "phase": 0, "role": "S-15", "icon": "objetivo", "title": "Coloca el pad de impacto", "action": "Centra el pad bajo la posición del tubo protector.", "check": "Centrado ± 50 mm; asentado sin holgura." },
-    { "n": 5, "phase": 0, "role": "S-15", "icon": "refractario", "title": "Arma el revestimiento de trabajo", "action": "Coloca el molde (former), vacía y vibra la masa seca de MgO.", "check": "Espesor 40–60 mm medido en 8 puntos." },
-    { "n": 6, "phase": 0, "role": "S-15", "icon": "calor", "title": "Cura el revestimiento", "action": "Calienta el former según la curva del proveedor (típico ≈ 250 °C) y retíralo [Validar con C-15].", "check": "Masa endurecida, sin zonas blandas.", "critical": true },
-    { "n": 7, "phase": 0, "role": "S-15", "icon": "refractario", "title": "Instala presa y dique", "action": "Colócalos según el plano del grado (C-08). Sella las ranuras con mortero seco.", "check": "Posición ± 20 mm del plano.", "quality": true },
-    { "n": 8, "phase": 0, "role": "S-15", "icon": "ajustar", "title": "Instala buza interior y barra tapón", "action": "Asienta la buza con mortero. Monta el tapón en el mecanismo y conecta la línea de argón.", "check": "Tapón centrado sobre la buza ± 1 mm." },
-    { "n": 9, "phase": 0, "role": "S-15", "icon": "verificar", "title": "Prueba asiento y argón del tapón", "action": "Cierra el tapón y haz la prueba de luz o de aire [Validar con OEM]. Luego abre el argón a presión nominal.", "check": "Sin paso de luz ni fuga; argón 3–8 NL/min, flujo libre.", "critical": true, "decision": { "question": "¿Asienta y pasa argón?", "no": "Recentra; si sigue, cambia tapón o buza." } },
-    { "n": 10, "phase": 0, "role": "S-15", "icon": "ajustar", "title": "Instala la SEN", "action": "Instala la SEN vertical, con los puertos hacia las caras angostas. Registra el número de lote.", "check": "Verticalidad ± 1 mm; puertos ± 2°.", "quality": true },
-    { "n": 11, "phase": 0, "role": "S-15", "icon": "checklist", "title": "Verifica que todo esté seco", "action": "Revisa mortero, sellos, pad y SEN. Ningún material mojado ni guardado a la intemperie.", "check": "Todo seco; registro firmado.", "critical": true, "stop": "Ves vapor, humedad o un material mojado." },
-    { "n": 12, "phase": 1, "role": "S-15", "icon": "grua", "title": "Lleva el distribuidor a precalentar", "action": "Izaje solo con la grúa de 50 t y accesorios inspeccionados. Da las señales desde fuera de la zona bajo la carga.", "check": "Distribuidor colocado y asegurado en la estación.", "critical": true, "stop": "Alguien está bajo la carga o a menos de 5 m de su proyección." },
-    { "n": 13, "phase": 1, "role": "S-15", "icon": "arrancar", "title": "Enciende los quemadores", "action": "Sigue la secuencia de la estación: purga, prueba del detector de flama y encendido.", "check": "Flama estable; sin alarma de gas.", "critical": true, "stop": "El detector de gas marca 10 % LEL o más." },
-    { "n": 14, "phase": 1, "role": "S-15", "icon": "temperatura", "title": "Precalienta por curva", "action": "Fuego bajo hasta ≈ 300 °C; rampa sin pasar de ≈ 8 °C/min; sostén con tapón y SEN en el quemador [Validar con C-15]. Registra la T cada 30 min.", "check": "Cara caliente 1,100 ± 50 °C; SEN ≥ 1,000 °C; 2.5–4 h.", "quality": true, "decision": { "question": "¿Llegó a temperatura?", "no": "Sigue en el quemador. Más de 6 h: C-15." } },
-    { "n": 15, "phase": 2, "role": "C-06", "icon": "autorizar", "title": "Inspecciona y firma \"listo para colar\"", "action": "Con S-15 revisa: cero vapor, revestimiento sin grietas, tapón cerrado y argón OK. Firma la lista.", "check": "Lista de verificación completa y firmada.", "decision": { "question": "¿Sin vapor ni grietas?", "no": "No se libera. Regresa al quemador." } },
-    { "n": 16, "phase": 2, "role": "S-13", "icon": "carro", "title": "Traslada a posición de colada", "action": "Apaga los quemadores y mueve el carro. Cuenta el tiempo sin fuego hasta abrir la olla.", "check": "≤ 10 min sin quemador (objetivo ≤ 5 min).", "quality": true, "stop": "Pasan más de 10 min sin fuego antes de abrir la olla." },
-    { "n": 17, "phase": 2, "role": "S-13", "icon": "objetivo", "title": "Centra el distribuidor sobre el molde", "action": "Ajusta X–Y hasta centrar la SEN en el molde.", "check": "SEN centrada ± 5 mm respecto a caras anchas y angostas [Validar con OEM]." },
-    { "n": 18, "phase": 2, "role": "S-13", "icon": "registrar", "title": "Recibe y registra la entrega", "action": "Con S-15, registra la hora, la temperatura final y el número de distribuidor.", "check": "Registro completo." }
+    {
+      "n": 1,
+      "phase": 0,
+      "role": "S-15",
+      "icon": "inspeccionar",
+      "title": "Recibe e inspecciona el distribuidor",
+      "action": "Revisa casco y orejas de izaje; para armar, el casco debe estar < 100 °C [Validar con C-15]. Mide los desprendimientos del revestimiento permanente y busca grietas.",
+      "check": "Casco y orejas sin grietas; desprendimiento ≤ 30 mm; sin grietas pasantes.",
+      "decision": {
+        "question": "¿Revestimiento OK?",
+        "no": "Avisa a C-15. Reparan C-15 / S-24."
+      }
+    },
+    {
+      "n": 2,
+      "phase": 0,
+      "role": "S-15",
+      "icon": "herramienta",
+      "title": "Limpia el interior en seco",
+      "action": "Retira restos de casco, escoria y polvo con aspiradora o aire. Nunca uses agua.",
+      "check": "Superficie limpia y seca."
+    },
+    {
+      "n": 3,
+      "phase": 0,
+      "role": "S-15",
+      "icon": "bloqueo",
+      "title": "Entra solo con permiso y LOTO",
+      "action": "LOTO de quemadores (aislamiento positivo del gas) y del carro. Mide O₂ → LEL → CO y temperatura. Vigía afuera y rescate listo (MS-ACE-05).",
+      "check": "Permiso firmado: O₂ 19.5–23.5 %, LEL < 10 %, CO < 25 ppm, ≤ 45 °C.",
+      "critical": true,
+      "stop": "Una lectura está fuera de rango o no hay vigía afuera."
+    },
+    {
+      "n": 4,
+      "phase": 0,
+      "role": "S-15",
+      "icon": "objetivo",
+      "title": "Coloca el pad de impacto",
+      "action": "Centra el pad bajo la posición del tubo protector.",
+      "check": "Centrado ± 50 mm; asentado sin holgura."
+    },
+    {
+      "n": 5,
+      "phase": 0,
+      "role": "S-15",
+      "icon": "refractario",
+      "title": "Arma el revestimiento de trabajo",
+      "action": "Coloca el molde (former), vacía y vibra la masa seca de MgO.",
+      "check": "Espesor 40–60 mm medido en 8 puntos."
+    },
+    {
+      "n": 6,
+      "phase": 0,
+      "role": "S-15",
+      "icon": "calor",
+      "title": "Cura el revestimiento",
+      "action": "Calienta el former según la curva del proveedor (típico ≈ 250 °C) y retíralo [Validar con C-15].",
+      "check": "Masa endurecida, sin zonas blandas.",
+      "critical": true
+    },
+    {
+      "n": 7,
+      "phase": 0,
+      "role": "S-15",
+      "icon": "refractario",
+      "title": "Instala presa y dique",
+      "action": "Colócalos según el plano del grado (C-08). Sella las ranuras con mortero seco.",
+      "check": "Posición ± 20 mm del plano.",
+      "quality": true
+    },
+    {
+      "n": 8,
+      "phase": 0,
+      "role": "S-15",
+      "icon": "ajustar",
+      "title": "Instala buza interior y barra tapón",
+      "action": "Asienta la buza con mortero. Monta el tapón en el mecanismo y conecta la línea de argón.",
+      "check": "Tapón centrado sobre la buza ± 1 mm."
+    },
+    {
+      "n": 9,
+      "phase": 0,
+      "role": "S-15",
+      "icon": "verificar",
+      "title": "Prueba asiento y argón del tapón",
+      "action": "Cierra el tapón y haz la prueba de luz o de aire [Validar con OEM]. Luego abre el argón a presión nominal.",
+      "check": "Sin paso de luz ni fuga; argón 3–8 NL/min, flujo libre.",
+      "critical": true,
+      "decision": {
+        "question": "¿Asienta y pasa argón?",
+        "no": "Recentra; si sigue, cambia tapón o buza."
+      }
+    },
+    {
+      "n": 10,
+      "phase": 0,
+      "role": "S-15",
+      "icon": "ajustar",
+      "title": "Instala la SEN",
+      "action": "Instala la SEN vertical, con los puertos hacia las caras angostas. Registra el número de lote.",
+      "check": "Verticalidad ± 1 mm; puertos ± 2°.",
+      "quality": true
+    },
+    {
+      "n": 11,
+      "phase": 0,
+      "role": "S-15",
+      "icon": "checklist",
+      "title": "Verifica que todo esté seco",
+      "action": "Revisa mortero, sellos, pad y SEN. Ningún material mojado ni guardado a la intemperie.",
+      "check": "Todo seco; registro firmado.",
+      "critical": true,
+      "stop": "Ves vapor, humedad o un material mojado."
+    },
+    {
+      "n": 12,
+      "phase": 1,
+      "role": "S-15",
+      "icon": "grua",
+      "title": "Lleva el distribuidor a precalentar",
+      "action": "Izaje solo con la grúa de 50 t y accesorios inspeccionados. Da las señales desde fuera de la zona bajo la carga.",
+      "check": "Distribuidor colocado y asegurado en la estación.",
+      "critical": true,
+      "stop": "Alguien está bajo la carga o a menos de 5 m de su proyección."
+    },
+    {
+      "n": 13,
+      "phase": 1,
+      "role": "S-15",
+      "icon": "arrancar",
+      "title": "Enciende los quemadores",
+      "action": "Sigue la secuencia de la estación: purga, prueba del detector de flama y encendido.",
+      "check": "Flama estable; sin alarma de gas.",
+      "critical": true,
+      "stop": "El detector de gas marca 10 % LEL o más."
+    },
+    {
+      "n": 14,
+      "phase": 1,
+      "role": "S-15",
+      "icon": "temperatura",
+      "title": "Precalienta por curva",
+      "action": "Fuego bajo hasta ≈ 300 °C; rampa sin pasar de ≈ 8 °C/min; sostén con tapón y SEN en el quemador [Validar con C-15]. Registra la T cada 30 min.",
+      "check": "Cara caliente 1,100 ± 50 °C; SEN ≥ 1,000 °C; 2.5–4 h.",
+      "quality": true,
+      "decision": {
+        "question": "¿Llegó a temperatura?",
+        "no": "Sigue en el quemador. Más de 6 h: C-15."
+      }
+    },
+    {
+      "n": 15,
+      "phase": 2,
+      "role": "C-06",
+      "icon": "autorizar",
+      "title": "Inspecciona y firma \"listo para colar\"",
+      "action": "Con S-15 revisa: cero vapor, revestimiento sin grietas, tapón cerrado y argón OK. Firma la lista.",
+      "check": "Lista de verificación completa y firmada."
+    },
+    {
+      "n": 16,
+      "phase": 2,
+      "role": "S-13",
+      "icon": "carro",
+      "title": "Traslada a posición de colada",
+      "action": "Apaga los quemadores y mueve el carro. Cuenta el tiempo sin fuego hasta abrir la olla.",
+      "check": "≤ 10 min sin quemador (objetivo ≤ 5 min).",
+      "quality": true,
+      "stop": "Pasan más de 10 min sin fuego antes de abrir la olla."
+    },
+    {
+      "n": 17,
+      "phase": 2,
+      "role": "S-13",
+      "icon": "objetivo",
+      "title": "Centra el distribuidor sobre el molde",
+      "action": "Ajusta X–Y hasta centrar la SEN en el molde.",
+      "check": "SEN centrada ± 5 mm respecto a caras anchas y angostas [Validar con OEM]."
+    },
+    {
+      "n": 18,
+      "phase": 2,
+      "role": "S-13",
+      "icon": "registrar",
+      "title": "Recibe y registra la entrega",
+      "action": "Con S-15, registra la hora, la temperatura final y el número de distribuidor.",
+      "check": "Registro completo."
+    }
   ],
   "abnormal": [
-    { "icon": "agua", "if": "Vapor o humedad visible en el distribuidor o la SEN", "do": "No se libera. Regresa al quemador y repite la etapa 1 de la curva.", "call": "C-06 y C-15" },
-    { "icon": "fuego", "if": "Alarma de pérdida de flama", "do": "El gas se corta solo. Purga antes de reencender; nunca reenciendas sin purga.", "call": "S-21 y C-06" },
-    { "icon": "gas", "if": "Olor a gas o detector de gas en alarma", "do": "Cierra la válvula manual o el ESD. 10 % LEL: sal del área; 20 % LEL: evacuación del sector. Sin flama ni equipo eléctrico.", "call": "C-06, C-16 y S-21" },
-    { "icon": "temperatura", "if": "La cara caliente no sube", "do": "Revisa el quemador y la relación aire–gas.", "call": "S-21 y C-08" },
-    { "icon": "calor", "if": "Temperatura mayor de 1,200 °C", "do": "Baja el fuego y regístralo. C-15 evalúa el daño.", "call": "C-15" },
-    { "icon": "rechazar", "if": "Grieta en la SEN o el tapón después del precalentamiento", "do": "Cambia la pieza y repite el precalentamiento de esa pieza.", "call": "C-06 y C-15" },
-    { "icon": "tiempo", "if": "La olla se retrasa y el distribuidor pasa de 6 h a temperatura", "do": "Mantén 1,050–1,100 °C. C-15 decide si se usa o se rearma.", "call": "C-06 y C-15" }
+    {
+      "icon": "agua",
+      "if": "Vapor o humedad visible en el distribuidor o la SEN",
+      "do": "No se libera. Regresa al quemador y repite la etapa 1 de la curva.",
+      "call": "C-06 y C-15"
+    },
+    {
+      "icon": "fuego",
+      "if": "Alarma de pérdida de flama",
+      "do": "El gas se corta solo. Purga antes de reencender; nunca reenciendas sin purga.",
+      "call": "S-21 y C-06"
+    },
+    {
+      "icon": "gas",
+      "if": "Olor a gas o detector de gas en alarma",
+      "do": "Cierra la válvula manual o el ESD. 10 % LEL: sal del área; 20 % LEL: evacuación del sector. Sin flama ni equipo eléctrico.",
+      "call": "C-06, C-16 y S-21"
+    },
+    {
+      "icon": "temperatura",
+      "if": "La cara caliente no sube",
+      "do": "Revisa el quemador y la relación aire–gas.",
+      "call": "S-21 y C-08"
+    },
+    {
+      "icon": "calor",
+      "if": "Temperatura mayor de 1,200 °C",
+      "do": "Baja el fuego y regístralo. C-15 evalúa el daño.",
+      "call": "C-15"
+    },
+    {
+      "icon": "rechazar",
+      "if": "Grieta en la SEN o el tapón después del precalentamiento",
+      "do": "Cambia la pieza y repite el precalentamiento de esa pieza.",
+      "call": "C-06 y C-15"
+    },
+    {
+      "icon": "tiempo",
+      "if": "La olla se retrasa y el distribuidor pasa de 6 h a temperatura",
+      "do": "Mantén 1,050–1,100 °C. C-15 decide si se usa o se rearma.",
+      "call": "C-06 y C-15"
+    }
   ],
   "records": [
-    { "what": "Lista de verificación de preparación (número, espesor, presas, tapón, SEN, lotes)", "when": "Cada distribuidor", "where": "Lista de verificación" },
-    { "what": "Registro de curado y curva de precalentamiento (T cada 30 min, hora de apagado)", "when": "Cada distribuidor", "where": "Registro de la estación" },
-    { "what": "Permiso de espacio confinado y LOTO", "when": "Cada ingreso", "where": "Sistema de SSO" },
-    { "what": "Vida del distribuidor (coladas y horas)", "when": "Cada secuencia", "where": "Registro de C-15" },
-    { "what": "Datos del distribuidor en la máquina", "when": "Cada distribuidor", "where": "Nivel 2 / MES" }
+    {
+      "what": "Lista de verificación de preparación (número, espesor, presas, tapón, SEN, lotes)",
+      "when": "Cada distribuidor",
+      "where": "Lista de verificación"
+    },
+    {
+      "what": "Registro de curado y curva de precalentamiento (T cada 30 min, hora de apagado)",
+      "when": "Cada distribuidor",
+      "where": "Registro de la estación"
+    },
+    {
+      "what": "Permiso de espacio confinado y LOTO",
+      "when": "Cada ingreso",
+      "where": "Sistema de SSO"
+    },
+    {
+      "what": "Vida del distribuidor (coladas y horas)",
+      "when": "Cada secuencia",
+      "where": "Registro de C-15"
+    },
+    {
+      "what": "Datos del distribuidor en la máquina",
+      "when": "Cada distribuidor",
+      "where": "Nivel 2 / MES"
+    }
   ],
   "certification": [
-    { "role": "S-15", "level": "3", "theory": "16 h", "ojt": "80 h / 10 distribuidores completos", "evaluated": "Pasos 3, 6, 9, 11, 12 y 13", "validity": "24 meses; espacio confinado y señales de izaje 12 meses" },
-    { "role": "S-13", "level": "2 (en este proceso)", "theory": "4 h", "ojt": "5 recepciones de distribuidor", "evaluated": "Paso 11 (verificación de humedad)", "validity": "24 meses" },
-    { "role": "C-06", "level": "4 (evaluador)", "theory": "8 h + formación de evaluador", "ojt": "—", "evaluated": "Todos los pasos", "validity": "24 meses" }
+    {
+      "role": "S-15",
+      "level": "3",
+      "theory": "16 h",
+      "ojt": "80 h / 10 distribuidores completos",
+      "evaluated": "Pasos 3, 6, 9, 11, 12 y 13",
+      "validity": "24 meses; espacio confinado y señales de izaje 12 meses"
+    },
+    {
+      "role": "S-13",
+      "level": "2 (en este proceso)",
+      "theory": "4 h",
+      "ojt": "5 recepciones de distribuidor",
+      "evaluated": "Paso 11 (verificación de humedad)",
+      "validity": "24 meses"
+    },
+    {
+      "role": "C-06",
+      "level": "4 (evaluador)",
+      "theory": "8 h + formación de evaluador",
+      "ojt": "—",
+      "evaluated": "Todos los pasos",
+      "validity": "24 meses"
+    }
   ],
   "glossary": [
-    { "term": "Distribuidor (tundish)", "def": "Recipiente refractario de 45 t entre la olla y el molde; calma y limpia el acero." },
-    { "term": "SEN", "def": "Buza sumergida: tubo refractario que lleva el acero al molde por debajo del menisco." },
-    { "term": "Barra tapón", "def": "Pieza que sube y baja para regular el flujo al molde; también inyecta argón." },
-    { "term": "Pad de impacto", "def": "Pieza que recibe el golpe del chorro de la olla." },
-    { "term": "Presa y dique", "def": "Muros dentro del distribuidor que guían el flujo para que floten las inclusiones." },
-    { "term": "Former", "def": "Molde metálico que da forma a la masa de MgO y se calienta para curarla." },
-    { "term": "Curva de precalentamiento", "def": "Etapas de tiempo y temperatura para secar y calentar sin agrietar el refractario." },
-    { "term": "Aislamiento positivo", "def": "Corte físico de la línea de gas (brida ciega o doble bloqueo) antes de entrar." }
+    {
+      "term": "Distribuidor (tundish)",
+      "def": "Recipiente refractario de 45 t entre la olla y el molde; calma y limpia el acero."
+    },
+    {
+      "term": "SEN",
+      "def": "Buza sumergida: tubo refractario que lleva el acero al molde por debajo del menisco."
+    },
+    {
+      "term": "Barra tapón",
+      "def": "Pieza que sube y baja para regular el flujo al molde; también inyecta argón."
+    },
+    {
+      "term": "Pad de impacto",
+      "def": "Pieza que recibe el golpe del chorro de la olla."
+    },
+    {
+      "term": "Presa y dique",
+      "def": "Muros dentro del distribuidor que guían el flujo para que floten las inclusiones."
+    },
+    {
+      "term": "Former",
+      "def": "Molde metálico que da forma a la masa de MgO y se calienta para curarla."
+    },
+    {
+      "term": "Curva de precalentamiento",
+      "def": "Etapas de tiempo y temperatura para secar y calentar sin agrietar el refractario."
+    },
+    {
+      "term": "Aislamiento positivo",
+      "def": "Corte seguro del gas de los quemadores para que no llegue al interior mientras hay alguien dentro (MS-ACE-05)."
+    }
   ],
   "review": [
-    { "area": "Elaboró", "who": "experto-operativo-metalurgia", "status": "Elaborado", "date": "2026-09-28" }
+    {
+      "area": "Elaboró",
+      "who": "experto-operativo-metalurgia",
+      "status": "Elaborado",
+      "date": "2026-09-28"
+    }
   ]
 }

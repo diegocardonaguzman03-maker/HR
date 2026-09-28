@@ -32,7 +32,7 @@ El POV **no crea contenido técnico nuevo**: todo sale del manual revisado, de l
 | `figures[]` | 0–2 figuras extra de `img/` (seguridad, corte de equipo) |
 | `roles[]` `{code, name, raci, does, it}` | Todos los puestos del manual §2. `does` en una frase. `it` = código de la IT del puesto si existe (IT-S01…IT-S26, IT-C04, IT-C05, IT-C06, IT-C17) |
 | `goldenRules[3]` | Las 3 reglas que nunca se rompen, ≤ 110 caracteres cada una |
-| `epp[]` | ids de: casco, careta_dorada, lentes, aluminizado, ropa_fr, guantes, botas, auditiva, respirador, detector_gas, arnes, dosimetro |
+| `epp[]` | ids de: casco, careta_dorada, careta_facial, lentes, aluminizado, ropa_fr, guantes, botas, auditiva, respirador, detector_gas, arnes, dosimetro, chaleco, proteccion_quimica |
 | `dangerZone` `{red, yellow, rule}` | Opcional; si el manual define zonas de exclusión |
 | `hazards[]` `{icon, text}` | 3–5 peligros principales |
 | `phases[]` | 2–4 fases, por ejemplo "Antes de…", "Durante…", "Al terminar" |

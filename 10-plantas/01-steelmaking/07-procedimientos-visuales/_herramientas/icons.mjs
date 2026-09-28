@@ -98,6 +98,9 @@ export const EPP = {
   detector_gas: ['device-watch', 'Detector personal multigás'],
   arnes: ['link', 'Arnés y línea de vida'],
   dosimetro: ['device-watch', 'Dosímetro personal'],
+  careta_facial: ['shield', 'Careta facial transparente'],
+  chaleco: ['shirt', 'Chaleco de alta visibilidad'],
+  proteccion_quimica: ['flask', 'Mandil y guantes para químicos'],
 };
 
 const cache = new Map();
