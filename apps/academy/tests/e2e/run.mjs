@@ -254,27 +254,27 @@ await test('MISIÓN 01 · Trabajo en alturas: de la pantalla inicial a resultado
   await page.waitForSelector('[data-testid=mission-intro]');
   await page.screenshot({ path: `${SHOTS}/20-mision-inicio.png` });
   await page.click('[data-testid=start-mission]');
-  const begin = async () => { await page.waitForSelector('[data-testid=step-start]', { timeout: 60000 }); await page.click('[data-testid=step-start]'); };
+  const begin = async () => { await page.waitForSelector('[data-testid=step-start]', { timeout: 60000 }); await page.click('[data-testid=step-start]'); if (await page.locator('[data-testid=skip-demo]').count()) await page.click('[data-testid=skip-demo]'); };
   const cont = async () => { await page.click('[data-testid=continue]'); };
   await begin();
   for (const t of ['observe-next', 'observe-next', 'observe-confirm']) await page.click(`[data-testid=${t}]`);
   await cont(); await begin();
   await page.click('[data-testid=help-list]');
-  for (const n of ['Borde derecho de la plataforma', 'Centro del piso de la plataforma', 'Cables aéreos', 'Caja de herramientas', 'Persona caminando abajo']) await page.getByRole('button', { name: n, exact: true }).click();
+  for (const n of ['Borde derecho de la plataforma', 'Centro del piso de la plataforma', 'Cables aéreos', 'Caja de herramientas', 'Persona caminando abajo', 'Mancha en el piso de la plataforma', 'Luminaria a cambiar']) await page.getByRole('button', { name: new RegExp('^' + n) }).click();
   await page.screenshot({ path: `${SHOTS}/21-mision-peligros.png` });
   await cont(); await begin();
-  for (const n of ['Permiso de trabajo en alturas autorizado', 'Capacitación vigente para trabajo en altura', 'Aptitud médica vigente', 'Plan de rescate definido antes de empezar']) await page.getByText(n, { exact: true }).click();
+  for (const n of ['Permiso de trabajo en alturas autorizado', 'Capacitación vigente para trabajo en altura', 'Aptitud médica vigente', 'Plan de rescate definido antes de empezar', 'Energía de la luminaria aislada y bloqueada']) await page.getByText(n, { exact: true }).click();
   await page.click('[data-testid=confirm-verify]');
   await cont(); await begin();
-  for (const z of ['correas-hombro', 'costuras', 'hebillas', 'argolla-dorsal', 'etiqueta', 'correa-pierna']) await page.click(`[data-testid=zone-${z}]`);
+  for (const z of ['correas-hombro', 'costuras', 'hebillas', 'argolla-dorsal', 'etiqueta', 'correa-pierna']) { await page.click(`[data-testid=zone-${z}]`); await page.click(z === 'correa-pierna' ? '[data-testid=judge-defect]' : '[data-testid=judge-ok]'); }
   await page.screenshot({ path: `${SHOTS}/22-mision-arnes.png` });
   await page.getByRole('button', { name: /retiro de servicio/ }).click();
   await cont(); await begin();
-  for (const n of ['Escalera fija', 'Barandal frontal']) await page.getByRole('button', { name: n, exact: true }).click();
+  for (const n of ['Escalera fija', 'Barandal frontal', 'Borde derecho de la plataforma']) await page.getByRole('button', { name: new RegExp('^' + n) }).click();
   await cont(); await begin();
   await page.getByRole('button', { name: /designado/ }).click();
   await cont(); await begin();
-  const want = ['Confirmar permiso y plan de rescate', 'Delimitar la zona inferior y retirar objetos sueltos', 'Inspeccionar el equipo de protección', 'Colocar y ajustar el arnés', 'Conectarte al anclaje antes de exponerte al borde'];
+  const want = ['Confirmar permiso, plan de rescate y que la energía de la luminaria está aislada', 'Delimitar la zona inferior, retirar objetos sueltos y aplicar los controles de los peligros identificados', 'Inspeccionar el equipo de protección', 'Colocar y ajustar el arnés', 'Conectarte al anclaje antes de exponerte al borde'];
   for (let pos = 0; pos < want.length; pos++) for (let g = 0; g < 10; g++) {
     const cur = await page.locator('[data-testid=sequence] li').allTextContents();
     if (cur[pos].includes(want[pos])) break;

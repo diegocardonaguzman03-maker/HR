@@ -103,7 +103,7 @@ function Opening({ o }: { o: SceneObjectT }) {
     <group>
       <mesh position={[0, 0.005, 0]} rotation={[-Math.PI / 2, 0, 0]}><planeGeometry args={[s, s]} /><M color="#050607" rough={1} /></mesh>
       {[[0, s / 2], [0, -s / 2]].map(([x, z], i) => <Box key={i} s={[s + 0.1, 0.04, 0.05]} p={[x, 0.02, z]} c="#3a4048" />)}
-      <Box s={[0.5, 0.04, s * 0.9]} p={[s * 0.35, 0.03, 0]} c="#7a6a4a" rot={[0, 0.25, 0]} />
+      {bool(o, 'covered') ? <Box s={[s + 0.2, 0.05, s + 0.2]} p={[0, 0.03, 0]} c="#c9a227" /> : <Box s={[0.5, 0.04, s * 0.9]} p={[s * 0.35, 0.03, 0]} c="#7a6a4a" rot={[0, 0.25, 0]} />}
     </group>
   );
 }
@@ -318,9 +318,6 @@ function PermitBoard() {
 }
 
 function Barricade({ o }: { o: SceneObjectT }) {
-  const flags = useMission((s) => s.sceneFlags);
-  const visible = flags[`${o.id}.visible`] ?? bool(o, 'visible', true);
-  if (!visible) return null;
   const w = num(o, 'w', 4), d = num(o, 'd', 4);
   const corners: [number, number][] = [[-w / 2, -d / 2], [w / 2, -d / 2], [w / 2, d / 2], [-w / 2, d / 2]];
   return (

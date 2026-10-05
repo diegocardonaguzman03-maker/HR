@@ -12,8 +12,16 @@ const reduced = () => typeof window !== 'undefined' && !!window.matchMedia?.('(p
 const AMBER = new THREE.Color('#e8a33d'), GREEN = new THREE.Color('#30a46c'), RED = new THREE.Color('#e5484d'), BLUE = new THREE.Color('#6e9fd8');
 
 /** Un objeto del escenario: solo reacciona si el paso actual lo hace interactivo. */
-function SceneItem({ o, register }: { o: SceneObjectT; register: (id: string, g: THREE.Object3D | null) => void }) {
-  const Kind = KINDS[o.kind];
+function SceneItem({ o: base, register }: { o: SceneObjectT; register: (id: string, g: THREE.Object3D | null) => void }) {
+  const Kind = KINDS[base.kind];
+  // cambios de escenario por paso: «id.visible» y «id.<prop>» (SAF-H-03)
+  const flags = useMission(useShallow((s) => Object.fromEntries(Object.entries(s.sceneFlags).filter(([k]) => k.startsWith(`${base.id}.`)))));
+  const o = useMemo(() => {
+    const props = { ...base.props };
+    for (const [k, v] of Object.entries(flags)) props[k.slice(base.id.length + 1)] = v;
+    return { ...base, props };
+  }, [base, flags]);
+  const visible = o.props.visible !== false;
   const { interactive, focused, marker, pick } = useMission(useShallow((s) => ({
     interactive: s.interactive.includes(o.id),
     focused: s.focus.includes(o.id),
@@ -23,6 +31,7 @@ function SceneItem({ o, register }: { o: SceneObjectT; register: (id: string, g:
   const [hover, setHover] = useState(false);
   const tint = marker === 'found' || marker === 'selected' ? GREEN : marker === 'wrong' ? RED : focused ? BLUE : hover && interactive ? AMBER : null;
   const amount = marker ? 0.45 : focused ? 0.35 : hover && interactive ? 0.3 : 0;
+  if (!visible) return null;
   return (
     <group
       ref={(g) => register(o.id, g)}
@@ -52,10 +61,12 @@ function Markers({ refs }: { refs: React.MutableRefObject<Map<string, THREE.Obje
         const box = new THREE.Box3().setFromObject(g);
         if (box.isEmpty()) return null;
         const c = box.getCenter(new THREE.Vector3());
-        const pos: [number, number, number] = [c.x, Math.min(box.max.y + 0.25, c.y + 2.2), c.z];
+        const pos: [number, number, number] = m.kind === 'tap' ? [c.x, c.y, c.z] : [c.x, Math.min(box.max.y + 0.25, c.y + 2.2), c.z];
         return (
           <Html key={`${m.objectId}-${m.kind}`} position={pos} center zIndexRange={[20, 0]} style={{ pointerEvents: 'none' }}>
-            {m.kind === 'hint' ? (
+            {m.kind === 'tap' ? (
+              <span className="mission-tap" aria-hidden />
+            ) : m.kind === 'hint' ? (
               <span className="mission-hint" aria-hidden />
             ) : (
               <span className={`whitespace-nowrap rounded-full px-2.5 py-1 text-[12px] font-semibold shadow-lg ${m.kind === 'wrong' ? 'bg-[#e5484d] text-white' : 'bg-[#30a46c] text-white'}`}>

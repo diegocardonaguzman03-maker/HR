@@ -22,6 +22,7 @@ export const SceneObject = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   kind: z.enum(SCENE_KINDS),
   label: text,
+  desc: z.string().optional(), // descripción de lo que se ve (alternativa no visual, SAF-H-06)
   position: vec3,
   rotation: vec3.default([0, 0, 0]),
   scale: vec3.default([1, 1, 1]),
@@ -46,6 +47,7 @@ const StepBase = {
   safety: z.string().optional(), // nota de seguridad contextual (puede llevar SME_REQUIRED)
   reference: z.array(z.string()).default([]), // IDs de sección del procedimiento (NIVEL 3)
   done: text, // mensaje al completar: «Correcto. …»
+  critical: z.boolean().default(false), // un error aquí podría ser fatal en planta (SAF-H-04)
 };
 
 export const Step = z.discriminatedUnion('type', [
@@ -65,7 +67,7 @@ export const Step = z.discriminatedUnion('type', [
   z.object({
     ...StepBase, type: z.literal('inspect'),
     objectId: z.string(),
-    zones: z.array(z.object({ id: z.string(), label: text, defect: z.boolean(), finding: text })).min(2),
+    zones: z.array(z.object({ id: z.string(), label: text, observation: text, defect: z.boolean(), finding: text })).min(2),
     decision: z.object({ prompt: text, options: z.array(Option).min(2) }),
   }),
   z.object({ ...StepBase, type: z.literal('select'), prompt: text, options: z.array(Option).min(2) }),
@@ -119,7 +121,7 @@ export function checkMission(m: MissionT, scene: SceneDefT): string[] {
     if (s.type === 'observe') s.tour.forEach((t) => t.focus.forEach((f) => obj(f, `${s.id}.tour`)));
     if (s.type === 'identify') {
       s.targets.forEach((t) => obj(t.objectId, s.id)); s.distractors.forEach((t) => obj(t.objectId, s.id));
-      if (s.required > s.targets.length) e.push(`${s.id}: required > targets`);
+      if (s.required !== s.targets.length) e.push(`${s.id}: todos los peligros deben identificarse (required = targets)`);
     }
     if (s.type === 'inspect') obj(s.objectId, s.id);
     if (s.type === 'select' || s.type === 'decide' || s.type === 'inspect') {

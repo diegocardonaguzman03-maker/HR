@@ -40,7 +40,7 @@ describe('motor de misiones — contenido', () => {
   });
 });
 
-const startStep = async () => { fireEvent.click(await screen.findByTestId('step-start')); };
+const startStep = async () => { fireEvent.click(await screen.findByTestId('step-start')); const sk = screen.queryByTestId('skip-demo'); if (sk) fireEvent.click(sk); };
 const cont = () => fireEvent.click(screen.getByTestId('continue'));
 
 describe('motor de misiones — experiencia', () => {
@@ -65,10 +65,10 @@ describe('motor de misiones — experiencia', () => {
     // 2 identificar (alternativa de lista; un distractor primero)
     await startStep();
     fireEvent.click(screen.getByTestId('help-list'));
-    fireEvent.click(screen.getByRole('button', { name: 'Luminaria a cambiar' }));
+    fireEvent.click(screen.getByRole('button', { name: /Señal de uso obligatorio de EPP/ }));
     expect(screen.getByTestId('feedback')).toHaveAttribute('data-kind', 'bad');
-    for (const n of ['Borde derecho de la plataforma', 'Centro del piso de la plataforma', 'Cables aéreos', 'Caja de herramientas', 'Persona caminando abajo']) fireEvent.click(screen.getByRole('button', { name: n }));
-    expect(screen.getByTestId('identify-count')).toHaveTextContent('5 de 5');
+    for (const n of ['Borde derecho de la plataforma', 'Centro del piso de la plataforma', 'Cables aéreos', 'Caja de herramientas', 'Persona caminando abajo', 'Mancha en el piso de la plataforma', 'Luminaria a cambiar']) fireEvent.click(screen.getByRole('button', { name: new RegExp('^' + n) }));
+    expect(screen.getByTestId('identify-count')).toHaveTextContent('7 de 7');
     cont();
     // 3 confirmar: marcar una trampa da error explicado
     await startStep();
@@ -77,17 +77,18 @@ describe('motor de misiones — experiencia', () => {
     fireEvent.click(screen.getByTestId('confirm-verify'));
     expect(screen.getByTestId('feedback')).toHaveTextContent('La duración no cambia el riesgo');
     fireEvent.click(within(box).getByText('«Es rápido, no hace falta permiso»'));
-    for (const t of ['Permiso de trabajo en alturas autorizado', 'Capacitación vigente para trabajo en altura', 'Aptitud médica vigente', 'Plan de rescate definido antes de empezar']) fireEvent.click(within(box).getByText(t));
+    for (const t of ['Permiso de trabajo en alturas autorizado', 'Capacitación vigente para trabajo en altura', 'Aptitud médica vigente', 'Plan de rescate definido antes de empezar', 'Energía de la luminaria aislada y bloqueada']) fireEvent.click(within(box).getByText(t));
     fireEvent.click(screen.getByTestId('confirm-verify'));
     cont();
     // 4 inspeccionar
     await startStep();
-    for (const z of ['correas-hombro', 'costuras', 'hebillas', 'argolla-dorsal', 'etiqueta', 'correa-pierna']) fireEvent.click(screen.getByTestId(`zone-${z}`));
+    for (const z of ['correas-hombro', 'costuras', 'hebillas', 'argolla-dorsal', 'etiqueta', 'correa-pierna']) { fireEvent.click(screen.getByTestId(`zone-${z}`)); fireEvent.click(screen.getByTestId(z === 'correa-pierna' ? 'judge-defect' : 'judge-ok')); }
+    expect(screen.getByTestId('feedback')).toHaveAttribute('data-kind', 'warn');
     fireEvent.click(screen.getByRole('button', { name: /retiro de servicio/ }));
     cont();
     // 5 acceso
     await startStep();
-    for (const n of ['Escalera fija', 'Barandal frontal']) fireEvent.click(screen.getByRole('button', { name: n }));
+    for (const n of ['Escalera fija', 'Barandal frontal', 'Borde derecho de la plataforma']) fireEvent.click(screen.getByRole('button', { name: new RegExp('^' + n) }));
     cont();
     // 6 anclaje
     await startStep();
@@ -111,6 +112,8 @@ describe('motor de misiones — experiencia', () => {
     expect(screen.getByTestId('result-correct')).toHaveTextContent('6 / 8');
     expect(within(screen.getByTestId('mastery')).getAllByRole('progressbar')).toHaveLength(m.masteryAreas.length);
     expect(done).toHaveTextContent('no te habilita para trabajar en altura');
+    expect(screen.getByTestId('complete-title')).toHaveTextContent('PRÁCTICA TERMINADA');
+    expect(screen.queryByTestId('critical-alert')).toBeNull();
     fireEvent.click(screen.getByTestId('continue-path'));
     expect(screen.getByTestId('learning-path')).toHaveTextContent('COMPLETADA');
   });
@@ -136,5 +139,21 @@ describe('motor de misiones — experiencia', () => {
     act(() => useMission.setState({ view: 'intro', missionId: 'heights-prep' }));
     render(<MissionApp />);
     expect(screen.getByTestId('start-mission')).toHaveTextContent('CONTINUAR MISIÓN (paso 2)');
+  });
+});
+
+describe('motor de misiones — errores críticos', () => {
+  it('elegir una acción insegura en un paso crítico marca «con errores críticos» y no completa la misión', async () => {
+    const steps = m.steps;
+    act(() => useMission.setState({ view: 'complete', missionId: m.id, startedAt: Date.now() - 60000, endedAt: Date.now(),
+      results: Object.fromEntries(steps.map((s) => [s.id, { done: true, mistakes: s.id === 'confirmar-inicio' ? 1 : 0, wrong: s.id === 'confirmar-inicio' ? ['iniciar'] : [] }])) }));
+    render(<MissionApp />);
+    expect(screen.getByTestId('complete-title')).toHaveTextContent('CON ERRORES CRÍTICOS');
+    expect(screen.getByTestId('critical-alert')).toHaveTextContent('puede causar una lesión grave o la muerte');
+    expect(screen.getByTestId('missed')).toHaveTextContent('Elegiste «Inicio la tarea; es rápida»');
+    expect(JSON.parse(localStorage.getItem('adx.missions.done') ?? '[]')).not.toContain(m.id);
+  });
+  it('en un paso de identificar se deben encontrar todos los peligros', () => {
+    for (const s of m.steps) if (s.type === 'identify') expect(s.required).toBe(s.targets.length);
   });
 });

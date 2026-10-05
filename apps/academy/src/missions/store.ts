@@ -4,9 +4,9 @@ import type { CameraT, MissionT } from './schema';
 export type View = 'path' | 'intro' | 'play' | 'complete';
 export type Phase = 'intro' | 'show' | 'try' | 'done';
 export type Drawer = null | 'why' | 'procedure' | 'ask';
-export interface StepResult { mistakes: number; done: boolean }
-export interface Feedback { kind: 'ok' | 'bad' | 'info'; title: string; text: string; key: number }
-export interface Marker { objectId: string; kind: 'found' | 'hint' | 'wrong' | 'selected'; label?: string }
+export interface StepResult { mistakes: number; done: boolean; wrong?: string[] }
+export interface Feedback { kind: 'ok' | 'bad' | 'info' | 'warn'; title: string; text: string; key: number }
+export interface Marker { objectId: string; kind: 'found' | 'hint' | 'wrong' | 'selected' | 'tap'; label?: string }
 
 interface S {
   view: View;

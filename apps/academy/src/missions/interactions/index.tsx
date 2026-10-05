@@ -6,8 +6,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { SceneDefT, StepT } from '../schema';
 import { useMission } from '../store';
+import { OpText } from '../../components/ui/Status';
 
-type P<T extends StepT['type']> = { step: Extract<StepT, { type: T }>; scene: SceneDefT; onDone: (mistakes: number) => void; done: boolean };
+type P<T extends StepT['type']> = { step: Extract<StepT, { type: T }>; scene: SceneDefT; onDone: (mistakes: number, wrong?: string[]) => void; done: boolean };
 
 const chip = (state: 'idle' | 'ok' | 'bad' | 'on' = 'idle') =>
   `inline-flex min-h-10 items-center gap-2 rounded-lg border px-3 py-2 text-left text-[14px] font-medium transition focus-visible:outline-2 ${
@@ -23,6 +24,25 @@ function useSceneClick(fn: (id: string) => void) {
   useEffect(() => { if (first.current) { first.current = false; return; } if (click) ref.current(click.id); }, [click]);
 }
 const labelOf = (scene: SceneDefT, id: string) => scene.objects.find((o) => o.id === id)?.label ?? id;
+const descOf = (scene: SceneDefT, id: string) => scene.objects.find((o) => o.id === id)?.desc;
+
+/** Lista accesible de elementos del escenario: siempre presente para teclado y lector de pantalla (RT-MUX-08);
+ *  visible para todos con «Usar lista». Cada elemento describe lo que se ve (SAF-H-06). */
+function ObjectList({ scene, ids, visible, state, onPick, disabled }: { scene: SceneDefT; ids: string[]; visible: boolean; state: (id: string) => 'idle' | 'ok' | 'bad'; onPick: (id: string) => void; disabled?: boolean }) {
+  return (
+    <div role="group" aria-label="Elementos del escenario" className={visible ? 'flex flex-wrap gap-1.5' : 'sr-only focus-within:not-sr-only focus-within:flex focus-within:flex-wrap focus-within:gap-1.5'}>
+      {ids.map((id) => {
+        const d = descOf(scene, id);
+        return (
+          <button key={id} className={chip(state(id)) + ' flex-col !items-start'} disabled={disabled} onClick={() => onPick(id)} aria-describedby={d ? `desc-${id}` : undefined}>
+            <span>{state(id) === 'ok' ? '✓ ' : ''}{labelOf(scene, id)}</span>
+            {d && <span id={`desc-${id}`} className="text-[11.5px] font-normal text-white/60">{d}</span>}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
 const shuffle = <T,>(a: T[], seed: string) => {
   const r = [...a]; let h = [...seed].reduce((x, c) => (x * 31 + c.charCodeAt(0)) >>> 0, 7);
   for (let i = r.length - 1; i > 0; i--) { h = (h * 1103515245 + 12345) >>> 0; const j = h % (i + 1); [r[i], r[j]] = [r[j], r[i]]; }
@@ -57,9 +77,12 @@ export function Identify({ step, scene, onDone, done }: P<'identify'>) {
   const targets = step.targets.map((t) => t.objectId), distractors = step.distractors.map((d) => d.objectId);
   const candidates = useMemo(() => shuffle([...targets, ...distractors], step.id), [step.id]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { set({ interactive: done ? [] : candidates, markers: [] }); }, [candidates, done, set]);
+  const foundMarkers = (f: string[]) => f.map((id) => ({ objectId: id, kind: 'found' as const, label: step.targets.find((t) => t.objectId === id)!.label }));
   useEffect(() => {
-    set({ markers: found.map((id) => ({ objectId: id, kind: 'found' as const, label: step.targets.find((t) => t.objectId === id)!.label })) });
-  }, [found, step, set]);
+    // puntos de «se puede tocar» en todo lo revisable (objetivos y no objetivos por igual: no delatan la respuesta)
+    const taps = done ? [] : candidates.filter((id) => !found.includes(id)).map((id) => ({ objectId: id, kind: 'tap' as const }));
+    set({ markers: [...foundMarkers(found), ...taps] });
+  }, [found, step, set, done, candidates]); // eslint-disable-line react-hooks/exhaustive-deps
   const choose = (id: string) => {
     if (done) return;
     const t = step.targets.find((x) => x.objectId === id);
@@ -78,7 +101,7 @@ export function Identify({ step, scene, onDone, done }: P<'identify'>) {
   const hint = () => {
     const next = targets.find((id) => !found.includes(id));
     if (!next) return;
-    set({ markers: [...found.map((id) => ({ objectId: id, kind: 'found' as const, label: step.targets.find((t) => t.objectId === id)!.label })), { objectId: next, kind: 'hint' }] });
+    set({ markers: [...foundMarkers(found), { objectId: next, kind: 'hint' }] });
     toast('info', 'Pista', step.hint);
   };
   return (
@@ -88,14 +111,7 @@ export function Identify({ step, scene, onDone, done }: P<'identify'>) {
         <span className="flex gap-1" aria-hidden>{Array.from({ length: step.required }, (_, i) => <span key={i} className={`h-2 w-6 rounded-full ${i < found.length ? 'bg-[#30a46c]' : 'bg-white/15'}`} />)}</span>
         {!done && <button className="text-[13px] font-medium text-[var(--color-accent)] underline-offset-2 hover:underline" onClick={hint} data-testid="hint">Necesito una pista</button>}
       </div>
-      {(listMode || done) && (
-        <div className="flex flex-wrap gap-1.5" role="group" aria-label="Elementos del escenario">
-          {candidates.map((id) => {
-            const isFound = found.includes(id);
-            return <button key={id} className={chip(isFound ? 'ok' : 'idle')} disabled={done} onClick={() => choose(id)}>{isFound ? '✓ ' : ''}{labelOf(scene, id)}</button>;
-          })}
-        </div>
-      )}
+      <ObjectList scene={scene} ids={candidates} visible={listMode || done} state={(id) => (found.includes(id) ? 'ok' : 'idle')} onPick={choose} disabled={done} />
     </div>
   );
 }
@@ -114,8 +130,8 @@ export function Confirm({ step, onDone, done }: P<'confirm'>) {
     const wrong = step.items.filter((i) => !i.required && checked.has(i.id));
     if (!missing.length && !wrong.length) { onDone(mistakes.current); return; }
     mistakes.current++;
-    if (wrong.length) toast('bad', 'Hay algo que no es válido', wrong[0].feedback);
-    else toast('bad', 'Falta algo', `${missing.length === 1 ? 'Falta 1 requisito' : `Faltan ${missing.length} requisitos`}. Piensa qué te protege si algo sale mal.`);
+    if (wrong.length) toast('bad', `«${wrong[0].label.replace(/[«»]/g, '')}» no es válido`, wrong[0].feedback);
+    else toast('bad', missing.length === 1 ? 'Falta 1 requisito' : `Faltan ${missing.length} requisitos`, `Pista: ${missing[0].feedback}`);
   };
   return (
     <div className="flex flex-col gap-2" data-testid="confirm">
@@ -128,7 +144,7 @@ export function Confirm({ step, onDone, done }: P<'confirm'>) {
             <label key={it.id} className={chip(state) + ' cursor-pointer'}>
               <input type="checkbox" className="h-4 w-4 accent-[var(--color-accent)]" checked={on} disabled={done}
                 onChange={() => { const n = new Set(checked); if (on) n.delete(it.id); else n.add(it.id); setChecked(n); }} />
-              <span><span className="block">{it.label}</span><span className="block text-[11.5px] font-normal text-white/55">{it.detail}</span></span>
+              <span><span className="block">{it.label}{state === 'bad' && <span className="ml-1 text-[12px] text-[#ff8a8d]">✗ no es válido</span>}</span><span className="block text-[11.5px] font-normal text-white/60"><OpText text={it.detail} /></span></span>
             </label>
           );
         })}
@@ -138,40 +154,60 @@ export function Confirm({ step, onDone, done }: P<'confirm'>) {
   );
 }
 
-/* ---------- 04 INSPECCIONAR ---------- */
+/* ---------- 04 INSPECCIONAR: tú observas y juzgas cada zona ---------- */
 export function Inspect({ step, onDone, done }: P<'inspect'>) {
   const { set, toast } = useMission.getState();
   const [states, setStates] = useState<Record<string, 'pending' | 'ok' | 'defect'>>(() => Object.fromEntries(step.zones.map((z) => [z.id, 'pending'])));
+  const [active, setActive] = useState<string | null>(null);
   const [choice, setChoice] = useState<string | null>(null);
   const mistakes = useRef(0);
+  const wrong = useRef<string[]>([]);
   useEffect(() => { set({ interactive: [], zones: { objectId: step.objectId, states } }); }, [states, step.objectId, set]);
   useEffect(() => () => set({ zones: null }), [set]);
-  const check = (zoneId: string) => {
-    const z = step.zones.find((x) => x.id === zoneId);
-    if (!z || done) return;
-    setStates((s) => ({ ...s, [zoneId]: z.defect ? 'defect' : 'ok' }));
-    toast(z.defect ? 'bad' : 'ok', z.defect ? `${z.label}: DAÑO` : `${z.label}: en buen estado`, z.finding);
+  const open = (zoneId: string) => { if (!done && step.zones.some((z) => z.id === zoneId)) setActive(zoneId); };
+  useSceneClick((id) => { const [obj, zone] = id.split('#'); if (obj === step.objectId && zone) open(zone); });
+  const judge = (zoneId: string, saysDefect: boolean) => {
+    const z = step.zones.find((x) => x.id === zoneId)!;
+    if (saysDefect === z.defect) {
+      setStates((s) => ({ ...s, [zoneId]: z.defect ? 'defect' : 'ok' }));
+      setActive(null);
+      if (z.defect) toast('warn', `⚠ ${z.label}: DAÑO ENCONTRADO`, `${z.finding} Bien visto: este hallazgo cambia tu decisión.`);
+      else toast('ok', `${z.label}: en buen estado`, z.finding);
+    } else {
+      mistakes.current++; wrong.current.push(`zona:${zoneId}`);
+      toast('bad', z.defect ? 'Vuelve a mirar: sí hay un daño' : 'Vuelve a mirar: esta parte está bien', z.defect ? `Lee otra vez lo que se ve: «${z.observation}». Un corte o fibras sueltas son daño.` : `Lee otra vez lo que se ve: «${z.observation}». No hay señales de daño.`);
+    }
   };
-  useSceneClick((id) => { const [obj, zone] = id.split('#'); if (obj === step.objectId && zone) check(zone); });
   const allChecked = Object.values(states).every((s) => s !== 'pending');
   const pending = step.zones.filter((z) => states[z.id] === 'pending').length;
+  const az = step.zones.find((z) => z.id === active);
   return (
     <div className="flex flex-col gap-2" data-testid="inspect">
       <div className="flex flex-wrap items-center gap-1.5">
         <span className="mr-1 text-[14px] font-semibold text-white" aria-live="polite">{step.zones.length - pending} de {step.zones.length} zonas revisadas</span>
         {step.zones.map((z) => (
-          <button key={z.id} className={chip(states[z.id] === 'ok' ? 'ok' : states[z.id] === 'defect' ? 'bad' : 'idle')} onClick={() => check(z.id)} data-testid={`zone-${z.id}`}>
-            {states[z.id] === 'ok' ? '✓ ' : states[z.id] === 'defect' ? '⚠ ' : ''}{z.label}
+          <button key={z.id} aria-pressed={active === z.id} className={chip(states[z.id] === 'ok' ? 'ok' : states[z.id] === 'defect' ? 'bad' : active === z.id ? 'on' : 'idle')} onClick={() => open(z.id)} data-testid={`zone-${z.id}`} disabled={states[z.id] !== 'pending'}>
+            {states[z.id] === 'ok' ? '✓ ' : states[z.id] === 'defect' ? '⚠ ' : ''}{z.label}{states[z.id] === 'defect' ? ' — dañada' : states[z.id] === 'ok' ? ' — bien' : ''}
           </button>
         ))}
       </div>
+      {az && (
+        <div className="rounded-lg border border-white/15 bg-white/[0.04] p-3" data-testid="zone-judge">
+          <p className="text-[13px] text-white/60">{az.label} — lo que ves:</p>
+          <p className="text-[15px] text-white">{az.observation}</p>
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            <button className={chip('idle')} onClick={() => judge(az.id, false)} data-testid="judge-ok">✓ Está bien</button>
+            <button className={chip('idle')} onClick={() => judge(az.id, true)} data-testid="judge-defect">⚠ Tiene daño</button>
+          </div>
+        </div>
+      )}
       {allChecked && (
         <div className="flex flex-col gap-1.5" role="group" aria-label={step.decision.prompt} data-testid="inspect-decision">
           <p className="text-[14px] font-semibold text-white">{step.decision.prompt}</p>
           <div className="flex flex-wrap gap-1.5">
             {step.decision.options.map((o) => (
               <button key={o.id} disabled={done} className={chip(choice === o.id ? (o.correct ? 'ok' : 'bad') : done && o.correct ? 'ok' : 'idle')}
-                onClick={() => { setChoice(o.id); if (o.correct) { toast('ok', 'Correcto', o.feedback); onDone(mistakes.current); } else { mistakes.current++; toast('bad', 'Piénsalo otra vez', o.feedback); } }}>{o.label}</button>
+                onClick={() => { setChoice(o.id); if (o.correct) { toast('ok', 'Correcto', o.feedback); onDone(mistakes.current, wrong.current); } else { mistakes.current++; wrong.current.push(o.id); toast('bad', 'Piénsalo otra vez', o.feedback); } }}>{o.label}</button>
             ))}
           </div>
         </div>
@@ -187,15 +223,16 @@ export function Select({ step, onDone, done }: P<'select'>) {
   const [picked, setPicked] = useState<string | null>(null);
   const mistakes = useRef(0);
   const objectIds = step.options.map((o) => o.objectId).filter(Boolean) as string[];
-  useEffect(() => { set({ interactive: done ? [] : objectIds, markers: [] }); }, [done]); // eslint-disable-line react-hooks/exhaustive-deps
+  const wrong = useRef<string[]>([]);
+  useEffect(() => { set({ interactive: done ? [] : objectIds, markers: done ? [] : objectIds.map((id) => ({ objectId: id, kind: 'tap' as const })) }); }, [done]); // eslint-disable-line react-hooks/exhaustive-deps
   const choose = (o: (typeof step.options)[number]) => {
     if (done) return;
     setPicked(o.id);
     if (o.correct) {
       set({ interactive: [], markers: o.objectId ? [{ objectId: o.objectId, kind: 'selected', label: o.label }] : [] });
-      toast('ok', 'Correcto', o.feedback); onDone(mistakes.current);
+      toast('ok', 'Correcto', o.feedback); onDone(mistakes.current, wrong.current);
     } else {
-      mistakes.current++;
+      mistakes.current++; wrong.current.push(o.id);
       set({ markers: o.objectId ? [{ objectId: o.objectId, kind: 'wrong', label: 'No es correcto' }] : [] });
       toast('bad', 'No es el adecuado', o.feedback);
     }
@@ -205,11 +242,9 @@ export function Select({ step, onDone, done }: P<'select'>) {
   return (
     <div className="flex flex-col gap-2" data-testid="select">
       <p className="text-[13px] text-white/70">{step.prompt}{objectIds.length ? ' — haz clic en el escenario' : ''}</p>
-      {(showList || done) && (
-        <div className="flex flex-wrap gap-1.5">
-          {step.options.map((o) => <button key={o.id} disabled={done} className={chip(picked === o.id ? (o.correct ? 'ok' : 'bad') : 'idle')} onClick={() => choose(o)}>{o.label}</button>)}
-        </div>
-      )}
+      <div role="group" aria-label={step.prompt} className={showList || done ? 'flex flex-wrap gap-1.5' : 'sr-only focus-within:not-sr-only focus-within:flex focus-within:flex-wrap focus-within:gap-1.5'}>
+        {step.options.map((o) => <button key={o.id} disabled={done} className={chip(picked === o.id ? (o.correct ? 'ok' : 'bad') : 'idle')} onClick={() => choose(o)}>{picked === o.id && !o.correct ? '✗ ' : ''}{o.label}</button>)}
+      </div>
     </div>
   );
 }
@@ -238,7 +273,7 @@ export function Sequence({ step, onDone, done }: P<'sequence'>) {
       <ol className="flex flex-col gap-1">
         {order.map((id, i) => (
           <li key={id} className={chip(done ? 'ok' : wrongAt.includes(i) ? 'bad' : 'idle') + ' justify-between'}>
-            <span className="flex items-center gap-2"><span className="font-mono text-[var(--color-accent)]">{i + 1}</span>{label(id)}</span>
+            <span className="flex items-center gap-2"><span className="font-mono text-[var(--color-accent)]">{i + 1}</span>{label(id)}{wrongAt.includes(i) && !done && <span className="text-[12px] text-[#ff8a8d]">✗ fuera de lugar</span>}</span>
             {!done && <span className="flex gap-1">
               <button aria-label={`Subir «${label(id)}»`} disabled={i === 0} className="rounded px-2 py-0.5 hover:bg-white/10 disabled:opacity-30" onClick={() => move(i, -1)}>↑</button>
               <button aria-label={`Bajar «${label(id)}»`} disabled={i === order.length - 1} className="rounded px-2 py-0.5 hover:bg-white/10 disabled:opacity-30" onClick={() => move(i, 1)}>↓</button>
@@ -256,6 +291,7 @@ export function Decide({ step, onDone, done }: P<'decide'>) {
   const { set, toast } = useMission.getState();
   const [picked, setPicked] = useState<string | null>(null);
   const mistakes = useRef(0);
+  const wrong = useRef<string[]>([]);
   useEffect(() => { set({ interactive: [], sceneFlags: { ...useMission.getState().sceneFlags, ...step.sceneChange } }); }, [step, set]);
   return (
     <div className="flex flex-col gap-2" data-testid="decide">
@@ -263,8 +299,8 @@ export function Decide({ step, onDone, done }: P<'decide'>) {
       <div className="flex flex-col gap-1.5">
         {step.options.map((o) => (
           <button key={o.id} disabled={done} className={chip(picked === o.id ? (o.correct ? 'ok' : 'bad') : done && o.correct ? 'ok' : 'idle')}
-            onClick={() => { setPicked(o.id); if (o.correct) { toast('ok', 'Decisión segura', o.feedback); onDone(mistakes.current); } else { mistakes.current++; toast('bad', 'Esa decisión no es segura', o.feedback); } }}>
-            {o.label}
+            onClick={() => { setPicked(o.id); if (o.correct) { toast('ok', 'Decisión segura', o.feedback); onDone(mistakes.current, wrong.current); } else { mistakes.current++; wrong.current.push(o.id); toast('bad', 'Esa decisión no es segura', o.feedback); } }}>
+            {picked === o.id && !o.correct ? '✗ ' : ''}{o.label}
           </button>
         ))}
       </div>
@@ -294,7 +330,7 @@ export function Demonstrate({ step, scene, onDone, done }: P<'demonstrate'>) {
   );
 }
 
-export function Interaction(props: { step: StepT; scene: SceneDefT; onDone: (m: number) => void; done: boolean }) {
+export function Interaction(props: { step: StepT; scene: SceneDefT; onDone: (m: number, wrong?: string[]) => void; done: boolean }) {
   const s = props.step;
   switch (s.type) {
     case 'observe': return <Observe {...props} step={s} />;

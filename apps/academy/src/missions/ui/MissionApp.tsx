@@ -29,7 +29,7 @@ function MissionIntro({ m, onStart, onPath }: { m: MissionT; onStart: (resume: b
       </button>
       {saved && done > 0 && <button onClick={() => onStart(false)} className="relative mt-3 text-[13px] text-white/60 underline-offset-2 hover:underline">Empezar de nuevo</button>}
       <button onClick={onPath} className="relative mt-6 text-[13px] text-white/50 hover:text-white" data-testid="to-path">Ver el mapa de misiones</button>
-      <p className="absolute inset-x-0 bottom-3 mx-auto max-w-3xl px-4 text-[11px] text-white/40"><span className="text-[#a78bfa]">◇ DEMOSTRACIÓN</span> — secuencia ilustrativa; antes de usarse en operación se reemplaza por el procedimiento aprobado de la planta (Operaciones y Seguridad). {DISCLAIMER}</p>
+      <p className="absolute inset-x-0 bottom-3 mx-auto max-w-3xl px-4 text-[12px] text-white/75"><span className="text-[#a78bfa]">◇ DEMOSTRACIÓN</span> — secuencia ilustrativa; antes de usarse en operación se reemplaza por el procedimiento aprobado de la planta (Operaciones y Seguridad). {DISCLAIMER}</p>
     </div>
   );
 }
@@ -46,17 +46,24 @@ function MissionComplete({ m, onRepeat, onPath }: { m: MissionT; onRepeat: () =>
   });
   const weakest = [...areas].sort((x, y) => x.score - y.score)[0];
   const missed = m.steps.filter((s) => (results[s.id]?.mistakes ?? 0) > 0);
-  useEffect(() => { markCompleted(m.id); track('completed', m.id, { correct, total: m.steps.length, seconds: secs }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const critical = m.steps.filter((s) => s.critical && (results[s.id]?.mistakes ?? 0) > 0);
+  const wrongFeedback = (s: (typeof m.steps)[number]) => {
+    const ids = results[s.id]?.wrong ?? [];
+    const opts = s.type === 'inspect' ? s.decision.options : s.type === 'select' || s.type === 'decide' ? s.options : [];
+    return opts.filter((o) => ids.includes(o.id)).map((o) => `Elegiste «${o.label}»: ${o.feedback}`);
+  };
+  useEffect(() => { if (!critical.length) markCompleted(m.id); track('completed', m.id, { correct, total: m.steps.length, seconds: secs }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className="scroll-thin h-full overflow-y-auto bg-[#0c0e11] px-6 py-10 text-white" data-testid="mission-complete">
       <div className="mx-auto max-w-2xl">
-        <p className="font-mono text-[13px] tracking-[0.3em] text-[#30a46c]">✓ MISIÓN COMPLETADA</p>
+        <p className={`font-mono text-[13px] tracking-[0.3em] ${critical.length ? 'text-[#e5484d]' : 'text-[#30a46c]'}`} data-testid="complete-title">{critical.length ? '⚠ PRÁCTICA TERMINADA — CON ERRORES CRÍTICOS' : '✓ PRÁCTICA TERMINADA'}</p>
         <h1 className="mt-1 text-[32px] font-bold">{m.title} — {m.subtitle}</h1>
         <div className="mt-6 grid grid-cols-2 gap-3">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4"><p className="label">Resultado</p><p className="text-[28px] font-bold" data-testid="result-correct">{correct} / {m.steps.length}</p><p className="text-[13px] text-white/60">decisiones correctas al primer intento</p></div>
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4"><p className="label">Tiempo</p><p className="text-[28px] font-bold">{String(Math.floor(secs / 60)).padStart(2, '0')}:{String(secs % 60).padStart(2, '0')}</p><p className="text-[13px] text-white/60">minutos</p></div>
         </div>
-        <h2 className="label mb-3 mt-8">Dominio</h2>
+        {critical.length > 0 && <p role="alert" className="mt-6 rounded-xl border-2 border-[#e5484d] bg-[#e5484d]/10 p-4 text-[14.5px]" data-testid="critical-alert">⚠ En esta práctica elegiste al menos una acción que, en una tarea real, puede causar una lesión grave o la muerte: <strong>{critical.map((s) => s.title).join(', ')}</strong>. En la planta no hay segundo intento. Repite la misión y repasa estos pasos con tu instructor o supervisor.</p>}
+        <h2 className="label mb-3 mt-8">Aciertos por tema (práctica)</h2>
         <ul className="space-y-3" data-testid="mastery">
           {areas.map((a) => (
             <li key={a.id}>
@@ -69,15 +76,15 @@ function MissionComplete({ m, onRepeat, onPath }: { m: MissionT; onRepeat: () =>
         </ul>
         <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
           <p className="label">Recomendación</p>
-          <p className="mt-1 text-[15px]">{weakest.score < 1 ? <>Repasa: <strong>{weakest.label}</strong> — {weakest.review}.</> : 'Dominaste todos los temas de esta misión. Sigue con la próxima cuando esté disponible.'}</p>
+          <p className="mt-1 text-[15px]">{weakest.score < 1 ? <>Repasa: <strong>{weakest.label}</strong> — {weakest.review}.</> : 'Respondiste bien todos los temas de esta práctica. Esto no acredita tu competencia. Sigue con la próxima misión cuando esté disponible.'}</p>
         </div>
         {missed.length > 0 && (
           <details className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4" data-testid="missed">
             <summary className="cursor-pointer font-semibold">Revisar lo que fallaste ({missed.length})</summary>
-            <ul className="mt-3 space-y-3 text-[14px] text-white/85">{missed.map((s) => <li key={s.id}><strong className="text-white">{s.title}.</strong> {s.why}</li>)}</ul>
+            <ul className="mt-3 space-y-3 text-[14px] text-white/85">{missed.map((s) => <li key={s.id}><strong className="text-white">{s.critical ? '⚠ ' : ''}{s.title}.</strong> {s.why}{wrongFeedback(s).map((f, i) => <span key={i} className="mt-1 block text-[#ffb3b5]">{f}</span>)}</li>)}</ul>
           </details>
         )}
-        <p className="mt-6 rounded-xl border border-[#f5c518]/40 bg-[#f5c518]/10 p-3 text-[13px]"><strong>Esta misión no te habilita para trabajar en altura.</strong> Es práctica de aprendizaje. La autorización requiere la capacitación oficial y la evaluación en piso por un evaluador autorizado. No se usa para escalafón, ascensos, sanciones ni bonos.</p>
+        <p className="mt-6 rounded-xl border border-[#f5c518]/40 bg-[#f5c518]/10 p-3 text-[13px]"><strong>Esta misión no te habilita para trabajar en altura ni certifica tu competencia.</strong> Es práctica de aprendizaje. Para trabajar en altura necesitas la capacitación y la autorización que exige la planta (SME_REQUIRED: requisitos de autorización — Seguridad). No se usa para escalafón, ascensos, sanciones ni bonos.</p>
         <div className="mt-6 flex flex-wrap gap-2">
           <button onClick={onRepeat} className="rounded-xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/10" data-testid="repeat">Repetir misión</button>
           <button onClick={onPath} className="rounded-xl bg-[var(--color-accent)] px-5 py-3 font-bold text-[#1a1203] hover:brightness-110" data-testid="continue-path">Continuar →</button>
@@ -138,13 +145,13 @@ export function MissionApp() {
   if (!m) return null;
   return (
     <div className="flex h-full flex-col">
-      {view !== 'play' && <FirstRunNotice where="También lo encuentras en el mapa de misiones → Privacidad y registro." />}
       <div className="min-h-0 flex-1">
         {view === 'path' && <LearningPath onOpen={(id) => set({ missionId: id, view: 'intro' })} />}
         {view === 'intro' && <MissionIntro m={m} onStart={(resume) => start(m, resume)} onPath={() => set({ view: 'path' })} />}
         {view === 'play' && <MissionPlayer m={m} scene={sceneFor(m)} onExit={() => set({ view: 'path' })} onComplete={() => set({ view: 'complete' })} />}
         {view === 'complete' && <MissionComplete m={m} onRepeat={() => start(m, false)} onPath={() => set({ view: 'path' })} />}
       </div>
+      {view !== 'play' && <FirstRunNotice where="También lo encuentras en el mapa de misiones → Privacidad y registro." />}
     </div>
   );
 }

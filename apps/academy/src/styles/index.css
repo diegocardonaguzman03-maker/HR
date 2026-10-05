@@ -59,3 +59,5 @@ body {
 
 /* Motor de misiones: pista pulsante sobre el objeto (se acompaña siempre de texto en el panel) */
 .mission-hint { display:block; width:46px; height:46px; border-radius:9999px; border:3px solid #6e9fd8; box-shadow:0 0 0 6px rgba(110,159,216,.25); animation: hs-pulse 1.6s ease-out infinite; }
+.mission-tap { display:block; width:16px; height:16px; border-radius:9999px; background:rgba(232,163,61,.85); box-shadow:0 0 0 4px rgba(232,163,61,.3); animation: tap-pulse 2s ease-in-out infinite; }
+@keyframes tap-pulse { 0%,100% { transform: scale(.8); opacity:.9 } 50% { transform: scale(1.15); opacity:.6 } }
