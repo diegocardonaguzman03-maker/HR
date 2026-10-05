@@ -37,6 +37,6 @@
 3. Se publica un link nuevo y se registra en esta sección. Si no pasa, sigue oculto y se corrige.
 
 ## 5. Acceso y soporte
-- **Link del piloto:** se registra en `entregables/2026-10-05-aceria-digital-academy/informe-ejecutivo.md` (sección «Acceso»).
+- **Link del piloto:** https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/9f09b294dfd6fc9989eaa8bfd5d3f23fcaff8e92/apps/academy/web/index.html
 - **Soporte:** el instructor de C&D asignado. Los fallos del 3D se reportan con una captura de pantalla; la app sigue usable sin 3D.
 - **Reportes de contenido:** se mandan a ADX-01, que los asigna a SME y a Seguridad.

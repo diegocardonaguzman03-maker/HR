@@ -1,6 +1,6 @@
 # Informe ejecutivo — ACERÍA DIGITAL ACADEMY: horno de arco eléctrico (piloto)
 
-**Para:** Director Corporativo de Capacitación y Desarrollo · **Fecha:** 2026-10-05 · **Estado:** APROBADO PARA PILOTO CONTROLADO (ADX-01), con condiciones
+**Para:** Director Corporativo de Capacitación y Desarrollo · **Fecha:** 2026-10-05 · **Estado:** LANZADO — piloto controlado (decisión D-011, 2026-10-05)
 
 ## Mensaje clave
 Se construyó y validó el primer módulo de la Academia Digital: un entorno 3D del horno de arco eléctrico con **15 equipos**, fichas de 9 pestañas, mapa del proceso, modos **Explorar · Aprender · Ejecutar · Evaluar**, biblioteca de PDF y video, y aviso de seguridad permanente.
@@ -9,7 +9,7 @@ Se construyó y validó el primer módulo de la Academia Digital: un entorno 3D 
 - **El asistente con IA queda oculto en el piloto:** Seguridad mantiene su veto sobre él (ver Decisión 1).
 
 **Link público (cualquier navegador, sin instalar nada):**
-https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/81141749c7d9444f0ab68736243a91467c9551f1/apps/academy/web/index.html
+https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/9f09b294dfd6fc9989eaa8bfd5d3f23fcaff8e92/apps/academy/web/index.html
 
 ## Qué se entregó
 | Pieza | Detalle |
@@ -41,5 +41,5 @@ https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/81141749c7d9444f0ab6873
 Cuando el Director decida, se registra en `equipo-director/decisiones/registro-de-decisiones.md`.
 
 ## Acceso
-- **Link público:** https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/81141749c7d9444f0ab68736243a91467c9551f1/apps/academy/web/index.html
+- **Link público:** https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/9f09b294dfd6fc9989eaa8bfd5d3f23fcaff8e92/apps/academy/web/index.html
 - **Código y documentos:** rama `claude/training-development-mining-company-0ctyfw`, carpeta `apps/academy/`.
