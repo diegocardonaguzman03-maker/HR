@@ -49,6 +49,8 @@
 
 **Link:** https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/3dba97d912bad33c53e831e99039477aa2c22b69/apps/academy/web/index.html
 
+**Versión 2 (2026-10-05): más fluida + Misión LOTO + menú de Procedimientos con 6 PDF descargables.** Seguridad (ADX-04) levantó el veto y la aprobó con condiciones (`docs/reviews/review-seguridad-loto-documentos.md`). Link: https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/02d9951f92d9b430220b55794ec23434dc92ea7f/apps/academy/web/index.html
+
 | Concepto | Definición |
 |---|---|
 | Participantes | 5 de nuevo ingreso [Supuesto]: personal de confianza o contratados en inducción mientras no esté el acuerdo de la CMCAP (D-011-4) |
