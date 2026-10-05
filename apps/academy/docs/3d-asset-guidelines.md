@@ -17,18 +17,20 @@ Hoy `npm run model` (`scripts/build-eaf-glb.mjs`) genera el modelo **esquemátic
 ## 2. Contrato de nombres
 - Sistema: `eaf__<sistema>`, minúsculas, sin acentos (por ejemplo `eaf__electrodes`). Tiene correspondencia 1:1 con `eq.*` y `hs.*`.
 - Componente: `eaf__<sistema>_<componente>` como hijo del sistema (por ejemplo `eaf__arms_clamp`).
+- Malla: `mesh_<nodo>`, una por nodo, con una primitiva por material. Nunca le pongas a la malla el nombre del nodo (ver `docs/nodos-3d.md`, RT-SW-05).
 - Entorno: `env__*` (plataforma, baño). No es seleccionable.
 - Los hotspots se anclan en `src/components/3d/anchors.ts` (ADX-09), con coordenadas de escena donde la plataforma está en y = 0.
 
 ## 3. Presupuestos (por modelo de equipo principal)
-| Métrica | Objetivo | Máximo | MVP actual |
+| Métrica | Objetivo | Máximo | MVP actual (2026-10-05, tras OPS-01/OPS-12/RT-SW-05) |
 |---|---|---|---|
-| Triángulos | ≤ 150 k | 300 k | ≈ 25 k |
-| Peso del GLB (comprimido) | ≤ 3 MB | 8 MB | ≈ 0.25 MB |
-| Materiales | ≤ 24 | 40 | 20 |
+| Triángulos | ≤ 150 k | 300 k | ≈ 25.3 k |
+| Peso del GLB (comprimido) | ≤ 3 MB | 8 MB | ≈ 0.25 MB (252 KB) |
+| Materiales | ≤ 24 | 40 | 19 (se quitó `grating`) |
 | Texturas | 0–8 (KTX2/BasisU 1k–2k) | 16 | 0 (PBR por factores) |
-| Llamadas de dibujo | ≤ 150 | 300 | ver `performance-report.md` |
+| Llamadas de dibujo | ≤ 150 | 300 | ver `performance-report.md` (1 por primitiva = 1 por material de cada nodo) |
 | Nodos seleccionables | 1 por sistema más los componentes | — | 15 sistemas + 19 componentes |
+| Mallas por nodo | 1 (varias primitivas si hay varios materiales) | 1 | 1, nombrada `mesh_<nodo>`; sin hijos `_1`/`_2` con nombre de contrato |
 
 ## 4. Materiales
 - PBR metal/rugosidad. Los colores son representativos: **no** reproducen el código de colores de tuberías de la planta (si se usara, debe venir de la norma de la planta, `SME_REQUIRED`).

@@ -1123,7 +1123,7 @@
       "El inyector de carbono sopla finos de coque o antracita con aire o gas de transporte a la interfase escoria–metal.",
       "El carbono reduce el FeO de la escoria y genera burbujas de CO que hacen que la escoria espume y cubra el arco.",
       "En modo quemador se mezcla gas natural con oxígeno para calentar zonas frías; con ≈ 100 % DRI se usa poco (arranque en frío o canasta de retornos).",
-      "En el modelo 3D se dibujan una lanza y un inyector por la puerta solo como ejemplo; SME_REQUIRED: confirmar con la OEM si existen en la planta."
+      "El modelo 3D muestra solo las 4 lanzas o quemadores de pared y un tanque dosificador de carbono como ejemplo. SME_REQUIRED: confirmar con la OEM la disposición real y si existen lanza móvil o inyección de carbono por la puerta."
     ],
     "components": [
       {

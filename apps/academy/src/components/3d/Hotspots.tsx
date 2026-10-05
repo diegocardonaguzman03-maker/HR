@@ -1,7 +1,7 @@
 import { Html } from '@react-three/drei';
 import { useShallow } from 'zustand/react/shallow';
 import { content, idx } from '../../lib/content';
-import { nodeMatches, nodesForEquipment, useApp } from '../../stores/useApp';
+import { nodesForEquipment, useApp } from '../../stores/useApp';
 import { ANCHORS, EXPLODE } from './anchors';
 import { track } from '../../lib/analytics';
 
@@ -34,7 +34,7 @@ export function Hotspots() {
         const pos: [number, number, number] = [a[0] + d[0] * explode, a[1] + d[1] * explode, a[2] + d[2] * explode];
         const eq = h.kind === 'equipment' ? idx.equipment.get(h.targetId) : undefined;
         const active = selectedEq === h.targetId;
-        const dim = mode === 'learn' && focusNodes.length > 0 && !focusNodes.some((f) => f === h.nodeName || f.startsWith(h.nodeName + '_')) && !nodeMatches(h.nodeName, focusNodes);
+        const dim = mode === 'learn' && focusNodes.length > 0 && !focusNodes.some((f) => f === h.nodeName || f.startsWith(h.nodeName + '_'));
         return (
           <Html key={h.id} position={pos} center zIndexRange={[30, 0]} style={{ pointerEvents: 'auto' }}>
             <button

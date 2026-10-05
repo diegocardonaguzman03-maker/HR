@@ -12,6 +12,7 @@ export function CameraDirector() {
   const req = useApp((s) => s.cameraRequest);
   const loaded = useApp((s) => s.loaded);
   const scene = useThree((s) => s.scene);
+  const lastKey = useRef(-1);
   useEffect(() => {
     const c = ref.current;
     if (!c) return;
@@ -21,7 +22,14 @@ export function CameraDirector() {
     const c = ref.current;
     if (!c || !req) return;
     const smooth = !reduced() && !(window as unknown as { __adxInstant?: boolean }).__adxInstant;
-    if (req.camera) {
+    const fresh = req.key !== lastKey.current;
+    lastKey.current = req.key;
+    if (req.rotate !== undefined || req.dolly !== undefined) {
+      // giro/acercamiento por botones (RT-UX-07); no se repite al terminar la carga
+      if (!fresh) return;
+      if (req.rotate) void c.rotate(req.rotate, 0, smooth);
+      if (req.dolly) void c.dolly(req.dolly, smooth);
+    } else if (req.camera) {
       void c.setLookAt(...req.camera.position, ...req.camera.target, smooth);
     } else if (req.fitNodes) {
       const box = boxOfNodes(scene, req.fitNodes);

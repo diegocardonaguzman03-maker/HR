@@ -1,4 +1,4 @@
-import { Suspense, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Environment, Lightformer, PerformanceMonitor, Grid } from '@react-three/drei';
 import { EffectComposer, Bloom, N8AO, SMAA, ToneMapping, Vignette } from '@react-three/postprocessing';
@@ -74,6 +74,16 @@ function Metrics() {
   return null;
 }
 
+/**
+ * Sombras bajo demanda: el mapa solo se recalcula cuando algo cambia (EafModel lo marca al animar o al cambiar la vista)
+ * o cuando cambia el nivel de calidad (RT-PERF-04).
+ */
+function ShadowPolicy({ q }: { q: EffectiveQuality }) {
+  const gl = useThree((s) => s.gl);
+  useEffect(() => { gl.shadowMap.autoUpdate = false; gl.shadowMap.needsUpdate = true; }, [gl, q]);
+  return null;
+}
+
 function Studio({ res }: { res: number }) {
   return (
     <Environment resolution={res} frames={1} background={false}>
@@ -87,16 +97,21 @@ function Studio({ res }: { res: number }) {
 
 export function Scene() {
   const quality = useApp((s) => s.quality);
-  const effective = useApp((s) => s.effective);
+  const stored = useApp((s) => s.effective);
+  const effective: EffectiveQuality = PRESETS[stored] ? stored : 'medium';
   const set = useApp((s) => s.set);
+  // con un visor de PDF o de video encima no se dibuja la escena (GPU libre; RT-PERF-04)
+  const paused = useApp((s) => !!s.docId || !!s.videoId);
   const p = PRESETS[effective];
   return (
     <Canvas
       data-testid="scene-canvas"
+      frameloop={paused ? 'never' : 'always'}
       shadows={p.shadows ? 'soft' : false}
       dpr={[1, p.dpr]}
       camera={{ position: [25, 15, 27], fov: 40, near: 0.1, far: 300 }}
-      gl={{ antialias: p.post === 'none', powerPreference: 'high-performance', toneMapping: p.post === 'none' ? THREE.AgXToneMapping : THREE.NoToneMapping, preserveDrawingBuffer: false }}
+      // antialias fijo: el contexto WebGL solo lo lee al crearse; si Auto baja a «low» (sin post) no se quedan bordes dentados (RT-PERF-07)
+      gl={{ antialias: true, powerPreference: 'high-performance', toneMapping: p.post === 'none' ? THREE.AgXToneMapping : THREE.NoToneMapping, preserveDrawingBuffer: false }}
       onPointerMissed={() => { const s = useApp.getState(); if (!s.picking) s.set({ selectedComponentNode: null }); }}
       aria-label="Modelo 3D esquemático del horno de arco eléctrico"
     >
@@ -128,6 +143,7 @@ export function Scene() {
         <Hotspots />
       </Suspense>
       <CameraDirector />
+      <ShadowPolicy q={effective} />
       <Effects q={effective} />
       <Metrics />
     </Canvas>
