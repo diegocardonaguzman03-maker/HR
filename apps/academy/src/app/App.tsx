@@ -57,9 +57,9 @@ function useHashRoute() {
     write(useApp.getState(), false);
     return useApp.subscribe((s, p) => {
       // UX-02: al cambiar de modo, el panel no se queda fijo en el equipo que estaba abierto
-      if (s.mode !== p.mode && s.selectedEq && s.selectedEq === p.selectedEq) { s.set({ selectedEq: null, selectedComponentNode: null }); return; }
       if (s.mode === p.mode && routeId(s) === routeId(p)) return;
       write(s, s.mode !== p.mode);
+      if (s.mode !== p.mode && s.selectedEq && s.selectedEq === p.selectedEq) s.set({ selectedEq: null, selectedComponentNode: null });
     });
   }, []);
 }
@@ -155,6 +155,7 @@ export function App() {
 
 function Main() {
   useHashRoute();
+  const mode = useApp((s) => s.mode);
   return (
     <div className="flex h-full flex-col">
       <a href="#panel" className="skip-link">Saltar al panel de información</a>
@@ -169,7 +170,9 @@ function Main() {
           <ArcNote />
         </main>
         <section id="panel" tabIndex={-1} aria-label="Panel de información" className="min-h-0 flex-1 border-l border-[var(--color-line)] bg-[var(--color-surface)] lg:flex-none">
-          <RightPanel />
+          <ErrorBoundary key={mode} fallback={<p role="alert" className="p-4 text-[13.5px]">Esta sección no se pudo mostrar. Cambia de modo o recarga la página; el resto de la academia sigue disponible.</p>}>
+            <RightPanel />
+          </ErrorBoundary>
         </section>
       </div>
       <Disclaimer />

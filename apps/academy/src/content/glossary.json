@@ -6,7 +6,7 @@
   },
   {
     "term": "DRI",
-    "definition": "Hierro de reducción directa: pelet de mineral de hierro al que se le quitó el oxígeno sin fundirlo. En GASM es la principal carga del EAF (≈ 95–100 %).",
+    "definition": "Hierro de reducción directa: pelet de mineral de hierro al que se le quitó la mayor parte del oxígeno sin fundirlo. Trae hierro metálico, algo de óxido de hierro (FeO), carbono y ganga (la parte no metálica del pelet). En GASM es la principal carga del EAF (≈ 95–100 %).",
     "status": "GENERAL_EDUCATIONAL"
   },
   {
@@ -17,6 +17,16 @@
   {
     "term": "Midrex",
     "definition": "Tecnología de reducción directa en horno de cuba que produce DRI con gas natural reformado. GASM tiene una planta de este tipo.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Metalización",
+    "definition": "Porcentaje del hierro del DRI que ya está como hierro metálico. Si baja, el horno necesita más energía y genera más escoria. El valor de recepción lo define la planta. SME_REQUIRED: metalización mínima de recepción del DRI; la dan C-07 y Reducción Directa (MO-EAF-02 en borrador).",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Ganga",
+    "definition": "Parte no metálica del pelet y del DRI (principalmente sílice y alúmina). Se va a la escoria y obliga a usar más cal y más energía.",
     "status": "GENERAL_EDUCATIONAL"
   },
   {
@@ -130,8 +140,8 @@
     "status": "GENERAL_EDUCATIONAL"
   },
   {
-    "term": "Cambiador de taps",
-    "definition": "Mecanismo del transformador que cambia su relación para ajustar la tensión que llega al horno.",
+    "term": "Cambiador de derivaciones (taps) bajo carga, OLTC",
+    "definition": "Mecanismo del transformador que cambia de derivación (tap) para ajustar la tensión que llega al horno.",
     "status": "GENERAL_EDUCATIONAL"
   },
   {

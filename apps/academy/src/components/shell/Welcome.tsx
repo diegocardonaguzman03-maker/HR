@@ -5,7 +5,7 @@ import { StatusChip, btn, btnPrimary } from '../ui/Status';
 import type { ValidationStatus } from '../../lib/content/schema';
 
 export function Welcome() {
-  const { set, setMode, selectEquipment } = useApp();
+  const set = useApp((s) => s.set), setMode = useApp((s) => s.setMode), selectEquipment = useApp((s) => s.selectEquipment);
   return (
     <div className="scroll-thin h-full overflow-y-auto px-4 py-4" data-testid="welcome">
       <p className="label">Módulo inicial</p>
@@ -22,7 +22,8 @@ export function Welcome() {
         <li>• Haz clic en un <strong>punto numerado</strong>, en el modelo o en la lista de equipos.</li>
         <li>• Arrastra para girar, rueda o pellizco para acercar, clic derecho para desplazar.</li>
         <li>• Usa <strong>Rayos X</strong>, <strong>Corte</strong> y <strong>Despiece</strong> para ver el interior.</li>
-        <li>• Todo se puede usar con teclado (Tab, Enter, flechas en pestañas).</li>
+        <li>• La selección y la información funcionan con teclado (Tab, Enter, flechas en pestañas); el giro libre del modelo requiere ratón o pantalla táctil.</li>
+        <li>• Si tu equipo no muestra el 3D, todo el contenido sigue disponible en la lista de equipos, las lecciones y la biblioteca.</li>
       </ul>
       <h2 className="label mb-2">Estados del contenido</h2>
       <ul className="space-y-1.5" data-testid="status-legend">

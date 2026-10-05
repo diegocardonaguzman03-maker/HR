@@ -14,7 +14,7 @@
     "kind": "identify",
     "topic": "Equipos del EAF",
     "level": 2,
-    "prompt": "En el modelo 3D, haz clic en el equipo por el que entra el DRI al horno (el 5.º agujero de la bóveda).",
+    "prompt": "En el modelo 3D, haz clic en el sistema que, sin parar durante la fusión, lleva la carga metálica principal de GASM hasta el horno: la banda y el chute que bajan hasta la bóveda.",
     "answerEquipmentId": "eq.dri-feed",
     "explanation": "En GASM el DRI llega por bandas a los silos de día y entra al horno de forma continua por el 5.º agujero de la bóveda. Por eso el horno casi no usa canastas: solo ocasionalmente para retornos internos."
   },
@@ -39,31 +39,31 @@
     "level": 1,
     "prompt": "¿Cuál es la principal carga metálica del horno de arco eléctrico de GASM?",
     "options": [
-      "Chatarra comprada a proveedores externos",
-      "DRI (hierro de reducción directa) de pelet propio de las plantas HYL y Midrex",
-      "Arrabio líquido de un alto horno",
-      "Ferroaleaciones compradas"
+      "Chatarra comprada a proveedores externos de la región",
+      "Arrabio líquido que llega de un alto horno de la misma planta",
+      "Ferroaleaciones y retornos de acero que se compran a otras acerías",
+      "DRI de pelet propio, de las plantas HYL y Midrex"
     ],
-    "answer": 1,
-    "explanation": "En GASM el EAF trabaja con alrededor de 95–100 % de DRI de pelet propio (HYL y Midrex), que llega por bandas, más retornos internos de hasta 5 %. No se compra chatarra (fuente: CV-GASM-001, borrador)."
+    "answer": 3,
+    "explanation": "En GASM el EAF trabaja con alrededor de 95–100 % de DRI de pelet propio (HYL y Midrex), que llega por bandas, más retornos internos de hasta 5 %. No se compra chatarra y no hay alto horno (fuente: CV-GASM-001, borrador)."
   },
   {
     "id": "q.electrode-1",
     "kind": "identify",
     "topic": "Sistema de electrodos",
     "level": 2,
-    "prompt": "En el modelo 3D, haz clic en las columnas de grafito que conducen la corriente y forman el arco eléctrico.",
+    "prompt": "Haz clic en el equipo que se consume con el uso y al que se le agregan secciones nuevas con una unión roscada.",
     "answerEquipmentId": "eq.electrodes",
-    "explanation": "Los electrodos de grafito bajan por la bóveda (por el delta). La corriente pasa por ellos y forma el arco entre la punta y la carga; ese arco es la principal fuente de calor para fundir."
+    "explanation": "Los electrodos de grafito bajan por la bóveda (por el delta). La corriente pasa por ellos y forma el arco entre la punta y la carga; ese arco es la principal fuente de calor para fundir. Como el grafito se gasta, se agregan secciones nuevas unidas con un niple."
   },
   {
     "id": "q.electrode-2",
     "kind": "identify",
     "topic": "Sistema de electrodos",
     "level": 2,
-    "prompt": "En el modelo 3D, haz clic en el equipo que transforma la energía de la red a la alta corriente que necesita el horno.",
+    "prompt": "Haz clic en el equipo que recibe la energía de la red en alta tensión y la entrega al horno con menor tensión y muy alta corriente.",
     "answerEquipmentId": "eq.transformer",
-    "explanation": "El transformador del horno recibe energía en alta tensión y la entrega con menor tensión y muy alta corriente al circuito secundario. Suele estar en una bóveda o cuarto separado, junto al horno."
+    "explanation": "El transformador del horno recibe energía en alta tensión y la entrega con menor tensión y muy alta corriente al circuito secundario. Suele estar en un cuarto separado (casa del transformador), junto al horno."
   },
   {
     "id": "q.electrode-3",
@@ -72,13 +72,13 @@
     "level": 3,
     "prompt": "¿Para qué sirve, en términos generales, la regulación automática de electrodos?",
     "options": [
-      "Para cambiar la composición química del acero",
-      "Para subir y bajar cada electrodo y mantener el arco estable mientras la carga se funde",
-      "Para enfriar los paneles de la coraza",
-      "Para abrir el orificio de vaciado"
+      "Para mantener estable el arco moviendo cada electrodo",
+      "Para ajustar la tensión del transformador según la etapa de la colada",
+      "Para controlar cuánto DRI entra al horno por el 5.º agujero en cada momento",
+      "Para bajar un electrodo solo cuando hay que agregarle una sección nueva"
     ],
-    "answer": 1,
-    "explanation": "La regulación mueve los mástiles con el sistema hidráulico para ajustar la altura de cada electrodo y mantener estable el arco. Los valores con los que trabaja (setpoints) los define la planta: SME_REQUIRED."
+    "answer": 0,
+    "explanation": "La regulación mueve los mástiles con el sistema hidráulico para ajustar la altura de cada electrodo y mantener estable el arco. La tensión la ajusta el cambiador de derivaciones (taps) del transformador, que es otro equipo. SME_REQUIRED: setpoints de regulación de electrodos; los dan C-07 y la OEM (MO-EAF-04 en borrador)."
   },
   {
     "id": "q.electrode-4",
@@ -86,9 +86,9 @@
     "topic": "Ruta de la energía eléctrica",
     "level": 3,
     "prompt": "Ordena el recorrido general de la energía eléctrica, desde la red hasta la carga.",
-    "items": ["Electrodos de grafito", "Transformador del horno", "Arco eléctrico sobre la carga", "Cables flexibles y barras del circuito secundario", "Brazos portaelectrodos y mordazas"],
+    "items": ["Electrodos de grafito", "Transformador del horno", "Arco eléctrico sobre la carga", "Barras y cables flexibles del circuito secundario", "Brazos portaelectrodos y mordazas"],
     "correctOrder": [1, 3, 4, 0, 2],
-    "explanation": "La energía va del transformador → circuito secundario (cables flexibles y barras) → brazos y mordazas → electrodos → arco sobre la carga. Todo este recorrido lleva corriente muy alta: nadie se acerca sin el permiso y el aislamiento que marca el procedimiento aprobado."
+    "explanation": "La energía va del transformador → circuito secundario (barras y cables flexibles) → brazos y mordazas → electrodos → arco sobre la carga. Todo este recorrido lleva corriente muy alta: nadie se acerca sin el permiso y el aislamiento que marca el procedimiento aprobado."
   },
   {
     "id": "q.electrode-5",
@@ -99,7 +99,7 @@
     "pairs": [
       { "left": "Mordaza", "right": "Sujeta el electrodo y le pasa la corriente" },
       { "left": "Mástil", "right": "Columna que sube y baja el brazo portaelectrodo" },
-      { "left": "Cambiador de taps", "right": "Cambia la relación del transformador para ajustar la tensión" },
+      { "left": "Cambiador de derivaciones (taps)", "right": "Ajusta la tensión que el transformador entrega al horno" },
       { "left": "Delta", "right": "Pieza central de la bóveda por donde pasan los tres electrodos" }
     ],
     "explanation": "Son funciones generales de la industria. Las inspecciones y ajustes de estos componentes los hace solo personal autorizado con la instrucción aprobada de la planta."
@@ -111,13 +111,13 @@
     "level": 1,
     "prompt": "Si apruebas esta evaluación en la plataforma, ¿qué significa?",
     "options": [
-      "Que ya estás certificado para operar el sistema de electrodos",
-      "Que puedes trabajar sin supervisión en el horno",
-      "Que comprendes los conceptos generales; la competencia la certifica un evaluador en piso con el procedimiento aprobado",
-      "Que puedes omitir el entrenamiento en el puesto"
+      "Que ya puedes operar el sistema de electrodos si tu supervisor está de acuerdo",
+      "Que comprendes los conceptos generales, pero no te habilita para operar",
+      "Que ya cuentas con tu constancia DC-3 del curso del sistema de electrodos",
+      "Que puedes saltarte una parte del entrenamiento en el puesto"
     ],
-    "answer": 2,
-    "explanation": "La plataforma apoya el aprendizaje, pero no certifica competencia. Para operar necesitas entrenamiento en el puesto, supervisión y la evaluación de un evaluador autorizado en piso con el procedimiento aprobado."
+    "answer": 1,
+    "explanation": "La plataforma apoya el aprendizaje, pero no certifica competencia ni es una constancia DC-3. Para operar necesitas entrenamiento en el puesto, supervisión y la evaluación de un evaluador autorizado en piso con el procedimiento aprobado. Tampoco se usa para escalafón ni para evaluar tu desempeño."
   },
   {
     "id": "q.safety-1",
@@ -128,11 +128,11 @@
     "options": [
       "La secas tú mismo con lo que tengas a la mano",
       "Sigues trabajando y lo reportas al final del turno",
-      "Te detienes, te alejas, avisas de inmediato a tu supervisor o al púlpito y no dejas que nadie se acerque",
-      "Le echas DRI encima para absorberla"
+      "Pones una señal en el piso para que nadie pise ahí y sigues con tu tarea",
+      "Te detienes, te alejas, avisas de inmediato a tu supervisor o al púlpito y no dejas que nadie se acerque"
     ],
-    "answer": 2,
-    "explanation": "El agua atrapada bajo metal líquido se convierte en vapor de golpe y puede causar una explosión. Detente, aléjate y avisa de inmediato. El DRI húmedo también es un peligro. Las acciones de control las define el procedimiento de emergencia aprobado: SME_REQUIRED."
+    "answer": 3,
+    "explanation": "El agua atrapada bajo metal líquido se convierte en vapor de golpe y puede causar una explosión. Detente, aléjate y avisa de inmediato. El DRI húmedo también es un peligro. SME_REQUIRED: respuesta de emergencia ante agua con metal líquido; la dan Seguridad C-16 y C-07 (MS-ACE-03 / MS-ACE-09 en borrador)."
   },
   {
     "id": "q.safety-2",
@@ -141,13 +141,13 @@
     "level": 3,
     "prompt": "El horno está apagado. ¿Por qué un brazo portaelectrodo todavía puede ser peligroso?",
     "options": [
-      "No es peligroso: si no hay corriente, no hay riesgo",
-      "Porque puede tener energía almacenada (presión hidráulica o gravedad) y moverse o caer",
-      "Porque el grafito se vuelve magnético",
-      "Porque el púlpito lo mueve de forma aleatoria"
+      "No es peligroso: si no hay corriente eléctrica, el brazo no se puede mover",
+      "Solo es peligroso mientras el horno está caliente; ya frío no hay riesgo",
+      "Porque puede tener energía almacenada (presión hidráulica o su propio peso) y moverse o caer",
+      "Solo es peligroso si alguien lo está moviendo desde el púlpito en ese momento"
     ],
-    "answer": 1,
-    "explanation": "Cortar la electricidad no elimina toda la energía. La presión hidráulica y el peso de brazos y electrodos pueden provocar movimientos. Nunca te pongas debajo de una carga suspendida. Bloqueo, aislamiento y verificación se hacen solo con el procedimiento LOTO aprobado: SME_REQUIRED."
+    "answer": 2,
+    "explanation": "Cortar la electricidad no elimina toda la energía. La presión hidráulica y el peso de brazos y electrodos pueden provocar movimientos. Nunca te pongas debajo de una carga suspendida. SME_REQUIRED: pasos de bloqueo, aislamiento y verificación de energía cero del EAF; los dan Mantenimiento y Seguridad C-16 (MS-ACE-02 en borrador)."
   },
   {
     "id": "q.safety-3",
@@ -156,12 +156,12 @@
     "level": 2,
     "prompt": "Relaciona cada peligro con un ejemplo general de control.",
     "pairs": [
-      { "left": "Alta corriente en el circuito secundario", "right": "Respetar la zona restringida y trabajar solo con equipo aislado y bloqueado" },
-      { "left": "Energía hidráulica almacenada", "right": "Bloqueo y liberación de energía según el procedimiento LOTO aprobado" },
-      { "left": "Salpicaduras de metal líquido", "right": "Ropa aluminizada o ignífuga y mantenerse fuera de la zona de exclusión" },
-      { "left": "Agua cerca de metal líquido", "right": "Detener, alejarse y avisar de inmediato" }
+      { "left": "Alta corriente en el circuito secundario", "right": "No entrar a la zona restringida sin autorización y permiso" },
+      { "left": "Energía hidráulica almacenada", "right": "Nunca ponerse debajo de un brazo o de la bóveda, aunque el horno esté apagado" },
+      { "left": "Salpicaduras de metal líquido", "right": "Usar la ropa ignífuga o aluminizada que marque la zona y quedarse fuera del área de vaciado" },
+      { "left": "Agua cerca de metal líquido", "right": "Alejarse y avisar de inmediato; no intentar secarla" }
     ],
-    "explanation": "Son ejemplos generales de la jerarquía de controles. Las distancias, permisos, pasos de LOTO y equipo de protección específicos los define la planta en sus procedimientos aprobados: SME_REQUIRED."
+    "explanation": "Son ejemplos generales de la jerarquía de controles. SME_REQUIRED: distancias, permisos, pasos de LOTO y equipo de protección de cada zona; los dan el estudio de arco eléctrico, Mantenimiento Eléctrico y Seguridad C-16 (MS-ACE-01 / MS-ACE-02 / MS-ACE-08 en borrador)."
   },
   {
     "id": "q.safety-4",
@@ -170,12 +170,125 @@
     "level": 3,
     "prompt": "Durante una revisión ves una grieta en un electrodo o una junta floja. ¿Cuál es la conducta correcta?",
     "options": [
-      "Intentas apretar la junta tú mismo para no perder tiempo",
-      "No haces nada porque el horno sigue funcionando",
-      "Detienes la actividad, reportas al supervisor o al púlpito y esperas indicaciones según el procedimiento",
-      "Lo anotas y lo comentas la próxima semana"
+      "Detienes la actividad, reportas al supervisor o al púlpito y esperas indicaciones",
+      "Lo anotas en la bitácora y lo reportas al terminar la revisión",
+      "Le avisas al compañero de al lado y sigues con la revisión",
+      "Revisas con la lámpara de cerca para confirmar si de verdad es una grieta antes de avisar"
+    ],
+    "answer": 0,
+    "explanation": "Una grieta o junta floja puede provocar la rotura del electrodo. Si ves algo anormal: detente, reporta y espera indicaciones. SME_REQUIRED: criterios de aceptación de juntas y respuesta ante un electrodo dañado; los dan el proveedor de electrodos y C-07 (MO-EAF-08 en borrador)."
+  },
+  {
+    "id": "q.asm-stages-1",
+    "kind": "order",
+    "topic": "Etapas del proceso",
+    "level": 2,
+    "prompt": "Sigue el recorrido del material en una colada. Ordena estos momentos del primero al último.",
+    "items": [
+      "El acero sale por el fondo del horno hacia la olla",
+      "La escoria espumosa sigue cubriendo el arco mientras se termina de ajustar el acero",
+      "El DRI llega por bandas a los silos de día",
+      "El arco funde el DRI que entra de forma continua",
+      "Empieza a entrar carga sobre el acero que se dejó en el horno"
+    ],
+    "correctOrder": [2, 4, 3, 1, 0],
+    "explanation": "Recorrido general: el DRI llega por bandas a los silos de día → entra sobre el pie líquido → el arco lo funde (desde que hay baño plano, la escoria espumosa cubre el arco) → afino → vaciado por el EBT hacia la olla. Es una secuencia educativa general; la secuencia real de cada colada la define el procedimiento aprobado de la planta."
+  },
+  {
+    "id": "q.asm-energy-1",
+    "kind": "order",
+    "topic": "Ruta de la energía eléctrica",
+    "level": 3,
+    "prompt": "Ordena del primer al último equipo por donde pasa la corriente.",
+    "items": ["Mordazas", "Barras fijas", "Punta del electrodo", "Transformador", "Cables flexibles"],
+    "correctOrder": [3, 1, 4, 0, 2],
+    "explanation": "La corriente sale del transformador, pasa por las barras fijas y los cables flexibles, llega a los brazos y a las mordazas, baja por el electrodo y forma el arco en la punta. Todo el recorrido lleva corriente muy alta."
+  },
+  {
+    "id": "q.asm-zone-1",
+    "kind": "identify",
+    "topic": "Zonas de alta corriente",
+    "level": 2,
+    "prompt": "En el modelo 3D, haz clic en el conjunto de conductores que lleva la corriente desde la salida del transformador hasta los brazos: una parte es rígida y otra se dobla cuando los brazos suben o bajan.",
+    "answerEquipmentId": "eq.secondary-circuit",
+    "explanation": "Es el circuito secundario: barras fijas y cables flexibles enfriados por agua. Lleva corriente muy alta y es zona restringida: no se entra sin autorización y permiso. SME_REQUIRED: distancias de aproximación y permisos aplicables; los dan el estudio de arco eléctrico, Mantenimiento Eléctrico y Seguridad C-16 (MS-ACE en borrador)."
+  },
+  {
+    "id": "q.asm-arms-1",
+    "kind": "identify",
+    "topic": "Componentes del sistema de electrodos",
+    "level": 2,
+    "prompt": "En el modelo 3D, haz clic en el equipo que sostiene cada columna de grafito sobre el horno, le pasa la corriente con una pieza que la aprieta y la sube o baja con un cilindro hidráulico.",
+    "answerEquipmentId": "eq.electrode-arms",
+    "explanation": "Son los brazos portaelectrodos: cada uno corre sobre su mástil, lleva la corriente hasta la mordaza y se mueve con hidráulica. Aun con el horno apagado guardan energía (presión hidráulica y su propio peso)."
+  },
+  {
+    "id": "q.asm-regulation-1",
+    "kind": "mcq",
+    "topic": "Regulación de electrodos",
+    "level": 3,
+    "prompt": "Mientras el DRI entra y se funde, la distancia entre la punta de cada electrodo y la carga cambia todo el tiempo. ¿Qué hace la regulación automática de electrodos?",
+    "options": [
+      "Sube o baja cada electrodo para que el arco siga estable",
+      "Cambia la derivación (tap) del transformador para compensar la distancia",
+      "Detiene la entrada de DRI hasta que la carga deje de moverse",
+      "Gira la bóveda para acercar los electrodos a donde todavía hay carga sólida"
+    ],
+    "answer": 0,
+    "explanation": "La regulación mueve cada electrodo, con el sistema hidráulico de los mástiles, para mantener estable el arco aunque la carga cambie. El cambiador de derivaciones y la alimentación de DRI son otros sistemas. SME_REQUIRED: setpoints de regulación; los dan C-07 y la OEM (MO-EAF-04 en borrador)."
+  },
+  {
+    "id": "q.asm-stored-1",
+    "kind": "mcq",
+    "topic": "Energía almacenada",
+    "level": 3,
+    "prompt": "El horno está apagado y un compañero quiere pasar por debajo de un brazo portaelectrodo para acortar camino. ¿Qué le dices?",
+    "options": [
+      "Que sí puede pasar, porque sin electricidad el brazo no tiene forma de moverse",
+      "Que no pase: aun apagado, el brazo puede bajar o caer",
+      "Que pase rápido, sin detenerse, y mirando siempre hacia arriba",
+      "Que primero avise por radio al púlpito que va a pasar y luego cruce"
+    ],
+    "answer": 1,
+    "explanation": "Apagado no significa seguro: la presión hidráulica y el peso del brazo y del electrodo pueden hacer que baje o caiga. Nadie se pone debajo de una carga suspendida, aunque avise. SME_REQUIRED: pasos de bloqueo y liberación de energía hidráulica y por gravedad del EAF; los dan Mantenimiento y Seguridad C-16 (MS-ACE-02 / MS-ACE-04 en borrador)."
+  },
+  {
+    "id": "q.asm-water-1",
+    "kind": "mcq",
+    "topic": "Agua y metal líquido",
+    "level": 3,
+    "prompt": "En la banda que lleva el DRI a los silos de día ves pelet mojado, por ejemplo por una gotera o una fuga de agua. ¿Qué haces?",
+    "options": [
+      "Lo dejas pasar: el calor del horno lo seca antes de que llegue al baño",
+      "Lo extiendes en el piso para que se oree y luego lo regresas a la banda",
+      "Avisas de inmediato al supervisor o al púlpito y no lo mueves tú",
+      "Lo apartas con una pala y lo anotas en la bitácora al final del turno"
     ],
     "answer": 2,
-    "explanation": "Una grieta o junta floja puede provocar la rotura del electrodo. Si ves algo anormal: detente, reporta y espera indicaciones. Los criterios de aceptación y la respuesta los define la instrucción aprobada: SME_REQUIRED."
+    "explanation": "El DRI mojado puede meter agua al horno, y el agua atrapada bajo metal líquido se vuelve vapor de golpe y puede causar una explosión. Además, el DRI húmedo se oxida y se calienta solo. Tu papel es avisar de inmediato. SME_REQUIRED: manejo aprobado del DRI mojado y respuesta ante agua con metal líquido; los dan C-07 y Seguridad C-16 (MO-EAF-02 / MS-ACE-03 en borrador)."
+  },
+  {
+    "id": "q.asm-signals-1",
+    "kind": "mcq",
+    "topic": "Condiciones anormales",
+    "level": 3,
+    "prompt": "Durante una pausa ves que gotea agua de uno de los cables que llevan la corriente hacia los brazos. ¿Qué haces?",
+    "options": [
+      "Pones una cubeta abajo para que el agua no llegue al piso y sigues tu revisión",
+      "Esperas a ver si la fuga crece antes de reportarla, para no parar el horno sin razón",
+      "Aprietas la conexión del cable con una llave para cortar la fuga",
+      "Te alejas, avisas de inmediato al supervisor o al púlpito y no tocas el cable"
+    ],
+    "answer": 3,
+    "explanation": "Los cables flexibles se enfrían con agua y llevan corriente muy alta. Una fuga puede llevar agua al horno o a zonas calientes, y tocar el cable es un riesgo eléctrico. Solo personal autorizado interviene. SME_REQUIRED: respuesta aprobada ante fuga de agua en el circuito secundario; la dan Mantenimiento Eléctrico, C-07 y Seguridad C-16 (MS-ACE-03 / MS-ACE-09 en borrador)."
+  },
+  {
+    "id": "q.asm-control-1",
+    "kind": "identify",
+    "topic": "A quién avisar",
+    "level": 2,
+    "prompt": "En el modelo 3D, haz clic en el cuarto con vista al horno desde donde se vigila y conduce la operación. Ahí avisas, junto con tu supervisor, si ves algo anormal en piso.",
+    "answerEquipmentId": "eq.control-room",
+    "explanation": "Es el púlpito de control. Ante cualquier condición anormal, el púlpito y tu supervisor son a quienes avisas primero. SME_REQUIRED: canales y protocolo de comunicación con el púlpito; los dan Operación de Acería (C-07) y Seguridad C-16 (MS-ACE-09 en borrador)."
   }
 ]

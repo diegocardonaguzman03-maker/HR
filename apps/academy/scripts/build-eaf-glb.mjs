@@ -36,7 +36,6 @@ const MATS = {
   pipe: { c: [0.58, 0.6, 0.62], m: 0.7, r: 0.4 },
   dri: { c: [0.3, 0.29, 0.28], m: 0.3, r: 0.8 },
   belt: { c: [0.08, 0.08, 0.08], m: 0, r: 0.9 },
-  grating: { c: [0.32, 0.33, 0.34], m: 0.6, r: 0.6 },
 };
 
 // ---------- registro de partes por nodo ----------
@@ -92,12 +91,14 @@ node('env__platform');
 node('env__bath');
 
 // ---------- plataforma (entorno) ----------
-add('env__platform', box(14, Y0, 22), 'concrete', [-6, Y0 / 2, 0]);
-add('env__platform', box(6, Y0, 7), 'concrete', [4, Y0 / 2, -7.5]);
-add('env__platform', box(6, Y0, 7), 'concrete', [4, Y0 / 2, 7.5]);
-add('env__platform', box(2.2, 0.05, 4), 'grating', [4, Y0 + 0.02, 0]);
-// barandales
-for (const z of [-11, 11]) tubeBetween('env__platform', [-13, Y0 + 1.1, z], [7, Y0 + 1.1, z], 0.04, 'hydraulic');
+// Disposición (OPS-01, opción A): mástiles y transformador en −x; puerta de escoria y púlpito en +z;
+// EBT y fosa en −z (lado opuesto a la puerta, mismo eje de basculamiento). La plataforma deja un hueco
+// x ∈ [−2, 2], z ∈ [−11, −2] para la fosa y el paso del carro de olla.
+add('env__platform', box(20, Y0, 13), 'concrete', [-3, Y0 / 2, 4.5]); // x −13…7, z −2…11
+add('env__platform', box(11, Y0, 9), 'concrete', [-7.5, Y0 / 2, -6.5]); // x −13…−2, z −11…−2
+add('env__platform', box(5, Y0, 9), 'concrete', [4.5, Y0 / 2, -6.5]); // x 2…7, z −11…−2
+// barandal en el borde x = 7 (no cruza la fosa ni el soporte del ducto de humos, que pasa a x = 8)
+tubeBetween('env__platform', [6.9, Y0 + 1.1, -11], [6.9, Y0 + 1.1, 11], 0.04, 'hydraulic');
 
 // ---------- 01 coraza y solera ----------
 add('eaf__shell_hearth', lathe([[0, Y0 + 0.25], [2.3, Y0 + 0.25], [2.85, Y0 + 0.55], [3.15, Y0 + 1.05], [3.25, Y0 + 1.6]]), 'shell');
@@ -108,11 +109,13 @@ for (let i = 0; i < 16; i++) {
   const a = (i / 16) * Math.PI * 2;
   add('eaf__shell_upper', box(0.08, 1.8, 0.2), 'steel', [Math.cos(a) * 3.33, Y0 + 2.5, Math.sin(a) * 3.33], [0, -a, 0]);
 }
-// cuna basculante (estructura)
-for (const z of [-1.6, 1.6]) {
-  add('eaf__shell', new THREE.CylinderGeometry(3.4, 3.4, 0.35, 48, 1, false, Math.PI * 0.75, Math.PI * 0.5), 'steel', [0, Y0 + 3.15, z], [Math.PI / 2, 0, 0]);
+// cuna basculante (estructura): eje de basculamiento paralelo a x → el horno bascula hacia −z (EBT, vaciado)
+// y hacia +z (puerta de escoria, desescoriado). Las cunas son arcos en los planos x = ±1.6 que ruedan a lo largo de z.
+const ROCK_R = 5, ROCK_ARC = 0.98; // radio y arco (rad) de la cuna; esquemático, no a escala
+for (const x of [-1.6, 1.6]) {
+  add('eaf__shell', torus(ROCK_R, 0.15, 24, ROCK_ARC), 'steel', [x, Y0 + ROCK_R + 0.1, 0], [0, Math.PI / 2, -Math.PI / 2 - ROCK_ARC / 2]);
 }
-add('eaf__shell', box(7.6, 0.3, 4.2), 'steel', [0, Y0 + 0.1, 0]);
+add('eaf__shell', box(4.2, 0.3, 6.0), 'steel', [0, Y0 + 0.1, 0]);
 
 // ---------- 11 refractario (visible en corte / rayos X) ----------
 add('eaf__refractory', lathe([[0, Y0 + 0.4], [2.15, Y0 + 0.4], [2.7, Y0 + 0.7], [2.98, Y0 + 1.15], [3.05, Y0 + 1.6], [2.75, Y0 + 1.6], [2.6, Y0 + 1.15], [2.3, Y0 + 0.95], [0, Y0 + 0.9]]), 'refractory');
@@ -192,12 +195,11 @@ for (const deg of [35, 145, 215, 325]) {
   add('eaf__oxygen_lance', box(0.5, 0.45, 0.7), 'pipe', [Math.cos(a) * 3.45, Y0 + 2.45, Math.sin(a) * 3.45], [0, -a, 0]);
   tubeBetween('eaf__oxygen_lance', [Math.cos(a) * 3.7, Y0 + 2.5, Math.sin(a) * 3.7], [Math.cos(a) * 5.0, Y0 + 3.6, Math.sin(a) * 5.0], 0.05, 'pipe', 8);
 }
-tubeBetween('eaf__oxygen_lance', [1.2, Y0 + 2.9, 7.2], [0.4, Y0 + 1.6, 2.6], 0.07, 'chrome');
-add('eaf__oxygen_lance', box(0.6, 0.6, 1.2), 'steel', [1.25, Y0 + 2.95, 7.4], [0.25, 0, 0]);
-tubeBetween('eaf__oxygen_carbon', [-1.0, Y0 + 2.8, 7.2], [-0.5, Y0 + 1.5, 2.7], 0.06, 'steel');
+// OPS-12: se quitaron la lanza/manipulador y el inyector que entraban por la puerta de escoria
+// (SME_REQUIRED: confirmar con la OEM si existen en la planta). Solo queda el tanque dosificador de carbono,
+// sin línea al horno: el punto de inyección real (pared o puerta) no está validado.
 add('eaf__oxygen_carbon', cyl(0.5, 0.5, 1.6, 20), 'steel', [-1.6, Y0 + 0.8, 8.4]);
 add('eaf__oxygen_carbon', cyl(0.5, 0.05, 0.6, 20), 'steel', [-1.6, Y0 - 0.3 + 0.3, 8.4]);
-tubeCurve('eaf__oxygen_carbon', [[-1.6, Y0 + 1.6, 8.4], [-1.3, Y0 + 2.6, 7.9], [-1.0, Y0 + 2.8, 7.2]], 0.05, 'steel', 12);
 
 // ---------- 08 puerta de escoria ----------
 add('eaf__slagdoor', box(1.9, 1.5, 0.35), 'steel', [0, Y0 + 2.3, 3.32]);
@@ -206,13 +208,14 @@ for (const x of [-0.85, 0.85]) add('eaf__slagdoor', box(0.18, 2.3, 0.25), 'steel
 add('eaf__slagdoor', cyl(0.1, 0.1, 1.2, 12), 'hydraulic', [0.95, Y0 + 3.4, 3.7]);
 
 // ---------- 09 vaciado EBT y fosa ----------
-add('eaf__ebt', box(1.4, 1.5, 1.8), 'shell', [3.7, Y0 + 1.0, 0]);
-add('eaf__ebt', box(1.5, 0.12, 1.9), 'steel', [3.75, Y0 + 1.8, 0]);
-add('eaf__ebt', cyl(0.3, 0.3, 0.3, 20), 'refractory', [3.95, Y0 + 1.9, 0]);
-add('eaf__ebt', cyl(0.22, 0.18, 0.7, 20), 'refractory', [3.95, Y0 + 0.0, 0]);
-add('eaf__ebt_pit', lathe([[0, 0.3], [1.35, 0.3], [1.55, 1.5], [1.7, 2.7], [1.85, 2.75]], 40), 'steel', [4.0, 0, 0]);
-add('eaf__ebt_pit', box(3.2, 0.3, 2.6), 'hydraulic', [4.0, 0.15, 0]);
-add('eaf__ebt_pit', torus(1.72, 0.08), 'steel', [4.0, 2.2, 0], [Math.PI / 2, 0, 0]);
+// En −z, opuesto a la puerta de escoria (+z). La fosa queda bajo el hueco de la plataforma.
+add('eaf__ebt', box(1.8, 1.5, 1.4), 'shell', [0, Y0 + 1.0, -3.7]);
+add('eaf__ebt', box(1.9, 0.12, 1.5), 'steel', [0, Y0 + 1.8, -3.75]);
+add('eaf__ebt', cyl(0.3, 0.3, 0.3, 20), 'refractory', [0, Y0 + 1.9, -3.95]);
+add('eaf__ebt', cyl(0.22, 0.18, 0.7, 20), 'refractory', [0, Y0 + 0.0, -3.95]);
+add('eaf__ebt_pit', lathe([[0, 0.3], [1.35, 0.3], [1.55, 1.5], [1.7, 2.7], [1.85, 2.75]], 40), 'steel', [0, 0, -4.0]);
+add('eaf__ebt_pit', box(2.6, 0.3, 3.2), 'hydraulic', [0, 0.15, -4.0]);
+add('eaf__ebt_pit', torus(1.72, 0.08), 'steel', [0, 2.2, -4.0], [Math.PI / 2, 0, 0]);
 
 // ---------- 10 sistema hidráulico ----------
 const HX = -7.5, HZ = -7.2;
@@ -222,9 +225,12 @@ for (let i = 0; i < 3; i++) {
 }
 for (let i = 0; i < 4; i++) add('eaf__hydraulics', cyl(0.22, 0.22, 2.0, 20), 'hydraulic', [HX - 1.2 + i * 0.8, Y0 + 1.0, HZ - 1.4]);
 tubeCurve('eaf__hydraulics', [[HX + 1.6, Y0 + 0.5, HZ], [-6.2, Y0 + 0.4, -3], [MASTX - 0.55, Y0 + 0.3, -0.69]], 0.05, 'pipe', 20);
-for (const x of [-2.6, 2.6]) {
-  add('eaf__hydraulics', cyl(0.2, 0.2, 2.0, 20), 'hydraulic', [x, Y0 - 1.0, 1.0], [0.3, 0, 0]);
-  add('eaf__hydraulics', cyl(0.09, 0.09, 1.0, 12), 'chrome', [x, Y0 - 0.05, 1.3], [0.3, 0, 0]);
+// cilindros de basculamiento en z = ±2.6 (eje de basculamiento paralelo a x), inclinados hacia el centro;
+// el de −z queda visible en el hueco de la fosa, a > 0.25 m del borde de la fosa.
+for (const z of [-2.6, 2.6]) {
+  const s = z < 0 ? 1 : -1;
+  add('eaf__hydraulics', cyl(0.2, 0.2, 2.0, 20), 'hydraulic', [1.6, Y0 - 1.0, z], [0.3 * s, 0, 0]);
+  add('eaf__hydraulics', cyl(0.09, 0.09, 1.0, 12), 'chrome', [1.6, Y0 - 0.05, z + 0.3 * s], [0.3 * s, 0, 0]);
 }
 
 // ---------- 13 extracción de humos (4.º agujero) ----------
@@ -232,7 +238,7 @@ tubeCurve('eaf__fume_elbow', [[2.0, Y0 + 4.0, -1.2], [2.3, Y0 + 5.2, -1.4], [3.1
 add('eaf__fume', cyl(0.75, 0.75, 9, 32), 'steel', [8.8, Y0 + 6.8, -2.6], [0, 0, Math.PI / 2]);
 add('eaf__fume', cyl(0.78, 0.78, 0.4, 32), 'pipe', [4.6, Y0 + 6.8, -2.6], [0, 0, Math.PI / 2]);
 add('eaf__fume', cyl(0.75, 0.75, 6, 32), 'steel', [13.3, Y0 + 9.8, -2.6]);
-for (const x of [7, 11]) add('eaf__fume', box(0.3, Y0 + 6, 0.3), 'steel', [x, (Y0 + 6) / 2, -2.6]);
+for (const x of [8, 11]) add('eaf__fume', box(0.3, Y0 + 6, 0.3), 'steel', [x, (Y0 + 6) / 2, -2.6]);
 
 // ---------- 14 alimentación de DRI (5.º agujero) ----------
 tubeBetween('eaf__drifeed_chute', [-1.5, Y0 + 4.3, 1.9], [-1.5, Y0 + 9.6, 5.0], 0.32, 'steel', 20);
@@ -284,7 +290,12 @@ for (const [name, info] of NODES) {
   if (info.parts.length) {
     const byMat = {};
     for (const p of info.parts) (byMat[p.mat] ??= []).push(p.geo.index ? p.geo : p.geo);
-    const mesh = doc.createMesh(name);
+    // RT-SW-05: la malla NO lleva el nombre del nodo. GLTFLoader (three r169) reserva primero el nombre del nodo
+    // y luego nombra cada primitiva con el nombre de la malla vía createUniqueName; si coinciden, las
+    // primitivas salen como `eaf__x_1`, `eaf__x_2`… y compiten con el contrato. Con `mesh_<nodo>` las
+    // primitivas se llaman `mesh_eaf__x`, `mesh_eaf__x_1`… (no empiezan con eaf__/env__) y cuelgan de un
+    // Group llamado `eaf__x`. Un nodo = una malla con una primitiva por material; nunca nodos hijos extra.
+    const mesh = doc.createMesh(`mesh_${name}`);
     for (const [mat, geos] of Object.entries(byMat)) {
       const g = mergeGeometries(geos.map((x) => (x.index ? x : x)), false);
       if (!g) throw new Error(`merge falló en ${name}/${mat}`);
@@ -303,6 +314,11 @@ for (const [name, info] of NODES) {
   }
 }
 for (const [name, info] of NODES) (info.parent ? gNodes[info.parent] : root).addChild(gNodes[name]);
+
+// validación del contrato: todo componente (eaf__<sistema>_<componente>) debe tener geometría propia
+for (const [name, info] of NODES) {
+  if (info.parent && !info.parts.length) throw new Error(`el componente ${name} no tiene geometría`);
+}
 
 await MeshoptEncoder.ready;
 await doc.transform(dedup(), weld(), prune({ keepLeaves: true }), quantize(), meshopt({ encoder: MeshoptEncoder, level: 'medium' }));

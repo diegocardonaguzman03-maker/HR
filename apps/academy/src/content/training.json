@@ -6,10 +6,10 @@
     "levels": [1, 2],
     "durationMin": 20,
     "objectives": [
-      "Explicar con tus palabras qué hace el horno de arco eléctrico",
-      "Describir de dónde viene la carga metálica en GASM (DRI propio y retornos)",
-      "Ordenar las etapas generales del proceso",
-      "Ubicar en el modelo 3D los equipos principales y el púlpito"
+      "Reconocer qué hace el horno de arco eléctrico y cuál es su principal fuente de calor",
+      "Reconocer de dónde viene la carga metálica en GASM (DRI propio y retornos)",
+      "Ordenar las etapas generales del proceso, de la primera a la última",
+      "Señalar en el modelo 3D los equipos principales y el púlpito"
     ],
     "lessons": [
       {
@@ -57,11 +57,11 @@
         "body": [
           "El proceso general tiene seis etapas: materias primas, carga y pie líquido, fusión, afino con escoria espumosa, vaciado y metalurgia secundaria.",
           "El pie líquido es acero que se deja en el horno para ayudar a fundir la siguiente carga.",
-          "En el afino se forma escoria espumosa, que cubre el arco y protege el horno. Al final, el acero sale por el EBT (vaciado por el fondo) hacia la olla."
+          "La escoria espumosa se forma desde la fusión y se mantiene durante el afino: cubre el arco y protege el horno. Al final, el acero sale por el EBT (vaciado excéntrico por el fondo) hacia la olla."
         ],
         "keyPoints": [
           "Materias primas → carga → fusión → afino → vaciado → secundaria",
-          "Los tiempos, temperaturas y adiciones los define la planta: SME_REQUIRED"
+          "Los tiempos, temperaturas y adiciones los define la planta. SME_REQUIRED: tiempos, temperaturas y adiciones por etapa de la colada; los da C-07 Ingeniero de Proceso EAF (MO-EAF en borrador)."
         ],
         "checkIds": ["q.orientation-1"]
       },
@@ -90,7 +90,7 @@
         "body": [
           "El púlpito es el cuarto desde donde el equipo de operación vigila y conduce el horno.",
           "Ante cualquier condición anormal en piso, el púlpito y tu supervisor son a quienes avisas primero.",
-          "Los canales y protocolos de comunicación los define la planta: SME_REQUIRED."
+          "Los canales y protocolos de comunicación los define la planta. SME_REQUIRED: canales y protocolo de comunicación con el púlpito; los dan Operación de Acería (C-07) y Seguridad C-16 (MS-ACE-09 en borrador)."
         ],
         "keyPoints": [
           "El púlpito coordina la operación",
@@ -110,10 +110,10 @@
     "levels": [1, 2, 3],
     "durationMin": 35,
     "objectives": [
-      "Identificar en el 3D el transformador, el circuito secundario, los brazos y los electrodos",
-      "Ordenar la ruta de la energía desde el transformador hasta el arco",
-      "Explicar en términos generales para qué sirve la regulación de electrodos",
-      "Reconocer señales anormales en el sistema de electrodos y saber a quién avisar"
+      "Señalar en el 3D el transformador, el circuito secundario, los brazos y los electrodos",
+      "Ordenar los equipos por los que pasa la energía, desde el transformador hasta el arco",
+      "Elegir, entre varias, la descripción correcta de para qué sirve la regulación de electrodos",
+      "Elegir la conducta correcta ante una señal anormal en el sistema de electrodos y señalar a quién se avisa"
     ],
     "lessons": [
       {
@@ -124,13 +124,13 @@
         "camera": { "position": [-4, 5, 7], "target": [-9, 3, 0] },
         "body": [
           "El transformador del horno recibe energía en alta tensión y la entrega con menor tensión y muy alta corriente.",
-          "El cambiador de taps ajusta la tensión de salida según la etapa de la colada.",
+          "El cambiador de derivaciones (taps) ajusta la tensión de salida según la etapa de la colada.",
           "Las barras fijas y los cables flexibles (enfriados por agua) llevan la corriente hasta los brazos portaelectrodos."
         ],
         "keyPoints": [
           "Transformador → barras → cables flexibles → brazos",
           "El circuito secundario lleva corriente muy alta: zona restringida",
-          "Taps, tensiones y corrientes de operación: SME_REQUIRED"
+          "Taps, tensiones y corrientes de operación: SME_REQUIRED: tabla de taps, tensiones secundarias y corrientes por etapa; las dan la OEM del transformador e Ingeniería Eléctrica con C-07 (FT-ACE-001 / MO-EAF-04 en borrador)."
         ],
         "checkIds": ["q.electrode-2"]
       },
@@ -166,7 +166,7 @@
         "keyPoints": [
           "El arco se forma en la punta del electrodo",
           "Las juntas son un punto crítico de inspección",
-          "Criterios de aceptación y torque: SME_REQUIRED"
+          "Criterios de aceptación y torque: SME_REQUIRED: criterios de aceptación de juntas y par de apriete de niples; los dan el proveedor de electrodos y C-07 (MO-EAF-08 en borrador)."
         ],
         "checkIds": ["q.electrode-1"]
       },
@@ -179,12 +179,12 @@
         "body": [
           "Durante la fusión, el DRI entra de forma continua por el 5.º agujero y se funde sobre el pie líquido.",
           "La regulación automática sube y baja cada electrodo para mantener el arco estable mientras la carga cambia.",
-          "Después, la escoria espumosa cubre el arco y ayuda a aprovechar mejor la energía."
+          "Desde que hay baño plano, la escoria espumosa se mantiene durante casi toda la fusión: cubre el arco, protege paneles y bóveda y ayuda a aprovechar mejor la energía."
         ],
         "keyPoints": [
           "Energía: transformador → secundario → brazos → electrodos → arco",
           "La regulación mantiene estable el arco",
-          "Ritmo de alimentación y setpoints: SME_REQUIRED"
+          "Ritmo de alimentación y setpoints: SME_REQUIRED: tasa de alimentación de DRI por MW y setpoints de regulación; los dan C-07 y la OEM (MO-EAF-03 / MO-EAF-04 en borrador)."
         ],
         "checkIds": ["q.electrode-3", "q.electrode-4"]
       },
@@ -204,7 +204,7 @@
           "La evaluación en línea no te habilita para operar",
           "Competencia = OJT + evaluador en piso + procedimiento aprobado"
         ],
-        "checkIds": ["q.safety-4", "q.electrode-6"]
+        "checkIds": ["q.safety-4"]
       }
     ],
     "workInstructionIds": ["wi.electrode-system-check"],
@@ -219,10 +219,10 @@
     "levels": [1, 2, 3],
     "durationMin": 30,
     "objectives": [
-      "Reconocer las zonas de alta corriente alrededor del horno",
-      "Explicar por qué un equipo apagado puede tener energía almacenada",
-      "Explicar por qué el agua y el DRI húmedo son peligrosos cerca de metal líquido",
-      "Aplicar la conducta de detenerse, alejarse y avisar"
+      "Señalar las zonas de alta corriente alrededor del horno",
+      "Reconocer por qué un equipo apagado todavía puede moverse o caer",
+      "Reconocer por qué el agua y el DRI húmedo son peligrosos cerca de metal líquido",
+      "Elegir, en un caso práctico, la conducta de detenerse, alejarse y avisar"
     ],
     "lessons": [
       {
@@ -238,7 +238,7 @@
         ],
         "keyPoints": [
           "Zona de alta corriente: no se entra sin autorización",
-          "Distancias y permisos: SME_REQUIRED (procedimiento de seguridad aprobado)"
+          "Distancias y permisos: SME_REQUIRED: distancias de aproximación al equipo energizado y permisos aplicables; los dan el estudio de arco eléctrico, Mantenimiento Eléctrico y Seguridad C-16 (MS-ACE en borrador)."
         ],
         "checkIds": ["q.safety-3"]
       },
@@ -255,7 +255,7 @@
         "keyPoints": [
           "Apagado no significa seguro",
           "Nunca bajo carga suspendida",
-          "Pasos de LOTO: SME_REQUIRED"
+          "Pasos de LOTO: SME_REQUIRED: pasos de bloqueo, descarga de energía hidráulica y por gravedad, prueba de energía cero y retiro de bloqueos del EAF; los dan Mantenimiento y Seguridad C-16 (MS-ACE-02 en borrador)."
         ],
         "checkIds": ["q.safety-2"]
       },
@@ -273,7 +273,7 @@
         "keyPoints": [
           "Agua + metal líquido = explosión",
           "Detente, aléjate y avisa",
-          "Zonas de exclusión y respuesta de emergencia: SME_REQUIRED"
+          "Zonas de exclusión y respuesta de emergencia: SME_REQUIRED: radio de las zonas de exclusión y respuesta ante agua con metal líquido; los dan Seguridad C-16 y C-07 (MS-ACE-01 / MS-ACE-09 en borrador)."
         ],
         "checkIds": ["q.safety-1"]
       },

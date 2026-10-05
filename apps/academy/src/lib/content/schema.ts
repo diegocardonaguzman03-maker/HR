@@ -146,6 +146,8 @@ export const WorkInstruction = z.object({
     warning: z.string().optional(),
     commonError: z.string().optional(),
     escalation: z.string().optional(),
+    /** RT-SW-15: paso de paro (ALTO). Si falta, la UI lo deduce del título. */
+    stop: z.boolean().optional(),
   })).min(3),
   completion: list,
   documentIds: z.array(id('doc')),
@@ -190,7 +192,12 @@ export const Assessment = z.object({
   title: text,
   passScore: z.number().min(0).max(1),
   questionIds: z.array(id('q')).min(3),
-  recommendations: z.array(z.object({ topic: text, moduleId: id('mod') })),
+  /** TRN-01 / SAF-09: preguntas de seguridad eliminatorias (todas deben estar bien para aprobar). */
+  criticalQuestionIds: z.array(id('q')).default([]),
+  /** TRN-01: preguntas que se muestran pero no cuentan para la calificación (p. ej. alcance de la plataforma). */
+  unscoredQuestionIds: z.array(id('q')).default([]),
+  /** TRN-10: la recomendación lleva a la lección exacta cuando trae lessonId. */
+  recommendations: z.array(z.object({ topic: text, moduleId: id('mod'), lessonId: id('les').optional() })),
   status: Validation,
 });
 
@@ -258,6 +265,35 @@ export type ContentBundleT = z.infer<typeof ContentBundle>;
 /** Verdadero si el texto es un pendiente de experto de planta. */
 export const isSmeRequired = (s: string | undefined) => !!s && /^SME_REQUIRED\b/.test(s);
 
+const MARK_G = /(SME_REQUIRED|PLACEHOLDER\s*[—-]\s*REQUIRES PLANT VALIDATION)\s*:?/g;
+/** Mínimo de caracteres útiles después de una marca: qué dato falta y quién lo da (§3.7 de review-seguridad). */
+export const MIN_MARK_DETAIL = 15;
+
+/**
+ * Marcas SME_REQUIRED / PLACEHOLDER vacías: la marca va seguida de menos de 15 caracteres
+ * (sin contar un paréntesis) o solo de un paréntesis. Devuelve «ruta: texto».
+ * Solo cuenta como marca la que inicia el texto o va después de «:», «.», «;» o «(» — no la mención en una frase.
+ */
+export function emptyMarks(value: unknown, path = ''): string[] {
+  const out: string[] = [];
+  const walk = (v: unknown, p: string) => {
+    if (typeof v === 'string') {
+      for (const m of v.matchAll(MARK_G)) {
+        const at = m.index ?? 0;
+        const prev = v.slice(0, at).trimEnd();
+        if (prev && !/[:.;(—-]$/.test(prev)) continue; // mención dentro de una frase («los pasos marcados SME_REQUIRED…»)
+        const rest = v.slice(at + m[0].length);
+        const next = rest.search(MARK_G);
+        const detail = (next >= 0 ? rest.slice(0, next) : rest).replace(/\([^)]*\)/g, '').replace(/[\s.;:,—-]+/g, ' ').trim();
+        if (detail.length < MIN_MARK_DETAIL) out.push(`${p}: marca ${m[1].startsWith('SME') ? 'SME_REQUIRED' : 'PLACEHOLDER'} vacía (falta qué dato y quién lo valida) «${v.slice(Math.max(0, at - 30), at + m[0].length + 20)}»`);
+      }
+    } else if (Array.isArray(v)) v.forEach((x, i) => walk(x, `${p}[${i}]`));
+    else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) walk(x, p ? `${p}.${k}` : k);
+  };
+  walk(value, path);
+  return out;
+}
+
 /** Referencias cruzadas: devuelve errores legibles (IDs que no existen, hotspots sin equipo, etc.). */
 export function crossCheck(c: ContentBundleT, nodeNames?: Set<string>): string[] {
   const e: string[] = [];
@@ -269,6 +305,18 @@ export function crossCheck(c: ContentBundleT, nodeNames?: Set<string>): string[]
     const seen = new Set<string>();
     for (const x of all) { if (seen.has(x.id)) e.push(`ID duplicado ${x.id}`); seen.add(x.id); }
   }
+
+  // SAF-16: nada puede estar PLANT_APPROVED en el MVP, en ninguna colección, sin la firma del Validation Board.
+  const statusOf: [string, { id?: string; term?: string; status: ValidationStatus }[]][] = [
+    ['sources', c.sources], ['processes', c.processes], ['equipment', c.equipment], ['hazards', c.hazards], ['workInstructions', c.workInstructions],
+    ['training', c.training], ['assessments', c.assessments], ['documents', c.documents], ['videos', c.videos], ['glossary', c.glossary],
+  ];
+  for (const [col, arr] of statusOf) for (const x of arr) if (x.status === 'PLANT_APPROVED') e.push(`${x.id ?? `${col}:${x.term}`}: PLANT_APPROVED no permitido en el MVP sin firma del Validation Board (ADX-04 + C-16)`);
+  for (const s of c.sources) if (s.kind === 'plant-approved') e.push(`${s.id}: fuente plant-approved no permitida en el MVP sin firma del Validation Board`);
+
+  // §3.7: marcas SME_REQUIRED / PLACEHOLDER vacías
+  e.push(...emptyMarks(c));
+
   for (const p of c.processes) {
     p.equipmentIds.forEach((r) => need(EQ, r, p.id)); p.hazardIds.forEach((r) => need(H, r, p.id)); p.sourceIds.forEach((r) => need(S, r, p.id));
     if (p.nextStageId) need(P, p.nextStageId, p.id);
@@ -276,26 +324,65 @@ export function crossCheck(c: ContentBundleT, nodeNames?: Set<string>): string[]
   for (const q of c.equipment) {
     q.stageIds.forEach((r) => need(P, r, q.id)); q.hazardIds.forEach((r) => need(H, r, q.id)); q.documentIds.forEach((r) => need(D, r, q.id));
     q.videoIds.forEach((r) => need(V, r, q.id)); q.learningModuleIds.forEach((r) => need(M, r, q.id)); q.sourceIds.forEach((r) => need(S, r, q.id));
-    if (nodeNames) q.nodeNames.forEach((n) => { if (!nodeNames.has(n)) e.push(`${q.id}: nodo 3D inexistente ${n}`); });
+    if (nodeNames) {
+      q.nodeNames.forEach((n) => { if (!nodeNames.has(n)) e.push(`${q.id}: nodo 3D inexistente ${n}`); });
+      q.components.forEach((k) => { if (k.nodeName && !nodeNames.has(k.nodeName)) e.push(`${q.id}/${k.id}: nodo 3D inexistente ${k.nodeName}`); });
+    }
+    // RT-SW-01 / SW-01b: el hotspot del equipo apunta a uno de sus nodos (contrato equipo → nodo)
+    if (!c.hotspots.some((h) => h.targetId === q.id && q.nodeNames.includes(h.nodeName))) e.push(`${q.id}: ningún hotspot apunta a su nodo ${q.nodeNames[0]}`);
   }
+  const nums = c.equipment.map((x) => x.hotspotNumber);
+  if (new Set(nums).size !== nums.length) e.push('equipment: hotspotNumber duplicado');
   for (const h of c.hazards) { h.equipmentIds.forEach((r) => need(EQ, r, h.id)); h.stageIds.forEach((r) => need(P, r, h.id)); h.sourceIds.forEach((r) => need(S, r, h.id)); }
   for (const hs of c.hotspots) {
     const set = hs.kind === 'equipment' ? EQ : hs.kind === 'hazard' ? H : hs.kind === 'process' ? P : EQ;
     need(set, hs.targetId, hs.id);
     if (nodeNames && !nodeNames.has(hs.nodeName)) e.push(`${hs.id}: nodo 3D inexistente ${hs.nodeName}`);
   }
-  for (const w of c.workInstructions) { w.equipmentIds.forEach((r) => need(EQ, r, w.id)); w.hazardIds.forEach((r) => need(H, r, w.id)); w.documentIds.forEach((r) => need(D, r, w.id)); w.sourceIds.forEach((r) => need(S, r, w.id)); if (w.status === 'PLANT_APPROVED') e.push(`${w.id}: no puede estar PLANT_APPROVED sin firma del Validation Board`); }
+  for (const w of c.workInstructions) {
+    w.equipmentIds.forEach((r) => need(EQ, r, w.id)); w.hazardIds.forEach((r) => need(H, r, w.id)); w.documentIds.forEach((r) => need(D, r, w.id)); w.sourceIds.forEach((r) => need(S, r, w.id));
+    const ns = w.steps.map((s) => s.n); if (new Set(ns).size !== ns.length) e.push(`${w.id}: pasos con n repetido`);
+  }
+  const lessonModule = new Map<string, string>();
+  const checkIds = new Map<string, string>();
   for (const m of c.training) {
     m.workInstructionIds.forEach((r) => need(W, r, m.id)); if (m.assessmentId) need(A, m.assessmentId, m.id); m.sourceIds.forEach((r) => need(S, r, m.id));
-    for (const l of m.lessons) { if (l.stageId) need(P, l.stageId, l.id); l.checkIds.forEach((r) => need(Q, r, l.id)); }
+    for (const l of m.lessons) {
+      lessonModule.set(l.id, m.id);
+      if (l.stageId) need(P, l.stageId, l.id);
+      l.checkIds.forEach((r) => { need(Q, r, l.id); checkIds.set(r, l.id); });
+      if (nodeNames) l.focus.forEach((f) => { if (!nodeNames.has(f)) e.push(`${l.id}: focus con nodo 3D inexistente ${f}`); });
+    }
   }
   for (const q of c.questions) {
     if (q.kind === 'mcq' && q.answer >= q.options.length) e.push(`${q.id}: respuesta fuera de rango`);
     if (q.kind === 'identify') need(EQ, q.answerEquipmentId, q.id);
-    if (q.kind === 'order' && [...q.correctOrder].sort().join() !== q.items.map((_, i) => i).join()) e.push(`${q.id}: correctOrder no es una permutación de items`);
+    // RT-SW-10: orden numérico (con 11+ elementos el orden lexicográfico daba un error falso)
+    if (q.kind === 'order' && [...q.correctOrder].sort((a, b) => a - b).join() !== q.items.map((_, i) => i).join()) e.push(`${q.id}: correctOrder no es una permutación de items`);
   }
-  for (const a of c.assessments) { a.questionIds.forEach((r) => need(Q, r, a.id)); a.recommendations.forEach((r) => need(M, r.moduleId, a.id)); }
+  const topicOf = new Map(c.questions.map((q) => [q.id, q.topic] as const));
+  for (const a of c.assessments) {
+    a.questionIds.forEach((r) => need(Q, r, a.id));
+    const inAsm = new Set(a.questionIds);
+    if (inAsm.size !== a.questionIds.length) e.push(`${a.id}: pregunta repetida en questionIds`);
+    // TRN-01: critical y unscored son subconjuntos de questionIds y no se cruzan
+    a.criticalQuestionIds.forEach((r) => { if (!inAsm.has(r)) e.push(`${a.id}: criticalQuestionIds incluye ${r}, que no está en questionIds`); });
+    a.unscoredQuestionIds.forEach((r) => { if (!inAsm.has(r)) e.push(`${a.id}: unscoredQuestionIds incluye ${r}, que no está en questionIds`); });
+    a.criticalQuestionIds.forEach((r) => { if (a.unscoredQuestionIds.includes(r)) e.push(`${a.id}: ${r} no puede ser crítica y no calificada a la vez`); });
+    if (a.unscoredQuestionIds.length >= a.questionIds.length) e.push(`${a.id}: no quedan preguntas calificadas`);
+    // TRN-02: un ítem de la evaluación no se practica antes con respuesta en una lección (salvo los no calificados)
+    for (const r of a.questionIds) if (checkIds.has(r) && !a.unscoredQuestionIds.includes(r)) e.push(`${a.id}: ${r} ya aparece como ejercicio en ${checkIds.get(r)} (usa un ítem paralelo)`);
+    // TRN-10: recomendaciones con módulo, lección del mismo módulo y alguna pregunta de ese tema
+    for (const rec of a.recommendations) {
+      need(M, rec.moduleId, a.id);
+      if (rec.lessonId && lessonModule.get(rec.lessonId) !== rec.moduleId) e.push(`${a.id}: la lección ${rec.lessonId} de la recomendación «${rec.topic}» no está en ${rec.moduleId}`);
+      if (!a.questionIds.some((q) => topicOf.get(q) === rec.topic)) e.push(`${a.id}: recomendación sin pregunta del tema «${rec.topic}»`);
+    }
+  }
   for (const d of c.documents) { d.processIds.forEach((r) => need(P, r, d.id)); d.equipmentIds.forEach((r) => need(EQ, r, d.id)); d.moduleIds.forEach((r) => need(M, r, d.id)); if (d.status === 'PLANT_APPROVED' && !d.approvalDate) e.push(`${d.id}: aprobado sin fecha`); }
-  for (const v of c.videos) { v.equipmentIds.forEach((r) => need(EQ, r, v.id)); v.stageIds.forEach((r) => need(P, r, v.id)); }
+  for (const v of c.videos) {
+    v.equipmentIds.forEach((r) => need(EQ, r, v.id)); v.stageIds.forEach((r) => need(P, r, v.id));
+    if (v.chapters.some((ch, i) => i > 0 && ch.t < v.chapters[i - 1].t)) e.push(`${v.id}: capítulos desordenados`);
+  }
   return e;
 }
