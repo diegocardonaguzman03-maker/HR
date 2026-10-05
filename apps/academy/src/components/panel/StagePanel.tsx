@@ -5,7 +5,7 @@ import { Bullets, OpText, Section, Sources, StatusChip, btn } from '../ui/Status
 import { HazardCard } from './HazardCard';
 
 export function StagePanel({ st }: { st: ProcessStageT }) {
-  const { selectEquipment, selectStage, flyTo } = useApp();
+  const selectEquipment = useApp((s) => s.selectEquipment), selectStage = useApp((s) => s.selectStage), flyTo = useApp((s) => s.flyTo);
   const next = st.nextStageId ? idx.stage.get(st.nextStageId) : null;
   const prev = stagesOrdered.find((s) => s.nextStageId === st.id);
   return (

@@ -35,6 +35,18 @@ El contenido industrial vive en `src/content/*.json`. El esquema y las referenci
    - se recirculan retornos internos ≤ 5 % con canasta ocasional;
    - **no hay chatarra comprada**.
 
+## Reglas del validador (`crossCheck` y `npm run check:content`)
+- **`PLANT_APPROVED` prohibido** en todas las colecciones (fuentes, etapas, equipos, peligros, WI, módulos, evaluaciones, documentos, videos y glosario) y `kind: "plant-approved"` en fuentes. Solo se levanta con la firma del Validation Board (ADX-04 + C-16) y un cambio de esta regla (SAF-16).
+- **Marca vacía:** una marca `SME_REQUIRED` o `PLACEHOLDER — REQUIRES PLANT VALIDATION` debe ir seguida de al menos 15 caracteres que digan **qué dato falta y quién lo da**; un paréntesis solo no cuenta. `check-content` las lista con su archivo y ruta (§3.7 de la revisión de seguridad).
+- **Evaluaciones (`Assessment`):**
+  - `criticalQuestionIds` (opcional, `[]`): preguntas de seguridad **eliminatorias**; deben estar en `questionIds`. La UI las marca con «▲ Pregunta de seguridad».
+  - `unscoredQuestionIds` (opcional, `[]`): se muestran pero **no cuentan** para la calificación; deben estar en `questionIds` y no pueden ser críticas.
+  - Ningún ítem calificado de una evaluación puede estar en `checkIds` de una lección (usa un ítem paralelo); los no calificados sí.
+  - `recommendations[]`: `{ topic, moduleId, lessonId? }`. `lessonId` debe pertenecer a `moduleId` y el `topic` debe tener al menos una pregunta en la evaluación.
+- **WI:** `steps[].stop` (opcional) marca el paso de ALTO; si falta, se deduce del título (`^ALTO` o `DETENTE`). Los `n` de los pasos son únicos.
+- **3D:** cada equipo tiene un hotspot que apunta a uno de sus `nodeNames`; `lesson.focus` y `component.nodeName` existen en el GLB; `hotspotNumber` es único.
+- Las preguntas de ordenar se validan como permutación con orden numérico; los capítulos de video van en orden.
+
 ## Catálogo de IDs (contrato fijo entre contenido y 3D)
 ### Etapas del proceso (`stage.*`)
 | ID | Código | Nombre |
@@ -98,5 +110,5 @@ Las preguntas usan `q.<tema>-<n>`; las lecciones, `les.<módulo>-<n>`; los compo
 
 ## Cómo agregar contenido
 1. Edita el JSON correspondiente con IDs del catálogo o con nuevos IDs que sigan el patrón.
-2. Corre `npm run check:content`. Valida forma, referencias cruzadas, nodos 3D y que no haya nada `PLANT_APPROVED` sin firma.
+2. Corre `npm run check:content`. Valida forma, referencias cruzadas, nodos 3D, marcas SME_REQUIRED vacías, reglas de evaluación y que no haya nada `PLANT_APPROVED`.
 3. Pide la revisión del Validation Board (`docs/validation-checklist.md`).

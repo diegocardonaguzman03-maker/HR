@@ -98,7 +98,7 @@ function RightPanel() {
   const peek = !!eq && !picking;
   return (
     <div className="relative h-full">
-      <div className={peek ? 'hidden' : 'h-full'} aria-hidden={peek || undefined} data-testid="training-host">
+      <div className="h-full" hidden={peek} data-testid="training-host">
         {mode === 'learn' ? <LearnPlayer /> : mode === 'perform' ? <PerformJobAid /> : mode === 'assess' ? <AssessmentView /> : <Library />}
       </div>
       {peek && eq && (

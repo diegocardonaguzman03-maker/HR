@@ -173,8 +173,9 @@ describe('evaluación', () => {
     expect(screen.getByTestId('recording-notice')).toHaveTextContent(/sin tu nombre/);
     fireEvent.click(screen.getByTestId('toggle-recording'));
     expect(localStorage.getItem('adx.analytics')).toBe('off');
+    const before = localStorage.getItem('adx.events');
     fireEvent.click(screen.getByTestId('start-asm.eaf-electrode'));
-    expect(localStorage.getItem('adx.events') ?? '[]').toBe('[]');
+    expect(localStorage.getItem('adx.events')).toBe(before);
   });
 });
 

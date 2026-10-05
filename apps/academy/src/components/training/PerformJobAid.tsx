@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { content, idx } from '../../lib/content';
 import { track } from '../../lib/analytics';
-import { useApp } from '../../stores/useApp';
+import { nodesForEquipment, useApp } from '../../stores/useApp';
 import { Bullets, OpText, Sources, StatusChip, btn, btnPrimary } from '../ui/Status';
 import { DownloadLink } from '../library/DocumentCard';
 import { HazardCard } from '../panel/HazardCard';
@@ -16,7 +16,7 @@ export function PerformJobAid() {
   useEffect(() => {
     if (!wi) return;
     // RT-SW-01: el nodo 3D sale de equipment.nodeNames (contrato), no del ID del equipo
-    const nodes = wi.equipmentIds.flatMap((e) => idx.equipment.get(e)?.nodeNames ?? []);
+    const nodes = wi.equipmentIds.flatMap((e) => [...nodesForEquipment(e)]);
     set({ focusNodes: nodes, selectedEq: null });
     if (nodes.length) useApp.getState().fitNodes(nodes);
     setStep(0); setChecked(new Set()); setIntro(true);

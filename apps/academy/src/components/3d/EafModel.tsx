@@ -3,7 +3,7 @@ import { useFrame, useThree, type ThreeEvent } from '@react-three/fiber';
 import { useShallow } from 'zustand/react/shallow';
 import * as THREE from 'three';
 import modelUrl from '../../assets/eaf.glb?url';
-import { loadModel } from '../../lib/three/loadModel';
+import { isAbort, loadModel } from '../../lib/three/loadModel';
 import { useLoad } from '../../stores/useLoad';
 import { nodeMatches, nodesForEquipment, useApp } from '../../stores/useApp';
 import { equipmentForNode } from '../../lib/content';
@@ -88,7 +88,8 @@ export function EafModel() {
 
   useEffect(() => {
     let alive = true;
-    loadModel(modelUrl, (p) => { if (alive) setLoad(p); })
+    const ctrl = new AbortController();
+    loadModel(modelUrl, (p) => { if (alive) setLoad(p); }, ctrl.signal)
       .then(async (gltf) => {
         if (!alive) return;
         const g = gltf.scene as THREE.Group;
@@ -119,8 +120,8 @@ export function EafModel() {
         setApp({ loaded: true });
         track('initialized', 'app', { quality: useApp.getState().effective });
       })
-      .catch((e: Error) => { if (alive) setLoad({ phase: 'error', loaded: 0, total: 0, message: e.message }); });
-    return () => { alive = false; };
+      .catch((e: Error) => { if (alive && !isAbort(e)) setLoad({ phase: 'error', loaded: 0, total: 0, message: e.message }); });
+    return () => { alive = false; ctrl.abort(); };
   }, [gl, camera, scene, setLoad, setApp]);
 
   const info = useMemo(() => {

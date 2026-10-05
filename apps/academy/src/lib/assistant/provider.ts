@@ -55,7 +55,9 @@ export class LocalExtractiveProvider implements AnswerProvider {
     // preguntas cortas ("¿qué componentes tiene?") dependen del equipo o etapa seleccionada
     const ctxW = qTokens <= 2 ? 3 : 1.35;
     const boost = (c: Chunk) => (ctx.equipmentId && c.ref.id === ctx.equipmentId) || (ctx.stageId && c.ref.id === ctx.stageId) ? ctxW : 1;
-    const hits = this.index.search(query, 6, boost).filter((h) => h.score >= this.minScore && h.matched >= Math.min(2, qTokens));
+    // preguntas de definición de una palabra («¿Qué es el DRI?»): el término del glosario va primero
+    const glossBoost = (c: Chunk) => (qTokens <= 2 && c.ref.kind === 'glossary' && this.index.queryTokens(c.ref.id).some((t) => this.index.queryTokens(query).includes(t)) ? 4 : 1);
+    const hits = this.index.search(query, 6, (c) => boost(c) * glossBoost(c)).filter((h) => h.score >= this.minScore && h.matched >= Math.min(2, qTokens));
     const citations: Citation[] = hits.slice(0, 3).map((h, i) => {
       const sp = splitPending(h.chunk.text);
       return { n: i + 1, title: scrubFigures(h.chunk.title), status: h.chunk.status, ref: h.chunk.ref, snippet: scrubFigures(snippet(sp.before || h.chunk.text, query)), pending: sp.pending ? scrubFigures(sp.pending.text) : undefined };

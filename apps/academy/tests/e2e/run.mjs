@@ -22,7 +22,8 @@ async function test(name, fn, { width = 1440, height = 900 } = {}) {
   const ctx = await browser.newContext({ viewport: { width, height }, acceptDownloads: true });
   const page = await ctx.newPage();
   page.on('pageerror', (e) => errors.push(`${name}: ${e.message}`));
-  page.on('console', (m) => { if (m.type() === 'error' && !/ERR_CERT|fonts\.g|net::ERR|404/.test(m.text())) errors.push(`${name}: ${m.text()}`); });
+  // RT-UX-04 / RT-SW-11: ya no se ocultan los 404 (un VTT o PDF faltante debe fallar)
+  page.on('console', (m) => { if (m.type() === 'error' && !/ERR_CERT|fonts\.g/.test(m.text())) errors.push(`${name}: ${m.text()}`); });
   const t0 = Date.now();
   try {
     await fn(page);
@@ -36,7 +37,8 @@ async function test(name, fn, { width = 1440, height = 900 } = {}) {
   await ctx.close();
 }
 const ready = async (page, hash = '') => {
-  await page.goto(srv.url + '/' + hash);
+  // ?e2e expone window.__adxStore en el build de producción (RT-SW-14)
+  await page.goto(srv.url + '/?e2e' + hash);
   await page.waitForSelector('[data-testid=loading]', { timeout: 15000 }).catch(() => {});
   await page.waitForSelector('[data-testid=loading]', { state: 'detached', timeout: 120000 });
 };
@@ -98,7 +100,7 @@ await test('cambio de modo y enlaces profundos', async (page) => {
     await page.waitForSelector(`[data-testid=${id}]`);
     assert(page.url().includes(`#/${m}`), 'hash no cambió a ' + m);
   }
-  await page.goto(srv.url + '/#/learn/mod.eaf-orientation');
+  await page.goto(srv.url + '/?e2e#/learn/mod.eaf-orientation');
   await page.waitForSelector('[data-testid=learn-player]');
 });
 
@@ -123,7 +125,7 @@ await test('EJECUTAR: instrucción paso a paso con aviso de no aprobada', async 
   assert((await page.textContent('[data-testid=wi-complete]')).includes(`${n}/${n}`), 'no completó');
 });
 
-await test('evaluación completa (incluye identificar haciendo clic en el 3D)', async (page) => {
+await test('evaluación completa (identificar con la lista accesible; preguntas críticas ▲)', async (page) => {
   await ready(page, '#/assess');
   await page.click('[data-testid="start-asm.eaf-electrode"]');
   const asm = content.assessments[0];
@@ -131,6 +133,8 @@ await test('evaluación completa (incluye identificar haciendo clic en el 3D)', 
   for (const [i, id] of asm.questionIds.entries()) {
     const q = Q[id];
     const box = page.locator(`[data-testid="question-${id}"]`);
+    const crit = (asm.criticalQuestionIds ?? []).includes(id);
+    assert((await box.locator('[data-testid=critical-badge]').count()) === (crit ? 1 : 0), `badge de seguridad en ${id}`);
     if (q.kind === 'mcq') await box.locator('label').nth(q.answer).click();
     if (q.kind === 'identify') await box.locator('[data-testid=identify-select]').selectOption(q.answerEquipmentId);
     if (q.kind === 'match') for (const [k, p] of q.pairs.entries()) await box.getByLabel(`Relaciona: ${p.left}`).selectOption(String(k));
@@ -147,7 +151,7 @@ await test('evaluación completa (incluye identificar haciendo clic en el 3D)', 
     await page.click(i < asm.questionIds.length - 1 ? '[data-testid=next-question]' : '[data-testid=finish-assessment]');
   }
   const txt = await page.textContent('[data-testid=assessment-result]');
-  assert(/Aprobado/.test(txt) && /no certifica competencia/.test(txt), 'resultado inesperado');
+  assert(/Aprobaste la evaluación de conocimiento/.test(txt) && /no certifica competencia/.test(txt) && /escalafón/.test(txt), 'resultado inesperado');
   await page.screenshot({ path: `${SHOTS}/06-resultado.png` });
 });
 
@@ -170,12 +174,22 @@ await test('video con subtítulos y capítulos', async (page) => {
   await ready(page, '#/library');
   await page.click('[data-testid="video-vid.melt-overview"]');
   await page.waitForSelector('[data-testid=video-player]');
+  // UX-04: el VTT debe cargar de verdad (readyState 2 = LOADED) y tener cues; textTracks.length no basta
   const ok = await page.evaluate(async () => {
     const v = document.querySelector('[data-testid=video-element]');
-    if (!v) return 'sin video';
+    const tr = v?.querySelector('track');
+    if (!v || !tr) return 'sin video/track';
+    tr.track.mode = 'showing';
     await new Promise((r) => (v.readyState >= 1 ? r() : v.addEventListener('loadedmetadata', r, { once: true })));
-    return v.duration > 30 && v.textTracks.length === 1 ? 'ok' : `dur ${v.duration}`;
+    await new Promise((r) => (tr.readyState === 2 || tr.readyState === 3 ? r() : (tr.addEventListener('load', r, { once: true }), tr.addEventListener('error', r, { once: true }), setTimeout(r, 10000))));
+    if (tr.readyState !== 2) return `track.readyState=${tr.readyState} (VTT no cargó)`;
+    if (!(tr.track.cues?.length > 0)) return 'VTT sin cues';
+    return v.duration > 30 ? 'ok' : `dur ${v.duration}`;
   });
+  assert(await page.evaluate(() => document.activeElement?.getAttribute('data-testid')) === 'video-element', 'el foco inicial debe ir al video (UX-01)');
+  // UX-01: Espacio sobre el video no cierra el modal
+  await page.keyboard.press('Space'); await page.waitForTimeout(600); await page.keyboard.press('Space');
+  assert(await page.isVisible('[data-testid=video-player]'), 'Espacio cerró el modal');
   assert(ok === 'ok', ok);
   await page.click('text=Electrodos y arco');
   await page.waitForTimeout(500);
@@ -202,7 +216,7 @@ await test('accesibilidad: teclado, landmarks, etiquetas y modo móvil', async (
   }).map((el) => el.outerHTML.slice(0, 80)));
   assert(unnamed.length === 0, 'controles sin nombre: ' + unnamed.join(' | '));
   for (const r of ['banner', 'main', 'contentinfo', 'navigation']) assert(await page.locator(`[role=${r}], ${({ banner: 'header', main: 'main', contentinfo: 'footer', navigation: 'nav' })[r]}`).count() > 0, 'falta ' + r);
-  // teclado: Tab llega a un hotspot y Enter lo abre
+  // teclado: un hotspot enfocado se abre con Enter (el foco se pone con focus(), no con Tab)
   await page.focus('[data-testid="hotspot-hs.transformer"]');
   await page.keyboard.press('Enter');
   await page.waitForSelector('[data-testid=equipment-panel]');

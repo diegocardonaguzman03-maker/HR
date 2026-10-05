@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-05T16:06:20.765Z",
+  "dir": "dist",
+  "results": [
+    {
+      "name": "arranque: carga real del modelo, aviso permanente y métricas",
+      "ok": true,
+      "ms": 5311
+    },
+    {
+      "name": "hotspot 3D abre el panel del equipo",
+      "ok": true,
+      "ms": 9994
+    },
+    {
+      "name": "clic directo en el modelo 3D selecciona un equipo",
+      "ok": true,
+      "ms": 5894
+    },
+    {
+      "name": "herramientas de vista: corte, rayos X, despiece, aislar, restablecer",
+      "ok": true,
+      "ms": 14017
+    },
+    {
+      "name": "cambio de modo y enlaces profundos",
+      "ok": true,
+      "ms": 7284
+    },
+    {
+      "name": "progresión de lecciones con resaltado 3D",
+      "ok": true,
+      "ms": 13143
+    },
+    {
+      "name": "EJECUTAR: instrucción paso a paso con aviso de no aprobada",
+      "ok": true,
+      "ms": 25685
+    },
+    {
+      "name": "evaluación completa (identificar con la lista accesible; preguntas críticas ▲)",
+      "ok": true,
+      "ms": 26917
+    },
+    {
+      "name": "descarga de documento PDF",
+      "ok": true,
+      "ms": 6542
+    },
+    {
+      "name": "video con subtítulos y capítulos",
+      "ok": true,
+      "ms": 5093
+    },
+    {
+      "name": "asistente: cita fuentes y se niega sin fuente o ante un bypass",
+      "ok": true,
+      "ms": 8504
+    },
+    {
+      "name": "accesibilidad: teclado, landmarks, etiquetas y modo móvil",
+      "ok": true,
+      "ms": 5393
+    },
+    {
+      "name": "vista móvil (390×844) sin desbordamiento horizontal",
+      "ok": true,
+      "ms": 1860
+    }
+  ],
+  "errors": [
+    "arranque: carga real del modelo, aviso permanente y métricas: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "arranque: carga real del modelo, aviso permanente y métricas: Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "perf": {
+    "loadMs": 2095,
+    "fps": 4,
+    "calls": 1,
+    "triangles": 1,
+    "geometries": 17,
+    "textures": 27,
+    "quality": "medium",
+    "jsHeapMB": 21
+  }
+}
