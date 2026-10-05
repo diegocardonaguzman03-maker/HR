@@ -272,7 +272,7 @@ export const MIN_MARK_DETAIL = 15;
 /**
  * Marcas SME_REQUIRED / PLACEHOLDER vacías: la marca va seguida de menos de 15 caracteres
  * (sin contar un paréntesis) o solo de un paréntesis. Devuelve «ruta: texto».
- * Solo cuenta como marca la que inicia el texto o va después de «:», «.», «;» o «(» — no la mención en una frase.
+ * No cuenta la mención dentro de una frase (la marca va justo después de una palabra).
  */
 export function emptyMarks(value: unknown, path = ''): string[] {
   const out: string[] = [];
@@ -281,7 +281,7 @@ export function emptyMarks(value: unknown, path = ''): string[] {
       for (const m of v.matchAll(MARK_G)) {
         const at = m.index ?? 0;
         const prev = v.slice(0, at).trimEnd();
-        if (prev && !/[:.;(—-]$/.test(prev)) continue; // mención dentro de una frase («los pasos marcados SME_REQUIRED…»)
+        if (/[\p{L}\p{N}]$/u.test(prev)) continue; // mención dentro de una frase («los pasos marcados SME_REQUIRED…»)
         const rest = v.slice(at + m[0].length);
         const next = rest.search(MARK_G);
         const detail = (next >= 0 ? rest.slice(0, next) : rest).replace(/\([^)]*\)/g, '').replace(/[\s.;:,—-]+/g, ' ').trim();

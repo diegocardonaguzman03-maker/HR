@@ -6,7 +6,7 @@ import { DownloadLink, typeLabel } from './DocumentCard';
 import { asset } from '../../lib/download';
 
 export function DocumentViewer() {
-  const { docId, set } = useApp();
+  const docId = useApp((s) => s.docId), set = useApp((s) => s.set);
   const doc = docId ? idx.document.get(docId) : null;
   if (!doc) return null;
   const notApproved = doc.status !== 'PLANT_APPROVED';

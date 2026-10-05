@@ -20,7 +20,7 @@ export function Tabs<T extends string>({ tabs, value, onChange, label }: { tabs:
           role="tab"
           id={`tab-${t.id}`}
           aria-selected={value === t.id}
-          aria-controls={`panel-${t.id}`}
+          aria-controls={value === t.id ? `panel-${t.id}` : undefined}
           tabIndex={value === t.id ? 0 : -1}
           onClick={() => onChange(t.id)}
           onKeyDown={(e) => onKey(e, i)}

@@ -8,17 +8,20 @@ import { HazardCard } from '../panel/HazardCard';
 
 /** Modo EJECUTAR: ayuda de trabajo paso a paso. Nunca se presenta como instrucción aprobada si no lo es. */
 export function PerformJobAid() {
-  const { wiId, set } = useApp();
+  const wiId = useApp((s) => s.wiId), set = useApp((s) => s.set);
   const wi = wiId ? idx.wi.get(wiId) : null;
   const [step, setStep] = useState(0);
   const [checked, setChecked] = useState<Set<number>>(new Set());
   const [intro, setIntro] = useState(true);
   useEffect(() => {
     if (!wi) return;
-    set({ focusNodes: wi.equipmentIds.map((e) => `eaf__${e.replace(/^eq\./, '')}`), selectedEq: null });
-    useApp.getState().fitNodes(['eaf__electrodes', 'eaf__arms']);
+    // RT-SW-01: el nodo 3D sale de equipment.nodeNames (contrato), no del ID del equipo
+    const nodes = wi.equipmentIds.flatMap((e) => idx.equipment.get(e)?.nodeNames ?? []);
+    set({ focusNodes: nodes, selectedEq: null });
+    if (nodes.length) useApp.getState().fitNodes(nodes);
     setStep(0); setChecked(new Set()); setIntro(true);
-    track('started', wi.id);
+    // TRN-06 / SAF-11: la práctica se registra como simulación, nunca como verificación OJT
+    track('started', `${wi.id}#practica-sim`, { simulated: true });
   }, [wi, set]);
 
   if (!wi) {
@@ -39,8 +42,8 @@ export function PerformJobAid() {
   }
   const approved = wi.status === 'PLANT_APPROVED';
   const s = wi.steps[step];
-  const stopStep = !!s && /^\s*ALTO\b|\bDET[EÉ]NTE\b/.test(s.title);
-  const stopIdx = wi.steps.findIndex((x) => /^\s*ALTO\b|\bDET[EÉ]NTE\b/.test(x.title));
+  const stopStep = !!s && isStop(s);
+  const stopIdx = wi.steps.findIndex(isStop);
   return (
     <div className="flex h-full flex-col" data-testid="perform-jobaid">
       <div className="border-b border-[var(--color-line)] p-4">
@@ -73,7 +76,10 @@ export function PerformJobAid() {
       ) : (
         <div className="scroll-thin flex-1 overflow-y-auto p-4" data-testid={`wi-step-${s.n}`}>
           <ol className="mb-3 flex gap-1" aria-label="Pasos">
-            {wi.steps.map((x, k) => <li key={x.n} className="flex-1"><button onClick={() => setStep(k)} aria-label={`Paso ${x.n}${checked.has(x.n) ? ' (verificado)' : ''}`} aria-current={k === step ? 'step' : undefined} className={`h-1.5 w-full rounded ${k === step ? 'bg-[var(--color-accent)]' : checked.has(x.n) ? 'bg-[var(--color-safe)]' : 'bg-[var(--color-surface-3)]'}`} /></li>)}
+            {/* RT-UX-06: 24 px, número visible y marca de texto (no solo color) */}
+            {wi.steps.map((x, k) => <li key={x.n} className="flex-1"><button onClick={() => setStep(k)} aria-label={`Paso ${x.n}${checked.has(x.n) ? ' (revisado en práctica)' : ''}${isStop(x) ? ' (ALTO)' : ''}`} aria-current={k === step ? 'step' : undefined}
+              className={`grid h-6 w-full min-w-6 place-items-center rounded font-mono text-[11px] ${k === step ? 'bg-[var(--color-accent)] text-[var(--color-accent-ink)]' : checked.has(x.n) ? 'border border-[var(--color-safe)] text-[var(--color-safe)]' : isStop(x) ? 'border border-[var(--color-danger)] text-[var(--color-danger)]' : 'border border-[var(--color-line-strong)] text-[var(--color-text-2)]'}`}>
+              {checked.has(x.n) && k !== step ? '✔' : x.n}</button></li>)}
           </ol>
           <p className="label">Paso {s.n} de {wi.steps.length}</p>
           <h3 className={`mb-3 text-[18px] font-semibold leading-tight ${stopStep ? 'text-[var(--color-danger)]' : ''}`}>{stopStep && <span aria-hidden>⛔ </span>}{s.title}</h3>
@@ -87,7 +93,7 @@ export function PerformJobAid() {
           {s.escalation && <p className="mb-3 rounded border border-[var(--color-mandatory)]/60 bg-[var(--color-mandatory)]/10 p-2 text-[13px]"><strong><span aria-hidden>☎ </span>Si algo no está bien: </strong><OpText text={s.escalation} /></p>}
           <label className="mt-2 flex items-center gap-2 rounded-lg border border-[var(--color-line)] p-2 text-[13.5px]">
             <input type="checkbox" className="h-4 w-4 accent-[var(--color-accent)]" checked={checked.has(s.n)} data-testid="step-check"
-              onChange={(e) => { const c = new Set(checked); if (e.target.checked) { c.add(s.n); track('checked', `${wi.id}#${s.n}`); } else c.delete(s.n); setChecked(c); }} />
+              onChange={(e) => { const c = new Set(checked); if (e.target.checked) { c.add(s.n); track('checked', `${wi.id}#practica-sim-${s.n}`, { simulated: true }); } else c.delete(s.n); setChecked(c); }} />
             Revisé este paso (práctica)
           </label>
         </div>
@@ -96,11 +102,14 @@ export function PerformJobAid() {
         <button className={btn} disabled={intro} onClick={() => (step === 0 ? setIntro(true) : setStep(step - 1))}>← Anterior</button>
         {!intro && step < wi.steps.length && stopIdx >= 0 && stopIdx !== step && <button className={btn + ' !border-[var(--color-danger)] text-[var(--color-danger)]'} onClick={() => setStep(stopIdx)} data-testid="stop-now"><span aria-hidden>⛔ </span>ALTO: detente y avisa</button>}
         {intro ? <button className={btnPrimary} onClick={() => setIntro(false)} data-testid="wi-begin">Comenzar pasos →</button>
-          : step < wi.steps.length && <button className={btnPrimary} data-testid="next-step" onClick={() => { const n = step + 1; setStep(n); if (n >= wi.steps.length) track('completed', wi.id, { checked: checked.size }); }}>{step + 1 >= wi.steps.length ? 'Terminar' : 'Siguiente paso →'}</button>}
+          : step < wi.steps.length && <button className={btnPrimary} data-testid="next-step" onClick={() => { const n = step + 1; setStep(n); if (n >= wi.steps.length) track('completed', `${wi.id}#practica-sim`, { checked: checked.size, simulated: true }); }}>{step + 1 >= wi.steps.length ? 'Terminar' : 'Siguiente paso →'}</button>}
       </div>
     </div>
   );
 }
+
+/** Paso de paro: bandera `stop` del contenido o, si falta, título que empieza con ALTO / dice DETENTE (SAF-08, RT-SW-15). */
+const isStop = (x: { title: string; stop?: boolean }) => x.stop ?? /^\s*ALTO\b|\bDET[EÉ]NTE\b/.test(x.title);
 
 function Block({ t, children }: { t: string; children: React.ReactNode }) {
   return <div className="mb-3"><h4 className="label mb-0.5">{t}</h4><div className="text-[13.5px] text-[var(--color-text-2)]">{children}</div></div>;

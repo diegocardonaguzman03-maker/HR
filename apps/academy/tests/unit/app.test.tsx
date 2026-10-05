@@ -1,5 +1,11 @@
-import { describe, expect, it, beforeEach } from 'vitest';
+import { describe, expect, it, beforeEach, vi } from 'vitest';
 import { render, screen, fireEvent, within, act } from '@testing-library/react';
+import { ErrorBoundary } from '../../src/components/ui/ErrorBoundary';
+import { useLoad } from '../../src/stores/useLoad';
+
+// La escena puede simular un fallo de WebGL (RT-SW-02).
+const sceneFail = vi.hoisted(() => ({ on: false }));
+vi.mock('../../src/components/3d/Scene', () => ({ Scene: () => { if (sceneFail.on) throw new Error('Error creating WebGL context'); return null; } }));
 import { App } from '../../src/app/App';
 import { useApp } from '../../src/stores/useApp';
 import { content, idx } from '../../src/lib/content';
@@ -7,7 +13,7 @@ import { DISCLAIMER } from '../../src/components/ui/Disclaimer';
 import type { QuestionT } from '../../src/lib/content/schema';
 
 const initial = useApp.getState();
-beforeEach(() => { localStorage.clear(); act(() => useApp.setState({ ...initial, mode: 'explore', selectedEq: null, selectedStage: null, moduleId: null, wiId: null, assessmentId: null, docId: null, videoId: null, assistantOpen: false }, true)); location.hash = ''; });
+beforeEach(() => { sceneFail.on = false; localStorage.clear(); act(() => useLoad.setState({ phase: 'download', loaded: 0, total: 0, message: undefined })); act(() => useApp.setState({ ...initial, mode: 'explore', selectedEq: null, selectedStage: null, moduleId: null, wiId: null, assessmentId: null, docId: null, videoId: null, assistantOpen: false }, true)); location.hash = ''; });
 
 describe('arranque', () => {
   it('muestra el aviso permanente, los modos y la bienvenida', () => {
@@ -54,6 +60,20 @@ describe('modos', () => {
     fireEvent.click(screen.getByTestId('mode-assess')); expect(screen.getByTestId('assessment-list')).toBeInTheDocument();
     fireEvent.click(screen.getByTestId('mode-library')); expect(screen.getByTestId('library')).toBeInTheDocument();
     fireEvent.click(screen.getByTestId('mode-explore')); expect(screen.getByTestId('welcome')).toBeInTheDocument();
+  });
+  it('cada lección dice en texto qué equipos resalta el 3D y sus palabras del glosario (TRN-13)', () => {
+    render(<App />);
+    fireEvent.click(screen.getByTestId('mode-learn'));
+    fireEvent.click(screen.getByTestId('open-mod.electrode-melting'));
+    expect(screen.getByTestId('lesson-focus')).toHaveTextContent(/Transformador/);
+    expect(screen.getByTestId('lesson-words')).toBeInTheDocument();
+  });
+  it('al cambiar de modo el panel no se queda en el equipo abierto (UX-02)', () => {
+    render(<App />);
+    fireEvent.click(screen.getByTestId('eq-eq.electrodes'));
+    fireEvent.click(screen.getByTestId('mode-learn'));
+    expect(screen.getByTestId('module-list')).toBeVisible();
+    expect(screen.queryByTestId('equipment-peek')).toBeNull();
   });
   it('avanza por las lecciones de un módulo hasta completarlo', () => {
     render(<App />);
@@ -105,8 +125,80 @@ describe('evaluación', () => {
       fireEvent.click(screen.getByTestId(i < a.questionIds.length - 1 ? 'next-question' : 'finish-assessment'));
     });
     const res = screen.getByTestId('assessment-result');
-    expect(res).toHaveTextContent(/Aprobado/);
+    expect(res).toHaveTextContent(/Aprobaste la evaluación de conocimiento/);
     expect(res).toHaveTextContent(/no certifica competencia/);
+    expect(res).toHaveTextContent(/no se usa para escalafón/);
+    expect(screen.queryByTestId('critical-missed')).toBeNull();
+  });
+  it('marca las preguntas críticas con «▲ Pregunta de seguridad» y no aprueba si una crítica queda mal (TRN-01 / SAF-09)', () => {
+    const a = content.assessments[0];
+    expect(a.criticalQuestionIds.length).toBeGreaterThan(0);
+    render(<App />);
+    fireEvent.click(screen.getByTestId('mode-assess'));
+    fireEvent.click(screen.getByTestId(`start-${a.id}`));
+    const crit = a.criticalQuestionIds[0];
+    a.questionIds.forEach((id, i) => {
+      const q = idx.question.get(id)!;
+      const box = screen.getByTestId(`question-${id}`);
+      if (a.criticalQuestionIds.includes(id)) expect(within(box).getByTestId('critical-badge')).toHaveTextContent('Pregunta de seguridad');
+      else expect(within(box).queryByTestId('critical-badge')).toBeNull();
+      if (id === crit && q.kind === 'mcq') fireEvent.click(within(box).getByLabelText(q.options[(q.answer + 1) % q.options.length]));
+      else answer(q);
+      fireEvent.click(screen.getByTestId(i < a.questionIds.length - 1 ? 'next-question' : 'finish-assessment'));
+    });
+    const res = screen.getByTestId('assessment-result');
+    expect(res).toHaveTextContent(/Aún no apruebas la evaluación de conocimiento/);
+    expect(screen.getByTestId('critical-missed')).toHaveTextContent(/preguntas de seguridad/);
+    const scored = a.questionIds.length - a.unscoredQuestionIds.length;
+    expect(res).toHaveTextContent(`${scored - 1} de ${scored}`);
+  });
+  it('consultar la ficha de un equipo no reinicia la evaluación (RT-SW-04)', () => {
+    render(<App />);
+    fireEvent.click(screen.getByTestId('mode-assess'));
+    fireEvent.click(screen.getByTestId('start-asm.eaf-electrode'));
+    const a = content.assessments[0];
+    answer(idx.question.get(a.questionIds[0])!);
+    fireEvent.click(screen.getByTestId('next-question'));
+    expect(screen.getByText(`2/${a.questionIds.length}`)).toBeInTheDocument();
+    act(() => useApp.setState({ picking: false }));
+    act(() => useApp.getState().selectEquipment('eq.electrodes', { fly: false }));
+    expect(screen.getByTestId('equipment-peek')).toBeInTheDocument();
+    expect(screen.getByTestId('assessment-runner')).not.toBeVisible();
+    fireEvent.click(screen.getByTestId('peek-back'));
+    expect(screen.getByText(`2/${a.questionIds.length}`)).toBeVisible();
+  });
+  it('avisa del registro local y permite desactivarlo (TRN-12)', () => {
+    render(<App />);
+    fireEvent.click(screen.getByTestId('mode-assess'));
+    expect(screen.getByTestId('recording-notice')).toHaveTextContent(/sin tu nombre/);
+    fireEvent.click(screen.getByTestId('toggle-recording'));
+    expect(localStorage.getItem('adx.analytics')).toBe('off');
+    fireEvent.click(screen.getByTestId('start-asm.eaf-electrode'));
+    expect(localStorage.getItem('adx.events') ?? '[]').toBe('[]');
+  });
+});
+
+describe('fallos contenidos (RT-SW-02)', () => {
+  it('si WebGL falla, la app sigue usable y el aviso de seguridad sigue visible', () => {
+    sceneFail.on = true;
+    const err = vi.spyOn(console, 'error').mockImplementation(() => {});
+    render(<App />);
+    err.mockRestore();
+    expect(screen.getByTestId('no-3d')).toHaveTextContent(/Puedes seguir usando la lista de equipos/);
+    expect(screen.getByTestId('disclaimer')).toHaveTextContent(DISCLAIMER);
+    fireEvent.click(screen.getByTestId('eq-eq.electrodes'));
+    expect(screen.getByTestId('equipment-panel')).toBeInTheDocument();
+    fireEvent.click(screen.getByTestId('mode-learn'));
+    expect(screen.getByTestId('module-list')).toBeInTheDocument();
+  });
+  it('ErrorBoundary muestra el respaldo y avisa del error', () => {
+    const Boom = () => { throw new Error('boom'); };
+    const onError = vi.fn();
+    const err = vi.spyOn(console, 'error').mockImplementation(() => {});
+    render(<ErrorBoundary fallback={<p>respaldo</p>} onError={onError}><Boom /></ErrorBoundary>);
+    err.mockRestore();
+    expect(screen.getByText('respaldo')).toBeInTheDocument();
+    expect(onError).toHaveBeenCalledWith(expect.objectContaining({ message: 'boom' }));
   });
 });
 

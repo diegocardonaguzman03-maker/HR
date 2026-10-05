@@ -19,7 +19,9 @@ export default defineConfig(({ mode }) => ({
           rollupOptions: {
             output: {
               manualChunks(id: string) {
-                if (/node_modules[\\/](react|react-dom|scheduler)[\\/]/.test(id)) return 'react';
+                // el helper de precarga de Vite lo usa el lazy() de index: si cae en r3f, index vuelve a depender del 3D
+                if (id.includes('vite/preload-helper') || id.includes('vite/modulepreload-polyfill')) return 'react';
+                if (/node_modules[\\/](react|react-dom|scheduler|zustand|use-sync-external-store|@babel[\\/]runtime)[\\/]/.test(id)) return 'react'; // + vendor que usa la UI
                 if (/node_modules[\\/]three[\\/]/.test(id)) return 'three';
                 if (/node_modules[\\/](@react-three|postprocessing|camera-controls|three-stdlib|maath|n8ao|troika-[^\\/]+|three-mesh-bvh|@monogrid|stats-gl|suspend-react|its-fine|react-reconciler)[\\/]/.test(id)) return 'r3f';
                 return undefined;

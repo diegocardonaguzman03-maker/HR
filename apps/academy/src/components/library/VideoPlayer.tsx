@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
+import type { VideoT } from '../../types/content';
 import { idx } from '../../lib/content';
 import { useApp } from '../../stores/useApp';
 import { Modal } from '../ui/Modal';
@@ -10,25 +11,32 @@ const mmss = (t: number) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).
 
 /** Reproductor accesible: controles nativos, subtítulos (VTT), capítulos y pantalla completa. */
 export function VideoPlayer() {
-  const { videoId, set } = useApp();
+  const videoId = useApp((s) => s.videoId);
   const v = videoId ? idx.video.get(videoId) : null;
+  // RT-SW-09: un componente por video (key) para que el tiempo y el error no pasen de un video a otro
+  return v ? <VideoModal key={v.id} v={v} /> : null;
+}
+
+function VideoModal({ v }: { v: VideoT }) {
   const ref = useRef<HTMLVideoElement>(null);
   const box = useRef<HTMLDivElement>(null);
   const [t, setT] = useState(0);
   const [failed, setFailed] = useState(false);
-  if (!v) return null;
+  const close = useCallback(() => useApp.getState().set({ videoId: null }), []);
   const chapterIdx = v.chapters.reduce((a, c, i) => (t >= c.t ? i : a), 0);
   return (
-    <Modal title={v.title} onClose={() => set({ videoId: null })} wide testid="video-player">
+    <Modal title={v.title} onClose={close} wide testid="video-player">
       <div className="p-4">
         <div className="mb-2 flex items-center gap-2"><StatusChip status={v.status} /><span className="text-[12px] text-[var(--color-text-3)]">Video placeholder de demostración generado desde el modelo 3D. No muestra la operación real de la planta.</span></div>
         <div ref={box} className="relative overflow-hidden rounded-lg bg-black">
           <p className="pointer-events-none absolute left-2 top-2 z-10 rounded bg-black/70 px-2 py-0.5 font-mono text-[11px] text-[var(--color-st-demo)]">◇ DEMO · modelo esquemático, no es operación real · no sustituye procedimientos aprobados</p>
           {failed ? (
-            <div className="grid aspect-video place-items-center text-center text-[var(--color-text-2)]"><p>Video no disponible en esta versión.<br />Ejecuta <code>npm run video</code> para generarlo.</p></div>
+            <div className="grid aspect-video place-items-center text-center text-[var(--color-text-2)]" data-testid="video-unavailable"><p>Video no disponible en esta versión.<br />Avisa a tu instructor.</p></div>
           ) : (
-            <video ref={ref} className="aspect-video w-full" controls preload="metadata" crossOrigin="anonymous" onTimeUpdate={(e) => setT(e.currentTarget.currentTime)} onPlay={() => track('played', v.id)} onError={() => setFailed(true)} data-testid="video-element">
-              <source src={asset(v.file)} type="video/webm" />
+            <video ref={ref} className="aspect-video w-full" controls preload="metadata" crossOrigin="anonymous" data-autofocus
+              onTimeUpdate={(e) => setT(e.currentTarget.currentTime)} onPlay={() => track('played', v.id)} onError={() => setFailed(true)} data-testid="video-element">
+              {/* RT-SW-09: el error de carga se dispara en <source>, no en <video> */}
+              <source src={asset(v.file)} type="video/webm" onError={() => setFailed(true)} />
               <track kind="captions" src={asset(v.captions)} srcLang="es" label="Español" default />
             </video>
           )}
@@ -41,7 +49,7 @@ export function VideoPlayer() {
         <ol className="grid gap-1 sm:grid-cols-2">
           {v.chapters.map((c, i) => (
             <li key={i}>
-              <button aria-current={i === chapterIdx} className={`flex w-full items-center gap-3 rounded border px-3 py-2 text-left text-[13px] ${i === chapterIdx ? 'border-[var(--color-accent)] bg-[var(--color-surface-2)]' : 'border-[var(--color-line)] hover:bg-[var(--color-surface-2)]'}`}
+              <button aria-current={i === chapterIdx ? 'true' : undefined} className={`flex w-full items-center gap-3 rounded border px-3 py-2 text-left text-[13px] ${i === chapterIdx ? 'border-[var(--color-accent)] bg-[var(--color-surface-2)]' : 'border-[var(--color-line)] hover:bg-[var(--color-surface-2)]'}`}
                 onClick={() => { if (ref.current) { ref.current.currentTime = c.t; void ref.current.play().catch(() => undefined); } }}>
                 <span className="font-mono text-[var(--color-accent)]">{mmss(c.t)}</span>{c.title}
               </button>

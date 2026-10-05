@@ -1,14 +1,23 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import { DISCLAIMER } from './Disclaimer';
 
-/** Diálogo modal accesible: foco atrapado, Esc cierra, devuelve el foco al cerrar. */
+/**
+ * Diálogo modal accesible: foco atrapado, Esc cierra, devuelve el foco al cerrar.
+ * UX-01: el efecto corre una sola vez (onClose va en una ref). Antes se re-ejecutaba en cada render del
+ * llamador (el video re-renderiza con cada timeupdate), mandaba el foco a «Cerrar» y el Espacio cerraba el modal.
+ * El foco inicial va al elemento con data-autofocus (p. ej. el video) o al primer control del contenido.
+ */
 export function Modal({ title, onClose, children, wide = false, testid }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean; testid?: string }) {
   const ref = useRef<HTMLDivElement>(null);
+  const body = useRef<HTMLDivElement>(null);
+  const closeRef = useRef(onClose);
+  closeRef.current = onClose;
   useEffect(() => {
     const prev = document.activeElement as HTMLElement | null;
-    ref.current?.querySelector<HTMLElement>('button, a, [tabindex="0"]')?.focus();
+    const first = body.current?.querySelector<HTMLElement>('[data-autofocus]') ?? body.current?.querySelector<HTMLElement>('button, a[href], input, select, video, [tabindex="0"]') ?? ref.current?.querySelector<HTMLElement>('button');
+    first?.focus();
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') closeRef.current();
       if (e.key === 'Tab' && ref.current) {
         const f = [...ref.current.querySelectorAll<HTMLElement>('button, a[href], input, select, textarea, video, iframe, [tabindex="0"]')].filter((x) => !x.hasAttribute('disabled'));
         if (!f.length) return;
@@ -17,16 +26,17 @@ export function Modal({ title, onClose, children, wide = false, testid }: { titl
       }
     };
     window.addEventListener('keydown', onKey);
-    return () => { window.removeEventListener('keydown', onKey); prev?.focus(); };
-  }, [onClose]);
+    // si el elemento que tenía el foco ya no existe, el foco vuelve al panel en lugar de perderse en <body>
+    return () => { window.removeEventListener('keydown', onKey); (prev?.isConnected ? prev : document.getElementById('panel'))?.focus(); };
+  }, []);
   return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-black/70 p-4" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+    <div className="fixed inset-0 z-50 grid place-items-center bg-black/70 p-4" onMouseDown={(e) => { if (e.target === e.currentTarget) closeRef.current(); }}>
       <div ref={ref} role="dialog" aria-modal="true" aria-label={title} data-testid={testid} className={`flex max-h-[92vh] w-full flex-col overflow-hidden rounded-xl border border-[var(--color-line-strong)] bg-[var(--color-surface)] shadow-2xl ${wide ? 'max-w-5xl' : 'max-w-2xl'}`}>
         <header className="flex items-center justify-between gap-4 border-b border-[var(--color-line)] px-4 py-3">
           <h2 className="font-semibold">{title}</h2>
           <button onClick={onClose} aria-label="Cerrar" className="rounded px-2 py-1 text-[var(--color-text-2)] hover:bg-[var(--color-surface-3)]">✕</button>
         </header>
-        <div className="scroll-thin flex-1 overflow-y-auto">{children}</div>
+        <div ref={body} className="scroll-thin flex-1 overflow-y-auto">{children}</div>
         <p role="note" data-testid="modal-disclaimer" className="border-t border-[var(--color-line)] px-4 py-1.5 text-[11.5px] text-[var(--color-text-2)]"><span aria-hidden>⚠ </span><strong>Aviso de seguridad:</strong> {DISCLAIMER}</p>
       </div>
     </div>
