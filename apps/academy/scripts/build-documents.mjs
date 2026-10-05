@@ -55,7 +55,7 @@ table { width: 100%; border-collapse: collapse; margin: 4pt 0; } td, th { border
 // así no se intercala con el contenido al copiar o al leer con lector de pantalla.
 const WM_TEXT = 'NO VALIDADO · NO USAR PARA OPERAR';
 const WM_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="816" height="1056" viewBox="0 0 816 1056"><g transform="rotate(-28 408 528)" fill="rgba(160,40,40,0.16)" font-family="DejaVu Sans, Arial, sans-serif" font-weight="800" text-anchor="middle"><text x="408" y="440" font-size="58">${WM_TEXT.split(' · ')[0]}</text><text x="408" y="530" font-size="58">${WM_TEXT.split(' · ')[1]}</text><text x="408" y="640" font-size="30">DEMO / BORRADOR · NO ES PROCEDIMIENTO APROBADO</text></g></svg>`;
-const WM_IMG = `data:image/svg+xml;base64,${Buffer.from(WM_SVG).toString('base64')}`;
+let WM_IMG = `data:image/svg+xml;base64,${Buffer.from(WM_SVG).toString('base64')}`;
 const watermark = (doc) => (doc.status === 'PLANT_APPROVED' ? '' : `<div class="wm" aria-hidden="true" role="presentation"><img src="${WM_IMG}" alt=""></div>`);
 
 function shell(doc, body) {
@@ -119,6 +119,10 @@ ${m.lessons.map((l, i) => `<h2>Lección ${i + 1}. ${esc(l.title)}</h2>${l.body.m
 fs.mkdirSync('public/documents', { recursive: true });
 const browser = await chromium.launch({ executablePath: CHROME });
 const page = await browser.newPage();
+// TRN-15: la marca de agua se rasteriza a PNG para que no se mezcle con el texto extraíble del PDF
+await page.setViewportSize({ width: 816, height: 1056 });
+await page.setContent(`<html><body style="margin:0;background:transparent">${WM_SVG}</body></html>`);
+WM_IMG = `data:image/png;base64,${(await page.screenshot({ omitBackground: true, type: 'png' })).toString('base64')}`;
 for (const doc of docs) {
   const b = builders[doc.id];
   if (!b) { console.log('sin plantilla:', doc.id); continue; }

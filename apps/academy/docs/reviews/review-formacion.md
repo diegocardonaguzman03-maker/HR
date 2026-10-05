@@ -182,3 +182,112 @@ Mapa de niveles ADX → evidencia:
 | ADX-08 (accesibilidad) / ADX-09 (3D) | TRN-04, TRN-13, TRN-15 |
 
 *Fuentes:* los archivos citados en el alcance, con corte al 2026-10-05; `docs/safety-review.md` (ADX-SR-001); `docs/validation-checklist.md`. Toda referencia a la LFT, al CCT o a la LFPDPPP está pendiente de verificar con Jurídico Laboral.
+
+---
+
+## Re-revisión (2026-10-05)
+
+| Código | Versión | Estado | Revisor | Corte | Base verificada |
+|---|---|---|---|---|---|
+| ADX-TR-001 | 0.2 | **DRAFT, NOT VALIDATED** | ADX-07 Diseño de Aprendizaje | 2026-10-05 | Commit `4912e42` + árbol de trabajo; `src/content/{training,questions,assessments,glossary,work-instructions}.json`; `src/lib/assessment.ts`; `src/lib/analytics/index.ts`; `src/lib/content/schema.ts`; `src/components/training/*.tsx`; los 4 PDF de `public/documents/` (generados 2026-10-05 15:59 UTC); `docs/architecture.md` §4 bis; `docs/content-schema.md` |
+
+**Pruebas corridas:** `npx tsx scripts/check-content.ts` → «✓ Contenido válido» (23 preguntas, 3 módulos, 215 campos SME_REQUIRED). `npx vitest run` → **116/116 en verde** (4 archivos). Solo hay un aviso de `act(...)` en `app.test.tsx`, que no afecta el resultado. No se corrió Playwright.
+
+> **Mensaje clave.** **Los 7 HIGH (TRN-01 a TRN-07) están CERRADOS en el código y el contenido.** Hay una evaluación con banco paralelo `q.asm-*`, 3 preguntas de seguridad eliminatorias, una pregunta no calificada, prompts de identificación que no revelan la respuesta, distractores plausibles, xAPI marcado como no certificante y el prerrequisito de la WI como «completado». De los 12 MEDIUM y LOW, **9 están cerrados, 2 siguen abiertos** (TRN-11 parcial y TRN-15, la marca de agua del PDF) y **1 se acepta con mitigación** (TRN-18). **Dictamen nuevo de TRAINING: APROBADO PARA PILOTO CONTROLADO, CON CONDICIONES.** Las condiciones ya no son de código: son el visto bueno de Relaciones Laborales a los textos de uso (TRN-03 y TRN-12), la revisión técnica y de seguridad de los ítems nuevos `q.asm-*` y la decisión §6 del Director.
+
+### R1. Estado de los hallazgos TRN-01 a TRN-19
+
+| ID | Sev. | Estado | Evidencia (archivo → qué se verificó) |
+|---|---|---|---|
+| TRN-01 | HIGH | **CERRADO** | `assessments.json`: `criticalQuestionIds` = q.asm-stored-1, q.asm-water-1, q.asm-signals-1 y `unscoredQuestionIds` = q.electrode-6. `assessment.ts`: `score()` excluye las no calificadas y devuelve `criticalOk` y `criticalMissed`; `isPassed = ratio ≥ passScore && criticalOk`. `AssessmentView.tsx` usa `isPassed` en `finish()` y en el resultado, y muestra el aviso `critical-missed`. `QuestionView.tsx` muestra «▲ Pregunta de seguridad» (texto + icono + `sr-only`). `schema.ts` (líneas 368–372) valida subconjuntos y que una pregunta no sea crítica y no calificada a la vez. Con 9 calificadas, aprobar = 8/9 y 3/3 críticas. Pruebas: `assessment-analytics.test.ts` y `app.test.tsx` |
+| TRN-02 | HIGH | **CERRADO** (falta revisión técnica de los ítems; ver R4) | La evaluación usa 9 ítems paralelos `q.asm-*` más q.electrode-6, que no se califica. **0 de 9 ítems calificados aparecen en `checkIds`.** La regla está en `schema.ts` (línea 374) y en `content-schema.md` (línea 44), y tiene prueba en `content.test.ts`. Ya hay un ítem de DRI húmedo (q.asm-water-1) y uno de identificar el secundario (q.asm-zone-1). Se aceptan los intentos ilimitados, el orden fijo y las explicaciones en el resultado, según §3, porque el banco ya es paralelo. La rotación queda para la fase 2 |
+| TRN-03 | HIGH | **CERRADO en la app** (falta el visto bueno de RL) | `AssessmentView.tsx`: la constante `NOT_FOR_HR` tiene el texto propuesto, palabra por palabra, y se muestra en la lista de evaluaciones y en el resultado (`data-testid="not-for-hr"`). La explicación de q.electrode-6 termina con «Tampoco se usa para escalafón ni para evaluar tu desempeño.» `architecture.md` §4 bis repite la regla. El código mismo lo marca «pendiente de visto bueno de experto-relaciones-laborales» |
+| TRN-04 | HIGH | **CERRADO** (falta la confirmación de ADX-08) | Los prompts de q.orientation-2, q.electrode-1 y q.electrode-2 ya se escriben por función o ubicación. Ninguna palabra del prompt coincide con el nombre en la lista: «banda y chute» no lleva a «Alimentación continua de DRI (5.º agujero)», y «se consume… unión roscada» no lleva a «Electrodos de grafito». Los nuevos q.asm-zone-1, q.asm-arms-1 y q.asm-control-1 siguen la misma regla. La lista de `QuestionView` muestra los 15 equipos por número de hotspot |
+| TRN-05 | HIGH | **CERRADO** (falta escribir la regla de redacción) | Ya se aplicaron las opciones propuestas en q.safety-1, q.safety-2, q.safety-4 y q.electrode-3. En las 10 mcq, la correcta queda en A = 3, B = 2, C = 2 y D = 3, y es la más larga solo en 2 de 10 (q.safety-1 y q.safety-2, ambas son checks de lección). En las 4 mcq de la evaluación queda en A, B, C y D, y nunca es la más larga. Ya no hay distractores absurdos. **Pendiente menor:** la regla de redacción (correcta ≠ más larga, posiciones balanceadas, distractores = errores reales) **no está** en `content-schema.md` |
+| TRN-06 | HIGH | **CERRADO** | `analytics/index.ts → toXapi()`: `contextActivities.category` = `urn:gasm:adx:category:knowledge-check-non-certifying`; `result.extensions['urn:gasm:adx:certifies-competency'] = false`; display «aprobó / no alcanzó el mínimo en la comprobación de conocimiento»; `activityDefinition()` nombra la evaluación «no válida para DC-3 ni para tareas críticas». `PerformJobAid.tsx` emite `${wi.id}#practica-sim[-n]` con `simulated: true`, que se tipa como `simulation` («no es verificación OJT ni certificación TD-P07»). Está documentado en `architecture.md` §4 bis. Prueba: `assessment-analytics.test.ts` |
+| TRN-07 | HIGH | **CERRADO** | `work-instructions.json → prerequisites[0]` tiene el texto propuesto, palabra por palabra («Haber completado… no habilita para la tarea ni sustituye la certificación en piso TD-P07»). Se verificó con `pdftotext` en `wi-` y `jobaid-electrode-system-check.pdf` |
+| TRN-08 | MEDIUM | **CERRADO** | Los objetivos de `training.json` ya usan los verbos medidos: «Reconocer…», «Elegir…», «Señalar…», «Ordenar…». Ya no queda ningún «Explicar» en los 12 objetivos |
+| TRN-09 | MEDIUM | **CERRADO** | q.safety-3 ya tiene los 4 pares propuestos, cada uno con una sola respuesta defendible, y conserva el SME_REQUIRED en `explanation` |
+| TRN-10 | MEDIUM | **CERRADO** | Las recomendaciones tienen `{topic, moduleId, lessonId}` y ya no existe «Equipos del EAF». `AssessmentView → goTo()` abre la lección exacta. `schema.ts` (líneas 376–379) valida que la lección esté en el módulo y que cada tema tenga una pregunta. Hay 10 recomendaciones y 10 temas en la evaluación; no quedan huérfanas. q.safety-4 sigue como check en dos lecciones, pero ya no entra en la evaluación, así que el punto (c) ya no aplica |
+| TRN-11 | MEDIUM | **ABIERTO (parcial)** | **Hecho:** el verbo `answered` por ítem (success, attempt, critical, scored); el evento global con `raw/max/attempt/durationSec/criticalOk`; en xAPI, `score.raw/min/max` y `duration` ISO-8601, y `object.definition` por tipo. **Falta:** (1) **N1 de reacción**, porque no hay verbo `responded` ni las 3 preguntas de escala en `module-complete`; (2) `LearnPlayer.tsx` emite `completed` del módulo con solo pulsar «Terminar módulo», aunque no se haya verificado ningún check |
+| TRN-12 | MEDIUM | **CERRADO en la app** (falta el visto bueno de RL y Jurídico) | `AssessmentView.tsx → RecordingNotice` muestra el aviso «sin tu nombre…», el botón «Desactivar registro» (`setEnabled`) y el botón «Terminar sesión en equipo compartido» (`clearEvents`, `resetProgress` y el nuevo `resetActor`). `architecture.md` §4 bis dice que la evidencia es solo agregada N1–N2 y que el expediente se lleva por TD-P09 como «constancia interna de conocimiento». Pruebas en `app.test.tsx` y `assessment-analytics.test.ts`. El texto del aviso de privacidad (LFPDPPP) no se ha validado con Jurídico |
+| TRN-13 | MEDIUM | **CERRADO** (falta la confirmación de ADX-08 y ADX-09) | `LearnPlayer.tsx` tiene `FocusList` («Equipos que se resaltan en el modelo», con `equipmentForNode`) y `LessonWords` («Palabras de esta lección», con coincidencia sin acentos ni mayúsculas sobre `glossary.json`). Prueba en `app.test.tsx` (TRN-13). Queda para ADX-08 confirmar el modo sin WebGL |
+| TRN-14 | MEDIUM | **CERRADO** | En `guide-electrode-melting.pdf`, la «Etapa 03 — Fusión» ya no tiene la tabla de variables y dice «Las condiciones de operación de la fusión las define el procedimiento aprobado de la planta» + SME_REQUIRED. `pdftotext` ya no encuentra «impedancia», «armónicos», «kWh/t» ni «icebergs». **Residuo LOW:** las tablas de componentes de la guía todavía usan vocabulario de ingeniería, como «perfil de potencia» y «válvula proporcional/servo» (ver R4) |
+| TRN-15 | MEDIUM | **ABIERTO (parcial)** | **Hecho:** el metadato `Title` de los 4 PDF ya es el título real del documento, según `pdfinfo`. **Falta:** la marca de agua sigue siendo texto extraíble. `pdftotext` devuelve 151 a 916 renglones de una o dos letras sueltas por PDF («O / N / O / M / DE…») intercalados con el contenido. Afecta a lectores de pantalla y a copiar y pegar |
+| TRN-16 | LOW | **CERRADO** | En q.electrode-5, la pareja de «Cambiador de derivaciones (taps)» ahora dice «Ajusta la tensión que el transformador entrega al horno» |
+| TRN-17 | LOW | **CERRADO** | `Response` de tipo order tiene `touched`, y `isAnswered` exige `touched === true`. El resultado muestra «Tu orden / Orden correcto» cuando la respuesta falla. Prueba en `assessment-analytics.test.ts` |
+| TRN-18 | LOW | **ACEPTADO con mitigación** | El encabezado dice «✔ Aprobaste la evaluación de conocimiento / ✕ Aún no apruebas la evaluación de conocimiento — X de Y (Z %)». Conserva el verbo «aprobar», pero lo limita a «evaluación de conocimiento» y siempre va junto a los avisos «no certifica competencia» y `NOT_FOR_HR`. Se acepta para el piloto, **sujeto a que RL lo revise junto con TRN-03**. Si RL lo pide, se cambia por «Comprensión suficiente / Aún no» |
+| TRN-19 | LOW | **CERRADO** | Todos los puntos clave con SME_REQUIRED de `training.json` dicen qué falta y quién lo da. En el PDF, «DATO DE PLANTA PENDIENTE (SME_REQUIRED): tabla de taps…» ya no queda vacío |
+
+**Resumen:** 16 CERRADOS (5 de ellos con una validación externa pendiente), 2 ABIERTOS parciales (TRN-11 y TRN-15, ambos MEDIUM) y 1 ACEPTADO (TRN-18, LOW). **No queda ningún HIGH abierto.**
+
+### R2. Matriz de alineación actualizada
+
+Leyenda igual a la de §1. «ASM» es `asm.eaf-electrode` con el banco paralelo.
+
+| Módulo | # | Objetivo (texto actual) | Check (lección) | ASM | Antes → ahora | Comentario |
+|---|---|---|---|---|---|---|
+| eaf-orientation | O1 | Reconocer qué hace el EAF y cuál es su principal fuente de calor | ninguno (la lección 1 sigue sin check) | ninguno | ○ → **○** | Se corrigió el verbo, pero sigue sin ítem |
+| eaf-orientation | O2 | Reconocer de dónde viene la carga metálica en GASM | q.orientation-4, q.orientation-2 | indirecto: q.asm-stages-1 (DRI por bandas), q.asm-water-1 | ◐ → **◐** | D-010 solo se evalúa de forma directa como check formativo |
+| eaf-orientation | O3 | Ordenar las etapas generales | q.orientation-1 | q.asm-stages-1 (paralelo) | ● → **●** | Ya no se repite el ítem |
+| eaf-orientation | O4 | Señalar en 3D los equipos principales y el púlpito | q.orientation-2 (identify), q.orientation-3 (match) | q.asm-control-1 (púlpito) | ◐ → **◐** | El púlpito ya se evalúa, pero la lección 5 («El púlpito de control») sigue sin check |
+| electrode-melting | O1 | Señalar en 3D el transformador, el secundario, los brazos y los electrodos | q.electrode-2, q.electrode-1, q.electrode-5 | q.asm-zone-1 (secundario), q.asm-arms-1 (brazos) | ◐ → **●** | Los 4 equipos ya se identifican entre check y evaluación; la evaluación toma una muestra de 2 de 4 |
+| electrode-melting | O2 | Ordenar la ruta de la energía | q.electrode-4 | q.asm-energy-1 | ● → **●** | Paralelo |
+| electrode-melting | O3 | Elegir la descripción correcta de la regulación | q.electrode-3 | q.asm-regulation-1 (escenario) | ◐ → **●** | El verbo y el ítem ya coinciden |
+| electrode-melting | O4 | Elegir la conducta ante una señal anormal y a quién avisar | q.safety-4 | q.asm-signals-1 ▲, q.asm-control-1 | ◐ → **●** | Ya entra la fuga de agua en un cable flexible |
+| eaf-energy-safety | O1 | Señalar las zonas de alta corriente | q.safety-3 (corregida) | q.asm-zone-1 | ○ → **●** | Ver la observación R4-1: q.asm-zone-1 no es crítica |
+| eaf-energy-safety | O2 | Reconocer por qué un equipo apagado todavía puede moverse o caer | q.safety-2 | q.asm-stored-1 ▲ | ◐ → **●** | Los distractores ya son plausibles |
+| eaf-energy-safety | O3 | Reconocer por qué el agua y el DRI húmedo son peligrosos | q.safety-1 | q.asm-water-1 ▲ (DRI mojado) | ◐ → **●** | Ya se evalúa el DRI húmedo |
+| eaf-energy-safety | O4 | Elegir la conducta de detenerse, alejarse y avisar | q.safety-4, q.safety-1 | q.asm-signals-1 ▲, q.asm-water-1 ▲, q.asm-stored-1 ▲ | ● → **●** | Es el objetivo más cubierto |
+
+| Indicador | Antes | Ahora | Meta MVP | Fuente |
+|---|---|---|---|---|
+| Objetivos con cobertura completa (●) | 3/12 (25 %) | **9/12 (75 %)** | ≥ 80 % | R2 |
+| Objetivos sin ningún ítem (○) | 2/12 | **1/12** (orientación O1) | 0 | R2 |
+| Ítems calificados de la ASM que ya se vieron como check | 10/10 | **0/9** | 0 | `schema.ts` (línea 374) y `content.test.ts` |
+| Ítems de seguridad críticos en la ASM | 3, se aprobaba con 1 | **3, obligatorios 3/3** | 3/3 | `assessments.json`, `isPassed` |
+| Posición de la correcta (10 mcq) | B = 3, C = 3 (de 6) | **A 3 · B 2 · C 2 · D 3** | Balanceada | `questions.json` |
+| Correcta = la más larga | 6/6 | **2/10** (0/4 en la ASM) | ≤ 1 de cada 3 | `questions.json` |
+| Recomendaciones sin pregunta | 1 | **0** | 0 | `schema.ts` (línea 379) |
+
+Los 3 objetivos que todavía no están en ● son del módulo de orientación, que **no tiene evaluación propia**. Para llegar a ≥ 80 % basta con agregar un check a les.eaf-orientation-1 (O1) y otro a les.eaf-orientation-5 (O4). Es la recomendación 7 de la fase 2 (§8).
+
+### R3. Dictamen nuevo de TRAINING
+
+**APROBADO PARA PILOTO CONTROLADO, CON CONDICIONES** (antes: aprobado con condiciones y piloto con sindicalizados bloqueado).
+
+- **Desde formación**, la evaluación ya mide comprensión de niveles 1 a 3 con evidencia válida: ítems paralelos, seguridad eliminatoria y distractores plausibles. Ya no se puede leer como certificación ni en la interfaz ni en el xAPI. La plataforma **sigue sin certificar competencia**: los niveles 4 y 5 quedan en el OJT y en el evaluador en piso (TD-P07).
+- **Condiciones antes del piloto con personal sindicalizado** (ninguna es de código):
+  1. Visto bueno de `experto-relaciones-laborales` a los textos de TRN-03 y TRN-12, y al encabezado de TRN-18.
+  2. Revisión de ADX-02/03 (contenido técnico) y ADX-04 o `experto-seguridad-salud` (seguridad) de los 9 ítems `q.asm-*` y de la selección de críticos.
+  3. Decisión del Director sobre la regla de uso (§6).
+  4. Programar el piloto dentro de la jornada (§5).
+- **Para la v0.2, no bloquean el piloto:** TRN-11 (N1 de reacción y `completed` condicionado a los checks), TRN-15 (marca de agua del PDF como imagen), la regla de redacción de TRN-05 en `content-schema.md`, los checks de orientación O1 y O4, y las observaciones de R4.
+
+**Renglón propuesto para `docs/validation-checklist.md`** (no se editó ese archivo):
+
+| Función | Agente/rol | Resultado | Fecha |
+|---|---|---|---|
+| Formación | ADX-07 | **APROBADO PARA PILOTO CONTROLADO, CON CONDICIONES**: TRN-01 a TRN-07 cerrados. Antes del piloto con sindicalizados: visto bueno de RL (TRN-03, TRN-12, TRN-18), revisión técnica y de seguridad de `q.asm-*` y decisión §6. TRN-11 y TRN-15 quedan para la v0.2 | 2026-10-05 |
+
+Sección C, estado propuesto: **C1 Parcial** (9/12 objetivos ●) · **C2 Cumple** (0 ítems repetidos y 0 temas huérfanos; los objetivos de orientación sin evaluación propia quedan anotados) · **C3 Cumple en la app / parcial en el PDF** (vocabulario de componentes y marca de agua) · **C4 Cumple** (categoría no certificante visible para el LMS).
+
+### R4. Observaciones nuevas (no bloquean)
+
+1. **q.asm-zone-1 (zona de alta corriente) no es crítica.** Es un objetivo de seguridad, igual que los otros tres. Hay que decidir con ADX-04 si se vuelve crítica. Si se agrega, aprobar exige 4/4 críticas y sigue en 8/9.
+2. **Rúbrica de los ítems `q.asm-*`:** no hay ningún registro de que ADX-02/03/04 los hayan revisado. Ningún archivo de `docs/reviews/` los cita.
+3. **Guía `guide-electrode-melting.pdf`:** las tablas de componentes («perfil de potencia», «válvula proporcional/servo», «zapata de contacto») vienen de la ficha técnica y rebasan el nivel de nuevo ingreso. Conviene simplificar esas tablas en la guía del participante (ADX-06).
+4. **La regla de redacción de distractores** (TRN-05) se aplicó en el contenido, pero no se documentó en `content-schema.md` ni se valida en `checkContent` (por ejemplo, alertar cuando la correcta es la más larga en más de 1 de cada 3 ítems).
+
+### R5. Pendientes para el Director
+
+| # | Pendiente | Responsable | Para cuándo **[Supuesto]** |
+|---|---|---|---|
+| 1 | **Visto bueno de Relaciones Laborales** al texto `NOT_FOR_HR` (TRN-03), al aviso de registro y al botón de equipo compartido (TRN-12), y al encabezado del resultado (TRN-18). Incluye la revisión de Jurídico Laboral (LFT, CCT, LFPDPPP) | `experto-relaciones-laborales` + Jurídico Laboral | Antes de 2026-10-30 |
+| 2 | **Decidir §6** (regla de uso de resultados con sindicalizados: A, B o C). La recomendación sigue siendo **A**: llevarla a la CMCAP | Director | 2026-10-30 |
+| 3 | **Revisión técnica y de seguridad de los 9 ítems `q.asm-*`** y de la lista de críticos, incluida la observación R4-1 | `experto-operativo-metalurgia` (ADX-02/03) + `experto-seguridad-salud` (ADX-04) | Antes del piloto |
+| 4 | **Confirmar la accesibilidad** de la lista alternativa al 3D (TRN-04), el modo sin WebGL (TRN-13) y el mapeo nodo → equipo | ADX-08 / ADX-09 | Antes del piloto |
+| 5 | **Programar el piloto dentro de la jornada** (85 min por los 3 módulos) en TD-P05, en sala o kiosco | `sind-procesos` / `gerente-personal-sindicalizado` | Al decidir el punto 2 |
+| 6 | **v0.2:** cerrar TRN-11 (N1 y `completed` condicionado), TRN-15 (marca de agua como imagen), los checks de orientación O1 y O4, la regla de distractores en `content-schema.md` y R4-3 | ADX-07 + ADX-06 (generador de PDF) | v0.2 |
+
+**Decisión requerida del Director:** sigue vigente la de §6 (opción A recomendada; riesgo bajo; costo $0 adicional **[Supuesto]**; fecha 2026-10-30 **[Supuesto]**). La re-revisión no agrega decisiones nuevas. Verificar con Jurídico Laboral.

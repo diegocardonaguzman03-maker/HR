@@ -107,3 +107,77 @@ Severidad: CRITICAL = valor de planta inventado o instrucción insegura · HIGH 
 - **ADX-06 / ADX-07 / ADX-11:** aplicar los textos, regenerar los PDF y crear el `.vtt` (OPS-13).
 - **experto-documentacion-mejora:** control de versión del contenido y de los PDF regenerados.
 - Los cambios no tocan condiciones laborales, así que no requieren revisión de Relaciones Laborales.
+
+## Re-revisión (2026-10-05)
+
+Revisores: ADX-02 (METALLURGY) y ADX-03 (OPERATIONS). Se revisaron `src/content/*.json`, `scripts/build-eaf-glb.mjs`, `src/components/3d/anchors.ts`, `scripts/capture-media.mjs`, `scripts/build-documents.mjs`, `public/videos/melt-overview.vtt` y los 4 PDF de `public/documents/` (con `pdftotext`). `npm run check:content` en verde: 23 preguntas y 215 campos `SME_REQUIRED`.
+
+**Mensaje clave:** los 23 hallazgos de la revisión anterior están cerrados en la fuente. OPS-01 (HIGH) quedó resuelto con la opción A: EBT en −z y puerta de escoria en +z, sobre el mismo eje de basculamiento. Solo hay un cierre parcial (OPS-08, LOW). Lo que falta es **regenerar lo derivado**. Los PDF (15:59) se construyeron con las imágenes anteriores a la reubicación del EBT (las de `public/images/` se recapturaron a las 16:07). El video se está regenerando. Las 9 preguntas `q.asm-*` son correctas, tienen una sola respuesta y no traen valores de planta.
+
+### R.1 Estado de los hallazgos anteriores
+
+| ID | Sev. | Estado | Evidencia |
+|---|---|---|---|
+| MET-01 | MEDIUM | CERRADO | `les.electrode-melting-4 › body[2]` = «Desde que hay baño plano, la escoria espumosa se mantiene durante casi toda la fusión…»; aparece igual en `guide-electrode-melting.pdf` |
+| MET-02 | MEDIUM | CERRADO | `les.eaf-orientation-3 › body[2]` = «La escoria espumosa se forma desde la fusión y se mantiene durante el afino…» |
+| MET-03 | MEDIUM | CERRADO | Glosario «DRI»: «…se le quitó la mayor parte del oxígeno… FeO, carbono y ganga…»; aparece igual en el glosario del PDF |
+| MET-04 | MEDIUM | CERRADO | `eq.cooling › observableSignals[1]` = «Subida de hidrógeno (H₂) en el análisis de gases, si existe, o vapor o llama anormal en el 4.º agujero» |
+| MET-05 | LOW | CERRADO | `eq.fume › dependencies[3]` tiene el texto propuesto |
+| MET-06 | LOW | CERRADO | `stage.raw › variables[1] › why` = «Por lo general, el DRI de HYL trae más carbono…» |
+| MET-07 | LOW | CERRADO | `cmp.dri-feed-silos › function` dice «inertización según el diseño de la planta; SME_REQUIRED…» |
+| MET-08 | LOW | CERRADO | Se aplicó el reemplazo sin cifras: ya no aparecen 610 mm ni 140 MVA en `eq.electrodes` ni en `eq.transformer` |
+| MET-09 | LOW | CERRADO | El glosario tiene «Metalización» (con `SME_REQUIRED` y su dueño) y «Ganga» |
+| OPS-01 | **HIGH** | **CERRADO en la fuente** (los derivados siguen pendientes: OPS-16 y OPS-17) | `build-eaf-glb.mjs`: el bloque 09 tiene el EBT en z = −3.7 a −3.95 y la fosa en z = −4.0; la puerta de escoria está en z = +3.32 a +3.7; las cunas están en los planos x = ±1.6 (eje de basculamiento paralelo a x); los cilindros de basculamiento están en z = ±2.6; la plataforma deja el hueco x ∈ [−2, 2], z ∈ [−11, −2]; el barandal está en x = 6.9; ya no hay rejilla. `anchors.ts`: `eaf__ebt: [0.9, 1.5, -4.3]` y `EXPLODE.eaf__ebt: [0, 0, -2.2]`. `processes.json`: las cámaras de `stage.tap` y `stage.secondary` son las propuestas. Ningún texto de contenido conserva la disposición a 90° (grep de «+x», «derecha» y «90°»). `src/assets/eaf.glb` se regeneró a las 15:55, después del script |
+| OPS-02 | MEDIUM | CERRADO | En la WI, el paso 2 es «Revisa en el púlpito…» y el paso 3, «Ubícate en la posición segura…»; la `description` del job aid lleva la secuencia nueva. Los dos PDF (WI y tarjeta) muestran el orden nuevo |
+| OPS-03 | MEDIUM | CERRADO | `steps[1] › action` incluye el agua de enfriamiento y la «alimentación de DRI por el 5.º agujero (debe estar detenida mientras el arco está apagado)» |
+| OPS-04 | MEDIUM | CERRADO | El texto de `q.orientation-2` es distinto al propuesto, pero equivalente: «…la banda y el chute que bajan hasta la bóveda». Ya no invita a hacer clic en la bóveda y la respuesta es `eq.dri-feed` |
+| OPS-05 | MEDIUM | CERRADO | El texto de `q.safety-3 › pairs[0] › right` también es distinto: «No entrar a la zona restringida sin autorización y permiso». Ya no se confunde con el par 1 (brazo o bóveda) |
+| OPS-06 | LOW | CERRADO | El paso 4 de la WI agrega «(la punta solo se ve si la columna está arriba y el procedimiento lo permite)»; también aparece en el PDF |
+| OPS-07 | LOW | CERRADO | Dice «casa del transformador» en `eq.secondary-circuit › summary` y en la `explanation` de `q.electrode-2` |
+| OPS-08 | LOW | **ABIERTO (parcial)** | El componente ya se llama «Mástil y rodillos guía» y `howItWorks[2]` está corregido. **El glosario «Mástil» todavía dice «Columna vertical…»**, que es justo la confusión con «columna de electrodo» |
+| OPS-09 | LOW | CERRADO | El glosario, `les.electrode-melting-1` y `q.electrode-5` dicen «Cambiador de derivaciones (taps)» |
+| OPS-10 | LOW | CERRADO | `q.electrode-4 › items[3]` = «Barras y cables flexibles del circuito secundario» |
+| OPS-11 | LOW | CERRADO | El título es «Tarjeta de apoyo (DEMO)…»; no queda «Job aid» en los PDF |
+| OPS-12 | LOW | CERRADO | Se quitaron la lanza y el inyector que entraban por la puerta (comentario OPS-12 en el bloque 07); `eq.oxygen-carbon › howItWorks[5]` aclara qué muestra el 3D y lleva `SME_REQUIRED`. Ver OPS-15 sobre el ancla |
+| OPS-13 | LOW | CERRADO | `melt-overview.vtt` existe y su texto es correcto: [DEMO], D-010 (HYL + Midrex por bandas y 5.º agujero), tasa de DRI = `SME_REQUIRED`, escoria espumosa sin ubicarla en una sola etapa y la nota «no sustituye la capacitación en piso». No trae cifras. Los capítulos coinciden con `videos.json` |
+| OPS-14 | LOW | CERRADO | `eq.ebt › howItWorks[1]` incluye «(Secuencia general; … SME_REQUIRED, MO-EAF-07 en borrador.)» |
+
+### R.2 Revisión de las 9 preguntas `q.asm-*` y de `asm.eaf-electrode`
+
+| Pregunta | Correcta | Inequívoca | Distractores | Sin valores de planta | Comentario |
+|---|---|---|---|---|---|
+| q.asm-stages-1 (order 2,4,3,1,0) | Sí | Sí | n/a | Sí | Coincide con MET-01/02: la espuma acompaña al arco y sigue en el afino. Los ítems 4 («Empieza a entrar carga») y 3 («funde… de forma continua») se distinguen por «empieza» y «continua»; se acepta |
+| q.asm-energy-1 (3,1,4,0,2) | Sí | Sí | n/a | Sí | Transformador → barras → cables → mordazas → punta. Es coherente con `q.electrode-4` |
+| q.asm-zone-1 | Sí | Sí | — | Sí | La pista «rígida y flexible» separa el circuito secundario de los brazos |
+| q.asm-arms-1 | Sí | Sí | — | Sí | La función descrita (sostener, apretar, subir y bajar) solo corresponde a `eq.electrode-arms` |
+| q.asm-regulation-1 | Sí | Sí | Buenos (el OLTC es el error típico) | Sí (setpoints = `SME_REQUIRED`) | — |
+| q.asm-stored-1 (crítica) | Sí | Sí | Buenos (el D, «aviso y cruzo», es muy plausible) | Sí | Ajuste menor de redacción en OPS-18 |
+| q.asm-water-1 (crítica) | Sí | Sí | Buenos (el D, «aparto y anoto al final», es plausible) | Sí | Bien relacionada con el riesgo propio del DRI (H₂, reoxidación) |
+| q.asm-signals-1 (crítica) | Sí | Sí | Buenos | Sí | — |
+| q.asm-control-1 | Sí | Sí | — | Sí | Redacción ambigua sobre cómo se avisa (OPS-19) |
+
+`assessments.json`: las 3 preguntas críticas son las de energía almacenada, agua y señal anormal, y la elección es correcta. `q.electrode-6` no cuenta para la calificación. Las 10 recomendaciones apuntan a lecciones que existen. El `passScore` es un parámetro de la app, no de la planta.
+
+### R.3 Hallazgos nuevos
+
+| ID | Sev. | Ruta | Hallazgo | CORRECCIÓN EXACTA |
+|---|---|---|---|---|
+| OPS-15 | LOW | `src/components/3d/anchors.ts › ANCHORS.eaf__oxygen` = `[1.0, 2.6, 5.6]` | Al quitar la lanza de la puerta (OPS-12), el hotspot de O₂/carbono quedó flotando frente a la puerta de escoria, donde ya no hay ninguna pieza. Así vuelve a sugerir una lanza por la puerta | `eaf__oxygen: [3.0, 2.5, 2.1],` (sobre la lanza de pared a 35°: `cos35°·3.7`, `Y0+2.45−Y0`, `sin35°·3.7`). En `EXPLODE.eaf__oxygen`, `[1.6, 0, 1.2]` (radial, hacia fuera de esa lanza) |
+| OPS-16 | MEDIUM | `public/videos/melt-overview.webm` (`scripts/capture-media.mjs`) | El `.webm` del repositorio es de las 15:45 y se grabó con el GLB anterior (15:55): las tomas de 0 a 10 s, desde (25, 15, 27), muestran el EBT en +x, a 90° de la puerta. A las 16:08 se estaba regenerando (archivo a medias, sin commit) | Esperar a que termine `npm run media` (después de `npm run model`) y verificar visualmente que el EBT aparezca del lado opuesto a la puerta. No subir un `.webm` truncado |
+| OPS-17 | MEDIUM | `public/documents/*.pdf` (`scripts/build-documents.mjs`, `img('overview' / 'section' / 'electrodes' / 'secondary')`) | Los 4 PDF son de las 15:59 y traen incrustadas (base64) las PNG anteriores a la recaptura de las 16:07. El texto está correcto, pero las imágenes de vista general y de corte llevan la disposición vieja del EBT | Correr, en este orden, `npm run model`, `npm run media` y `npm run docs:pdf`. Verificar que la fecha de cada PDF sea posterior a la de `public/images/*.png` |
+| OPS-18 | LOW | `questions.json › q.asm-stored-1 › explanation` | «carga suspendida» describe mal el brazo: está guiado y sostenido por hidráulica, no colgado | Cambiar `"Nadie se pone debajo de una carga suspendida, aunque avise."` por `"Nadie se pone debajo de un brazo, de la bóveda ni de otro equipo que pueda bajar, aunque avise."` |
+| OPS-19 | LOW | `questions.json › q.asm-control-1 › prompt` | «Ahí avisas, junto con tu supervisor» se puede leer como «ve al púlpito con tu supervisor». En piso se avisa por radio (WI, paso 9) | `"En el modelo 3D, haz clic en el cuarto con vista al horno desde donde se vigila y conduce la operación. Si ves algo anormal en piso, avisas a este cuarto y a tu supervisor por radio o por el medio que marque la planta."` |
+| OPS-08 (resto) | LOW | `glossary.json › term "Mástil" › definition` | Sigue pendiente la parte del glosario | `"Poste vertical que, con un cilindro hidráulico, sube y baja el brazo portaelectrodo. No confundir con la columna de electrodo."` |
+
+### R.4 Dictamen nuevo
+
+| Disciplina | Dictamen | Motivo |
+|---|---|---|
+| **METALLURGY** (ADX-02) | **APROBADO** | MET-01 a MET-09 están cerrados en el JSON y en los PDF. Las `q.asm-*` son metalúrgicamente correctas y no traen ningún valor de planta |
+| **OPERATIONS** (ADX-03) | **APROBADO CON CONDICIONES** | OPS-01 (HIGH) y OPS-02 a OPS-05 están cerrados en la fuente. Antes del piloto deben regenerarse el video y los PDF con el GLB nuevo (OPS-16 y OPS-17, MEDIUM). Los LOW (OPS-08 resto, 15, 18 y 19) no bloquean |
+
+### R.5 Renglón para la tabla de validación
+
+| Área | Dictamen | Condiciones |
+|---|---|---|
+| Metalurgia y Operaciones (ADX-02 / ADX-03), re-revisión 2026-10-05 | METALLURGY: APROBADO · OPERATIONS: APROBADO CON CONDICIONES | (1) Regenerar en orden `npm run model` → `npm run media` → `npm run docs:pdf` y verificar en el video y en las imágenes de los PDF que el EBT esté opuesto a la puerta de escoria (OPS-16 y OPS-17). (2) Recomendado: OPS-08 (glosario), OPS-15 (ancla de O₂), OPS-18 y OPS-19. (3) Correr de nuevo `check:content` y e2e. Ya no se requiere la decisión del Director sobre OPS-01, porque se aplicó la opción A |

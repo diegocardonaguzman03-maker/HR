@@ -17,7 +17,7 @@ export const ANCHORS: Record<string, [number, number, number]> = {
   eaf__arms: [-3, 8.9, 0.69],
   eaf__transformer: [-12.2, 3.9, 1.7],
   eaf__secondary: [-7.3, 6.0, 1.0],
-  eaf__oxygen: [1.0, 2.6, 5.6],
+  eaf__oxygen: [3.0, 2.7, -2.1], // quemador/lanza de pared a 325° (OPS-15)
   eaf__slagdoor: [0, 2.3, 3.8],
   eaf__ebt: [0.9, 1.5, -4.3], // OPS-01: EBT en −z, opuesto a la puerta de escoria (+z)
   eaf__hydraulics: [-7.5, 1.8, -7.2],
