@@ -9,7 +9,7 @@ Se construyó y validó el primer módulo de la Academia Digital: un entorno 3D 
 - **El asistente con IA queda oculto en el piloto:** Seguridad mantiene su veto sobre él (ver Decisión 1).
 
 **Link público (cualquier navegador, sin instalar nada):**
-https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/9f09b294dfd6fc9989eaa8bfd5d3f23fcaff8e92/apps/academy/web/index.html
+https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/069f602bfeb545e1c34a2eeec87853afd0b8500b/apps/academy/web/index.html
 
 ## Qué se entregó
 | Pieza | Detalle |
@@ -41,5 +41,5 @@ https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/9f09b294dfd6fc9989eaa8b
 Cuando el Director decida, se registra en `equipo-director/decisiones/registro-de-decisiones.md`.
 
 ## Acceso
-- **Link público:** https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/9f09b294dfd6fc9989eaa8bfd5d3f23fcaff8e92/apps/academy/web/index.html
+- **Link público:** https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/069f602bfeb545e1c34a2eeec87853afd0b8500b/apps/academy/web/index.html
 - **Código y documentos:** rama `claude/training-development-mining-company-0ctyfw`, carpeta `apps/academy/`.
