@@ -40,3 +40,39 @@
 - **Link del piloto:** https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/069f602bfeb545e1c34a2eeec87853afd0b8500b/apps/academy/web/index.html
 - **Soporte:** el instructor de C&D asignado. Los fallos del 3D se reportan con una captura de pantalla; la app sigue usable sin 3D.
 - **Reportes de contenido:** se mandan a ADX-01, que los asigna a SME y a Seguridad.
+
+---
+
+# Piloto de la Misión 01 — Trabajo en Alturas (decisión D-012, 2026-10-05)
+
+**Mensaje clave:** la experiencia principal de la academia ahora es **completar misiones**. El piloto prueba la Misión 01 con **5 trabajadores reales de nuevo ingreso**, en modo DEMO, sin instrucciones previas. Mide si saben qué hacer, si aprenden y si la experiencia se entiende sola.
+
+**Link:** https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/3dba97d912bad33c53e831e99039477aa2c22b69/apps/academy/web/index.html
+
+| Concepto | Definición |
+|---|---|
+| Participantes | 5 de nuevo ingreso [Supuesto]: personal de confianza o contratados en inducción mientras no esté el acuerdo de la CMCAP (D-011-4) |
+| Formato | Sesión individual de unos 20 min: el instructor observa sin explicar (prueba de 10 segundos) y después hace una entrevista breve |
+| Fechas | 2026-10-12 → 2026-10-16 [Supuesto] |
+| Responsables | ADX-01 (conducción), ADX-07 (aprendizaje), ADX-13 (registro de fallas), ADX-04 (observa la parte de seguridad) |
+
+## Qué se mide
+| Pregunta (red team de UX) | Cómo se mide | Meta [Supuesto] |
+|---|---|---|
+| ¿Empieza en ≤ 10 s sin ayuda? | Tiempo hasta el primer clic útil | 5/5 |
+| ¿Sabe en qué paso va y qué hacer? | Observación y entrevista | ≥ 4/5 |
+| ¿Se recupera de un error y entiende por qué? | Observación de reintentos | ≥ 4/5 |
+| ¿Encuentra el detalle técnico sin salir? | Uso de «¿Por qué?» o «Procedimiento» | ≥ 3/5 |
+| Aprendizaje | Pasos sin errores al primer intento y errores críticos | Sin errores críticos en el 2.º intento |
+| Utilidad percibida | Escala 1–5 en la entrevista | ≥ 4.2 |
+
+## Condiciones (Seguridad y Relaciones Laborales)
+- Solo en DEMO: la secuencia es ilustrativa y **no** se usa para operar.
+- Antes de cualquier uso operativo, se reemplaza por el procedimiento aprobado de trabajo en alturas, validado por Operaciones y Seguridad.
+- Relaciones Laborales valida dos textos: «detente y avisa / facultad de detener el trabajo» y «no se usa para escalafón, ascensos, sanciones ni bonos».
+- Los 7 hallazgos MEDIUM de UX se priorizan con lo que salga del piloto.
+
+## Después del piloto
+- Informe al Director el 2026-10-19 [Supuesto].
+- Ajustes a la Misión 01.
+- Decisión sobre la siguiente misión: 02 Ejecutar la tarea, o una misión de LOTO o del EAF con el mismo motor.
