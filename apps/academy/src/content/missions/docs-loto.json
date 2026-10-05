@@ -3,7 +3,7 @@
   "missionId": "loto-01",
   "title": "Bloqueo y etiquetado de una banda transportadora — Cambio de rodillo",
   "area": "Seguridad — Control de energías peligrosas",
-  "summary": "Documentos de práctica DEMO para aislar, bloquear y verificar en cero las energías de una banda transportadora antes de cambiar un rodillo. Explican cómo identificar todas las energías (eléctrica, gravedad y mecánica almacenada), por qué un paro no es un aislamiento, cómo usar candado personal y etiqueta completa, cómo verificar energía cero y por qué cada quien retira su propio candado. Son contenido educativo general: no son el procedimiento de la planta y todo dato de planta está marcado SME_REQUIRED.",
+  "summary": "Documentos de práctica DEMO para aislar, bloquear y verificar en cero las energías de una banda transportadora antes de cambiar un rodillo. Explican cómo identificar todas las energías (eléctrica, gravedad y mecánica almacenada), por qué un paro no es un aislamiento, cómo usar candado personal y etiqueta completa, cómo verificar energía cero y por qué cada quien retira su propio candado. Son contenido educativo general: no son el procedimiento de la planta y todo dato de planta está marcado «SME_REQUIRED: dato (responsable)».",
   "wi": {
     "code": "WI-LOTO-001-DEMO",
     "title": "Instrucción de trabajo — Bloqueo y etiquetado de una banda transportadora para cambiar un rodillo",
@@ -14,11 +14,26 @@
     "purpose": "Mostrar, como práctica, la lógica segura para controlar las energías peligrosas de una banda transportadora antes de intervenirla: apagar, aislar, bloquear y etiquetar, liberar o bloquear la energía almacenada, verificar energía cero y retirar el bloqueo de forma segura. DEMO CONTENT: no es una instrucción aprobada de la planta.",
     "scope": "Aplica al escenario de práctica de la misión «Bloqueo y Etiquetado» (loto-01): cambio de un rodillo de una banda transportadora con motor eléctrico, tensor de contrapeso y banda tensa. El cambio del rodillo en sí no está incluido. SME_REQUIRED: alcance, procedimiento específico del equipo y marco normativo (NOM-004-STPS, NOM-029-STPS y procedimiento de la planta; Seguridad + Jurídico).",
     "roles": [
-      { "role": "Trabajador autorizado que bloquea", "responsibility": "Aplica su propio candado y su etiqueta, verifica energía cero, trabaja solo dentro del bloqueo y retira su propio candado. SME_REQUIRED: quién está autorizado y su capacitación (Seguridad)." },
-      { "role": "Personal afectado y operador de la banda", "responsibility": "Recibe el aviso de que el equipo se va a bloquear, no intenta arrancarlo y no toca candados ni etiquetas. SME_REQUIRED: a quién se avisa y cómo." },
-      { "role": "Supervisor del área", "responsibility": "Confirma que hay procedimiento del equipo y personal autorizado, coordina el aviso y atiende cualquier candado olvidado o ajeno. SME_REQUIRED: puesto responsable (Seguridad + Mantenimiento)." },
-      { "role": "Mantenimiento Eléctrico", "responsibility": "Define los puntos de aislamiento eléctrico y el método de verificación, incluida la prueba de ausencia de tensión cuando aplique. SME_REQUIRED: lista de puntos de aislamiento (Mantenimiento Eléctrico)." },
-      { "role": "Mantenimiento Mecánico", "responsibility": "Define cómo soportar el contrapeso y liberar la tensión de la banda. SME_REQUIRED: método aprobado (Mantenimiento Mecánico + Seguridad)." }
+      {
+        "role": "Trabajador autorizado que bloquea",
+        "responsibility": "Aplica su propio candado y su etiqueta, verifica energía cero, trabaja solo dentro del bloqueo y retira su propio candado. SME_REQUIRED: quién está autorizado y su capacitación (Seguridad)."
+      },
+      {
+        "role": "Personal afectado y operador de la banda",
+        "responsibility": "Recibe el aviso de que el equipo se va a bloquear, no intenta arrancarlo y no toca candados ni etiquetas. SME_REQUIRED: a quién se avisa y cómo."
+      },
+      {
+        "role": "Supervisor del área",
+        "responsibility": "Confirma que hay procedimiento del equipo y personal autorizado y coordina el aviso. Si un candado se queda sin su dueño, activa el procedimiento autorizado de retiro de bloqueo ajeno; nunca lo retira por su cuenta. SME_REQUIRED: puesto responsable y procedimiento de retiro (Seguridad + Mantenimiento + Relaciones Laborales)."
+      },
+      {
+        "role": "Mantenimiento Eléctrico",
+        "responsibility": "Define los puntos de aislamiento eléctrico y el método de verificación, incluida la prueba de ausencia de tensión cuando aplique. SME_REQUIRED: lista de puntos de aislamiento (Mantenimiento Eléctrico)."
+      },
+      {
+        "role": "Mantenimiento Mecánico",
+        "responsibility": "Define cómo soportar el contrapeso y liberar la tensión de la banda. SME_REQUIRED: método aprobado (Mantenimiento Mecánico + Seguridad)."
+      }
     ],
     "ppe": [
       "Casco, lentes de seguridad, calzado de seguridad y guantes.",
@@ -28,32 +43,110 @@
     "tools": [
       "Candado personal de uso exclusivo para bloqueo, con una sola llave.",
       "Etiqueta de bloqueo con nombre, fecha y motivo. SME_REQUIRED: formato de etiqueta de la planta (Seguridad).",
-      "Procedimiento de bloqueo específico del equipo, con sus puntos de aislamiento. SME_REQUIRED (Mantenimiento + Seguridad).",
+      "Procedimiento de bloqueo específico del equipo, con sus puntos de aislamiento. SME_REQUIRED: documento aprobado (Mantenimiento + Seguridad).",
       "Dispositivo para soportar o bloquear el contrapeso. SME_REQUIRED: dispositivo aprobado (Mantenimiento Mecánico + Seguridad).",
       "Instrumento para verificar ausencia de tensión, cuando aplique. SME_REQUIRED: instrumento y método (Mantenimiento Eléctrico).",
       "Dispositivo de bloqueo grupal (pinza o caja de bloqueo), si intervienen varias personas. SME_REQUIRED: método de bloqueo grupal (Seguridad)."
     ],
     "hazards": [
-      { "hazard": "Energía eléctrica del motor y del control: arranque inesperado de la banda o descarga.", "control": "Aislarla en el punto de aislamiento que corta la energía físicamente y bloquear con candado y etiqueta. El paro o la pantalla no aíslan. SME_REQUIRED: puntos de aislamiento del equipo (Mantenimiento Eléctrico)." },
-      { "hazard": "Energía por gravedad del contrapeso del tensor: puede caer o volver a tensar la banda.", "control": "Bajarlo o soportarlo mecánicamente y bloquearlo. SME_REQUIRED: método aprobado (Mantenimiento Mecánico + Seguridad)." },
-      { "hazard": "Energía mecánica almacenada en la banda tensa: movimiento brusco al aflojar.", "control": "Liberar la tensión de forma controlada antes de trabajar. SME_REQUIRED: secuencia del procedimiento del equipo (Mantenimiento Mecánico)." },
-      { "hazard": "Arranque por otra persona que no sabe que hay alguien dentro del equipo.", "control": "Avisar al personal afectado y al operador; candado personal con llave única y etiqueta completa con nombre, fecha y motivo." },
-      { "hazard": "Atrapamiento al arrancar con herramientas, guardas fuera o personas en el equipo.", "control": "Antes de retirar el bloqueo: retirar herramientas, colocar guardas, verificar que no haya personas y avisar." },
-      { "hazard": "Energías no identificadas en el escenario de práctica.", "control": "SME_REQUIRED: inventario completo de energías del equipo real (Mantenimiento + Seguridad)." }
+      {
+        "hazard": "Energía eléctrica del motor y del control: arranque inesperado de la banda o descarga.",
+        "control": "Aislarla en el punto de aislamiento que corta la energía físicamente y bloquear con candado y etiqueta. El paro o la pantalla no aíslan. SME_REQUIRED: puntos de aislamiento del equipo (Mantenimiento Eléctrico)."
+      },
+      {
+        "hazard": "Energía por gravedad del contrapeso del tensor: puede caer o volver a tensar la banda.",
+        "control": "Bajarlo o soportarlo mecánicamente y bloquearlo. SME_REQUIRED: método aprobado (Mantenimiento Mecánico + Seguridad)."
+      },
+      {
+        "hazard": "Energía mecánica almacenada en la banda tensa: movimiento brusco al aflojar.",
+        "control": "Liberar la tensión de forma controlada antes de trabajar. SME_REQUIRED: secuencia del procedimiento del equipo (Mantenimiento Mecánico)."
+      },
+      {
+        "hazard": "Arranque por otra persona que no sabe que hay alguien dentro del equipo.",
+        "control": "Avisar al personal afectado y al operador; candado personal con llave única y etiqueta completa con nombre, fecha y motivo."
+      },
+      {
+        "hazard": "Atrapamiento al arrancar con herramientas, guardas fuera o personas en el equipo.",
+        "control": "Antes de retirar el bloqueo: retirar herramientas, colocar guardas, verificar que no haya personas y avisar."
+      },
+      {
+        "hazard": "Energías no identificadas en el escenario de práctica.",
+        "control": "SME_REQUIRED: inventario completo de energías del equipo real (Mantenimiento + Seguridad)."
+      }
     ],
     "steps": [
-      { "n": 1, "action": "Entiende la tarea: vas a cambiar un rodillo de una banda transportadora. Consigue el procedimiento de bloqueo específico de este equipo.", "keyPoint": "Sin procedimiento del equipo, no se bloquea ni se interviene. Orden de práctica ilustrativo. SME_REQUIRED: secuencia del procedimiento aprobado (Mantenimiento + Seguridad).", "why": "Cada equipo tiene sus propias energías y sus propios puntos de aislamiento." },
-      { "n": 2, "action": "Identifica todas las energías que podrían mover o energizar el equipo: eléctrica (motor y control), gravedad (contrapeso del tensor) y mecánica almacenada (banda tensa).", "keyPoint": "Se identifican todas, no solo la eléctrica. SME_REQUIRED: inventario de energías del equipo (Mantenimiento + Seguridad).", "why": "Una energía que no identificaste es una energía sin bloquear." },
-      { "n": 3, "action": "Confirma los requisitos: estás capacitado y autorizado, tienes el procedimiento del equipo y tu candado personal con su única llave y tu etiqueta.", "keyPoint": "No usas el candado de un compañero, aunque él tenga la llave. SME_REQUIRED: quién está autorizado (Seguridad).", "why": "Tu candado y tu llave son lo único que garantiza que nadie más puede quitar tu protección." },
-      { "n": 4, "action": "Avisa al personal afectado y al operador que la banda se va a detener y bloquear.", "keyPoint": "SME_REQUIRED: a quién se avisa y cómo (Operaciones + Seguridad).", "why": "Quien no sabe del bloqueo puede intentar arrancar el equipo." },
-      { "n": 5, "action": "Apaga la banda con sus controles normales.", "keyPoint": "Apagar o detener todavía no es aislar.", "why": "Detener primero evita cortar la energía con el equipo en marcha." },
-      { "n": 6, "action": "Aísla la energía eléctrica en el punto de aislamiento identificado, el dispositivo que corta la energía físicamente.", "keyPoint": "Paro ≠ aislamiento: el botón de paro, el paro de emergencia y la pantalla del tablero no aíslan. SME_REQUIRED: lista de puntos de aislamiento del equipo (Mantenimiento Eléctrico).", "why": "Un paro es una orden de control; el equipo puede arrancar de nuevo." },
-      { "n": 7, "action": "Coloca tu candado y tu etiqueta en el punto de aislamiento. La etiqueta lleva tu nombre, la fecha y el motivo.", "keyPoint": "Completa la etiqueta antes de colocarla. Si intervienen varias personas, cada una coloca su propio candado. SME_REQUIRED: formato de etiqueta y método de bloqueo grupal (Seguridad).", "why": "Una etiqueta sin nombre no dice quién está dentro del equipo." },
-      { "n": 8, "action": "Libera o bloquea la energía almacenada: soporta el contrapeso y libera la tensión de la banda de forma controlada.", "keyPoint": "SME_REQUIRED: método aprobado para soportar el contrapeso y liberar la tensión (Mantenimiento Mecánico + Seguridad).", "why": "Aunque la electricidad esté aislada, el contrapeso puede caer y la banda tensa puede moverse." },
-      { "n": 9, "action": "Verifica energía cero: confirma que el punto de aislamiento está abierto y con tu candado, que el contrapeso está soportado, intenta arrancar en la botonera, comprueba que nada se mueve y regresa el control a paro.", "keyPoint": "Si algo se mueve o enciende, te detienes y avisas. SME_REQUIRED: método de verificación, incluida la prueba de ausencia de tensión cuando aplique (Mantenimiento Eléctrico).", "why": "Solo la verificación demuestra que el bloqueo funcionó." },
-      { "n": 10, "action": "Realiza el cambio del rodillo solo mientras tu bloqueo esté colocado y dentro de lo que cubre.", "keyPoint": "SME_REQUIRED: procedimiento de cambio de rodillo (Mantenimiento Mecánico).", "why": "El bloqueo protege solo las energías y el equipo que aislaste." },
-      { "n": 11, "action": "Prepara el retiro: retira herramientas, coloca las guardas, verifica que no haya personas en el equipo y avisa que se va a retirar el bloqueo.", "keyPoint": "No arrancas para probar hasta que el área esté lista y todos lo sepan. SME_REQUIRED: pasos de retiro del procedimiento (Mantenimiento + Seguridad).", "why": "Arrancar con herramientas, sin guardas o con personas dentro puede causar atrapamiento." },
-      { "n": 12, "action": "Retira tu propio candado y tu etiqueta. Nadie más retira tu candado y tú no retiras el de otra persona.", "keyPoint": "No le dejas tu llave a nadie. Si encuentras un candado ajeno, no lo retires: avisa a tu supervisor. SME_REQUIRED: retiro autorizado de un bloqueo ajeno (Seguridad + Relaciones Laborales).", "why": "Solo quien está protegido por el candado sabe si ya salió del equipo." }
+      {
+        "n": 1,
+        "action": "Entiende la tarea: vas a cambiar un rodillo de una banda transportadora. Consigue el procedimiento de bloqueo específico de este equipo.",
+        "keyPoint": "Sin procedimiento del equipo, no se bloquea ni se interviene. Orden de práctica ilustrativo. SME_REQUIRED: secuencia del procedimiento aprobado (Mantenimiento + Seguridad).",
+        "why": "Cada equipo tiene sus propias energías y sus propios puntos de aislamiento."
+      },
+      {
+        "n": 2,
+        "action": "Identifica todas las energías que podrían mover o energizar el equipo: eléctrica (motor y control), gravedad (contrapeso del tensor) y mecánica almacenada (banda tensa).",
+        "keyPoint": "Se identifican todas, no solo la eléctrica. SME_REQUIRED: inventario de energías del equipo (Mantenimiento + Seguridad).",
+        "why": "Una energía que no identificaste es una energía sin bloquear."
+      },
+      {
+        "n": 3,
+        "action": "Confirma los requisitos: estás capacitado y autorizado, tienes el procedimiento del equipo y tu candado personal con su única llave y tu etiqueta.",
+        "keyPoint": "No usas el candado de un compañero, aunque él tenga la llave. SME_REQUIRED: quién está autorizado (Seguridad).",
+        "why": "Tu candado y tu llave son lo único que garantiza que nadie más puede quitar tu protección."
+      },
+      {
+        "n": 4,
+        "action": "Avisa al personal afectado y al operador que la banda se va a detener y bloquear.",
+        "keyPoint": "SME_REQUIRED: a quién se avisa y cómo (Operaciones + Seguridad).",
+        "why": "Quien no sabe del bloqueo puede intentar arrancar el equipo."
+      },
+      {
+        "n": 5,
+        "action": "Apaga la banda con sus controles normales.",
+        "keyPoint": "Apagar o detener todavía no es aislar.",
+        "why": "Detener primero evita cortar la energía con el equipo en marcha."
+      },
+      {
+        "n": 6,
+        "action": "Aísla la energía eléctrica en el punto de aislamiento identificado, el dispositivo que corta la energía físicamente.",
+        "keyPoint": "Paro ≠ aislamiento: el botón de paro, el paro de emergencia y la pantalla del tablero no aíslan. SME_REQUIRED: lista de puntos de aislamiento del equipo (Mantenimiento Eléctrico).",
+        "why": "Un paro es una orden de control; el equipo puede arrancar de nuevo."
+      },
+      {
+        "n": 7,
+        "action": "Coloca tu candado y tu etiqueta en el punto de aislamiento. La etiqueta lleva tu nombre, la fecha y el motivo.",
+        "keyPoint": "Completa la etiqueta antes de colocarla. Si intervienen varias personas, cada una coloca su propio candado. SME_REQUIRED: formato de etiqueta y método de bloqueo grupal (Seguridad).",
+        "why": "Una etiqueta sin nombre no dice quién está dentro del equipo."
+      },
+      {
+        "n": 8,
+        "action": "Libera o bloquea la energía almacenada: soporta el contrapeso y libera la tensión de la banda de forma controlada.",
+        "keyPoint": "SME_REQUIRED: método aprobado para soportar el contrapeso y liberar la tensión (Mantenimiento Mecánico + Seguridad).",
+        "why": "Aunque la electricidad esté aislada, el contrapeso puede caer y la banda tensa puede moverse."
+      },
+      {
+        "n": 9,
+        "action": "Verifica energía cero: confirma que el punto de aislamiento está abierto y con tu candado, que el contrapeso está soportado y la tensión de la banda liberada, y que nadie está en la banda ni en su zona; intenta arrancar en la botonera, comprueba que nada se mueve y regresa el control a paro.",
+        "keyPoint": "Si algo se mueve o enciende, te detienes y avisas. SME_REQUIRED: método de verificación, incluida la prueba de ausencia de tensión cuando aplique (Mantenimiento Eléctrico).",
+        "why": "Solo la verificación demuestra que el bloqueo funcionó."
+      },
+      {
+        "n": 10,
+        "action": "Realiza el cambio del rodillo solo mientras tu bloqueo esté colocado y dentro de lo que cubre.",
+        "keyPoint": "SME_REQUIRED: procedimiento de cambio de rodillo (Mantenimiento Mecánico).",
+        "why": "El bloqueo protege solo las energías y el equipo que aislaste."
+      },
+      {
+        "n": 11,
+        "action": "Prepara el retiro: retira herramientas, coloca las guardas, verifica que no haya personas en el equipo y avisa que se va a retirar el bloqueo.",
+        "keyPoint": "No arrancas para probar hasta que el área esté lista y todos lo sepan. SME_REQUIRED: pasos de retiro del procedimiento (Mantenimiento + Seguridad).",
+        "why": "Arrancar con herramientas, sin guardas o con personas dentro puede causar atrapamiento."
+      },
+      {
+        "n": 12,
+        "action": "Retira tu propio candado y tu etiqueta y avisa al personal afectado y al operador que el equipo puede volver a operar. Nadie más retira tu candado y tú no retiras el de otra persona.",
+        "keyPoint": "No le dejas tu llave a nadie. Si encuentras un candado ajeno, no lo retires: avisa a tu supervisor. Un bloqueo ajeno solo se retira con el procedimiento autorizado de la planta, nunca por iniciativa propia ni por una orden verbal. SME_REQUIRED: retiro autorizado de un bloqueo ajeno (Seguridad + Relaciones Laborales).",
+        "why": "Solo quien está protegido por el candado sabe si ya salió del equipo."
+      }
     ],
     "stopConditions": [
       "No tienes el procedimiento de bloqueo específico del equipo o no sabes cuál es el punto de aislamiento.",
@@ -69,7 +162,7 @@
       "NOM-004-STPS-1999, Sistemas de protección y dispositivos de seguridad en la maquinaria y equipo (verificar con Seguridad / Jurídico).",
       "NOM-029-STPS-2011, Mantenimiento de las instalaciones eléctricas en los centros de trabajo (verificar con Seguridad / Jurídico).",
       "NOM-017-STPS-2008, Equipo de protección personal (verificar con Seguridad / Jurídico).",
-      "Procedimiento de bloqueo y etiquetado de la planta y procedimiento específico del equipo. SME_REQUIRED (Mantenimiento + Seguridad).",
+      "Procedimiento de bloqueo y etiquetado de la planta y procedimiento específico del equipo. SME_REQUIRED: documento aprobado (Mantenimiento + Seguridad).",
       "Misión «Bloqueo y Etiquetado — Aislar un equipo para mantenimiento» (loto-01)."
     ]
   },
@@ -107,11 +200,13 @@
       },
       {
         "title": "3. Responsabilidades",
-        "paragraphs": ["Los puestos son roles genéricos. La planta debe asignar los responsables reales."],
+        "paragraphs": [
+          "Los puestos son roles genéricos. La planta debe asignar los responsables reales."
+        ],
         "bullets": [
           "Trabajador autorizado: bloquea, etiqueta, verifica energía cero y retira su propio candado. SME_REQUIRED: autorización (Seguridad).",
           "Personal afectado y operador: reciben el aviso y no intentan arrancar ni tocan candados.",
-          "Supervisor: coordina el aviso y atiende candados olvidados o ajenos. SME_REQUIRED: retiro autorizado de un bloqueo ajeno (Seguridad + Relaciones Laborales).",
+          "Supervisor: coordina el aviso y, si un candado se queda sin su dueño, activa el procedimiento autorizado de retiro; nunca lo retira por su cuenta. SME_REQUIRED: retiro autorizado de un bloqueo ajeno (Seguridad + Relaciones Laborales).",
           "Mantenimiento Eléctrico: puntos de aislamiento y método de verificación.",
           "Mantenimiento Mecánico: método para soportar el contrapeso y liberar la tensión."
         ]
@@ -142,14 +237,16 @@
       },
       {
         "title": "6. Procedimiento general",
-        "paragraphs": ["Orden de práctica ilustrativo; no es la secuencia de la planta. El detalle paso a paso está en la instrucción WI-LOTO-001-DEMO."],
+        "paragraphs": [
+          "Orden de práctica ilustrativo; no es la secuencia de la planta. El detalle paso a paso está en la instrucción WI-LOTO-001-DEMO."
+        ],
         "bullets": [
           "Preparar: procedimiento del equipo, autorización, candado y etiqueta; avisar al personal afectado.",
           "Apagar con los controles normales.",
           "Aislar en el punto de aislamiento.",
           "Bloquear y etiquetar.",
           "Liberar o bloquear la energía almacenada.",
-          "Verificar energía cero: intentar arrancar, comprobar que nada se mueve y regresar a paro.",
+          "Verificar energía cero: confirmar que nadie está expuesto, intentar arrancar, comprobar que nada se mueve y regresar a paro.",
           "Trabajar dentro del bloqueo.",
           "Retirar: herramientas fuera, guardas colocadas, nadie en el equipo, aviso; cada quien retira su propio candado.",
           "SME_REQUIRED: secuencia del procedimiento aprobado (Mantenimiento + Seguridad)."
@@ -201,52 +298,127 @@
       {
         "title": "1. Antes de bloquear",
         "items": [
-          { "text": "Estoy capacitado y autorizado para aplicar bloqueo. SME_REQUIRED: autorización (Seguridad).", "critical": true },
-          { "text": "Tengo el procedimiento de bloqueo de este equipo con sus puntos de aislamiento.", "critical": true },
-          { "text": "Identifiqué todas las energías: eléctrica, gravedad (contrapeso) y mecánica almacenada (banda tensa).", "critical": true },
-          { "text": "Tengo mi candado personal, su única llave y mi etiqueta.", "critical": true },
-          { "text": "Avisé al personal afectado y al operador.", "critical": false }
+          {
+            "text": "Estoy capacitado y autorizado para aplicar bloqueo. SME_REQUIRED: autorización (Seguridad).",
+            "critical": true
+          },
+          {
+            "text": "Tengo el procedimiento de bloqueo de este equipo con sus puntos de aislamiento.",
+            "critical": true
+          },
+          {
+            "text": "Identifiqué todas las energías: eléctrica, gravedad (contrapeso) y mecánica almacenada (banda tensa).",
+            "critical": true
+          },
+          {
+            "text": "Tengo mi candado personal, su única llave y mi etiqueta.",
+            "critical": true
+          },
+          {
+            "text": "Avisé al personal afectado y al operador.",
+            "critical": true
+          }
         ]
       },
       {
         "title": "2. Aislamiento, bloqueo y etiquetado",
         "items": [
-          { "text": "Apagué la banda con sus controles normales.", "critical": false },
-          { "text": "Aislé en el punto de aislamiento, no en el botón de paro, el paro de emergencia ni la pantalla.", "critical": true },
-          { "text": "Mi candado está colocado en el punto de aislamiento y la llave la tengo yo.", "critical": true },
-          { "text": "Mi etiqueta tiene nombre, fecha y motivo. SME_REQUIRED: datos obligatorios de la planta.", "critical": true },
-          { "text": "Cada persona que interviene tiene su propio candado. SME_REQUIRED: bloqueo grupal (Seguridad).", "critical": true }
+          {
+            "text": "Apagué la banda con sus controles normales.",
+            "critical": false
+          },
+          {
+            "text": "Aislé en el punto de aislamiento, no en el botón de paro, el paro de emergencia ni la pantalla.",
+            "critical": true
+          },
+          {
+            "text": "Mi candado está colocado en el punto de aislamiento y la llave la tengo yo.",
+            "critical": true
+          },
+          {
+            "text": "Mi etiqueta tiene nombre, fecha y motivo. SME_REQUIRED: datos obligatorios de la planta.",
+            "critical": true
+          },
+          {
+            "text": "Cada persona que interviene tiene su propio candado. SME_REQUIRED: bloqueo grupal (Seguridad).",
+            "critical": true
+          }
         ]
       },
       {
         "title": "3. Energía almacenada",
         "items": [
-          { "text": "Contrapeso soportado o bloqueado. SME_REQUIRED: método aprobado (Mantenimiento Mecánico + Seguridad).", "critical": true },
-          { "text": "Tensión de la banda liberada de forma controlada.", "critical": true }
+          {
+            "text": "Contrapeso soportado o bloqueado. SME_REQUIRED: método aprobado (Mantenimiento Mecánico + Seguridad).",
+            "critical": true
+          },
+          {
+            "text": "Tensión de la banda liberada de forma controlada.",
+            "critical": true
+          },
+          {
+            "text": "Verifiqué que la banda quedó sin tensión.",
+            "critical": true
+          }
         ]
       },
       {
         "title": "4. Verificación de energía cero",
         "items": [
-          { "text": "Punto de aislamiento abierto y con mi candado.", "critical": true },
-          { "text": "Intenté arrancar en la botonera y nada se movió.", "critical": true },
-          { "text": "Regresé el control a paro después de la prueba.", "critical": true },
-          { "text": "Prueba de ausencia de tensión hecha cuando aplica. SME_REQUIRED: método (Mantenimiento Eléctrico).", "critical": true }
+          {
+            "text": "Punto de aislamiento abierto y con mi candado.",
+            "critical": true
+          },
+          {
+            "text": "Antes de la prueba de arranque, verifiqué que nadie está en la banda ni en su zona.",
+            "critical": true
+          },
+          {
+            "text": "Intenté arrancar en la botonera y nada se movió.",
+            "critical": true
+          },
+          {
+            "text": "Regresé el control a paro después de la prueba.",
+            "critical": true
+          },
+          {
+            "text": "Prueba de ausencia de tensión hecha cuando aplica. SME_REQUIRED: método (Mantenimiento Eléctrico).",
+            "critical": true
+          }
         ]
       },
       {
         "title": "5. Retiro del bloqueo",
         "items": [
-          { "text": "Herramientas retiradas del equipo.", "critical": true },
-          { "text": "Guardas colocadas.", "critical": true },
-          { "text": "Verifiqué que no hay personas en el equipo y avisé que se retira el bloqueo.", "critical": true },
-          { "text": "Retiré mi propio candado y mi etiqueta; nadie más lo hizo por mí.", "critical": true },
-          { "text": "No retiré ningún candado ajeno; si encontré uno, avisé a mi supervisor.", "critical": true }
+          {
+            "text": "Herramientas retiradas del equipo.",
+            "critical": true
+          },
+          {
+            "text": "Guardas colocadas.",
+            "critical": true
+          },
+          {
+            "text": "Verifiqué que no hay personas en el equipo y avisé que se retira el bloqueo.",
+            "critical": true
+          },
+          {
+            "text": "Retiré mi propio candado y mi etiqueta; nadie más lo hizo por mí.",
+            "critical": true
+          },
+          {
+            "text": "No retiré ningún candado ajeno; si encontré uno, avisé a mi supervisor.",
+            "critical": true
+          },
+          {
+            "text": "Avisé al personal afectado y al operador que se retiró el bloqueo.",
+            "critical": true
+          }
         ]
       }
     ],
     "signatures": [
-      "Trabajador autorizado que bloquea — nombre, firma y fecha. SME_REQUIRED: formato de la planta (Seguridad).",
+      "Firmas de práctica. SME_REQUIRED: quién firma y autoriza en la planta (Seguridad + Mantenimiento). Trabajador autorizado que bloquea — nombre, firma y fecha. SME_REQUIRED: formato de la planta (Seguridad).",
       "Supervisor del área — nombre, firma y fecha.",
       "Operador de la banda (enterado del bloqueo y del retiro) — nombre, firma y fecha.",
       "Seguridad Industrial (cuando el procedimiento lo pida) — nombre, firma y fecha."

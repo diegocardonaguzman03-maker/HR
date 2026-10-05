@@ -766,7 +766,7 @@
           "label": "Conectarte al anclaje antes de exponerte al borde"
         }
       ],
-      "done": "Correcto. La secuencia exacta la define el procedimiento aprobado de la planta (SME_REQUIRED).",
+      "done": "Correcto. La secuencia exacta la define el procedimiento aprobado de la planta (SME_REQUIRED: secuencia aprobada, Seguridad + Operaciones).",
       "faq": [
         {
           "q": "¿Esta es la secuencia oficial?",
@@ -814,7 +814,7 @@
           0.5
         ]
       },
-      "scenario": "Ya se aplicaron y se verificaron los controles de los peligros que identificaste: la zona de abajo está delimitada y libre, sin herramientas en el borde, sin derrame, con la abertura tapada y los barandales de la plataforma completos (la protección de la llegada de la escalera la define el procedimiento: SME_REQUIRED, Seguridad + Ingeniería). (En este escenario de práctica no todos los controles se dibujan.) Pero el supervisor te avisa que el equipo de rescate todavía no está disponible. Tu compañero dice: «Empecemos, es rápido».",
+      "scenario": "Ya se aplicaron y se verificaron los controles de los peligros que identificaste: la zona de abajo está delimitada y libre, sin herramientas en el borde, sin derrame, con la abertura tapada y los barandales de la plataforma completos (la protección de la llegada de la escalera la define el procedimiento: SME_REQUIRED: protección de la llegada de la escalera, Seguridad + Ingeniería). (En este escenario de práctica no todos los controles se dibujan.) Pero el supervisor te avisa que el equipo de rescate todavía no está disponible. Tu compañero dice: «Empecemos, es rápido».",
       "sceneChange": {
         "delimitacion.visible": true,
         "persona-abajo.visible": false,
@@ -960,5 +960,6 @@
   "video": {
     "title": "Demostración (placeholder de video)",
     "caption": "Recorrido demostrativo en el escenario 3D. El video real de planta se agregará cuando esté aprobado."
-  }
+  },
+  "authorization": "trabajar en altura"
 }

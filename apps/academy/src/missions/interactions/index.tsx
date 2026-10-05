@@ -129,14 +129,15 @@ export function Confirm({ step, onDone, done }: P<'confirm'>) {
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const [checkedOnce, setCheckedOnce] = useState(false);
   const mistakes = useRef(0);
+  const wrongIds = useRef<string[]>([]);
   useEffect(() => { set({ interactive: [], focus: ['tablero-permiso'] }); return () => set({ focus: [] }); }, [set]);
   const items = useMemo(() => shuffle(step.items, step.id), [step]);
   const verify = () => {
     setCheckedOnce(true);
     const missing = step.items.filter((i) => i.required && !checked.has(i.id));
     const wrong = step.items.filter((i) => !i.required && checked.has(i.id));
-    if (!missing.length && !wrong.length) { onDone(mistakes.current); return; }
-    mistakes.current++;
+    if (!missing.length && !wrong.length) { onDone(mistakes.current, wrongIds.current); return; }
+    mistakes.current++; wrongIds.current.push(...wrong.map((i) => i.id));
     if (wrong.length) toast('bad', `«${wrong[0].label.replace(/[«»]/g, '')}» no es válido`, wrong[0].feedback);
     else toast('bad', missing.length === 1 ? 'Falta 1 requisito' : `Faltan ${missing.length} requisitos`, `Pista: ${missing[0].feedback}`);
   };

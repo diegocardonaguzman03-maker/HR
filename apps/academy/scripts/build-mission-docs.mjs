@@ -10,7 +10,7 @@ const files = fs.readdirSync(DIR).filter((f) => /^docs-.*\.json$/.test(f));
 const DISCLAIMER = 'Este entorno de capacitación apoya el aprendizaje y no sustituye procedimientos operativos aprobados, instrucciones de trabajo, permisos, supervisión ni requisitos de seguridad.';
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const MARK = /(SME_REQUIRED|PLACEHOLDER\s*[—-]\s*REQUIRES PLANT VALIDATION)\s*:?\s*/i;
-const op = (s = '') => { const m = MARK.exec(s); return m ? `${esc(s.slice(0, m.index))}<span class="sme"><b>⚠ PENDIENTE DE VALIDACIÓN DE PLANTA (SME_REQUIRED):</b> ${esc(s.slice(m.index + m[0].length))}</span>` : esc(s); };
+const op = (s = '') => esc(s).replace(/(SME_REQUIRED|PLACEHOLDER\s*[—-]\s*REQUIRES PLANT VALIDATION)\s*:?\s*([^.;]*[.;]?)/gi, (_m, _k, rest) => `<span class="sme"><b>⚠ PENDIENTE DE VALIDACIÓN DE PLANTA (SME_REQUIRED):</b> ${rest}</span>`);
 const ul = (a = []) => (a.length ? `<ul>${a.map((x) => `<li>${op(x)}</li>`).join('')}</ul>` : '');
 
 const CSS = `
@@ -27,7 +27,7 @@ table { width: 100%; border-collapse: collapse; margin: 4pt 0; } td, th { border
 .crit { color: #b91c1c; font-weight: 700; } .cb { display: inline-block; width: 11pt; height: 11pt; border: 1.3pt solid #333; vertical-align: -2pt; }
 .foot { font-size: 8pt; color: #6b7380; border-top: 1pt solid #ddd; margin-top: 14pt; padding-top: 4pt; }
 `;
-const TYPE = { wi: 'INSTRUCCIÓN DE TRABAJO', manual: 'MANUAL OPERATIVO', checklist: 'CHECKLIST' };
+const TYPE = { wi: 'INSTRUCCIÓN DE TRABAJO', manual: 'MANUAL OPERATIVO', checklist: 'CHECKLIST DE PRÁCTICA' };
 function page(p, kind, d, body, img) {
   return `<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><title>${esc(d.title)}</title><style>${CSS}</style></head><body>
 <div class="wm" aria-hidden="true"><img src="${img}" alt=""></div>
@@ -48,15 +48,15 @@ const wiBody = (w) => `<h2>Propósito</h2><p>${op(w.purpose)}</p><h2>Alcance</h2
 <h2>Pasos</h2>${w.steps.map((s) => `<div class="step"><span class="n">PASO ${s.n}</span> · <b>${op(s.action)}</b><br><b>Punto clave:</b> ${op(s.keyPoint)}<br><b>Por qué:</b> ${op(s.why)}</div>`).join('')}
 <h2>⛔ Condiciones para detenerse y avisar</h2>${ul(w.stopConditions)}<h2>Referencias</h2>${ul(w.references)}`;
 const manualBody = (mo) => mo.sections.map((s) => `<h2>${esc(s.title)}</h2>${s.paragraphs.map((p) => `<p>${op(p)}</p>`).join('')}${ul(s.bullets)}`).join('');
-const checklistBody = (c) => `<p>${op(c.instructions)}</p>
+const checklistBody = (c) => `<p class="danger"><b>PLANTILLA DE PRÁCTICA — NO ES UN REGISTRO DE PLANTA.</b> No anotes equipos reales ni la uses como evidencia de bloqueo, de permiso o de inspección.</p><p>${op(c.instructions)}</p>
 <p><b>Equipo / área:</b> ____________________ &nbsp; <b>Fecha:</b> __________ &nbsp; <b>Turno:</b> ______</p>
-${c.sections.map((s) => `<h2>${esc(s.title)}</h2><table><tr><th>Verificación</th><th style="width:9%">Sí</th><th style="width:9%">No</th><th style="width:9%">N/A</th></tr>${s.items.map((i) => `<tr><td>${i.critical ? '<span class="crit">▲ CRÍTICO · </span>' : ''}${op(i.text)}</td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td></tr>`).join('')}</table>`).join('')}
-<p class="crit">▲ Si un punto crítico es «No»: NO se inicia. Detente y avisa a tu supervisor.</p>
-<h2>Firmas</h2><table>${c.signatures.map((s) => `<tr><td style="width:40%">${esc(s)}</td><td>&nbsp;</td></tr>`).join('')}</table>`;
+${c.sections.map((s) => `<h2>${esc(s.title)}</h2><table><tr><th>Verificación</th><th style="width:9%">Sí</th><th style="width:9%">No</th><th style="width:9%">N/A</th></tr>${s.items.map((i) => `<tr><td>${i.critical ? '<span class="crit">▲ CRÍTICO · </span>' : ''}${op(i.text)}</td><td><span class="cb"></span></td><td><span class="cb"></span></td><td>${i.critical && !/cuando aplica/i.test(i.text) ? '—' : '<span class="cb"></span>'}</td></tr>`).join('')}</table>`).join('')}
+<p class="crit">▲ Si un punto crítico es «No»: NO se inicia. Detente y avisa a tu supervisor.</p><p class="crit">▲ Un punto crítico no se marca N/A. Si tienes duda, la respuesta es «No».</p>
+<h2>Firmas (solo para práctica en aula; no son válidas como registro)</h2><table>${c.signatures.map((s) => `<tr><td style="width:40%">${esc(s)}</td><td>&nbsp;</td></tr>`).join('')}</table>`;
 
 const browser = await chromium.launch({ executablePath: CHROME });
 const pg = await browser.newPage();
-const WM = `<svg xmlns="http://www.w3.org/2000/svg" width="816" height="1056"><g transform="rotate(-28 408 528)" fill="rgba(124,58,237,0.13)" font-family="DejaVu Sans, Arial" font-weight="800" text-anchor="middle"><text x="408" y="470" font-size="60">DEMOSTRACIÓN</text><text x="408" y="560" font-size="40">NO USAR PARA OPERAR</text></g></svg>`;
+const WM = `<svg xmlns="http://www.w3.org/2000/svg" width="816" height="1056"><g transform="rotate(-28 408 528)" fill="rgba(124,58,237,0.22)" font-family="DejaVu Sans, Arial" font-weight="800" text-anchor="middle"><text x="408" y="470" font-size="60">DEMOSTRACIÓN</text><text x="408" y="560" font-size="40">NO USAR PARA OPERAR</text></g></svg>`;
 await pg.setViewportSize({ width: 816, height: 1056 });
 await pg.setContent(`<html><body style="margin:0;background:transparent">${WM}</body></html>`);
 const img = `data:image/png;base64,${(await pg.screenshot({ omitBackground: true })).toString('base64')}`;

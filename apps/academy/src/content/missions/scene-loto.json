@@ -165,7 +165,8 @@
         -6.8,
         0,
         -0.6
-      ]
+      ],
+      "desc": "Mesa de trabajo junto a la estación de candados."
     },
     {
       "id": "companero",
@@ -202,7 +203,8 @@
       ],
       "props": {
         "color": "#e8a33d"
-      }
+      },
+      "desc": "Tú, junto a la banda."
     },
     {
       "id": "extintor",
@@ -220,7 +222,8 @@
       ],
       "props": {
         "text": "EXTINTOR"
-      }
+      },
+      "desc": "Señal roja de extintor en el muro."
     },
     {
       "id": "delimitacion",
@@ -235,7 +238,8 @@
         "w": 15,
         "d": 4.4,
         "visible": false
-      }
+      },
+      "desc": "Cinta de delimitación alrededor de la banda."
     }
   ]
 }

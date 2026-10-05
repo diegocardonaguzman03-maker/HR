@@ -51,7 +51,7 @@ function MissionComplete({ m, onRepeat, onPath }: { m: MissionT; onRepeat: () =>
   const critical = m.steps.filter((s) => s.critical && (results[s.id]?.wrong ?? []).some((id) => !id.startsWith('zona:') || (s.type === 'inspect' && s.zones.find((z) => `zona:${z.id}` === id)?.defect)));
   const wrongFeedback = (s: (typeof m.steps)[number]) => {
     const ids = results[s.id]?.wrong ?? [];
-    const opts = s.type === 'inspect' ? s.decision.options : s.type === 'select' || s.type === 'decide' ? s.options : [];
+    const opts: { id: string; label: string; feedback: string }[] = s.type === 'inspect' ? s.decision.options : s.type === 'select' || s.type === 'decide' ? s.options : s.type === 'confirm' ? s.items.filter((i) => !i.required) : [];
     return opts.filter((o) => ids.includes(o.id)).map((o) => `Elegiste «${o.label}»: ${o.feedback}`);
   };
   useEffect(() => { if (!critical.length) markCompleted(m.id); track('completed', m.id, { correct, total: m.steps.length, seconds: secs }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -86,7 +86,7 @@ function MissionComplete({ m, onRepeat, onPath }: { m: MissionT; onRepeat: () =>
             <ul className="mt-3 space-y-3 text-[14px] text-white/85">{missed.map((s) => <li key={s.id}><strong className="text-white">{s.critical ? '⚠ ' : ''}{s.title}.</strong> {s.why}{wrongFeedback(s).map((f, i) => <span key={i} className="mt-1 block text-[#ffb3b5]">{f}</span>)}</li>)}</ul>
           </details>
         )}
-        <p className="mt-6 rounded-xl border border-[#f5c518]/40 bg-[#f5c518]/10 p-3 text-[13px]"><strong>Esta misión no te habilita para trabajar en altura ni certifica tu competencia.</strong> Es práctica de aprendizaje. Para trabajar en altura necesitas la capacitación y la autorización que exige la planta (SME_REQUIRED: requisitos de autorización — Seguridad). No se usa para escalafón, ascensos, sanciones ni bonos.</p>
+        <p className="mt-6 rounded-xl border border-[#f5c518]/40 bg-[#f5c518]/10 p-3 text-[13px]"><strong>Esta misión no te habilita para {m.authorization} ni certifica tu competencia.</strong> Es práctica de aprendizaje. Para {m.authorization} necesitas la capacitación y la autorización que exige la planta (SME_REQUIRED: requisitos de autorización — Seguridad). No se usa para escalafón, ascensos, sanciones ni bonos.</p>
         <div className="mt-6 flex flex-wrap gap-2">
           <button onClick={onRepeat} className="rounded-xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/10" data-testid="repeat">Repetir misión</button>
           <button onClick={onPath} className="rounded-xl bg-[var(--color-accent)] px-5 py-3 font-bold text-[#1a1203] hover:brightness-110" data-testid="continue-path">Continuar →</button>

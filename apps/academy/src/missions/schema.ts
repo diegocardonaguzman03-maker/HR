@@ -85,6 +85,7 @@ export const Mission = z.object({
   subtitle: text,
   objective: text,
   estimatedMin: z.number().int().min(1),
+  authorization: text, // qué NO habilita la misión: «trabajar en altura», «aplicar bloqueo y etiquetado» (SAF-L-03)
   status: Validation,
   sceneId: z.string(),
   masteryAreas: z.array(z.object({ id: z.string(), label: text, review: text })).min(1),

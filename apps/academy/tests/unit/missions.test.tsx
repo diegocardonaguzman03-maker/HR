@@ -1,7 +1,7 @@
 import { describe, expect, it, beforeEach, vi } from 'vitest';
 import { render, screen, fireEvent, act, within } from '@testing-library/react';
 import { Mission, SceneDef, checkMission } from '../../src/missions/schema';
-import { rawMissionContent, missions, sceneFor } from '../../src/missions/content';
+import { rawMissionContent, missions, sceneFor, procedures, docsForMission } from '../../src/missions/content';
 import { useMission } from '../../src/missions/store';
 import { MissionApp } from '../../src/missions/ui/MissionApp';
 
@@ -173,7 +173,7 @@ describe('SAF-H-R1 — la precaución no se castiga', () => {
   });
 });
 
-import { procedures, docsForMission } from '../../src/missions/content';
+
 import { ProcedureDocs } from '../../src/missions/schema';
 
 describe('todas las misiones del motor', () => {
@@ -189,6 +189,13 @@ describe('todas las misiones del motor', () => {
   }
   it('LOTO usa los 8 tipos de interacción', () => {
     expect(new Set(missions['loto-01'].steps.map((s) => s.type)).size).toBe(8);
+  });
+  it('SAF-D-07: todo marcador SME_REQUIRED dice qué dato falta («SME_REQUIRED: …»)', () => {
+    const all = JSON.stringify([missions, procedures]);
+    expect(all.match(/SME_REQUIRED(?!:)/g) ?? []).toEqual([]);
+  });
+  it('SAF-L-03: cada misión declara qué autorización NO otorga', () => {
+    for (const mm of Object.values(missions)) expect(mm.authorization.length, mm.id).toBeGreaterThan(5);
   });
 });
 

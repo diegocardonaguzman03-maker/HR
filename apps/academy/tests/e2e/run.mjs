@@ -325,7 +325,7 @@ await test('MISIÓN LOTO · 8 pasos con los 8 tipos de interacción hasta result
   for (const n of ['Estoy capacitado', 'Tengo el procedimiento', 'Avisé al personal', 'Tengo mi candado']) await page.getByText(new RegExp('^' + n)).click();
   await page.click('[data-testid=confirm-verify]');
   await cont(); await begin();
-  const want = ['Apagar el equipo con sus controles normales', 'Aislar la energía en el punto de aislamiento', 'Colocar tu candado y tu etiqueta', 'Liberar o bloquear la energía almacenada (contrapeso, tensión)', 'Verificar energía cero: intentar arrancar y comprobar que nada se mueve'];
+  const want = ['Apagar el equipo con sus controles normales', 'Aislar la energía en el punto de aislamiento', 'Colocar tu candado y tu etiqueta', 'Liberar o bloquear la energía almacenada (contrapeso, tensión)', 'Verificar energía cero: confirmar que nadie está expuesto, intentar arrancar, comprobar que nada se mueve y regresar el control a paro'];
   for (let pos = 0; pos < want.length; pos++) for (let g = 0; g < 10; g++) { const cur = await page.locator('[data-testid=sequence] li').allTextContents(); if (cur[pos].includes(want[pos])) break; await page.getByLabel(`Subir «${want[pos]}»`).click(); }
   await page.click('[data-testid=sequence-verify]');
   await cont(); await begin();
@@ -335,9 +335,9 @@ await test('MISIÓN LOTO · 8 pasos con los 8 tipos de interacción hasta result
   await page.getByRole('button', { name: /Completo mi nombre/ }).click();
   await cont(); await begin();
   await page.screenshot({ path: `${SHOTS}/31-loto-verificar.png` });
-  for (const n of ['Seccionador del motor', 'Contrapeso del tensor', 'Estación de botones']) await page.getByRole('button', { name: new RegExp('^' + n) }).click();
+  for (const n of ['Seccionador del motor', 'Contrapeso del tensor', 'Compañero de trabajo', 'Estación de botones', 'Estación de botones']) await page.getByRole('button', { name: new RegExp('^' + n) }).click();
   await cont(); await begin();
-  await page.getByRole('button', { name: /Retiro herramientas/ }).click();
+  await page.getByRole('button', { name: /^No retiro mi candado mientras/ }).click();
   await cont();
   await page.waitForSelector('[data-testid=mission-complete]');
   assert((await page.textContent('[data-testid=result-correct]')).trim() === '8 / 8', 'resultado LOTO');

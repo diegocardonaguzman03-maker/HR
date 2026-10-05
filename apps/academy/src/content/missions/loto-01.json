@@ -301,6 +301,13 @@
           "focus": [],
           "caption": "El bloqueo funciona solo si lo hace una persona autorizada, con su propio candado, y si todos los afectados saben que el equipo se va a detener."
         }
+      ],
+      "critical": true,
+      "faq": [
+        {
+          "q": "¿Y si somos varios los que vamos a intervenir?",
+          "a": "Cada persona expuesta coloca su propio candado y su etiqueta, directamente o en un dispositivo de bloqueo grupal. Nadie trabaja protegido por el candado de otro. SME_REQUIRED: método de bloqueo grupal de la planta (Seguridad)."
+        }
       ]
     },
     {
@@ -323,7 +330,7 @@
         ]
       },
       "prompt": "Orden de práctica (ilustrativo; no es la secuencia de la planta)",
-      "hint": "Primero apagar, luego aislar y bloquear, liberar lo almacenado y, al final, comprobar que no se mueve.",
+      "hint": "Primero apagar, luego aislar y bloquear, liberar lo almacenado y, al final, comprobar con nadie expuesto que nada se mueve.",
       "items": [
         {
           "id": "apagar",
@@ -343,10 +350,10 @@
         },
         {
           "id": "verificar",
-          "label": "Verificar energía cero: intentar arrancar y comprobar que nada se mueve"
+          "label": "Verificar energía cero: confirmar que nadie está expuesto, intentar arrancar, comprobar que nada se mueve y regresar el control a paro"
         }
       ],
-      "done": "Correcto. La secuencia exacta del equipo la define su procedimiento aprobado (SME_REQUIRED).",
+      "done": "Correcto. La secuencia exacta del equipo la define su procedimiento aprobado (SME_REQUIRED: secuencia aprobada del equipo, Seguridad + Operaciones).",
       "reference": [
         "secuencia"
       ],
@@ -571,16 +578,26 @@
         },
         {
           "objectId": "contrapeso",
-          "label": "Confirma que el contrapeso está soportado",
-          "feedback": "Contrapeso soportado: ya no puede caer ni tensar la banda."
+          "label": "Confirma que el contrapeso está soportado y que la tensión de la banda está liberada",
+          "feedback": "Contrapeso soportado y banda floja: ya no pueden mover la banda."
+        },
+        {
+          "objectId": "companero",
+          "label": "Confirma que nadie está en la banda ni en su zona antes de la prueba",
+          "feedback": "Tu compañero está fuera de la banda y sabe que vas a hacer la prueba de arranque. Nunca pruebes con alguien expuesto."
         },
         {
           "objectId": "estacion-control",
           "label": "Intenta arrancar en la botonera",
-          "feedback": "Oprimiste arranque y la banda no se movió: energía cero verificada. Regresa el botón a paro."
+          "feedback": "Oprimiste arranque y la banda no se movió."
+        },
+        {
+          "objectId": "estacion-control",
+          "label": "Regresa el control a paro",
+          "feedback": "Control en paro. Si dejas el arranque activado, el equipo podría arrancar solo en cuanto se retire el bloqueo."
         }
       ],
-      "done": "Correcto. Solo después de verificar energía cero se puede trabajar. SME_REQUIRED: método de verificación del procedimiento (Mantenimiento + Seguridad).",
+      "done": "Correcto. Nadie expuesto, prueba de arranque sin movimiento y control de regreso en paro. En planta, la verificación completa incluye la prueba de ausencia de tensión cuando aplique. SME_REQUIRED: método de verificación del procedimiento (Mantenimiento Eléctrico + Seguridad).",
       "critical": true,
       "reference": [
         "verificacion"
@@ -602,7 +619,8 @@
           "focus": [],
           "caption": "Bloquear no basta: hay que comprobar que el equipo realmente no puede moverse ni energizarse."
         }
-      ]
+      ],
+      "safety": "Si algo se mueve, enciende o tienes duda, detente, no toques el equipo y avisa a tu supervisor. SME_REQUIRED: qué hacer si la verificación falla (Mantenimiento + Seguridad)."
     },
     {
       "id": "retiro-bloqueo",
@@ -610,7 +628,7 @@
       "mastery": "retiro",
       "title": "Retira el bloqueo de forma segura",
       "instruction": "Lee la situación y decide.",
-      "why": "El bloqueo lo retira quien lo puso, y solo cuando el equipo y el área están listos para volver a operar.",
+      "why": "El bloqueo lo retira quien lo puso, solo cuando verificó que nadie está en el equipo y el área está lista para operar. Quien sigue expuesto necesita su propio candado.",
       "camera": {
         "position": [
           7,
@@ -623,7 +641,7 @@
           0
         ]
       },
-      "scenario": "Terminaste de cambiar el rodillo. Tu compañero dice: «Vete, yo quito tu candado cuando acabe de limpiar». Todavía hay herramientas sobre la banda y la guarda no está colocada.",
+      "scenario": "Terminaste de cambiar el rodillo. Tu compañero todavía está limpiando la banda y no tiene candado propio. Te dice: «Vete, yo quito tu candado cuando acabe». Todavía hay herramientas sobre la banda y la guarda no está colocada.",
       "sceneChange": {
         "seccionador.locked": true,
         "delimitacion.visible": true
@@ -643,13 +661,19 @@
         },
         {
           "id": "yo",
-          "label": "Retiro herramientas y coloco la guarda; aviso que todos estén fuera y yo retiro mi candado",
+          "label": "No retiro mi candado mientras él esté dentro: le pido que salga o que coloque su propio candado; retiro herramientas, coloco la guarda, verifico que nadie esté en el equipo, aviso y retiro mi candado",
           "correct": true,
-          "feedback": "Correcto. Retira tu propio bloqueo solo cuando el área está lista y todos lo saben. SME_REQUIRED: pasos de retiro del procedimiento."
+          "feedback": "Correcto. Quien está expuesto necesita su propio candado; el tuyo no lo protege cuando lo retiras. Antes de retirar: herramientas fuera, guardas colocadas, nadie en el equipo (verificado, no solo avisado) y aviso a los afectados. SME_REQUIRED: pasos de retiro y método de bloqueo grupal (Mantenimiento + Seguridad)."
+        },
+        {
+          "id": "aviso",
+          "label": "Grito que me voy a retirar y quito mi candado",
+          "correct": false,
+          "feedback": "No. Avisar no es verificar: tu compañero sigue dentro y quedaría sin protección. Confirma con tus ojos que nadie está en el equipo."
         }
       ],
       "done": "Práctica terminada. Retiraste el bloqueo de forma segura.",
-      "safety": "Si encuentras un candado de otra persona, no lo retires: avisa a tu supervisor. SME_REQUIRED: procedimiento de retiro autorizado de un bloqueo ajeno (Seguridad + Relaciones Laborales).",
+      "safety": "Si encuentras un candado de otra persona, no lo retires ni lo dejes retirar por una orden verbal: avisa a tu supervisor. Un bloqueo ajeno solo se retira con el procedimiento autorizado de la planta. SME_REQUIRED: procedimiento de retiro autorizado de un bloqueo ajeno (Seguridad + Relaciones Laborales).",
       "critical": true,
       "reference": [
         "retiro"
@@ -735,7 +759,7 @@
         "id": "verificacion",
         "title": "7. Verificación de energía cero",
         "items": [
-          "Intentar arrancar y comprobar que nada se mueve; regresar el control a paro.",
+          "Confirmar que nadie está expuesto, intentar arrancar, comprobar que nada se mueve y regresar el control a paro.",
           "SME_REQUIRED: método de verificación (incluye prueba de ausencia de tensión cuando aplique; Mantenimiento Eléctrico)."
         ]
       },
@@ -745,7 +769,7 @@
         "items": [
           "Retirar herramientas, colocar guardas, verificar que no haya personas y avisar.",
           "Cada persona retira su propio candado.",
-          "SME_REQUIRED: retiro autorizado de un bloqueo ajeno (Seguridad + Relaciones Laborales)."
+          "Un bloqueo ajeno solo se retira con el procedimiento autorizado de la planta, nunca por iniciativa propia. SME_REQUIRED: procedimiento (Seguridad + Relaciones Laborales)."
         ]
       }
     ]
@@ -753,5 +777,6 @@
   "video": {
     "title": "Demostración (placeholder de video)",
     "caption": "Recorrido demostrativo en el escenario 3D."
-  }
+  },
+  "authorization": "aplicar bloqueo y etiquetado"
 }
