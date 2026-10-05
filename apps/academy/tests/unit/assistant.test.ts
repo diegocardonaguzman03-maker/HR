@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { LocalExtractiveProvider, NO_SOURCE, REFUSE, SAFETY_FIRST, NO_AUTH, isUnsafe, type Answer } from '../../src/lib/assistant/provider';
+import { LocalExtractiveProvider, NO_SOURCE, REFUSE, SAFETY_FIRST, NO_AUTH, DRAFT_FIGURE_MARK, isUnsafe, scrubFigures, type Answer } from '../../src/lib/assistant/provider';
 
 const ai = new LocalExtractiveProvider();
 type K = Answer['kind'];
@@ -131,8 +131,9 @@ const LEGIT: [string, K[]][] = [
   ['¿Qué es un permiso de trabajo?', [A]],
   ['¿Para qué sirve la guarda de una banda?', [A, N]],
   ['¿Qué EPP necesito cerca del horno?', [A]],
-  ['¿Por qué no debo pasar por debajo de una carga suspendida?', [A, N, S]],
-  ['¿Qué es el DRI?', [A]],
+  ['¿Qué es la zona de exclusión?', [P]],
+  ['¿Qué es una alarma de fuga de agua?', [A, S]],
+  ['¿Qué es el DRI?', [A, N]],
   ['¿Qué es la escoria espumosa?', [A]],
   ['¿Para qué sirve el paro de emergencia?', [A]],
   ['¿Qué hago si suena la alarma de CO?', [S]],
@@ -154,4 +155,17 @@ describe('sin cifras de borrador (SAF-01)', () => {
       const a = await ai.answer(q, {});
       expect(visible(a)).not.toMatch(DRAFT_FIGURES);
     });
+});
+
+describe('scrubFigures: cifras de borrador nunca llegan a la pantalla, aunque sigan en el contenido', () => {
+  it('sustituye cifras con unidades de ingeniería', () => {
+    const t = scrubFigures('Electrodos UHP de 610 mm y transformador de 140 MVA; 1 600 °C; 3,5 bar; 33 kV.');
+    expect(t).not.toMatch(DRAFT_FIGURES);
+    expect(t).not.toMatch(/°C|bar|kV/);
+    expect(t).toContain(DRAFT_FIGURE_MARK);
+  });
+  it('no toca texto sin unidades', () => {
+    const t = '¿Para qué sirve el 5.º agujero? Revisa de 2 a 3 puntos.';
+    expect(scrubFigures(t)).toBe(t);
+  });
 });

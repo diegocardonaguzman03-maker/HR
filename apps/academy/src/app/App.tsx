@@ -7,6 +7,8 @@ import { ViewToolbar } from '../components/shell/ViewToolbar';
 import { LoadingScreen } from '../components/shell/LoadingScreen';
 import { Welcome } from '../components/shell/Welcome';
 import { Disclaimer, DISCLAIMER } from '../components/ui/Disclaimer';
+import { ErrorBoundary } from '../components/ui/ErrorBoundary';
+import { useLoad } from '../stores/useLoad';
 import { EquipmentPanel } from '../components/panel/EquipmentPanel';
 import { StagePanel } from '../components/panel/StagePanel';
 import { LearnPlayer } from '../components/training/LearnPlayer';
@@ -20,9 +22,11 @@ import { AskAceria } from '../components/assistant/AskAceria';
 const Scene = lazy(() => import('../components/3d/Scene').then((m) => ({ default: m.Scene })));
 const MODES: Mode[] = ['explore', 'learn', 'perform', 'assess', 'library'];
 
-/** #/modo[/id] ↔ estado (deep links compartibles, sin servidor). */
+const routeId = (s: ReturnType<typeof useApp.getState>) =>
+  s.mode === 'explore' ? s.selectedEq ?? s.selectedStage : s.mode === 'learn' ? s.moduleId : s.mode === 'perform' ? s.wiId : s.mode === 'assess' ? s.assessmentId : null;
+
+/** #/modo[/id] ↔ estado (deep links compartibles, sin servidor). Se sincroniza sin volver a renderizar la app (RT-PERF-02). */
 function useHashRoute() {
-  const s = useApp();
   useEffect(() => {
     const apply = () => {
       const [, m, id] = location.hash.split('/');
@@ -32,7 +36,8 @@ function useHashRoute() {
       if (id) {
         if (m === 'explore' && idx.equipment.has(id)) st.selectEquipment(id);
         if (m === 'explore' && idx.stage.has(id)) st.selectStage(id);
-        if (m === 'learn' && idx.module.has(id)) st.set({ moduleId: id });
+        // RT-SW-08: un enlace a otro módulo empieza en su lección 1
+        if (m === 'learn' && idx.module.has(id) && st.moduleId !== id) st.set({ moduleId: id, lessonIdx: 0 });
         if (m === 'perform' && idx.wi.has(id)) st.set({ wiId: id });
         if (m === 'assess' && idx.assessment.has(id)) st.set({ assessmentId: id });
       }
@@ -42,10 +47,21 @@ function useHashRoute() {
     return () => window.removeEventListener('hashchange', apply);
   }, []);
   useEffect(() => {
-    const id = s.mode === 'explore' ? s.selectedEq ?? s.selectedStage : s.mode === 'learn' ? s.moduleId : s.mode === 'perform' ? s.wiId : s.mode === 'assess' ? s.assessmentId : null;
-    const h = `#/${s.mode}${id ? `/${id}` : ''}`;
-    if (location.hash !== h) history.replaceState(null, '', h);
-  }, [s.mode, s.selectedEq, s.selectedStage, s.moduleId, s.wiId, s.assessmentId]);
+    const write = (s: ReturnType<typeof useApp.getState>, modeChanged: boolean) => {
+      const id = routeId(s);
+      const h = `#/${s.mode}${id ? `/${id}` : ''}`;
+      if (location.hash === h) return;
+      // RT-SW-08: cambiar de modo crea una entrada de historial (Atrás no sale de la app)
+      if (modeChanged) history.pushState(null, '', h); else history.replaceState(null, '', h);
+    };
+    write(useApp.getState(), false);
+    return useApp.subscribe((s, p) => {
+      // UX-02: al cambiar de modo, el panel no se queda fijo en el equipo que estaba abierto
+      if (s.mode !== p.mode && s.selectedEq && s.selectedEq === p.selectedEq) { s.set({ selectedEq: null, selectedComponentNode: null }); return; }
+      if (s.mode === p.mode && routeId(s) === routeId(p)) return;
+      write(s, s.mode !== p.mode);
+    });
+  }, []);
 }
 
 function ArcNote() {
@@ -64,36 +80,68 @@ function SidebarShell() {
   );
 }
 
+const BACK = { learn: 'la lección', perform: 'la instrucción', assess: 'la evaluación', library: 'la biblioteca', explore: '' } as const;
+
+/**
+ * RT-SW-04: en Aprender, Ejecutar, Evaluar y Biblioteca el árbol de entrenamiento queda montado (oculto)
+ * mientras se consulta la ficha de un equipo; así no se pierde el avance de la evaluación ni de la WI.
+ */
 function RightPanel() {
-  const { mode, selectedEq, selectedStage, picking, set } = useApp();
+  const mode = useApp((s) => s.mode), selectedEq = useApp((s) => s.selectedEq), selectedStage = useApp((s) => s.selectedStage);
+  const picking = useApp((s) => s.picking), set = useApp((s) => s.set);
   const eq = selectedEq ? idx.equipment.get(selectedEq) : null;
-  if (eq && !picking && mode !== 'explore') {
-    return (
-      <div className="flex h-full flex-col">
-        <button className="label border-b border-[var(--color-line)] px-4 py-2 text-left hover:text-[var(--color-text)]" onClick={() => set({ selectedEq: null })}>← Volver a {({ learn: 'la lección', perform: 'la instrucción', assess: 'la evaluación', library: 'la biblioteca', explore: '' } as const)[mode]}</button>
-        <div className="min-h-0 flex-1"><EquipmentPanel eq={eq} /></div>
-      </div>
-    );
+  if (mode === 'explore') {
+    if (eq) return <EquipmentPanel eq={eq} />;
+    const st = selectedStage ? idx.stage.get(selectedStage) : null;
+    return st ? <StagePanel st={st} /> : <Welcome />;
   }
-  if (mode === 'learn') return <LearnPlayer />;
-  if (mode === 'perform') return <PerformJobAid />;
-  if (mode === 'assess') return <AssessmentView />;
-  if (mode === 'library') return <Library />;
-  if (eq) return <EquipmentPanel eq={eq} />;
-  const st = selectedStage ? idx.stage.get(selectedStage) : null;
-  if (st) return <StagePanel st={st} />;
-  return <Welcome />;
+  const peek = !!eq && !picking;
+  return (
+    <div className="relative h-full">
+      <div className={peek ? 'hidden' : 'h-full'} aria-hidden={peek || undefined} data-testid="training-host">
+        {mode === 'learn' ? <LearnPlayer /> : mode === 'perform' ? <PerformJobAid /> : mode === 'assess' ? <AssessmentView /> : <Library />}
+      </div>
+      {peek && eq && (
+        <div className="absolute inset-0 flex flex-col bg-[var(--color-surface)]" data-testid="equipment-peek">
+          <button className="label border-b border-[var(--color-line)] px-4 py-2 text-left hover:text-[var(--color-text)]" onClick={() => set({ selectedEq: null, selectedComponentNode: null })} data-testid="peek-back">← Volver a {BACK[mode]}</button>
+          <div className="min-h-0 flex-1"><EquipmentPanel eq={eq} /></div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** Si la escena 3D falla (sin WebGL, chunk no disponible), se avisa y la app sigue en modo lista (RT-SW-02). */
+function SafeScene() {
+  return (
+    <ErrorBoundary fallback={null} onError={(e) => useLoad.getState().set({ phase: 'error', loaded: 0, total: 0, message: `el 3D no está disponible en este equipo (${e.message})` })}>
+      <Suspense fallback={null}><Scene /></Suspense>
+    </ErrorBoundary>
+  );
+}
+
+/** Pantalla mínima si la app entera no puede iniciar: el aviso de seguridad sigue visible. */
+export function AppCrashed() {
+  return (
+    <div className="flex h-full flex-col">
+      <main className="grid flex-1 place-items-center p-4">
+        <p role="alert" className="max-w-md text-center text-[14px]">La academia no pudo iniciar en este equipo. Recarga la página; si sigue igual, avisa a Capacitación.</p>
+      </main>
+      <Disclaimer />
+    </div>
+  );
 }
 
 /** ?capture=1: solo la escena (lo usa scripts/capture-media.mjs para imágenes y el video placeholder). */
 const CAPTURE = typeof location !== 'undefined' && new URLSearchParams(location.search).has('capture');
-if (typeof window !== 'undefined') (window as unknown as { __adxStore: typeof useApp }).__adxStore = useApp;
+/** RT-SW-14: el store solo se expone en desarrollo, en capturas (?capture) y en pruebas (?e2e). */
+if (typeof window !== 'undefined' && (import.meta.env.DEV || CAPTURE || new URLSearchParams(location.search).has('e2e'))) (window as unknown as { __adxStore: typeof useApp }).__adxStore = useApp;
 
 export function App() {
   if (CAPTURE) {
     return (
       <div className="relative h-full">
-        <Suspense fallback={null}><Scene /></Suspense>
+        <SafeScene />
         <LoadingScreen />
         <div data-capture-badge className="absolute inset-x-4 top-4 font-mono">
           <p className="inline-block rounded bg-black/70 px-2 py-1 text-[13px] text-[var(--color-st-demo)]">◇ DEMO · VIDEO PLACEHOLDER · MODELO ESQUEMÁTICO, NO OPERACIÓN REAL</p>
@@ -114,7 +162,7 @@ function Main() {
       <div className="flex min-h-0 flex-1 flex-col lg:grid lg:grid-cols-[240px_minmax(0,1fr)_minmax(360px,420px)]">
         <SidebarShell />
         <main className="relative h-[46vh] min-h-[280px] lg:h-auto" aria-label="Vista 3D del horno">
-          <Suspense fallback={null}><Scene /></Suspense>
+          <SafeScene />
           <LoadingScreen />
           <div className="pointer-events-none absolute inset-x-3 bottom-3 flex justify-center"><ViewToolbar /></div>
           <p className="pointer-events-none absolute left-3 top-3 rounded bg-black/50 px-2 py-1 font-mono text-[10.5px] text-[var(--color-text-3)]">Modelo esquemático · disposición ilustrativa, no a escala de planta</p>

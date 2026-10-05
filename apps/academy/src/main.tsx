@@ -1,6 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles/index.css';
-import { App } from './app/App';
+import { App, AppCrashed } from './app/App';
+import { ErrorBoundary } from './components/ui/ErrorBoundary';
 
-createRoot(document.getElementById('root')!).render(<StrictMode><App /></StrictMode>);
+// Raíz protegida: si algo falla al iniciar, se ve un mensaje y el aviso de seguridad (RT-SW-02).
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <ErrorBoundary fallback={<AppCrashed />}><App /></ErrorBoundary>
+  </StrictMode>,
+);
