@@ -1,82 +1,87 @@
 {
-  "date": "2026-10-05T17:05:42.437Z",
+  "date": "2026-10-05T17:12:59.079Z",
   "dir": "dist",
   "results": [
     {
       "name": "arranque: carga real del modelo, aviso permanente y métricas",
       "ok": true,
-      "ms": 5995
+      "ms": 5561
+    },
+    {
+      "name": "aviso de registro al arrancar, antes de `initialized` (RL-10)",
+      "ok": true,
+      "ms": 8392
     },
     {
       "name": "hotspot 3D abre el panel del equipo",
       "ok": true,
-      "ms": 9875
+      "ms": 8650
     },
     {
       "name": "clic directo en el modelo 3D selecciona un equipo",
       "ok": true,
-      "ms": 5500
+      "ms": 5507
     },
     {
       "name": "herramientas de vista: corte, rayos X, despiece, aislar, restablecer",
       "ok": true,
-      "ms": 12494
+      "ms": 11550
     },
     {
       "name": "cambio de modo y enlaces profundos",
       "ok": true,
-      "ms": 8927
+      "ms": 5628
     },
     {
       "name": "progresión de lecciones con resaltado 3D",
       "ok": true,
-      "ms": 13900
+      "ms": 13107
     },
     {
       "name": "EJECUTAR: instrucción paso a paso con aviso de no aprobada",
       "ok": true,
-      "ms": 26784
+      "ms": 24275
     },
     {
       "name": "evaluación completa (identificar con la lista accesible; preguntas críticas ▲)",
       "ok": true,
-      "ms": 27403
+      "ms": 22886
     },
     {
       "name": "descarga de documento PDF",
       "ok": true,
-      "ms": 6039
+      "ms": 5272
     },
     {
       "name": "video con subtítulos y capítulos",
       "ok": true,
-      "ms": 5214
+      "ms": 4893
     },
     {
       "name": "asistente oculto en el piloto (veto ADX-04, opción B)",
       "ok": true,
-      "ms": 1239
+      "ms": 1113
     },
     {
       "name": "accesibilidad: teclado, landmarks, etiquetas y modo móvil",
       "ok": true,
-      "ms": 2720
+      "ms": 5383
     },
     {
       "name": "vista móvil (390×844) sin desbordamiento horizontal",
       "ok": true,
-      "ms": 2092
+      "ms": 1840
     }
   ],
   "errors": [],
   "perf": {
-    "loadMs": 2076,
+    "loadMs": 2079,
     "fps": 4,
     "calls": 1,
     "triangles": 1,
     "geometries": 17,
     "textures": 27,
     "quality": "medium",
-    "jsHeapMB": 16
+    "jsHeapMB": 15
   }
 }

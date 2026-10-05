@@ -10,6 +10,7 @@ import { App } from '../../src/app/App';
 import { useApp } from '../../src/stores/useApp';
 import { content, idx } from '../../src/lib/content';
 import { DISCLAIMER } from '../../src/components/ui/Disclaimer';
+import { CLEAR_LABEL, CLEARED_MSG, RECORDING_OFF, RECORDING_ON } from '../../src/components/ui/RecordingNotice';
 import type { QuestionT } from '../../src/lib/content/schema';
 
 const initial = useApp.getState();
@@ -125,9 +126,11 @@ describe('evaluación', () => {
       fireEvent.click(screen.getByTestId(i < a.questionIds.length - 1 ? 'next-question' : 'finish-assessment'));
     });
     const res = screen.getByTestId('assessment-result');
-    expect(res).toHaveTextContent(/Aprobaste la evaluación de conocimiento/);
+    expect(res).toHaveTextContent(/✔ Comprensión suficiente — /);
+    expect(res).not.toHaveTextContent(/Aprobaste|Aprobado|apruebas/);
     expect(res).toHaveTextContent(/no certifica competencia/);
-    expect(res).toHaveTextContent(/no se usa para escalafón/);
+    expect(res).toHaveTextContent(/no es un examen de suficiencia ni de escalafón/);
+    expect(res).toHaveTextContent(/Ni este resultado ni tu avance en la plataforma se usan para escalafón/);
     expect(screen.queryByTestId('critical-missed')).toBeNull();
   });
   it('marca las preguntas críticas con «▲ Pregunta de seguridad» y no aprueba si una crítica queda mal (TRN-01 / SAF-09)', () => {
@@ -147,7 +150,7 @@ describe('evaluación', () => {
       fireEvent.click(screen.getByTestId(i < a.questionIds.length - 1 ? 'next-question' : 'finish-assessment'));
     });
     const res = screen.getByTestId('assessment-result');
-    expect(res).toHaveTextContent(/Aún no apruebas la evaluación de conocimiento/);
+    expect(res).toHaveTextContent(/✕ Aún no: repasa y vuelve a intentarlo — /);
     expect(screen.getByTestId('critical-missed')).toHaveTextContent(/preguntas de seguridad/);
     const scored = a.questionIds.length - a.unscoredQuestionIds.length;
     expect(res).toHaveTextContent(`${scored - 1} de ${scored}`);
@@ -170,12 +173,66 @@ describe('evaluación', () => {
   it('avisa del registro local y permite desactivarlo (TRN-12)', () => {
     render(<App />);
     fireEvent.click(screen.getByTestId('mode-assess'));
-    expect(screen.getByTestId('recording-notice')).toHaveTextContent(/sin tu nombre/);
+    const notice = screen.getByTestId('recording-notice');
+    expect(notice).toHaveTextContent(RECORDING_ON);
+    expect(notice).not.toHaveTextContent(/anónim/i);
     fireEvent.click(screen.getByTestId('toggle-recording'));
     expect(localStorage.getItem('adx.analytics')).toBe('off');
     const before = localStorage.getItem('adx.events');
+    expect(screen.getByTestId('recording-notice')).toHaveTextContent(RECORDING_OFF);
+    // el aviso de entrada muestra el mismo estado
+    expect(screen.getByTestId('first-run-toggle-recording')).toHaveTextContent('Activar registro');
     fireEvent.click(screen.getByTestId('start-asm.eaf-electrode'));
     expect(localStorage.getItem('adx.events')).toBe(before);
+  });
+  it('«Borrar mis datos de este equipo y terminar» borra eventos, avance e identificador (RL-13)', () => {
+    localStorage.setItem('adx.events', JSON.stringify([{ id: 'x', ts: '', verb: 'opened', object: 'eq.ebt' }]));
+    localStorage.setItem('adx.actor', 'anon-x');
+    localStorage.setItem('adx.recording-notice-seen', '1');
+    render(<App />);
+    fireEvent.click(screen.getByTestId('mode-assess'));
+    const btn = screen.getByTestId('clear-shared');
+    expect(btn).toHaveTextContent(CLEAR_LABEL);
+    fireEvent.click(btn);
+    expect(screen.getByRole('status')).toHaveTextContent(CLEARED_MSG);
+    expect(JSON.parse(localStorage.getItem('adx.events') ?? '[]')).toEqual([]);
+    expect(localStorage.getItem('adx.actor')).toBeNull();
+    expect(localStorage.getItem('adx.recording-notice-seen')).toBeNull();
+  });
+});
+
+describe('aviso de registro al arrancar (RL-10)', () => {
+  it('aparece al entrar por primera vez, antes del primer `initialized`, con sus dos botones y sin bloquear', () => {
+    render(<App />);
+    const n = screen.getByRole('region', { name: /Aviso de registro/ });
+    expect(n).toHaveAttribute('data-testid', 'first-run-notice');
+    expect(n).toHaveTextContent(RECORDING_ON);
+    expect(n).not.toHaveTextContent(/anónim/i);
+    expect(within(n).getByTestId('first-run-toggle-recording')).toHaveTextContent('Desactivar registro');
+    expect(within(n).getByTestId('first-run-clear-shared')).toHaveTextContent(CLEAR_LABEL);
+    // aún no se registró ningún `initialized` (la escena lo registra después de cargar)
+    const evs = JSON.parse(localStorage.getItem('adx.events') ?? '[]') as { verb: string }[];
+    expect(evs.some((e) => e.verb === 'initialized')).toBe(false);
+    // no bloquea: el resto de la app sigue operable con el aviso abierto
+    fireEvent.click(screen.getByTestId('mode-learn'));
+    expect(screen.getByTestId('module-list')).toBeInTheDocument();
+    expect(screen.getByTestId('first-run-notice')).toBeInTheDocument();
+  });
+  it('se recuerda por equipo al pulsar «Entendido» y sigue visible en EVALUAR', () => {
+    const { unmount } = render(<App />);
+    fireEvent.click(screen.getByTestId('first-run-dismiss'));
+    expect(screen.queryByTestId('first-run-notice')).toBeNull();
+    unmount();
+    render(<App />);
+    expect(screen.queryByTestId('first-run-notice')).toBeNull();
+    fireEvent.click(screen.getByTestId('mode-assess'));
+    expect(screen.getByTestId('recording-notice')).toHaveTextContent(RECORDING_ON);
+  });
+  it('desactivar desde el aviso de entrada detiene el registro', () => {
+    render(<App />);
+    fireEvent.click(screen.getByTestId('first-run-toggle-recording'));
+    expect(localStorage.getItem('adx.analytics')).toBe('off');
+    expect(screen.getByTestId('first-run-notice')).toHaveTextContent(RECORDING_OFF);
   });
 });
 

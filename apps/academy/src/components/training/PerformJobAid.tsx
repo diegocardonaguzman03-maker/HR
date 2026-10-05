@@ -71,7 +71,7 @@ export function PerformJobAid() {
         <div className="scroll-thin flex-1 overflow-y-auto p-4" data-testid="wi-complete">
           <h3 className="mb-2 text-[18px] font-semibold"><span aria-hidden>✔ </span>Recorrido completo ({checked.size}/{wi.steps.length} pasos verificados)</h3>
           <p className="label mb-1">Cierre</p><Bullets items={wi.completion} />
-          <p role="note" className="mt-3 rounded border border-[var(--color-st-sme)]/60 bg-[var(--color-st-sme)]/10 p-2 text-[13px]"><strong>Práctica en simulación.</strong> No acredita que puedas hacer la tarea en planta: eso lo evalúa un instructor en piso con el procedimiento aprobado.</p>
+          <p role="note" className="mt-3 rounded border border-[var(--color-st-sme)]/60 bg-[var(--color-st-sme)]/10 p-2 text-[13px]"><strong>Práctica en simulación.</strong> No acredita que puedas hacer la tarea en planta: eso lo evalúa un evaluador autorizado en piso con el procedimiento aprobado.</p>
         </div>
       ) : (
         <div className="scroll-thin flex-1 overflow-y-auto p-4" data-testid={`wi-step-${s.n}`}>

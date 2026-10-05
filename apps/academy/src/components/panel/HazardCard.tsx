@@ -18,7 +18,7 @@ export function HazardCard({ h, open = false }: { h: HazardT; open?: boolean }) 
           <span className="block text-[12.5px] text-[var(--color-text-2)]">{h.consequence}</span>
           <span className="mt-1 flex flex-wrap items-center gap-2">
             <StatusChip status={h.status} compact />
-            <span className="text-[11.5px] font-medium text-[var(--color-text)]"><span aria-hidden>✋ </span>Si un control falta o tienes duda: detente y avisa. Detenerte nunca se sanciona.</span>
+            <span className="text-[11.5px] font-medium text-[var(--color-text)]"><span aria-hidden>✋ </span>Si un control falta o tienes duda: detente y avisa. Detenerte por seguridad nunca se sanciona.</span>
           </span>
         </span>
         <span aria-hidden className="text-[var(--color-text-3)] transition group-open:rotate-90">›</span>

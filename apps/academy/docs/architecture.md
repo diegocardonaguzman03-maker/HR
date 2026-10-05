@@ -18,7 +18,7 @@
  │ Scene (R3F): EafModel · Hotspots · CameraDirector · Effects por calidad     │
  │ Modos: Explorar · Aprender · Ejecutar · Evaluar · Biblioteca                │
  │ Asistente: retriever BM25 local → AnswerProvider (citas / negativa)         │
- │ Analítica: eventos locales → xAPI (actor anónimo)                           │
+ │ Analítica: eventos locales → xAPI (actor seudónimo por equipo)              │
  │ Aviso de seguridad permanente                                               │
  └────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -56,19 +56,35 @@
 
 ## 4 bis. Uso de la evidencia de aprendizaje (TRN-06, TRN-12, SAF-11)
 - **Ningún evento de la plataforma alimenta la certificación de tareas críticas (TD-P07) ni la emisión de DC-3.** La competencia la evalúa y firma un evaluador en piso con el procedimiento aprobado.
-- Cada sentencia xAPI lleva `context.contextActivities.category = urn:gasm:adx:category:knowledge-check-non-certifying` y `result.extensions["urn:gasm:adx:certifies-competency"] = false`. La evaluación se nombra «Evaluación de conocimiento (no certifica competencia; no válida para DC-3 ni para tareas críticas)» y `passed`/`failed` se muestran como «aprobó / no alcanzó el mínimo en la comprobación de conocimiento».
+- Cada sentencia xAPI lleva `context.contextActivities.category = urn:gasm:adx:category:knowledge-check-non-certifying` y `result.extensions["urn:gasm:adx:certifies-competency"] = false`. La evaluación se nombra «Evaluación de conocimiento (no certifica competencia; no válida para DC-3 ni para tareas críticas)» y `passed`/`failed` (IRI ADL estándar) se muestran como «comprensión suficiente en la comprobación de conocimiento (no certifica)» / «aún sin comprensión suficiente en la comprobación de conocimiento (no certifica)» (RL-19, display).
 - La práctica de EJECUTAR se registra como `wi.<id>#practica-sim[-n]` con `simulated: true` (tipo `simulation`), nunca como verificación OJT.
 - Por ítem se registra `answered` (correcta o no, intento, crítica); en el global, `raw/max`, intento y duración. Sin texto libre ni datos personales.
-- En la fase 1 la evidencia **solo** sirve para indicadores agregados N1–N2 por módulo. Si se lleva al expediente individual, el registro se hace en el LMS bajo TD-P09 como «constancia interna de conocimiento» (no DC-3), con aviso de privacidad y acuerdo previo de la CMCAP. El resultado **no se usa para escalafón, ascensos, cambios de puesto, sanciones ni bonos** (TRN-03; verificar con Jurídico Laboral y `experto-relaciones-laborales`).
-- El trabajador ve un aviso de registro en EVALUAR, puede **desactivarlo** (`setEnabled(false)`) y, en un equipo compartido, **terminar sesión** (borra eventos, progreso y el actor anónimo).
+- En la fase 1 la evidencia **solo** sirve para indicadores agregados N1–N2 por módulo. Si se lleva al expediente individual, el registro se hace en el LMS bajo TD-P09 como «constancia interna de conocimiento» (no DC-3), con aviso de privacidad y acuerdo previo de la CMCAP. Ni el resultado ni el avance **se usan para escalafón, ascensos, cambios de puesto o de categoría, evaluación de desempeño, sanciones ni bonos**, y la evaluación no es examen de suficiencia ni de escalafón (TRN-03, RL-01; verificar con Jurídico Laboral).
+- **Aviso de registro (RL-10).** Aparece al entrar a la app por primera vez en el equipo (`FirstRunNotice`, franja no bloqueante bajo la barra superior, en el primer render y antes de que la escena registre `initialized`) y sigue visible en EVALUAR. Se recuerda por equipo (`adx.recording-notice-seen`) al pulsar «Entendido». No promete anonimato. Ambos avisos permiten **desactivar el registro** (`setEnabled(false)`) y **«Borrar mis datos de este equipo y terminar»** (borra eventos, avance, el identificador seudónimo y la marca del aviso, para que la siguiente persona lo vuelva a ver).
+- **Identificador (RL-18).** `account.name = anon-…` es un **identificador seudónimo por equipo**, no anónimo: con la hora y la lista de quién usó el equipo se puede reidentificar. El export (`exportXapi`) no se cruza con listas de asistencia, roles de turno ni bitácoras de kiosco. Intentos y duración solo se usan agregados (RL-21).
+
+### 4 ter. Regla de exclusión LRS/LMS → DC-3 (RL-19). Requisito previo a cualquier LRS o LMS
+**Estado: requisito. No hay ningún LRS ni LMS conectado; la fase 1 no se conecta con datos de sindicalizados.**
+
+Antes de conectar cualquier LRS o LMS, el área de Plataformas (TD-16/TD-17) **documenta y prueba** esta regla en el sistema receptor:
+
+> Toda sentencia con la categoría `urn:gasm:adx:category:knowledge-check-non-certifying` en `context.contextActivities.category`, **o** con `result.extensions["urn:gasm:adx:certifies-competency"] = false`:
+> 1. **no** cambia el estado del curso a «acreditado» ni a «aprobado»;
+> 2. **no** entra al flujo de TD-P09 (registro de constancias);
+> 3. **no** genera DC-3 ni se reporta en la DC-4.
+
+- Motivo: los LMS no leen solos la marca de no certificante, y TD-P09, paso 2, genera la DC-3 «automáticamente desde el LMS para quienes aprobaron». Un `passed` estándar es justo lo que ese automatismo busca.
+- Evidencia mínima antes de conectar: prueba en el LMS de destino con una sentencia `passed` de `exportXapi()` que confirme que no acredita el curso ni dispara DC-3, firmada por Plataformas y revisada por `experto-relaciones-laborales`.
+- Alternativa si Plataformas no puede garantizar la regla: usar una IRI de verbo propia (`urn:gasm:adx:verb:knowledge-check-met`) en lugar de `passed` solo para el piloto con sindicalizados. **SME_REQUIRED** (decisión del Director).
+- Pendiente de proceso (no aplicado aquí): ajuste P-1 a TD-P09, paso 2, en `04-processes/process-manual.md` (visto bueno de `experto-documentacion-mejora`).
 
 ## 5. Integración futura
 | Punto | Hoy (MVP) | Siguiente paso |
 |---|---|---|
 | Contenido | JSON en el repositorio | CMS o repositorio documental con flujo de firmas (los esquemas zod se conservan como contrato de API). |
 | Asistente | `LocalExtractiveProvider` | `AnswerProvider` remoto (RAG con LLM) que **solo** use pasajes recuperados de documentos con estado conocido, cite y conserve las mismas reglas de negativa. |
-| Analítica | localStorage + exportación xAPI | Envío a un LRS corporativo con consentimiento y aviso de privacidad (`toXapi`). SCORM: empaquetar `web/index.html` con un adaptador SCORM 1.2/2004. |
-| Identidad | Anónima | SSO corporativo. La plataforma **no** emite certificaciones; la DC-3 y la certificación de tareas críticas se quedan en el proceso TD-P07 en piso. |
+| Analítica | localStorage + exportación xAPI | Envío a un LRS corporativo con consentimiento y aviso de privacidad (`toXapi`), **solo después** de cumplir la regla de exclusión del §4 ter (RL-19). SCORM: empaquetar `web/index.html` con un adaptador SCORM 1.2/2004. |
+| Identidad | Seudónimo por equipo (sin nombre ni ficha) | SSO corporativo. La plataforma **no** emite certificaciones; la DC-3 y la certificación de tareas críticas se quedan en el proceso TD-P07 en piso. |
 
 ## 6. Builds
 - `npm run build` → `dist/` (chunks separados: three, r3f, escena *lazy*).

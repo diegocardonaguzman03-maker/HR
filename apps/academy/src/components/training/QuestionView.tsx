@@ -28,7 +28,7 @@ export function QuestionView({ q, r, onChange, disabled = false, critical = fals
   return (
     <fieldset className="space-y-2" disabled={disabled} data-testid={`question-${q.id}`} data-critical={critical || undefined}>
       <legend className="mb-3 text-[15px] font-medium leading-snug">
-        {critical && <span className="mb-1.5 block w-fit rounded border border-[var(--color-danger)] px-1.5 py-0.5 font-mono text-[11px] font-semibold text-[var(--color-danger)]" data-testid="critical-badge"><span aria-hidden>▲ </span>Pregunta de seguridad<span className="sr-only">: debes contestarla bien para aprobar.</span></span>}
+        {critical && <span className="mb-1.5 block w-fit rounded border border-[var(--color-danger)] px-1.5 py-0.5 font-mono text-[11px] font-semibold text-[var(--color-danger)]" data-testid="critical-badge"><span aria-hidden>▲ </span>Pregunta de seguridad<span className="sr-only">: debes contestarla bien para terminar con comprensión suficiente.</span></span>}
         {q.prompt}
       </legend>
       {q.kind === 'mcq' && r.kind === 'mcq' && q.options.map((o, i) => (

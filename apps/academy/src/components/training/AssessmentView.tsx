@@ -1,39 +1,20 @@
 import { useMemo, useRef, useState } from 'react';
 import { content, idx } from '../../lib/content';
 import { emptyResponse, grade, isAnswered, isPassed, score, type Response } from '../../lib/assessment';
-import { recordAttempt, resetProgress } from '../../lib/progress';
-import { clearEvents, enabled, resetActor, setEnabled, track } from '../../lib/analytics';
+import { recordAttempt } from '../../lib/progress';
+import { track } from '../../lib/analytics';
+import { RecordingNotice } from '../ui/RecordingNotice';
 import { useApp } from '../../stores/useApp';
 import { QuestionView } from './QuestionView';
 import { StatusChip, btn, btnPrimary } from '../ui/Status';
 import type { AssessmentT, QuestionT } from '../../types/content';
 
-/** TRN-03: para qué NO se usa el resultado (pendiente de visto bueno de experto-relaciones-laborales). */
-export const NOT_FOR_HR = 'Esta evaluación es solo para tu aprendizaje. No es una constancia DC-3, no te habilita para operar y no se usa para escalafón, ascensos, cambios de puesto, sanciones ni bonos. Puedes repetirla las veces que necesites.';
+/** TRN-03: para qué NO se usa el resultado ni el avance (RL-01, revisión ADX-RL-001; verificar con Jurídico Laboral). */
+export const NOT_FOR_HR = 'Esta evaluación es solo para tu aprendizaje. No es una constancia DC-3, no es un examen de suficiencia ni de escalafón y no te habilita para operar. Ni este resultado ni tu avance en la plataforma se usan para escalafón, ascensos, cambios de puesto o de categoría, evaluación de desempeño, sanciones ni bonos. Puedes repetirla las veces que necesites.';
 const CRITICAL_MISSED = 'Para terminar necesitas contestar bien todas las preguntas de seguridad (marcadas con ▲). Repasa el módulo de seguridad y vuelve a intentarlo.';
 
 function NotForHr() {
   return <p role="note" className="mb-3 rounded border border-[var(--color-line)] bg-[var(--color-surface-2)] p-2 text-[13px]" data-testid="not-for-hr"><strong><span aria-hidden>ⓘ </span>{NOT_FOR_HR.split('. ')[0]}.</strong> {NOT_FOR_HR.split('. ').slice(1).join('. ')}</p>;
-}
-
-/** TRN-12: aviso de registro local y control para desactivarlo o borrar lo guardado en un equipo compartido. */
-function RecordingNotice() {
-  const [on, setOn] = useState(enabled());
-  const [cleared, setCleared] = useState(false);
-  return (
-    <div className="mb-4 rounded border border-[var(--color-line)] p-2 text-[12.5px] text-[var(--color-text-2)]" data-testid="recording-notice">
-      <p>
-        {on
-          ? 'Esta plataforma guarda en este equipo, sin tu nombre, qué lecciones viste y tu resultado, para mejorar el curso.'
-          : 'El registro está desactivado: en este equipo no se guarda qué lecciones viste ni tu resultado.'}
-      </p>
-      <div className="mt-2 flex flex-wrap gap-2">
-        <button className={btn} aria-pressed={!on} onClick={() => { setEnabled(!on); setOn(!on); }} data-testid="toggle-recording">{on ? 'Desactivar registro' : 'Activar registro'}</button>
-        <button className={btn} onClick={() => { clearEvents(); resetProgress(); resetActor(); setCleared(true); }} data-testid="clear-shared">Terminar sesión en equipo compartido</button>
-      </div>
-      {cleared && <p role="status" className="mt-1">Listo: se borró lo guardado en este equipo.</p>}
-    </div>
-  );
 }
 
 const scoreOf = (a: AssessmentT, qs: QuestionT[], rs: Response[]) => score(qs, rs, { critical: a.criticalQuestionIds, unscored: a.unscoredQuestionIds });
@@ -101,7 +82,8 @@ function Runner({ asmId, onExit }: { asmId: string; onExit: () => void }) {
     return (
       <div className="scroll-thin h-full overflow-y-auto p-4" data-testid="assessment-result" data-passed={passed}>
         <p className="label">Resultado</p>
-        <h2 className="text-[22px] font-semibold leading-tight"><span aria-hidden>{passed ? '✔ ' : '✕ '}</span>{passed ? 'Aprobaste la evaluación de conocimiento' : 'Aún no apruebas la evaluación de conocimiento'} — {s.correct} de {s.total} ({Math.round(s.ratio * 100)} %)</h2>
+        {/* RL-04 / TRN-18: sin «aprobar / reprobar», lenguaje de los exámenes de escalafón y suficiencia */}
+        <h2 className="text-[22px] font-semibold leading-tight"><span aria-hidden>{passed ? '✔ ' : '✕ '}</span>{passed ? 'Comprensión suficiente' : 'Aún no: repasa y vuelve a intentarlo'} — {s.correct} de {s.total} ({Math.round(s.ratio * 100)} %)</h2>
         {a.unscoredQuestionIds.length > 0 && <p className="mt-1 text-[12.5px] text-[var(--color-text-2)]">{a.unscoredQuestionIds.length === 1 ? 'Una pregunta es' : `${a.unscoredQuestionIds.length} preguntas son`} de repaso y no cuenta{a.unscoredQuestionIds.length === 1 ? '' : 'n'} para la calificación.</p>}
         {!s.criticalOk && (
           <p role="alert" className="mt-3 rounded border border-[var(--color-danger)]/70 bg-[var(--color-danger)]/10 p-2 text-[13px]" data-testid="critical-missed">

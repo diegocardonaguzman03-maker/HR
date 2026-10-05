@@ -109,7 +109,7 @@
     "kind": "mcq",
     "topic": "Alcance de la evaluación",
     "level": 1,
-    "prompt": "Si apruebas esta evaluación en la plataforma, ¿qué significa?",
+    "prompt": "Si sales con comprensión suficiente en esta evaluación de la plataforma, ¿qué significa?",
     "options": [
       "Que ya puedes operar el sistema de electrodos si tu supervisor está de acuerdo",
       "Que comprendes los conceptos generales, pero no te habilita para operar",
@@ -117,7 +117,7 @@
       "Que puedes saltarte una parte del entrenamiento en el puesto"
     ],
     "answer": 1,
-    "explanation": "La plataforma apoya el aprendizaje, pero no certifica competencia ni es una constancia DC-3. Para operar necesitas entrenamiento en el puesto, supervisión y la evaluación de un evaluador autorizado en piso con el procedimiento aprobado. Tampoco se usa para escalafón ni para evaluar tu desempeño."
+    "explanation": "La plataforma apoya el aprendizaje, pero no certifica competencia ni es una constancia DC-3. Para operar necesitas entrenamiento en el puesto, supervisión y la evaluación de un evaluador autorizado en piso con el procedimiento aprobado. Tampoco se usa para escalafón, ascensos, sanciones ni bonos, ni para evaluar tu desempeño."
   },
   {
     "id": "q.safety-1",

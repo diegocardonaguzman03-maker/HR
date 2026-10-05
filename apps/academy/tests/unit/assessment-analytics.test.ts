@@ -62,7 +62,9 @@ describe('analítica no invasiva', () => {
     const asm = toXapi(track('passed', 'asm.eaf-electrode', { score: 0.9, success: true, raw: 8, max: 9, attempt: 2 })!, 'anon-test');
     expect(asm.object.definition?.type).toBe('http://adlnet.gov/expapi/activities/assessment');
     expect(asm.object.definition?.name['es-MX']).toMatch(/no certifica competencia; no válida para DC-3/);
-    expect(asm.verb.display['es-MX']).toBe('aprobó la comprobación de conocimiento');
+    expect(asm.verb.id).toBe('http://adlnet.gov/expapi/verbs/passed');
+    expect(asm.verb.display['es-MX']).toBe('comprensión suficiente en la comprobación de conocimiento (no certifica)');
+    expect(toXapi(track('failed', 'asm.eaf-electrode', { success: false })!, 'anon-test').verb.display['es-MX']).toBe('aún sin comprensión suficiente en la comprobación de conocimiento (no certifica)');
     expect(asm.context.contextActivities.category[0].id).toBe('urn:gasm:adx:category:knowledge-check-non-certifying');
     expect(asm.result.score).toEqual({ scaled: 0.9, raw: 8, min: 0, max: 9 });
     expect(asm.result.extensions).toMatchObject({ 'urn:gasm:adx:certifies-competency': false, 'urn:gasm:adx:attempt': 2 });

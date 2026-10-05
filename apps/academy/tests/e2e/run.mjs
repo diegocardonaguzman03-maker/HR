@@ -56,6 +56,26 @@ await test('arranque: carga real del modelo, aviso permanente y métricas', asyn
   await page.screenshot({ path: `${SHOTS}/01-inicio.png` });
 });
 
+await test('aviso de registro al arrancar, antes de `initialized` (RL-10)', async (page) => {
+  await page.goto(srv.url + '/?e2e');
+  await page.waitForSelector('[data-testid=first-run-notice]', { timeout: 15000 });
+  // el aviso se pinta antes de que la escena registre `initialized`
+  const before = await page.evaluate(() => JSON.parse(localStorage.getItem('adx.events') ?? '[]').map((e) => e.verb));
+  assert(!before.includes('initialized'), 'initialized antes del aviso');
+  const txt = await page.textContent('[data-testid=first-run-notice]');
+  assert(/sin tu nombre ni tu número de ficha/.test(txt) && !/anónim/i.test(txt), 'texto del aviso');
+  assert(await page.isVisible('[data-testid=first-run-toggle-recording]') && await page.isVisible('[data-testid=first-run-clear-shared]'), 'faltan botones');
+  await page.waitForSelector('[data-testid=loading]', { state: 'detached', timeout: 120000 });
+  assert(await page.isVisible('[data-testid=first-run-notice]'), 'el aviso desapareció al cargar');
+  await page.screenshot({ path: `${SHOTS}/00-aviso-registro.png` });
+  await page.click('[data-testid=first-run-dismiss]');
+  await page.reload();
+  await page.waitForSelector('[data-testid=loading]', { state: 'detached', timeout: 120000 });
+  assert(await page.locator('[data-testid=first-run-notice]').count() === 0, 'no se recordó por equipo');
+  await page.click('[data-testid=mode-assess]');
+  assert(await page.isVisible('[data-testid=recording-notice]'), 'falta el aviso en EVALUAR');
+});
+
 await test('hotspot 3D abre el panel del equipo', async (page) => {
   await ready(page);
   await page.click('[data-testid="hotspot-hs.electrodes"]');
@@ -151,7 +171,7 @@ await test('evaluación completa (identificar con la lista accesible; preguntas 
     await page.click(i < asm.questionIds.length - 1 ? '[data-testid=next-question]' : '[data-testid=finish-assessment]');
   }
   const txt = await page.textContent('[data-testid=assessment-result]');
-  assert(/Aprobaste la evaluación de conocimiento/.test(txt) && /no certifica competencia/.test(txt) && /escalafón/.test(txt), 'resultado inesperado');
+  assert(/Comprensión suficiente/.test(txt) && !/Aprobaste|Aprobado/.test(txt) && /no certifica competencia/.test(txt) && /escalafón/.test(txt), 'resultado inesperado');
   await page.screenshot({ path: `${SHOTS}/06-resultado.png` });
 });
 

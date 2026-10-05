@@ -7,6 +7,7 @@ import { ViewToolbar } from '../components/shell/ViewToolbar';
 import { LoadingScreen } from '../components/shell/LoadingScreen';
 import { Welcome } from '../components/shell/Welcome';
 import { Disclaimer, DISCLAIMER } from '../components/ui/Disclaimer';
+import { FirstRunNotice } from '../components/ui/RecordingNotice';
 import { ErrorBoundary } from '../components/ui/ErrorBoundary';
 import { useLoad } from '../stores/useLoad';
 import { EquipmentPanel } from '../components/panel/EquipmentPanel';
@@ -161,6 +162,8 @@ function Main() {
     <div className="flex h-full flex-col">
       <a href="#panel" className="skip-link">Saltar al panel de información</a>
       <TopBar />
+      {/* RL-10: aviso de registro al entrar, antes de que la escena registre `initialized` */}
+      <FirstRunNotice />
       <div className="flex min-h-0 flex-1 flex-col lg:grid lg:grid-cols-[240px_minmax(0,1fr)_minmax(360px,420px)]">
         <SidebarShell />
         <main className="relative h-[46vh] min-h-[280px] lg:h-auto" aria-label="Vista 3D del horno">

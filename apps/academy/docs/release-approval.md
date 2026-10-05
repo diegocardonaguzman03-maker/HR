@@ -102,7 +102,7 @@ Activos de contenido incluidos en el entregable 1: `src/content/*.json`, `src/as
 > - **C4.** Actualizar `qa-report.md` y `README.md` con el estado real: 202 pruebas y asistente oculto.
 > - **C5.** Medir FPS y tiempo de carga en 3 equipos reales y en la red de planta durante la primera semana. Si el resultado es < 30 FPS en Media, usar Baja como predeterminada.
 > - **C6.** Llenar las firmas de `validation-checklist.md` con los dictámenes de la sección 1 (lo hace ADX-14 cuando el Director decida).
-> - **C7.** Ningún resultado del piloto se registra como DC-3, certificación TD-P07 ni dato de escalafón. La evidencia es solo agregada (N1–N2).
+> - **C7.** Ningún resultado ni avance del piloto se registra como DC-3, certificación TD-P07, examen de suficiencia (LFT art. 153-U), examen de capacidad para escalafón ni dato de desempeño. La evidencia es solo agregada (N1–N2) y no entra al flujo TD-P09. *(Texto de RL, ADX-RL-001; verificar con Jurídico Laboral.)*
 >
 > **Qué haría cambiar este dictamen a NO APROBADO:** que se publique un build con el asistente activo, que aparezca un valor de planta sin `SME_REQUIRED`, o que se use el resultado con fines laborales antes del visto bueno de RL.
 

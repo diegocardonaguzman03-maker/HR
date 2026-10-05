@@ -2,11 +2,14 @@
  * Analítica de aprendizaje NO invasiva.
  * - Solo eventos de aprendizaje (abrir equipo, completar lección, descargar documento, terminar evaluación).
  * - Sin movimiento del ratón, sin teclas, sin texto libre (las preguntas al asistente NO se guardan), sin datos personales.
- * - Se guarda solo en este navegador (localStorage) con un identificador anónimo aleatorio.
+ * - Se guarda solo en este navegador (localStorage) con un identificador seudónimo por equipo (aleatorio, sin nombre ni
+ *   número de ficha). NO es anónimo: con la hora y la lista de quién usó el equipo se podría reidentificar (RL-18).
  * - Listo para enviarse a un LRS como sentencias xAPI cuando la planta lo habilite (toXapi / exportXapi).
  * - NINGÚN evento alimenta la certificación de tareas críticas (TD-P07) ni la emisión de DC-3 (TRN-06 / SAF-11):
  *   cada sentencia lleva la categoría «knowledge-check-non-certifying» y `certifies-competency: false`.
  * - El trabajador puede desactivar el registro y borrar lo guardado en un equipo compartido (TRN-12).
+ * - RL-10: el aviso de registro se muestra al entrar a la app por primera vez en el equipo (FirstRunNotice).
+ * - RL-19: ningún LRS/LMS se conecta sin la regla de exclusión de docs/architecture.md §4 bis.
  */
 export type Verb = 'initialized' | 'opened' | 'mode-changed' | 'started' | 'progressed' | 'completed' | 'passed' | 'failed' | 'downloaded' | 'played' | 'asked' | 'checked' | 'answered';
 
@@ -21,9 +24,19 @@ function safeGet(k: string): string | null { try { return localStorage.getItem(k
 function safeSet(k: string, v: string) { try { localStorage.setItem(k, v); } catch { /* sin almacenamiento */ } }
 const rid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
 
+const enabledListeners = new Set<() => void>();
 export function enabled(): boolean { return safeGet('adx.analytics') !== 'off'; }
-export function setEnabled(on: boolean) { safeSet('adx.analytics', on ? 'on' : 'off'); }
-/** TRN-12: olvida el identificador anónimo de este navegador (equipo compartido). */
+export function setEnabled(on: boolean) { safeSet('adx.analytics', on ? 'on' : 'off'); enabledListeners.forEach((l) => l()); }
+/** Para que los dos avisos de registro (al entrar y en EVALUAR) muestren el mismo estado. */
+export function subscribeEnabled(l: () => void) { enabledListeners.add(l); return () => { enabledListeners.delete(l); }; }
+
+/** RL-10: el aviso de registro se recuerda por equipo (navegador). */
+const NOTICE = 'adx.recording-notice-seen';
+export function noticeSeen(): boolean { return safeGet(NOTICE) === '1'; }
+export function markNoticeSeen() { safeSet(NOTICE, '1'); }
+export function forgetNoticeSeen() { try { localStorage.removeItem(NOTICE); } catch { /* sin almacenamiento */ } }
+
+/** TRN-12: olvida el identificador seudónimo de este navegador (equipo compartido). */
 export function resetActor() { try { localStorage.removeItem(ACTOR); } catch { /* sin almacenamiento */ } }
 
 export function anonymousActor(): string {
@@ -83,11 +96,12 @@ const NON_CERT = {
   definition: { name: { 'es-MX': 'Evidencia de conocimiento. No es DC-3 ni certificación TD-P07' } },
 } as const;
 
-/** Sentencia xAPI 1.0.3 con actor anónimo (cuenta, sin nombre ni correo). */
+/** Sentencia xAPI 1.0.3 con actor seudónimo por equipo (cuenta, sin nombre, ficha ni correo). */
 export function toXapi(e: LearningEvent, actor = anonymousActor()) {
   const r = e.result ?? {};
   const asm = e.object.startsWith('asm.');
-  const display = asm && e.verb === 'passed' ? 'aprobó la comprobación de conocimiento' : asm && e.verb === 'failed' ? 'no alcanzó el mínimo en la comprobación de conocimiento' : e.verb;
+  // RL-19 (display): mismo lenguaje que el resultado en pantalla (RL-04); la IRI ADL se conserva
+  const display = asm && e.verb === 'passed' ? 'comprensión suficiente en la comprobación de conocimiento (no certifica)' : asm && e.verb === 'failed' ? 'aún sin comprensión suficiente en la comprobación de conocimiento (no certifica)' : e.verb;
   const def = activityDefinition(e.object);
   const score = {
     ...(typeof r.score === 'number' ? { scaled: r.score } : {}),
