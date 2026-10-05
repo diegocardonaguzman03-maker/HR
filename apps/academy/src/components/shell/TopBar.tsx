@@ -1,4 +1,5 @@
-import { useApp, type Mode, type Quality } from '../../stores/useApp';
+import { useShallow } from 'zustand/react/shallow';
+import { isQuality, useApp, type Mode } from '../../stores/useApp';
 import { track } from '../../lib/analytics';
 import { btnPrimary } from '../ui/Status';
 
@@ -9,10 +10,12 @@ const MODES: { id: Mode; label: string; hint: string }[] = [
   { id: 'assess', label: 'EVALUAR', hint: 'Comprueba lo aprendido' },
   { id: 'library', label: 'BIBLIOTECA', hint: 'Documentos y videos' },
 ];
-const Q: { id: Quality; label: string }[] = [{ id: 'auto', label: 'Auto' }, { id: 'low', label: 'Baja' }, { id: 'medium', label: 'Media' }, { id: 'high', label: 'Alta' }];
+const Q: { id: 'auto' | 'low' | 'medium' | 'high'; label: string }[] = [{ id: 'auto', label: 'Auto' }, { id: 'low', label: 'Baja' }, { id: 'medium', label: 'Media' }, { id: 'high', label: 'Alta' }];
 
 export function TopBar() {
-  const { mode, setMode, quality, effective, set, assistantOpen } = useApp();
+  const { mode, setMode, quality, effective, set, assistantOpen } = useApp(useShallow((s) => ({
+    mode: s.mode, setMode: s.setMode, quality: s.quality, effective: s.effective, set: s.set, assistantOpen: s.assistantOpen,
+  })));
   return (
     <header className="flex min-h-13 flex-wrap items-center gap-x-4 gap-y-2 border-b border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-2">
       <div className="flex items-center gap-2.5">
@@ -35,7 +38,7 @@ export function TopBar() {
         <label className="flex items-center gap-1.5 text-[12px] text-[var(--color-text-3)]">
           <span className="hidden sm:inline">Gráficos</span>
           <select aria-label="Calidad de gráficos" data-testid="quality" value={quality} className="rounded-md border border-[var(--color-line-strong)] bg-[var(--color-surface-2)] px-1.5 py-1 text-[12px] text-[var(--color-text)]"
-            onChange={(e) => { const q = e.target.value as Quality; try { localStorage.setItem('adx.quality', q); } catch { /* */ } set({ quality: q, effective: q === 'auto' ? effective : q }); }}>
+            onChange={(e) => { const q = e.target.value; if (!isQuality(q)) return; try { localStorage.setItem('adx.quality', q); } catch { /* */ } set({ quality: q, effective: q === 'auto' ? effective : q }); }}>
             {Q.map((x) => <option key={x.id} value={x.id}>{x.label}{x.id === 'auto' && quality === 'auto' ? ` (${({ low: 'baja', medium: 'media', high: 'alta' } as const)[effective]})` : ''}</option>)}
           </select>
         </label>

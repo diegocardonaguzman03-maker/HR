@@ -1,5 +1,6 @@
 import type { EquipmentT } from '../../types/content';
 import { idx } from '../../lib/content';
+import { useShallow } from 'zustand/react/shallow';
 import { useApp, type Tab } from '../../stores/useApp';
 import { Tabs } from '../ui/Tabs';
 import { Bullets, OpText, Section, Sources, StatusChip, btn } from '../ui/Status';
@@ -14,7 +15,7 @@ const TABS: { id: Tab; label: string }[] = [
 ];
 
 export function EquipmentPanel({ eq }: { eq: EquipmentT }) {
-  const { tab, set, selectedComponentNode, setMode } = useApp();
+  const { tab, set, selectedComponentNode, setMode } = useApp(useShallow((s) => ({ tab: s.tab, set: s.set, selectedComponentNode: s.selectedComponentNode, setMode: s.setMode })));
   const hazards = eq.hazardIds.map((h) => idx.hazard.get(h)!).filter(Boolean);
   const crit = hazards.filter((h) => h.severity === 'critical');
   const tabs = TABS.map((t) => ({ ...t, badge: t.id === 'safety' ? hazards.length : t.id === 'documents' ? eq.documentIds.length : t.id === 'videos' ? eq.videoIds.length : undefined }));

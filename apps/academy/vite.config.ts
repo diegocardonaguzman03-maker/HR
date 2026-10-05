@@ -14,7 +14,18 @@ export default defineConfig(({ mode }) => ({
       ? { outDir: 'web', emptyOutDir: true, copyPublicDir: true, assetsInlineLimit: 8_000_000, chunkSizeWarningLimit: 4000 }
       : {
           chunkSizeWarningLimit: 1500,
-          rollupOptions: { output: { manualChunks: { three: ['three'], r3f: ['@react-three/fiber', '@react-three/drei', '@react-three/postprocessing'] } } },
+          // RT-PERF-03: React va en su propio chunk; así `index` ya no importa estáticamente `r3f`/`three`
+          // y la interfaz (aviso, lista de equipos) se pinta antes de descargar el 3D (que entra con lazy()).
+          rollupOptions: {
+            output: {
+              manualChunks(id: string) {
+                if (/node_modules[\\/](react|react-dom|scheduler)[\\/]/.test(id)) return 'react';
+                if (/node_modules[\\/]three[\\/]/.test(id)) return 'three';
+                if (/node_modules[\\/](@react-three|postprocessing|camera-controls|three-stdlib|maath|n8ao|troika-[^\\/]+|three-mesh-bvh|@monogrid|stats-gl|suspend-react|its-fine|react-reconciler)[\\/]/.test(id)) return 'r3f';
+                return undefined;
+              },
+            },
+          },
         },
   test: {
     environment: 'jsdom',
