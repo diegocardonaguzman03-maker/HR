@@ -30,7 +30,7 @@ export const isUnsafe = (q: string) => { const s = norm(q); return (UNSAFE_VERB.
 const WATER = /\b(agua|manguera\w*|mojad\w*|humed\w*|hielo)\b/;
 const MELT = /\b(escoria|metal|acero|bano|olla|fosa|horno|pie liquido|liquid\w*)\b/;
 const WATER_ACT = /\b(meto|meter\w*|echo|echar\w*|tiro|tirar|avent\w*|roci\w*|enfri\w*|cargo|cargar|carga|se vale|sigo|seguir)\b/;
-const EMERGENCY = /\b(fuga\w*|derram\w*|explosi\w*|incendi\w*|fuego|lesionad\w*|herid\w*|atrapad\w*|quemad\w*|desmay\w*|me (queme|corte|golpee|cai|lastime|electrocute|intoxique)|se (quemo|corto|golpeo|lastimo|electrocuto|intoxico)|vapor|humo|chispa\w*|ator\w*|atasc\w*|prensad\w*|gotea\w*|suena|sono|evacu\w*|emergencia\w*|se rompe|se rompio|se cae|se cayo)\b/;
+const EMERGENCY = /\b(fuga\w*|derram\w*|explosi\w*|incendi\w*|fuego|lesionad\w*|herid\w*|atrapad\w*|quemad\w*|desmay\w*|le cayo|me cayo|me (queme|corte|golpee|cai|lastime|electrocute|intoxique)|se (quemo|corto|golpeo|lastimo|electrocuto|intoxico)|vapor|humo|chispa\w*|ator\w*|atasc\w*|prensad\w*|gotea\w*|suena|sono|evacu\w*|emergencia\w*|se rompe|se rompio|se cae|se cayo)\b/;
 /** «paro de emergencia» es un equipo, no una emergencia en curso. */
 const isEmergency = (s: string) => EMERGENCY.test(s.replace(/\bparos? de emergencia\b/g, ''));
 const PERMISSION = /^\s*¿?\s*(puedo|podemos|se puede|me puedo|nos podemos|esta bien (si|que)|es seguro|alcanzo a|da tiempo de|se vale|hay problema si|pasa algo si)\b|¿\s*(sigo|continuo|le sigo)\b/;
@@ -48,6 +48,16 @@ export const REFUSE = 'No puedo ayudar a omitir, puentear ni anular bloqueos, en
 export const SAFETY_FIRST = 'Si esto está pasando ahora: DETENTE, aléjate a una zona segura, avisa de inmediato por radio a tu supervisor o al púlpito y no dejes que nadie se acerque. No intentes corregirlo tú. La respuesta de emergencia de la planta la define su procedimiento aprobado (SME_REQUIRED: MS-ACE-09 en borrador; Seguridad C-16).';
 export const WATER_NO = 'NO. El agua o la humedad en contacto con metal líquido o escoria puede causar una explosión de vapor. No eches agua ni cargues material mojado. Si ves agua, vapor o material mojado cerca de metal líquido: detente, aléjate y avisa de inmediato a tu supervisor o al púlpito. SME_REQUIRED: manejo aprobado del DRI mojado y respuesta ante agua con metal líquido; los dan C-07 y Seguridad C-16 (MO-EAF-02 / MS-ACE-03 / MS-ACE-09 en borrador).';
 export const NO_AUTH = 'La plataforma no autoriza tareas ni excepciones. Si tienes duda, la respuesta es NO: detente y pregúntale a tu supervisor.';
+
+// §8.9-B (ADX-04): criterio por omisión — la plataforma EXPLICA, no instruye tareas. Toda pregunta de «cómo hacer»
+// que no sea explicativa recibe NO_HOWTO. Además, una pregunta en primera persona con contexto de peligro
+// (equipo encendido, metal, bloqueo…) que no sea explicativa también recibe NO_HOWTO (red de seguridad extra).
+const HOWTO = /\b(como|que hago para|forma de|manera de)\b/;
+const EXPLAIN = /\bcomo (funciona\w*|se llama\w*|se forma|se produce\w*|se mide|se controla|es|son|esta hecho|se relaciona\w*|afecta\w*|influye\w*|se mueve\w*|trabaja\w*|opera\w*|llega\w*|sale\w*|entra\w*|circula\w*|se enfria\w*|se alimenta\w*|se conecta\w*|se usa\w*|se ve\w*|reconozco|identifico|se reporta|reporto|aviso|se avisa)\b/;
+const EXPLANATORY = /^\s*¿?\s*(que es|que son|para que|por que|cual es la funcion|que hace|que significa|explica\w*|describe)\b/;
+const HAZARD_CTX = /\b(encendid\w*|prendid\w*|energizad\w*|funcionando|andando|en marcha|metal|escoria|acero liquido|olla|fosa|candado\w*|tarjeta\w*|bloqueo\w*|enclavamiento\w*|mordaza\w*|electrodo\w*|arco|oxigeno|hidraulic\w*)\b/;
+const FIRST_PERSON_ACT = /\b\w+(o)\b\s+(el|la|los|las|al|a la|mi|su)\b/;
+export const NO_HOWTO = 'Esta plataforma explica cómo funciona el equipo; no da instrucciones para hacer tareas en planta. Cómo se hace una tarea lo define el procedimiento aprobado y te lo enseña tu supervisor o instructor en piso. Si tienes duda o algo no se ve bien: detente y pregunta.';
 
 export class LocalExtractiveProvider implements AnswerProvider {
   readonly name = 'Recuperación local (BM25) con citas — sin modelo generativo';
@@ -82,6 +92,9 @@ export class LocalExtractiveProvider implements AnswerProvider {
         citations,
         note: citations.length ? 'Abajo hay contexto educativo general relacionado, no valores de planta.' : undefined,
       };
+    }
+    if (!EXPLANATORY.test(s) && ((HOWTO.test(s) && !EXPLAIN.test(s)) || (HAZARD_CTX.test(s) && FIRST_PERSON_ACT.test(s)))) {
+      return { kind: 'safety-first', text: NO_HOWTO, citations, note: 'Abajo hay contexto educativo general; no es una instrucción de trabajo.' };
     }
     if (!citations.length) return { kind: 'no-source', text: NO_SOURCE, citations: [], note: 'No encontré ese tema en el contenido del módulo.' };
     return { kind: 'answer', text: 'Según el contenido del módulo (educativo, no es un procedimiento aprobado):', citations };
