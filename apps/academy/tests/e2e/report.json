@@ -1,87 +1,93 @@
 {
-  "date": "2026-10-05T17:12:59.079Z",
+  "date": "2026-10-05T22:08:35.452Z",
   "dir": "dist",
   "results": [
     {
       "name": "arranque: carga real del modelo, aviso permanente y métricas",
       "ok": true,
-      "ms": 5561
+      "ms": 4844
     },
     {
       "name": "aviso de registro al arrancar, antes de `initialized` (RL-10)",
-      "ok": true,
-      "ms": 8392
+      "ok": false,
+      "ms": 31222,
+      "error": "page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=mode-assess]')\u001b[22m\n"
     },
     {
       "name": "hotspot 3D abre el panel del equipo",
       "ok": true,
-      "ms": 8650
+      "ms": 6756
     },
     {
       "name": "clic directo en el modelo 3D selecciona un equipo",
       "ok": true,
-      "ms": 5507
+      "ms": 4295
     },
     {
       "name": "herramientas de vista: corte, rayos X, despiece, aislar, restablecer",
       "ok": true,
-      "ms": 11550
+      "ms": 10092
     },
     {
       "name": "cambio de modo y enlaces profundos",
       "ok": true,
-      "ms": 5628
+      "ms": 5039
     },
     {
       "name": "progresión de lecciones con resaltado 3D",
       "ok": true,
-      "ms": 13107
+      "ms": 11670
     },
     {
       "name": "EJECUTAR: instrucción paso a paso con aviso de no aprobada",
       "ok": true,
-      "ms": 24275
+      "ms": 20618
     },
     {
       "name": "evaluación completa (identificar con la lista accesible; preguntas críticas ▲)",
       "ok": true,
-      "ms": 22886
+      "ms": 18980
     },
     {
       "name": "descarga de documento PDF",
       "ok": true,
-      "ms": 5272
+      "ms": 4696
     },
     {
       "name": "video con subtítulos y capítulos",
       "ok": true,
-      "ms": 4893
+      "ms": 4464
     },
     {
       "name": "asistente oculto en el piloto (veto ADX-04, opción B)",
       "ok": true,
-      "ms": 1113
+      "ms": 1064
     },
     {
       "name": "accesibilidad: teclado, landmarks, etiquetas y modo móvil",
       "ok": true,
-      "ms": 5383
+      "ms": 2014
     },
     {
       "name": "vista móvil (390×844) sin desbordamiento horizontal",
       "ok": true,
-      "ms": 1840
+      "ms": 1658
+    },
+    {
+      "name": "MISIÓN 01 · Trabajo en alturas: de la pantalla inicial a resultados (8 pasos)",
+      "ok": true,
+      "ms": 42720
     }
   ],
   "errors": [],
   "perf": {
-    "loadMs": 2079,
-    "fps": 4,
+    "loadMs": 3090,
+    "fps": 2,
     "calls": 1,
     "triangles": 1,
-    "geometries": 17,
+    "geometries": 74,
     "textures": 27,
     "quality": "medium",
-    "jsHeapMB": 15
+    "jsHeapMB": 19
   }
 }

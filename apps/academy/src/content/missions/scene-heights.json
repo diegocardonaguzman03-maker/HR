@@ -1,0 +1,403 @@
+{
+  "id": "heights-01",
+  "home": {
+    "position": [
+      16,
+      11,
+      18
+    ],
+    "target": [
+      -1,
+      3,
+      0
+    ]
+  },
+  "objects": [
+    {
+      "id": "piso",
+      "kind": "floor",
+      "label": "Piso de la nave",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "props": {
+        "w": 40,
+        "d": 30
+      }
+    },
+    {
+      "id": "muro",
+      "kind": "wall",
+      "label": "Muro de la nave",
+      "position": [
+        0,
+        0,
+        -9
+      ],
+      "props": {
+        "w": 40,
+        "h": 12
+      }
+    },
+    {
+      "id": "plataforma",
+      "kind": "platform",
+      "label": "Plataforma a 4 m",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "props": {
+        "w": 8,
+        "d": 6,
+        "h": 4
+      }
+    },
+    {
+      "id": "viga-superior",
+      "kind": "column",
+      "label": "Viga estructural superior",
+      "position": [
+        0,
+        7,
+        -2.6
+      ],
+      "rotation": [
+        0,
+        0,
+        1.5707963267948966
+      ],
+      "props": {
+        "h": 10,
+        "size": 0.35
+      }
+    },
+    {
+      "id": "escalera",
+      "kind": "ladder",
+      "label": "Escalera fija",
+      "position": [
+        3.2,
+        0,
+        3.15
+      ],
+      "props": {
+        "h": 4,
+        "missingRung": true
+      }
+    },
+    {
+      "id": "barandal-trasero",
+      "kind": "guardrail",
+      "label": "Barandal trasero",
+      "position": [
+        0,
+        4,
+        -3
+      ],
+      "props": {
+        "length": 8,
+        "missingMidrail": false
+      }
+    },
+    {
+      "id": "barandal-izquierdo",
+      "kind": "guardrail",
+      "label": "Barandal izquierdo",
+      "position": [
+        -4,
+        4,
+        0
+      ],
+      "rotation": [
+        0,
+        1.5707963267948966,
+        0
+      ],
+      "props": {
+        "length": 6,
+        "missingMidrail": false
+      }
+    },
+    {
+      "id": "barandal-frontal",
+      "kind": "guardrail",
+      "label": "Barandal frontal",
+      "position": [
+        -1.25,
+        4,
+        3
+      ],
+      "props": {
+        "length": 5.5,
+        "missingMidrail": true
+      }
+    },
+    {
+      "id": "borde-abierto",
+      "kind": "edge",
+      "label": "Borde derecho de la plataforma",
+      "position": [
+        4,
+        4,
+        0
+      ],
+      "rotation": [
+        0,
+        1.5707963267948966,
+        0
+      ],
+      "props": {
+        "length": 6
+      }
+    },
+    {
+      "id": "abertura",
+      "kind": "opening",
+      "label": "Centro del piso de la plataforma",
+      "position": [
+        -1.6,
+        4,
+        -0.9
+      ],
+      "props": {
+        "size": 1.3
+      }
+    },
+    {
+      "id": "linea-electrica",
+      "kind": "powerline",
+      "label": "Cables aéreos",
+      "position": [
+        8.5,
+        0,
+        -4
+      ],
+      "props": {
+        "h": 7.2,
+        "span": 14
+      }
+    },
+    {
+      "id": "herramienta-borde",
+      "kind": "tools",
+      "label": "Caja de herramientas",
+      "position": [
+        3.6,
+        4,
+        1.4
+      ]
+    },
+    {
+      "id": "persona-abajo",
+      "kind": "person",
+      "label": "Persona caminando abajo",
+      "position": [
+        5.6,
+        0,
+        1.2
+      ],
+      "rotation": [
+        0,
+        -1.5707963267948966,
+        0
+      ],
+      "props": {
+        "color": "#3b82f6",
+        "walking": true
+      }
+    },
+    {
+      "id": "derrame",
+      "kind": "spill",
+      "label": "Mancha en el piso de la plataforma",
+      "position": [
+        0.6,
+        4,
+        1.3
+      ],
+      "props": {
+        "r": 0.7
+      }
+    },
+    {
+      "id": "luminaria",
+      "kind": "luminaire",
+      "label": "Luminaria a cambiar",
+      "position": [
+        1.2,
+        6.6,
+        0.2
+      ]
+    },
+    {
+      "id": "senal-epp",
+      "kind": "sign",
+      "label": "Señal de uso obligatorio de EPP",
+      "position": [
+        -9,
+        0,
+        -3
+      ],
+      "rotation": [
+        0,
+        0.7853981633974483,
+        0
+      ],
+      "props": {
+        "text": "USO OBLIGATORIO DE EPP"
+      }
+    },
+    {
+      "id": "anclaje-designado",
+      "kind": "anchor",
+      "label": "Punto de anclaje designado",
+      "position": [
+        -2.2,
+        6.82,
+        -2.6
+      ],
+      "props": {
+        "tag": true
+      },
+      "scale": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "id": "tubo-conduit",
+      "kind": "pipe",
+      "label": "Tubo conduit eléctrico",
+      "position": [
+        0,
+        5.7,
+        -2.85
+      ],
+      "rotation": [
+        0,
+        0,
+        1.5707963267948966
+      ],
+      "props": {
+        "length": 8,
+        "r": 0.05,
+        "color": "#9aa3ad"
+      }
+    },
+    {
+      "id": "charola-cables",
+      "kind": "cabletray",
+      "label": "Charola de cables",
+      "position": [
+        0.5,
+        6.2,
+        2.4
+      ],
+      "props": {
+        "length": 7
+      }
+    },
+    {
+      "id": "banco-epp",
+      "kind": "bench",
+      "label": "Mesa de inspección de EPP",
+      "position": [
+        -7,
+        0,
+        2
+      ]
+    },
+    {
+      "id": "arnes",
+      "kind": "harness",
+      "label": "Arnés de cuerpo completo",
+      "position": [
+        -7.0,
+        0.92,
+        2.0
+      ],
+      "props": {
+        "defect": "correa-pierna"
+      },
+      "scale": [
+        1.6,
+        1.6,
+        1.6
+      ]
+    },
+    {
+      "id": "linea-vida",
+      "kind": "lanyard",
+      "label": "Línea de sujeción con absorbedor",
+      "position": [
+        -6.0,
+        0.95,
+        2.2
+      ]
+    },
+    {
+      "id": "casco",
+      "kind": "helmet",
+      "label": "Casco con barbiquejo",
+      "position": [
+        -7.95,
+        0.95,
+        1.75
+      ]
+    },
+    {
+      "id": "tablero-permiso",
+      "kind": "permitboard",
+      "label": "Tablero de permisos",
+      "position": [
+        -7.5,
+        0,
+        -1.6
+      ],
+      "rotation": [
+        0,
+        0.7853981633974483,
+        0
+      ]
+    },
+    {
+      "id": "trabajador",
+      "kind": "person",
+      "label": "Tú",
+      "position": [
+        -4.2,
+        0,
+        4.6
+      ],
+      "rotation": [
+        0,
+        -2.4,
+        0
+      ],
+      "props": {
+        "color": "#e8a33d",
+        "helmet": true
+      }
+    },
+    {
+      "id": "delimitacion",
+      "kind": "barricade",
+      "label": "Delimitación de la zona inferior",
+      "position": [
+        5,
+        0,
+        0
+      ],
+      "props": {
+        "w": 4,
+        "d": 7,
+        "visible": false
+      }
+    }
+  ]
+}

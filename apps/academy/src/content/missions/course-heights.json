@@ -1,0 +1,40 @@
+{
+  "id": "alturas",
+  "title": "Trabajo en Alturas",
+  "missions": [
+    {
+      "id": "heights-prep",
+      "number": "01",
+      "title": "Preparación de la tarea",
+      "available": true
+    },
+    {
+      "id": "heights-exec",
+      "number": "02",
+      "title": "Ejecutar la tarea",
+      "available": false,
+      "note": "Próximamente"
+    },
+    {
+      "id": "heights-abnormal",
+      "number": "03",
+      "title": "Condiciones anormales",
+      "available": false,
+      "note": "Próximamente"
+    },
+    {
+      "id": "heights-rescue",
+      "number": "04",
+      "title": "Rescate y emergencia",
+      "available": false,
+      "note": "Próximamente"
+    },
+    {
+      "id": "heights-practical",
+      "number": "★",
+      "title": "Evaluación práctica en piso",
+      "available": false,
+      "note": "La realiza un evaluador autorizado en planta"
+    }
+  ]
+}

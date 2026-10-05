@@ -20,6 +20,7 @@ import { DocumentViewer } from '../components/library/DocumentViewer';
 import { VideoPlayer } from '../components/library/VideoPlayer';
 import { AskAceria } from '../components/assistant/AskAceria';
 import { ASSISTANT_ENABLED } from '../lib/features';
+import { MissionApp } from '../missions/ui/MissionApp';
 
 const Scene = lazy(() => import('../components/3d/Scene').then((m) => ({ default: m.Scene })));
 const MODES: Mode[] = ['explore', 'learn', 'perform', 'assess', 'library'];
@@ -152,7 +153,15 @@ export function App() {
       </div>
     );
   }
-  return <Main />;
+  return <Root />;
+}
+
+/** Ruta raíz: las misiones son la experiencia principal; la biblioteca técnica EAF vive en #/explore, #/learn, … */
+const isEafRoute = () => { const m = location.hash.split('/')[1]; return !!m && MODES.includes(m as Mode); };
+function Root() {
+  const [eaf, setEaf] = useState(isEafRoute);
+  useEffect(() => { const f = () => setEaf(isEafRoute()); window.addEventListener('hashchange', f); return () => window.removeEventListener('hashchange', f); }, []);
+  return eaf ? <Main /> : <MissionApp />;
 }
 
 function Main() {

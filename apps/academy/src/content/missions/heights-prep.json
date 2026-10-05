@@ -1,0 +1,701 @@
+{
+  "id": "heights-prep",
+  "course": "Trabajo en Alturas",
+  "number": "01",
+  "title": "Trabajo en Alturas",
+  "subtitle": "Preparación de la tarea",
+  "objective": "Completa correctamente la preparación de una tarea en altura.",
+  "estimatedMin": 10,
+  "status": "DEMO",
+  "sceneId": "heights-01",
+  "masteryAreas": [
+    {
+      "id": "fundamentos",
+      "label": "Fundamentos",
+      "review": "Qué hace que una tarea sea «en altura»"
+    },
+    {
+      "id": "peligros",
+      "label": "Identificación de peligros",
+      "review": "Bordes, aberturas, energía, objetos que caen y zona inferior"
+    },
+    {
+      "id": "requisitos",
+      "label": "Requisitos y decisión de inicio",
+      "review": "Permiso, capacitación, rescate y cuándo NO iniciar"
+    },
+    {
+      "id": "equipo",
+      "label": "Equipo de protección",
+      "review": "Inspección del arnés antes de cada uso"
+    },
+    {
+      "id": "controles",
+      "label": "Controles",
+      "review": "Acceso, barandales y punto de anclaje"
+    },
+    {
+      "id": "preparacion",
+      "label": "Secuencia de preparación",
+      "review": "Orden de la revisión previa"
+    }
+  ],
+  "steps": [
+    {
+      "id": "entender-tarea",
+      "type": "observe",
+      "mastery": "fundamentos",
+      "title": "Entiende la tarea",
+      "instruction": "Mira el recorrido y después confirma que entendiste qué vas a hacer y por qué es una tarea en altura.",
+      "why": "Antes de preparar nada, necesitas saber qué tarea harás, dónde y qué puede salir mal si caes o si algo cae.",
+      "camera": {
+        "position": [
+          9,
+          8.5,
+          10
+        ],
+        "target": [
+          0.5,
+          5,
+          0
+        ]
+      },
+      "tour": [
+        {
+          "camera": {
+            "position": [
+              5,
+              6.5,
+              6
+            ],
+            "target": [
+              1.2,
+              6.4,
+              0.2
+            ]
+          },
+          "focus": [
+            "luminaria"
+          ],
+          "caption": "La tarea: cambiar esta luminaria del techo."
+        },
+        {
+          "camera": {
+            "position": [
+              10,
+              6,
+              10
+            ],
+            "target": [
+              0,
+              3,
+              0
+            ]
+          },
+          "focus": [
+            "plataforma"
+          ],
+          "caption": "Se trabaja sobre una plataforma a unos 4 m del piso."
+        },
+        {
+          "camera": {
+            "position": [
+              9,
+              3,
+              8
+            ],
+            "target": [
+              3,
+              0.5,
+              1
+            ]
+          },
+          "focus": [
+            "persona-abajo"
+          ],
+          "caption": "Abajo hay gente trabajando y pasando."
+        }
+      ],
+      "confirm": "Entendido: es una tarea en altura",
+      "done": "Correcto. Esta tarea expone a una caída a distinto nivel y a la caída de objetos. Ahora vamos a identificar los peligros.",
+      "faq": [
+        {
+          "q": "¿Desde qué altura se considera «trabajo en altura»?",
+          "a": "La define la NOM-009-STPS y el procedimiento de la planta. SME_REQUIRED: altura de aplicación y criterios del procedimiento aprobado (Seguridad)."
+        },
+        {
+          "q": "¿Es una tarea real?",
+          "a": "No. Es un escenario de demostración para aprender el método. Las tareas reales siguen el procedimiento aprobado de la planta."
+        }
+      ],
+      "reference": [
+        "alcance"
+      ]
+    },
+    {
+      "id": "identificar-peligros",
+      "type": "identify",
+      "mastery": "peligros",
+      "title": "Identifica los peligros",
+      "instruction": "Observa el escenario. Haz clic en cada peligro que encuentres.",
+      "why": "Solo puedes controlar lo que reconoces. Un peligro que no viste es un peligro sin control.",
+      "camera": {
+        "position": [
+          10.5,
+          8.5,
+          10.5
+        ],
+        "target": [
+          1.2,
+          3.2,
+          0.3
+        ]
+      },
+      "required": 5,
+      "hint": "Revisa los bordes de la plataforma, el piso de la plataforma, lo que hay arriba y lo que hay abajo.",
+      "targets": [
+        {
+          "objectId": "borde-abierto",
+          "label": "Borde sin protección",
+          "why": "Un borde abierto puede provocar una caída a distinto nivel.",
+          "control": "Protección colectiva (barandal) o sistema personal de detención de caídas. SME_REQUIRED: criterio del procedimiento aprobado."
+        },
+        {
+          "objectId": "abertura",
+          "label": "Abertura en el piso",
+          "why": "Puedes pisarla sin darte cuenta, sobre todo si cargas algo.",
+          "control": "Cubrirla o protegerla y señalizarla antes de trabajar."
+        },
+        {
+          "objectId": "linea-electrica",
+          "label": "Línea eléctrica aérea",
+          "why": "Al subir o mover herramientas largas puedes acercarte a partes energizadas.",
+          "control": "Mantener distancia segura o desenergizar. SME_REQUIRED: distancias y permiso eléctrico (Mantenimiento Eléctrico + Seguridad)."
+        },
+        {
+          "objectId": "herramienta-borde",
+          "label": "Herramientas en el borde",
+          "why": "Un objeto que cae desde 4 m puede lesionar gravemente a quien está abajo.",
+          "control": "Retirar o amarrar herramientas y usar rodapié."
+        },
+        {
+          "objectId": "persona-abajo",
+          "label": "Persona en la zona de caída de objetos",
+          "why": "Quien pasa abajo puede recibir un objeto que caiga.",
+          "control": "Delimitar y restringir el paso en la zona inferior."
+        },
+        {
+          "objectId": "derrame",
+          "label": "Derrame de aceite",
+          "why": "Una superficie resbalosa en altura aumenta la probabilidad de caer.",
+          "control": "Limpiar y secar antes de iniciar."
+        }
+      ],
+      "distractors": [
+        {
+          "objectId": "luminaria",
+          "feedback": "Es la luminaria que vas a cambiar. Fíjate en lo que puede hacer que caigas o que algo caiga."
+        },
+        {
+          "objectId": "senal-epp",
+          "feedback": "Es señalización de seguridad: ayuda, no es un peligro."
+        },
+        {
+          "objectId": "barandal-trasero",
+          "feedback": "Este barandal se ve completo. Busca bordes donde no haya protección."
+        }
+      ],
+      "done": "Bien. Encontraste los peligros principales. Cada uno necesita un control antes de empezar.",
+      "faq": [
+        {
+          "q": "¿Por qué la persona de abajo es un peligro?",
+          "a": "No es ella el peligro: es que está en la zona donde podría caer un objeto. El control es delimitar esa zona."
+        },
+        {
+          "q": "¿Qué es «caída a distinto nivel»?",
+          "a": "Caer desde un lugar alto a uno más bajo, por ejemplo desde la plataforma al piso."
+        }
+      ],
+      "reference": [
+        "peligros"
+      ]
+    },
+    {
+      "id": "validar-requisitos",
+      "type": "confirm",
+      "mastery": "requisitos",
+      "title": "Valida requisitos y autorización",
+      "instruction": "En el tablero, marca solo lo que SÍ debe estar confirmado antes de subir. Deja sin marcar lo que no es válido.",
+      "why": "Trabajar en altura sin autorización ni preparación es la causa de muchos accidentes. Los requisitos protegen a ti y a tu equipo.",
+      "camera": {
+        "position": [
+          -4.6,
+          2.0,
+          -1.6
+        ],
+        "target": [
+          -7.5,
+          1.5,
+          -1.6
+        ]
+      },
+      "prompt": "¿Qué debe estar confirmado antes de subir?",
+      "items": [
+        {
+          "id": "permiso",
+          "label": "Permiso de trabajo en alturas autorizado",
+          "detail": "SME_REQUIRED: formato, quién autoriza y vigencia según el procedimiento de la planta.",
+          "required": true,
+          "feedback": "Sin permiso autorizado no se inicia."
+        },
+        {
+          "id": "capacitacion",
+          "label": "Capacitación vigente para trabajo en altura",
+          "detail": "SME_REQUIRED: curso y vigencia exigidos (NOM-009-STPS y la planta).",
+          "required": true,
+          "feedback": "Solo personal capacitado y autorizado trabaja en altura."
+        },
+        {
+          "id": "aptitud",
+          "label": "Aptitud médica vigente",
+          "detail": "SME_REQUIRED: criterio médico de la planta.",
+          "required": true,
+          "feedback": "La condición de salud es parte de la autorización."
+        },
+        {
+          "id": "rescate",
+          "label": "Plan de rescate definido antes de empezar",
+          "detail": "SME_REQUIRED: plan y equipo de rescate aprobados (Seguridad).",
+          "required": true,
+          "feedback": "Si alguien queda suspendido del arnés, el rescate debe ser rápido."
+        },
+        {
+          "id": "rapido",
+          "label": "«Es rápido, no hace falta permiso»",
+          "detail": "Lo dijo un compañero.",
+          "required": false,
+          "feedback": "No. La duración no cambia el riesgo de caer."
+        },
+        {
+          "id": "ayer",
+          "label": "«Ayer trabajé ahí, ya no reviso nada»",
+          "detail": "Experiencia previa.",
+          "required": false,
+          "feedback": "No. Las condiciones cambian de un día a otro; se revisa cada vez."
+        }
+      ],
+      "done": "Correcto. Con los requisitos confirmados, sigue preparar tu equipo.",
+      "faq": [
+        {
+          "q": "¿Quién firma el permiso?",
+          "a": "SME_REQUIRED: lo define el procedimiento aprobado de la planta (Seguridad + Operaciones)."
+        }
+      ],
+      "reference": [
+        "requisitos"
+      ]
+    },
+    {
+      "id": "inspeccionar-arnes",
+      "type": "inspect",
+      "mastery": "equipo",
+      "title": "Inspecciona tu arnés",
+      "instruction": "Revisa cada parte del arnés: haz clic en las 6 zonas marcadas. Luego decide si se puede usar.",
+      "why": "Un arnés dañado puede fallar justo cuando lo necesitas. Por eso se inspecciona antes de cada uso.",
+      "camera": {
+        "position": [
+          -7.0,
+          2.0,
+          4.1
+        ],
+        "target": [
+          -7.0,
+          1.75,
+          2.0
+        ]
+      },
+      "objectId": "arnes",
+      "zones": [
+        {
+          "id": "correas-hombro",
+          "label": "Correas de hombro",
+          "defect": false,
+          "finding": "Sin cortes, quemaduras ni desgaste."
+        },
+        {
+          "id": "costuras",
+          "label": "Costuras",
+          "defect": false,
+          "finding": "Costuras completas, sin hilos sueltos."
+        },
+        {
+          "id": "hebillas",
+          "label": "Hebillas y ajustadores",
+          "defect": false,
+          "finding": "Cierran y ajustan bien, sin deformación ni óxido."
+        },
+        {
+          "id": "argolla-dorsal",
+          "label": "Argolla dorsal (anillo D)",
+          "defect": false,
+          "finding": "Sin deformación, grietas ni bordes filosos."
+        },
+        {
+          "id": "etiqueta",
+          "label": "Etiqueta",
+          "defect": false,
+          "finding": "Legible. SME_REQUIRED: datos a verificar (fecha, inspección periódica) según la planta."
+        },
+        {
+          "id": "correa-pierna",
+          "label": "Correa de pierna",
+          "defect": true,
+          "finding": "CORTE y desgaste en la correa. Este daño compromete el arnés."
+        }
+      ],
+      "decision": {
+        "prompt": "Encontraste un corte en la correa de pierna. ¿Qué haces?",
+        "options": [
+          {
+            "id": "usar",
+            "label": "Lo uso con cuidado, es solo una correa",
+            "correct": false,
+            "feedback": "No. Cualquier corte puede hacer que la correa falle bajo carga."
+          },
+          {
+            "id": "cinta",
+            "label": "Lo reparo con cinta y lo uso",
+            "correct": false,
+            "feedback": "No. El equipo de protección no se repara en campo."
+          },
+          {
+            "id": "retirar",
+            "label": "Lo retiro de servicio, lo reporto y pido otro arnés",
+            "correct": true,
+            "feedback": "Correcto. El equipo dañado se retira y se reporta."
+          }
+        ]
+      },
+      "done": "Bien. Inspeccionaste el arnés y tomaste la decisión correcta.",
+      "faq": [
+        {
+          "q": "¿Cada cuánto se inspecciona el arnés?",
+          "a": "Antes de cada uso, por quien lo va a usar. Además hay inspecciones periódicas por personal competente: SME_REQUIRED: frecuencia según la planta y el fabricante."
+        },
+        {
+          "q": "¿Qué es la argolla dorsal?",
+          "a": "Es el anillo en la espalda donde se conecta la línea para detener una caída."
+        }
+      ],
+      "reference": [
+        "equipo"
+      ]
+    },
+    {
+      "id": "revisar-acceso",
+      "type": "identify",
+      "mastery": "controles",
+      "title": "Revisa el acceso y la protección",
+      "instruction": "Revisa la escalera y los barandales. Haz clic en las 2 condiciones inseguras.",
+      "why": "Muchas caídas ocurren al subir o bajar, o por una protección incompleta.",
+      "camera": {
+        "position": [
+          7.5,
+          5.8,
+          8.5
+        ],
+        "target": [
+          1,
+          3.2,
+          2.2
+        ]
+      },
+      "required": 2,
+      "hint": "Mira los peldaños de la escalera y el barandal del frente.",
+      "targets": [
+        {
+          "objectId": "escalera",
+          "label": "Escalera con un peldaño faltante",
+          "why": "Un peldaño faltante provoca resbalones y caídas al subir o bajar.",
+          "control": "No usarla; reportarla y usar un acceso seguro."
+        },
+        {
+          "objectId": "barandal-frontal",
+          "label": "Barandal sin travesaño intermedio",
+          "why": "Sin el travesaño intermedio, una persona puede pasar por debajo del barandal.",
+          "control": "Completar la protección antes de trabajar en esa zona. SME_REQUIRED: especificación del barandal."
+        }
+      ],
+      "distractors": [
+        {
+          "objectId": "barandal-trasero",
+          "feedback": "Este barandal está completo: pasamanos, travesaño intermedio y rodapié."
+        },
+        {
+          "objectId": "barandal-izquierdo",
+          "feedback": "Este barandal está completo."
+        }
+      ],
+      "done": "Bien. Un acceso y una protección en buen estado son la primera barrera contra la caída.",
+      "faq": [
+        {
+          "q": "¿Qué partes tiene un barandal?",
+          "a": "En general: pasamanos arriba, travesaño intermedio y rodapié abajo. SME_REQUIRED: especificación de la planta."
+        }
+      ],
+      "reference": [
+        "acceso"
+      ]
+    },
+    {
+      "id": "elegir-anclaje",
+      "type": "select",
+      "mastery": "controles",
+      "title": "Elige el punto de anclaje",
+      "instruction": "¿Dónde conectarías tu línea de sujeción? Haz clic en el punto correcto del escenario.",
+      "why": "El anclaje debe resistir la fuerza de una caída. No cualquier tubo o estructura sirve.",
+      "camera": {
+        "position": [
+          2.5,
+          5.4,
+          3.2
+        ],
+        "target": [
+          -1,
+          6.2,
+          -2.2
+        ]
+      },
+      "prompt": "Elige el punto de anclaje correcto",
+      "options": [
+        {
+          "id": "designado",
+          "objectId": "anclaje-designado",
+          "label": "Punto de anclaje designado e identificado",
+          "correct": true,
+          "feedback": "Correcto. Usa solo puntos designados y aprobados. SME_REQUIRED: capacidad y certificación del anclaje."
+        },
+        {
+          "id": "conduit",
+          "objectId": "tubo-conduit",
+          "label": "Tubo conduit",
+          "correct": false,
+          "feedback": "No. Un conduit no está diseñado para detener una caída y puede llevar energía eléctrica."
+        },
+        {
+          "id": "charola",
+          "objectId": "charola-cables",
+          "label": "Charola de cables",
+          "correct": false,
+          "feedback": "No. Una charola no es un anclaje: puede desprenderse."
+        },
+        {
+          "id": "barandal",
+          "objectId": "barandal-trasero",
+          "label": "Barandal",
+          "correct": false,
+          "feedback": "No. El barandal es protección colectiva, no un punto de anclaje para detener caídas."
+        }
+      ],
+      "done": "Correcto. El anclaje correcto es un punto designado, por encima de tu cabeza cuando es posible.",
+      "faq": [
+        {
+          "q": "¿Por qué arriba de la cabeza?",
+          "a": "Así se reduce la distancia de caída libre. SME_REQUIRED: criterios de distancia de caída del procedimiento."
+        }
+      ],
+      "reference": [
+        "anclaje"
+      ]
+    },
+    {
+      "id": "revision-previa",
+      "type": "sequence",
+      "mastery": "preparacion",
+      "title": "Ordena la revisión previa",
+      "instruction": "Pon las acciones en el orden correcto. Usa las flechas para mover cada una.",
+      "why": "El orden importa: conectarte después de llegar al borde ya no te protege.",
+      "camera": {
+        "position": [
+          10.5,
+          8.5,
+          10.5
+        ],
+        "target": [
+          1,
+          3,
+          0.3
+        ]
+      },
+      "prompt": "Orden de preparación (ilustrativo)",
+      "hint": "Primero lo administrativo y el área; al final, conectarte antes de exponerte al borde.",
+      "items": [
+        {
+          "id": "permiso",
+          "label": "Confirmar permiso y plan de rescate"
+        },
+        {
+          "id": "delimitar",
+          "label": "Delimitar la zona inferior y retirar objetos sueltos"
+        },
+        {
+          "id": "inspeccionar",
+          "label": "Inspeccionar el equipo de protección"
+        },
+        {
+          "id": "colocar",
+          "label": "Colocar y ajustar el arnés"
+        },
+        {
+          "id": "conectar",
+          "label": "Conectarte al anclaje antes de exponerte al borde"
+        }
+      ],
+      "done": "Correcto. La secuencia exacta la define el procedimiento aprobado de la planta (SME_REQUIRED).",
+      "faq": [
+        {
+          "q": "¿Esta es la secuencia oficial?",
+          "a": "No. Es una secuencia ilustrativa para aprender. SME_REQUIRED: secuencia del procedimiento aprobado."
+        }
+      ],
+      "reference": [
+        "secuencia"
+      ]
+    },
+    {
+      "id": "confirmar-inicio",
+      "type": "decide",
+      "mastery": "requisitos",
+      "title": "Confirma si puedes iniciar",
+      "instruction": "Lee la situación y decide.",
+      "why": "Iniciar solo cuando todas las condiciones están listas es la última barrera.",
+      "camera": {
+        "position": [
+          11,
+          8,
+          11
+        ],
+        "target": [
+          1,
+          3,
+          0.5
+        ]
+      },
+      "scenario": "Todo está preparado, pero el supervisor te avisa que el equipo de rescate todavía no está disponible. Tu compañero dice: «Empecemos, es rápido».",
+      "sceneChange": {
+        "delimitacion.visible": true
+      },
+      "options": [
+        {
+          "id": "iniciar",
+          "label": "Inicio la tarea; es rápida",
+          "correct": false,
+          "feedback": "No. Sin rescate disponible, una persona suspendida del arnés puede sufrir lesiones graves en minutos."
+        },
+        {
+          "id": "iniciar-avisar",
+          "label": "Inicio y pido que el rescate llegue mientras trabajo",
+          "correct": false,
+          "feedback": "No. El rescate debe estar listo ANTES de exponerte."
+        },
+        {
+          "id": "esperar",
+          "label": "No inicio. Espero a que el rescate esté disponible y lo confirmo con el supervisor",
+          "correct": true,
+          "feedback": "Correcto. Si una condición no se cumple, no se inicia. Detente y avisa."
+        }
+      ],
+      "done": "Misión lista. Tomaste la decisión segura.",
+      "safety": "Cualquier persona puede detener una tarea si una condición no se cumple. Detenerte por seguridad nunca se sanciona.",
+      "faq": [
+        {
+          "q": "¿Qué pasa si alguien queda colgado del arnés?",
+          "a": "Necesita rescate rápido. SME_REQUIRED: tiempo objetivo y método de rescate del plan aprobado."
+        }
+      ],
+      "reference": [
+        "inicio"
+      ]
+    }
+  ],
+  "procedure": {
+    "title": "Procedimiento ilustrativo — Preparación para trabajo en altura",
+    "status": "DEMO",
+    "note": "DEMOSTRACIÓN. No es el procedimiento de la planta. Antes de usarse en operación debe reemplazarse por el procedimiento aprobado y validarse por Operaciones y Seguridad.",
+    "sections": [
+      {
+        "id": "alcance",
+        "title": "1. Alcance",
+        "items": [
+          "Aplica a tareas con riesgo de caída a distinto nivel.",
+          "SME_REQUIRED: altura y criterios de aplicación según la NOM-009-STPS y el procedimiento de la planta."
+        ]
+      },
+      {
+        "id": "peligros",
+        "title": "2. Peligros a identificar",
+        "items": [
+          "Bordes y aberturas sin protección.",
+          "Superficies resbalosas.",
+          "Energía eléctrica cercana.",
+          "Objetos que pueden caer y personas en la zona inferior."
+        ]
+      },
+      {
+        "id": "requisitos",
+        "title": "3. Requisitos",
+        "items": [
+          "Permiso de trabajo en alturas. SME_REQUIRED: formato y autorizaciones.",
+          "Capacitación y aptitud médica vigentes. SME_REQUIRED.",
+          "Plan de rescate antes de iniciar. SME_REQUIRED."
+        ]
+      },
+      {
+        "id": "equipo",
+        "title": "4. Equipo de protección",
+        "items": [
+          "Arnés de cuerpo completo inspeccionado antes de cada uso.",
+          "Línea de sujeción con absorbedor de energía.",
+          "Casco con barbiquejo.",
+          "SME_REQUIRED: especificaciones y criterios de rechazo."
+        ]
+      },
+      {
+        "id": "acceso",
+        "title": "5. Acceso y protección colectiva",
+        "items": [
+          "Escaleras en buen estado.",
+          "Barandales completos (pasamanos, travesaño intermedio y rodapié).",
+          "SME_REQUIRED: especificaciones."
+        ]
+      },
+      {
+        "id": "anclaje",
+        "title": "6. Anclaje",
+        "items": [
+          "Solo puntos de anclaje designados y aprobados.",
+          "SME_REQUIRED: capacidad, certificación y distancia de caída."
+        ]
+      },
+      {
+        "id": "secuencia",
+        "title": "7. Secuencia de preparación",
+        "items": [
+          "SME_REQUIRED: secuencia del procedimiento aprobado."
+        ]
+      },
+      {
+        "id": "inicio",
+        "title": "8. Condición de inicio",
+        "items": [
+          "No se inicia si alguna condición no se cumple: detente y avisa.",
+          "SME_REQUIRED: lista de verificación final y responsable."
+        ]
+      }
+    ]
+  },
+  "video": {
+    "title": "Demostración (placeholder de video)",
+    "caption": "Recorrido demostrativo en el escenario 3D. El video real de planta se agregará cuando esté aprobado."
+  }
+}

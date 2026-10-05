@@ -56,3 +56,6 @@ body {
   opacity: .0; animation: hs-pulse 2.4s ease-out infinite;
 }
 @keyframes hs-pulse { 0% { opacity: .7; transform: scale(.7) } 100% { opacity: 0; transform: scale(1.5) } }
+
+/* Motor de misiones: pista pulsante sobre el objeto (se acompaña siempre de texto en el panel) */
+.mission-hint { display:block; width:46px; height:46px; border-radius:9999px; border:3px solid #6e9fd8; box-shadow:0 0 0 6px rgba(110,159,216,.25); animation: hs-pulse 1.6s ease-out infinite; }

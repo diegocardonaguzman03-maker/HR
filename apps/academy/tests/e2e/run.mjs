@@ -38,7 +38,7 @@ async function test(name, fn, { width = 1440, height = 900 } = {}) {
 }
 const ready = async (page, hash = '') => {
   // ?e2e expone window.__adxStore en el build de producción (RT-SW-14)
-  await page.goto(srv.url + '/?e2e' + hash);
+  await page.goto(srv.url + '/?e2e' + (hash || '#/explore'));
   await page.waitForSelector('[data-testid=loading]', { timeout: 15000 }).catch(() => {});
   await page.waitForSelector('[data-testid=loading]', { state: 'detached', timeout: 120000 });
 };
@@ -57,7 +57,7 @@ await test('arranque: carga real del modelo, aviso permanente y métricas', asyn
 });
 
 await test('aviso de registro al arrancar, antes de `initialized` (RL-10)', async (page) => {
-  await page.goto(srv.url + '/?e2e');
+  await page.goto(srv.url + '/?e2e#/explore');
   await page.waitForSelector('[data-testid=first-run-notice]', { timeout: 15000 });
   // el aviso se pinta antes de que la escena registre `initialized`
   const before = await page.evaluate(() => JSON.parse(localStorage.getItem('adx.events') ?? '[]').map((e) => e.verb));
@@ -246,6 +246,51 @@ await test('vista móvil (390×844) sin desbordamiento horizontal', async (page)
   assert(over <= 1, 'desborde horizontal ' + over);
   await page.screenshot({ path: `${SHOTS}/10-movil.png`, fullPage: false });
 }, { width: 390, height: 844 });
+
+
+await test('MISIÓN 01 · Trabajo en alturas: de la pantalla inicial a resultados (8 pasos)', async (page) => {
+  await page.addInitScript(() => { localStorage.setItem('adx.recording-notice-seen', '1'); });
+  await page.goto(srv.url + '/?e2e');
+  await page.waitForSelector('[data-testid=mission-intro]');
+  await page.screenshot({ path: `${SHOTS}/20-mision-inicio.png` });
+  await page.click('[data-testid=start-mission]');
+  const begin = async () => { await page.waitForSelector('[data-testid=step-start]', { timeout: 60000 }); await page.click('[data-testid=step-start]'); };
+  const cont = async () => { await page.click('[data-testid=continue]'); };
+  await begin();
+  for (const t of ['observe-next', 'observe-next', 'observe-confirm']) await page.click(`[data-testid=${t}]`);
+  await cont(); await begin();
+  await page.click('[data-testid=help-list]');
+  for (const n of ['Borde derecho de la plataforma', 'Centro del piso de la plataforma', 'Cables aéreos', 'Caja de herramientas', 'Persona caminando abajo']) await page.getByRole('button', { name: n, exact: true }).click();
+  await page.screenshot({ path: `${SHOTS}/21-mision-peligros.png` });
+  await cont(); await begin();
+  for (const n of ['Permiso de trabajo en alturas autorizado', 'Capacitación vigente para trabajo en altura', 'Aptitud médica vigente', 'Plan de rescate definido antes de empezar']) await page.getByText(n, { exact: true }).click();
+  await page.click('[data-testid=confirm-verify]');
+  await cont(); await begin();
+  for (const z of ['correas-hombro', 'costuras', 'hebillas', 'argolla-dorsal', 'etiqueta', 'correa-pierna']) await page.click(`[data-testid=zone-${z}]`);
+  await page.screenshot({ path: `${SHOTS}/22-mision-arnes.png` });
+  await page.getByRole('button', { name: /retiro de servicio/ }).click();
+  await cont(); await begin();
+  for (const n of ['Escalera fija', 'Barandal frontal']) await page.getByRole('button', { name: n, exact: true }).click();
+  await cont(); await begin();
+  await page.getByRole('button', { name: /designado/ }).click();
+  await cont(); await begin();
+  const want = ['Confirmar permiso y plan de rescate', 'Delimitar la zona inferior y retirar objetos sueltos', 'Inspeccionar el equipo de protección', 'Colocar y ajustar el arnés', 'Conectarte al anclaje antes de exponerte al borde'];
+  for (let pos = 0; pos < want.length; pos++) for (let g = 0; g < 10; g++) {
+    const cur = await page.locator('[data-testid=sequence] li').allTextContents();
+    if (cur[pos].includes(want[pos])) break;
+    await page.getByLabel(`Subir «${want[pos]}»`).click();
+  }
+  await page.click('[data-testid=sequence-verify]');
+  await cont(); await begin();
+  await page.getByRole('button', { name: /No inicio/ }).click();
+  await cont();
+  await page.waitForSelector('[data-testid=mission-complete]');
+  const r = await page.textContent('[data-testid=result-correct]');
+  assert(r.trim() === '8 / 8', 'resultado ' + r);
+  await page.screenshot({ path: `${SHOTS}/23-mision-resultado.png`, fullPage: true });
+  await page.click('[data-testid=continue-path]');
+  assert((await page.textContent('[data-testid=learning-path]')).includes('COMPLETADA'), 'mapa sin completar');
+});
 
 const report = { date: new Date().toISOString(), dir: DIR, results, errors, perf };
 fs.writeFileSync('tests/e2e/report.json', JSON.stringify(report, null, 2));

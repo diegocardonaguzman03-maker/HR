@@ -14,7 +14,7 @@ import { CLEAR_LABEL, CLEARED_MSG, RECORDING_OFF, RECORDING_ON } from '../../src
 import type { QuestionT } from '../../src/lib/content/schema';
 
 const initial = useApp.getState();
-beforeEach(() => { sceneFail.on = false; localStorage.clear(); act(() => useLoad.setState({ phase: 'download', loaded: 0, total: 0, message: undefined })); act(() => useApp.setState({ ...initial, mode: 'explore', selectedEq: null, selectedStage: null, moduleId: null, wiId: null, assessmentId: null, docId: null, videoId: null, assistantOpen: false }, true)); location.hash = ''; });
+beforeEach(() => { sceneFail.on = false; localStorage.clear(); act(() => useLoad.setState({ phase: 'download', loaded: 0, total: 0, message: undefined })); act(() => useApp.setState({ ...initial, mode: 'explore', selectedEq: null, selectedStage: null, moduleId: null, wiId: null, assessmentId: null, docId: null, videoId: null, assistantOpen: false }, true)); location.hash = '#/explore'; });
 
 describe('arranque', () => {
   it('muestra el aviso permanente, los modos y la bienvenida', () => {

@@ -16,7 +16,7 @@ export const CLEARED_MSG = 'Listo: se borró de este equipo lo que viste, tus re
 function clearDevice() { clearEvents(); resetProgress(); resetActor(); forgetNoticeSeen(); }
 
 /** Texto y controles del aviso de registro. `prefix` distingue los data-testid del aviso al entrar y del de EVALUAR. */
-function RecordingControls({ prefix = '', onCleared }: { prefix?: string; onCleared?: () => void }) {
+export function RecordingControls({ prefix = '', onCleared }: { prefix?: string; onCleared?: () => void }) {
   const on = useSyncExternalStore(subscribeEnabled, enabled, enabled);
   const [cleared, setCleared] = useState(false);
   return (
@@ -46,7 +46,7 @@ export function RecordingNotice() {
  * página, sin atrapar el foco. Se recuerda por equipo al pulsar «Entendido»; borrar los datos lo vuelve a activar
  * para la siguiente persona.
  */
-export function FirstRunNotice() {
+export function FirstRunNotice({ where = 'También lo encuentras en EVALUAR.' }: { where?: string }) {
   const [open, setOpen] = useState(() => !noticeSeen());
   const [cleared, setCleared] = useState(false);
   const titleId = useId();
@@ -58,7 +58,7 @@ export function FirstRunNotice() {
       <RecordingControls prefix="first-run-" onCleared={() => setCleared(true)} />
       <div className="mt-2">
         <button className={btnPrimary} onClick={() => { if (!cleared) markNoticeSeen(); setOpen(false); }} data-testid="first-run-dismiss">Entendido</button>
-        <span className="ml-2 text-[11.5px]">También lo encuentras en EVALUAR.</span>
+        <span className="ml-2 text-[11.5px]">{where}</span>
       </div>
     </section>
   );
