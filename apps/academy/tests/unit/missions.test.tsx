@@ -157,3 +157,18 @@ describe('motor de misiones — errores críticos', () => {
     for (const s of m.steps) if (s.type === 'identify') expect(s.required).toBe(s.targets.length);
   });
 });
+
+describe('SAF-H-R1 — la precaución no se castiga', () => {
+  it('marcar como dañada una zona que está bien no cuenta como error crítico', () => {
+    act(() => useMission.setState({ view: 'complete', missionId: m.id, startedAt: Date.now() - 60000, endedAt: Date.now(),
+      results: Object.fromEntries(m.steps.map((s) => [s.id, { done: true, mistakes: s.id === 'inspeccionar-arnes' ? 1 : 0, wrong: s.id === 'inspeccionar-arnes' ? ['zona:costuras'] : [] }])) }));
+    render(<MissionApp />);
+    expect(screen.queryByTestId('critical-alert')).toBeNull();
+  });
+  it('no detectar el daño sí es crítico', () => {
+    act(() => useMission.setState({ view: 'complete', missionId: m.id, startedAt: Date.now() - 60000, endedAt: Date.now(),
+      results: Object.fromEntries(m.steps.map((s) => [s.id, { done: true, mistakes: s.id === 'inspeccionar-arnes' ? 1 : 0, wrong: s.id === 'inspeccionar-arnes' ? ['zona:correa-pierna'] : [] }])) }));
+    render(<MissionApp />);
+    expect(screen.getByTestId('critical-alert')).toBeInTheDocument();
+  });
+});

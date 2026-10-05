@@ -814,7 +814,7 @@
           0.5
         ]
       },
-      "scenario": "Ya se aplicaron y se verificaron los controles de los peligros que identificaste: la zona de abajo está delimitada y libre, sin herramientas en el borde, sin derrame, con la abertura tapada y los barandales completos. (En este escenario de práctica no todos los controles se dibujan.) Pero el supervisor te avisa que el equipo de rescate todavía no está disponible. Tu compañero dice: «Empecemos, es rápido».",
+      "scenario": "Ya se aplicaron y se verificaron los controles de los peligros que identificaste: la zona de abajo está delimitada y libre, sin herramientas en el borde, sin derrame, con la abertura tapada y los barandales de la plataforma completos (la protección de la llegada de la escalera la define el procedimiento: SME_REQUIRED, Seguridad + Ingeniería). (En este escenario de práctica no todos los controles se dibujan.) Pero el supervisor te avisa que el equipo de rescate todavía no está disponible. Tu compañero dice: «Empecemos, es rápido».",
       "sceneChange": {
         "delimitacion.visible": true,
         "persona-abajo.visible": false,

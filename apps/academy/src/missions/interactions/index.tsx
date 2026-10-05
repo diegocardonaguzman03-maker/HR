@@ -175,7 +175,8 @@ export function Inspect({ step, onDone, done }: P<'inspect'>) {
       else toast('ok', `${z.label}: en buen estado`, z.finding);
     } else {
       mistakes.current++; wrong.current.push(`zona:${zoneId}`);
-      toast('bad', z.defect ? 'Vuelve a mirar: sí hay un daño' : 'Vuelve a mirar: esta parte está bien', z.defect ? `Lee otra vez lo que se ve: «${z.observation}». Un corte o fibras sueltas son daño.` : `Lee otra vez lo que se ve: «${z.observation}». No hay señales de daño.`);
+      if (z.defect) toast('bad', 'Vuelve a mirar: sí hay un daño', `Lee otra vez lo que se ve: «${z.observation}». Un corte o fibras sueltas son daño.`);
+      else toast('info', 'En este ejercicio, esta parte está bien', `Lo que se ve: «${z.observation}». No hay señales de daño. En la planta, si tienes duda sobre el estado de tu equipo, no lo uses y consulta a tu supervisor.`);
     }
   };
   const allChecked = Object.values(states).every((s) => s !== 'pending');

@@ -77,3 +77,61 @@ Severidad: **ALTA** = enseña o permite un acto inseguro (condición de veto) ·
 **Recomendación:** opción A. Además, enviar SAF-H-11 y la última frase de SAF-H-17 a `experto-relaciones-laborales`, y pedir a Seguridad de planta los datos marcados `SME_REQUIRED` (altura de aplicación, permiso, rescate, anclaje, espacio libre de caída, distancias eléctricas, bloqueo y etiquetado) para la versión siguiente, que dejaría de ser DEMO.
 
 **Fecha límite para decidir:** 2026-10-12 **[Supuesto]**, para no retrasar el arranque del piloto. Mientras no se decida, la misión solo se muestra como prototipo al Director, a C&D, a Seguridad y a comités.
+
+---
+
+## Re-revisión (2026-10-05)
+
+**Alcance:** contenido y código actuales (commit `ee9c774`): `heights-prep.json`, `scene-heights.json`, `MissionApp.tsx`, `MissionPlayer.tsx`, `interactions/index.tsx`, `scene/MissionScene.tsx`, `scene/kinds.tsx` y `schema.ts`. También las capturas nuevas de escritorio y `movil-*`, de las que se revisaron 02d, 04b, 08, 09, movil-08 y movil-09. `npm run check:content` → «✓ Contenido válido».
+
+### Estado de cada hallazgo
+
+| ID | Estado | Evidencia |
+|---|---|---|
+| SAF-H-01 | **CERRADO** | La luminaria pasó a `targets` con el control de aislamiento y la marca `SME_REQUIRED`; ya no es distractor. Se agregó el ítem `energia` (requerido) en el paso 3. También se corrigieron la pista, el `done` del paso 1 y la sección 2 del procedimiento, y la sección 3 incluye el bloqueo y etiquetado. |
+| SAF-H-02 | **CERRADO** | `required: 7` = 7 objetivos. La regla `required === targets.length` está en `schema.ts:124`. Observación: se aplica al cargar el contenido y en `tests/unit/missions.test.tsx`, pero no en `scripts/check-content.mjs` (BAJA; conviene agregarla ahí). |
+| SAF-H-03 | **CERRADO** | Las banderas genéricas `id.visible` e `id.<prop>` están en `MissionScene.tsx:17-34`. En el paso 8, la persona, la herramienta y el derrame están ocultos; el barandal derecho, la tapa de la abertura, el peldaño y el travesaño aparecen corregidos. En la captura 08, la persona ya no está dentro de la delimitación. El escenario lleva el texto acordado. Queda un residuo: SAF-H-R2. |
+| SAF-H-04 | **CERRADO, con residuo** | `critical: true` en los pasos 4, 6 y 8. El título rojo «⚠ PRÁCTICA TERMINADA — CON ERRORES CRÍTICOS» va con un aviso `role="alert"`, la misión no se marca como completada y se muestra la opción elegida con su retroalimentación (capturas 09 y movil-09). El residuo es SAF-H-R1. |
+| SAF-H-05 | **CERRADO** | «Aciertos por tema (práctica)»; «Esto no acredita tu competencia»; «Práctica terminada». |
+| SAF-H-06 | **CERRADO** | `desc` está en el esquema y en los 15 objetos, y se muestra con `aria-describedby` en el modo lista (captura 02d). La posición equivocada del paso 7 dice «✗ fuera de lugar». La inspección ahora se basa en una observación escrita para cada zona. |
+| SAF-H-07 | **CERRADO, con residuo** | La instrucción dice «todas… son 3», `borde-abierto` es objetivo, se corrigió la pista y se agregó la FAQ del acceso y la escalera. El residuo es SAF-H-R2. |
+| SAF-H-08 | **CERRADO** | Hay una FAQ sobre el espacio libre de caída, se corrigió el `done` y la sección 6 incluye la verificación con `SME_REQUIRED`. |
+| SAF-H-09 | **CERRADO** | Control de la línea eléctrica con el texto acordado (captura 02d). |
+| SAF-H-10 | **CERRADO** | Se cambiaron el prompt, los ítems y la etiqueta del área a «Orden de práctica (ilustrativo)». La mejora del motor (calificar solo precedencias) queda para la siguiente iteración. |
+| SAF-H-11 | **CERRADO** (contenido) | Texto con `SME_REQUIRED (Seguridad + Relaciones Laborales)`. Sigue pendiente que lo valide `experto-relaciones-laborales`. |
+| SAF-H-12 | **CERRADO** | `MissionPlayer.tsx:39`: los mensajes `bad` y `warn` no se cierran solos. |
+| SAF-H-13 | **CERRADO** | Nuevo tipo de mensaje `warn`: «⚠ Correa de pierna: DAÑO ENCONTRADO… Bien visto», sin «Intenta de nuevo» (captura 04b). |
+| SAF-H-14 | **CERRADO** | Opción y retroalimentación con «lo marco para que nadie lo use» y `SME_REQUIRED`. |
+| SAF-H-15 | **CERRADO** | Se agregó la FAQ «¿Solo se revisa el arnés?». |
+| SAF-H-16 | **CERRADO** | Las marcas `SME_REQUIRED` tienen dato y responsable en las secciones 3, 5 y 7. |
+| SAF-H-17 | **CERRADO** (contenido) | `MissionApp.tsx:87` y `MissionPlayer.tsx:215` usan el texto acordado. La frase «No se usa para escalafón…» la debe validar Relaciones Laborales. |
+| SAF-H-18 | **CERRADO** | Aviso DEMO en 12 px y `white/75`; «Respuestas de demostración, pendientes de validación por Seguridad»; «Procedimiento (demo)». |
+| SAF-H-19 | **CERRADO** | Se regeneraron las capturas de escritorio y móvil, y se agregaron 05a y 05b (acceso). |
+
+### Hallazgos residuales nuevos
+
+| ID | Severidad | Ubicación | Hallazgo | CORRECCIÓN EXACTA |
+|---|---|---|---|---|
+| SAF-H-R1 | MEDIA | `interactions/index.tsx` (`judge`, rama de error cuando `!z.defect`); `MissionApp.tsx:49` | Si el trabajador marca como «Tiene daño» una zona que está bien, es decir, si es **demasiado precavido**, se cuenta como **error crítico** («acción que puede causar una lesión grave o la muerte»). Además recibe «Vuelve a mirar: esta parte está bien». Esto castiga la precaución y puede desalentar que se reporte un equipo dudoso. | **(a)** `MissionApp.tsx:49` → `const critical = m.steps.filter((s) => s.critical && (results[s.id]?.wrong ?? []).some((id) => !id.startsWith('zona:') \|\| (s.type === 'inspect' && s.zones.find((z) => `zona:${z.id}` === id)?.defect)));` (solo cuentan como críticas las opciones inseguras y los daños no detectados). **(b)** Texto del mensaje cuando `!z.defect`: título `'En este ejercicio, esta parte está bien'`; cuerpo `` `Lo que se ve: «${z.observation}». No hay señales de daño. En la planta, si tienes duda sobre el estado de tu equipo, no lo uses y consulta a tu supervisor.` ``. |
+| SAF-H-R2 | BAJA | `heights-prep.json` → `steps[7].scenario`; `scene-heights.json` → `barandal-frontal` (x −4 a 1.5) | En el paso 8, el texto dice «barandales completos», pero en la escena el hueco de llegada de la escalera sigue sin protección (captura 08). El escenario tampoco menciona la escalera reparada ni la energía aislada. | Reemplazar `"con la abertura tapada y los barandales completos."` por `"con la abertura tapada, los barandales completos, el acceso de la escalera protegido, la escalera reparada y la energía de la luminaria aislada."` En la siguiente iteración, dibujar una protección en el acceso con `SME_REQUIRED: especificación (Seguridad + Ingeniería)`. |
+
+### Nuevo dictamen: **SE LEVANTA EL SAFETY VETO → APROBADO CON CONDICIONES**
+
+Los cuatro hallazgos ALTOS (SAF-H-01 a SAF-H-04) están cerrados y verificados en el código, el contenido y las capturas. La misión ya no enseña un acto inseguro: las respuestas «correctas» son las seguras, se deben identificar todos los peligros, la escena del paso 8 coincide con el texto y los errores críticos se muestran como tales.
+
+**Condiciones para usar la misión en el piloto con trabajadores:**
+1. Corregir SAF-H-R1 (MEDIA) antes del piloto. Esfuerzo: ≤ 0.5 día **[Supuesto]**. No requiere otra re-revisión completa; basta con verificar la prueba unitaria.
+2. Usar la misión siempre como **DEMO / práctica**, con los avisos actuales, y nunca como evidencia de autorización para trabajo en altura (NOM-009-STPS-2011, verificar con Seguridad / Jurídico).
+3. `experto-relaciones-laborales` valida SAF-H-11 y la frase de SAF-H-17 antes de usarla con personal sindicalizado.
+4. Pasar a contenido aprobado (sin estado DEMO) requiere que Seguridad de planta complete los `SME_REQUIRED`. Esto aplica a la versión siguiente, no al piloto.
+
+SAF-H-R2 y la regla de SAF-H-02 en `check-content.mjs` pueden quedar para la siguiente iteración.
+
+### Decisión requerida del Director (re-revisión)
+
+| Opción | Descripción | Costo / esfuerzo | Riesgo |
+|---|---|---|---|
+| **A (recomendada)** | Corregir SAF-H-R1 y liberar el piloto con las condiciones 2 y 3. | ≤ 0.5 día **[Supuesto]**, con capacidad interna. | Bajo. |
+| **B** | Liberar el piloto ya y corregir SAF-H-R1 en la siguiente iteración. | Ninguno inmediato. | Medio-bajo: durante el piloto, quien sea demasiado precavido al inspeccionar verá el aviso de «error crítico» y el mensaje de que la parte «está bien», lo que puede desalentar que reporte un equipo dudoso. |
+
+**Recomendación:** opción A. **Fecha límite para decidir:** 2026-10-12 **[Supuesto]**.

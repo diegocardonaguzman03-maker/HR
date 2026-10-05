@@ -46,7 +46,8 @@ function MissionComplete({ m, onRepeat, onPath }: { m: MissionT; onRepeat: () =>
   });
   const weakest = [...areas].sort((x, y) => x.score - y.score)[0];
   const missed = m.steps.filter((s) => (results[s.id]?.mistakes ?? 0) > 0);
-  const critical = m.steps.filter((s) => s.critical && (results[s.id]?.mistakes ?? 0) > 0);
+  // solo cuentan como críticas las opciones inseguras y los daños NO detectados; ser precavido no se castiga (SAF-H-R1)
+  const critical = m.steps.filter((s) => s.critical && (results[s.id]?.wrong ?? []).some((id) => !id.startsWith('zona:') || (s.type === 'inspect' && s.zones.find((z) => `zona:${z.id}` === id)?.defect)));
   const wrongFeedback = (s: (typeof m.steps)[number]) => {
     const ids = results[s.id]?.wrong ?? [];
     const opts = s.type === 'inspect' ? s.decision.options : s.type === 'select' || s.type === 'decide' ? s.options : [];
