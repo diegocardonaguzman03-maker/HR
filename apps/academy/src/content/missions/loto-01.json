@@ -1,0 +1,757 @@
+{
+  "id": "loto-01",
+  "course": "Bloqueo y etiquetado (LOTO)",
+  "number": "01",
+  "title": "Bloqueo y Etiquetado",
+  "subtitle": "Aislar un equipo para mantenimiento",
+  "objective": "Aísla, bloquea y verifica en cero las energías de una banda transportadora antes de cambiar un rodillo.",
+  "estimatedMin": 10,
+  "status": "DEMO",
+  "sceneId": "loto-01",
+  "masteryAreas": [
+    {
+      "id": "fundamentos",
+      "label": "Fundamentos",
+      "review": "Qué es LOTO y cuándo aplica"
+    },
+    {
+      "id": "energias",
+      "label": "Identificación de energías",
+      "review": "Eléctrica, gravedad y energía almacenada"
+    },
+    {
+      "id": "requisitos",
+      "label": "Requisitos",
+      "review": "Autorización, procedimiento, aviso y candado personal"
+    },
+    {
+      "id": "aislamiento",
+      "label": "Aislamiento y bloqueo",
+      "review": "Punto de aislamiento, candado y etiqueta"
+    },
+    {
+      "id": "verificacion",
+      "label": "Verificación de energía cero",
+      "review": "Comprobar que nada se mueve"
+    },
+    {
+      "id": "retiro",
+      "label": "Retiro del bloqueo",
+      "review": "Quién y cuándo retira el candado"
+    }
+  ],
+  "steps": [
+    {
+      "id": "entender-tarea",
+      "type": "observe",
+      "mastery": "fundamentos",
+      "title": "Entiende la tarea",
+      "instruction": "Mira el recorrido y confirma qué vas a hacer y por qué este equipo debe bloquearse.",
+      "why": "Antes de meter las manos a un equipo, necesitas saber qué tarea harás y qué puede moverse o energizarse mientras trabajas.",
+      "camera": {
+        "position": [
+          6,
+          4,
+          7
+        ],
+        "target": [
+          0.6,
+          1,
+          0
+        ]
+      },
+      "tour": [
+        {
+          "camera": {
+            "position": [
+              3,
+              2.6,
+              3.5
+            ],
+            "target": [
+              0.6,
+              1.1,
+              0
+            ]
+          },
+          "focus": [
+            "rodillo"
+          ],
+          "caption": "La tarea: cambiar este rodillo dañado de la banda."
+        },
+        {
+          "camera": {
+            "position": [
+              9,
+              3,
+              5
+            ],
+            "target": [
+              6.9,
+              0.8,
+              0
+            ]
+          },
+          "focus": [
+            "motor"
+          ],
+          "caption": "La banda la mueve un motor eléctrico: puede arrancar mientras trabajas."
+        },
+        {
+          "camera": {
+            "position": [
+              -2,
+              3,
+              5
+            ],
+            "target": [
+              -4.5,
+              0.8,
+              0
+            ]
+          },
+          "focus": [
+            "contrapeso"
+          ],
+          "caption": "Este contrapeso mantiene la banda tensa: guarda energía aunque el motor esté apagado."
+        }
+      ],
+      "confirm": "Entendido: hay que aislar y bloquear las energías",
+      "done": "Correcto. Para trabajar dentro de un equipo, todas sus energías deben estar aisladas, bloqueadas y verificadas en cero.",
+      "faq": [
+        {
+          "q": "¿Qué es LOTO?",
+          "a": "Bloqueo y etiquetado (Lockout/Tagout): aislar las energías de un equipo, poner tu candado y tu etiqueta, y verificar que no puede moverse ni energizarse antes de intervenirlo."
+        },
+        {
+          "q": "¿Qué norma aplica en México?",
+          "a": "SME_REQUIRED: marco normativo aplicable (por ejemplo, NOM-004-STPS y NOM-029-STPS) y procedimiento de la planta; verificar con Seguridad y Jurídico."
+        }
+      ],
+      "reference": [
+        "alcance"
+      ]
+    },
+    {
+      "id": "identificar-energias",
+      "type": "identify",
+      "mastery": "energias",
+      "title": "Identifica las energías",
+      "instruction": "Haz clic en cada fuente de energía que podría mover o energizar el equipo: son 3.",
+      "why": "Una energía que no identificaste es una energía que no bloqueaste. No solo la electricidad: también la gravedad y la tensión.",
+      "camera": {
+        "position": [
+          5,
+          6,
+          9
+        ],
+        "target": [
+          0.5,
+          1,
+          0
+        ]
+      },
+      "required": 3,
+      "hint": "Busca lo que mueve la banda, lo que la mantiene tensa y lo que puede caer por su propio peso.",
+      "targets": [
+        {
+          "objectId": "motor",
+          "label": "Energía eléctrica del motor",
+          "why": "El motor puede arrancar por un botón, por el sistema de control o por error de otra persona.",
+          "control": "Aislarla en el punto de aislamiento identificado y bloquear con candado. SME_REQUIRED: puntos de aislamiento del equipo (Mantenimiento Eléctrico)."
+        },
+        {
+          "objectId": "contrapeso",
+          "label": "Energía por gravedad (contrapeso)",
+          "why": "Al aflojar la banda, el contrapeso puede caer o moverla.",
+          "control": "Bajarlo o soportarlo mecánicamente y bloquearlo. SME_REQUIRED: método aprobado (Mantenimiento Mecánico + Seguridad)."
+        },
+        {
+          "objectId": "banda",
+          "label": "Energía mecánica almacenada (banda tensa)",
+          "why": "Una banda tensa puede moverse o latigar al soltar un rodillo.",
+          "control": "Liberar la tensión de forma controlada antes de trabajar. SME_REQUIRED: secuencia del procedimiento del equipo."
+        }
+      ],
+      "distractors": [
+        {
+          "objectId": "extintor",
+          "feedback": "Es una señal de equipo contra incendio. Busca lo que puede mover o energizar la banda."
+        },
+        {
+          "objectId": "estacion-candados",
+          "feedback": "Ahí se guardan candados y etiquetas: es parte del control, no una fuente de energía."
+        },
+        {
+          "objectId": "rodillo",
+          "feedback": "Es la pieza que vas a cambiar. Piensa qué la puede mover mientras trabajas."
+        }
+      ],
+      "done": "Bien. Identificaste las tres energías: eléctrica, gravedad y tensión. Todas se controlan antes de trabajar.",
+      "faq": [
+        {
+          "q": "¿Y si hay más energías?",
+          "a": "Cada equipo tiene su lista. SME_REQUIRED: inventario de energías y puntos de aislamiento del procedimiento específico del equipo."
+        }
+      ],
+      "reference": [
+        "energias"
+      ],
+      "show": [
+        {
+          "camera": {
+            "position": [
+              5,
+              6,
+              9
+            ],
+            "target": [
+              0.5,
+              1,
+              0
+            ]
+          },
+          "focus": [],
+          "caption": "Una energía que no identificaste es una energía que no bloqueaste. No solo la electricidad: también la gravedad y la tensión."
+        }
+      ]
+    },
+    {
+      "id": "validar-requisitos",
+      "type": "confirm",
+      "mastery": "requisitos",
+      "title": "Valida requisitos antes de bloquear",
+      "instruction": "Marca solo lo que SÍ debe cumplirse antes de bloquear. Deja sin marcar lo que no es válido.",
+      "why": "El bloqueo funciona solo si lo hace una persona autorizada, con su propio candado, y si todos los afectados saben que el equipo se va a detener.",
+      "camera": {
+        "position": [
+          -4.6,
+          1.8,
+          1.5
+        ],
+        "target": [
+          -7.5,
+          1.3,
+          -2.6
+        ]
+      },
+      "prompt": "¿Qué debe cumplirse antes de bloquear?",
+      "items": [
+        {
+          "id": "autorizado",
+          "label": "Estoy capacitado y autorizado para aplicar bloqueo",
+          "detail": "SME_REQUIRED: quién está autorizado y su capacitación (Seguridad).",
+          "required": true,
+          "feedback": "Solo personal autorizado aplica bloqueo."
+        },
+        {
+          "id": "procedimiento",
+          "label": "Tengo el procedimiento de bloqueo de este equipo",
+          "detail": "SME_REQUIRED: procedimiento específico con sus puntos de aislamiento.",
+          "required": true,
+          "feedback": "Cada equipo tiene sus propias energías y puntos de aislamiento."
+        },
+        {
+          "id": "avisar",
+          "label": "Avisé al personal afectado y al operador",
+          "detail": "SME_REQUIRED: a quién se avisa y cómo.",
+          "required": true,
+          "feedback": "Quien opera el equipo debe saber que se detendrá y por qué."
+        },
+        {
+          "id": "candado",
+          "label": "Tengo mi candado personal, su única llave y mi etiqueta",
+          "detail": "Candado de uso exclusivo para bloqueo.",
+          "required": true,
+          "feedback": "Tu candado te protege a ti: nadie más tiene la llave."
+        },
+        {
+          "id": "prestado",
+          "label": "«Uso el candado de mi compañero, él tiene la llave»",
+          "detail": "Propuesta de un compañero.",
+          "required": false,
+          "feedback": "No. Si otra persona tiene la llave, puede retirar el bloqueo mientras tú trabajas."
+        },
+        {
+          "id": "paro",
+          "label": "«Basta con oprimir el paro de emergencia»",
+          "detail": "Idea común.",
+          "required": false,
+          "feedback": "No. Un paro no es un aislamiento: el equipo puede volver a arrancar."
+        }
+      ],
+      "done": "Correcto. Con los requisitos cumplidos, sigue planear el orden del bloqueo.",
+      "reference": [
+        "requisitos"
+      ],
+      "show": [
+        {
+          "camera": {
+            "position": [
+              -4.6,
+              1.8,
+              1.5
+            ],
+            "target": [
+              -7.5,
+              1.3,
+              -2.6
+            ]
+          },
+          "focus": [],
+          "caption": "El bloqueo funciona solo si lo hace una persona autorizada, con su propio candado, y si todos los afectados saben que el equipo se va a detener."
+        }
+      ]
+    },
+    {
+      "id": "ordenar-bloqueo",
+      "type": "sequence",
+      "mastery": "aislamiento",
+      "title": "Ordena los pasos del bloqueo",
+      "instruction": "Pon los pasos en orden. Usa las flechas para mover cada uno.",
+      "why": "El orden importa: si verificas antes de bloquear, o bloqueas sin apagar, el equipo puede moverse contigo dentro.",
+      "camera": {
+        "position": [
+          8,
+          5,
+          9
+        ],
+        "target": [
+          1,
+          1,
+          0
+        ]
+      },
+      "prompt": "Orden de práctica (ilustrativo; no es la secuencia de la planta)",
+      "hint": "Primero apagar, luego aislar y bloquear, liberar lo almacenado y, al final, comprobar que no se mueve.",
+      "items": [
+        {
+          "id": "apagar",
+          "label": "Apagar el equipo con sus controles normales"
+        },
+        {
+          "id": "aislar",
+          "label": "Aislar la energía en el punto de aislamiento"
+        },
+        {
+          "id": "bloquear",
+          "label": "Colocar tu candado y tu etiqueta"
+        },
+        {
+          "id": "liberar",
+          "label": "Liberar o bloquear la energía almacenada (contrapeso, tensión)"
+        },
+        {
+          "id": "verificar",
+          "label": "Verificar energía cero: intentar arrancar y comprobar que nada se mueve"
+        }
+      ],
+      "done": "Correcto. La secuencia exacta del equipo la define su procedimiento aprobado (SME_REQUIRED).",
+      "reference": [
+        "secuencia"
+      ],
+      "show": [
+        {
+          "camera": {
+            "position": [
+              8,
+              5,
+              9
+            ],
+            "target": [
+              1,
+              1,
+              0
+            ]
+          },
+          "focus": [],
+          "caption": "El orden importa: si verificas antes de bloquear, o bloqueas sin apagar, el equipo puede moverse contigo dentro."
+        }
+      ]
+    },
+    {
+      "id": "punto-aislamiento",
+      "type": "select",
+      "mastery": "aislamiento",
+      "title": "Elige el punto de aislamiento",
+      "instruction": "¿Dónde se aísla y se bloquea la energía eléctrica del motor? Haz clic en el punto correcto.",
+      "why": "Un botón de paro solo da una orden: no corta la energía. El bloqueo se hace en un dispositivo que la corta físicamente.",
+      "camera": {
+        "position": [
+          6,
+          3.5,
+          7
+        ],
+        "target": [
+          6,
+          1.2,
+          0.5
+        ]
+      },
+      "prompt": "Elige el punto de aislamiento correcto",
+      "options": [
+        {
+          "id": "seccionador",
+          "objectId": "seccionador",
+          "label": "Seccionador del motor (identificado)",
+          "correct": true,
+          "feedback": "Correcto. Se aísla en el dispositivo que corta la energía y se bloquea con candado. SME_REQUIRED: puntos de aislamiento del procedimiento del equipo."
+        },
+        {
+          "id": "paro",
+          "objectId": "estacion-control",
+          "label": "Botón de paro / paro de emergencia",
+          "correct": false,
+          "feedback": "No. El paro detiene, pero no aísla: el equipo puede arrancar de nuevo."
+        },
+        {
+          "id": "hmi",
+          "objectId": "tablero",
+          "label": "Pantalla del tablero de control",
+          "correct": false,
+          "feedback": "No. Apagar desde la pantalla es una orden de control, no un aislamiento físico."
+        }
+      ],
+      "done": "Correcto. Aislamiento físico + candado personal: así nadie puede energizar el equipo mientras trabajas.",
+      "critical": true,
+      "reference": [
+        "aislamiento"
+      ],
+      "show": [
+        {
+          "camera": {
+            "position": [
+              6,
+              3.5,
+              7
+            ],
+            "target": [
+              6,
+              1.2,
+              0.5
+            ]
+          },
+          "focus": [],
+          "caption": "Un botón de paro solo da una orden: no corta la energía. El bloqueo se hace en un dispositivo que la corta físicamente."
+        }
+      ]
+    },
+    {
+      "id": "revisar-candado",
+      "type": "inspect",
+      "mastery": "aislamiento",
+      "title": "Revisa tu candado y tu etiqueta",
+      "instruction": "Revisa cada parte: haz clic en una zona, lee lo que se ve y decide si está bien o le falta algo. Al final, decide qué hacer.",
+      "why": "La etiqueta dice quién bloqueó y por qué. Una etiqueta incompleta no protege a nadie.",
+      "camera": {
+        "position": [
+          -6.6,
+          1.8,
+          0.4
+        ],
+        "target": [
+          -6.6,
+          1.2,
+          -1.2
+        ]
+      },
+      "objectId": "candado-etiqueta",
+      "zones": [
+        {
+          "id": "candado",
+          "label": "Candado",
+          "observation": "Candado de bloqueo de color, cerrado y sin daño.",
+          "defect": false,
+          "finding": "Candado personal en buen estado."
+        },
+        {
+          "id": "llave",
+          "label": "Llave",
+          "observation": "Una sola llave, la tienes tú.",
+          "defect": false,
+          "finding": "Solo tú puedes retirar tu candado."
+        },
+        {
+          "id": "etiqueta-nombre",
+          "label": "Nombre en la etiqueta",
+          "observation": "El espacio del nombre está vacío.",
+          "defect": true,
+          "finding": "Falta tu nombre: nadie sabría quién bloqueó."
+        },
+        {
+          "id": "etiqueta-fecha",
+          "label": "Fecha",
+          "observation": "La fecha de hoy está escrita.",
+          "defect": false,
+          "finding": "Fecha completa."
+        },
+        {
+          "id": "etiqueta-motivo",
+          "label": "Motivo",
+          "observation": "Dice «Cambio de rodillo, banda B-1».",
+          "defect": false,
+          "finding": "Motivo claro."
+        }
+      ],
+      "decision": {
+        "prompt": "A tu etiqueta le falta el nombre. ¿Qué haces?",
+        "options": [
+          {
+            "id": "asi",
+            "label": "La coloco así; todos saben que soy yo",
+            "correct": false,
+            "feedback": "No. Una etiqueta sin nombre no dice quién está dentro del equipo."
+          },
+          {
+            "id": "otra",
+            "label": "Uso la etiqueta de un compañero que ya está llena",
+            "correct": false,
+            "feedback": "No. La etiqueta debe identificar a quien bloquea."
+          },
+          {
+            "id": "completar",
+            "label": "Completo mi nombre en la etiqueta antes de colocarla",
+            "correct": true,
+            "feedback": "Correcto. Etiqueta completa: quién, cuándo y por qué. SME_REQUIRED: datos obligatorios de la etiqueta de la planta."
+          }
+        ]
+      },
+      "done": "Bien. Candado personal y etiqueta completa.",
+      "critical": true,
+      "reference": [
+        "candado"
+      ],
+      "show": [
+        {
+          "camera": {
+            "position": [
+              -6.6,
+              1.8,
+              0.4
+            ],
+            "target": [
+              -6.6,
+              1.2,
+              -1.2
+            ]
+          },
+          "focus": [],
+          "caption": "La etiqueta dice quién bloqueó y por qué. Una etiqueta incompleta no protege a nadie."
+        }
+      ]
+    },
+    {
+      "id": "verificar-cero",
+      "type": "demonstrate",
+      "mastery": "verificacion",
+      "title": "Verifica energía cero",
+      "instruction": "Demuestra la verificación: haz clic en orden en lo que se indica.",
+      "why": "Bloquear no basta: hay que comprobar que el equipo realmente no puede moverse ni energizarse.",
+      "camera": {
+        "position": [
+          6,
+          4,
+          8
+        ],
+        "target": [
+          2,
+          1,
+          0.5
+        ]
+      },
+      "sceneChange": {
+        "seccionador.locked": true,
+        "contrapeso.supported": true
+      },
+      "actions": [
+        {
+          "objectId": "seccionador",
+          "label": "Confirma que el seccionador está abierto y con tu candado",
+          "feedback": "Seccionador abierto y bloqueado con tu candado y tu etiqueta."
+        },
+        {
+          "objectId": "contrapeso",
+          "label": "Confirma que el contrapeso está soportado",
+          "feedback": "Contrapeso soportado: ya no puede caer ni tensar la banda."
+        },
+        {
+          "objectId": "estacion-control",
+          "label": "Intenta arrancar en la botonera",
+          "feedback": "Oprimiste arranque y la banda no se movió: energía cero verificada. Regresa el botón a paro."
+        }
+      ],
+      "done": "Correcto. Solo después de verificar energía cero se puede trabajar. SME_REQUIRED: método de verificación del procedimiento (Mantenimiento + Seguridad).",
+      "critical": true,
+      "reference": [
+        "verificacion"
+      ],
+      "show": [
+        {
+          "camera": {
+            "position": [
+              6,
+              4,
+              8
+            ],
+            "target": [
+              2,
+              1,
+              0.5
+            ]
+          },
+          "focus": [],
+          "caption": "Bloquear no basta: hay que comprobar que el equipo realmente no puede moverse ni energizarse."
+        }
+      ]
+    },
+    {
+      "id": "retiro-bloqueo",
+      "type": "decide",
+      "mastery": "retiro",
+      "title": "Retira el bloqueo de forma segura",
+      "instruction": "Lee la situación y decide.",
+      "why": "El bloqueo lo retira quien lo puso, y solo cuando el equipo y el área están listos para volver a operar.",
+      "camera": {
+        "position": [
+          7,
+          5,
+          8
+        ],
+        "target": [
+          1,
+          1,
+          0
+        ]
+      },
+      "scenario": "Terminaste de cambiar el rodillo. Tu compañero dice: «Vete, yo quito tu candado cuando acabe de limpiar». Todavía hay herramientas sobre la banda y la guarda no está colocada.",
+      "sceneChange": {
+        "seccionador.locked": true,
+        "delimitacion.visible": true
+      },
+      "options": [
+        {
+          "id": "companero",
+          "label": "Le dejo la llave para que él lo quite",
+          "correct": false,
+          "feedback": "No. Cada quien retira su propio candado; nadie más debe tener tu llave."
+        },
+        {
+          "id": "arrancar",
+          "label": "Quito mi candado y arranco para probar el rodillo",
+          "correct": false,
+          "feedback": "No. Antes hay que retirar herramientas, colocar guardas, verificar que no haya personas y avisar."
+        },
+        {
+          "id": "yo",
+          "label": "Retiro herramientas y coloco la guarda; aviso que todos estén fuera y yo retiro mi candado",
+          "correct": true,
+          "feedback": "Correcto. Retira tu propio bloqueo solo cuando el área está lista y todos lo saben. SME_REQUIRED: pasos de retiro del procedimiento."
+        }
+      ],
+      "done": "Práctica terminada. Retiraste el bloqueo de forma segura.",
+      "safety": "Si encuentras un candado de otra persona, no lo retires: avisa a tu supervisor. SME_REQUIRED: procedimiento de retiro autorizado de un bloqueo ajeno (Seguridad + Relaciones Laborales).",
+      "critical": true,
+      "reference": [
+        "retiro"
+      ],
+      "show": [
+        {
+          "camera": {
+            "position": [
+              7,
+              5,
+              8
+            ],
+            "target": [
+              1,
+              1,
+              0
+            ]
+          },
+          "focus": [],
+          "caption": "El bloqueo lo retira quien lo puso, y solo cuando el equipo y el área están listos para volver a operar."
+        }
+      ]
+    }
+  ],
+  "procedure": {
+    "title": "Procedimiento ilustrativo — Bloqueo y etiquetado de una banda transportadora",
+    "status": "DEMO",
+    "note": "DEMOSTRACIÓN. No es el procedimiento de la planta. Antes de usarse en operación debe reemplazarse por el procedimiento aprobado del equipo y validarse por Operaciones, Mantenimiento y Seguridad.",
+    "sections": [
+      {
+        "id": "alcance",
+        "title": "1. Alcance",
+        "items": [
+          "Aplica a intervenciones donde una energía pueda mover o energizar el equipo.",
+          "SME_REQUIRED: alcance y marco normativo (NOM-004-STPS, NOM-029-STPS y procedimiento de la planta; verificar con Seguridad y Jurídico)."
+        ]
+      },
+      {
+        "id": "energias",
+        "title": "2. Energías del equipo",
+        "items": [
+          "Eléctrica (motor y control).",
+          "Gravedad (contrapeso del tensor).",
+          "Mecánica almacenada (tensión de la banda).",
+          "SME_REQUIRED: inventario de energías del equipo."
+        ]
+      },
+      {
+        "id": "requisitos",
+        "title": "3. Requisitos",
+        "items": [
+          "Persona capacitada y autorizada. SME_REQUIRED: autorización (Seguridad).",
+          "Procedimiento específico del equipo.",
+          "Aviso al personal afectado.",
+          "Candado personal con llave única y etiqueta."
+        ]
+      },
+      {
+        "id": "secuencia",
+        "title": "4. Secuencia de bloqueo",
+        "items": [
+          "Apagar → aislar → bloquear y etiquetar → liberar energía almacenada → verificar energía cero.",
+          "SME_REQUIRED: secuencia del procedimiento aprobado (Mantenimiento + Seguridad)."
+        ]
+      },
+      {
+        "id": "aislamiento",
+        "title": "5. Puntos de aislamiento",
+        "items": [
+          "El bloqueo se aplica en dispositivos que cortan la energía físicamente (no en botones de paro ni en pantallas).",
+          "SME_REQUIRED: lista de puntos de aislamiento del equipo (Mantenimiento Eléctrico)."
+        ]
+      },
+      {
+        "id": "candado",
+        "title": "6. Candado y etiqueta",
+        "items": [
+          "Candado personal, una sola llave.",
+          "Etiqueta con nombre, fecha y motivo. SME_REQUIRED: formato de etiqueta de la planta."
+        ]
+      },
+      {
+        "id": "verificacion",
+        "title": "7. Verificación de energía cero",
+        "items": [
+          "Intentar arrancar y comprobar que nada se mueve; regresar el control a paro.",
+          "SME_REQUIRED: método de verificación (incluye prueba de ausencia de tensión cuando aplique; Mantenimiento Eléctrico)."
+        ]
+      },
+      {
+        "id": "retiro",
+        "title": "8. Retiro del bloqueo",
+        "items": [
+          "Retirar herramientas, colocar guardas, verificar que no haya personas y avisar.",
+          "Cada persona retira su propio candado.",
+          "SME_REQUIRED: retiro autorizado de un bloqueo ajeno (Seguridad + Relaciones Laborales)."
+        ]
+      }
+    ]
+  },
+  "video": {
+    "title": "Demostración (placeholder de video)",
+    "caption": "Recorrido demostrativo en el escenario 3D."
+  }
+}

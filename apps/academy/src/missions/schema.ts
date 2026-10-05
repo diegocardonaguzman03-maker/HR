@@ -17,6 +17,7 @@ export const Camera = z.object({ position: vec3, target: vec3 });
 export const SCENE_KINDS = [
   'floor', 'platform', 'ladder', 'guardrail', 'opening', 'edge', 'powerline', 'spill', 'tools', 'person', 'barricade',
   'anchor', 'pipe', 'cabletray', 'bench', 'harness', 'lanyard', 'helmet', 'permitboard', 'luminaire', 'sign', 'wall', 'column',
+  'conveyor', 'roller', 'motor', 'counterweight', 'disconnect', 'controlstation', 'mcc', 'lockboard', 'lockset',
 ] as const;
 export const SceneObject = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
@@ -97,6 +98,27 @@ export const Course = z.object({
   title: text,
   missions: z.array(z.object({ id: z.string(), number: z.string(), title: text, available: z.boolean(), note: z.string().optional() })),
 });
+
+/* ---------- documentos del procedimiento (WI, manual operativo, checklist) ---------- */
+const Doc = z.object({ code: z.string(), title: text, version: z.string(), status: Validation, owner: text, file: z.string() });
+export const ProcedureDocs = z.object({
+  procedureId: z.string(),
+  missionId: z.string(),
+  title: text,
+  area: text,
+  summary: text,
+  wi: Doc.extend({
+    purpose: text, scope: text,
+    roles: z.array(z.object({ role: text, responsibility: text })),
+    ppe: z.array(text), tools: z.array(text),
+    hazards: z.array(z.object({ hazard: text, control: text })),
+    steps: z.array(z.object({ n: z.number().int(), action: text, keyPoint: text, why: text })).min(3),
+    stopConditions: z.array(text), references: z.array(text),
+  }),
+  manual: Doc.extend({ sections: z.array(z.object({ title: text, paragraphs: z.array(text).default([]), bullets: z.array(text).default([]) })).min(3) }),
+  checklist: Doc.extend({ instructions: text, sections: z.array(z.object({ title: text, items: z.array(z.object({ text: text, critical: z.boolean().default(false) })).min(1) })).min(1), signatures: z.array(text) }),
+});
+export type ProcedureDocsT = z.infer<typeof ProcedureDocs>;
 
 export type SceneObjectT = z.infer<typeof SceneObject>;
 export type SceneDefT = z.infer<typeof SceneDef>;

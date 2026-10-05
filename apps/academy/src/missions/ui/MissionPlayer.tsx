@@ -1,7 +1,10 @@
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import type { MissionT, SceneDefT, StepT } from '../schema';
+import { useShallow } from 'zustand/react/shallow';
 import { useMission } from '../store';
 import { Interaction } from '../interactions';
+import { docsForMission } from '../content';
+import { DocDownload } from './Procedures';
 import { OpText } from '../../components/ui/Status';
 import { DISCLAIMER } from '../../components/ui/Disclaimer';
 import { ErrorBoundary } from '../../components/ui/ErrorBoundary';
@@ -24,7 +27,7 @@ function MissionHeader({ m, i, onExit }: { m: MissionT; i: number; onExit: () =>
       <div className="ml-auto flex items-center gap-3" aria-label={`Paso ${i + 1} de ${m.steps.length}`}>
         <span className="font-mono text-[13px] text-white" data-testid="step-counter">{String(i + 1).padStart(2, '0')} / {String(m.steps.length).padStart(2, '0')}</span>
         <ol className="hidden gap-1.5 sm:flex" aria-hidden>
-          {m.steps.map((s, k) => <li key={s.id} title={s.title} className={`h-2.5 w-2.5 rounded-full ${results[s.id]?.done ? 'bg-[#30a46c]' : k === i ? 'bg-[var(--color-accent)] ring-2 ring-[var(--color-accent)]/40' : 'bg-white/20'}`} />)}
+          {m.steps.map((s, k) => <li key={s.id} title={s.title} className={`h-2.5 w-2.5 rounded-full transition-all duration-500 ${results[s.id]?.done ? 'bg-[#30a46c]' : k === i ? 'bg-[var(--color-accent)] ring-2 ring-[var(--color-accent)]/40' : 'bg-white/20'}`} />)}
         </ol>
       </div>
     </header>
@@ -42,7 +45,7 @@ function FeedbackToast() {
   const icon = fb.kind === 'ok' ? '✓' : fb.kind === 'bad' ? '↻' : fb.kind === 'warn' ? '' : '💡';
   return (
     <div role="status" aria-live="polite" data-testid="feedback" data-kind={fb.kind} key={fb.key}
-      className={`pointer-events-auto absolute left-1/2 top-4 z-20 w-[min(560px,calc(100%-2rem))] -translate-x-1/2 rounded-xl border-l-4 ${tone} px-4 py-3 shadow-2xl`}>
+      className={`anim-drop pointer-events-auto absolute left-1/2 top-4 z-20 w-[min(560px,calc(100%-2rem))] -translate-x-1/2 rounded-xl border-l-4 ${tone} px-4 py-3 shadow-2xl`}>
       <p className="text-[15px] font-semibold text-white"><span aria-hidden className="mr-1.5">{icon}</span>{fb.title}{fb.kind === 'bad' && <span className="ml-2 text-[12px] font-normal text-white/60">Intenta de nuevo</span>}</p>
       <p className="mt-0.5 text-[13.5px] text-white/85"><OpText text={fb.text} /></p>
       <button onClick={() => set({ feedback: null })} className="absolute right-2 top-2 rounded px-1.5 text-white/50 hover:text-white" aria-label="Cerrar mensaje">✕</button>
@@ -52,7 +55,8 @@ function FeedbackToast() {
 
 /** Ayuda contextual: se abre encima del escenario y al cerrar regresas al mismo paso. */
 function ContextDrawer({ m, step }: { m: MissionT; step: StepT }) {
-  const { drawer, set } = useMission();
+  const drawer = useMission((s) => s.drawer);
+  const set = useMission((s) => s.set);
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (!drawer) return;
@@ -65,9 +69,10 @@ function ContextDrawer({ m, step }: { m: MissionT; step: StepT }) {
   if (!drawer) return null;
   const title = drawer === 'why' ? '¿Por qué?' : drawer === 'procedure' ? 'Ver procedimiento' : 'Pregunta sobre este paso';
   const sections = m.procedure.sections.filter((s) => step.reference.includes(s.id));
+  const docs = docsForMission(m.id);
   return (
     <aside ref={ref} role="dialog" aria-modal="false" aria-label={title} data-testid="context-drawer"
-      className="absolute inset-y-3 right-3 z-30 flex w-[min(400px,calc(100%-1.5rem))] flex-col overflow-hidden rounded-2xl border border-white/15 bg-[#14181d]/97 shadow-2xl backdrop-blur">
+      className="anim-slide-left absolute inset-y-3 right-3 z-30 flex w-[min(400px,calc(100%-1.5rem))] flex-col overflow-hidden rounded-2xl border border-white/15 bg-[#14181d]/97 shadow-2xl backdrop-blur">
       <header className="flex items-center justify-between border-b border-white/10 px-4 py-3">
         <h2 className="text-[16px] font-semibold text-white">{title}</h2>
         <button onClick={() => set({ drawer: null })} className="rounded-md px-2 py-1 text-[13px] text-white/70 hover:bg-white/10" data-testid="drawer-close">Volver al paso ✕</button>
@@ -86,6 +91,7 @@ function ContextDrawer({ m, step }: { m: MissionT; step: StepT }) {
             </section>
           ))}
           {sections.length > 0 && sections.length < m.procedure.sections.length && <p className="text-[12px] text-white/50">Se muestra la parte del procedimiento de este paso.</p>}
+          {docs && <div className="border-t border-white/10 pt-3"><p className="mb-2 text-[12.5px] font-semibold text-white">Descargar documentos (demo)</p><div className="flex flex-wrap gap-1.5"><DocDownload p={docs} kind="wi" compact /><DocDownload p={docs} kind="manual" compact /><DocDownload p={docs} kind="checklist" compact /></div></div>}
         </>)}
         {drawer === 'ask' && (<>
           {step.faq.length ? step.faq.map((f, i) => (
@@ -107,8 +113,8 @@ function StepIntro({ step, i, total, onStart }: { step: StepT; i: number; total:
   const btn = useRef<HTMLButtonElement>(null);
   useEffect(() => { btn.current?.focus(); }, []);
   return (
-    <div className="absolute inset-0 z-20 grid place-items-center bg-black/45 p-4" data-testid="step-intro">
-      <div className="w-[min(520px,100%)] rounded-2xl border border-white/15 bg-[#14181d]/95 p-6 text-center shadow-2xl">
+    <div className="anim-fade absolute inset-0 z-20 grid place-items-center bg-black/45 p-4" data-testid="step-intro">
+      <div className="anim-pop w-[min(520px,100%)] rounded-2xl border border-white/15 bg-[#14181d]/95 p-6 text-center shadow-2xl">
         <p className="font-mono text-[12px] tracking-widest text-[var(--color-accent)]">PASO {i + 1} DE {total} · {TYPE_LABEL[step.type].toUpperCase()}</p>
         <h2 className="mt-2 text-[26px] font-bold leading-tight text-white">{step.title}</h2>
         <p className="mx-auto mt-3 max-w-[42ch] text-[15px] text-white/80"><OpText text={step.why} /></p>
@@ -137,7 +143,10 @@ function useDemo(m: MissionT, step: StepT, onEnd: () => void) {
 }
 
 export function MissionPlayer({ m, scene, onExit, onComplete }: { m: MissionT; scene: SceneDefT; onExit: () => void; onComplete: () => void }) {
-  const { stepIdx, phase, results, caption, demo, listMode, set, flyTo, record, resetStepScene } = useMission();
+  const { stepIdx, phase, results, caption, demo, listMode, set, flyTo, record, resetStepScene } = useMission(useShallow((s) => ({
+    stepIdx: s.stepIdx, phase: s.phase, results: s.results, caption: s.caption, demo: s.demo, listMode: s.listMode,
+    set: s.set, flyTo: s.flyTo, record: s.record, resetStepScene: s.resetStepScene,
+  })));
   const step = m.steps[stepIdx];
   const res = results[step.id];
   const done = !!res?.done;
@@ -169,7 +178,7 @@ export function MissionPlayer({ m, scene, onExit, onComplete }: { m: MissionT; s
         {!ready && <div className="absolute inset-0 grid place-items-center bg-[#0c0e11] text-white/60" data-testid="scene-loading">Preparando el escenario…</div>}
         {caption && (
           <div className="pointer-events-none absolute inset-x-0 bottom-5 flex justify-center px-4" aria-live="polite">
-            <p className="max-w-[640px] rounded-xl bg-black/75 px-4 py-2.5 text-center text-[16px] font-medium text-white shadow-xl" data-testid="caption">{demo && <span className="mr-2 font-mono text-[11px] text-[#a78bfa]">▶ DEMO</span>}{caption}</p>
+            <p key={caption} className="anim-rise max-w-[640px] rounded-xl bg-black/75 px-4 py-2.5 text-center text-[16px] font-medium text-white shadow-xl" data-testid="caption">{demo && <span className="mr-2 font-mono text-[11px] text-[#a78bfa]">▶ DEMO</span>}{caption}</p>
           </div>
         )}
         {demo && <button onClick={stop} className="absolute right-4 top-4 z-20 rounded-lg bg-black/70 px-3 py-1.5 text-[13px] text-white hover:bg-black/90">Saltar demostración ✕</button>}
@@ -179,7 +188,7 @@ export function MissionPlayer({ m, scene, onExit, onComplete }: { m: MissionT; s
       </main>
 
       <section ref={panel} aria-label={`Paso ${stepIdx + 1}: ${step.title}`} className="scroll-thin max-h-[48vh] overflow-y-auto border-t border-white/10 bg-[#111418] px-4 py-3 sm:px-6 lg:max-h-none" data-testid="step-panel">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 lg:flex-row lg:items-start">
+        <div key={step.id} className="anim-rise mx-auto flex max-w-6xl flex-col gap-3 lg:flex-row lg:items-start">
           <div className="min-w-0 flex-1">
             <p className="font-mono text-[11px] tracking-widest text-[var(--color-accent)]">PASO {stepIdx + 1} · {TYPE_LABEL[step.type].toUpperCase()}</p>
             <h1 className="text-[20px] font-bold leading-tight text-white" data-testid="step-title">{step.title}</h1>
@@ -207,7 +216,7 @@ export function MissionPlayer({ m, scene, onExit, onComplete }: { m: MissionT; s
               <Help onClick={play} icon="▶" label="Demostración" testid="help-demo" />
               <Help onClick={() => set({ drawer: 'procedure' })} icon="📄" label="Procedimiento (demo)" testid="help-procedure" />
               <Help onClick={() => set({ drawer: 'ask' })} icon="✦" label="Preguntas" testid="help-ask" />
-              {(step.type === 'identify' || step.type === 'select') && <Help onClick={() => set({ listMode: !listMode })} icon="☰" label={listMode ? 'Usar 3D' : 'Usar lista'} testid="help-list" />}
+              {(step.type === 'identify' || step.type === 'select' || step.type === 'demonstrate') && <Help onClick={() => set({ listMode: !listMode })} icon="☰" label={listMode ? 'Usar 3D' : 'Usar lista'} testid="help-list" />}
             </div>
           </div>
         </div>

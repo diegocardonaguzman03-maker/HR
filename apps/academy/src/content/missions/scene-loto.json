@@ -1,0 +1,241 @@
+{
+  "id": "loto-01",
+  "home": {
+    "position": [
+      12,
+      8,
+      13
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ]
+  },
+  "objects": [
+    {
+      "id": "piso",
+      "kind": "floor",
+      "label": "Piso de la nave",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "props": {
+        "w": 40,
+        "d": 30
+      }
+    },
+    {
+      "id": "muro",
+      "kind": "wall",
+      "label": "Muro",
+      "position": [
+        0,
+        0,
+        -8
+      ],
+      "props": {
+        "w": 40,
+        "h": 10
+      }
+    },
+    {
+      "id": "banda",
+      "kind": "conveyor",
+      "label": "Banda transportadora",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "props": {
+        "length": 12,
+        "h": 1.1
+      },
+      "desc": "Banda transportadora de 12 m; la banda está tensa entre las poleas."
+    },
+    {
+      "id": "rodillo",
+      "kind": "roller",
+      "label": "Rodillo a cambiar",
+      "position": [
+        0.6,
+        1.1,
+        0
+      ],
+      "desc": "Rodillo de carga dañado: es el que vas a cambiar."
+    },
+    {
+      "id": "motor",
+      "kind": "motor",
+      "label": "Motor y reductor",
+      "position": [
+        6.9,
+        0,
+        0
+      ],
+      "desc": "Motor eléctrico con reductor que mueve la banda."
+    },
+    {
+      "id": "contrapeso",
+      "kind": "counterweight",
+      "label": "Contrapeso del tensor",
+      "position": [
+        -4.5,
+        0,
+        0
+      ],
+      "desc": "Contrapeso colgante que mantiene tensa la banda."
+    },
+    {
+      "id": "seccionador",
+      "kind": "disconnect",
+      "label": "Seccionador del motor (identificado)",
+      "position": [
+        8.6,
+        0,
+        2.2
+      ],
+      "rotation": [
+        0,
+        -1.5707963267948966,
+        0
+      ],
+      "desc": "Interruptor de cuchillas con manija y punto para candado, con etiqueta «BANDA B-1»."
+    },
+    {
+      "id": "estacion-control",
+      "kind": "controlstation",
+      "label": "Estación de botones (arranque / paro)",
+      "position": [
+        3.2,
+        0,
+        2.2
+      ],
+      "desc": "Botonera local con arranque verde, paro rojo y paro de emergencia."
+    },
+    {
+      "id": "tablero",
+      "kind": "mcc",
+      "label": "Tablero de control (HMI)",
+      "position": [
+        5,
+        0,
+        -7.2
+      ],
+      "desc": "Tablero con pantalla de control del sistema."
+    },
+    {
+      "id": "estacion-candados",
+      "kind": "lockboard",
+      "label": "Estación de candados y etiquetas",
+      "position": [
+        -8,
+        0,
+        -3
+      ],
+      "rotation": [
+        0,
+        0.7853981633974483,
+        0
+      ],
+      "desc": "Tablero con candados personales y etiquetas de bloqueo."
+    },
+    {
+      "id": "candado-etiqueta",
+      "kind": "lockset",
+      "label": "Tu candado y etiqueta",
+      "position": [
+        -6.6,
+        0.95,
+        -1.2
+      ],
+      "props": {
+        "defect": "etiqueta-nombre"
+      },
+      "desc": "Tu candado personal con su etiqueta."
+    },
+    {
+      "id": "mesa",
+      "kind": "bench",
+      "label": "Mesa de trabajo",
+      "position": [
+        -6.8,
+        0,
+        -0.6
+      ]
+    },
+    {
+      "id": "companero",
+      "kind": "person",
+      "label": "Compañero de trabajo",
+      "position": [
+        2,
+        0,
+        3.6
+      ],
+      "rotation": [
+        0,
+        3.141592653589793,
+        0
+      ],
+      "props": {
+        "color": "#3b82f6"
+      },
+      "desc": "Operador de la banda."
+    },
+    {
+      "id": "trabajador",
+      "kind": "person",
+      "label": "Tú",
+      "position": [
+        -2.2,
+        0,
+        3.6
+      ],
+      "rotation": [
+        0,
+        -2.6,
+        0
+      ],
+      "props": {
+        "color": "#e8a33d"
+      }
+    },
+    {
+      "id": "extintor",
+      "kind": "sign",
+      "label": "Señal de extintor",
+      "position": [
+        -9,
+        0,
+        1
+      ],
+      "rotation": [
+        0,
+        0.7853981633974483,
+        0
+      ],
+      "props": {
+        "text": "EXTINTOR"
+      }
+    },
+    {
+      "id": "delimitacion",
+      "kind": "barricade",
+      "label": "Delimitación del área",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "props": {
+        "w": 15,
+        "d": 4.4,
+        "visible": false
+      }
+    }
+  ]
+}

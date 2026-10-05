@@ -338,8 +338,140 @@ function Wall({ o }: { o: SceneObjectT }) {
   return <Box s={[num(o, 'w', 40), num(o, 'h', 10), 0.3]} p={[0, num(o, 'h', 10) / 2, 0]} c="#2c3138" r={0.95} />;
 }
 
+
+/* ---------- LOTO: banda transportadora y control de energías ---------- */
+function Conveyor({ o }: { o: SceneObjectT }) {
+  const L = num(o, 'length', 12), h = num(o, 'h', 1.1);
+  const rollers = Math.floor(L / 0.9);
+  return (
+    <group>
+      {[-0.55, 0.55].map((z) => <Box key={z} s={[L, 0.18, 0.08]} p={[0, h - 0.12, z]} c="#3d4a57" m={0.5} />)}
+      {Array.from({ length: Math.floor(L / 2) + 1 }, (_, i) => -L / 2 + i * 2).flatMap((x) => [-0.55, 0.55].map((z) => <Box key={`${x}${z}`} s={[0.08, h - 0.2, 0.08]} p={[x, (h - 0.2) / 2, z]} c="#3d4a57" m={0.5} />))}
+      {Array.from({ length: rollers }, (_, i) => <Cyl key={i} rad={0.06} h={1.0} p={[-L / 2 + 0.45 + i * 0.9, h - 0.08, 0]} rot={[Math.PI / 2, 0, 0]} c="#9aa3ad" m={0.7} />)}
+      <Box s={[L + 0.4, 0.03, 0.95]} p={[0, h, 0]} c="#16181b" r={0.95} />
+      {[-L / 2 - 0.1, L / 2 + 0.1].map((x) => <Cyl key={x} rad={0.22} h={1.05} p={[x, h - 0.15, 0]} rot={[Math.PI / 2, 0, 0]} c="#59636e" m={0.6} />)}
+      <Box s={[1.2, 0.5, 1.2]} p={[L / 2 - 0.5, h + 0.1, 0]} c={YELLOW} />
+    </group>
+  );
+}
+function Roller() {
+  return (
+    <group>
+      <Cyl rad={0.075} h={1.04} p={[0, 0.02, 0]} rot={[Math.PI / 2, 0, 0]} c="#b45309" m={0.4} />
+      <mesh position={[0, 0.02, 0]}><boxGeometry args={[0.4, 0.4, 1.2]} /><M color="#fff" transparent opacity={0} /></mesh>
+    </group>
+  );
+}
+function Motor() {
+  return (
+    <group>
+      <Box s={[1.0, 0.3, 0.9]} p={[0, 0.15, 0.95]} c="#3d4a57" />
+      <Cyl rad={0.32} h={0.8} p={[0, 0.65, 1.1]} rot={[0, 0, Math.PI / 2]} c="#1d4ed8" m={0.4} />
+      <Box s={[0.5, 0.55, 0.5]} p={[0, 0.6, 0.5]} c="#4b5563" m={0.5} />
+      <Cyl rad={0.06} h={0.5} p={[0, 0.85, 0.2]} rot={[Math.PI / 2, 0, 0]} c="#9aa3ad" m={0.8} />
+      <Cyl rad={0.03} h={1.6} p={[0.3, 0.9, 1.6]} rot={[0.3, 0, 0.6]} c="#111" />
+    </group>
+  );
+}
+function Counterweight({ o }: { o: SceneObjectT }) {
+  const supported = bool(o, 'supported');
+  return (
+    <group>
+      {[-0.4, 0.4].map((x) => <Box key={x} s={[0.1, 1.9, 0.1]} p={[x, 0.95, -0.9]} c="#3d4a57" />)}
+      <Cyl rad={0.02} h={0.9} p={[0, 1.3, -0.9]} c="#111" />
+      <Box s={[0.7, 0.6, 0.4]} p={[0, supported ? 0.35 : 0.65, -0.9]} c="#6b7280" m={0.6} />
+      {supported && <Box s={[0.8, 0.05, 0.5]} p={[0, 0.03, -0.9]} c={YELLOW} />}
+      {supported && [-0.25, 0.25].map((x) => <Box key={x} s={[0.08, 0.05, 0.08]} p={[x, 0.07, -0.9]} c={YELLOW} />)}
+    </group>
+  );
+}
+/** Seccionador: con «locked» muestra la manija en OFF con candado y etiqueta. */
+function Disconnect({ o }: { o: SceneObjectT }) {
+  const locked = bool(o, 'locked');
+  return (
+    <group>
+      <Box s={[0.12, 2.2, 0.12]} p={[0, 1.1, -0.12]} c="#3d4a57" />
+      <Box s={[0.55, 0.75, 0.25]} p={[0, 1.5, 0.05]} c="#9ca3af" m={0.4} />
+      <Label text="BANDA B-1" size={[0.4, 0.1]} p={[0, 1.95, 0.18]} />
+      <Box s={[0.07, 0.32, 0.07]} p={[0.2, locked ? 1.38 : 1.62, 0.21]} c="#dc2626" rot={[0, 0, locked ? 0.5 : -0.5]} />
+      {locked && <group>
+        <mesh position={[0.24, 1.2, 0.26]}><torusGeometry args={[0.04, 0.012, 8, 16, Math.PI]} /><M color="#e5e7eb" metal={0.9} /></mesh>
+        <Box s={[0.09, 0.1, 0.05]} p={[0.24, 1.13, 0.26]} c="#dc2626" />
+        <Box s={[0.12, 0.2, 0.01]} p={[0.24, 0.96, 0.27]} c="#f5c518" />
+      </group>}
+      <mesh position={[0, 1.4, 0]}><boxGeometry args={[0.9, 1.4, 0.7]} /><M color="#fff" transparent opacity={0} /></mesh>
+    </group>
+  );
+}
+function ControlStation() {
+  return (
+    <group>
+      <Cyl rad={0.04} h={1.2} p={[0, 0.6, 0]} c="#3d4a57" />
+      <Box s={[0.3, 0.45, 0.18]} p={[0, 1.35, 0]} c="#e5e7eb" />
+      <Cyl rad={0.045} h={0.04} p={[0, 1.48, 0.1]} rot={[Math.PI / 2, 0, 0]} c="#16a34a" />
+      <Cyl rad={0.045} h={0.04} p={[0, 1.35, 0.1]} rot={[Math.PI / 2, 0, 0]} c="#111" />
+      <mesh position={[0, 1.2, 0.11]}><sphereGeometry args={[0.06, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2]} /><M color="#dc2626" /></mesh>
+      <mesh position={[0, 1.2, 0]}><boxGeometry args={[0.6, 1.0, 0.5]} /><M color="#fff" transparent opacity={0} /></mesh>
+    </group>
+  );
+}
+function Mcc() {
+  return (
+    <group>
+      <Box s={[2.4, 2.1, 0.6]} p={[0, 1.05, 0]} c="#9ca3af" m={0.3} />
+      {[-0.8, 0, 0.8].map((x) => <Box key={x} s={[0.7, 1.9, 0.02]} p={[x, 1.05, 0.31]} c="#a8b0ba" />)}
+      <mesh position={[0, 1.45, 0.33]}><planeGeometry args={[0.55, 0.35]} /><meshStandardMaterial color="#0b2a3a" emissive="#1e6a8a" emissiveIntensity={0.8} /></mesh>
+    </group>
+  );
+}
+function LockBoard() {
+  return (
+    <group>
+      {[-0.7, 0.7].map((x) => <Box key={x} s={[0.06, 1.6, 0.06]} p={[x, 0.8, 0]} c="#3d4a57" />)}
+      <Box s={[1.6, 1.0, 0.05]} p={[0, 1.6, 0]} c="#1f2937" />
+      <Label text="CANDADOS LOTO" size={[1.0, 0.18]} p={[0, 2.0, 0.03]} bg="#dc2626" fg="#fff" />
+      {[-0.5, -0.25, 0, 0.25, 0.5].map((x, i) => <Box key={x} s={[0.09, 0.11, 0.05]} p={[x, 1.6, 0.05]} c={['#dc2626', '#2563eb', '#16a34a', '#dc2626', '#f59e0b'][i]} />)}
+      {[-0.4, 0, 0.4].map((x) => <Box key={x} s={[0.14, 0.24, 0.01]} p={[x, 1.32, 0.04]} c="#f5c518" />)}
+    </group>
+  );
+}
+
+/** Zona inspeccionable reutilizable (arnés, candado y etiqueta…). */
+function InspectZone({ objectId, id, zones, children }: { objectId: string; id: string; zones: Record<string, 'pending' | 'ok' | 'defect'> | null; children: ReactNode }) {
+  const pick = useMission((s) => s.pick);
+  const st = zones?.[id];
+  const tint = st === 'ok' ? new THREE.Color('#30a46c') : st === 'defect' ? new THREE.Color('#e5484d') : st === 'pending' ? new THREE.Color('#e8a33d') : null;
+  return (
+    <TintCtx.Provider value={{ color: tint, amount: st === 'pending' ? 0.18 : st ? 0.45 : 0 }}>
+      <group name={`${objectId}#${id}`} onClick={zones ? (e) => { e.stopPropagation(); pick(`${objectId}#${id}`); } : undefined}
+        onPointerOver={zones ? (e) => { e.stopPropagation(); document.body.style.cursor = 'pointer'; } : undefined}
+        onPointerOut={zones ? () => { document.body.style.cursor = 'auto'; } : undefined}>
+        {children}
+      </group>
+    </TintCtx.Provider>
+  );
+}
+/** Candado personal con etiqueta de bloqueo, a escala de inspección. */
+function LockSet({ o }: { o: SceneObjectT }) {
+  const zones = useMission((s) => (s.zones?.objectId === o.id ? s.zones.states : null));
+  const Z = ({ id, children }: { id: string; children: ReactNode }) => <InspectZone objectId={o.id} id={id} zones={zones}>{children}</InspectZone>;
+  return (
+    <group scale={[1.8, 1.8, 1.8]}>
+      <Z id="candado"><Box s={[0.12, 0.14, 0.06]} p={[0, 0.1, 0]} c="#dc2626" /><mesh position={[0, 0.19, 0]}><torusGeometry args={[0.04, 0.012, 8, 16, Math.PI]} /><M color="#e5e7eb" metal={0.9} /></mesh></Z>
+      <Z id="llave"><Box s={[0.02, 0.06, 0.005]} p={[0.18, 0.04, 0.03]} c="#d4d4d8" m={0.9} /><mesh position={[0.18, 0.08, 0.03]}><torusGeometry args={[0.014, 0.005, 6, 12]} /><M color="#d4d4d8" metal={0.9} /></mesh></Z>
+      <group position={[0, -0.1, 0.01]}>
+        <Box s={[0.16, 0.26, 0.005]} p={[0, -0.03, 0]} c="#f5c518" />
+        <Z id="etiqueta-nombre"><Box s={[0.13, 0.035, 0.006]} p={[0, 0.05, 0.002]} c="#fffbe6" /></Z>
+        <Z id="etiqueta-fecha"><Box s={[0.13, 0.03, 0.006]} p={[0, -0.01, 0.002]} c="#fffbe6" /><Box s={[0.08, 0.008, 0.007]} p={[-0.02, -0.01, 0.003]} c="#1f2937" /></Z>
+        <Z id="etiqueta-motivo"><Box s={[0.13, 0.05, 0.006]} p={[0, -0.075, 0.002]} c="#fffbe6" /><Box s={[0.1, 0.008, 0.007]} p={[0, -0.065, 0.003]} c="#1f2937" /><Box s={[0.08, 0.008, 0.007]} p={[-0.01, -0.085, 0.003]} c="#1f2937" /></Z>
+      </group>
+    </group>
+  );
+}
+
 export const KINDS: Record<SceneObjectT['kind'], (p: { o: SceneObjectT }) => JSX.Element | null> = {
   floor: Floor, wall: Wall, platform: Platform, ladder: Ladder, guardrail: Guardrail, edge: Edge, opening: Opening, powerline: Powerline,
   spill: Spill, tools: Tools, person: Person, barricade: Barricade, anchor: Anchor, pipe: Pipe, cabletray: CableTray, bench: Bench,
   harness: Harness, lanyard: Lanyard, helmet: Helmet, permitboard: PermitBoard, luminaire: Luminaire, sign: Sign, column: Column,
+  conveyor: Conveyor, roller: Roller, motor: Motor, counterweight: Counterweight, disconnect: Disconnect, controlstation: ControlStation, mcc: Mcc, lockboard: LockBoard, lockset: LockSet,
 };

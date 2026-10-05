@@ -1,0 +1,33 @@
+{
+  "id": "loto",
+  "title": "Bloqueo y Etiquetado (LOTO)",
+  "missions": [
+    {
+      "id": "loto-01",
+      "number": "01",
+      "title": "Aislar un equipo para mantenimiento",
+      "available": true
+    },
+    {
+      "id": "loto-02",
+      "number": "02",
+      "title": "Bloqueo grupal",
+      "available": false,
+      "note": "Próximamente"
+    },
+    {
+      "id": "loto-03",
+      "number": "03",
+      "title": "Equipos con varias energías",
+      "available": false,
+      "note": "Próximamente"
+    },
+    {
+      "id": "loto-practical",
+      "number": "★",
+      "title": "Evaluación práctica en piso",
+      "available": false,
+      "note": "La realiza un evaluador autorizado en planta"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { courses, missions, sceneFor } from '../content';
 import { completedMissions, markCompleted, savedProgress, useMission } from '../store';
 import type { MissionT } from '../schema';
 import { MissionPlayer } from './MissionPlayer';
+import { Procedures } from './Procedures';
 import { DISCLAIMER } from '../../components/ui/Disclaimer';
 import { FirstRunNotice, RecordingControls } from '../../components/ui/RecordingNotice';
 import { track } from '../../lib/analytics';
@@ -139,14 +140,34 @@ function LearningPath({ onOpen }: { onOpen: (id: string) => void }) {
   );
 }
 
+/** Navegación mínima fuera de la misión: Misión actual · Misiones · Procedimientos. */
+function TopNav({ view, onNav }: { view: string; onNav: (v: 'intro' | 'path' | 'procedures') => void }) {
+  const item = (v: 'intro' | 'path' | 'procedures', label: string) => (
+    <button onClick={() => onNav(v)} aria-current={view === v ? 'page' : undefined} data-testid={`nav-${v}`}
+      className={`rounded-lg px-3 py-1.5 text-[13px] font-semibold transition ${view === v ? 'bg-white/10 text-white' : 'text-white/55 hover:text-white'}`}>{label}</button>
+  );
+  return (
+    <nav aria-label="Secciones" className="flex items-center gap-1 border-b border-white/10 bg-[#0c0e11] px-4 py-2">
+      <span className="mr-3 font-mono text-[11px] tracking-[0.25em] text-white/45">ACERÍA DIGITAL ACADEMY</span>
+      {item('intro', 'Misión')}{item('path', 'Misiones')}{item('procedures', 'Procedimientos')}
+    </nav>
+  );
+}
+
+// precarga el escenario 3D mientras la persona lee la pantalla de inicio (arranque instantáneo)
+const preloadScene = () => { void import('../scene/MissionScene'); };
+
 export function MissionApp() {
-  const { view, missionId, set, start } = useMission();
+  const view = useMission((s) => s.view), missionId = useMission((s) => s.missionId), set = useMission((s) => s.set), start = useMission((s) => s.start);
   const m = missions[missionId ?? DEFAULT];
   useEffect(() => { if (!missionId) set({ missionId: DEFAULT, view: 'intro' }); }, [missionId, set]);
+  useEffect(() => { const id = window.setTimeout(preloadScene, 300); return () => clearTimeout(id); }, []);
   if (!m) return null;
   return (
     <div className="flex h-full flex-col">
+      {view !== 'play' && <TopNav view={view} onNav={(v) => set({ view: v })} />}
       <div className="min-h-0 flex-1">
+        {view === 'procedures' && <Procedures onPlay={(id) => set({ missionId: id, view: 'intro' })} />}
         {view === 'path' && <LearningPath onOpen={(id) => set({ missionId: id, view: 'intro' })} />}
         {view === 'intro' && <MissionIntro m={m} onStart={(resume) => start(m, resume)} onPath={() => set({ view: 'path' })} />}
         {view === 'play' && <MissionPlayer m={m} scene={sceneFor(m)} onExit={() => set({ view: 'path' })} onComplete={() => set({ view: 'complete' })} />}

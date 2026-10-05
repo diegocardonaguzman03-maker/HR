@@ -61,3 +61,17 @@ body {
 .mission-hint { display:block; width:46px; height:46px; border-radius:9999px; border:3px solid #6e9fd8; box-shadow:0 0 0 6px rgba(110,159,216,.25); animation: hs-pulse 1.6s ease-out infinite; }
 .mission-tap { display:block; width:16px; height:16px; border-radius:9999px; background:rgba(232,163,61,.85); box-shadow:0 0 0 4px rgba(232,163,61,.3); animation: tap-pulse 2s ease-in-out infinite; }
 @keyframes tap-pulse { 0%,100% { transform: scale(.8); opacity:.9 } 50% { transform: scale(1.15); opacity:.6 } }
+
+/* Animaciones de la experiencia de misiones (suaves, cortas; se desactivan con movimiento reducido) */
+@keyframes a-fade { from { opacity: 0 } to { opacity: 1 } }
+@keyframes a-pop { from { opacity: 0; transform: scale(.94) } to { opacity: 1; transform: scale(1) } }
+@keyframes a-rise { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: translateY(0) } }
+@keyframes a-drop { from { opacity: 0; transform: translateY(-10px) } to { opacity: 1; transform: translateY(0) } }
+@keyframes a-slide-left { from { opacity: 0; transform: translateX(24px) } to { opacity: 1; transform: translateX(0) } }
+.anim-fade { animation: a-fade .25s ease-out both }
+.anim-pop { animation: a-pop .28s cubic-bezier(.2,.8,.2,1) both }
+.anim-rise { animation: a-rise .35s cubic-bezier(.2,.8,.2,1) both }
+.anim-drop { animation: a-drop .3s cubic-bezier(.2,.8,.2,1) both }
+.anim-slide-left { animation: a-slide-left .3s cubic-bezier(.2,.8,.2,1) both }
+button { transition: background-color .15s ease, border-color .15s ease, color .15s ease, transform .1s ease; }
+button:active:not(:disabled) { transform: scale(.98); }

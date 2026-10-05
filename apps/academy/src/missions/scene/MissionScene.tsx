@@ -51,6 +51,8 @@ function SceneItem({ o: base, register }: { o: SceneObjectT; register: (id: stri
 }
 
 /** Marcadores 2D anclados al objeto (encontrado, pista, seleccionado). Solo los del paso actual. */
+const boxCache = new WeakMap<THREE.Object3D, THREE.Box3>();
+
 function Markers({ refs }: { refs: React.MutableRefObject<Map<string, THREE.Object3D>> }) {
   const markers = useMission((s) => s.markers);
   return (
@@ -58,7 +60,9 @@ function Markers({ refs }: { refs: React.MutableRefObject<Map<string, THREE.Obje
       {markers.map((m) => {
         const g = refs.current.get(m.objectId);
         if (!g) return null;
-        const box = new THREE.Box3().setFromObject(g);
+        let cached = boxCache.get(g);
+        if (!cached) { cached = new THREE.Box3().setFromObject(g); boxCache.set(g, cached); }
+        const box = cached;
         if (box.isEmpty()) return null;
         const c = box.getCenter(new THREE.Vector3());
         const pos: [number, number, number] = m.kind === 'tap' ? [c.x, c.y, c.z] : [c.x, Math.min(box.max.y + 0.25, c.y + 2.2), c.z];
@@ -69,7 +73,7 @@ function Markers({ refs }: { refs: React.MutableRefObject<Map<string, THREE.Obje
             ) : m.kind === 'hint' ? (
               <span className="mission-hint" aria-hidden />
             ) : (
-              <span className={`whitespace-nowrap rounded-full px-2.5 py-1 text-[12px] font-semibold shadow-lg ${m.kind === 'wrong' ? 'bg-[#e5484d] text-white' : 'bg-[#30a46c] text-white'}`}>
+              <span className={`anim-pop whitespace-nowrap rounded-full px-2.5 py-1 text-[12px] font-semibold shadow-lg ${m.kind === 'wrong' ? 'bg-[#e5484d] text-white' : 'bg-[#30a46c] text-white'}`}>
                 {m.kind === 'wrong' ? '↻ ' : '✓ '}{m.label}
               </span>
             )}
@@ -88,7 +92,7 @@ function CameraRig({ home }: { home: SceneDefT['home'] }) {
     if (!req || !ref.current) return;
     void ref.current.setLookAt(...req.cam.position, ...req.cam.target, !reduced());
   }, [req]);
-  return <CameraControls ref={ref} makeDefault minDistance={1.2} maxDistance={45} maxPolarAngle={Math.PI * 0.49} smoothTime={0.5} dollySpeed={0.6} />;
+  return <CameraControls ref={ref} makeDefault minDistance={1.2} maxDistance={45} maxPolarAngle={Math.PI * 0.49} smoothTime={0.65} draggingSmoothTime={0.12} dollySpeed={0.6} />;
 }
 
 function Readiness({ onReady }: { onReady: () => void }) {
@@ -104,6 +108,7 @@ export default function MissionScene({ scene, onReady }: { scene: SceneDefT; onR
   return (
     <Canvas
       shadows
+      frameloop="demand"
       dpr={[1, dpr]}
       camera={{ position: scene.home.position, fov: 42, near: 0.1, far: 200 }}
       gl={{ antialias: true, powerPreference: 'high-performance' }}

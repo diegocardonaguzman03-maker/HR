@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import type { CameraT, MissionT } from './schema';
 
-export type View = 'path' | 'intro' | 'play' | 'complete';
+export type View = 'path' | 'intro' | 'play' | 'complete' | 'procedures';
 export type Phase = 'intro' | 'show' | 'try' | 'done';
 export type Drawer = null | 'why' | 'procedure' | 'ask';
 export interface StepResult { mistakes: number; done: boolean; wrong?: string[] }

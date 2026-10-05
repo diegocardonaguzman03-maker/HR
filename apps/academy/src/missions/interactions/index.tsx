@@ -207,7 +207,7 @@ export function Inspect({ step, onDone, done }: P<'inspect'>) {
           <p className="text-[15px] text-white">{az.observation}</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
             <button className={chip('idle')} onClick={() => judge(az.id, false)} data-testid="judge-ok">✓ Está bien</button>
-            <button className={chip('idle')} onClick={() => judge(az.id, true)} data-testid="judge-defect">⚠ Tiene daño</button>
+            <button className={chip('idle')} onClick={() => judge(az.id, true)} data-testid="judge-defect">⚠ Tiene un problema</button>
           </div>
         </div>
       )}
@@ -322,21 +322,26 @@ export function Decide({ step, onDone, done }: P<'decide'>) {
 /* ---------- 08 DEMOSTRAR (acciones en orden sobre el escenario) ---------- */
 export function Demonstrate({ step, scene, onDone, done }: P<'demonstrate'>) {
   const { set, toast } = useMission.getState();
+  const listMode = useMission((s) => s.listMode);
+  const ids = useMemo(() => shuffle([...new Set(step.actions.map((a) => a.objectId))], step.id), [step]);
   const [n, setN] = useState(0);
   const mistakes = useRef(0);
   useEffect(() => { set({ interactive: done ? [] : step.actions.map((a) => a.objectId) }); }, [done, step, set]);
-  useSceneClick((id) => {
+  const act = (id: string) => {
     if (done) return;
     const a = step.actions[n];
     if (a && id === a.objectId) {
       toast('ok', a.label, a.feedback);
       if (n + 1 >= step.actions.length) onDone(mistakes.current); else setN(n + 1);
     } else { mistakes.current++; toast('bad', 'Todavía no', `Primero: ${a?.label ?? ''}`); }
-  });
+  };
+  useSceneClick(act);
+  useEffect(() => { set({ markers: done ? [] : ids.map((id) => ({ objectId: id, kind: 'tap' as const })) }); }, [done, ids, set]);
   return (
     <div data-testid="demonstrate" className="text-[14px] text-white">
       Acción {Math.min(n + 1, step.actions.length)} de {step.actions.length}: <strong>{step.actions[Math.min(n, step.actions.length - 1)].label}</strong>
       <span className="ml-2 text-white/50">({labelOf(scene, step.actions[Math.min(n, step.actions.length - 1)].objectId)})</span>
+      <div className="mt-2"><ObjectList scene={scene} ids={ids} visible={listMode} state={() => 'idle'} onPick={act} disabled={done} /></div>
     </div>
   );
 }

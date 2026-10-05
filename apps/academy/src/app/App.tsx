@@ -138,7 +138,7 @@ export function AppCrashed() {
 /** ?capture=1: solo la escena (lo usa scripts/capture-media.mjs para imágenes y el video placeholder). */
 const CAPTURE = typeof location !== 'undefined' && new URLSearchParams(location.search).has('capture');
 /** RT-SW-14: el store solo se expone en desarrollo, en capturas (?capture) y en pruebas (?e2e). */
-if (typeof window !== 'undefined' && (import.meta.env.DEV || CAPTURE || new URLSearchParams(location.search).has('e2e'))) (window as unknown as { __adxStore: typeof useApp }).__adxStore = useApp;
+if (typeof window !== 'undefined' && (import.meta.env.DEV || CAPTURE || new URLSearchParams(location.search).has('e2e'))) { (window as unknown as { __adxStore: typeof useApp }).__adxStore = useApp; void import('../missions/store').then((m) => { (window as unknown as { __adxMission: unknown }).__adxMission = m.useMission; }); }
 
 export function App() {
   if (CAPTURE) {

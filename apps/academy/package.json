@@ -14,7 +14,8 @@
     "e2e": "node tests/e2e/run.mjs",
     "model": "node scripts/build-eaf-glb.mjs",
     "docs:pdf": "node scripts/build-documents.mjs",
-    "media": "node scripts/capture-media.mjs"
+    "media": "node scripts/capture-media.mjs",
+    "docs:missions": "node scripts/build-mission-docs.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",

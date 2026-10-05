@@ -172,3 +172,55 @@ describe('SAF-H-R1 — la precaución no se castiga', () => {
     expect(screen.getByTestId('critical-alert')).toBeInTheDocument();
   });
 });
+
+import { procedures, docsForMission } from '../../src/missions/content';
+import { ProcedureDocs } from '../../src/missions/schema';
+
+describe('todas las misiones del motor', () => {
+  for (const mm of Object.values(missions)) {
+    it(`${mm.id}: esquema, referencias, DEMO y una sola opción correcta`, () => {
+      expect(checkMission(mm, sceneFor(mm))).toEqual([]);
+      expect(mm.status).toBe('DEMO');
+      for (const s of mm.steps) {
+        const opts = s.type === 'inspect' ? s.decision.options : s.type === 'select' || s.type === 'decide' ? s.options : null;
+        if (opts) expect(opts.filter((o) => o.correct), s.id).toHaveLength(1);
+      }
+    });
+  }
+  it('LOTO usa los 8 tipos de interacción', () => {
+    expect(new Set(missions['loto-01'].steps.map((s) => s.type)).size).toBe(8);
+  });
+});
+
+describe('procedimientos y documentos', () => {
+  it('cada misión tiene sus 3 documentos (instrucción, manual, checklist) en DEMO y con SME_REQUIRED', () => {
+    for (const id of Object.keys(missions)) {
+      const d = docsForMission(id);
+      expect(d, id).toBeTruthy();
+      ProcedureDocs.parse(d);
+      for (const k of ['wi', 'manual', 'checklist'] as const) {
+        expect(d![k].status).toBe('DEMO');
+        expect(d![k].file).toMatch(/^documents\/procedimientos\/.+\.pdf$/);
+      }
+      expect(JSON.stringify(d)).toMatch(/SME_REQUIRED/);
+    }
+    expect(procedures.length).toBeGreaterThanOrEqual(2);
+  });
+  it('el menú de procedimientos lista, abre el lector y ofrece las 3 descargas', () => {
+    act(() => useMission.setState({ view: 'procedures', missionId: 'heights-prep' }));
+    render(<MissionApp />);
+    const card = screen.getByTestId('proc-loto-banda');
+    for (const code of ['WI-LOTO-001-DEMO', 'MO-LOTO-001-DEMO', 'CL-LOTO-001-DEMO']) {
+      const a = within(card).getByTestId(`dl-${code}`);
+      expect(a).toHaveAttribute('download');
+      expect(a.getAttribute('href')).toBe(`./documents/procedimientos/${code}.pdf`);
+    }
+    fireEvent.click(within(card).getByTestId('read-loto-banda'));
+    expect(screen.getByTestId('proc-reader')).toHaveTextContent(/DEMO/);
+    fireEvent.click(screen.getByTestId('reader-tab-checklist'));
+    expect(screen.getByTestId('proc-reader')).toHaveTextContent(/Crítico/);
+    fireEvent.click(screen.getByTestId('reader-close'));
+    fireEvent.click(within(card).getByTestId('play-loto-01'));
+    expect(screen.getByTestId('mission-intro')).toHaveTextContent('BLOQUEO Y ETIQUETADO');
+  });
+});

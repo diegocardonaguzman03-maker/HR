@@ -1,0 +1,268 @@
+{
+  "procedureId": "alturas-preparacion",
+  "missionId": "heights-prep",
+  "title": "Trabajo en Alturas — Preparación de la tarea",
+  "area": "Seguridad — Trabajo en alturas",
+  "summary": "Documentos de práctica DEMO para preparar una tarea en altura: cambiar una luminaria conectada a la energía, desde una plataforma con escalera fija. Explican cómo identificar todos los peligros, aislar la energía de la luminaria, confirmar el rescate antes de iniciar, inspeccionar el equipo, elegir un anclaje designado y verificar el espacio libre de caída. Son contenido educativo general: no son el procedimiento de la planta y todo dato de planta está marcado SME_REQUIRED.",
+  "wi": {
+    "code": "WI-ALT-001-DEMO",
+    "title": "Instrucción de trabajo — Preparación para trabajo en altura (cambio de luminaria)",
+    "version": "0.1-demo",
+    "status": "DEMO",
+    "owner": "Seguridad Industrial de la planta (rol custodio). SME_REQUIRED: puesto responsable designado (Seguridad).",
+    "file": "documents/procedimientos/WI-ALT-001-DEMO.pdf",
+    "purpose": "Mostrar, como práctica, la lógica segura para preparar una tarea en altura antes de exponerse a una caída: identificar todos los peligros, confirmar requisitos y rescate, aislar la energía del equipo que se va a intervenir, revisar el acceso, inspeccionar el equipo de protección y conectarse a un anclaje designado. DEMO CONTENT: no es una instrucción aprobada de la planta.",
+    "scope": "Aplica al escenario de práctica de la misión «Trabajo en Alturas — Preparación»: cambio de una luminaria desde una plataforma con escalera fija. Cubre solo la preparación; el cambio de la luminaria en sí no está incluido. SME_REQUIRED: altura y criterios de aplicación según la NOM-009-STPS-2011 y el procedimiento de la planta (Seguridad + Jurídico).",
+    "roles": [
+      { "role": "Trabajador que ejecuta la tarea", "responsibility": "Identifica los peligros, confirma los requisitos, inspecciona su equipo y no inicia si alguna condición no se cumple. Se detiene y avisa a su supervisor." },
+      { "role": "Supervisor del área", "responsibility": "Autoriza el permiso, confirma que el plan de rescate está disponible y que la energía de la luminaria está aislada. SME_REQUIRED: puesto que autoriza el permiso (Seguridad)." },
+      { "role": "Personal autorizado de Mantenimiento Eléctrico", "responsibility": "Aísla, bloquea y verifica la ausencia de energía del circuito de la luminaria. SME_REQUIRED: quién está autorizado y cómo lo verifica (Mantenimiento Eléctrico + Seguridad)." },
+      { "role": "Equipo de rescate", "responsibility": "Está disponible y confirmado antes de que alguien se exponga a la caída. SME_REQUIRED: plan, equipo y responsables del rescate (Seguridad)." },
+      { "role": "Seguridad Industrial", "responsibility": "Define el procedimiento aprobado, los puntos de anclaje designados, los criterios de inspección del equipo y el cálculo del espacio libre de caída. SME_REQUIRED: procedimiento aprobado (Seguridad)." }
+    ],
+    "ppe": [
+      "Arnés de cuerpo completo inspeccionado antes de cada uso.",
+      "Línea de sujeción con absorbedor de energía y conectores (ganchos y mosquetones) inspeccionados.",
+      "Casco con barbiquejo.",
+      "Calzado de seguridad, guantes y lentes de seguridad.",
+      "SME_REQUIRED: especificaciones del equipo, criterios de rechazo y equipo aplicable a poca altura (Seguridad + fabricante)."
+    ],
+    "tools": [
+      "Permiso de trabajo en alturas autorizado. SME_REQUIRED: formato, quién autoriza y vigencia (Seguridad).",
+      "Material para delimitar la zona inferior (cinta, conos o barrera).",
+      "Material para limpiar y secar derrames.",
+      "Bolsa o amarre para herramientas.",
+      "Candado personal y etiqueta, si el procedimiento de la planta lo pide para el bloqueo del circuito. SME_REQUIRED: procedimiento de bloqueo y etiquetado (Mantenimiento Eléctrico + Seguridad).",
+      "Plan de rescate y equipo de rescate. SME_REQUIRED: plan y equipo aprobados (Seguridad)."
+    ],
+    "hazards": [
+      { "hazard": "Caída a distinto nivel por un borde sin protección o un lado de la plataforma sin barandal.", "control": "Protección colectiva (barandal completo) o sistema personal de detención de caídas conectado a un anclaje designado. No trabajar en una zona sin protección. SME_REQUIRED: criterio del procedimiento aprobado (Seguridad)." },
+      { "hazard": "Abertura en el piso de la plataforma.", "control": "Cubrirla o protegerla y señalizarla antes de trabajar." },
+      { "hazard": "Caída al subir o bajar la escalera fija y al pasar de la escalera a la plataforma; escalera con peldaño faltante.", "control": "No usar una escalera dañada: reportarla y usar un acceso seguro. El acceso debe tener su propia protección. SME_REQUIRED: protección para escaleras fijas y para el paso de llegada (Seguridad + Ingeniería)." },
+      { "hazard": "Barandal incompleto (sin travesaño intermedio).", "control": "Completar la protección antes de trabajar en esa zona. SME_REQUIRED: especificación de barandales (Seguridad + Ingeniería)." },
+      { "hazard": "Luminaria conectada a la energía eléctrica (el equipo que vas a intervenir).", "control": "Aislar la energía del circuito con bloqueo y etiquetado y comprobar que no hay energía antes de tocarla. SME_REQUIRED: procedimiento de bloqueo y etiquetado y permiso eléctrico (Mantenimiento Eléctrico + Seguridad)." },
+      { "hazard": "Línea eléctrica aérea cercana.", "control": "No te acerques ni acerques herramientas o materiales largos. La distancia mínima la define el procedimiento; nunca se calcula a ojo. Si no se puede respetar, no se inicia y se solicita desenergizar. SME_REQUIRED: distancias mínimas y permiso eléctrico (Mantenimiento Eléctrico + Seguridad)." },
+      { "hazard": "Herramientas u objetos en el borde que pueden caer.", "control": "Retirar o amarrar las herramientas y usar rodapié." },
+      { "hazard": "Personas en la zona inferior (caída de objetos).", "control": "Delimitar y restringir el paso en la zona inferior; verificar que esté libre." },
+      { "hazard": "Superficie resbalosa por derrame de aceite.", "control": "Limpiar y secar antes de iniciar." },
+      { "hazard": "Caída detenida, pero con golpe contra el piso o una estructura por falta de espacio libre de caída.", "control": "Verificar el espacio libre de caída antes de conectarte; a poca altura puede requerirse otro equipo. SME_REQUIRED: criterio y cálculo del espacio libre de caída (Seguridad + fabricante)." },
+      { "hazard": "Persona suspendida en el arnés sin rescate disponible.", "control": "El rescate debe estar listo y confirmado ANTES de exponerte. Sin rescate no se inicia. SME_REQUIRED: plan de rescate (Seguridad)." }
+    ],
+    "steps": [
+      { "n": 1, "action": "Entiende la tarea: vas a cambiar una luminaria desde una plataforma con escalera fija. Confirma con tu supervisor que es un trabajo en altura y que aplica este procedimiento.", "keyPoint": "Esta tarea te expone a una caída a distinto nivel, a la caída de objetos y a energía eléctrica. Orden de práctica ilustrativo. SME_REQUIRED: secuencia del procedimiento aprobado (Seguridad + Operaciones).", "why": "Si no sabes qué riesgos tiene la tarea, no puedes preparar sus controles." },
+      { "n": 2, "action": "Identifica todos los peligros del lugar: bordes y lados sin protección, abertura en el piso, derrame, línea eléctrica aérea, herramientas en el borde, personas abajo y la luminaria conectada a la energía.", "keyPoint": "Revisa los bordes y el piso de la plataforma, lo que hay arriba, lo que hay abajo y el equipo que vas a intervenir. Se identifican todos, no solo algunos.", "why": "Un peligro que no viste es un peligro sin control." },
+      { "n": 3, "action": "Confirma los requisitos antes de subir: permiso de trabajo en alturas autorizado, capacitación y aptitud médica vigentes y plan de rescate definido y disponible.", "keyPoint": "«Es rápido» o «ayer trabajé ahí» no sustituyen ningún requisito. SME_REQUIRED: formato del permiso, curso, vigencia y criterio médico (Seguridad + Servicio Médico).", "why": "Las condiciones cambian de un día a otro; se revisa cada vez." },
+      { "n": 4, "action": "Confirma que la energía del circuito de la luminaria está aislada, bloqueada y etiquetada, y que se comprobó que no hay energía.", "keyPoint": "No tocas la luminaria hasta que el personal autorizado confirme que no hay energía. SME_REQUIRED: procedimiento de bloqueo y etiquetado, punto de aislamiento y quién lo verifica (Mantenimiento Eléctrico + Seguridad).", "why": "Una descarga eléctrica estando en altura puede causar una lesión grave o una caída." },
+      { "n": 5, "action": "Prepara la zona inferior: delimita y restringe el paso, verifica que no haya personas, retira o amarra las herramientas del borde, limpia el derrame y cubre la abertura.", "keyPoint": "Aplica el control de cada peligro identificado en el paso 2 y verifica que quedó aplicado.", "why": "Identificar un peligro no lo controla; solo el control aplicado protege." },
+      { "n": 6, "action": "Revisa el acceso y la protección colectiva: escalera, barandales en los tres elementos (pasamanos, travesaño intermedio y rodapié), lados sin barandal y el paso de llegada de la escalera.", "keyPoint": "Si la escalera está dañada o falta protección, no subes: reportas y esperas a que se corrija. SME_REQUIRED: especificación de escaleras, barandales y protección del acceso (Seguridad + Ingeniería).", "why": "También te puedes caer al subir, al bajar y al pasar de la escalera a la plataforma." },
+      { "n": 7, "action": "Inspecciona tu equipo de protección: arnés, línea de sujeción, absorbedor de energía, conectores y casco.", "keyPoint": "Si encuentras daño, lo retiras de servicio, lo marcas para que nadie lo use, lo reportas y pides otro. El equipo de protección no se repara en campo. SME_REQUIRED: lista de inspección y criterios de rechazo (Seguridad + fabricante).", "why": "Un equipo dañado puede fallar justo cuando detiene una caída." },
+      { "n": 8, "action": "Colócate el arnés y ajústalo.", "keyPoint": "Ajuste según las instrucciones del fabricante. SME_REQUIRED: criterio de ajuste (Seguridad + fabricante).", "why": "Un arnés flojo o mal colocado puede no sostenerte bien al detener una caída." },
+      { "n": 9, "action": "Elige un punto de anclaje designado e identificado y verifica que haya espacio libre de caída suficiente debajo de ti.", "keyPoint": "Nunca te anclas a un tubo conduit, a una charola de cables ni al barandal. De preferencia, el anclaje va por encima de tu cabeza. SME_REQUIRED: capacidad, certificación del anclaje y cálculo del espacio libre de caída (Seguridad).", "why": "Un punto no diseñado para anclaje puede romperse, y sin espacio libre puedes golpear el piso antes de que el sistema te detenga." },
+      { "n": 10, "action": "Conéctate al anclaje antes de exponerte al borde y mantente conectado mientras estés expuesto.", "keyPoint": "Primero te conectas, después te expones.", "why": "La caída puede ocurrir en el primer momento en que te acercas al borde." },
+      { "n": 11, "action": "Haz la confirmación final de inicio con tu supervisor: permiso, rescate disponible, energía aislada, controles aplicados y zona inferior libre. Si algo falta, no inicias.", "keyPoint": "Sin rescate disponible no se inicia, aunque la tarea sea rápida. SME_REQUIRED: lista de verificación final y responsable (Seguridad).", "why": "La duración no cambia el riesgo de caer, y el rescate debe estar listo ANTES de exponerte." }
+    ],
+    "stopConditions": [
+      "No hay permiso de trabajo en alturas autorizado.",
+      "El plan de rescate no está definido o el equipo de rescate no está disponible.",
+      "La energía de la luminaria no está aislada, bloqueada y comprobada sin energía.",
+      "No se puede respetar la distancia mínima a la línea eléctrica (SME_REQUIRED: distancias mínimas — Mantenimiento Eléctrico + Seguridad).",
+      "El arnés, la línea, el absorbedor o un conector tiene daño o tienes duda de su estado.",
+      "No hay un punto de anclaje designado o no hay espacio libre de caída suficiente.",
+      "La escalera, el barandal o el acceso están dañados o incompletos.",
+      "Hay personas en la zona inferior o la delimitación no está completa.",
+      "Cambian las condiciones (clima, iluminación, actividad cercana). SME_REQUIRED: criterios de suspensión de la planta (Seguridad).",
+      "Si una condición no se cumple, detente y avisa a tu supervisor. SME_REQUIRED: política de la planta sobre la facultad de detener el trabajo y la protección de quien la ejerce (Seguridad + Relaciones Laborales)."
+    ],
+    "references": [
+      "NOM-009-STPS-2011, Condiciones de seguridad para realizar trabajos en altura (verificar con Seguridad / Jurídico).",
+      "NOM-029-STPS-2011, Mantenimiento de las instalaciones eléctricas en los centros de trabajo (verificar con Seguridad / Jurídico).",
+      "NOM-017-STPS-2008, Equipo de protección personal (verificar con Seguridad / Jurídico).",
+      "Procedimiento de bloqueo y etiquetado de la planta. SME_REQUIRED (Mantenimiento Eléctrico + Seguridad).",
+      "Procedimiento aprobado de trabajo en alturas de la planta. SME_REQUIRED (Seguridad + Operaciones).",
+      "Misión «Trabajo en Alturas — Preparación» (heights-prep) y revisión de seguridad ADX-SR-003."
+    ]
+  },
+  "manual": {
+    "code": "MO-ALT-001-DEMO",
+    "title": "Manual operativo — Preparación para trabajo en altura",
+    "version": "0.1-demo",
+    "status": "DEMO",
+    "owner": "Seguridad Industrial de la planta (rol custodio). SME_REQUIRED: puesto responsable designado (Seguridad).",
+    "file": "documents/procedimientos/MO-ALT-001-DEMO.pdf",
+    "sections": [
+      {
+        "title": "1. Objetivo y alcance",
+        "paragraphs": [
+          "Este manual explica, como contenido educativo general, por qué y cómo se prepara una tarea en altura antes de exponerse a una caída. Usa el escenario de práctica de la misión: cambiar una luminaria conectada a la energía desde una plataforma con escalera fija.",
+          "DEMO CONTENT: no es el procedimiento de la planta. Antes de usarse en operación debe reemplazarse por el procedimiento aprobado y validarse por Operaciones y Seguridad."
+        ],
+        "bullets": [
+          "Cubre la preparación; el cambio de la luminaria no está incluido.",
+          "SME_REQUIRED: altura y criterios de aplicación según la NOM-009-STPS-2011 y el procedimiento de la planta (Seguridad + Jurídico)."
+        ]
+      },
+      {
+        "title": "2. Definiciones",
+        "paragraphs": [],
+        "bullets": [
+          "Trabajo en altura: actividad con riesgo de caída a distinto nivel. SME_REQUIRED: definición y altura de aplicación (Seguridad + Jurídico).",
+          "Protección colectiva: protege a todos sin depender de cada persona; por ejemplo, un barandal con pasamanos, travesaño intermedio y rodapié.",
+          "Sistema personal de detención de caídas: arnés de cuerpo completo, línea de sujeción con absorbedor de energía, conectores y punto de anclaje.",
+          "Punto de anclaje designado: punto identificado y aprobado para conectarse. Un tubo, una charola o un barandal no son anclajes.",
+          "Espacio libre de caída: distancia libre debajo del trabajador que el sistema necesita para detener la caída antes de que golpee el piso o una estructura.",
+          "Bloqueo y etiquetado: aislar una energía peligrosa en su punto de aislamiento, ponerle candado y etiqueta y comprobar que no hay energía.",
+          "Plan de rescate: forma acordada de bajar a una persona que quedó suspendida en su arnés. Debe estar listo antes de iniciar."
+        ]
+      },
+      {
+        "title": "3. Responsabilidades",
+        "paragraphs": ["Los puestos son roles genéricos. La planta debe asignar los responsables reales."],
+        "bullets": [
+          "Trabajador: identifica peligros, inspecciona su equipo, no inicia si algo falta y avisa.",
+          "Supervisor: autoriza el permiso y confirma rescate, energía aislada y controles aplicados. SME_REQUIRED: puesto que autoriza (Seguridad).",
+          "Mantenimiento Eléctrico: aísla y verifica la energía de la luminaria. SME_REQUIRED: personal autorizado (Mantenimiento Eléctrico + Seguridad).",
+          "Equipo de rescate: disponible antes de iniciar. SME_REQUIRED: responsables del rescate (Seguridad).",
+          "Seguridad Industrial: procedimiento aprobado, anclajes designados, criterios de inspección y espacio libre de caída."
+        ]
+      },
+      {
+        "title": "4. Descripción del lugar y de sus peligros",
+        "paragraphs": [
+          "El escenario es una plataforma con escalera fija, una luminaria conectada a la energía, una línea eléctrica aérea cercana y una zona inferior por donde pasa gente. La plataforma de «unos 4 m» es un dato del escenario, no una instrucción."
+        ],
+        "bullets": [
+          "Caída a distinto nivel: bordes, lados sin barandal, abertura en el piso, escalera y paso de llegada.",
+          "Energía eléctrica: la luminaria que vas a intervenir y la línea eléctrica aérea.",
+          "Caída de objetos sobre personas en la zona inferior.",
+          "Superficie resbalosa por derrame.",
+          "Suspensión en el arnés si no hay rescate disponible."
+        ]
+      },
+      {
+        "title": "5. Controles",
+        "paragraphs": ["Primero se eliminan o aíslan los peligros, después se usa protección colectiva y al final el equipo de protección personal."],
+        "bullets": [
+          "Aislar la energía de la luminaria con bloqueo y etiquetado y comprobar que no hay energía. SME_REQUIRED: procedimiento de bloqueo (Mantenimiento Eléctrico + Seguridad).",
+          "Línea eléctrica: no acercarse ni acercar herramientas largas; la distancia mínima la define el procedimiento, nunca a ojo. SME_REQUIRED: distancias mínimas (Mantenimiento Eléctrico + Seguridad).",
+          "Barandales completos, abertura cubierta, escalera en buen estado y acceso protegido. SME_REQUIRED: especificaciones (Seguridad + Ingeniería).",
+          "Zona inferior delimitada y libre; herramientas retiradas o amarradas; derrame limpio.",
+          "Equipo de protección inspeccionado; anclaje designado con espacio libre de caída verificado. SME_REQUIRED: capacidad del anclaje y cálculo (Seguridad).",
+          "Plan de rescate listo y confirmado antes de iniciar."
+        ]
+      },
+      {
+        "title": "6. Procedimiento general",
+        "paragraphs": ["Orden de práctica ilustrativo; no es la secuencia de la planta. El detalle paso a paso está en la instrucción WI-ALT-001-DEMO."],
+        "bullets": [
+          "Entender la tarea y sus riesgos.",
+          "Identificar todos los peligros, incluida la luminaria conectada.",
+          "Confirmar permiso, capacitación, aptitud médica, plan de rescate y energía aislada.",
+          "Aplicar los controles de cada peligro y preparar la zona inferior.",
+          "Revisar el acceso y la protección colectiva.",
+          "Inspeccionar el equipo de protección, colocarlo y ajustarlo.",
+          "Conectarse a un anclaje designado, con espacio libre de caída, antes de exponerse al borde.",
+          "Confirmación final con el supervisor; si algo falta, no se inicia.",
+          "SME_REQUIRED: secuencia del procedimiento aprobado (Seguridad + Operaciones)."
+        ]
+      },
+      {
+        "title": "7. Condiciones anormales y emergencia",
+        "paragraphs": [
+          "Ante cualquier condición anormal, detente, no te expongas y avisa a tu supervisor. Este documento DEMO no contiene procedimientos de emergencia ni de rescate."
+        ],
+        "bullets": [
+          "SME_REQUIRED: procedimiento de rescate de una persona suspendida en el arnés, equipo y tiempos de respuesta (Seguridad).",
+          "SME_REQUIRED: qué hacer ante contacto o arco eléctrico (Mantenimiento Eléctrico + Seguridad + Servicio Médico).",
+          "SME_REQUIRED: equipo que ya detuvo una caída — retiro de servicio y reporte (Seguridad).",
+          "SME_REQUIRED: números y canales de emergencia de la planta (Seguridad)."
+        ]
+      },
+      {
+        "title": "8. Capacitación y competencia",
+        "paragraphs": [
+          "La misión y estos documentos son práctica de aprendizaje. La plataforma ACERÍA DIGITAL ACADEMY no certifica competencia ni habilita para trabajar en altura."
+        ],
+        "bullets": [
+          "Para trabajar en altura se necesitan la capacitación y la autorización que exige la planta. SME_REQUIRED: requisitos de autorización, curso y vigencia (Seguridad).",
+          "SME_REQUIRED: aptitud médica (Servicio Médico).",
+          "Los resultados de la práctica no se usan para escalafón, ascensos, sanciones ni bonos. SME_REQUIRED: validación de esta frase (Relaciones Laborales)."
+        ]
+      },
+      {
+        "title": "9. Registros y referencias",
+        "paragraphs": [],
+        "bullets": [
+          "Permiso de trabajo en alturas. SME_REQUIRED: formato y resguardo (Seguridad).",
+          "Registro de inspección del equipo de protección. SME_REQUIRED: formato (Seguridad).",
+          "Registro de bloqueo y etiquetado. SME_REQUIRED: formato (Mantenimiento Eléctrico + Seguridad).",
+          "NOM-009-STPS-2011, NOM-029-STPS-2011 y NOM-017-STPS-2008 (verificar con Seguridad / Jurídico).",
+          "Instrucción WI-ALT-001-DEMO y lista CL-ALT-001-DEMO."
+        ]
+      }
+    ]
+  },
+  "checklist": {
+    "code": "CL-ALT-001-DEMO",
+    "title": "Lista de verificación — Preparación para trabajo en altura",
+    "version": "0.1-demo",
+    "status": "DEMO",
+    "owner": "Seguridad Industrial de la planta (rol custodio). SME_REQUIRED: puesto responsable designado (Seguridad).",
+    "file": "documents/procedimientos/CL-ALT-001-DEMO.pdf",
+    "instructions": "Esta es una plantilla de práctica DEMO para aprender; no es la lista de verificación de la planta. En planta solo se usa la lista aprobada por Seguridad (SME_REQUIRED: lista aprobada). Marca cada punto solo después de verificarlo. Los puntos marcados como críticos no admiten excepción: si uno no se cumple, no se inicia; detente y avisa a tu supervisor.",
+    "sections": [
+      {
+        "title": "1. Requisitos y autorización",
+        "items": [
+          { "text": "Permiso de trabajo en alturas autorizado y vigente. SME_REQUIRED: formato (Seguridad).", "critical": true },
+          { "text": "Capacitación y aptitud médica vigentes. SME_REQUIRED: curso y criterio médico (Seguridad + Servicio Médico).", "critical": true },
+          { "text": "Plan de rescate definido y equipo de rescate disponible y confirmado ANTES de iniciar.", "critical": true },
+          { "text": "Instrucción de trabajo disponible y entendida.", "critical": false }
+        ]
+      },
+      {
+        "title": "2. Peligros identificados y controlados",
+        "items": [
+          { "text": "Energía de la luminaria aislada, bloqueada, etiquetada y comprobada sin energía. SME_REQUIRED: procedimiento de bloqueo (Mantenimiento Eléctrico + Seguridad).", "critical": true },
+          { "text": "Línea eléctrica aérea: se respeta la distancia mínima del procedimiento o se solicitó desenergizar. SME_REQUIRED: distancias mínimas.", "critical": true },
+          { "text": "Zona inferior delimitada y sin personas.", "critical": true },
+          { "text": "Herramientas retiradas del borde o amarradas.", "critical": false },
+          { "text": "Derrame limpio y superficie seca.", "critical": false },
+          { "text": "Abertura en el piso cubierta y señalizada.", "critical": true }
+        ]
+      },
+      {
+        "title": "3. Acceso y protección colectiva",
+        "items": [
+          { "text": "Escalera sin peldaños dañados o faltantes.", "critical": true },
+          { "text": "Barandales completos: pasamanos, travesaño intermedio y rodapié, en todos los lados expuestos.", "critical": true },
+          { "text": "Paso de llegada de la escalera protegido. SME_REQUIRED: especificación (Seguridad + Ingeniería).", "critical": true }
+        ]
+      },
+      {
+        "title": "4. Equipo de protección personal",
+        "items": [
+          { "text": "Arnés inspeccionado y sin daño.", "critical": true },
+          { "text": "Línea de sujeción, absorbedor de energía y conectores inspeccionados y sin daño.", "critical": true },
+          { "text": "Equipo dañado retirado de servicio, marcado y reportado (si aplica).", "critical": false },
+          { "text": "Casco con barbiquejo y demás EPP colocados.", "critical": false },
+          { "text": "Arnés colocado y ajustado.", "critical": false }
+        ]
+      },
+      {
+        "title": "5. Anclaje y condición de inicio",
+        "items": [
+          { "text": "Punto de anclaje designado e identificado (no conduit, no charola, no barandal). SME_REQUIRED: capacidad y certificación (Seguridad).", "critical": true },
+          { "text": "Espacio libre de caída verificado. SME_REQUIRED: cálculo (Seguridad).", "critical": true },
+          { "text": "Conectado al anclaje antes de exponerse al borde.", "critical": true },
+          { "text": "Confirmación final con el supervisor: todas las condiciones se cumplen.", "critical": true }
+        ]
+      }
+    ],
+    "signatures": [
+      "Trabajador que ejecuta — nombre, firma y fecha. SME_REQUIRED: formato de la planta (Seguridad).",
+      "Supervisor que autoriza — nombre, firma y fecha.",
+      "Personal de Mantenimiento Eléctrico que verificó el aislamiento — nombre, firma y fecha.",
+      "Seguridad Industrial (cuando el procedimiento lo pida) — nombre, firma y fecha."
+    ]
+  }
+}

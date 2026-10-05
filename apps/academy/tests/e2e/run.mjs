@@ -292,6 +292,58 @@ await test('MISIÓN 01 · Trabajo en alturas: de la pantalla inicial a resultado
   assert((await page.textContent('[data-testid=learning-path]')).includes('COMPLETADA'), 'mapa sin completar');
 });
 
+
+await test('PROCEDIMIENTOS: menú, lector y descarga de instrucción, manual y checklist (PDF)', async (page) => {
+  await page.addInitScript(() => { localStorage.setItem('adx.recording-notice-seen', '1'); });
+  await page.goto(srv.url + '/?e2e');
+  await page.click('[data-testid=nav-procedures]');
+  await page.waitForSelector('[data-testid=procedures]');
+  for (const code of ['WI-LOTO-001-DEMO', 'MO-LOTO-001-DEMO', 'CL-LOTO-001-DEMO', 'WI-ALT-001-DEMO']) {
+    const [dl] = await Promise.all([page.waitForEvent('download'), page.click(`[data-testid=dl-${code}]`)]);
+    assert(fs.readFileSync(await dl.path()).subarray(0, 5).toString() === '%PDF-', code + ' no es PDF');
+  }
+  await page.click('[data-testid=read-loto-banda]');
+  await page.waitForSelector('[data-testid=proc-reader]');
+  await page.screenshot({ path: `${SHOTS}/30-procedimientos-lector.png` });
+  await page.keyboard.press('Escape');
+});
+
+await test('MISIÓN LOTO · 8 pasos con los 8 tipos de interacción hasta resultados', async (page) => {
+  await page.addInitScript(() => { localStorage.setItem('adx.recording-notice-seen', '1'); });
+  await page.goto(srv.url + '/?e2e');
+  await page.click('[data-testid=nav-procedures]');
+  await page.click('[data-testid=play-loto-01]');
+  await page.click('[data-testid=start-mission]');
+  const begin = async () => { await page.waitForSelector('[data-testid=step-start]', { timeout: 90000 }); await page.click('[data-testid=step-start]'); if (await page.locator('[data-testid=skip-demo]').count()) await page.click('[data-testid=skip-demo]'); };
+  const cont = () => page.click('[data-testid=continue]');
+  await begin();
+  for (const t of ['observe-next', 'observe-next', 'observe-confirm']) await page.click(`[data-testid=${t}]`);
+  await cont(); await begin();
+  await page.click('[data-testid=help-list]');
+  for (const n of ['Motor y reductor', 'Contrapeso del tensor', 'Banda transportadora']) await page.getByRole('button', { name: new RegExp('^' + n) }).click();
+  await cont(); await begin();
+  for (const n of ['Estoy capacitado', 'Tengo el procedimiento', 'Avisé al personal', 'Tengo mi candado']) await page.getByText(new RegExp('^' + n)).click();
+  await page.click('[data-testid=confirm-verify]');
+  await cont(); await begin();
+  const want = ['Apagar el equipo con sus controles normales', 'Aislar la energía en el punto de aislamiento', 'Colocar tu candado y tu etiqueta', 'Liberar o bloquear la energía almacenada (contrapeso, tensión)', 'Verificar energía cero: intentar arrancar y comprobar que nada se mueve'];
+  for (let pos = 0; pos < want.length; pos++) for (let g = 0; g < 10; g++) { const cur = await page.locator('[data-testid=sequence] li').allTextContents(); if (cur[pos].includes(want[pos])) break; await page.getByLabel(`Subir «${want[pos]}»`).click(); }
+  await page.click('[data-testid=sequence-verify]');
+  await cont(); await begin();
+  await page.getByRole('button', { name: /^Seccionador/ }).click();
+  await cont(); await begin();
+  for (const z of ['candado', 'llave', 'etiqueta-nombre', 'etiqueta-fecha', 'etiqueta-motivo']) { await page.click(`[data-testid=zone-${z}]`); await page.click(z === 'etiqueta-nombre' ? '[data-testid=judge-defect]' : '[data-testid=judge-ok]'); }
+  await page.getByRole('button', { name: /Completo mi nombre/ }).click();
+  await cont(); await begin();
+  await page.screenshot({ path: `${SHOTS}/31-loto-verificar.png` });
+  for (const n of ['Seccionador del motor', 'Contrapeso del tensor', 'Estación de botones']) await page.getByRole('button', { name: new RegExp('^' + n) }).click();
+  await cont(); await begin();
+  await page.getByRole('button', { name: /Retiro herramientas/ }).click();
+  await cont();
+  await page.waitForSelector('[data-testid=mission-complete]');
+  assert((await page.textContent('[data-testid=result-correct]')).trim() === '8 / 8', 'resultado LOTO');
+  await page.screenshot({ path: `${SHOTS}/32-loto-resultado.png`, fullPage: true });
+});
+
 const report = { date: new Date().toISOString(), dir: DIR, results, errors, perf };
 fs.writeFileSync('tests/e2e/report.json', JSON.stringify(report, null, 2));
 console.log(`\n${results.filter((r) => r.ok).length}/${results.length} pruebas e2e OK · errores de consola: ${errors.length}`);
