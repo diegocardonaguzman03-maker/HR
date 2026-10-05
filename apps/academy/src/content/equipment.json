@@ -18,7 +18,7 @@
     "howItWorks": [
       "La coraza inferior (solera) es una tina de acero forrada por dentro con refractario: ahí queda el acero líquido.",
       "La coraza superior es un anillo de acero donde se montan los paneles enfriados por agua que protegen la pared arriba de la línea de escoria.",
-      "La coraza descansa sobre la plataforma basculante, que la inclina hacia la puerta de escoria o hacia el vaciado EBT.",
+      "La coraza descansa sobre la plataforma basculante, que la inclina hacia la puerta de escoria o hacia el vaciado EBT; la puerta y el EBT están en lados opuestos del horno.",
       "Con ≈ 95–100 % DRI el horno trabaja casi siempre sobre pie líquido: el DRI cae en el baño y se funde dentro de la coraza."
     ],
     "components": [
@@ -418,7 +418,7 @@
       "haz.noise-dust"
     ],
     "operationalNotes": [
-      "Electrodos de grafito UHP de 610 mm con niples cónicos según el borrador FT-ACE-001; SME_REQUIRED: diámetro, grado y tipo de niple confirmados con el proveedor de electrodos y la OEM.",
+      "Electrodos de grafito UHP con niples cónicos (tipo general de la industria). SME_REQUIRED: diámetro, grado y tipo de niple confirmados con el proveedor de electrodos y la OEM; el borrador FT-ACE-001 trae un valor no validado.",
       "Con ≈ 95–100 % DRI no hay colapsos de carga de chatarra, lo que reduce el riesgo de rotura por golpe, pero el arco trabaja más tiempo (D-010).",
       "SME_REQUIRED: consumo objetivo de electrodo (kg/t) validado por Ingeniería de Proceso C-07; el borrador FT-ACE-001 trae un valor de referencia no validado.",
       "SME_REQUIRED: longitud mínima de columna bajo la mordaza y criterio para agregar electrodo (procedimiento de adición y empalme, MO-EAF-08 aprobado).",
@@ -501,7 +501,7 @@
     "howItWorks": [
       "Cada brazo es conductor de corriente (o lleva tubos conductores) y termina en una mordaza que aprieta el electrodo.",
       "La mordaza cierra por paquete de resortes y abre con presión hidráulica: si falta presión, el electrodo sigue sujeto.",
-      "El brazo está fijo a un mástil (columna) que corre sobre rodillos guía; un cilindro hidráulico lo sube o baja.",
+      "El brazo está fijo a un mástil que corre sobre rodillos guía; un cilindro hidráulico lo sube o baja.",
       "La regulación de electrodos compara la impedancia (tensión/corriente) medida en cada fase con la referencia y mueve el cilindro con una válvula proporcional o servo.",
       "Si la corriente sube (arco corto), la regulación sube el electrodo; si baja (arco largo), lo baja.",
       "El brazo está aislado eléctricamente del mástil para que la corriente no pase a la estructura."
@@ -527,7 +527,7 @@
       },
       {
         "id": "cmp.electrode-arms-mast",
-        "name": "Mástil (columna) y rodillos guía",
+        "name": "Mástil y rodillos guía",
         "function": "Guía el movimiento vertical del brazo.",
         "nodeName": "eaf__arms_mast",
         "failureModes": [
@@ -869,7 +869,7 @@
       "haz.noise-dust"
     ],
     "operationalNotes": [
-      "El borrador FT-ACE-001 describe un transformador de 140 MVA con OLTC; SME_REQUIRED: potencia nominal, tensiones secundarias, tabla de taps y corrientes validadas por OEM e Ingeniería Eléctrica.",
+      "Transformador de horno con cambiador de derivaciones bajo carga (OLTC). SME_REQUIRED: potencia nominal, tensiones secundarias, tabla de derivaciones (taps) y corrientes validadas por la OEM e Ingeniería Eléctrica; el borrador FT-ACE-001 trae valores no validados.",
       "SME_REQUIRED: límites de sobrecarga y de temperatura del transformador y del OLTC (OEM).",
       "SME_REQUIRED: cuándo y quién puede cambiar el tap con arco encendido; el perfil de potencia aprobado lo define C-07 (MO-EAF-04 está en borrador).",
       "Las maniobras en alta tensión solo las realiza personal eléctrico autorizado con el procedimiento aprobado. SME_REQUIRED: procedimiento de maniobras y aislamiento en alta tensión (Ingeniería Eléctrica + Seguridad C-16)."
@@ -939,7 +939,7 @@
       "stage.melt",
       "stage.refine"
     ],
-    "summary": "Conductores de muy alta corriente que llevan la energía del transformador a los brazos: barras rígidas a la salida de la bóveda del transformador y cables flexibles enfriados por agua que permiten el movimiento de los brazos.",
+    "summary": "Conductores de muy alta corriente que llevan la energía del transformador a los brazos: barras rígidas a la salida de la casa del transformador y cables flexibles enfriados por agua que permiten el movimiento de los brazos.",
     "function": "Conducir la corriente del secundario del transformador hasta los brazos portaelectrodos con pocas pérdidas y permitir que los brazos suban, bajen y giren.",
     "howItWorks": [
       "A la salida del transformador, barras de cobre (a veces tubos enfriados) atraviesan la pared de la casa del transformador.",
@@ -1122,7 +1122,8 @@
       "El oxígeno reacciona con el carbono del baño y forma CO; esa reacción libera energía y baja el carbono del acero.",
       "El inyector de carbono sopla finos de coque o antracita con aire o gas de transporte a la interfase escoria–metal.",
       "El carbono reduce el FeO de la escoria y genera burbujas de CO que hacen que la escoria espume y cubra el arco.",
-      "En modo quemador se mezcla gas natural con oxígeno para calentar zonas frías; con ≈ 100 % DRI se usa poco (arranque en frío o canasta de retornos)."
+      "En modo quemador se mezcla gas natural con oxígeno para calentar zonas frías; con ≈ 100 % DRI se usa poco (arranque en frío o canasta de retornos).",
+      "En el modelo 3D se dibujan una lanza y un inyector por la puerta solo como ejemplo; SME_REQUIRED: confirmar con la OEM si existen en la planta."
     ],
     "components": [
       {
@@ -1406,7 +1407,7 @@
     "function": "Vaciar el acero líquido a la olla de forma rápida y con mínimo arrastre de escoria, dejando el pie líquido para la siguiente colada.",
     "howItWorks": [
       "Entre coladas, el agujero se rellena con arena de sello y se cierra por abajo con una compuerta (tapa) mecánica.",
-      "Al vaciar, el horno se inclina hacia el EBT, se abre la compuerta y la arena cae; el acero empieza a fluir.",
+      "Al vaciar, el horno se inclina hacia el EBT, se abre la compuerta y la arena cae; el acero empieza a fluir. (Secuencia general; el orden, los ángulos y los tiempos reales los fija el procedimiento aprobado: SME_REQUIRED, MO-EAF-07 en borrador.)",
       "La olla espera debajo, en un carro dentro de la fosa.",
       "Al llegar al peso de vaciado, el horno regresa rápido para cortar el chorro y dejar el pie líquido."
     ],
@@ -1964,7 +1965,7 @@
     ],
     "observableSignals": [
       "Vapor blanco anormal",
-      "Llama de color distinto en el 4.º agujero (hidrógeno)",
+      "Subida de hidrógeno (H₂) en el análisis de gases, si existe, o vapor o llama anormal en el 4.º agujero",
       "Diferencia de caudal en pantalla"
     ],
     "maintenance": {
@@ -2096,7 +2097,7 @@
       "eq.roof",
       "eq.cooling",
       "eq.oxygen-carbon (genera CO)",
-      "eq.dri-feed (finos de DRI se van al 4.º agujero)"
+      "eq.dri-feed (si entran finos de DRI por el 5.º agujero, la succión los arrastra al 4.º agujero y a la casa de bolsas; por eso se separan antes)"
     ],
     "hazardIds": [
       "haz.gas-co",
@@ -2190,7 +2191,7 @@
       {
         "id": "cmp.dri-feed-silos",
         "name": "Silos de día",
-        "function": "Almacenan el DRI de forma seca e inertizada antes del horno.",
+        "function": "Almacenan el DRI seco y protegido de la reoxidación (inertización según el diseño de la planta; SME_REQUIRED: confirmar con OEM / Reducción Directa).",
         "failureModes": [
           "Autocalentamiento del DRI",
           "Puenteo (el material no baja)"

@@ -8,7 +8,7 @@
     "equipmentIds": ["eq.electrodes", "eq.electrode-arms", "eq.secondary-circuit", "eq.transformer", "eq.control-room"],
     "hazardIds": ["haz.electrical", "haz.stored-energy", "haz.molten-metal", "haz.thermal", "haz.height", "haz.line-of-fire", "haz.suspended-load", "haz.water-molten-metal"],
     "prerequisites": [
-      "Haber aprobado los módulos de orientación al EAF y de seguridad de energía eléctrica, energía almacenada y metal líquido (contenido de formación general; no es una certificación de planta).",
+      "Haber completado los módulos de orientación al EAF y de seguridad de energía eléctrica, energía almacenada y metal líquido (formación general de conocimiento; no habilita para la tarea ni sustituye la certificación en piso TD-P07).",
       "SME_REQUIRED: competencia o certificación interna que exige la planta para ejecutar esta revisión (C-05 / Capacitación).",
       "SME_REQUIRED: autorización del supervisor y estado de energía del horno según el procedimiento aprobado de aislamiento (MS-ACE-02 en borrador; validar con Seguridad y Operaciones).",
       "SME_REQUIRED: permiso de trabajo aplicable (por ejemplo, trabajo en altura si la revisión se hace desde una plataforma) según el procedimiento aprobado.",
@@ -29,7 +29,7 @@
     "tools": [
       "Radio portátil en el canal de hornos",
       "Lámpara de mano",
-      "Lista de verificación de esta revisión (job aid DEMO)",
+      "Lista de verificación de esta revisión (tarjeta de apoyo DEMO)",
       "Bitácora del horno o registro electrónico de turno",
       "SME_REQUIRED: instrumentos de inspección autorizados por la planta (por ejemplo, para medir longitud de columna); no se usan sin el procedimiento aprobado"
     ],
@@ -48,6 +48,18 @@
       },
       {
         "n": 2,
+        "title": "Revisa en el púlpito las señales del sistema",
+        "action": "Junto con el operador del púlpito, revisa en la HMI las alarmas activas y el estado reportado de transformador, interruptor, regulación de electrodos, hidráulica de brazos, agua de enfriamiento (paneles, brazos y cables) y alimentación de DRI por el 5.º agujero (debe estar detenida mientras el arco está apagado). Anota las alarmas que veas. SME_REQUIRED: lista de pantallas, alarmas y señales que la planta exige revisar, y su interpretación aprobada.",
+        "why": "El sistema de control muestra condiciones que no se ven desde el piso (alarmas del transformador, fallas de regulación o de hidráulica). Revisarlas evita reanudar con una falla activa.",
+        "visual": "Captura DEMO de una HMI genérica con alarmas resaltadas (sin valores de planta).",
+        "check": "Tienes la lista de alarmas activas o la confirmación del púlpito de que no hay alarmas relevantes.",
+        "expected": "Sabes si hay alarmas del transformador, del circuito secundario, de la regulación o de la hidráulica. SME_REQUIRED: criterio aprobado de qué alarmas impiden reanudar.",
+        "warning": "No reconozcas ni borres alarmas para «limpiar» la pantalla: eso es decisión del responsable autorizado.",
+        "commonError": "Revisar solo la alarma más reciente y omitir alarmas reconocidas que siguen activas.",
+        "escalation": "Cualquier alarma que no entiendas se reporta al supervisor antes de continuar."
+      },
+      {
+        "n": 3,
         "title": "Ubícate en la posición segura asignada",
         "action": "Colócate en la posición de observación que te asignó el supervisor, fuera de la línea de fuego de los brazos, de la grúa y de posibles proyecciones de metal o escoria. SME_REQUIRED: ubicación de la posición segura, distancias y zonas de exclusión del procedimiento aprobado (MS-ACE-01, MS-ACE-04).",
         "why": "Una revisión visual se hace sin exponer el cuerpo: si algo se mueve, cae o salpica, la posición segura te mantiene fuera de su alcance.",
@@ -59,21 +71,9 @@
         "escalation": "Si la posición asignada está obstruida o hay una maniobra de grúa en curso, detente y avisa al supervisor."
       },
       {
-        "n": 3,
-        "title": "Revisa en el púlpito las señales del sistema",
-        "action": "Junto con el operador del púlpito, revisa en la HMI las alarmas activas y el estado reportado de transformador, interruptor, regulación de electrodos e hidráulica de brazos. Anota las alarmas que veas. SME_REQUIRED: lista de pantallas, alarmas y señales que la planta exige revisar, y su interpretación aprobada.",
-        "why": "El sistema de control muestra condiciones que no se ven desde el piso (alarmas del transformador, fallas de regulación o de hidráulica). Revisarlas evita reanudar con una falla activa.",
-        "visual": "Captura DEMO de una HMI genérica con alarmas resaltadas (sin valores de planta).",
-        "check": "Tienes la lista de alarmas activas o la confirmación del púlpito de que no hay alarmas relevantes.",
-        "expected": "Sabes si hay alarmas del transformador, del circuito secundario, de la regulación o de la hidráulica. SME_REQUIRED: criterio aprobado de qué alarmas impiden reanudar.",
-        "warning": "No reconozcas ni borres alarmas para «limpiar» la pantalla: eso es decisión del responsable autorizado.",
-        "commonError": "Revisar solo la alarma más reciente y omitir alarmas reconocidas que siguen activas.",
-        "escalation": "Cualquier alarma que no entiendas se reporta al supervisor antes de continuar."
-      },
-      {
         "n": 4,
         "title": "Observa la condición visible de las columnas de electrodos",
-        "action": "Desde la posición segura, observa visualmente cada columna (fase 1, 2 y 3): busca grietas, desprendimientos, juntas con brillo o chispas, oxidación anormal (adelgazamiento) o puntas rotas. SME_REQUIRED: criterios de aceptación de longitud, desgaste y oxidación del procedimiento aprobado (MO-EAF-08 en borrador; Ingeniería de Proceso / OEM).",
+        "action": "Desde la posición segura, observa visualmente cada columna (fase 1, 2 y 3): busca grietas, desprendimientos, juntas con brillo o chispas, oxidación anormal (adelgazamiento) o puntas rotas (la punta solo se ve si la columna está arriba y el procedimiento lo permite). SME_REQUIRED: criterios de aceptación de longitud, desgaste y oxidación del procedimiento aprobado (MO-EAF-08 en borrador; Ingeniería de Proceso / OEM).",
         "why": "Una columna dañada o con junta floja se puede romper y caer al baño o a la plataforma. Detectarlo antes de reanudar evita una rotura con el horno energizado.",
         "visual": "Ilustración DEMO de una columna con tres zonas marcadas: punta, junta y zona bajo la mordaza; ejemplos genéricos de grieta y de oxidación.",
         "check": "Revisaste las tres columnas y anotaste cualquier anomalía por fase.",

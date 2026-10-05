@@ -31,7 +31,7 @@
       },
       {
         "name": "Carbono de la mezcla HYL + Midrex",
-        "why": "El DRI de HYL trae más carbono que el de Midrex. La mezcla define cuánto oxígeno y carbono habrá que usar en el horno.",
+        "why": "Por lo general, el DRI de HYL trae más carbono que el de Midrex. La mezcla define cuánto oxígeno y carbono habrá que usar en el horno.",
         "value": "SME_REQUIRED: rango de carbono de la mezcla y límite de alarma. Existe un valor de borrador en FT-ACE-001 §2.1 por validar; lo da C-07 Ingeniero de Proceso EAF."
       },
       {
@@ -492,14 +492,14 @@
     "nextStageId": "stage.secondary",
     "camera": {
       "position": [
-        12,
+        6,
         5,
-        6
+        -12
       ],
       "target": [
-        4,
+        0,
         1,
-        0
+        -4
       ]
     },
     "status": "DRAFT_NOT_VALIDATED",
@@ -556,14 +556,14 @@
     "nextStageId": null,
     "camera": {
       "position": [
-        14,
+        10,
         7,
-        10
+        -14
       ],
       "target": [
-        4,
+        0,
         1,
-        0
+        -4
       ]
     },
     "status": "GENERAL_EDUCATIONAL",
