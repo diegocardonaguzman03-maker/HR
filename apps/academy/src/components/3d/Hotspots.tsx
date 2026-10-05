@@ -13,7 +13,7 @@ export function Hotspots() {
   })));
   // En EVALUAR los puntos no se muestran: abrir la ficha desmontaría la evaluación (RT-SW-04).
   // PENDIENTE decisión del Director (consulta a libro abierto, red-team §4 n.º 2).
-  if (!hotspotsVisible || picking || mode === 'assess') return null;
+  if (!hotspotsVisible || picking) return null; // libro abierto en EVALUAR (D-011-3A); ocultos solo al identificar
   const sel = nodesForEquipment(selectedEq);
   const emph = [...sel, ...focusNodes];
   const open = (kind: string, id: string) => {

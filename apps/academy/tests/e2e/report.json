@@ -1,82 +1,82 @@
 {
-  "date": "2026-10-05T16:27:39.303Z",
+  "date": "2026-10-05T17:05:42.437Z",
   "dir": "dist",
   "results": [
     {
       "name": "arranque: carga real del modelo, aviso permanente y métricas",
       "ok": true,
-      "ms": 5465
+      "ms": 5995
     },
     {
       "name": "hotspot 3D abre el panel del equipo",
       "ok": true,
-      "ms": 11617
+      "ms": 9875
     },
     {
       "name": "clic directo en el modelo 3D selecciona un equipo",
       "ok": true,
-      "ms": 6556
+      "ms": 5500
     },
     {
       "name": "herramientas de vista: corte, rayos X, despiece, aislar, restablecer",
       "ok": true,
-      "ms": 13952
+      "ms": 12494
     },
     {
       "name": "cambio de modo y enlaces profundos",
       "ok": true,
-      "ms": 7488
+      "ms": 8927
     },
     {
       "name": "progresión de lecciones con resaltado 3D",
       "ok": true,
-      "ms": 14949
+      "ms": 13900
     },
     {
       "name": "EJECUTAR: instrucción paso a paso con aviso de no aprobada",
       "ok": true,
-      "ms": 26052
+      "ms": 26784
     },
     {
       "name": "evaluación completa (identificar con la lista accesible; preguntas críticas ▲)",
       "ok": true,
-      "ms": 28449
+      "ms": 27403
     },
     {
       "name": "descarga de documento PDF",
       "ok": true,
-      "ms": 5892
+      "ms": 6039
     },
     {
       "name": "video con subtítulos y capítulos",
       "ok": true,
-      "ms": 5648
+      "ms": 5214
     },
     {
       "name": "asistente oculto en el piloto (veto ADX-04, opción B)",
       "ok": true,
-      "ms": 1393
+      "ms": 1239
     },
     {
       "name": "accesibilidad: teclado, landmarks, etiquetas y modo móvil",
       "ok": true,
-      "ms": 2933
+      "ms": 2720
     },
     {
       "name": "vista móvil (390×844) sin desbordamiento horizontal",
       "ok": true,
-      "ms": 1962
+      "ms": 2092
     }
   ],
   "errors": [],
   "perf": {
-    "loadMs": 2170,
+    "loadMs": 2076,
     "fps": 4,
     "calls": 1,
     "triangles": 1,
     "geometries": 17,
     "textures": 27,
     "quality": "medium",
-    "jsHeapMB": 22
+    "jsHeapMB": 16
   }
 }

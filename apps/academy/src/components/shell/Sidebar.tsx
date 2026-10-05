@@ -9,8 +9,8 @@ export function Sidebar() {
     selectedStage: s.selectedStage, selectedEq: s.selectedEq, selectStage: s.selectStage, flyTo: s.flyTo,
     selectEquipment: s.selectEquipment, picking: s.picking, mode: s.mode,
   })));
-  // En EVALUAR abrir una ficha desmontaría la evaluación (RT-SW-04). PENDIENTE decisión del Director (§4 n.º 2).
-  const locked = picking || mode === 'assess';
+  // Libro abierto en EVALUAR (D-011-3A): la evaluación queda montada; solo se bloquea mientras se identifica en 3D.
+  const locked = picking;
   return (
     <nav aria-label="Proceso y equipos" className="scroll-thin flex h-full flex-col gap-5 overflow-y-auto p-3">
       <div>
@@ -33,7 +33,7 @@ export function Sidebar() {
         </ol>
       </div>
       <div>
-        <h2 className="label mb-2 px-1">Equipos {picking ? <span className="text-[var(--color-accent)]">· modo identificar</span> : mode === 'assess' ? <span className="text-[var(--color-accent)]">· en evaluación</span> : null}</h2>
+        <h2 className="label mb-2 px-1">Equipos {picking ? <span className="text-[var(--color-accent)]">· modo identificar</span> : mode === 'assess' ? <span className="text-[var(--color-accent)]">· consulta libre</span> : null}</h2>
         <ul className="space-y-0.5" data-testid="equipment-list">
           {equipmentOrdered.map((e) => (
             <li key={e.id}>

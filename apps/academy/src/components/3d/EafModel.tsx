@@ -242,8 +242,8 @@ export function EafModel() {
     if (!eq) return;
     const st = useApp.getState();
     if (st.picking) { st.set({ lastPick: { eqId: eq.id, key: Date.now() } }); return; }
-    // RT-SW-04: en EVALUAR un clic 3D sin «identificar» no cambia nada (no se pierde el avance)
-    if (st.mode === 'assess') return;
+    // Decisión del Director (2026-10-05, D-011-3A): evaluación a libro abierto. En EVALUAR se puede consultar la ficha;
+    // la evaluación sigue montada y no pierde avance (RT-SW-04). Durante «identificar» el clic responde (arriba).
     // en EJECUTAR solo se resalta la pieza; el panel de la instrucción no cambia
     if (st.mode === 'perform') { st.set({ selectedComponentNode: n.node }); return; }
     st.selectEquipment(eq.id, { fly: false });
