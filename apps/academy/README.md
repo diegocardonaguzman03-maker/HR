@@ -1,6 +1,6 @@
 # ACERÍA DIGITAL ACADEMY — Horno de arco eléctrico (módulo inicial)
 
-Entorno web interactivo de aprendizaje sobre el **horno de arco eléctrico (EAF)** de GASM. Tiene un modelo 3D con 15 hotspots, fichas de 9 pestañas por equipo, el mapa del proceso, los modos **EXPLORAR · APRENDER · EJECUTAR · EVALUAR**, una biblioteca de documentos y videos y el asistente **Pregunta a Acería AI**, que solo responde con citas.
+Entorno web interactivo de aprendizaje sobre el **horno de arco eléctrico (EAF)** de GASM. Tiene un modelo 3D con 15 hotspots, fichas de 9 pestañas por equipo, el mapa del proceso, los modos **EXPLORAR · APRENDER · EJECUTAR · EVALUAR**, una biblioteca de documentos y videos. El asistente **Pregunta a Acería AI** está construido y probado, pero queda **oculto en el piloto** por el veto de Seguridad (ADX-04, opción B; ver `docs/release-approval.md`). Se activa con `VITE_ASSISTANT=on` solo después de la segunda liberación.
 
 > **Aviso de seguridad.** Este entorno de capacitación apoya el aprendizaje y no sustituye procedimientos operativos aprobados, instrucciones de trabajo, permisos, supervisión ni requisitos de seguridad. **La plataforma no certifica competencia.** Ningún contenido de esta versión está aprobado por planta. Los datos de planta aparecen como `SME_REQUIRED` o `PLACEHOLDER — REQUIRES PLANT VALIDATION`.
 
@@ -34,7 +34,7 @@ npm run build:web    # web/index.html autocontenido (+ documents/, videos/, imag
 | Un módulo de formación y una evaluación de 10 preguntas (incluye identificar en 3D) | `training.json`, `questions.json`, `assessments.json` |
 | Un video placeholder con capítulos y subtítulos | `public/videos/` |
 | Documentos descargables: WI, job aid y 2 guías (PDF) | `public/documents/` |
-| Una experiencia de IA: recuperación local con citas y negativas | `src/lib/assistant/` |
+| Una experiencia de IA: recuperación local con citas y negativas (oculta en el piloto, `src/lib/features.ts`) | `src/lib/assistant/` |
 
 ## Documentación
 | Documento | Contenido |

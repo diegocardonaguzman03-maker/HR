@@ -1,6 +1,6 @@
 # Informe de QA — ACERÍA DIGITAL ACADEMY (MVP 0.1)
 
-**Mensaje clave:** todo está en verde: **116 pruebas unitarias y de componentes**, **13/13 pruebas e2e** en Chromium real sobre el build de producción, typecheck estricto y validación de contenido sin errores. Además, el asistente se probó con **44 preguntas trampa** de Seguridad y más de 25 casos propios. La liberación depende de la re-revisión de Seguridad (veto) y de las decisiones del Director (§5).
+**Mensaje clave:** todo está en verde: **202 pruebas unitarias y de componentes**, **13/13 pruebas e2e** en Chromium real sobre el build de producción, typecheck estricto y validación de contenido sin errores. Además, el asistente se probó con **44 preguntas trampa** de Seguridad y más de 25 casos propios. La liberación depende de la re-revisión de Seguridad (veto) y de las decisiones del Director (§5).
 Fecha: 2026-10-05.
 
 ## 1. Comandos y resultado
@@ -8,7 +8,7 @@ Fecha: 2026-10-05.
 |---|---|---|
 | Contenido (esquema, referencias, nodos 3D, PLANT_APPROVED bloqueado, marcas SME vacías) | `npm run check:content` | ✓ 6 etapas · 15 equipos · 12 peligros · 15 hotspots · 1 WI · 3 módulos · 23 preguntas · 4 documentos · 1 video · 215 campos SME_REQUIRED |
 | Tipos | `npm run typecheck` | ✓ 0 errores (TS strict) |
-| Unitarias y componentes | `npm test` | ✓ 116/116 |
+| Unitarias y componentes | `npm test` | ✓ 202/202 |
 | e2e | `npm run build && npm run e2e` | ✓ 13/13 |
 | Build | `npm run build` / `npm run build:web` | ✓ |
 
