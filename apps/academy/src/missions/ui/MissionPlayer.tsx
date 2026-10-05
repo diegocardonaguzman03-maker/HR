@@ -56,10 +56,11 @@ function ContextDrawer({ m, step }: { m: MissionT; step: StepT }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (!drawer) return;
+    const prev = document.activeElement as HTMLElement | null;
     ref.current?.querySelector<HTMLElement>('button')?.focus();
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') set({ drawer: null }); };
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    return () => { window.removeEventListener('keydown', onKey); prev?.focus?.(); };
   }, [drawer, set]);
   if (!drawer) return null;
   const title = drawer === 'why' ? '¿Por qué?' : drawer === 'procedure' ? 'Ver procedimiento' : 'Pregunta sobre este paso';

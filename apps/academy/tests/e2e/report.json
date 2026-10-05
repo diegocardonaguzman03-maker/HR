@@ -1,92 +1,92 @@
 {
-  "date": "2026-10-05T22:16:01.984Z",
+  "date": "2026-10-05T22:27:30.510Z",
   "dir": "dist",
   "results": [
     {
       "name": "arranque: carga real del modelo, aviso permanente y métricas",
       "ok": true,
-      "ms": 4520
+      "ms": 3878
     },
     {
       "name": "aviso de registro al arrancar, antes de `initialized` (RL-10)",
       "ok": true,
-      "ms": 6290
+      "ms": 6711
     },
     {
       "name": "hotspot 3D abre el panel del equipo",
       "ok": true,
-      "ms": 7104
+      "ms": 9303
     },
     {
       "name": "clic directo en el modelo 3D selecciona un equipo",
       "ok": true,
-      "ms": 4422
+      "ms": 3631
     },
     {
       "name": "herramientas de vista: corte, rayos X, despiece, aislar, restablecer",
       "ok": true,
-      "ms": 9867
+      "ms": 9706
     },
     {
       "name": "cambio de modo y enlaces profundos",
       "ok": true,
-      "ms": 5405
+      "ms": 7582
     },
     {
       "name": "progresión de lecciones con resaltado 3D",
       "ok": true,
-      "ms": 9973
+      "ms": 10323
     },
     {
       "name": "EJECUTAR: instrucción paso a paso con aviso de no aprobada",
       "ok": true,
-      "ms": 19435
+      "ms": 19862
     },
     {
       "name": "evaluación completa (identificar con la lista accesible; preguntas críticas ▲)",
       "ok": true,
-      "ms": 18696
+      "ms": 19041
     },
     {
       "name": "descarga de documento PDF",
       "ok": true,
-      "ms": 4578
+      "ms": 4632
     },
     {
       "name": "video con subtítulos y capítulos",
       "ok": true,
-      "ms": 4533
+      "ms": 4746
     },
     {
       "name": "asistente oculto en el piloto (veto ADX-04, opción B)",
       "ok": true,
-      "ms": 1029
+      "ms": 1045
     },
     {
       "name": "accesibilidad: teclado, landmarks, etiquetas y modo móvil",
       "ok": true,
-      "ms": 2077
+      "ms": 2159
     },
     {
       "name": "vista móvil (390×844) sin desbordamiento horizontal",
       "ok": true,
-      "ms": 1884
+      "ms": 1540
     },
     {
       "name": "MISIÓN 01 · Trabajo en alturas: de la pantalla inicial a resultados (8 pasos)",
       "ok": true,
-      "ms": 54506
+      "ms": 53346
     }
   ],
   "errors": [],
   "perf": {
-    "loadMs": 1308,
+    "loadMs": 1306,
     "fps": 3,
     "calls": 1,
     "triangles": 1,
     "geometries": 74,
     "textures": 27,
     "quality": "medium",
-    "jsHeapMB": 20
+    "jsHeapMB": 16
   }
 }

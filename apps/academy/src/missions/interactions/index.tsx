@@ -16,6 +16,13 @@ const chip = (state: 'idle' | 'ok' | 'bad' | 'on' = 'idle') =>
   }`;
 
 /** Escucha los clics en el escenario mientras el componente está montado. */
+/** En pantallas chicas, lo que aparece en el panel se desplaza a la vista (RT-MUX-26). */
+function useRevealOnShow<T extends HTMLElement>(show: unknown) {
+  const ref = useRef<T>(null);
+  useEffect(() => { if (show) ref.current?.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' }); }, [show]);
+  return ref;
+}
+
 function useSceneClick(fn: (id: string) => void) {
   const click = useMission((s) => s.click);
   const ref = useRef(fn);
@@ -182,6 +189,8 @@ export function Inspect({ step, onDone, done }: P<'inspect'>) {
   const allChecked = Object.values(states).every((s) => s !== 'pending');
   const pending = step.zones.filter((z) => states[z.id] === 'pending').length;
   const az = step.zones.find((z) => z.id === active);
+  const judgeRef = useRevealOnShow<HTMLDivElement>(active);
+  const decisionRef = useRevealOnShow<HTMLDivElement>(allChecked);
   return (
     <div className="flex flex-col gap-2" data-testid="inspect">
       <div className="flex flex-wrap items-center gap-1.5">
@@ -193,7 +202,7 @@ export function Inspect({ step, onDone, done }: P<'inspect'>) {
         ))}
       </div>
       {az && (
-        <div className="rounded-lg border border-white/15 bg-white/[0.04] p-3" data-testid="zone-judge">
+        <div ref={judgeRef} className="rounded-lg border border-white/15 bg-white/[0.04] p-3" data-testid="zone-judge">
           <p className="text-[13px] text-white/60">{az.label} — lo que ves:</p>
           <p className="text-[15px] text-white">{az.observation}</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
@@ -203,7 +212,7 @@ export function Inspect({ step, onDone, done }: P<'inspect'>) {
         </div>
       )}
       {allChecked && (
-        <div className="flex flex-col gap-1.5" role="group" aria-label={step.decision.prompt} data-testid="inspect-decision">
+        <div ref={decisionRef} className="flex flex-col gap-1.5" role="group" aria-label={step.decision.prompt} data-testid="inspect-decision">
           <p className="text-[14px] font-semibold text-white">{step.decision.prompt}</p>
           <div className="flex flex-wrap gap-1.5">
             {step.decision.options.map((o) => (
@@ -265,12 +274,13 @@ export function Sequence({ step, onDone, done }: P<'sequence'>) {
     const bad = order.map((id, i) => (id === step.items[i].id ? -1 : i)).filter((i) => i >= 0);
     if (!bad.length) { toast('ok', 'Orden correcto', step.done); onDone(mistakes.current); return; }
     mistakes.current++; setWrongAt(bad);
-    toast('bad', `${bad.length} ${bad.length === 1 ? 'acción está' : 'acciones están'} fuera de lugar`, step.hint);
+    toast('bad', `${bad.length} ${bad.length === 1 ? 'acción está' : 'acciones están'} fuera de lugar`, `Revisa la posición ${bad[0] + 1}: ahí va «${step.items[bad[0]].label}». ${step.hint}`);
   };
   const label = (id: string) => step.items.find((i) => i.id === id)!.label;
   return (
     <div className="flex flex-col gap-2" data-testid="sequence">
       <p className="text-[13px] text-white/70">{step.prompt}</p>
+      {step.safety === undefined && <p className="text-[12px] text-white/60"><OpText text="SME_REQUIRED: secuencia aprobada y procedimiento de bloqueo y etiquetado de la energía (Operaciones + Mantenimiento Eléctrico + Seguridad)." /></p>}
       <ol className="flex flex-col gap-1">
         {order.map((id, i) => (
           <li key={id} className={chip(done ? 'ok' : wrongAt.includes(i) ? 'bad' : 'idle') + ' justify-between'}>
@@ -282,7 +292,7 @@ export function Sequence({ step, onDone, done }: P<'sequence'>) {
           </li>
         ))}
       </ol>
-      {!done && <button className={chip('on') + ' self-start'} onClick={verify} data-testid="sequence-verify">Verificar orden</button>}
+      {!done && <button className={chip('on') + ' sticky bottom-0 self-start shadow-lg'} onClick={verify} data-testid="sequence-verify">Verificar orden</button>}
     </div>
   );
 }

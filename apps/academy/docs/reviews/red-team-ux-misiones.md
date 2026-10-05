@@ -227,3 +227,99 @@ La arquitectura (misión → paso → escenario → progreso, 8 tipos de interac
 
 **Recomendación:** **A.** Costo: solo horas internas del equipo de la Academia, sin gasto externo **[Supuesto]**.
 **Fecha límite para decidir:** 2026-10-12.
+
+---
+
+## Re-prueba (2026-10-05)
+
+**Alcance:** repetí el recorrido con un usuario simulado sin explicación previa, sobre el código actual (`MissionPlayer.tsx`, 223 líneas; `interactions/index.tsx`, 345; `MissionScene.tsx`, 129; `MissionApp.tsx`, 157; `store.ts`), el contenido `heights-prep.json` y `scene-heights.json`, y las 34 capturas nuevas de `docs/missions/shots/` (17 de escritorio y 17 `movil-*`). No ejecuté builds, servidores ni Playwright.
+
+**Mensaje clave:** los 8 HIGH y el CRITICAL quedaron cerrados o bajaron a MEDIUM. El usuario simulado ahora contesta **SÍ a las 8 preguntas**. Quedan fricciones MEDIUM en el celular (contenido que queda debajo del borde visible del panel), en «Ordena» (el error no explica) y en la carga de texto. Ninguna bloquea un piloto controlado en modo DEMO.
+
+### Las 8 preguntas (re-prueba)
+
+| # | Pregunta | Antes | Ahora | Evidencia |
+|---|---|---|---|---|
+| 1 | ¿Sabe en qué hacer clic? | NO | **SÍ** | Hay puntos ámbar pulsantes en los 10 elementos que se pueden tocar en el escritorio y en el celular (capturas `02c-peligros-tocables`, `movil-02c`; `interactions/index.tsx:83`, `MissionScene.tsx:67-68`). Marcan igual los objetivos y los distractores, así que no delatan la respuesta. En la inspección del arnés, los botones de zona son la vía principal (`04a`). Quedan detalles en RT-MUX-25 y RT-MUX-28. |
+| 2 | ¿Sabe cuál es el objetivo? | SÍ | **SÍ** | La tarjeta del paso dice «**Lo que vas a hacer:** … son 7» (`MissionPlayer.tsx:114`, `02a`). El objetivo de la misión sigue siendo circular (RT-MUX-14, abierto). |
+| 3 | ¿Sabe en qué paso está? | SÍ | **SÍ** | El encabezado muestra `02 / 08` y se queda fijo aunque el panel se desplace en el celular (`movil-07`, `movil-08`). |
+| 4 | ¿Sabe cuándo completó la interacción? | SÍ | **SÍ** | Hay que encontrar los 7 de 7 peligros (`heights-prep.json:154`). Al terminar aparece el texto verde «✓», «Continuar» se activa y recibe el foco (`MissionPlayer.tsx:152`). |
+| 5 | ¿Puede recuperarse de un error? | SÍ | **SÍ** | Todos los tipos permiten reintentar. El mensaje rojo se queda hasta que el usuario lo cierra con ✕ (`MissionPlayer.tsx:39`). |
+| 6 | ¿Entiende por qué una respuesta fue incorrecta? | NO | **SÍ** (excepto en «Ordena») | Los mensajes rojos son persistentes y la opción equivocada se marca con «✗» en texto (`06a`, `movil-08`). La inspección explica qué se ve, «Lee otra vez lo que se ve: …» (`index.tsx:178`). «Confirma» da la pista del faltante (`index.tsx:134`). **Excepción:** en «Ordena» el mensaje sigue siendo «5 acciones están fuera de lugar» con la misma pista general, y marca las 5 filas aunque solo un elemento esté desplazado (`07-orden-error`; RT-MUX-10, parcial). |
+| 7 | ¿Encuentra el detalle técnico sin salir de la misión? | SÍ | **SÍ** | Sin cambio: el cajón «Procedimiento (demo)» y «Preguntas» se abre encima del escenario. |
+| 8 | ¿Empieza a aprender en unos 10 segundos? | NO | **SÍ** (≈ 10–12 s) | El aviso de registro bajó y ya no compite con el botón principal (`MissionApp.tsx:153`, `00-inicio`, `movil-00`). La ruta es: «COMENZAR MISIÓN» → tarjeta del paso 1 (≈ 45 palabras) → «Comenzar paso» → vista 1 con subtítulo. Son 2 clics. |
+
+### Estado de los hallazgos originales
+
+| ID | Sev. original | Estado | Evidencia / lo que falta |
+|---|---|---|---|
+| RT-MUX-01 | CRITICAL | **Cerrado** | `required: 7` = 7 objetivos; el contador dice «0 de 7». |
+| RT-MUX-02 | HIGH | **Cerrado** | `show` está en los pasos 2 a 8; la demostración arranca sola y se puede saltar (`MissionPlayer.tsx:177`, `:191`; `02b`). Nota LOW: la demostración indica *dónde mirar* pero no ejecuta la acción. Sirve para DEMO; en la siguiente versión debería mostrar un clic de ejemplo. |
+| RT-MUX-03 | HIGH | **Cerrado** para errores | Los mensajes `bad` y `warn` ya no se cierran solos. Los de acierto sí se cierran: ver RT-MUX-27. |
+| RT-MUX-04 | HIGH | **Cerrado** | «⚠ Correa de pierna: DAÑO ENCONTRADO … Bien visto» en ámbar, sin «Intenta de nuevo» (`04b`). |
+| RT-MUX-05 | HIGH | **Parcial → MEDIUM** | Resuelto en «Identifica» y «Selecciona». Pendiente en RT-MUX-25. |
+| RT-MUX-06 | HIGH | **Parcial → MEDIUM** | El escenario ocupa ≥ 42vh y el panel ≤ 48vh con desplazamiento (`movil-*`). Pendiente en RT-MUX-26. |
+| RT-MUX-07 | HIGH | **Cerrado** | El mensaje de seguridad se ve en el panel (`MissionPlayer.tsx:190`). La frase «nunca se sanciona» se reemplazó por `SME_REQUIRED` (Seguridad + Relaciones Laborales). |
+| RT-MUX-08 | HIGH | **Cerrado** | La lista `sr-only` aparece al recibir el foco y cada elemento trae su descripción (`index.tsx:31-44`, `:245`). |
+| RT-MUX-09 | MEDIUM | **Cerrado** | «Lo que ves» + «✓ Está bien / ⚠ Tiene daño» (`04a`). |
+| RT-MUX-10 | MEDIUM | **Parcial** | «Confirma» quedó resuelto; «Ordena» no (`index.tsx:267`). |
+| RT-MUX-11 | MEDIUM | **Cerrado** | El aviso de registro está abajo de la pantalla de inicio. |
+| RT-MUX-12 | MEDIUM | **Cerrado** | Usa `OpText` (`index.tsx:147`). Como efecto secundario sube la carga de texto: ver RT-MUX-18. |
+| RT-MUX-13 | MEDIUM | **Cerrado** | La tarjeta incluye «Lo que vas a hacer». |
+| RT-MUX-14 | LOW | Abierto | `heights-prep.json:7` sin cambio. |
+| RT-MUX-15 | MEDIUM | Abierto | Siguen 4 o 5 botones de ayuda, «Usar lista/3D» y el pie de aviso de 5 líneas en el celular. |
+| RT-MUX-16 | MEDIUM | **Cerrado** | «✗ no es válido» y «✗ fuera de lugar» en texto. |
+| RT-MUX-17 | MEDIUM | **Parcial** | `aria-modal="false"` es válido para un cajón no modal, pero al cerrarlo el foco **no regresa** al botón que lo abrió (`MissionPlayer.tsx:57-63`). Corrección: `const prev = useRef<HTMLElement|null>(null);` y, en el efecto, `prev.current = document.activeElement as HTMLElement; … return () => { window.removeEventListener('keydown', onKey); prev.current?.focus(); };`. |
+| RT-MUX-18 | MEDIUM | **Abierto y peor** | En el paso 3 hay 7 casillas, 5 de ellas con recuadro `SME_REQUIRED` (≈ 120 px cada una en el celular, `movil-03`). El escenario del paso 8 sube a ≈ 75 palabras (`heights-prep.json:817`). Corrección: en `Confirm`, mostrar `it.detail` solo como `<details><summary>Ver detalle</summary>…</details>`, y reducir el escenario a «Todos los controles están aplicados. Pero el equipo de rescate todavía no está disponible. Tu compañero dice: «Empecemos, es rápido».» |
+| RT-MUX-19 | LOW | Abierto | «Continuar» aparece deshabilitado sin explicación detrás de la tarjeta del paso (`02a`). |
+| RT-MUX-20 | LOW | Abierto | `aria-label` en un `div` sin rol (`MissionPlayer.tsx:24`). |
+| RT-MUX-21 | LOW | **Cerrado** | La etiqueta cambió a «Preguntas». El icono ✦ es menor y no bloquea. |
+| RT-MUX-22 | LOW | Abierto | Sigue sin haber «← Paso anterior». |
+| RT-MUX-23 | LOW | Abierto | `heights-prep.json:362`: «sigue preparar tu equipo» → «ahora prepara tu equipo». |
+| RT-MUX-24 | LOW | **Cerrado** | Capturas regeneradas. |
+
+### Hallazgos nuevos o residuales
+
+**RT-MUX-25 · MEDIUM · `src/missions/interactions/index.tsx:104`, `:236`; `src/missions/scene/kinds.tsx:243`. Los puntos ámbar desaparecen después de pedir una pista o de equivocarse, y el arnés no tiene puntos.**
+- **Problema:** `hint()` sustituye los marcadores por «encontrados + pista», sin los puntos ámbar. En «Selecciona», un error deja solo el marcador rojo (`06a`: ya no hay puntos ámbar). El arnés mantiene un tinte de 0.18 que casi no se ve.
+- **Corrección:**
+  - Línea 104: `set({ markers: [...foundMarkers(found), ...candidates.filter((id) => !found.includes(id) && id !== next).map((id) => ({ objectId: id, kind: 'tap' as const })), { objectId: next, kind: 'hint' }] });`.
+  - Línea 236: `set({ markers: [...(o.objectId ? [{ objectId: o.objectId, kind: 'wrong' as const, label: 'No es correcto' }] : []), ...objectIds.filter((id) => id !== o.objectId).map((id) => ({ objectId: id, kind: 'tap' as const }))] });`.
+  - `kinds.tsx:243`: `amount: st === 'pending' ? 0.32 : st ? 0.45 : 0`.
+
+**RT-MUX-26 · MEDIUM · `src/missions/interactions/index.tsx:194-214`, `src/missions/ui/MissionPlayer.tsx:180` y `:214`. En el celular, lo que aparece después de una acción queda debajo del borde visible del panel.**
+- **Problema:** al tocar «Correa de pierna», el recuadro «lo que ves / Está bien / Tiene daño» se abre debajo del borde visible del panel de 48vh (`movil-04a`: solo se ve su borde superior). Para el trabajador «no pasó nada». Lo mismo ocurre con la decisión final de la inspección y con «Verificar orden». Además, el pie de aviso ocupa 5 líneas (≈ 95 px, 11 % de la pantalla) en todos los pasos.
+- **Corrección:**
+  - En `Inspect`: `useEffect(() => { document.querySelector(active ? '[data-testid=zone-judge]' : '[data-testid=inspect-decision]')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }, [active, allChecked]);`.
+  - Pie de aviso en `< sm`: `className="… line-clamp-1 sm:line-clamp-none"` con un botón «Ver aviso completo» que lo expanda. El texto íntegro se conserva en el DOM. Cambiar la presentación del aviso requiere el visto bueno de `experto-seguridad-salud`. **[Verificar en navegador a 390×844]**
+
+**RT-MUX-27 · MEDIUM · `src/missions/ui/MissionPlayer.tsx:39` + `interactions/index.tsx:93`. El «explícame» de los aciertos se borra a los 6 s.**
+- **Problema:** al encontrar un peligro, el mensaje verde trae el porqué y el control, y se cierra solo. Al terminar el paso, la lista solo muestra nombres. El trabajador nunca ve juntos los 7 controles.
+- **Corrección:** en `Identify`, debajo de `ObjectList`, agregar `{done && <ul className="mt-2 space-y-1 text-[13px] text-white/85" data-testid="controls-summary">{step.targets.map((t) => <li key={t.objectId}><strong>{t.label}:</strong> <OpText text={t.control} /></li>)}</ul>}`.
+
+**RT-MUX-28 · LOW · `src/missions/scene/MissionScene.tsx:64`. En el paso 2 hay un punto ámbar suelto en el aire.**
+- **Problema:** se ve a la derecha en la captura `02c` (≈ x 1217, y 355) y no se distingue a qué objeto pertenece. Probablemente es el centro de la caja de clic de «Cables aéreos» (`scene-heights.json:177`). **[Verificar en navegador]**
+- **Corrección:** para `kind: 'tap'` en `powerline`, anclar el punto sobre un cable: `pos = [c.x, box.max.y - 0.4, c.z]`. Alternativa: permitir en la escena un `tapOffset` por objeto.
+
+**RT-MUX-29 · LOW (gobierno de contenido) · `heights-prep.json:750`. Una acción del orden menciona aislamiento de energía sin marca `SME_REQUIRED`.**
+- **Problema:** «Confirmar permiso, plan de rescate y que la energía de la luminaria está aislada» toca el aislamiento de energía (LOTO), que es tema crítico.
+- **Corrección:** «Confirmar permiso, plan de rescate y aislamiento de energía (SME_REQUIRED: procedimiento de bloqueo de la planta)». Antes del piloto debe pasar por `experto-operativo-metalurgia` y `experto-seguridad-salud`.
+
+**Conteo abierto tras la re-prueba:** CRITICAL 0 · HIGH 0 · MEDIUM 7 (RT-MUX-10, 15, 17, 18, 25, 26 y 27; lo que quedó pendiente de RT-MUX-05 y 06 se rastrea en 25 y 26) · LOW 7 (RT-MUX-14, 19, 20, 22, 23, 28 y 29).
+
+### Nuevo dictamen: **LIBERAR para piloto controlado (DEMO), con condiciones**
+
+El ciclo «muéstrame, explícame, déjame intentarlo, revísame» ya está en el flujo, y el usuario simulado responde SÍ a las 8 preguntas. Las condiciones son dos:
+1. Corregir RT-MUX-26 (contenido debajo del borde visible en el celular) y RT-MUX-29 (marca `SME_REQUIRED` en la acción de energía) antes de abrir el piloto. Son cambios de una línea cada uno.
+2. Observar en el piloto, con 5 trabajadores reales, el paso 7 («Ordena») y el paso 3 (carga de texto). Si más de 1 de los 5 se atora ahí, aplicar RT-MUX-10 y RT-MUX-18 antes de ampliar.
+
+Sigue vigente: es contenido GENERAL EDUCATIONAL CONTENT y no hay PLANT-APPROVED OPERATING INSTRUCTIONS. La misión no habilita ni certifica a nadie.
+
+### Decisión requerida del Director (actualizada)
+
+| Opción | Qué implica | Riesgo |
+|---|---|---|
+| **A. Piloto controlado ya, con las 2 condiciones** | Corregir RT-MUX-26 y RT-MUX-29 (≈ 1 día **[Supuesto]**), validar con los expertos de Seguridad y Operación, y hacer un piloto con 5 trabajadores de nuevo ingreso con observación. | Fricción en «Ordena» y en el paso 3; se mide en el piloto. |
+| **B. Cerrar todos los MEDIUM antes del piloto** | Corregir los 7 MEDIUM y repetir esta prueba. | Retraso de ≈ 1 semana **[Supuesto]** sin evidencia de usuarios reales. |
+
+**Recomendación:** **A.** Costo: solo horas internas del equipo de la Academia **[Supuesto]**. **Fecha límite para decidir:** 2026-10-12.
