@@ -1,1 +1,2475 @@
-[]
+[
+  {
+    "id": "eq.shell",
+    "name": "Coraza y solera del horno",
+    "shortName": "Coraza",
+    "hotspotNumber": 1,
+    "nodeNames": [
+      "eaf__shell"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine",
+      "stage.tap"
+    ],
+    "summary": "Recipiente de acero que contiene el baño líquido. La parte baja (solera) lleva refractario; la parte alta lleva paneles enfriados por agua.",
+    "function": "Contener el pie líquido, el DRI que se funde y la escoria, y soportar el peso y el calor del baño durante toda la colada.",
+    "howItWorks": [
+      "La coraza inferior (solera) es una tina de acero forrada por dentro con refractario: ahí queda el acero líquido.",
+      "La coraza superior es un anillo de acero donde se montan los paneles enfriados por agua que protegen la pared arriba de la línea de escoria.",
+      "La coraza descansa sobre la plataforma basculante, que la inclina hacia la puerta de escoria o hacia el vaciado EBT.",
+      "Con ≈ 95–100 % DRI el horno trabaja casi siempre sobre pie líquido: el DRI cae en el baño y se funde dentro de la coraza."
+    ],
+    "components": [
+      {
+        "id": "cmp.shell-upper",
+        "name": "Coraza superior",
+        "function": "Soporta los paneles enfriados y forma la pared alta del horno.",
+        "nodeName": "eaf__shell_upper",
+        "failureModes": [
+          "Deformación del anillo por calor",
+          "Fisuras en soldaduras de soportes de paneles"
+        ],
+        "inspectionPoints": [
+          "Estado de soportes y anclajes de paneles",
+          "Puntos calientes visibles en la lámina"
+        ]
+      },
+      {
+        "id": "cmp.shell-hearth",
+        "name": "Solera (coraza inferior)",
+        "function": "Contiene el baño líquido con su refractario y aloja el agujero EBT.",
+        "nodeName": "eaf__shell_hearth",
+        "failureModes": [
+          "Punto caliente en la lámina por desgaste del refractario",
+          "Perforación (fuga de metal) en casos extremos"
+        ],
+        "inspectionPoints": [
+          "Termografía o termopares de la lámina de la solera",
+          "Manchas de color o pintura quemada en la lámina"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía térmica del baño líquido",
+      "Energía potencial (gravedad) del recipiente y su contenido al bascular"
+    ],
+    "inputs": [
+      "Pie líquido de la colada anterior",
+      "DRI y fundentes desde el 5.º agujero",
+      "Retornos internos en canasta ocasional"
+    ],
+    "outputs": [
+      "Acero líquido hacia el EBT",
+      "Escoria hacia la puerta de escoria"
+    ],
+    "actuators": [
+      "Cilindros de basculamiento (ver sistema hidráulico)"
+    ],
+    "sensors": [
+      "Termopares o termografía de la lámina de la solera (si existen en la planta)",
+      "Indicador de ángulo de basculamiento"
+    ],
+    "controlSignals": [
+      "Ángulo de inclinación del horno",
+      "Alarma de temperatura de lámina (si existe)"
+    ],
+    "movements": [
+      "Basculamiento hacia la puerta de escoria (desescoriado)",
+      "Basculamiento hacia el EBT (vaciado)"
+    ],
+    "dependencies": [
+      "eq.refractory: protege la solera",
+      "eq.cooling: protege la coraza superior",
+      "eq.hydraulics: bascula el horno"
+    ],
+    "hazardIds": [
+      "haz.molten-metal",
+      "haz.water-molten-metal",
+      "haz.thermal",
+      "haz.stored-energy"
+    ],
+    "operationalNotes": [
+      "El tamaño del pie líquido y el volumen libre de la coraza los fija Ingeniería de Proceso. SME_REQUIRED: tamaño de pie líquido y bordo libre validados (Ingeniería de Proceso C-07 / OEM).",
+      "SME_REQUIRED: criterio de temperatura de lámina para parar el horno por punto caliente (Ingeniería de Proceso + Mantenimiento de Refractarios)."
+    ],
+    "commonMistakes": [
+      "Ignorar una mancha de color en la lámina de la solera pensando que es pintura vieja",
+      "Bascular sin confirmar que nadie está en la línea de vaciado o de escoria"
+    ],
+    "observableSignals": [
+      "Cambio de color o brillo en la lámina exterior (punto caliente)",
+      "Salpicaduras de metal o escoria por arriba del bordo",
+      "Vapor o chisporroteo anormal cerca de la coraza (posible agua)"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Desgaste local del refractario que calienta la lámina",
+        "Fisuras en la coraza o en soldaduras de soportes",
+        "Deformación del anillo superior"
+      ],
+      "inspectionPoints": [
+        "Lámina de la solera (termografía o recorrido visual)",
+        "Soportes de paneles en la coraza superior",
+        "Anillo de asiento de la bóveda"
+      ],
+      "considerations": [
+        "SME_REQUIRED: frecuencia de termografía e inspección de la coraza (Ingeniería de Confiabilidad C-14).",
+        "Cualquier trabajo dentro de la coraza es espacio confinado y requiere permisos de la planta."
+      ]
+    },
+    "documentIds": [],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation"
+    ],
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001"
+    ]
+  },
+  {
+    "id": "eq.roof",
+    "name": "Bóveda y delta",
+    "shortName": "Bóveda",
+    "hotspotNumber": 2,
+    "nodeNames": [
+      "eaf__roof"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine"
+    ],
+    "summary": "Tapa del horno, normalmente de paneles enfriados por agua, con un centro refractario (delta) por donde pasan los tres electrodos.",
+    "function": "Cerrar el horno para retener calor y gases, y dar paso a los electrodos, al 4.º agujero (humos) y al 5.º agujero (DRI).",
+    "howItWorks": [
+      "La bóveda se apoya sobre el anillo de la coraza superior y se levanta y gira para abrir el horno cuando entra la canasta de retornos.",
+      "El delta es una pieza refractaria en el centro: aísla eléctricamente a los electrodos entre sí y de la bóveda metálica.",
+      "La bóveda tiene agujeros para los 3 electrodos, para la extracción de humos (4.º agujero) y para la alimentación de DRI (5.º agujero).",
+      "Los paneles de la bóveda se enfrían con agua; una fuga en ellos puede dejar caer agua al baño."
+    ],
+    "components": [
+      {
+        "id": "cmp.roof-delta",
+        "name": "Delta refractario",
+        "function": "Aísla los electrodos y resiste el calor del arco en el centro de la bóveda.",
+        "nodeName": "eaf__roof_delta",
+        "failureModes": [
+          "Grietas pasantes",
+          "Erosión alrededor de los agujeros de electrodo",
+          "Holgura insuficiente electrodo–delta"
+        ],
+        "inspectionPoints": [
+          "Grietas y erosión del delta",
+          "Holgura entre cada electrodo y su agujero"
+        ]
+      },
+      {
+        "id": "cmp.roof-panels",
+        "name": "Paneles de bóveda enfriados por agua",
+        "function": "Forman la tapa metálica y resisten la radiación del arco.",
+        "failureModes": [
+          "Fuga de agua por desgaste o fisura del tubo",
+          "Acumulación de salpicaduras"
+        ],
+        "inspectionPoints": [
+          "Señales de fuga (vapor, goteo)",
+          "Estado de mangueras y conexiones"
+        ]
+      },
+      {
+        "id": "cmp.roof-lift",
+        "name": "Mecanismo de levante y giro de bóveda",
+        "function": "Levanta y gira la bóveda para abrir el horno.",
+        "failureModes": [
+          "Atoramiento del giro",
+          "Fuga en cilindros de levante"
+        ],
+        "inspectionPoints": [
+          "Topes y seguros mecánicos",
+          "Pivote y cilindros de levante"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía hidráulica (levante y giro)",
+      "Gravedad (peso de la bóveda)",
+      "Agua de enfriamiento a presión"
+    ],
+    "inputs": [
+      "Agua de enfriamiento",
+      "Paso de electrodos, humos y DRI"
+    ],
+    "outputs": [
+      "Agua de retorno caliente",
+      "Gases hacia el 4.º agujero"
+    ],
+    "actuators": [
+      "Cilindros de levante de bóveda",
+      "Mecanismo de giro"
+    ],
+    "sensors": [
+      "Temperatura y caudal de agua por circuito de bóveda",
+      "Finales de carrera de levante y giro"
+    ],
+    "controlSignals": [
+      "Posición bóveda arriba/abajo/girada",
+      "Alarmas de agua de bóveda",
+      "Permisivos de movimiento de bóveda (SME_REQUIRED: lógica de enclavamientos del OEM / Ingeniería Eléctrica)"
+    ],
+    "movements": [
+      "Levante vertical",
+      "Giro horizontal para abrir el horno"
+    ],
+    "dependencies": [
+      "eq.cooling",
+      "eq.hydraulics",
+      "eq.electrodes (deben estar arriba antes de girar)",
+      "eq.fume",
+      "eq.dri-feed"
+    ],
+    "hazardIds": [
+      "haz.water-molten-metal",
+      "haz.stored-energy",
+      "haz.suspended-load",
+      "haz.height",
+      "haz.thermal",
+      "haz.electrical"
+    ],
+    "operationalNotes": [
+      "SME_REQUIRED: secuencia y permisivos para levantar y girar la bóveda (OEM + Ingeniería de Proceso).",
+      "SME_REQUIRED: holgura mínima electrodo–delta y criterio de cambio del delta (Mantenimiento Mecánico C-11 / OEM)."
+    ],
+    "commonMistakes": [
+      "Girar la bóveda sin confirmar que los electrodos están arriba",
+      "Subestimar una fuga pequeña de agua en un panel de bóveda"
+    ],
+    "observableSignals": [
+      "Vapor o llama de color anormal en la bóveda",
+      "Arco o chispas entre electrodo y delta",
+      "Bóveda que no asienta parejo"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Fuga en paneles de bóveda",
+        "Desgaste o fisura del delta",
+        "Desalineación de agujeros con los electrodos"
+      ],
+      "inspectionPoints": [
+        "Delta (grietas, erosión)",
+        "Paneles y mangueras de agua",
+        "Anillo de asiento y pivote"
+      ],
+      "considerations": [
+        "El cambio de bóveda o delta es un izaje crítico con grúa y requiere LOTO de varias energías. SME_REQUIRED: procedimiento aprobado de cambio de bóveda/delta y plan de izaje (C-11 + C-16).",
+        "SME_REQUIRED: frecuencia de inspección del delta y de los paneles (C-14)."
+      ]
+    },
+    "documentIds": [],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation"
+    ],
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001"
+    ]
+  },
+  {
+    "id": "eq.electrodes",
+    "name": "Electrodos de grafito",
+    "shortName": "Electrodos",
+    "hotspotNumber": 3,
+    "nodeNames": [
+      "eaf__electrodes"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine"
+    ],
+    "summary": "Tres columnas de grafito que conducen la corriente desde los brazos hasta el baño y forman el arco eléctrico que funde el DRI.",
+    "function": "Conducir la corriente eléctrica y formar el arco entre la punta del electrodo y el baño, que es la fuente principal de energía para fundir.",
+    "howItWorks": [
+      "El horno es de corriente alterna con 3 electrodos, uno por fase (FT-ACE-001, borrador).",
+      "Cada columna está formada por varios electrodos unidos con niples roscados; la mordaza del brazo la sujeta por arriba.",
+      "La corriente baja por la columna y salta como arco desde la punta hasta el baño líquido; el arco calienta y funde el DRI que cae al baño.",
+      "La regulación sube o baja cada columna para mantener la longitud de arco que pide el perfil de potencia.",
+      "La punta se consume por oxidación y sublimación; por eso la columna baja poco a poco y periódicamente se agrega un electrodo nuevo arriba (adición y empalme).",
+      "La escoria espumosa cubre el arco: protege paneles y bóveda de la radiación y mejora el aprovechamiento de la energía."
+    ],
+    "components": [
+      {
+        "id": "cmp.electrodes-column",
+        "name": "Columna de electrodo",
+        "function": "Conjunto de electrodos empalmados que conduce la corriente de la mordaza a la punta.",
+        "nodeName": "eaf__electrodes_column",
+        "failureModes": [
+          "Rotura de la columna (por golpe, esfuerzo lateral o empalme flojo)",
+          "Oxidación lateral excesiva (columna en forma de lápiz)",
+          "Desgaste en la zona de contacto con la mordaza"
+        ],
+        "inspectionPoints": [
+          "Superficie lateral: oxidación, grietas, zonas brillantes",
+          "Verticalidad y centrado en el agujero del delta",
+          "Longitud disponible bajo la mordaza"
+        ]
+      },
+      {
+        "id": "cmp.electrodes-joint",
+        "name": "Niple y empalme",
+        "function": "Une mecánica y eléctricamente un electrodo con el siguiente mediante un niple roscado.",
+        "nodeName": "eaf__electrodes_joint",
+        "failureModes": [
+          "Empalme flojo que se calienta y se afloja",
+          "Rotura en la junta",
+          "Rosca dañada o sucia que impide asentar"
+        ],
+        "inspectionPoints": [
+          "Rosca limpia y sin daño antes de empalmar",
+          "Junta sin separación visible",
+          "Marca de apriete según el procedimiento"
+        ]
+      },
+      {
+        "id": "cmp.electrodes-tip",
+        "name": "Punta del electrodo",
+        "function": "Extremo inferior donde se forma el arco con el baño.",
+        "nodeName": "eaf__electrodes_tip",
+        "failureModes": [
+          "Rotura o caída de punta al baño",
+          "Consumo acelerado por arco largo o escoria no espumosa"
+        ],
+        "inspectionPoints": [
+          "Forma de la punta al subir la columna (si el procedimiento lo permite)",
+          "Registro de rotura de punta y su causa"
+        ]
+      },
+      {
+        "id": "cmp.electrodes-spare",
+        "name": "Electrodo de reposición y su estación de empalme",
+        "function": "Electrodo nuevo preparado con niple, listo para agregarse a la columna.",
+        "failureModes": [
+          "Electrodo húmedo o golpeado en almacén",
+          "Niple mal colocado en la preparación"
+        ],
+        "inspectionPoints": [
+          "Electrodo seco y sin golpes",
+          "Niple colocado y apretado según el procedimiento",
+          "Gancho o tapón de izaje en buen estado"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía eléctrica del circuito secundario (alta corriente, baja tensión)",
+      "Energía térmica del arco y del baño",
+      "Gravedad (peso de la columna suspendida)"
+    ],
+    "inputs": [
+      "Corriente eléctrica desde el brazo y la mordaza",
+      "Electrodos de reposición con niple",
+      "Señal de posición desde la regulación"
+    ],
+    "outputs": [
+      "Arco eléctrico y calor al baño",
+      "Consumo de grafito (kg de electrodo por tonelada)",
+      "Gases de oxidación del grafito"
+    ],
+    "actuators": [
+      "Cilindro de regulación de cada columna (ver eq.electrode-arms)",
+      "Mordaza de resortes con apertura hidráulica (ver eq.electrode-arms)"
+    ],
+    "sensors": [
+      "Corriente de arco por fase",
+      "Tensión de fase",
+      "Posición de la columna (transductor en el mástil)",
+      "Medición de consumo y longitud de electrodo (registro operativo)"
+    ],
+    "controlSignals": [
+      "Impedancia o corriente de referencia por fase (del perfil de potencia)",
+      "Orden de subir/bajar cada columna",
+      "Alarma de rotura o de diferencia anormal entre fases (SME_REQUIRED: lógica y umbrales del sistema de regulación del OEM)"
+    ],
+    "movements": [
+      "Subida y bajada vertical de cada columna durante la fusión",
+      "Subida total para adición de electrodo o cambio de canasta",
+      "Deslizamiento de la columna dentro de la mordaza al reposicionar (con mordaza abierta)"
+    ],
+    "dependencies": [
+      "eq.electrode-arms: sostienen, mueven y dan corriente",
+      "eq.transformer y eq.secondary-circuit: fuente de energía",
+      "eq.roof: el delta los guía y aísla",
+      "eq.oxygen-carbon: la escoria espumosa protege el arco",
+      "eq.dri-feed: la tasa de DRI debe ir con la potencia",
+      "eq.control-room: perfil de potencia y regulación"
+    ],
+    "hazardIds": [
+      "haz.electrical",
+      "haz.molten-metal",
+      "haz.suspended-load",
+      "haz.line-of-fire",
+      "haz.thermal",
+      "haz.height",
+      "haz.stored-energy",
+      "haz.noise-dust"
+    ],
+    "operationalNotes": [
+      "Electrodos de grafito UHP de 610 mm con niples cónicos según el borrador FT-ACE-001; SME_REQUIRED: diámetro, grado y tipo de niple confirmados con el proveedor de electrodos y la OEM.",
+      "Con ≈ 95–100 % DRI no hay colapsos de carga de chatarra, lo que reduce el riesgo de rotura por golpe, pero el arco trabaja más tiempo (D-010).",
+      "SME_REQUIRED: consumo objetivo de electrodo (kg/t) validado por Ingeniería de Proceso C-07; el borrador FT-ACE-001 trae un valor de referencia no validado.",
+      "SME_REQUIRED: longitud mínima de columna bajo la mordaza y criterio para agregar electrodo (procedimiento de adición y empalme, MO-EAF-08 aprobado).",
+      "SME_REQUIRED: torque o método de apriete del empalme (proveedor de electrodos / OEM).",
+      "Nadie se acerca a las columnas, brazos o cables con el horno energizado. El aislamiento de energía para adición de electrodo sigue el procedimiento aprobado de la planta: SME_REQUIRED: pasos de aislamiento y verificación de energía cero (Seguridad C-16 + Ingeniería Eléctrica)."
+    ],
+    "commonMistakes": [
+      "Empalmar con roscas sucias o húmedas",
+      "Dejar la columna con poca longitud bajo la mordaza esperando a 'la siguiente colada'",
+      "Bajar los electrodos sobre material sin fundir o sin pie líquido suficiente (riesgo de golpe y rotura)",
+      "Ignorar una fase con corriente distinta a las otras dos",
+      "Quedarse en la línea de fuego bajo un electrodo suspendido durante la adición"
+    ],
+    "observableSignals": [
+      "Ruido del arco más fuerte o irregular (arco descubierto, escoria poco espumosa)",
+      "Diferencia de corriente o de posición entre fases en la pantalla",
+      "Columna con zona brillante o chispeo en la junta (empalme flojo o arco lateral)",
+      "Electrodo con forma de lápiz (oxidación lateral alta)",
+      "Caída brusca de corriente en una fase (posible rotura)"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Rotura de columna o de punta",
+        "Empalme flojo o roto",
+        "Oxidación lateral alta",
+        "Arco lateral contra el delta o la bóveda",
+        "Deslizamiento en la mordaza"
+      ],
+      "inspectionPoints": [
+        "Superficie lateral y juntas de cada columna",
+        "Longitud disponible bajo la mordaza",
+        "Holgura con el delta",
+        "Estado de electrodos en almacén (secos, sin golpes)",
+        "Registro de roturas y consumo por turno"
+      ],
+      "considerations": [
+        "SME_REQUIRED: frecuencia de inspección visual de columnas y almacén (Ingeniería de Proceso C-07 / Mantenimiento).",
+        "Analizar cada rotura de electrodo con causa raíz: golpe mecánico, empalme, regulación o mordaza.",
+        "Guardar electrodos en área seca y techada: la humedad daña el grafito y genera riesgo al entrar al horno.",
+        "SME_REQUIRED: criterios de aceptación de electrodos y niples al recibirlos (proveedor + Calidad)."
+      ]
+    },
+    "documentIds": [
+      "doc.wi-electrode-system-check",
+      "doc.jobaid-electrode-system-check",
+      "doc.guide-eaf-energy-safety",
+      "doc.guide-electrode-melting"
+    ],
+    "videoIds": [
+      "vid.melt-overview"
+    ],
+    "learningModuleIds": [
+      "mod.eaf-orientation",
+      "mod.electrode-melting",
+      "mod.eaf-energy-safety"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001",
+      "src.mo-eaf-04",
+      "src.mo-eaf-08"
+    ]
+  },
+  {
+    "id": "eq.electrode-arms",
+    "name": "Brazos portaelectrodos, mástiles y regulación",
+    "shortName": "Brazos y regulación",
+    "hotspotNumber": 4,
+    "nodeNames": [
+      "eaf__arms"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine"
+    ],
+    "summary": "Tres brazos que sujetan y alimentan de corriente a cada electrodo, montados sobre mástiles que suben y bajan con cilindros hidráulicos controlados por la regulación automática.",
+    "function": "Sostener cada columna de electrodo, conducirle la corriente y moverla verticalmente para mantener la longitud de arco que pide el perfil de potencia.",
+    "howItWorks": [
+      "Cada brazo es conductor de corriente (o lleva tubos conductores) y termina en una mordaza que aprieta el electrodo.",
+      "La mordaza cierra por paquete de resortes y abre con presión hidráulica: si falta presión, el electrodo sigue sujeto.",
+      "El brazo está fijo a un mástil (columna) que corre sobre rodillos guía; un cilindro hidráulico lo sube o baja.",
+      "La regulación de electrodos compara la impedancia (tensión/corriente) medida en cada fase con la referencia y mueve el cilindro con una válvula proporcional o servo.",
+      "Si la corriente sube (arco corto), la regulación sube el electrodo; si baja (arco largo), lo baja.",
+      "El brazo está aislado eléctricamente del mástil para que la corriente no pase a la estructura."
+    ],
+    "components": [
+      {
+        "id": "cmp.electrode-arms-clamp",
+        "name": "Mordaza y zapata de contacto",
+        "function": "Aprieta el electrodo y le transfiere la corriente por la zapata de cobre.",
+        "nodeName": "eaf__arms_clamp",
+        "failureModes": [
+          "Zapata con cráteres o picaduras por mal contacto",
+          "Resortes fatigados: electrodo resbala",
+          "Fuga de agua de enfriamiento de la mordaza",
+          "Falla de apertura hidráulica"
+        ],
+        "inspectionPoints": [
+          "Superficie de la zapata",
+          "Prueba de apertura y cierre",
+          "Termografía de la zona de contacto",
+          "Fugas de agua o aceite"
+        ]
+      },
+      {
+        "id": "cmp.electrode-arms-mast",
+        "name": "Mástil (columna) y rodillos guía",
+        "function": "Guía el movimiento vertical del brazo.",
+        "nodeName": "eaf__arms_mast",
+        "failureModes": [
+          "Holgura excesiva de rodillos",
+          "Desalineación (verticalidad)",
+          "Rodillo trabado"
+        ],
+        "inspectionPoints": [
+          "Holgura de rodillos",
+          "Verticalidad del mástil",
+          "Lubricación de guías"
+        ]
+      },
+      {
+        "id": "cmp.electrode-arms-cylinder",
+        "name": "Cilindro de regulación y válvula proporcional/servo",
+        "function": "Mueven el mástil según la orden de la regulación.",
+        "nodeName": "eaf__arms_cylinder",
+        "failureModes": [
+          "Deriva (el mástil baja solo) por sellos o válvula",
+          "Respuesta lenta u oscilante por aceite sucio o servo desgastado",
+          "Fuga de fluido a alta presión"
+        ],
+        "inspectionPoints": [
+          "Deriva con válvula cerrada",
+          "Prueba de respuesta de la regulación",
+          "Fugas en cilindro y mangueras",
+          "Limpieza del fluido hidráulico"
+        ]
+      },
+      {
+        "id": "cmp.electrode-arms-busstube",
+        "name": "Brazo conductor / tubos conductores enfriados",
+        "function": "Llevan la corriente del cable flexible a la mordaza.",
+        "nodeName": "eaf__arms_busstube",
+        "failureModes": [
+          "Fuga de agua de enfriamiento",
+          "Unión eléctrica floja y caliente",
+          "Daño del aislamiento brazo–mástil"
+        ],
+        "inspectionPoints": [
+          "Termografía de uniones",
+          "Fugas de agua",
+          "Resistencia de aislamiento brazo–mástil"
+        ]
+      },
+      {
+        "id": "cmp.electrode-arms-insulation",
+        "name": "Aislamiento brazo–mástil",
+        "function": "Evita que la corriente pase del brazo a la estructura.",
+        "failureModes": [
+          "Aislador contaminado con polvo conductor o salpicaduras",
+          "Aislador roto"
+        ],
+        "inspectionPoints": [
+          "Limpieza y estado de aisladores",
+          "Medición de aislamiento tras intervenciones"
+        ]
+      },
+      {
+        "id": "cmp.electrode-arms-regulator",
+        "name": "Regulador de electrodos (PLC/controlador)",
+        "function": "Calcula la orden de posición de cada columna a partir de corriente, tensión y referencia.",
+        "failureModes": [
+          "Transductor de posición o de corriente con falla",
+          "Parámetros desajustados que causan oscilación"
+        ],
+        "inspectionPoints": [
+          "Tendencias de corriente e impedancia",
+          "Prueba de respuesta"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía hidráulica (cilindros, apertura de mordaza, acumuladores)",
+      "Energía mecánica almacenada en los resortes de la mordaza",
+      "Energía eléctrica del circuito secundario (corriente de arco)",
+      "Gravedad (mástil, brazo y columna suspendidos)",
+      "Agua de enfriamiento a presión"
+    ],
+    "inputs": [
+      "Corriente desde los cables flexibles",
+      "Fluido hidráulico desde la HPU",
+      "Agua de enfriamiento",
+      "Referencia de impedancia del perfil de potencia",
+      "Mediciones de corriente y tensión por fase"
+    ],
+    "outputs": [
+      "Posición vertical de cada electrodo",
+      "Corriente entregada al electrodo",
+      "Agua de retorno caliente"
+    ],
+    "actuators": [
+      "Cilindro hidráulico de regulación por mástil",
+      "Válvula proporcional o servoválvula",
+      "Cilindro de apertura de mordaza",
+      "Paquete de resortes de cierre de mordaza"
+    ],
+    "sensors": [
+      "Transductor de posición del mástil",
+      "Transformadores de corriente y medición de tensión por fase",
+      "Presión hidráulica del circuito de regulación",
+      "Temperatura y caudal de agua de brazos",
+      "Finales de carrera de posición alta/baja"
+    ],
+    "controlSignals": [
+      "Referencia de impedancia o corriente por fase",
+      "Orden de velocidad/posición a la válvula",
+      "Orden de abrir/cerrar mordaza",
+      "Permisivos de movimiento (SME_REQUIRED: lógica de enclavamientos del OEM / Ingeniería Eléctrica e Instrumentación)"
+    ],
+    "movements": [
+      "Subida y bajada de cada mástil (regulación continua)",
+      "Subida total para cambio de canasta o adición de electrodo",
+      "Giro del conjunto de brazos con la bóveda, si el diseño lo tiene (SME_REQUIRED: confirmar con OEM)",
+      "Apertura y cierre de mordaza"
+    ],
+    "dependencies": [
+      "eq.hydraulics: presión para regular y abrir mordazas",
+      "eq.secondary-circuit: corriente",
+      "eq.cooling: agua de brazos y mordazas",
+      "eq.electrodes",
+      "eq.control-room: regulación y perfil de potencia"
+    ],
+    "hazardIds": [
+      "haz.electrical",
+      "haz.stored-energy",
+      "haz.suspended-load",
+      "haz.line-of-fire",
+      "haz.thermal",
+      "haz.height",
+      "haz.water-molten-metal"
+    ],
+    "operationalNotes": [
+      "La mordaza cierra por resortes: perder presión hidráulica no suelta el electrodo, pero sí puede impedir abrirla para reposicionar.",
+      "Un mástil puede moverse o bajar sin orden si hay energía hidráulica almacenada. SME_REQUIRED: método aprobado de bloqueo mecánico y descarga de acumuladores (Mantenimiento C-11 + Seguridad C-16).",
+      "SME_REQUIRED: presión de trabajo hidráulica, fuerza de apriete de mordaza y torques de uniones (OEM).",
+      "SME_REQUIRED: criterio de aislamiento mínimo brazo–mástil y método de prueba (Ingeniería Eléctrica / OEM).",
+      "SME_REQUIRED: parámetros de la regulación (ganancias, referencias por paso del perfil) — Ingeniería de Proceso C-07 + OEM."
+    ],
+    "commonMistakes": [
+      "Trabajar bajo un brazo o mástil confiando solo en que la HPU está apagada",
+      "Ignorar una oscilación de corriente atribuyéndola siempre al proceso",
+      "Limpiar zapatas con herramientas que dejan rayas o rebabas",
+      "No reportar una pequeña fuga de agua en el brazo"
+    ],
+    "observableSignals": [
+      "Corriente oscilante en una fase sin causa de proceso",
+      "Mástil que baja solo con la válvula cerrada",
+      "Chispa o arco entre zapata y electrodo",
+      "Electrodo que resbala en la mordaza",
+      "Goteo de agua o de fluido hidráulico en el brazo"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Deriva del cilindro",
+        "Regulación oscilante o lenta",
+        "Zapata dañada por arco",
+        "Resortes de mordaza fatigados",
+        "Falla de aislamiento brazo–mástil",
+        "Fuga de agua en brazo o mordaza",
+        "Fuga hidráulica a alta presión"
+      ],
+      "inspectionPoints": [
+        "Zapatas y mordazas",
+        "Rodillos guía y verticalidad del mástil",
+        "Cilindros, mangueras y válvulas",
+        "Aisladores brazo–mástil",
+        "Uniones eléctricas (termografía)",
+        "Circuitos de agua de brazos"
+      ],
+      "considerations": [
+        "SME_REQUIRED: frecuencias de la rutina preventiva y predictiva (el borrador MM-EAF-02 propone frecuencias no validadas; las fija C-14 con la OEM).",
+        "Usar análisis de fluido, termografía y pruebas de respuesta de la regulación como mantenimiento predictivo.",
+        "SME_REQUIRED: criterios de aceptación de holguras, deriva y respuesta (OEM / Ingeniería de Mantenimiento).",
+        "Toda intervención requiere aislar energía eléctrica, hidráulica, mecánica (gravedad) y agua según el procedimiento aprobado."
+      ]
+    },
+    "documentIds": [
+      "doc.wi-electrode-system-check",
+      "doc.jobaid-electrode-system-check",
+      "doc.guide-eaf-energy-safety",
+      "doc.guide-electrode-melting"
+    ],
+    "videoIds": [
+      "vid.melt-overview"
+    ],
+    "learningModuleIds": [
+      "mod.eaf-orientation",
+      "mod.electrode-melting",
+      "mod.eaf-energy-safety"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001",
+      "src.mo-eaf-04",
+      "src.mo-eaf-08"
+    ]
+  },
+  {
+    "id": "eq.transformer",
+    "name": "Transformador del horno",
+    "shortName": "Transformador",
+    "hotspotNumber": 5,
+    "nodeNames": [
+      "eaf__transformer"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine"
+    ],
+    "summary": "Transformador trifásico que baja la alta tensión de la red a la baja tensión y muy alta corriente que necesita el arco. Tiene cambiador de derivaciones bajo carga para ajustar la tensión del arco.",
+    "function": "Convertir la energía de la red de alta o media tensión en la tensión secundaria del arco, y permitir cambiar esa tensión (tap) según la etapa de la colada.",
+    "howItWorks": [
+      "El primario recibe energía de la subestación a través de un interruptor de horno diseñado para muchas maniobras al día.",
+      "El secundario entrega baja tensión y corriente de decenas de kiloamperes hacia las barras y cables del circuito secundario.",
+      "El cambiador de derivaciones bajo carga (OLTC) cambia el número de vueltas activas para subir o bajar la tensión del arco sin apagar el horno.",
+      "El perfil de potencia define qué derivación (tap) y qué referencia de corriente usar en cada etapa; en baño plano con DRI se busca arco largo cubierto por escoria espumosa.",
+      "El transformador se enfría con aceite, y el aceite con agua o aire mediante intercambiadores."
+    ],
+    "components": [
+      {
+        "id": "cmp.transformer-tank",
+        "name": "Tanque, núcleo y devanados",
+        "function": "Contienen el núcleo y las bobinas sumergidas en aceite aislante.",
+        "nodeName": "eaf__transformer_tank",
+        "failureModes": [
+          "Sobrecalentamiento de devanados",
+          "Degradación del aceite aislante (gases disueltos)",
+          "Fuga de aceite"
+        ],
+        "inspectionPoints": [
+          "Temperaturas de aceite y devanado",
+          "Análisis de gases disueltos y rigidez del aceite",
+          "Fugas en juntas y radiadores"
+        ]
+      },
+      {
+        "id": "cmp.transformer-oltc",
+        "name": "Cambiador de derivaciones bajo carga (OLTC)",
+        "function": "Cambia la tensión secundaria durante la operación.",
+        "nodeName": "eaf__transformer_oltc",
+        "failureModes": [
+          "Desgaste de contactos por el gran número de maniobras",
+          "Aceite del OLTC degradado",
+          "Falla de mecanismo de accionamiento"
+        ],
+        "inspectionPoints": [
+          "Contador de operaciones",
+          "Estado del aceite del OLTC",
+          "Funcionamiento del accionamiento"
+        ]
+      },
+      {
+        "id": "cmp.transformer-cooling",
+        "name": "Sistema de enfriamiento aceite–agua",
+        "function": "Retira el calor del aceite del transformador.",
+        "failureModes": [
+          "Intercambiador sucio o tapado",
+          "Fuga de agua al aceite"
+        ],
+        "inspectionPoints": [
+          "Temperaturas de entrada/salida",
+          "Caudal de agua",
+          "Humedad en aceite"
+        ]
+      },
+      {
+        "id": "cmp.transformer-protections",
+        "name": "Protecciones del transformador (Buchholz, presión, temperatura)",
+        "function": "Disparan el interruptor ante fallas internas o sobretemperatura.",
+        "failureModes": [
+          "Protección que no actúa o dispara en falso"
+        ],
+        "inspectionPoints": [
+          "Pruebas funcionales de protecciones según el programa eléctrico"
+        ]
+      },
+      {
+        "id": "cmp.transformer-breaker",
+        "name": "Interruptor de horno y seccionadores del primario",
+        "function": "Conectan y desconectan el transformador de la red; base del aislamiento eléctrico.",
+        "failureModes": [
+          "Desgaste por número alto de maniobras",
+          "Falla de apertura"
+        ],
+        "inspectionPoints": [
+          "Contador de maniobras",
+          "Pruebas del interruptor según el fabricante"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía eléctrica de alta/media tensión de la red",
+      "Energía térmica del aceite caliente"
+    ],
+    "inputs": [
+      "Energía eléctrica del primario",
+      "Orden de derivación (tap) desde el púlpito",
+      "Agua o aire de enfriamiento"
+    ],
+    "outputs": [
+      "Energía eléctrica de baja tensión y alta corriente al circuito secundario",
+      "Calor retirado por el enfriamiento"
+    ],
+    "actuators": [
+      "Accionamiento motorizado del OLTC",
+      "Interruptor de horno",
+      "Bombas y ventiladores de enfriamiento"
+    ],
+    "sensors": [
+      "Temperatura de aceite y de devanado",
+      "Relé Buchholz y alivio de presión",
+      "Medición de tensión, corriente y potencia en primario y secundario",
+      "Posición del tap",
+      "Caudal y temperatura del agua de enfriamiento"
+    ],
+    "controlSignals": [
+      "Orden de subir/bajar tap",
+      "Orden de cierre/apertura del interruptor",
+      "Disparos por protecciones (SME_REQUIRED: ajustes y lógica de protecciones de Ingeniería Eléctrica / OEM)"
+    ],
+    "movements": [
+      "Movimiento interno del selector del OLTC (no visible)"
+    ],
+    "dependencies": [
+      "Subestación y red eléctrica",
+      "eq.secondary-circuit",
+      "eq.cooling (agua de enfriamiento del transformador)",
+      "eq.control-room: perfil de potencia",
+      "Compensación de reactivos y filtros de la planta (si existen)"
+    ],
+    "hazardIds": [
+      "haz.electrical",
+      "haz.thermal",
+      "haz.stored-energy",
+      "haz.noise-dust"
+    ],
+    "operationalNotes": [
+      "El borrador FT-ACE-001 describe un transformador de 140 MVA con OLTC; SME_REQUIRED: potencia nominal, tensiones secundarias, tabla de taps y corrientes validadas por OEM e Ingeniería Eléctrica.",
+      "SME_REQUIRED: límites de sobrecarga y de temperatura del transformador y del OLTC (OEM).",
+      "SME_REQUIRED: cuándo y quién puede cambiar el tap con arco encendido; el perfil de potencia aprobado lo define C-07 (MO-EAF-04 está en borrador).",
+      "Las maniobras en alta tensión solo las realiza personal eléctrico autorizado con el procedimiento aprobado. SME_REQUIRED: procedimiento de maniobras y aislamiento en alta tensión (Ingeniería Eléctrica + Seguridad C-16)."
+    ],
+    "commonMistakes": [
+      "Pensar que abrir el interruptor de horno basta para trabajar en el circuito secundario sin aplicar el procedimiento de aislamiento completo",
+      "Ignorar alarmas de temperatura de aceite porque 'siempre suenan'",
+      "Restablecer un disparo de protección sin saber la causa"
+    ],
+    "observableSignals": [
+      "Alarma de temperatura de aceite o devanado",
+      "Disparo del interruptor por protección",
+      "Ruido o vibración anormal del transformador",
+      "Mancha de aceite bajo el tanque"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Degradación del aceite",
+        "Desgaste de contactos del OLTC",
+        "Sobrecalentamiento",
+        "Falla del enfriamiento",
+        "Falla de protecciones"
+      ],
+      "inspectionPoints": [
+        "Temperaturas y alarmas",
+        "Aceite (análisis de gases y rigidez)",
+        "Contador del OLTC",
+        "Intercambiadores",
+        "Fugas"
+      ],
+      "considerations": [
+        "SME_REQUIRED: frecuencias de muestreo de aceite y mantenimiento del OLTC (OEM; el borrador MM-EAF-04 no está validado).",
+        "El mantenimiento del transformador y del OLTC lo hace personal eléctrico calificado con aislamiento en alta tensión.",
+        "SME_REQUIRED: criterios de aceptación del análisis de aceite (Ingeniería Eléctrica / laboratorio)."
+      ]
+    },
+    "documentIds": [
+      "doc.wi-electrode-system-check",
+      "doc.jobaid-electrode-system-check",
+      "doc.guide-eaf-energy-safety",
+      "doc.guide-electrode-melting"
+    ],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation",
+      "mod.electrode-melting",
+      "mod.eaf-energy-safety"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001",
+      "src.mo-eaf-04",
+      "src.ms-ace-02"
+    ]
+  },
+  {
+    "id": "eq.secondary-circuit",
+    "name": "Circuito secundario: barras y cables flexibles",
+    "shortName": "Circuito secundario",
+    "hotspotNumber": 6,
+    "nodeNames": [
+      "eaf__secondary"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine"
+    ],
+    "summary": "Conductores de muy alta corriente que llevan la energía del transformador a los brazos: barras rígidas a la salida de la bóveda del transformador y cables flexibles enfriados por agua que permiten el movimiento de los brazos.",
+    "function": "Conducir la corriente del secundario del transformador hasta los brazos portaelectrodos con pocas pérdidas y permitir que los brazos suban, bajen y giren.",
+    "howItWorks": [
+      "A la salida del transformador, barras de cobre (a veces tubos enfriados) atraviesan la pared de la casa del transformador.",
+      "Las barras se conectan a cables flexibles enfriados por agua que cuelgan en forma de lazo hasta cada brazo.",
+      "Los cables flexibles se doblan con cada movimiento de los brazos; por eso sufren fatiga con el tiempo.",
+      "El arreglo de los conductores busca equilibrar las tres fases; un desequilibrio afecta el arco y el desgaste de refractario."
+    ],
+    "components": [
+      {
+        "id": "cmp.secondary-circuit-cables",
+        "name": "Cables flexibles enfriados por agua",
+        "function": "Unen las barras fijas con los brazos móviles.",
+        "nodeName": "eaf__secondary_cables",
+        "failureModes": [
+          "Rotura de hilos por fatiga",
+          "Fuga de agua en manguera o terminal",
+          "Sobrecalentamiento del terminal",
+          "Roce o golpe contra la estructura"
+        ],
+        "inspectionPoints": [
+          "Hilos rotos visibles",
+          "Fugas de agua",
+          "Termografía de terminales",
+          "Separación con estructura y otros cables"
+        ]
+      },
+      {
+        "id": "cmp.secondary-circuit-busbar",
+        "name": "Barras de cobre del secundario",
+        "function": "Conducen la corriente desde el transformador hasta los cables flexibles.",
+        "nodeName": "eaf__secondary_busbar",
+        "failureModes": [
+          "Unión floja y caliente",
+          "Daño de aisladores y soportes",
+          "Fuga en barras enfriadas"
+        ],
+        "inspectionPoints": [
+          "Termografía de uniones",
+          "Estado de aisladores y soportes",
+          "Polvo conductor acumulado"
+        ]
+      },
+      {
+        "id": "cmp.secondary-circuit-terminals",
+        "name": "Terminales y uniones atornilladas",
+        "function": "Conectan barras, cables y brazos.",
+        "failureModes": [
+          "Pérdida de apriete por ciclos térmicos",
+          "Oxidación de superficies de contacto"
+        ],
+        "inspectionPoints": [
+          "Termografía",
+          "Marcas de apriete"
+        ]
+      },
+      {
+        "id": "cmp.secondary-circuit-supports",
+        "name": "Soportes, aisladores y protecciones contra salpicaduras",
+        "function": "Mantienen separación eléctrica y protegen los conductores.",
+        "failureModes": [
+          "Aislador roto o sucio",
+          "Salpicadura de metal o escoria sobre el cable"
+        ],
+        "inspectionPoints": [
+          "Limpieza y estado de aisladores",
+          "Pantallas de protección en su lugar"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía eléctrica de alta corriente (decenas de kA)",
+      "Campo magnético intenso alrededor de los conductores",
+      "Agua de enfriamiento a presión"
+    ],
+    "inputs": [
+      "Corriente del secundario del transformador",
+      "Agua de enfriamiento"
+    ],
+    "outputs": [
+      "Corriente hacia los brazos",
+      "Agua de retorno caliente"
+    ],
+    "actuators": [
+      "Ninguno propio; se mueve con los brazos"
+    ],
+    "sensors": [
+      "Medición de corriente y tensión del secundario",
+      "Temperatura y caudal del agua de cables y barras (si existe por circuito)"
+    ],
+    "controlSignals": [
+      "Alarma de agua de cables (SME_REQUIRED: umbrales y acción de la planta / OEM)",
+      "Señales de medición hacia la regulación"
+    ],
+    "movements": [
+      "Flexión de los cables al subir, bajar o girar los brazos"
+    ],
+    "dependencies": [
+      "eq.transformer",
+      "eq.electrode-arms",
+      "eq.cooling"
+    ],
+    "hazardIds": [
+      "haz.electrical",
+      "haz.water-molten-metal",
+      "haz.thermal",
+      "haz.line-of-fire",
+      "haz.height"
+    ],
+    "operationalNotes": [
+      "El campo magnético cerca de los conductores es muy intenso: puede afectar marcapasos, herramientas y objetos metálicos. SME_REQUIRED: restricciones de acceso por campo magnético y personal con implantes (Salud Ocupacional / Seguridad).",
+      "SME_REQUIRED: criterio de cambio de cables flexibles (hilos rotos, horas o coladas) — OEM / Ingeniería Eléctrica.",
+      "Una fuga de agua de un cable puede caer cerca del horno: se reporta de inmediato."
+    ],
+    "commonMistakes": [
+      "Acercarse a los cables con el horno energizado para 'ver una fuga'",
+      "Dejar herramientas o piezas metálicas cerca de las barras",
+      "No reportar hilos rotos porque el cable 'aún funciona'"
+    ],
+    "observableSignals": [
+      "Hilos rotos o abultamiento en el cable",
+      "Goteo o vapor en terminales",
+      "Decoloración por calor en uniones",
+      "Vibración o golpeteo de cables al conducir"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Fatiga y rotura de cables",
+        "Fugas de agua",
+        "Uniones calientes",
+        "Falla de aisladores"
+      ],
+      "inspectionPoints": [
+        "Cables flexibles",
+        "Uniones y terminales",
+        "Aisladores y soportes",
+        "Mangueras de agua"
+      ],
+      "considerations": [
+        "SME_REQUIRED: frecuencia de termografía y de inspección visual (Ingeniería de Confiabilidad C-14 / Ingeniería Eléctrica).",
+        "Toda intervención con aislamiento eléctrico y del agua según el procedimiento aprobado de la planta.",
+        "SME_REQUIRED: torques de uniones y método de limpieza de contactos (OEM)."
+      ]
+    },
+    "documentIds": [
+      "doc.wi-electrode-system-check",
+      "doc.jobaid-electrode-system-check",
+      "doc.guide-eaf-energy-safety",
+      "doc.guide-electrode-melting"
+    ],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation",
+      "mod.electrode-melting",
+      "mod.eaf-energy-safety"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001",
+      "src.mo-eaf-04",
+      "src.ms-ace-02"
+    ]
+  },
+  {
+    "id": "eq.oxygen-carbon",
+    "name": "Lanzas de oxígeno, quemadores e inyección de carbono",
+    "shortName": "O₂ y carbono",
+    "hotspotNumber": 7,
+    "nodeNames": [
+      "eaf__oxygen"
+    ],
+    "stageIds": [
+      "stage.melt",
+      "stage.refine"
+    ],
+    "summary": "Equipos de pared que inyectan oxígeno al baño y carbono fino a la escoria para descarburar, aportar energía química y formar la escoria espumosa.",
+    "function": "Inyectar oxígeno para quemar el carbono del baño y del DRI, e inyectar carbono para generar gas CO que espuma la escoria y cubre el arco.",
+    "howItWorks": [
+      "Las lanzas o quemadores de pared inyectan oxígeno a alta velocidad hacia el baño (tecnología tipo jet coherente, según el borrador FT-ACE-001).",
+      "El oxígeno reacciona con el carbono del baño y forma CO; esa reacción libera energía y baja el carbono del acero.",
+      "El inyector de carbono sopla finos de coque o antracita con aire o gas de transporte a la interfase escoria–metal.",
+      "El carbono reduce el FeO de la escoria y genera burbujas de CO que hacen que la escoria espume y cubra el arco.",
+      "En modo quemador se mezcla gas natural con oxígeno para calentar zonas frías; con ≈ 100 % DRI se usa poco (arranque en frío o canasta de retornos)."
+    ],
+    "components": [
+      {
+        "id": "cmp.oxygen-carbon-lance",
+        "name": "Lanza / quemador de oxígeno de pared",
+        "function": "Inyecta oxígeno (y gas natural en modo quemador).",
+        "nodeName": "eaf__oxygen_lance",
+        "failureModes": [
+          "Boquilla tapada o erosionada",
+          "Fuga de agua en el bloque enfriado",
+          "Retroceso de llama"
+        ],
+        "inspectionPoints": [
+          "Estado de la boquilla y del bloque de cobre",
+          "Fugas de agua",
+          "Presión y caudal de O₂ en pantalla"
+        ]
+      },
+      {
+        "id": "cmp.oxygen-carbon-carbon",
+        "name": "Inyector de carbono",
+        "function": "Sopla carbono fino a la escoria para espumarla.",
+        "nodeName": "eaf__oxygen_carbon",
+        "failureModes": [
+          "Línea tapada por humedad o finos gruesos",
+          "Desgaste de la tubería por abrasión"
+        ],
+        "inspectionPoints": [
+          "Flujo continuo de carbono",
+          "Desgaste de codos",
+          "Humedad del carbono"
+        ]
+      },
+      {
+        "id": "cmp.oxygen-carbon-valvestand",
+        "name": "Tren de válvulas de O₂ y gas natural",
+        "function": "Regula y corta el oxígeno y el gas.",
+        "failureModes": [
+          "Válvula de corte que no cierra",
+          "Fuga en uniones",
+          "Contaminación con grasa en líneas de O₂"
+        ],
+        "inspectionPoints": [
+          "Prueba de cierre de válvulas",
+          "Detección de fugas",
+          "Limpieza para servicio de oxígeno"
+        ]
+      }
+    ],
+    "energySources": [
+      "Oxígeno a presión",
+      "Gas natural a presión",
+      "Aire o gas de transporte del carbono",
+      "Energía química de las reacciones en el baño",
+      "Agua de enfriamiento"
+    ],
+    "inputs": [
+      "Oxígeno",
+      "Gas natural",
+      "Carbono fino",
+      "Agua de enfriamiento"
+    ],
+    "outputs": [
+      "Descarburación del baño",
+      "CO en el horno (va al 4.º agujero)",
+      "Escoria espumosa",
+      "Energía química"
+    ],
+    "actuators": [
+      "Válvulas de control y de corte de O₂ y gas",
+      "Alimentador del carbono (dosificador)"
+    ],
+    "sensors": [
+      "Caudal y presión de O₂ y gas por lanza",
+      "Caudal de carbono",
+      "Temperatura y caudal de agua del bloque",
+      "Detectores de flama (modo quemador, si existen)"
+    ],
+    "controlSignals": [
+      "Perfil de oxígeno y carbono por etapa",
+      "Permisivos de encendido (SME_REQUIRED: lógica de enclavamientos de O₂/gas natural del OEM y Seguridad)"
+    ],
+    "movements": [
+      "Sin movimiento en lanzas fijas de pared; SME_REQUIRED: confirmar si existe lanza móvil por la puerta"
+    ],
+    "dependencies": [
+      "Planta de oxígeno y red de gas natural",
+      "eq.fume (retira el CO)",
+      "eq.cooling",
+      "eq.dri-feed (el carbono del DRI cambia la necesidad de O₂ y C)",
+      "eq.control-room"
+    ],
+    "hazardIds": [
+      "haz.oxygen",
+      "haz.gas-co",
+      "haz.thermal",
+      "haz.molten-metal",
+      "haz.water-molten-metal",
+      "haz.noise-dust"
+    ],
+    "operationalNotes": [
+      "SME_REQUIRED: caudales de O₂, gas y carbono por etapa y consumos objetivo (Ingeniería de Proceso C-07; el borrador FT-ACE-001 y MO-EAF-05 no están validados).",
+      "El oxígeno acelera la combustión de cualquier material: grasas, ropa, guantes. Las líneas y herramientas deben ser aptas para oxígeno.",
+      "SME_REQUIRED: reglas para operar en modo quemador vs. modo lanza con 100 % DRI (C-07)."
+    ],
+    "commonMistakes": [
+      "Inyectar oxígeno sin carbono suficiente (escoria con mucho FeO y poca espuma)",
+      "Usar guantes con grasa al tocar conexiones de oxígeno",
+      "Ignorar una lanza con caudal menor que las demás"
+    ],
+    "observableSignals": [
+      "Escoria que no espuma (arco ruidoso, radiación a paneles)",
+      "Llama anormal en la puerta o en el 4.º agujero",
+      "Caída de caudal de una lanza"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Boquillas tapadas",
+        "Fugas de agua en bloques",
+        "Válvulas de corte con fuga",
+        "Línea de carbono tapada"
+      ],
+      "inspectionPoints": [
+        "Boquillas y bloques",
+        "Tren de válvulas",
+        "Líneas de carbono"
+      ],
+      "considerations": [
+        "SME_REQUIRED: frecuencias de prueba de válvulas de corte y de inspección de lanzas (OEM / C-14).",
+        "Mantenimiento de líneas de oxígeno solo con materiales y limpieza para servicio de oxígeno."
+      ]
+    },
+    "documentIds": [],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation"
+    ],
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001",
+      "src.mo-eaf-05",
+      "src.ms-ace-06"
+    ]
+  },
+  {
+    "id": "eq.slag-door",
+    "name": "Puerta de escoria",
+    "shortName": "Puerta de escoria",
+    "hotspotNumber": 8,
+    "nodeNames": [
+      "eaf__slagdoor"
+    ],
+    "stageIds": [
+      "stage.melt",
+      "stage.refine"
+    ],
+    "summary": "Abertura en la pared del horno, con compuerta enfriada, por donde sale la escoria espumosa y se toman muestras y temperaturas.",
+    "function": "Permitir el desescoriado controlado y el acceso para medición, muestreo y, si existe, lanza o manipulador por la puerta.",
+    "howItWorks": [
+      "La escoria espumosa sube de nivel y desborda por el umbral de la puerta hacia la olla o fosa de escoria.",
+      "Al inclinar el horno hacia la puerta se ayuda a sacar la escoria.",
+      "La compuerta enfriada por agua sube o baja para controlar la abertura y reducir la entrada de aire.",
+      "Por la puerta (o por un manipulador) se toman temperatura y muestras con la sonda."
+    ],
+    "components": [
+      {
+        "id": "cmp.slag-door-gate",
+        "name": "Compuerta enfriada",
+        "function": "Cierra o abre la puerta.",
+        "failureModes": [
+          "Fuga de agua",
+          "Atoramiento por escoria"
+        ],
+        "inspectionPoints": [
+          "Fugas",
+          "Movimiento libre"
+        ]
+      },
+      {
+        "id": "cmp.slag-door-sill",
+        "name": "Umbral de la puerta",
+        "function": "Define el nivel por donde rebosa la escoria.",
+        "failureModes": [
+          "Acumulación de escoria solidificada",
+          "Desgaste del refractario"
+        ],
+        "inspectionPoints": [
+          "Altura y limpieza del umbral"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía hidráulica o neumática de la compuerta",
+      "Energía térmica de la escoria"
+    ],
+    "inputs": [
+      "Escoria espumosa del horno"
+    ],
+    "outputs": [
+      "Escoria hacia olla o fosa de escoria"
+    ],
+    "actuators": [
+      "Cilindro de la compuerta"
+    ],
+    "sensors": [
+      "Finales de carrera de la compuerta",
+      "Observación visual / cámara (si existe)"
+    ],
+    "controlSignals": [
+      "Orden abrir/cerrar compuerta",
+      "Ángulo de inclinación del horno"
+    ],
+    "movements": [
+      "Subida y bajada de la compuerta"
+    ],
+    "dependencies": [
+      "eq.shell (basculamiento)",
+      "eq.hydraulics",
+      "eq.cooling",
+      "Manejo de ollas de escoria"
+    ],
+    "hazardIds": [
+      "haz.molten-metal",
+      "haz.thermal",
+      "haz.water-molten-metal",
+      "haz.line-of-fire",
+      "haz.stored-energy"
+    ],
+    "operationalNotes": [
+      "SME_REQUIRED: zona de exclusión frente a la puerta durante el desescoriado (Seguridad C-16; MS-ACE-01 en borrador).",
+      "SME_REQUIRED: criterio de cuándo y cuánto desescoriar (Ingeniería de Proceso C-07)."
+    ],
+    "commonMistakes": [
+      "Pararse frente a la puerta mientras rebosa la escoria",
+      "Dejar que se acumule escoria sólida en el umbral"
+    ],
+    "observableSignals": [
+      "Escoria que sale muy fluida o con metal",
+      "Salpicaduras por la puerta",
+      "Compuerta que no cierra"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Fuga de agua de la compuerta",
+        "Cilindro dañado",
+        "Umbral desgastado"
+      ],
+      "inspectionPoints": [
+        "Compuerta y mangueras",
+        "Umbral"
+      ],
+      "considerations": [
+        "SME_REQUIRED: frecuencia de inspección y limpieza del umbral (C-14 / Operación)."
+      ]
+    },
+    "documentIds": [],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation"
+    ],
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": [
+      "src.industry-general",
+      "src.mo-eaf-05",
+      "src.ms-ace-01"
+    ]
+  },
+  {
+    "id": "eq.ebt",
+    "name": "Vaciado excéntrico por el fondo (EBT) y fosa",
+    "shortName": "EBT",
+    "hotspotNumber": 9,
+    "nodeNames": [
+      "eaf__ebt"
+    ],
+    "stageIds": [
+      "stage.tap"
+    ],
+    "summary": "Agujero de vaciado en la solera, fuera del centro del horno, por donde sale el acero a la olla con poca escoria.",
+    "function": "Vaciar el acero líquido a la olla de forma rápida y con mínimo arrastre de escoria, dejando el pie líquido para la siguiente colada.",
+    "howItWorks": [
+      "Entre coladas, el agujero se rellena con arena de sello y se cierra por abajo con una compuerta (tapa) mecánica.",
+      "Al vaciar, el horno se inclina hacia el EBT, se abre la compuerta y la arena cae; el acero empieza a fluir.",
+      "La olla espera debajo, en un carro dentro de la fosa.",
+      "Al llegar al peso de vaciado, el horno regresa rápido para cortar el chorro y dejar el pie líquido."
+    ],
+    "components": [
+      {
+        "id": "cmp.ebt-taphole",
+        "name": "Agujero EBT y bloques refractarios",
+        "function": "Canal de vaciado en la solera.",
+        "failureModes": [
+          "Desgaste del canal",
+          "Arena que no cae (no abre solo)"
+        ],
+        "inspectionPoints": [
+          "Diámetro y estado del canal",
+          "Rellenado con arena"
+        ]
+      },
+      {
+        "id": "cmp.ebt-gate",
+        "name": "Compuerta inferior del EBT",
+        "function": "Cierra el agujero por abajo.",
+        "failureModes": [
+          "Falla de apertura",
+          "Daño por salpicaduras"
+        ],
+        "inspectionPoints": [
+          "Movimiento y estado de la compuerta"
+        ]
+      },
+      {
+        "id": "cmp.ebt-pit",
+        "name": "Fosa y carro de olla",
+        "function": "Recibe la olla durante el vaciado.",
+        "nodeName": "eaf__ebt_pit",
+        "failureModes": [
+          "Agua o humedad en la fosa",
+          "Carro trabado"
+        ],
+        "inspectionPoints": [
+          "Fosa seca y limpia",
+          "Movimiento del carro"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía térmica del acero",
+      "Gravedad",
+      "Energía hidráulica (basculamiento y compuerta)"
+    ],
+    "inputs": [
+      "Acero líquido del horno",
+      "Arena de sello"
+    ],
+    "outputs": [
+      "Acero líquido en la olla",
+      "Pie líquido que queda en el horno"
+    ],
+    "actuators": [
+      "Cilindros de basculamiento",
+      "Cilindro de la compuerta EBT",
+      "Accionamiento del carro de olla"
+    ],
+    "sensors": [
+      "Peso de la olla (báscula del carro, si existe)",
+      "Ángulo de inclinación",
+      "Cámara o detección de escoria (si existe)"
+    ],
+    "controlSignals": [
+      "Orden de inclinación y retorno",
+      "Orden de abrir compuerta",
+      "Peso objetivo de vaciado (SME_REQUIRED: Ingeniería de Proceso C-07)"
+    ],
+    "movements": [
+      "Inclinación del horno",
+      "Apertura de la compuerta",
+      "Traslado del carro de olla"
+    ],
+    "dependencies": [
+      "eq.refractory",
+      "eq.hydraulics",
+      "Manejo de ollas y grúas",
+      "eq.control-room"
+    ],
+    "hazardIds": [
+      "haz.molten-metal",
+      "haz.water-molten-metal",
+      "haz.thermal",
+      "haz.line-of-fire",
+      "haz.confined-space",
+      "haz.stored-energy"
+    ],
+    "operationalNotes": [
+      "SME_REQUIRED: secuencia de vaciado, ángulos y peso de corte (procedimiento aprobado; MO-EAF-07 en borrador).",
+      "SME_REQUIRED: condiciones de la olla y de la fosa para permitir el vaciado (Operación + Seguridad)."
+    ],
+    "commonMistakes": [
+      "Vaciar sin confirmar que la fosa está seca",
+      "Tardar en regresar el horno y pasar escoria a la olla"
+    ],
+    "observableSignals": [
+      "EBT que no abre solo",
+      "Chorro abierto o en abanico",
+      "Escoria en el chorro"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Desgaste del canal EBT",
+        "Compuerta trabada",
+        "Fosa con humedad o derrames"
+      ],
+      "inspectionPoints": [
+        "Canal y bloques",
+        "Compuerta",
+        "Fosa y carro"
+      ],
+      "considerations": [
+        "SME_REQUIRED: criterio de cambio de bloques del EBT y frecuencia de reparación (Refractarios / OEM).",
+        "Entrar a la fosa puede ser espacio confinado: se sigue el permiso aplicable."
+      ]
+    },
+    "documentIds": [],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation"
+    ],
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": [
+      "src.industry-general",
+      "src.mo-eaf-07",
+      "src.ms-ace-01",
+      "src.ms-ace-03"
+    ]
+  },
+  {
+    "id": "eq.hydraulics",
+    "name": "Sistema hidráulico del horno",
+    "shortName": "Hidráulica",
+    "hotspotNumber": 10,
+    "nodeNames": [
+      "eaf__hydraulics"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine",
+      "stage.tap"
+    ],
+    "summary": "Unidad de potencia hidráulica (HPU), acumuladores, válvulas y cilindros que mueven electrodos, bóveda, basculamiento y compuertas.",
+    "function": "Generar y distribuir presión hidráulica para todos los movimientos del horno, con respaldo de acumuladores para movimientos de emergencia.",
+    "howItWorks": [
+      "Bombas en la HPU toman fluido del tanque y lo envían a presión a los circuitos.",
+      "Acumuladores con nitrógeno guardan energía para responder rápido y para mover en una emergencia.",
+      "Válvulas proporcionales o servo controlan la regulación de electrodos; válvulas direccionales controlan bóveda, basculamiento y compuertas.",
+      "En hornos de arco se suele usar fluido resistente al fuego (por ejemplo agua-glicol) por la cercanía con metal líquido; SME_REQUIRED: tipo de fluido real de la planta (OEM).",
+      "Los filtros y el enfriador mantienen el fluido limpio y a temperatura de trabajo."
+    ],
+    "components": [
+      {
+        "id": "cmp.hydraulics-hpu",
+        "name": "Unidad de potencia (bombas, tanque, filtros, enfriador)",
+        "function": "Genera la presión hidráulica.",
+        "failureModes": [
+          "Bomba desgastada o con vibración",
+          "Filtro saturado",
+          "Fluido caliente o contaminado"
+        ],
+        "inspectionPoints": [
+          "Nivel, temperatura y presión",
+          "Indicadores de filtro",
+          "Vibración de bombas"
+        ]
+      },
+      {
+        "id": "cmp.hydraulics-accumulators",
+        "name": "Acumuladores",
+        "function": "Guardan energía hidráulica con nitrógeno.",
+        "failureModes": [
+          "Pérdida de precarga",
+          "Vejiga rota"
+        ],
+        "inspectionPoints": [
+          "Precarga de nitrógeno",
+          "Estado del recipiente"
+        ]
+      },
+      {
+        "id": "cmp.hydraulics-valves",
+        "name": "Bloques de válvulas",
+        "function": "Dirigen el fluido a cada actuador.",
+        "failureModes": [
+          "Válvula pegada",
+          "Fuga interna"
+        ],
+        "inspectionPoints": [
+          "Respuesta de actuadores",
+          "Fugas externas"
+        ]
+      },
+      {
+        "id": "cmp.hydraulics-hoses",
+        "name": "Mangueras y tuberías",
+        "function": "Llevan el fluido a los cilindros.",
+        "failureModes": [
+          "Manguera rota por calor o fatiga"
+        ],
+        "inspectionPoints": [
+          "Protección térmica",
+          "Abrasión y fecha de las mangueras"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía hidráulica a alta presión",
+      "Energía almacenada en acumuladores (nitrógeno)",
+      "Energía eléctrica de los motores de bombas",
+      "Gravedad sobre cilindros cargados"
+    ],
+    "inputs": [
+      "Energía eléctrica",
+      "Fluido hidráulico",
+      "Agua de enfriamiento del enfriador"
+    ],
+    "outputs": [
+      "Presión y caudal hacia los actuadores"
+    ],
+    "actuators": [
+      "Bombas",
+      "Válvulas",
+      "Cilindros de electrodos, bóveda, basculamiento, compuertas"
+    ],
+    "sensors": [
+      "Presión de sistema y de acumuladores",
+      "Temperatura y nivel del tanque",
+      "Presión diferencial de filtros"
+    ],
+    "controlSignals": [
+      "Arranque/paro de bombas",
+      "Alarmas de presión, nivel y temperatura (SME_REQUIRED: umbrales del OEM)"
+    ],
+    "movements": [
+      "No se mueve; mueve a los demás equipos"
+    ],
+    "dependencies": [
+      "Energía eléctrica",
+      "eq.cooling (enfriador)",
+      "eq.electrode-arms",
+      "eq.roof",
+      "eq.shell",
+      "eq.ebt",
+      "eq.slag-door"
+    ],
+    "hazardIds": [
+      "haz.stored-energy",
+      "haz.line-of-fire",
+      "haz.thermal",
+      "haz.molten-metal",
+      "haz.noise-dust"
+    ],
+    "operationalNotes": [
+      "Apagar la HPU no elimina la energía: los acumuladores y la gravedad pueden mover equipo. SME_REQUIRED: pasos de descarga de acumuladores, bloqueo mecánico y prueba de energía cero (MS-ACE-02 aprobado + OEM).",
+      "SME_REQUIRED: presión de trabajo, precarga de acumuladores y límites de temperatura del fluido (OEM).",
+      "Una fuga fina a alta presión puede inyectar fluido bajo la piel: nunca se busca con la mano."
+    ],
+    "commonMistakes": [
+      "Creer que con la bomba apagada no hay presión",
+      "Buscar una fuga con la mano",
+      "Rellenar con un fluido distinto al especificado"
+    ],
+    "observableSignals": [
+      "Ruido o vibración de bombas",
+      "Charco o neblina de fluido",
+      "Movimientos lentos o bruscos de actuadores",
+      "Alarma de filtro"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Contaminación del fluido",
+        "Pérdida de precarga",
+        "Fugas",
+        "Desgaste de bombas",
+        "Mangueras dañadas por calor"
+      ],
+      "inspectionPoints": [
+        "HPU",
+        "Acumuladores",
+        "Mangueras cerca del horno",
+        "Análisis de fluido"
+      ],
+      "considerations": [
+        "SME_REQUIRED: frecuencias de análisis de fluido, precarga y cambio de mangueras (OEM / C-14).",
+        "Los acumuladores son recipientes a presión con requisitos normativos; verificar con Jurídico Laboral / SSO."
+      ]
+    },
+    "documentIds": [],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation",
+      "mod.eaf-energy-safety"
+    ],
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-02"
+    ]
+  },
+  {
+    "id": "eq.refractory",
+    "name": "Refractario del horno",
+    "shortName": "Refractario",
+    "hotspotNumber": 11,
+    "nodeNames": [
+      "eaf__refractory"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine",
+      "stage.tap"
+    ],
+    "summary": "Ladrillos y masas resistentes al calor que forran la solera, la línea de escoria y el EBT.",
+    "function": "Contener el acero y la escoria líquidos y proteger la coraza de acero del calor y del ataque químico.",
+    "howItWorks": [
+      "La solera lleva capas de refractario (permanente y de trabajo) que soportan el baño.",
+      "En la línea de escoria se usan ladrillos de magnesia-carbono que resisten la escoria básica.",
+      "Entre coladas se repara con proyección (gunning) las zonas desgastadas.",
+      "La escoria saturada en MgO y la escoria espumosa ayudan a proteger el refractario."
+    ],
+    "components": [
+      {
+        "id": "cmp.refractory-hearth",
+        "name": "Refractario de solera",
+        "function": "Soporta el baño líquido.",
+        "failureModes": [
+          "Desgaste o agujero en la solera",
+          "Penetración de metal"
+        ],
+        "inspectionPoints": [
+          "Perfil de la solera",
+          "Puntos calientes en la lámina"
+        ]
+      },
+      {
+        "id": "cmp.refractory-slagline",
+        "name": "Línea de escoria (MgO-C)",
+        "function": "Resiste el ataque de la escoria.",
+        "failureModes": [
+          "Desgaste acelerado frente a electrodos o lanzas"
+        ],
+        "inspectionPoints": [
+          "Espesor remanente en zonas críticas"
+        ]
+      },
+      {
+        "id": "cmp.refractory-gunning",
+        "name": "Masa de proyección (gunning)",
+        "function": "Repara zonas desgastadas entre coladas.",
+        "failureModes": [
+          "Masa que no adhiere",
+          "Masa húmeda"
+        ],
+        "inspectionPoints": [
+          "Adherencia y cobertura de la reparación"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía térmica del baño",
+      "Energía neumática de la máquina de proyección"
+    ],
+    "inputs": [
+      "Ladrillos y masas refractarias",
+      "Agua solo para preparar masas, según el fabricante"
+    ],
+    "outputs": [
+      "Contención del baño",
+      "Desgaste (aporta MgO a la escoria)"
+    ],
+    "actuators": [
+      "Máquina o manipulador de proyección"
+    ],
+    "sensors": [
+      "Termografía o termopares de la lámina (si existen)",
+      "Medición de perfil de refractario (si existe)"
+    ],
+    "controlSignals": [
+      "Alarmas de temperatura de lámina (SME_REQUIRED: umbrales de Refractarios / OEM)"
+    ],
+    "movements": [
+      "Ninguno propio"
+    ],
+    "dependencies": [
+      "eq.shell",
+      "eq.oxygen-carbon (química de escoria)",
+      "eq.ebt",
+      "Química de escoria (MgO)"
+    ],
+    "hazardIds": [
+      "haz.molten-metal",
+      "haz.thermal",
+      "haz.water-molten-metal",
+      "haz.noise-dust",
+      "haz.confined-space"
+    ],
+    "operationalNotes": [
+      "SME_REQUIRED: criterio de reparación y de fin de campaña de solera y línea de escoria (Refractarios + Ingeniería de Proceso).",
+      "SME_REQUIRED: tiempo de secado y condiciones antes de cargar sobre una reparación con masa (proveedor de refractario)."
+    ],
+    "commonMistakes": [
+      "Cargar sobre una reparación húmeda",
+      "No reportar un punto caliente en la coraza"
+    ],
+    "observableSignals": [
+      "Punto caliente en la lámina",
+      "Escoria con MgO bajo",
+      "Desgaste visible al inspeccionar el horno vacío"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Desgaste local",
+        "Penetración de metal",
+        "Descascarado"
+      ],
+      "inspectionPoints": [
+        "Solera",
+        "Línea de escoria",
+        "EBT"
+      ],
+      "considerations": [
+        "SME_REQUIRED: programa de inspección y reparación (Refractarios / C-14).",
+        "La demolición y reconstrucción implica espacio confinado, polvo y calor residual."
+      ]
+    },
+    "documentIds": [],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation"
+    ],
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-03",
+      "src.ms-ace-05"
+    ]
+  },
+  {
+    "id": "eq.cooling",
+    "name": "Paneles enfriados por agua",
+    "shortName": "Paneles enfriados",
+    "hotspotNumber": 12,
+    "nodeNames": [
+      "eaf__cooling"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine",
+      "stage.tap"
+    ],
+    "summary": "Paneles de tubo por los que circula agua y que forman la pared alta y la bóveda del horno; también se enfrían así brazos, cables y lanzas.",
+    "function": "Retirar el calor de la pared y la bóveda para que el horno resista la radiación del arco, sin depender solo del refractario.",
+    "howItWorks": [
+      "Bombas envían agua a cada circuito de paneles; el agua sale caliente y regresa a torres o intercambiadores.",
+      "Sobre los paneles se pega escoria que funciona como aislante natural.",
+      "El sistema mide caudal y temperatura de entrada y salida; una diferencia de caudal indica posible fuga.",
+      "Una fuga de agua dentro del horno es muy peligrosa: el agua bajo el metal líquido se vaporiza de golpe y puede causar explosión."
+    ],
+    "components": [
+      {
+        "id": "cmp.cooling-wallpanels",
+        "name": "Paneles de pared",
+        "function": "Forman la pared superior.",
+        "failureModes": [
+          "Fuga por desgaste o arco",
+          "Tubo tapado por sarro"
+        ],
+        "inspectionPoints": [
+          "Caudal y temperatura por circuito",
+          "Señales de vapor"
+        ]
+      },
+      {
+        "id": "cmp.cooling-pumps",
+        "name": "Bombas y circuito de agua",
+        "function": "Hacen circular el agua.",
+        "failureModes": [
+          "Falla de bomba",
+          "Baja presión"
+        ],
+        "inspectionPoints": [
+          "Presión y caudal",
+          "Respaldo de bombas"
+        ]
+      },
+      {
+        "id": "cmp.cooling-monitoring",
+        "name": "Medición de caudal y temperatura por circuito",
+        "function": "Detecta fugas y sobrecalentamiento.",
+        "failureModes": [
+          "Medidor descalibrado"
+        ],
+        "inspectionPoints": [
+          "Comparación entrada–salida",
+          "Calibración"
+        ]
+      }
+    ],
+    "energySources": [
+      "Agua a presión",
+      "Energía térmica absorbida del horno",
+      "Energía eléctrica de bombas"
+    ],
+    "inputs": [
+      "Agua tratada de enfriamiento"
+    ],
+    "outputs": [
+      "Agua de retorno caliente"
+    ],
+    "actuators": [
+      "Bombas",
+      "Válvulas de aislamiento por circuito"
+    ],
+    "sensors": [
+      "Caudal de entrada y salida por circuito",
+      "Temperatura de salida",
+      "Presión de suministro"
+    ],
+    "controlSignals": [
+      "Alarma de fuga y de temperatura alta",
+      "Disparo del arco por fuga (SME_REQUIRED: umbrales y lógica aprobados; el borrador FT-ACE-001 trae valores no validados)"
+    ],
+    "movements": [
+      "Ninguno"
+    ],
+    "dependencies": [
+      "Planta de agua de enfriamiento",
+      "eq.roof",
+      "eq.shell",
+      "eq.electrode-arms",
+      "eq.secondary-circuit",
+      "eq.oxygen-carbon"
+    ],
+    "hazardIds": [
+      "haz.water-molten-metal",
+      "haz.thermal",
+      "haz.stored-energy",
+      "haz.molten-metal"
+    ],
+    "operationalNotes": [
+      "SME_REQUIRED: acción ante alarma de fuga: quién apaga el arco, cómo se aísla el circuito y cuándo se puede mover el horno (procedimiento aprobado; MS-ACE-03 en borrador).",
+      "Si hay sospecha de agua en el horno, no se bascula el horno ni se mueve el baño hasta que lo indique el procedimiento aprobado."
+    ],
+    "commonMistakes": [
+      "Restablecer la alarma de fuga sin investigar",
+      "Bascular el horno con agua acumulada sobre el baño"
+    ],
+    "observableSignals": [
+      "Vapor blanco anormal",
+      "Llama de color distinto en el 4.º agujero (hidrógeno)",
+      "Diferencia de caudal en pantalla"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Fugas",
+        "Sarro y obstrucción",
+        "Falla de bombas"
+      ],
+      "inspectionPoints": [
+        "Paneles",
+        "Mangueras y conexiones",
+        "Calidad del agua"
+      ],
+      "considerations": [
+        "SME_REQUIRED: frecuencia de inspección de paneles y criterio de reparación o cambio (C-14 / OEM).",
+        "La reparación de paneles requiere aislar agua, energía eléctrica e hidráulica."
+      ]
+    },
+    "documentIds": [],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation",
+      "mod.eaf-energy-safety"
+    ],
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001",
+      "src.ms-ace-03"
+    ]
+  },
+  {
+    "id": "eq.fume",
+    "name": "Extracción de humos (4.º agujero)",
+    "shortName": "Humos",
+    "hotspotNumber": 13,
+    "nodeNames": [
+      "eaf__fume"
+    ],
+    "stageIds": [
+      "stage.melt",
+      "stage.refine",
+      "stage.tap"
+    ],
+    "summary": "Ducto conectado al 4.º agujero de la bóveda que extrae los gases calientes y el polvo del horno hacia la cámara de combustión y la casa de bolsas.",
+    "function": "Mantener el horno con ligera presión negativa, quemar el CO de los gases y captar el polvo antes de liberar los gases.",
+    "howItWorks": [
+      "El ventilador de la casa de bolsas jala los gases por el codo enfriado del 4.º agujero.",
+      "Entre el codo y el ducto queda una abertura que deja entrar aire para quemar el CO (postcombustión).",
+      "En la cámara de combustión los gases terminan de quemarse y caen partículas gruesas.",
+      "Los gases se enfrían y pasan a la casa de bolsas, donde se filtra el polvo.",
+      "Con DRI de alto carbono hay más CO en el gas, por lo que la postcombustión es más importante (FT-ACE-001, borrador)."
+    ],
+    "components": [
+      {
+        "id": "cmp.fume-elbow",
+        "name": "Codo enfriado del 4.º agujero",
+        "function": "Conecta la bóveda con el ducto de humos.",
+        "nodeName": "eaf__fume_elbow",
+        "failureModes": [
+          "Fuga de agua",
+          "Acumulación de escoria y polvo"
+        ],
+        "inspectionPoints": [
+          "Fugas",
+          "Obstrucción"
+        ]
+      },
+      {
+        "id": "cmp.fume-combustion",
+        "name": "Cámara de combustión",
+        "function": "Termina de quemar el CO.",
+        "failureModes": [
+          "Acumulación de polvo",
+          "Daño refractario"
+        ],
+        "inspectionPoints": [
+          "Limpieza",
+          "Estado interno"
+        ]
+      },
+      {
+        "id": "cmp.fume-baghouse",
+        "name": "Casa de bolsas y ventiladores",
+        "function": "Filtra el polvo y genera la succión.",
+        "failureModes": [
+          "Bolsas rotas",
+          "Ventilador con vibración"
+        ],
+        "inspectionPoints": [
+          "Diferencial de presión",
+          "Emisiones visibles",
+          "Vibración"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía eléctrica de ventiladores",
+      "Energía química del CO",
+      "Energía térmica de los gases",
+      "Agua de enfriamiento del ducto"
+    ],
+    "inputs": [
+      "Gases y polvo del horno",
+      "Aire de combustión"
+    ],
+    "outputs": [
+      "Gases limpios a la chimenea",
+      "Polvo de acería captado"
+    ],
+    "actuators": [
+      "Ventiladores",
+      "Compuertas (dampers)"
+    ],
+    "sensors": [
+      "Presión del horno",
+      "Temperatura de gases",
+      "Análisis de gases (CO, O₂) si existe",
+      "Diferencial de presión de la casa de bolsas"
+    ],
+    "controlSignals": [
+      "Posición de dampers según presión del horno (SME_REQUIRED: setpoint de presión del horno validado por C-07 / OEM)",
+      "Alarmas de temperatura y de CO"
+    ],
+    "movements": [
+      "Ajuste del damper o de la abertura del codo (si existe)"
+    ],
+    "dependencies": [
+      "eq.roof",
+      "eq.cooling",
+      "eq.oxygen-carbon (genera CO)",
+      "eq.dri-feed (finos de DRI se van al 4.º agujero)"
+    ],
+    "hazardIds": [
+      "haz.gas-co",
+      "haz.thermal",
+      "haz.noise-dust",
+      "haz.confined-space",
+      "haz.water-molten-metal"
+    ],
+    "operationalNotes": [
+      "SME_REQUIRED: presión objetivo del horno y criterios de alarma de CO (Ingeniería de Proceso C-07 + Medio Ambiente).",
+      "Las áreas cercanas a ductos y casa de bolsas pueden tener CO: se sigue el procedimiento de gases de la planta (MS-ACE-06 en borrador)."
+    ],
+    "commonMistakes": [
+      "Entrar a ductos o cámara sin permiso de espacio confinado",
+      "Ignorar humo saliendo por la puerta o los electrodos (falta succión)"
+    ],
+    "observableSignals": [
+      "Humo escapando del horno por la bóveda o la puerta",
+      "Llama larga en el codo",
+      "Emisión visible en chimenea"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Obstrucción del codo",
+        "Fugas de agua del ducto enfriado",
+        "Bolsas rotas",
+        "Fallas de ventilador"
+      ],
+      "inspectionPoints": [
+        "Codo",
+        "Ductos",
+        "Casa de bolsas"
+      ],
+      "considerations": [
+        "SME_REQUIRED: frecuencias de limpieza e inspección (C-14 / Medio Ambiente).",
+        "Las entradas a ductos y cámaras son espacio confinado con riesgo de CO."
+      ]
+    },
+    "documentIds": [],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation"
+    ],
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001",
+      "src.ms-ace-05",
+      "src.ms-ace-06"
+    ]
+  },
+  {
+    "id": "eq.dri-feed",
+    "name": "Alimentación continua de DRI (5.º agujero)",
+    "shortName": "Alimentación DRI",
+    "hotspotNumber": 14,
+    "nodeNames": [
+      "eaf__drifeed"
+    ],
+    "stageIds": [
+      "stage.raw",
+      "stage.charge",
+      "stage.melt",
+      "stage.refine"
+    ],
+    "summary": "Sistema de silos de día, básculas dosificadoras y bandas que alimenta DRI y fundentes en continuo al horno por un agujero de la bóveda (5.º agujero).",
+    "function": "Entregar al baño el DRI (≈ 95–100 % de la carga metálica en GASM, D-010) y los fundentes a la tasa que corresponde a la potencia del arco.",
+    "howItWorks": [
+      "El DRI de las plantas HYL y Midrex llega por bandas cerradas a los silos de día de la Acería.",
+      "Bajo cada silo, un alimentador y una báscula dosificadora entregan el DRI a la banda del 5.º agujero; cal y dolomita se dosifican a la misma banda.",
+      "Una tolva en la bóveda recibe el material y una canaleta lo deja caer al baño, cerca de la zona de los electrodos.",
+      "La tasa de DRI se ajusta a la potencia del arco: si entra demasiado DRI para la potencia disponible, se enfría el baño y pueden formarse acumulaciones sin fundir.",
+      "El DRI debe llegar seco: la humedad con DRI caliente o acero líquido genera vapor e hidrógeno."
+    ],
+    "components": [
+      {
+        "id": "cmp.dri-feed-chute",
+        "name": "Canaleta y tolva del 5.º agujero",
+        "function": "Deja caer el DRI al baño.",
+        "nodeName": "eaf__drifeed_chute",
+        "failureModes": [
+          "Obstrucción",
+          "Desgaste por abrasión",
+          "Daño por calor"
+        ],
+        "inspectionPoints": [
+          "Flujo libre",
+          "Desgaste del revestimiento"
+        ]
+      },
+      {
+        "id": "cmp.dri-feed-silos",
+        "name": "Silos de día",
+        "function": "Almacenan el DRI de forma seca e inertizada antes del horno.",
+        "failureModes": [
+          "Autocalentamiento del DRI",
+          "Puenteo (el material no baja)"
+        ],
+        "inspectionPoints": [
+          "Temperatura en varios niveles",
+          "Nivel",
+          "Atmósfera inerte"
+        ]
+      },
+      {
+        "id": "cmp.dri-feed-weighfeeder",
+        "name": "Básculas dosificadoras",
+        "function": "Miden y controlan la tasa de DRI y fundentes.",
+        "failureModes": [
+          "Descalibración",
+          "Banda desalineada"
+        ],
+        "inspectionPoints": [
+          "Calibración",
+          "Limpieza"
+        ]
+      },
+      {
+        "id": "cmp.dri-feed-conveyor",
+        "name": "Banda del 5.º agujero",
+        "function": "Lleva el DRI y los fundentes hasta la bóveda.",
+        "failureModes": [
+          "Rotura o desalineación de banda",
+          "Rodillos trabados",
+          "Derrames"
+        ],
+        "inspectionPoints": [
+          "Alineación",
+          "Rodillos",
+          "Limpieza de derrames y finos"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía eléctrica de motores de bandas y alimentadores",
+      "Gravedad (caída del material)",
+      "Energía química del DRI (puede autocalentarse)",
+      "Nitrógeno de inertización"
+    ],
+    "inputs": [
+      "DRI de HYL y Midrex",
+      "Cal y dolomita",
+      "Nitrógeno",
+      "Orden de tasa desde el púlpito"
+    ],
+    "outputs": [
+      "DRI y fundentes al baño",
+      "Finos separados (no van por el 5.º agujero, según borrador FT-ACE-001)"
+    ],
+    "actuators": [
+      "Alimentadores de silo",
+      "Motores de banda",
+      "Compuertas"
+    ],
+    "sensors": [
+      "Básculas dosificadoras",
+      "Nivel de silos",
+      "Temperatura en silos",
+      "Gases en domo de silos (CO/H₂, O₂)",
+      "Detectores de desalineación y paro de banda"
+    ],
+    "controlSignals": [
+      "Tasa de DRI ligada a la potencia del arco (SME_REQUIRED: tasa máxima y relación con la potencia validadas por C-07; el borrador trae valores no validados)",
+      "Proporción HYL/Midrex (SME_REQUIRED: la fija C-07 por el carbono objetivo)",
+      "Paro de alimentación por enclavamiento (SME_REQUIRED: lógica del OEM / Ingeniería de Proceso)"
+    ],
+    "movements": [
+      "Movimiento continuo de bandas",
+      "Descarga de silos"
+    ],
+    "dependencies": [
+      "Plantas HYL y Midrex (Reducción Directa)",
+      "eq.electrodes y eq.transformer: la potencia manda la tasa",
+      "eq.roof (5.º agujero)",
+      "eq.fume (finos)",
+      "eq.control-room"
+    ],
+    "hazardIds": [
+      "haz.water-molten-metal",
+      "haz.gas-co",
+      "haz.noise-dust",
+      "haz.line-of-fire",
+      "haz.confined-space",
+      "haz.height",
+      "haz.thermal"
+    ],
+    "operationalNotes": [
+      "En GASM no hay chatarra comprada: si falla la alimentación de DRI no hay carga de respaldo (D-010).",
+      "SME_REQUIRED: temperatura máxima del DRI, criterio de humedad y acción ante autocalentamiento en silos (Reducción Directa + Seguridad + C-07).",
+      "SME_REQUIRED: tasa de alimentación por etapa (MO-EAF-03 en borrador)."
+    ],
+    "commonMistakes": [
+      "Seguir alimentando DRI cuando el arco está inestable o apagado",
+      "Usar agua para limpiar derrames de DRI",
+      "Meter la mano o herramientas en una banda en movimiento"
+    ],
+    "observableSignals": [
+      "Montículo de DRI sin fundir visible por la puerta",
+      "Caída de temperatura del baño",
+      "Polvo excesivo en la banda",
+      "Alarma de temperatura en silo"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Banda desalineada o rota",
+        "Báscula descalibrada",
+        "Canaleta obstruida",
+        "Autocalentamiento en silo"
+      ],
+      "inspectionPoints": [
+        "Bandas y rodillos",
+        "Básculas",
+        "Canaleta",
+        "Instrumentación de silos"
+      ],
+      "considerations": [
+        "SME_REQUIRED: frecuencias de calibración y de inspección (C-14 / OEM).",
+        "La entrada a silos es espacio confinado con atmósfera inerte (N₂) y posible CO/H₂.",
+        "Toda intervención en bandas requiere aislar energía; nunca con la banda en movimiento."
+      ]
+    },
+    "documentIds": [],
+    "videoIds": [
+      "vid.melt-overview"
+    ],
+    "learningModuleIds": [
+      "mod.eaf-orientation",
+      "mod.electrode-melting"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.cv-gasm-001",
+      "src.ft-ace-001",
+      "src.mo-eaf-02",
+      "src.mo-eaf-03"
+    ]
+  },
+  {
+    "id": "eq.control-room",
+    "name": "Púlpito de control",
+    "shortName": "Púlpito",
+    "hotspotNumber": 15,
+    "nodeNames": [
+      "eaf__control"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine",
+      "stage.tap"
+    ],
+    "summary": "Cuarto de control protegido desde donde el operador vigila y manda el horno: energía, electrodos, oxígeno, alimentación de DRI, agua y vaciado.",
+    "function": "Concentrar el mando y la supervisión del horno en pantallas (HMI) y botoneras, con protección para el personal.",
+    "howItWorks": [
+      "El sistema de control (PLC/DCS) recibe señales de todos los equipos y las muestra en pantallas.",
+      "El operador selecciona el perfil de potencia, vigila la regulación de electrodos y la alimentación de DRI.",
+      "Las alarmas avisan de condiciones anormales (agua, hidráulica, transformador, gases).",
+      "Los paros de emergencia y los enclavamientos protegen a personas y equipos.",
+      "Desde el púlpito se coordina con grúas, metalurgia secundaria y mantenimiento."
+    ],
+    "components": [
+      {
+        "id": "cmp.control-room-hmi",
+        "name": "Pantallas HMI",
+        "function": "Muestran el estado del horno y permiten dar órdenes.",
+        "failureModes": [
+          "Pantalla congelada o sin actualización"
+        ],
+        "inspectionPoints": [
+          "Indicación de comunicación activa"
+        ]
+      },
+      {
+        "id": "cmp.control-room-estop",
+        "name": "Paros de emergencia",
+        "function": "Detienen el arco y movimientos ante emergencia.",
+        "failureModes": [
+          "Botón dañado o sin prueba"
+        ],
+        "inspectionPoints": [
+          "Prueba funcional según programa aprobado"
+        ]
+      },
+      {
+        "id": "cmp.control-room-plc",
+        "name": "Sistema de control (PLC/DCS)",
+        "function": "Ejecuta la lógica de control y enclavamientos.",
+        "failureModes": [
+          "Falla de comunicación",
+          "Cambios no autorizados de lógica"
+        ],
+        "inspectionPoints": [
+          "Diagnóstico del sistema",
+          "Control de cambios"
+        ]
+      }
+    ],
+    "energySources": [
+      "Energía eléctrica de control (UPS)"
+    ],
+    "inputs": [
+      "Señales de todos los equipos",
+      "Perfil de potencia y programa de producción"
+    ],
+    "outputs": [
+      "Órdenes a equipos",
+      "Registros de colada"
+    ],
+    "actuators": [
+      "Mandos y botoneras"
+    ],
+    "sensors": [
+      "Recibe todas las señales del horno"
+    ],
+    "controlSignals": [
+      "Perfil de potencia",
+      "Órdenes de regulación",
+      "Paro de emergencia",
+      "Enclavamientos (SME_REQUIRED: matriz de enclavamientos aprobada por Ingeniería Eléctrica, Proceso y Seguridad)"
+    ],
+    "movements": [
+      "Ninguno"
+    ],
+    "dependencies": [
+      "Todos los equipos del horno",
+      "Comunicación con grúas, LF y mantenimiento"
+    ],
+    "hazardIds": [
+      "haz.molten-metal",
+      "haz.electrical",
+      "haz.noise-dust",
+      "haz.thermal"
+    ],
+    "operationalNotes": [
+      "Ninguna alarma o enclavamiento se puentea sin autorización formal. SME_REQUIRED: procedimiento de bypass y autorizaciones (Ingeniería Eléctrica + Seguridad C-16).",
+      "SME_REQUIRED: roles autorizados para operar cada pantalla y nivel de acceso (Gerencia de Acería)."
+    ],
+    "commonMistakes": [
+      "Reconocer alarmas sin leerlas",
+      "Cambiar parámetros sin registro",
+      "Dejar el púlpito sin relevo con el arco encendido"
+    ],
+    "observableSignals": [
+      "Alarmas repetidas",
+      "Tendencias fuera de lo normal",
+      "Diferencias entre lo que se ve en campo y en pantalla"
+    ],
+    "maintenance": {
+      "failureModes": [
+        "Falla de HMI o comunicación",
+        "Falla de UPS",
+        "Daño a ventanas o protección del púlpito"
+      ],
+      "inspectionPoints": [
+        "UPS",
+        "Paros de emergencia",
+        "Comunicaciones"
+      ],
+      "considerations": [
+        "SME_REQUIRED: programa de pruebas de paros de emergencia y respaldo del sistema (Ingeniería Eléctrica e Instrumentación).",
+        "Todo cambio de lógica sigue control de cambios aprobado."
+      ]
+    },
+    "documentIds": [],
+    "videoIds": [],
+    "learningModuleIds": [
+      "mod.eaf-orientation"
+    ],
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": [
+      "src.industry-general",
+      "src.mo-eaf-04"
+    ]
+  }
+]

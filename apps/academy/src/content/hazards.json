@@ -1,1 +1,683 @@
-[]
+[
+  {
+    "id": "haz.molten-metal",
+    "name": "Metal y escoria líquidos",
+    "category": "molten-metal",
+    "severity": "critical",
+    "description": "El acero y la escoria líquidos están a temperaturas muy altas. Pueden salpicar, derramarse o proyectarse durante la fusión, el afino, el desescoriado y el vaciado.",
+    "consequence": "Quemaduras graves o mortales, incendio de ropa, daño a equipos y estructuras; un derrame grande puede afectar a varias personas a la vez.",
+    "controls": [
+      {
+        "type": "elimination",
+        "text": "Diseñar la tarea para que nadie tenga que estar cerca del horno abierto o del chorro de vaciado cuando no es indispensable."
+      },
+      {
+        "type": "engineering",
+        "text": "Barreras físicas, mamparas y refugios; operación remota desde el púlpito; contención de derrames en fosas secas."
+      },
+      {
+        "type": "administrative",
+        "text": "Zonas de exclusión marcadas y controladas; solo personal esencial y autorizado; comunicación por radio antes de mover metal líquido."
+      },
+      {
+        "type": "ppe",
+        "text": "Ropa aluminizada o ignífuga seca, careta, guantes y polainas para metal líquido según el puesto."
+      }
+    ],
+    "ppe": [
+      "Ropa ignífuga o aluminizada (según zona)",
+      "Careta facial con protección térmica",
+      "Casco con barbiquejo",
+      "Guantes para alta temperatura",
+      "Polainas y calzado para metal fundido",
+      "Lentes de seguridad"
+    ],
+    "exclusionZone": "SME_REQUIRED: radio y límites de las zonas roja y amarilla alrededor del horno, la puerta de escoria y el vaciado; las cifras de MS-ACE-01 están como [Supuesto] y requieren el estudio de la nave. Aprueba C-16 con el Gerente de Acería.",
+    "interlock": "SME_REQUIRED: lista y lógica de los enclavamientos que impiden bascular o vaciar con personal en zona; la da Ingeniería de Control/OEM y la valida C-16.",
+    "permit": "SME_REQUIRED: qué tareas cerca del metal líquido requieren permiso de trabajo y quién lo firma; lo define el procedimiento aprobado de la Acería (C-16).",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: condiciones específicas de paro (p. ej., ruta de escape bloqueada, EPP mojado o dañado, personal no esencial en zona); las define el procedimiento aprobado (MS-ACE-01 validado).",
+    "escalation": "SME_REQUIRED: cadena de aviso y respuesta ante derrame o salpicadura; la define el plan de emergencias aprobado (MS-ACE-09, responsable C-04).",
+    "equipmentIds": [
+      "eq.shell",
+      "eq.slag-door",
+      "eq.ebt",
+      "eq.refractory",
+      "eq.oxygen-carbon"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine",
+      "stage.tap",
+      "stage.secondary"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-01",
+      "src.ms-ace-08",
+      "src.ms-ace-09"
+    ]
+  },
+  {
+    "id": "haz.water-molten-metal",
+    "name": "Agua o humedad en contacto con metal líquido (incluye DRI húmedo y reoxidación)",
+    "category": "water-molten-metal",
+    "severity": "critical",
+    "description": "El agua atrapada bajo el metal se convierte en vapor de forma explosiva. El DRI (hierro de reducción directa) es poroso y reacciona con el agua: genera hidrógeno y calor, y puede autocalentarse por reoxidación en silos y bandas. Fuentes típicas: fugas de paneles o bóveda, herramientas, ollas o adiciones húmedas, y DRI mojado.",
+    "consequence": "Explosión de vapor que proyecta metal líquido a gran distancia; explosión de hidrógeno en silos, chutes o bandas cerradas; ebullición violenta del baño; muertes múltiples.",
+    "controls": [
+      {
+        "type": "elimination",
+        "text": "Evitar que el agua llegue al DRI o al metal: bandas y silos cerrados, nunca lavar con agua ni apagar DRI con agua."
+      },
+      {
+        "type": "engineering",
+        "text": "Detección de fugas en el sistema de enfriamiento con corte automático; inertización y monitoreo de temperatura y gases en silos de DRI."
+      },
+      {
+        "type": "administrative",
+        "text": "Rechazo de lotes de DRI fuera de especificación; herramientas, ollas y adiciones secas y precalentadas; ante sospecha de agua en el horno, no bascular y alejarse."
+      },
+      {
+        "type": "ppe",
+        "text": "EPP para metal líquido seco; el EPP no protege contra una explosión, por eso las barreras anteriores son las que salvan vidas."
+      }
+    ],
+    "ppe": [
+      "Ropa ignífuga o aluminizada seca",
+      "Careta facial",
+      "Casco",
+      "Detector personal de gases con sensor de H₂ y CO en silos y bandas (según evaluación)"
+    ],
+    "exclusionZone": "SME_REQUIRED: distancia de evacuación ante agua en el horno y zona alrededor de silos y bandas de DRI; las cifras del borrador MS-ACE-03 son [Supuesto]. Aprueba C-16 con C-07.",
+    "interlock": "SME_REQUIRED: umbrales y lógica de detección de fuga de agua y del corte de arco y alimentación; inertización de silos. Los da Ingeniería de Control/OEM; valida C-07 y C-16.",
+    "permit": "SME_REQUIRED: permiso para reparar fugas, entrar a silos o manejar DRI fuera de especificación; lo define el procedimiento aprobado (MS-ACE-03 y MS-ACE-05).",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: criterios de humedad, temperatura y gases del DRI para rechazar un lote o detener la alimentación, y criterio de reanudación tras una fuga; los da C-07 con C-16.",
+    "escalation": "SME_REQUIRED: respuesta ante agua en el horno o evento de DRI en silo o banda; la define el plan de emergencias aprobado (MS-ACE-09, ramas A e I; responsable C-04).",
+    "equipmentIds": [
+      "eq.cooling",
+      "eq.roof",
+      "eq.shell",
+      "eq.dri-feed",
+      "eq.ebt",
+      "eq.refractory"
+    ],
+    "stageIds": [
+      "stage.raw",
+      "stage.charge",
+      "stage.melt",
+      "stage.refine",
+      "stage.tap"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-03",
+      "src.ms-ace-05",
+      "src.ms-ace-06",
+      "src.ms-ace-09",
+      "src.cv-gasm-001",
+      "src.ft-ace-001"
+    ]
+  },
+  {
+    "id": "haz.electrical",
+    "name": "Energía eléctrica: arco, circuito secundario y alta tensión",
+    "category": "electrical",
+    "severity": "critical",
+    "description": "El horno usa energía eléctrica de muy alta potencia: alimentación de alta tensión al transformador y corriente muy alta en las barras, cables flexibles y electrodos. El arco produce radiación intensa, ruido y campos magnéticos.",
+    "consequence": "Electrocución, arco eléctrico (quemaduras graves, explosión), lesiones oculares por radiación del arco; daño a marcapasos u objetos metálicos por campos magnéticos.",
+    "controls": [
+      {
+        "type": "elimination",
+        "text": "Desenergizar y aislar antes de cualquier intervención en electrodos, brazos, circuito secundario o transformador."
+      },
+      {
+        "type": "engineering",
+        "text": "Guardas, distancias y barreras al equipo energizado; enclavamientos entre el interruptor del horno y el acceso a zonas peligrosas."
+      },
+      {
+        "type": "administrative",
+        "text": "Bloqueo y etiquetado (LOTO) con verificación de energía cero; solo personal calificado y autorizado en trabajos eléctricos."
+      },
+      {
+        "type": "ppe",
+        "text": "EPP dieléctrico y para arco eléctrico según el análisis de riesgo; protección ocular contra radiación del arco."
+      }
+    ],
+    "ppe": [
+      "EPP para arco eléctrico según análisis de riesgo",
+      "Guantes dieléctricos (personal calificado)",
+      "Careta o lentes con filtro para radiación del arco",
+      "Calzado dieléctrico",
+      "Casco dieléctrico"
+    ],
+    "exclusionZone": "SME_REQUIRED: distancias de aproximación y zonas restringidas alrededor del transformador, barras y electrodos energizados; las da el estudio eléctrico y de arco de la planta, aprueba C-16 con Mantenimiento Eléctrico.",
+    "interlock": "SME_REQUIRED: lista y lógica de enclavamientos entre el interruptor del horno, el acceso a la bóveda y el movimiento de brazos; la da OEM/Ingeniería de Control. Nunca se describe ni se enseña un bypass.",
+    "permit": "SME_REQUIRED: permiso de trabajo eléctrico y pasos de LOTO específicos del EAF; los define el procedimiento aprobado (MS-ACE-02) y el programa NOM-029.",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: condiciones específicas que obligan a cortar el arco o detener la tarea; las define el procedimiento aprobado.",
+    "escalation": "SME_REQUIRED: a quién se avisa y cómo ante contacto eléctrico o arco no controlado; lo define el plan de emergencias aprobado (MS-ACE-09).",
+    "equipmentIds": [
+      "eq.electrodes",
+      "eq.electrode-arms",
+      "eq.transformer",
+      "eq.secondary-circuit",
+      "eq.control-room"
+    ],
+    "stageIds": [
+      "stage.melt",
+      "stage.refine"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-02",
+      "src.ms-ace-09",
+      "src.ft-ace-001"
+    ]
+  },
+  {
+    "id": "haz.stored-energy",
+    "name": "Energía almacenada: hidráulica, gravedad y resortes",
+    "category": "stored-energy",
+    "severity": "critical",
+    "description": "Aunque el horno esté apagado, puede quedar energía: presión en el sistema hidráulico y acumuladores, piezas elevadas que pueden caer (brazos, mástiles, bóveda, electrodos) y resortes en mordazas o frenos.",
+    "consequence": "Aplastamiento, amputación, golpe o inyección de fluido hidráulico a presión; movimiento inesperado de brazos, bóveda o mordaza.",
+    "controls": [
+      {
+        "type": "elimination",
+        "text": "Liberar o bloquear toda energía residual antes de intervenir: despresurizar, bajar a posición segura o asegurar mecánicamente."
+      },
+      {
+        "type": "engineering",
+        "text": "Válvulas de bloqueo y purga, soportes mecánicos, pasadores y calzas diseñados para la pieza."
+      },
+      {
+        "type": "administrative",
+        "text": "LOTO que incluya energía hidráulica, gravedad y resortes, con prueba de energía cero; nunca confiar solo en el paro desde el púlpito."
+      },
+      {
+        "type": "ppe",
+        "text": "Guantes, lentes y careta contra proyección de fluido; el EPP no sustituye el aislamiento."
+      }
+    ],
+    "ppe": [
+      "Lentes de seguridad y careta",
+      "Guantes de trabajo",
+      "Casco",
+      "Calzado de seguridad"
+    ],
+    "exclusionZone": "SME_REQUIRED: zona de no ingreso bajo brazos, mástiles y bóveda y alrededor de líneas hidráulicas presurizadas; la define el procedimiento aprobado (C-16 con Mantenimiento).",
+    "interlock": "SME_REQUIRED: enclavamientos del sistema hidráulico y de movimiento de brazos y bóveda; los da OEM/Ingeniería de Control.",
+    "permit": "SME_REQUIRED: pasos de LOTO para hidráulica, gravedad y resortes del EAF y cómo verificar energía cero; los define MS-ACE-02 validado.",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: condiciones específicas (p. ej., presión residual detectada, pieza sin soporte); las define el procedimiento aprobado.",
+    "escalation": "SME_REQUIRED: cadena de aviso ante movimiento inesperado o fuga a presión; la define el plan de emergencias aprobado (MS-ACE-09).",
+    "equipmentIds": [
+      "eq.hydraulics",
+      "eq.electrode-arms",
+      "eq.roof",
+      "eq.electrodes",
+      "eq.slag-door",
+      "eq.ebt"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.tap"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-02",
+      "src.ft-ace-001"
+    ]
+  },
+  {
+    "id": "haz.oxygen",
+    "name": "Oxígeno: enriquecimiento y fuego",
+    "category": "oxygen",
+    "severity": "critical",
+    "description": "Las lanzas y quemadores usan oxígeno. Una atmósfera con exceso de oxígeno hace que la ropa, la grasa y muchos materiales ardan con violencia. Una fuga o un retroceso de llama en lanzas es muy peligroso.",
+    "consequence": "Incendio de ropa y quemaduras graves, explosión o incendio en líneas y válvulas, proyección de metal por reacción violenta.",
+    "controls": [
+      {
+        "type": "elimination",
+        "text": "Aislar el suministro de oxígeno antes de intervenir lanzas, quemadores o tuberías."
+      },
+      {
+        "type": "engineering",
+        "text": "Válvulas de corte, arrestadores de flama y materiales compatibles con oxígeno; ventilación de áreas de válvulas."
+      },
+      {
+        "type": "administrative",
+        "text": "Prohibido usar oxígeno para ventilar o limpiar ropa; limpieza libre de grasa en componentes de oxígeno; monitoreo de O₂ en áreas cerradas."
+      },
+      {
+        "type": "ppe",
+        "text": "Ropa ignífuga limpia y sin grasa; detector personal de O₂ donde aplique."
+      }
+    ],
+    "ppe": [
+      "Ropa ignífuga limpia, sin grasa ni aceite",
+      "Careta facial",
+      "Guantes limpios",
+      "Detector de O₂ en áreas cerradas (según evaluación)"
+    ],
+    "exclusionZone": "SME_REQUIRED: zona alrededor de lanzas, estación de válvulas y líneas de oxígeno; la define el procedimiento aprobado (C-16 con C-07).",
+    "interlock": "SME_REQUIRED: enclavamientos de lanzas y quemadores (posición, flama, presión); los da OEM/Ingeniería de Control.",
+    "permit": "SME_REQUIRED: permiso y aislamiento para trabajos en sistemas de oxígeno; lo define el procedimiento aprobado (MS-ACE-06 y MS-ACE-02).",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: condiciones específicas por lectura de O₂ o falla de lanza; los valores del borrador MS-ACE-06 requieren validación con la NOM vigente (C-16).",
+    "escalation": "SME_REQUIRED: respuesta ante fuga o incendio de oxígeno; la define el plan de emergencias aprobado (MS-ACE-09).",
+    "equipmentIds": [
+      "eq.oxygen-carbon",
+      "eq.slag-door",
+      "eq.control-room"
+    ],
+    "stageIds": [
+      "stage.melt",
+      "stage.refine"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-06",
+      "src.ms-ace-02",
+      "src.ft-ace-001"
+    ]
+  },
+  {
+    "id": "haz.gas-co",
+    "name": "Gases: monóxido de carbono (CO), gases del horno, hidrógeno y gas natural",
+    "category": "gas",
+    "severity": "critical",
+    "description": "El horno genera CO, un gas tóxico que no se ve ni se huele. Los quemadores usan gas natural (inflamable). En silos y chutes de DRI puede acumularse CO e hidrógeno, y el nitrógeno de inertización desplaza el oxígeno.",
+    "consequence": "Intoxicación y muerte por CO, asfixia por falta de oxígeno, incendio o explosión de gas natural o hidrógeno.",
+    "controls": [
+      {
+        "type": "elimination",
+        "text": "Aislar y purgar líneas de gas antes de intervenir; no entrar a zonas con atmósfera peligrosa."
+      },
+      {
+        "type": "engineering",
+        "text": "Extracción de humos, ventilación, detectores fijos de gases con alarma y corte automático de gas."
+      },
+      {
+        "type": "administrative",
+        "text": "Detector personal obligatorio en zonas de riesgo y obedecer sus alarmas; medición antes de entrar; trabajo en pareja."
+      },
+      {
+        "type": "ppe",
+        "text": "Detector personal multigas; equipo de respiración autónomo solo para personal entrenado y autorizado."
+      }
+    ],
+    "ppe": [
+      "Detector personal multigas (CO, O₂, LEL, H₂ donde aplique)",
+      "Equipo de respiración autónomo (solo personal entrenado)",
+      "Ropa ignífuga"
+    ],
+    "exclusionZone": "SME_REQUIRED: zonas con riesgo de acumulación de gases (cercanía del 4.º agujero, silos, chutes, estaciones de gas); las define el estudio de la planta (C-16).",
+    "interlock": "SME_REQUIRED: lógica de los detectores fijos, alarmas y cortes automáticos de gas natural y de inertización; la da OEM/Ingeniería de Control.",
+    "permit": "SME_REQUIRED: permiso para trabajos en líneas de gas o en áreas con riesgo de atmósfera peligrosa; lo define el procedimiento aprobado (MS-ACE-06).",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: umbrales de alarma y evacuación por CO, O₂ y LEL; las cifras del borrador MS-ACE-06 requieren verificación con la NOM vigente (C-16 / SSO).",
+    "escalation": "SME_REQUIRED: respuesta ante alarma de gas o persona intoxicada; la define el plan de emergencias aprobado (MS-ACE-09). Nunca se rescata sin equipo de respiración.",
+    "equipmentIds": [
+      "eq.fume",
+      "eq.oxygen-carbon",
+      "eq.dri-feed",
+      "eq.shell",
+      "eq.control-room"
+    ],
+    "stageIds": [
+      "stage.raw",
+      "stage.melt",
+      "stage.refine",
+      "stage.tap"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-06",
+      "src.ms-ace-05",
+      "src.ms-ace-09",
+      "src.cv-gasm-001"
+    ]
+  },
+  {
+    "id": "haz.thermal",
+    "name": "Calor radiante, superficies calientes y estrés térmico",
+    "category": "thermal",
+    "severity": "high",
+    "description": "Alrededor del horno hay calor radiante intenso y superficies muy calientes (coraza, bóveda, ductos, ollas). Trabajar mucho tiempo en calor causa estrés térmico.",
+    "consequence": "Quemaduras por contacto o radiación; agotamiento y golpe de calor, que puede ser mortal; errores por fatiga.",
+    "controls": [
+      {
+        "type": "engineering",
+        "text": "Mamparas y pantallas térmicas, cabinas climatizadas, ventilación y enfriamiento de puestos."
+      },
+      {
+        "type": "administrative",
+        "text": "Régimen de trabajo y descanso según evaluación de calor; hidratación programada; aclimatación del personal de nuevo ingreso."
+      },
+      {
+        "type": "administrative",
+        "text": "Señalización de superficies calientes; vigilancia médica del personal expuesto."
+      },
+      {
+        "type": "ppe",
+        "text": "Ropa ignífuga, careta térmica y guantes para alta temperatura."
+      }
+    ],
+    "ppe": [
+      "Ropa ignífuga o aluminizada según zona",
+      "Careta con protección térmica",
+      "Guantes para alta temperatura",
+      "Agua para hidratación"
+    ],
+    "exclusionZone": "SME_REQUIRED: zonas de calor radiante donde se limita la permanencia; las define la evaluación térmica de la planta (C-16).",
+    "interlock": "SME_REQUIRED: No aplica un enclavamiento general; SME confirma si existe alguno para cabinas o pantallas (C-16).",
+    "permit": "SME_REQUIRED: si alguna tarea en calor extremo requiere permiso; lo define el procedimiento aprobado (MS-ACE-08).",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: régimen de trabajo-descanso y señales de alerta específicas; los da la evaluación conforme a la NOM vigente (C-16 / Servicio Médico).",
+    "escalation": "SME_REQUIRED: atención de una persona con golpe de calor; la define el plan de emergencias y Servicio Médico (MS-ACE-09).",
+    "equipmentIds": [
+      "eq.shell",
+      "eq.roof",
+      "eq.refractory",
+      "eq.fume",
+      "eq.ebt",
+      "eq.slag-door"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.melt",
+      "stage.refine",
+      "stage.tap",
+      "stage.secondary"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-08",
+      "src.ms-ace-09"
+    ]
+  },
+  {
+    "id": "haz.suspended-load",
+    "name": "Cargas suspendidas e izaje",
+    "category": "suspended-load",
+    "severity": "critical",
+    "description": "Las grúas mueven ollas llenas, la bóveda, electrodos y la canasta ocasional de retornos. Una carga puede caer, balancearse o golpear.",
+    "consequence": "Aplastamiento mortal; derrame de metal líquido si cae o se golpea una olla llena.",
+    "controls": [
+      {
+        "type": "elimination",
+        "text": "Nunca colocarse bajo una carga suspendida ni en la ruta de una olla llena."
+      },
+      {
+        "type": "engineering",
+        "text": "Grúas con frenos, límites de carrera y dispositivos de seguridad mantenidos e inspeccionados; rutas definidas."
+      },
+      {
+        "type": "administrative",
+        "text": "Plan de izaje, señalero calificado, comunicación por radio, inspección de accesorios de izaje."
+      },
+      {
+        "type": "ppe",
+        "text": "Casco con barbiquejo, calzado de seguridad y chaleco de alta visibilidad."
+      }
+    ],
+    "ppe": [
+      "Casco con barbiquejo",
+      "Calzado de seguridad",
+      "Chaleco de alta visibilidad",
+      "Guantes de trabajo"
+    ],
+    "exclusionZone": "SME_REQUIRED: ancho de la ruta de olla y zonas bajo la grúa; las cifras del borrador MS-ACE-04 son [Supuesto]. Aprueba C-16.",
+    "interlock": "SME_REQUIRED: dispositivos y enclavamientos de la grúa (límites, frenos, sobrecarga); los da OEM de la grúa y Mantenimiento.",
+    "permit": "SME_REQUIRED: permiso o plan de izaje crítico y quién lo autoriza; lo define el procedimiento aprobado (MS-ACE-04, NOM-006).",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: condiciones específicas (p. ej., personal en ruta, accesorio dañado, señal no clara); las define el procedimiento aprobado.",
+    "escalation": "SME_REQUIRED: respuesta ante caída de carga o derrame de olla; la define el plan de emergencias aprobado (MS-ACE-09).",
+    "equipmentIds": [
+      "eq.roof",
+      "eq.electrodes",
+      "eq.ebt",
+      "eq.shell"
+    ],
+    "stageIds": [
+      "stage.charge",
+      "stage.tap",
+      "stage.secondary",
+      "stage.melt"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-04",
+      "src.ms-ace-09"
+    ]
+  },
+  {
+    "id": "haz.height",
+    "name": "Trabajo en altura",
+    "category": "height",
+    "severity": "critical",
+    "description": "Hay tareas en la bóveda, plataformas de electrodos, galerías de bandas, techos de silos y grúas donde una persona puede caer a otro nivel.",
+    "consequence": "Caída a distinto nivel con lesiones graves o la muerte; caída sobre equipo caliente.",
+    "controls": [
+      {
+        "type": "elimination",
+        "text": "Hacer la tarea desde el piso o desde una plataforma fija con barandal cuando sea posible."
+      },
+      {
+        "type": "engineering",
+        "text": "Barandales, plataformas, líneas de vida y puntos de anclaje certificados; protección contra calor cerca del horno."
+      },
+      {
+        "type": "administrative",
+        "text": "Permiso de trabajo en altura, personal certificado y plan de rescate antes de empezar."
+      },
+      {
+        "type": "ppe",
+        "text": "Arnés de cuerpo completo con línea de vida adecuada (resistente al calor cerca del horno)."
+      }
+    ],
+    "ppe": [
+      "Arnés de cuerpo completo",
+      "Línea de vida y absorbedor de energía adecuados",
+      "Casco con barbiquejo",
+      "Calzado antiderrapante"
+    ],
+    "exclusionZone": "SME_REQUIRED: zona bajo el trabajo en altura (caída de objetos); la define el procedimiento aprobado (C-16).",
+    "interlock": "SME_REQUIRED: LOTO y enclavamientos del equipo cercano (electrodos, brazos, grúa) antes de subir; los define MS-ACE-02/MS-ACE-10 validados.",
+    "permit": "SME_REQUIRED: permiso de trabajo en altura y plan de rescate; lo define el procedimiento aprobado (MS-ACE-10, NOM-009).",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: condiciones específicas (p. ej., anclaje no verificado, horno energizado, sin plan de rescate); las define el procedimiento aprobado.",
+    "escalation": "SME_REQUIRED: rescate de persona suspendida; lo define el plan de emergencias aprobado (MS-ACE-09/MS-ACE-10).",
+    "equipmentIds": [
+      "eq.roof",
+      "eq.electrodes",
+      "eq.electrode-arms",
+      "eq.dri-feed",
+      "eq.fume"
+    ],
+    "stageIds": [
+      "stage.raw",
+      "stage.melt",
+      "stage.refine"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-10",
+      "src.ms-ace-09"
+    ]
+  },
+  {
+    "id": "haz.line-of-fire",
+    "name": "Línea de fuego: atrapamiento, golpe y proyección",
+    "category": "line-of-fire",
+    "severity": "high",
+    "description": "Estar en la trayectoria de algo que se mueve o puede salir proyectado: brazos y bóveda en movimiento, puerta de escoria, bandas transportadoras de DRI, mangueras a presión o material que cae.",
+    "consequence": "Golpes, atrapamiento, amputación, aplastamiento; arrastre por banda en movimiento.",
+    "controls": [
+      {
+        "type": "elimination",
+        "text": "Detener y aislar el equipo antes de acercarse; nunca tocar, limpiar ni cruzar una banda en movimiento."
+      },
+      {
+        "type": "engineering",
+        "text": "Guardas fijas, barreras, cables de paro de emergencia y señales de arranque."
+      },
+      {
+        "type": "administrative",
+        "text": "Identificar la línea de fuego antes de cada tarea; posicionarse fuera de ella; el cable de paro no es un bloqueo."
+      },
+      {
+        "type": "ppe",
+        "text": "Ropa ajustada, guantes adecuados y casco; el EPP no evita un atrapamiento."
+      }
+    ],
+    "ppe": [
+      "Ropa ajustada sin partes sueltas",
+      "Casco",
+      "Guantes de trabajo",
+      "Lentes de seguridad",
+      "Calzado de seguridad"
+    ],
+    "exclusionZone": "SME_REQUIRED: zonas de movimiento de brazos, bóveda, puerta de escoria y bandas; las define el procedimiento aprobado (C-16).",
+    "interlock": "SME_REQUIRED: guardas con enclavamiento, cables de paro y alarmas de arranque; los da OEM/Ingeniería de Control.",
+    "permit": "SME_REQUIRED: cuándo se requiere LOTO o permiso para intervenir equipo en movimiento; lo define MS-ACE-02 validado.",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: condiciones específicas (p. ej., guarda retirada, equipo sin aislar); las define el procedimiento aprobado.",
+    "escalation": "SME_REQUIRED: respuesta ante atrapamiento; la define el plan de emergencias aprobado (MS-ACE-09, escenario J).",
+    "equipmentIds": [
+      "eq.electrode-arms",
+      "eq.roof",
+      "eq.slag-door",
+      "eq.dri-feed",
+      "eq.hydraulics",
+      "eq.ebt"
+    ],
+    "stageIds": [
+      "stage.raw",
+      "stage.charge",
+      "stage.melt",
+      "stage.tap"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-02",
+      "src.ms-ace-09"
+    ]
+  },
+  {
+    "id": "haz.noise-dust",
+    "name": "Ruido y polvo (incluye polvo y finos de DRI)",
+    "category": "noise-dust",
+    "severity": "medium",
+    "description": "El arco eléctrico y los equipos generan ruido alto. La fusión, el manejo de DRI y la escoria generan humos y polvo.",
+    "consequence": "Pérdida auditiva permanente; enfermedades respiratorias; irritación de ojos; el polvo de DRI fino también puede reaccionar o arder.",
+    "controls": [
+      {
+        "type": "engineering",
+        "text": "Extracción de humos y polvo, cabinas aisladas del ruido, encierros de bandas y puntos de transferencia."
+      },
+      {
+        "type": "administrative",
+        "text": "Mapeo de ruido y polvo, señalización de zonas de uso obligatorio de EPP, vigilancia médica (audiometría y espirometría)."
+      },
+      {
+        "type": "administrative",
+        "text": "Orden y limpieza sin agua en zonas de DRI (métodos secos aprobados)."
+      },
+      {
+        "type": "ppe",
+        "text": "Protección auditiva y respiratoria seleccionada según la evaluación."
+      }
+    ],
+    "ppe": [
+      "Protección auditiva (tapones u orejeras)",
+      "Respirador según evaluación",
+      "Lentes de seguridad"
+    ],
+    "exclusionZone": "SME_REQUIRED: zonas de uso obligatorio de protección auditiva y respiratoria; las define el estudio de ruido y polvo de la planta (C-16).",
+    "interlock": "SME_REQUIRED: No aplica un enclavamiento general; SME confirma enclavamientos del sistema de extracción (OEM).",
+    "permit": "SME_REQUIRED: No aplica un permiso general; SME confirma si alguna tarea con polvo de DRI lo requiere (C-16).",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: valores límite y niveles de acción; los da la evaluación conforme a las NOM vigentes (C-16 / Higiene Industrial).",
+    "escalation": "SME_REQUIRED: reporte de síntomas o falla de la extracción; lo define el procedimiento aprobado (C-16 / Servicio Médico).",
+    "equipmentIds": [
+      "eq.fume",
+      "eq.electrodes",
+      "eq.dri-feed",
+      "eq.slag-door",
+      "eq.control-room"
+    ],
+    "stageIds": [
+      "stage.raw",
+      "stage.melt",
+      "stage.refine",
+      "stage.tap"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-08",
+      "src.ms-ace-06"
+    ]
+  },
+  {
+    "id": "haz.confined-space",
+    "name": "Espacios confinados (fosas, ductos, silos de DRI)",
+    "category": "confined-space",
+    "severity": "critical",
+    "description": "Lugares con entrada y salida limitadas donde puede faltar oxígeno o acumularse gases: fosas, ductos de humos, ollas, silos y torres de DRI.",
+    "consequence": "Asfixia, intoxicación, sepultamiento en material, incendio o explosión; muerte de rescatistas no protegidos.",
+    "controls": [
+      {
+        "type": "elimination",
+        "text": "Hacer la tarea desde afuera cuando sea posible; nadie se para sobre el DRI de un silo."
+      },
+      {
+        "type": "engineering",
+        "text": "Aislamiento positivo de gases y materiales, ventilación forzada, detectores de gases."
+      },
+      {
+        "type": "administrative",
+        "text": "Permiso de entrada, medición de atmósfera, vigía que nunca entra y plan de rescate listo antes de entrar."
+      },
+      {
+        "type": "ppe",
+        "text": "Detector multigas, arnés de rescate y equipo de respiración según la evaluación."
+      }
+    ],
+    "ppe": [
+      "Detector personal multigas",
+      "Arnés con punto de rescate",
+      "Equipo de respiración según evaluación",
+      "Casco",
+      "Ropa ignífuga"
+    ],
+    "exclusionZone": "SME_REQUIRED: perímetro de control en el acceso al espacio confinado; lo define el procedimiento aprobado (C-16).",
+    "interlock": "SME_REQUIRED: aislamientos positivos y bloqueos de materiales, gases y energía antes de entrar; los define MS-ACE-02/MS-ACE-05 validados.",
+    "permit": "SME_REQUIRED: permiso de entrada a espacio confinado y quién lo firma; lo define el procedimiento aprobado (MS-ACE-05, NOM-033).",
+    "stopCondition": "Cualquier persona puede y debe detener la tarea si un control crítico falta, falla o no está claro, o si cambian las condiciones; detenerse nunca se sanciona. SME_REQUIRED: criterios de atmósfera aceptable y condiciones de evacuación; las cifras del borrador MS-ACE-05 requieren verificación con la NOM vigente (C-16).",
+    "escalation": "SME_REQUIRED: rescate en espacio confinado; lo define el plan de emergencias aprobado (MS-ACE-09). Nunca se entra a rescatar sin equipo y sin entrenamiento.",
+    "equipmentIds": [
+      "eq.fume",
+      "eq.dri-feed",
+      "eq.ebt",
+      "eq.shell"
+    ],
+    "stageIds": [
+      "stage.raw",
+      "stage.tap",
+      "stage.secondary"
+    ],
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ms-ace-05",
+      "src.ms-ace-06",
+      "src.ms-ace-09"
+    ]
+  }
+]

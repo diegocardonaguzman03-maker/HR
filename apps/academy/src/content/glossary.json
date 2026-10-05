@@ -1,1 +1,177 @@
-[]
+[
+  {
+    "term": "Horno de arco eléctrico (EAF)",
+    "definition": "Horno que funde la carga metálica con el calor de arcos eléctricos formados entre electrodos de grafito y la carga.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "DRI",
+    "definition": "Hierro de reducción directa: pelet de mineral de hierro al que se le quitó el oxígeno sin fundirlo. En GASM es la principal carga del EAF (≈ 95–100 %).",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "HYL",
+    "definition": "Tecnología de reducción directa (de origen mexicano) que produce DRI con gas reductor. GASM tiene una planta de este tipo.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Midrex",
+    "definition": "Tecnología de reducción directa en horno de cuba que produce DRI con gas natural reformado. GASM tiene una planta de este tipo.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Pelet",
+    "definition": "Pequeña esfera de mineral de hierro concentrado. Es la materia prima de las plantas de reducción directa.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Retornos internos",
+    "definition": "Material metálico que se genera dentro de la propia planta (despuntes, rechazos) y se recircula al horno. En GASM son ≤ 5 % de la carga; no se compra chatarra.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Canasta",
+    "definition": "Recipiente con el que una grúa vacía material por la parte superior del horno. En GASM se usa solo de forma ocasional para retornos.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "5.º agujero",
+    "definition": "Abertura de la bóveda por la que entra el DRI de forma continua desde los silos y las bandas.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "4.º agujero",
+    "definition": "Abertura de la bóveda por la que se extraen los humos y gases del horno hacia el sistema de limpieza.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Pie líquido",
+    "definition": "Parte del acero líquido que se deja dentro del horno después del vaciado para ayudar a fundir la siguiente carga.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Escoria",
+    "definition": "Capa de óxidos y otros compuestos que flota sobre el acero líquido y atrapa impurezas.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Escoria espumosa",
+    "definition": "Escoria que se infla con burbujas de gas (por inyección de carbono y oxígeno). Cubre el arco, protege las paredes y mejora el aprovechamiento de la energía.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Coraza",
+    "definition": "Cuerpo de acero del horno que contiene la carga; su parte inferior se llama solera.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Solera",
+    "definition": "Fondo del horno, recubierto de refractario, donde se acumula el acero líquido.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Bóveda",
+    "definition": "Tapa del horno, normalmente con paneles enfriados por agua. Tiene agujeros para los electrodos, los humos y la alimentación de DRI.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Delta",
+    "definition": "Pieza central de la bóveda, de material refractario, por donde pasan los tres electrodos.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Refractario",
+    "definition": "Material que resiste altas temperaturas y protege la coraza y la solera del metal y la escoria.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Paneles enfriados por agua",
+    "definition": "Paneles por los que circula agua para proteger las paredes y la bóveda del calor. Una fuga de agua hacia el horno es un peligro grave.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Electrodo de grafito",
+    "definition": "Columna de grafito que conduce la corriente y forma el arco con la carga. Se consume con el uso y se le agregan nuevas secciones.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Junta (niple)",
+    "definition": "Unión roscada entre dos secciones de electrodo. Una junta floja puede provocar la rotura del electrodo.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Mordaza",
+    "definition": "Pieza del brazo portaelectrodo que sujeta el electrodo y le transmite la corriente.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Brazo portaelectrodo",
+    "definition": "Brazo que sostiene cada electrodo sobre el horno y lleva la corriente hasta la mordaza.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Mástil",
+    "definition": "Columna vertical que, con un cilindro hidráulico, sube y baja el brazo portaelectrodo.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Regulación de electrodos",
+    "definition": "Sistema automático que sube y baja cada electrodo para mantener estable el arco mientras se funde la carga.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Arco eléctrico",
+    "definition": "Descarga eléctrica entre la punta del electrodo y la carga que genera el calor principal para fundir.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Transformador de horno",
+    "definition": "Equipo que recibe energía en alta tensión y la entrega al horno con menor tensión y muy alta corriente.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Cambiador de taps",
+    "definition": "Mecanismo del transformador que cambia su relación para ajustar la tensión que llega al horno.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Circuito secundario",
+    "definition": "Conjunto de barras, cables flexibles y brazos que llevan la alta corriente del transformador a los electrodos.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Cables flexibles",
+    "definition": "Cables enfriados por agua que unen las barras fijas con los brazos y permiten que estos se muevan.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Lanza de oxígeno",
+    "definition": "Equipo que inyecta oxígeno al baño para ayudar a fundir y afinar el acero.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Inyección de carbono",
+    "definition": "Inyección de carbón fino al baño o a la escoria para formar escoria espumosa.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "EBT",
+    "definition": "Vaciado excéntrico por el fondo (Eccentric Bottom Tapping): orificio en la solera por donde sale el acero a la olla con poca escoria.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Púlpito",
+    "definition": "Cuarto de control desde donde se vigila y conduce la operación del horno.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "LOTO",
+    "definition": "Bloqueo y etiquetado (Lockout/Tagout): método para aislar y bloquear las fuentes de energía antes de intervenir un equipo. Los pasos los define el procedimiento aprobado de la planta.",
+    "status": "GENERAL_EDUCATIONAL"
+  },
+  {
+    "term": "Energía almacenada",
+    "definition": "Energía que queda en un equipo aun apagado (presión hidráulica, gravedad, resortes) y que puede causar movimientos inesperados.",
+    "status": "GENERAL_EDUCATIONAL"
+  }
+]

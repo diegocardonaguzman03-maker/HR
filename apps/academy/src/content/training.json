@@ -1,1 +1,301 @@
-[]
+[
+  {
+    "id": "mod.eaf-orientation",
+    "title": "Orientación al horno de arco eléctrico: etapas y equipos",
+    "summary": "Recorrido de bienvenida por el EAF: para qué sirve, cómo llega el DRI, cuáles son las etapas y dónde está cada equipo principal.",
+    "levels": [1, 2],
+    "durationMin": 20,
+    "objectives": [
+      "Explicar con tus palabras qué hace el horno de arco eléctrico",
+      "Describir de dónde viene la carga metálica en GASM (DRI propio y retornos)",
+      "Ordenar las etapas generales del proceso",
+      "Ubicar en el modelo 3D los equipos principales y el púlpito"
+    ],
+    "lessons": [
+      {
+        "id": "les.eaf-orientation-1",
+        "title": "¿Qué es el horno de arco eléctrico?",
+        "focus": ["eaf__shell", "eaf__roof", "eaf__electrodes"],
+        "camera": { "position": [12, 9, 12], "target": [0, 2.5, 0] },
+        "body": [
+          "El horno de arco eléctrico (EAF) convierte una carga metálica sólida en acero líquido.",
+          "El calor viene de arcos eléctricos que se forman entre tres electrodos de grafito y la carga.",
+          "El horno tiene una coraza con fondo de refractario (solera), una bóveda que lo tapa y equipos alrededor que le dan energía, oxígeno y carbono."
+        ],
+        "keyPoints": [
+          "El arco eléctrico es la principal fuente de calor",
+          "Coraza, solera y bóveda forman el recipiente",
+          "Esta plataforma es educativa: no sustituye los procedimientos aprobados"
+        ],
+        "checkIds": []
+      },
+      {
+        "id": "les.eaf-orientation-2",
+        "title": "La carga en GASM: DRI propio y retornos",
+        "stageId": "stage.raw",
+        "focus": ["eaf__drifeed", "eaf__drifeed_chute"],
+        "camera": { "position": [6, 9, -6], "target": [0, 5, 0] },
+        "body": [
+          "En GASM el horno se carga con alrededor de 95–100 % de DRI (hierro de reducción directa) hecho con pelet propio en las plantas HYL y Midrex.",
+          "El DRI llega por bandas a los silos de día y entra al horno de forma continua por el 5.º agujero de la bóveda.",
+          "Además se recirculan retornos internos (hasta 5 %), a veces con canasta. No se compra chatarra."
+        ],
+        "keyPoints": [
+          "Carga principal: DRI de HYL y Midrex",
+          "Entrada continua por el 5.º agujero",
+          "Retornos internos ≤ 5 %; sin chatarra comprada",
+          "El DRI húmedo es peligroso cerca de metal líquido"
+        ],
+        "checkIds": ["q.orientation-4", "q.orientation-2"]
+      },
+      {
+        "id": "les.eaf-orientation-3",
+        "title": "Las etapas del proceso",
+        "stageId": "stage.charge",
+        "focus": ["eaf__shell", "eaf__oxygen", "eaf__ebt"],
+        "camera": { "position": [10, 7, 10], "target": [0, 2, 0] },
+        "body": [
+          "El proceso general tiene seis etapas: materias primas, carga y pie líquido, fusión, afino con escoria espumosa, vaciado y metalurgia secundaria.",
+          "El pie líquido es acero que se deja en el horno para ayudar a fundir la siguiente carga.",
+          "En el afino se forma escoria espumosa, que cubre el arco y protege el horno. Al final, el acero sale por el EBT (vaciado por el fondo) hacia la olla."
+        ],
+        "keyPoints": [
+          "Materias primas → carga → fusión → afino → vaciado → secundaria",
+          "Los tiempos, temperaturas y adiciones los define la planta: SME_REQUIRED"
+        ],
+        "checkIds": ["q.orientation-1"]
+      },
+      {
+        "id": "les.eaf-orientation-4",
+        "title": "Equipos alrededor del horno",
+        "focus": ["eaf__transformer", "eaf__secondary", "eaf__fume", "eaf__hydraulics", "eaf__cooling", "eaf__slagdoor", "eaf__ebt"],
+        "camera": { "position": [-2, 10, 14], "target": [-2, 2, 0] },
+        "body": [
+          "Junto al horno está el transformador, que entrega la energía eléctrica, y el circuito secundario, que la lleva a los electrodos.",
+          "Por el 4.º agujero se extraen los humos. El sistema hidráulico mueve brazos, bóveda y otros mecanismos.",
+          "Los paneles enfriados por agua protegen paredes y bóveda. La puerta de escoria y el EBT permiten sacar escoria y acero."
+        ],
+        "keyPoints": [
+          "Transformador a un costado del horno",
+          "Humos por el 4.º agujero; DRI por el 5.º",
+          "Agua de enfriamiento: cualquier fuga se reporta de inmediato"
+        ],
+        "checkIds": ["q.orientation-3"]
+      },
+      {
+        "id": "les.eaf-orientation-5",
+        "title": "El púlpito de control",
+        "focus": ["eaf__control"],
+        "camera": { "position": [4, 5, 16], "target": [0, 2, 10] },
+        "body": [
+          "El púlpito es el cuarto desde donde el equipo de operación vigila y conduce el horno.",
+          "Ante cualquier condición anormal en piso, el púlpito y tu supervisor son a quienes avisas primero.",
+          "Los canales y protocolos de comunicación los define la planta: SME_REQUIRED."
+        ],
+        "keyPoints": [
+          "El púlpito coordina la operación",
+          "Si ves algo anormal: detente y avisa"
+        ],
+        "checkIds": []
+      }
+    ],
+    "workInstructionIds": [],
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": ["src.industry-general", "src.cv-gasm-001"]
+  },
+  {
+    "id": "mod.electrode-melting",
+    "title": "Sistema de electrodos y fusión",
+    "summary": "Cómo llega la energía eléctrica del transformador al arco, qué hace cada parte del sistema de electrodos y qué observar durante la fusión. Módulo MVP de demostración.",
+    "levels": [1, 2, 3],
+    "durationMin": 35,
+    "objectives": [
+      "Identificar en el 3D el transformador, el circuito secundario, los brazos y los electrodos",
+      "Ordenar la ruta de la energía desde el transformador hasta el arco",
+      "Explicar en términos generales para qué sirve la regulación de electrodos",
+      "Reconocer señales anormales en el sistema de electrodos y saber a quién avisar"
+    ],
+    "lessons": [
+      {
+        "id": "les.electrode-melting-1",
+        "title": "Del transformador al circuito secundario",
+        "stageId": "stage.melt",
+        "focus": ["eaf__transformer", "eaf__transformer_tank", "eaf__transformer_oltc", "eaf__secondary", "eaf__secondary_busbar", "eaf__secondary_cables"],
+        "camera": { "position": [-4, 5, 7], "target": [-9, 3, 0] },
+        "body": [
+          "El transformador del horno recibe energía en alta tensión y la entrega con menor tensión y muy alta corriente.",
+          "El cambiador de taps ajusta la tensión de salida según la etapa de la colada.",
+          "Las barras fijas y los cables flexibles (enfriados por agua) llevan la corriente hasta los brazos portaelectrodos."
+        ],
+        "keyPoints": [
+          "Transformador → barras → cables flexibles → brazos",
+          "El circuito secundario lleva corriente muy alta: zona restringida",
+          "Taps, tensiones y corrientes de operación: SME_REQUIRED"
+        ],
+        "checkIds": ["q.electrode-2"]
+      },
+      {
+        "id": "les.electrode-melting-2",
+        "title": "Brazos, mástiles y mordazas",
+        "stageId": "stage.melt",
+        "focus": ["eaf__arms", "eaf__arms_mast", "eaf__arms_cylinder", "eaf__arms_clamp", "eaf__arms_busstube"],
+        "camera": { "position": [-6, 8, 6], "target": [-2, 6, 0] },
+        "body": [
+          "Cada electrodo cuelga de un brazo portaelectrodo. El brazo lleva la corriente y la mordaza sujeta el electrodo.",
+          "El mástil, movido por un cilindro hidráulico, sube y baja el brazo.",
+          "Aunque el horno esté apagado, el sistema hidráulico y el peso de brazos y electrodos guardan energía."
+        ],
+        "keyPoints": [
+          "La mordaza sujeta y transmite corriente",
+          "El mástil se mueve con hidráulica",
+          "Energía almacenada: nunca te pongas debajo de un brazo o electrodo"
+        ],
+        "checkIds": ["q.electrode-5"]
+      },
+      {
+        "id": "les.electrode-melting-3",
+        "title": "Los electrodos de grafito y el arco",
+        "stageId": "stage.melt",
+        "focus": ["eaf__electrodes", "eaf__electrodes_column", "eaf__electrodes_joint", "eaf__electrodes_tip", "eaf__roof_delta"],
+        "camera": { "position": [4, 8.5, 4], "target": [0, 5, 0] },
+        "body": [
+          "Los tres electrodos de grafito pasan por el delta de la bóveda y forman el arco con la carga.",
+          "El grafito se consume con el uso; por eso se agregan nuevas secciones unidas con una junta roscada (niple).",
+          "Una grieta o junta floja puede provocar la rotura del electrodo. Si la ves, se reporta."
+        ],
+        "keyPoints": [
+          "El arco se forma en la punta del electrodo",
+          "Las juntas son un punto crítico de inspección",
+          "Criterios de aceptación y torque: SME_REQUIRED"
+        ],
+        "checkIds": ["q.electrode-1"]
+      },
+      {
+        "id": "les.electrode-melting-4",
+        "title": "La fusión y la regulación de electrodos",
+        "stageId": "stage.melt",
+        "focus": ["eaf__electrodes", "eaf__arms", "eaf__drifeed", "eaf__hydraulics"],
+        "camera": { "position": [7, 6, 7], "target": [0, 3, 0] },
+        "body": [
+          "Durante la fusión, el DRI entra de forma continua por el 5.º agujero y se funde sobre el pie líquido.",
+          "La regulación automática sube y baja cada electrodo para mantener el arco estable mientras la carga cambia.",
+          "Después, la escoria espumosa cubre el arco y ayuda a aprovechar mejor la energía."
+        ],
+        "keyPoints": [
+          "Energía: transformador → secundario → brazos → electrodos → arco",
+          "La regulación mantiene estable el arco",
+          "Ritmo de alimentación y setpoints: SME_REQUIRED"
+        ],
+        "checkIds": ["q.electrode-3", "q.electrode-4"]
+      },
+      {
+        "id": "les.electrode-melting-5",
+        "title": "Qué observar y cuándo avisar",
+        "stageId": "stage.melt",
+        "focus": ["eaf__electrodes_joint", "eaf__arms_clamp", "eaf__secondary_cables", "eaf__control"],
+        "camera": { "position": [3, 6, 14], "target": [0, 3, 3] },
+        "body": [
+          "Señales a reportar: grietas o juntas flojas en electrodos, fugas de agua en cables o paneles, ruidos o movimientos anormales de los brazos y fugas hidráulicas.",
+          "Tu papel como nuevo ingreso es observar, detenerte y avisar al supervisor o al púlpito. No intentes reparar.",
+          "La revisión del sistema de electrodos se practica con la instrucción DEMO wi.electrode-system-check. Esta plataforma no certifica competencia: la certifica un evaluador en piso con el procedimiento aprobado."
+        ],
+        "keyPoints": [
+          "Detente, reporta y espera indicaciones",
+          "La evaluación en línea no te habilita para operar",
+          "Competencia = OJT + evaluador en piso + procedimiento aprobado"
+        ],
+        "checkIds": ["q.safety-4", "q.electrode-6"]
+      }
+    ],
+    "workInstructionIds": ["wi.electrode-system-check"],
+    "assessmentId": "asm.eaf-electrode",
+    "status": "DEMO",
+    "sourceIds": ["src.industry-general", "src.demo", "src.cv-gasm-001"]
+  },
+  {
+    "id": "mod.eaf-energy-safety",
+    "title": "Seguridad en el EAF: energía eléctrica, energía almacenada y metal líquido",
+    "summary": "Los tres peligros críticos alrededor del horno explicados para nuevo ingreso: qué son, dónde están y qué conducta se espera. No sustituye la inducción de seguridad ni los procedimientos aprobados.",
+    "levels": [1, 2, 3],
+    "durationMin": 30,
+    "objectives": [
+      "Reconocer las zonas de alta corriente alrededor del horno",
+      "Explicar por qué un equipo apagado puede tener energía almacenada",
+      "Explicar por qué el agua y el DRI húmedo son peligrosos cerca de metal líquido",
+      "Aplicar la conducta de detenerse, alejarse y avisar"
+    ],
+    "lessons": [
+      {
+        "id": "les.eaf-energy-safety-1",
+        "title": "Energía eléctrica: arco, secundario y alta tensión",
+        "stageId": "stage.melt",
+        "focus": ["eaf__transformer", "eaf__secondary", "eaf__arms_busstube", "eaf__electrodes"],
+        "camera": { "position": [-3, 7, 8], "target": [-5, 4, 0] },
+        "body": [
+          "El transformador, el circuito secundario, los brazos y los electrodos llevan corriente muy alta.",
+          "El arco produce además luz intensa, radiación y ruido.",
+          "Solo personal autorizado entra a estas zonas, con permiso y equipo aislado y bloqueado."
+        ],
+        "keyPoints": [
+          "Zona de alta corriente: no se entra sin autorización",
+          "Distancias y permisos: SME_REQUIRED (procedimiento de seguridad aprobado)"
+        ],
+        "checkIds": ["q.safety-3"]
+      },
+      {
+        "id": "les.eaf-energy-safety-2",
+        "title": "Energía almacenada: hidráulica y gravedad",
+        "focus": ["eaf__hydraulics", "eaf__arms_cylinder", "eaf__arms_mast", "eaf__roof"],
+        "camera": { "position": [-7, 6, -6], "target": [-2, 4, 0] },
+        "body": [
+          "Apagar la electricidad no elimina toda la energía. La presión hidráulica, el peso de brazos, electrodos y bóveda, y los resortes pueden mover un equipo.",
+          "Por eso existe el bloqueo y etiquetado (LOTO): aislar, bloquear, liberar la energía y verificar antes de intervenir.",
+          "Los pasos de LOTO del EAF los define el procedimiento aprobado de la planta. Aquí no se enseñan pasos."
+        ],
+        "keyPoints": [
+          "Apagado no significa seguro",
+          "Nunca bajo carga suspendida",
+          "Pasos de LOTO: SME_REQUIRED"
+        ],
+        "checkIds": ["q.safety-2"]
+      },
+      {
+        "id": "les.eaf-energy-safety-3",
+        "title": "Metal líquido y agua",
+        "stageId": "stage.tap",
+        "focus": ["eaf__ebt", "eaf__ebt_pit", "eaf__slagdoor", "eaf__cooling"],
+        "camera": { "position": [10, 4, 6], "target": [4, 0.5, 0] },
+        "body": [
+          "El acero y la escoria líquidos queman al contacto y pueden salpicar.",
+          "Si el agua queda atrapada bajo metal líquido, se convierte en vapor de golpe y puede causar una explosión. El DRI húmedo también es peligroso.",
+          "Si ves agua o una fuga cerca de metal líquido: detente, aléjate, avisa de inmediato y no dejes que nadie se acerque."
+        ],
+        "keyPoints": [
+          "Agua + metal líquido = explosión",
+          "Detente, aléjate y avisa",
+          "Zonas de exclusión y respuesta de emergencia: SME_REQUIRED"
+        ],
+        "checkIds": ["q.safety-1"]
+      },
+      {
+        "id": "les.eaf-energy-safety-4",
+        "title": "Tu papel: detener, avisar y pedir ayuda",
+        "focus": ["eaf__control"],
+        "camera": { "position": [4, 5, 16], "target": [0, 2, 10] },
+        "body": [
+          "Como nuevo ingreso trabajas siempre bajo supervisión.",
+          "Tienes el derecho y la obligación de detener una actividad si ves un peligro.",
+          "Esta plataforma te prepara, pero la competencia la certifica un evaluador en piso con el procedimiento aprobado."
+        ],
+        "keyPoints": [
+          "Si dudas, detente y pregunta",
+          "Reporta toda condición anormal al supervisor o al púlpito"
+        ],
+        "checkIds": ["q.safety-4"]
+      }
+    ],
+    "workInstructionIds": [],
+    "status": "DEMO",
+    "sourceIds": ["src.industry-general", "src.demo"]
+  }
+]

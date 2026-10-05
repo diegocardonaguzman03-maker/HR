@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "id": "doc.wi-electrode-system-check",
+    "title": "Instrucción detallada (DEMO): revisión del sistema de electrodos antes de reanudar la fusión",
+    "type": "WI",
+    "status": "DEMO",
+    "owner": "ADX-06 Arquitecto de Instrucciones de Trabajo (contenido DEMO). SME_REQUIRED: dueño de proceso en planta (Supervisor de Hornos)",
+    "version": "0.1-demo",
+    "approvalDate": null,
+    "file": "documents/wi-electrode-system-check.pdf",
+    "description": "Versión descargable de la instrucción wi.electrode-system-check: 10 pasos con acción, porqué, verificación, resultado esperado, advertencias, error común y escalamiento. Demuestra la estructura; los datos de planta están marcados SME_REQUIRED. No es una instrucción aprobada.",
+    "processIds": ["stage.melt"],
+    "equipmentIds": ["eq.electrodes", "eq.electrode-arms", "eq.secondary-circuit", "eq.transformer", "eq.control-room"],
+    "roles": ["Operador de horno", "Primer ayudante de horno", "Supervisor de turno de hornos"],
+    "moduleIds": ["mod.electrode-melting", "mod.eaf-energy-safety"]
+  },
+  {
+    "id": "doc.jobaid-electrode-system-check",
+    "title": "Job aid (DEMO): revisión del sistema de electrodos",
+    "type": "JobAid",
+    "status": "DEMO",
+    "owner": "ADX-06 Arquitecto de Instrucciones de Trabajo (contenido DEMO). SME_REQUIRED: dueño de proceso en planta (Supervisor de Hornos)",
+    "version": "0.1-demo",
+    "approvalDate": null,
+    "file": "documents/jobaid-electrode-system-check.pdf",
+    "description": "Tarjeta de una página con la secuencia corta de la revisión (autorización → posición segura → púlpito → columnas → juntas → brazos → circuito secundario → registro → ALTO → entrega) y casillas para marcar. Lleva la marca DEMO CONTENT.",
+    "processIds": ["stage.melt"],
+    "equipmentIds": ["eq.electrodes", "eq.electrode-arms", "eq.secondary-circuit", "eq.transformer", "eq.control-room"],
+    "roles": ["Operador de horno", "Primer ayudante de horno"],
+    "moduleIds": ["mod.electrode-melting"]
+  },
+  {
+    "id": "doc.guide-eaf-energy-safety",
+    "title": "Guía del participante: energía eléctrica, energía almacenada y metal líquido en el EAF",
+    "type": "TrainingGuide",
+    "status": "DRAFT_NOT_VALIDATED",
+    "owner": "ADX-04 Seguridad (veto) con ADX-07 Aprendizaje. SME_REQUIRED: revisión del área de Seguridad y Salud de la planta",
+    "version": "0.1-demo",
+    "approvalDate": null,
+    "file": "documents/guide-eaf-energy-safety.pdf",
+    "description": "Guía de apoyo del módulo de seguridad: fuentes de energía del EAF, jerarquía de controles, por qué existen el aislamiento, las zonas de exclusión y la regla de ALTO. Se basa en borradores MS-ACE no validados; no sustituye el procedimiento de LOTO ni el de emergencias de la planta.",
+    "processIds": ["stage.charge", "stage.melt", "stage.refine", "stage.tap"],
+    "equipmentIds": ["eq.electrodes", "eq.electrode-arms", "eq.secondary-circuit", "eq.transformer", "eq.hydraulics", "eq.ebt", "eq.control-room"],
+    "roles": ["Operador de horno", "Primer ayudante de horno", "Personal de nuevo ingreso de la Acería", "Supervisor de turno de hornos"],
+    "moduleIds": ["mod.eaf-energy-safety", "mod.eaf-orientation"]
+  },
+  {
+    "id": "doc.guide-electrode-melting",
+    "title": "Guía del participante: sistema de electrodos y fusión",
+    "type": "TrainingGuide",
+    "status": "DRAFT_NOT_VALIDATED",
+    "owner": "ADX-07 Aprendizaje con ADX-02/ADX-03 (proceso y operación). SME_REQUIRED: revisión técnica de Ingeniería de Proceso de la Acería",
+    "version": "0.1-demo",
+    "approvalDate": null,
+    "file": "documents/guide-electrode-melting.pdf",
+    "description": "Guía de estudio del módulo MVP: cómo los electrodos de grafito forman el arco, función del transformador, del circuito secundario y de los brazos, consumo y roturas de electrodos, y qué observa el operador durante la fusión con alimentación continua de DRI. Contenido educativo general; los valores de planta están marcados SME_REQUIRED.",
+    "processIds": ["stage.melt"],
+    "equipmentIds": ["eq.electrodes", "eq.electrode-arms", "eq.secondary-circuit", "eq.transformer", "eq.dri-feed", "eq.control-room"],
+    "roles": ["Operador de horno", "Primer ayudante de horno", "Personal de nuevo ingreso de la Acería"],
+    "moduleIds": ["mod.electrode-melting", "mod.eaf-orientation"]
+  }
+]

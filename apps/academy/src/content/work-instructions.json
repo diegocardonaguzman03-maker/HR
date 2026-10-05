@@ -1,1 +1,168 @@
-[]
+[
+  {
+    "id": "wi.electrode-system-check",
+    "title": "Revisión del sistema de electrodos antes de reanudar la fusión",
+    "purpose": "CONTENIDO DEMO — NO VALIDADO. Muestra la estructura de una revisión visual del sistema de electrodos (columnas, brazos, mordazas, circuito secundario y señales en el púlpito) antes de reanudar la fusión después de una pausa, una adición de electrodo o una condición anormal. No sustituye el procedimiento aprobado de la planta, el permiso de trabajo ni la autorización del supervisor. Todo dato o decisión que dependa de la planta está marcado como SME_REQUIRED o PLACEHOLDER.",
+    "role": "Operador de horno / Primer ayudante de horno (ejecuta la revisión) con el Supervisor de turno de hornos (autoriza, verifica el estado de energía y decide si se reanuda). SME_REQUIRED: nombres de puesto y matriz de responsabilidades del procedimiento aprobado de la planta.",
+    "status": "DEMO",
+    "equipmentIds": ["eq.electrodes", "eq.electrode-arms", "eq.secondary-circuit", "eq.transformer", "eq.control-room"],
+    "hazardIds": ["haz.electrical", "haz.stored-energy", "haz.molten-metal", "haz.thermal", "haz.height", "haz.line-of-fire", "haz.suspended-load", "haz.water-molten-metal"],
+    "prerequisites": [
+      "Haber aprobado los módulos de orientación al EAF y de seguridad de energía eléctrica, energía almacenada y metal líquido (contenido de formación general; no es una certificación de planta).",
+      "SME_REQUIRED: competencia o certificación interna que exige la planta para ejecutar esta revisión (C-05 / Capacitación).",
+      "SME_REQUIRED: autorización del supervisor y estado de energía del horno según el procedimiento aprobado de aislamiento (MS-ACE-02 en borrador; validar con Seguridad y Operaciones).",
+      "SME_REQUIRED: permiso de trabajo aplicable (por ejemplo, trabajo en altura si la revisión se hace desde una plataforma) según el procedimiento aprobado.",
+      "Comunicación por radio establecida con el púlpito de control y con el operador de grúa si hay maniobra cercana.",
+      "Conocer la posición segura asignada para observar y la ruta de evacuación del área. SME_REQUIRED: ubicación de la posición segura y de las zonas de exclusión (MS-ACE-01)."
+    ],
+    "ppe": [
+      "Casco con barbiquejo",
+      "Lentes de seguridad y careta facial cuando haya superficies calientes o radiación del horno",
+      "Ropa ignífuga / aluminizada según la zona",
+      "Guantes de carnaza o aluminizados",
+      "Botas de seguridad con protección metatarsal",
+      "Protección auditiva",
+      "SME_REQUIRED: arnés y punto de anclaje si la revisión se hace desde una plataforma en altura (MS-ACE-10)",
+      "SME_REQUIRED: detector personal de gases y niveles de alarma según el procedimiento aprobado (MS-ACE-06)",
+      "SME_REQUIRED: matriz de EPP aprobada por Seguridad para esta tarea"
+    ],
+    "tools": [
+      "Radio portátil en el canal de hornos",
+      "Lámpara de mano",
+      "Lista de verificación de esta revisión (job aid DEMO)",
+      "Bitácora del horno o registro electrónico de turno",
+      "SME_REQUIRED: instrumentos de inspección autorizados por la planta (por ejemplo, para medir longitud de columna); no se usan sin el procedimiento aprobado"
+    ],
+    "steps": [
+      {
+        "n": 1,
+        "title": "Confirma la autorización y el estado de energía con el supervisor",
+        "action": "Antes de acercarte al horno, contacta al supervisor de turno y confirma que autoriza la revisión. SME_REQUIRED: confirmar el estado de energía del horno (interruptor, hidráulica de brazos y movimientos) y el tipo de aislamiento que aplica según el procedimiento aprobado de la planta (MS-ACE-02 en borrador; Seguridad + Operaciones).",
+        "why": "El arco eléctrico, el circuito secundario y la energía almacenada en la hidráulica pueden lesionar o matar. Nadie se acerca al sistema de electrodos sin saber, de boca del responsable, en qué estado de energía está el horno.",
+        "visual": "Ilustración DEMO: operador con radio frente al supervisor; tablero con indicador de estado de energía (sin valores reales).",
+        "check": "El supervisor confirmó la autorización y el estado de energía, y quedó anotado en la bitácora.",
+        "expected": "Tienes autorización explícita y sabes qué aislamiento aplica. SME_REQUIRED: evidencia de verificación de energía cero que exige la planta.",
+        "warning": "No supongas que el horno está desenergizado porque no escuchas el arco. Sin confirmación del supervisor, no avances.",
+        "commonError": "Empezar la revisión porque «el horno está parado» sin pedir la autorización ni confirmar el aislamiento.",
+        "escalation": "Si no localizas al supervisor o hay duda sobre el estado de energía, no inicies. Espera en zona segura y repórtalo al supervisor o al jefe de turno."
+      },
+      {
+        "n": 2,
+        "title": "Ubícate en la posición segura asignada",
+        "action": "Colócate en la posición de observación que te asignó el supervisor, fuera de la línea de fuego de los brazos, de la grúa y de posibles proyecciones de metal o escoria. SME_REQUIRED: ubicación de la posición segura, distancias y zonas de exclusión del procedimiento aprobado (MS-ACE-01, MS-ACE-04).",
+        "why": "Una revisión visual se hace sin exponer el cuerpo: si algo se mueve, cae o salpica, la posición segura te mantiene fuera de su alcance.",
+        "visual": "Plano DEMO del piso de hornos con la posición segura marcada en verde y la zona de exclusión en rojo (ilustrativo, sin cotas).",
+        "check": "Estás en la posición asignada, con ruta de salida libre y sin cargas suspendidas sobre ti.",
+        "expected": "Ves el horno y las columnas sin estar bajo cargas, frente a la puerta de escoria ni en el alcance de los brazos.",
+        "warning": "Nunca te coloques bajo una carga suspendida ni entre un brazo y una estructura fija.",
+        "commonError": "Acercarse «para ver mejor» y salir de la posición segura.",
+        "escalation": "Si la posición asignada está obstruida o hay una maniobra de grúa en curso, detente y avisa al supervisor."
+      },
+      {
+        "n": 3,
+        "title": "Revisa en el púlpito las señales del sistema",
+        "action": "Junto con el operador del púlpito, revisa en la HMI las alarmas activas y el estado reportado de transformador, interruptor, regulación de electrodos e hidráulica de brazos. Anota las alarmas que veas. SME_REQUIRED: lista de pantallas, alarmas y señales que la planta exige revisar, y su interpretación aprobada.",
+        "why": "El sistema de control muestra condiciones que no se ven desde el piso (alarmas del transformador, fallas de regulación o de hidráulica). Revisarlas evita reanudar con una falla activa.",
+        "visual": "Captura DEMO de una HMI genérica con alarmas resaltadas (sin valores de planta).",
+        "check": "Tienes la lista de alarmas activas o la confirmación del púlpito de que no hay alarmas relevantes.",
+        "expected": "Sabes si hay alarmas del transformador, del circuito secundario, de la regulación o de la hidráulica. SME_REQUIRED: criterio aprobado de qué alarmas impiden reanudar.",
+        "warning": "No reconozcas ni borres alarmas para «limpiar» la pantalla: eso es decisión del responsable autorizado.",
+        "commonError": "Revisar solo la alarma más reciente y omitir alarmas reconocidas que siguen activas.",
+        "escalation": "Cualquier alarma que no entiendas se reporta al supervisor antes de continuar."
+      },
+      {
+        "n": 4,
+        "title": "Observa la condición visible de las columnas de electrodos",
+        "action": "Desde la posición segura, observa visualmente cada columna (fase 1, 2 y 3): busca grietas, desprendimientos, juntas con brillo o chispas, oxidación anormal (adelgazamiento) o puntas rotas. SME_REQUIRED: criterios de aceptación de longitud, desgaste y oxidación del procedimiento aprobado (MO-EAF-08 en borrador; Ingeniería de Proceso / OEM).",
+        "why": "Una columna dañada o con junta floja se puede romper y caer al baño o a la plataforma. Detectarlo antes de reanudar evita una rotura con el horno energizado.",
+        "visual": "Ilustración DEMO de una columna con tres zonas marcadas: punta, junta y zona bajo la mordaza; ejemplos genéricos de grieta y de oxidación.",
+        "check": "Revisaste las tres columnas y anotaste cualquier anomalía por fase.",
+        "expected": "Ninguna anomalía visible, o anomalías registradas por fase para que el supervisor decida. PLACEHOLDER — REQUIRES PLANT VALIDATION: criterio de aceptación de cada condición.",
+        "warning": "La columna puede estar muy caliente aunque no brille. No la toques ni te acerques para observarla.",
+        "commonError": "Revisar solo la columna más cercana y suponer que las otras dos están igual.",
+        "escalation": "Grieta, junta con brillo o punta rota: aplica el paso 9 (ALTO) y avisa de inmediato al supervisor."
+      },
+      {
+        "n": 5,
+        "title": "Observa la posición de las juntas respecto a la mordaza",
+        "action": "Desde la posición segura, observa si alguna junta (empalme) quedó a la altura de la mordaza o cerca de ella. SME_REQUIRED: distancia mínima aprobada entre la junta y la mordaza, y quién la verifica (MO-EAF-08 en borrador; Ingeniería de Proceso / OEM).",
+        "why": "La junta es el punto más débil de la columna. Si queda en la zona de sujeción de la mordaza, el esfuerzo y la corriente pueden aflojarla o romperla.",
+        "visual": "Esquema DEMO: columna con la junta por debajo de la mordaza (correcto) y con la junta a la altura de la mordaza (incorrecto), sin cotas.",
+        "check": "Identificaste dónde está la junta de cada columna respecto a su mordaza.",
+        "expected": "Ninguna junta queda en la zona de la mordaza. PLACEHOLDER — REQUIRES PLANT VALIDATION: valor de distancia y método de verificación.",
+        "warning": "No ordenes ni hagas un deslizamiento (slipping) de columna para corregir: es una maniobra con su propio procedimiento y autorización.",
+        "commonError": "Confundir la marca de deslizamiento pintada con la posición real de la junta.",
+        "escalation": "Si una junta parece estar en la zona de la mordaza, repórtalo al supervisor; él decide la acción según el procedimiento aprobado."
+      },
+      {
+        "n": 6,
+        "title": "Observa brazos, mástiles y mordazas",
+        "action": "Desde la posición segura, observa los brazos portaelectrodos, los mástiles y las mordazas: busca fugas visibles de aceite o de agua, mangueras dañadas, marcas de arco en la mordaza, piezas sueltas o desalineación evidente. SME_REQUIRED: puntos de inspección, criterios y presión hidráulica aprobados (los da Mantenimiento / OEM; no se miden en esta revisión).",
+        "why": "Los brazos guardan energía hidráulica y por gravedad. Una fuga o una mordaza con marcas de arco puede provocar un movimiento inesperado, una caída de columna o un incendio.",
+        "visual": "Ilustración DEMO del conjunto brazo–mástil–mordaza con puntos de observación numerados.",
+        "check": "Revisaste los tres brazos y anotaste fugas, daños o marcas de arco por fase.",
+        "expected": "Sin fugas, sin piezas sueltas ni marcas de arco visibles, o anomalías registradas para el supervisor.",
+        "warning": "Una fuga de agua cerca del horno es una condición crítica (riesgo de contacto agua–metal líquido). No te acerques a investigarla.",
+        "commonError": "Intentar limpiar o apretar algo en el brazo durante la revisión. Esta revisión es solo de observación.",
+        "escalation": "Fuga de agua, fuga de aceite, manguera dañada o marca de arco en la mordaza: aplica el paso 9 (ALTO)."
+      },
+      {
+        "n": 7,
+        "title": "Observa el circuito secundario",
+        "action": "Desde la posición segura, observa las barras, los cables flexibles (cables refrigerados) y sus soportes: busca cables rozando estructuras, aislamientos dañados, fugas de agua de enfriamiento, conexiones con decoloración o material ajeno sobre el circuito. SME_REQUIRED: puntos de inspección y criterios aprobados por Mantenimiento Eléctrico.",
+        "why": "El circuito secundario lleva corrientes muy altas. Un cable dañado o una conexión floja se calienta y puede provocar un arco, un incendio o una fuga de agua sobre el horno.",
+        "visual": "Ilustración DEMO del recorrido transformador → barras → cables flexibles → brazos, con las zonas a observar resaltadas.",
+        "check": "Recorriste visualmente el circuito de las tres fases desde la posición segura.",
+        "expected": "Sin daños, roces, fugas ni objetos ajenos visibles, o anomalías registradas para el supervisor.",
+        "warning": "Nunca toques ni te acerques al circuito secundario, aunque te digan que está desenergizado. Su intervención exige el aislamiento aprobado y personal autorizado.",
+        "commonError": "Revisar solo los cables y olvidar los soportes y las conexiones a las barras.",
+        "escalation": "Daño en cables, fuga de agua o conexión decolorada: aplica el paso 9 (ALTO)."
+      },
+      {
+        "n": 8,
+        "title": "Registra tus observaciones",
+        "action": "Anota en la bitácora o en el registro de turno la hora, el horno, las alarmas revisadas y las observaciones por fase (columnas, juntas, brazos y circuito secundario). Marca «sin anomalías» solo lo que revisaste. SME_REQUIRED: formato de registro aprobado y tiempo de conservación.",
+        "why": "El registro le da al supervisor la información para decidir y deja trazabilidad para el siguiente turno y para el análisis de fallas.",
+        "visual": "Ejemplo DEMO de registro llenado (datos ficticios).",
+        "check": "El registro tiene hora, horno, alarmas y una observación por fase.",
+        "expected": "Registro completo y legible, entregado al supervisor.",
+        "commonError": "Escribir «todo bien» sin detalle por fase, o llenar el registro antes de hacer la revisión.",
+        "escalation": "Si no existe el formato o no puedes registrar, informa de palabra al supervisor y anótalo en cuanto sea posible."
+      },
+      {
+        "n": 9,
+        "title": "ALTO: detente y escala cualquier anomalía",
+        "action": "Si observaste cualquier anomalía (grieta, junta con brillo, punta rota, fuga de agua o aceite, daño en cables, marca de arco, alarma que no entiendes) o tienes cualquier duda: DETENTE. No continúes la revisión, no intentes corregir, retírate a la posición segura y avisa de inmediato al supervisor por radio. Mantén a otras personas fuera del área. SME_REQUIRED: condiciones de paro, cadena de aviso y respuesta aprobadas (MO-EAF-04 §9, MO-EAF-08 §9 y MS-ACE-09 en borrador).",
+        "why": "Detenerse ante una anomalía es la acción que más protege la vida. Corregir sin procedimiento ni autorización convierte una falla en un accidente.",
+        "visual": "Ícono DEMO de ALTO con la secuencia: detente → retírate → avisa → espera instrucciones.",
+        "check": "Ante cualquier anomalía o duda, te detuviste y el supervisor recibió el aviso.",
+        "expected": "El supervisor conoce la anomalía y decide la acción. Nadie interviene el equipo sin el procedimiento y el aislamiento aprobados.",
+        "warning": "Tienes el derecho y la obligación de detener el trabajo si algo no es seguro. Nadie puede pedirte que continúes con una duda sin resolver.",
+        "commonError": "Seguir con la revisión «para terminar rápido» o intentar arreglar la anomalía uno mismo.",
+        "escalation": "Supervisor de turno de hornos. Si hay riesgo inmediato (fuga de agua hacia el horno, fuego, persona lesionada): SME_REQUIRED: procedimiento de emergencia aprobado de la planta (MS-ACE-09 en borrador)."
+      },
+      {
+        "n": 10,
+        "title": "Entrega el resultado; el supervisor decide si se reanuda",
+        "action": "Retírate del área, entrega tu registro y confirma al supervisor que terminaste y que no queda nadie en la zona. La decisión de reanudar la fusión es del supervisor. PLACEHOLDER — REQUIRES PLANT VALIDATION: condiciones para reanudar, retiro de bloqueos o llaves, conteo de personal y secuencia de energización del procedimiento aprobado (MS-ACE-02, MO-EAF-04 en borrador).",
+        "why": "Reanudar la fusión energiza el horno: antes hay que asegurar que todas las personas salieron y que se cumplieron las condiciones aprobadas.",
+        "visual": "Ilustración DEMO: área despejada y operador entregando el registro al supervisor.",
+        "check": "Saliste del área, entregaste el registro y el supervisor confirmó que lo recibió.",
+        "expected": "El supervisor tiene la información para decidir. SME_REQUIRED: evidencia de liberación y conteo de personal que exige la planta.",
+        "warning": "Nunca des por liberado el horno ni pidas energizar: no es tu decisión en esta revisión.",
+        "commonError": "Avisar «ya quedó» por radio sin haber salido del área ni entregado el registro.",
+        "escalation": "Si notas a alguien en la zona después de terminar o tienes una duda, avisa al supervisor antes de cualquier energización."
+      }
+    ],
+    "completion": [
+      "La revisión cubre las tres fases: columnas, juntas, brazos y mordazas, circuito secundario y señales del púlpito.",
+      "Las observaciones quedaron registradas y se entregaron al supervisor.",
+      "Toda anomalía o duda se detuvo y se escaló (paso 9).",
+      "El área quedó despejada y el supervisor confirmó que recibió el resultado.",
+      "PLACEHOLDER — REQUIRES PLANT VALIDATION: criterios de cierre, firmas y condiciones de reanudación del procedimiento aprobado.",
+      "Recordatorio: esta es una instrucción DEMO de estructura. No es una instrucción aprobada de la planta y no autoriza ninguna tarea."
+    ],
+    "documentIds": ["doc.wi-electrode-system-check", "doc.jobaid-electrode-system-check"],
+    "sourceIds": ["src.demo", "src.industry-general", "src.mo-eaf-04", "src.mo-eaf-08", "src.ms-ace-01", "src.ms-ace-02", "src.ms-ace-04", "src.ms-ace-09", "src.ms-ace-10"]
+  }
+]

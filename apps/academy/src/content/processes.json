@@ -1,1 +1,574 @@
-[]
+[
+  {
+    "id": "stage.raw",
+    "order": 1,
+    "code": "01",
+    "name": "Materias primas: DRI y retornos",
+    "shortName": "Materias primas",
+    "summary": "El horno se alimenta casi solo con DRI (hierro de reducción directa) de pelet propio. Llega por bandas desde las plantas HYL y Midrex a los silos de día. Los retornos internos son poco y se cargan en canasta.",
+    "purpose": "Tener DRI seco, en especificación y en cantidad suficiente para que el horno no se detenga. También tener listos los fundentes (cal y dolomita) y los retornos internos secos.",
+    "inputs": [
+      "DRI de la planta HYL por banda cerrada",
+      "DRI de la planta Midrex por banda cerrada",
+      "Cal y dolomita calcinada (fundentes)",
+      "Retornos internos: despuntes, rechazos, costras y derrames de la propia Acería",
+      "Análisis de calidad del DRI por lote o por turno"
+    ],
+    "outputs": [
+      "DRI almacenado en silos de día, listo para dosificar al 5.º agujero",
+      "Fundentes en tolvas, listos para dosificar con el DRI",
+      "Canasta de retornos internos, seca y armada",
+      "Finos de DRI separados (no entran por el 5.º agujero)"
+    ],
+    "equipmentIds": [
+      "eq.dri-feed"
+    ],
+    "variables": [
+      {
+        "name": "Metalización del DRI",
+        "why": "Es la parte del hierro que ya está como metal. Si baja, el horno necesita más energía y más tiempo para fundir y genera más escoria.",
+        "value": "SME_REQUIRED: metalización mínima y objetivo de recepción. Existe un valor de borrador en FT-ACE-001 §2 por validar; lo da C-07 Ingeniero de Proceso EAF con Reducción Directa."
+      },
+      {
+        "name": "Carbono de la mezcla HYL + Midrex",
+        "why": "El DRI de HYL trae más carbono que el de Midrex. La mezcla define cuánto oxígeno y carbono habrá que usar en el horno.",
+        "value": "SME_REQUIRED: rango de carbono de la mezcla y límite de alarma. Existe un valor de borrador en FT-ACE-001 §2.1 por validar; lo da C-07 Ingeniero de Proceso EAF."
+      },
+      {
+        "name": "Ganga ácida del DRI (SiO₂ + Al₂O₃)",
+        "why": "Es la parte no metálica del pelet. Más ganga significa más cal, más escoria y más energía.",
+        "value": "SME_REQUIRED: rango de ganga aceptable. Existe un valor de borrador en FT-ACE-001 §2 por validar; lo da C-07 Ingeniero de Proceso EAF."
+      },
+      {
+        "name": "Temperatura del DRI en banda y en silo",
+        "why": "El DRI se puede reoxidar y calentar solo dentro del silo. Eso daña la calidad y puede causar un incendio.",
+        "value": "SME_REQUIRED: temperatura máxima, alarma de subida y acción. Existe un valor de borrador en FT-ACE-001 §2.1 por validar; lo dan C-17 Supervisor de Manejo de Materiales y Seguridad (C-16)."
+      },
+      {
+        "name": "Humedad del DRI y de los retornos",
+        "why": "El agua en contacto con metal líquido se convierte en vapor de golpe y puede causar una explosión. El DRI húmedo también genera hidrógeno.",
+        "value": "SME_REQUIRED: criterio de aceptación de humedad y método de verificación de retornos secos; lo dan C-07 y el procedimiento de seguridad aprobado (MS-ACE)."
+      },
+      {
+        "name": "Autonomía de los silos de día",
+        "why": "Si los silos se vacían, el horno se queda sin carga y se pierde la colada.",
+        "value": "SME_REQUIRED: horas mínimas y objetivo de autonomía. Existe un valor de borrador en FT-ACE-001 §2.1 / MO-EAF-02 por validar; lo da C-17 Supervisor de Manejo de Materiales."
+      },
+      {
+        "name": "Proporción de retornos internos en la carga",
+        "why": "Por decisión D-010 la carga es casi toda DRI. Los retornos se limitan para cuidar la química y la operación.",
+        "value": "SME_REQUIRED: límite y objetivo de retornos por colada. Existe un valor de borrador en CV-GASM-001 / FT-ACE-001 §2.2 por validar; lo da C-07 Ingeniero de Proceso EAF."
+      }
+    ],
+    "operatorDecisions": [
+      "¿El DRI que llega está dentro de especificación o se debe avisar a Reducción Directa?",
+      "¿Algún silo muestra calentamiento anormal y se debe escalar de inmediato?",
+      "¿Hay suficiente DRI en silos para las siguientes coladas o hay que avisar al Supervisor de Hornos?",
+      "¿Los retornos están secos y sin materiales prohibidos antes de armar la canasta?",
+      "¿Se separan los finos para que no entren por el 5.º agujero?"
+    ],
+    "dependencies": [
+      "Operación continua de las plantas HYL y Midrex y de sus bandas",
+      "Muestreo y laboratorio para la calidad del DRI",
+      "Inertización de silos (según diseño de la planta)",
+      "Áreas techadas y secas para retornos internos",
+      "Verificación radiológica de retornos según el procedimiento de seguridad aprobado"
+    ],
+    "hazardIds": [
+      "haz.water-molten-metal",
+      "haz.gas-co",
+      "haz.thermal",
+      "haz.noise-dust",
+      "haz.confined-space",
+      "haz.suspended-load"
+    ],
+    "nextStageId": "stage.charge",
+    "camera": {
+      "position": [
+        -6,
+        9,
+        12
+      ],
+      "target": [
+        0,
+        4,
+        0
+      ]
+    },
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.cv-gasm-001",
+      "src.ft-ace-001",
+      "src.mo-eaf-02"
+    ]
+  },
+  {
+    "id": "stage.charge",
+    "order": 2,
+    "code": "02",
+    "name": "Carga y pie líquido",
+    "shortName": "Carga",
+    "summary": "La colada empieza sobre un pie líquido: acero que se dejó en el horno de la colada anterior. De vez en cuando se carga una canasta de retornos internos. Luego empieza la alimentación continua de DRI por el 5.º agujero.",
+    "purpose": "Dejar el horno listo para fundir: pie líquido suficiente, horno revisado entre coladas, canasta de retornos (si toca) cargada con seguridad y alimentación de DRI lista para arrancar.",
+    "inputs": [
+      "Pie líquido (talón) de la colada anterior",
+      "Canasta de retornos internos (solo en algunas coladas)",
+      "DRI y fundentes dosificados desde los silos de día",
+      "Horno revisado entre coladas: refractario, paneles, electrodos, EBT"
+    ],
+    "outputs": [
+      "Horno cargado y cerrado, con la bóveda en posición",
+      "Alimentación de DRI y fundentes lista por el 5.º agujero",
+      "Condiciones para encender el arco"
+    ],
+    "equipmentIds": [
+      "eq.shell",
+      "eq.roof",
+      "eq.refractory",
+      "eq.cooling",
+      "eq.ebt",
+      "eq.dri-feed",
+      "eq.hydraulics",
+      "eq.control-room"
+    ],
+    "variables": [
+      {
+        "name": "Tamaño del pie líquido",
+        "why": "Con casi 100 % DRI, el DRI se funde al caer en el baño. Sin pie líquido suficiente el arranque es lento e inestable.",
+        "value": "SME_REQUIRED: peso mínimo y objetivo del pie líquido. Existe un valor de borrador en FT-ACE-001 §2 por validar; lo da C-07 Ingeniero de Proceso EAF."
+      },
+      {
+        "name": "Frecuencia y peso de la canasta de retornos",
+        "why": "La canasta añade tiempo a la colada y debe caer sobre el pie líquido con el arco apagado.",
+        "value": "SME_REQUIRED: frecuencia y peso por canasta. Existe un valor de borrador en FT-ACE-001 §2 / MO-EAF-02 por validar; lo da C-05 Supervisor de Hornos con C-07."
+      },
+      {
+        "name": "Estado del refractario y de la solera",
+        "why": "Un refractario dañado puede dejar pasar acero hacia la coraza.",
+        "value": "SME_REQUIRED: criterios de inspección y reparación entre coladas del manual aprobado (MO-EAF-01); los da C-15 Especialista de Refractarios."
+      },
+      {
+        "name": "Condición del agua de paneles antes de cargar",
+        "why": "Una fuga de agua dentro del horno con metal líquido es una de las causas de explosión más graves.",
+        "value": "SME_REQUIRED: criterios de fuga y de liberación del horno del procedimiento aprobado; los dan C-07 y Seguridad (C-16)."
+      }
+    ],
+    "operatorDecisions": [
+      "¿El horno está liberado entre coladas (refractario, paneles sin fuga, electrodos, EBT preparado)?",
+      "¿Toca cargar canasta de retornos en esta colada?",
+      "¿La zona bajo la grúa y alrededor del horno está despejada antes de cargar la canasta?",
+      "¿Hay señales de agua o humedad en la carga que obliguen a detener la carga y escalar?"
+    ],
+    "dependencies": [
+      "Colada anterior terminada con pie líquido retenido",
+      "Grúa de carga disponible (cuando hay canasta)",
+      "Sistema hidráulico para girar la bóveda",
+      "Silos de día con DRI y fundentes",
+      "Inspección entre coladas terminada"
+    ],
+    "hazardIds": [
+      "haz.molten-metal",
+      "haz.water-molten-metal",
+      "haz.suspended-load",
+      "haz.stored-energy",
+      "haz.line-of-fire",
+      "haz.thermal"
+    ],
+    "nextStageId": "stage.melt",
+    "camera": {
+      "position": [
+        9,
+        10,
+        9
+      ],
+      "target": [
+        0,
+        3,
+        0
+      ]
+    },
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001",
+      "src.mo-eaf-02",
+      "src.mo-eaf-03"
+    ]
+  },
+  {
+    "id": "stage.melt",
+    "order": 3,
+    "code": "03",
+    "name": "Fusión",
+    "shortName": "Fusión",
+    "summary": "Los tres electrodos de grafito forman arcos eléctricos sobre el baño. El arco genera el calor que funde el DRI que cae de forma continua por el 5.º agujero. Es la etapa que más energía consume y la más larga de la colada.",
+    "purpose": "Fundir todo el DRI y los retornos de la colada con un arco estable, cubierto por escoria espumosa, sin dañar paneles, refractario ni electrodos, y llegar al afino con el peso de acero planeado.",
+    "inputs": [
+      "Energía eléctrica del transformador del horno",
+      "DRI y fundentes alimentados de forma continua por el 5.º agujero",
+      "Oxígeno por lanzas e inyección de carbono para espumar la escoria",
+      "Electrodos de grafito con longitud suficiente",
+      "Agua de enfriamiento para paneles y bóveda"
+    ],
+    "outputs": [
+      "Baño de acero líquido con todo el DRI fundido",
+      "Escoria con la ganga del DRI y los fundentes",
+      "Gases del horno (con CO) hacia la extracción de humos",
+      "Registro de energía, consumo de electrodo y tiempo de arco"
+    ],
+    "equipmentIds": [
+      "eq.electrodes",
+      "eq.electrode-arms",
+      "eq.transformer",
+      "eq.secondary-circuit",
+      "eq.oxygen-carbon",
+      "eq.dri-feed",
+      "eq.cooling",
+      "eq.fume",
+      "eq.roof",
+      "eq.shell",
+      "eq.control-room"
+    ],
+    "variables": [
+      {
+        "name": "Perfil de potencia (derivación del transformador y punto de trabajo)",
+        "why": "Define cuánta energía entra y cómo es el arco: largo o corto. Un arco largo sin escoria que lo cubra calienta los paneles en lugar del baño.",
+        "value": "SME_REQUIRED: perfil de potencia por fase de la colada y límites eléctricos. Existe un valor de borrador en FT-ACE-001 §2 / MO-EAF-04 por validar; lo dan el OEM del transformador y C-07 Ingeniero de Proceso EAF."
+      },
+      {
+        "name": "Corriente y estabilidad del arco por fase",
+        "why": "La regulación de electrodos sube o baja cada brazo para mantener el arco estable. Un arco inestable gasta energía y daña electrodos.",
+        "value": "SME_REQUIRED: setpoints de regulación (impedancia o corriente) y límites de alarma del sistema de regulación; los dan el OEM y C-07."
+      },
+      {
+        "name": "Velocidad de alimentación de DRI",
+        "why": "Debe ir de acuerdo con la potencia. Si entra más DRI del que el arco puede fundir, se forman montones fríos (icebergs) y el baño se enfría. Si entra menos, se pierde tiempo y se calientan los paneles.",
+        "value": "SME_REQUIRED: tasa de alimentación objetivo y máxima por MW. Existe un valor de borrador en FT-ACE-001 §2 / MO-EAF-03 por validar (control crítico); lo da C-07 Ingeniero de Proceso EAF."
+      },
+      {
+        "name": "Altura y estabilidad de la escoria espumosa",
+        "why": "La escoria espumosa cubre el arco. Protege paneles y bóveda y hace que la energía llegue al baño.",
+        "value": "SME_REQUIRED: criterio de escoria espumosa (señal acústica, armónicos o indicador del sistema) y acción de corrección del manual aprobado (MO-EAF-05); lo da C-07."
+      },
+      {
+        "name": "Energía acumulada (kWh/t) y tiempo de arco",
+        "why": "Sirve para saber cuánto falta para terminar la fusión y comparar la colada con lo normal.",
+        "value": "SME_REQUIRED: energía y tiempo de arco objetivo por colada. Existe un valor de borrador en FT-ACE-001 §2 por validar; lo da C-07 Ingeniero de Proceso EAF."
+      },
+      {
+        "name": "Flujo de oxígeno y de carbono inyectado",
+        "why": "El oxígeno quema el exceso de carbono del DRI y, junto con el carbono inyectado, genera la espuma de la escoria.",
+        "value": "SME_REQUIRED: flujos por lanza, consumo por tonelada y modo lanza/quemador. Existe un valor de borrador en FT-ACE-001 §2 / MO-EAF-05 por validar; lo dan el OEM de lanzas y C-07."
+      },
+      {
+        "name": "Temperatura y caudal del agua de paneles y bóveda",
+        "why": "Un panel caliente o una diferencia de caudal entre entrada y salida pueden indicar una fuga de agua dentro del horno.",
+        "value": "SME_REQUIRED: límites de temperatura, de diferencia de caudal y de presión, y la acción (alarma o disparo). Existe un valor de borrador en FT-ACE-001 §2 por validar; lo dan el OEM, C-07 y Seguridad (C-16)."
+      },
+      {
+        "name": "Presión dentro del horno y CO en los humos",
+        "why": "La extracción debe mantener el horno en ligera depresión para que los gases no salgan a la nave. El DRI aporta carbono y genera mucho CO.",
+        "value": "SME_REQUIRED: rango de presión del horno y límites de CO del sistema de humos. Existe un valor de borrador en FT-ACE-001 §2 por validar; lo dan C-07 y el responsable del sistema de humos."
+      },
+      {
+        "name": "Longitud de electrodo disponible y consumo",
+        "why": "Si una columna se queda corta, no se puede regular el arco y hay que parar para añadir electrodo.",
+        "value": "SME_REQUIRED: longitud mínima de columna y criterio de adición. Existe un valor de borrador de consumo en FT-ACE-001 §2 / MO-EAF-08 por validar; lo da C-05 Supervisor de Hornos con C-07."
+      }
+    ],
+    "operatorDecisions": [
+      "¿El arco está estable y cubierto por escoria espumosa, o hay que corregir oxígeno, carbono o potencia?",
+      "¿La alimentación de DRI va pareja con la potencia, o hay señales de DRI sin fundir que obliguen a bajar la alimentación?",
+      "¿Hay una alarma de agua (temperatura o diferencia de caudal) que obligue a parar el arco y escalar de inmediato?",
+      "¿Las columnas de electrodo tienen longitud suficiente para terminar la colada o hay que programar una adición?",
+      "¿Hay ruido, chispas, vibración o corriente anormal en un electrodo o brazo que obligue a revisar el sistema antes de seguir?",
+      "¿La presión del horno o la salida de humos es anormal y se debe avisar al Supervisor de Hornos?",
+      "¿Ya se fundió toda la carga y se puede pasar al afino (medición de temperatura y muestra)?"
+    ],
+    "dependencies": [
+      "Pie líquido y horno liberado (etapa de carga)",
+      "Suministro eléctrico y transformador disponibles",
+      "Regulación de electrodos y sistema hidráulico funcionando",
+      "Silos de día con DRI y fundentes",
+      "Oxígeno, carbono de inyección y gas disponibles",
+      "Agua de enfriamiento con caudal y presión normales",
+      "Extracción de humos funcionando"
+    ],
+    "hazardIds": [
+      "haz.electrical",
+      "haz.molten-metal",
+      "haz.water-molten-metal",
+      "haz.oxygen",
+      "haz.gas-co",
+      "haz.thermal",
+      "haz.stored-energy",
+      "haz.noise-dust",
+      "haz.line-of-fire"
+    ],
+    "nextStageId": "stage.refine",
+    "camera": {
+      "position": [
+        -8,
+        9,
+        9
+      ],
+      "target": [
+        0,
+        4,
+        0
+      ]
+    },
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001",
+      "src.mo-eaf-03",
+      "src.mo-eaf-04",
+      "src.mo-eaf-05",
+      "src.mo-eaf-08"
+    ]
+  },
+  {
+    "id": "stage.refine",
+    "order": 4,
+    "code": "04",
+    "name": "Afino y escoria espumosa",
+    "shortName": "Afino",
+    "summary": "Con todo fundido, se ajusta el acero: se baja el carbono con oxígeno, se controla la escoria y se sube la temperatura. Se mide temperatura y se toma muestra para saber si el acero está listo para vaciar.",
+    "purpose": "Llegar al vaciado con la temperatura, el carbono y el oxígeno del baño que pide el grado, con una escoria que proteja el horno y retenga el fósforo.",
+    "inputs": [
+      "Baño fundido de la etapa de fusión",
+      "Oxígeno por lanzas",
+      "Carbono de inyección",
+      "Cal y dolomita para la escoria",
+      "Mediciones de temperatura y oxígeno activo y muestra química"
+    ],
+    "outputs": [
+      "Acero con temperatura y química para vaciar",
+      "Escoria retirada por la puerta de escoria",
+      "Resultados de laboratorio registrados"
+    ],
+    "equipmentIds": [
+      "eq.oxygen-carbon",
+      "eq.slag-door",
+      "eq.electrodes",
+      "eq.transformer",
+      "eq.cooling",
+      "eq.fume",
+      "eq.control-room"
+    ],
+    "variables": [
+      {
+        "name": "Temperatura del baño antes de vaciar",
+        "why": "Si está fría, el acero se congela en la olla o en la colada continua. Si está muy caliente, se desgasta el refractario y se gasta energía.",
+        "value": "SME_REQUIRED: temperatura objetivo y tolerancia por grado. Existe un valor de borrador en FT-ACE-001 §2 / MO-EAF-06 por validar; lo dan C-07 y C-09 Metalurgista de Producto."
+      },
+      {
+        "name": "Carbono y oxígeno activo del baño",
+        "why": "Definen qué tanto hay que desoxidar después y la calidad del acero.",
+        "value": "SME_REQUIRED: rangos de C y O activo al vaciado por grado. Existe un valor de borrador en FT-ACE-001 §2 por validar; lo da C-09 Metalurgista de Producto."
+      },
+      {
+        "name": "Basicidad y FeO de la escoria",
+        "why": "Una escoria bien formada espuma mejor, protege el refractario y retiene el fósforo. Mucho FeO significa hierro perdido.",
+        "value": "SME_REQUIRED: basicidad, FeO y MgO objetivo de la escoria. Existe un valor de borrador en FT-ACE-001 §2 por validar; lo da C-07 Ingeniero de Proceso EAF."
+      },
+      {
+        "name": "Fósforo y residuales",
+        "why": "El fósforo casi no se quita después del horno. Hay que controlarlo aquí.",
+        "value": "SME_REQUIRED: límites de P y residuales al vaciado por grado; lo da C-09 Metalurgista de Producto."
+      }
+    ],
+    "operatorDecisions": [
+      "¿La temperatura y la química ya cumplen para vaciar, o hace falta más tiempo de arco u oxígeno?",
+      "¿Es momento de retirar escoria por la puerta y la zona está despejada?",
+      "¿El resultado de laboratorio está fuera de lo esperado y hay que consultar al Metalurgista?",
+      "¿La medición fue válida o hay que repetirla?"
+    ],
+    "dependencies": [
+      "Fusión completa de la carga",
+      "Laboratorio y sistema de medición (sonda) disponibles",
+      "Olla de escoria colocada bajo la puerta",
+      "Olla de acero lista para el vaciado"
+    ],
+    "hazardIds": [
+      "haz.molten-metal",
+      "haz.oxygen",
+      "haz.gas-co",
+      "haz.thermal",
+      "haz.electrical",
+      "haz.line-of-fire"
+    ],
+    "nextStageId": "stage.tap",
+    "camera": {
+      "position": [
+        -2,
+        6,
+        13
+      ],
+      "target": [
+        0,
+        2,
+        0
+      ]
+    },
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001",
+      "src.mo-eaf-05",
+      "src.mo-eaf-06"
+    ]
+  },
+  {
+    "id": "stage.tap",
+    "order": 5,
+    "code": "05",
+    "name": "Vaciado",
+    "shortName": "Vaciado",
+    "summary": "El horno se inclina y el acero sale por el agujero excéntrico del fondo (EBT) hacia la olla. Se deja un pie líquido en el horno para la siguiente colada y se evita que pase escoria a la olla.",
+    "purpose": "Pasar el acero a la olla con la menor cantidad de escoria, en el tiempo correcto y dejando el pie líquido para la siguiente colada.",
+    "inputs": [
+      "Acero en temperatura y química de la etapa de afino",
+      "Olla de acero precalentada y posicionada en el carro",
+      "Agujero EBT preparado (relleno de arena)",
+      "Adiciones de vaciado definidas para el grado"
+    ],
+    "outputs": [
+      "Olla con acero líquido hacia metalurgia secundaria",
+      "Pie líquido retenido en el horno",
+      "Registro de peso vaciado, temperatura y tiempo"
+    ],
+    "equipmentIds": [
+      "eq.ebt",
+      "eq.shell",
+      "eq.hydraulics",
+      "eq.refractory",
+      "eq.control-room"
+    ],
+    "variables": [
+      {
+        "name": "Ángulo de inclinación y momento de regreso",
+        "why": "Regresar el horno a tiempo evita que la escoria pase a la olla y deja el pie líquido.",
+        "value": "SME_REQUIRED: ángulos de vaciado y criterio de regreso. Parámetro de vaciado del manual aprobado (MO-EAF-07); lo dan el OEM y C-07."
+      },
+      {
+        "name": "Peso vaciado y pie líquido retenido",
+        "why": "La olla tiene capacidad fija y la siguiente colada necesita su pie líquido.",
+        "value": "SME_REQUIRED: peso de vaciado y pie objetivo. Existe un valor de borrador en FT-ACE-001 §2 por validar; lo da C-07 Ingeniero de Proceso EAF."
+      },
+      {
+        "name": "Adiciones al vaciado (desoxidantes y aleantes)",
+        "why": "Empiezan a ajustar la química y a desoxidar el acero en la olla.",
+        "value": "SME_REQUIRED: tipo y cantidad de adiciones por grado. Existe práctica de borrador en MO-EAF-07 por validar; lo da C-09 Metalurgista de Producto."
+      },
+      {
+        "name": "Apertura libre del EBT y tiempo de vaciado",
+        "why": "Si el EBT no abre solo, se retrasa el vaciado y se expone personal a riesgo al abrirlo.",
+        "value": "SME_REQUIRED: tiempo normal de vaciado y procedimiento cuando el EBT no abre; lo dan C-05 Supervisor de Hornos y Seguridad (C-16)."
+      }
+    ],
+    "operatorDecisions": [
+      "¿La olla está bien posicionada y precalentada, y el área de vaciado está despejada?",
+      "¿El EBT abrió libre o hay que aplicar el procedimiento aprobado de apertura?",
+      "¿Cuándo regresar el horno para cortar la escoria y retener el pie líquido?",
+      "¿Hay una anormalidad (fuga, salpicadura, olla con problema) que obligue a detener el vaciado y escalar?"
+    ],
+    "dependencies": [
+      "Afino terminado y autorizado para vaciar",
+      "Olla y carro de olla disponibles",
+      "Sistema hidráulico de inclinación funcionando",
+      "Metalurgia secundaria lista para recibir la olla"
+    ],
+    "hazardIds": [
+      "haz.molten-metal",
+      "haz.water-molten-metal",
+      "haz.thermal",
+      "haz.stored-energy",
+      "haz.line-of-fire",
+      "haz.suspended-load"
+    ],
+    "nextStageId": "stage.secondary",
+    "camera": {
+      "position": [
+        12,
+        5,
+        6
+      ],
+      "target": [
+        4,
+        1,
+        0
+      ]
+    },
+    "status": "DRAFT_NOT_VALIDATED",
+    "sourceIds": [
+      "src.industry-general",
+      "src.ft-ace-001",
+      "src.mo-eaf-07"
+    ]
+  },
+  {
+    "id": "stage.secondary",
+    "order": 6,
+    "code": "06",
+    "name": "Metalurgia secundaria (sale del módulo)",
+    "shortName": "Metalurgia secundaria",
+    "summary": "La olla sale del horno hacia el horno olla. Ahí se ajustan la química y la temperatura finales antes de la colada continua. Esta etapa queda fuera de este módulo; solo se muestra para entender a dónde va el acero.",
+    "purpose": "Entender qué recibe el horno olla del EAF y por qué la calidad del vaciado (temperatura, escoria arrastrada, química) afecta lo que sigue.",
+    "inputs": [
+      "Olla con acero líquido del EAF",
+      "Información de la colada: temperatura, química, adiciones y peso"
+    ],
+    "outputs": [
+      "Acero con composición y temperatura para colada continua (fuera de alcance de este módulo)"
+    ],
+    "equipmentIds": [
+      "eq.ebt",
+      "eq.control-room"
+    ],
+    "variables": [
+      {
+        "name": "Escoria del EAF arrastrada a la olla",
+        "why": "La escoria del horno trae FeO y fósforo. Si pasa a la olla, complica la desoxidación y la desulfuración.",
+        "value": "SME_REQUIRED: criterio de escoria arrastrada aceptable; lo da C-09 Metalurgista de Producto."
+      },
+      {
+        "name": "Información entregada al horno olla",
+        "why": "El operador del horno olla planea su tratamiento con los datos del vaciado.",
+        "value": "SME_REQUIRED: formato y datos obligatorios de entrega EAF–horno olla; lo da C-05 Supervisor de Hornos con el responsable de metalurgia secundaria."
+      }
+    ],
+    "operatorDecisions": [
+      "¿Se entregó al horno olla la información completa de la colada?",
+      "¿Hubo una anormalidad en el vaciado que el horno olla debe conocer?"
+    ],
+    "dependencies": [
+      "Vaciado terminado",
+      "Grúa de ollas y horno olla disponibles"
+    ],
+    "hazardIds": [
+      "haz.molten-metal",
+      "haz.suspended-load",
+      "haz.thermal"
+    ],
+    "nextStageId": null,
+    "camera": {
+      "position": [
+        14,
+        7,
+        10
+      ],
+      "target": [
+        4,
+        1,
+        0
+      ]
+    },
+    "status": "GENERAL_EDUCATIONAL",
+    "sourceIds": [
+      "src.industry-general"
+    ]
+  }
+]

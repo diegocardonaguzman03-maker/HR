@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": "asm.eaf-electrode",
+    "title": "Evaluación: sistema de electrodos y seguridad en la fusión (DEMO — no certifica competencia)",
+    "passScore": 0.8,
+    "questionIds": ["q.orientation-1", "q.electrode-1", "q.electrode-2", "q.electrode-3", "q.electrode-4", "q.electrode-5", "q.electrode-6", "q.safety-1", "q.safety-2", "q.safety-4"],
+    "recommendations": [
+      { "topic": "Etapas del proceso", "moduleId": "mod.eaf-orientation" },
+      { "topic": "Equipos del EAF", "moduleId": "mod.eaf-orientation" },
+      { "topic": "Sistema de electrodos", "moduleId": "mod.electrode-melting" },
+      { "topic": "Regulación de electrodos", "moduleId": "mod.electrode-melting" },
+      { "topic": "Ruta de la energía eléctrica", "moduleId": "mod.electrode-melting" },
+      { "topic": "Componentes del sistema de electrodos", "moduleId": "mod.electrode-melting" },
+      { "topic": "Alcance de la evaluación", "moduleId": "mod.electrode-melting" },
+      { "topic": "Agua y metal líquido", "moduleId": "mod.eaf-energy-safety" },
+      { "topic": "Energía almacenada", "moduleId": "mod.eaf-energy-safety" },
+      { "topic": "Condiciones anormales", "moduleId": "mod.eaf-energy-safety" }
+    ],
+    "status": "DEMO"
+  }
+]
