@@ -1,0 +1,122 @@
+[
+  {
+    "id": "hs.shell",
+    "number": 1,
+    "label": "Coraza y solera",
+    "kind": "equipment",
+    "targetId": "eq.shell",
+    "nodeName": "eaf__shell"
+  },
+  {
+    "id": "hs.roof",
+    "number": 2,
+    "label": "Bóveda y delta",
+    "kind": "equipment",
+    "targetId": "eq.roof",
+    "nodeName": "eaf__roof"
+  },
+  {
+    "id": "hs.electrodes",
+    "number": 3,
+    "label": "Electrodos de grafito",
+    "kind": "equipment",
+    "targetId": "eq.electrodes",
+    "nodeName": "eaf__electrodes"
+  },
+  {
+    "id": "hs.electrode-arms",
+    "number": 4,
+    "label": "Brazos, mástiles y regulación",
+    "kind": "equipment",
+    "targetId": "eq.electrode-arms",
+    "nodeName": "eaf__arms"
+  },
+  {
+    "id": "hs.transformer",
+    "number": 5,
+    "label": "Transformador del horno",
+    "kind": "equipment",
+    "targetId": "eq.transformer",
+    "nodeName": "eaf__transformer"
+  },
+  {
+    "id": "hs.secondary-circuit",
+    "number": 6,
+    "label": "Barras y cables flexibles",
+    "kind": "equipment",
+    "targetId": "eq.secondary-circuit",
+    "nodeName": "eaf__secondary"
+  },
+  {
+    "id": "hs.oxygen-carbon",
+    "number": 7,
+    "label": "Oxígeno, quemadores y carbono",
+    "kind": "equipment",
+    "targetId": "eq.oxygen-carbon",
+    "nodeName": "eaf__oxygen"
+  },
+  {
+    "id": "hs.slag-door",
+    "number": 8,
+    "label": "Puerta de escoria",
+    "kind": "equipment",
+    "targetId": "eq.slag-door",
+    "nodeName": "eaf__slagdoor"
+  },
+  {
+    "id": "hs.ebt",
+    "number": 9,
+    "label": "Vaciado EBT y fosa",
+    "kind": "equipment",
+    "targetId": "eq.ebt",
+    "nodeName": "eaf__ebt"
+  },
+  {
+    "id": "hs.hydraulics",
+    "number": 10,
+    "label": "Sistema hidráulico",
+    "kind": "equipment",
+    "targetId": "eq.hydraulics",
+    "nodeName": "eaf__hydraulics"
+  },
+  {
+    "id": "hs.refractory",
+    "number": 11,
+    "label": "Refractario",
+    "kind": "equipment",
+    "targetId": "eq.refractory",
+    "nodeName": "eaf__refractory"
+  },
+  {
+    "id": "hs.cooling",
+    "number": 12,
+    "label": "Paneles enfriados por agua",
+    "kind": "equipment",
+    "targetId": "eq.cooling",
+    "nodeName": "eaf__cooling"
+  },
+  {
+    "id": "hs.fume",
+    "number": 13,
+    "label": "Extracción de humos",
+    "kind": "equipment",
+    "targetId": "eq.fume",
+    "nodeName": "eaf__fume"
+  },
+  {
+    "id": "hs.dri-feed",
+    "number": 14,
+    "label": "Alimentación de DRI",
+    "kind": "equipment",
+    "targetId": "eq.dri-feed",
+    "nodeName": "eaf__drifeed"
+  },
+  {
+    "id": "hs.control-room",
+    "number": 15,
+    "label": "Púlpito de control",
+    "kind": "equipment",
+    "targetId": "eq.control-room",
+    "nodeName": "eaf__control"
+  }
+]

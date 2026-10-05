@@ -1,0 +1,36 @@
+[
+  {
+    "id": "vid.melt-overview",
+    "title": "Fusión con alimentación continua de DRI (placeholder de demostración)",
+    "file": "videos/melt-overview.webm",
+    "captions": "videos/melt-overview.vtt",
+    "durationSec": 40,
+    "chapters": [
+      {
+        "t": 0,
+        "title": "El horno y sus sistemas"
+      },
+      {
+        "t": 10,
+        "title": "Electrodos y arco"
+      },
+      {
+        "t": 20,
+        "title": "Entra el DRI por el 5.º agujero"
+      },
+      {
+        "t": 30,
+        "title": "Escoria espumosa y control"
+      }
+    ],
+    "status": "DEMO",
+    "equipmentIds": [
+      "eq.electrodes",
+      "eq.electrode-arms",
+      "eq.dri-feed"
+    ],
+    "stageIds": [
+      "stage.melt"
+    ]
+  }
+]

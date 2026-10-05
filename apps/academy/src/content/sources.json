@@ -1,0 +1,149 @@
+[
+  {
+    "id": "src.industry-general",
+    "title": "Conocimiento general de la industria del horno de arco eléctrico",
+    "kind": "industry-general",
+    "status": "GENERAL_EDUCATIONAL",
+    "note": "Descripciones educativas que no describen a la planta de GASM."
+  },
+  {
+    "id": "src.demo",
+    "title": "Contenido de demostración ACERÍA DIGITAL ACADEMY",
+    "kind": "demo",
+    "status": "DEMO",
+    "note": "Sirve para mostrar el producto; no es instrucción de planta."
+  },
+  {
+    "id": "src.cv-gasm-001",
+    "title": "CV-GASM-001 Cadena de valor (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/00-cadena-de-valor/CV-GASM-001-cadena-de-valor.md"
+  },
+  {
+    "id": "src.ft-ace-001",
+    "title": "FT-ACE-001 Ficha técnica de la Acería v0.4 (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/00-ficha-tecnica-acería.md"
+  },
+  {
+    "id": "src.mo-eaf-02",
+    "title": "MO-EAF-02 Recepción de DRI por bandas, silos de día y carga de retornos internos (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/02-operacion/eaf/"
+  },
+  {
+    "id": "src.mo-eaf-03",
+    "title": "MO-EAF-03 Alimentación continua de DRI (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/02-operacion/eaf/"
+  },
+  {
+    "id": "src.mo-eaf-04",
+    "title": "MO-EAF-04 Fusión: perfil de potencia y regulación de electrodos (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/02-operacion/eaf/"
+  },
+  {
+    "id": "src.mo-eaf-05",
+    "title": "MO-EAF-05 Escoria espumosa, oxígeno y carbono (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/02-operacion/eaf/"
+  },
+  {
+    "id": "src.mo-eaf-06",
+    "title": "MO-EAF-06 Temperatura, oxígeno activo y muestreo (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/02-operacion/eaf/"
+  },
+  {
+    "id": "src.mo-eaf-07",
+    "title": "MO-EAF-07 Vaciado por EBT y adiciones (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/02-operacion/eaf/"
+  },
+  {
+    "id": "src.mo-eaf-08",
+    "title": "MO-EAF-08 Adición y empalme de electrodos (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/02-operacion/eaf/"
+  },
+  {
+    "id": "src.ms-ace-01",
+    "title": "MS-ACE-01 Metal líquido y zonas de exclusión (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/04-seguridad/"
+  },
+  {
+    "id": "src.ms-ace-02",
+    "title": "MS-ACE-02 LOTO, aislamiento y bloqueo (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/04-seguridad/"
+  },
+  {
+    "id": "src.ms-ace-03",
+    "title": "MS-ACE-03 Explosiones por agua y humedad (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/04-seguridad/"
+  },
+  {
+    "id": "src.ms-ace-04",
+    "title": "MS-ACE-04 Izaje y cargas suspendidas (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/04-seguridad/"
+  },
+  {
+    "id": "src.ms-ace-05",
+    "title": "MS-ACE-05 Espacios confinados (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/04-seguridad/"
+  },
+  {
+    "id": "src.ms-ace-06",
+    "title": "MS-ACE-06 Gases CO, O₂, argón y gas natural (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/04-seguridad/"
+  },
+  {
+    "id": "src.ms-ace-07",
+    "title": "MS-ACE-07 Fuentes radiactivas (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/04-seguridad/"
+  },
+  {
+    "id": "src.ms-ace-08",
+    "title": "MS-ACE-08 Estrés térmico y EPP (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/04-seguridad/"
+  },
+  {
+    "id": "src.ms-ace-09",
+    "title": "MS-ACE-09 Respuesta a emergencias (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/04-seguridad/"
+  },
+  {
+    "id": "src.ms-ace-10",
+    "title": "MS-ACE-10 Trabajo en altura (borrador)",
+    "kind": "plant-draft",
+    "status": "DRAFT_NOT_VALIDATED",
+    "path": "10-plantas/01-steelmaking/04-seguridad/"
+  }
+]
