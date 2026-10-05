@@ -23,6 +23,7 @@ export function VideoPlayer() {
       <div className="p-4">
         <div className="mb-2 flex items-center gap-2"><StatusChip status={v.status} /><span className="text-[12px] text-[var(--color-text-3)]">Video placeholder de demostración generado desde el modelo 3D. No muestra la operación real de la planta.</span></div>
         <div ref={box} className="relative overflow-hidden rounded-lg bg-black">
+          <p className="pointer-events-none absolute left-2 top-2 z-10 rounded bg-black/70 px-2 py-0.5 font-mono text-[11px] text-[var(--color-st-demo)]">◇ DEMO · modelo esquemático, no es operación real · no sustituye procedimientos aprobados</p>
           {failed ? (
             <div className="grid aspect-video place-items-center text-center text-[var(--color-text-2)]"><p>Video no disponible en esta versión.<br />Ejecuta <code>npm run video</code> para generarlo.</p></div>
           ) : (

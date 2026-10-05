@@ -3,7 +3,8 @@ import { provider, type Answer } from '../../lib/assistant/provider';
 import { idx } from '../../lib/content';
 import { useApp } from '../../stores/useApp';
 import { track } from '../../lib/analytics';
-import { StatusChip, btn, btnPrimary } from '../ui/Status';
+import { OpText, StatusChip, btn, btnPrimary } from '../ui/Status';
+import { DISCLAIMER } from '../ui/Disclaimer';
 
 interface Turn { q: string; a: Answer }
 const SUGGEST = ['¿Para qué sirve el 5.º agujero?', '¿Qué hace el transformador del horno?', '¿Por qué es peligrosa el agua cerca del metal líquido?', '¿Cuál es la temperatura de vaciado?'];
@@ -28,7 +29,7 @@ export function AskAceria() {
     setBusy(false);
   };
   return (
-    <aside aria-label="Pregunta a Acería AI" className="fixed bottom-12 right-4 z-40 flex max-h-[72vh] w-[min(440px,calc(100vw-2rem))] flex-col overflow-hidden rounded-xl border border-[var(--color-line-strong)] bg-[var(--color-surface)] shadow-2xl" data-testid="assistant">
+    <aside aria-label="Pregunta a Acería AI" className="fixed bottom-[calc(var(--disclaimer-h,4.5rem)+0.5rem)] right-4 z-40 flex max-h-[72vh] w-[min(440px,calc(100vw-2rem))] flex-col overflow-hidden rounded-xl border border-[var(--color-line-strong)] bg-[var(--color-surface)] shadow-2xl" data-testid="assistant">
       <header className="flex items-start justify-between gap-2 border-b border-[var(--color-line)] px-4 py-3">
         <div>
           <h2 className="font-semibold">Pregunta a Acería AI</h2>
@@ -46,14 +47,15 @@ export function AskAceria() {
         {turns.map((t, i) => (
           <div key={i} data-testid="assistant-turn">
             <p className="mb-1.5 ml-8 rounded-lg bg-[var(--color-surface-3)] px-3 py-2 text-[13px]">{t.q}</p>
-            <div className={`rounded-lg border px-3 py-2 text-[13px] ${t.a.kind === 'answer' ? 'border-[var(--color-line)]' : t.a.kind === 'refused-safety' ? 'border-[var(--color-danger)]/60 bg-[var(--color-danger)]/10' : 'border-[var(--color-st-sme)]/60 bg-[var(--color-st-sme)]/10'}`} data-kind={t.a.kind}>
-              <p className="font-medium">{t.a.kind === 'refused-safety' && <span aria-hidden>⛔ </span>}{t.a.kind !== 'answer' && t.a.kind !== 'refused-safety' && <span aria-hidden>⚠ </span>}{t.a.text}</p>
+            <div className={`rounded-lg border px-3 py-2 text-[13px] ${t.a.kind === 'answer' ? 'border-[var(--color-line)]' : t.a.kind === 'refused-safety' || t.a.kind === 'safety-first' ? 'border-[var(--color-danger)]/60 bg-[var(--color-danger)]/10' : 'border-[var(--color-st-sme)]/60 bg-[var(--color-st-sme)]/10'}`} data-kind={t.a.kind}>
+              <p className="font-medium">{(t.a.kind === 'refused-safety' || t.a.kind === 'safety-first') && <span aria-hidden>⛔ </span>}{(t.a.kind === 'no-source' || t.a.kind === 'plant-data-pending') && <span aria-hidden>⚠ </span>}<OpText text={t.a.text} /></p>
               {t.a.note && <p className="mt-1 text-[12px] text-[var(--color-text-3)]">{t.a.note}</p>}
               {t.a.citations.length > 0 && (
                 <ol className="mt-2 space-y-2">
                   {t.a.citations.map((c) => (
                     <li key={c.n} className="rounded border border-[var(--color-line)] bg-[var(--color-surface-2)] p-2">
                       <p className="text-[var(--color-text-2)]">{c.snippet}</p>
+                      {c.pending && <OpText text={`SME_REQUIRED: ${c.pending}`} className="text-[12.5px]" />}
                       <p className="mt-1 flex flex-wrap items-center gap-1.5 text-[11.5px] text-[var(--color-text-3)]">
                         <span className="font-mono">[{c.n}]</span>
                         {c.ref.kind === 'equipment' ? <button className="underline hover:text-[var(--color-text)]" onClick={() => selectEquipment(c.ref.id)}>{c.title}</button> : <span>{c.title}</span>}
@@ -67,6 +69,7 @@ export function AskAceria() {
           </div>
         ))}
       </div>
+      <p role="note" className="border-t border-[var(--color-line)] px-3 py-1.5 text-[11px] text-[var(--color-text-3)]"><span aria-hidden>⚠ </span>{DISCLAIMER}</p>
       <form className="flex gap-2 border-t border-[var(--color-line)] p-3" onSubmit={(e) => { e.preventDefault(); void ask(q); }}>
         <label className="flex-1"><span className="sr-only">Tu pregunta</span>
           <input ref={input} value={q} onChange={(e) => setQ(e.target.value)} placeholder={ctxLabel ? `Pregunta sobre ${ctxLabel}…` : 'Escribe tu pregunta…'} className="w-full rounded-md border border-[var(--color-line-strong)] bg-[var(--color-surface-2)] px-3 py-1.5 text-[13px]" data-testid="assistant-input" />

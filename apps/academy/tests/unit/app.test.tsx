@@ -36,7 +36,7 @@ describe('navegación y equipos', () => {
   it('muestra una etapa del mapa del proceso con valores pendientes de planta', () => {
     render(<App />);
     fireEvent.click(screen.getByTestId('stage-stage.melt'));
-    expect(screen.getByTestId('stage-panel').textContent).toMatch(/SME_REQUIRED — DATO DE PLANTA PENDIENTE/);
+    expect(screen.getByTestId('stage-panel').textContent).toMatch(/PENDIENTE DE VALIDACIÓN DE PLANTA \(SME_REQUIRED\)/);
   });
   it('las flechas del teclado cambian de pestaña', () => {
     render(<App />);

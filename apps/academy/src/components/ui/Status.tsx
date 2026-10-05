@@ -28,7 +28,7 @@ export function OpText({ text, className = '' }: { text: string; className?: str
       {before && <span>{before} </span>}
       <span role="note" className="mt-1 block rounded border border-dashed border-[var(--color-st-sme)]/60 bg-[var(--color-st-sme)]/[0.07] px-2 py-1.5 text-[12.5px] text-[var(--color-text-2)]">
         <span className="mr-1 font-mono text-[10.5px] font-semibold tracking-wide text-[var(--color-st-sme)]">
-          <span aria-hidden>⚠ </span>{pending.kind === 'SME_REQUIRED' ? 'SME_REQUIRED — DATO DE PLANTA PENDIENTE' : 'PLACEHOLDER — REQUIERE VALIDACIÓN DE PLANTA'}
+          <span aria-hidden>⚠ </span>{pending.kind === 'SME_REQUIRED' ? 'PENDIENTE DE VALIDACIÓN DE PLANTA (SME_REQUIRED)' : 'PENDIENTE DE VALIDACIÓN DE PLANTA (PLACEHOLDER)'}
         </span>
         <span className="block">{pending.text}</span>
       </span>

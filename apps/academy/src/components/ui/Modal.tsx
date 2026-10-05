@@ -1,4 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react';
+import { DISCLAIMER } from './Disclaimer';
 
 /** Diálogo modal accesible: foco atrapado, Esc cierra, devuelve el foco al cerrar. */
 export function Modal({ title, onClose, children, wide = false, testid }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean; testid?: string }) {
@@ -26,6 +27,7 @@ export function Modal({ title, onClose, children, wide = false, testid }: { titl
           <button onClick={onClose} aria-label="Cerrar" className="rounded px-2 py-1 text-[var(--color-text-2)] hover:bg-[var(--color-surface-3)]">✕</button>
         </header>
         <div className="scroll-thin flex-1 overflow-y-auto">{children}</div>
+        <p role="note" data-testid="modal-disclaimer" className="border-t border-[var(--color-line)] px-4 py-1.5 text-[11.5px] text-[var(--color-text-2)]"><span aria-hidden>⚠ </span><strong>Aviso de seguridad:</strong> {DISCLAIMER}</p>
       </div>
     </div>
   );

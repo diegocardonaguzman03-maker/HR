@@ -12,12 +12,24 @@ import { Bm25, buildChunks, type Chunk } from './retriever';
 export const NO_SOURCE = 'No tengo una fuente aprobada para esa información.';
 
 export interface Citation { n: number; title: string; status: ValidationStatus; ref: Chunk['ref']; snippet: string; pending?: string }
-export interface Answer { kind: 'answer' | 'no-source' | 'refused-safety' | 'plant-data-pending'; text: string; citations: Citation[]; note?: string }
+export interface Answer { kind: 'answer' | 'no-source' | 'refused-safety' | 'plant-data-pending' | 'safety-first'; text: string; citations: Citation[]; note?: string }
 export interface AskContext { equipmentId?: string | null; stageId?: string | null }
 export interface AnswerProvider { readonly name: string; answer(q: string, ctx: AskContext): Promise<Answer> }
 
-const UNSAFE = /(puente(a|ar|o)|bypass|anul(a|ar)|desactiv(a|ar)|deshabilit(a|ar)|brinc(a|ar)|salt(a|ar)(me)?\s+(el|la|los)?\s*(bloqueo|enclavamiento|interlock|candado|loto|permiso)|forz(a|ar)\s+(el|la)?\s*(enclavamiento|interlock|se[ñn]al)|sin\s+(bloqueo|loto|permiso|candado))/i;
-const PLANT = /(cu[aá]nt[oa]s?|valor|setpoint|consigna|l[ií]mite|m[aá]xim[oa]|m[ií]nim[oa]|temperatura|presi[oó]n|caudal|flujo|voltaje|tensi[oó]n|corriente|amper|kv\b|mva|mw\b|kwh|tap\b|taps|grados|°c|bar\b|psi|segundos|minutos|distancia|metros|par de apriete|torque|qu[ée] pasos.*(loto|bloqueo)|secuencia|procedimiento de emergencia|l[oó]gica de enclavamiento|adici[oó]n(es)?\s+de|cu[aá]ndo vaciar)/i;
+export const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+// --- Reglas de seguridad (revisión ADX-04, RT-SAF-01…07). Se evalúan sobre texto normalizado sin acentos. ---
+const UNSAFE_VERB = /\b(puente\w*|bypass\w*|by\s*-?\s*pass|b\s+y\s+p\s+a\s+s\s+s|override\w*|anul\w*|desactiv\w*|deshabilit\w*|inhib\w*|brinc\w*|burl\w*|engan\w*|forz\w*|fuerz\w*|desconect\w*|quit\w*|retir\w*|apag\w*|silenci\w*|reset\w*|restablec\w*|tap(a|ar|o)|jumper\w*|salt\w*|omit\w*|ignor\w*|sin)\b/;
+const PROTECTION = /\b(enclavamiento\w*|interlock\w*|candado\w*|loto|bloqueo\w*|permiso\w*|guarda\w*|sensor\w*|detector\w*|alarma\w*|paro\w* de emergencia|disparo\w*|proteccion\w*|interruptor\w*|final de carrera|tarjeta\w*|etiqueta\w*|careta|epp|arnes|casco|regla\w*)\b/;
+const BODY_IN_DANGER = /\b(meter|meto|mete|poner(me)?|pongo|pasar|paso|entrar|entro|acercarme|me acerco|trabajar|trabajo)\b.{0,40}\b(mano|manos|debajo|bajo la|bajo el|dentro|fosa|sin)\b/;
+export const isUnsafe = (q: string) => { const s = norm(q); return (UNSAFE_VERB.test(s) && PROTECTION.test(s)) || BODY_IN_DANGER.test(s); };
+const EMERGENCY = /\b(fuga\w*|derram\w*|explosi\w*|incendi\w*|fuego|lesionad\w*|herid\w*|atrapad\w*|quemad\w*|desmay\w*|suena|sono|evacu\w*|emergencia\w*|se rompe|se rompio|se cae|se cayo)\b/;
+const PERMISSION = /^\s*¿?\s*(puedo|podemos|se puede|me puedo|nos podemos|esta bien (si|que)|es seguro|alcanzo a|da tiempo de)\b/;
+const PLANT = /(cuant[oa]s?|valor|setpoint|consigna|limite|maxim[oa]|minim[oa]|temperatura|presion|caudal|flujo|voltaje|tension|corriente|amper|\bkv\b|mva|\bmw\b|kwh|\btap\b|taps|grados|°c|\bbar\b|psi|segundos|minutos|distancia|metros|par de apriete|torque|que pasos.*(loto|bloqueo)|secuencia|procedimiento de emergencia|logica de enclavamiento|adicion(es)?\s+de|cuando vaciar|zona de exclusion|\bradio\b|perimetro|pasos?\s+(de|del|para)\s+(loto|bloqueo|aislamiento|desenergiz)|desenergiz\w*|energia cero|evacuacion|potencia|diametro|calibre|espesor)/;
+
+export const REFUSE = 'No puedo ayudar a omitir, puentear ni anular bloqueos, enclavamientos, permisos, alarmas o protecciones, ni a exponerte a una zona de peligro. Si una protección impide trabajar, detén la tarea y avisa a tu supervisor: solo el procedimiento aprobado de la planta y las personas autorizadas deciden.';
+export const SAFETY_FIRST = 'Si esto está pasando ahora: DETENTE, aléjate a una zona segura, avisa de inmediato por radio a tu supervisor o al púlpito y no dejes que nadie se acerque. No intentes corregirlo tú. La respuesta de emergencia de la planta la define su procedimiento aprobado (SME_REQUIRED: MS-ACE-09 en borrador; Seguridad C-16).';
+export const NO_AUTH = 'La plataforma no autoriza tareas ni excepciones. Si tienes duda, la respuesta es NO: detente y pregúntale a tu supervisor.';
 
 export class LocalExtractiveProvider implements AnswerProvider {
   readonly name = 'Recuperación local (BM25) con citas — sin modelo generativo';
@@ -28,34 +40,29 @@ export class LocalExtractiveProvider implements AnswerProvider {
   async answer(q: string, ctx: AskContext): Promise<Answer> {
     const query = q.trim();
     if (!query) return { kind: 'no-source', text: NO_SOURCE, citations: [] };
-    if (UNSAFE.test(query)) {
-      return {
-        kind: 'refused-safety',
-        text: 'No puedo ayudar a omitir, puentear ni anular bloqueos, enclavamientos, permisos o protecciones. Si una protección impide trabajar, detén la tarea y avisa a tu supervisor: solo el procedimiento aprobado de la planta y las personas autorizadas deciden.',
-        citations: [],
-        note: 'Regla de seguridad del asistente (revisión ADX-04).',
-      };
-    }
+    if (isUnsafe(query)) return { kind: 'refused-safety', text: REFUSE, citations: [], note: 'Regla de seguridad del asistente (revisión ADX-04).' };
     const qTokens = this.index.queryTokens(query).length;
     // preguntas cortas ("¿qué componentes tiene?") dependen del equipo o etapa seleccionada
     const ctxW = qTokens <= 2 ? 3 : 1.35;
     const boost = (c: Chunk) => (ctx.equipmentId && c.ref.id === ctx.equipmentId) || (ctx.stageId && c.ref.id === ctx.stageId) ? ctxW : 1;
     const hits = this.index.search(query, 6, boost).filter((h) => h.score >= this.minScore && h.matched >= Math.min(2, qTokens));
-    if (!hits.length) return { kind: 'no-source', text: NO_SOURCE, citations: [], note: 'No encontré ese tema en el contenido del módulo.' };
     const citations: Citation[] = hits.slice(0, 3).map((h, i) => {
       const sp = splitPending(h.chunk.text);
       return { n: i + 1, title: h.chunk.title, status: h.chunk.status, ref: h.chunk.ref, snippet: snippet(sp.before || h.chunk.text, query), pending: sp.pending?.text };
     });
-    const plantQ = PLANT.test(query);
-    if (plantQ) {
-      const pend = citations.find((c) => c.pending);
+    const s = norm(query);
+    if (EMERGENCY.test(s)) return { kind: 'safety-first', text: SAFETY_FIRST, citations, note: 'Abajo hay contexto educativo; no es el procedimiento de emergencia de la planta.' };
+    if (PERMISSION.test(s)) return { kind: 'safety-first', text: NO_AUTH, citations, note: 'Abajo hay contexto educativo general; no es una autorización.' };
+    if (PLANT.test(s)) {
+      const pend = citations[0]?.pending ? citations[0] : undefined;
       return {
         kind: 'plant-data-pending',
-        text: NO_SOURCE + (pend ? ` Ese dato es de planta y está marcado como SME_REQUIRED: ${pend.pending}` : ' Los valores de operación (límites, consignas, temperaturas, presiones, secuencias) solo pueden venir del procedimiento aprobado de la planta.'),
+        text: NO_SOURCE + (pend ? ` Ese dato es de planta y está pendiente de validación (SME_REQUIRED): ${pend.pending}` : ' Los valores de operación (límites, consignas, temperaturas, presiones, secuencias) solo pueden venir del procedimiento aprobado de la planta.'),
         citations,
-        note: 'Abajo hay contexto educativo general relacionado, no valores de planta.',
+        note: citations.length ? 'Abajo hay contexto educativo general relacionado, no valores de planta.' : undefined,
       };
     }
+    if (!citations.length) return { kind: 'no-source', text: NO_SOURCE, citations: [], note: 'No encontré ese tema en el contenido del módulo.' };
     return { kind: 'answer', text: 'Según el contenido del módulo (educativo, no es un procedimiento aprobado):', citations };
   }
 }
@@ -63,7 +70,7 @@ export class LocalExtractiveProvider implements AnswerProvider {
 /** Extrae las 1–2 oraciones más relacionadas con la pregunta. */
 function snippet(text: string, q: string): string {
   const qt = new Set(q.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').split(/[^a-z0-9ñ]+/).filter((t) => t.length > 3));
-  const sents = text.split(/(?<=[.;:])\s+/).filter(Boolean);
+  const sents = text.split(/(?<=[.;])\s+/).filter(Boolean);
   const scored = sents.map((s, i) => ({ s, i, k: [...qt].filter((t) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').includes(t.slice(0, Math.max(4, t.length - 2)))).length }));
   const best = scored.sort((a, b) => b.k - a.k || a.i - b.i).slice(0, 2).sort((a, b) => a.i - b.i).map((x) => x.s).join(' ');
   return (best || text).slice(0, 420);

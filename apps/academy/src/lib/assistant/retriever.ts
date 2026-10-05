@@ -18,16 +18,19 @@ function stem(t: string): string {
   return t;
 }
 
+const tag = (label: string, xs: string[]) => (xs.length ? `${label}: ${xs.join('; ')}.` : '');
+
 export function buildChunks(c: ContentBundleT): Chunk[] {
   const out: Chunk[] = [];
   for (const e of c.equipment) {
     const base = { ref: { kind: 'equipment' as const, id: e.id }, status: e.status, sourceIds: e.sourceIds };
     out.push({ id: `${e.id}#overview`, title: `${e.name} — general`, text: [e.summary, e.function, ...e.howItWorks].join(' '), ...base });
-    out.push({ id: `${e.id}#operation`, title: `${e.name} — operación`, text: [...e.operationalNotes, ...e.observableSignals, ...e.commonMistakes, ...e.movements].join(' '), ...base });
-    out.push({ id: `${e.id}#controls`, title: `${e.name} — control`, text: [...e.energySources, ...e.actuators, ...e.sensors, ...e.controlSignals, ...e.dependencies].join(' '), ...base });
-    out.push({ id: `${e.id}#maintenance`, title: `${e.name} — mantenimiento`, text: [...e.maintenance.failureModes, ...e.maintenance.inspectionPoints, ...e.maintenance.considerations].join(' '), ...base });
+    out.push({ id: `${e.id}#operation`, title: `${e.name} — operación`, text: [tag('Notas de operación', e.operationalNotes), tag('Señales que se observan', e.observableSignals), tag('Movimientos', e.movements)].filter(Boolean).join(' '), ...base });
+    if (e.commonMistakes.length) out.push({ id: `${e.id}#mistakes`, title: `${e.name} — errores comunes (NO lo hagas)`, text: `Error común — NO lo hagas: ${e.commonMistakes.join('; ')}.`, ...base });
+    out.push({ id: `${e.id}#controls`, title: `${e.name} — control`, text: [tag('Fuentes de energía', e.energySources), tag('Actuadores', e.actuators), tag('Sensores', e.sensors), tag('Señales de control', e.controlSignals), tag('Dependencias', e.dependencies)].filter(Boolean).join(' '), ...base });
+    out.push({ id: `${e.id}#maintenance`, title: `${e.name} — mantenimiento`, text: [tag('Modos de falla', e.maintenance.failureModes), tag('Puntos de inspección', e.maintenance.inspectionPoints), tag('Consideraciones', e.maintenance.considerations)].filter(Boolean).join(' '), ...base });
     out.push({ id: `${e.id}#components`, title: `${e.name} — componentes`, text: `Componentes principales de ${e.name}: ${e.components.map((k) => k.name).join(', ')}.`, ...base });
-    for (const k of e.components) out.push({ id: `${e.id}#${k.id}`, title: `${e.name} — ${k.name}`, text: [k.name, k.function, ...k.failureModes, ...k.inspectionPoints].join(' '), ...base });
+    for (const k of e.components) out.push({ id: `${e.id}#${k.id}`, title: `${e.name} — ${k.name}`, text: [`${k.name}: ${k.function}`, tag('Modos de falla', k.failureModes), tag('Puntos de inspección', k.inspectionPoints)].filter(Boolean).join(' '), ...base });
   }
   for (const h of c.hazards) {
     out.push({ id: h.id, title: `Peligro: ${h.name}`, text: [h.name, h.description, h.consequence, ...h.controls.map((x) => x.text), ...h.ppe].join(' '), ref: { kind: 'hazard', id: h.id }, status: h.status, sourceIds: h.sourceIds });

@@ -39,7 +39,8 @@ export function PerformJobAid() {
   }
   const approved = wi.status === 'PLANT_APPROVED';
   const s = wi.steps[step];
-  const stopStep = !!s && /ALTO|DET[EÉ]N/i.test(s.title);
+  const stopStep = !!s && /^\s*ALTO\b|\bDET[EÉ]NTE\b/.test(s.title);
+  const stopIdx = wi.steps.findIndex((x) => /^\s*ALTO\b|\bDET[EÉ]NTE\b/.test(x.title));
   return (
     <div className="flex h-full flex-col" data-testid="perform-jobaid">
       <div className="border-b border-[var(--color-line)] p-4">
@@ -93,6 +94,7 @@ export function PerformJobAid() {
       )}
       <div className="flex justify-between gap-2 border-t border-[var(--color-line)] p-3">
         <button className={btn} disabled={intro} onClick={() => (step === 0 ? setIntro(true) : setStep(step - 1))}>← Anterior</button>
+        {!intro && step < wi.steps.length && stopIdx >= 0 && stopIdx !== step && <button className={btn + ' !border-[var(--color-danger)] text-[var(--color-danger)]'} onClick={() => setStep(stopIdx)} data-testid="stop-now"><span aria-hidden>⛔ </span>ALTO: detente y avisa</button>}
         {intro ? <button className={btnPrimary} onClick={() => setIntro(false)} data-testid="wi-begin">Comenzar pasos →</button>
           : step < wi.steps.length && <button className={btnPrimary} data-testid="next-step" onClick={() => { const n = step + 1; setStep(n); if (n >= wi.steps.length) track('completed', wi.id, { checked: checked.size }); }}>{step + 1 >= wi.steps.length ? 'Terminar' : 'Siguiente paso →'}</button>}
       </div>

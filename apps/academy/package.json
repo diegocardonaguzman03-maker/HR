@@ -13,7 +13,8 @@
     "test": "vitest run",
     "e2e": "node tests/e2e/run.mjs",
     "model": "node scripts/build-eaf-glb.mjs",
-    "docs:pdf": "node scripts/build-documents.mjs"
+    "docs:pdf": "node scripts/build-documents.mjs",
+    "media": "node scripts/capture-media.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",

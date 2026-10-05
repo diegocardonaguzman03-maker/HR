@@ -10,6 +10,7 @@ import { EXPLODE, REGULATION, SECTIONED, Y0 } from './anchors';
 import { track } from '../../lib/analytics';
 
 const ACCENT = new THREE.Color('#e8a33d');
+const REDUCED = typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 const SECTION_PLANE = new THREE.Plane(new THREE.Vector3(0, 0, -1), 0.02);
 
 interface MeshInfo {
@@ -125,7 +126,7 @@ export function EafModel() {
     if (!info) return;
     const { explode, arcDemo } = useApp.getState();
     const t = state.clock.elapsedTime;
-    const reg = arcDemo ? Math.sin(t * 1.3) * 0.18 + Math.sin(t * 5.1) * 0.03 : 0;
+    const reg = arcDemo && !REDUCED ? Math.sin(t * 1.3) * 0.18 : 0;
     info.nodes.forEach((o, name) => {
       const base = info.origin.get(name)!;
       const dir = EXPLODE[name];

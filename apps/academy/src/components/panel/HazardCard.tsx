@@ -16,6 +16,10 @@ export function HazardCard({ h, open = false }: { h: HazardT; open?: boolean }) 
         <span className="flex-1">
           <span className="block font-semibold text-[var(--color-text)]">{h.name}</span>
           <span className="block text-[12.5px] text-[var(--color-text-2)]">{h.consequence}</span>
+          <span className="mt-1 flex flex-wrap items-center gap-2">
+            <StatusChip status={h.status} compact />
+            <span className="text-[11.5px] font-medium text-[var(--color-text)]"><span aria-hidden>✋ </span>Si un control falta o tienes duda: detente y avisa. Detenerte nunca se sanciona.</span>
+          </span>
         </span>
         <span aria-hidden className="text-[var(--color-text-3)] transition group-open:rotate-90">›</span>
       </summary>
@@ -33,7 +37,6 @@ export function HazardCard({ h, open = false }: { h: HazardT; open?: boolean }) 
         {([['Zona de exclusión', h.exclusionZone], ['Enclavamiento', h.interlock], ['Permiso', h.permit], ['Condición de paro', h.stopCondition], ['Escalamiento', h.escalation]] as const).map(([k, v]) => (
           <div key={k}><h4 className="label mb-1">{k}</h4><OpText text={v} className="text-[var(--color-text-2)]" /></div>
         ))}
-        <StatusChip status={h.status} />
       </div>
     </details>
   );

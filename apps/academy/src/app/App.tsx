@@ -6,7 +6,7 @@ import { Sidebar } from '../components/shell/Sidebar';
 import { ViewToolbar } from '../components/shell/ViewToolbar';
 import { LoadingScreen } from '../components/shell/LoadingScreen';
 import { Welcome } from '../components/shell/Welcome';
-import { Disclaimer } from '../components/ui/Disclaimer';
+import { Disclaimer, DISCLAIMER } from '../components/ui/Disclaimer';
 import { EquipmentPanel } from '../components/panel/EquipmentPanel';
 import { StagePanel } from '../components/panel/StagePanel';
 import { LearnPlayer } from '../components/training/LearnPlayer';
@@ -46,6 +46,11 @@ function useHashRoute() {
     const h = `#/${s.mode}${id ? `/${id}` : ''}`;
     if (location.hash !== h) history.replaceState(null, '', h);
   }, [s.mode, s.selectedEq, s.selectedStage, s.moduleId, s.wiId, s.assessmentId]);
+}
+
+function ArcNote() {
+  const on = useApp((s) => s.arcDemo);
+  return on ? <p role="note" className="pointer-events-none absolute right-3 top-3 rounded bg-black/70 px-2 py-1 font-mono text-[11px] text-[var(--color-st-demo)]">◇ ARCO DEMOSTRATIVO — animación ilustrativa, no representa parámetros reales</p> : null;
 }
 
 /** Una sola barra lateral: columna fija en escritorio, plegable en pantallas angostas. */
@@ -90,7 +95,10 @@ export function App() {
       <div className="relative h-full">
         <Suspense fallback={null}><Scene /></Suspense>
         <LoadingScreen />
-        <p data-capture-badge className="absolute left-4 top-4 rounded bg-black/70 px-2 py-1 font-mono text-[13px] text-[var(--color-st-demo)]">◇ DEMO · VIDEO PLACEHOLDER · MODELO ESQUEMÁTICO, NO OPERACIÓN REAL</p>
+        <div data-capture-badge className="absolute inset-x-4 top-4 font-mono">
+          <p className="inline-block rounded bg-black/70 px-2 py-1 text-[13px] text-[var(--color-st-demo)]">◇ DEMO · VIDEO PLACEHOLDER · MODELO ESQUEMÁTICO, NO OPERACIÓN REAL</p>
+          <p className="mt-1 max-w-[70%] rounded bg-black/60 px-2 py-0.5 text-[10.5px] text-[var(--color-text-2)]">{DISCLAIMER}</p>
+        </div>
       </div>
     );
   }
@@ -109,7 +117,8 @@ function Main() {
           <Suspense fallback={null}><Scene /></Suspense>
           <LoadingScreen />
           <div className="pointer-events-none absolute inset-x-3 bottom-3 flex justify-center"><ViewToolbar /></div>
-          <p className="pointer-events-none absolute left-3 top-3 rounded bg-black/50 px-2 py-1 font-mono text-[10.5px] text-[var(--color-text-3)]">Modelo esquemático · no a escala de planta</p>
+          <p className="pointer-events-none absolute left-3 top-3 rounded bg-black/50 px-2 py-1 font-mono text-[10.5px] text-[var(--color-text-3)]">Modelo esquemático · disposición ilustrativa, no a escala de planta</p>
+          <ArcNote />
         </main>
         <section id="panel" tabIndex={-1} aria-label="Panel de información" className="min-h-0 flex-1 border-l border-[var(--color-line)] bg-[var(--color-surface)] lg:flex-none">
           <RightPanel />

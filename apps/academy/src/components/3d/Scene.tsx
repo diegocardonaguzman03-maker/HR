@@ -17,6 +17,7 @@ export const PRESETS: Record<EffectiveQuality, { dpr: number; shadows: boolean; 
   high: { dpr: 2, shadows: true, post: 'full', envRes: 256 },
 };
 const ORDER: EffectiveQuality[] = ['low', 'medium', 'high'];
+const REDUCED = typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
 function Effects({ q }: { q: EffectiveQuality }) {
   if (PRESETS[q].post === 'none') return null;
@@ -38,8 +39,9 @@ function FurnaceLight() {
   useFrame(({ clock }) => {
     const on = useApp.getState().arcDemo;
     const t = clock.elapsedTime;
-    if (arc.current) arc.current.intensity = on ? 60 + Math.sin(t * 37) * 18 + Math.sin(t * 13) * 12 : 0;
-    if (sprite.current) { sprite.current.visible = on; sprite.current.scale.setScalar(0.9 + Math.sin(t * 41) * 0.15); }
+    // Ilustrativo: ≤ 2 Hz y ±10 %, sin destellos (WCAG 2.3.1). No representa parámetros reales.
+    if (arc.current) arc.current.intensity = on ? (REDUCED ? 60 : 60 + Math.sin(t * 2 * Math.PI * 1.5) * 6) : 0;
+    if (sprite.current) { sprite.current.visible = on; sprite.current.scale.setScalar(REDUCED ? 1 : 1 + Math.sin(t * 2 * Math.PI * 1.2) * 0.05); }
   });
   const tips = [180, 60, 300].map((d) => [Math.cos((d * Math.PI) / 180) * 0.8, 1.25, Math.sin((d * Math.PI) / 180) * 0.8] as [number, number, number]);
   return (
