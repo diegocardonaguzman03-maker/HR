@@ -19,7 +19,7 @@ export interface AnswerProvider { readonly name: string; answer(q: string, ctx: 
 export const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
 // --- Reglas de seguridad (revisión ADX-04, RT-SAF-01…07). Se evalúan sobre texto normalizado sin acentos. ---
-const UNSAFE_VERB = /\b(desarm\w*|puente\w*|bypass\w*|by\s*-?\s*pass|b\s+y\s+p\s+a\s+s\s+s|override\w*|anul\w*|desactiv\w*|deshabilit\w*|inhib\w*|brinc\w*|burl\w*|engan\w*|forz\w*|fuerz\w*|desconect\w*|quit\w*|retir\w*|apag\w*|silenci\w*|reset\w*|restablec\w*|tap(a|ar|o)|jumper\w*|salt\w*|omit\w*|ignor\w*|evit\w*|esquiv\w*|entr(ar|o|e|amos|an)|desbloque\w*|cancel\w*|sin)\b/;
+const UNSAFE_VERB = /\b(desarm\w*|cort\w*|puente\w*|bypass\w*|by\s*-?\s*pass|b\s+y\s+p\s+a\s+s\s+s|override\w*|anul\w*|desactiv\w*|deshabilit\w*|inhib\w*|brinc\w*|burl\w*|engan\w*|forz\w*|fuerz\w*|desconect\w*|quit\w*|retir\w*|apag\w*|silenci\w*|reset\w*|restablec\w*|tap(a|ar|o)|jumper\w*|salt\w*|omit\w*|ignor\w*|evit\w*|esquiv\w*|entr(ar|o|e|amos|an)|desbloque\w*|cancel\w*|sin)\b/;
 const PROTECTION = /\b(enclavamiento\w*|resguardo\w*|zonas? de exclusion|barrera\w*|interlock\w*|candado\w*|loto|bloqueo\w*|permiso\w*|guarda\w*|sensor\w*|detector\w*|alarma\w*|paro\w* de emergencia|disparo\w*|proteccion\w*|interruptor\w*|final de carrera|tarjeta\w*|etiqueta\w*|careta|epp|arnes|casco|regla\w*)\b/;
 const BODY_IN_DANGER = /\b(meter|meto|mete|poner(me)?|pongo|pasar|paso|entrar|entro|acercarme|me acerco|trabajar|trabajo|me paro|pararme|quedarme|me quedo|cruzar|cruzo)\b.{0,40}\b(mano|manos|debajo|abajo|bajo la|bajo el|dentro|fosa|sin)\b/;
 // RT-SAF-10: engañar una protección o trabajar con equipo energizado (revisión ADX-04 §8.4).
@@ -30,7 +30,7 @@ export const isUnsafe = (q: string) => { const s = norm(q); return (UNSAFE_VERB.
 const WATER = /\b(agua|manguera\w*|mojad\w*|humed\w*|hielo)\b/;
 const MELT = /\b(escoria|metal|acero|bano|olla|fosa|horno|pie liquido|liquid\w*)\b/;
 const WATER_ACT = /\b(meto|meter\w*|echo|echar\w*|tiro|tirar|avent\w*|roci\w*|enfri\w*|cargo|cargar|carga|se vale|sigo|seguir)\b/;
-const EMERGENCY = /\b(fuga\w*|derram\w*|explosi\w*|incendi\w*|fuego|lesionad\w*|herid\w*|atrapad\w*|quemad\w*|desmay\w*|huele\w*|olor a|le cayo|me cayo|me (queme|corte|golpee|cai|lastime|electrocute|intoxique)|se (quemo|corto|golpeo|lastimo|electrocuto|intoxico)|vapor|humo|chispa\w*|ator\w*|atasc\w*|prensad\w*|gotea\w*|suena|sono|evacu\w*|emergencia\w*|se rompe|se rompio|se cae|se cayo)\b/;
+const EMERGENCY = /\b(fuga\w*|derram\w*|explosi\w*|incendi\w*|fuego|lesionad\w*|herid\w*|atrapad\w*|quemad\w*|desmay\w*|llamarad\w*|flamazo\w*|huele\w*|olor a|le cayo|me cayo|me (queme|corte|golpee|cai|lastime|electrocute|intoxique)|se (quemo|corto|golpeo|lastimo|electrocuto|intoxico)|vapor|humo|chispa\w*|ator\w*|atasc\w*|prensad\w*|gotea\w*|suena|sono|evacu\w*|emergencia\w*|se rompe|se rompio|se cae|se cayo)\b/;
 /** «paro de emergencia» es un equipo, no una emergencia en curso. */
 const isEmergency = (s: string) => EMERGENCY.test(s.replace(/\bparos? de emergencia\b/g, ''));
 const PERMISSION = /^\s*¿?\s*(puedo|podemos|se puede|me puedo|nos podemos|esta bien (si|que)|es seguro|alcanzo a|da tiempo de|se vale|hay problema si|pasa algo si)\b|¿\s*(sigo|continuo|le sigo)\b/;
@@ -59,6 +59,7 @@ const EXPLANATORY = /^\s*¿?\s*(que es|que son|para que|por que|cual es la funci
 // §8.10-C: lista blanca — solo las preguntas explicativas reciben respuesta normal.
 const ASK_INFO = /^\s*¿?\s*(que pasa si|que ocurre si|donde (esta|estan|se ubica\w*)|quien(es)?|que (controla\w*|mide|regula|vigila|detecta|protege|componentes|partes|peligros?|riesgos?|epp|equipos?|senales|tipos?|funcion|diferencia)|cual(es)? (es|son) (el |la |los |las )?(funcion|peligro\w*|riesgo\w*|parte\w*|componente\w*|diferencia\w*|objetivo|proposito)|la evaluacion)\b/;
 const isExplanatory = (s: string) => EXPLANATORY.test(s) || ASK_INFO.test(s) || (EXPLAIN.test(s) && !/\bcomo (lo |la )?(hago|puedo)\b/.test(s));
+export const NO_SOURCE_SAFE = 'No encontré ese tema en el contenido del módulo. Si tu pregunta es sobre hacer una tarea o sobre algo que está pasando ahora: detente, aléjate si hay peligro y avisa a tu supervisor o al púlpito. Esta plataforma no autoriza tareas.';
 export const NO_HOWTO = 'Esta plataforma explica cómo funciona el equipo; no da instrucciones para hacer tareas en planta. Cómo se hace una tarea lo define el procedimiento aprobado y te lo enseña tu supervisor o instructor en piso. Si tienes duda o algo no se ve bien: detente y pregunta.';
 
 export class LocalExtractiveProvider implements AnswerProvider {
@@ -98,7 +99,7 @@ export class LocalExtractiveProvider implements AnswerProvider {
     if (!isExplanatory(s) && (citations.length || HOWTO.test(s))) {
       return { kind: 'safety-first', text: NO_HOWTO, citations, note: 'Abajo hay contexto educativo general; no es una instrucción de trabajo.' };
     }
-    if (!citations.length) return { kind: 'no-source', text: NO_SOURCE, citations: [], note: 'No encontré ese tema en el contenido del módulo.' };
+    if (!citations.length) return { kind: 'no-source', text: NO_SOURCE, citations: [], note: NO_SOURCE_SAFE };
     return { kind: 'answer', text: 'Según el contenido del módulo (educativo, no es un procedimiento aprobado):', citations };
   }
 }

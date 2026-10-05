@@ -18,6 +18,7 @@ import { Library } from '../components/library/Library';
 import { DocumentViewer } from '../components/library/DocumentViewer';
 import { VideoPlayer } from '../components/library/VideoPlayer';
 import { AskAceria } from '../components/assistant/AskAceria';
+import { ASSISTANT_ENABLED } from '../lib/features';
 
 const Scene = lazy(() => import('../components/3d/Scene').then((m) => ({ default: m.Scene })));
 const MODES: Mode[] = ['explore', 'learn', 'perform', 'assess', 'library'];
@@ -178,7 +179,7 @@ function Main() {
       <Disclaimer />
       <DocumentViewer />
       <VideoPlayer />
-      <AskAceria />
+      {ASSISTANT_ENABLED && <AskAceria />}
     </div>
   );
 }

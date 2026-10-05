@@ -32,6 +32,7 @@ export default defineConfig(({ mode }) => ({
   test: {
     environment: 'jsdom',
     globals: true,
+    env: { VITE_ASSISTANT: 'on' }, // las pruebas unitarias cubren el asistente aunque esté oculto en el piloto
     setupFiles: ['tests/setup.ts'],
     include: ['tests/unit/**/*.test.{ts,tsx}'],
   },

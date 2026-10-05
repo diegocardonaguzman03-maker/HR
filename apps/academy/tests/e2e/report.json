@@ -1,82 +1,82 @@
 {
-  "date": "2026-10-05T16:21:47.812Z",
-  "dir": "web",
+  "date": "2026-10-05T16:27:39.303Z",
+  "dir": "dist",
   "results": [
     {
       "name": "arranque: carga real del modelo, aviso permanente y métricas",
       "ok": true,
-      "ms": 5443
+      "ms": 5465
     },
     {
       "name": "hotspot 3D abre el panel del equipo",
       "ok": true,
-      "ms": 9108
+      "ms": 11617
     },
     {
       "name": "clic directo en el modelo 3D selecciona un equipo",
       "ok": true,
-      "ms": 8363
+      "ms": 6556
     },
     {
       "name": "herramientas de vista: corte, rayos X, despiece, aislar, restablecer",
       "ok": true,
-      "ms": 12610
+      "ms": 13952
     },
     {
       "name": "cambio de modo y enlaces profundos",
       "ok": true,
-      "ms": 7515
+      "ms": 7488
     },
     {
       "name": "progresión de lecciones con resaltado 3D",
       "ok": true,
-      "ms": 12993
+      "ms": 14949
     },
     {
       "name": "EJECUTAR: instrucción paso a paso con aviso de no aprobada",
       "ok": true,
-      "ms": 25485
+      "ms": 26052
     },
     {
       "name": "evaluación completa (identificar con la lista accesible; preguntas críticas ▲)",
       "ok": true,
-      "ms": 26363
+      "ms": 28449
     },
     {
       "name": "descarga de documento PDF",
       "ok": true,
-      "ms": 6123
+      "ms": 5892
     },
     {
       "name": "video con subtítulos y capítulos",
       "ok": true,
-      "ms": 7731
+      "ms": 5648
     },
     {
-      "name": "asistente: cita fuentes y se niega sin fuente o ante un bypass",
+      "name": "asistente oculto en el piloto (veto ADX-04, opción B)",
       "ok": true,
-      "ms": 8871
+      "ms": 1393
     },
     {
       "name": "accesibilidad: teclado, landmarks, etiquetas y modo móvil",
       "ok": true,
-      "ms": 2969
+      "ms": 2933
     },
     {
       "name": "vista móvil (390×844) sin desbordamiento horizontal",
       "ok": true,
-      "ms": 2037
+      "ms": 1962
     }
   ],
   "errors": [],
   "perf": {
-    "loadMs": 1577,
-    "fps": 3,
+    "loadMs": 2170,
+    "fps": 4,
     "calls": 1,
     "triangles": 1,
     "geometries": 17,
     "textures": 27,
     "quality": "medium",
-    "jsHeapMB": 24
+    "jsHeapMB": 22
   }
 }

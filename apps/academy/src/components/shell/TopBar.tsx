@@ -2,6 +2,7 @@ import { useShallow } from 'zustand/react/shallow';
 import { isQuality, useApp, type Mode } from '../../stores/useApp';
 import { track } from '../../lib/analytics';
 import { btnPrimary } from '../ui/Status';
+import { ASSISTANT_ENABLED } from '../../lib/features';
 
 const MODES: { id: Mode; label: string; hint: string }[] = [
   { id: 'explore', label: 'EXPLORAR', hint: 'Recorre el horno y sus equipos' },
@@ -42,9 +43,9 @@ export function TopBar() {
             {Q.map((x) => <option key={x.id} value={x.id}>{x.label}{x.id === 'auto' && quality === 'auto' ? ` (${({ low: 'baja', medium: 'media', high: 'alta' } as const)[effective]})` : ''}</option>)}
           </select>
         </label>
-        <button className={btnPrimary} aria-expanded={assistantOpen} onClick={() => set({ assistantOpen: !assistantOpen })} data-testid="open-assistant">
+        {ASSISTANT_ENABLED && <button className={btnPrimary} aria-expanded={assistantOpen} onClick={() => set({ assistantOpen: !assistantOpen })} data-testid="open-assistant">
           <span aria-hidden>✦</span> Pregunta a Acería AI
-        </button>
+        </button>}
       </div>
     </header>
   );
