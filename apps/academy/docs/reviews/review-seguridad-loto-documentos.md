@@ -84,3 +84,57 @@ Severidad: **ALTA** = enseña o permite un acto inseguro (condición de veto) ·
 **Recomendación:** opción A. Además: (1) enviar SAF-L-05, SAF-D-04 y SAF-D-05 (retiro de bloqueo ajeno y cadena de firmas) a `experto-relaciones-laborales`, porque tocan facultades del supervisor y del personal sindicalizado; (2) pedir a `experto-operativo-metalurgia` el visto bueno técnico de la secuencia ilustrativa de la banda (contrapeso y tensión); (3) pedir a Seguridad y Mantenimiento de planta los `SME_REQUIRED` (puntos de aislamiento, método del contrapeso y la tensión, prueba de ausencia de tensión, bloqueo grupal, retiro de bloqueo ajeno, cambio de turno, formato de etiqueta y lista aprobada) para la versión que deje de ser DEMO.
 
 **Fecha límite para decidir:** 2026-10-12 **[Supuesto]**, alineada con la decisión pendiente sobre la misión de alturas, para arrancar el piloto con las dos misiones. Mientras no se decida, el material LOTO solo se muestra como prototipo.
+
+---
+
+## Re-revisión (2026-10-05, commit `4884636`)
+
+**Alcance:** `loto-01.json`, `scene-loto.json`, `docs-loto.json`, `docs-heights.json`, `heights-prep.json`, `scripts/build-mission-docs.mjs`, `MissionApp.tsx`, `interactions/index.tsx` (`Confirm`), `schema.ts`, `tests/e2e/run.mjs`, y los 6 PDF regenerados (leídos con `pdftotext`). Los PDF son de las 23:05:27 y los JSON de las 23:05:20, así que están sincronizados. Comparé con un script todas las cadenas del JSON contra los PDF: no hay diferencias de contenido (las 3 «faltas» que marca son cortes de página). `npx vitest run tests/unit/missions.test.tsx` → 20/20.
+
+### Estado de cada hallazgo
+
+| ID | Estado | Evidencia |
+|---|---|---|
+| SAF-L-01 | **CERRADO** | `verificar-cero` tiene 5 acciones: seccionador, contrapeso y tensión, nadie expuesto (`companero`), intentar arrancar y regresar a paro. Tiene el `done` con la prueba de ausencia de tensión `SME_REQUIRED` y un `safety` para cuando la verificación falla. El ítem de la secuencia y `procedure.sections[6]` se corrigieron. El e2e recorre las 5 acciones (`run.mjs`). |
+| SAF-L-02 | **CERRADO** | El escenario dice «no tiene candado propio». La opción correcta es «No retiro mi candado mientras él esté dentro… verifico que nadie esté en el equipo…». Se agregó la trampa «Grito que me voy a retirar…» y se corrigió `why`. |
+| SAF-L-03 | **CERRADO** | `authorization` es obligatorio en `schema.ts` y la prueba unitaria lo exige. La pantalla final usa `{m.authorization}`: en LOTO dice «aplicar bloqueo y etiquetado» y en alturas, «trabajar en altura». |
+| SAF-L-04 | **CERRADO, con residuo** | `validar-requisitos` tiene `critical: true`. `Confirm` registra `wrongIds` y `wrongFeedback` muestra las trampas de confirmación. Se agregó la FAQ de bloqueo grupal. Residuo: SAF-R-02. |
+| SAF-L-05 | **CERRADO** | Se usaron los textos acordados en `steps[7].safety` y `procedure.sections[7].items[2]`. |
+| SAF-L-06 | **CERRADO** | La pista dice «comprobar con nadie expuesto». La mejora del motor queda para la siguiente iteración. |
+| SAF-L-07 | **CERRADO** | Se agregaron `desc` a `extintor`, `mesa`, `trabajador` y `delimitacion`. |
+| SAF-D-01 | **CERRADO** | WI-LOTO paso 9, MO-LOTO §6 y CL-LOTO §3 y §4 incluyen «nadie está en la banda ni en su zona» y «banda sin tensión» (verificado en el texto del PDF). |
+| SAF-D-02 | **CERRADO** | El banner «PLANTILLA DE PRÁCTICA — NO ES UN REGISTRO DE PLANTA» aparece en CL-LOTO y CL-ALT. Los puntos críticos muestran «—» en N/A y está la regla «Un punto crítico no se marca N/A». Firmas «solo para práctica en aula»; marca de agua al 0.22; tipo «CHECKLIST DE PRÁCTICA». |
+| SAF-D-03 | **CERRADO** | En WI-ALT, `tools` y el paso 4 incluyen «coloca tu propio candado». En CL-ALT, el ítem de energía dice «bloqueada con mi propio candado». |
+| SAF-D-04 | **CERRADO** (contenido) | Las firmas empiezan con «Firmas de práctica. SME_REQUIRED: quién firma y autoriza en la planta…». Falta la validación de Relaciones Laborales. |
+| SAF-D-05 | **CERRADO** (contenido) | Supervisor: «nunca lo retira por su cuenta» (WI-LOTO y MO-LOTO). WI paso 12: «nunca por iniciativa propia ni por una orden verbal». Falta la validación de Relaciones Laborales. |
+| SAF-D-06 | **CERRADO, con residuo** | En CL-LOTO, «Avisé…» es crítico y se agregó el aviso de retiro en §5. Residuo: SAF-R-01. |
+| SAF-D-07 | **CERRADO, con residuo** | No quedan marcas `SME_REQUIRED` sin dato: revisé con un script `docs-*.json` y ya no aparece «(SME_REQUIRED): (» en ningún PDF. `op()` ahora es global. Residuo: SAF-R-03. |
+
+### Hallazgos residuales (todos BAJA; no condicionan el piloto)
+
+| ID | Severidad | Ubicación | Hallazgo | CORRECCIÓN EXACTA |
+|---|---|---|---|---|
+| SAF-R-01 | BAJA | `docs-heights.json` → `checklist.sections[3].items[4]` («Arnés colocado y ajustado.») | Sigue con `"critical": false`. No se aplicó esa parte de SAF-D-06. | `"critical": false` → `"critical": true` y regenerar CL-ALT. |
+| SAF-R-02 | BAJA | `tests/unit/missions.test.tsx` | Ninguna prueba garantiza que marcar «prestado» o «paro» en `validar-requisitos` produzca «PRÁCTICA TERMINADA — CON ERRORES CRÍTICOS». Una regresión en `Confirm` lo apagaría sin aviso. | Agregar una prueba: en `loto-01`, marcar `prestado`, corregir y terminar. Esperar `results['validar-requisitos'].wrong` con `'prestado'` y que `critical-alert` sea visible. |
+| SAF-R-03 | BAJA | `scripts/build-mission-docs.mjs:13` (`op`) | La expresión `([^.;]*[.;]?)` corta el resaltado en el primer «;». Por ejemplo, en «(incluye prueba de ausencia de tensión cuando aplique; Mantenimiento Eléctrico)», el responsable queda fuera del recuadro amarillo. Solo es un tema de formato. | `([^.;]*[.;]?)` → `([^.]*\.?)` y regenerar los PDF. |
+
+### Nuevo dictamen: **SE LEVANTA EL SAFETY VETO → APROBADO CON CONDICIONES**
+
+Los tres hallazgos ALTOS (SAF-L-01, SAF-L-02 y SAF-D-01) y los MEDIOS están cerrados y verificados en el contenido, el código, los PDF y el e2e. Las respuestas correctas son las seguras. Están los principios del control de energías peligrosas: un paro no es aislamiento, candado personal con llave única, energía almacenada, verificar energía cero con nadie expuesto y regresar a paro, cada quien retira su candado, y un bloqueo ajeno solo se retira por el procedimiento autorizado. Los checklist ya no pasan por un registro de planta.
+
+**Condiciones para usar la misión y los 6 documentos en el piloto con trabajadores:**
+1. Usarlos siempre como **DEMO / práctica**, con los avisos actuales, y nunca como evidencia de autorización para aplicar bloqueo o trabajar en altura (NOM-004-STPS-1999, NOM-029-STPS-2011 y NOM-009-STPS-2011; verificar con Jurídico / Seguridad).
+2. `experto-relaciones-laborales` valida SAF-L-05, SAF-D-04, SAF-D-05 y la frase «No se usa para escalafón…» antes de usarlos con personal sindicalizado.
+3. `experto-operativo-metalurgia` da el visto bueno técnico a la secuencia ilustrativa de la banda (contrapeso y tensión), como exige CLAUDE.md para documentos operativos.
+4. Pasar a contenido aprobado (sin estado DEMO) requiere que Seguridad y Mantenimiento de planta completen los `SME_REQUIRED`. Esto aplica a la versión siguiente, no al piloto.
+
+SAF-R-01 a SAF-R-03 pueden quedar para la siguiente iteración. Si se corrigen, no hace falta otra re-revisión completa.
+
+### Decisión requerida del Director (re-revisión)
+
+| Opción | Descripción | Costo / esfuerzo | Riesgo |
+|---|---|---|---|
+| **A (recomendada)** | Liberar LOTO y los 6 documentos para el piloto con las condiciones 1 a 3. Corregir SAF-R-01 a SAF-R-03 en la misma semana. | ≤ 0.5 día **[Supuesto]**, con capacidad interna. | Bajo. |
+| **B** | Esperar las validaciones de Relaciones Laborales y del experto operativo antes de liberar cualquier parte. | Sin costo; el piloto LOTO se retrasa hasta tener las validaciones. | Bajo para seguridad; medio para el calendario del piloto. |
+
+**Recomendación:** opción A, con las validaciones de las condiciones 2 y 3 terminadas antes de la primera sesión con personal sindicalizado. **Fecha límite para decidir:** 2026-10-12 **[Supuesto]**.

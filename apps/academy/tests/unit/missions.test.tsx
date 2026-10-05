@@ -153,6 +153,15 @@ describe('motor de misiones — errores críticos', () => {
     expect(screen.getByTestId('missed')).toHaveTextContent('Elegiste «Inicio la tarea; es rápida»');
     expect(JSON.parse(localStorage.getItem('adx.missions.done') ?? '[]')).not.toContain(m.id);
   });
+  it('SAF-R-02 · LOTO: marcar «candado prestado» en validar-requisitos es error crítico', () => {
+    const lm = missions['loto-01'];
+    act(() => useMission.setState({ view: 'complete', missionId: lm.id, startedAt: Date.now() - 60000, endedAt: Date.now(),
+      results: Object.fromEntries(lm.steps.map((s) => [s.id, { done: true, mistakes: s.id === 'validar-requisitos' ? 1 : 0, wrong: s.id === 'validar-requisitos' ? ['prestado'] : [] }])) }));
+    render(<MissionApp />);
+    expect(screen.getByTestId('complete-title')).toHaveTextContent('CON ERRORES CRÍTICOS');
+    expect(screen.getByTestId('critical-alert')).toBeInTheDocument();
+    expect(JSON.parse(localStorage.getItem('adx.missions.done') ?? '[]')).not.toContain(lm.id);
+  });
   it('en un paso de identificar se deben encontrar todos los peligros', () => {
     for (const s of m.steps) if (s.type === 'identify') expect(s.required).toBe(s.targets.length);
   });

@@ -10,7 +10,7 @@ const files = fs.readdirSync(DIR).filter((f) => /^docs-.*\.json$/.test(f));
 const DISCLAIMER = 'Este entorno de capacitación apoya el aprendizaje y no sustituye procedimientos operativos aprobados, instrucciones de trabajo, permisos, supervisión ni requisitos de seguridad.';
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const MARK = /(SME_REQUIRED|PLACEHOLDER\s*[—-]\s*REQUIRES PLANT VALIDATION)\s*:?\s*/i;
-const op = (s = '') => esc(s).replace(/(SME_REQUIRED|PLACEHOLDER\s*[—-]\s*REQUIRES PLANT VALIDATION)\s*:?\s*([^.;]*[.;]?)/gi, (_m, _k, rest) => `<span class="sme"><b>⚠ PENDIENTE DE VALIDACIÓN DE PLANTA (SME_REQUIRED):</b> ${rest}</span>`);
+const op = (s = '') => esc(s).replace(/(SME_REQUIRED|PLACEHOLDER\s*[—-]\s*REQUIRES PLANT VALIDATION)\s*:?\s*([^.]*\.?)/gi, (_m, _k, rest) => `<span class="sme"><b>⚠ PENDIENTE DE VALIDACIÓN DE PLANTA (SME_REQUIRED):</b> ${rest}</span>`);
 const ul = (a = []) => (a.length ? `<ul>${a.map((x) => `<li>${op(x)}</li>`).join('')}</ul>` : '');
 
 const CSS = `
