@@ -94,4 +94,4 @@ export const useApp = create<AppState>((set, get) => ({
   resetView: () => set({ xray: false, section: false, explode: 0, isolate: false, hidden: [], cameraRequest: { camera: HOME, key: ++k } }),
 }));
 
-export const HOME: CameraT = { position: [17, 11, 19], target: [-1.5, 3, 0] };
+export const HOME: CameraT = { position: [25, 15, 27], target: [-3, 2.5, 0] };
