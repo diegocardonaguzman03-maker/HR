@@ -24,13 +24,13 @@ const PROTECTION = /\b(enclavamiento\w*|resguardo\w*|zonas? de exclusion|barrera
 const BODY_IN_DANGER = /\b(meter|meto|mete|poner(me)?|pongo|pasar|paso|entrar|entro|acercarme|me acerco|trabajar|trabajo)\b.{0,40}\b(mano|manos|debajo|bajo la|bajo el|dentro|fosa|sin)\b/;
 // RT-SAF-10: engañar una protección o trabajar con equipo energizado (revisión ADX-04 §8.4).
 const DEFEAT = /\bpara que no (se )?(dispare|suene|active|detecte|bote)\b|\b(crea|piense|marque|lea|detecte|simule) que (esta|estan|sigue)\b/;
-const LIVE_WORK = /\b(abr\w*|cambi\w*|meto|meter|limpi\w*|repar\w*|ajust\w*|toc\w*|trabaj\w*|subo|subir|entr\w*)\b.{0,50}\b(energizad\w*|prendid\w*|encendid\w*|andando|en marcha|funcionando)\b/;
+const LIVE_WORK = /\b(destrab\w*|desator\w*|zaf\w*|saco|sacar|quito|quitar|abr\w*|cambi\w*|meto|meter|limpi\w*|repar\w*|ajust\w*|toc\w*|trabaj\w*|subo|subir|entr\w*)\b.{0,50}\b(energizad\w*|prendid\w*|encendid\w*|andando|en marcha|funcionando)\b/;
 export const isUnsafe = (q: string) => { const s = norm(q); return (UNSAFE_VERB.test(s) && PROTECTION.test(s)) || BODY_IN_DANGER.test(s) || DEFEAT.test(s) || LIVE_WORK.test(s); };
 // RT-SAF-09: agua o humedad con metal líquido o escoria (conducta general ya revisada en q.safety-1 y q.asm-water-1).
 const WATER = /\b(agua|manguera\w*|mojad\w*|humed\w*|hielo)\b/;
 const MELT = /\b(escoria|metal|acero|bano|olla|fosa|horno|pie liquido|liquid\w*)\b/;
 const WATER_ACT = /\b(meto|meter\w*|echo|echar\w*|tiro|tirar|avent\w*|roci\w*|enfri\w*|cargo|cargar|carga|se vale|sigo|seguir)\b/;
-const EMERGENCY = /\b(fuga\w*|derram\w*|explosi\w*|incendi\w*|fuego|lesionad\w*|herid\w*|atrapad\w*|quemad\w*|desmay\w*|vapor|humo|chispa\w*|ator\w*|atasc\w*|prensad\w*|gotea\w*|suena|sono|evacu\w*|emergencia\w*|se rompe|se rompio|se cae|se cayo)\b/;
+const EMERGENCY = /\b(fuga\w*|derram\w*|explosi\w*|incendi\w*|fuego|lesionad\w*|herid\w*|atrapad\w*|quemad\w*|desmay\w*|me (queme|corte|golpee|cai|lastime|electrocute|intoxique)|se (quemo|corto|golpeo|lastimo|electrocuto|intoxico)|vapor|humo|chispa\w*|ator\w*|atasc\w*|prensad\w*|gotea\w*|suena|sono|evacu\w*|emergencia\w*|se rompe|se rompio|se cae|se cayo)\b/;
 /** «paro de emergencia» es un equipo, no una emergencia en curso. */
 const isEmergency = (s: string) => EMERGENCY.test(s.replace(/\bparos? de emergencia\b/g, ''));
 const PERMISSION = /^\s*¿?\s*(puedo|podemos|se puede|me puedo|nos podemos|esta bien (si|que)|es seguro|alcanzo a|da tiempo de|se vale|hay problema si|pasa algo si)\b|¿\s*(sigo|continuo|le sigo)\b/;
