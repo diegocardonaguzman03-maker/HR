@@ -10,6 +10,8 @@ import { Icon } from '@/components/ui/Icon';
 import { AgentAvatar, clock, cx, IconBtn, SourceBadge, StatusIndicator } from '@/components/ui/primitives';
 import { DecisionButtons } from '../agents/AgentPanel';
 
+const REMOTE_PROMPTS = ['¿En qué estado vas?', 'Aprobado, continúa.', 'Resume lo que hiciste y qué falta.', 'Prepara la presentación ejecutiva de avances.'];
+
 const QUICK_PROMPTS = [
   'Give me a status update.',
   'What are you working on?',
@@ -37,7 +39,25 @@ export function ChatPanel({ conversationId }: { conversationId: string }) {
   const fileRef = useRef<HTMLInputElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  const messages = useMemo(() => (conv ? conv.messageIds.map((id) => messagesMap[id]).filter(Boolean) : []), [conv, messagesMap]);
+  const remoteId = conv?.remoteSessionId;
+  const remote = useWorld((s) => (remoteId ? s.world.remote?.[remoteId] : undefined));
+  const transcript = useWorld((s) => (remoteId ? s.transcripts[remoteId] : undefined));
+  const [sent, setSent] = useState<Message[]>([]);
+  const local = useMemo(() => (conv ? conv.messageIds.map((id) => messagesMap[id]).filter(Boolean) : []), [conv, messagesMap]);
+  const messages = useMemo(() => {
+    if (!remoteId) return local;
+    const t = transcript ?? [];
+    const lastTs = t.length ? t[t.length - 1].ts : 0;
+    return [...t, ...sent.filter((m) => m.ts > lastTs - 2000 && !t.some((x) => x.role === 'user' && x.text === m.text))];
+  }, [remoteId, local, transcript, sent]);
+
+  // Real session: load its transcript and keep it fresh while the chat is open.
+  useEffect(() => {
+    if (!remoteId) return;
+    dispatch({ type: 'remote.refresh', sessionId: remoteId });
+    const t = setInterval(() => document.visibilityState === 'visible' && dispatch({ type: 'remote.refresh', sessionId: remoteId }), 15000);
+    return () => clearInterval(t);
+  }, [remoteId]);
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: 'smooth' });
@@ -60,6 +80,13 @@ export function ChatPanel({ conversationId }: { conversationId: string }) {
   const send = (value = text) => {
     const v = value.trim();
     if (!v && !files.length) return;
+    if (remoteId) {
+      if (!v) return;
+      dispatch({ type: 'chat.send', conversationId, agentId: agent.id, text: v });
+      setSent((xs) => [...xs, { id: `local-${Date.now()}`, conversationId, role: 'user', text: v, ts: Date.now() }]);
+      setText('');
+      return;
+    }
     dispatch({
       type: 'chat.send',
       conversationId,
@@ -127,8 +154,22 @@ export function ChatPanel({ conversationId }: { conversationId: string }) {
         </div>
       </header>
 
+      {remoteId && (
+        <div className="flex items-center gap-2 border-b border-white/8 bg-emerald-400/5 px-4 py-2 text-[11px] text-emerald-100/90">
+          <Icon name="link" size={13} className="shrink-0 text-emerald-300" />
+          <span className="min-w-0 flex-1">
+            Real Claude Code session · <b className="font-semibold">{remote?.status?.replace('_', ' ') ?? 'loading'}</b>
+            {remote?.needsAction ? <span className="block truncate text-yellow-200">Waiting for you: {remote.needsAction}</span> : null}
+          </span>
+          <a href={`https://claude.ai/code/${remoteId}`} target="_blank" rel="noreferrer" className="shrink-0 rounded border border-emerald-400/30 px-2 py-0.5 text-emerald-200 hover:bg-emerald-400/10">Open in Claude</a>
+        </div>
+      )}
       <div ref={listRef} className="min-h-0 flex-1 space-y-3 overflow-y-auto px-4 py-4" aria-live="polite">
-        {messages.length === 0 && <p className="text-center text-xs text-zinc-500">Start the conversation — {agent.name} has the context of {project ? project.name : 'your workspace'}.</p>}
+        {messages.length === 0 && (
+          <p className="text-center text-xs text-zinc-500">
+            {remoteId ? (transcript ? 'No messages in this session yet.' : 'Loading the session’s conversation…') : `Start the conversation — ${agent.name} has the context of ${project ? project.name : 'your workspace'}.`}
+          </p>
+        )}
         {messages.map((m) => <Bubble key={m.id} m={m} />)}
         {agent.state === 'waiting' && agent.waitingFor?.decisionId && (
           <div className="rounded-lg border border-yellow-400/25 bg-yellow-400/6 p-3">
@@ -154,7 +195,7 @@ export function ChatPanel({ conversationId }: { conversationId: string }) {
 
       <div className="border-t border-white/8 px-3 pb-3 pt-2">
         <div className="scrollbar-none mb-2 flex gap-1.5 overflow-x-auto">
-          {QUICK_PROMPTS.map((q) => (
+          {(remoteId ? REMOTE_PROMPTS : QUICK_PROMPTS).map((q) => (
             <button key={q} type="button" onClick={() => send(q)} className="shrink-0 rounded-full border border-white/10 px-2.5 py-1 text-[10.5px] text-zinc-300 hover:border-[var(--accent)]/50 hover:text-white">
               {q}
             </button>
@@ -184,7 +225,7 @@ export function ChatPanel({ conversationId }: { conversationId: string }) {
                 send();
               }
             }}
-            placeholder={`Message ${agent.name}…`}
+            placeholder={remoteId ? 'Write to the Claude Code session…' : `Message ${agent.name}…`}
             className="max-h-32 min-h-9 flex-1 resize-none bg-transparent px-1 py-2 text-[13px] text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus-visible:outline-none"
           />
           <IconBtn icon="mic" label="Voice input — coming later (not yet available)" disabled className="opacity-35" />

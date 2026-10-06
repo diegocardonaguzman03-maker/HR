@@ -137,6 +137,7 @@ export function AgentPanel({ agent }: { agent: Agent }) {
             <div className="glass-solid absolute bottom-10 left-0 right-0 z-10 rounded-lg p-1">
               {([
                 ['user', 'Open full profile', () => u.openAgentProfile(agent.id)],
+                ['zap', 'Launch real work with this agent', () => u.openModal({ type: 'launchRemote', projectId: project?.id ?? null, agentIds: [agent.id] })],
                 ['move', 'Move to another project', () => u.openModal({ type: 'moveAgent', agentId: agent.id })],
                 ['file', 'Create a deliverable', () => dispatch({ type: 'deliverable.create', agentId: agent.id, projectId: project?.id ?? null, title: `${project?.name ?? agent.name} — deliverable` })],
                 ['users', 'Collaborate with another agent', () => u.openModal({ type: 'createConversation', agentId: agent.id, request: `Collaborate on ${project?.name ?? 'this'}`, projectId: project?.id })],

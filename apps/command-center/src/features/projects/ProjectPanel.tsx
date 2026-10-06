@@ -20,6 +20,7 @@ export function ProjectPanel({ project }: { project: Project }) {
   const open = missions.filter((m) => m.status !== 'done').slice(0, 3);
   const pendingDecisions = project.decisionIds.map((id) => world.decisions[id]).filter((d) => d?.status === 'pending');
   const lead = present[0] ?? agents[0];
+  const sessions = Object.values(world.remote ?? {}).filter((r) => r.projectId === project.id);
 
   const actions: { label: string; icon: IconName; run: () => void; primary?: boolean }[] = [
     { label: 'Open workspace', icon: 'layers', run: () => u.openWorkspace(project.id), primary: true },
@@ -52,6 +53,17 @@ export function ProjectPanel({ project }: { project: Project }) {
       </div>
 
       <p className="text-[12.5px] leading-relaxed text-zinc-300">{project.objective}</p>
+
+      {sessions.map((r) => (
+        <button key={r.id} type="button" onClick={() => u.openChat(r.conversationId)} className="flex items-center gap-2 rounded-lg border border-emerald-400/25 bg-emerald-400/6 px-3 py-2 text-left text-[12px] text-emerald-50 hover:bg-emerald-400/10">
+          <Icon name="link" size={14} className="text-emerald-300" />
+          <span className="min-w-0 flex-1">
+            <span className="block truncate">Claude Code · {r.title}</span>
+            <span className="block text-[10.5px] text-emerald-200/70">{r.needsAction ? `Waiting for you: ${r.needsAction}` : r.status.replace('_', ' ')}</span>
+          </span>
+          <Icon name="chevronRight" size={14} />
+        </button>
+      ))}
 
       {pendingDecisions.length > 0 && (
         <button type="button" onClick={() => u.openModal({ type: 'decision', decisionId: pendingDecisions[0].id })} className="flex items-center gap-2 rounded-lg border border-yellow-400/30 bg-yellow-400/8 px-3 py-2 text-left text-[12px] text-yellow-100 hover:bg-yellow-400/12">
@@ -127,6 +139,7 @@ export function ProjectPanel({ project }: { project: Project }) {
                   ? ['play', 'Resume project', () => dispatch({ type: 'project.set_status', projectId: project.id, status: 'active' })]
                   : ['pause', 'Pause project', () => dispatch({ type: 'project.set_status', projectId: project.id, status: 'paused' })],
                 ['check', 'Mark completed', () => dispatch({ type: 'project.set_status', projectId: project.id, status: 'completed' })],
+                ['zap', 'Ask a team for real work (Claude Code)', () => u.openModal({ type: 'launchRemote', projectId: project.id, agentIds: project.agentIds.slice(0, 3) })],
                 ['users', 'Form a squad here', () => u.openModal({ type: 'createConversation', projectId: project.id, request: `Squad for ${project.name}: ` })],
                 ['archive', 'Archive project', () => { dispatch({ type: 'project.archive', projectId: project.id }); u.select(null); }],
                 ] as [IconName, string, () => void][]

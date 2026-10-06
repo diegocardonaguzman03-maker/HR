@@ -29,6 +29,7 @@ import type {
   Message,
   Mission,
   Project,
+  RemoteSession,
   Squad,
   Territory,
 } from '@/types/domain';
@@ -49,6 +50,8 @@ export interface WorldState {
   activity: ActivityItem[];
   calendar: CalendarEvent[];
   inbox: InboxItem[];
+  /** Real Claude Code sessions linked to the world. */
+  remote: Record<ID, RemoteSession>;
   /** Append-only event log (capped) — enables history, replay and audit. */
   events: WorldEvent[];
 }
@@ -92,6 +95,7 @@ export function createSeedState(): WorldState {
     activity: seedActivity(),
     calendar: seedCalendar(),
     inbox: seedInbox(),
+    remote: {},
     events: [],
   };
 }
@@ -256,9 +260,9 @@ function reduceEntities(s: WorldState, e: WorldEvent): WorldState {
       };
     }
     case 'conversation.created': {
-      const { conversationId, agentId, projectId, title } = e.payload;
+      const { conversationId, agentId, projectId, title, remoteSessionId } = e.payload;
       if (s.conversations[conversationId]) return s;
-      s = { ...s, conversations: { ...s.conversations, [conversationId]: { id: conversationId, agentId, projectId, title, messageIds: [], updatedAt: e.ts } } };
+      s = { ...s, conversations: { ...s.conversations, [conversationId]: { id: conversationId, agentId, projectId, title, messageIds: [], updatedAt: e.ts, remoteSessionId } } };
       return patchAgent(s, agentId, (a) => ({ ...a, conversationIds: addUnique(a.conversationIds, conversationId) }));
     }
     case 'project.created':
@@ -313,6 +317,16 @@ function reduceEntities(s: WorldState, e: WorldEvent): WorldState {
     }
     case 'notification.created':
       return { ...s, notifications: [e.payload.notification, ...s.notifications].slice(0, 100) };
+    case 'remote.session_linked': {
+      const r = e.payload.session;
+      s = { ...s, remote: { ...(s.remote ?? {}), [r.id]: r } };
+      return patchProject(s, r.projectId, (p) => ({ ...p, agentIds: Array.from(new Set([...p.agentIds, ...r.agentIds])) }));
+    }
+    case 'remote.session_updated': {
+      const r = s.remote?.[e.payload.sessionId];
+      if (!r) return s;
+      return { ...s, remote: { ...s.remote, [r.id]: { ...r, ...e.payload.patch } } };
+    }
     case 'notification.read': {
       const ids = e.payload.ids;
       return { ...s, notifications: s.notifications.map((n) => (!ids || ids.includes(n.id) ? { ...n, read: true } : n)) };
@@ -391,6 +405,8 @@ export function activityFromEvent(s: WorldState, e: WorldEvent): ActivityItem | 
       return base(`Francisco ${e.payload.status === 'revision' ? 'requested a revision of' : e.payload.status} “${s.decisions[e.payload.decisionId]?.title ?? 'decision'}”.`, {
         projectId: s.decisions[e.payload.decisionId]?.projectId,
       });
+    case 'remote.session_linked':
+      return base(`Claude Code session linked: “${e.payload.session.title}”.`, { projectId: e.payload.session.projectId });
     case 'squad.formed':
       return base(`Squad formed: ${e.payload.squad.agentIds.map(name).join(' + ')} — ${e.payload.squad.objective}`, { projectId: e.payload.squad.projectId });
     case 'mission.created':

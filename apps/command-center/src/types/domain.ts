@@ -211,6 +211,8 @@ export interface Conversation {
   agentId: ID;
   projectId: ID | null;
   missionId?: ID | null;
+  /** A real Claude Code session this conversation mirrors (messages live there). */
+  remoteSessionId?: ID;
   messageIds: ID[];
   updatedAt: number;
 }
@@ -299,4 +301,22 @@ export interface ActivityItem {
   waitingForMe: boolean;
   completed: boolean;
   source: ActivitySource | 'user';
+}
+
+/** Normalised status of a Claude Code session (from its status bucket). */
+export type RemoteStatus = 'working' | 'needs_input' | 'review_ready' | 'idle' | 'completed' | 'failed' | 'unknown';
+
+/** A real Claude Code session linked to the world: a team doing actual work. */
+export interface RemoteSession {
+  id: ID; // session_…
+  title: string;
+  projectId: ID;
+  agentIds: ID[];
+  conversationId: ID;
+  status: RemoteStatus;
+  needsAction: string | null;
+  repo: string | null;
+  branch: string | null;
+  updatedAt: string;
+  launchedHere: boolean;
 }

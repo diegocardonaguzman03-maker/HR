@@ -51,6 +51,7 @@ export interface DB {
 interface ClaudeRuntime {
   use(name: 'sample'): Promise<SampleFn | null>;
   use(name: 'db'): Promise<DB | null>;
+  use(name: 'mcp'): Promise<import('./RemoteOps').McpLike | null>;
   use(name: string): Promise<unknown>;
 }
 

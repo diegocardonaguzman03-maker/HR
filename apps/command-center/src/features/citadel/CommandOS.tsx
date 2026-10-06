@@ -6,7 +6,7 @@ import { focusAgent, focusProject, openAgentChat, openAria } from '@/services/ac
 import { groupResults, RESULT_LABEL, search } from '@/services/search';
 import { selectors } from '@/services/worldState';
 import { useUi, type OsSection } from '@/store/uiStore';
-import { useWorld } from '@/store/worldStore';
+import { dispatch, useWorld } from '@/store/worldStore';
 import type { Priority } from '@/types/domain';
 import { resultToItem } from '../command/commands';
 import { DecisionButtons } from '../agents/AgentPanel';
@@ -18,6 +18,7 @@ import { AgentAvatar, Btn, cx, Empty, IconBtn, PriorityBadge, Progress, ProjectS
 
 const SECTIONS: { id: OsSection; label: string; icon: IconName }[] = [
   { id: 'today', label: 'Today', icon: 'target' },
+  { id: 'sessions', label: 'Claude sessions', icon: 'link' },
   { id: 'priorities', label: 'Priorities', icon: 'alert' },
   { id: 'projects', label: 'Projects', icon: 'building' },
   { id: 'agents', label: 'Agents', icon: 'bot' },
@@ -119,6 +120,43 @@ function Section({ id }: { id: OsSection }) {
               </div>
             </div>
           )}
+        </div>
+      );
+    }
+    case 'sessions': {
+      const sessions = Object.values(world.remote ?? {}).sort((a, b) => (b.updatedAt || '').localeCompare(a.updatedAt || ''));
+      const tone: Record<string, string> = { working: 'text-emerald-300', needs_input: 'text-yellow-300', failed: 'text-red-300', review_ready: 'text-sky-300', idle: 'text-zinc-400', completed: 'text-zinc-400', unknown: 'text-zinc-500' };
+      return (
+        <div className="space-y-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <Btn variant="primary" icon="zap" onClick={() => u.openModal({ type: 'launchRemote' })}>LAUNCH REAL WORK</Btn>
+            <Btn variant="outline" icon="history" onClick={() => dispatch({ type: 'remote.sync' })}>Refresh</Btn>
+            <span className="text-[11px] text-zinc-500">{conn.detail}</span>
+          </div>
+          {conn.kind !== 'claude' && <Empty>Switch to Live — Claude (Settings) inside claude.ai to link your Claude Code sessions.</Empty>}
+          {conn.kind === 'claude' && sessions.length === 0 && <Empty>No sessions linked yet. If this stays empty, connect “Claude Code Remote” in claude.ai Settings → Connectors and allow it for this page.</Empty>}
+          {sessions.map((r) => {
+            const p = world.projects[r.projectId];
+            return (
+              <div key={r.id} className="rounded-lg bg-white/[0.035] p-3">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <div className="truncate text-[13px] font-medium text-zinc-100">{r.title}</div>
+                    <div className="text-[11px] text-zinc-500">{p?.name ?? '—'}{r.branch ? ` · ${r.branch}` : ''}{r.launchedHere ? ' · launched here' : ''}</div>
+                  </div>
+                  <span className={`shrink-0 text-[10.5px] font-bold uppercase tracking-wider ${tone[r.status] ?? 'text-zinc-400'}`}>{r.status.replace('_', ' ')}</span>
+                </div>
+                {r.needsAction && <p className="mt-1.5 rounded-md bg-yellow-400/8 px-2 py-1 text-[12px] text-yellow-100">Waiting for you: {r.needsAction}</p>}
+                <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                  <span className="mr-1 flex -space-x-1">{r.agentIds.map((id) => world.agents[id]).filter(Boolean).map((a) => <AgentAvatar key={a.id} agent={a} size={20} />)}</span>
+                  <Btn size="sm" variant="primary" icon="chat" onClick={() => u.openChat(r.conversationId)}>Open chat</Btn>
+                  <Btn size="sm" variant="subtle" icon="crosshair" onClick={() => { u.closeOs(); focusProject(r.projectId); }}>Map</Btn>
+                  <Btn size="sm" variant="ghost" icon="zap" onClick={() => u.openModal({ type: 'launchRemote', projectId: r.projectId, agentIds: r.agentIds })}>New task</Btn>
+                  <a href={`https://claude.ai/code/${r.id}`} target="_blank" rel="noreferrer" className="ml-auto text-[11px] text-[var(--accent)] hover:underline">Open in Claude ↗</a>
+                </div>
+              </div>
+            );
+          })}
         </div>
       );
     }

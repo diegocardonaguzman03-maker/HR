@@ -12,6 +12,7 @@ import { AgentAvatar, Btn, clock, cx, Empty, SectionTitle, StatusIndicator, time
 import { DecisionButtons } from '../agents/AgentPanel';
 import { CreateConversationModal } from '../chat/CreateConversationModal';
 import { CreateProjectModal } from '../projects/CreateProjectModal';
+import { LaunchRemoteModal } from '../remote/LaunchRemoteModal';
 
 export function ModalRoot() {
   const m = useUi((s) => s.modal);
@@ -26,6 +27,7 @@ function ModalSwitch({ m }: { m: NonNullable<ModalState> }) {
     case 'assignTask': return <AssignTaskModal agentId={m.agentId} projectId={m.projectId} />;
     case 'moveAgent': return <MoveAgentModal agentId={m.agentId} />;
     case 'createAgent': return <CreateAgentModal />;
+    case 'launchRemote': return <LaunchRemoteModal projectId={m.projectId} agentIds={m.agentIds} request={m.request} />;
     case 'squad': return <SquadModal squadId={m.squadId} />;
     case 'file': return <FileModal fileId={m.fileId} />;
     case 'decision': return <DecisionModal decisionId={m.decisionId} />;

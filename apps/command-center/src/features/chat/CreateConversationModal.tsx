@@ -19,6 +19,7 @@ export function CreateConversationModal({ agentId, request: initialRequest, proj
   const [evaluated, setEvaluated] = useState(!!initialRequest);
   const [team, setTeam] = useState<ID[]>(() => (agentId ? [agentId] : []));
   const project = projectId ? world.projects[projectId] : undefined;
+  const live = useWorld((s) => s.connection.kind === 'claude');
 
   const rec = useMemo(() => recommendAgents(request, Object.values(world.agents)), [request, world.agents]);
   const agents = Object.values(world.agents);
@@ -106,6 +107,11 @@ export function CreateConversationModal({ agentId, request: initialRequest, proj
                   {team.length > 1 ? `START WITH RECOMMENDED TEAM (${team.length})` : 'START CONVERSATION'}
                 </Btn>
                 {team.length > 1 && <Btn variant="ghost" onClick={() => startTeam([team[0]])}>Only {world.agents[team[0]]?.name}</Btn>}
+                {live && (
+                  <Btn variant="outline" icon="zap" disabled={!team.length} onClick={() => u.openModal({ type: 'launchRemote', projectId: projectId ?? null, agentIds: team, request })}>
+                    Launch as real Claude Code work
+                  </Btn>
+                )}
               </div>
               <p className="text-[10.5px] text-zinc-500">A team becomes a temporary squad: the agents walk to the project and collaborate around it.</p>
             </div>

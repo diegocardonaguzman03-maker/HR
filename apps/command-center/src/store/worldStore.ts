@@ -5,7 +5,7 @@
 import { create } from 'zustand';
 import { createProvider, defaultProvider, DEFAULT_WS_URL, type AgentProvider, type ConnectionStatus, type ProviderKind } from '@/providers';
 import { createSeedState, reduce, type WorldState } from '@/services/worldState';
-import type { ID } from '@/types/domain';
+import type { ID, Message } from '@/types/domain';
 import type { Command, WorldEvent } from '@/types/events';
 
 type Listener = (e: WorldEvent) => void;
@@ -16,6 +16,8 @@ interface WorldStore {
   typing: Record<ID, boolean>;
   /** Reply text streaming in, per conversation. */
   streaming: Record<ID, { agentId: ID; text: string }>;
+  /** Live transcripts of real Claude Code sessions, by session id. */
+  transcripts: Record<ID, Message[]>;
   speed: number;
   started: boolean;
   start(): void;
@@ -55,6 +57,7 @@ export const useWorld = create<WorldStore>((set, get) => {
       emit,
       reset: (world) => set({ world }),
       onStatus: (status, detail) => set((s) => ({ connection: { ...s.connection, status, detail } })),
+      onTranscript: (sessionId, messages) => set((s) => ({ transcripts: { ...s.transcripts, [sessionId]: messages } })),
       onStream: (conversationId, agentId, text) =>
         set((s) => {
           const streaming = { ...s.streaming };
@@ -70,6 +73,7 @@ export const useWorld = create<WorldStore>((set, get) => {
     connection: { kind: defaultProvider(), status: 'connecting', wsUrl: DEFAULT_WS_URL, label: '' },
     typing: {},
     streaming: {},
+    transcripts: {},
     speed: 1,
     started: false,
     start() {
@@ -78,7 +82,8 @@ export const useWorld = create<WorldStore>((set, get) => {
       startProvider(get().connection.kind, get().connection.wsUrl);
     },
     dispatch(cmd) {
-      if (cmd.type === 'chat.send' || (cmd.type === 'conversation.start' && cmd.firstMessage) || cmd.type === 'team.start') {
+      const remoteChat = cmd.type === 'chat.send' && !!get().world.conversations[cmd.conversationId]?.remoteSessionId;
+      if (!remoteChat && (cmd.type === 'chat.send' || (cmd.type === 'conversation.start' && cmd.firstMessage) || cmd.type === 'team.start')) {
         const cid = cmd.conversationId;
         set((s) => ({ typing: { ...s.typing, [cid]: true } }));
         clearTimeout(typingTimers[cid]);
@@ -88,7 +93,7 @@ export const useWorld = create<WorldStore>((set, get) => {
     },
     switchProvider(kind, wsUrl) {
       // Switching resets to seed data so simulated and real activity never mix.
-      set({ world: createSeedState(), typing: {}, streaming: {} });
+      set({ world: createSeedState(), typing: {}, streaming: {}, transcripts: {} });
       startProvider(kind, wsUrl ?? get().connection.wsUrl);
     },
     setSpeed(x) {

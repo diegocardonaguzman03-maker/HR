@@ -19,7 +19,7 @@ export type DrawerKind = 'agents' | 'projects' | 'conversations' | 'files' | 'mi
 export type ProjectTab = 'overview' | 'missions' | 'agents' | 'chat' | 'files' | 'timeline' | 'decisions' | 'metrics' | 'activity';
 export type AgentTab = 'overview' | 'queue' | 'activity' | 'files' | 'conversations' | 'memory';
 export type OsSection =
-  | 'today' | 'priorities' | 'projects' | 'agents' | 'conversations' | 'decisions' | 'calendar' | 'inbox' | 'files' | 'notifications' | 'search' | 'system';
+  | 'today' | 'sessions' | 'priorities' | 'projects' | 'agents' | 'conversations' | 'decisions' | 'calendar' | 'inbox' | 'files' | 'notifications' | 'search' | 'system';
 
 export type Modal =
   | { type: 'createProject'; territory?: TerritoryId }
@@ -27,6 +27,7 @@ export type Modal =
   | { type: 'assignTask'; agentId: ID; projectId?: ID }
   | { type: 'moveAgent'; agentId: ID }
   | { type: 'createAgent' }
+  | { type: 'launchRemote'; projectId?: ID | null; agentIds?: ID[]; request?: string }
   | { type: 'squad'; squadId: ID }
   | { type: 'file'; fileId: ID }
   | { type: 'decision'; decisionId: ID }

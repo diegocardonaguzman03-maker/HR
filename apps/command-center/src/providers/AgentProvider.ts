@@ -21,6 +21,8 @@ export interface ProviderContext {
   onStatus(status: ConnectionStatus, detail?: string): void;
   /** Live text of a reply being written (null = finished). */
   onStream?(conversationId: string, agentId: string, text: string | null): void;
+  /** Messages of a real Claude Code session (read from the session, not stored here). */
+  onTranscript?(sessionId: string, messages: import('@/types/domain').Message[]): void;
 }
 
 export interface AgentProvider {

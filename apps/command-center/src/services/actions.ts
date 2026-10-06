@@ -67,6 +67,7 @@ export function runAction(command: string) {
       if (kind === 'files') return id ? u.openWorkspace(id, 'files') : u.openDrawer('files');
       if (kind === 'decision') return u.openModal({ type: 'decision', decisionId: id });
       if (kind === 'agent') return u.openAgentProfile(id);
+      if (kind === 'conversation') return u.openChat(id);
       return;
     case 'agent':
       if (kind === 'resume') return dispatch({ type: 'agent.resume', agentId: id });

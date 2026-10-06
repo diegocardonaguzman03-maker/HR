@@ -16,6 +16,7 @@ import type { Agent, AgentTask, ID, MessageAction, Priority, ProjectKind, Projec
 import type { Command, WorldEvent } from '@/types/events';
 import type { AgentProvider, ProviderContext } from '../AgentProvider';
 import { ArtifactLog } from './ArtifactLog';
+import { RemoteOps, sessionUrl } from './RemoteOps';
 import { createBrowserSample, getStoredApiKey, LocalDB, storageAvailable } from './browserBackend';
 import { claudeRuntime, type DB, type SampleError, type SampleFn, type SampleTool } from './runtime';
 
@@ -63,6 +64,8 @@ export class ClaudeAgentProvider implements AgentProvider {
   private running = new Map<ID, AbortController>();
   private queues = new Map<ID, Job[]>();
   private disabledReason: string | null = null;
+  private remote: RemoteOps | null = null;
+  private baseStatus = '';
 
   start(ctx: ProviderContext): void {
     this.ctx = ctx;
@@ -71,6 +74,7 @@ export class ClaudeAgentProvider implements AgentProvider {
   }
 
   stop(): void {
+    this.remote?.stop();
     for (const c of this.running.values()) c.abort();
     this.running.clear();
     this.log?.close();
@@ -85,7 +89,17 @@ export class ClaudeAgentProvider implements AgentProvider {
     let sample: SampleFn | null = null;
     let db: DB | null = null;
     if (rt) {
-      [sample, db] = await Promise.all([rt.use('sample'), rt.use('db')]);
+      const [s1, d1, mcp] = await Promise.all([rt.use('sample'), rt.use('db'), rt.use('mcp').catch(() => null)]);
+      sample = s1;
+      db = d1;
+      if (mcp)
+        this.remote = new RemoteOps(mcp, {
+          getState: () => this.s,
+          emit: (e, src) => this.emit(e, src),
+          notify: (title, body) => this.emit({ type: 'notification.created', payload: { notification: { id: uid('n'), kind: 'input_needed', title, body, ts: Date.now(), read: false, priority: 'high' } } }),
+          onTranscript: (sessionId, messages) => this.ctx?.onTranscript?.(sessionId, messages),
+          onStatus: (text) => this.ctx?.onStatus('connected', `${this.baseStatus} · ${text}`),
+        });
     } else {
       this.web = true;
       const key = getStoredApiKey();
@@ -120,9 +134,11 @@ export class ClaudeAgentProvider implements AgentProvider {
     this.log?.subscribe((e) => this.ctx?.emit(e));
 
     const saved = this.log ? (this.web ? 'saved in this browser' : 'saved to this artifact') : 'not saved (storage unavailable)';
-    this.ctx.onStatus('connected', `${sample ? 'Claude ready' : 'Claude unavailable'} · ${saved}`);
+    this.baseStatus = `${sample ? 'Claude ready' : 'Claude unavailable'} · ${saved}`;
+    this.ctx.onStatus('connected', this.baseStatus);
     this.ready = true;
     for (const c of this.pending.splice(0)) this.dispatch(c);
+    void this.remote?.start();
   }
 
   // ───────────────────────── plumbing ─────────────────────────
@@ -178,7 +194,23 @@ export class ClaudeAgentProvider implements AgentProvider {
         this.ensureConversation(cmd.conversationId, cmd.agentId, cmd.projectId, cmd.title ?? 'Conversation');
         if (cmd.firstMessage) this.chat(cmd.agentId, cmd.conversationId, cmd.firstMessage);
         return;
+      case 'remote.launch':
+        if (!this.remote) return this.notifyLocal('Real sessions unavailable', 'Launching Claude Code sessions works inside claude.ai with the “Claude Code Remote” connector.');
+        void this.remote.launch(cmd);
+        return;
+      case 'remote.refresh':
+        void this.remote?.transcript(cmd.sessionId);
+        return;
+      case 'remote.sync':
+        void this.remote?.sync();
+        return;
       case 'chat.send': {
+        const remoteId = this.s.conversations[cmd.conversationId]?.remoteSessionId;
+        if (remoteId) {
+          if (!this.remote) return this.system(cmd.conversationId, 'This conversation belongs to a Claude Code session; open the Command Center inside claude.ai to write to it.');
+          void this.remote.send(remoteId, cmd.text);
+          return;
+        }
         const note = cmd.attachments?.length ? `\n\n[Attached: ${cmd.attachments.map((a) => a.name).join(', ')} — file contents are not readable yet]` : '';
         if (cmd.attachments?.length) this.dispatch({ type: 'file.add', projectId: this.s.conversations[cmd.conversationId]?.projectId ?? null, files: cmd.attachments });
         this.chat(cmd.agentId, cmd.conversationId, cmd.text + note);
@@ -419,7 +451,8 @@ export class ClaudeAgentProvider implements AgentProvider {
     const agents = Object.values(s.agents).map((a) => `- ${a.id} | ${a.name} — ${a.role} | ${a.state}${a.currentTask ? ` | on: ${a.currentTask.title}` : ''}`).join('\n');
     const decisions = Object.values(s.decisions).filter((d) => d.status === 'pending').map((d) => `- ${d.id} | ${d.title} (asked by ${d.agentId ?? '—'})`).join('\n') || '- none';
     const missions = Object.values(s.missions).filter((m) => m.status !== 'done').slice(0, 30).map((m) => `- ${m.id} | ${m.projectId} | ${m.title} | ${m.status} ${m.progress}%`).join('\n');
-    return `PROJECTS (id | name | territory | status | priority | progress | agents)\n${projects}\n\nAGENTS\n${agents}\n\nPENDING DECISIONS\n${decisions}\n\nOPEN MISSIONS\n${missions}`;
+    const sessions = Object.values(s.remote ?? {}).map((r) => `- ${r.id} | ${r.title} | ${r.status}${r.needsAction ? ` | waiting: ${r.needsAction}` : ''} | project ${r.projectId} | team ${r.agentIds.join(',')}`).join('\n') || '- none';
+    return `PROJECTS (id | name | territory | status | priority | progress | agents)\n${projects}\n\nAGENTS\n${agents}\n\nPENDING DECISIONS\n${decisions}\n\nOPEN MISSIONS\n${missions}\n\nCLAUDE CODE SESSIONS (real work running in Francisco's account)\n${sessions}`;
   }
 
   private input(agent: Agent, job: Job): { role: 'user' | 'assistant'; content: string }[] {
@@ -432,7 +465,7 @@ export class ClaudeAgentProvider implements AgentProvider {
       project ? `Current project: ${project.name} — ${project.objective}` : '',
       'Write in the language Francisco uses. Be concise and concrete; use short headings or bullets when useful.',
       this.toolsAllowed
-        ? 'You can act on the Command Center with the tools provided (create/update projects, create missions for agents, request a decision, resolve a decision, pause/resume agents, show something on the map). Use them only when Francisco asks for an action or it clearly helps; say what you changed. Never invent IDs — use the IDs listed below. To route work to another agent, use create_mission.'
+        ? `You can act on the Command Center with the tools provided (create/update projects, create missions for agents, request a decision, resolve a decision, pause/resume agents, show something on the map${this.remote ? ', launch a REAL Claude Code session for a team, message an existing session' : ''}). Use them only when Francisco asks for an action or it clearly helps; say what you changed. Never invent IDs — use the IDs listed below. To route quick work to another agent, use create_mission${this.remote ? '; for real deliverables in the repository (presentations, reports, progress updates), use launch_team_session' : ''}.`
         : 'You cannot change the Command Center yourself in this view; tell Francisco what to do in the UI instead.',
       'If you need Francisco to choose before you can continue, call request_decision instead of guessing.',
       `\nCURRENT STATE\n${this.worldBrief()}`,
@@ -573,6 +606,55 @@ export class ClaudeAgentProvider implements AgentProvider {
           return { ok: true };
         },
       },
+      ...(this.remote
+        ? ([
+            {
+              name: 'launch_team_session',
+              description:
+                'Start REAL work: launches a Claude Code session on Francisco’s repository where a team of agents produces actual deliverables (presentations as .pptx, reports, progress updates, analyses) and opens a pull request. Use when Francisco asks a team to produce or advance something concrete. Returns the session id.',
+              inputSchema: {
+                type: 'object',
+                properties: {
+                  title: { type: 'string', description: 'Short task title' },
+                  request: { type: 'string', description: 'Full, specific instructions for the team' },
+                  kind: { type: 'string', enum: ['presentation', 'report', 'progress', 'analysis', 'build', 'other'] },
+                  projectId: { type: 'string', description: 'Existing project id to attach the work to (optional)' },
+                  agentIds: { type: 'array', items: { type: 'string' }, description: 'Team members (agent ids)' },
+                },
+                required: ['title', 'request', 'kind'],
+              },
+              execute: async (i: Record<string, unknown>) => {
+                if (started >= 2) throw new Error('Limit reached: at most 2 launches per reply.');
+                started++;
+                const agentIds = Array.isArray(i.agentIds) ? (i.agentIds as unknown[]).map(asId).filter((id) => s().agents[id]) : [];
+                const projectId = i.projectId && s().projects[asId(i.projectId)] ? asId(i.projectId) : job.projectId ?? null;
+                const id = await this.remote!.launch({
+                  title: String(i.title).slice(0, 120),
+                  request: String(i.request),
+                  kind: pick(i.kind, ['presentation', 'report', 'progress', 'analysis', 'build', 'other'] as const, 'other'),
+                  projectId,
+                  agentIds: agentIds.length ? agentIds : [agent.id],
+                });
+                if (!id) throw new Error('The session could not be launched (see notifications).');
+                actions.push({ label: 'OPEN SESSION CHAT', command: `open:conversation:c-remote-${id}` });
+                return { sessionId: id, url: sessionUrl(id) };
+              },
+            },
+            {
+              name: 'message_session',
+              description: 'Send a message into one of Francisco’s existing Claude Code sessions (for example to answer what it is waiting for). Only when Francisco explicitly asks you to.',
+              inputSchema: { type: 'object', properties: { sessionId: { type: 'string' }, text: { type: 'string' } }, required: ['sessionId', 'text'] },
+              execute: async (i: Record<string, unknown>) => {
+                const r = s().remote?.[asId(i.sessionId)];
+                if (!r) throw new Error('Unknown session id.');
+                const ok = await this.remote!.send(r.id, String(i.text));
+                if (!ok) throw new Error('Not delivered.');
+                actions.push({ label: 'OPEN SESSION CHAT', command: `open:conversation:${r.conversationId}` });
+                return { delivered: true };
+              },
+            },
+          ] as SampleTool[])
+        : []),
       {
         name: 'add_memory',
         description: 'Remember a durable fact or preference of Francisco’s for future conversations (one short sentence).',

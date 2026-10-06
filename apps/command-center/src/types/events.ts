@@ -19,6 +19,7 @@ import type {
   Priority,
   Project,
   ProjectStatus,
+  RemoteSession,
   Squad,
 } from './domain';
 
@@ -44,7 +45,9 @@ export type WorldEvent =
   | Base<'agent.created', { agent: Agent }>
   | Base<'agent.memory_added', { agentId: ID; fact: string }>
   | Base<'message.sent', { message: Message }>
-  | Base<'conversation.created', { conversationId: ID; agentId: ID; projectId: ID | null; title: string }>
+  | Base<'conversation.created', { conversationId: ID; agentId: ID; projectId: ID | null; title: string; remoteSessionId?: ID }>
+  | Base<'remote.session_linked', { session: RemoteSession }>
+  | Base<'remote.session_updated', { sessionId: ID; patch: Partial<Omit<RemoteSession, 'id'>> }>
   | Base<'project.created', { project: Project }>
   | Base<'project.status_changed', { projectId: ID; status: ProjectStatus }>
   | Base<'project.priority_changed', { projectId: ID; priority: Priority }>
@@ -83,7 +86,12 @@ export type Command =
   | { type: 'deliverable.create'; agentId: ID; projectId: ID | null; title: string }
   | { type: 'file.add'; projectId: ID | null; files: { name: string; size: number }[] }
   | { type: 'notification.read'; ids?: ID[] }
-  | { type: 'agent.cancel'; agentId: ID };
+  | { type: 'agent.cancel'; agentId: ID }
+  | { type: 'remote.launch'; title: string; request: string; projectId: ID | null; agentIds: ID[]; kind: RemoteTaskKind }
+  | { type: 'remote.refresh'; sessionId: ID }
+  | { type: 'remote.sync' };
+
+export type RemoteTaskKind = 'presentation' | 'report' | 'progress' | 'analysis' | 'build' | 'other';
 
 export interface ProjectDraft {
   name: string;
