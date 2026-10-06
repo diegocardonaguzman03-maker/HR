@@ -1,4 +1,5 @@
-// Builds the claude.ai artifact: dist-artifact/{index.html, app.js, app.css}.
+// Builds the claude.ai artifact (dist-artifact/index.html) and the standalone
+// web page (web/index.html) — both a single self-contained file.
 //   node scripts/build-artifact.mjs
 // The page is published with the Artifact tool; app.js/app.css are published
 // alongside it as supporting files and loaded by relative URL.
@@ -78,6 +79,16 @@ body { margin: 0; background: var(--page); color: var(--ink); overflow: hidden; 
 </script>
 <style>${css}</style>
 <script>${js}</script>
+`,
+);
+
+// Web build: the same page as a complete standalone document (GitHub Pages, any static host).
+const webDir = path.join(root, 'web');
+mkdirSync(webDir, { recursive: true });
+writeFileSync(
+  path.join(webDir, 'index.html'),
+  `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="A living operating system for AI agents, projects and priorities."><meta name="theme-color" content="#0e0f12"></head><body>
+${readFileSync(path.join(out, 'index.html'), 'utf8')}</body></html>
 `,
 );
 

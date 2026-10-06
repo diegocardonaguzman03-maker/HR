@@ -3,6 +3,7 @@ import { MockAgentProvider } from './mock/MockAgentProvider';
 import { RealAgentProvider } from './real/RealAgentProvider';
 import { ClaudeAgentProvider } from './claude/ClaudeAgentProvider';
 import { claudeRuntime } from './claude/runtime';
+import { getStoredApiKey } from './claude/browserBackend';
 
 export type { AgentProvider, ProviderKind, ConnectionStatus, ProviderContext } from './AgentProvider';
 
@@ -11,7 +12,7 @@ export const DEFAULT_WS_URL = process.env.NEXT_PUBLIC_AGENT_WS_URL || 'ws://loca
 export const inClaudeViewer = (): boolean => claudeRuntime() !== null;
 
 export function defaultProvider(): ProviderKind {
-  if (inClaudeViewer()) return 'claude';
+  if (inClaudeViewer() || getStoredApiKey()) return 'claude';
   return process.env.NEXT_PUBLIC_AGENT_PROVIDER === 'real' ? 'real' : 'mock';
 }
 

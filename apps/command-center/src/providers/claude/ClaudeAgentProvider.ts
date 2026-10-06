@@ -16,7 +16,8 @@ import type { Agent, AgentTask, ID, MessageAction, Priority, ProjectKind, Projec
 import type { Command, WorldEvent } from '@/types/events';
 import type { AgentProvider, ProviderContext } from '../AgentProvider';
 import { ArtifactLog } from './ArtifactLog';
-import { claudeRuntime, type SampleError, type SampleFn, type SampleTool } from './runtime';
+import { createBrowserSample, getStoredApiKey, LocalDB, storageAvailable } from './browserBackend';
+import { claudeRuntime, type DB, type SampleError, type SampleFn, type SampleTool } from './runtime';
 
 type Src = WorldEvent['source'];
 type EvInput = { [K in WorldEvent['type']]: { type: K; payload: Extract<WorldEvent, { type: K }>['payload'] } }[WorldEvent['type']];
@@ -76,15 +77,27 @@ export class ClaudeAgentProvider implements AgentProvider {
     this.ctx = null;
   }
 
+  /** Inside claude.ai: the artifact runtime. On the open web: the user's API key + browser storage. */
+  private web = false;
+
   private async init() {
     const rt = claudeRuntime();
-    const [sample, db] = rt ? await Promise.all([rt.use('sample'), rt.use('db')]) : [null, null];
+    let sample: SampleFn | null = null;
+    let db: DB | null = null;
+    if (rt) {
+      [sample, db] = await Promise.all([rt.use('sample'), rt.use('db')]);
+    } else {
+      this.web = true;
+      const key = getStoredApiKey();
+      sample = key ? createBrowserSample(key) : null;
+      db = storageAvailable() ? new LocalDB() : null;
+    }
     if (!this.ctx) return;
     this.sample = sample;
     if (sample) {
       const limits = await sample.limits().catch(() => null);
       this.toolsAllowed = !!limits?.tools && limits.tools.maxCount >= 8;
-    } else this.disabledReason = 'Claude is not available in this view.';
+    } else this.disabledReason = this.web ? 'No Anthropic API key is set. Add one in Settings → Live — Claude.' : 'Claude is not available in this view.';
 
     let state: WorldState;
     if (db) {
@@ -106,7 +119,7 @@ export class ClaudeAgentProvider implements AgentProvider {
       if (!['idle', 'paused', 'waiting'].includes(a.state)) this.emit({ type: 'agent.state_changed', payload: { agentId: a.id, state: 'idle', note: 'Page reloaded — no work in progress' } }, 'real');
     this.log?.subscribe((e) => this.ctx?.emit(e));
 
-    const saved = this.log ? 'saved to this artifact' : 'not saved (storage unavailable)';
+    const saved = this.log ? (this.web ? 'saved in this browser' : 'saved to this artifact') : 'not saved (storage unavailable)';
     this.ctx.onStatus('connected', `${sample ? 'Claude ready' : 'Claude unavailable'} · ${saved}`);
     this.ready = true;
     for (const c of this.pending.splice(0)) this.dispatch(c);
@@ -370,7 +383,9 @@ export class ClaudeAgentProvider implements AgentProvider {
         case 'capability_disabled':
         case 'capability_removed':
           this.sample = null;
-          this.disabledReason = 'Claude access is not allowed for this page. Allow it from the artifact’s Permissions menu, then reload.';
+          this.disabledReason = this.web
+            ? 'Your Anthropic API key was rejected. Update it in Settings → Live — Claude.'
+            : 'Claude access is not allowed for this page. Allow it from the artifact’s Permissions menu, then reload.';
           this.system(job.conversationId, this.disabledReason);
           this.emit({ type: 'agent.state_changed', payload: { agentId: agent.id, state: 'idle' } });
           break;
@@ -384,7 +399,7 @@ export class ClaudeAgentProvider implements AgentProvider {
           break;
         default:
           this.emit({ type: 'agent.blocked', payload: { agentId: agent.id, reason: `Claude request failed (${e.code ?? 'error'})` } });
-          this.system(job.conversationId, `The request failed (${e.code ?? 'error'}). Send it again to retry.`);
+          this.system(job.conversationId, `The request failed (${e.code ?? 'error'}${e.message ? `: ${e.message.slice(0, 160)}` : ''}). Send it again to retry.`);
       }
       return null;
     } finally {

@@ -6,6 +6,7 @@ import { useUi, type Modal as ModalState } from '@/store/uiStore';
 import { dispatch, useWorld } from '@/store/worldStore';
 import type { ID, Priority } from '@/types/domain';
 import { DEFAULT_WS_URL, inClaudeViewer } from '@/providers';
+import { getStoredApiKey, storeApiKey } from '@/providers/claude/browserBackend';
 import { Modal } from '@/components/ui/Modal';
 import { AgentAvatar, Btn, clock, cx, Empty, SectionTitle, StatusIndicator, timeAgo } from '@/components/ui/primitives';
 import { DecisionButtons } from '../agents/AgentPanel';
@@ -225,6 +226,11 @@ function SettingsModal() {
   const reduced = useUi((s) => s.reducedMotion);
   const [url, setUrl] = useState(conn.wsUrl || DEFAULT_WS_URL);
   const viewer = inClaudeViewer();
+  const [apiKey, setApiKey] = useState(() => getStoredApiKey() ?? '');
+  const saveKey = () => {
+    storeApiKey(apiKey.trim() || null);
+    switchTo(apiKey.trim() ? 'claude' : 'mock');
+  };
   const switchTo = (kind: 'mock' | 'real' | 'claude') => {
     useWorld.getState().switchProvider(kind, url);
     useUi.getState().showToast(kind === 'mock' ? 'Demo mode: simulated agents' : kind === 'claude' ? 'Live mode: agents run on Claude' : `Connecting to ${url}…`);
@@ -241,10 +247,25 @@ function SettingsModal() {
         <div>
           <SectionTitle>Agent mode</SectionTitle>
           <div className="grid gap-2 sm:grid-cols-2">
-            {viewer && option('claude', 'Live — Claude', 'Agents answer and act with Claude on your account. Changes are saved to this page.', 'border-emerald-400/60 bg-emerald-400/8')}
+            {option(
+              'claude',
+              'Live — Claude',
+              viewer ? 'Agents answer and act with Claude on your account. Changes are saved to this page.' : 'Agents answer and act with Claude using your Anthropic API key. Changes are saved in this browser.',
+              'border-emerald-400/60 bg-emerald-400/8',
+            )}
             {option('mock', 'Demo', 'Simulated activity to explore the world. Nothing is saved; clearly labelled.', 'border-sky-400/60 bg-sky-400/8')}
             {!viewer && option('real', 'Live gateway', 'Your own backend over WebSocket (npm run gateway).', 'border-emerald-400/60 bg-emerald-400/8')}
           </div>
+          {!viewer && (
+            <div className="mt-2 rounded-lg border border-white/10 p-3">
+              <label htmlFor="api-key" className="mb-1 block text-[11px] text-zinc-400">Anthropic API key (for Live — Claude on the web)</label>
+              <div className="flex gap-2">
+                <input id="api-key" type="password" autoComplete="off" className="field flex-1 font-mono text-[12px]" placeholder="sk-ant-…" value={apiKey} onChange={(e) => setApiKey(e.target.value)} />
+                <Btn variant="primary" onClick={saveKey}>{apiKey.trim() ? 'Save & go live' : 'Remove key'}</Btn>
+              </div>
+              <p className="mt-1.5 text-[10.5px] leading-snug text-zinc-500">Stored only in this browser and sent only to api.anthropic.com. Usage is billed to your Anthropic account. Get a key at console.anthropic.com.</p>
+            </div>
+          )}
           {conn.kind === 'real' && <input className="field mt-2 w-full font-mono text-[12px]" value={url} onChange={(e) => setUrl(e.target.value)} aria-label="Gateway WebSocket URL" />}
           <p className="mt-1 text-[11px] text-zinc-500">Status: <span className="text-zinc-300">{conn.status}</span>{conn.detail ? ` — ${conn.detail}` : ''}. Switching reloads the world for that mode, so simulated and real activity never mix.</p>
         </div>
