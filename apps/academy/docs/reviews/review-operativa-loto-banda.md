@@ -118,3 +118,19 @@ Las rutas de campo usan índices base 0 sobre el JSON actual. Si OP-L-06 o OP-L-
 **Recomendación:** opción A. Además, para la versión que deje de ser DEMO, incluir en el taller SME F2-01 (D-011-5) los datos de bandas de Mina, Peletizadora y transporte de DRI: inventario de energías, interbloqueos y permisivos de arranque, equipos que se bloquean junto con cada banda, método del contrapeso y de las mordazas, y condiciones válidas de la prueba de arranque.
 
 **Fecha límite para decidir:** 2026-10-12 **[Supuesto]**, la misma de las condiciones de D-013. Mientras no se apliquen los ALTOS, la Misión LOTO solo se muestra como prototipo y no se usa con trabajadores.
+
+---
+
+## Verificación posterior (2026-10-06, commit `c1d2316`, decisión D-014)
+
+**Alcance:** `loto-01.json`, `docs-loto.json`, `scene-loto.json`, `tests/e2e/run.mjs` y los PDF WI/MO/CL-LOTO-001-DEMO regenerados (leídos con `pdftotext`). Revisé también los cambios de Relaciones Laborales en el mismo commit.
+
+| Verificación | Resultado |
+|---|---|
+| OP-L-01 a OP-L-11 en el JSON | **31/31 campos idénticos** al texto exacto de la tabla. Lo comprobé con un script que compara cada ruta contra su texto propuesto. Los índices después de las inserciones son correctos: `wi.tools[4]` (mordazas), `wi.stopConditions[4]` (OP-L-07) y `checklist.sections[4].items[2]` (`critical: true`). |
+| Textos de WI, MO y CL en los PDF | **Presentes los 22.** 13 coinciden literalmente. En los otros 9, el único fragmento que no coincide es la marca, que el generador escribe como «⚠ PENDIENTE DE VALIDACIÓN DE PLANTA (SME_REQUIRED):». Es solo formato, no contenido. «latigar» ya no aparece en ningún PDF. |
+| Sincronía | El JSON es de las 22:29:48 y los PDF de las 22:29:51. Los tres documentos están en `0.2-demo`, en el JSON y en el PDF. |
+| e2e / unitarias | `tests/e2e/run.mjs` tiene la etiqueta nueva de OP-L-02. `npx vitest run tests/unit/missions.test.tsx` → 21/21. |
+| Cambios de Relaciones Laborales | **No contradicen el dictamen.** Son: firmas «PRÁCTICA» por rol; canal alterno a Seguridad Industrial en `wi.stopConditions[8]`, MO §7, `checklist.instructions` y `steps[6].safety`; «no emite constancias DC-3» y la frase de no uso para escalafón en MO §8; y la redacción de la autorización en CL §1. Ninguno toca la secuencia, las energías, la verificación ni el retiro. |
+
+**Dictamen final: VISTO BUENO FIRME.** Se cumple la condición 3 de D-013 en lo técnico-operativo. No hay residuales operativos. El material sigue siendo DEMO. Los `SME_REQUIRED` de bandas (inventario de energías, interbloqueos y permisivos, equipos que se bloquean junto con cada banda, método del contrapeso y de las mordazas, y condiciones válidas de la prueba de arranque) se completan en el taller SME F2-01 antes de pasar a contenido aprobado.

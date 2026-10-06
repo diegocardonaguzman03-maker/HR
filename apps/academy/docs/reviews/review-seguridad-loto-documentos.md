@@ -138,3 +138,49 @@ SAF-R-01 a SAF-R-03 pueden quedar para la siguiente iteración. Si se corrigen, 
 | **B** | Esperar las validaciones de Relaciones Laborales y del experto operativo antes de liberar cualquier parte. | Sin costo; el piloto LOTO se retrasa hasta tener las validaciones. | Bajo para seguridad; medio para el calendario del piloto. |
 
 **Recomendación:** opción A, con las validaciones de las condiciones 2 y 3 terminadas antes de la primera sesión con personal sindicalizado. **Fecha límite para decidir:** 2026-10-12 **[Supuesto]**.
+
+---
+
+## Revisión cruzada de los cambios D-014 (2026-10-06, commit `c1d2316`)
+
+**Alcance:** cambios de los dictámenes Operativo (`review-operativa-loto-banda.md`) y Laboral (`review-laboral-loto-documentos.md`) en `loto-01.json`, `scene-loto.json`, `docs-loto.json`, `docs-heights.json`, `heights-prep.json`, `build-mission-docs.mjs` y los 6 PDF (0.2-demo). Los PDF son de las 22:29:50-51 y los JSON de las 22:29:48, así que están sincronizados. La comparación JSON → PDF da 0 diferencias de contenido (2 cortes de página).
+
+### ¿Se debilitan los cierres del veto?
+
+| Cierre | Resultado | Evidencia |
+|---|---|---|
+| SAF-L-01 | **No se debilita; se refuerza** | `verificar-cero` sigue con las 5 acciones (nadie expuesto → arrancar → regresar a paro). OP-L-01 agrega en `done` y en la `faq` nueva que la prueba no vale con el selector en remoto o con un interbloqueo. Es correcto, es general de la industria y las condiciones de planta quedan como `SME_REQUIRED`. El `safety` conserva «detente, no toques el equipo». |
+| SAF-L-02 | **No se debilita** | La opción correcta, la trampa «Grito…», el escenario y `why` no cambiaron. RL-L-04 alinea el `caption` con `why` («verificó que nadie está en el equipo»), lo que mejora la consistencia. Queda un residuo de consistencia por OP-L-04: SAF-X-01. |
+| SAF-D-01 | **No se debilita** | CL-LOTO §4 conserva «Antes de la prueba de arranque, verifiqué que nadie está en la banda ni en su zona» (crítico). WI paso 9 y MO §6 conservan «nadie expuesto». El ítem de la prueba ahora exige un control válido. |
+
+### Revisión de los puntos pedidos
+
+| Punto | Resultado |
+|---|---|
+| OP-L-01 | **Sin objeción.** Es la limitación real de la prueba de arranque. No inventa lógica de interbloqueos: queda `SME_REQUIRED (Ingeniería de Proceso + Mantenimiento Eléctrico)`. |
+| OP-L-03 | **Sin objeción en la misión, con un residuo en los documentos.** Las energías de bandas reales (material, inercia, antirretorno, tensores, equipos aguas arriba o aguas abajo) son contenido general correcto y no tienen cifras. La misión (FAQ de `identificar-energias`) menciona la **atmósfera del transportador cerrado**, pero WI, MO y CL-LOTO solo mencionan la temperatura del DRI. Ese peligro puede ser fatal y en los documentos no tiene control ni condición de paro: SAF-X-02. |
+| OP-L-04 | **Sin objeción.** Restablecer el contrapeso y la tensión **con el candado todavía puesto** es la práctica segura. El nuevo ítem crítico de CL §5 va antes de «Verifiqué que no hay personas…» y de retirar el candado; el orden es correcto. «Nunca dejes el contrapeso soportado para que alguien lo libere con la banda en marcha» es correcto. La opción correcta de la misión no lo refleja: SAF-X-01. |
+| RL-L-03 | **Sin objeción.** «No lo retires, aunque alguien te lo pida de palabra» conserva el sentido: una orden verbal no autoriza el retiro. WI paso 12 conserva «ni por una orden verbal». |
+| RL-L-04 | **Sin objeción.** |
+| RL-L-06 | **Sin objeción.** Me preocupaba el compromiso de no represalia (SAF-H-11). «Detenerte por una condición insegura es lo que se espera de ti» es una expectativa, no una promesa de no sanción. El canal alterno a Seguridad Industrial cubre el caso en que el propio supervisor presiona para continuar. La existencia del canal y la política quedan `SME_REQUIRED (Seguridad + Relaciones Laborales)`. |
+| Otros | Sin objeción: «cable de paro de emergencia» y el interruptor del arrancador en el CCM como ejemplos genéricos; esperar el paro total por inercia; mordazas «cuando el procedimiento las pida»; firmas «escribe PRÁCTICA»; «no emite constancias DC-3». |
+
+### Hallazgos residuales
+
+| ID | Severidad | Ubicación | Hallazgo | CORRECCIÓN EXACTA |
+|---|---|---|---|---|
+| SAF-X-01 | MEDIA | `loto-01.json` → `steps[7]` (`retiro-bloqueo`) → `options[2]` (`id: "yo"`), `label` y `feedback` | Hay una inconsistencia que introdujo OP-L-04. La trampa «arranco para probar» dice que antes hay que «restablecer el contrapeso y la tensión de la banda». La opción **correcta** no lo menciona, así que se aprende un retiro incompleto: si se retira el candado con el contrapeso soportado, la banda puede arrancar con el tensor bloqueado o con alguien liberándolo después. Contradice WI paso 11 y CL §5. | `label` → `"No retiro mi candado mientras él esté dentro: le pido que salga o que coloque su propio candado; retiro herramientas, coloco la guarda, restablezco el contrapeso y la tensión con mi candado puesto, verifico que nadie esté en el equipo, aviso y retiro mi candado"`. En `feedback`, reemplazar `"Antes de retirar: herramientas fuera, guardas colocadas, nadie en el equipo"` por `"Antes de retirar: herramientas fuera, guardas colocadas, contrapeso y tensión restablecidos con tu candado puesto, nadie en el equipo"`. Actualizar el selector del e2e (`/^No retiro mi candado mientras/` sigue funcionando). |
+| SAF-X-02 | MEDIA | `docs-loto.json` → `wi.hazards[5]` (`hazard`, `control`), `wi.stopConditions`, `manual.sections[3].bullets[3]`; PDF WI-LOTO y MO-LOTO | La misión menciona la atmósfera del transportador cerrado (DRI caliente), pero los documentos descargables no. Una atmósfera peligrosa (gases o falta de oxígeno) puede matar sin ningún movimiento de la banda, y no tiene control ni condición de paro. | **(a)** Al final de `wi.hazards[5].hazard`, reemplazar `"temperatura del DRI caliente."` por `"temperatura del DRI caliente y atmósfera peligrosa (gases o falta de oxígeno) dentro de un transportador cerrado."` **(b)** Al final de `wi.hazards[5].control`, antes de `SME_REQUIRED`, agregar: `"No abras ni metas la cabeza o el cuerpo en un transportador cerrado sin la autorización y las mediciones de atmósfera que pida el procedimiento de espacios confinados."` y cambiar el responsable a `(Mantenimiento + Ingeniería de Proceso + Seguridad; NOM-033-STPS-2015, verificar con Jurídico / Seguridad)`. **(c)** Agregar a `wi.stopConditions`: `"Tienes que abrir o entrar a un transportador cerrado y no hay autorización ni medición de atmósfera. SME_REQUIRED: procedimiento de espacios confinados y atmósferas peligrosas (Seguridad)."` **(d)** En `manual.sections[3].bullets[3]`, reemplazar `"temperatura del DRI caliente."` por `"temperatura del DRI caliente y atmósfera del transportador cerrado."` **(e)** Regenerar WI-LOTO y MO-LOTO. |
+
+### Dictamen: **SIN OBJECIÓN A LOS CAMBIOS D-014, CON 2 RESIDUALES MEDIOS**
+
+Los cambios no debilitan SAF-L-01, SAF-L-02 ni SAF-D-01. OP-L-01 y OP-L-04 los refuerzan. **El veto sigue levantado**; el dictamen sigue siendo APROBADO CON CONDICIONES. Hay que corregir SAF-X-01 y SAF-X-02 antes de la primera sesión del piloto (≤ 0.5 día **[Supuesto]**). Basta con verificar el texto y los PDF; no hace falta otra re-revisión completa. Siguen abiertos de la re-revisión anterior: SAF-R-02 (prueba unitaria de las trampas de confirmación) y SAF-R-03. SAF-R-01 quedó cerrado: «Arnés colocado y ajustado» ya es crítico (`docs-heights.json:410`).
+
+### Decisión requerida del Director (revisión cruzada D-014)
+
+| Opción | Descripción | Costo / esfuerzo | Riesgo |
+|---|---|---|---|
+| **A (recomendada)** | Corregir SAF-X-01 y SAF-X-02, regenerar los PDF y mantener la fecha del piloto. | ≤ 0.5 día **[Supuesto]**, con capacidad interna. | Bajo. |
+| **B** | Iniciar el piloto con D-014 tal como está y corregir en la siguiente iteración. | Ninguno inmediato. | Medio: la misión enseña un retiro sin restablecer la tensión y los documentos omiten un peligro de atmósfera que puede ser fatal. |
+
+**Recomendación:** opción A. **Fecha límite para decidir:** antes de la primera sesión del piloto LOTO; 2026-10-12 **[Supuesto]**.
