@@ -13,6 +13,7 @@ const RING = new THREE.RingGeometry(0.2, 0.26, 32).rotateX(-Math.PI / 2);
 const HIT = new THREE.CylinderGeometry(0.42, 0.42, 1.3, 8).translate(0, 0.65, 0);
 const PIN = new THREE.SphereGeometry(0.22, 12, 8);
 
+const MARKER_SHAPE = new THREE.Vector3(1, 1.5, 1);
 const muted = (hex: number) => new THREE.Color(hex).lerp(new THREE.Color(0x9a9a96), 0.22);
 
 export class Agent3D {
@@ -234,7 +235,7 @@ export class Agent3D {
     const rs = this.selected ? 1.5 : this.hovered ? 1.25 : 1;
     this.ring.scale.setScalar(rs);
     rm.opacity = this.selected ? 1 : 0.8;
-    this.marker.scale.setScalar(far ? Math.min(5, camDist / 40) : 1).multiply(new THREE.Vector3(1, 1.5, 1));
+    this.marker.scale.setScalar(far ? Math.min(5, camDist / 40) : 1).multiply(MARKER_SHAPE);
     this.sync();
   }
 

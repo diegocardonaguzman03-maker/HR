@@ -16,9 +16,9 @@ import { CameraRig, type Insets } from './CameraRig';
 import type { Spot } from './kit';
 import { AmbientLife, Parcels } from './life';
 import { buildBase, buildDressing, buildHills, buildPaths, Vegetation, type Obstacle } from './landscape';
-import { STATE_HEX } from './materials';
+import { MAT, STATE_HEX } from './materials';
 import { Overlay, type LabelInfo } from './Overlay';
-import { tickScreens } from './screens';
+import { screenMaterial, tickScreens } from './screens';
 import { footprint, gateWorld, hubWorld, projectCenter, territoryAtWorld, territoryCenterWorld, tileToWorld, worldToTile } from './space';
 
 export type Pick = { kind: 'agent' | 'project' | 'citadel'; id: ID } | null;
@@ -96,6 +96,10 @@ export class DioramaWorld {
   private frameAvg = 16;
   private pixelRatio = 1;
   private lastParcel = new Map<ID, number>();
+  private shadowKey = '';
+  private frameNo = 0;
+  private shadowSize = 2048;
+  private camDir = new THREE.Vector3();
 
   constructor(private cb: GameCallbacks) {}
 
@@ -103,13 +107,16 @@ export class DioramaWorld {
     this.el = el;
     const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
     this.renderer = renderer;
-    this.pixelRatio = Math.min(2, window.devicePixelRatio || 1);
+    // 1.5× is visually indistinguishable from 2× on a diorama and ~44% cheaper on retina screens.
+    this.pixelRatio = Math.min(1.5, window.devicePixelRatio || 1);
     renderer.setPixelRatio(this.pixelRatio);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 0.94;
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    // Shadows are re-rendered only when the view changes, plus at ~half rate for moving figures.
+    renderer.shadowMap.autoUpdate = false;
     renderer.domElement.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;touch-action:none;outline:none';
     el.appendChild(renderer.domElement);
     this.overlay = new Overlay(el);
@@ -138,20 +145,55 @@ export class DioramaWorld {
     this.pickGroup.visible = false;
 
     this.resize();
-    this.rig.set(new THREE.Vector3(-16, 0, -16), 170);
-    this.rig.flyTo(new THREE.Vector3(-14, 0, -14), 112);
+    // narrow (portrait) screens start a little further out so the district fits
+    const startDist = THREE.MathUtils.clamp(112 / Math.min(1, (this.w / this.h) * 1.4), 112, 175);
+    this.rig.set(new THREE.Vector3(-16, 0, -16), startDist * 1.5);
+    this.rig.flyTo(new THREE.Vector3(-14, 0, -14), startDist);
     this.bindInput(renderer.domElement);
     const ro = new ResizeObserver(() => this.resize());
     ro.observe(el);
     this.cleanup.push(() => ro.disconnect());
     this.ready = true;
     if (this.state) this.setWorld(this.state, true);
+    this.prewarm();
     this.clock.start();
     const loop = () => {
       this.raf = requestAnimationFrame(loop);
       this.frame();
     };
     this.raf = requestAnimationFrame(loop);
+  }
+
+  /**
+   * Compile shader variants ahead of time so the first cutaway (roofs and walls
+   * fading = transparent variants) and the first lit screens never stutter.
+   */
+  private prewarm(): void {
+    const warm = new THREE.Group();
+    warm.position.y = -50;
+    const box = new THREE.BoxGeometry(0.1, 0.1, 0.1);
+    for (const m of Object.values(MAT)) {
+      const t = m.clone();
+      t.transparent = true;
+      t.depthWrite = false;
+      warm.add(new THREE.Mesh(box, t), new THREE.Mesh(box, m));
+    }
+    warm.add(new THREE.Mesh(box, screenMaterial('chart')));
+    this.scene.add(warm);
+    const done = () => {
+      this.scene.remove(warm);
+      warm.traverse((o) => {
+        const mesh = o as THREE.Mesh;
+        if (mesh.isMesh && !Object.values(MAT).includes(mesh.material as never) && mesh.material !== screenMaterial('chart')) (mesh.material as THREE.Material).dispose();
+      });
+      box.dispose();
+    };
+    const r = this.renderer as THREE.WebGLRenderer & { compileAsync?: (s: THREE.Object3D, c: THREE.Camera) => Promise<unknown> };
+    if (r.compileAsync) r.compileAsync(this.scene, this.rig.camera).then(done, done);
+    else {
+      r.compile(this.scene, this.rig.camera);
+      done();
+    }
   }
 
   destroy(): void {
@@ -553,6 +595,8 @@ export class DioramaWorld {
     let pinch = { d: 0, a: 0, mx: 0, my: 0 };
     let hoverRaf = 0;
     let lastMove: PointerEvent | null = null;
+    // pan velocity (px/ms) for a gentle glide after release
+    let vel = { x: 0, y: 0, t: 0 };
 
     const ndc = (x: number, y: number) => {
       const r = cv.getBoundingClientRect();
@@ -605,7 +649,13 @@ export class DioramaWorld {
         return;
       }
       if (mode === 'orbit') this.rig.orbit(-dx * 0.006, dy * 0.004);
-      else panBy(dx, dy);
+      else {
+        panBy(dx, dy);
+        const now = performance.now();
+        const span = Math.max(1, now - vel.t);
+        const a = Math.min(1, span / 50);
+        vel = { x: vel.x * (1 - a) + (dx / span) * a, y: vel.y * (1 - a) + (dy / span) * a, t: now };
+      }
     };
     const onUp = (e: PointerEvent) => {
       pointers.delete(e.pointerId);
@@ -614,7 +664,12 @@ export class DioramaWorld {
       if (!moved && e.button === 0) {
         const hit = this.pickAt(ndc(e.clientX, e.clientY));
         this.cb.onPick(hit);
+      } else if (mode === 'pan' && performance.now() - vel.t < 60 && !this.reduced) {
+        // glide: carry ~180 ms of the release velocity (the camera's damping eases it out)
+        const speed = Math.hypot(vel.x, vel.y);
+        if (speed > 0.15) panBy(vel.x * 180, vel.y * 180);
       }
+      vel = { x: 0, y: 0, t: 0 };
       mode = null;
     };
     const onWheel = (e: WheelEvent) => {
@@ -722,7 +777,8 @@ export class DioramaWorld {
     const dist = rig.dist;
     const lod: Lod = dist > 118 ? 'far' : dist > 46 ? 'mid' : 'near';
     this.lod = lod;
-    const camDir = new THREE.Vector3(Math.sin(rig.az), 0, Math.cos(rig.az));
+    const camDir = this.camDir.set(Math.sin(rig.az), 0, Math.cos(rig.az));
+    this.frameNo++;
 
     for (const b of this.buildings.values()) {
       b.setLod(lod, camDir, dist);
@@ -769,21 +825,32 @@ export class DioramaWorld {
       this.cb.onCameraTerritory(terr);
     }
 
-    const t0 = performance.now();
+    const key = `${tx.toFixed(2)}|${tz.toFixed(2)}|${half.toFixed(1)}`;
+    if (key !== this.shadowKey || this.frameNo % 2 === 0) {
+      this.shadowKey = key;
+      this.renderer.shadowMap.needsUpdate = true;
+    }
     this.renderer.render(this.scene, rig.camera);
-    this.adaptQuality(performance.now() - t0, dt);
+    this.adaptQuality(dt);
   }
 
-  /** Keep 60 FPS on modest machines: lower the pixel ratio if frames run long. */
-  private adaptQuality(_renderMs: number, dt: number): void {
+  /** Keep 60 FPS on modest machines: step quality down if frames run long (pixel ratio, then shadow resolution). */
+  private adaptQuality(dt: number): void {
+    if (document.hidden) return;
     this.frameAvg = this.frameAvg * 0.95 + dt * 1000 * 0.05;
-    if (this.time < 3) return;
-    if (this.frameAvg > 24 && this.pixelRatio > 1) {
+    if (this.time < 3 || this.frameAvg < 22) return;
+    if (this.pixelRatio > 1) {
       this.pixelRatio = Math.max(1, this.pixelRatio - 0.25);
       this.renderer.setPixelRatio(this.pixelRatio);
       this.resize();
-      this.frameAvg = 16;
+    } else if (this.shadowSize > 1024) {
+      this.shadowSize = 1024;
+      this.sun.shadow.mapSize.set(1024, 1024);
+      this.sun.shadow.map?.dispose();
+      this.sun.shadow.map = null;
+      this.renderer.shadowMap.needsUpdate = true;
     }
+    this.frameAvg = 16;
   }
 
   private updateLabels(dist: number): void {
@@ -791,6 +858,7 @@ export class DioramaWorld {
     const cam = this.rig.camera;
     const { w, h } = this;
     // focus label: hovered thing, else selected thing
+    this.overlay.safe = this.rig.insets;
     const f = this.hover ?? this.selection;
     let info: LabelInfo | null = null;
     let at: THREE.Vector3 | null = null;
@@ -833,7 +901,8 @@ export class DioramaWorld {
           const p = s.projects[b.id];
           const color = b.waiting ? hexCss(STATE_HEX.waiting) : p?.status === 'blocked' ? hexCss(STATE_HEX.blocked) : p?.status === 'paused' ? '#8e9196' : b.activityTarget > 0 ? '#7cc595' : '#c8c4bb';
           const text = (p?.structure ?? '').length > 24 ? `${p!.structure.slice(0, 22)}…` : p?.structure ?? '';
-          return { id: b.id, text, color, at: b.center.setY(b.height + 0.4), alert: b.waiting > 0 || p?.status === 'blocked' };
+          const alert = b.waiting > 0 || p?.status === 'blocked';
+          return { id: b.id, text, color, at: b.center.setY(b.height + 0.4), alert, rank: (alert ? 4 : 0) + (b.activityTarget > 0 ? 2 : 0) + (p?.priority === 'critical' || p?.priority === 'high' ? 1 : 0) };
         }),
       chips,
       cam,

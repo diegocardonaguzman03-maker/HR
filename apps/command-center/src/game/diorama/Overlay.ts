@@ -14,6 +14,16 @@ export interface LabelInfo {
   color: string;
 }
 
+export interface Safe {
+  top: number;
+  right: number;
+  bottom: number;
+  left: number;
+}
+
+type Rect = { x0: number; y0: number; x1: number; y1: number };
+const hits = (a: Rect, b: Rect) => a.x0 < b.x1 && a.x1 > b.x0 && a.y0 < b.y1 && a.y1 > b.y0;
+
 interface Tag {
   el: HTMLDivElement;
   visible: boolean;
@@ -29,6 +39,9 @@ export class Overlay {
   private territory = new Map<string, Tag>();
   private chips = new Map<string, Tag>();
   private names = new Map<string, Tag>();
+  /** Screen areas taken by territory names this frame (chips avoid them). */
+  private taken: Rect[] = [];
+  safe: Safe = { top: 56, right: 0, bottom: 90, left: 64 };
 
   constructor(parent: HTMLElement) {
     Object.assign(this.root.style, { position: 'absolute', inset: '0', pointerEvents: 'none', overflow: 'hidden', fontFamily: FONT });
@@ -78,22 +91,27 @@ export class Overlay {
   }
 
   setTerritories(items: { id: string; name: string; tagline: string; at: THREE.Vector3 }[], alpha: number, cam: THREE.Camera, w: number, h: number): void {
+    this.taken = [];
     for (const it of items) {
       let t = this.territory.get(it.id);
       if (!t) {
-        t = this.tag('text-align:center;color:#f6f3ec;text-shadow:0 1px 12px rgba(0,0,0,0.35)');
+        t = this.tag('text-align:center;color:#2a2c30;text-shadow:0 0 10px rgba(246,243,236,0.9),0 0 2px rgba(246,243,236,0.9)');
         t.el.innerHTML = `<div style="font-size:13px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase">${esc(it.name)}</div><div style="font-size:10.5px;letter-spacing:0.08em;opacity:0.8;margin-top:3px">${esc(it.tagline)}</div>`;
         this.territory.set(it.id, t);
       }
       const s = this.project(it.at, cam, w, h);
       this.place(t, s.x, s.y, alpha > 0.02 && s.ok, 0.5, 0.5);
       if (t.visible) t.el.style.opacity = alpha.toFixed(2);
+      if (t.visible && alpha > 0.4) this.taken.push({ x0: s.x - 110, x1: s.x + 110, y0: s.y - 22, y1: s.y + 22 });
     }
   }
 
-  setChips(items: { id: string; text: string; color: string; at: THREE.Vector3; alert: boolean }[], show: boolean, cam: THREE.Camera, w: number, h: number): void {
+  setChips(items: { id: string; text: string; color: string; at: THREE.Vector3; alert: boolean; rank: number }[], show: boolean, cam: THREE.Camera, w: number, h: number): void {
     const seen = new Set<string>();
-    for (const it of items) {
+    const placed: Rect[] = [...this.taken];
+    const sf = this.safe;
+    // Most important first: needs-Francisco / blocked, then busy, then the rest. Overlapping chips are dropped.
+    for (const it of [...items].sort((a, b) => b.rank - a.rank)) {
       seen.add(it.id);
       let t = this.chips.get(it.id);
       if (!t) {
@@ -106,7 +124,12 @@ export class Overlay {
         t.el.innerHTML = `<span style="width:6px;height:6px;border-radius:50%;background:${it.color}"></span>${esc(it.text)}${it.alert ? '<span style="color:#f0b33c;margin-left:2px">◆</span>' : ''}`;
       }
       const s = this.project(it.at, cam, w, h);
-      this.place(t, s.x, s.y, show && s.ok);
+      const cw = it.text.length * 6.2 + (it.alert ? 30 : 22);
+      const r: Rect = { x0: s.x - cw / 2 - 3, x1: s.x + cw / 2 + 3, y0: s.y - 22, y1: s.y + 1 };
+      const inside = r.y0 > sf.top + 4 && r.y1 < h - sf.bottom - 4 && r.x0 > sf.left + 4 && r.x1 < w - sf.right - 4;
+      const free = inside && !placed.some((p) => hits(p, r));
+      if (show && s.ok && free) placed.push(r);
+      this.place(t, s.x, s.y, show && s.ok && free);
     }
     for (const [id, t] of this.chips)
       if (!seen.has(id)) {

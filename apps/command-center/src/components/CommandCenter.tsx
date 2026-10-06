@@ -23,7 +23,7 @@ import { ProjectPanel } from '@/features/projects/ProjectPanel';
 import { ProjectWorkspace } from '@/features/projects/ProjectWorkspace';
 import { IconBtn } from './ui/primitives';
 
-// PixiJS is heavy and touches `window`: load the game layer lazily, client-side.
+// Three.js is heavy and touches `window`: load the game layer lazily, client-side.
 const GameCanvas = lazy(() => import('./GameCanvas').then((m) => ({ default: m.GameCanvas })));
 const WorldLoading = () => <div className="absolute inset-0 flex items-center justify-center text-[11px] tracking-[0.3em] text-zinc-600">LOADING WORLD…</div>;
 
@@ -37,7 +37,6 @@ export function CommandCenter() {
   const profile = useUi((s) => s.agentProfile);
   const os = useUi((s) => s.os);
   const drawer = useUi((s) => s.drawer);
-  const world = useWorld((s) => s.world);
 
   useEffect(() => {
     start();
@@ -80,10 +79,12 @@ export function CommandCenter() {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  const agent = sel?.kind === 'agent' ? world.agents[sel.id] : undefined;
-  const project = sel?.kind === 'project' ? world.projects[sel.id] : undefined;
-  const wsProject = workspace ? world.projects[workspace.projectId] : undefined;
-  const profAgent = profile ? world.agents[profile.agentId] : undefined;
+  // Narrow subscriptions: the shell re-renders only when what it shows changes,
+  // not on every world event (keeps the 3D view smooth while agents work).
+  const agent = useWorld((s) => (sel?.kind === 'agent' ? s.world.agents[sel.id] : undefined));
+  const project = useWorld((s) => (sel?.kind === 'project' ? s.world.projects[sel.id] : undefined));
+  const wsProject = useWorld((s) => (workspace ? s.world.projects[workspace.projectId] : undefined));
+  const profAgent = useWorld((s) => (profile ? s.world.agents[profile.agentId] : undefined));
   const wide = wsProject || profAgent || os;
   const inspector = !wide && !chat && (agent || project);
 
@@ -173,7 +174,7 @@ function FirstRunHint() {
   return (
     <div className="glass pointer-events-auto absolute bottom-[132px] left-1/2 z-20 hidden w-[min(560px,calc(100%-24px))] -translate-x-1/2 items-center gap-3 rounded-xl px-4 py-2.5 text-[11.5px] text-zinc-300 md:flex">
       <span className="flex-1">
-        <b className="text-zinc-100">{live ? 'Your agents run on Claude.' : 'Your world is live.'}</b> Click a unit to chat, a building to manage it · drag to pan · scroll to zoom · <kbd className="kbd">⌘K</kbd> to command.
+        <b className="text-zinc-100">{live ? 'Your agents run on Claude.' : 'Your world is live.'}</b> Click an agent to chat, a building to manage it · drag to pan · right-drag to rotate · scroll to zoom · <kbd className="kbd">⌘K</kbd> to command.
       </span>
       <button type="button" onClick={done} className="text-[11px] font-semibold text-[var(--accent)]">Got it</button>
     </div>

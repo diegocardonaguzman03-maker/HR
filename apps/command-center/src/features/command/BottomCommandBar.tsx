@@ -19,7 +19,9 @@ export let currentBarCommands: BarCommand[] = [];
 
 export function BottomCommandBar() {
   const sel = useUi((s) => s.selection);
-  const world = useWorld((s) => s.world);
+  const selAgent = useWorld((s) => (sel?.kind === 'agent' ? s.world.agents[sel.id] : undefined));
+  const selProject = useWorld((s) => (sel?.kind === 'project' ? s.world.projects[sel.id] : undefined));
+  const homeExists = useWorld((s) => !!selAgent && selAgent.homeProjectId in s.world.projects);
   const u = useUi.getState();
 
   let title: React.ReactNode = (
@@ -35,9 +37,9 @@ export function BottomCommandBar() {
   );
   let cmds: BarCommand[];
 
-  if (sel?.kind === 'agent' && world.agents[sel.id]) {
-    const a = world.agents[sel.id];
-    const pid = a.currentTask?.projectId ?? (a.homeProjectId in world.projects ? a.homeProjectId : null);
+  if (selAgent) {
+    const a = selAgent;
+    const pid = a.currentTask?.projectId ?? (homeExists ? a.homeProjectId : null);
     title = (
       <div className="flex min-w-0 items-center gap-2">
         <AgentAvatar agent={a} size={32} />
@@ -57,8 +59,8 @@ export function BottomCommandBar() {
         ? { label: 'Resume', icon: 'play', run: () => dispatch({ type: 'agent.resume', agentId: a.id }) }
         : { label: 'Pause', icon: 'pause', run: () => dispatch({ type: 'agent.pause', agentId: a.id }) },
     ];
-  } else if (sel?.kind === 'project' && world.projects[sel.id]) {
-    const p = world.projects[sel.id];
+  } else if (selProject) {
+    const p = selProject;
     title = (
       <div className="flex min-w-0 items-center gap-2">
         <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/6 text-zinc-300">

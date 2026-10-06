@@ -47,19 +47,21 @@ export const MAT = {
   extra: std(0xd7d4cd, 0.85),
   extraDark: std(0x6d7076, 0.85),
   // glass
-  glass: new THREE.MeshPhysicalMaterial({
+  // Glass uses the standard shader (cheaper than physical) with env reflections.
+  glass: new THREE.MeshStandardMaterial({
     color: 0xd6e6ea,
     roughness: 0.06,
-    metalness: 0,
+    metalness: 0.1,
     transparent: true,
     opacity: 0.22,
     envMapIntensity: 1.4,
     depthWrite: false,
     side: THREE.DoubleSide,
   }),
-  glassTint: new THREE.MeshPhysicalMaterial({
+  glassTint: new THREE.MeshStandardMaterial({
     color: 0x9fb8bf,
     roughness: 0.08,
+    metalness: 0.1,
     transparent: true,
     opacity: 0.38,
     envMapIntensity: 1.2,

@@ -12,9 +12,8 @@ export function useNavItems(): Item[] {
   const u = useUi.getState();
   const drawer = useUi((s) => s.drawer);
   const os = useUi((s) => s.os);
-  const world = useWorld((s) => s.world);
-  const unread = world.notifications.filter((n) => !n.read).length;
-  const waiting = Object.values(world.agents).filter((a) => a.state === 'waiting').length;
+  const unread = useWorld((s) => s.world.notifications.filter((n) => !n.read).length);
+  const waiting = useWorld((s) => Object.values(s.world.agents).filter((a) => a.state === 'waiting').length);
   const d = (k: DrawerKind) => () => u.openDrawer(k);
   return [
     { id: 'home', icon: 'home', label: 'Command Center', run: () => { focusCitadel(); u.openOs('today'); }, active: !!os, badge: waiting },
