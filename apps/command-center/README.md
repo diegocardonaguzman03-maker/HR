@@ -1,6 +1,6 @@
 # Francisco Command Center
 
-A living operating system: an isometric, real-time strategy–style world where **structures are projects**, **units are AI agents** and **movement is work**. You select a unit or a building to see what is happening, open a conversation, assign missions, approve decisions, and watch the world react.
+A living operating system rendered as a **premium 3D architectural diorama**: a physical-model miniature where **buildings are projects**, **figures are AI agents** and **movement is work**. Cutaway architecture lets you see who is working, where, and on what. You select a unit or a building to see what is happening, open a conversation, assign missions, approve decisions, and watch the world react.
 
 > **Phase 1 — functional prototype.** Everything visible works. Agent activity comes from a **simulated demo engine** (labelled `DEMO · SIMULATED ACTIVITY` / `SIMULATED` everywhere) until you connect a real provider. In live mode, agents are idle unless the backend is actually running something.
 
@@ -46,13 +46,30 @@ Controls: drag or touch to pan · wheel or pinch to zoom · click or tap to sele
   React UI ───────────────────────────────▶ AgentProvider ───────────────────────────▶ reduce() ──▶ WorldState
   (features/*)        dispatch(cmd)          Mock | Real          emit(event)          (pure)        (zustand)
       ▲                                                                                                │
-      └──────────────── selection / panels (uiStore) ◀── picks ── GameWorld (PixiJS) ◀── setWorld() ───┘
+      └──────────────── selection / panels (uiStore) ◀── picks ── DioramaWorld (Three.js) ◀ setWorld() ┘
 ```
 
 - **Event-sourced state.** Domain state changes *only* by reducing `WorldEvent`s (`src/services/worldState.ts`). The UI never mutates domain state. It dispatches `Command`s to the active provider. Every event carries `source: 'real' | 'simulated' | 'user'`.
-- **Game layer is separate from the application layer.** `src/game/**` is plain TypeScript + PixiJS, with no React and no providers. It receives `WorldState` snapshots and the selection, and reports picks through callbacks. `src/components/GameCanvas.tsx` is the only bridge.
-- **Agent behaviour is derived, not scripted in the renderer.** `game/agents/behavior.ts` maps state to a destination: *working/researching/reviewing/collaborating* go to the task's structure, *waiting* goes to the Citadel steps, *idle* goes home, and *blocked/paused/completed* hold position. Units walk the road graph (`services/geometry.routeBetween`), going around the Citadel and never through it.
-- **Rendering (2.5D isometric, PixiJS v8).** Ground is a single static `Graphics`. Decor uses textures pre-rendered once and drawn as batched `Sprite`s. There is manual viewport culling plus level of detail (labels and small decor hide when you zoom out, territory names appear). Particles are capped (≤ 36 smoke puffs), and *Reduce motion* turns animation off.
+- **Game layer is separate from the application layer.** `src/game/**` is plain TypeScript + Three.js, with no React and no providers. It receives `WorldState` snapshots and the selection, and reports picks through callbacks. `src/components/GameCanvas.tsx` is the only bridge.
+- **Agent behaviour is derived, not scripted in the renderer.** State maps to a place inside the architecture: *working/researching/reviewing* sit at a workstation of the task's building, *collaborating* agents move to its meeting table, *waiting* and *blocked* stay at their desk with a subtle amber/red marker (and the building shows a "needs Francisco" beacon), *idle* agents relax at home (lounge or entrance), *paused* agents hold position. Figures walk the streets: door → street → district hub → gate → bridges around the Command plaza → … → door.
+- **Rendering: a 3D diorama (Three.js).** See [Visual direction](#visual-direction--premium-living-3d-diorama).
+
+## Visual direction — premium living 3D diorama
+
+The world reads like a physical architectural model: four territory plinths (concrete, jungle, garden and survey sand) around a round Command plaza, separated by canals and joined by bridges, with contour-layer hills, model trees, vehicles and small figures.
+
+| Principle | Implementation (`src/game/diorama/`) |
+|---|---|
+| **Architecture, not sprites** | `recipes.ts` models a micro-environment for each structure type (19 types): an L&D academy with a sawtooth roof and an EAF training mock-up, a 3D Digital Twin Lab with the furnace model under a hologram, a maintenance hangar with a travelling gantry crane and forklift, a glass talent tower with interview rooms, a work-at-heights tower, a jungle strategy temple with a reflection pool, a content studio with a cyclorama, a financial observatory with a cut dome, a house with a pool, a dock with a boat, a prototype hangar with a drone, and more. `shell.ts` provides the parametric architecture: podium, stepped floor plates, columns, back walls with window bands, glass fronts and roofs. |
+| **Cutaway sections** | Roofs lift away (fade) when you zoom in or select a building, and walls facing the camera dissolve as you orbit (`Building3D.setLod`). Upper floors step back, so ground-floor workspaces stay visible. |
+| **Meaningful workspaces** | Each recipe registers *work*, *meeting* and *idle* spots: desks with monitors, meeting tables, a holo-table, workbenches and lounges. Agents sit, type and gather there. |
+| **Activity has consequences** | Screens switch on, with live canvas content (charts, code, CAD, people, kanban, finance, map), when a building is busy. Ceiling lights glow through the glass. Collaboration moves agents to the table. Finished work (`agent.task_completed`, `file.added`) flies as a small glowing parcel to the project's sign. A waiting decision raises an amber beacon. |
+| **Live micro-activity** | Haul trucks, a forklift, a gantry crane, a tram at the onboarding station, conveyor boxes, drones, a boat, a cyclist, a runner and people crossing the plaza, all slow and subtle. *Reduce motion* stops them. |
+| **Look** | Matte model materials (off-white, concrete, graphite, steel, glass, timber, stone, vegetation) and restrained accents (industrial red, technology cyan, warm amber), with no neon. Soft sky light, warm sun with soft shadows that follow the area of interest, image-based reflections for glass and metal, contact-shadow pads, and distance fog for depth. |
+| **Camera** | `CameraRig.ts` gives an elevated architectural view (≈38°, orbit limited to 26–57°), damped pan/zoom/orbit, zoom toward the cursor, pinch and twist on touch, and fly-to of 0.5–1.2 s (ease-in-out, with a slight cinematic pull-back on long hops). Focus is centred in the area not covered by panels. Keys: WASD/arrows to pan, Q/E to orbit, +/− to zoom. |
+| **Level of detail** | *Far:* territories, project-state chips and agent beads. *Medium:* buildings, rooms and agents. *Near:* desks, screens, props, and agent name tags. |
+| **Labels** | Physical signage on every building, a single floating label for the hovered or selected item (`SCOUT / Translating OJT benchmark / ● ACTIVE`), and small name tags only when close. |
+| **Performance** | Static geometry is merged per building, layer and material (`kit.ts`), so a detailed building costs a few draw calls. Vegetation is instanced, screens redraw one at a time at about 8 Hz, the shadow frustum is texel-snapped, and the pixel ratio adapts if frames run long. |
 
 ### Code map
 
@@ -61,10 +78,10 @@ src/
   app/                 Next.js App Router entry (static export)
   components/          Shell (CommandCenter), GameCanvas bridge, ui/ design-system primitives
   game/
-    world/             GameWorld (scene, input, culling), terrain + decor, iso draw helpers
-    agents/            AgentUnit (unit view + movement), behavior (state → destination)
-    buildings/         BuildingView (status visuals, construction), buildingArt (19 original structure types)
-    camera/            Camera (pan, zoom-to-cursor, pinch, fly-to, follow, insets)
+    diorama/           DioramaWorld (scene, input, routing, LOD, labels) · CameraRig · Building3D · Agent3D ·
+                       recipes (19 micro-environments) · shell (parametric architecture) · props · kit (merge) ·
+                       landscape (plinths, canals, paths, hills, vegetation) · life (vehicles, parcels) · screens · Overlay
+    agents/            behavior (state colours and tile-space targets used by tests)
   features/            agents · projects · chat · missions · activity · command (bar, palette, NL) ·
                        citadel (Command OS) · minimap · nav · notifications · modals
   providers/           AgentProvider interface · mock/MockAgentProvider · real/RealAgentProvider
@@ -173,7 +190,7 @@ Both providers implement the same `AgentProvider` interface (`start`, `stop`, `d
 - **Camera:** focus targets are centred in the *unobstructed* area (panel insets), a selected moving agent is followed gently, fly-to zooms geometrically, and fling has inertia.
 - **Agent movement:** route detours via district hubs removed; units walk around the Citadel on a gate ring; waiting agents line up on its front steps.
 - **Visual hierarchy:** larger units, labels shown by zoom level, territory names at world zoom, lighter Frontier fog, and status beacons only for blocked, critical, completed and waiting.
-- **Performance:** batched decor sprites, viewport culling, a capped particle count, and `computeTargets` only re-runs when agents change.
+- **Performance:** merged architecture, instanced vegetation, adaptive pixel ratio, and agent targets only re-computed when agents change.
 - **Responsive:** on mobile the inspector is a bottom sheet with the world visible above; chat and workspaces are full-screen; there is a tab bar; and touch picking uses larger hit radii.
 - **Correctness:** client-only rendering (no hydration drift from time-relative seed data), and notifications are marked read immutably.
 

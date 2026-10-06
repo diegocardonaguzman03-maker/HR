@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import { getGame } from '@/components/GameCanvas';
 import { CITADEL_TILE, TERRITORIES, WORLD_SIZE, territoryAt } from '@/data/territories';
 import { STATE_COLORS } from '@/game/agents/behavior';
-import { agentPositions } from '@/game/world/GameWorld';
+import { agentPositions } from '@/game/diorama/DioramaWorld';
 import { useUi } from '@/store/uiStore';
 import { useWorld } from '@/store/worldStore';
 import { hex } from '@/components/ui/primitives';

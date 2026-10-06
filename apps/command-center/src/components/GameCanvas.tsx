@@ -1,12 +1,12 @@
 'use client';
-// Mounts the PixiJS world and bridges it to the stores.
+// Mounts the 3D diorama and bridges it to the stores.
 // Domain state flows in (store → game). User picks flow out (game → ui store).
 import { useEffect, useRef } from 'react';
-import { GameWorld } from '@/game/world/GameWorld';
+import { DioramaWorld } from '@/game/diorama/DioramaWorld';
 import { useUi } from '@/store/uiStore';
 import { useWorld } from '@/store/worldStore';
 
-let instance: GameWorld | null = null;
+let instance: DioramaWorld | null = null;
 export const getGame = () => instance;
 
 export function GameCanvas() {
@@ -15,7 +15,7 @@ export function GameCanvas() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const game = new GameWorld({
+    const game = new DioramaWorld({
       onPick: (p) => {
         const u = useUi.getState();
         if (!p) return u.select(null);
@@ -30,6 +30,7 @@ export function GameCanvas() {
       onCameraTerritory: (t) => useUi.getState().setCameraTerritory(t),
     });
     instance = game;
+    (window as unknown as { __fccWorld?: DioramaWorld }).__fccWorld = game;
     game.setWorld(useWorld.getState().world);
     game
       .init(el)
@@ -48,6 +49,7 @@ export function GameCanvas() {
     const unsubWorld = useWorld.subscribe((s, prev) => {
       if (s.world !== prev.world) game.setWorld(s.world);
     });
+    const unsubEvents = useWorld.getState().onEvent((e) => game.onEvent(e));
     const unsubUi = useUi.subscribe((s, prev) => {
       if (s.selection !== prev.selection || s.hover !== prev.hover) game.setSelection(s.selection, s.hover);
       if (s.camera && s.camera !== prev.camera) game.focus(s.camera.target);
@@ -55,6 +57,7 @@ export function GameCanvas() {
     });
     return () => {
       unsubWorld();
+      unsubEvents();
       unsubUi();
       game.destroy();
       instance = null;
