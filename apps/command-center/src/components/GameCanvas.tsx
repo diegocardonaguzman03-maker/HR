@@ -31,11 +31,19 @@ export function GameCanvas() {
     });
     instance = game;
     game.setWorld(useWorld.getState().world);
-    void game.init(el).then(() => {
-      const u = useUi.getState();
-      game.setReducedMotion(u.reducedMotion);
-      game.setSelection(u.selection, u.hover);
-    });
+    game
+      .init(el)
+      .then(() => {
+        const u = useUi.getState();
+        game.setReducedMotion(u.reducedMotion);
+        game.setSelection(u.selection, u.hover);
+      })
+      .catch((err) => {
+        // No WebGL (or a blocked GPU): keep the rest of the interface usable.
+        console.error('[world] map failed to start', err);
+        el.innerHTML =
+          '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;color:#9a978f;font:13px/1.5 ui-sans-serif,system-ui,sans-serif">The map could not start in this browser (WebGL unavailable). Agents, projects and chat still work from the menus on the left and the ⌘K palette.</div>';
+      });
 
     const unsubWorld = useWorld.subscribe((s, prev) => {
       if (s.world !== prev.world) game.setWorld(s.world);
