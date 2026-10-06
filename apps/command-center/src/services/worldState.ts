@@ -96,10 +96,25 @@ export function createSeedState(): WorldState {
   };
 }
 
+/**
+ * The world for live modes (gateway, Claude): seed projects, missions and
+ * decisions stay as starting data, but nothing simulated survives — agents are
+ * idle and the demo's scripted chat replies and activity are dropped.
+ */
 export function createEmptyState(): WorldState {
-  // Used by the real provider: territories exist, everything else arrives as events/snapshot.
   const s = createSeedState();
-  return { ...s, agents: Object.fromEntries(Object.values(s.agents).map((a) => [a.id, idleAgent(a)])), activity: [], events: [] };
+  const messages = Object.fromEntries(Object.entries(s.messages).filter(([, m]) => m.source !== 'simulated'));
+  const conversations = Object.fromEntries(
+    Object.values(s.conversations).map((c) => [c.id, { ...c, messageIds: c.messageIds.filter((id) => id in messages) }]),
+  );
+  return {
+    ...s,
+    messages,
+    conversations,
+    agents: Object.fromEntries(Object.values(s.agents).map((a) => [a.id, { ...idleAgent(a), position: a.position }])),
+    activity: [],
+    events: [],
+  };
 }
 
 export function idleAgent(a: Agent): Agent {
@@ -228,6 +243,8 @@ function reduceEntities(s: WorldState, e: WorldEvent): WorldState {
       return patchProject(s, e.payload.task.projectId, (p) => ({ ...p, agentIds: addUnique(p.agentIds, e.payload.agentId) }));
     case 'agent.created':
       return { ...s, agents: { ...s.agents, [e.payload.agent.id]: e.payload.agent } };
+    case 'agent.memory_added':
+      return patchAgent(s, e.payload.agentId, (a) => ({ ...a, memory: [...a.memory, e.payload.fact].slice(-30) }));
     case 'message.sent': {
       const m = e.payload.message;
       const c = s.conversations[m.conversationId];

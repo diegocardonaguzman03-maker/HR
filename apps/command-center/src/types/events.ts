@@ -42,6 +42,7 @@ export type WorldEvent =
   | Base<'agent.assigned', { agentId: ID; projectId: ID }>
   | Base<'agent.task_queued', { agentId: ID; task: AgentTask }>
   | Base<'agent.created', { agent: Agent }>
+  | Base<'agent.memory_added', { agentId: ID; fact: string }>
   | Base<'message.sent', { message: Message }>
   | Base<'conversation.created', { conversationId: ID; agentId: ID; projectId: ID | null; title: string }>
   | Base<'project.created', { project: Project }>
@@ -81,7 +82,8 @@ export type Command =
   | { type: 'squad.form'; projectId: ID; objective: string; agentIds: ID[] }
   | { type: 'deliverable.create'; agentId: ID; projectId: ID | null; title: string }
   | { type: 'file.add'; projectId: ID | null; files: { name: string; size: number }[] }
-  | { type: 'notification.read'; ids?: ID[] };
+  | { type: 'notification.read'; ids?: ID[] }
+  | { type: 'agent.cancel'; agentId: ID };
 
 export interface ProjectDraft {
   name: string;

@@ -2,8 +2,7 @@
 // Application shell: the world fills the screen; UI layers float above it.
 // Level 1 = world · Level 2 = selection panel · Level 3 = workspace / chat / profile / OS.
 import { AnimatePresence, motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { focusCitadel } from '@/services/actions';
 import { useUi } from '@/store/uiStore';
 import { useWorld } from '@/store/worldStore';
@@ -24,11 +23,9 @@ import { ProjectPanel } from '@/features/projects/ProjectPanel';
 import { ProjectWorkspace } from '@/features/projects/ProjectWorkspace';
 import { IconBtn } from './ui/primitives';
 
-// PixiJS touches `window` — load the game layer on the client only.
-const GameCanvas = dynamic(() => import('./GameCanvas').then((m) => m.GameCanvas), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 flex items-center justify-center text-[11px] tracking-[0.3em] text-zinc-600">LOADING WORLD…</div>,
-});
+// PixiJS is heavy and touches `window`: load the game layer lazily, client-side.
+const GameCanvas = lazy(() => import('./GameCanvas').then((m) => ({ default: m.GameCanvas })));
+const WorldLoading = () => <div className="absolute inset-0 flex items-center justify-center text-[11px] tracking-[0.3em] text-zinc-600">LOADING WORLD…</div>;
 
 const isTyping = (t: EventTarget | null) => t instanceof HTMLElement && (t.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(t.tagName));
 
@@ -92,7 +89,9 @@ export function CommandCenter() {
 
   return (
     <main className="relative h-dvh w-full overflow-hidden bg-[var(--bg)] text-zinc-100">
-      <GameCanvas />
+      <Suspense fallback={<WorldLoading />}>
+        <GameCanvas />
+      </Suspense>
       <div className="vignette pointer-events-none absolute inset-0" />
       <TopBar />
       <GlobalNav />
@@ -154,6 +153,7 @@ function SidePanel({ children, width, z = 30, sheet = false }: { children: React
 
 function FirstRunHint() {
   const [show, setShow] = useState(false);
+  const live = useWorld((s) => s.connection.kind === 'claude');
   useEffect(() => {
     try {
       setShow(localStorage.getItem('fcc.hint.v1') !== 'done');
@@ -173,7 +173,7 @@ function FirstRunHint() {
   return (
     <div className="glass pointer-events-auto absolute bottom-[132px] left-1/2 z-20 hidden w-[min(560px,calc(100%-24px))] -translate-x-1/2 items-center gap-3 rounded-xl px-4 py-2.5 text-[11.5px] text-zinc-300 md:flex">
       <span className="flex-1">
-        <b className="text-zinc-100">Your world is live.</b> Click any unit or structure · drag to pan · scroll to zoom · double-click a territory · <kbd className="kbd">⌘K</kbd> to command.
+        <b className="text-zinc-100">{live ? 'Your agents run on Claude.' : 'Your world is live.'}</b> Click a unit to chat, a building to manage it · drag to pan · scroll to zoom · <kbd className="kbd">⌘K</kbd> to command.
       </span>
       <button type="button" onClick={done} className="text-[11px] font-semibold text-[var(--accent)]">Got it</button>
     </div>

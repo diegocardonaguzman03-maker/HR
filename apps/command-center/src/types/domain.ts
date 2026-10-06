@@ -226,6 +226,8 @@ export interface FileDoc {
   summary: string;
   /** Simulated deliverables have no real content behind them. */
   simulated?: boolean;
+  /** Text content of a deliverable an agent actually wrote. */
+  content?: string;
 }
 
 export type DecisionStatus = 'pending' | 'approved' | 'rejected' | 'revision';

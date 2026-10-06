@@ -1,6 +1,7 @@
 // GameWorld — the PixiJS scene. It knows nothing about React or providers:
 // it receives WorldState snapshots + selection, renders them, and reports
 // user picks through callbacks. (Game layer ⟂ application layer.)
+import 'pixi.js/unsafe-eval'; // no eval(): required under the artifact CSP
 import { Application, Container, Graphics, Sprite, Text, type Texture } from 'pixi.js';
 import { CITADEL_TILE, TERRITORIES, territoryAt } from '@/data/territories';
 import { isoToScreen, screenToIso, type Vec } from '@/services/geometry';

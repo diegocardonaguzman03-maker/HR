@@ -5,7 +5,7 @@ import { uid } from '@/services/ids';
 import { useUi, type Modal as ModalState } from '@/store/uiStore';
 import { dispatch, useWorld } from '@/store/worldStore';
 import type { ID, Priority } from '@/types/domain';
-import { DEFAULT_WS_URL } from '@/providers';
+import { DEFAULT_WS_URL, inClaudeViewer } from '@/providers';
 import { Modal } from '@/components/ui/Modal';
 import { AgentAvatar, Btn, clock, cx, Empty, SectionTitle, StatusIndicator, timeAgo } from '@/components/ui/primitives';
 import { DecisionButtons } from '../agents/AgentPanel';
@@ -167,13 +167,30 @@ function FileModal({ fileId }: { fileId: ID }) {
         {project && <Btn variant="subtle" icon="building" onClick={() => { close(); useUi.getState().openWorkspace(project.id, 'files'); }}>Open project</Btn>}
       </>}>
       <div className="space-y-3 text-[12.5px]">
-        <p className="text-zinc-300">{f.summary}</p>
+        {f.content ? (
+          <>
+            <div className="max-h-[50dvh] overflow-y-auto whitespace-pre-wrap rounded-lg border border-white/8 bg-black/25 p-3 text-[12.5px] leading-relaxed text-zinc-200">{f.content}</div>
+            <Btn
+              size="sm"
+              variant="outline"
+              icon="file"
+              onClick={(e) => {
+                const btn = e.currentTarget;
+                navigator.clipboard?.writeText(f.content!).then(() => (btn.textContent = 'Copied'), () => (btn.textContent = 'Select the text to copy'));
+              }}
+            >
+              Copy text
+            </Btn>
+          </>
+        ) : (
+          <p className="text-zinc-300">{f.summary}</p>
+        )}
         <div className="grid grid-cols-[90px_1fr] gap-y-1">
           <span className="text-zinc-500">Author</span><span className="text-zinc-200">{agent ? agent.name : 'Francisco'}</span>
           <span className="text-zinc-500">Project</span><span className="text-zinc-200">{project?.name ?? '—'}</span>
         </div>
         <p className="rounded-md border border-sky-400/20 bg-sky-400/5 px-3 py-2 text-[11px] text-sky-200/80">
-          {f.simulated ? 'Simulated deliverable — the demo engine created the record, not real content.' : 'Document preview requires a storage integration (Google Drive / OneDrive). Seed records only hold metadata.'}
+          {f.simulated ? 'Simulated deliverable — the demo engine created the record, not real content.' : f.content ? `Written by ${agent ? agent.name : 'an agent'} with Claude.` : 'Only the file name and size are stored; previews need a storage integration (Google Drive / OneDrive).'}
         </p>
       </div>
     </Modal>
@@ -207,27 +224,29 @@ function SettingsModal() {
   const speed = useWorld((s) => s.speed);
   const reduced = useUi((s) => s.reducedMotion);
   const [url, setUrl] = useState(conn.wsUrl || DEFAULT_WS_URL);
-  const switchTo = (kind: 'mock' | 'real') => {
+  const viewer = inClaudeViewer();
+  const switchTo = (kind: 'mock' | 'real' | 'claude') => {
     useWorld.getState().switchProvider(kind, url);
-    useUi.getState().showToast(kind === 'mock' ? 'Demo engine started' : `Connecting to ${url}…`);
+    useUi.getState().showToast(kind === 'mock' ? 'Demo mode: simulated agents' : kind === 'claude' ? 'Live mode: agents run on Claude' : `Connecting to ${url}…`);
   };
+  const option = (kind: 'mock' | 'real' | 'claude', title: string, body: string, on: string) => (
+    <button key={kind} type="button" onClick={() => switchTo(kind)} className={cx('rounded-lg border p-3 text-left', conn.kind === kind ? on : 'border-white/10 hover:border-white/25')}>
+      <div className="font-semibold text-zinc-100">{title}</div>
+      <div className="text-[11px] text-zinc-400">{body}</div>
+    </button>
+  );
   return (
     <Modal title="Settings" onClose={close} width={560}>
       <div className="space-y-5 text-[12.5px]">
         <div>
-          <SectionTitle>Agent provider</SectionTitle>
+          <SectionTitle>Agent mode</SectionTitle>
           <div className="grid gap-2 sm:grid-cols-2">
-            <button type="button" onClick={() => switchTo('mock')} className={cx('rounded-lg border p-3 text-left', conn.kind === 'mock' ? 'border-sky-400/60 bg-sky-400/8' : 'border-white/10 hover:border-white/25')}>
-              <div className="font-semibold text-zinc-100">Demo engine</div>
-              <div className="text-[11px] text-zinc-400">MockAgentProvider · simulated activity, clearly labelled</div>
-            </button>
-            <button type="button" onClick={() => switchTo('real')} className={cx('rounded-lg border p-3 text-left', conn.kind === 'real' ? 'border-emerald-400/60 bg-emerald-400/8' : 'border-white/10 hover:border-white/25')}>
-              <div className="font-semibold text-zinc-100">Live gateway</div>
-              <div className="text-[11px] text-zinc-400">RealAgentProvider · WebSocket · agents idle unless the backend works</div>
-            </button>
+            {viewer && option('claude', 'Live — Claude', 'Agents answer and act with Claude on your account. Changes are saved to this page.', 'border-emerald-400/60 bg-emerald-400/8')}
+            {option('mock', 'Demo', 'Simulated activity to explore the world. Nothing is saved; clearly labelled.', 'border-sky-400/60 bg-sky-400/8')}
+            {!viewer && option('real', 'Live gateway', 'Your own backend over WebSocket (npm run gateway).', 'border-emerald-400/60 bg-emerald-400/8')}
           </div>
-          <input className="field mt-2 w-full font-mono text-[12px]" value={url} onChange={(e) => setUrl(e.target.value)} aria-label="Gateway WebSocket URL" />
-          <p className="mt-1 text-[11px] text-zinc-500">Status: <span className="text-zinc-300">{conn.status}</span>{conn.detail ? ` — ${conn.detail}` : ''}. Switching resets the world to seed data so simulated and real activity never mix.</p>
+          {conn.kind === 'real' && <input className="field mt-2 w-full font-mono text-[12px]" value={url} onChange={(e) => setUrl(e.target.value)} aria-label="Gateway WebSocket URL" />}
+          <p className="mt-1 text-[11px] text-zinc-500">Status: <span className="text-zinc-300">{conn.status}</span>{conn.detail ? ` — ${conn.detail}` : ''}. Switching reloads the world for that mode, so simulated and real activity never mix.</p>
         </div>
         {conn.kind === 'mock' && (
           <div>

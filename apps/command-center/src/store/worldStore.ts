@@ -3,7 +3,7 @@
 // Components read from here; they never mutate domain state directly —
 // they dispatch Commands, and providers answer with WorldEvents.
 import { create } from 'zustand';
-import { createProvider, DEFAULT_PROVIDER, DEFAULT_WS_URL, type AgentProvider, type ConnectionStatus, type ProviderKind } from '@/providers';
+import { createProvider, defaultProvider, DEFAULT_WS_URL, type AgentProvider, type ConnectionStatus, type ProviderKind } from '@/providers';
 import { createSeedState, reduce, type WorldState } from '@/services/worldState';
 import type { ID } from '@/types/domain';
 import type { Command, WorldEvent } from '@/types/events';
@@ -14,6 +14,8 @@ interface WorldStore {
   world: WorldState;
   connection: { kind: ProviderKind; status: ConnectionStatus; detail?: string; wsUrl: string; label: string };
   typing: Record<ID, boolean>;
+  /** Reply text streaming in, per conversation. */
+  streaming: Record<ID, { agentId: ID; text: string }>;
   speed: number;
   started: boolean;
   start(): void;
@@ -53,13 +55,21 @@ export const useWorld = create<WorldStore>((set, get) => {
       emit,
       reset: (world) => set({ world }),
       onStatus: (status, detail) => set((s) => ({ connection: { ...s.connection, status, detail } })),
+      onStream: (conversationId, agentId, text) =>
+        set((s) => {
+          const streaming = { ...s.streaming };
+          if (text === null) delete streaming[conversationId];
+          else streaming[conversationId] = { agentId, text };
+          return { streaming };
+        }),
     });
   };
 
   return {
     world: createSeedState(),
-    connection: { kind: DEFAULT_PROVIDER, status: 'connecting', wsUrl: DEFAULT_WS_URL, label: '' },
+    connection: { kind: defaultProvider(), status: 'connecting', wsUrl: DEFAULT_WS_URL, label: '' },
     typing: {},
+    streaming: {},
     speed: 1,
     started: false,
     start() {
@@ -78,7 +88,7 @@ export const useWorld = create<WorldStore>((set, get) => {
     },
     switchProvider(kind, wsUrl) {
       // Switching resets to seed data so simulated and real activity never mix.
-      set({ world: createSeedState(), typing: {} });
+      set({ world: createSeedState(), typing: {}, streaming: {} });
       startProvider(kind, wsUrl ?? get().connection.wsUrl);
     },
     setSpeed(x) {

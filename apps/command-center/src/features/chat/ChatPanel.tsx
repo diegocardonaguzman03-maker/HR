@@ -27,6 +27,8 @@ export function ChatPanel({ conversationId }: { conversationId: string }) {
   const projects = useWorld((s) => s.world.projects);
   const conversations = useWorld((s) => s.world.conversations);
   const typing = useWorld((s) => s.typing[conversationId]);
+  const stream = useWorld((s) => s.streaming[conversationId]);
+  const live = useWorld((s) => s.connection.kind === 'claude');
   const u = useUi.getState();
   const [text, setText] = useState('');
   const [files, setFiles] = useState<File[]>([]);
@@ -39,7 +41,7 @@ export function ChatPanel({ conversationId }: { conversationId: string }) {
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: 'smooth' });
-  }, [messages.length, typing]);
+  }, [messages.length, typing, stream?.text]);
   useEffect(() => {
     inputRef.current?.focus({ preventScroll: true });
   }, [conversationId]);
@@ -134,12 +136,18 @@ export function ChatPanel({ conversationId }: { conversationId: string }) {
             <DecisionButtons decisionId={agent.waitingFor.decisionId} />
           </div>
         )}
-        {typing && (
+        {stream && <StreamingBubble agentId={stream.agentId} text={stream.text} />}
+        {typing && !stream && (
           <div className="flex items-center gap-2 text-[11px] text-zinc-500">
             <span className="flex gap-0.5">
               {[0, 1, 2].map((i) => <span key={i} className="h-1.5 w-1.5 animate-bounce rounded-full bg-zinc-500" style={{ animationDelay: `${i * 120}ms` }} />)}
             </span>
-            {agent.name} is typing…
+            {live ? `${agent.name} is thinking…` : `${agent.name} is typing…`}
+            {live && (
+              <button type="button" onClick={() => dispatch({ type: 'agent.cancel', agentId: agent.id })} className="ml-1 rounded border border-white/10 px-1.5 py-0.5 text-[10px] text-zinc-300 hover:bg-white/8">
+                Stop
+              </button>
+            )}
           </div>
         )}
       </div>
@@ -189,10 +197,42 @@ export function ChatPanel({ conversationId }: { conversationId: string }) {
   );
 }
 
+function StreamingBubble({ agentId, text }: { agentId: string; text: string }) {
+  const agent = useWorld((s) => s.world.agents[agentId]);
+  return (
+    <div className="flex gap-2">
+      {agent && <AgentAvatar agent={agent} size={24} />}
+      <div className="max-w-[85%]">
+        <div className="whitespace-pre-wrap rounded-xl rounded-tl-sm bg-white/[0.06] px-3 py-2 text-[12.5px] leading-relaxed text-zinc-200">
+          {text}
+          <span className="ml-0.5 inline-block h-3 w-1.5 animate-pulse bg-[var(--accent)] align-middle" />
+        </div>
+        <div className="mt-0.5 flex items-center gap-2 text-[9.5px] text-zinc-600">
+          writing…
+          <button type="button" onClick={() => dispatch({ type: 'agent.cancel', agentId })} className="rounded border border-white/10 px-1.5 text-zinc-400 hover:bg-white/8">Stop</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Bubble({ m }: { m: Message }) {
   const agent = useWorld((s) => (m.agentId ? s.world.agents[m.agentId] : undefined));
   const u = useUi.getState();
   const mine = m.role === 'user';
+  if (m.role === 'system')
+    return (
+      <div className="mx-auto max-w-[92%] rounded-lg border border-white/8 bg-white/[0.03] px-3 py-2 text-center text-[11.5px] leading-snug text-zinc-400">
+        {m.text}
+        {m.actions && m.actions.length > 0 && (
+          <div className="mt-1.5 flex flex-wrap justify-center gap-1">
+            {m.actions.map((a) => (
+              <button key={a.label + a.command} type="button" onClick={() => runAction(a.command)} className="rounded-md border border-[var(--accent)]/40 px-2 py-0.5 text-[10px] font-semibold text-[var(--accent)]">{a.label}</button>
+            ))}
+          </div>
+        )}
+      </div>
+    );
   return (
     <div className={cx('flex gap-2', mine && 'flex-row-reverse')}>
       {!mine && agent && <AgentAvatar agent={agent} size={24} />}

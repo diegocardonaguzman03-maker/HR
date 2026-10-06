@@ -29,7 +29,11 @@ export function TopBar() {
   const l3 = chat ? 'Conversation' : ws ? 'Workspace' : profile ? 'Agent profile' : os ? 'Operating system' : null;
 
   const mode =
-    conn.kind === 'mock'
+    conn.kind === 'claude'
+      ? conn.status === 'connected'
+        ? { text: 'LIVE · AGENTS RUN ON CLAUDE', cls: 'text-emerald-300 border-emerald-400/30 bg-emerald-400/8' }
+        : { text: 'CONNECTING TO CLAUDE…', cls: 'text-zinc-400 border-zinc-500/30' }
+      : conn.kind === 'mock'
       ? { text: 'DEMO · SIMULATED ACTIVITY', cls: 'text-sky-300 border-sky-400/30 bg-sky-400/8' }
       : conn.status === 'connected'
         ? { text: 'LIVE · GATEWAY CONNECTED', cls: 'text-emerald-300 border-emerald-400/30 bg-emerald-400/8' }
@@ -76,10 +80,10 @@ export function TopBar() {
           type="button"
           onClick={() => u.openModal({ type: 'settings' })}
           className={cx('rounded-md border px-2 py-1 text-[9.5px] font-bold tracking-[0.16em]', mode.cls)}
-          title={conn.kind === 'mock' ? 'Agent activity is simulated by the in-browser demo engine. Click to connect a real provider.' : conn.detail}
+          title={conn.kind === 'mock' ? 'Agent activity is simulated by the in-browser demo engine. Click to switch modes.' : conn.detail}
         >
           <span className="hidden lg:inline">{mode.text}</span>
-          <span className="lg:hidden">{conn.kind === 'mock' ? 'DEMO' : conn.status === 'connected' ? 'LIVE' : 'OFFLINE'}</span>
+          <span className="lg:hidden">{conn.kind === 'mock' ? 'DEMO' : conn.status === 'connected' ? 'LIVE' : '…'}</span>
         </button>
         {attention > 0 && (
           <button

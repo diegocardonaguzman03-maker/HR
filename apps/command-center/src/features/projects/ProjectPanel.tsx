@@ -76,7 +76,7 @@ export function ProjectPanel({ project }: { project: Project }) {
         )}
       </div>
 
-      <div>
+      {project.kpis.length > 0 && <div>
         <SectionTitle>KPIs</SectionTitle>
         <div className="grid grid-cols-2 gap-1.5">
           {project.kpis.slice(0, 4).map((k) => (
@@ -86,7 +86,7 @@ export function ProjectPanel({ project }: { project: Project }) {
             </div>
           ))}
         </div>
-      </div>
+      </div>}
 
       {open.length > 0 && (
         <div>

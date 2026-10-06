@@ -73,7 +73,7 @@ export function buildProject(state: WorldState, draft: ProjectDraft, id: string,
     fileIds: [],
     decisionIds: [],
     dependencies: [],
-    kpis: [{ label: 'Missions', value: '0' }],
+    kpis: [],
     createdAt: now,
     underConstruction: true,
   };

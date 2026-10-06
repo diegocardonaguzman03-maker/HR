@@ -8,7 +8,7 @@
 import type { WorldState } from '@/services/worldState';
 import type { Command, WorldEvent } from '@/types/events';
 
-export type ProviderKind = 'mock' | 'real';
+export type ProviderKind = 'mock' | 'real' | 'claude';
 export type ConnectionStatus = 'connecting' | 'connected' | 'disconnected' | 'simulated';
 
 export interface ProviderContext {
@@ -19,6 +19,8 @@ export interface ProviderContext {
   /** Replace the world (e.g. snapshot from a real backend on connect). */
   reset?(state: WorldState): void;
   onStatus(status: ConnectionStatus, detail?: string): void;
+  /** Live text of a reply being written (null = finished). */
+  onStream?(conversationId: string, agentId: string, text: string | null): void;
 }
 
 export interface AgentProvider {
