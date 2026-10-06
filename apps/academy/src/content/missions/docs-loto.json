@@ -7,7 +7,7 @@
   "wi": {
     "code": "WI-LOTO-001-DEMO",
     "title": "Instrucción de trabajo — Bloqueo y etiquetado de una banda transportadora para cambiar un rodillo",
-    "version": "0.1-demo",
+    "version": "0.2-demo",
     "status": "DEMO",
     "owner": "Seguridad Industrial con Mantenimiento de la planta (rol custodio). SME_REQUIRED: puesto responsable designado (Seguridad + Mantenimiento).",
     "file": "documents/procedimientos/WI-LOTO-001-DEMO.pdf",
@@ -45,6 +45,7 @@
       "Etiqueta de bloqueo con nombre, fecha y motivo. SME_REQUIRED: formato de etiqueta de la planta (Seguridad).",
       "Procedimiento de bloqueo específico del equipo, con sus puntos de aislamiento. SME_REQUIRED: documento aprobado (Mantenimiento + Seguridad).",
       "Dispositivo para soportar o bloquear el contrapeso. SME_REQUIRED: dispositivo aprobado (Mantenimiento Mecánico + Seguridad).",
+      "Mordazas o abrazaderas de banda para impedir que la banda se desplace mientras trabajas, cuando el procedimiento las pida. SME_REQUIRED: dispositivo y método (Mantenimiento Mecánico + Seguridad).",
       "Instrumento para verificar ausencia de tensión, cuando aplique. SME_REQUIRED: instrumento y método (Mantenimiento Eléctrico).",
       "Dispositivo de bloqueo grupal (pinza o caja de bloqueo), si intervienen varias personas. SME_REQUIRED: método de bloqueo grupal (Seguridad)."
     ],
@@ -70,8 +71,8 @@
         "control": "Antes de retirar el bloqueo: retirar herramientas, colocar guardas, verificar que no haya personas y avisar."
       },
       {
-        "hazard": "Energías no identificadas en el escenario de práctica.",
-        "control": "SME_REQUIRED: inventario completo de energías del equipo real (Mantenimiento + Seguridad)."
+        "hazard": "Energías que este escenario simplificado no tiene y una banda real sí puede tener: material en la banda, la tolva o el chute; inercia; regreso de la banda cargada en tramos inclinados (freno y antirretorno); tensores hidráulicos, neumáticos o de malacate; alimentadores y bandas aguas arriba o aguas abajo; temperatura del DRI caliente.",
+        "control": "Identificarlas y controlarlas con el procedimiento del equipo: detener y, si el procedimiento lo pide, bloquear los equipos que alimentan o reciben material de la banda; vaciar o asegurar el material; no liberar la tensión ni intervenir el antirretorno con la banda cargada en pendiente. SME_REQUIRED: inventario completo de energías, interbloqueos y equipos que también se bloquean (Mantenimiento + Ingeniería de Proceso + Seguridad)."
       }
     ],
     "steps": [
@@ -83,7 +84,7 @@
       },
       {
         "n": 2,
-        "action": "Identifica todas las energías que podrían mover o energizar el equipo: eléctrica (motor y control), gravedad (contrapeso del tensor) y mecánica almacenada (banda tensa).",
+        "action": "Identifica todas las energías que podrían mover o energizar el equipo. En este escenario: eléctrica (motor y control), gravedad (contrapeso del tensor) y mecánica almacenada (banda tensa). En una banda real revisa también el material en la banda, la tolva o el chute, la inercia, el freno y el antirretorno en tramos inclinados, los tensores hidráulicos o neumáticos y los equipos aguas arriba o aguas abajo.",
         "keyPoint": "Se identifican todas, no solo la eléctrica. SME_REQUIRED: inventario de energías del equipo (Mantenimiento + Seguridad).",
         "why": "Una energía que no identificaste es una energía sin bloquear."
       },
@@ -101,8 +102,8 @@
       },
       {
         "n": 5,
-        "action": "Apaga la banda con sus controles normales.",
-        "keyPoint": "Apagar o detener todavía no es aislar.",
+        "action": "Apaga la banda con sus controles normales y espera a que la banda, las poleas y los rodillos dejen de girar.",
+        "keyPoint": "Apagar o detener todavía no es aislar. Una banda larga o cargada sigue girando por inercia.",
         "why": "Detener primero evita cortar la energía con el equipo en marcha."
       },
       {
@@ -120,13 +121,13 @@
       {
         "n": 8,
         "action": "Libera o bloquea la energía almacenada: soporta el contrapeso y libera la tensión de la banda de forma controlada.",
-        "keyPoint": "SME_REQUIRED: método aprobado para soportar el contrapeso y liberar la tensión (Mantenimiento Mecánico + Seguridad).",
+        "keyPoint": "Si el procedimiento lo pide, sujeta la banda con mordazas para que no se desplace. SME_REQUIRED: método aprobado para soportar el contrapeso, liberar la tensión y sujetar la banda (Mantenimiento Mecánico + Seguridad).",
         "why": "Aunque la electricidad esté aislada, el contrapeso puede caer y la banda tensa puede moverse."
       },
       {
         "n": 9,
         "action": "Verifica energía cero: confirma que el punto de aislamiento está abierto y con tu candado, que el contrapeso está soportado y la tensión de la banda liberada, y que nadie está en la banda ni en su zona; intenta arrancar en la botonera, comprueba que nada se mueve y regresa el control a paro.",
-        "keyPoint": "Si algo se mueve o enciende, te detienes y avisas. SME_REQUIRED: método de verificación, incluida la prueba de ausencia de tensión cuando aplique (Mantenimiento Eléctrico).",
+        "keyPoint": "Si algo se mueve o enciende, te detienes y avisas. La prueba de arranque solo vale si, sin el bloqueo, el arranque sí habría funcionado desde ese control (selector en local y sin un interbloqueo que lo impida); si no, no demuestra nada. SME_REQUIRED: método de verificación, condiciones válidas de la prueba de arranque y prueba de ausencia de tensión cuando aplique (Mantenimiento Eléctrico + Seguridad).",
         "why": "Solo la verificación demuestra que el bloqueo funcionó."
       },
       {
@@ -137,8 +138,8 @@
       },
       {
         "n": 11,
-        "action": "Prepara el retiro: retira herramientas, coloca las guardas, verifica que no haya personas en el equipo y avisa que se va a retirar el bloqueo.",
-        "keyPoint": "No arrancas para probar hasta que el área esté lista y todos lo sepan. SME_REQUIRED: pasos de retiro del procedimiento (Mantenimiento + Seguridad).",
+        "action": "Prepara el retiro: retira herramientas y coloca las guardas; con tu candado todavía puesto, retira las mordazas y los soportes del contrapeso y restablece la tensión de la banda de forma controlada; verifica que no haya personas en el equipo y avisa que se va a retirar el bloqueo.",
+        "keyPoint": "No arrancas para probar hasta que el área esté lista y todos lo sepan. Nunca dejes el contrapeso soportado para que alguien lo libere con la banda en marcha. SME_REQUIRED: pasos de retiro y método para restablecer la tensión (Mantenimiento Mecánico + Seguridad).",
         "why": "Arrancar con herramientas, sin guardas o con personas dentro puede causar atrapamiento."
       },
       {
@@ -153,10 +154,11 @@
       "No estás capacitado y autorizado para aplicar bloqueo.",
       "No tienes candado personal con llave única o la etiqueta no está completa.",
       "Hay una energía que no puedes aislar, liberar o bloquear.",
+      "Un alimentador, una tolva o una banda aguas arriba o aguas abajo puede arrancar o descargar material sobre tu zona y no está detenido ni bloqueado como pide el procedimiento.",
       "La verificación de energía cero falla: algo se mueve, enciende o hay tensión.",
       "Te piden bloquear con el botón de paro, el paro de emergencia o la pantalla.",
       "Te piden dejar tu llave o retirar el candado de otra persona.",
-      "Si una condición no se cumple, detente y avisa a tu supervisor. SME_REQUIRED: política de la planta sobre la facultad de detener el trabajo (Seguridad + Relaciones Laborales)."
+      "Si una condición no se cumple, detente y avisa a tu supervisor. Si tu supervisor no te atiende o es quien te pide continuar, avisa a Seguridad Industrial. Detenerte por una condición insegura es lo que se espera de ti. SME_REQUIRED: canal de reporte y política de la planta sobre la facultad de detener el trabajo y la protección de quien la ejerce (Seguridad + Relaciones Laborales)."
     ],
     "references": [
       "NOM-004-STPS-1999, Sistemas de protección y dispositivos de seguridad en la maquinaria y equipo (verificar con Seguridad / Jurídico).",
@@ -169,7 +171,7 @@
   "manual": {
     "code": "MO-LOTO-001-DEMO",
     "title": "Manual operativo — Control de energías peligrosas en una banda transportadora",
-    "version": "0.1-demo",
+    "version": "0.2-demo",
     "status": "DEMO",
     "owner": "Seguridad Industrial con Mantenimiento de la planta (rol custodio). SME_REQUIRED: puesto responsable designado (Seguridad + Mantenimiento).",
     "file": "documents/procedimientos/MO-LOTO-001-DEMO.pdf",
@@ -194,7 +196,7 @@
           "Paro: orden de control que detiene el equipo. No es un aislamiento: el equipo puede volver a arrancar.",
           "Bloqueo: colocar un candado personal en el punto de aislamiento para que nadie pueda restablecer la energía.",
           "Etiquetado: colocar una etiqueta que dice quién bloqueó, cuándo y por qué.",
-          "Energía almacenada: la que queda después de aislar; aquí, el contrapeso del tensor y la tensión de la banda.",
+          "Energía almacenada o residual: la que queda después de aislar; aquí, el contrapeso del tensor y la tensión de la banda. En otras bandas también el material, el movimiento por inercia y la banda cargada en pendiente.",
           "Energía cero: estado verificado en el que ninguna energía puede mover o energizar el equipo."
         ]
       },
@@ -220,7 +222,7 @@
           "Eléctrica: motor y control. Puede arrancar la banda o causar una descarga.",
           "Gravedad: contrapeso del tensor. Puede caer o volver a tensar la banda.",
           "Mecánica almacenada: tensión de la banda. Puede provocar un movimiento brusco.",
-          "SME_REQUIRED: inventario completo de energías y lista de puntos de aislamiento del equipo real (Mantenimiento + Seguridad)."
+          "En una banda real revisa también: material en la banda, la tolva o el chute; inercia; freno y antirretorno en tramos inclinados; tensores hidráulicos, neumáticos o de malacate; alimentadores y bandas aguas arriba o aguas abajo; temperatura del DRI caliente. SME_REQUIRED: inventario completo de energías, interbloqueos y lista de puntos de aislamiento del equipo real (Mantenimiento + Ingeniería de Proceso + Seguridad)."
         ]
       },
       {
@@ -242,20 +244,20 @@
         ],
         "bullets": [
           "Preparar: procedimiento del equipo, autorización, candado y etiqueta; avisar al personal afectado.",
-          "Apagar con los controles normales.",
+          "Apagar con los controles normales y esperar el paro total.",
           "Aislar en el punto de aislamiento.",
           "Bloquear y etiquetar.",
           "Liberar o bloquear la energía almacenada.",
           "Verificar energía cero: confirmar que nadie está expuesto, intentar arrancar, comprobar que nada se mueve y regresar a paro.",
           "Trabajar dentro del bloqueo.",
-          "Retirar: herramientas fuera, guardas colocadas, nadie en el equipo, aviso; cada quien retira su propio candado.",
+          "Retirar: herramientas fuera, guardas colocadas, mordazas y soportes retirados y tensión restablecida, nadie en el equipo, aviso; cada quien retira su propio candado.",
           "SME_REQUIRED: secuencia del procedimiento aprobado (Mantenimiento + Seguridad)."
         ]
       },
       {
         "title": "7. Condiciones anormales y emergencia",
         "paragraphs": [
-          "Si la verificación de energía cero falla, si encuentras una energía que no esperabas o un candado que no es tuyo, detente, no toques el equipo y avisa a tu supervisor. Este documento DEMO no contiene procedimientos de emergencia."
+          "Si la verificación de energía cero falla, si encuentras una energía que no esperabas o un candado que no es tuyo, detente, no toques el equipo y avisa a tu supervisor; si no te atiende o es quien te pide continuar, avisa a Seguridad Industrial. Este documento DEMO no contiene procedimientos de emergencia."
         ],
         "bullets": [
           "SME_REQUIRED: qué hacer si la verificación de energía cero falla (Mantenimiento + Seguridad).",
@@ -267,11 +269,11 @@
       {
         "title": "8. Capacitación y competencia",
         "paragraphs": [
-          "La misión y estos documentos son práctica de aprendizaje. La plataforma ACERÍA DIGITAL ACADEMY no certifica competencia ni autoriza a aplicar bloqueo."
+          "La misión y estos documentos son práctica de aprendizaje. La plataforma ACERÍA DIGITAL ACADEMY no certifica competencia, no autoriza a aplicar bloqueo y no emite constancias DC-3."
         ],
         "bullets": [
           "Para aplicar bloqueo se necesitan la capacitación y la autorización que exige la planta. SME_REQUIRED: requisitos de autorización (Seguridad).",
-          "Los resultados de la práctica no se usan para escalafón, ascensos, sanciones ni bonos. SME_REQUIRED: validación de esta frase (Relaciones Laborales)."
+          "No es un examen de suficiencia ni de escalafón. Ni la práctica ni el avance en la plataforma se usan para escalafón, ascensos, cambios de puesto o de categoría, evaluación de desempeño, sanciones ni bonos."
         ]
       },
       {
@@ -289,17 +291,17 @@
   "checklist": {
     "code": "CL-LOTO-001-DEMO",
     "title": "Lista de verificación — Bloqueo y etiquetado de una banda transportadora",
-    "version": "0.1-demo",
+    "version": "0.2-demo",
     "status": "DEMO",
     "owner": "Seguridad Industrial con Mantenimiento de la planta (rol custodio). SME_REQUIRED: puesto responsable designado (Seguridad + Mantenimiento).",
     "file": "documents/procedimientos/CL-LOTO-001-DEMO.pdf",
-    "instructions": "Esta es una plantilla de práctica DEMO para aprender; no es la lista de verificación de la planta. En planta solo se usa la lista aprobada por Seguridad y Mantenimiento (SME_REQUIRED: lista aprobada). Marca cada punto solo después de verificarlo. Los puntos marcados como críticos no admiten excepción: si uno no se cumple, no intervengas el equipo; detente y avisa a tu supervisor.",
+    "instructions": "Esta es una plantilla de práctica DEMO para aprender; no es la lista de verificación de la planta. En planta solo se usa la lista aprobada por Seguridad y Mantenimiento (SME_REQUIRED: lista aprobada). Marca cada punto solo después de verificarlo. Los puntos marcados como críticos no admiten excepción: si uno no se cumple, no intervengas el equipo; detente y avisa a tu supervisor (o a Seguridad Industrial si no te atiende).",
     "sections": [
       {
         "title": "1. Antes de bloquear",
         "items": [
           {
-            "text": "Estoy capacitado y autorizado para aplicar bloqueo. SME_REQUIRED: autorización (Seguridad).",
+            "text": "Cuento con la capacitación y la autorización vigentes que otorga la planta para aplicar bloqueo. SME_REQUIRED: autorización (Seguridad).",
             "critical": true
           },
           {
@@ -307,7 +309,7 @@
             "critical": true
           },
           {
-            "text": "Identifiqué todas las energías: eléctrica, gravedad (contrapeso) y mecánica almacenada (banda tensa).",
+            "text": "Identifiqué todas las energías del procedimiento del equipo. En el escenario: eléctrica, gravedad (contrapeso) y mecánica almacenada (banda tensa). En una banda real, también material, inercia, antirretorno y equipos aguas arriba o aguas abajo. SME_REQUIRED: inventario de energías (Mantenimiento + Seguridad).",
             "critical": true
           },
           {
@@ -324,7 +326,7 @@
         "title": "2. Aislamiento, bloqueo y etiquetado",
         "items": [
           {
-            "text": "Apagué la banda con sus controles normales.",
+            "text": "Apagué la banda con sus controles normales y esperé a que se detuviera por completo.",
             "critical": false
           },
           {
@@ -374,7 +376,7 @@
             "critical": true
           },
           {
-            "text": "Intenté arrancar en la botonera y nada se movió.",
+            "text": "Intenté arrancar desde un control que sí habría arrancado la banda sin el bloqueo, y nada se movió. SME_REQUIRED: condiciones válidas de la prueba de arranque (Mantenimiento Eléctrico + Seguridad).",
             "critical": true
           },
           {
@@ -399,6 +401,10 @@
             "critical": true
           },
           {
+            "text": "Retiré mordazas y soportes del contrapeso y restablecí la tensión de la banda de forma controlada, con mi candado todavía puesto. SME_REQUIRED: método (Mantenimiento Mecánico + Seguridad).",
+            "critical": true
+          },
+          {
             "text": "Verifiqué que no hay personas en el equipo y avisé que se retira el bloqueo.",
             "critical": true
           },
@@ -418,10 +424,10 @@
       }
     ],
     "signatures": [
-      "Firmas de práctica. SME_REQUIRED: quién firma y autoriza en la planta (Seguridad + Mantenimiento). Trabajador autorizado que bloquea — nombre, firma y fecha. SME_REQUIRED: formato de la planta (Seguridad).",
-      "Supervisor del área — nombre, firma y fecha.",
-      "Operador de la banda (enterado del bloqueo y del retiro) — nombre, firma y fecha.",
-      "Seguridad Industrial (cuando el procedimiento lo pida) — nombre, firma y fecha."
+      "Firmas de práctica: en aula escribe «PRÁCTICA»; no anotes tu nombre ni tu firma reales. SME_REQUIRED: quién firma y autoriza en la planta y formato (Seguridad + Mantenimiento). Rol: trabajador autorizado que bloquea.",
+      "Rol: supervisor del área.",
+      "Rol: operador de la banda (enterado del bloqueo y del retiro).",
+      "Rol: Seguridad Industrial (cuando el procedimiento lo pida)."
     ]
   }
 }

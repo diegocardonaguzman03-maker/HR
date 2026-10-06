@@ -62,9 +62,9 @@ function MissionComplete({ m, onRepeat, onPath }: { m: MissionT; onRepeat: () =>
         <h1 className="mt-1 text-[32px] font-bold">{m.title} — {m.subtitle}</h1>
         <div className="mt-6 grid grid-cols-2 gap-3">
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4"><p className="label">Resultado</p><p className="text-[28px] font-bold" data-testid="result-correct">{correct} / {m.steps.length}</p><p className="text-[13px] text-white/60">decisiones correctas al primer intento</p></div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4"><p className="label">Tiempo</p><p className="text-[28px] font-bold">{String(Math.floor(secs / 60)).padStart(2, '0')}:{String(secs % 60).padStart(2, '0')}</p><p className="text-[13px] text-white/60">minutos</p></div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4"><p className="label">Tiempo de práctica</p><p className="text-[28px] font-bold">{String(Math.floor(secs / 60)).padStart(2, '0')}:{String(secs % 60).padStart(2, '0')}</p><p className="text-[13px] text-white/60">minutos (solo para ti)</p></div>
         </div>
-        {critical.length > 0 && <p role="alert" className="mt-6 rounded-xl border-2 border-[#e5484d] bg-[#e5484d]/10 p-4 text-[14.5px]" data-testid="critical-alert">⚠ En esta práctica elegiste al menos una acción que, en una tarea real, puede causar una lesión grave o la muerte: <strong>{critical.map((s) => s.title).join(', ')}</strong>. En la planta no hay segundo intento. Repite la misión y repasa estos pasos con tu instructor o supervisor.</p>}
+        {critical.length > 0 && <p role="alert" className="mt-6 rounded-xl border-2 border-[#e5484d] bg-[#e5484d]/10 p-4 text-[14.5px]" data-testid="critical-alert">⚠ En esta práctica elegiste al menos una acción que, en una tarea real, puede causar una lesión grave o la muerte: <strong>{critical.map((s) => s.title).join(', ')}</strong>. En la planta no hay segundo intento. Repite la misión y, si tienes dudas, repasa estos pasos con tu instructor.</p>}
         <h2 className="label mb-3 mt-8">Aciertos por tema (práctica)</h2>
         <ul className="space-y-3" data-testid="mastery">
           {areas.map((a) => (
@@ -86,7 +86,7 @@ function MissionComplete({ m, onRepeat, onPath }: { m: MissionT; onRepeat: () =>
             <ul className="mt-3 space-y-3 text-[14px] text-white/85">{missed.map((s) => <li key={s.id}><strong className="text-white">{s.critical ? '⚠ ' : ''}{s.title}.</strong> {s.why}{wrongFeedback(s).map((f, i) => <span key={i} className="mt-1 block text-[#ffb3b5]">{f}</span>)}</li>)}</ul>
           </details>
         )}
-        <p className="mt-6 rounded-xl border border-[#f5c518]/40 bg-[#f5c518]/10 p-3 text-[13px]"><strong>Esta misión no te habilita para {m.authorization} ni certifica tu competencia.</strong> Es práctica de aprendizaje. Para {m.authorization} necesitas la capacitación y la autorización que exige la planta (SME_REQUIRED: requisitos de autorización — Seguridad). No se usa para escalafón, ascensos, sanciones ni bonos.</p>
+        <p className="mt-6 rounded-xl border border-[#f5c518]/40 bg-[#f5c518]/10 p-3 text-[13px]"><strong>Esta misión no te habilita para {m.authorization}, no certifica tu competencia y no es una constancia DC-3.</strong> Es práctica de aprendizaje. Para {m.authorization} necesitas la capacitación y la autorización que exige la planta (SME_REQUIRED: requisitos de autorización — Seguridad). No es un examen de suficiencia ni de escalafón. Ni esta práctica ni tu avance en la plataforma se usan para escalafón, ascensos, cambios de puesto o de categoría, evaluación de desempeño, sanciones ni bonos.</p>
         <div className="mt-6 flex flex-wrap gap-2">
           <button onClick={onRepeat} className="rounded-xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/10" data-testid="repeat">Repetir misión</button>
           <button onClick={onPath} className="rounded-xl bg-[var(--color-accent)] px-5 py-3 font-bold text-[#1a1203] hover:brightness-110" data-testid="continue-path">Continuar →</button>

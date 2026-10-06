@@ -53,7 +53,7 @@
 
 | Concepto | Definición |
 |---|---|
-| Participantes | 5 de nuevo ingreso [Supuesto]: personal de confianza o contratados en inducción mientras no esté el acuerdo de la CMCAP (D-011-4) |
+| Participantes | 5 de nuevo ingreso de confianza [Supuesto]. **Participan solo trabajadores de confianza (incluido el nuevo ingreso de confianza). Un trabajador de nuevo ingreso contratado en un puesto de categoría sindicalizable, aunque esté en periodo de prueba o de capacitación inicial, cuenta como personal sindicalizado para D-011-4 y no participa hasta el acuerdo de la CMCAP. Los instructores sindicalizados participan solo como facilitadores, con el registro desactivado (ADX-RL-001, Decisión 3).** (RL-L-14, D-014) |
 | Formato | Sesión individual de unos 20 min: el instructor observa sin explicar (prueba de 10 segundos) y después hace una entrevista breve |
 | Fechas | 2026-10-12 → 2026-10-16 [Supuesto] |
 | Responsables | ADX-01 (conducción), ADX-07 (aprendizaje), ADX-13 (registro de fallas), ADX-04 (observa la parte de seguridad) |

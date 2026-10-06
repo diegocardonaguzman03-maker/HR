@@ -1,19 +1,25 @@
 import { useId, useState, useSyncExternalStore } from 'react';
 import { clearEvents, enabled, forgetNoticeSeen, markNoticeSeen, noticeSeen, resetActor, setEnabled, subscribeEnabled } from '../../lib/analytics';
 import { resetProgress } from '../../lib/progress';
+import { useMission } from '../../missions/store';
 import { btn, btnPrimary } from './Status';
 
 /**
  * Textos del aviso de registro (TRN-12). Revisión de Relaciones Laborales ADX-RL-001: RL-10, RL-11 y RL-13.
  * No prometen anonimato: el identificador es un seudónimo por equipo (RL-18). Verificar con Jurídico Laboral.
  */
-export const RECORDING_ON = 'Esta plataforma guarda solo en este equipo, sin tu nombre ni tu número de ficha, qué lecciones viste, tus respuestas y tu resultado. Se usa para mejorar el curso con datos de todo el grupo, no para evaluarte a ti. Puedes desactivar el registro o borrarlo al terminar.';
-export const RECORDING_OFF = 'El registro está desactivado: en este equipo no se guarda qué lecciones viste, tus respuestas ni tu resultado.';
+export const RECORDING_ON = 'Esta plataforma guarda solo en este equipo, sin tu nombre ni tu número de ficha, qué lecciones y misiones hiciste, tus respuestas y errores, el tiempo de práctica, los documentos que descargaste y tu resultado. Se usa para mejorar el curso con datos de todo el grupo, no para evaluarte a ti. Puedes desactivar el registro o borrarlo al terminar.';
+export const RECORDING_OFF = 'El registro está desactivado: en este equipo no se guardan eventos de aprendizaje. Solo se guarda tu avance en las misiones, para que puedas continuar; lo borras con «Borrar mis datos de este equipo y terminar».';
 export const CLEAR_LABEL = 'Borrar mis datos de este equipo y terminar';
 export const CLEARED_MSG = 'Listo: se borró de este equipo lo que viste, tus respuestas y tu avance.';
 
 /** Borra eventos, avance e identificador; el siguiente usuario del equipo vuelve a ver el aviso al entrar. */
-function clearDevice() { clearEvents(); resetProgress(); resetActor(); forgetNoticeSeen(); }
+function clearDevice() {
+  clearEvents(); resetProgress(); resetActor(); forgetNoticeSeen();
+  // RL-L-11: también el avance de las misiones (pasos, errores y completadas)
+  try { Object.keys(localStorage).filter((k) => k.startsWith('adx.mission')).forEach((k) => localStorage.removeItem(k)); } catch { /* sin almacenamiento */ }
+  if (useMission.getState().view === 'play' || useMission.getState().view === 'complete') useMission.setState({ view: 'path' });
+}
 
 /** Texto y controles del aviso de registro. `prefix` distingue los data-testid del aviso al entrar y del de EVALUAR. */
 export function RecordingControls({ prefix = '', onCleared }: { prefix?: string; onCleared?: () => void }) {

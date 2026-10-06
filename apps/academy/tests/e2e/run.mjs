@@ -325,7 +325,7 @@ await test('MISIÓN LOTO · 8 pasos con los 8 tipos de interacción hasta result
   for (const n of ['Estoy capacitado', 'Tengo el procedimiento', 'Avisé al personal', 'Tengo mi candado']) await page.getByText(new RegExp('^' + n)).click();
   await page.click('[data-testid=confirm-verify]');
   await cont(); await begin();
-  const want = ['Apagar el equipo con sus controles normales', 'Aislar la energía en el punto de aislamiento', 'Colocar tu candado y tu etiqueta', 'Liberar o bloquear la energía almacenada (contrapeso, tensión)', 'Verificar energía cero: confirmar que nadie está expuesto, intentar arrancar, comprobar que nada se mueve y regresar el control a paro'];
+  const want = ['Apagar el equipo con sus controles normales y esperar a que se detenga por completo', 'Aislar la energía en el punto de aislamiento', 'Colocar tu candado y tu etiqueta', 'Liberar o bloquear la energía almacenada (contrapeso, tensión)', 'Verificar energía cero: confirmar que nadie está expuesto, intentar arrancar, comprobar que nada se mueve y regresar el control a paro'];
   for (let pos = 0; pos < want.length; pos++) for (let g = 0; g < 10; g++) { const cur = await page.locator('[data-testid=sequence] li').allTextContents(); if (cur[pos].includes(want[pos])) break; await page.getByLabel(`Subir «${want[pos]}»`).click(); }
   await page.click('[data-testid=sequence-verify]');
   await cont(); await begin();

@@ -846,7 +846,7 @@
         }
       ],
       "done": "Práctica terminada. Tomaste la decisión segura.",
-      "safety": "Si una condición no se cumple, detente y avisa a tu supervisor. SME_REQUIRED: política de la planta sobre la facultad de detener el trabajo y la protección de quien la ejerce (Seguridad + Relaciones Laborales).",
+      "safety": "Si una condición no se cumple, detente y avisa a tu supervisor. Si tu supervisor no te atiende o es quien te pide continuar, avisa a Seguridad Industrial. Detenerte por una condición insegura es lo que se espera de ti. SME_REQUIRED: canal de reporte y política de la planta sobre la facultad de detener el trabajo y la protección de quien la ejerce (Seguridad + Relaciones Laborales).",
       "faq": [
         {
           "q": "¿Qué pasa si alguien queda colgado del arnés?",
