@@ -184,3 +184,18 @@ Los cambios no debilitan SAF-L-01, SAF-L-02 ni SAF-D-01. OP-L-01 y OP-L-04 los r
 | **B** | Iniciar el piloto con D-014 tal como está y corregir en la siguiente iteración. | Ninguno inmediato. | Medio: la misión enseña un retiro sin restablecer la tensión y los documentos omiten un peligro de atmósfera que puede ser fatal. |
 
 **Recomendación:** opción A. **Fecha límite para decidir:** antes de la primera sesión del piloto LOTO; 2026-10-12 **[Supuesto]**.
+
+---
+
+## Verificación de SAF-X-01, SAF-X-02, SAF-R-02 y SAF-R-03 (2026-10-06, commits `fa25ff0` y `02d9951`)
+
+| ID | Estado | Evidencia |
+|---|---|---|
+| SAF-X-01 | **CERRADO** | `loto-01.json` → `steps[7].options[2]`: `label` y `feedback` tienen el texto exacto propuesto («restablezco el contrapeso y la tensión con mi candado puesto»; «contrapeso y tensión restablecidos con tu candado puesto»). Ahora coinciden con la trampa «arranco para probar», con WI paso 11 y con CL §5. |
+| SAF-X-02 | **CERRADO** | `docs-loto.json` tiene el texto exacto en `wi.hazards[5].hazard` y `.control` (con NOM-033-STPS-2015, «verificar con Jurídico / Seguridad»), en `wi.stopConditions[5]` y en `manual.sections[3].bullets[3]`. Los PDF WI-LOTO y MO-LOTO (22:35:59, después del JSON de las 22:35:57) incluyen el texto de atmósfera y la NOM. La comparación JSON → PDF da 0 diferencias de contenido (2 cortes de página). |
+| SAF-R-02 | **CERRADO** | `tests/unit/missions.test.tsx:156`: con `wrong: ['prestado']` en `validar-requisitos` se espera «CON ERRORES CRÍTICOS», `critical-alert` y que la misión no se marque como completada. `npx vitest run tests/unit/missions.test.tsx` pasa. Observación (sin severidad): la prueba inyecta el estado y no recorre `Confirm`. El registro de `wrongIds` en `Confirm` lo verifiqué leyendo el código. |
+| SAF-R-03 | **CERRADO** | `scripts/build-mission-docs.mjs:13`: `op()` usa `([^.]*\.?)` con la bandera `g`. |
+
+### Dictamen final: **CERRADO**. No quedan hallazgos de Seguridad abiertos (SAF-L, SAF-D, SAF-R ni SAF-X).
+
+La misión `loto-01` y los 6 documentos (0.2-demo) quedan **APROBADOS CON CONDICIONES** para el piloto: siguen vigentes las condiciones 1 y 4 de la re-revisión. Las condiciones 2 y 3 se cumplieron con los dictámenes Laboral y Operativo y con D-014. No hay una decisión nueva para el Director: aplica la decisión ya registrada para el piloto.

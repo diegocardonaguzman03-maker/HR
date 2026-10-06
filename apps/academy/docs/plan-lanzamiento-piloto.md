@@ -51,6 +51,8 @@
 
 **Versión 2 (2026-10-05): más fluida + Misión LOTO + menú de Procedimientos con 6 PDF descargables.** Seguridad (ADX-04) levantó el veto y la aprobó con condiciones (`docs/reviews/review-seguridad-loto-documentos.md`). Link: https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/02d9951f92d9b430220b55794ec23434dc92ea7f/apps/academy/web/index.html
 
+**Versión 2.1 (2026-10-06, D-014):** cambios de Operativo/Metalurgia y Relaciones Laborales, y verificación de Seguridad cerrada. LOTO está habilitada para el piloto con personal de confianza, en modo DEMO. Link: https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/fa25ff0f34fb2eee70bc7d8df4b7645c63c0f7a1/apps/academy/web/index.html
+
 | Concepto | Definición |
 |---|---|
 | Participantes | 5 de nuevo ingreso de confianza [Supuesto]. **Participan solo trabajadores de confianza (incluido el nuevo ingreso de confianza). Un trabajador de nuevo ingreso contratado en un puesto de categoría sindicalizable, aunque esté en periodo de prueba o de capacitación inicial, cuenta como personal sindicalizado para D-011-4 y no participa hasta el acuerdo de la CMCAP. Los instructores sindicalizados participan solo como facilitadores, con el registro desactivado (ADX-RL-001, Decisión 3).** (RL-L-14, D-014) |
