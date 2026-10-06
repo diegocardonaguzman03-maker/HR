@@ -1,5 +1,5 @@
 // Notion adapter — stub (search + page content).
-import type { StorageAdapter } from '../types.ts';
+import type { StorageAdapter } from '../types';
 
 export function createNotionAdapter(_token: string): StorageAdapter {
   const todo = async (): Promise<never> => {

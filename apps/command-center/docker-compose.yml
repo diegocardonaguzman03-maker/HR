@@ -1,0 +1,14 @@
+# Local PostgreSQL for the gateway:  docker compose up -d
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: fcc
+      POSTGRES_PASSWORD: fcc
+      POSTGRES_DB: fcc
+    ports:
+      - "5432:5432"
+    volumes:
+      - fcc-pg:/var/lib/postgresql/data
+volumes:
+  fcc-pg:

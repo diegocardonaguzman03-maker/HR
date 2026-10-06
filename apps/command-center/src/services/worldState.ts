@@ -296,6 +296,10 @@ function reduceEntities(s: WorldState, e: WorldEvent): WorldState {
     }
     case 'notification.created':
       return { ...s, notifications: [e.payload.notification, ...s.notifications].slice(0, 100) };
+    case 'notification.read': {
+      const ids = e.payload.ids;
+      return { ...s, notifications: s.notifications.map((n) => (!ids || ids.includes(n.id) ? { ...n, read: true } : n)) };
+    }
     default:
       return s;
   }

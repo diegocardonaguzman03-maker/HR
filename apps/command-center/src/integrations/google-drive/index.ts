@@ -1,6 +1,6 @@
 // Google Drive adapter — stub. Implement with the Drive v3 API (files.list / files.get)
 // using OAuth credentials held by the gateway.
-import type { StorageAdapter } from '../types.ts';
+import type { StorageAdapter } from '../types';
 
 export function createGoogleDriveAdapter(_accessToken: string): StorageAdapter {
   return {

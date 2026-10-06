@@ -1,9 +1,7 @@
 // Integration layer contracts. Business logic depends on these interfaces,
 // never on a specific vendor SDK. Adapters live in /integrations/<id>.
-//
-// IMPORTANT: files in this folder are imported by the Node gateway
-// (server/gateway.ts, run with type-stripping), so they must only use
-// `import type` between each other and must not use path aliases.
+// Adapters run server-side only (server/gateway.ts via tsx) — secrets never
+// reach the browser.
 
 export type IntegrationCategory = 'llm' | 'storage' | 'email' | 'calendar' | 'chat' | 'knowledge' | 'code' | 'internal';
 

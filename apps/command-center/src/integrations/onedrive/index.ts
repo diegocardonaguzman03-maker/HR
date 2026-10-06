@@ -1,5 +1,5 @@
 // OneDrive adapter — stub (Graph API drive items).
-import type { StorageAdapter } from '../types.ts';
+import type { StorageAdapter } from '../types';
 
 export function createOneDriveAdapter(_token: string): StorageAdapter {
   const todo = async (): Promise<never> => {

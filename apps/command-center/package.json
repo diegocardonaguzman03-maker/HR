@@ -6,15 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.server.json",
     "lint": "next lint",
     "test": "vitest run",
-    "gateway": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON server/gateway.ts"
+    "gateway": "tsx server/gateway.ts",
+    "db:migrate": "tsx server/persistence/cli.ts migrate",
+    "db:rebuild": "tsx server/persistence/cli.ts rebuild",
+    "db:reset": "tsx server/persistence/cli.ts reset"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
     "framer-motion": "^12.0.0",
     "next": "^15.5.0",
+    "pg": "^8.23.1",
     "pixi.js": "^8.6.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -23,9 +27,12 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.0",
     "@types/node": "^22.0.0",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
+    "@types/ws": "^8.18.2",
     "tailwindcss": "^4.1.0",
+    "tsx": "^4.23.15",
     "typescript": "^5.6.3",
     "vitest": "^3.2.0",
     "ws": "^8.18.0"

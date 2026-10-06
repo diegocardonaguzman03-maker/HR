@@ -57,7 +57,8 @@ export type WorldEvent =
   | Base<'squad.formed', { squad: Squad }>
   | Base<'squad.message', { squadId: ID; agentId: ID; text: string }>
   | Base<'squad.disbanded', { squadId: ID }>
-  | Base<'notification.created', { notification: AppNotification }>;
+  | Base<'notification.created', { notification: AppNotification }>
+  | Base<'notification.read', { ids?: ID[] }>;
 
 export type WorldEventType = WorldEvent['type'];
 export type EventOf<T extends WorldEventType> = Extract<WorldEvent, { type: T }>;
@@ -79,7 +80,8 @@ export type Command =
   | { type: 'decision.resolve'; decisionId: ID; status: 'approved' | 'rejected' | 'revision'; note?: string }
   | { type: 'squad.form'; projectId: ID; objective: string; agentIds: ID[] }
   | { type: 'deliverable.create'; agentId: ID; projectId: ID | null; title: string }
-  | { type: 'file.add'; projectId: ID | null; files: { name: string; size: number }[] };
+  | { type: 'file.add'; projectId: ID | null; files: { name: string; size: number }[] }
+  | { type: 'notification.read'; ids?: ID[] };
 
 export interface ProjectDraft {
   name: string;

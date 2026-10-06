@@ -3,7 +3,7 @@
 // Refusal fallbacks are enabled ("default" routing) — a policy decline is
 // retried server-side on a suitable fallback model inside the same call.
 import Anthropic from '@anthropic-ai/sdk';
-import type { ChatTurn, LLMAdapter } from '../types.ts';
+import type { ChatTurn, LLMAdapter } from '../types';
 
 export function createClaudeAdapter(apiKey?: string, model = 'claude-opus-5-5'): LLMAdapter {
   // No key → the SDK resolves ANTHROPIC_API_KEY / ANTHROPIC_AUTH_TOKEN / `ant auth login` profile.

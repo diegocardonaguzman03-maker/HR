@@ -3,16 +3,23 @@
 // Wire protocol (JSON over WebSocket, see server/gateway.ts for a reference):
 //   client → server  { kind: 'command', command: Command }
 //   server → client  { kind: 'event', event: WorldEvent }
-//                    { kind: 'snapshot', events: WorldEvent[] }   (optional, on connect)
-//                    { kind: 'hello', agents?: string[] }
+//                    { kind: 'state', state: WorldState, seq: number }   (on connect: persisted world)
+//                    { kind: 'snapshot', events: WorldEvent[] }           (optional catch-up)
+//                    { kind: 'hello', agents?: string[], persistence?: 'postgres' | 'memory' }
 //
+// The gateway is the single writer: every command goes to it, it persists the
+// resulting events (PostgreSQL) and broadcasts them. The client only reduces.
 // It never invents activity: while disconnected every agent is shown IDLE.
 import { idleAgent, type WorldState } from '@/services/worldState';
 import type { Command, WorldEvent } from '@/types/events';
 import type { AgentProvider, ProviderContext } from '../AgentProvider';
-import { applyLocalCommand } from './localCommands';
 
-type ServerMessage = { kind: 'event'; event: WorldEvent } | { kind: 'snapshot'; events: WorldEvent[] } | { kind: 'hello'; agents?: string[] };
+type ServerMessage =
+  | { kind: 'event'; event: WorldEvent }
+  | { kind: 'state'; state: WorldState; seq: number }
+  | { kind: 'snapshot'; events: WorldEvent[] }
+  | { kind: 'hello'; agents?: string[]; persistence?: 'postgres' | 'memory' }
+  | { kind: 'error'; message: string };
 
 export class RealAgentProvider implements AgentProvider {
   readonly kind = 'real' as const;
@@ -43,10 +50,6 @@ export class RealAgentProvider implements AgentProvider {
   }
 
   dispatch(command: Command): void {
-    if (this.ctx && applyLocalCommand(command, this.ctx.getState(), this.ctx.emit)) {
-      this.send(command); // persist on the backend; the world already reflects it
-      return;
-    }
     this.send(command);
   }
 
@@ -78,7 +81,10 @@ export class RealAgentProvider implements AgentProvider {
       } catch {
         return;
       }
-      if (data.kind === 'event') this.ctx?.emit({ ...data.event, source: data.event.source === 'user' ? 'user' : 'real' });
+      if (data.kind === 'hello') this.ctx?.onStatus('connected', `${this.url} · persistence: ${data.persistence ?? 'unknown'}`);
+      else if (data.kind === 'state') this.ctx?.reset?.(data.state);
+      else if (data.kind === 'error') this.ctx?.onStatus('connected', `Gateway error: ${data.message}`);
+      else if (data.kind === 'event') this.ctx?.emit({ ...data.event, source: data.event.source === 'user' ? 'user' : 'real' });
       else if (data.kind === 'snapshot') for (const e of data.events) this.ctx?.emit({ ...e, source: e.source === 'user' ? 'user' : 'real' });
     };
     ws.onclose = () => {

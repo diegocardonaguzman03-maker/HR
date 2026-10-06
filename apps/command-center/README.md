@@ -23,7 +23,8 @@ Other scripts:
 | `npm run build` | Static export to `out/` (the MVP is fully client-side) |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm test` | Vitest: reducer, routing, router, search, factory and mock-provider scenarios |
-| `npm run gateway` | Reference WebSocket gateway for `RealAgentProvider` (see below) |
+| `npm run gateway` | WebSocket gateway for `RealAgentProvider` — PostgreSQL when `DATABASE_URL` is set (see *Persistence*) |
+| `npm run db:migrate` / `db:rebuild` / `db:reset -- --yes` | Apply migrations · rebuild projection tables from the event log · drop everything (dev) |
 
 ### What to try
 
@@ -72,7 +73,10 @@ src/
   integrations/        Adapter contracts + /llm/claude, /llm/openai, /google-drive, /gmail, /calendar, …
   data/                Seed data: territories, projects, agents, missions, files, decisions, calendar, inbox
   types/               domain.ts (entities) · events.ts (WorldEvent + Command)
-server/gateway.ts      Reference WebSocket gateway (Node, type-stripped TS)
+server/
+  gateway.ts           WebSocket + HTTP gateway (tsx): single writer, broadcasts persisted events
+  world/               WorldService (reduce → persist → broadcast) · AgentRuntime (LLM work) · handleCommand
+  persistence/         EventStore port · PostgresEventStore · MemoryEventStore · projections · migrations · cli
 ```
 
 Design-system components: `AgentPanel`, `ProjectPanel`, `ChatPanel`, `MissionCard`, `ActivityEvent`, `NotificationList`/`Toasts`, `CommandPalette`, `StatusIndicator`, `MiniMap`, `BottomCommandBar`, `CreateProjectModal`, `CreateConversationModal`, plus `Btn`, `IconBtn`, `Tabs`, `Progress`, `AgentAvatar` and `Modal`.
@@ -119,7 +123,7 @@ Commands (UI → provider): `chat.send`, `conversation.start`, `team.start`, `ag
 
 ### Create agents
 - **At runtime:** Agents → *Create agent* (or ⌘K → “Create agent”). This dispatches `agent.create`.
-- **In seed data:** add an entry in `src/data/agents.ts` (pick a `look` and a `color`; `homeProjectId` decides where the unit lives) and, if it is a real agent, add a persona in `server/gateway.ts`.
+- **In seed data:** add an entry in `src/data/agents.ts` (pick a `look` and a `color`; `homeProjectId` decides where the unit lives) and, if it is a real agent, add a persona in `server/world/AgentRuntime.ts`.
 
 ### Create territories
 Add a `Territory` to `src/data/territories.ts` (polygon, center, hub, palette, free plots). Add its gate to `GATES` and `GATE_RING`, extend `territoryAt()`, and add decor in `game/world/terrain.ts → buildDecor`.
@@ -146,7 +150,7 @@ Implement the protocol in `providers/real/RealAgentProvider.ts`:
 { "kind": "snapshot", "events": [ … ] }   // optional, on connect
 ```
 
-It works with FastAPI (`websockets`) or NestJS gateways. Persist `events` in PostgreSQL and replay them as a `snapshot` on connect. World-structure commands (projects, files, decisions, priorities) are applied immediately on the client as `source: 'user'` events and also forwarded to you to persist (`providers/real/localCommands.ts`). SSE also fits: replace the transport in `RealAgentProvider` and keep the same event shape.
+On connect the gateway sends `{ kind: 'hello', persistence }` and `{ kind: 'state', state, seq }` (the persisted world), then streams events. The gateway is the **single writer**: the client never applies commands locally; world-structure commands (projects, files, decisions, priorities, pause/resume, notifications read) are turned into `source: 'user'` events server-side by `src/services/structuralCommands.ts`. The same protocol can be served by FastAPI or NestJS; SSE also fits — replace the transport in `RealAgentProvider` and keep the event shape.
 
 ### Replace mock agents with real agents
 Both providers implement the same `AgentProvider` interface (`start`, `stop`, `dispatch`), so the UI does not change. To migrate one capability at a time:
@@ -173,5 +177,45 @@ Both providers implement the same `AgentProvider` interface (`start`, `stop`, `d
 - **Responsive:** on mobile the inspector is a bottom sheet with the world visible above; chat and workspaces are full-screen; there is a tab bar; and touch picking uses larger hit radii.
 - **Correctness:** client-only rendering (no hydration drift from time-relative seed data), and notifications are marked read immutably.
 
-## Next steps (Phase 2)
-PostgreSQL persistence for the event log · authentication · a real router (LLM-based `recommendAgents`) · tool use per agent through the integration adapters · a 3D spatial layer for the Digital Twin Lab (React Three Fiber, only where 3D adds value) · replay and analytics from the event log.
+## Persistence (Phase 2) — PostgreSQL, event-sourced
+
+```
+command ─▶ handleCommand ─▶ events ─▶ WorldService ──reduce──▶ state
+                                          │
+                                          └─ one transaction: INSERT events + UPDATE projections
+                                                              │
+                                                              └─▶ broadcast to every client
+```
+
+- **Source of truth:** the append-only `events` table (`seq`, `id`, `ts`, `type`, `source`, `payload jsonb`) plus periodic `snapshots` (every `SNAPSHOT_EVERY` events, and on graceful shutdown).
+- **Recovery:** on boot the gateway loads the latest snapshot and replays the newer events through the same pure reducer the browser uses. Work cannot survive a restart, so any agent that looked busy is set **idle** with an explicit event — the world stays honest.
+- **Projections (queryable SQL):** `territories`, `projects`, `agents`, `project_agents`, `missions`, `conversations`, `messages`, `files`, `decisions`, `notifications`, `squads` (latest state, typed columns + `data jsonb`) and append-only history `agent_states`, `tasks`, `activity_logs`. They are written in the same transaction as the events, never directly by app code, and can be rebuilt any time with `npm run db:rebuild`.
+- **Atomicity:** a failed append rolls back the whole commit; the in-memory world is only advanced after the commit succeeds.
+- **Audit/replay over HTTP:** `GET /health`, `GET /api/events?after=<seq>&limit=<n>`.
+- **No database?** Without `DATABASE_URL` the gateway uses `MemoryEventStore` (same code path, not durable) and says so in the log.
+
+### Run it
+
+```bash
+docker compose up -d                                   # or any PostgreSQL 14+
+export DATABASE_URL=postgres://fcc:fcc@localhost:5432/fcc
+npm run db:migrate                                     # also runs automatically on gateway start
+npm run gateway                                        # first start seeds the world (agents idle)
+npm run dev                                            # Settings → Live gateway
+```
+
+Useful queries:
+
+```sql
+SELECT type, source, ts FROM events ORDER BY seq DESC LIMIT 20;           -- what happened
+SELECT agent_id, state, ts FROM agent_states ORDER BY ts DESC LIMIT 20;   -- agent timelines
+SELECT name, status, priority, progress FROM projects ORDER BY priority;  -- portfolio
+SELECT title, status, completed_at FROM tasks WHERE agent_id = 'scout';   -- real work done
+```
+
+Tests: `npm test` runs projection and recovery tests in memory; set `TEST_DATABASE_URL` (a throw-away database — the test drops its tables) to also run the PostgreSQL integration suite.
+
+Demo mode (`MockAgentProvider`) is intentionally **not** persisted: simulated activity never reaches the database.
+
+## Next steps
+Authentication (before exposing the gateway) · multi-agent squads and agent tool use through the integration adapters on the live gateway · LLM-based router for `recommendAgents` · file content storage (object storage; today only metadata) · a 3D spatial layer for the Digital Twin Lab · analytics and replay UI over the event log.

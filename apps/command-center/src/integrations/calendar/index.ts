@@ -1,5 +1,5 @@
 // Google Calendar adapter — stub. Implement with events.list.
-import type { CalendarAdapter } from '../types.ts';
+import type { CalendarAdapter } from '../types';
 
 export function createGoogleCalendarAdapter(_accessToken: string): CalendarAdapter {
   return {

@@ -1,5 +1,5 @@
 // GitHub adapter — stub (repo search + file content).
-import type { StorageAdapter } from '../types.ts';
+import type { StorageAdapter } from '../types';
 
 export function createGitHubAdapter(_token: string): StorageAdapter {
   const todo = async (): Promise<never> => {

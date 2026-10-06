@@ -427,6 +427,9 @@ export class MockAgentProvider implements AgentProvider {
       case 'squad.form':
         this.formSquad(cmd.projectId, cmd.objective, cmd.agentIds, 60000, 'user');
         return;
+      case 'notification.read':
+        this.emit({ type: 'notification.read', payload: { ids: cmd.ids } }, 'user');
+        return;
       case 'file.add':
         for (const f of cmd.files)
           this.emit({

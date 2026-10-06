@@ -1,5 +1,5 @@
 // OpenAI adapter (Chat Completions). Server-side only.
-import type { ChatTurn, LLMAdapter } from '../types.ts';
+import type { ChatTurn, LLMAdapter } from '../types';
 
 export function createOpenAIAdapter(apiKey: string, model = 'gpt-4.1'): LLMAdapter {
   return {

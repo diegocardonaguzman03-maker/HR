@@ -20,7 +20,7 @@ interface WorldStore {
   dispatch(cmd: Command): void;
   switchProvider(kind: ProviderKind, wsUrl?: string): void;
   setSpeed(x: number): void;
-  /** Local acknowledgement (not a domain event): mark notifications as read. */
+  /** Mark notifications as read (persisted by the real backend). */
   markRead(ids?: ID[]): void;
   /** Subscribe to the raw event stream (the game layer uses this for one-shot effects). */
   onEvent(fn: Listener): () => void;
@@ -86,9 +86,7 @@ export const useWorld = create<WorldStore>((set, get) => {
       provider?.setSpeed?.(x);
     },
     markRead(ids) {
-      set((s) => ({
-        world: { ...s.world, notifications: s.world.notifications.map((n) => (!ids || ids.includes(n.id) ? { ...n, read: true } : n)) },
-      }));
+      provider?.dispatch({ type: 'notification.read', ids });
     },
     onEvent(fn) {
       listeners.add(fn);

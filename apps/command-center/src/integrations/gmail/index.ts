@@ -1,5 +1,5 @@
 // Gmail adapter — stub. Implement with users.messages.list / users.drafts.create.
-import type { MailAdapter } from '../types.ts';
+import type { MailAdapter } from '../types';
 
 export function createGmailAdapter(_accessToken: string): MailAdapter {
   return {
