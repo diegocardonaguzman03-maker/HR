@@ -667,9 +667,9 @@
         },
         {
           "id": "yo",
-          "label": "No retiro mi candado mientras él esté dentro: le pido que salga o que coloque su propio candado; retiro herramientas, coloco la guarda, verifico que nadie esté en el equipo, aviso y retiro mi candado",
+          "label": "No retiro mi candado mientras él esté dentro: le pido que salga o que coloque su propio candado; retiro herramientas, coloco la guarda, restablezco el contrapeso y la tensión con mi candado puesto, verifico que nadie esté en el equipo, aviso y retiro mi candado",
           "correct": true,
-          "feedback": "Correcto. Quien está expuesto necesita su propio candado; el tuyo no lo protege cuando lo retiras. Antes de retirar: herramientas fuera, guardas colocadas, nadie en el equipo (verificado, no solo avisado) y aviso a los afectados. SME_REQUIRED: pasos de retiro y método de bloqueo grupal (Mantenimiento + Seguridad)."
+          "feedback": "Correcto. Quien está expuesto necesita su propio candado; el tuyo no lo protege cuando lo retiras. Antes de retirar: herramientas fuera, guardas colocadas, contrapeso y tensión restablecidos con tu candado puesto, nadie en el equipo (verificado, no solo avisado) y aviso a los afectados. SME_REQUIRED: pasos de retiro y método de bloqueo grupal (Mantenimiento + Seguridad)."
         },
         {
           "id": "aviso",

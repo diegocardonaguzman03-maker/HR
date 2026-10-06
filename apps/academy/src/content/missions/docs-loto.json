@@ -71,8 +71,8 @@
         "control": "Antes de retirar el bloqueo: retirar herramientas, colocar guardas, verificar que no haya personas y avisar."
       },
       {
-        "hazard": "Energías que este escenario simplificado no tiene y una banda real sí puede tener: material en la banda, la tolva o el chute; inercia; regreso de la banda cargada en tramos inclinados (freno y antirretorno); tensores hidráulicos, neumáticos o de malacate; alimentadores y bandas aguas arriba o aguas abajo; temperatura del DRI caliente.",
-        "control": "Identificarlas y controlarlas con el procedimiento del equipo: detener y, si el procedimiento lo pide, bloquear los equipos que alimentan o reciben material de la banda; vaciar o asegurar el material; no liberar la tensión ni intervenir el antirretorno con la banda cargada en pendiente. SME_REQUIRED: inventario completo de energías, interbloqueos y equipos que también se bloquean (Mantenimiento + Ingeniería de Proceso + Seguridad)."
+        "hazard": "Energías que este escenario simplificado no tiene y una banda real sí puede tener: material en la banda, la tolva o el chute; inercia; regreso de la banda cargada en tramos inclinados (freno y antirretorno); tensores hidráulicos, neumáticos o de malacate; alimentadores y bandas aguas arriba o aguas abajo; temperatura del DRI caliente y atmósfera peligrosa (gases o falta de oxígeno) dentro de un transportador cerrado.",
+        "control": "Identificarlas y controlarlas con el procedimiento del equipo: detener y, si el procedimiento lo pide, bloquear los equipos que alimentan o reciben material de la banda; vaciar o asegurar el material; no liberar la tensión ni intervenir el antirretorno con la banda cargada en pendiente. No abras ni metas la cabeza o el cuerpo en un transportador cerrado sin la autorización y las mediciones de atmósfera que pida el procedimiento de espacios confinados. SME_REQUIRED: inventario completo de energías, interbloqueos y equipos que también se bloquean (Mantenimiento + Ingeniería de Proceso + Seguridad; NOM-033-STPS-2015, verificar con Jurídico / Seguridad)."
       }
     ],
     "steps": [
@@ -155,6 +155,7 @@
       "No tienes candado personal con llave única o la etiqueta no está completa.",
       "Hay una energía que no puedes aislar, liberar o bloquear.",
       "Un alimentador, una tolva o una banda aguas arriba o aguas abajo puede arrancar o descargar material sobre tu zona y no está detenido ni bloqueado como pide el procedimiento.",
+      "Tienes que abrir o entrar a un transportador cerrado y no hay autorización ni medición de atmósfera. SME_REQUIRED: procedimiento de espacios confinados y atmósferas peligrosas (Seguridad).",
       "La verificación de energía cero falla: algo se mueve, enciende o hay tensión.",
       "Te piden bloquear con el botón de paro, el paro de emergencia o la pantalla.",
       "Te piden dejar tu llave o retirar el candado de otra persona.",
@@ -222,7 +223,7 @@
           "Eléctrica: motor y control. Puede arrancar la banda o causar una descarga.",
           "Gravedad: contrapeso del tensor. Puede caer o volver a tensar la banda.",
           "Mecánica almacenada: tensión de la banda. Puede provocar un movimiento brusco.",
-          "En una banda real revisa también: material en la banda, la tolva o el chute; inercia; freno y antirretorno en tramos inclinados; tensores hidráulicos, neumáticos o de malacate; alimentadores y bandas aguas arriba o aguas abajo; temperatura del DRI caliente. SME_REQUIRED: inventario completo de energías, interbloqueos y lista de puntos de aislamiento del equipo real (Mantenimiento + Ingeniería de Proceso + Seguridad)."
+          "En una banda real revisa también: material en la banda, la tolva o el chute; inercia; freno y antirretorno en tramos inclinados; tensores hidráulicos, neumáticos o de malacate; alimentadores y bandas aguas arriba o aguas abajo; temperatura del DRI caliente y atmósfera del transportador cerrado. SME_REQUIRED: inventario completo de energías, interbloqueos y lista de puntos de aislamiento del equipo real (Mantenimiento + Ingeniería de Proceso + Seguridad)."
         ]
       },
       {
