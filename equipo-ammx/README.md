@@ -42,6 +42,7 @@ Los agentes con nombre de persona representan el **rol**, no a la persona: no ha
 | [entregas/](entregas/) | Una carpeta por tarea con su ficha y entregable |
 | `.claude/agents/ammx-*.md` | Fichas de los 13 agentes (misma estructura de 8 apartados) |
 | `.claude/skills/ammx-tarea/`, `.claude/skills/ammx-brief/` | Los comandos `/ammx-tarea` y `/ammx-brief` |
+| [`apps/ammx-ops/`](../apps/ammx-ops/README.md) | **AMMX Agent Operations**: la nave 3D donde se ve trabajar a los agentes, con chat, tareas, proyectos, alertas y decisiones (simulación con datos ilustrativos) |
 
 ## Notas sensibles
 Notas de relación con stakeholders, juicios sobre proveedores, datos personales y cifras confidenciales **no van al repositorio**. Diego los da en la conversación cuando una tarea los necesita. En una copia local, la carpeta `equipo-ammx/privado/` está excluida de git para guardarlos.

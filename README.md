@@ -58,7 +58,7 @@ El Director (el usuario) cuenta con un equipo de 10 subagentes en `.claude/agent
 
 ## Equipo digital de Diego — ArcelorMittal México (`equipo-ammx/`)
 
-Módulo de tareas puntuales para la Dirección de Desarrollo Organizacional y Adquisición de Talento de ArcelorMittal México: 13 agentes (`.claude/agents/ammx-*.md`), los comandos `/ammx-tarea` y `/ammx-brief`, tablero de tareas, cartera de 31 proyectos y memoria de decisiones. Es independiente del modelo GASM. Empieza por [equipo-ammx/README.md](equipo-ammx/README.md).
+Módulo de tareas puntuales para la Dirección de Desarrollo Organizacional y Adquisición de Talento de ArcelorMittal México: 13 agentes (`.claude/agents/ammx-*.md`), los comandos `/ammx-tarea` y `/ammx-brief`, tablero de tareas, cartera de 31 proyectos y memoria de decisiones. Es independiente del modelo GASM. Empieza por [equipo-ammx/README.md](equipo-ammx/README.md). La app [AMMX Agent Operations](apps/ammx-ops/README.md) muestra al equipo como una nave 3D viva (simulación).
 
 ## How to adapt this model to a real company
 1. Replace the figures in `01` (headcount, sites, safety and operating data) with real data.

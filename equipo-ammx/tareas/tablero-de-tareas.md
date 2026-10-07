@@ -16,6 +16,7 @@ Estados: 📥 Recibida · 🗂️ Clasificada · 🔧 En proceso · 🏭 Revisi�
 | ID | Recibida | Tarea | Dueño | Entregada | Resultado | Carpeta |
 |---|---|---|---|---|---|---|
 | T-2610-001 | 2026-10-07 | Crear el módulo de tareas puntuales del equipo a partir de los dos prompts maestros | Coordinador (consolidación) | 2026-10-07 | 📤 Entregada; espera visto bueno de Diego | `equipo-ammx/` |
+| T-2610-004 | 2026-10-07 | Crear la aplicación web interactiva "AMMX AI Agent Operations Warehouse" (nave 3D con agentes, chat, tareas, proyectos, alertas y decisiones) | Coordinador + NEXUS (arquitectura) | 2026-10-07 | 📤 Entregada como simulación con datos ilustrativos; el prompt llegó cortado en la sección 13 | `apps/ammx-ops/` |
 
 ## Carga por agente
 
@@ -33,7 +34,7 @@ Estados: 📥 Recibida · 🗂️ Clasificada · 🔧 En proceso · 🏭 Revisi�
 | Maribel | 0 | 0 | D1–D7, X3*, X4 | **Saturada:** 7 proyectos + 2 propuestos |
 | ATLAS | 0 | 0 | Revisiones | — |
 | AEGIS | 0 | 0 | Revisiones | — |
-| NEXUS | 0 | 0 | Apoyo X1–X4, R6 | — |
+| NEXUS | 0 | 0 | Apoyo X1–X4, R6 | Arquitectura de `apps/ammx-ops` (T-2610-004) |
 
 \* Dueño propuesto, por confirmar (confirmación #6).
 
