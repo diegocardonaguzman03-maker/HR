@@ -56,7 +56,9 @@
 | Concepto | Definición |
 |---|---|
 | Participantes | 5 de nuevo ingreso de confianza [Supuesto]. **Participan solo trabajadores de confianza (incluido el nuevo ingreso de confianza). Un trabajador de nuevo ingreso contratado en un puesto de categoría sindicalizable, aunque esté en periodo de prueba o de capacitación inicial, cuenta como personal sindicalizado para D-011-4 y no participa hasta el acuerdo de la CMCAP. Los instructores sindicalizados participan solo como facilitadores, con el registro desactivado (ADX-RL-001, Decisión 3).** (RL-L-14, D-014) |
-| Formato | Sesión individual de unos 20 min: el instructor observa sin explicar (prueba de 10 segundos) y después hace una entrevista breve |
+| Estado | **LANZADO (D-015, 2026-10-07).** Kit de ejecución: `entregables/2026-10-07-lanzamiento-piloto-misiones/` |
+| Alcance | Misión 01 Trabajo en Alturas + Misión 02 LOTO + menú de Procedimientos (6 PDF DEMO) |
+| Formato | Sesión individual de unos 40 min: el instructor observa sin explicar (prueba de 10 segundos), las dos misiones, búsqueda del checklist de LOTO y entrevista breve |
 | Fechas | 2026-10-12 → 2026-10-16 [Supuesto] |
 | Responsables | ADX-01 (conducción), ADX-07 (aprendizaje), ADX-13 (registro de fallas), ADX-04 (observa la parte de seguridad) |
 
@@ -73,7 +75,7 @@
 ## Condiciones (Seguridad y Relaciones Laborales)
 - Solo en DEMO: la secuencia es ilustrativa y **no** se usa para operar.
 - Antes de cualquier uso operativo, se reemplaza por el procedimiento aprobado de trabajo en alturas, validado por Operaciones y Seguridad.
-- Relaciones Laborales valida dos textos: «detente y avisa / facultad de detener el trabajo» y «no se usa para escalafón, ascensos, sanciones ni bonos».
+- Relaciones Laborales validó los textos de «detente y avisa» y de no uso (ADX-RL-002, D-014), solo para personal de confianza.
 - Los 7 hallazgos MEDIUM de UX se priorizan con lo que salga del piloto.
 
 ## Después del piloto

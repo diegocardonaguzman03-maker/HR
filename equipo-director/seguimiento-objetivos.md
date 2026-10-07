@@ -17,3 +17,9 @@ Lo actualizan cada mes (día 5 hábil) los gerentes. Las metas vienen de `08-kpi
 | 11 | Procedimientos de C&D documentados y vigentes | experto-documentacion-mejora | 100% de TD-P01 a TD-P12 | | | |
 | 12 | Aplicación en el puesto (N3) | experto-liderazgo-cambio | 60% | | | |
 | 13 | Variación del presupuesto | Ambos gerentes | ±5% | | | |
+
+## Iniciativas en ejecución
+
+| Iniciativa | Decisión | Dueño | Fecha clave | Estado | Siguiente hito |
+|---|---|---|---|---|---|
+| Piloto de misiones Alturas + LOTO (Academia v2.1) | D-015 | ADX-01 | 2026-10-12 → 10-16 | 🟡 En ejecución | Informe al Director el 2026-10-19 [Supuesto] (`entregables/2026-10-07-lanzamiento-piloto-misiones/`) |
