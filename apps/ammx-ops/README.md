@@ -36,7 +36,8 @@ Aplicación web 3D que muestra al equipo digital de la Dirección de Talent Acqu
 npm install
 npm run dev        # http://localhost:5173
 npm run build      # verificación de tipos + build en dist/
-npm run build:web  # un solo index.html autocontenido en web/ (para compartir)
+npm run build:web  # un solo index.html autocontenido en web/ (link público)
+npm run build:share  # página pequeña + app.js en dist-share/ (para la página de claude.ai)
 ```
 `?q=low` fuerza el modo ligero (sin post-proceso ni sombras suaves) para equipos lentos.
 
