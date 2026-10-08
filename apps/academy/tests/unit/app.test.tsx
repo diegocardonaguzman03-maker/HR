@@ -7,6 +7,7 @@ import { useLoad } from '../../src/stores/useLoad';
 const sceneFail = vi.hoisted(() => ({ on: false }));
 vi.mock('../../src/components/3d/Scene', () => ({ Scene: () => { if (sceneFail.on) throw new Error('Error creating WebGL context'); return null; } }));
 import { App } from '../../src/app/App';
+import { savedProgress, completedMissions } from '../../src/missions/store';
 import { useApp } from '../../src/stores/useApp';
 import { content, idx } from '../../src/lib/content';
 import { DISCLAIMER } from '../../src/components/ui/Disclaimer';
@@ -198,6 +199,16 @@ describe('evaluación', () => {
     expect(JSON.parse(localStorage.getItem('adx.events') ?? '[]')).toEqual([]);
     expect(localStorage.getItem('adx.actor')).toBeNull();
     expect(localStorage.getItem('adx.recording-notice-seen')).toBeNull();
+  });
+  it('RL-L-11: el borrado también elimina el avance y los errores de las misiones', () => {
+    localStorage.setItem('adx.mission.loto-01', JSON.stringify({ stepIdx: 3, results: { 'validar-requisitos': { done: true, mistakes: 1, wrong: ['prestado'] } }, startedAt: 1 }));
+    localStorage.setItem('adx.missions.done', JSON.stringify(['heights-prep']));
+    localStorage.setItem('adx.recording-notice-seen', '1');
+    render(<App />);
+    fireEvent.click(screen.getByTestId('mode-assess'));
+    fireEvent.click(screen.getByTestId('clear-shared'));
+    expect(savedProgress('loto-01')).toBeNull();
+    expect(completedMissions()).toEqual([]);
   });
 });
 

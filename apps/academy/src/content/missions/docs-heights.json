@@ -7,7 +7,7 @@
   "wi": {
     "code": "WI-ALT-001-DEMO",
     "title": "Instrucción de trabajo — Preparación para trabajo en altura (cambio de luminaria)",
-    "version": "0.1-demo",
+    "version": "0.2-demo",
     "status": "DEMO",
     "owner": "Seguridad Industrial de la planta (rol custodio). SME_REQUIRED: puesto responsable designado (Seguridad).",
     "file": "documents/procedimientos/WI-ALT-001-DEMO.pdf",
@@ -174,7 +174,7 @@
       "La escalera, el barandal o el acceso están dañados o incompletos.",
       "Hay personas en la zona inferior o la delimitación no está completa.",
       "Cambian las condiciones (clima, iluminación, actividad cercana). SME_REQUIRED: criterios de suspensión de la planta (Seguridad).",
-      "Si una condición no se cumple, detente y avisa a tu supervisor. SME_REQUIRED: política de la planta sobre la facultad de detener el trabajo y la protección de quien la ejerce (Seguridad + Relaciones Laborales)."
+      "Si una condición no se cumple, detente y avisa a tu supervisor. Si tu supervisor no te atiende o es quien te pide continuar, avisa a Seguridad Industrial. Detenerte por una condición insegura es lo que se espera de ti. SME_REQUIRED: canal de reporte y política de la planta sobre la facultad de detener el trabajo y la protección de quien la ejerce (Seguridad + Relaciones Laborales)."
     ],
     "references": [
       "NOM-009-STPS-2011, Condiciones de seguridad para realizar trabajos en altura (verificar con Seguridad / Jurídico).",
@@ -188,7 +188,7 @@
   "manual": {
     "code": "MO-ALT-001-DEMO",
     "title": "Manual operativo — Preparación para trabajo en altura",
-    "version": "0.1-demo",
+    "version": "0.2-demo",
     "status": "DEMO",
     "owner": "Seguridad Industrial de la planta (rol custodio). SME_REQUIRED: puesto responsable designado (Seguridad).",
     "file": "documents/procedimientos/MO-ALT-001-DEMO.pdf",
@@ -277,7 +277,7 @@
       {
         "title": "7. Condiciones anormales y emergencia",
         "paragraphs": [
-          "Ante cualquier condición anormal, detente, no te expongas y avisa a tu supervisor. Este documento DEMO no contiene procedimientos de emergencia ni de rescate."
+          "Ante cualquier condición anormal, detente, no te expongas y avisa a tu supervisor; si no te atiende o es quien te pide continuar, avisa a Seguridad Industrial. Este documento DEMO no contiene procedimientos de emergencia ni de rescate."
         ],
         "bullets": [
           "SME_REQUIRED: procedimiento de rescate de una persona suspendida en el arnés, equipo y tiempos de respuesta (Seguridad).",
@@ -289,12 +289,12 @@
       {
         "title": "8. Capacitación y competencia",
         "paragraphs": [
-          "La misión y estos documentos son práctica de aprendizaje. La plataforma ACERÍA DIGITAL ACADEMY no certifica competencia ni habilita para trabajar en altura."
+          "La misión y estos documentos son práctica de aprendizaje. La plataforma ACERÍA DIGITAL ACADEMY no certifica competencia, no habilita para trabajar en altura y no emite constancias DC-3."
         ],
         "bullets": [
           "Para trabajar en altura se necesitan la capacitación y la autorización que exige la planta. SME_REQUIRED: requisitos de autorización, curso y vigencia (Seguridad).",
           "SME_REQUIRED: aptitud médica (Servicio Médico).",
-          "Los resultados de la práctica no se usan para escalafón, ascensos, sanciones ni bonos. SME_REQUIRED: validación de esta frase (Relaciones Laborales)."
+          "No es un examen de suficiencia ni de escalafón. Ni la práctica ni el avance en la plataforma se usan para escalafón, ascensos, cambios de puesto o de categoría, evaluación de desempeño, sanciones ni bonos."
         ]
       },
       {
@@ -313,11 +313,11 @@
   "checklist": {
     "code": "CL-ALT-001-DEMO",
     "title": "Lista de verificación — Preparación para trabajo en altura",
-    "version": "0.1-demo",
+    "version": "0.2-demo",
     "status": "DEMO",
     "owner": "Seguridad Industrial de la planta (rol custodio). SME_REQUIRED: puesto responsable designado (Seguridad).",
     "file": "documents/procedimientos/CL-ALT-001-DEMO.pdf",
-    "instructions": "Esta es una plantilla de práctica DEMO para aprender; no es la lista de verificación de la planta. En planta solo se usa la lista aprobada por Seguridad (SME_REQUIRED: lista aprobada). Marca cada punto solo después de verificarlo. Los puntos marcados como críticos no admiten excepción: si uno no se cumple, no se inicia; detente y avisa a tu supervisor.",
+    "instructions": "Esta es una plantilla de práctica DEMO para aprender; no es la lista de verificación de la planta. En planta solo se usa la lista aprobada por Seguridad (SME_REQUIRED: lista aprobada). Marca cada punto solo después de verificarlo. Los puntos marcados como críticos no admiten excepción: si uno no se cumple, no se inicia; detente y avisa a tu supervisor (o a Seguridad Industrial si no te atiende).",
     "sections": [
       {
         "title": "1. Requisitos y autorización",
@@ -327,7 +327,7 @@
             "critical": true
           },
           {
-            "text": "Capacitación y aptitud médica vigentes. SME_REQUIRED: curso y criterio médico (Seguridad + Servicio Médico).",
+            "text": "Capacitación y aptitud médica vigentes, confirmadas por la planta (no anotes datos médicos). SME_REQUIRED: curso y criterio médico (Seguridad + Servicio Médico).",
             "critical": true
           },
           {
@@ -434,10 +434,10 @@
       }
     ],
     "signatures": [
-      "Firmas de práctica. SME_REQUIRED: quién firma y autoriza en la planta (Seguridad + Mantenimiento). Trabajador que ejecuta — nombre, firma y fecha. SME_REQUIRED: formato de la planta (Seguridad).",
-      "Supervisor que autoriza — nombre, firma y fecha.",
-      "Personal de Mantenimiento Eléctrico que verificó el aislamiento — nombre, firma y fecha.",
-      "Seguridad Industrial (cuando el procedimiento lo pida) — nombre, firma y fecha."
+      "Firmas de práctica: en aula escribe «PRÁCTICA»; no anotes tu nombre ni tu firma reales. SME_REQUIRED: quién firma y autoriza en la planta y formato (Seguridad + Mantenimiento). Rol: trabajador que ejecuta.",
+      "Rol: supervisor que autoriza el permiso.",
+      "Rol: personal de Mantenimiento Eléctrico que verificó el aislamiento.",
+      "Rol: Seguridad Industrial (cuando el procedimiento lo pida)."
     ]
   }
 }
