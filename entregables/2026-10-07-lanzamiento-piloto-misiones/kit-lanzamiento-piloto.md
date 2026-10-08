@@ -3,7 +3,7 @@
 **Origen:** decisión del Director del 2026-10-07 (D-015), con base en D-012, D-013 y D-014 · **Dueño del piloto:** ADX-01 (conducción) · **Fecha de corte:** 2026-10-16
 
 ## 1. Mensaje clave
-El piloto queda **lanzado**. Del 2026-10-12 al 2026-10-16 **[Supuesto]**, 5 trabajadores de nuevo ingreso **de confianza** juegan, en sesiones individuales, las dos misiones: 01 Trabajo en Alturas y 02 LOTO. Las misiones se juegan en modo DEMO y sin instrucciones previas. El objetivo es medir si la experiencia se entiende sola, si la persona aprende y si se detectan riesgos de uso.
+El piloto queda **lanzado**. Del 2026-10-12 al 2026-10-16 **[Supuesto]**, 5 trabajadores de nuevo ingreso **de confianza** juegan, en sesiones individuales, las dos misiones: Trabajo en Alturas 01 «Preparación de la tarea» y Bloqueo y Etiquetado (LOTO) 01 «Aislar un equipo para mantenimiento». Las misiones se juegan en modo DEMO y sin instrucciones previas. El objetivo es medir si la experiencia se entiende sola, si la persona aprende y si se detectan riesgos de uso.
 
 **Link de la versión 2.1:** https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/fa25ff0f34fb2eee70bc7d8df4b7645c63c0f7a1/apps/academy/web/index.html
 
@@ -47,8 +47,8 @@ El piloto queda **lanzado**. Del 2026-10-12 al 2026-10-16 **[Supuesto]**, 5 trab
 |---|---|---|---|
 | 0–3 | Bienvenida | Lee el guion A | No explica la plataforma ni las misiones |
 | 3–5 | Prueba de 10 segundos | Abre la pantalla inicial, dice «Adelante» y arranca el cronómetro. Anota el tiempo hasta el primer clic útil | No señala la pantalla |
-| 5–17 | Misión 01 Alturas | Observa y anota en la hoja. Si la persona se atora más de 60 s, dice solo: «¿Qué crees que te pide la pantalla?» | No da la respuesta ni dice «muy bien» o «mal» |
-| 17–29 | Misión 02 LOTO | Pide «Ahora entra a la misión de bloqueo». Observa igual | Igual que arriba |
+| 5–17 | Misión Alturas 01 | Observa y anota en la hoja. Si la persona se atora más de 60 s, dice solo: «¿Qué crees que te pide la pantalla?» | No da la respuesta ni dice «muy bien» o «mal» |
+| 17–29 | Misión LOTO 01 | Pide «Ahora entra a la misión de bloqueo». Observa igual | Igual que arriba |
 | 29–31 | Procedimientos | Pide «Busca el checklist de LOTO y descárgalo». Anota si lo encuentra solo | No le dice dónde está el menú |
 | 31–38 | Entrevista | Hace las preguntas del guion B y anota las respuestas textuales | No discute las respuestas |
 | 38–40 | Cierre | Lee el guion C. Pulsa «Borrar mis datos…» frente al participante | No comenta su resultado con nadie más |
@@ -71,7 +71,7 @@ El piloto queda **lanzado**. Del 2026-10-12 al 2026-10-16 **[Supuesto]**, 5 trab
 **Código:** P__ · **Fecha:** ____ · **Equipo:** ____ · **Instructor:** ____ · **Observador de Seguridad:** ____
 *(No se anota el nombre ni el número de ficha.)*
 
-| Indicador | Misión 01 Alturas | Misión 02 LOTO |
+| Indicador | Alturas 01 | LOTO 01 |
 |---|---|---|
 | Segundos hasta el primer clic útil (solo al inicio) | | – |
 | Pasos donde se atoró más de 60 s (número de paso) | | |
