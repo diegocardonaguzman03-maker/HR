@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Component, useEffect, useState, type ReactNode } from 'react';
 import { World } from './scene/World';
 import { TopBar } from './ui/TopBar';
 import { DirectorPanel } from './ui/DirectorPanel';
@@ -15,7 +15,9 @@ export default function App() {
   return (
     <div className="app">
       <div className="world">
-        <World />
+        <SceneGuard>
+          <World />
+        </SceneGuard>
       </div>
       <TopBar />
       <DirectorPanel />
@@ -78,4 +80,31 @@ function Intro() {
       </div>
     </div>
   );
+}
+
+// If the 3D view cannot start (no WebGL, blocked GPU), keep the rest of the app usable and say why.
+function webglAvailable() {
+  try {
+    const c = document.createElement('canvas');
+    return !!(c.getContext('webgl2') || c.getContext('webgl'));
+  } catch {
+    return false;
+  }
+}
+
+class SceneGuard extends Component<{ children: ReactNode }, { error: string | null }> {
+  state = { error: webglAvailable() ? null : 'Este navegador o visor no tiene WebGL disponible.' };
+  static getDerivedStateFromError(e: unknown) {
+    return { error: e instanceof Error ? e.message : String(e) };
+  }
+  render() {
+    if (!this.state.error) return this.props.children;
+    return (
+      <div className="scene-error">
+        <b>La vista 3D no pudo iniciar aquí.</b>
+        <span>{this.state.error}</span>
+        <span>El resto del centro de operaciones funciona. Prueba abrir el link en Chrome o Edge con la aceleración por hardware activada.</span>
+      </div>
+    );
+  }
 }

@@ -377,3 +377,7 @@ table.help { width: 100%; border-collapse: collapse; }
 @media (min-width: 521px) {
   .tb-btn.primary .short { display: none; }
 }
+
+.scene-error { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 24px; text-align: center; color: var(--muted); background: radial-gradient(circle at 50% 40%, #13213a, var(--bg)); }
+.scene-error b { color: var(--text); font: 600 16px Oxanium, Inter, sans-serif; }
+.scene-error span { max-width: 520px; line-height: 1.5; }
