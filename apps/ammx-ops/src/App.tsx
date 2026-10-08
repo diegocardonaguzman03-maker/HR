@@ -68,7 +68,7 @@ function Intro() {
         <h1>Bienvenido, {DIRECTOR.first}</h1>
         <p>
           Tu equipo de agentes trabaja en esta nave: Talent Acquisition, Learning &amp; Development, Desarrollo Organizacional, Operaciones,
-          AI Lab, Auditoría y la torre PMO con tu Command Center arriba.
+          AI Lab, Auditoría y la torre PMO con tu Command Center arriba. Por el pasillo del lado derecho llegas al Campus de Capacitación, con las clases en vivo.
         </p>
         <ul>
           <li>Haz clic en un agente para hablar con él, ver su trabajo o asignarle una tarea.</li>

@@ -3,6 +3,7 @@ import { projectById, PROJECT_STATUS } from '../data/projects';
 import { ZONES } from '../data/zones';
 import { useStore, allProjects, type CommandResult } from '../store/useStore';
 import { DIRECTOR } from '../config';
+import { dayPlans, minuteOfDay, phaseOf, summary } from './campus';
 
 // Local, rule-based replies built from the board. There is no language model behind them:
 // the app answers with what the portfolio and the simulation know, and says so.
@@ -121,6 +122,21 @@ export function runCommand(raw: string): CommandResult | null {
   if (/atras|behind|retras|riesgo|risk|late|delay/.test(q)) {
     const list = allProjects(st.extraProjects).filter((p) => ['attention', 'risk', 'blocked'].includes(p.status) && (p.area === 'Capacitación' || !/capacit|training/.test(q)));
     return { query: raw, title: /capacit|training/.test(q) ? 'Programas de capacitación que requieren atención' : 'Proyectos que requieren atención', lines: list.map((p) => ({ text: `${PROJECT_STATUS[p.status].icon} ${p.id} ${p.name} — ${p.next}`, action: { kind: 'project' as const, id: p.id } })) };
+  }
+  if (/agenda|cronograma|calendario de capacit|programa de cursos/.test(q)) {
+    st.open({ kind: 'agenda' });
+    return null;
+  }
+  if (/clase|en vivo|campus|aula|curso|participante|asistencia/.test(q)) {
+    st.flyTo('campus');
+    const m = minuteOfDay(st.simMinute);
+    const plans = dayPlans();
+    const live = plans.filter((p) => m >= p.start && m <= p.end);
+    const lines = (live.length ? live : plans.filter((p) => p.start > m).slice(0, 4)).map((p) => {
+      const sm = summary(p, m, st.attendance[`${p.session.id}|${st.campusDay}`]);
+      return { text: `${p.room.short} · ${p.session.title} — ${phaseOf(p, m)} · ${sm.presente + sm.tarde}/${sm.total}`, action: { kind: 'live' as const, id: p.room.id } };
+    });
+    return { query: raw, title: live.length ? 'Clases en vivo en el campus' : 'Próximas clases del campus', lines: [...lines, { text: 'Abrir la agenda semanal', action: { kind: 'agenda' } }] };
   }
   if (/decisi|decide|aprob|approv/.test(q)) {
     st.open({ kind: 'decisions' });

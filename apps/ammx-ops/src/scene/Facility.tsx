@@ -27,7 +27,7 @@ export function Facility() {
       </mesh>
       <CorridorMarkings />
       <Shell />
-      {ZONES.filter((z) => z.id !== 'pmo').map((z) => (
+      {ZONES.filter((z) => z.id !== 'pmo' && z.id !== 'campus').map((z) => (
         <Zone key={z.id} z={z} />
       ))}
       {SPOTS.filter((s) => s.prop !== 'none').map((s) => (
@@ -84,11 +84,18 @@ function Shell() {
         <boxGeometry args={[W - 6, 1.4, 0.05]} />
       </mesh>
       {/* side walls (low, so the camera can see in) */}
-      {[FACILITY.minX - 0.3, FACILITY.maxX + 0.3].map((x) => (
-        <mesh key={x} position={[x, 2.5, 0]} material={mat('#2a3038', 0.8, 0.2)} receiveShadow>
-          <boxGeometry args={[0.6, 5, D]} />
+      <mesh position={[FACILITY.minX - 0.3, 2.5, 0]} material={mat('#2a3038', 0.8, 0.2)} receiveShadow>
+        <boxGeometry args={[0.6, 5, D]} />
+      </mesh>
+      {/* east wall with the opening to the covered walkway */}
+      {[-1, 1].map((sgn) => (
+        <mesh key={sgn} position={[FACILITY.maxX + 0.3, 2.5, sgn * (2.2 + (D / 2 - 2.2) / 2)]} material={mat('#2a3038', 0.8, 0.2)} receiveShadow>
+          <boxGeometry args={[0.6, 5, D / 2 - 2.2]} />
         </mesh>
       ))}
+      <mesh position={[FACILITY.maxX + 0.3, 3.6, 0]} material={M.orange}>
+        <boxGeometry args={[0.7, 0.3, 4.4]} />
+      </mesh>
       {/* columns */}
       {cols.map((x) => (
         <group key={x}>

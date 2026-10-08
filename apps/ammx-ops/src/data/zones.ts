@@ -15,6 +15,7 @@ export const ZONES: ZoneDef[] = [
   { id: 'war', name: 'Project War Room', short: 'War Room', center: [2, 15.5], size: [14, 17], door: [7, 7], side: 'front', accent: '#eab308', floor: '#2c2b27', agents: [] },
   { id: 'ai', name: 'AI & Digital Lab', short: 'AI Lab', center: [20, 15.5], size: [18, 17], door: [13, 7], side: 'front', accent: '#22d3ee', floor: '#1f2a30', agents: ['nexus'] },
   { id: 'audit', name: 'Quality & Audit Room', short: 'Auditoría', center: [39, 15.5], size: [12, 17], door: [35, 7], side: 'front', accent: '#10b981', floor: '#1f2b27', agents: ['aegis'] },
+  { id: 'campus', name: 'Campus de Capacitación', short: 'Campus', center: [91, 0], size: [68, 48], door: [45.6, 0], side: 'east', accent: '#F58220', floor: '#4b5058', agents: [] },
   { id: 'pmo', name: 'PMO / Strategy Control Tower', short: 'PMO', center: [0, 0], size: [8, 8], door: [0, 4.9], side: 'center', accent: '#002B5C', floor: '#22262c', agents: ['pmo'] },
 ];
 
@@ -26,7 +27,8 @@ export type ScreenKind =
   | 'succession' | 'talent' | 'projectwall'
   | 'agents' | 'auditqueue' | 'risk'
   | 'academy' | 'trainingcal' | 'compliance' | 'charts' | 'workinstr' | 'video' | 'certs' | 'ojt'
-  | 'process' | 'reliability' | 'safety' | 'kpis' | 'portfolio';
+  | 'process' | 'reliability' | 'safety' | 'kpis' | 'portfolio'
+  | 'classroom' | 'reception';
 
 export interface SpotDef extends Spot { prop: PropKind; screen?: ScreenKind; width?: number; label?: string }
 
@@ -75,6 +77,8 @@ export const SPOTS: SpotDef[] = [
   { id: 'atlas_desk', zone: 'ops', pos: [10, -14.5], face: P, prop: 'desk', screen: 'kpis' },
   { id: 'atlas_furnace', zone: 'ops', pos: [24, -9.6], face: P, prop: 'none', label: 'Horno de arco eléctrico' },
   // PMO tower
+  { id: 'alejandro_campus', zone: 'campus', pos: [69.8, -3.0], face: -Math.PI / 2, prop: 'none', label: 'Atención al usuario' },
+  { id: 'uziel_campus', zone: 'campus', pos: [84.4, -16.6], face: Math.PI, prop: 'none', label: 'Aula LOTO' },
   { id: 'pmo_console', zone: 'pmo', pos: [0, 4.2], face: P, prop: 'none', label: 'Consola PMO' },
   { id: 'pmo_side', zone: 'pmo', pos: [-4.3, 1.6], face: P / 2 + 0.35, prop: 'none' },
 ];

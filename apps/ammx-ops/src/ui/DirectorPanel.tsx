@@ -4,6 +4,7 @@ import { PROJECT_STATUS } from '../data/projects';
 import { KPIS } from '../data/seed';
 import { DIRECTOR } from '../config';
 import { doAction } from './TopBar';
+import { CampusToday } from './CampusPanels';
 
 export function DirectorPanel() {
   const open = useStore((s) => s.leftOpen);
@@ -68,6 +69,9 @@ export function DirectorPanel() {
               </div>
             ))}
           </div>
+        </Section>
+        <Section title="Campus de capacitación hoy">
+          <CampusToday />
         </Section>
         <Section title="Prioridades de hoy">
           {priorities.map((p) => (

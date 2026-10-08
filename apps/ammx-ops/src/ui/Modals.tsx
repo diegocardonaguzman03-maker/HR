@@ -7,11 +7,13 @@ import { Chat } from './AgentPanel';
 import { DEMO_NOTICE, DIRECTOR } from '../config';
 import type { ProjectDef, Task } from '../types';
 import { stageLabel } from '../sim/chat';
+import { AgendaView, LivePanel, SessionEditor } from './CampusPanels';
 
 export function Overlays() {
   const o = useStore((s) => s.overlay);
   const close = useStore((s) => s.close);
   if (o.kind === 'none') return null;
+  if (o.kind === 'live') return <LivePanel key={o.room} room={o.room} />;
   return (
     <div className="modal-bg" onMouseDown={(e) => e.target === e.currentTarget && close()}>
       {o.kind === 'projects' && <ProjectsView />}
@@ -21,6 +23,8 @@ export function Overlays() {
       {o.kind === 'decisions' && <Decisions />}
       {o.kind === 'chat' && <FullChat id={o.agent} />}
       {o.kind === 'help' && <Help />}
+      {o.kind === 'agenda' && <AgendaView />}
+      {o.kind === 'session' && <SessionEditor key={`${o.id ?? 'new'}|${o.day ?? ''}`} id={o.id} day={o.day} />}
     </div>
   );
 }

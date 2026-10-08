@@ -8,10 +8,13 @@ import type { OrbitControls as OrbitImpl } from 'three-stdlib';
 import { Facility } from './Facility';
 import { Props } from './Props';
 import { Agents, Packets } from './Agents';
+import { Campus } from './Campus';
+import { campusTick } from '../sim/campus';
 import { step, BODIES } from '../sim/engine';
 import { tickScreens } from './screens';
 import { useStore } from '../store/useStore';
 import { MEZZANINE_Y, zoneById, FACILITY } from '../data/zones';
+import { roomById, CAMPUS } from '../data/campus';
 
 function SimDriver() {
   const acc = useRef(0);
@@ -21,6 +24,7 @@ function SimDriver() {
     if (acc.current > 0.35) {
       acc.current = 0;
       tickScreens(clock.elapsedTime);
+      campusTick(useStore.getState().simMinute);
     }
   });
   return null;
@@ -65,6 +69,15 @@ function CameraRig() {
     } else if (focus.kind === 'agent' && focus.id) {
       const b = BODIES[focus.id];
       go(new THREE.Vector3(b.x, 11 * fit, b.z + 13 * fit), new THREE.Vector3(b.x, 1.2, b.z));
+    } else if (focus.kind === 'campus') {
+      go(new THREE.Vector3(88, 62 * fit, 58 * fit), new THREE.Vector3(88, 0, 2));
+    } else if (focus.kind === 'room' && focus.id) {
+      const r = roomById(focus.id);
+      if (r) {
+        const cx = (r.x0 + r.x1) / 2;
+        const cz = (r.z0 + r.z1) / 2;
+        go(new THREE.Vector3(cx, 13 * fit, cz + 12 * fit), new THREE.Vector3(cx, 0.8, cz - 1));
+      }
     } else if (focus.kind === 'director') {
       go(new THREE.Vector3(0, MEZZANINE_Y + 7, 10 * fit), new THREE.Vector3(0, MEZZANINE_Y + 1.4, -2));
     }
@@ -88,7 +101,7 @@ function CameraRig() {
       }
     }
     // keep the orbit target inside the building
-    c.target.x = THREE.MathUtils.clamp(c.target.x, FACILITY.minX, FACILITY.maxX);
+    c.target.x = THREE.MathUtils.clamp(c.target.x, FACILITY.minX, CAMPUS.x1);
     c.target.z = THREE.MathUtils.clamp(c.target.z, FACILITY.minZ, FACILITY.maxZ);
     c.target.y = THREE.MathUtils.clamp(c.target.y, 0, MEZZANINE_Y + 2);
     c.update();
@@ -165,11 +178,11 @@ export function World() {
         intensity={2.1}
         color="#fff4e6"
         castShadow
-        shadow-mapSize={[2048, 2048]}
+        shadow-mapSize={[4096, 2048]}
         shadow-bias={-0.0004}
         shadow-normalBias={0.04}
-        shadow-camera-left={-60}
-        shadow-camera-right={60}
+        shadow-camera-left={-70}
+        shadow-camera-right={135}
         shadow-camera-top={40}
         shadow-camera-bottom={-40}
         shadow-camera-far={220}
@@ -179,10 +192,11 @@ export function World() {
         <StudioEnvironment />
       </Suspense>
       <Facility />
+      <Campus />
       <Props />
       <Agents />
       <Packets />
-      <ContactShadows position={[0, 0.02, 0]} scale={[100, 60]} resolution={1024} blur={2.4} opacity={0.4} far={10} frames={1} />
+      <ContactShadows position={[38, 0.02, 0]} scale={[180, 60]} resolution={1024} blur={2.4} opacity={0.4} far={10} frames={1} />
       <SimDriver />
       <CameraRig />
       <AdaptiveDpr pixelated />

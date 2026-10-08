@@ -16,6 +16,12 @@ export function doAction(a: Action | undefined) {
   else if (a.kind === 'projects') st.open({ kind: 'projects' });
   else if (a.kind === 'newtask') st.open({ kind: 'newtask' });
   else if (a.kind === 'newproject') st.open({ kind: 'newproject' });
+  else if (a.kind === 'agenda') st.open({ kind: 'agenda' });
+  else if (a.kind === 'live' && a.id) {
+    st.select(null);
+    st.open({ kind: 'live', room: a.id as never });
+    st.flyTo('room', a.id);
+  }
 }
 
 export function TopBar() {
@@ -38,6 +44,8 @@ export function TopBar() {
           <button className={view === 'strategic' ? 'on' : ''} onClick={() => setView('strategic')}>Estratégica</button>
         </div>
         <button className="tb-btn" onClick={() => open({ kind: 'projects' })}>Proyectos</button>
+        <button className="tb-btn campus-btn" onClick={() => { useStore.getState().flyTo('campus'); }}>Campus</button>
+        <button className="tb-btn" onClick={() => open({ kind: 'agenda' })}>Agenda</button>
         <button className="tb-btn primary" onClick={() => open({ kind: 'newtask' })}>
           <span className="long">+ Nueva tarea</span>
           <span className="short">+ Tarea</span>

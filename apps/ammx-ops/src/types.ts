@@ -1,4 +1,4 @@
-export type ZoneId = 'ta' | 'ld' | 'od' | 'ops' | 'ai' | 'audit' | 'pmo' | 'war' | 'dock';
+export type ZoneId = 'ta' | 'ld' | 'od' | 'ops' | 'ai' | 'audit' | 'pmo' | 'war' | 'dock' | 'campus';
 
 export type AgentStatus = 'working' | 'waiting' | 'meeting' | 'analyzing' | 'blocked' | 'available';
 
@@ -18,7 +18,7 @@ export interface ZoneDef {
   center: [number, number];
   size: [number, number];
   door: [number, number];
-  side: 'back' | 'front' | 'center';
+  side: 'back' | 'front' | 'center' | 'east';
   accent: string;
   floor: string;
   agents: string[];

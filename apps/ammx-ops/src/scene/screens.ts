@@ -3,12 +3,14 @@ import type { ScreenKind } from '../data/zones';
 import { useStore, fmtTime } from '../store/useStore';
 import { PROJECTS, PROJECT_STATUS } from '../data/projects';
 import { AGENTS, STATUS_META } from '../data/agents';
+import { WEEK, roomById } from '../data/campus';
+import { dayPlans, minuteOfDay, phaseOf, summary } from '../sim/campus';
 
 // Every in-world screen is a CanvasTexture redrawn a few times per second by one shared ticker.
 // Values on screens are SIMULATED (seeded noise), never real plant or HR data.
 
 type Ctx = CanvasRenderingContext2D;
-interface Screen { kind: ScreenKind; canvas: HTMLCanvasElement; tex: THREE.CanvasTexture; seed: number }
+interface Screen { kind: ScreenKind; canvas: HTMLCanvasElement; tex: THREE.CanvasTexture; seed: number; key?: string }
 const screens: Screen[] = [];
 
 const NAVY = '#0a1628';
@@ -17,14 +19,14 @@ const GRID = 'rgba(148,163,184,0.12)';
 const TXT = '#cbd5e1';
 const DIM = '#64748b';
 
-export function makeScreen(kind: ScreenKind, w = 512, h = 288) {
+export function makeScreen(kind: ScreenKind, w = 512, h = 288, key?: string) {
   const canvas = document.createElement('canvas');
   canvas.width = w;
   canvas.height = h;
   const tex = new THREE.CanvasTexture(canvas);
   tex.colorSpace = THREE.SRGBColorSpace;
   tex.anisotropy = 4;
-  const s = { kind, canvas, tex, seed: screens.length * 7.13 + 1 };
+  const s = { kind, canvas, tex, seed: screens.length * 7.13 + 1, key };
   screens.push(s);
   draw(s, performance.now() / 1000);
   return tex;
@@ -114,6 +116,14 @@ function draw(s: Screen, t: number) {
   const k = s.seed;
   const tt = t * 0.6 + k;
   switch (s.kind) {
+    case 'classroom': {
+      drawClassroom(c, w, h, s.key ?? '', tt);
+      break;
+    }
+    case 'reception': {
+      drawReception(c, w, h);
+      break;
+    }
     case 'funnel': {
       frame(c, w, h, 'Hiring funnel', '#3b82f6');
       const stages = ['Postulados', 'Filtro', 'Entrevista', 'Terna', 'Oferta', 'Ingreso'];
@@ -506,3 +516,84 @@ function wrap(c: Ctx, text: string, x: number, y: number, maxW: number, lh: numb
 }
 
 export { NAVY };
+
+// ------------------------------------------------------------------ campus screens
+const STEPS: Record<string, string[]> = {
+  loto: ['Identificar energías', 'Avisar al personal', 'Apagar el equipo', 'Aislar fuentes', 'Colocar candado y tarjeta', 'Liberar energía residual', 'Verificar energía cero'],
+  alturas: ['Análisis de riesgo', 'Permiso de trabajo', 'Inspección del arnés', 'Punto de anclaje', 'Ascenso con 3 puntos', 'Trabajo con línea de vida', 'Descenso y cierre'],
+  confinados: ['Permiso de entrada', 'Aislamiento y bloqueo', 'Ventilación', 'Medición de atmósfera', 'Vigía y rescate listos', 'Entrada controlada', 'Salida y cierre'],
+  izaje: ['Plan de izaje', 'Inspección de eslingas', 'Delimitar el área', 'Señalero designado', 'Izaje de prueba', 'Maniobra', 'Cierre'],
+  electrica: ['Riesgos eléctricos', 'Distancias de seguridad', 'EPP dieléctrico', 'Bloqueo eléctrico', 'Prueba de ausencia de tensión', 'Trabajo', 'Restablecimiento'],
+  transporte: ['Ingreso a planta', 'Velocidades y rutas', 'Peatones y equipo móvil', 'Carga y descarga', 'Calzas y freno', 'Emergencias', 'Salida'],
+};
+
+function drawClassroom(c: Ctx, w: number, h: number, roomId: string, tt: number) {
+  const room = roomById(roomId);
+  const m = minuteOfDay(useStore.getState().simMinute);
+  const plans = dayPlans().filter((p) => p.room.id === roomId);
+  const p = plans.find((x) => m >= x.start - 45 && m <= x.end + 10) ?? plans.find((x) => x.start > m);
+  frame(c, w, h, room?.short ?? 'Aula', room?.accent ?? ORANGE);
+  if (!p) {
+    c.fillStyle = TXT;
+    c.font = '600 20px Inter, sans-serif';
+    c.fillText('Sin clase programada hoy', 24, 150);
+    return;
+  }
+  const live = m >= p.start && m <= p.end;
+  c.fillStyle = '#f8fafc';
+  c.font = '700 22px Inter, sans-serif';
+  wrap(c, p.session.title, 22, 70, w - 44, 26, 2);
+  c.fillStyle = live ? '#22c55e' : DIM;
+  c.font = '600 13px Inter, sans-serif';
+  c.fillText(`${live ? '● EN VIVO · ' : ''}${phaseOf(p, m)} · ${p.session.start}`, 22, 128);
+  const steps = STEPS[roomId];
+  if (steps) {
+    const f = live ? Math.min(0.999, (m - p.start) / (p.end - p.start)) : 0;
+    const cur = Math.floor(f * steps.length);
+    steps.forEach((st, i) => {
+      const x = 22 + (i % 4) * 120;
+      const y = 150 + Math.floor(i / 4) * 44;
+      c.fillStyle = i < cur ? 'rgba(34,197,94,0.25)' : i === cur && live ? 'rgba(245,130,32,0.35)' : 'rgba(255,255,255,0.06)';
+      c.fillRect(x, y, 112, 36);
+      c.fillStyle = TXT;
+      c.font = '600 10px Inter, sans-serif';
+      wrap(c, `${i + 1}. ${st}`, x + 6, y + 15, 100, 12, 2);
+    });
+  } else {
+    bars(c, 22, 150, w - 44, 80, Array.from({ length: 12 }, (_, i) => 0.25 + 0.7 * Math.abs(Math.sin(i * 1.7 + tt * 0.2))), '#94a3b8');
+  }
+  const sm = summary(p, m, useStore.getState().attendance[`${p.session.id}|${useStore.getState().campusDay}`]);
+  c.fillStyle = TXT;
+  c.font = '600 12px Inter, sans-serif';
+  c.fillText(`Asistencia ${sm.presente + sm.tarde}/${sm.total} · ${WEEK.days[useStore.getState().campusDay]}`, 22, h - 18);
+  if (live) {
+    c.fillStyle = 'rgba(255,255,255,0.12)';
+    c.fillRect(260, h - 26, 230, 6);
+    c.fillStyle = ORANGE;
+    c.fillRect(260, h - 26, 230 * Math.min(1, (m - p.start) / (p.end - p.start)), 6);
+  }
+}
+
+function drawReception(c: Ctx, w: number, h: number) {
+  const st = useStore.getState();
+  const m = minuteOfDay(st.simMinute);
+  frame(c, w, h, `Agenda de hoy · ${WEEK.days[st.campusDay]}`, ORANGE);
+  const list = st.sessions.filter((s) => s.days.includes(st.campusDay)).sort((a, b) => a.start.localeCompare(b.start)).slice(0, 9);
+  list.forEach((s, i) => {
+    const y = 56 + i * 25;
+    const [hh, mm] = s.start.split(':').map(Number);
+    const start = hh * 60 + mm;
+    const end = start + s.durationMin;
+    const status = m < start ? 'Próxima' : m > end ? 'Concluida' : 'En curso';
+    c.fillStyle = status === 'En curso' ? '#22c55e' : status === 'Próxima' ? ORANGE : DIM;
+    c.font = '700 12px Oxanium, Inter, sans-serif';
+    c.fillText(s.start, 20, y);
+    c.fillStyle = TXT;
+    c.font = '500 12px Inter, sans-serif';
+    const title = s.title.length > 34 ? s.title.slice(0, 33) + '…' : s.title;
+    c.fillText(title, 70, y);
+    c.fillStyle = DIM;
+    c.font = '500 11px Inter, sans-serif';
+    c.fillText(`${roomById(s.room)?.short ?? s.location} · ${status}`, 340, y);
+  });
+}

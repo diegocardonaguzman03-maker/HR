@@ -52,6 +52,7 @@ export const AGENTS: AgentDef[] = [
       { spot: 'alejandro_cal', minutes: 25, status: 'working', anim: 'present', task: 'Calendario de cursos y convocatorias', project: 'C9', next: 'Calendario del mes con instructores', feed: 'Alejandro coordinó el calendario de capacitación.' },
       { spot: 'alejandro_desk', minutes: 35, status: 'analyzing', anim: 'type', task: 'Conciliación de registros entre AMU, IMaS y 360Learning', project: 'C9', next: 'Lista de no conformidades con fecha de cierre', feed: 'Alejandro concilió registros entre plataformas.' },
       { spot: 'ld_certs', minutes: 15, status: 'working', anim: 'inspect', task: 'Vencimientos y evidencias de certificaciones', project: 'C14', next: 'Reporte de vencimientos', feed: 'Alejandro revisó vencimientos en el muro de certificaciones.' },
+      { spot: 'alejandro_campus', minutes: 25, status: 'working', anim: 'talk', task: 'Listas de asistencia con las practicantes del campus', project: 'C9', next: 'Listas conciliadas para DC-3', feed: 'Alejandro revisó con las practicantes las listas de asistencia del campus.' },
     ],
   },
   {
@@ -83,6 +84,7 @@ export const AGENTS: AgentDef[] = [
       { spot: 'uziel_desk', minutes: 25, status: 'working', anim: 'type', task: 'Semanas → fechas reales en el deck de gobierno de SAFETS', project: 'C2', next: 'Deck de gobierno con fechas reales y RACI', feed: 'Uziel cambió semanas por fechas en el deck de gobierno de SAFETS.' },
       { spot: 'ld_maint', minutes: 20, status: 'blocked', anim: 'idle', task: 'Diplomado de mantenimiento: espera respuesta de Fernando', project: 'C5', next: 'Ajuste del catálogo según respuesta', feed: 'Uziel reporta: el diplomado de mantenimiento sigue sin respuesta del director.' },
       { spot: 'ld_ojt', minutes: 20, status: 'working', anim: 'talk', task: 'Piloto OJT: puestos, instructor y evidencia', project: 'C6', next: 'Matriz de habilitación del piloto', feed: 'Uziel trabajó con operadores en la zona OJT.' },
+      { spot: 'uziel_campus', minutes: 25, status: 'working', anim: 'inspect', task: 'Observación de práctica en el Aula LOTO del campus', project: 'C2', next: 'Evidencia de práctica LOTO', feed: 'Uziel observó la práctica en el Aula LOTO del campus.' },
     ],
   },
   {

@@ -2,6 +2,7 @@ import type { AgentStatus, Anim, Task, ZoneId } from '../types';
 import { AGENTS, agentById } from '../data/agents';
 import { BACK_LANE, FRONT_LANE, MEETING_SEATS, MEZZANINE_Y, SPOTS, spotById, zoneById } from '../data/zones';
 import { MEETINGS } from '../data/seed';
+import { ROOMS } from '../data/campus';
 import { projectById } from '../data/projects';
 import { useStore } from '../store/useStore';
 import { SIM_START_MIN } from '../config';
@@ -56,7 +57,28 @@ AGENTS.forEach((a, i) => {
 
 const laneOf = (z: ZoneId) => (zoneById(z).side === 'back' ? BACK_LANE : FRONT_LANE);
 
-export function routeBetween(_from: V2, fromZone: ZoneId, to: V2, toZone: ZoneId): V2[] {
+/** Waypoints from the warehouse east door (45.6, 0) to just before a spot inside the campus. */
+function campusVia(p: V2): V2[] {
+  const r = ROOMS.find((x) => p[0] >= x.x0 && p[0] <= x.x1 && p[1] >= x.z0 && p[1] <= x.z1);
+  const base: V2[] = [[60.6, 0]];
+  if (!r) return p[0] > 72 ? [...base, [72.6, 0], [p[0], 0]] : p[0] > 66.4 ? [...base, [63.8, 5.0], [70.6, 5.0]] : [...base, [64.6, 0]];
+  const inside: V2 = r.x0 >= 113 ? [r.door[0] + 1, r.door[1]] : [r.door[0], r.door[1] + (r.z0 < 0 ? -1 : 1)];
+  return [...base, [65.0, 5.0], [70.6, 5.0], [72.6, 0], [r.outside[0], 0], r.outside, r.door, inside];
+}
+
+export function routeBetween(from: V2, fromZone: ZoneId, to: V2, toZone: ZoneId): V2[] {
+  if (fromZone === 'campus' || toZone === 'campus') {
+    const out: V2[] = [];
+    if (fromZone === 'campus') out.push(...campusVia(from).reverse(), [45.6, 0]);
+    if (toZone === 'campus') {
+      if (fromZone !== 'campus') out.push(...routeBetween(from, fromZone, [45.6, 0], 'campus_gate' as ZoneId));
+      out.push(...campusVia(to), to);
+    } else {
+      out.push([45.6, FRONT_LANE], ...routeBetween([45.6, FRONT_LANE], 'campus_gate' as ZoneId, to, toZone));
+    }
+    return out.filter((p, i) => i === 0 || Math.hypot(p[0] - out[i - 1][0], p[1] - out[i - 1][1]) > 0.05);
+  }
+  if ((fromZone as string) === 'campus_gate' || (toZone as string) === 'campus_gate') return gateRoute(from, fromZone, to, toZone);
   if (fromZone === toZone) return [to];
   const fz = zoneById(fromZone);
   const tz = zoneById(toZone);
@@ -70,6 +92,24 @@ export function routeBetween(_from: V2, fromZone: ZoneId, to: V2, toZone: ZoneId
   }
   pts.push([tz.door[0], tl], tz.door, to);
   return pts.filter((p, i) => i === 0 || Math.hypot(p[0] - pts[i - 1][0], p[1] - pts[i - 1][1]) > 0.05);
+}
+
+/** Warehouse leg to/from the east gate: through the zone door and along the front lane. */
+function gateRoute(_from: V2, fromZone: ZoneId, to: V2, toZone: ZoneId): V2[] {
+  if ((fromZone as string) === 'campus_gate') {
+    const tz = zoneById(toZone);
+    const tl = laneOf(toZone);
+    const pts: V2[] = [];
+    if (tl !== FRONT_LANE) pts.push([44, FRONT_LANE], [44, tl]);
+    pts.push([tz.door[0], tl], tz.door, to);
+    return pts;
+  }
+  const fz = zoneById(fromZone);
+  const fl = laneOf(fromZone);
+  const pts: V2[] = [fz.door, [fz.door[0], fl]];
+  if (fl !== FRONT_LANE) pts.push([44, fl], [44, FRONT_LANE]);
+  pts.push([45.6, FRONT_LANE], to);
+  return pts;
 }
 
 const deskOf = (id: string) => {

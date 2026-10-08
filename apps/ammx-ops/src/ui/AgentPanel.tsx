@@ -8,7 +8,8 @@ import { callMeeting, sendToAudit } from '../sim/engine';
 
 export function AgentPanel() {
   const id = useStore((s) => s.selected);
-  if (!id) return null;
+  const liveOpen = useStore((s) => s.overlay.kind === 'live');
+  if (!id || liveOpen) return null;
   return <AgentPanelInner key={id} id={id} />;
 }
 

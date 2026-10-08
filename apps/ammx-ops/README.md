@@ -16,6 +16,22 @@ Aplicación web 3D que muestra al equipo digital de la Dirección de Talent Acqu
 | PMO / Strategy Control Tower | Coordinador · PMO | Consola y pantallas de cartera; arriba, el **Director Command Center** con su muro curvo |
 | Project War Room | (reuniones) | Mesa donde los equipos de proyecto se reúnen; muro de notas |
 
+## Campus de Capacitación (conectado por un pasillo techado)
+Al este de la nave, inspirado en el sitio de capacitación de Lázaro Cárdenas: Atención al usuario con 4 practicantes (reciben instructores y capturan listas de asistencia), comedor, estacionamiento, patio con punto de reunión y 9 aulas con equipo del sector:
+| Aula | Equipo |
+|---|---|
+| LOTO · Bloqueo y etiquetado | Tablero de aislamiento de energías, válvula, estación de candados |
+| Trabajo en alturas | Torre de andamio con línea de vida y rack de arneses |
+| Espacios confinados | Tanque con entrada hombre, trípode con malacate y detector de gases |
+| Maniobras e izaje | Pórtico con polipasto, carga de prueba y eslingas |
+| Seguridad eléctrica | Tableros eléctricos y tapete dieléctrico |
+| Transporte y transportistas | Tractocamión de práctica, conos y calzas |
+| Inducción S1, Aula 12, Aula 17 | Aulas teóricas con exhibidor de EPP y banco de instrumentos |
+
+- **Agenda semanal** (botón *Agenda*): cargada con la agenda del 05 al 10 de octubre de 2026 (seguridad, cursos operativos en CECATI, ITLAC y CONALEP, webinar). Se edita y se agregan sesiones; se escoge el día a simular.
+- **Clases en vivo**: clic en un aula o su letrero. Los participantes llegan del estacionamiento, se registran con las practicantes, toman la clase, pasan a la práctica en el equipo y salen. El panel muestra fase, avance y la lista de asistencia (presente, tarde, ausente) con marcas manuales y copia en CSV.
+- **Participantes reales**: se capturan por sesión (uno por línea: nombre, empresa o área). Se guardan solo en ese navegador. Duración de los cursos de seguridad: 4 h [Supuesto].
+
 ## Qué puede hacer el Director
 - **Ver a cada agente**: etiqueta con estado (🟢 trabajando, 🟡 esperando, 🔵 en reunión, 🟣 analizando, 🔴 bloqueado, ⚪ disponible); al pasar el cursor, tarjeta con tarea, proyecto, avance, siguiente entrega y estado.
 - **Clic en un agente**: panel con chat, trabajo actual, bloqueos, proyectos, entregables y 11 acciones (asignar tarea, preguntar, revisar trabajo, agregar fecha, cambiar prioridad, agregar a proyecto, crear reunión, pedir actualización, escalar, enviar a auditoría, chat completo).

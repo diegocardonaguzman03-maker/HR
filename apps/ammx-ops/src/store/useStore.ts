@@ -4,6 +4,22 @@ import { AGENTS } from '../data/agents';
 import { PROJECTS } from '../data/projects';
 import { SEED_ALERTS, SEED_DECISIONS } from '../data/seed';
 import { SIM_START_MIN } from '../config';
+import { SEED_SESSIONS, defaultDay, type CampusSession, type RoomId } from '../data/campus';
+
+export type AttendanceStatus = 'presente' | 'tarde' | 'ausente';
+export interface Participant { name: string; org: string }
+
+// Agenda and participants captured by the user are kept in this browser only (per viewer).
+const CAMPUS_KEY = 'ammx-campus-v1';
+function loadCampus(): { sessions?: CampusSession[]; participants?: Record<string, Participant[]>; attendance?: Record<string, Record<number, AttendanceStatus>> } {
+  try {
+    const raw = localStorage.getItem(CAMPUS_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+const savedCampus = loadCampus();
 
 export type Mode = 'script' | 'meeting' | 'task' | 'review';
 
@@ -29,12 +45,15 @@ export type Overlay =
   | { kind: 'newproject' }
   | { kind: 'chat'; agent: string }
   | { kind: 'decisions' }
-  | { kind: 'help' };
+  | { kind: 'help' }
+  | { kind: 'agenda' }
+  | { kind: 'session'; id?: string; day?: number }
+  | { kind: 'live'; room: RoomId };
 
 export interface Packet { id: number; from: [number, number, number]; to: string; born: number; color: string; label: string }
 
 export interface CommandResult { query: string; title: string; lines: { text: string; action?: Action }[] }
-export type Action = { kind: 'agent' | 'project' | 'zone' | 'decisions' | 'projects' | 'newtask' | 'newproject'; id?: string };
+export type Action = { kind: 'agent' | 'project' | 'zone' | 'decisions' | 'projects' | 'newtask' | 'newproject' | 'live' | 'agenda'; id?: string };
 
 interface State {
   simMinute: number;
@@ -52,7 +71,7 @@ interface State {
   alertsSeen: number;
   decisions: Decision[];
   chats: Record<string, ChatMsg[]>;
-  focus: { kind: 'agent' | 'zone' | 'home' | 'director'; id?: string; nonce: number };
+  focus: { kind: 'agent' | 'zone' | 'home' | 'director' | 'campus' | 'room'; id?: string; nonce: number };
   packets: Packet[];
   command: CommandResult | null;
   leftOpen: boolean;
@@ -75,7 +94,7 @@ interface State {
   addDecision: (d: Omit<Decision, 'id'>) => void;
   resolveDecision: (id: string, choice: string) => void;
   say: (agent: string, msg: ChatMsg) => void;
-  flyTo: (kind: 'agent' | 'zone' | 'home' | 'director', id?: string) => void;
+  flyTo: (kind: 'agent' | 'zone' | 'home' | 'director' | 'campus' | 'room', id?: string) => void;
   sendPacket: (p: Omit<Packet, 'id' | 'born'>) => void;
   dropPacket: (id: number) => void;
   setCommand: (c: CommandResult | null) => void;
@@ -84,6 +103,17 @@ interface State {
   setMeeting: (m: State['meetingNow']) => void;
   addProject: (p: ProjectDef) => void;
   tick: (minute: number) => void;
+
+  campusDay: number;
+  sessions: CampusSession[];
+  participants: Record<string, Participant[]>;
+  attendance: Record<string, Record<number, AttendanceStatus>>; // key: sessionId|day
+  setCampusDay: (d: number) => void;
+  upsertSession: (s: CampusSession) => void;
+  deleteSession: (id: string) => void;
+  setParticipants: (sessionId: string, list: Participant[]) => void;
+  setAttendance: (sessionId: string, day: number, idx: number, status: AttendanceStatus | null) => void;
+  resetCampus: () => void;
 }
 
 let feedId = 1;
@@ -187,6 +217,35 @@ export const useStore = create<State>((set, get) => ({
   addProject: (p) =>
     set((s) => ({ extraProjects: [...s.extraProjects, p], projects: { ...s.projects, [p.id]: { progress: p.progress, updates: [] } } })),
   tick: (simMinute) => set({ simMinute }),
+
+  campusDay: defaultDay(),
+  sessions: savedCampus.sessions ?? SEED_SESSIONS,
+  participants: savedCampus.participants ?? {},
+  attendance: savedCampus.attendance ?? {},
+  setCampusDay: (campusDay) => set({ campusDay }),
+  upsertSession: (sess) =>
+    set((st) => ({ sessions: st.sessions.some((x) => x.id === sess.id) ? st.sessions.map((x) => (x.id === sess.id ? sess : x)) : [...st.sessions, sess] })),
+  deleteSession: (id) => set((st) => ({ sessions: st.sessions.filter((x) => x.id !== id) })),
+  setParticipants: (sessionId, list) => set((st) => ({ participants: { ...st.participants, [sessionId]: list } })),
+  setAttendance: (sessionId, day, idx, status) =>
+    set((st) => {
+      const key = `${sessionId}|${day}`;
+      const cur = { ...(st.attendance[key] ?? {}) };
+      if (status) cur[idx] = status;
+      else delete cur[idx];
+      return { attendance: { ...st.attendance, [key]: cur } };
+    }),
+  resetCampus: () => set({ sessions: SEED_SESSIONS, participants: {}, attendance: {} }),
 }));
 
 export const allProjects = (extra: ProjectDef[]) => [...PROJECTS, ...extra];
+
+// Persist the captured agenda, participants and attendance (per browser).
+useStore.subscribe((st, prev) => {
+  if (st.sessions === prev.sessions && st.participants === prev.participants && st.attendance === prev.attendance) return;
+  try {
+    localStorage.setItem(CAMPUS_KEY, JSON.stringify({ sessions: st.sessions, participants: st.participants, attendance: st.attendance }));
+  } catch {
+    /* storage unavailable: the capture lives only in this session */
+  }
+});
