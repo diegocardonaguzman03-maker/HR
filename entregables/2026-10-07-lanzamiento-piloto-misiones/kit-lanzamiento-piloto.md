@@ -5,7 +5,7 @@
 ## 1. Mensaje clave
 El piloto queda **lanzado**. Del 2026-10-12 al 2026-10-16 **[Supuesto]**, 5 trabajadores de nuevo ingreso **de confianza** juegan, en sesiones individuales, las dos misiones: Trabajo en Alturas 01 «Preparación de la tarea» y Bloqueo y Etiquetado (LOTO) 01 «Aislar un equipo para mantenimiento». Las misiones se juegan en modo DEMO y sin instrucciones previas. El objetivo es medir si la experiencia se entiende sola, si la persona aprende y si se detectan riesgos de uso.
 
-**Link de la versión 2.1:** https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/fa25ff0f34fb2eee70bc7d8df4b7645c63c0f7a1/apps/academy/web/index.html
+**Acceso a la versión 2.1:** por la intranet (la publica TI) o, como respaldo, desde el disco del equipo con el paquete `academia-digital-piloto-v2.1.zip`. Ver `acceso-piloto-sin-link-publico.md`. El link público de githack deja de funcionar cuando el repositorio pase a privado (D-017).
 
 > Este entorno de capacitación apoya el aprendizaje y no sustituye procedimientos operativos aprobados, instrucciones de trabajo, permisos, supervisión ni requisitos de seguridad.
 
@@ -33,13 +33,13 @@ El piloto queda **lanzado**. Del 2026-10-12 al 2026-10-16 **[Supuesto]**, 5 trab
 **Escalamiento:** un hallazgo de seguridad o laboral se reporta al Director el mismo día. No se espera al informe.
 
 ## 4. Checklist del equipo (antes de cada día y entre sesiones)
-- [ ] El link de la versión 2.1 abre en el navegador del equipo de planta (Chrome o Edge actualizado) y el escenario 3D carga en menos de 10 s.
+- [ ] La versión 2.1 abre en el navegador del equipo de planta (Chrome o Edge actualizado), desde la intranet o desde el disco, y el escenario 3D carga en menos de 10 s.
 - [ ] Pantalla de 13" o más, mouse conectado y audio no requerido.
 - [ ] Los 6 PDF se descargan desde «Procedimientos» (WI, MO y CL de Alturas y de LOTO).
 - [ ] Antes de cada participante: el botón «Borrar mis datos de este equipo y terminar» está pulsado y la pantalla inicial muestra las misiones sin avance.
 - [ ] Registro: activado para participantes. Si un instructor sindicalizado facilita, va desactivado (ADX-RL-001, Decisión 3).
 - [ ] Hay un cronómetro y hojas de observación impresas (§6), una por participante.
-- [ ] Plan B si falla la red: un segundo equipo con el mismo link ya cargado.
+- [ ] Plan B si falla la red: el paquete descomprimido en el disco de los 2 equipos (vía 2 de `acceso-piloto-sin-link-publico.md`).
 
 ## 5. Guía del instructor (sesión de unos 40 min)
 

@@ -17,7 +17,8 @@ const KIND: Record<Kind, { label: string; short: string; icon: string }> = {
 export function DocDownload({ p, kind, compact = false }: { p: ProcedureDocsT; kind: Kind; compact?: boolean }) {
   const d = p[kind];
   return (
-    <a href={asset(d.file)} download={fileName(d.file)} onClick={() => track('downloaded', d.code)} data-testid={`dl-${d.code}`}
+    // target: abierta desde el disco (file://) el navegador ignora «download»; así el PDF abre en otra pestaña y no saca de la misión
+    <a href={asset(d.file)} download={fileName(d.file)} target="_blank" rel="noopener" onClick={() => track('downloaded', d.code)} data-testid={`dl-${d.code}`}
       className={`inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] font-semibold text-white transition hover:border-[var(--color-accent)] hover:bg-white/[0.08] ${compact ? 'px-3 py-1.5 text-[12.5px]' : 'px-4 py-2.5 text-[14px]'}`}>
       <span aria-hidden>{KIND[kind].icon}</span>{compact ? KIND[kind].short : KIND[kind].label}<span className="font-mono text-[10.5px] text-white/50">PDF ↓</span>
     </a>

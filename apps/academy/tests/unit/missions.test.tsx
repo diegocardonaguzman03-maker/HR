@@ -229,6 +229,7 @@ describe('procedimientos y documentos', () => {
     for (const code of ['WI-LOTO-001-DEMO', 'MO-LOTO-001-DEMO', 'CL-LOTO-001-DEMO']) {
       const a = within(card).getByTestId(`dl-${code}`);
       expect(a).toHaveAttribute('download');
+      expect(a).toHaveAttribute('target', '_blank'); // abierta desde el disco, el PDF no saca de la app
       expect(a.getAttribute('href')).toBe(`./documents/procedimientos/${code}.pdf`);
     }
     fireEvent.click(within(card).getByTestId('read-loto-banda'));

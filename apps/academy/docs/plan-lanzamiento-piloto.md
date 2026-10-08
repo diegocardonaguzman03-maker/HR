@@ -51,6 +51,8 @@
 
 **Versión 2 (2026-10-05): más fluida + Misión LOTO + menú de Procedimientos con 6 PDF descargables.** Seguridad (ADX-04) levantó el veto y la aprobó con condiciones (`docs/reviews/review-seguridad-loto-documentos.md`). Link: https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/02d9951f92d9b430220b55794ec23434dc92ea7f/apps/academy/web/index.html
 
+> **Nota (D-017, 2026-10-08):** el repositorio pasa a privado y los links de githack de esta página dejan de funcionar. El acceso del piloto es por la intranet o desde el disco del equipo: `entregables/2026-10-07-lanzamiento-piloto-misiones/acceso-piloto-sin-link-publico.md`.
+
 **Versión 2.1 (2026-10-06, D-014):** cambios de Operativo/Metalurgia y Relaciones Laborales, y verificación de Seguridad cerrada. LOTO está habilitada para el piloto con personal de confianza, en modo DEMO. Link: https://rawcdn.githack.com/diegocardonaguzman03-maker/HR/fa25ff0f34fb2eee70bc7d8df4b7645c63c0f7a1/apps/academy/web/index.html
 
 | Concepto | Definición |
