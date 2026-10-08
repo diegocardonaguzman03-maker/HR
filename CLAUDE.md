@@ -63,3 +63,10 @@ informe ejecutivo, propuesta, presentación, plan de acción, plan de mejora (A3
 
 ## Documentos base del departamento
 `01-company-profile/`, `02-research/`, `03-department-design/` (incluye `org/`), `04-processes/`, `05-programs/`, `06-implementation/`, `07-business-case/`, `08-kpis/`, `09-proposal/`, `templates/`.
+
+## Módulo AMMX — equipo digital de Diego (ArcelorMittal México)
+Además del equipo de GASM, el repositorio tiene un **módulo de tareas puntuales** para el equipo real de Diego Cardona, Director de Desarrollo Organizacional y Adquisición de Talento de ArcelorMittal México. Vive en `equipo-ammx/` y en los agentes `.claude/agents/ammx-*.md`.
+- **Cuándo aplica:** cuando Diego usa `/ammx-tarea` o `/ammx-brief`, menciona ArcelorMittal / AMMX, o dirige un encargo a Enrique, Sheccid, Alondra, Alex, Alejandro, Diana, Emma, Uziel, Maribel, el Coordinador, AEGIS, ATLAS o NEXUS. En ese caso mandan las reglas de `equipo-ammx/prompt-maestro.md`, no las de GASM.
+- **No mezclar:** los datos de GASM (empresa ficticia) nunca se usan en entregables de ArcelorMittal, ni al revés.
+- **Repositorio público:** en `equipo-ammx/` no se guardan datos personales sensibles, notas de relación con personas, juicios sobre proveedores ni cifras confidenciales (regla 4.7).
+- Flujo: `equipo-ammx/tareas/flujo-de-tareas.md`. Tablero: `equipo-ammx/tareas/tablero-de-tareas.md`. Cartera: `equipo-ammx/cartera/cartera-de-proyectos.md`.
