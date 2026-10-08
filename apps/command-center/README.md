@@ -175,6 +175,17 @@ Both providers implement the same `AgentProvider` interface (`start`, `stop`, `d
 2. Switch the provider (Settings, or `NEXT_PUBLIC_AGENT_PROVIDER=real`). Switching resets the world so simulated and real activity never mix.
 3. Remove the matching behaviour from `providers/mock/library.ts` once it is real.
 
+### Security
+- **Gateway:**
+  - binds `127.0.0.1` by default;
+  - set `GATEWAY_TOKEN` (24+ chars) to require `ws://host:8787?token=…` and `Authorization: Bearer …` on `/api/events`; the gateway refuses to listen on a non-loopback `HOST` without a token;
+  - `ALLOWED_ORIGINS` lists the browser origins that may connect;
+  - messages are size- and rate-limited, and malformed commands are dropped.
+- **Web build:** `web/index.html` ships a strict Content-Security-Policy. Inline scripts are pinned by SHA-256 hashes computed at build time, and the page can only connect to `api.anthropic.com`, `wss:` or a localhost gateway. An injected script cannot run, and the browser-stored API key cannot be sent anywhere else.
+- **Secrets:** keep them in env vars or a local `.env` (git-ignored); only `.env.example` is versioned.
+- **CI:** `.github/workflows/security.yml` runs gitleaks over the full history, `npm audit --audit-level=moderate`, the typecheck and the tests on every push.
+- **Dependencies:** Dependabot keeps npm packages and Actions current. See the root `SECURITY.md`.
+
 ### Integrations
 `src/integrations/types.ts` defines vendor-neutral contracts (`LLMAdapter`, `StorageAdapter`, `MailAdapter`, `CalendarAdapter`, `ChatPlatformAdapter`). Adapters live in `/integrations/<id>`: Claude and OpenAI are implemented; Google Drive, Gmail, Calendar, Microsoft 365, Slack, Notion, GitHub and OneDrive are typed stubs. Secrets stay in the gateway and never reach the browser.
 

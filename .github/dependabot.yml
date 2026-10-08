@@ -1,0 +1,18 @@
+# Actualizaciones de seguridad y versiones (semanal). Las de seguridad se abren de inmediato.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directories:
+      - /apps/command-center
+      - /apps/academy
+      - /apps/steel-twin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

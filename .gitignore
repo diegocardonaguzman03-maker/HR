@@ -1,1 +1,8 @@
 10-plantas/01-steelmaking/descargas/Aceria_Presentaciones-Capacitacion.zip
+
+# Secrets: never commit local env files or keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key

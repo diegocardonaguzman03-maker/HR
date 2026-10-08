@@ -3,11 +3,13 @@
 //   node scripts/build-artifact.mjs
 // The page is published with the Artifact tool; app.js/app.css are published
 // alongside it as supporting files and loaded by relative URL.
-import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { build } from 'esbuild';
+import { build, transform } from 'esbuild';
+import postcss from 'postcss';
+import tailwind from '@tailwindcss/postcss';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, 'dist-artifact');
@@ -31,7 +33,11 @@ await build({
   logLevel: 'warning',
 });
 
-execFileSync(path.join(root, 'node_modules/.bin/tailwindcss'), ['-i', 'src/app/globals.css', '-o', path.join(out, 'app.css'), '--minify'], { cwd: root, stdio: 'inherit' });
+// Tailwind through PostCSS (same pipeline as Next), minified by esbuild.
+const cssIn = path.join(root, 'src/app/globals.css');
+const compiled = await postcss([tailwind({ base: root })]).process(readFileSync(cssIn, 'utf8'), { from: cssIn });
+const minified = await transform(compiled.css, { loader: 'css', minify: true, legalComments: 'none' });
+writeFileSync(path.join(out, 'app.css'), minified.code);
 
 // The Artifact skeleton supplies doctype/head/body; this is the page content.
 // Everything is inlined into ONE file: no relative fetches the viewer could block.
@@ -83,12 +89,30 @@ body { margin: 0; background: var(--page); color: var(--ink); overflow: hidden; 
 );
 
 // Web build: the same page as a complete standalone document (GitHub Pages, any static host).
+// It carries a strict Content-Security-Policy: only the page's own inline scripts
+// (pinned by SHA-256) may run, and the page may only talk to the Anthropic API or a
+// local/secure gateway — so an injected script cannot run or exfiltrate the API key.
 const webDir = path.join(root, 'web');
 mkdirSync(webDir, { recursive: true });
+const page = readFileSync(path.join(out, 'index.html'), 'utf8');
+const scriptHashes = [...page.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => `'sha256-${createHash('sha256').update(m[1], 'utf8').digest('base64')}'`);
+const csp = [
+  "default-src 'none'",
+  `script-src ${scriptHashes.join(' ')}`,
+  "style-src 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self' data:",
+  'connect-src https://api.anthropic.com wss: ws://localhost:* ws://127.0.0.1:*',
+  "base-uri 'none'",
+  "form-action 'none'",
+  "object-src 'none'",
+  "frame-src 'none'",
+  "manifest-src 'none'",
+].join('; ');
 writeFileSync(
   path.join(webDir, 'index.html'),
-  `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="A living operating system for AI agents, projects and priorities."><meta name="theme-color" content="#0e0f12"></head><body>
-${readFileSync(path.join(out, 'index.html'), 'utf8')}</body></html>
+  `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="${csp}"><meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="A living operating system for AI agents, projects and priorities."><meta name="theme-color" content="#0e0f12"></head><body>
+${page}</body></html>
 `,
 );
 
