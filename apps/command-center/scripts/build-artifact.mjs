@@ -28,6 +28,7 @@ await build({
     'process.env.NODE_ENV': '"production"',
     'process.env.NEXT_PUBLIC_AGENT_PROVIDER': '""',
     'process.env.NEXT_PUBLIC_AGENT_WS_URL': '""',
+    'process.env.NEXT_PUBLIC_FORCE_PROVIDER': JSON.stringify(process.env.FORCE_PROVIDER || ''),
   },
   legalComments: 'none',
   logLevel: 'warning',

@@ -12,6 +12,8 @@ export const DEFAULT_WS_URL = process.env.NEXT_PUBLIC_AGENT_WS_URL || 'ws://loca
 export const inClaudeViewer = (): boolean => claudeRuntime() !== null;
 
 export function defaultProvider(): ProviderKind {
+  // Build-time override (e.g. a demo-only artifact published without runtime capabilities).
+  if (process.env.NEXT_PUBLIC_FORCE_PROVIDER === 'mock') return 'mock';
   if (inClaudeViewer() || getStoredApiKey()) return 'claude';
   return process.env.NEXT_PUBLIC_AGENT_PROVIDER === 'real' ? 'real' : 'mock';
 }
