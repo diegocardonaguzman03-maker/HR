@@ -9,6 +9,7 @@
 | D-P00 | 2026-10-09 | Iniciar el diseño del equipo con el paquete de 28 agentes y la skill PRAXIA como fuentes | Instrucción del Founder en el chat («go») |
 | D-P01 | 2026-10-09 | **Opción C: los 28 agentes quedan activos desde hoy.** No se siguió la recomendación A; el riesgo de saturación del Founder queda registrado (ver `diseno-del-equipo.md` §8) | Instrucción del Founder en el chat («move with option C») |
 | D-P04 | 2026-10-09 | Construir el **PRAXIA Command Center** según el PRD v3.0, empezando por la Fase 0 y la Fase 1 (slice vertical del ciclo de ingresos) | Instrucción del Founder en el chat, PRD v3.0 |
+| D-P08 | 2026-10-09 | **El repositorio sigue público** y el Command Center se publica en githack (`apps/praxia-command-center/static/command-center.html`). Opción C: las bases de PRX-0012 se quedan en el repo. El Founder considera que no se comparte información privada. Nota de registro: las bases nombran empresas reales y ejecutivos tomados de comunicados y notas públicas, sin correos verificados ni datos privados | Instrucción del Founder en el chat («Déjalo como está») |
 
 ## Pendientes
 
