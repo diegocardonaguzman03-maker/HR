@@ -11,7 +11,7 @@ praxia/
 ├── CLAUDE.md              reglas de trabajo para todo lo que se haga en praxia/
 ├── README.md              este archivo
 └── 00-fuentes/            documentos fuente que entregó el usuario (solo lectura)
-    ├── paquete-agentes/   especificación del equipo de 28 agentes (README, orquestador, agents/)
+    ├── paquete-agentes/   especificación del equipo de 28 agentes (agents/, knowledge/, governance/, templates/)
     ├── PRAXIA_Skill_Business_Brand_OS.md   skill v1.0 (sistema operativo de la firma)
     ├── originales/        archivos tal como se recibieron
     ├── texto/             extracción a texto/Markdown para que los agentes puedan leerlos
@@ -47,13 +47,36 @@ Nota: llegaron dos copias del `.docx` Master. Eran idénticas byte a byte (mismo
 
 Estado del paquete: [PROPUESTA] (`status: proposed-operating-design`). Los 3 perfiles comparten plantilla: misión, contexto común, alcance, métodos, reporte, entradas, salidas en formato de handoff, calidad y autoridad.
 
-### Faltan del paquete de agentes (el README del paquete los menciona)
+### Lote 3 — recibido el 9 oct 2026 · conocimiento y gobierno
+
+| # | Archivo | Qué es |
+|---|---|---|
+| 12 | `knowledge/PRAXIA_MASTER_CONTEXT.md` | Master context en Markdown (469 líneas): el mismo contenido del `.docx` Master, en formato de skill `praxia-master` |
+| 13 | `knowledge/BRAND_RULES.md` | Reglas de marca condensadas (Brand Guidelines v1.0) |
+| 14 | `knowledge/BUSINESS_AND_CUSTOMERS.md` | Compradores, problemas y tesis comercial |
+| 15 | `knowledge/SERVICE_PORTFOLIO.md` | Catálogo de 7 servicios y 5 ofertas con precios exploratorios |
+| 16 | `governance/AGENT_CONSTITUTION.md` | Constitución de 10 reglas: el fundador responde por todo, hay puertas de aprobación humana y QA puede bloquear (llegó dos veces; las copias eran idénticas) |
+| 17 | `governance/RACI.md` | Derechos de decisión: 9 decisiones, todas con el Founder como responsable final (A) |
+
+### Lote 4 — recibido el 9 oct 2026 · plantillas
+
+| # | Archivo | Qué es |
+|---|---|---|
+| 18 | `templates/AGENT_TASK.json` | Plantilla de encargo a un agente (JSON válido) |
+| 19 | `templates/UNIVERSAL_BRIEF.md` | Brief universal de encargo |
+| 20 | `templates/CLIENT_DISCOVERY.md` | Guía de discovery ejecutivo |
+| 21 | `templates/EXECUTIVE_ONE_PAGER.md` | One-pager ejecutivo que abre con la decisión requerida |
+
+### Inconsistencias detectadas (se resuelven al diseñar el equipo)
+
+- **Nombres de servicios:** `SERVICE_PORTFOLIO.md` usa nombres distintos de los de la skill y el Master. Por ejemplo, «Strategy Execution & Adoption» frente a «Strategy-to-Adoption Advisory», «Leadership & Organizational Effectiveness» frente a «Leadership & Execution System» y «Operating Model & Change Transformation» frente a «Organizational Design & Operating Model». Por precedencia (skill §0.1) se propone usar los nombres de la skill y el Master.
+- **Método de entrega:** el portafolio usa 5 pasos (Discover → Diagnose → Design → Activate → Measure & Scale) y la skill usa 4 etapas de marca (SENSE · ALIGN · ADOPT · SUSTAIN). Son compatibles: la skill §6.5 mapea los 5 pasos dentro de las 4 etapas.
+
+### Faltan del paquete de agentes
 
 - **25 perfiles de agente:** STR-01, RES-01, RES-02, SAL-01, SAL-02, SAL-03, MKT-01, MKT-02, MKT-03, PR-01, DEL-01, DEL-02, DEL-03, DEV-01, DEV-02, DEV-03, UX-01, UI-01, DSN-01, OPS-01, FIN-01, HR-01, DAT-01, RISK-01, QA-01
-- `knowledge/PRAXIA_MASTER_CONTEXT.md` y `knowledge/BRAND_RULES.md`
-- `governance/AGENT_CONSTITUTION.md` y `governance/RACI.md`
 - `config/org_chart.json` y `config/handoff.schema.json`
-- `templates/AGENT_TASK.json` y `workflows/*.md`
+- `workflows/*.md`
 
 ### Otras fuentes por recibir (según la skill)
 

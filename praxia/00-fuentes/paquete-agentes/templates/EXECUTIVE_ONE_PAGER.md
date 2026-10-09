@@ -1,0 +1,10 @@
+# PRAXIA Executive One-Pager
+**Decision needed** — [one clear sentence]
+**Business challenge** — [cost/impact]
+**Evidence** — [source, date, limits]
+**Root cause/adoption gap** — [observable behavior and broken operating model]
+**Options** — [2–3 options including do-nothing]
+**Recommended approach** — [why, timeline, assumptions]
+**Success indicators** — [leading behavior, lagging business]
+**Risks & tradeoffs** — [owner and mitigations]
+**Next step / approval** — [who decides what by when]
