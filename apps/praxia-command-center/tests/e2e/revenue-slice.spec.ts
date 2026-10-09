@@ -160,6 +160,11 @@ test("agent task changes status only through recorded events and shows in PRAXIA
 
 test("PRAXIA World mission control: record progress, reassign, see workload and activity", async () => {
   await page.goto("/world");
+  // Mission control opens on the company structure: the eight delivery teams, then the org chart.
+  await expect(page.getByRole("article", { name: /E2 Revenue/ })).toContainText("WF01 Lead to Contract");
+  await page.getByRole("tab", { name: "Org chart" }).click();
+  await expect(page.getByText("Decides · approves every output")).toBeVisible();
+  await page.getByRole("tab", { name: "Task board" }).click();
   const card = page.getByRole("button", { name: /Draft discovery guide for Acme/ }).first();
   await expect(page.getByLabel("In progress column")).toContainText("Draft discovery guide for Acme");
   await card.click();

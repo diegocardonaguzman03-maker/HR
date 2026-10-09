@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { AGENT_STATUSES } from "@/server/db/schema";
-import { WORLD_DEPARTMENTS } from "@/features/world/types";
+import { TEAM_IDS } from "@/domain/teams";
 import {
   DESKS_PER_ROOM,
   GRID_H,
@@ -20,45 +20,45 @@ import {
   fromIso,
   resolveAnimation,
   resolvePose,
-  roomForDepartment,
+  roomForTeam,
   statusVisual,
   toIso,
   worldBounds,
 } from "@/features/world/layout";
 
-/** The 28-agent registry shape (ids and departments), mirroring the seed distribution. */
-const REGISTRY: { id: string; department: string }[] = [
-  ["CEO-01", "Executive Leadership"],
-  ["STR-01", "Strategy & Research"],
-  ["RES-01", "Strategy & Research"],
-  ["RES-02", "Strategy & Research"],
-  ["SAL-01", "Sales & Business Development"],
-  ["SAL-02", "Sales & Business Development"],
-  ["SAL-03", "Sales & Business Development"],
-  ["MKT-01", "Marketing & Public Relations"],
-  ["MKT-02", "Marketing & Public Relations"],
-  ["MKT-03", "Marketing & Public Relations"],
-  ["PR-01", "Marketing & Public Relations"],
-  ["DEL-01", "Client Delivery"],
-  ["DEL-02", "Client Delivery"],
-  ["DEL-03", "Client Delivery"],
-  ["DEV-01", "Product & Engineering"],
-  ["DEV-02", "Product & Engineering"],
-  ["DEV-03", "Product & Engineering"],
-  ["UX-01", "UX, UI & Creative Design"],
-  ["UI-01", "UX, UI & Creative Design"],
-  ["DSN-01", "UX, UI & Creative Design"],
-  ["OPS-01", "Operations & Finance"],
-  ["FIN-01", "Operations & Finance"],
-  ["HR-01", "Human Resources & Internal Communications"],
-  ["COM-01", "Human Resources & Internal Communications"],
-  ["CX-01", "Customer Success"],
-  ["DAT-01", "Data, Quality & Governance"],
-  ["RISK-01", "Data, Quality & Governance"],
-  ["QA-01", "Data, Quality & Governance"],
-].map(([id, department]) => ({ id: id as string, department: department as string }));
+/** The 28-agent registry shape (ids and delivery teams), taken from the seed. */
+const REGISTRY: { id: string; team: string }[] = [
+  ["CEO-01", "E1 Dirección"],
+  ["STR-01", "E1 Dirección"],
+  ["RES-01", "E5 Research, Datos e IP"],
+  ["RES-02", "E5 Research, Datos e IP"],
+  ["SAL-01", "E2 Revenue"],
+  ["SAL-02", "E2 Revenue"],
+  ["SAL-03", "E2 Revenue"],
+  ["MKT-01", "E3 Marca y Demanda"],
+  ["MKT-02", "E3 Marca y Demanda"],
+  ["MKT-03", "E3 Marca y Demanda"],
+  ["PR-01", "E3 Marca y Demanda"],
+  ["DEL-01", "E4 Delivery y Adopción"],
+  ["DEL-02", "E4 Delivery y Adopción"],
+  ["DEL-03", "E4 Delivery y Adopción"],
+  ["DEV-01", "E6 Producto y Experiencia"],
+  ["DEV-02", "E6 Producto y Experiencia"],
+  ["DEV-03", "E6 Producto y Experiencia"],
+  ["UX-01", "E6 Producto y Experiencia"],
+  ["UI-01", "E6 Producto y Experiencia"],
+  ["DSN-01", "E3 Marca y Demanda"],
+  ["OPS-01", "E7 Operaciones y Personas"],
+  ["FIN-01", "E7 Operaciones y Personas"],
+  ["HR-01", "E7 Operaciones y Personas"],
+  ["COM-01", "E7 Operaciones y Personas"],
+  ["CX-01", "E4 Delivery y Adopción"],
+  ["DAT-01", "E5 Research, Datos e IP"],
+  ["RISK-01", "E8 Gobierno"],
+  ["QA-01", "E8 Gobierno"],
+].map(([id, team]) => ({ id: id as string, team: team as string }));
 
-const seatSnapshot = (agents: { id: string; department: string }[]) =>
+const seatSnapshot = (agents: { id: string; team: string }[]) =>
   Object.fromEntries([...assignSeats(agents)].map(([id, s]) => [id, s.key]));
 
 describe("toIso", () => {
@@ -92,20 +92,21 @@ describe("toIso", () => {
 });
 
 describe("room layout", () => {
-  it("gives every department exactly one room", () => {
-    for (const dept of WORLD_DEPARTMENTS) {
-      const rooms = WORLD_AREAS.filter((a) => a.department === dept);
-      expect(rooms, dept).toHaveLength(1);
-      expect(roomForDepartment(dept)?.department).toBe(dept);
+  it("gives every delivery team exactly one room", () => {
+    for (const team of TEAM_IDS) {
+      const rooms = WORLD_AREAS.filter((a) => a.team === team);
+      expect(rooms, team).toHaveLength(1);
+      expect(roomForTeam(team)?.team).toBe(team);
     }
-    expect(WORLD_AREAS.filter((a) => a.kind === "department")).toHaveLength(WORLD_DEPARTMENTS.length);
-    expect(roomForDepartment("Unknown Department")).toBeNull();
+    expect(roomForTeam("E3 Marca y Demanda")?.team).toBe("E3");
+    expect(WORLD_AREAS.filter((a) => a.kind === "team")).toHaveLength(TEAM_IDS.length);
+    expect(roomForTeam("Unknown team")).toBeNull();
   });
 
-  it("includes the shared areas: reception, café, conference and terrace", () => {
+  it("includes the founder's office and the shared areas: reception, café, conference and terrace", () => {
     const kinds = WORLD_AREAS.map((a) => a.kind);
-    for (const kind of ["reception", "cafe", "conference", "terrace"] as const) expect(kinds).toContain(kind);
-    expect(WORLD_AREAS).toHaveLength(15);
+    for (const kind of ["founder", "reception", "cafe", "conference", "terrace"] as const) expect(kinds).toContain(kind);
+    expect(WORLD_AREAS).toHaveLength(13);
   });
 
   it("keeps areas inside the grid and never overlapping", () => {
@@ -144,7 +145,7 @@ describe("room layout", () => {
 });
 
 describe("seat assignment", () => {
-  it("gives the 28 registry agents unique desk seats in their own department room", () => {
+  it("gives the 28 registry agents unique desk seats in their own team room", () => {
     expect(REGISTRY).toHaveLength(28);
     const seats = assignSeats(REGISTRY);
     expect(seats.size).toBe(28);
@@ -156,7 +157,7 @@ describe("seat assignment", () => {
       const seat = seats.get(agent.id);
       expect(seat?.overflow).toBe(false);
       expect(seat?.desk).not.toBeNull();
-      expect(seat?.areaId).toBe(roomForDepartment(agent.department)?.id);
+      expect(seat?.areaId).toBe(roomForTeam(agent.team)?.id);
     }
   });
 
@@ -170,18 +171,21 @@ describe("seat assignment", () => {
 
   it("assigns desks within a room in ascending id order", () => {
     const seats = assignSeats(REGISTRY);
-    expect(seats.get("MKT-01")?.deskIndex).toBe(0);
-    expect(seats.get("MKT-02")?.deskIndex).toBe(1);
-    expect(seats.get("MKT-03")?.deskIndex).toBe(2);
-    expect(seats.get("PR-01")?.deskIndex).toBe(3);
+    // E3 has five people, so it gets a double room.
+    expect(seats.get("DSN-01")?.deskIndex).toBe(0);
+    expect(seats.get("MKT-01")?.deskIndex).toBe(1);
+    expect(seats.get("MKT-02")?.deskIndex).toBe(2);
+    expect(seats.get("MKT-03")?.deskIndex).toBe(3);
+    expect(seats.get("PR-01")?.deskIndex).toBe(4);
+    expect(seats.get("PR-01")?.areaId).toBe("team-e3");
   });
 
-  it("sends agents beyond room capacity or with unknown departments to unique overflow spots", () => {
+  it("sends agents beyond room capacity or with unknown teams to unique overflow spots", () => {
     const crowded = Array.from({ length: DESKS_PER_ROOM + 3 }, (_, i) => ({
       id: `X-${String(i).padStart(2, "0")}`,
-      department: "Customer Success",
+      team: "E2 Revenue",
     }));
-    const stray = { id: "ZZ-01", department: "Not A Department" };
+    const stray = { id: "ZZ-01", team: "Not A Team" };
     const seats = assignSeats([...crowded, stray]);
     expect(seats.size).toBe(crowded.length + 1);
     expect([...seats.values()].filter((s) => s.overflow)).toHaveLength(4);

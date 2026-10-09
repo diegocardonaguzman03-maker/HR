@@ -1,8 +1,8 @@
 "use client";
 /**
- * Mission control under PRAXIA World: the task board (drag a card to change its status), each agent's
- * workload, and the live feed of recorded task events. Everything here reads and writes the same records
- * the world animates.
+ * Mission control under PRAXIA World, organised like the company structure: the eight delivery teams, the org
+ * chart, the task board (drag a card to change its status), each team's workload, and the live feed of recorded
+ * task events. Everything here reads and writes the same records the world animates.
  */
 import { useMemo, useState } from "react";
 import { ChevronDown, ChevronUp, Search } from "lucide-react";
@@ -10,18 +10,22 @@ import { Badge, Input, Select } from "@/components/ui/primitives";
 import { AgentStatusBadge } from "@/components/agents/StatusBadge";
 import { BOARD_COLUMNS, PRIORITY_LABEL, PRIORITY_OPTIONS, compareTasks, dropTarget, type BoardColumnId } from "@/domain/tasks";
 import { toast } from "@/lib/ui-store";
+import { TEAMS, teamIdOf, type TeamId } from "@/domain/teams";
+import { OrgChart, TeamChip, TeamsView } from "./TeamViews";
 import type { AgentStatus, TaskPriority, TaskStatus } from "@/server/db/schema";
 import type { BoardTask } from "@/server/services/agents";
 import type { WorldEvent } from "@/features/world/types";
 import { EVENT_LABEL } from "./TaskDetail";
 import { STATUS_LABEL, changeTaskStatus } from "./taskOps";
 
-export type McAgent = { id: string; role: string; department: string; status: AgentStatus; currentTaskTitle: string | null; currentTaskProgress?: number | null; tasksOpen: number; tasksQueued?: number; tasksOverdue?: number; tasksCompleted: number };
+export type McAgent = { id: string; role: string; department: string; team: string; reportsTo: string; status: AgentStatus; currentTaskTitle: string | null; currentTaskProgress?: number | null; tasksOpen: number; tasksQueued?: number; tasksOverdue?: number; tasksCompleted: number };
 
 const PRIORITY_TONE: Record<TaskPriority, "bad" | "clay" | "neutral" | "indigo"> = { urgent: "bad", high: "clay", normal: "indigo", low: "neutral" };
 /** Reference load for the workload bar (open tasks per agent). An assumption until real capacity data exists. */
 const CAPACITY = 5;
 const TABS = [
+  { id: "teams", label: "Teams" },
+  { id: "org", label: "Org chart" },
   { id: "board", label: "Task board" },
   { id: "workload", label: "Workload" },
   { id: "activity", label: "Live activity" },
@@ -29,7 +33,7 @@ const TABS = [
 type Tab = (typeof TABS)[number]["id"];
 
 export function MissionControl({
-  open, onToggle, tasks, agents, feed, agentFilter, setAgentFilter, onOpenTask, onFocusAgent, onChanged, newTaskButton, emptyBoard,
+  open, onToggle, tasks, agents, feed, agentFilter, setAgentFilter, onOpenTask, onFocusAgent, onFocusTeam, selectedAgentId, onChanged, newTaskButton, emptyBoard,
 }: {
   open: boolean;
   onToggle: () => void;
@@ -40,31 +44,32 @@ export function MissionControl({
   setAgentFilter: (id: string) => void;
   onOpenTask: (id: string) => void;
   onFocusAgent: (id: string) => void;
+  onFocusTeam: (id: TeamId) => void;
+  selectedAgentId: string | null;
   onChanged: () => void;
   newTaskButton: React.ReactNode;
   /** Shown instead of the columns when there are no tasks at all. */
   emptyBoard?: React.ReactNode;
 }) {
-  const [tab, setTab] = useState<Tab>("board");
+  const [tab, setTab] = useState<Tab>("teams");
   const [q, setQ] = useState("");
-  const [dept, setDept] = useState("");
+  const [team, setTeam] = useState("");
   const [prio, setPrio] = useState("");
   const [dragging, setDragging] = useState<BoardTask | null>(null);
   const [over, setOver] = useState<BoardColumnId | null>(null);
 
-  const deptOf = useMemo(() => new Map(agents.map((a) => [a.id, a.department])), [agents]);
-  const departments = useMemo(() => [...new Set(agents.map((a) => a.department))].sort(), [agents]);
+  const teamOfAgent = useMemo(() => new Map(agents.map((a) => [a.id, teamIdOf(a.team)])), [agents]);
   const term = q.trim().toLowerCase();
   const visible = useMemo(
     () =>
       tasks.filter(
         (t) =>
           (!agentFilter || t.agentId === agentFilter) &&
-          (!dept || deptOf.get(t.agentId) === dept) &&
+          (!team || teamOfAgent.get(t.agentId) === team) &&
           (!prio || t.priority === prio) &&
           (!term || t.title.toLowerCase().includes(term) || t.agentId.toLowerCase().includes(term)),
       ),
-    [tasks, agentFilter, dept, prio, term, deptOf],
+    [tasks, agentFilter, team, prio, term, teamOfAgent],
   );
 
   const counts = useMemo(() => {
@@ -111,6 +116,17 @@ export function MissionControl({
         <div className="ml-auto flex items-center gap-2">{newTaskButton}</div>
       </header>
 
+      {open && tab === "teams" && (
+        <TeamsView
+          agents={agents}
+          tasks={tasks}
+          onFocusTeam={onFocusTeam}
+          onFocusAgent={onFocusAgent}
+          onOpenTask={onOpenTask}
+          onShowBoard={(id) => { setTeam(id); setAgentFilter(""); setTab("board"); onFocusTeam(id); }}
+        />
+      )}
+      {open && tab === "org" && <OrgChart agents={agents} selectedId={selectedAgentId} onFocusAgent={onFocusAgent} />}
       {open && tab === "board" && !tasks.length && emptyBoard}
       {open && tab === "board" && !!tasks.length && (
         <div className="flex min-h-0 flex-1 flex-col">
@@ -123,15 +139,15 @@ export function MissionControl({
               <option value="">All agents</option>
               {agents.map((a) => <option key={a.id} value={a.id}>{a.id} · {a.role}</option>)}
             </Select>
-            <Select value={dept} onChange={(e) => setDept(e.target.value)} className="h-8 w-48 text-[12.5px]" aria-label="Filter by department">
-              <option value="">All departments</option>
-              {departments.map((d) => <option key={d} value={d}>{d}</option>)}
+            <Select value={team} onChange={(e) => setTeam(e.target.value)} className="h-8 w-52 text-[12.5px]" aria-label="Filter by team">
+              <option value="">All teams</option>
+              {TEAMS.map((t) => <option key={t.id} value={t.id}>{t.id} · {t.name}</option>)}
             </Select>
             <Select value={prio} onChange={(e) => setPrio(e.target.value)} className="h-8 w-36 text-[12.5px]" aria-label="Filter by priority">
               <option value="">Any priority</option>
               {PRIORITY_OPTIONS.map((p) => <option key={p} value={p}>{PRIORITY_LABEL[p]}</option>)}
             </Select>
-            {(agentFilter || dept || prio || q) && <button className="text-[12px] text-mute hover:text-ivory" onClick={() => { setAgentFilter(""); setDept(""); setPrio(""); setQ(""); }}>Clear filters</button>}
+            {(agentFilter || team || prio || q) && <button className="text-[12px] text-mute hover:text-ivory" onClick={() => { setAgentFilter(""); setTeam(""); setPrio(""); setQ(""); }}>Clear filters</button>}
             <span className="ml-auto hidden text-[11.5px] text-mute lg:inline">Drag a card to another column to change its status · click it to edit, reassign or see its history</span>
           </div>
           <div className="flex min-h-0 flex-1 gap-3 overflow-x-auto px-4 pb-3">
@@ -171,6 +187,7 @@ export function MissionControl({
                               onClick={(e) => { e.stopPropagation(); onFocusAgent(t.agentId); }}
                               title={`Show ${t.agentId} in the HQ`}
                             >{t.agentId}</button>
+                            <span className="ml-auto"><TeamChip team={agents.find((a) => a.id === t.agentId)?.team ?? ""} /></span>
                             <Badge tone={PRIORITY_TONE[t.priority]}>{PRIORITY_LABEL[t.priority]}</Badge>
                           </div>
                           <div className="line-clamp-2 text-[13px] leading-snug">{t.title}</div>
@@ -203,23 +220,34 @@ export function MissionControl({
           <table className="px-table">
             <thead><tr><th>Agent</th><th>Status</th><th>Current task</th><th className="text-right">Queued</th><th className="text-right">Open</th><th className="text-right">Overdue</th><th className="text-right">Done</th><th>Load</th></tr></thead>
             <tbody>
-              {[...agents].sort((a, b) => b.tasksOpen - a.tasksOpen || (a.id < b.id ? -1 : 1)).map((a) => {
-                return (
-                  <tr key={a.id} className="cursor-pointer hover:bg-graphite-3/50" onClick={() => onFocusAgent(a.id)}>
-                    <td><div className="font-mono text-[12px] text-indigo-soft">{a.id}</div><div className="text-[11.5px] text-mute">{a.role}</div></td>
-                    <td><AgentStatusBadge status={a.status} /></td>
-                    <td className="max-w-[300px] text-[12.5px]">{a.currentTaskTitle ? <>{a.currentTaskTitle}{a.currentTaskProgress != null && <span className="ml-1 font-mono text-[11px] text-mute">{a.currentTaskProgress}%</span>}</> : <span className="text-mute">—</span>}</td>
-                    <td className="text-right font-mono">{a.tasksQueued ?? 0}</td>
-                    <td className="text-right font-mono">{a.tasksOpen}</td>
-                    <td className={`text-right font-mono ${a.tasksOverdue ? "text-bad" : ""}`}>{a.tasksOverdue ?? 0}</td>
-                    <td className="text-right font-mono">{a.tasksCompleted}</td>
-                    <td className="w-40"><div className="h-1.5 overflow-hidden rounded-full bg-graphite-3"><div className="h-full rounded-full bg-indigo" style={{ width: `${Math.min(100, (a.tasksOpen / CAPACITY) * 100)}%` }} /></div></td>
-                  </tr>
-                );
+              {TEAMS.map((tm) => {
+                const members = agents.filter((a) => teamIdOf(a.team) === tm.id).sort((a, b) => b.tasksOpen - a.tasksOpen || (a.id < b.id ? -1 : 1));
+                const open = members.reduce((n, a) => n + a.tasksOpen, 0);
+                return [
+                  <tr key={tm.id} className="cursor-pointer" onClick={() => onFocusTeam(tm.id)}>
+                    <td colSpan={8} className="bg-graphite/60 py-1.5">
+                      <span className="mr-2 inline-block size-2 rounded-full align-middle" style={{ background: tm.color }} />
+                      <span className="font-mono text-[11px]" style={{ color: tm.color }}>{tm.id}</span> <span className="text-[12.5px] font-medium">{tm.name}</span>
+                      <span className="ml-2 font-mono text-[10.5px] text-mute">{members.length} agents · {open} open · {tm.owns}</span>
+                    </td>
+                  </tr>,
+                  ...members.map((a) => (
+                    <tr key={a.id} className="cursor-pointer hover:bg-graphite-3/50" onClick={() => onFocusAgent(a.id)}>
+                      <td><div className="font-mono text-[12px] text-indigo-soft">{a.id}</div><div className="text-[11.5px] text-mute">{a.role}</div></td>
+                      <td><AgentStatusBadge status={a.status} /></td>
+                      <td className="max-w-[300px] text-[12.5px]">{a.currentTaskTitle ? <>{a.currentTaskTitle}{a.currentTaskProgress != null && <span className="ml-1 font-mono text-[11px] text-mute">{a.currentTaskProgress}%</span>}</> : <span className="text-mute">—</span>}</td>
+                      <td className="text-right font-mono">{a.tasksQueued ?? 0}</td>
+                      <td className="text-right font-mono">{a.tasksOpen}</td>
+                      <td className={`text-right font-mono ${a.tasksOverdue ? "text-bad" : ""}`}>{a.tasksOverdue ?? 0}</td>
+                      <td className="text-right font-mono">{a.tasksCompleted}</td>
+                      <td className="w-40"><div className="h-1.5 overflow-hidden rounded-full bg-graphite-3"><div className="h-full rounded-full" style={{ width: `${Math.min(100, (a.tasksOpen / CAPACITY) * 100)}%`, background: tm.color }} /></div></td>
+                    </tr>
+                  )),
+                ];
               })}
             </tbody>
           </table>
-          <p className="mt-2 text-[11.5px] text-mute">Load = open tasks against a reference of {CAPACITY} per agent [Supuesto]. Click a row to find the agent in the HQ.</p>
+          <p className="mt-2 text-[11.5px] text-mute">Load = open tasks against a reference of {CAPACITY} per agent [Supuesto]. Click a team to see its room, or an agent to find them in the HQ.</p>
         </div>
       )}
 

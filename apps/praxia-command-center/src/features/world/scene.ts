@@ -28,6 +28,7 @@ import {
   WORLD_AREAS,
   WORLD_FURNITURE,
   arcPoint,
+  areaById,
   assignSeats,
   clampZoom,
   depthOf,
@@ -73,6 +74,8 @@ export type WorldScene = {
   playEvents(events: WorldEvent[]): void;
   /** Smoothly pans the camera to an agent. */
   focusAgent(agentId: string): void;
+  /** Smoothly pans the camera to a room (e.g. a delivery team's room). */
+  focusArea(areaId: string): void;
   destroy(): void;
 };
 
@@ -117,7 +120,8 @@ function isoTop(g: Graphics, x: number, y: number, w: number, h: number, z = 0) 
 // Static HQ
 // ---------------------------------------------------------------------------------------------------------------
 const FLOOR_FILL: Record<WorldArea["kind"], number> = {
-  department: 0x15161d,
+  team: 0x15161d,
+  founder: 0x17162a,
   conference: 0x15161d,
   cafe: 0x17171c,
   reception: 0x18191f,
@@ -166,6 +170,11 @@ function drawSlabAndFloors(layer: Container) {
     if (area.kind === "reception") {
       // Entrance mat (Clay, human accent)
       isoTop(g, area.x + 1.6, area.y + area.h - 0.9, 1.8, 0.7).fill({ color: C.clay, alpha: 0.22 });
+    }
+    if (area.accent !== null) {
+      // Team colour: a trim along the room's back edges and a soft rug in the middle of the room.
+      g.moveTo(...P(area.x, area.y + area.h)).lineTo(...P(area.x, area.y)).lineTo(...P(area.x + area.w, area.y)).stroke({ width: 2, color: area.accent, alpha: 0.55 });
+      isoTop(g, area.x + 0.5, area.y + 0.5, area.w - 1, area.h - 1).fill({ color: area.accent, alpha: area.kind === "founder" ? 0.09 : 0.045 });
     }
   }
   layer.addChild(g);
@@ -247,10 +256,10 @@ function drawLabels(layer: Container, fontFamily: string) {
     const height = area.backWalls === "rail" ? RAIL_HEIGHT : BACK_WALL_HEIGHT;
     const label = new Text({
       text: area.label.toUpperCase(),
-      style: monoStyle(fontFamily, 9, C.ivory),
+      style: monoStyle(fontFamily, 9, area.accent ?? C.ivory, area.accent !== null ? "700" : "400"),
       resolution: 3,
     });
-    label.alpha = 0.82;
+    label.alpha = area.accent !== null ? 0.95 : 0.82;
     label.anchor.set(0, 0.5);
     const startInset = 0.35;
     const available = (area.w - startInset * 2) * TILE_EDGE_LEN;
@@ -1048,6 +1057,18 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
   app.ticker.add(tick);
   app.ticker.maxFPS = reducedMotion ? 30 : 60;
 
+  function panTo(wx: number, wy: number) {
+    const scale = camera.scale.x;
+    const tx = app.screen.width / 2 - wx * scale;
+    const ty = app.screen.height / 2 - wy * scale;
+    userMovedCamera = true;
+    if (reducedMotion) {
+      camera.position.set(tx, ty);
+      return;
+    }
+    camTween = { fx: camera.x, fy: camera.y, tx, ty, start: performance.now(), dur: 650 };
+  }
+
   // ------------------------------------------------------------------ public API
   const scene: WorldScene = {
     setAgents(agents) {
@@ -1130,15 +1151,13 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
       const s = sprites.get(agentId);
       if (!s) return;
       const p = seatScreenPosition(s.seat);
-      const scale = camera.scale.x;
-      const tx = app.screen.width / 2 - p.x * scale;
-      const ty = app.screen.height / 2 - (p.y - 20) * scale;
-      userMovedCamera = true;
-      if (reducedMotion) {
-        camera.position.set(tx, ty);
-        return;
-      }
-      camTween = { fx: camera.x, fy: camera.y, tx, ty, start: performance.now(), dur: 650 };
+      panTo(p.x, p.y - 20);
+    },
+    focusArea(areaId) {
+      const a = areaById(areaId);
+      if (!a) return;
+      const c = toIso(a.x + a.w / 2, a.y + a.h / 2);
+      panTo(c.x, c.y - 10);
     },
     destroy() {
       app.ticker.remove(tick);

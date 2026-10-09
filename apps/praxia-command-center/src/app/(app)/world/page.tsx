@@ -17,7 +17,7 @@ export default async function WorldPage({ searchParams }: { searchParams: Promis
       lastEventAt={recent[0]?.at ?? null}
       agents={agents.map((a) => ({
         id: a.id, role: a.role, department: a.department, status: a.status, statusNote: a.statusNote, currentTaskTitle: a.currentTask?.title ?? null,
-        currentTaskProgress: a.currentTask?.progress ?? null, tasksQueued: a.tasksQueued, tasksOverdue: a.tasksOverdue, avatar: a.avatar, active: a.active,
+        currentTaskProgress: a.currentTask?.progress ?? null, reportsTo: a.reportsTo, tasksQueued: a.tasksQueued, tasksOverdue: a.tasksOverdue, avatar: a.avatar, active: a.active,
         team: a.team, description: a.description, skills: a.skills, tasksCompleted: a.tasksCompleted, tasksOpen: a.tasksOpen, costUsdMicros: a.costUsdMicros,
       }))}
     />

@@ -42,6 +42,7 @@ The e2e test covers: login → empty dashboard → organization (with duplicate 
 | Server actions | `src/app/actions/` | Each one re-checks the founder session (`requireFounder`) |
 | UI | `src/app/(app)/**`, `src/components/**` | Next.js 15 App Router, Server Components, Tailwind v4 with PRAXIA tokens |
 | PRAXIA World | `src/features/world/` | PixiJS 8 isometric HQ, procedural art, statuses from real events (built by DEV-02) |
+| Company structure | `src/domain/teams.ts` | The team design (8 delivery teams E1–E8 + reporting lines): HQ rooms per team, Teams and Org chart views in mission control |
 | Mission control | `src/app/(app)/world/` | Task board (drag to change status), workload per agent, live activity; edit priority, due date and recorded progress, reassign; per-department work animations and document flights that replay real task events |
 | Seeds | `src/server/seed/` | `base.ts` (configuration), `demo.ts` (marked fiction), `agents.json` (28 roles) |
 

@@ -9,6 +9,7 @@
  *   centre, which is the classic ordering for a 2:1 isometric grid.
  */
 import { WORLD_DEPARTMENTS, type AgentStatus, type WorldAgent } from "./types";
+import { teamById, teamIdOf, type TeamId } from "@/domain/teams";
 
 export type WorldDepartment = (typeof WORLD_DEPARTMENTS)[number];
 
@@ -69,15 +70,17 @@ export const BACK_WALL_HEIGHT = 20;
 export const FRONT_WALL_HEIGHT = 12;
 export const RAIL_HEIGHT = 8;
 
-export type AreaKind = "department" | "reception" | "cafe" | "conference" | "terrace";
+export type AreaKind = "team" | "founder" | "reception" | "cafe" | "conference" | "terrace";
 
 export type WallStyle = "glass" | "rail" | "none";
 
 export type WorldArea = {
   id: string;
   kind: AreaKind;
-  /** Registry department this room hosts (department rooms only). */
-  department: WorldDepartment | null;
+  /** Delivery team this room hosts (team rooms only). */
+  team: TeamId | null;
+  /** Team accent colour (label and floor trim), or null for shared areas. */
+  accent: number | null;
   /** Short label painted on the back glass wall (rendered uppercase, Space Mono). */
   label: string;
   x: number;
@@ -90,13 +93,6 @@ export type WorldArea = {
   doors: { frontLeft: number[]; frontRight: number[] };
 };
 
-const slug = (s: string) =>
-  s
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-
 const cellRect = (col: number, row: number, spanCols = 1) => ({
   x: col * CELL,
   y: row * CELL,
@@ -105,40 +101,53 @@ const cellRect = (col: number, row: number, spanCols = 1) => ({
 });
 
 const STANDARD_DOORS = { frontLeft: [2], frontRight: [2] };
+const hexToNumber = (hex: string) => parseInt(hex.replace("#", ""), 16);
 
-function departmentRoom(department: WorldDepartment, label: string, col: number, row: number): WorldArea {
+function teamRoom(id: TeamId, col: number, row: number, span = 1): WorldArea {
+  const team = teamById(id)!;
   return {
-    id: `dept-${slug(department)}`,
-    kind: "department",
-    department,
-    label,
-    ...cellRect(col, row),
+    id: `team-${id.toLowerCase()}`,
+    kind: "team",
+    team: id,
+    accent: hexToNumber(team.color),
+    label: team.wallLabel,
+    ...cellRect(col, row, span),
     backWalls: "glass",
     frontWalls: "glass",
-    doors: STANDARD_DOORS,
+    doors: span > 1 ? { frontLeft: [2], frontRight: [2, 8] } : STANDARD_DOORS,
   };
 }
 
 /**
- * The room layout table. Back of the HQ (top of the screen) holds leadership and strategy; the front holds
- * the public areas (Café, Main Reception, Terrace).
+ * The HQ follows the company structure (praxia/01-equipo/diseno-del-equipo.md): the Founder's office and
+ * E1 Dirección at the back, the governance and research teams beside them, the two five-person teams (E3, E6)
+ * in double rooms, and the shared areas (Café, Main Reception, Terrace) at the front.
  */
 export const WORLD_AREAS: readonly WorldArea[] = [
-  departmentRoom("Executive Leadership", "Executive", 0, 0),
-  departmentRoom("Strategy & Research", "Strategy & Research", 1, 0),
-  departmentRoom("Data, Quality & Governance", "Data · QA · Gov", 2, 0),
-  departmentRoom("Operations & Finance", "Ops & Finance", 3, 0),
-  departmentRoom("Product & Engineering", "Product & Eng", 0, 1),
-  departmentRoom("UX, UI & Creative Design", "UX · UI · Design", 1, 1),
-  departmentRoom("Client Delivery", "Client Delivery", 2, 1),
-  departmentRoom("Customer Success", "Customer Success", 3, 1),
-  departmentRoom("Sales & Business Development", "Sales & Biz Dev", 0, 2),
-  departmentRoom("Marketing & Public Relations", "Marketing & PR", 1, 2),
-  departmentRoom("Human Resources & Internal Communications", "HR & Internal Comms", 2, 2),
+  {
+    id: "founder",
+    kind: "founder",
+    team: null,
+    accent: PRAXIA_COLORS.indigo,
+    label: "Founder · decides",
+    ...cellRect(0, 0),
+    backWalls: "glass",
+    frontWalls: "glass",
+    doors: STANDARD_DOORS,
+  },
+  teamRoom("E1", 1, 0),
+  teamRoom("E8", 2, 0),
+  teamRoom("E5", 3, 0),
+  teamRoom("E3", 0, 1, 2),
+  teamRoom("E6", 2, 1, 2),
+  teamRoom("E2", 0, 2),
+  teamRoom("E4", 1, 2),
+  teamRoom("E7", 2, 2),
   {
     id: "conference",
     kind: "conference",
-    department: null,
+    team: null,
+    accent: null,
     label: "Conference",
     ...cellRect(3, 2),
     backWalls: "glass",
@@ -148,7 +157,8 @@ export const WORLD_AREAS: readonly WorldArea[] = [
   {
     id: "cafe",
     kind: "cafe",
-    department: null,
+    team: null,
+    accent: null,
     label: "Café",
     ...cellRect(0, 3),
     backWalls: "glass",
@@ -158,7 +168,8 @@ export const WORLD_AREAS: readonly WorldArea[] = [
   {
     id: "reception",
     kind: "reception",
-    department: null,
+    team: null,
+    accent: null,
     label: "Main Reception",
     ...cellRect(1, 3),
     backWalls: "glass",
@@ -168,7 +179,8 @@ export const WORLD_AREAS: readonly WorldArea[] = [
   {
     id: "terrace",
     kind: "terrace",
-    department: null,
+    team: null,
+    accent: null,
     label: "Terrace",
     ...cellRect(2, 3, 2),
     backWalls: "rail",
@@ -177,15 +189,16 @@ export const WORLD_AREAS: readonly WorldArea[] = [
   },
 ];
 
-const roomByDepartment = new Map<WorldDepartment, WorldArea>();
-for (const area of WORLD_AREAS) if (area.department) roomByDepartment.set(area.department, area);
+const roomByTeam = new Map<TeamId, WorldArea>();
+for (const area of WORLD_AREAS) if (area.team) roomByTeam.set(area.team, area);
 
 export const isWorldDepartment = (value: string): value is WorldDepartment =>
   (WORLD_DEPARTMENTS as readonly string[]).includes(value);
 
-/** Returns the room that hosts a department, or null for an unknown department. */
-export function roomForDepartment(department: string): WorldArea | null {
-  return isWorldDepartment(department) ? (roomByDepartment.get(department) ?? null) : null;
+/** The room that hosts a delivery team ("E3" or the registry's "E3 Marca y Demanda"), or null if unknown. */
+export function roomForTeam(team: string): WorldArea | null {
+  const id = teamIdOf(team);
+  return id ? (roomByTeam.get(id) ?? null) : null;
 }
 
 export function areaById(id: string): WorldArea | null {
@@ -211,7 +224,7 @@ export type FurnitureKind =
   | "parasol-table"
   | "lounger";
 
-/** Absolute tile footprint. `seatIndex` links a desk/chair to the department seat it serves. */
+/** Absolute tile footprint. `seatIndex` links a desk/chair to the team seat it serves. */
 export type FurnitureItem = {
   kind: FurnitureKind;
   areaId: string;
@@ -222,27 +235,44 @@ export type FurnitureItem = {
   seatIndex?: number;
 };
 
-/** Department rooms: 4 workstations. The agent sits on the chair tile, the desk is the next tile toward +y. */
+/** Team rooms: 4 workstations. The agent sits on the chair tile, the desk is the next tile toward +y. */
 export const DESK_SEATS: readonly { chair: Point; desk: Point }[] = [
   { chair: { x: 1, y: 1 }, desk: { x: 1, y: 2 } },
   { chair: { x: 3, y: 1 }, desk: { x: 3, y: 2 } },
   { chair: { x: 1, y: 3 }, desk: { x: 1, y: 4 } },
   { chair: { x: 3, y: 3 }, desk: { x: 3, y: 4 } },
 ];
+/** Double rooms (two cells wide): 8 workstations, the standard block twice. */
+export const DESK_SEATS_WIDE: readonly { chair: Point; desk: Point }[] = [
+  ...DESK_SEATS,
+  ...DESK_SEATS.map((s) => ({ chair: { x: s.chair.x + 6, y: s.chair.y }, desk: { x: s.desk.x + 6, y: s.desk.y } })),
+];
 export const DESKS_PER_ROOM = DESK_SEATS.length;
+
+export const seatsOf = (area: WorldArea) => (area.w > ROOM_SIZE ? DESK_SEATS_WIDE : DESK_SEATS);
 
 type LocalItem = { kind: FurnitureKind; x: number; y: number; w?: number; h?: number; seatIndex?: number };
 
 function localFurniture(area: WorldArea): LocalItem[] {
   switch (area.kind) {
-    case "department":
+    case "team":
       return [
-        ...DESK_SEATS.flatMap((s, i): LocalItem[] => [
+        ...seatsOf(area).flatMap((s, i): LocalItem[] => [
           { kind: "chair", ...s.chair, seatIndex: i },
           { kind: "desk", ...s.desk, seatIndex: i },
         ]),
-        { kind: "plant", x: 4, y: 4 },
+        { kind: "plant", x: area.w - 1, y: 4 },
         { kind: "plant", x: 0, y: 2 },
+        ...(area.w > ROOM_SIZE ? [{ kind: "plant" as const, x: 5, y: 0 }] : []),
+      ];
+    case "founder":
+      return [
+        { kind: "wall-screen", x: 0, y: 1, w: 0, h: 3 },
+        { kind: "chair", x: 2, y: 1 },
+        { kind: "desk", x: 2, y: 2 },
+        { kind: "sofa", x: 1, y: 4, w: 2, h: 1 },
+        { kind: "plant", x: 4, y: 4 },
+        { kind: "plant", x: 4, y: 0 },
       ];
     case "conference":
       return [
@@ -322,7 +352,7 @@ export type Seat = {
 };
 
 /**
- * Standing spots for agents without a desk (department full or unknown department), in fill order.
+ * Standing spots for agents without a desk (team room full or unknown team), in fill order.
  * Every spot is a free tile (no furniture).
  */
 export const OVERFLOW_SPOTS: readonly { areaId: string; x: number; y: number }[] = (() => {
@@ -345,11 +375,11 @@ export const OVERFLOW_SPOTS: readonly { areaId: string; x: number; y: number }[]
 const compareIds = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
 
 /**
- * Assigns every agent a unique seat. Department agents take their room's desks in ascending id order;
- * anyone beyond the room's capacity (or with an unknown department) gets an overflow standing spot.
- * The result depends only on the set of (id, department) pairs, never on input order.
+ * Assigns every agent a unique seat. Team members take their room's desks in ascending id order; anyone beyond
+ * the room's capacity (or with an unknown team) gets an overflow standing spot.
+ * The result depends only on the set of (id, team) pairs, never on input order.
  */
-export function assignSeats(agents: ReadonlyArray<Pick<WorldAgent, "id" | "department">>): Map<string, Seat> {
+export function assignSeats(agents: ReadonlyArray<Pick<WorldAgent, "id" | "team">>): Map<string, Seat> {
   const sorted = [...agents].sort((a, b) => compareIds(a.id, b.id));
   const seats = new Map<string, Seat>();
   const usedPerRoom = new Map<string, number>();
@@ -357,9 +387,9 @@ export function assignSeats(agents: ReadonlyArray<Pick<WorldAgent, "id" | "depar
 
   for (const agent of sorted) {
     if (seats.has(agent.id) || overflowQueue.includes(agent.id)) continue; // duplicate ids: first wins
-    const room = roomForDepartment(agent.department);
-    const used = room ? (usedPerRoom.get(room.id) ?? 0) : DESKS_PER_ROOM;
-    const deskSeat = room ? DESK_SEATS[used] : undefined;
+    const room = roomForTeam(agent.team);
+    const used = room ? (usedPerRoom.get(room.id) ?? 0) : Infinity;
+    const deskSeat = room ? seatsOf(room)[used] : undefined;
     if (room && deskSeat) {
       usedPerRoom.set(room.id, used + 1);
       seats.set(agent.id, {
@@ -625,10 +655,10 @@ export function workActivity(department: string): WorkActivity {
   return isWorldDepartment(department) ? WORK_ACTIVITY[department] : DEFAULT_ACTIVITY;
 }
 
-/** Where the founder sits: the Main Reception counter. Tasks arrive from here and outputs return here. */
+/** Where the founder sits: the desk in the Founder's office. Tasks leave from here and outputs return here. */
 export const FOUNDER_TILE: Point = (() => {
-  const r = areaById("reception");
-  return r ? { x: r.x + 2.5, y: r.y + 1.5 } : { x: 0, y: 0 };
+  const r = areaById("founder");
+  return r ? { x: r.x + 2.5, y: r.y + 2.5 } : { x: 0, y: 0 };
 })();
 
 export type FlightKind = "assign" | "handoff" | "deliver" | "approval" | "cancel";

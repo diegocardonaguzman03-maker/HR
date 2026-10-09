@@ -133,7 +133,9 @@ export default function PraxiaWorld({ agents, selectedAgentId, onSelectAgent, re
   }, [events, ready]);
 
   useEffect(() => {
-    if (ready && focus) sceneRef.current?.focusAgent(focus.agentId);
+    if (!ready || !focus) return;
+    if (focus.kind === "area") sceneRef.current?.focusArea(focus.id);
+    else sceneRef.current?.focusAgent(focus.id);
   }, [focus, ready]);
 
   const counts = useMemo(() => {
@@ -207,7 +209,7 @@ export default function PraxiaWorld({ agents, selectedAgentId, onSelectAgent, re
               })}
             </ul>
             <p className="mt-2 text-[11px] leading-snug" style={{ color: "var(--color-niebla, #A7AAB5)" }}>
-              Statuses, desk inboxes, progress bars and flying documents all come from real task records and events.
+              Rooms follow the delivery teams (E1–E8). Statuses, desk inboxes, progress bars and flying documents all come from real task records and events.
               With no execution engine connected, an agent works only on tasks you set to In progress.
             </p>
           </>

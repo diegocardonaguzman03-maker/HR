@@ -4,7 +4,9 @@ import dynamic from "next/dynamic";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { MessageSquare, X } from "lucide-react";
 import type { WorldAgent, WorldEvent } from "@/features/world/types";
-import { workActivity } from "@/features/world/layout";
+import { roomForTeam, workActivity } from "@/features/world/layout";
+import { teamOf, type TeamId } from "@/domain/teams";
+import { TeamChip } from "./TeamViews";
 import { AvatarPreview } from "@/features/world/AvatarPreview";
 import { importBacklogAction, worldSnapshotAction } from "@/app/actions/governance";
 import { AgentStatusBadge } from "@/components/agents/StatusBadge";
@@ -19,7 +21,7 @@ import { STATUS_LABEL } from "./taskOps";
 
 const PraxiaWorld = dynamic(() => import("@/features/world/PraxiaWorld"), { ssr: false, loading: () => <div className="flex h-full items-center justify-center font-mono text-[11px] tracking-widest text-mute uppercase">Loading headquarters…</div> });
 
-type HostAgent = WorldAgent & { team: string; description: string; skills: string[]; tasksCompleted: number; tasksOpen: number; costUsdMicros: number; active: boolean };
+type HostAgent = WorldAgent & { reportsTo: string; description: string; skills: string[]; tasksCompleted: number; tasksOpen: number; costUsdMicros: number; active: boolean };
 
 const POLL_MS = 4000;
 
@@ -29,7 +31,7 @@ export function WorldHost({ agents: initialAgents, tasks: initialTasks, feed: in
   const [feed, setFeed] = useState(initialFeed);
   const [events, setEvents] = useState<WorldEvent[]>([]);
   const [selected, setSelected] = useState<string | null>(initialSelected);
-  const [focus, setFocus] = useState<{ agentId: string; nonce: number } | null>(initialSelected ? { agentId: initialSelected, nonce: 1 } : null);
+  const [focus, setFocus] = useState<{ kind: "agent" | "area"; id: string; nonce: number } | null>(initialSelected ? { kind: "agent", id: initialSelected, nonce: 1 } : null);
   const [openTaskId, setOpenTaskId] = useState<string | null>(null);
   const [mcOpen, setMcOpen] = useState(true);
   const [agentFilter, setAgentFilter] = useState(initialSelected ?? "");
@@ -79,11 +81,15 @@ export function WorldHost({ agents: initialAgents, tasks: initialTasks, feed: in
   }, []);
   const focusAgent = useCallback((id: string) => {
     selectAgent(id);
-    setFocus((f) => ({ agentId: id, nonce: (f?.nonce ?? 0) + 1 }));
+    setFocus((f) => ({ kind: "agent", id, nonce: (f?.nonce ?? 0) + 1 }));
   }, [selectAgent]);
+  const focusTeam = useCallback((id: TeamId) => {
+    const room = roomForTeam(id);
+    if (room) setFocus((f) => ({ kind: "area", id: room.id, nonce: (f?.nonce ?? 0) + 1 }));
+  }, []);
 
   const worldAgents = useMemo<WorldAgent[]>(
-    () => agents.map(({ id, role, department, status, statusNote, currentTaskTitle, currentTaskProgress, tasksQueued, tasksOverdue, avatar }) => ({ id, role, department, status, statusNote, currentTaskTitle, currentTaskProgress, tasksQueued, tasksOverdue, avatar })),
+    () => agents.map(({ id, role, department, team, status, statusNote, currentTaskTitle, currentTaskProgress, tasksQueued, tasksOverdue, avatar }) => ({ id, role, department, team, status, statusNote, currentTaskTitle, currentTaskProgress, tasksQueued, tasksOverdue, avatar })),
     [agents],
   );
   const a = agents.find((x) => x.id === selected) ?? null;
@@ -109,11 +115,23 @@ export function WorldHost({ agents: initialAgents, tasks: initialTasks, feed: in
                 <div>
                   <div className="font-mono text-[12px] text-indigo-soft">{a.id}</div>
                   <div className="font-display text-[16px] leading-snug font-semibold">{a.role}</div>
-                  <div className="text-[12px] text-mute">{a.department}</div>
+                  <div className="mt-0.5 flex items-center gap-1.5 text-[12px] text-mute"><TeamChip team={a.team} /> {teamOf(a.team)?.name ?? a.team}</div>
                 </div>
               </div>
               <button onClick={() => setSelected(null)} aria-label="Close panel" className="text-mute hover:text-ivory"><X size={16} /></button>
             </div>
+            <dl className="mb-4 grid grid-cols-[90px_1fr] gap-x-2 gap-y-1 text-[12px]">
+              <dt className="text-mute">Reports to</dt>
+              <dd>{a.reportsTo === "Founder" ? <span className="text-ivory">Founder</span> : <button className="font-mono text-indigo-soft hover:underline" onClick={() => focusAgent(a.reportsTo)}>{a.reportsTo}</button>}</dd>
+              <dt className="text-mute">Team owns</dt>
+              <dd className="text-niebla">{teamOf(a.team)?.owns ?? "—"}</dd>
+              <dt className="text-mute">Delivers to</dt>
+              <dd className="truncate font-mono text-[11px] text-niebla" title={teamOf(a.team)?.folder}>{teamOf(a.team)?.folder ?? "—"}</dd>
+              {agents.some((x) => x.reportsTo === a.id) && (<>
+                <dt className="text-mute">Direct reports</dt>
+                <dd className="flex flex-wrap gap-1">{agents.filter((x) => x.reportsTo === a.id).map((x) => <button key={x.id} className="font-mono text-indigo-soft hover:underline" onClick={() => focusAgent(x.id)}>{x.id}</button>)}</dd>
+              </>)}
+            </dl>
             <div className="mb-4 rounded-lg border border-hair p-3 text-[13px]">
               <div className="mb-1 flex items-center gap-2"><AgentStatusBadge status={a.status} manual={!!engineNote && !!a.currentTaskTitle} /> <span className="text-niebla">{a.currentTaskTitle ?? "No active task"}</span></div>
               {a.currentTaskProgress != null && a.currentTaskTitle && (
@@ -163,6 +181,8 @@ export function WorldHost({ agents: initialAgents, tasks: initialTasks, feed: in
         setAgentFilter={setAgentFilter}
         onOpenTask={setOpenTaskId}
         onFocusAgent={focusAgent}
+        onFocusTeam={focusTeam}
+        selectedAgentId={selected}
         onChanged={sync}
         emptyBoard={
           <div className="flex flex-1 flex-col items-center justify-center gap-3 px-6 pb-6 text-center">

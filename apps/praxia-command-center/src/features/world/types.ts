@@ -10,7 +10,8 @@ export type { AgentStatus, AvatarConfig };
 export type WorldAgent = {
   id: string; // e.g. "SAL-03"
   role: string; // e.g. "Solutions Consultant & Proposal Lead"
-  department: string; // one of WORLD_DEPARTMENTS
+  department: string; // one of WORLD_DEPARTMENTS (drives the work animation)
+  team: string; // delivery team, e.g. "E3 Marca y Demanda" (drives the room)
   status: AgentStatus;
   statusNote: string;
   currentTaskTitle: string | null;
@@ -49,6 +50,6 @@ export type PraxiaWorldProps = {
   reducedMotion?: boolean;
   /** New task events to play (each event id is played once). */
   events?: WorldEvent[];
-  /** Pan the camera to this agent whenever `focus.nonce` changes. */
-  focus?: { agentId: string; nonce: number } | null;
+  /** Pan the camera to an agent or a room whenever `focus.nonce` changes. */
+  focus?: { kind: "agent" | "area"; id: string; nonce: number } | null;
 };
