@@ -81,6 +81,17 @@ Son 7 SOP en estado [PROPUESTA] («proposed SOP; configure live permissions befo
 | 27 | `06_RESEARCH_TO_IP.md` | De la investigación a la PI |
 | 28 | `07_INTERNAL_OPERATIONS.md` | Operación interna |
 
+### Lote 7 — recibido el 9 oct 2026 · configuración (`config/`)
+
+| # | Archivo | Qué es |
+|---|---|---|
+| 29 | `org_chart.json` | Organigrama de los agentes en formato máquina (JSON válido) |
+| 30 | `handoff.schema.json` | Esquema del handoff universal entre agentes (JSON válido) |
+
+### Lote 8 en adelante — perfiles de agente (`agents/`)
+
+Los perfiles se van guardando conforme llegan. Los reenvíos de CEO-01, COM-01 y CX-01 eran idénticos a las copias que ya estaban guardadas. El conteo actualizado está en «Faltan del paquete de agentes».
+
 ### Inconsistencias detectadas (se resuelven al diseñar el equipo)
 
 - **Nombres de servicios:** `SERVICE_PORTFOLIO.md` usa nombres distintos de los de la skill y el Master. Por ejemplo, «Strategy Execution & Adoption» frente a «Strategy-to-Adoption Advisory», «Leadership & Organizational Effectiveness» frente a «Leadership & Execution System» y «Operating Model & Change Transformation» frente a «Organizational Design & Operating Model». Por precedencia (skill §0.1) se propone usar los nombres de la skill y el Master.
@@ -88,8 +99,7 @@ Son 7 SOP en estado [PROPUESTA] («proposed SOP; configure live permissions befo
 
 ### Faltan del paquete de agentes
 
-- **25 perfiles de agente:** STR-01, RES-01, RES-02, SAL-01, SAL-02, SAL-03, MKT-01, MKT-02, MKT-03, PR-01, DEL-01, DEL-02, DEL-03, DEV-01, DEV-02, DEV-03, UX-01, UI-01, DSN-01, OPS-01, FIN-01, HR-01, DAT-01, RISK-01, QA-01
-- `config/org_chart.json` y `config/handoff.schema.json`
+- **13 perfiles de agente:** STR-01, RES-01, RES-02, SAL-01, SAL-02, SAL-03, MKT-03, PR-01, UX-01, UI-01, OPS-01, RISK-01, QA-01
 
 ### Otras fuentes por recibir (según la skill)
 

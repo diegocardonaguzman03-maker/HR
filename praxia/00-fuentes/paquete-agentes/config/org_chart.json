@@ -1,0 +1,176 @@
+{
+  "brand": "PRAXIA",
+  "version": "1.0",
+  "model": "human-led multi-agent organization",
+  "founder": "Human approval authority",
+  "agents": [
+    {
+      "id": "CEO-01",
+      "role": "Chief of Staff & CEO Strategist",
+      "department": "Executive Office",
+      "reports_to": "Founder"
+    },
+    {
+      "id": "STR-01",
+      "role": "Strategy & Market Intelligence Lead",
+      "department": "Strategy",
+      "reports_to": "CEO-01"
+    },
+    {
+      "id": "RES-01",
+      "role": "Research Director",
+      "department": "Research & Insights",
+      "reports_to": "STR-01"
+    },
+    {
+      "id": "RES-02",
+      "role": "Competitive Intelligence Analyst",
+      "department": "Research & Insights",
+      "reports_to": "RES-01"
+    },
+    {
+      "id": "SAL-01",
+      "role": "Chief Revenue Officer",
+      "department": "Sales & Growth",
+      "reports_to": "CEO-01"
+    },
+    {
+      "id": "SAL-02",
+      "role": "Account Research & Prospecting",
+      "department": "Sales & Growth",
+      "reports_to": "SAL-01"
+    },
+    {
+      "id": "SAL-03",
+      "role": "Solutions Consultant & Proposal Lead",
+      "department": "Sales & Growth",
+      "reports_to": "SAL-01"
+    },
+    {
+      "id": "MKT-01",
+      "role": "Chief Marketing & Brand Officer",
+      "department": "Marketing",
+      "reports_to": "CEO-01"
+    },
+    {
+      "id": "MKT-02",
+      "role": "Executive Thought Leadership Editor",
+      "department": "Marketing",
+      "reports_to": "MKT-01"
+    },
+    {
+      "id": "MKT-03",
+      "role": "Growth & Performance Analyst",
+      "department": "Marketing",
+      "reports_to": "MKT-01"
+    },
+    {
+      "id": "PR-01",
+      "role": "Public Relations & Partnerships Lead",
+      "department": "PR & External Relations",
+      "reports_to": "CEO-01"
+    },
+    {
+      "id": "DEL-01",
+      "role": "Chief Delivery & Transformation Officer",
+      "department": "Client Delivery",
+      "reports_to": "CEO-01"
+    },
+    {
+      "id": "DEL-02",
+      "role": "Adoption & Change Principal",
+      "department": "Client Delivery",
+      "reports_to": "DEL-01"
+    },
+    {
+      "id": "DEL-03",
+      "role": "AI Adoption & Capability Consultant",
+      "department": "Client Delivery",
+      "reports_to": "DEL-01"
+    },
+    {
+      "id": "DEV-01",
+      "role": "Head of Product & Engineering",
+      "department": "Product & Development",
+      "reports_to": "CEO-01"
+    },
+    {
+      "id": "DEV-02",
+      "role": "Full-Stack Engineer",
+      "department": "Product & Development",
+      "reports_to": "DEV-01"
+    },
+    {
+      "id": "DEV-03",
+      "role": "AI Systems & Automation Engineer",
+      "department": "Product & Development",
+      "reports_to": "DEV-01"
+    },
+    {
+      "id": "UX-01",
+      "role": "Head of UX Research & Service Design",
+      "department": "Experience",
+      "reports_to": "DEV-01"
+    },
+    {
+      "id": "UI-01",
+      "role": "Product UI & Design Systems Lead",
+      "department": "Experience",
+      "reports_to": "UX-01"
+    },
+    {
+      "id": "DSN-01",
+      "role": "Creative Director & Brand Designer",
+      "department": "Creative Studio",
+      "reports_to": "MKT-01"
+    },
+    {
+      "id": "OPS-01",
+      "role": "Chief Operating Officer",
+      "department": "Operations",
+      "reports_to": "CEO-01"
+    },
+    {
+      "id": "FIN-01",
+      "role": "Finance & Commercial Operations",
+      "department": "Operations",
+      "reports_to": "OPS-01"
+    },
+    {
+      "id": "HR-01",
+      "role": "People & Talent Director",
+      "department": "People",
+      "reports_to": "OPS-01"
+    },
+    {
+      "id": "COM-01",
+      "role": "Internal Communications & Knowledge Lead",
+      "department": "People & Communications",
+      "reports_to": "OPS-01"
+    },
+    {
+      "id": "CX-01",
+      "role": "Client Success & Customer Support Lead",
+      "department": "Customer Experience",
+      "reports_to": "DEL-01"
+    },
+    {
+      "id": "DAT-01",
+      "role": "Data, Impact & Evaluation Lead",
+      "department": "Data & Measurement",
+      "reports_to": "CEO-01"
+    },
+    {
+      "id": "RISK-01",
+      "role": "Legal, Privacy & Risk Advisor",
+      "department": "Governance",
+      "reports_to": "CEO-01"
+    },
+    {
+      "id": "QA-01",
+      "role": "Quality Assurance & Knowledge Auditor",
+      "department": "Governance",
+      "reports_to": "CEO-01"
+    }
+  ]
+}

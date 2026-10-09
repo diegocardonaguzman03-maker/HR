@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PRAXIA Agent Handoff",
+  "type": "object",
+  "required": [
+    "brief_id",
+    "owner",
+    "objective",
+    "deliverable",
+    "evidence_and_sources",
+    "assumptions",
+    "risks",
+    "decisions_needed",
+    "next_owner",
+    "review_status"
+  ],
+  "properties": {
+    "brief_id": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "deliverable": {
+      "type": "string"
+    },
+    "evidence_and_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decisions_needed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_owner": {
+      "type": "string"
+    },
+    "review_status": {
+      "type": "string"
+    }
+  }
+}
