@@ -99,7 +99,7 @@ Los perfiles se van guardando conforme llegan. Los reenvíos de CEO-01, COM-01 y
 
 ### Faltan del paquete de agentes
 
-- **13 perfiles de agente:** STR-01, RES-01, RES-02, SAL-01, SAL-02, SAL-03, MKT-03, PR-01, UX-01, UI-01, OPS-01, RISK-01, QA-01
+- **8 perfiles de agente:** STR-01, RES-02, SAL-01, SAL-02, SAL-03, UX-01, UI-01, RISK-01
 
 ### Otras fuentes por recibir (según la skill)
 
