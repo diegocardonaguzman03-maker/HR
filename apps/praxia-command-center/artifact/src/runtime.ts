@@ -13,6 +13,30 @@ type ArtifactDb = {
   collection(path: string): { get(): Promise<{ docs: { id: string; data(): Record<string, unknown> | undefined }[] }>; doc(id: string): { set(d: Record<string, unknown>): Promise<void>; delete(): Promise<void> } };
 };
 
+/** Fallback store when the page is opened outside claude.ai (e.g. a static host): this browser's localStorage. */
+function localStore(): ArtifactDb | null {
+  try {
+    const k = "__praxia_probe";
+    localStorage.setItem(k, "1");
+    localStorage.removeItem(k);
+  } catch {
+    return null;
+  }
+  const key = (t: string) => `praxia_cc:${t}`;
+  const read = (t: string): Record<string, Record<string, unknown>> => {
+    try { return JSON.parse(localStorage.getItem(key(t)) ?? "{}"); } catch { return {}; }
+  };
+  return {
+    collection: (t) => ({
+      get: async () => ({ docs: Object.entries(read(t)).map(([id, row]) => ({ id, data: () => row })) }),
+      doc: (id) => ({
+        set: async (d) => { const all = read(t); all[id] = d; localStorage.setItem(key(t), JSON.stringify(all)); },
+        delete: async () => { const all = read(t); delete all[id]; localStorage.setItem(key(t), JSON.stringify(all)); },
+      }),
+    }),
+  };
+}
+
 export const TABLES = [
   "company_settings", "fx_rates", "services", "pipeline_stages", "agents", "organizations", "contacts", "opportunities",
   "activities", "proposals", "proposal_lines", "contracts", "revenue_entries", "invoices", "payments", "expenses",
@@ -24,6 +48,7 @@ type Snap = Map<string, Map<string, string>>; // table -> id -> JSON
 export type Runtime = {
   db: DB;
   persisted: boolean;
+  storage: "artifact" | "browser" | "none";
   status: "ready" | "offline";
   flush: () => Promise<{ written: number; error?: string }>;
 };
@@ -60,6 +85,7 @@ export async function boot(): Promise<Runtime> {
   sqlite = created.sqlite;
   const claude = (window as unknown as { claude?: { use(n: string): Promise<unknown> } }).claude;
   store = claude ? ((await claude.use("db").catch(() => null)) as ArtifactDb | null) : null;
+  const storage: Runtime["storage"] = store ? "artifact" : (store = localStore()) ? "browser" : "none";
   if (store) {
     sqlite.run("PRAGMA foreign_keys = OFF;");
     for (const t of TABLES) {
@@ -77,6 +103,7 @@ export async function boot(): Promise<Runtime> {
   runtime = {
     db: created.db,
     persisted: !!store,
+    storage,
     status: store ? "ready" : "offline",
     flush: async () => {
       if (!store) return { written: 0 };
