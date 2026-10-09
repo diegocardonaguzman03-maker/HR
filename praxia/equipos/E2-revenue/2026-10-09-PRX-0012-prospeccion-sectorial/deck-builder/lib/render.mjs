@@ -92,25 +92,25 @@ export function createRenderer(pres, F) {
   R.cover = (s, d, n, meta) => {
     const k = frame(s, d, n, { footer: meta.confidential === false ? "" : "Confidencial", noNumber: true, noLabel: true });
     const lh = 0.52;
-    s.addImage({ path: ASSET.lockupIvory, x: MX - 0.02, y: 0.55, w: lh * LOCKUP_RATIO, h: lh, altText: "Praxia (logo provisional)" });
-    text(s, DESCRIPTOR, { x: MX, y: 1.2, w: 6, h: 0.22, fontFace: F.mono, fontSize: 8, charSpacing: 5, color: PX.niebla });
-    if (d.kicker) label(s, d.kicker, true, 2.25);
+    s.addImage({ path: k.dark ? ASSET.lockupIvory : ASSET.lockupGraphite, x: MX - 0.02, y: 0.55, w: lh * LOCKUP_RATIO, h: lh, altText: "Praxia (logo provisional)" });
+    text(s, DESCRIPTOR, { x: MX, y: 1.2, w: 6, h: 0.22, fontFace: F.mono, fontSize: 8, charSpacing: 5, color: k.mute });
+    if (d.kicker) label(s, d.kicker, k.dark, 2.25);
     const size = pick(len(d.title), [[28, 66], [46, 56], [64, 48]]);
     title(s, d.title, MX, 2.7, 10.6, 2.45, k.fg, size);
-    if (d.subtitle) text(s, d.subtitle, { x: MX, y: 5.2, w: 8.4, h: 0.75, ...body(PX.niebla, 16) });
+    if (d.subtitle) text(s, d.subtitle, { x: MX, y: 5.2, w: 8.4, h: 0.75, ...body(k.mute, 16) });
     const sector = d.preparedFor || meta.sector;
     text(s, [
-      { text: "PREPARADO PARA  ·  ", options: { color: PX.niebla } },
-      { text: sector.toUpperCase(), options: { color: PX.ivory, bold: true } },
+      { text: "PREPARADO PARA  ·  ", options: { color: k.mute } },
+      { text: sector.toUpperCase(), options: { color: k.fg, bold: true } },
     ], { x: MX, y: 6.35, w: 8, h: 0.28, fontFace: F.mono, fontSize: 10, charSpacing: 3 });
-    text(s, (d.date || meta.date).toUpperCase(), { x: RIGHT - 4, y: 6.35, w: 4, h: 0.28, fontFace: F.mono, fontSize: 10, charSpacing: 3, color: PX.niebla, align: "right" });
+    text(s, (d.date || meta.date).toUpperCase(), { x: RIGHT - 4, y: 6.35, w: 4, h: 0.28, fontFace: F.mono, fontSize: 10, charSpacing: 3, color: k.mute, align: "right" });
   };
 
   R.section = (s, d, n) => {
     const k = frame(s, d, n);
-    text(s, `—  ${d.number}`, { x: MX, y: 2.45, w: 3, h: 0.35, fontFace: F.mono, fontSize: 16, color: PX.violet, charSpacing: 2 });
+    text(s, `—  ${d.number}`, { x: MX, y: 2.45, w: 3, h: 0.35, fontFace: F.mono, fontSize: 16, color: k.dark ? PX.violet : PX.indigo, charSpacing: 2 });
     title(s, d.title, MX, 2.95, 10.4, 1.9, k.fg, pick(len(d.title), [[24, 60], [44, 50]]));
-    if (d.kicker) text(s, d.kicker, { x: MX, y: 5.0, w: 8.6, h: 0.9, ...body(PX.niebla, 18) });
+    if (d.kicker) text(s, d.kicker, { x: MX, y: 5.0, w: 8.6, h: 0.9, ...body(k.mute, 18) });
   };
 
   R.statement = (s, d, n) => {
@@ -136,11 +136,12 @@ export function createRenderer(pres, F) {
       const y = top + i * (h + gap);
       if (k.dark) rect(s, x, y, w, h, PX.graphite2);
       ticks(s, x, y, w, h, i === 0 ? PX.indigo : k.dark ? PX.hair : PX.hairLight);
-      const ih = Math.min(h - 0.5, 1.4);
-      const iy = y + (h - ih) / 2;
-      text(s, String(i + 1).padStart(2, "0"), { x: x + 0.3, y: iy, w: 0.6, h: 0.3, fontFace: F.mono, fontSize: 10, color: k.dark ? PX.violet : PX.indigo });
-      text(s, p.title, { x: x + 1.0, y: iy, w: w - 1.3, h: 0.4, fontFace: F.display, fontSize: 19, bold: true, color: k.fg });
-      if (p.body) text(s, p.body, { x: x + 1.0, y: iy + 0.45, w: w - 1.3, h: ih - 0.45, ...body(k.dark ? PX.niebla : PX.muteLight, 14) });
+      const tw = w - 1.3, ph = titleH(p.title, 19, tw), bh2 = p.body ? bodyH(p.body, 14, tw) : 0;
+      const block = ph + (bh2 ? 0.12 + bh2 : 0);
+      const iy = y + Math.max(0.25, (h - block) / 2);
+      text(s, String(i + 1).padStart(2, "0"), { x: x + 0.3, y: iy + 0.04, w: 0.6, h: 0.3, fontFace: F.mono, fontSize: 10, color: k.dark ? PX.violet : PX.indigo });
+      text(s, p.title, { x: x + 1.0, y: iy, w: tw, h: ph + 0.05, fontFace: F.display, fontSize: 19, bold: true, color: k.fg, lineSpacingMultiple: 0.95 });
+      if (p.body) text(s, p.body, { x: x + 1.0, y: iy + ph + 0.12, w: tw, h: Math.max(0.3, y + h - 0.15 - (iy + ph + 0.12)), ...body(k.dark ? PX.niebla : PX.muteLight, 14) });
     });
   };
 
@@ -153,15 +154,17 @@ export function createRenderer(pres, F) {
       const x = MX + i * (w + gap);
       if (k.dark) rect(s, x, top, w, h, PX.graphite2);
       ticks(s, x, top, w, h, k.dark ? PX.hair : PX.hairLight, 0.16, 1);
-      const pending = len(it.value) > 8;
+      const pending = len(it.value) > 6;
       if (pending) {
         rect(s, x + 0.3, top + 0.35, w - 0.6, 1.0, null, PX.clay);
         text(s, it.value, { x: x + 0.42, y: top + 0.42, w: w - 0.84, h: 0.86, fontFace: F.mono, fontSize: 12, bold: true, color: PX.clay, valign: "middle", charSpacing: 1 });
       } else {
-        text(s, rich(it.value, { fontFace: F.display, fontSize: st.length > 3 ? 54 : 64, bold: true, color: k.fg }), { x: x + 0.3, y: top + 0.25, w: w - 0.5, h: 1.15, valign: "middle" });
+        const vs = Math.min(64, Math.floor(((w - 0.5) * 72) / (Math.max(3, len(it.value)) * 0.66)));
+        text(s, rich(it.value, { fontFace: F.display, fontSize: vs, bold: true, color: k.fg }), { x: x + 0.3, y: top + 0.25, w: w - 0.5, h: 1.15, valign: "middle" });
       }
-      text(s, it.label, { x: x + 0.3, y: top + 1.6, w: w - 0.6, h: 1.35, ...body(k.fg, 15), lineSpacingMultiple: 1.15 });
-      text(s, /^\[/.test(it.source) ? it.source : `FUENTE · ${it.source}`, { x: x + 0.3, y: top + h - 0.75, w: w - 0.6, h: 0.6, fontFace: F.mono, fontSize: 8, color: k.mute, valign: "bottom", lineSpacingMultiple: 1.1 });
+      const four = st.length > 3;
+      text(s, it.label, { x: x + 0.3, y: top + (four ? 1.5 : 1.6), w: w - 0.6, h: four ? 1.5 : 1.35, ...body(k.fg, four ? 12 : 15), lineSpacingMultiple: 1.15 });
+      text(s, /^\[/.test(it.source) ? it.source : `FUENTE · ${it.source}`, { x: x + 0.3, y: top + h - 0.7, w: w - 0.6, h: 0.55, fontFace: F.mono, fontSize: 8, color: k.mute, valign: "bottom", lineSpacingMultiple: 1.1 });
     });
     if (d.note) text(s, d.note, { x: MX, y: 6.5, w: CW, h: 0.3, ...body(k.mute, 11) });
   };
@@ -217,8 +220,8 @@ export function createRenderer(pres, F) {
 
   R.method = (s, d, n) => {
     const k = frame(s, d, n);
-    title(s, d.title, MX, 1.0, 11.6, 0.75, k.fg, pick(len(d.title), [[45, 36], [70, 30]]));
-    if (d.intro) text(s, d.intro, { x: MX, y: 1.85, w: 10.5, h: 0.6, ...body(k.mute, 15) });
+    title(s, d.title, MX, 1.0, 11.6, 0.75, k.fg, pick(len(d.title), [[38, 36], [48, 30]]));
+    if (d.intro) text(s, d.intro, { x: MX, y: 1.85, w: 11.6, h: 0.6, ...body(k.mute, 15) });
     const gap = 0.3, w = (CW - gap * 3) / 4, axisY = 2.85, top = 3.15;
     hline(s, MX, axisY, CW, k.dark ? PX.niebla : PX.graphite, 0.75);
     d.stages.forEach((st, i) => {
@@ -226,7 +229,7 @@ export function createRenderer(pres, F) {
       const last = i === 3;
       s.addShape(pres.shapes.RECTANGLE, { x, y: axisY - 0.07, w: 0.14, h: 0.14, fill: { color: last ? PX.clay : PX.indigo }, line: { type: "none" } });
       text(s, `${String(i + 1).padStart(2, "0")} · ${st.name.toUpperCase()}`, { x, y: top + 0.05, w, h: 0.3, fontFace: F.mono, fontSize: 10, bold: true, charSpacing: 3, color: k.dark ? PX.violet : PX.indigo });
-      text(s, st.verb, { x, y: top + 0.42, w, h: 0.5, fontFace: F.display, fontSize: 24, bold: true, color: k.fg });
+      text(s, st.verb, { x, y: top + 0.42, w, h: 0.5, fontFace: F.display, fontSize: 22, bold: true, color: k.fg });
       text(s, st.body, { x, y: top + 1.0, w: w - 0.1, h: 1.5, ...body(k.dark ? PX.niebla : PX.graphite, 13) });
       if (st.gate) {
         const gy = 5.7, gh = 0.62;
@@ -273,7 +276,7 @@ export function createRenderer(pres, F) {
       const ty = y + 0.14;
       text(s, String(i + 1).padStart(2, "0"), { x: MX, y: ty + 0.04, w: 0.6, h: 0.3, fontFace: F.mono, fontSize: 10, color: k.dark ? PX.violet : PX.indigo });
       text(s, it.name, { x: MX + 0.7, y: ty, w: 4.4, h: rowH - 0.22, fontFace: F.display, fontSize: 17, bold: true, color: k.fg, lineSpacingMultiple: 0.95 });
-      if (it.body) text(s, it.body, { x: 5.95, y: ty + 0.02, w: 4.9, h: rowH - 0.22, ...body(k.dark ? PX.niebla : PX.graphite, 13), lineSpacingMultiple: 1.1 });
+      if (it.body) text(s, it.body, { x: 5.95, y: ty + 0.02, w: 4.9, h: rowH - 0.22, ...body(k.dark ? PX.niebla : PX.graphite, d.items.length > 5 ? 12 : 13), lineSpacingMultiple: 1.1 });
       if (it.tag) text(s, it.tag.toUpperCase(), { x: 11.0, y: ty + 0.05, w: RIGHT - 11.0, h: 0.4, fontFace: F.mono, fontSize: 8, bold: true, charSpacing: 2, color: PX.clay, align: "right" });
     });
   };
@@ -282,14 +285,15 @@ export function createRenderer(pres, F) {
     const k = frame(s, d, n);
     const initials = d.name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join("");
     const cs = 2.5, cx = MX, cy = 1.55;
-    s.addShape(pres.shapes.OVAL, { x: cx, y: cy, w: cs, h: cs, fill: { color: PX.graphite2 }, line: { color: k.dark ? PX.niebla : PX.muteLight, width: 1 } });
+    s.addShape(pres.shapes.OVAL, { x: cx, y: cy, w: cs, h: cs, fill: { color: k.dark ? PX.graphite2 : "FFFFFF" }, line: { color: k.dark ? PX.niebla : PX.muteLight, width: 1 } });
     text(s, initials, { x: cx, y: cy, w: cs, h: cs, fontFace: F.display, fontSize: 54, bold: true, color: k.fg, align: "center", valign: "middle" });
     const x = 3.75, w = RIGHT - x;
-    text(s, d.name, { x, y: 1.5, w, h: 0.7, fontFace: F.display, fontSize: 40, bold: true, color: k.fg });
+    text(s, d.name, { x, y: 1.5, w, h: 0.7, fontFace: F.display, fontSize: pick(d.name.length, [[22, 40], [26, 34]]), bold: true, color: k.fg });
     text(s, d.role.toUpperCase(), { x, y: 2.28, w, h: 0.3, fontFace: F.mono, fontSize: 10, charSpacing: 4, color: k.dark ? PX.violet : PX.indigo });
     text(s, d.bio, { x, y: 2.85, w: w - 0.3, h: 2.25, ...body(k.fg, 16) });
+    const p0 = Math.min(5.3, 2.85 + bodyH(d.bio, 16, w - 0.3) + 0.5);
     (d.points || []).forEach((p, i) => {
-      const pw = (w - 0.3) / 2, px = x + (i % 2) * (pw + 0.3), py = 5.3 + Math.floor(i / 2) * 0.62;
+      const pw = (w - 0.3) / 2, px = x + (i % 2) * (pw + 0.3), py = p0 + Math.floor(i / 2) * 0.62;
       s.addShape(pres.shapes.RECTANGLE, { x: px, y: py + 0.08, w: 0.08, h: 0.08, fill: { color: PX.indigo }, line: { type: "none" } });
       text(s, p, { x: px + 0.22, y: py, w: pw - 0.25, h: 0.55, ...body(k.dark ? PX.niebla : PX.muteLight, 13), lineSpacingMultiple: 1.1 });
     });
@@ -311,13 +315,13 @@ export function createRenderer(pres, F) {
       text(s, st.title, { x: x + 0.7, y: y + 0.16, w: w - 0.9, h: 0.35, fontFace: F.display, fontSize: 15, bold: true, color: k.fg });
       if (st.body) text(s, st.body, { x: x + 0.7, y: y + 0.55, w: w - 0.9, h: 0.8, ...body(k.dark ? PX.niebla : PX.muteLight, 12.5), lineSpacingMultiple: 1.1 });
     });
-    const by = 5.9, bh = 0.62, bw = 3.7;
+    const by = 5.9, btnH = 0.62, bw = 3.7;
     rect(s, MX, by, bw, bh, PX.clay);
-    text(s, d.button, { x: MX + 0.25, y: by, w: bw - 0.5, h: bh, fontFace: F.display, fontSize: 15, bold: true, color: PX.graphite, valign: "middle" });
+    text(s, d.button, { x: MX + 0.25, y: by, w: bw - 0.5, h: btnH, fontFace: F.display, fontSize: 15, bold: true, color: PX.graphite, valign: "middle" });
     const cx = MX + bw + 0.35, cw2 = RIGHT - cx - 1.5;
     const marker = /\[.*\]/.test(d.contact);
-    if (marker) s.addShape(pres.shapes.RECTANGLE, { x: cx, y: by, w: cw2, h: bh, fill: { type: "none" }, line: { color: PX.clay, width: 1, dashType: "dash" } });
-    text(s, d.contact, { x: cx + 0.25, y: by, w: cw2 - 0.5, h: bh, fontFace: F.mono, fontSize: 10.5, bold: marker, charSpacing: 1, color: marker ? PX.clay : k.fg, valign: "middle" });
+    if (marker) s.addShape(pres.shapes.RECTANGLE, { x: cx, y: by, w: cw2, h: btnH, fill: { type: "none" }, line: { color: PX.clay, width: 1, dashType: "dash" } });
+    text(s, d.contact, { x: cx + 0.25, y: by, w: cw2 - 0.5, h: btnH, fontFace: F.mono, fontSize: 10.5, bold: marker, color: marker ? PX.clay : k.fg, valign: "middle" });
   };
 
   R.closing = (s, d, n) => {

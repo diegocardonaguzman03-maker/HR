@@ -40,22 +40,23 @@
       "title": "La brecha no es un tema blando. Se paga en valor que no llega.",
       "stats": [
         {
-          "value": "[CIFRA PENDIENTE RES-01]",
-          "label": "Organizaciones que capturan valor sustancial de su inversión en IA.",
-          "source": "[FUENTE Y FECHA PENDIENTES RES-01]"
+          "value": "~5%",
+          "label": "de las organizaciones obtiene ganancias financieras sustanciales de la IA.",
+          "source": "BCG, 2026 · AI Transformation Is a Workforce Transformation"
         },
         {
-          "value": "[CIFRA PENDIENTE RES-01]",
-          "label": "Probabilidad de no ver retorno cuando el enfoque es solo tecnológico.",
-          "source": "[FUENTE Y FECHA PENDIENTES RES-01]"
+          "value": "~70%",
+          "label": "del valor de la IA depende de repensar el componente humano, en la experiencia de BCG.",
+          "source": "BCG, 2026 · AI Transformation Is a Workforce Transformation"
         },
         {
-          "value": "[CIFRA PENDIENTE RES-01]",
-          "label": "Peso de la gestión del cambio y la cultura en la agenda de la dirección de personas.",
-          "source": "[FUENTE Y FECHA PENDIENTES RES-01]"
+          "value": "56%",
+          "label": "de las empresas en México aún no identifica con claridad el valor de negocio de la IA.",
+          "source": "KPMG México, 2025 · Panorama de la IA en México y Centroamérica"
         }
       ],
-      "note": "Comprar software o IA no equivale a adopción ni a retorno. Cada cifra se publica solo con fuente verificable y fecha."
+      "note": "Comprar software o IA no equivale a adopción ni a retorno. Cifras globales (BCG) y de México (KPMG); fuentes en las notas.",
+      "notes": "Fuentes de esta lámina (texto completo y enlace):\n• Solo ~5% de las organizaciones obtiene ganancias financieras sustanciales de la IA. Fuente: BCG, 2026. https://www.bcg.com/publications/2026/ai-transformation-is-a-workforce-transformation\n• En la experiencia de BCG, ~70% del valor de la IA depende de repensar el componente humano; 20%, de la tecnología; 10%, de los algoritmos. Fuente: BCG, 2026. https://www.bcg.com/publications/2026/ai-transformation-is-a-workforce-transformation\n• En México, 56% de las empresas aún no identifica con claridad el valor de negocio de la IA, y solo 27% tiene una estrategia de IA bien definida. Fuente: KPMG México, 2025. https://kpmg.com/mx/es/sala-de-prensa/comunicados-de-prensa/2025/10/cp-empresas-en-mexico-y-centroamerica-apuestan-por-la-ia.html"
     },
     {
       "type": "content",
@@ -85,7 +86,7 @@
       "type": "method",
       "label": "06 — Cómo trabajamos",
       "section": "Método",
-      "title": "The Adoption System: cuatro etapas, cuatro gates.",
+      "title": "The Adoption System en cuatro etapas.",
       "intro": "Un sistema repetible y medible. Cada etapa cierra con un gate que aprueba el sponsor.",
       "stages": [
         { "name": "Sense", "verb": "Diagnosticar", "body": "Contexto de negocio, sponsor, baseline y costo de no actuar. Dónde se rompe la adopción.", "gate": "G0 · Business case aprobado" },

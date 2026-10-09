@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "slug": "06-logistica-cadena-suministro",
+    "title": "PRAXIA · Logística y cadena de suministro",
+    "sector": "Logística y cadena de suministro",
+    "date": "Octubre 2026",
+    "lang": "es",
+    "confidential": true,
+    "output": "../06-logistica-cadena-suministro/deck-praxia-logistica.pptx"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Presentación ejecutiva",
+      "title": "Implementar el WMS no es ~adoptarlo~.",
+      "subtitle": "Para operadores logísticos y cadenas de suministro que crecieron con el nearshoring y necesitan que el sistema gobierne el turno."
+    },
+    {
+      "type": "statement",
+      "label": "01 — El momento",
+      "section": "El momento",
+      "statement": "El nearshoring llenó las naves. La capacidad de gestión no creció al mismo ritmo.",
+      "support": "México recibió una IED récord de 40,871 mdd en 2025 (Secretaría de Economía, 2026). CEDIS, cruces y rutas nuevas exigen otra forma de operar el turno.",
+      "notes": "Fuentes de esta lámina (texto completo y enlace):\n• México recibió una IED récord de 40,871 mdd en 2025; las nuevas inversiones crecieron 132.9%. Fuente: Secretaría de Economía, 2026. https://www.gob.mx/se/prensa/mexico-alcanza-cifra-historica-de-inversion-extranjera-directa-en-2025-40-871-millones-de-dolares-crecio-un-10-8-anual"
+    },
+    {
+      "type": "gap",
+      "label": "02 — El problema real",
+      "section": "El problema",
+      "title": "The ~Adoption Gap~ en el CEDIS.",
+      "definition": "El WMS y el TMS están implementados; supervisores y despachadores siguen en Excel y WhatsApp. La rotación de almacenistas y operadores reinicia la curva, y el OTIF depende de quién esté en el turno.",
+      "leftLabel": "WMS, TMS y torre de control",
+      "rightLabel": "Turno gobernado por el sistema",
+      "gapLabel": "La brecha"
+    },
+    {
+      "type": "stats",
+      "label": "03 — El costo de la brecha",
+      "section": "El costo",
+      "title": "Implementar no es capturar valor. La brecha se paga en la operación.",
+      "stats": [
+        {
+          "value": "56%",
+          "label": "de las empresas en México aún no identifica con claridad el valor de negocio de la IA.",
+          "source": "KPMG México, 2025 · México, transversal"
+        },
+        {
+          "value": "16%",
+          "label": "de las empresas ha rediseñado por completo roles, procesos y modelo operativo para la IA.",
+          "source": "Deloitte, 2025 · global, transversal"
+        },
+        {
+          "value": ">40%",
+          "label": "de los proyectos de IA agéntica se cancelará para finales de 2027, prevé Gartner.",
+          "source": "Gartner, 2025 (predicción) · global"
+        }
+      ],
+      "note": "Cifras transversales de México y globales, no específicas de logística. La de Gartner es una predicción.",
+      "notes": "Fuentes de esta lámina (texto completo y enlace):\n• En México, 56% de las empresas aún no identifica con claridad el valor de negocio de la IA, y solo 27% tiene una estrategia de IA bien definida. Fuente: KPMG México, 2025. https://kpmg.com/mx/es/sala-de-prensa/comunicados-de-prensa/2025/10/cp-empresas-en-mexico-y-centroamerica-apuestan-por-la-ia.html\n• Solo 16% de las organizaciones ha rediseñado por completo roles, procesos y modelo operativo para integrar la IA. Fuente: Deloitte, 2025. https://www.deloitte.com/us/en/about/press-room/work-design-essential-to-ai-roi.html\n• Gartner prevé que más de 40% de los proyectos de IA agéntica se cancelará para finales de 2027. Fuente: Gartner, 2025 (predicción). https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027"
+    },
+    {
+      "type": "content",
+      "label": "04 — Qué hacemos",
+      "section": "Qué hacemos",
+      "title": "Convertimos el sistema instalado en operación gobernada.",
+      "body": "Tu inversión en WMS, TMS y automatización rinde cuando supervisores, despachadores y almacenistas deciden con el sistema. Medimos esa brecha y la cerramos: del comité a la junta de arranque de turno en cada CEDIS.",
+      "points": [
+        {
+          "title": "Diagnosticamos",
+          "body": "Dónde se rompe la adopción: almacén, despacho, flota, mandos medios y datos de uso."
+        },
+        {
+          "title": "Diseñamos el sistema",
+          "body": "Roles de supervisión, rutinas de turno, incentivos y métricas de OTIF, exactitud y seguridad."
+        },
+        {
+          "title": "Medimos el cambio",
+          "body": "Uso del sistema, comportamiento e impacto en OTIF y errores de surtido. Nunca asistencia."
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "label": "05 — Por qué distinto",
+      "section": "Por qué PRAXIA",
+      "title": "Otros implementan o capacitan. Nosotros respondemos por la adopción.",
+      "columns": [
+        {
+          "kicker": "Integradores de WMS y TMS",
+          "verb": "Implementan",
+          "body": "El sistema configurado y en producción. Su alcance termina en el go-live; el turno queda fuera."
+        },
+        {
+          "kicker": "Capacitación operativa",
+          "verb": "Entrenan",
+          "body": "Cursos medidos en asistencia, que la rotación borra sin mover errores de surtido ni OTIF."
+        },
+        {
+          "kicker": "PRAXIA",
+          "verb": "Asegura la adopción",
+          "body": "Diseña y mide la adopción en cada almacén, flota y turno, hasta que se nota en OTIF, exactitud y seguridad."
+        }
+      ],
+      "highlight": 2
+    },
+    {
+      "type": "method",
+      "label": "06 — Cómo trabajamos",
+      "section": "Método",
+      "title": "The Adoption System en cuatro etapas.",
+      "intro": "Un sistema repetible y medible, del comité al turno. Cada etapa cierra con un gate que aprueba el sponsor.",
+      "stages": [
+        {
+          "name": "Sense",
+          "verb": "Diagnosticar",
+          "gate": "G0 · Business case aprobado",
+          "body": "Baseline de uso del WMS y TMS por CEDIS y turno, rutinas de supervisión, rotación y costo de no actuar."
+        },
+        {
+          "name": "Align",
+          "verb": "Alinear",
+          "gate": "G1 · Tesis y roadmap aprobados",
+          "body": "Roles de supervisión, decision rights, rutinas de turno y métricas de OTIF y exactitud en un roadmap."
+        },
+        {
+          "name": "Adopt",
+          "verb": "Adoptar",
+          "gate": "G2 · KPIs de adopción por ola",
+          "body": "Piloto en un CEDIS o una ruta, habilitación en puesto, junta de arranque y refuerzo de supervisores."
+        },
+        {
+          "name": "Sustain",
+          "verb": "Sostener",
+          "gate": "G3 · Re-medición periódica",
+          "body": "Despliegue por olas en la red, re-medición de OTIF y exactitud, y transferencia del método a tu equipo."
+        }
+      ],
+      "mantra": "La estrategia se compra. La ~adopción~ se diseña."
+    },
+    {
+      "type": "offer",
+      "label": "07 — Punto de entrada",
+      "section": "Punto de entrada",
+      "title": "Empieza midiendo: Adoption Gap Diagnostic.",
+      "body": "En 3 a 5 semanas medimos la distancia entre lo que tu operación implementó (WMS, TMS, automatización) y lo que realmente gobierna el turno, y construimos el business case con tus datos.",
+      "facts": [
+        {
+          "k": "Duración",
+          "v": "3–5 semanas"
+        },
+        {
+          "k": "Qué medimos",
+          "v": "5 capas × 5 niveles"
+        },
+        {
+          "k": "Evidencia",
+          "v": "Cualitativa y cuantitativa"
+        },
+        {
+          "k": "Inversión",
+          "v": "Según alcance"
+        }
+      ],
+      "panelTitle": "Lo que recibes",
+      "deliverables": [
+        "Hallazgos en las cinco capas, del comité al supervisor de turno",
+        "Baseline de adopción por CEDIS, ruta y turno",
+        "Costo de la brecha en OTIF, exactitud y rotación",
+        "Prioridades por impacto y esfuerzo",
+        "Roadmap de 90 y 180 días"
+      ]
+    },
+    {
+      "type": "services",
+      "label": "08 — Cómo seguimos",
+      "section": "Servicios",
+      "title": "Del diagnóstico a una operación que adopta.",
+      "items": [
+        {
+          "name": "Adoption Gap Diagnostic",
+          "body": "Baseline por CEDIS y turno, costo de la brecha y business case. De 3 a 5 semanas.",
+          "tag": "Punto de entrada"
+        },
+        {
+          "name": "Strategy-to-Adoption Sprint",
+          "body": "Una prioridad activada: arranque de CEDIS o adopción del WMS. De 6 a 10 semanas."
+        },
+        {
+          "name": "Transformation Adoption Program",
+          "body": "Integración o red de CEDIS por olas, con supervisores como palanca. De 3 a 6 meses."
+        },
+        {
+          "name": "AI Adoption Accelerator",
+          "body": "IA en planeación de demanda o ruteo de flota, con uso real medido. De 6 a 12 semanas."
+        }
+      ]
+    },
+    {
+      "type": "founder",
+      "label": "09 — Quién está detrás",
+      "section": "Quién está detrás",
+      "name": "Francisco Cardona",
+      "role": "Founder & Principal",
+      "bio": "PRAXIA es una firma senior-led y basada en evidencia. Francisco trabaja de par a par con la dirección, desde el P&L y el riesgo, para que la estrategia se convierta en decisiones, comportamientos e indicadores que cambian.",
+      "points": [
+        "Liderazgo en un grupo industrial multinacional",
+        "Talento, aprendizaje, desarrollo organizacional y people analytics",
+        "Exposición internacional",
+        "Proyectos de transformación y productividad"
+      ]
+    },
+    {
+      "type": "cta",
+      "label": "10 — Empecemos",
+      "section": "Empecemos",
+      "title": "Mide tu ~Adoption Gap~.",
+      "body": "Un diagnóstico de 3 a 5 semanas te dice dónde tu operación no está adoptando lo que ya implementó y qué hacer al respecto. Es el punto de partida de menor riesgo.",
+      "steps": [
+        {
+          "title": "Conversación ejecutiva",
+          "body": "45 minutos sobre la operación, la red de CEDIS y el valor en juego."
+        },
+        {
+          "title": "Hipótesis de valor",
+          "body": "Resumimos en una página la brecha, el valor en juego y el siguiente paso."
+        },
+        {
+          "title": "Diagnóstico",
+          "body": "Alcance, entregables e inversión según alcance, listos para decidir."
+        }
+      ],
+      "button": "Agenda tu diagnóstico →",
+      "contact": "[CANAL DE CONTACTO — COMPLETAR]"
+    },
+    {
+      "type": "closing",
+      "section": "Gracias",
+      "tagline": "Turn *strategy* into ~adoption~.",
+      "contact": "[CANAL DE CONTACTO — COMPLETAR]"
+    }
+  ]
+}

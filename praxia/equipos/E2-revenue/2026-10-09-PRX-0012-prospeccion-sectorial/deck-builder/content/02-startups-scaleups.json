@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "slug": "02-startups-scaleups",
+    "title": "PRAXIA · Startups y scale-ups",
+    "sector": "Startups y scale-ups",
+    "date": "Octubre 2026",
+    "lang": "es",
+    "confidential": true,
+    "output": "../02-startups-scaleups/deck-praxia-startups-scaleups.pptx"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Presentación ejecutiva",
+      "title": "Escalar no es contratar. Es ~adoptar~ otra forma de operar.",
+      "subtitle": "Para fundadores y equipos directivos que crecen más rápido que su forma de decidir, gestionar y medir."
+    },
+    {
+      "type": "statement",
+      "label": "01 — El momento",
+      "section": "El momento",
+      "statement": "La ronda compra crecimiento. No compra una organización lista para escalar.",
+      "support": "México captó USD 440.8 millones de capital de riesgo en el 2T 2026, el mayor monto de LatAm en el trimestre (KPMG México, 2026).",
+      "notes": "Fuentes de esta lámina (texto completo y enlace):\n• México captó USD 440.8 millones de capital de riesgo en el 2T 2026, el mayor monto de LatAm en el trimestre. Fuente: KPMG México, 2026. https://kpmg.com/mx/es/sala-de-prensa/comunicados-de-prensa/2026/08/cp-mexico-capta-usd-440-millones-en-capital-de-riesgo-y-reafirma-su-relevancia-en-america-latina.html"
+    },
+    {
+      "type": "gap",
+      "label": "02 — El problema real",
+      "section": "El problema",
+      "title": "The ~Adoption Gap~ después de la ronda.",
+      "definition": "La plantilla se duplica y los derechos de decisión siguen siendo los de cuando eran 40. Los valores viven en la wiki, y cada equipo usa IA por su cuenta sin que nadie sepa si cambió la productividad.",
+      "leftLabel": "Capital, plantilla y software",
+      "rightLabel": "Cómo se decide y se gestiona",
+      "gapLabel": "La brecha"
+    },
+    {
+      "type": "stats",
+      "label": "03 — El costo de la brecha",
+      "section": "El costo",
+      "title": "El capital crece más rápido que la capacidad de la organización para usarlo.",
+      "stats": [
+        {
+          "value": "+21%",
+          "label": "más capital levantaron en 2025 las startups con sede en México que en 2024.",
+          "source": "LAVCA, 2026 · Trends in Tech"
+        },
+        {
+          "value": "80%",
+          "label": "de la fuerza laboral dice que le falta tiempo o energía para su trabajo.",
+          "source": "Microsoft Work Trend Index, 2025 · global"
+        },
+        {
+          "value": "16%",
+          "label": "de las empresas ha rediseñado por completo roles, procesos y modelo operativo para la IA.",
+          "source": "Deloitte, 2025 · global"
+        }
+      ],
+      "note": "Universos distintos (México y global): las cifras no se suman ni se restan. Fuentes completas en las notas.",
+      "notes": "Fuentes de esta lámina (texto completo y enlace):\n• Las startups con sede en México levantaron 21% más capital en 2025 que en 2024. Fuente: LAVCA, 2026. https://www.lavca.org/research/2026-lavca-trends-in-tech/\n• 53% de los líderes dice que la productividad debe aumentar; 80% de la fuerza laboral dice que le falta tiempo o energía. Fuente: Microsoft Work Trend Index, 2025. https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born\n• Solo 16% de las organizaciones ha rediseñado por completo roles, procesos y modelo operativo para integrar la IA. Fuente: Deloitte, 2025. https://www.deloitte.com/us/en/about/press-room/work-design-essential-to-ai-roi.html"
+    },
+    {
+      "type": "content",
+      "label": "04 — Qué hacemos",
+      "section": "Qué hacemos",
+      "title": "Diseñamos la organización que tu siguiente etapa necesita.",
+      "body": "Después de una ronda, la plantilla crece en meses y la forma de decidir se queda atrás. Medimos dónde se rompe la ejecución y rediseñamos derechos de decisión, cadencia de gestión y el rol de los primeros managers.",
+      "points": [
+        {
+          "title": "Diagnosticamos",
+          "body": "Dónde se atora la ejecución: decisiones, handoffs entre equipos, primeros managers y uso real de IA."
+        },
+        {
+          "title": "Diseñamos el sistema",
+          "body": "Derechos de decisión, cadencia de gestión, roles y métricas para operar a la nueva escala."
+        },
+        {
+          "title": "Medimos el cambio",
+          "body": "Uso, comportamiento e impacto en velocidad de ejecución, productividad y burn. Nunca horas de curso."
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "label": "05 — Por qué distinto",
+      "section": "Por qué PRAXIA",
+      "title": "Otros entregan el plan. Nosotros respondemos por la adopción.",
+      "columns": [
+        {
+          "kicker": "Firmas de estrategia",
+          "verb": "Recomiendan",
+          "body": "Un plan sólido para la siguiente etapa. La organización que debe ejecutarlo queda como un «workstream» más."
+        },
+        {
+          "kicker": "Consultoras de cultura",
+          "verb": "Facilitan",
+          "body": "Offsites, valores y encuestas de clima con buena intención, sin un número que el CEO pueda gestionar."
+        },
+        {
+          "kicker": "PRAXIA",
+          "verb": "Asegura la adopción",
+          "body": "Diseña y mide cómo decide, gestiona y usa la IA tu organización, hasta que se nota en velocidad, productividad y burn."
+        }
+      ],
+      "highlight": 2
+    },
+    {
+      "type": "method",
+      "label": "06 — Cómo trabajamos",
+      "section": "Método",
+      "title": "The Adoption System en cuatro etapas.",
+      "intro": "Un sistema repetible y medible, al ritmo del hypergrowth. Cada etapa cierra con un gate del sponsor.",
+      "stages": [
+        {
+          "name": "Sense",
+          "verb": "Diagnosticar",
+          "gate": "G0 · Business case aprobado",
+          "body": "Baseline de ejecución: decisiones atoradas, handoffs, cadencia de gestión, uso real de IA y costo de no actuar."
+        },
+        {
+          "name": "Align",
+          "verb": "Alinear",
+          "gate": "G1 · Tesis y roadmap aprobados",
+          "body": "Derechos de decisión, rol de los primeros managers, rituales y métricas en una tesis de cambio para la nueva escala."
+        },
+        {
+          "name": "Adopt",
+          "verb": "Adoptar",
+          "gate": "G2 · KPIs de adopción por ola",
+          "body": "Piloto en uno o dos equipos, habilitación de managers, flujos de trabajo humano-IA y mecanismos de refuerzo."
+        },
+        {
+          "name": "Sustain",
+          "verb": "Sostener",
+          "gate": "G3 · Re-medición periódica",
+          "body": "Re-medición después de cada ola de contratación y transferencia del método a tu equipo de People."
+        }
+      ],
+      "mantra": "La estrategia se compra. La ~adopción~ se diseña."
+    },
+    {
+      "type": "offer",
+      "label": "07 — Punto de entrada",
+      "section": "Punto de entrada",
+      "title": "Empieza midiendo: Adoption Gap Diagnostic.",
+      "body": "En 3 a 5 semanas medimos la distancia entre la organización que tu plan de crecimiento exige y la que hoy opera, y construimos el business case del cambio con datos de tu propia operación.",
+      "facts": [
+        {
+          "k": "Duración",
+          "v": "3–5 semanas"
+        },
+        {
+          "k": "Qué medimos",
+          "v": "5 capas × 5 niveles"
+        },
+        {
+          "k": "Evidencia",
+          "v": "Cualitativa y cuantitativa"
+        },
+        {
+          "k": "Inversión",
+          "v": "Según alcance"
+        }
+      ],
+      "panelTitle": "Lo que recibes",
+      "deliverables": [
+        "Hallazgos en las cinco capas, del equipo fundador a los primeros managers",
+        "Baseline de adopción: decisiones, rituales y uso real de IA",
+        "Costo de la brecha en velocidad de ejecución y productividad",
+        "Prioridades por impacto y esfuerzo",
+        "Roadmap de 90 y 180 días para la siguiente etapa"
+      ]
+    },
+    {
+      "type": "services",
+      "label": "08 — Cómo seguimos",
+      "section": "Servicios",
+      "title": "Del diagnóstico a una organización que escala.",
+      "items": [
+        {
+          "name": "Adoption Gap Diagnostic",
+          "body": "Baseline de ejecución, costo de la brecha y business case. De 3 a 5 semanas.",
+          "tag": "Punto de entrada"
+        },
+        {
+          "name": "Strategy-to-Adoption Sprint",
+          "body": "Operating model post-ronda: derechos de decisión, cadencia y roles. De 6 a 10 semanas."
+        },
+        {
+          "name": "AI Adoption Accelerator",
+          "body": "IA en un flujo de trabajo prioritario, con uso e impacto medidos. De 6 a 12 semanas."
+        },
+        {
+          "name": "Executive Advisory Retainer",
+          "body": "Gobernanza y seguimiento mensual con el CEO y el equipo directivo."
+        }
+      ]
+    },
+    {
+      "type": "founder",
+      "label": "09 — Quién está detrás",
+      "section": "Quién está detrás",
+      "name": "Francisco Cardona",
+      "role": "Founder & Principal",
+      "bio": "PRAXIA es una firma senior-led y basada en evidencia. Francisco trabaja de par a par con la dirección, desde el P&L y el riesgo, para que la estrategia se convierta en decisiones, comportamientos e indicadores que cambian.",
+      "points": [
+        "Liderazgo en un grupo industrial multinacional",
+        "Talento, aprendizaje, desarrollo organizacional y people analytics",
+        "Exposición internacional",
+        "Proyectos de transformación y productividad"
+      ]
+    },
+    {
+      "type": "cta",
+      "label": "10 — Empecemos",
+      "section": "Empecemos",
+      "title": "Mide tu ~Adoption Gap~.",
+      "body": "Un diagnóstico de 3 a 5 semanas te dice dónde tu organización no está a la altura de tu plan de crecimiento y qué hacer antes de la siguiente ola de contratación.",
+      "steps": [
+        {
+          "title": "Conversación ejecutiva",
+          "body": "45 minutos sobre la etapa, el plan de crecimiento y el valor en juego."
+        },
+        {
+          "title": "Hipótesis de valor",
+          "body": "Resumimos en una página la brecha, el valor en juego y el siguiente paso."
+        },
+        {
+          "title": "Diagnóstico",
+          "body": "Alcance, entregables e inversión según alcance, listos para decidir."
+        }
+      ],
+      "button": "Agenda tu diagnóstico →",
+      "contact": "[CANAL DE CONTACTO — COMPLETAR]"
+    },
+    {
+      "type": "closing",
+      "section": "Gracias",
+      "tagline": "Turn *strategy* into ~adoption~.",
+      "contact": "[CANAL DE CONTACTO — COMPLETAR]"
+    }
+  ]
+}

@@ -16,6 +16,6 @@
     "pptxgenjs": "4.0.1"
   },
   "devDependencies": {
-    "sharp": "^0.34.0"
+    "sharp": "0.34.5"
   }
 }

@@ -53,11 +53,11 @@ export const TYPES = {
   content: {
     title: T(64, true),
     body: T(300),
-    points: A(0, 3, O({ title: T(36, true), body: T(130) }), false),
+    points: A(0, 3, O({ title: T(36, true), body: T(110) }), false),
   },
   stats: {
     title: T(90, true),
-    stats: A(2, 4, O({ value: T(28, true), label: T(110, true), source: T(90, true) })),
+    stats: A(2, 4, O({ value: T(28, true), label: T(90, true), source: T(90, true) })), // value ≤ 6 = cifra grande; más largo = marcador
     note: T(140),
   },
   gap: {
@@ -74,24 +74,24 @@ export const TYPES = {
     footnote: T(140),
   },
   method: {
-    title: T(70, true),
+    title: T(48, true),
     intro: T(110),
-    stages: A(4, 4, O({ name: T(10, true), verb: T(16, true), body: T(130, true), gate: T(40) })),
+    stages: A(4, 4, O({ name: T(10, true), verb: T(14, true), body: T(130, true), gate: T(40) })),
     mantra: T(80),
   },
   offer: {
-    title: T(60, true),
-    body: T(260),
+    title: T(48, true),
+    body: T(220),
     facts: A(0, 4, O({ k: T(16, true), v: T(30, true) }), false),
     panelTitle: T(24),
     deliverables: A(1, 5, T(80)),
   },
   services: {
     title: T(60, true),
-    items: A(3, 6, O({ name: T(42, true), body: T(110), tag: T(18) })),
+    items: A(3, 6, O({ name: T(42, true), body: T(90), tag: T(18) })),
   },
   founder: {
-    name: T(32, true),
+    name: T(26, true),
     role: T(40, true),
     bio: T(420, true),
     points: A(0, 4, T(70), false),
@@ -99,9 +99,9 @@ export const TYPES = {
   cta: {
     title: T(40, true),
     body: T(200),
-    steps: A(0, 3, O({ title: T(30, true), body: T(90) }), false),
-    button: T(30, true),
-    contact: T(64, true),
+    steps: A(0, 3, O({ title: T(24, true), body: T(90) }), false),
+    button: T(26, true),
+    contact: T(56, true),
   },
   closing: {
     tagline: T(40, true),

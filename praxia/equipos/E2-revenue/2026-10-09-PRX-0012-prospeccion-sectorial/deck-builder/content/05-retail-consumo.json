@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "slug": "05-retail-consumo",
+    "title": "PRAXIA · Retail, consumo y e-commerce",
+    "sector": "Retail, consumo y e-commerce",
+    "date": "Octubre 2026",
+    "lang": "es",
+    "confidential": true,
+    "output": "../05-retail-consumo/deck-praxia-retail-consumo.pptx"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Presentación ejecutiva",
+      "title": "Omnicanal en la estrategia. ~Adopción~ en la tienda.",
+      "subtitle": "Para cadenas de retail, consumo y e-commerce que ya desplegaron la tecnología y cuyo último metro sigue operando igual."
+    },
+    {
+      "type": "statement",
+      "label": "01 — El momento",
+      "section": "El momento",
+      "statement": "La estrategia es omnicanal. En muchas cadenas, la tienda sigue operando como un solo canal.",
+      "support": "App, clic y recoge, CRM, pricing dinámico e IA en atención ya están desplegados. El último metro es el gerente de tienda, con los incentivos y rituales de siempre."
+    },
+    {
+      "type": "gap",
+      "label": "02 — El problema real",
+      "section": "El problema",
+      "title": "The ~Adoption Gap~ en el último metro.",
+      "definition": "Clic y recoge, CRM y pricing dinámico desplegados; el gerente de tienda opera con los incentivos de siempre. Chatbots que escalan más de lo que resuelven y una rotación que borra cada capacitación antes de volverse hábito.",
+      "leftLabel": "Omnicanal, CRM e IA lanzados",
+      "rightLabel": "Lo que cambió en tienda",
+      "gapLabel": "La brecha"
+    },
+    {
+      "type": "stats",
+      "label": "03 — El costo de la brecha",
+      "section": "El costo",
+      "title": "Desplegar es rápido. Capturar el valor, no.",
+      "stats": [
+        {
+          "value": "56%",
+          "label": "de las empresas en México aún no identifica con claridad el valor de negocio de la IA.",
+          "source": "KPMG México, 2025 · México, transversal"
+        },
+        {
+          "value": "1.6×",
+          "label": "más probable no lograr retornos que superen expectativas con IA centrada en tecnología.",
+          "source": "Deloitte, 2026 · global, transversal"
+        },
+        {
+          "value": "50%",
+          "label": "abandonará sus planes de reducir personal de servicio al cliente por la IA, prevé Gartner.",
+          "source": "Gartner, 2025 (predicción) · organizaciones, global"
+        }
+      ],
+      "note": "Cifras transversales de México y globales, no específicas de retail. La de Gartner es una predicción.",
+      "notes": "Fuentes de esta lámina (texto completo y enlace):\n• En México, 56% de las empresas aún no identifica con claridad el valor de negocio de la IA, y solo 27% tiene una estrategia de IA bien definida. Fuente: KPMG México, 2025. https://kpmg.com/mx/es/sala-de-prensa/comunicados-de-prensa/2025/10/cp-empresas-en-mexico-y-centroamerica-apuestan-por-la-ia.html\n• Las organizaciones con un enfoque de IA centrado en la tecnología (59%) tienen 1.6 veces más probabilidad de no lograr retornos que superen sus expectativas que las que ponen a las personas al centro. Fuente: Deloitte, 2026. https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends.html\n• Gartner prevé que 50% de las organizaciones abandonará sus planes de reducir la fuerza laboral de servicio al cliente debido a la IA. Fuente: Gartner, 2025 (predicción). https://www.gartner.com/en/newsroom/press-releases/2025-06-10-gartner-predicts-50-percent-of-organizations-will-abandon-plans-to-reduce-customer-service-workforce-due-to-ai"
+    },
+    {
+      "type": "content",
+      "label": "04 — Qué hacemos",
+      "section": "Qué hacemos",
+      "title": "Convertimos la estrategia omnicanal en operación de tienda.",
+      "body": "Tu inversión en omnicanal e IA rinde cuando el gerente de tienda, el piso de ventas y atención cambian cómo trabajan. Medimos esa brecha y la cerramos: del comité a la junta de arranque de cada tienda.",
+      "points": [
+        {
+          "title": "Diagnosticamos",
+          "body": "Dónde se rompe la adopción: tienda, fulfillment, atención, incentivos y rotación."
+        },
+        {
+          "title": "Diseñamos el sistema",
+          "body": "Rol del gerente de tienda, rituales, incentivos y métricas alineadas al cliente omnicanal."
+        },
+        {
+          "title": "Medimos el cambio",
+          "body": "Uso, comportamiento e impacto en venta, conversión y servicio. Nunca horas de formación."
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "label": "05 — Por qué distinto",
+      "section": "Por qué PRAXIA",
+      "title": "Otros despliegan o entrenan. Nosotros respondemos por la adopción.",
+      "columns": [
+        {
+          "kicker": "Proveedores de tecnología",
+          "verb": "Despliegan",
+          "body": "App, CRM y chatbots funcionando. Su alcance termina en el lanzamiento; la operación de tienda queda fuera."
+        },
+        {
+          "kicker": "Programas de capacitación",
+          "verb": "Entrenan",
+          "body": "Un curso por cada lanzamiento, que la rotación borra antes de que se vuelva hábito."
+        },
+        {
+          "kicker": "PRAXIA",
+          "verb": "Asegura la adopción",
+          "body": "Diseña y mide la adopción en la red de tiendas y en atención, hasta que se nota en venta, servicio y rotación."
+        }
+      ],
+      "highlight": 2
+    },
+    {
+      "type": "method",
+      "label": "06 — Cómo trabajamos",
+      "section": "Método",
+      "title": "The Adoption System en cuatro etapas.",
+      "intro": "Un sistema repetible y medible, del comité a la tienda. Cada etapa cierra con un gate que aprueba el sponsor.",
+      "stages": [
+        {
+          "name": "Sense",
+          "verb": "Diagnosticar",
+          "gate": "G0 · Business case aprobado",
+          "body": "Baseline por formato, región y tienda: uso de herramientas, rituales, incentivos y costo de no actuar."
+        },
+        {
+          "name": "Align",
+          "verb": "Alinear",
+          "gate": "G1 · Tesis y roadmap aprobados",
+          "body": "Rol del gerente de tienda, decision rights, incentivos y métricas omnicanal en una tesis de cambio."
+        },
+        {
+          "name": "Adopt",
+          "verb": "Adoptar",
+          "gate": "G2 · KPIs de adopción por ola",
+          "body": "Pilotos en tiendas seleccionadas, habilitación en piso, rutinas de arranque y refuerzo del gerente regional."
+        },
+        {
+          "name": "Sustain",
+          "verb": "Sostener",
+          "gate": "G3 · Re-medición periódica",
+          "body": "Despliegue por olas en la red, re-medición por tienda y transferencia del método a tu equipo."
+        }
+      ],
+      "mantra": "La estrategia se compra. La ~adopción~ se diseña."
+    },
+    {
+      "type": "offer",
+      "label": "07 — Punto de entrada",
+      "section": "Punto de entrada",
+      "title": "Empieza midiendo: Adoption Gap Diagnostic.",
+      "body": "En 3 a 5 semanas medimos la distancia entre lo que tu cadena desplegó (omnicanal, CRM, IA) y lo que realmente se usa en tienda y en atención, y construimos el business case con tus datos.",
+      "facts": [
+        {
+          "k": "Duración",
+          "v": "3–5 semanas"
+        },
+        {
+          "k": "Qué medimos",
+          "v": "5 capas × 5 niveles"
+        },
+        {
+          "k": "Evidencia",
+          "v": "Cualitativa y cuantitativa"
+        },
+        {
+          "k": "Inversión",
+          "v": "Según alcance"
+        }
+      ],
+      "panelTitle": "Lo que recibes",
+      "deliverables": [
+        "Hallazgos en las cinco capas, del comité al gerente de tienda",
+        "Baseline de adopción por formato, región y tienda",
+        "Costo de la brecha en venta, servicio y rotación",
+        "Prioridades por impacto y esfuerzo",
+        "Roadmap de 90 y 180 días"
+      ]
+    },
+    {
+      "type": "services",
+      "label": "08 — Cómo seguimos",
+      "section": "Servicios",
+      "title": "Del diagnóstico a la adopción en toda la red.",
+      "items": [
+        {
+          "name": "Adoption Gap Diagnostic",
+          "body": "Baseline por formato y tienda, costo de la brecha y business case. De 3 a 5 semanas.",
+          "tag": "Punto de entrada"
+        },
+        {
+          "name": "Transformation Adoption Program",
+          "body": "Adopción por olas en la red de tiendas, con el gerente como palanca. De 3 a 6 meses."
+        },
+        {
+          "name": "AI Adoption Accelerator",
+          "body": "IA en atención, pricing o surtido, con uso real medido. De 6 a 12 semanas."
+        },
+        {
+          "name": "Strategy-to-Adoption Sprint",
+          "body": "Una prioridad: clic y recoge o tienda como centro de fulfillment. De 6 a 10 semanas."
+        }
+      ]
+    },
+    {
+      "type": "founder",
+      "label": "09 — Quién está detrás",
+      "section": "Quién está detrás",
+      "name": "Francisco Cardona",
+      "role": "Founder & Principal",
+      "bio": "PRAXIA es una firma senior-led y basada en evidencia. Francisco trabaja de par a par con la dirección, desde el P&L y el riesgo, para que la estrategia se convierta en decisiones, comportamientos e indicadores que cambian.",
+      "points": [
+        "Liderazgo en un grupo industrial multinacional",
+        "Talento, aprendizaje, desarrollo organizacional y people analytics",
+        "Exposición internacional",
+        "Proyectos de transformación y productividad"
+      ]
+    },
+    {
+      "type": "cta",
+      "label": "10 — Empecemos",
+      "section": "Empecemos",
+      "title": "Mide tu ~Adoption Gap~.",
+      "body": "Un diagnóstico de 3 a 5 semanas te dice dónde tu red de tiendas no está adoptando lo que ya desplegaste y qué hacer al respecto. Es el punto de partida de menor riesgo.",
+      "steps": [
+        {
+          "title": "Conversación ejecutiva",
+          "body": "45 minutos sobre la estrategia omnicanal, la red de tiendas y el valor en juego."
+        },
+        {
+          "title": "Hipótesis de valor",
+          "body": "Resumimos en una página la brecha, el valor en juego y el siguiente paso."
+        },
+        {
+          "title": "Diagnóstico",
+          "body": "Alcance, entregables e inversión según alcance, listos para decidir."
+        }
+      ],
+      "button": "Agenda tu diagnóstico →",
+      "contact": "[CANAL DE CONTACTO — COMPLETAR]"
+    },
+    {
+      "type": "closing",
+      "section": "Gracias",
+      "tagline": "Turn *strategy* into ~adoption~.",
+      "contact": "[CANAL DE CONTACTO — COMPLETAR]"
+    }
+  ]
+}
