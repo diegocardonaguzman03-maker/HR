@@ -1,0 +1,21 @@
+{
+  "name": "praxia-deck-builder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generador de decks PRAXIA (Brand Guidelines v1.0) a partir de content/<slug>.json · PRX-0012",
+  "type": "module",
+  "license": "UNLICENSED",
+  "author": "PRAXIA · DSN-01",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node build.mjs",
+    "assets": "node scripts/make-assets.mjs",
+    "test:limits": "node build.mjs --file test/limites.json --out /tmp/praxia-limites.pptx"
+  },
+  "dependencies": {
+    "pptxgenjs": "4.0.1"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  }
+}
