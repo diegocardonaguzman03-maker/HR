@@ -1,0 +1,825 @@
+[
+ {
+  "id": "CEO-01",
+  "slug": "praxia-ceo-01",
+  "displayName": "CEO-01",
+  "role": "Chief of Staff & CEO Strategist",
+  "department": "Executive Leadership",
+  "team": "E1 Dirección",
+  "reportsTo": "Founder",
+  "description": "Dirección y priorización de PRAXIA, síntesis estratégica, plan de 90 días, OKRs, revisión semanal del negocio y registro de decisiones del Founder.",
+  "instructionsPath": ".claude/agents/praxia-ceo-01.md",
+  "skills": [
+   "Plan estratégico trimestral y plan de 90 días",
+   "Briefs ejecutivos y síntesis de decisión",
+   "Registro de decisiones (praxia/01-equipo/registro-de-decisiones.md): lo propones y el Founder decide",
+   "OKRs y revisión semanal y mensual del negocio (skill §11.3)"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "finance.read",
+   "tasks.assign"
+  ],
+  "dataAccessPolicy": "all:read",
+  "avatar": {
+   "bodyType": "c",
+   "skinTone": "#4A3122",
+   "hairStyle": "long",
+   "hairColor": "#C9C2B8",
+   "outfitColor": "#0C0D12",
+   "accessory": "glasses"
+  }
+ },
+ {
+  "id": "STR-01",
+  "slug": "praxia-str-01",
+  "displayName": "STR-01",
+  "role": "Strategy & Market Intelligence Lead",
+  "department": "Strategy & Research",
+  "team": "E1 Dirección",
+  "reportsTo": "CEO-01",
+  "description": "Mapa de mercado, selección de verticales, tesis de mercado, ajuste oferta-mercado y encuadre de temas de contenido e investigación de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-str-01.md",
+  "skills": [
+   "Análisis de segmentos y selección de verticales (decisión abierta, skill §16)",
+   "Tesis de mercado y mapa de oportunidades",
+   "Encuadre del problema de negocio en WF03 y WF06"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "research.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "a",
+   "skinTone": "#F1D3B5",
+   "hairStyle": "short",
+   "hairColor": "#3B2A20",
+   "outfitColor": "#0C0D12",
+   "accessory": "glasses"
+  }
+ },
+ {
+  "id": "RES-01",
+  "slug": "praxia-res-01",
+  "displayName": "RES-01",
+  "role": "Research Director",
+  "department": "Strategy & Research",
+  "team": "E5 Research, Datos e IP",
+  "reportsTo": "STR-01",
+  "description": "Diseño de investigación, revisión de literatura, guías de entrevista, dossiers de evidencia y verificación de fuentes de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-res-01.md",
+  "skills": [
+   "Dossier de evidencia y memo de investigación",
+   "Guías de entrevista (incluidas las del diagnóstico)",
+   "Verificación de las fuentes de BCG, Deloitte y Gartner que usan los decks (skill §9.1)"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "research.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "a",
+   "skinTone": "#9C6A45",
+   "hairStyle": "buzz",
+   "hairColor": "#A0743F",
+   "outfitColor": "#8B5CF6",
+   "accessory": "glasses"
+  }
+ },
+ {
+  "id": "RES-02",
+  "slug": "praxia-res-02",
+  "displayName": "RES-02",
+  "role": "Competitive Intelligence Analyst",
+  "department": "Strategy & Research",
+  "team": "E5 Research, Datos e IP",
+  "reportsTo": "RES-01",
+  "description": "Inteligencia competitiva, tablas comparativas, vigilancia de tendencias, investigación de precios de mercado y verificación de cuentas de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-res-02.md",
+  "skills": [
+   "Tabla competitiva (firmas de estrategia, consultoras de RH y cambio, integradores)",
+   "Vigilancia de tendencias y FODA con fuentes",
+   "Verificación de industria y cuenta en WF01"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "research.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "c",
+   "skinTone": "#4A3122",
+   "hairStyle": "long",
+   "hairColor": "#5B4BFF",
+   "outfitColor": "#8B5CF6",
+   "accessory": "badge"
+  }
+ },
+ {
+  "id": "SAL-01",
+  "slug": "praxia-sal-01",
+  "displayName": "SAL-01",
+  "role": "Chief Revenue Officer",
+  "department": "Sales & Business Development",
+  "team": "E2 Revenue",
+  "reportsTo": "CEO-01",
+  "description": "Plan de ingresos, ICP, calificación de oportunidades, estrategia de cuenta, pipeline y guardrails de negociación de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-sal-01.md",
+  "skills": [
+   "Definición de ICP del Horizonte 1 y oferta ancla",
+   "Plan comercial y pronóstico de ingresos",
+   "Revisión semanal del pipeline (CRM ligero, skill §11.3)",
+   "Calificación de oportunidades (/calificar)"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "crm.draft",
+   "proposal.draft"
+  ],
+  "dataAccessPolicy": "crm:read-write-draft; finance:none",
+  "avatar": {
+   "bodyType": "a",
+   "skinTone": "#F1D3B5",
+   "hairStyle": "bun",
+   "hairColor": "#1B1B1F",
+   "outfitColor": "#0C0D12",
+   "accessory": "none"
+  }
+ },
+ {
+  "id": "SAL-02",
+  "slug": "praxia-sal-02",
+  "displayName": "SAL-02",
+  "role": "Account Research & Prospecting",
+  "department": "Sales & Business Development",
+  "team": "E2 Revenue",
+  "reportsTo": "SAL-01",
+  "description": "Listas de cuentas, triggers de compra, scoring de ICP, briefs de cuenta y borradores de outreach personalizado de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-sal-02.md",
+  "skills": [
+   "Brief de cuenta objetivo",
+   "Secuencias de outreach (solo borradores)",
+   "Registros de CRM"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "crm.draft",
+   "proposal.draft"
+  ],
+  "dataAccessPolicy": "crm:read-write-draft; finance:none",
+  "avatar": {
+   "bodyType": "c",
+   "skinTone": "#4A3122",
+   "hairStyle": "buzz",
+   "hairColor": "#A0743F",
+   "outfitColor": "#8B5CF6",
+   "accessory": "glasses"
+  }
+ },
+ {
+  "id": "SAL-03",
+  "slug": "praxia-sal-03",
+  "displayName": "SAL-03",
+  "role": "Solutions Consultant & Proposal Lead",
+  "department": "Sales & Business Development",
+  "team": "E2 Revenue",
+  "reportsTo": "SAL-01",
+  "description": "Discovery ejecutivo, hipótesis de valor, oferta de diagnóstico, pricing, propuestas comerciales, business case y SOW de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-sal-03.md",
+  "skills": [
+   "Nota de discovery (1 página) y guía de discovery",
+   "Ficha de diagnóstico (Adoption Gap Diagnostic)",
+   "Propuesta comercial de 14 secciones (§9.2) y business case",
+   "SOW en borrador (§9.3) y matriz de alcance"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "crm.draft",
+   "proposal.draft"
+  ],
+  "dataAccessPolicy": "crm:read-write-draft; finance:none",
+  "avatar": {
+   "bodyType": "c",
+   "skinTone": "#C68E65",
+   "hairStyle": "short",
+   "hairColor": "#5B4BFF",
+   "outfitColor": "#5B4BFF",
+   "accessory": "glasses"
+  }
+ },
+ {
+  "id": "MKT-01",
+  "slug": "praxia-mkt-01",
+  "displayName": "MKT-01",
+  "role": "Chief Marketing & Brand Officer",
+  "department": "Marketing & Public Relations",
+  "team": "E3 Marca y Demanda",
+  "reportsTo": "CEO-01",
+  "description": "Posicionamiento, gobierno de marca, plan de go-to-market, calendario editorial, campañas y auditorías de marca de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-mkt-01.md",
+  "skills": [
+   "Calendario GTM y editorial",
+   "Brief de campaña",
+   "Auditoría de marca contra la skill §14 y §17"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "content.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "a",
+   "skinTone": "#9C6A45",
+   "hairStyle": "buzz",
+   "hairColor": "#5B4BFF",
+   "outfitColor": "#2B2D38",
+   "accessory": "none"
+  }
+ },
+ {
+  "id": "MKT-02",
+  "slug": "praxia-mkt-02",
+  "displayName": "MKT-02",
+  "role": "Executive Thought Leadership Editor",
+  "department": "Marketing & Public Relations",
+  "team": "E3 Marca y Demanda",
+  "reportsTo": "MKT-01",
+  "description": "Voz del Founder, publicaciones y artículos de LinkedIn, series editoriales y calidad del argumento en contenido de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-mkt-02.md",
+  "skills": [
+   "Publicaciones de LinkedIn (calendario de 3 por semana)",
+   "Artículos y series (The Adoption Gap, Operating Model Reality, etc.)",
+   "Estándar editorial"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "content.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "b",
+   "skinTone": "#6E4A31",
+   "hairStyle": "short",
+   "hairColor": "#5B4BFF",
+   "outfitColor": "#2B2D38",
+   "accessory": "headset"
+  }
+ },
+ {
+  "id": "MKT-03",
+  "slug": "praxia-mkt-03",
+  "displayName": "MKT-03",
+  "role": "Growth & Performance Analyst",
+  "department": "Marketing & Public Relations",
+  "team": "E3 Marca y Demanda",
+  "reportsTo": "MKT-01",
+  "description": "Diseño de experimentos, analítica de embudo, SEO, atribución y tablero de crecimiento de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-mkt-03.md",
+  "skills": [
+   "Tablero de crecimiento",
+   "Plan de pruebas",
+   "Insights de landing page"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "content.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "b",
+   "skinTone": "#6E4A31",
+   "hairStyle": "bun",
+   "hairColor": "#3B2A20",
+   "outfitColor": "#0C0D12",
+   "accessory": "headset"
+  }
+ },
+ {
+  "id": "PR-01",
+  "slug": "praxia-pr-01",
+  "displayName": "PR-01",
+  "role": "Public Relations & Partnerships Lead",
+  "department": "Marketing & Public Relations",
+  "team": "E3 Marca y Demanda",
+  "reportsTo": "CEO-01",
+  "description": "Relaciones con medios, conferencias, alianzas (integradores y firmas complementarias), riesgo reputacional y mensajes a stakeholders de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-pr-01.md",
+  "skills": [
+   "Press kit",
+   "Pitch de conferencista",
+   "Brief de alianza",
+   "Protocolo de respuesta reputacional"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "content.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "a",
+   "skinTone": "#F1D3B5",
+   "hairStyle": "buzz",
+   "hairColor": "#3B2A20",
+   "outfitColor": "#5B4BFF",
+   "accessory": "headset"
+  }
+ },
+ {
+  "id": "DEL-01",
+  "slug": "praxia-del-01",
+  "displayName": "DEL-01",
+  "role": "Chief Delivery & Transformation Officer",
+  "department": "Client Delivery",
+  "team": "E4 Delivery y Adopción",
+  "reportsTo": "CEO-01",
+  "description": "Calidad de entrega, dotación de proyectos, gobierno de la transformación, gates G0–G3, kickoff, status, steering e informe de cierre de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-del-01.md",
+  "skills": [
+   "Delivery charter y kickoff deck",
+   "Plan de equipo, dotación y margen (/equipo)",
+   "Status report, steering pack y change requests",
+   "Informe de cierre"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "delivery.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "c",
+   "skinTone": "#4A3122",
+   "hairStyle": "short",
+   "hairColor": "#C9C2B8",
+   "outfitColor": "#E9663C",
+   "accessory": "headset"
+  }
+ },
+ {
+  "id": "DEL-02",
+  "slug": "praxia-del-02",
+  "displayName": "DEL-02",
+  "role": "Adoption & Change Principal",
+  "department": "Client Delivery",
+  "team": "E4 Delivery y Adopción",
+  "reportsTo": "DEL-01",
+  "description": "Diagnóstico de adopción, Adoption Architecture, Adoption Scorecard, diseño de cambio de comportamiento, operating model y activación de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-del-02.md",
+  "skills": [
+   "Kit e informe de diagnóstico (Adoption Architecture × Adoption Scorecard)",
+   "Blueprint de cambio y stakeholder map",
+   "Alcance técnico de la solución en WF01",
+   "Operating model, decision rights y RACI del cliente"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "delivery.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "b",
+   "skinTone": "#6E4A31",
+   "hairStyle": "long",
+   "hairColor": "#C9C2B8",
+   "outfitColor": "#0C0D12",
+   "accessory": "glasses"
+  }
+ },
+ {
+  "id": "DEL-03",
+  "slug": "praxia-del-03",
+  "displayName": "DEL-03",
+  "role": "AI Adoption & Capability Consultant",
+  "department": "Client Delivery",
+  "team": "E4 Delivery y Adopción",
+  "reportsTo": "DEL-01",
+  "description": "Readiness de IA, priorización de casos de uso, pilotos por función, habilitación por rol, capability maps y medición de uso-a-valor de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-del-03.md",
+  "skills": [
+   "Roadmap de adopción de IA y matriz de readiness",
+   "Charter de piloto",
+   "Capability map y diseño de aprendizaje aplicado"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "delivery.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "b",
+   "skinTone": "#E0B590",
+   "hairStyle": "short",
+   "hairColor": "#3B2A20",
+   "outfitColor": "#A7AAB5",
+   "accessory": "headset"
+  }
+ },
+ {
+  "id": "DEV-01",
+  "slug": "praxia-dev-01",
+  "displayName": "DEV-01",
+  "role": "Head of Product & Engineering",
+  "department": "Product & Engineering",
+  "team": "E6 Producto y Experiencia",
+  "reportsTo": "CEO-01",
+  "description": "Roadmap de activos digitales (diagnóstico digital, scorecards, dashboard de adopción), factibilidad, arquitectura segura y decisiones técnicas de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-dev-01.md",
+  "skills": [
+   "Roadmap de producto",
+   "Especificación técnica",
+   "Architecture Decision Records"
+  ],
+  "allowedTools": [
+   "repo.read"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "b",
+   "skinTone": "#6E4A31",
+   "hairStyle": "curly",
+   "hairColor": "#5B4BFF",
+   "outfitColor": "#E9663C",
+   "accessory": "badge"
+  }
+ },
+ {
+  "id": "DEV-02",
+  "slug": "praxia-dev-02",
+  "displayName": "DEV-02",
+  "role": "Full-Stack Engineer",
+  "department": "Product & Engineering",
+  "team": "E6 Producto y Experiencia",
+  "reportsTo": "DEV-01",
+  "description": "Prototipos web, integraciones, APIs, pruebas y runbooks de los activos digitales de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-dev-02.md",
+  "skills": [
+   "Código funcional con pruebas",
+   "Runbook y change log"
+  ],
+  "allowedTools": [
+   "repo.read"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "c",
+   "skinTone": "#C68E65",
+   "hairStyle": "long",
+   "hairColor": "#5B4BFF",
+   "outfitColor": "#8B5CF6",
+   "accessory": "headset"
+  }
+ },
+ {
+  "id": "DEV-03",
+  "slug": "praxia-dev-03",
+  "displayName": "DEV-03",
+  "role": "AI Systems & Automation Engineer",
+  "department": "Product & Engineering",
+  "team": "E6 Producto y Experiencia",
+  "reportsTo": "DEV-01",
+  "description": "Orquestación de agentes, retrieval, suites de evaluación, automatizaciones seguras en privacidad y evaluación del propio equipo de agentes praxia-*.",
+  "instructionsPath": ".claude/agents/praxia-dev-03.md",
+  "skills": [
+   "Especificación de agente e integraciones de herramientas",
+   "Suite de evaluación (exactitud, fidelidad de marca, ruteo)",
+   "Bitácora de fallas"
+  ],
+  "allowedTools": [
+   "repo.read"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "a",
+   "skinTone": "#F1D3B5",
+   "hairStyle": "short",
+   "hairColor": "#C9C2B8",
+   "outfitColor": "#8B5CF6",
+   "accessory": "none"
+  }
+ },
+ {
+  "id": "UX-01",
+  "slug": "praxia-ux-01",
+  "displayName": "UX-01",
+  "role": "Head of UX Research & Service Design",
+  "department": "UX, UI & Creative Design",
+  "team": "E6 Producto y Experiencia",
+  "reportsTo": "DEV-01",
+  "description": "Investigación de usuarios, service blueprints (incluida la experiencia del diagnóstico), arquitectura de información y usabilidad de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-ux-01.md",
+  "skills": [
+   "Journey map y service blueprint",
+   "Reporte de usabilidad",
+   "Flujos de usuario"
+  ],
+  "allowedTools": [
+   "content.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "b",
+   "skinTone": "#E0B590",
+   "hairStyle": "curly",
+   "hairColor": "#6B4A2E",
+   "outfitColor": "#A7AAB5",
+   "accessory": "headset"
+  }
+ },
+ {
+  "id": "UI-01",
+  "slug": "praxia-ui-01",
+  "displayName": "UI-01",
+  "role": "Product UI & Design Systems Lead",
+  "department": "UX, UI & Creative Design",
+  "team": "E6 Producto y Experiencia",
+  "reportsTo": "UX-01",
+  "description": "Diseño de interfaz, sistema de diseño y componentes, accesibilidad y prototipos de interacción de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-ui-01.md",
+  "skills": [
+   "Especificaciones de UI",
+   "Librería de componentes",
+   "Prototipo de interacción"
+  ],
+  "allowedTools": [
+   "content.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "c",
+   "skinTone": "#4A3122",
+   "hairStyle": "curly",
+   "hairColor": "#5B4BFF",
+   "outfitColor": "#2B2D38",
+   "accessory": "badge"
+  }
+ },
+ {
+  "id": "DSN-01",
+  "slug": "praxia-dsn-01",
+  "displayName": "DSN-01",
+  "role": "Creative Director & Brand Designer",
+  "department": "UX, UI & Creative Design",
+  "team": "E3 Marca y Demanda",
+  "reportsTo": "MKT-01",
+  "description": "Dirección de arte, decks (pitch, sales, kickoff), one-pagers, piezas visuales de LinkedIn y conformidad con el sistema visual de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-dsn-01.md",
+  "skills": [
+   "Brief creativo y key visuals",
+   "Decks y one-pagers en pptx, docx o pdf",
+   "QA de dirección de arte"
+  ],
+  "allowedTools": [
+   "content.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "b",
+   "skinTone": "#6E4A31",
+   "hairStyle": "curly",
+   "hairColor": "#C9C2B8",
+   "outfitColor": "#0C0D12",
+   "accessory": "none"
+  }
+ },
+ {
+  "id": "OPS-01",
+  "slug": "praxia-ops-01",
+  "displayName": "OPS-01",
+  "role": "Chief Operating Officer",
+  "department": "Operations & Finance",
+  "team": "E7 Operaciones y Personas",
+  "reportsTo": "CEO-01",
+  "description": "Asignación de recursos, plan de capacidad (horas del fundador), cadencia operativa, disciplina de procesos, proveedores y backlog de SOP de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-ops-01.md",
+  "skills": [
+   "Plan de capacidad",
+   "Cadencia operativa",
+   "Backlog de SOP"
+  ],
+  "allowedTools": [
+   "finance.read",
+   "finance.draft",
+   "crm.read"
+  ],
+  "dataAccessPolicy": "finance:read-write-draft; crm:read",
+  "avatar": {
+   "bodyType": "c",
+   "skinTone": "#4A3122",
+   "hairStyle": "curly",
+   "hairColor": "#3B2A20",
+   "outfitColor": "#5B4BFF",
+   "accessory": "badge"
+  }
+ },
+ {
+  "id": "FIN-01",
+  "slug": "praxia-fin-01",
+  "displayName": "FIN-01",
+  "role": "Finance & Commercial Operations",
+  "department": "Operations & Finance",
+  "team": "E7 Operaciones y Personas",
+  "reportsTo": "OPS-01",
+  "description": "Unit economics, flujo de caja, pricing, revisión de margen, pronósticos, cotizaciones y preparación de facturación de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-fin-01.md",
+  "skills": [
+   "Escenarios de P&L",
+   "Modelo de pricing y de valor en juego (xlsx)",
+   "Revisión de margen por propuesta"
+  ],
+  "allowedTools": [
+   "finance.read",
+   "finance.draft",
+   "crm.read"
+  ],
+  "dataAccessPolicy": "finance:read-write-draft; crm:read",
+  "avatar": {
+   "bodyType": "c",
+   "skinTone": "#C68E65",
+   "hairStyle": "long",
+   "hairColor": "#3B2A20",
+   "outfitColor": "#E9663C",
+   "accessory": "glasses"
+  }
+ },
+ {
+  "id": "HR-01",
+  "slug": "praxia-hr-01",
+  "displayName": "HR-01",
+  "role": "People & Talent Director",
+  "department": "Human Resources & Internal Communications",
+  "team": "E7 Operaciones y Personas",
+  "reportsTo": "OPS-01",
+  "description": "Arquitectura de roles, perfiles de asociados, rúbricas de entrevista, onboarding de colaboradores y plan de crecimiento de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-hr-01.md",
+  "skills": [
+   "Fichas de rol (catálogo de la skill §10.1)",
+   "Rúbrica de entrevista",
+   "Ruta de onboarding de asociados",
+   "Plan de crecimiento"
+  ],
+  "allowedTools": [
+   "knowledge.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "b",
+   "skinTone": "#6E4A31",
+   "hairStyle": "buzz",
+   "hairColor": "#C9C2B8",
+   "outfitColor": "#5B4BFF",
+   "accessory": "headset"
+  }
+ },
+ {
+  "id": "COM-01",
+  "slug": "praxia-com-01",
+  "displayName": "COM-01",
+  "role": "Internal Communications & Knowledge Lead",
+  "department": "Human Resources & Internal Communications",
+  "team": "E7 Operaciones y Personas",
+  "reportsTo": "OPS-01",
+  "description": "Brief interno semanal, anuncios, minutas, wiki de decisiones, higiene del conocimiento y activación de comunicación con stakeholders del cliente de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-com-01.md",
+  "skills": [
+   "Brief interno semanal",
+   "Minutas y anuncios",
+   "Wiki de decisiones y revisión trimestral del conocimiento",
+   "Plan de comunicación con stakeholders del cliente (WF02)"
+  ],
+  "allowedTools": [
+   "knowledge.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "a",
+   "skinTone": "#F1D3B5",
+   "hairStyle": "short",
+   "hairColor": "#C9C2B8",
+   "outfitColor": "#E9663C",
+   "accessory": "headset"
+  }
+ },
+ {
+  "id": "CX-01",
+  "slug": "praxia-cx-01",
+  "displayName": "CX-01",
+  "role": "Client Success & Customer Support Lead",
+  "department": "Customer Success",
+  "team": "E4 Delivery y Adopción",
+  "reportsTo": "DEL-01",
+  "description": "Onboarding de clientes, atención de solicitudes, health score, recuperación de servicio, retención y voz del cliente de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-cx-01.md",
+  "skills": [
+   "Plan de onboarding del cliente",
+   "Health score y QBR",
+   "Ticket de servicio y artículo de conocimiento"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "delivery.draft"
+  ],
+  "dataAccessPolicy": "crm:read; own drafts",
+  "avatar": {
+   "bodyType": "c",
+   "skinTone": "#C68E65",
+   "hairStyle": "short",
+   "hairColor": "#C9C2B8",
+   "outfitColor": "#5B4BFF",
+   "accessory": "headset"
+  }
+ },
+ {
+  "id": "DAT-01",
+  "slug": "praxia-dat-01",
+  "displayName": "DAT-01",
+  "role": "Data, Impact & Evaluation Lead",
+  "department": "Data, Quality & Governance",
+  "team": "E5 Research, Datos e IP",
+  "reportsTo": "CEO-01",
+  "description": "Líneas base, diseño de métricas, Adoption Scorecard, tableros, cálculo de valor en juego, investigación del Adoption Gap Index y advertencias de ROI de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-dat-01.md",
+  "skills": [
+   "Plan de medición y diccionario de datos",
+   "Scorecard con línea base",
+   "Reporte de impacto",
+   "Plan de validación del AGI (dimensiones, escalas, confiabilidad, calibración)"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "finance.read",
+   "review.block"
+  ],
+  "dataAccessPolicy": "all:read (review only)",
+  "avatar": {
+   "bodyType": "a",
+   "skinTone": "#F1D3B5",
+   "hairStyle": "buzz",
+   "hairColor": "#C9C2B8",
+   "outfitColor": "#E9663C",
+   "accessory": "badge"
+  }
+ },
+ {
+  "id": "RISK-01",
+  "slug": "praxia-risk-01",
+  "displayName": "RISK-01",
+  "role": "Legal, Privacy & Risk Advisor",
+  "department": "Data, Quality & Governance",
+  "team": "E8 Gobierno",
+  "reportsTo": "CEO-01",
+  "description": "Checklist de contratos, NDA, privacidad de datos, aprobación de claims, conflictos de interés, validación del nombre y marca, y riesgos de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-risk-01.md",
+  "skills": [
+   "Evaluación de riesgos",
+   "Revisión de políticas y contratos (checklist)",
+   "Borradores de NDA y contrato de asociados",
+   "Brief de validación de nombre (marca, dominio, redes)",
+   "Aviso de escalamiento"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "finance.read",
+   "review.block"
+  ],
+  "dataAccessPolicy": "all:read (review only)",
+  "avatar": {
+   "bodyType": "a",
+   "skinTone": "#9C6A45",
+   "hairStyle": "curly",
+   "hairColor": "#A0743F",
+   "outfitColor": "#E9663C",
+   "accessory": "headset"
+  }
+ },
+ {
+  "id": "QA-01",
+  "slug": "praxia-qa-01",
+  "displayName": "QA-01",
+  "role": "Quality Assurance & Knowledge Auditor",
+  "department": "Data, Quality & Governance",
+  "team": "E8 Gobierno",
+  "reportsTo": "CEO-01",
+  "description": "Revisión de calidad, verificación de fuentes, fidelidad de marca, consistencia y recomendación de liberación de cualquier entregable de PRAXIA.",
+  "instructionsPath": ".claude/agents/praxia-qa-01.md",
+  "skills": [
+   "Reporte de QA con dictamen",
+   "Verificación de fuentes",
+   "Recomendación de liberación"
+  ],
+  "allowedTools": [
+   "crm.read",
+   "finance.read",
+   "review.block"
+  ],
+  "dataAccessPolicy": "all:read (review only)",
+  "avatar": {
+   "bodyType": "b",
+   "skinTone": "#6E4A31",
+   "hairStyle": "short",
+   "hairColor": "#5B4BFF",
+   "outfitColor": "#0C0D12",
+   "accessory": "headset"
+  }
+ }
+]

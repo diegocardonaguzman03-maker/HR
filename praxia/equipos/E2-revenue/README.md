@@ -4,9 +4,9 @@ Del prospecto al contrato: ICP, calificación, discovery, propuesta y SOW. Dueñ
 
 | ID | Rol | Le reporta a | Activación | Agente |
 |---|---|---|---|---|
-| SAL-01 | Chief Revenue Officer | CEO-01 | Fase 1 | `.claude/agents/praxia-sal-01.md` |
-| SAL-02 | Account Research & Prospecting | SAL-01 | Fase 2 | `.claude/agents/praxia-sal-02.md` |
-| SAL-03 | Solutions Consultant & Proposal Lead | SAL-01 | Fase 1 | `.claude/agents/praxia-sal-03.md` |
+| SAL-01 | Chief Revenue Officer | CEO-01 | Activo | `.claude/agents/praxia-sal-01.md` |
+| SAL-02 | Account Research & Prospecting | SAL-01 | Activo | `.claude/agents/praxia-sal-02.md` |
+| SAL-03 | Solutions Consultant & Proposal Lead | SAL-01 | Activo | `.claude/agents/praxia-sal-03.md` |
 
 **Flujos en los que participa el equipo:** WF01 Lead To Contract
 

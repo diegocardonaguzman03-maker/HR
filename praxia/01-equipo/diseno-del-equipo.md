@@ -1,6 +1,6 @@
 # PRAXIA — Diseño del equipo de agentes v1.0
 
-> PRAXIA · Documento interno · 9 de octubre de 2026 · Estado: **[PROPUESTA]**, pendiente de las decisiones D-P01 a D-P03 del Founder
+> PRAXIA · Documento interno · 9 de octubre de 2026 · Estado: estructura vigente. **D-P01 decidida: opción C, los 28 agentes activos desde el 2026-10-09.** Las fases de la §4 y la tabla de cobertura de la §5 se conservan como referencia, pero ya no limitan la activación.
 
 ## Mensaje clave
 

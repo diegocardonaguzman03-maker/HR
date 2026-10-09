@@ -4,11 +4,11 @@ Activos digitales (diagnóstico digital, scorecards, tableros), experiencia de u
 
 | ID | Rol | Le reporta a | Activación | Agente |
 |---|---|---|---|---|
-| DEV-01 | Head of Product & Engineering | CEO-01 | Fase 4 | `.claude/agents/praxia-dev-01.md` |
-| DEV-02 | Full-Stack Engineer | DEV-01 | Fase 4 | `.claude/agents/praxia-dev-02.md` |
-| DEV-03 | AI Systems & Automation Engineer | DEV-01 | Fase 4 | `.claude/agents/praxia-dev-03.md` |
-| UX-01 | Head of UX Research & Service Design | DEV-01 | Fase 4 | `.claude/agents/praxia-ux-01.md` |
-| UI-01 | Product UI & Design Systems Lead | UX-01 | Fase 4 | `.claude/agents/praxia-ui-01.md` |
+| DEV-01 | Head of Product & Engineering | CEO-01 | Activo | `.claude/agents/praxia-dev-01.md` |
+| DEV-02 | Full-Stack Engineer | DEV-01 | Activo | `.claude/agents/praxia-dev-02.md` |
+| DEV-03 | AI Systems & Automation Engineer | DEV-01 | Activo | `.claude/agents/praxia-dev-03.md` |
+| UX-01 | Head of UX Research & Service Design | DEV-01 | Activo | `.claude/agents/praxia-ux-01.md` |
+| UI-01 | Product UI & Design Systems Lead | UX-01 | Activo | `.claude/agents/praxia-ui-01.md` |
 
 **Flujos en los que participa el equipo:** WF04 Product Build, WF05 Customer Support
 

@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* PRAXIA Brand Guidelines v1.0 — official tokens */
+@theme {
+  --color-graphite: #0c0d12;
+  --color-graphite-2: #15161d;
+  --color-graphite-3: #1d1f28;
+  --color-hair: #2a2b33;
+  --color-ivory: #f5f2ec;
+  --color-indigo: #5b4bff;
+  --color-violet: #8b5cf6;
+  --color-clay: #e9663c;
+  --color-niebla: #a7aab5;
+  --color-mute: #6b6e78;
+  --color-ok: #3fb68b;
+  --color-warn: #e9a23c;
+  --color-bad: #e5484d;
+
+  --font-display: var(--font-space-grotesk), "Space Grotesk", Arial, sans-serif;
+  --font-sans: var(--font-inter), "Inter", Calibri, sans-serif;
+  --font-mono: var(--font-space-mono), "Space Mono", Consolas, monospace;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html { color-scheme: dark; }
+  body {
+    background: var(--color-graphite);
+    color: var(--color-ivory);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: color-mix(in srgb, var(--color-indigo) 45%, transparent); }
+  :focus-visible { outline: 2px solid var(--color-indigo); outline-offset: 2px; border-radius: 4px; }
+  input, select, textarea { color-scheme: dark; }
+}
+
+@layer components {
+  .px-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-niebla);
+  }
+  /* Restrained duotone light — one focal point only (top-right of the page). */
+  .px-glow {
+    background:
+      radial-gradient(600px 380px at 92% -10%, rgb(91 75 255 / 0.16), transparent 60%),
+      radial-gradient(420px 300px at 100% 20%, rgb(233 102 60 / 0.07), transparent 60%);
+  }
+  .px-card {
+    background: var(--color-graphite-2);
+    border: 1px solid var(--color-hair);
+    border-radius: 14px;
+  }
+  .px-input {
+    width: 100%;
+    background: var(--color-graphite);
+    border: 1px solid var(--color-hair);
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 13.5px;
+    color: var(--color-ivory);
+    transition: border-color 150ms;
+  }
+  .px-input:focus { border-color: var(--color-indigo); outline: none; }
+  .px-table { width: 100%; font-size: 13px; border-collapse: collapse; }
+  .px-table th {
+    text-align: left; font-family: var(--font-mono); font-weight: 400; font-size: 10px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--color-niebla); padding: 8px 12px; border-bottom: 1px solid var(--color-hair);
+  }
+  .px-table td { padding: 10px 12px; border-bottom: 1px solid color-mix(in srgb, var(--color-hair) 60%, transparent); vertical-align: top; }
+  .px-table tr:hover td { background: color-mix(in srgb, var(--color-graphite-3) 60%, transparent); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+}

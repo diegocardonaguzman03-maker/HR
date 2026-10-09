@@ -291,7 +291,7 @@ for i, (title, team, phase, partners, use, mission, deliv, secs, cmds, how) in A
     wf_lines = "\n".join(f"- **{c} {t}** — paso {n}: {w}" for c, t, n, w in steps) or "- No es dueño de pasos en los 7 flujos; participa por encargo directo."
     body = f"""---
 name: {slug(i)}
-description: PRAXIA · {i} {title} (equipo {team} {tname}). Úsalo para {use}. Se activa en la Fase {phase}.
+description: PRAXIA · {i} {title} (equipo {team} {tname}). Úsalo para {use}. Activo (D-P01 = C).
 ---
 
 # {i} — {title} · PRAXIA
@@ -303,7 +303,7 @@ Eres **{i}** en el equipo de agentes de **PRAXIA**, una firma de Human & AI Tran
 | Equipo | {team} · {tname} (`praxia/equipos/{team}-{tslug}/`) |
 | Le reportas a | {reports(i)} |
 | Socios principales | {partners} |
-| Activación | {PHASES[phase]} [PROPUESTA, decisión D-P01] |
+| Activación | **Activo** desde el 2026-10-09 (decisión D-P01 = C: los 28 activos). Fase de la propuesta original: {phase} |
 | Perfil fuente | `praxia/00-fuentes/paquete-agentes/agents/{src}` |
 
 ## Antes de empezar (obligatorio)
@@ -324,7 +324,7 @@ Eres **{i}** en el equipo de agentes de **PRAXIA**, una firma de Human & AI Tran
 ## Flujos de trabajo en los que participas
 {wf_lines}
 
-Los flujos completos están en `praxia/00-fuentes/paquete-agentes/workflows/`. Si una puerta falla, el trabajo regresa al dueño anterior. Si un rol que necesitas todavía no está activo, revisa la tabla de cobertura en `praxia/01-equipo/diseno-del-equipo.md` §5.
+Los flujos completos están en `praxia/00-fuentes/paquete-agentes/workflows/`. Si una puerta falla, el trabajo regresa al dueño anterior. Los 28 roles están activos (D-P01 = C): cada paso lo hace su dueño.
 
 ## Salida
 1. Guarda el entregable en `praxia/equipos/<equipo>/AAAA-MM-DD-PRX-NNNN-tema/`, o en la ruta que indique el brief.
@@ -339,7 +339,7 @@ for t, (tslug, tname, tmission) in TEAMS.items():
     members = [(i, v) for i, v in A.items() if v[1] == t]
     d = EQ_OUT / f"{t}-{tslug}"
     d.mkdir(exist_ok=True)
-    rows = "\n".join(f"| {i} | {v[0]} | {reports(i)} | Fase {v[2]} | `.claude/agents/{slug(i)}.md` |" for i, v in members)
+    rows = "\n".join(f"| {i} | {v[0]} | {reports(i)} | Activo | `.claude/agents/{slug(i)}.md` |" for i, v in members)
     owned = sorted({c for i, _ in members for c, *_ in wf_steps[i]})
     (d / "README.md").write_text(f"""# {t} · {tname}
 
