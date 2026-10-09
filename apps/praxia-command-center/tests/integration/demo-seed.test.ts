@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { freshDb } from "../helpers";
-import { seedDemo } from "@/server/seed/demo";
+import { DEMO_BOOKINGS, seedDemo } from "@/server/seed/demo";
 import { loadDashboard } from "@/server/services/dashboard";
 import { listAgentsWithStatus } from "@/server/services/agents";
 import { todayIso } from "@/server/services/common";
@@ -15,11 +15,16 @@ describe("demo dataset", () => {
     expect(real.sales.activeOpportunities).toBe(0);
     expect(real.operations.openApprovals).toBe(0);
     const demo = await loadDashboard(db, { includeDemo: true, periodKey: "ytd", today: todayIso() });
-    expect(demo.finance.bookings.value).toBe(1_200_000);
-    expect(demo.finance.collected.value).toBe(300_000);
-    expect(demo.finance.overdueReceivables.value).toBe(696_000 - 300_000);
-    expect(demo.operations.openApprovals).toBe(1);
-    expect(demo.sales.weightedPipeline.missingFx).toBe(1); // MXN deal without a rate
+    // Simulation requested by the founder: 3 client accounts, USD 4.3M in signed contracts.
+    expect(demo.finance.bookings.value).toBe(DEMO_BOOKINGS);
+    expect(DEMO_BOOKINGS).toBe(430_000_000);
+    expect(demo.operations.activeClients).toBe(3);
+    expect(demo.sales.wonCount).toBe(5);
+    expect(demo.finance.recognizedRevenue.value).toBe(160_000_000);
+    expect(demo.finance.collectedNet.value).toBe(97_000_000);
+    expect(demo.finance.overdueReceivables.value).toBe(9_000_000); // Nexa month-2 invoice
+    expect(demo.finance.mrr.value).toBe(9_000_000); // the 90k/month retainer
+    expect(demo.operations.openApprovals).toBe(1); // phase-2 pricing waits for the founder
     expect(demo.decisions.length).toBeGreaterThan(0);
     expect((await listAgentsWithStatus(db)).every((a) => a.status === "offline")).toBe(true);
     const { auditLog } = await import("@/server/db/schema");

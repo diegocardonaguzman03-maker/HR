@@ -1,8 +1,10 @@
 import { createRoot } from "react-dom/client";
 import { useEffect, useState, useSyncExternalStore, type ReactNode } from "react";
 import { and, eq, sql } from "drizzle-orm";
-import { approvals, companySettings } from "@/server/db/schema";
+import { approvals, companySettings, organizations } from "@/server/db/schema";
 import { seedBase } from "@/server/seed/base";
+import { seedDemo } from "@/server/seed/demo";
+import { setDemoMode } from "@/app/actions/session";
 import { Sidebar } from "@/components/shell/Sidebar";
 import { Topbar } from "@/components/shell/Topbar";
 import { CommandPalette } from "@/components/shell/CommandPalette";
@@ -94,10 +96,13 @@ function Shell() {
   const { el, err, path, version } = usePageElement();
   const [pending, setPending] = useState(0);
   const [demo, setDemo] = useState(false);
+  const [hasDemoData, setHasDemoData] = useState(true);
+  const [loadingSim, setLoadingSim] = useState(false);
   useEffect(() => {
     (async () => {
       const includeDemo = (await cookies()).get("praxia_demo")?.value === "1";
       setDemo(includeDemo);
+      setHasDemoData((await getRuntime().db.select({ id: organizations.id }).from(organizations).where(eq(organizations.isDemo, true)).limit(1)).length > 0);
       const [{ n }] = (await getRuntime().db.select({ n: sql<number>`count(*)` }).from(approvals).where(and(eq(approvals.status, "pending"), includeDemo ? undefined : eq(approvals.isDemo, false)))) as [{ n: number }];
       setPending(n);
     })();
@@ -111,7 +116,17 @@ function Shell() {
         {!print && <Topbar includeDemo={demo} approvals={pending} devOpen={false} />}
         {rt.storage === "browser" && <div className="border-b border-hair bg-graphite-2 px-6 py-2 font-mono text-[11px] tracking-wider text-niebla uppercase" role="note">Standalone mode — data is saved only in this browser (localStorage). Clearing site data erases it.</div>}
         {!rt.persisted && <div className="border-b border-warn/40 bg-warn/10 px-6 py-2 font-mono text-[11px] tracking-wider text-warn uppercase" role="note">Not connected to the Artifact database — changes in this view are not saved.</div>}
-        {demo && !print && <div className="border-b border-clay/40 bg-clay/10 px-6 py-2 font-mono text-[11px] tracking-wider text-clay uppercase" role="note">Demo mode — fictional demonstration records are included and labelled. They are not real business performance.</div>}
+        {demo && !print && (
+          <div className="flex flex-wrap items-center gap-3 border-b border-clay/40 bg-clay/10 px-6 py-2 font-mono text-[11px] tracking-wider text-clay uppercase" role="note">
+            <span>Demo mode — fictional demonstration records are included and labelled. They are not real business performance.</span>
+            {hasDemoData && <button onClick={() => nav.push("/?period=ytd")} className="rounded-md border border-clay/60 px-2 py-0.5 normal-case tracking-normal text-ivory hover:bg-clay/20">See the simulation year to date →</button>}
+            {!hasDemoData && (
+              <button disabled={loadingSim} onClick={async () => { setLoadingSim(true); await seedDemo(getRuntime().db); await getRuntime().flush(); setLoadingSim(false); nav.refresh(); }} className="rounded-md border border-clay/60 px-2 py-0.5 normal-case tracking-normal text-ivory hover:bg-clay/20 disabled:opacity-50">
+                {loadingSim ? "Loading…" : "Load the simulation (3 accounts · USD 4.3M)"}
+              </button>
+            )}
+          </div>
+        )}
         <main className={print ? "" : "px-glow min-h-[calc(100dvh-4rem)] px-4 py-8 sm:px-6 lg:px-10"}>
           {err ? <div className="px-card mx-auto max-w-xl p-6 text-[14px]"><div className="mb-2 font-display text-[18px] font-semibold">Can't show this page</div><p className="text-niebla">{err}</p><button className="mt-4 text-indigo-soft hover:underline" onClick={() => nav.push("/")}>Back to overview</button></div> : el}
         </main>
@@ -130,7 +145,11 @@ function Setup({ onDone }: { onDone: () => void }) {
         <AxisSymbol size={48} />
         <h1 className="mt-4 font-display text-[28px] font-bold tracking-[-0.03em]">Set up the Command Center</h1>
         <p className="mt-2 text-[14px] text-niebla">This workspace has no configuration yet. Initializing creates the 28-agent registry, the 12 pipeline stages, the 7 editable services and default settings. It creates no clients, revenue or activity.</p>
-        <button disabled={busy} onClick={async () => { setBusy(true); await seedBase(getRuntime().db); await getRuntime().flush(); onDone(); }} className="mt-6 rounded-lg bg-indigo px-4 py-2 text-[14px] font-medium text-ivory disabled:opacity-50">{busy ? "Initializing…" : "Initialize workspace"}</button>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <button disabled={busy} onClick={async () => { setBusy(true); await seedBase(getRuntime().db); await getRuntime().flush(); onDone(); }} className="rounded-lg bg-indigo px-4 py-2 text-[14px] font-medium text-ivory disabled:opacity-50">{busy ? "Initializing…" : "Initialize workspace"}</button>
+          <button disabled={busy} onClick={async () => { setBusy(true); await seedBase(getRuntime().db); await seedDemo(getRuntime().db); await setDemoMode(true); await getRuntime().flush(); onDone(); }} className="rounded-lg border border-clay/60 px-4 py-2 text-[14px] text-ivory hover:bg-clay/10 disabled:opacity-50">Initialize with the simulation</button>
+        </div>
+        <p className="mt-3 text-[12px] text-mute">The simulation adds 3 fictional client accounts with USD 4.3M in signed contracts. Every record is labelled demo and stays hidden when demo mode is off.</p>
       </div>
     </main>
   );

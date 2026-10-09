@@ -19,8 +19,8 @@ describe("sql.js engine parity", () => {
     await seedBase(db);
     await seedDemo(db);
     const d = await loadDashboard(db, { includeDemo: true, periodKey: "ytd", today: todayIso() });
-    expect(d.finance.bookings.value).toBe(1_200_000);
-    expect(d.finance.collected.value).toBe(300_000);
+    expect(d.finance.bookings.value).toBe(430_000_000);
+    expect(d.finance.collectedNet.value).toBe(97_000_000);
     expect(d.operations.openApprovals).toBe(1);
   });
 });
