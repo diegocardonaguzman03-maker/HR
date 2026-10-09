@@ -29,6 +29,22 @@ export function createRenderer(pres, F) {
     return runs;
   }
   const len = (s) => String(s || "").replace(/[*~]/g, "").length;
+  // Estimación conservadora de alto de texto (ajuste de línea por palabras) para encadenar bloques.
+  const CHAR_EM = { display: 0.58, body: 0.52, mono: 0.62 };
+  function lines(str, size, w, kind) {
+    const cpl = Math.max(4, Math.floor((w * 72) / (size * CHAR_EM[kind])));
+    let n = 0;
+    for (const para of String(str).replace(/[*~]/g, "").split("\n")) {
+      let cur = 0; n++;
+      for (const word of para.split(/\s+/).filter(Boolean)) {
+        const add = (cur ? 1 : 0) + word.length;
+        if (cur + add > cpl && cur) { n++; cur = word.length; } else cur += add;
+      }
+    }
+    return n;
+  }
+  const titleH = (str, size, w) => (lines(str, size, w, "display") * size * 1.16) / 72;
+  const bodyH = (str, size, w, ls = 1.2) => (lines(str, size, w, "body") * size * 1.2 * ls) / 72;
   const pick = (n, tiers) => { for (const [max, size] of tiers) if (n <= max) return size; return tiers[tiers.length - 1][1]; };
 
   function frame(s, slide, n, opts = {}) {
@@ -100,14 +116,19 @@ export function createRenderer(pres, F) {
   R.statement = (s, d, n) => {
     const k = frame(s, d, n);
     const size = pick(len(d.statement), [[50, 56], [85, 48], [120, 40]]);
-    title(s, d.statement, MX, 1.55, 10.9, 3.75, k.fg, size);
-    if (d.support) text(s, d.support, { x: MX, y: 5.5, w: 8.6, h: 0.95, ...body(k.dark ? PX.niebla : PX.muteLight, 17) });
+    const th = titleH(d.statement, size, 10.9), sh = d.support ? bodyH(d.support, 17, 8.6) : 0;
+    const block = th + (sh ? 0.45 + sh : 0);
+    const y0 = Math.max(1.3, Math.min(3.75 - block / 2, 6.6 - block));
+    title(s, d.statement, MX, y0, 10.9, th + 0.2, k.fg, size);
+    if (d.support) text(s, d.support, { x: MX, y: y0 + th + 0.45, w: 8.6, h: sh + 0.15, ...body(k.dark ? PX.niebla : PX.muteLight, 17) });
   };
 
   R.content = (s, d, n) => {
     const k = frame(s, d, n);
-    title(s, d.title, MX, 1.0, 5.9, 2.25, k.fg, pick(len(d.title), [[36, 36], [64, 32]]));
-    if (d.body) text(s, d.body, { x: MX, y: 3.45, w: 5.6, h: 2.9, ...body(k.fg, 15) });
+    const ts = pick(len(d.title), [[36, 36], [64, 32]]), th = titleH(d.title, ts, 5.9);
+    title(s, d.title, MX, 1.0, 5.9, th + 0.2, k.fg, ts);
+    const by = 1.0 + th + 0.4;
+    if (d.body) text(s, d.body, { x: MX, y: by, w: 5.6, h: 6.5 - by, ...body(k.fg, 15) });
     const pts = d.points || [];
     const x = 7.05, w = RIGHT - x, gap = 0.2, top = 1.0, bottom = 6.55;
     const h = pts.length ? (bottom - top - gap * (pts.length - 1)) / pts.length : 0;
@@ -140,15 +161,17 @@ export function createRenderer(pres, F) {
         text(s, rich(it.value, { fontFace: F.display, fontSize: st.length > 3 ? 54 : 64, bold: true, color: k.fg }), { x: x + 0.3, y: top + 0.25, w: w - 0.5, h: 1.15, valign: "middle" });
       }
       text(s, it.label, { x: x + 0.3, y: top + 1.6, w: w - 0.6, h: 1.35, ...body(k.fg, 15), lineSpacingMultiple: 1.15 });
-      text(s, `FUENTE · ${it.source}`, { x: x + 0.3, y: top + h - 0.75, w: w - 0.6, h: 0.6, fontFace: F.mono, fontSize: 8, color: k.mute, valign: "bottom", lineSpacingMultiple: 1.1 });
+      text(s, /^\[/.test(it.source) ? it.source : `FUENTE · ${it.source}`, { x: x + 0.3, y: top + h - 0.75, w: w - 0.6, h: 0.6, fontFace: F.mono, fontSize: 8, color: k.mute, valign: "bottom", lineSpacingMultiple: 1.1 });
     });
     if (d.note) text(s, d.note, { x: MX, y: 6.5, w: CW, h: 0.3, ...body(k.mute, 11) });
   };
 
   R.gap = (s, d, n) => {
     const k = frame(s, d, n);
-    title(s, d.title, MX, 1.0, 5.9, 2.0, k.fg, pick(len(d.title), [[30, 42], [60, 34]]));
-    if (d.definition) text(s, d.definition, { x: MX, y: 3.25, w: 5.6, h: 2.6, ...body(PX.niebla, 16) });
+    const ts = pick(len(d.title), [[30, 42], [60, 34]]), th = titleH(d.title, ts, 5.9);
+    title(s, d.title, MX, 1.0, 5.9, th + 0.2, k.fg, ts);
+    const dy = Math.max(1.0 + th + 0.45, 2.6);
+    if (d.definition) text(s, d.definition, { x: MX, y: dy, w: 5.6, h: 6.4 - dy, ...body(k.dark ? PX.niebla : PX.muteLight, 16) });
     // diagrama conceptual (sin datos)
     const base = 5.75, bw = 1.55, lx = 7.75, rxb = 10.35, topL = 1.55, topR = 3.95;
     hline(s, 7.3, base, 5.43, k.dark ? PX.niebla : PX.muteLight, 1);
@@ -185,7 +208,7 @@ export function createRenderer(pres, F) {
         if (k.dark) rect(s, x, top, w, h, PX.graphite2);
         ticks(s, x, top, w, h, k.dark ? PX.hair : PX.hairLight, 0.16, 1);
       }
-      text(s, c.kicker.toUpperCase(), { x: x + 0.3, y: top + 0.32, w: w - 1.0, h: 0.4, fontFace: F.mono, fontSize: 9, charSpacing: 3, color: on ? PX.violet : k.mute });
+      text(s, c.kicker.toUpperCase(), { x: x + 0.3, y: top + 0.32, w: w - (on ? 1.0 : 0.5), h: 0.4, fontFace: F.mono, fontSize: 9, charSpacing: 2, color: on ? PX.violet : k.mute });
       text(s, c.verb, { x: x + 0.3, y: top + 0.85, w: w - 0.6, h: 1.0, fontFace: F.display, fontSize: 28, bold: true, color: on ? PX.clay : fg, lineSpacingMultiple: 0.95 });
       text(s, c.body, { x: x + 0.3, y: top + 2.0, w: w - 0.6, h: 1.6, ...body(on ? PX.ivory : k.dark ? PX.niebla : PX.graphite, 14) });
     });
@@ -216,8 +239,10 @@ export function createRenderer(pres, F) {
 
   R.offer = (s, d, n) => {
     const k = frame(s, d, n);
-    title(s, d.title, MX, 1.0, 6.3, 1.5, k.fg, pick(len(d.title), [[32, 36], [60, 32]]));
-    if (d.body) text(s, d.body, { x: MX, y: 2.65, w: 6.2, h: 1.75, ...body(k.fg, 15) });
+    const ts = pick(len(d.title), [[32, 36], [60, 32]]), th = titleH(d.title, ts, 6.3);
+    title(s, d.title, MX, 1.0, 6.3, th + 0.2, k.fg, ts);
+    const by = 1.0 + th + 0.4;
+    if (d.body) text(s, d.body, { x: MX, y: by, w: 6.2, h: 4.45 - by, ...body(k.fg, 15) });
     (d.facts || []).forEach((f, i) => {
       const cw = 3.0, ch = 0.88, x = MX + (i % 2) * (cw + 0.2), y = 4.6 + Math.floor(i / 2) * (ch + 0.15);
       ticks(s, x, y, cw, ch, k.dark ? PX.hair : PX.hairLight, 0.12, 1);
@@ -272,8 +297,11 @@ export function createRenderer(pres, F) {
 
   R.cta = (s, d, n) => {
     const k = frame(s, d, n);
-    title(s, d.title, MX, 1.05, 10.5, 1.55, k.fg, pick(len(d.title), [[24, 54], [40, 46]]));
-    if (d.body) text(s, d.body, { x: MX, y: 2.75, w: 8.6, h: 1.0, ...body(k.dark ? PX.niebla : PX.muteLight, 17) });
+    const ts = pick(len(d.title), [[24, 54], [40, 46]]), th = titleH(d.title, ts, 10.5);
+    const bh = d.body ? bodyH(d.body, 17, 8.6) : 0;
+    const ty = Math.max(1.0, 3.65 - (th + (bh ? 0.3 + bh : 0)));
+    title(s, d.title, MX, ty, 10.5, th + 0.2, k.fg, ts);
+    if (d.body) text(s, d.body, { x: MX, y: ty + th + 0.3, w: 8.6, h: bh + 0.1, ...body(k.dark ? PX.niebla : PX.muteLight, 17) });
     const steps = d.steps || [];
     const gap = 0.3, w = steps.length ? Math.min(3.9, (CW - gap * (steps.length - 1)) / steps.length) : 0;
     steps.forEach((st, i) => {
