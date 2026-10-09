@@ -44,7 +44,7 @@ export default async function CrmPage({ searchParams }: { searchParams: Promise<
       />
       <CrmTabs active={view === "table" ? "table" : "pipeline"} />
       {!opts.organizations.length ? (
-        <EmptyState title="No organizations yet" action={<Link className="text-[#a9a1ff] hover:underline" href="/crm/organizations?new=1">Add your first target organization →</Link>}>
+        <EmptyState title="No organizations yet" action={<Link className="text-indigo-soft hover:underline" href="/crm/organizations?new=1">Add your first target organization →</Link>}>
           Opportunities belong to an organization. Add a target account first, then create the opportunity from the client's problem.
         </EmptyState>
       ) : view === "table" ? (

@@ -50,18 +50,18 @@ export default async function Overview({ searchParams }: { searchParams: Promise
       <section className="px-card mb-8 p-5">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <div className="px-label">Revenue vs goal · basis: {d.settings.targetBasis}</div>
+            <div className="px-label">Revenue vs goal · basis: {d.settings.targetBasis}{d.settings.targetBasis === "collected" ? " (net of tax)" : ""}</div>
             <div className="mt-1 font-display text-[34px] leading-none font-semibold tracking-[-0.02em] tabular-nums">
-              {formatMoney(d.settings.targetBasis === "collected" ? f.collected.value : d.settings.targetBasis === "contracted" ? f.bookings.value : f.recognizedRevenue.value, R)}
+              {formatMoney(f.revenueTargetBasisValue.value, R)}
               <span className="ml-2 text-[16px] text-niebla">of {target === null ? "—" : formatMoney(target, R)} goal</span>
             </div>
           </div>
           <div className="text-right text-[12px] text-mute">
-            The goal comes from the founder's stated ambition (USD 10k/month). It is a target, <br className="hidden md:block" />not revenue. Change it under <Link href="/settings" className="text-[#a9a1ff] hover:underline">Settings</Link>.
+            Goal: {formatMoney(d.settings.monthlyRevenueTarget, d.settings.monthlyRevenueTargetCurrency)}/month — a target, not revenue. <br className="hidden md:block" />Measurement basis is an open founder decision [Supuesto]. Change under <Link href="/settings" className="text-indigo-soft hover:underline">Settings</Link>.
           </div>
         </div>
-        <div className="mt-4 h-2 overflow-hidden rounded-full bg-graphite-3" role="progressbar" aria-valuenow={ratio ? Math.round(ratio * 100) : 0} aria-valuemin={0} aria-valuemax={100}>
-          <div className="h-full rounded-full bg-gradient-to-r from-indigo via-violet to-clay transition-[width] duration-700" style={{ width: `${Math.min((ratio ?? 0) * 100, 100)}%` }} />
+        <div className="mt-4 h-2 overflow-hidden rounded-full bg-graphite-3" role="progressbar" aria-label="Revenue versus monthly goal" aria-valuenow={Math.min(100, Math.round((ratio ?? 0) * 100))} aria-valuemin={0} aria-valuemax={100}>
+          <div className="h-full rounded-full bg-indigo transition-[width] duration-300" style={{ width: `${Math.min((ratio ?? 0) * 100, 100)}%` }} />
         </div>
         <div className="mt-1.5 font-mono text-[11px] text-niebla">{ratio === null ? "Select a bounded period to compare with the goal" : `${formatPct(ratio)} of goal`}</div>
       </section>
@@ -71,7 +71,7 @@ export default async function Overview({ searchParams }: { searchParams: Promise
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
           <KpiCard label="Contracted (bookings)" metric={f.bookings} currency={R} emphasis="indigo" />
           <KpiCard label="Recognized revenue" metric={f.recognizedRevenue} currency={R} hint={`Recurring ${formatMoney(f.recognizedRecurring.value, R)} · Project ${formatMoney(f.recognizedProject.value, R)}`} />
-          <KpiCard label="Cash collected" metric={f.collected} currency={R} emphasis="clay" />
+          <KpiCard label="Cash collected (incl. tax)" metric={f.collected} currency={R} emphasis="clay" hint={`Net of tax ${formatMoney(f.collectedNet.value, R)}`} />
           <KpiCard label="MRR" metric={f.mrr} currency={R} />
           <KpiCard label="Invoiced (pre-tax)" metric={f.invoicedSubtotal} currency={R} />
           <KpiCard label="Outstanding invoices" metric={f.accountsReceivable} currency={R} hint={`Overdue ${formatMoney(f.overdueReceivables.value, R)}`} />
@@ -85,7 +85,7 @@ export default async function Overview({ searchParams }: { searchParams: Promise
       </section>
 
       <div className="grid gap-8 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
-        <section aria-labelledby="feed">
+        <section aria-label="Executive decision feed">
           <SectionTitle label="Executive decision feed" title={`${d.decisions.length} item${d.decisions.length === 1 ? "" : "s"} backed by records`} />
           <DecisionFeed items={d.decisions} />
         </section>
@@ -112,7 +112,7 @@ export default async function Overview({ searchParams }: { searchParams: Promise
             <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
               <SimpleKpi label="Active clients" value={String(d.operations.activeClients)} sub={`${d.operations.activeContracts} active contract(s)`} />
               <SimpleKpi label="Open approvals" value={String(d.operations.openApprovals)} />
-              <SimpleKpi label="Agent tasks done / open" value={`${d.operations.agentTasksCompleted} / ${d.operations.agentTasksOpen}`} sub={`${d.operations.agentsWorking} agent(s) working now`} />
+              <SimpleKpi label="Agent tasks done / open" value={`${d.operations.agentTasksCompleted} / ${d.operations.agentTasksOpen}`} sub={`${d.operations.agentsWorking} marked working (manual updates — no engine yet)`} />
               <KpiCard label="AI operating costs" metric={f.aiCosts} currency={R} />
             </div>
           </section>

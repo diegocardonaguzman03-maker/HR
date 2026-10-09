@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { eq } from "drizzle-orm";
-import { getDb } from "@/server/db/client";
+import { getContext } from "@/server/context";
 import { opportunities, organizations } from "@/server/db/schema";
 import { getProposalWithLines } from "@/server/services/commercial";
 import { formatMoney } from "@/domain/money";
@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 /** Print-ready proposal (browser "Save as PDF"). Ivory editorial layout per brand guidelines. */
 export default async function PrintProposal({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const db = await getDb();
+  const { db } = await getContext();
   let data;
   try { data = await getProposalWithLines(db, id); } catch { notFound(); }
   const { proposal: p, lines, totals } = data;
@@ -22,9 +22,13 @@ export default async function PrintProposal({ params }: { params: Promise<{ id: 
   return (
     <div className="min-h-dvh bg-[#e9e6df] py-10 print:bg-white print:py-0">
       <style>{`@page { size: letter; margin: 18mm; } @media print { .no-print { display: none } body { background: #fff } }`}</style>
-      <div className="no-print mx-auto mb-4 flex max-w-[816px] justify-end"><PrintButton /></div>
+      <div className="no-print mx-auto mb-4 flex max-w-[816px] items-center justify-between gap-4">
+        <p className="text-[12px] text-graphite/70">Internal note (not printed): the payment and validity terms below are PROPOSED defaults from the PRAXIA skill §7.3 — validate with your accountant and lawyer before sending.</p>
+        <PrintButton />
+      </div>
       <article className="relative mx-auto max-w-[816px] bg-ivory px-16 py-14 text-graphite shadow-xl print:shadow-none">
-        {draft && <div className="pointer-events-none absolute inset-0 flex items-center justify-center text-[110px] font-bold tracking-widest text-graphite/5 -rotate-12">DRAFT</div>}
+        {(draft || p.isDemo) && <div className="pointer-events-none absolute inset-0 flex items-center justify-center text-[110px] font-bold tracking-widest text-graphite/5 -rotate-12">{p.isDemo ? "DEMO" : "DRAFT"}</div>}
+        {p.isDemo && <div className="mb-6 rounded border border-clay px-3 py-2 font-mono text-[10px] tracking-[0.18em] text-clay uppercase">Demonstration document — fictional client, not a real proposal</div>}
         <header className="mb-14 flex items-start justify-between">
           <div className="flex items-center gap-3"><AxisSymbol size={40} /><div><div className="font-display text-[22px] font-bold tracking-[-0.03em]">Praxia</div><div className="font-mono text-[8px] tracking-[0.22em] text-mute uppercase">Human &amp; AI Transformation Advisory</div></div></div>
           <div className="text-right font-mono text-[10px] tracking-[0.18em] text-mute uppercase">Prepared for · {org?.name}<br />Confidential · v{p.version}</div>

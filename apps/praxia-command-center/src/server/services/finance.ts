@@ -57,6 +57,7 @@ export async function issueInvoice(db: DB, id: string, actor: Actor = "founder")
   const [inv] = await db.select().from(invoices).where(eq(invoices.id, id));
   if (!inv) throw new BusinessRuleError("Invoice not found.");
   if (inv.status !== "draft") throw new BusinessRuleError(`Invoice is already ${inv.status}.`);
+  if (inv.issueDate > todayIso()) throw new BusinessRuleError("An invoice can't be issued with a future issue date. Keep it as a draft until that date.");
   const snap = await snapshotFor(db, inv.total, inv.currency, inv.issueDate);
   const [after] = await db.update(invoices).set({ status: "issued", ...snap, updatedAt: nowIso() }).where(eq(invoices.id, id)).returning();
   await audit(db, actor, "invoice.issue", "invoice", id, inv, after);

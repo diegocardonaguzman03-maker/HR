@@ -24,7 +24,7 @@ export function fmt(v: number | null, f: Format, cur: Currency) {
 
 function KindTag({ kind }: { kind: MetricKind }) {
   const k = KIND[kind];
-  const color = { neutral: "text-mute", violet: "text-violet", warn: "text-warn", indigo: "text-[#a9a1ff]" }[k.tone as "neutral" | "violet" | "warn" | "indigo"];
+  const color = { neutral: "text-mute", violet: "text-violet", warn: "text-warn", indigo: "text-indigo-soft" }[k.tone as "neutral" | "violet" | "warn" | "indigo"];
   return <span className={cn("shrink-0 font-mono text-[9.5px] tracking-[0.14em] uppercase", color)}>{k.label}</span>;
 }
 

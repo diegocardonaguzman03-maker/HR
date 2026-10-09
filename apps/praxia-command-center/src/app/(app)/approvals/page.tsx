@@ -12,7 +12,7 @@ export default async function ApprovalsPage() {
   const { db, includeDemo } = await getContext();
   const all = await db.select().from(approvals).where(demoFilter(approvals.isDemo, includeDemo)).orderBy(desc(approvals.createdAt));
   const pending = all.filter((a) => a.status === "pending");
-  const href = (a: (typeof all)[number]) => (a.entityType === "proposal" ? `/proposals/${a.entityId}` : "#");
+  const href = (a: (typeof all)[number]) => (a.entityType === "proposal" ? `/proposals/${a.entityId}` : "/approvals");
   return (
     <div className="mx-auto max-w-[1100px]">
       <PageHeader label="Governance" title="Approvals" description="Only the founder decides. Pricing, outbound messages, contracts and agent outputs that leave the company wait here. Every decision is written to the audit log." />

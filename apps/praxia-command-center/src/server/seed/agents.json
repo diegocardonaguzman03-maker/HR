@@ -509,7 +509,7 @@
   "description": "Investigación de usuarios, service blueprints (incluida la experiencia del diagnóstico), arquitectura de información y usabilidad de PRAXIA.",
   "instructionsPath": ".claude/agents/praxia-ux-01.md",
   "skills": [
-   "Journey map y service blueprint",
+   "Mapa de recorrido del usuario y service blueprint",
    "Reporte de usabilidad",
    "Flujos de usuario"
   ],

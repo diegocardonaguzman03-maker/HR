@@ -4,7 +4,9 @@ import type { DB } from "../db/client";
 import { auditLog, companySettings, fxRates, type Currency } from "../db/schema";
 import { buildSnapshot, type FxRate } from "@/domain/fx";
 
-export type Actor = string; // "founder" | "system" | agent id
+export type Actor = string; // "founder" | "system" | agent id | DEMO_ACTOR
+/** Actor id used by the demonstration seed; its audit entries are flagged is_demo. */
+export const DEMO_ACTOR = "system:demo-seed";
 
 export class BusinessRuleError extends Error {
   constructor(message: string, public readonly details: Record<string, unknown> = {}) {
@@ -30,7 +32,7 @@ export async function attempt<T>(fn: () => Promise<T>): Promise<Result<T>> {
 }
 
 export async function audit(db: Pick<DB, "insert">, actor: Actor, action: string, entityType: string, entityId: string, before: unknown = null, after: unknown = null) {
-  await db.insert(auditLog).values({ actor, action, entityType, entityId, before: before as never, after: after as never });
+  await db.insert(auditLog).values({ actor, action, entityType, entityId, before: before as never, after: after as never, isDemo: actor.startsWith(DEMO_ACTOR) });
 }
 
 export const nowIso = () => new Date().toISOString();

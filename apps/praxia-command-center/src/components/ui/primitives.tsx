@@ -71,7 +71,7 @@ export function PageHeader({ label, title, description, actions }: { label: stri
 
 const tones = {
   neutral: "border-hair text-niebla",
-  indigo: "border-indigo/50 text-[#a9a1ff] bg-indigo/10",
+  indigo: "border-indigo/50 text-indigo-soft bg-indigo/10",
   clay: "border-clay/50 text-clay bg-clay/10",
   ok: "border-ok/40 text-ok bg-ok/10",
   warn: "border-warn/40 text-warn bg-warn/10",

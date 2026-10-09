@@ -16,7 +16,7 @@ export const EXECUTION_ENGINE = {
 
 export type AgentWithStatus = typeof agents.$inferSelect & {
   status: AgentStatus;
-  statusSource: "task" | "engine";
+  statusSource: "task" | "manual" | "engine";
   statusNote: string;
   currentTask: { id: string; title: string; status: TaskStatus } | null;
   tasksCompleted: number;
@@ -45,7 +45,7 @@ export async function listAgentsWithStatus(db: DB): Promise<AgentWithStatus[]> {
       costUsdMicros: mine.reduce((s, t) => s + t.costUsdMicros, 0),
     };
     if (active) {
-      return { ...base, status: TASK_TO_AGENT_STATUS[active.status]!, statusSource: "task" as const, statusNote: `Task: ${active.title}`, currentTask: { id: active.id, title: active.title, status: active.status } };
+      return { ...base, status: TASK_TO_AGENT_STATUS[active.status]!, statusSource: EXECUTION_ENGINE.connected ? ("task" as const) : ("manual" as const), statusNote: EXECUTION_ENGINE.connected ? `Task: ${active.title}` : `Task: ${active.title} (status set manually by the founder)`, currentTask: { id: active.id, title: active.title, status: active.status } };
     }
     if (!a.active) return { ...base, status: "offline" as const, statusSource: "engine" as const, statusNote: "Agent deactivated.", currentTask: null };
     return EXECUTION_ENGINE.connected

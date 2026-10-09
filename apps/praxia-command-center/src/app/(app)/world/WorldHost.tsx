@@ -48,7 +48,7 @@ export function WorldHost({ agents: initial, initialSelected, engineNote }: { ag
         <PraxiaWorld agents={worldAgents} selectedAgentId={selected} onSelectAgent={setSelected} reducedMotion={reduced} />
         <div className="pointer-events-none absolute top-4 right-4 rounded-lg border border-hair bg-graphite/80 px-3 py-2 text-right backdrop-blur">
           <div className="px-label">PRAXIA World · HQ</div>
-          <div className="font-mono text-[11px] text-niebla">{agents.length} agents · {working} working</div>
+          <div className="font-mono text-[11px] text-niebla">{agents.length} agents · {working} working{engineNote && working ? " (manual)" : ""}</div>
           {engineNote && <div className="mt-1 max-w-[260px] text-[11px] text-warn">{engineNote}</div>}
         </div>
         {a && (
@@ -57,7 +57,7 @@ export function WorldHost({ agents: initial, initialSelected, engineNote }: { ag
               <div className="flex items-center gap-3">
                 <AvatarPreview avatar={a.avatar} size={64} showFloor={false} />
                 <div>
-                  <div className="font-mono text-[12px] text-[#a9a1ff]">{a.id}</div>
+                  <div className="font-mono text-[12px] text-indigo-soft">{a.id}</div>
                   <div className="font-display text-[16px] font-semibold leading-snug">{a.role}</div>
                   <div className="text-[12px] text-mute">{a.department}</div>
                 </div>
@@ -65,14 +65,14 @@ export function WorldHost({ agents: initial, initialSelected, engineNote }: { ag
               <button onClick={() => setSelected(null)} aria-label="Close panel" className="text-mute hover:text-ivory"><X size={16} /></button>
             </div>
             <div className="mb-4 rounded-lg border border-hair p-3 text-[13px]">
-              <div className="mb-1 flex items-center gap-2"><AgentStatusBadge status={a.status} /> <span className="text-niebla">{a.currentTaskTitle ?? "No active task"}</span></div>
+               <div className="mb-1 flex items-center gap-2"><AgentStatusBadge status={a.status} manual={!!engineNote && !!a.currentTaskTitle} /> <span className="text-niebla">{a.currentTaskTitle ?? "No active task"}</span></div>
               <div className="text-[11.5px] text-mute">{a.statusNote}</div>
             </div>
             <p className="mb-4 text-[13px] text-niebla">{a.description}</p>
             <div className="mb-4 grid grid-cols-3 gap-2 text-center">
               <div className="rounded-lg border border-hair p-2"><div className="font-display text-[18px]">{a.tasksCompleted}</div><div className="px-label">done</div></div>
               <div className="rounded-lg border border-hair p-2"><div className="font-display text-[18px]">{a.tasksOpen}</div><div className="px-label">open</div></div>
-              <div className="rounded-lg border border-hair p-2"><div className="font-display text-[18px]">${(a.costUsdMicros / 1e6).toFixed(2)}</div><div className="px-label">AI cost</div></div>
+              <div className="rounded-lg border border-hair p-2"><div className="font-display text-[18px]">{a.costUsdMicros ? `$${(a.costUsdMicros / 1e6).toFixed(2)}` : "—"}</div><div className="px-label">AI cost</div></div>
             </div>
             <div className="px-label mb-2">Skills</div>
             <div className="mb-5 flex flex-wrap gap-1">{a.skills.map((s) => <Badge key={s} className="normal-case tracking-normal">{s}</Badge>)}</div>

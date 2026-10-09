@@ -8,16 +8,24 @@ const enc = new TextEncoder();
 
 export type AuthConfig = { configured: true; password: string; secret: string } | { configured: false; reason: string };
 
+/** Values published in .env.example or obviously weak — never accepted. */
+const KNOWN_BAD = ["change-me", "changeme", "password", "generate-a-random-string-of-at-least-32-characters"];
+
 export function authConfig(): AuthConfig {
   const password = process.env.PRAXIA_ADMIN_PASSWORD;
   const secret = process.env.PRAXIA_SESSION_SECRET;
   if (!password || !secret) return { configured: false, reason: "PRAXIA_ADMIN_PASSWORD and PRAXIA_SESSION_SECRET are not set." };
-  if (secret.length < 32) return { configured: false, reason: "PRAXIA_SESSION_SECRET must be at least 32 characters." };
+  if (KNOWN_BAD.includes(password.toLowerCase()) || KNOWN_BAD.includes(secret)) return { configured: false, reason: "Example credentials from .env.example are not accepted." };
+  if (password.length < 12) return { configured: false, reason: "PRAXIA_ADMIN_PASSWORD must be at least 12 characters." };
+  if (secret.length < 32) return { configured: false, reason: "PRAXIA_SESSION_SECRET must be at least 32 characters (use: openssl rand -base64 48)." };
   return { configured: true, password, secret };
 }
 
-/** In development without configuration the app runs open (with a visible warning). Never in production. */
-export const devOpenMode = () => !authConfig().configured && process.env.NODE_ENV !== "production";
+/**
+ * Login-free mode for local development ONLY: requires PRAXIA_DEV_OPEN=1, a non-production build and no credentials.
+ * `npm run dev` binds to 127.0.0.1 so the open app is not reachable from the network.
+ */
+export const devOpenMode = () => !authConfig().configured && process.env.NODE_ENV !== "production" && process.env.PRAXIA_DEV_OPEN === "1";
 
 const b64url = (buf: ArrayBuffer | Uint8Array) =>
   btoa(String.fromCharCode(...new Uint8Array(buf instanceof Uint8Array ? buf : new Uint8Array(buf)))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
@@ -59,3 +67,14 @@ export async function passwordMatches(input: string, expected: string, secret: s
 }
 
 export const sessionMaxAge = SESSION_HOURS * 3600;
+
+/** Only same-origin relative paths are allowed as post-login destinations. */
+export function safeNext(next: string): string {
+  if (!next || !next.startsWith("/") || next.startsWith("//") || /[\\\s\u0000-\u001f]/.test(next)) return "/";
+  try {
+    const u = new URL(next, "http://praxia.local");
+    return u.origin === "http://praxia.local" ? u.pathname + u.search : "/";
+  } catch {
+    return "/";
+  }
+}

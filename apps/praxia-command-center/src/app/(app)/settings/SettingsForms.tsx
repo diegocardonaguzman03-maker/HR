@@ -64,7 +64,7 @@ export function ServiceRow({ service: s }: { service: Svc }) {
   };
   return (
     <form onSubmit={onSubmit} className="grid gap-2 rounded-lg border border-hair p-3 md:grid-cols-[40px_1.3fr_2fr_110px_100px_100px_80px_110px_auto]">
-      <div className="pt-2 font-mono text-[#a9a1ff]">{s.code}</div>
+      <div className="pt-2 font-mono text-indigo-soft">{s.code}</div>
       <Input name="name" defaultValue={s.name} aria-label="Name" />
       <Input name="description" defaultValue={s.description} aria-label="Description" />
       <Select name="model" defaultValue={s.pricingModel} aria-label="Pricing model"><option value="fixed">fixed</option><option value="milestone">milestone</option><option value="retainer">retainer</option></Select>

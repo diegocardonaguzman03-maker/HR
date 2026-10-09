@@ -12,10 +12,11 @@ import { AssignTask } from "@/components/agents/AssignTask";
 import { AvatarEditor } from "./AvatarEditor";
 
 function readInstructions(rel: string) {
+  if (!/^\.claude\/agents\/praxia-[a-z0-9-]+\.md$/.test(rel)) return null; // allowlist: never read arbitrary repo files
   // Instruction files live at the repository root (two levels above the app).
   for (const base of [path.resolve(process.cwd(), "../.."), process.cwd()]) {
     const p = path.join(base, rel);
-    if (p.startsWith(base) && fs.existsSync(p)) return fs.readFileSync(p, "utf8");
+    if (p.startsWith(base + path.sep) && fs.existsSync(p) && fs.realpathSync(p).startsWith(base + path.sep)) return fs.readFileSync(p, "utf8");
   }
   return null;
 }
@@ -37,11 +38,11 @@ export default async function AgentPage({ params }: { params: Promise<{ id: stri
       <PageHeader label={`${a.department} · ${a.team} · reports to ${a.reportsTo}`} title={`${a.id} — ${a.role}`} description={a.description}
         actions={<><AssignTask agents={all.map((x) => ({ id: x.id, label: `${x.id} · ${x.role}` }))} defaultAgentId={a.id} /><Link href={`/world?agent=${a.id}`} className="inline-flex items-center rounded-lg border border-hair px-3 py-1.5 text-[13px] hover:bg-graphite-3">Find in PRAXIA World</Link></>} />
       <Card className="mb-6 grid grid-cols-2 gap-5 p-5 md:grid-cols-5">
-        <Stat label="Status" value={<AgentStatusBadge status={a.status} />} sub={a.statusNote} />
+        <Stat label="Status" value={<AgentStatusBadge status={a.status} manual={a.statusSource === "manual"} />} sub={a.statusNote} />
         <Stat label="Current task" value={a.currentTask?.title ?? "—"} />
         <Stat label="Tasks completed" value={a.tasksCompleted} />
         <Stat label="Open tasks" value={a.tasksOpen} />
-        <Stat label="AI cost" value={`USD ${(a.costUsdMicros / 1_000_000).toFixed(2)}`} sub="recorded execution cost" />
+        <Stat label="AI cost" value={a.costUsdMicros ? `USD ${(a.costUsdMicros / 1_000_000).toFixed(2)}` : "—"} sub="recorded execution cost (none until the engine runs)" />
       </Card>
       <div className="grid gap-6 lg:grid-cols-[1fr_380px]">
         <div className="flex flex-col gap-6">

@@ -21,11 +21,12 @@ type Props = {
   today: string;
   approvals: { id: string; status: string; createdAt: string; decidedAt: string | null; decisionNote: string | null }[];
   contractId: string | null;
+  contractSigned: boolean;
 };
 
 const toInput = (minor: number) => (minor / 100).toFixed(2);
 
-export function ProposalEditor({ proposal: p, lines: initial, marginTarget, services, today, approvals, contractId }: Props) {
+export function ProposalEditor({ proposal: p, lines: initial, marginTarget, services, today, approvals, contractId, contractSigned }: Props) {
   const router = useRouter();
   const [pending, start] = useTransition();
   const editable = p.status === "draft" || p.status === "internal_review";
@@ -59,21 +60,21 @@ export function ProposalEditor({ proposal: p, lines: initial, marginTarget, serv
             <Field label="Executive summary (problem → value → approach)" className="sm:col-span-2"><Textarea value={meta.summary} disabled={!editable} onChange={(e) => setMeta({ ...meta, summary: e.target.value })} className="min-h-28" /></Field>
           </div>
           <div className="mt-5 overflow-x-auto">
-            <table className="px-table min-w-[720px]">
-              <thead><tr><th>Deliverable</th><th>Milestone</th><th className="w-16">Qty</th><th className="w-32">Unit price</th><th className="w-32">Est. cost</th><th className="w-28 text-right">Line</th><th /></tr></thead>
+            <table className="px-table min-w-[820px]">
+              <thead><tr><th className="min-w-[260px]">Deliverable</th><th className="w-36">Milestone</th><th className="w-20">Qty</th><th className="w-32">Unit price</th><th className="w-32">Est. cost</th><th className="w-32 text-right">Line</th><th className="w-8" /></tr></thead>
               <tbody>
                 {rows.map((r, i) => (
                   <tr key={i}>
                     <td>
-                      <Input value={r.description} disabled={!editable} onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, description: e.target.value } : x)))} />
-                      <Select className="mt-1 text-[12px]" value={r.serviceId ?? ""} disabled={!editable} onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, serviceId: e.target.value || null } : x)))}>
+                      <Input aria-label={`Deliverable line ${i + 1}`} value={r.description} disabled={!editable} onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, description: e.target.value } : x)))} />
+                      <Select aria-label={`Service line ${i + 1}`} className="mt-1 text-[12px]" value={r.serviceId ?? ""} disabled={!editable} onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, serviceId: e.target.value || null } : x)))}>
                         <option value="">— service —</option>{services.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}
                       </Select>
                     </td>
-                    <td><Input value={r.milestone ?? ""} disabled={!editable} placeholder="e.g. Kickoff" onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, milestone: e.target.value || null } : x)))} /></td>
-                    <td><Input type="number" min={0} step="0.5" value={r.quantity} disabled={!editable} onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, quantity: Number(e.target.value) } : x)))} /></td>
-                    <td><Input inputMode="decimal" value={r.price} disabled={!editable} aria-invalid={parseMoneyInput(r.price) === null} onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, price: e.target.value } : x)))} /></td>
-                    <td><Input inputMode="decimal" value={r.cost} disabled={!editable} onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, cost: e.target.value } : x)))} /></td>
+                    <td><Input aria-label={`Milestone line ${i + 1}`} value={r.milestone ?? ""} disabled={!editable} placeholder="e.g. Kickoff" onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, milestone: e.target.value || null } : x)))} /></td>
+                    <td><Input aria-label={`Quantity line ${i + 1}`} type="number" min={0} step="0.5" value={r.quantity} disabled={!editable} onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, quantity: Number(e.target.value) } : x)))} /></td>
+                    <td><Input aria-label={`Unit price line ${i + 1}`} inputMode="decimal" value={r.price} disabled={!editable} aria-invalid={parseMoneyInput(r.price) === null} onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, price: e.target.value } : x)))} /></td>
+                    <td><Input aria-label={`Estimated cost line ${i + 1}`} inputMode="decimal" value={r.cost} disabled={!editable} onChange={(e) => setRows(rows.map((x, j) => (j === i ? { ...x, cost: e.target.value } : x)))} /></td>
                     <td className="text-right font-mono tabular-nums">{parseMoneyInput(r.price) !== null ? formatMoney(Math.round(parseMoneyInput(r.price)! * r.quantity), cur) : "—"}</td>
                     <td>{editable && <button aria-label="Remove line" className="p-1 text-mute hover:text-bad" onClick={() => setRows(rows.filter((_, j) => j !== i))}><Trash2 size={14} /></button>}</td>
                   </tr>
@@ -123,7 +124,7 @@ export function ProposalEditor({ proposal: p, lines: initial, marginTarget, serv
             {(p.status === "sent" || p.status === "negotiation") && <Button variant="human" disabled={pending} onClick={() => setAcceptOpen(true)}>Client accepted…</Button>}
             {(p.status === "sent" || p.status === "negotiation") && <Button variant="danger" disabled={pending} onClick={() => confirm("Mark this proposal as rejected by the client?") && call(() => proposalOutcomeAction(p.id, "rejected"), "Marked as rejected.")}>Client rejected</Button>}
             {["sent", "negotiation", "approved"].includes(p.status) && <Button variant="ghost" disabled={pending} onClick={() => call(() => proposalOutcomeAction(p.id, "expired"), "Marked as expired.")}>Mark expired</Button>}
-            {contractId && <Link href={`/finance/contracts/${contractId}`} className="rounded-lg border border-ok/40 bg-ok/10 px-3 py-2 text-center text-[13px] text-ok">Contract created → record signature</Link>}
+            {contractId && <Link href={`/finance/contracts/${contractId}`} className="rounded-lg border border-ok/40 bg-ok/10 px-3 py-2 text-center text-[13px] text-ok">{contractSigned ? "View signed contract →" : "Contract created → record signature"}</Link>}
           </div>
           {p.acceptanceEvidence && <p className="mt-3 text-[12px] text-niebla">Acceptance evidence: {p.acceptanceEvidence}</p>}
           {approvals.length > 0 && (

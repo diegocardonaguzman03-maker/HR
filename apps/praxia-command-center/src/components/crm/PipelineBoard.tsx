@@ -50,7 +50,7 @@ function Card({ c, today }: { c: BoardCard; today: string }) {
 function Column({ stage, cards, today, currency, totals }: { stage: BoardStage; cards: BoardCard[]; today: string; currency: Currency; totals: { value: number; missing: number } }) {
   const { setNodeRef, isOver } = useDroppable({ id: stage.id });
   return (
-    <div ref={setNodeRef} className={cn("flex w-[248px] shrink-0 flex-col rounded-xl border border-transparent bg-graphite-2/40 p-2 transition-colors", isOver && "border-indigo/60 bg-indigo/5")}>
+    <div ref={setNodeRef} className={cn("flex w-[228px] shrink-0 flex-col rounded-xl border border-transparent bg-graphite-2/40 p-2 transition-colors", isOver && "border-indigo/60 bg-indigo/5")}>
       <div className="mb-2 px-1.5 pt-1">
         <div className="flex items-center justify-between">
           <span className={cn("px-label", stage.kind === "won" && "text-ok", stage.kind === "lost" && "text-bad")}>{stage.name}</span>

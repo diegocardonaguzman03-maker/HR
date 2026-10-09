@@ -22,7 +22,7 @@ export default async function AgentsPage() {
               {agents.filter((a) => a.department === d).map((a) => (
                 <Link key={a.id} href={`/agents/${a.id}`}>
                   <Card className="h-full p-4 transition-colors hover:border-niebla/40">
-                    <div className="mb-2 flex items-center justify-between"><span className="font-mono text-[12px] text-[#a9a1ff]">{a.id}</span><AgentStatusBadge status={a.status} title={a.statusNote} /></div>
+                    <div className="mb-2 flex items-center justify-between"><span className="font-mono text-[12px] text-indigo-soft">{a.id}</span><AgentStatusBadge status={a.status} title={a.statusNote} manual={a.statusSource === "manual"} /></div>
                     <div className="font-display text-[14.5px] font-semibold leading-snug">{a.role}</div>
                     <p className="mt-1 line-clamp-2 text-[12px] text-niebla">{a.description}</p>
                     <div className="mt-3 flex gap-4 font-mono text-[10.5px] text-mute"><span>{a.tasksCompleted} done</span><span>{a.tasksOpen} open</span><span>{a.team}</span></div>

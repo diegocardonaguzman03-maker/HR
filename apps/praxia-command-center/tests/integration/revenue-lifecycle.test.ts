@@ -39,6 +39,15 @@ describe("base seed", () => {
 });
 
 describe("CRM rules", () => {
+  it("editing an organization never changes its demo flag or provenance", async () => {
+    const { updateOrganization } = await import("@/server/services/crm");
+    const demo = await createOrganization(db, { name: "Demo Org", isDemo: true, source: "hunter.io", sourceRetrievedAt: "2026-10-01T00:00:00Z" });
+    const after = await updateOrganization(db, demo.id, { name: "Demo Org Renamed", notes: "edited" });
+    expect(after.isDemo).toBe(true);
+    expect(after.source).toBe("hunter.io");
+    expect(after.sourceRetrievedAt).toBe("2026-10-01T00:00:00Z");
+  });
+
   it("detects duplicate organizations by domain and name", async () => {
     await createOrganization(db, { name: "Acme Steel", website: "https://www.acme-steel.mx/about" });
     await expect(createOrganization(db, { name: "Other name", domain: "ACME-STEEL.mx" })).rejects.toThrow(/duplicate/i);
@@ -101,6 +110,14 @@ describe("revenue lifecycle (end to end)", () => {
       ],
     });
     await expect(markProposalSent(db, p.id, todayIso())).rejects.toThrow(/approved/);
+    await updateProposal(db, p.id, { lines: [{ description: "Uncosted", quantity: 1, unitPrice: 1_200_000, estimatedCost: 0 }] });
+    await expect(submitProposalForApproval(db, p.id)).rejects.toThrow(/direct delivery cost/);
+    await updateProposal(db, p.id, {
+      lines: [
+        { description: "Diagnostic (5 layers × 5 levels)", quantity: 1, unitPrice: 1_000_000, estimatedCost: 300_000 },
+        { description: "Executive readout", quantity: 1, unitPrice: 200_000, estimatedCost: 50_000 },
+      ],
+    });
     const approval = await submitProposalForApproval(db, p.id);
     await expect(decideApproval(db, approval.id, "approved", null, "SAL-03")).rejects.toThrow(/founder/);
     await decideApproval(db, approval.id, "approved", "Within range");
@@ -113,11 +130,13 @@ describe("revenue lifecycle (end to end)", () => {
     let d = await loadDashboard(db, { includeDemo: false, periodKey: "mtd", today: todayIso() });
     expect(d.finance.bookings.value).toBe(0);
 
+    await expect(signContract(db, contract.id, { signedAt: todayIso(), evidence: "x signed", totalAmount: 900_000 })).rejects.toThrow(/differs from the approved proposal/);
     await signContract(db, contract.id, { signedAt: todayIso(), evidence: "Countersigned contract, file DLT-001-signed.pdf", startDate: todayIso() });
     expect((await db.select().from(pipelineStages).where(eq(pipelineStages.id, (await loadOpp(db, opp.id)).stageId)))[0]!.kind).toBe("won");
 
     await recognizeRevenue(db, contract.id, { recognizedOn: todayIso(), amount: 600_000, basis: "milestone", description: "Kickoff + fieldwork" });
     await expect(recognizeRevenue(db, contract.id, { recognizedOn: todayIso(), amount: 700_000, basis: "milestone" })).rejects.toThrow(/exceed/);
+    await expect(recognizeRevenue(db, contract.id, { recognizedOn: daysAgo(-3), amount: 1_000, basis: "milestone" })).rejects.toThrow(/future/);
 
     const inv = await createInvoice(db, { organizationId: org.id, contractId: contract.id, issueDate: todayIso(), dueDate: daysAgo(-15), currency: "USD", subtotal: 600_000, taxRate: 0.16 });
     await expect(createInvoice(db, { organizationId: org.id, contractId: contract.id, issueDate: todayIso(), dueDate: daysAgo(-15), currency: "USD", subtotal: 700_000, taxRate: 0.16 })).rejects.toThrow(/exceed/);
@@ -178,6 +197,28 @@ describe("revenue lifecycle (end to end)", () => {
     expect(real.sales.activeOpportunities).toBe(0);
     expect(demo.sales.activeOpportunities).toBe(1);
     expect(real.hasDemoData).toBe(true);
+  });
+});
+
+describe("retainers", () => {
+  it("require monthly × committed months and a start date; MRR counts the monthly amount only", async () => {
+    const org = await createOrganization(db, { name: "Retainer Co" });
+    const c = await createContact(db, { organizationId: org.id, fullName: "R Person" });
+    const opp = await createOpportunity(db, { organizationId: org.id, title: "Advisory", primaryContactId: c.id, serviceId: (await service("G")).id, amount: 1_500_000 });
+    const p = await createProposalFromOpportunity(db, opp.id);
+    await updateProposal(db, p.id, { lines: [{ description: "Advisory retainer — 3 months", quantity: 3, unitPrice: 500_000, estimatedCost: 600_000 }] });
+    const a = await submitProposalForApproval(db, p.id);
+    await decideApproval(db, a.id, "approved", null);
+    await markProposalSent(db, p.id, todayIso());
+    const k = await acceptProposal(db, p.id, { acceptedOn: todayIso(), evidence: "signed retainer letter" });
+    expect(k.kind).toBe("retainer");
+    expect(k.monthlyAmount).toBeNull();
+    await expect(signContract(db, k.id, { signedAt: todayIso(), evidence: "signed retainer" })).rejects.toThrow(/monthly amount and a start date/);
+    await expect(signContract(db, k.id, { signedAt: todayIso(), evidence: "signed retainer", startDate: todayIso(), monthlyAmount: 400_000 })).rejects.toThrow(/multiple/);
+    await signContract(db, k.id, { signedAt: todayIso(), evidence: "signed retainer", startDate: todayIso(), monthlyAmount: 500_000 });
+    const d = await loadDashboard(db, { includeDemo: false, periodKey: "mtd", today: todayIso() });
+    expect(d.finance.mrr.value).toBe(500_000);
+    expect(d.finance.bookings.value).toBe(1_500_000);
   });
 });
 

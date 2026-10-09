@@ -3,7 +3,7 @@ import { z } from "zod";
 import type { DB } from "../db/client";
 import { approvals, contracts, opportunities, organizations, proposalLines, proposals, revenueEntries, services, pipelineStages, CURRENCIES } from "../db/schema";
 import { proposalTotals } from "@/domain/finance";
-import { audit, BusinessRuleError, getSettings, nowIso, snapshotFor, type Actor } from "./common";
+import { audit, BusinessRuleError, getSettings, nowIso, snapshotFor, todayIso, type Actor } from "./common";
 import { moveOpportunityStage } from "./crm";
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "expected YYYY-MM-DD");
@@ -29,7 +29,7 @@ export async function createProposalFromOpportunity(db: DB, opportunityId: strin
     .values({
       opportunityId,
       version: (v ?? 0) + 1,
-      title: `${svc?.name ?? "Proposal"} — ${opp.title}`,
+      title: svc && svc.name !== opp.title ? `${svc.name} — ${opp.title}` : opp.title,
       summary: opp.problemStatement,
       currency: opp.currency,
       taxRate: settings.defaultTaxRate,
@@ -83,6 +83,8 @@ export async function submitProposalForApproval(db: DB, id: string, actor: Actor
   const { proposal, lines, totals } = await getProposalWithLines(db, id);
   if (proposal.status !== "draft") throw new BusinessRuleError("Only draft proposals can be submitted for approval.");
   if (!lines.length || totals.subtotal <= 0) throw new BusinessRuleError("Add at least one priced line before submitting.");
+  if (totals.cost <= 0) throw new BusinessRuleError("Estimate the direct delivery cost (associates, tools, travel, founder time) before submitting — a zero cost would show a false 100% margin.");
+  const unCosted = lines.filter((l) => l.estimatedCost <= 0).length;
   await db.update(proposals).set({ status: "internal_review", updatedAt: nowIso() }).where(eq(proposals.id, id));
   const marginTxt = totals.grossMargin === null ? "n/a" : `${(totals.grossMargin * 100).toFixed(0)}%`;
   const [a] = await db
@@ -90,7 +92,7 @@ export async function submitProposalForApproval(db: DB, id: string, actor: Actor
     .values({
       kind: "proposal_pricing",
       title: `Pricing for "${proposal.title}" (v${proposal.version})`,
-      detail: `Subtotal ${totals.subtotal / 100} ${proposal.currency}; estimated cost ${totals.cost / 100}; gross margin ${marginTxt}${totals.meetsMarginTarget ? "" : ` — BELOW the ${MARGIN_TARGET * 100}% target`}.`,
+      detail: `Subtotal ${totals.subtotal / 100} ${proposal.currency}; estimated cost ${totals.cost / 100}; gross margin ${marginTxt}${totals.meetsMarginTarget ? "" : ` — BELOW the ${MARGIN_TARGET * 100}% target`}${unCosted ? ` — ${unCosted} line(s) without estimated cost` : ""}.`,
       entityType: "proposal",
       entityId: id,
       requestedBy: actor,
@@ -103,10 +105,12 @@ export async function submitProposalForApproval(db: DB, id: string, actor: Actor
 
 /** Founder decision on any approval. Side effects depend on the approval kind. */
 export async function decideApproval(db: DB, approvalId: string, decision: "approved" | "rejected", note: string | null, actor: Actor = "founder") {
+  z.enum(["approved", "rejected"]).parse(decision);
   const [a] = await db.select().from(approvals).where(eq(approvals.id, approvalId));
   if (!a) throw new BusinessRuleError("Approval not found.");
   if (a.status !== "pending") throw new BusinessRuleError(`Already ${a.status}.`);
-  if (actor !== "founder") throw new BusinessRuleError("Only the founder can decide approvals.");
+  // Only the founder decides. The demo seed may decide its own fictional (is_demo) approvals, under its own actor id.
+  if (actor !== "founder" && !(actor === "system:demo-seed" && a.isDemo)) throw new BusinessRuleError("Only the founder can decide approvals.");
   const now = nowIso();
   await db.update(approvals).set({ status: decision, decisionNote: note, decidedAt: now }).where(eq(approvals.id, approvalId));
   if (a.kind === "proposal_pricing") {
@@ -169,7 +173,7 @@ export async function acceptProposal(db: DB, id: string, input: { acceptedOn: st
       kind: svc?.pricingModel === "retainer" ? "retainer" : "project",
       currency: proposal.currency,
       totalAmount: totals.subtotal,
-      monthlyAmount: svc?.pricingModel === "retainer" ? totals.subtotal : null,
+      monthlyAmount: null, // retainers: monthly amount × committed months is fixed at signature
       status: "pending_signature",
       isDemo: proposal.isDemo,
     })
@@ -194,7 +198,15 @@ export async function signContract(db: DB, id: string, raw: z.input<typeof signI
   if (!c) throw new BusinessRuleError("Contract not found.");
   if (c.status !== "pending_signature") throw new BusinessRuleError(`Contract is already ${c.status}.`);
   if (input.startDate && input.endDate && input.endDate < input.startDate) throw new BusinessRuleError("End date must be after start date.");
+  if (input.signedAt > todayIso()) throw new BusinessRuleError("Signature date cannot be in the future.");
+  if (c.proposalId && input.totalAmount !== undefined && input.totalAmount !== c.totalAmount)
+    throw new BusinessRuleError("Signed value differs from the approved proposal. Create a new proposal version and get its pricing approved.");
   const totalAmount = input.totalAmount ?? c.totalAmount;
+  if (c.kind === "retainer") {
+    const monthly = input.monthlyAmount ?? c.monthlyAmount;
+    if (!monthly || !input.startDate) throw new BusinessRuleError("Retainers require a monthly amount and a start date.");
+    if (totalAmount % monthly !== 0) throw new BusinessRuleError(`Retainer value must equal monthly amount × committed months (${totalAmount / 100} is not a multiple of ${monthly / 100}).`);
+  }
   const snap = await snapshotFor(db, totalAmount, c.currency, input.signedAt);
   const [after] = await db
     .update(contracts)
@@ -247,6 +259,7 @@ export async function recognizeRevenue(db: DB, contractId: string, raw: z.input<
   if (!c) throw new BusinessRuleError("Contract not found.");
   if (!["signed", "active", "completed"].includes(c.status)) throw new BusinessRuleError("Revenue can only be recognized on signed contracts.");
   if (c.signedAt && input.recognizedOn < c.signedAt) throw new BusinessRuleError("Revenue cannot be recognized before the contract was signed.");
+  if (input.recognizedOn > todayIso()) throw new BusinessRuleError("Revenue can only be recognized for work already delivered (no future dates).");
   const [{ s }] = (await db.select({ s: sql<number>`coalesce(sum(${revenueEntries.amount}),0)` }).from(revenueEntries).where(eq(revenueEntries.contractId, contractId))) as [{ s: number }];
   if (s + input.amount > c.totalAmount)
     throw new BusinessRuleError(`Recognition would exceed the contract value (${(c.totalAmount - s) / 100} ${c.currency} remaining).`, { remaining: c.totalAmount - s });

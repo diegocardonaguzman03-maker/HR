@@ -23,7 +23,7 @@ export default async function ProposalPage({ params }: { params: Promise<{ id: s
       <PageHeader
         label={`Proposal v${p.version} · ${org?.name}`}
         title={p.title}
-        description={<>For <Link href={`/crm/opportunities/${opp!.id}`} className="text-[#a9a1ff] hover:underline">{opp!.title}</Link> · status <Badge tone={p.status === "accepted" ? "ok" : p.status === "internal_review" ? "warn" : "indigo"}>{p.status.replace("_", " ")}</Badge> {p.isDemo && <Badge tone="clay">Demo</Badge>}</>}
+        description={<>For <Link href={`/crm/opportunities/${opp!.id}`} className="text-indigo-soft hover:underline">{opp!.title}</Link> · status <Badge tone={p.status === "accepted" ? "ok" : p.status === "internal_review" ? "warn" : "indigo"}>{p.status.replace("_", " ")}</Badge> {p.isDemo && <Badge tone="clay">Demo</Badge>}</>}
         actions={<Link href={`/print/proposals/${id}`} target="_blank" className="inline-flex items-center rounded-lg border border-hair px-3 py-1.5 text-[13px] hover:bg-graphite-3">Print / save as PDF</Link>}
       />
       <ProposalEditor
@@ -35,6 +35,7 @@ export default async function ProposalPage({ params }: { params: Promise<{ id: s
         today={today}
         approvals={history.map((a) => ({ id: a.id, status: a.status, createdAt: a.createdAt, decidedAt: a.decidedAt, decisionNote: a.decisionNote }))}
         contractId={contract?.id ?? null}
+        contractSigned={!!contract?.signedAt}
       />
     </div>
   );

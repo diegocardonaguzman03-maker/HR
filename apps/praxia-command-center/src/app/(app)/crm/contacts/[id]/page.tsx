@@ -24,7 +24,7 @@ export default async function ContactDetail({ params }: { params: Promise<{ id: 
       <PageHeader
         label={`CRM · Contact · ${c.leadStatus}`}
         title={c.fullName}
-        description={<>{c.title ?? "No title"}{org && <> at <Link className="text-[#a9a1ff] hover:underline" href={`/crm/organizations/${org.id}`}>{org.name}</Link></>} {c.isDemo && <Badge tone="clay">Demo</Badge>} {c.doNotContact && <Badge tone="bad">Do not contact</Badge>}</>}
+        description={<>{c.title ?? "No title"}{org && <> at <Link className="text-indigo-soft hover:underline" href={`/crm/organizations/${org.id}`}>{org.name}</Link></>} {c.isDemo && <Badge tone="clay">Demo</Badge>} {c.doNotContact && <Badge tone="bad">Do not contact</Badge>}</>}
         actions={<>
           {c.linkedinUrl && <a href={c.linkedinUrl} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 rounded-lg border border-hair px-3 py-1.5 text-[13px] hover:bg-graphite-3">Open LinkedIn profile <ExternalLink size={12} /></a>}
           <EditContact contact={c} organizations={opts.organizations} />

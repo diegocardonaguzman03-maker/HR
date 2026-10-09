@@ -200,7 +200,7 @@ A = {
 "UX-01": ("Head of UX Research & Service Design", "E6", 4, "DEV-01, UI-01, CX-01, MKT-03",
   "investigación de usuarios, service blueprints (incluida la experiencia del diagnóstico), arquitectura de información y usabilidad de PRAXIA",
   "Diseñar experiencias (digitales y de servicio) que la gente realmente adopte.",
-  ["Journey map y service blueprint", "Reporte de usabilidad", "Flujos de usuario"],
+  ["Mapa de recorrido del usuario y service blueprint", "Reporte de usabilidad", "Flujos de usuario"],
   "§0, §6.5, §6.6, §14", "—",
   ["Aplicas la tesis PRAXIA a tu propio trabajo: se mide uso observable, no opinión.",
    "Investigación con personas: consentimiento y anonimización."]),

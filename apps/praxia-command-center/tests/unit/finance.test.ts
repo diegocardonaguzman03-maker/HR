@@ -79,9 +79,23 @@ describe("finance metrics", () => {
     expect(m.grossMargin.value).toBeCloseTo(0.8);
     expect(m.operatingProfit.value).toBe(350_000);
     expect(m.cashBalance.value).toBe(500_000 + 300_000 - 150_000);
-    expect(m.runwayMonths.value).toBeCloseTo(650_000 / (150_000 / 3));
+    expect(m.cashBalance.kind).toBe("estimate");
+    // History is 20 days (opening 2026-09-30 → today) → burn measured over the 30-day minimum, not divided by 3 months.
+    expect(m.runwayMonths.value).toBeCloseTo(650_000 / (150_000 / (30 / 30.44)), 3);
+    expect(m.collectedNet.value).toBe(Math.round(300_000 * 500_000 / 580_000));
     expect(m.plannedExpenses30.value).toBe(40_000);
     expect(m.revenueVsTarget.value).toBeCloseTo(0.5);
+  });
+
+  it("counts MRR only for retainers in force with a start date, and last30 as one month of goal", () => {
+    const i = base();
+    i.contracts = [
+      { id: "r1", kind: "retainer", status: "signed", signedAt: "2026-10-01", signatureEvidence: "e", amount: 1_500_000, currency: "USD", monthlyAmount: 500_000, startDate: null, endDate: null },
+      { id: "r2", kind: "retainer", status: "terminated", signedAt: "2026-09-01", signatureEvidence: "e", amount: 900_000, currency: "USD", monthlyAmount: 300_000, startDate: "2026-09-01", endDate: null },
+    ];
+    expect(computeFinanceMetrics(i).mrr.value).toBeNull();
+    i.period = resolvePeriod("last30", today);
+    expect(computeFinanceMetrics(i).revenueTarget.value).toBe(1_000_000);
   });
 
   it("flags records it cannot convert instead of dropping them silently", () => {

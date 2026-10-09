@@ -17,13 +17,14 @@ export default async function SalesPage() {
   const R = d.settings.reportingCurrency;
   const openStageIds = new Set(d.stages.filter((x) => x.kind === "open").map((x) => x.id));
   const queue = (await db.select({ o: opportunities, org: organizations.name }).from(opportunities).leftJoin(organizations, eq(opportunities.organizationId, organizations.id)).where(demoFilter(opportunities.isDemo, includeDemo)).orderBy(asc(opportunities.nextActionDate)))
-    .filter(({ o }) => openStageIds.has(o.stageId));
+    .filter(({ o }) => openStageIds.has(o.stageId))
+    .sort((a, b) => (a.o.nextActionDate ?? "9999") .localeCompare(b.o.nextActionDate ?? "9999"));
   const maxReached = Math.max(1, ...s.funnel.map((f) => f.reached));
   return (
     <div className="mx-auto max-w-[1300px]">
       <PageHeader label="Revenue intelligence · year to date" title="Sales" description="Pipeline conversion, forecast and the follow-up queue. Forecasts are weighted by stage probability; they are not commitments." />
       <div className="mb-8 grid grid-cols-2 gap-3 md:grid-cols-4">
-        <SimpleKpi label="Weighted pipeline" kind="forecast" value={formatMoney(s.weightedPipeline.value, R)} sub={`Unweighted ${formatMoney(s.unweightedPipeline.value, R)}`} />
+        <SimpleKpi label="Weighted pipeline" kind="forecast" value={formatMoney(s.weightedPipeline.value, R)} sub={s.weightedPipeline.missingFx ? `${s.weightedPipeline.missingFx} deal(s) without FX rate excluded` : `Unweighted ${formatMoney(s.unweightedPipeline.value, R)}`} />
         <SimpleKpi label="Win rate (YTD)" value={formatPct(s.winRate)} sub={`${s.wonCount} won / ${s.lostCount} lost`} />
         <SimpleKpi label="Average deal" value={s.averageDealSize === null ? "—" : formatMoney(s.averageDealSize, R)} />
         <SimpleKpi label="Sales cycle" value={s.salesCycleDays === null ? "—" : `${s.salesCycleDays} days`} sub="created → closed won" />

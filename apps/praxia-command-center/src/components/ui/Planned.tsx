@@ -14,7 +14,7 @@ export function PlannedModule({ label, title, phase, purpose, scope, today, need
         <div className="flex flex-col gap-6">
           <Card className="p-5">
             <div className="px-label mb-3">Use today</div>
-            <ul className="space-y-1.5 text-[13px]">{today.map((t) => <li key={t.label}><Link className="text-[#a9a1ff] hover:underline" href={t.href}>{t.label} →</Link></li>)}</ul>
+            <ul className="space-y-1.5 text-[13px]">{today.map((t) => <li key={t.label}><Link className="text-indigo-soft hover:underline" href={t.href}>{t.label} →</Link></li>)}</ul>
           </Card>
           <Card className="p-5">
             <div className="px-label mb-3">Requires</div>

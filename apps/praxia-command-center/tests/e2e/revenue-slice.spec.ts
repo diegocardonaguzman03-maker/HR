@@ -142,7 +142,8 @@ test("invoice → issue → payment; dashboard reflects real figures", async () 
   await expect(card("Contracted (bookings)")).toContainText("USD 12,000.00");
   await expect(card("Recognized revenue")).toContainText("USD 6,000.00");
   await expect(card("Invoiced (pre-tax)")).toContainText("USD 6,000.00");
-  await expect(card("Cash collected")).toContainText("USD 3,000.00");
+  await expect(card("Cash collected (incl. tax)")).toContainText("USD 3,000.00");
+  await expect(card("Cash collected (incl. tax)")).toContainText("Net of tax USD 2,586.21");
   await expect(card("Outstanding invoices")).toContainText("USD 3,960.00");
 });
 

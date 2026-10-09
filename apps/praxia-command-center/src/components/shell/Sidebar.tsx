@@ -25,6 +25,7 @@ export function Sidebar({ approvals }: { approvals: number }) {
               key={item.href}
               href={item.href}
               title={collapsed ? item.label : undefined}
+              aria-label={item.label}
               aria-current={active ? "page" : undefined}
               className={cn(
                 "group relative mb-0.5 flex items-center gap-3 rounded-lg px-2.5 py-2 text-[13px] transition-colors duration-150",

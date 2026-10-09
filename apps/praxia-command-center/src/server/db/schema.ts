@@ -448,6 +448,8 @@ export const auditLog = sqliteTable(
     entityId: text("entity_id").notNull(),
     before: text("before", { mode: "json" }),
     after: text("after", { mode: "json" }),
+    /** Entries written by the demo seed (fictional activity, never the founder's). */
+    isDemo: isDemo(),
   },
   (t) => [index("audit_entity").on(t.entityType, t.entityId)],
 );

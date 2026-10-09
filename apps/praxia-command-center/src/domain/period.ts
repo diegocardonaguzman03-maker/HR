@@ -36,6 +36,7 @@ export function addDays(date: string, days: number): string {
 /** Number of whole or partial months in a period (used to compare against a monthly target). */
 export function monthsInPeriod(p: Period): number {
   if (p.key === "all") return 0;
+  if (p.key === "last30") return 1;
   const a = new Date(`${p.from}T00:00:00Z`);
   const b = new Date(`${p.to}T00:00:00Z`);
   return (b.getUTCFullYear() - a.getUTCFullYear()) * 12 + (b.getUTCMonth() - a.getUTCMonth()) + 1;

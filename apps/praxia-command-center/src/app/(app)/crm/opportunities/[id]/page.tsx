@@ -39,7 +39,7 @@ export default async function OpportunityWorkspace({ params }: { params: Promise
       <PageHeader
         label={`Opportunity · ${org?.name ?? ""}`}
         title={o.title}
-        description={<><Link href={`/crm/organizations/${o.organizationId}`} className="text-[#a9a1ff] hover:underline">{org?.name}</Link> · owner {o.ownerAgentId ?? "founder"} {o.isDemo && <Badge tone="clay">Demo</Badge>}</>}
+        description={<><Link href={`/crm/organizations/${o.organizationId}`} className="text-indigo-soft hover:underline">{org?.name}</Link> · owner {o.ownerAgentId ?? "founder"} {o.isDemo && <Badge tone="clay">Demo</Badge>}</>}
         actions={<>
           <AssignTask agents={opts.agents} defaultAgentId={o.ownerAgentId ?? "SAL-03"} entityType="opportunity" entityId={id} />
           <EditOpportunity initial={o} organizations={opts.organizations} contacts={opts.contacts} services={opts.services} agents={opts.agents} />

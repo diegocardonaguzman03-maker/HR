@@ -13,7 +13,7 @@ export function Timeline({ items }: { items: Act[] }) {
           <div className="flex flex-wrap items-center gap-2 text-[11.5px] text-mute">
             <span className="font-mono">{a.occurredAt.slice(0, 16).replace("T", " ")}</span>
             <Badge>{a.type.replace("_", " ")}</Badge>
-            {a.direction === "outbound" && <span className="flex items-center text-[#a9a1ff]"><ArrowUpRight size={12} />outbound</span>}
+            {a.direction === "outbound" && <span className="flex items-center text-indigo-soft"><ArrowUpRight size={12} />outbound</span>}
             {a.direction === "inbound" && <span className="flex items-center text-ok"><ArrowDownLeft size={12} />inbound</span>}
             <span className="flex items-center"><Dot size={12} />{a.actor}{a.recordedManually ? " · manual record" : ""}</span>
             {a.isDemo && <Badge tone="clay">Demo</Badge>}

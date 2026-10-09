@@ -19,7 +19,7 @@ export function StageControl({ opportunityId, stageId, stages }: { opportunityId
     });
   };
   return (
-    <div className="flex flex-wrap gap-1" aria-label="Pipeline stage">
+    <div className="flex flex-wrap gap-1" role="group" aria-label="Pipeline stage">
       {stages.map((s) => (
         <button
           key={s.id}

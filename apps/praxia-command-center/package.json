@@ -4,7 +4,7 @@
   "private": true,
   "description": "PRAXIA Command Center — AI-native operating system for PRAXIA (Phase 0 + Phase 1 vertical slice).",
   "scripts": {
-    "dev": "next dev -p 3100",
+    "dev": "next dev -H 127.0.0.1 -p 3100",
     "build": "next build",
     "start": "next start -p 3100",
     "typecheck": "tsc --noEmit",

@@ -117,6 +117,7 @@ export type FinanceMetrics = {
   invoicedSubtotal: Metric;
   invoicedTotal: Metric;
   collected: Metric;
+  collectedNet: Metric;
   accountsReceivable: Metric;
   overdueReceivables: Metric;
   directCosts: Metric;
@@ -129,6 +130,7 @@ export type FinanceMetrics = {
   runwayMonths: Metric;
   revenueTarget: Metric;
   revenueVsTarget: Metric;
+  revenueTargetBasisValue: Metric;
   expectedCollections30: Metric;
   plannedExpenses30: Metric;
   invoiceStates: InvoiceState[];
@@ -145,7 +147,7 @@ export function computeFinanceMetrics(input: FinanceInput): FinanceMetrics {
 
   // MRR (retainers in force today)
   const retainers = booked.filter(
-    (c) => c.kind === "retainer" && c.monthlyAmount && (!c.startDate || c.startDate <= today) && (!c.endDate || c.endDate >= today) && c.status !== "completed",
+    (c) => c.kind === "retainer" && c.monthlyAmount && !!c.startDate && c.startDate <= today && (!c.endDate || c.endDate >= today) && ["signed", "active"].includes(c.status),
   );
   const mrr = sumReported(
     retainers.map((c) => ({
@@ -174,8 +176,18 @@ export function computeFinanceMetrics(input: FinanceInput): FinanceMetrics {
     else { invSub += s; invTot += t; }
   }
 
-  // Collections
-  const collected = sumReported(input.payments.filter((p) => inPeriod(p.receivedOn, period)), R);
+  // Collections (gross = cash incl. tax; net = pre-tax share, pro-rata to the invoice subtotal/total)
+  const paymentsP = input.payments.filter((p) => inPeriod(p.receivedOn, period));
+  const collected = sumReported(paymentsP, R);
+  const invById = new Map(input.invoices.map((i) => [i.id, i]));
+  const collectedNet = sumReported(
+    paymentsP.map((p) => {
+      const inv = invById.get(p.invoiceId);
+      const f = inv && inv.total > 0 ? inv.subtotal / inv.total : 1;
+      return { ...p, amount: Math.round(p.amount * f), reportingAmount: p.reportingAmount == null ? p.reportingAmount : Math.round(p.reportingAmount * f) };
+    }),
+    R,
+  );
 
   // Receivables
   const invoiceStates = input.invoices.map((i) => invoiceState(i, input.payments, today));
@@ -223,16 +235,19 @@ export function computeFinanceMetrics(input: FinanceInput): FinanceMetrics {
     const outflow = sumReported(actual.filter((e) => e.incurredOn > since && e.incurredOn <= today), R);
     const missing = inflow.missingFx + outflow.missingFx + (openR === null ? 1 : 0);
     const balance = openR === null ? null : openR + inflow.total - outflow.total;
-    cash = { value: balance, kind: "actual", missingFx: missing, note: "Opening balance + collections − actual expenses (expenses assumed paid when incurred)." };
-    const from90 = addDays(today, -90);
-    const burn = sumReported(actual.filter((e) => e.incurredOn > from90 && e.incurredOn <= today), R);
-    const monthlyBurn = burn.total / 3;
+    cash = { value: balance, kind: "estimate", missingFx: missing, note: "Opening balance + collections − actual expenses (expenses assumed paid when incurred; balances not revalued at today's FX; includes tax collected)." };
+    // Burn over the history actually available (max 90 days, min 30) — never divide a short history by 3 months.
+    const firstExpense = actual.map((e) => e.incurredOn).sort()[0];
+    const windowStart = [addDays(today, -90), since, firstExpense ?? today].sort().reverse()[0]!;
+    const days = Math.min(90, Math.max(30, Math.round((Date.parse(today) - Date.parse(windowStart)) / 86_400_000)));
+    const burn = sumReported(actual.filter((e) => e.incurredOn > addDays(today, -days) && e.incurredOn <= today), R);
+    const monthlyBurn = burn.total / (days / 30.44);
     runway =
       balance === null
         ? { value: null, kind: "estimate", missingFx: missing, note: "Cash balance unavailable." }
         : monthlyBurn <= 0
           ? { value: null, kind: "estimate", missingFx: burn.missingFx, note: "No expenses recorded in the last 90 days." }
-          : { value: balance / monthlyBurn, kind: "estimate", missingFx: burn.missingFx, note: "Months of cash at the average burn of the last 90 days." };
+          : { value: balance / monthlyBurn, kind: "estimate", missingFx: burn.missingFx, note: `Months of cash at the average gross burn of the last ${days} days.` };
   }
 
   // Target
@@ -242,7 +257,8 @@ export function computeFinanceMetrics(input: FinanceInput): FinanceMetrics {
     return r ? convertMinor(settings.monthlyRevenueTarget, r.rate) : null;
   })();
   const targetValue = months > 0 && targetR !== null ? targetR * months : null;
-  const basisValue = settings.targetBasis === "collected" ? collected.total : settings.targetBasis === "contracted" ? bookingsP.total : recognized.total;
+  const basis = settings.targetBasis === "collected" ? collectedNet : settings.targetBasis === "contracted" ? bookingsP : recognized;
+  const basisValue = basis.total;
 
   const planned30 = sumReported(input.expenses.filter((e) => e.status === "planned" && e.incurredOn > today && e.incurredOn <= in30), R);
 
@@ -259,6 +275,7 @@ export function computeFinanceMetrics(input: FinanceInput): FinanceMetrics {
     invoicedSubtotal: m(invSub, "actual", invMissing, "Issued invoices, before tax."),
     invoicedTotal: m(invTot, "actual", invMissing, "Issued invoices, including tax."),
     collected: m(collected.total, "actual", collected.missingFx, "Payments received (including tax)."),
+    collectedNet: m(collectedNet.total, "actual", collectedNet.missingFx, "Payments received, net of tax."),
     accountsReceivable: m(ar, "actual", arMissing, "Open balance of issued invoices."),
     overdueReceivables: m(overdue, "actual", overdueMissing),
     directCosts: m(direct.total, "actual", direct.missingFx),
@@ -270,7 +287,8 @@ export function computeFinanceMetrics(input: FinanceInput): FinanceMetrics {
     cashBalance: cash,
     runwayMonths: runway,
     revenueTarget: m(targetValue, "goal", 0, `Founder goal (${settings.targetBasis}), not revenue.`),
-    revenueVsTarget: m(targetValue ? basisValue / targetValue : null, "actual", 0, `Basis: ${settings.targetBasis} revenue.`),
+    revenueVsTarget: m(targetValue && !basis.missingFx ? basisValue / targetValue : null, "actual", basis.missingFx, basis.missingFx ? "Some records lack an FX rate; ratio withheld." : `Basis: ${settings.targetBasis} revenue${settings.targetBasis === "collected" ? " (net of tax)" : ""}.`),
+    revenueTargetBasisValue: m(basisValue, "actual", basis.missingFx),
     expectedCollections30: m(exp30, "forecast", exp30Missing, "Open invoices due in the next 30 days (excludes overdue)."),
     plannedExpenses30: m(planned30.total, "forecast", planned30.missingFx, "Planned expenses in the next 30 days."),
     invoiceStates,

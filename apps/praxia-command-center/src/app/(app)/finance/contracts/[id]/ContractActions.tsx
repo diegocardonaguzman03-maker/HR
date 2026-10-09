@@ -34,7 +34,7 @@ export function ContractActions({ contract: c, remaining, today }: { contract: C
           <Field label="Start"><Input type="date" name="startDate" /></Field>
           <Field label="End"><Input type="date" name="endDate" /></Field>
         </div>
-        {c.kind === "retainer" && <Field label={`Monthly amount (${c.currency})`}><Input name="monthly" defaultValue={c.monthlyAmount ? (c.monthlyAmount / 100).toFixed(2) : ""} /></Field>}
+        {c.kind === "retainer" && <Field label={`Monthly amount (${c.currency}) *`} hint={`Contract value ${(c.totalAmount / 100).toFixed(2)} must equal monthly × committed months. Start date required.`}><Input name="monthly" required defaultValue={c.monthlyAmount ? (c.monthlyAmount / 100).toFixed(2) : ""} /></Field>}
         <Button variant="human" type="submit" disabled={pending}>Record signature</Button>
       </form>
     );

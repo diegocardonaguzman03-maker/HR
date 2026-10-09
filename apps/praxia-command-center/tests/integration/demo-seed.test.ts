@@ -22,5 +22,9 @@ describe("demo dataset", () => {
     expect(demo.sales.weightedPipeline.missingFx).toBe(1); // MXN deal without a rate
     expect(demo.decisions.length).toBeGreaterThan(0);
     expect((await listAgentsWithStatus(db)).every((a) => a.status === "offline")).toBe(true);
+    const { auditLog } = await import("@/server/db/schema");
+    const entries = await db.select().from(auditLog);
+    expect(entries.length).toBeGreaterThan(0);
+    expect(entries.every((e) => e.isDemo && e.actor === "system:demo-seed")).toBe(true);
   });
 });

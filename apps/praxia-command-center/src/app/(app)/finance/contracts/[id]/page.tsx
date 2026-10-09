@@ -30,7 +30,7 @@ export default async function ContractPage({ params }: { params: Promise<{ id: s
   return (
     <div className="mx-auto max-w-[1200px]">
       <PageHeader label={`Contract · ${c.kind}`} title={c.title}
-        description={<><Link href={`/crm/organizations/${c.organizationId}`} className="text-[#a9a1ff] hover:underline">{org?.name}</Link> · <Badge tone={c.signedAt ? "ok" : "warn"}>{c.status.replace("_", " ")}</Badge> {c.isDemo && <Badge tone="clay">Demo</Badge>}</>}
+        description={<><Link href={`/crm/organizations/${c.organizationId}`} className="text-indigo-soft hover:underline">{org?.name}</Link> · <Badge tone={c.signedAt ? "ok" : "warn"}>{c.status.replace("_", " ")}</Badge> {c.isDemo && <Badge tone="clay">Demo</Badge>}</>}
         actions={c.signedAt && ["signed", "active"].includes(c.status) ? <ButtonLink variant="primary" href={`/finance/invoices/new?contractId=${c.id}`}>New invoice</ButtonLink> : undefined} />
       <Card className="mb-6 grid grid-cols-2 gap-5 p-5 md:grid-cols-5">
         <Stat label="Contract value" value={formatMoney(c.totalAmount, c.currency)} sub={c.kind === "retainer" && c.monthlyAmount ? `${formatMoney(c.monthlyAmount, c.currency)} / month` : undefined} />

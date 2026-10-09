@@ -19,7 +19,7 @@ export default async function InvoicePage({ params }: { params: Promise<{ id: st
   return (
     <div className="mx-auto max-w-[1100px]">
       <PageHeader label="Finance · Invoice" title={i.number}
-        description={<>{org?.name} {i.contractId && <>· <Link href={`/finance/contracts/${i.contractId}`} className="text-[#a9a1ff] hover:underline">contract</Link></>} · <Badge tone={st.derivedStatus === "paid" ? "ok" : st.derivedStatus === "overdue" ? "bad" : "neutral"}>{st.derivedStatus.replace("_", " ")}</Badge> {i.isDemo && <Badge tone="clay">Demo</Badge>}</>} />
+        description={<>{org?.name} {i.contractId && <>· <Link href={`/finance/contracts/${i.contractId}`} className="text-indigo-soft hover:underline">contract</Link></>} · <Badge tone={st.derivedStatus === "paid" ? "ok" : st.derivedStatus === "overdue" ? "bad" : "neutral"}>{st.derivedStatus.replace("_", " ")}</Badge> {i.isDemo && <Badge tone="clay">Demo</Badge>}</>} />
       <Card className="mb-6 grid grid-cols-2 gap-5 p-5 md:grid-cols-5">
         <Stat label="Subtotal" value={formatMoney(i.subtotal, i.currency)} />
         <Stat label={`Tax ${Math.round(i.taxRate * 100)}%`} value={formatMoney(i.tax, i.currency)} />

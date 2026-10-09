@@ -236,7 +236,7 @@ export default function PraxiaWorld({ agents, selectedAgentId, onSelectAgent, re
       {failed && (
         <div className="absolute inset-0 flex items-center justify-center p-6 text-center">
           <p className="max-w-sm text-[13px]" style={{ color: "var(--color-niebla, #A7AAB5)" }}>
-            PRAXIA World could not start: this browser did not provide WebGL. The agent list and detail panel still work.
+            PRAXIA World could not start: this browser did not provide WebGL. The same agents and live statuses are available in the <a href="/agents" style={{ textDecoration: "underline" }}>agent registry</a>.
           </p>
         </div>
       )}

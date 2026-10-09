@@ -63,7 +63,8 @@ export async function updateOrganization(db: DB, id: string, raw: Partial<z.inpu
   const [before] = await db.select().from(organizations).where(eq(organizations.id, id));
   if (!before) throw new BusinessRuleError("Organization not found.");
   const parsed = organizationInput.partial().parse(raw);
-  const patch: Record<string, unknown> = { ...parsed, updatedAt: nowIso() };
+  // zod partial() still applies defaults: keep only keys actually sent; demo flag and provenance timestamp never change on edit.
+  const patch: Record<string, unknown> = { ...Object.fromEntries(Object.entries(parsed).filter(([k]) => k in raw && k !== "isDemo" && k !== "sourceRetrievedAt")), updatedAt: nowIso() };
   if ("domain" in raw || "website" in raw) patch.domain = normalizeDomain((parsed.domain ?? parsed.website) || before.domain);
   if (raw.lifecycle) patch.lifecycle = z.enum(["target", "prospect", "client", "former_client", "partner"]).parse(raw.lifecycle);
   if (raw.fitScore !== undefined) patch.fitScore = raw.fitScore === null ? null : z.number().int().min(0).max(100).parse(raw.fitScore);
@@ -120,7 +121,11 @@ export async function updateContact(db: DB, id: string, raw: Partial<z.input<typ
   const [before] = await db.select().from(contacts).where(eq(contacts.id, id));
   if (!before) throw new BusinessRuleError("Contact not found.");
   const parsed = contactInput.partial().parse(raw);
-  const patch = Object.fromEntries(Object.entries(parsed).filter(([k]) => k in raw));
+  const patch = Object.fromEntries(Object.entries(parsed).filter(([k]) => k in raw && k !== "isDemo"));
+  if (patch.email && patch.email !== before.email) {
+    const [dup] = await db.select({ id: contacts.id, fullName: contacts.fullName }).from(contacts).where(eq(contacts.email, patch.email as string));
+    if (dup && dup.id !== id) throw new BusinessRuleError(`A contact with this email already exists (${dup.fullName}).`, { duplicateId: dup.id });
+  }
   const [after] = await db.update(contacts).set({ ...patch, updatedAt: nowIso() }).where(eq(contacts.id, id)).returning();
   await audit(db, actor, "contact.update", "contact", id, before, after);
   return after!;
@@ -262,7 +267,7 @@ export const activityInput = z.object({
   direction: z.enum(["outbound", "inbound", "internal"]).default("internal"),
   subject: z.string().trim().min(2, "subject is required").max(300),
   body: z.string().trim().max(10000).optional().default(""),
-  occurredAt: z.string().min(10),
+  occurredAt: z.string().min(10).refine((v) => !Number.isNaN(Date.parse(v)), "invalid date"),
   organizationId: z.string().optional().nullable(),
   contactId: z.string().optional().nullable(),
   opportunityId: z.string().optional().nullable(),
