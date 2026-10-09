@@ -18,7 +18,10 @@ praxia/
     └── imagenes/          tablero de exploración de marca y símbolo
 ```
 
-Pendiente de crear cuando terminen de llegar las fuentes: `01-equipo/` (diseño del equipo y agentes) y una carpeta por equipo de entrega.
+Además:
+- `01-equipo/`: diseño del equipo, estándar común de los agentes y registro de decisiones.
+- `equipos/E1…E8/`: una carpeta por equipo de entrega, donde se guardan sus entregables.
+- Los 28 agentes operables están en `../.claude/agents/praxia-*.md`.
 
 ## Inventario de fuentes
 

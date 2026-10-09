@@ -63,3 +63,6 @@ informe ejecutivo, propuesta, presentación, plan de acción, plan de mejora (A3
 
 ## Documentos base del departamento
 `01-company-profile/`, `02-research/`, `03-department-design/` (incluye `org/`), `04-processes/`, `05-programs/`, `06-implementation/`, `07-business-case/`, `08-kpis/`, `09-proposal/`, `templates/`.
+
+## Proyecto independiente: PRAXIA (`praxia/`)
+La carpeta `praxia/` y los agentes `.claude/agents/praxia-*.md` pertenecen a **PRAXIA**, una firma de Human & AI Transformation Advisory que **no es GASM**. En esa carpeta las reglas de este archivo no aplican; aplica `praxia/CLAUDE.md`. El contenido de GASM no se usa en trabajos de PRAXIA.
