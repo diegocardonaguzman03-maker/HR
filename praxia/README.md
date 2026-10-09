@@ -97,9 +97,9 @@ Los perfiles se van guardando conforme llegan. Los reenvíos de CEO-01, COM-01 y
 - **Nombres de servicios:** `SERVICE_PORTFOLIO.md` usa nombres distintos de los de la skill y el Master. Por ejemplo, «Strategy Execution & Adoption» frente a «Strategy-to-Adoption Advisory», «Leadership & Organizational Effectiveness» frente a «Leadership & Execution System» y «Operating Model & Change Transformation» frente a «Organizational Design & Operating Model». Por precedencia (skill §0.1) se propone usar los nombres de la skill y el Master.
 - **Método de entrega:** el portafolio usa 5 pasos (Discover → Diagnose → Design → Activate → Measure & Scale) y la skill usa 4 etapas de marca (SENSE · ALIGN · ADOPT · SUSTAIN). Son compatibles: la skill §6.5 mapea los 5 pasos dentro de las 4 etapas.
 
-### Faltan del paquete de agentes
+### Paquete de agentes: completo
 
-- **1 perfiles de agente:** missing:
+Ya están los **28 de 28 perfiles** en `agents/`, además de `knowledge/`, `governance/`, `templates/`, `workflows/` y `config/`. Todos los perfiles comparten la misma plantilla y solo cambian la misión, el alcance, a quién le reportan y sus socios principales.
 
 ### Otras fuentes por recibir (según la skill)
 
