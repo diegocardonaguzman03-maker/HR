@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "slug": "maestro",
+    "title": "PRAXIA · Presentación ejecutiva",
+    "sector": "Alta dirección",
+    "date": "Octubre 2026",
+    "lang": "es",
+    "confidential": true,
+    "output": "../00-maestro/deck-praxia-maestro.pptx",
+    "previewPdf": "../00-maestro/preview.pdf"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Presentación ejecutiva",
+      "title": "De la *estrategia* a la ~adopción~.",
+      "subtitle": "Cerramos la distancia entre la transformación que tu organización compra y el cambio que realmente adopta."
+    },
+    {
+      "type": "statement",
+      "label": "01 — El momento",
+      "section": "El momento",
+      "statement": "Cada empresa tiene una estrategia para la IA. Casi ninguna tiene una organización lista para vivirla.",
+      "support": "La tecnología está lista. El plan también. Lo que no se mueve es cómo la organización decide, trabaja y mide."
+    },
+    {
+      "type": "gap",
+      "label": "02 — El problema real",
+      "section": "El problema",
+      "title": "The ~Adoption Gap~.",
+      "definition": "La distancia medible entre lo que una organización declara, compra o despliega y lo que realmente se usa e incorpora a decisiones, comportamientos y resultados.",
+      "leftLabel": "Lo comprado y desplegado",
+      "rightLabel": "Lo realmente adoptado",
+      "gapLabel": "La brecha"
+    },
+    {
+      "type": "stats",
+      "label": "03 — El costo de la brecha",
+      "section": "El costo",
+      "title": "La brecha no es un tema blando. Se paga en valor que no llega.",
+      "stats": [
+        {
+          "value": "[CIFRA PENDIENTE RES-01]",
+          "label": "Organizaciones que capturan valor sustancial de su inversión en IA.",
+          "source": "[FUENTE Y FECHA PENDIENTES RES-01]"
+        },
+        {
+          "value": "[CIFRA PENDIENTE RES-01]",
+          "label": "Probabilidad de no ver retorno cuando el enfoque es solo tecnológico.",
+          "source": "[FUENTE Y FECHA PENDIENTES RES-01]"
+        },
+        {
+          "value": "[CIFRA PENDIENTE RES-01]",
+          "label": "Peso de la gestión del cambio y la cultura en la agenda de la dirección de personas.",
+          "source": "[FUENTE Y FECHA PENDIENTES RES-01]"
+        }
+      ],
+      "note": "Comprar software o IA no equivale a adopción ni a retorno. Cada cifra se publica solo con fuente verificable y fecha."
+    },
+    {
+      "type": "content",
+      "label": "04 — Qué hacemos",
+      "section": "Qué hacemos",
+      "title": "Convertimos la estrategia en comportamiento que se vive.",
+      "body": "Tu inversión en IA rinde cuando tu gente cambia cómo trabaja. Medimos esa brecha y la cerramos: conectamos la sala de juntas con las rutinas y decisiones de primera línea.",
+      "points": [
+        { "title": "Diagnosticamos", "body": "Ubicamos dónde se rompe la adopción: decisiones, flujos de trabajo, liderazgo, datos y capacidad." },
+        { "title": "Diseñamos el sistema", "body": "Tratamos la adopción como un problema de diseño: roles, operating model, incentivos, rituales y métricas." },
+        { "title": "Medimos el cambio", "body": "Gestionamos con indicadores de uso, comportamiento e impacto. Nunca con asistencia ni horas de formación." }
+      ]
+    },
+    {
+      "type": "comparison",
+      "label": "05 — Por qué distinto",
+      "section": "Por qué PRAXIA",
+      "title": "Otros entregan el plan. Nosotros respondemos por la adopción.",
+      "columns": [
+        { "kicker": "Firmas de estrategia", "verb": "Recomiendan", "body": "Entregan un diagnóstico brillante y un plan. Las personas quedan como un «workstream» más." },
+        { "kicker": "Consultoras de RH y cambio", "verb": "Facilitan", "body": "Talleres y comunicación con buena intención, sin un número que la dirección pueda gestionar." },
+        { "kicker": "PRAXIA", "verb": "Asegura la adopción", "body": "Mide, mueve y responde por el resultado: adopción observable en decisiones, comportamientos e indicadores del negocio." }
+      ],
+      "highlight": 2
+    },
+    {
+      "type": "method",
+      "label": "06 — Cómo trabajamos",
+      "section": "Método",
+      "title": "The Adoption System: cuatro etapas, cuatro gates.",
+      "intro": "Un sistema repetible y medible. Cada etapa cierra con un gate que aprueba el sponsor.",
+      "stages": [
+        { "name": "Sense", "verb": "Diagnosticar", "body": "Contexto de negocio, sponsor, baseline y costo de no actuar. Dónde se rompe la adopción.", "gate": "G0 · Business case aprobado" },
+        { "name": "Align", "verb": "Alinear", "body": "Resultados, cambios requeridos, roles, operating model, métricas y roadmap en una tesis de cambio.", "gate": "G1 · Tesis y roadmap aprobados" },
+        { "name": "Adopt", "verb": "Adoptar", "body": "Pilotos, habilitación, liderazgo, mecanismos de refuerzo y flujos de trabajo humano-IA.", "gate": "G2 · KPIs de adopción por ola" },
+        { "name": "Sustain", "verb": "Sostener", "body": "Evidencia de beneficios, iteración y transferencia del método al equipo del cliente.", "gate": "G3 · Re-medición periódica" }
+      ],
+      "mantra": "La estrategia se compra. La ~adopción~ se diseña."
+    },
+    {
+      "type": "offer",
+      "label": "07 — Punto de entrada",
+      "section": "Punto de entrada",
+      "title": "Empieza midiendo: Adoption Gap Diagnostic.",
+      "body": "En 3 a 5 semanas medimos la distancia entre tu transformación declarada y su adopción real, y construimos el business case del cambio con evidencia de tu propia organización.",
+      "facts": [
+        { "k": "Duración", "v": "3–5 semanas" },
+        { "k": "Qué medimos", "v": "5 capas × 5 niveles" },
+        { "k": "Evidencia", "v": "Cualitativa y cuantitativa" },
+        { "k": "Inversión", "v": "Según alcance" }
+      ],
+      "panelTitle": "Lo que recibes",
+      "deliverables": [
+        "Hallazgos en las cinco capas de la Adoption Architecture",
+        "Baseline de adopción en comportamiento e impacto",
+        "Costo de la brecha y business case del cambio",
+        "Prioridades por impacto y esfuerzo",
+        "Roadmap de 90 y 180 días"
+      ]
+    },
+    {
+      "type": "services",
+      "label": "08 — Cómo seguimos",
+      "section": "Servicios",
+      "title": "Del diagnóstico a la adopción sostenida.",
+      "items": [
+        { "name": "Adoption Gap Diagnostic", "body": "Diagnóstico ejecutivo, baseline, oportunidades y business case. De 3 a 5 semanas.", "tag": "Punto de entrada" },
+        { "name": "Strategy-to-Adoption Sprint", "body": "Diseño y activación de una o dos prioridades estratégicas. De 6 a 10 semanas." },
+        { "name": "AI Adoption Accelerator", "body": "Caso de uso priorizado, piloto por función y medición de uso real. De 6 a 12 semanas." },
+        { "name": "Transformation Adoption Program", "body": "Intervención transversal con medición por olas. De 3 a 6 meses." },
+        { "name": "Executive Advisory Retainer", "body": "Gobernanza, acompañamiento a la ejecución y seguimiento mensual con la dirección." }
+      ]
+    },
+    {
+      "type": "founder",
+      "label": "09 — Quién está detrás",
+      "section": "Quién está detrás",
+      "name": "Francisco Cardona",
+      "role": "Founder & Principal",
+      "bio": "PRAXIA es una firma senior-led y basada en evidencia. Francisco trabaja de par a par con la dirección, desde el P&L y el riesgo, para que la estrategia se convierta en decisiones, comportamientos e indicadores que cambian.",
+      "points": [
+        "Liderazgo en un grupo industrial multinacional",
+        "Talento, aprendizaje, desarrollo organizacional y people analytics",
+        "Exposición internacional",
+        "Proyectos de transformación y productividad"
+      ]
+    },
+    {
+      "type": "cta",
+      "label": "10 — Empecemos",
+      "section": "Empecemos",
+      "title": "Mide tu ~Adoption Gap~.",
+      "body": "Un diagnóstico de 3 a 5 semanas te dice dónde tu organización no está adoptando y qué hacer al respecto. Es el punto de partida de menor riesgo.",
+      "steps": [
+        { "title": "Conversación ejecutiva", "body": "45 minutos para entender la transformación en curso y el valor en juego." },
+        { "title": "Hipótesis de valor", "body": "Resumimos en una página la brecha, el valor en juego y el siguiente paso." },
+        { "title": "Diagnóstico", "body": "Alcance, entregables e inversión según alcance, listos para decidir." }
+      ],
+      "button": "Agenda tu diagnóstico →",
+      "contact": "[CANAL DE CONTACTO — COMPLETAR]"
+    },
+    {
+      "type": "closing",
+      "section": "Gracias",
+      "tagline": "Turn *strategy* into ~adoption~.",
+      "contact": "[CANAL DE CONTACTO — COMPLETAR]"
+    }
+  ]
+}
