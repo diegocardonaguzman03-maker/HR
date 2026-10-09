@@ -11,7 +11,7 @@ praxia/
 ├── CLAUDE.md              reglas de trabajo para todo lo que se haga en praxia/
 ├── README.md              este archivo
 └── 00-fuentes/            documentos fuente que entregó el usuario (solo lectura)
-    ├── paquete-agentes/   especificación del equipo de 28 agentes (agents/, knowledge/, governance/, templates/)
+    ├── paquete-agentes/   especificación del equipo de 28 agentes (agents/, knowledge/, governance/, templates/, workflows/)
     ├── PRAXIA_Skill_Business_Brand_OS.md   skill v1.0 (sistema operativo de la firma)
     ├── originales/        archivos tal como se recibieron
     ├── texto/             extracción a texto/Markdown para que los agentes puedan leerlos
@@ -67,6 +67,20 @@ Estado del paquete: [PROPUESTA] (`status: proposed-operating-design`). Los 3 per
 | 20 | `templates/CLIENT_DISCOVERY.md` | Guía de discovery ejecutivo |
 | 21 | `templates/EXECUTIVE_ONE_PAGER.md` | One-pager ejecutivo que abre con la decisión requerida |
 
+### Lotes 5 y 6 — recibidos el 9 oct 2026 · flujos de trabajo (`workflows/`)
+
+Son 7 SOP en estado [PROPUESTA] («proposed SOP; configure live permissions before use»). Cada etapa entrega su handoff en JSON y tiene un dueño nombrado; si una puerta falla, el trabajo regresa al dueño anterior.
+
+| # | Archivo | Flujo |
+|---|---|---|
+| 22 | `01_LEAD_TO_CONTRACT.md` | Del prospecto al contrato |
+| 23 | `02_CLIENT_DELIVERY.md` | Entrega al cliente: DEL-01 → RES-01 → DAT-01 → DEL-02 → DEL-03 → COM-01 → CX-01 → DAT-01 → QA-01 → aprobación del Founder y el cliente |
+| 24 | `03_CONTENT_TO_DEMAND.md` | Del contenido a la demanda |
+| 25 | `04_PRODUCT_BUILD.md` | Construcción de producto |
+| 26 | `05_CUSTOMER_SUPPORT.md` | Soporte al cliente |
+| 27 | `06_RESEARCH_TO_IP.md` | De la investigación a la PI |
+| 28 | `07_INTERNAL_OPERATIONS.md` | Operación interna |
+
 ### Inconsistencias detectadas (se resuelven al diseñar el equipo)
 
 - **Nombres de servicios:** `SERVICE_PORTFOLIO.md` usa nombres distintos de los de la skill y el Master. Por ejemplo, «Strategy Execution & Adoption» frente a «Strategy-to-Adoption Advisory», «Leadership & Organizational Effectiveness» frente a «Leadership & Execution System» y «Operating Model & Change Transformation» frente a «Organizational Design & Operating Model». Por precedencia (skill §0.1) se propone usar los nombres de la skill y el Master.
@@ -76,7 +90,6 @@ Estado del paquete: [PROPUESTA] (`status: proposed-operating-design`). Los 3 per
 
 - **25 perfiles de agente:** STR-01, RES-01, RES-02, SAL-01, SAL-02, SAL-03, MKT-01, MKT-02, MKT-03, PR-01, DEL-01, DEL-02, DEL-03, DEV-01, DEV-02, DEV-03, UX-01, UI-01, DSN-01, OPS-01, FIN-01, HR-01, DAT-01, RISK-01, QA-01
 - `config/org_chart.json` y `config/handoff.schema.json`
-- `workflows/*.md`
 
 ### Otras fuentes por recibir (según la skill)
 
