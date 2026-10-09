@@ -158,6 +158,25 @@ test("agent task changes status only through recorded events and shows in PRAXIA
   await expect(page.getByLabel("Agent SAL-03", { exact: true })).toContainText("Draft discovery guide for Acme");
 });
 
+test("PRAXIA World mission control: record progress, reassign, see workload and activity", async () => {
+  await page.goto("/world");
+  const card = page.getByRole("button", { name: /Draft discovery guide for Acme/ }).first();
+  await expect(page.getByLabel("In progress column")).toContainText("Draft discovery guide for Acme");
+  await card.click();
+  await page.getByLabel("Recorded progress").fill("40");
+  await page.getByRole("button", { name: "Save changes" }).click();
+  await expect(page.getByText("Task updated.")).toBeVisible();
+  await page.getByLabel("Assigned agent").selectOption("SAL-02");
+  await page.getByRole("button", { name: "Reassign to SAL-02" }).click();
+  await page.getByRole("dialog").getByRole("button", { name: "Reassign" }).click();
+  await expect(page.getByText("Task reassigned to SAL-02.")).toBeVisible();
+  await expect(page.getByLabel("Queued column")).toContainText("Draft discovery guide for Acme");
+  await page.getByRole("tab", { name: "Workload" }).click();
+  await expect(page.getByRole("row", { name: /SAL-02/ })).toBeVisible();
+  await page.getByRole("tab", { name: "Live activity" }).click();
+  await expect(page.getByText("Reassigned", { exact: true }).first()).toBeVisible();
+});
+
 test("audit log records the lifecycle", async () => {
   await page.goto("/settings/audit");
   for (const a of ["contract.signed", "payment.record", "approval.approved", "task.working"]) await expect(page.getByText(a).first()).toBeVisible();

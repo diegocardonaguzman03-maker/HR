@@ -28,6 +28,7 @@
 | Decision feed (PRD §5.4) driven by records, with evidence, impact, priority, owner and direct actions | `domain/decisions.ts`, `DecisionFeed.tsx` |
 | Registry of 28 agents configurable without code (instructions in `.claude/agents`), tasks, events, avatar editor | `/agents`, `/tasks` |
 | PRAXIA World connected to the same database, statuses from real events, contextual panel | `/world`, `src/features/world/` |
+| PRAXIA World mission control: task board, workload, live activity, priority / due date / recorded progress, reassignment, real-backlog import; animations driven only by recorded tasks and events | `/world`, `src/domain/tasks.ts`, `src/server/seed/backlog.ts` |
 | Audit log of every mutation; approvals; Integrations page with real statuses | `/settings/audit`, `/approvals`, `/integrations` |
 | Automated tests | 48 unit/integration + 7 e2e |
 

@@ -379,6 +379,8 @@ export type AvatarConfig = {
 
 export const TASK_STATUSES = ["queued", "working", "waiting_input", "waiting_approval", "completed", "error", "cancelled"] as const;
 export type TaskStatus = (typeof TASK_STATUSES)[number];
+export const TASK_PRIORITIES = ["low", "normal", "high", "urgent"] as const;
+export type TaskPriority = (typeof TASK_PRIORITIES)[number];
 
 export const agentTasks = sqliteTable(
   "agent_tasks",
@@ -389,6 +391,11 @@ export const agentTasks = sqliteTable(
     instructions: text("instructions").notNull().default(""),
     status: text("status").$type<TaskStatus>().notNull().default("queued"),
     origin: text("origin").$type<"founder" | "decision_feed" | "orchestrator">().notNull().default("founder"),
+    priority: text("priority").$type<TaskPriority>().notNull().default("normal"),
+    /** YYYY-MM-DD, optional. */
+    dueDate: text("due_date"),
+    /** Progress recorded by whoever works the task (founder today, the engine in Phase 2). 0–100. */
+    progress: integer("progress").notNull().default(0),
     entityType: text("entity_type"),
     entityId: text("entity_id"),
     output: text("output"),
@@ -409,7 +416,7 @@ export const agentEvents = sqliteTable(
     id: id(),
     agentId: text("agent_id").notNull().references(() => agents.id),
     taskId: text("task_id").references(() => agentTasks.id, { onDelete: "set null" }),
-    type: text("type").$type<"task_queued" | "task_started" | "task_waiting_input" | "task_waiting_approval" | "task_completed" | "task_failed" | "task_cancelled">().notNull(),
+    type: text("type").$type<"task_queued" | "task_started" | "task_waiting_input" | "task_waiting_approval" | "task_completed" | "task_failed" | "task_cancelled" | "task_reassigned" | "task_updated">().notNull(),
     message: text("message").notNull().default(""),
     at: text("at").notNull().default(sql`(strftime('%Y-%m-%dT%H:%M:%fZ','now'))`),
   },

@@ -31,7 +31,7 @@ npm run typecheck
 npm test                        # 54 unit + integration tests (in-memory SQLite)
 PW_CHROMIUM_PATH=/path/to/chromium npm run test:e2e   # 7 Playwright end-to-end tests (production build, fresh DB)
 ```
-The e2e test covers: login → empty dashboard → organization (with duplicate detection) → contact → opportunity → stage validation → proposal with margin → founder approval → sent → acceptance with evidence → signature → revenue recognition → invoice → payment → dashboard figures → agent task → PRAXIA World → audit log.
+The e2e test covers: login → empty dashboard → organization (with duplicate detection) → contact → opportunity → stage validation → proposal with margin → founder approval → sent → acceptance with evidence → signature → revenue recognition → invoice → payment → dashboard figures → agent task → PRAXIA World → mission control (progress, reassign, workload, activity) → audit log.
 
 ## Architecture
 | Layer | Location | Notes |
@@ -42,6 +42,7 @@ The e2e test covers: login → empty dashboard → organization (with duplicate 
 | Server actions | `src/app/actions/` | Each one re-checks the founder session (`requireFounder`) |
 | UI | `src/app/(app)/**`, `src/components/**` | Next.js 15 App Router, Server Components, Tailwind v4 with PRAXIA tokens |
 | PRAXIA World | `src/features/world/` | PixiJS 8 isometric HQ, procedural art, statuses from real events (built by DEV-02) |
+| Mission control | `src/app/(app)/world/` | Task board (drag to change status), workload per agent, live activity; edit priority, due date and recorded progress, reassign; per-department work animations and document flights that replay real task events |
 | Seeds | `src/server/seed/` | `base.ts` (configuration), `demo.ts` (marked fiction), `agents.json` (28 roles) |
 
 Deviations from the recommended PRD stack: TanStack Query is not used yet (Server Components + server actions cover reads; it will be added with live events in Phase 2). shadcn/ui is replaced by our own components on Radix (Dialog) and cmdk, to follow the PRAXIA design system exactly.

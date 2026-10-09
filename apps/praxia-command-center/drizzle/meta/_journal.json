@@ -15,6 +15,13 @@
       "when": 1791565960140,
       "tag": "0001_audit_is_demo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791569299770,
+      "tag": "0002_task_management",
+      "breakpoints": true
     }
   ]
 }

@@ -32,7 +32,7 @@ async function waitForFont(family: string): Promise<void> {
   await Promise.race([load, timeout]);
 }
 
-export default function PraxiaWorld({ agents, selectedAgentId, onSelectAgent, reducedMotion = false }: PraxiaWorldProps) {
+export default function PraxiaWorld({ agents, selectedAgentId, onSelectAgent, reducedMotion = false, events, focus }: PraxiaWorldProps) {
   const hostRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<WorldScene | null>(null);
   const latest = useRef({ agents, selectedAgentId, onSelectAgent, reducedMotion });
@@ -127,6 +127,15 @@ export default function PraxiaWorld({ agents, selectedAgentId, onSelectAgent, re
     if (ready) sceneRef.current?.setReducedMotion(reducedMotion);
   }, [reducedMotion, ready]);
 
+  // Events play after the agents they refer to are updated (same commit, effects run in order).
+  useEffect(() => {
+    if (ready && events?.length) sceneRef.current?.playEvents(events);
+  }, [events, ready]);
+
+  useEffect(() => {
+    if (ready && focus) sceneRef.current?.focusAgent(focus.agentId);
+  }, [focus, ready]);
+
   const counts = useMemo(() => {
     const c = new Map<string, number>();
     for (const a of agents) {
@@ -198,7 +207,8 @@ export default function PraxiaWorld({ agents, selectedAgentId, onSelectAgent, re
               })}
             </ul>
             <p className="mt-2 text-[11px] leading-snug" style={{ color: "var(--color-niebla, #A7AAB5)" }}>
-              Statuses come from real task events. With no execution engine connected, agents show as offline.
+              Statuses, desk inboxes, progress bars and flying documents all come from real task records and events.
+              With no execution engine connected, an agent works only on tasks you set to In progress.
             </p>
           </>
         )}
@@ -213,6 +223,7 @@ export default function PraxiaWorld({ agents, selectedAgentId, onSelectAgent, re
           { label: "Zoom out", text: "−", run: () => sceneRef.current?.zoomBy(1 / 1.2) },
           { label: "Zoom in", text: "+", run: () => sceneRef.current?.zoomBy(1.2) },
           { label: "Fit the whole HQ", text: "Fit", run: () => sceneRef.current?.fit() },
+          ...(selectedAgentId ? [{ label: `Focus ${selectedAgentId}`, text: "Focus", run: () => sceneRef.current?.focusAgent(selectedAgentId) }] : []),
         ].map((b) => (
           <button
             key={b.label}

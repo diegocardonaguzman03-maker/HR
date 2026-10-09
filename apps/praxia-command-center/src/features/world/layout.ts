@@ -591,3 +591,75 @@ export function fitCamera(
     y: viewportHeight / 2 - (b.y + b.height / 2) * scale,
   };
 }
+
+// ---------------------------------------------------------------------------------------------------------------
+// Work visuals (what a working agent "looks like" at its desk) and task-event flights.
+// These only ever play for real records: an agent shows its department's work visual while its recorded task
+// status is `working`, and a flight plays once per real task event. Nothing here creates activity.
+// ---------------------------------------------------------------------------------------------------------------
+export type WorkActivity = {
+  /** Short description shown in the UI next to the animation. */
+  label: string;
+  /** Glyphs that rise from the desk while working (Space Mono). */
+  glyphs: readonly string[];
+  color: number;
+};
+
+const WORK_ACTIVITY: Readonly<Record<WorldDepartment, WorkActivity>> = {
+  "Executive Leadership": { label: "Prioritising and deciding", glyphs: ["OKR", "→", "1·2·3", "✓"], color: PRAXIA_COLORS.indigo },
+  "Strategy & Research": { label: "Reading sources and taking notes", glyphs: ["?", "§", "¶", "“ ”"], color: PRAXIA_COLORS.violet },
+  "Data, Quality & Governance": { label: "Checking data and quality", glyphs: ["%", "✓", "Σ", "≈"], color: PRAXIA_COLORS.ivory },
+  "Operations & Finance": { label: "Running numbers", glyphs: ["$", "+", "−", "%"], color: PRAXIA_COLORS.ivory },
+  "Product & Engineering": { label: "Writing code", glyphs: ["</>", "{ }", "( )", "=>"], color: PRAXIA_COLORS.indigo },
+  "UX, UI & Creative Design": { label: "Designing", glyphs: ["■", "●", "▲", "Aa"], color: PRAXIA_COLORS.clay },
+  "Client Delivery": { label: "Moving delivery work forward", glyphs: ["▤", "→", "✓", "G1"], color: PRAXIA_COLORS.violet },
+  "Customer Success": { label: "Answering the client", glyphs: ["…", "♥", "✓", "?"], color: PRAXIA_COLORS.clay },
+  "Sales & Business Development": { label: "Preparing the deal", glyphs: ["@", "$", "✉", "→"], color: PRAXIA_COLORS.clay },
+  "Marketing & Public Relations": { label: "Writing content", glyphs: ["#", "¶", "“ ”", "in"], color: PRAXIA_COLORS.violet },
+  "Human Resources & Internal Communications": { label: "Working with people", glyphs: ["☺", "✉", "…", "+1"], color: PRAXIA_COLORS.niebla },
+};
+
+const DEFAULT_ACTIVITY: WorkActivity = { label: "Working", glyphs: ["·", "+", "✓"], color: PRAXIA_COLORS.niebla };
+
+export function workActivity(department: string): WorkActivity {
+  return isWorldDepartment(department) ? WORK_ACTIVITY[department] : DEFAULT_ACTIVITY;
+}
+
+/** Where the founder sits: the Main Reception counter. Tasks arrive from here and outputs return here. */
+export const FOUNDER_TILE: Point = (() => {
+  const r = areaById("reception");
+  return r ? { x: r.x + 2.5, y: r.y + 1.5 } : { x: 0, y: 0 };
+})();
+
+export type FlightKind = "assign" | "handoff" | "deliver" | "approval" | "cancel";
+
+/** Which flight (if any) a recorded task event plays. Unknown event types play nothing. */
+export function flightForEvent(type: string, message: string): { kind: FlightKind; fromAgentId: string | null } | null {
+  switch (type) {
+    case "task_queued":
+      return { kind: "assign", fromAgentId: null };
+    case "task_reassigned": {
+      const m = /Reassigned from ([A-Z0-9]+-\d+)/.exec(message);
+      return m ? { kind: "handoff", fromAgentId: m[1]! } : null;
+    }
+    case "task_completed":
+      return { kind: "deliver", fromAgentId: null };
+    case "task_waiting_approval":
+      return { kind: "approval", fromAgentId: null };
+    case "task_cancelled":
+      return { kind: "cancel", fromAgentId: null };
+    default:
+      return null;
+  }
+}
+
+/** Quadratic arc between two screen points; `t` in [0, 1]. The arc peaks `lift` pixels above the midpoint. */
+export function arcPoint(from: Point, to: Point, t: number, lift = 70): Point {
+  const cx = (from.x + to.x) / 2;
+  const cy = Math.min(from.y, to.y) - lift;
+  const u = 1 - t;
+  return { x: u * u * from.x + 2 * u * t * cx + t * t * to.x, y: u * u * from.y + 2 * u * t * cy + t * t * to.y };
+}
+
+/** Ease-in-out used by flights and camera moves. */
+export const easeInOut = (t: number) => (t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2);

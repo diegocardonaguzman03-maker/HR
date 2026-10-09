@@ -22,26 +22,34 @@ import {
   RAIL_HEIGHT,
   SLAB,
   SLAB_DEPTH,
+  CELEBRATE_MS,
+  FOUNDER_TILE,
   TONE_COLORS,
   WORLD_AREAS,
   WORLD_FURNITURE,
+  arcPoint,
   assignSeats,
   clampZoom,
   depthOf,
+  easeInOut,
   fitCamera,
+  flightForEvent,
   resolveAnimation,
   resolvePose,
   seatScreenPosition,
   statusVisual,
   toIso,
+  workActivity,
   type AvatarPose,
+  type FlightKind,
+  type Point,
   type FurnitureItem,
   type Seat,
   type StatusBubble,
   type WorldArea,
   type WallStyle,
 } from "./layout";
-import type { WorldAgent } from "./types";
+import type { WorldAgent, WorldEvent } from "./types";
 
 // Compile-time guarantee that a PixiJS Graphics can be passed to drawAvatar.
 const asPainter = (g: Graphics): AvatarPainter => g;
@@ -61,6 +69,10 @@ export type WorldScene = {
   fit(): void;
   /** Zoom around the viewport centre by a factor (clamped). */
   zoomBy(factor: number): void;
+  /** Plays real task events (each id once): document flights, pulses and the completion celebration. */
+  playEvents(events: WorldEvent[]): void;
+  /** Smoothly pans the camera to an agent. */
+  focusAgent(agentId: string): void;
   destroy(): void;
 };
 
@@ -430,6 +442,17 @@ type AgentSprite = {
   tagBg: Graphics;
   tagText: Text;
   statusSince: number;
+  /** Desk inbox tray (queued tasks) and its count badge. */
+  tray: Container;
+  trayGfx: Graphics;
+  trayText: Text;
+  trayKey: string;
+  /** Recorded progress bar above the head. */
+  progressBar: Graphics;
+  progressKey: string;
+  celebrateUntil: number;
+  shakeUntil: number;
+  nextGlyphAt: number;
   drawnPose: AvatarPose | null;
   drawnFrame: number;
   drawnBubble: StatusBubble | "unset";
@@ -472,6 +495,27 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
   const sprites = new Map<string, AgentSprite>();
   const bodyIds = new WeakMap<ContainerChild, string>();
 
+  // ------------------------------------------------------------------ founder desk + effects layer
+  const fxLayer = new Container();
+  camera.addChild(fxLayer);
+  const founderPoint: Point = (() => {
+    const [x, y] = P(FOUNDER_TILE.x, FOUNDER_TILE.y, 16);
+    return { x, y };
+  })();
+  {
+    const beacon = new Container();
+    const g = new Graphics();
+    g.poly([0, -7, 5, 0, 0, 7, -5, 0]).fill({ color: C.indigo }).stroke({ width: 1, color: C.ivory, alpha: 0.8 });
+    const label = new Text({ text: "FOUNDER", style: monoStyle(fontFamily, 8, C.ivory, "700"), resolution: 3 });
+    label.anchor.set(0.5, 0);
+    label.position.set(0, 9);
+    const pill = new Graphics();
+    pill.roundRect(-label.width / 2 - 4, 7.5, label.width + 8, label.height + 3, 3).fill({ color: C.graphite, alpha: 0.92 }).stroke({ width: 1, color: C.indigo, alpha: 0.9 });
+    beacon.addChild(g, pill, label);
+    beacon.position.set(founderPoint.x, founderPoint.y - 6);
+    overlayLayer.addChild(beacon);
+  }
+
   // ------------------------------------------------------------------ camera
   const applyFit = () => {
     const f = fitCamera(app.screen.width, app.screen.height, 28);
@@ -481,6 +525,7 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
   };
 
   const zoomAt = (sx: number, sy: number, factor: number) => {
+    camTween = null;
     const old = camera.scale.x;
     const next = clampZoom(old * factor, fitScale);
     if (next === old) return;
@@ -525,6 +570,7 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
 
   const onPointerDown = (e: FederatedPointerEvent) => {
     if (e.button !== undefined && e.button > 0) return;
+    camTween = null;
     drag = { pointerId: e.pointerId, sx: e.global.x, sy: e.global.y, cx: camera.x, cy: camera.y, moved: false };
   };
   const onPointerMove = (e: FederatedPointerEvent) => {
@@ -595,7 +641,18 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
     const tagText = new Text({ text: agent.id, style: textStyle(10, C.ivory), resolution: 3 });
     tagText.anchor.set(0.5, 1);
     tag.addChild(tagBg, tagText);
-    overlay.addChild(bubble, tag);
+    const progressBar = new Graphics();
+    overlay.addChild(progressBar, bubble, tag);
+
+    const tray = new Container();
+    const trayGfx = new Graphics();
+    const trayText = new Text({ text: "", style: textStyle(8, C.ivory), resolution: 3 });
+    trayText.anchor.set(0.5, 0.5);
+    tray.addChild(trayGfx, trayText);
+    if (seat.desk) {
+      tray.zIndex = depthOf(seat.desk.x + 0.5, seat.desk.y + 0.5) + 0.03;
+      depthLayer.addChild(tray);
+    }
 
     agentLayer.addChild(body);
     decalLayer.addChild(decal);
@@ -615,6 +672,15 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
       tagBg,
       tagText,
       statusSince: now,
+      tray,
+      trayGfx,
+      trayText,
+      trayKey: "",
+      progressBar,
+      progressKey: "",
+      celebrateUntil: 0,
+      shakeUntil: 0,
+      nextGlyphAt: now + (hashPhase(agent.id) % 700),
       drawnPose: null,
       drawnFrame: -1,
       drawnBubble: "unset",
@@ -631,6 +697,13 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
     s.body.zIndex = depthOf(s.seat.x + 0.5, s.seat.y + 0.5);
     s.decal.position.set(p.x, p.y);
     s.overlay.position.set(p.x, p.y);
+    if (s.seat.desk) {
+      s.tray.zIndex = depthOf(s.seat.desk.x + 0.5, s.seat.desk.y + 0.5) + 0.03;
+      if (!s.tray.parent) depthLayer.addChild(s.tray);
+    } else if (s.tray.parent) {
+      s.tray.parent.removeChild(s.tray);
+    }
+    s.trayKey = "";
   }
 
   function drawFigure(s: AgentSprite, pose: AvatarPose, frame: number) {
@@ -673,7 +746,50 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
     // The bubble sits beside the head (not above it) so it stays clear of the room label on the back glass.
     const top = headTop(s.drawnPose ?? "idle");
     s.bubble.position.set(11, top + 11);
-    s.tag.position.set(0, top - 6);
+    s.progressBar.position.set(0, top - 4);
+    s.tag.position.set(0, s.progressBar.visible ? top - 10 : top - 6);
+  }
+
+  /** Progress bar of the current task (recorded value). Shown while the task is open and being worked. */
+  function drawProgress(s: AgentSprite) {
+    const p = s.agent.currentTaskProgress;
+    const show = p !== null && p !== undefined && ["working", "waiting_input", "waiting_approval"].includes(s.agent.status);
+    const key = show ? `${p}:${s.agent.status}` : "";
+    if (key === s.progressKey) return;
+    s.progressKey = key;
+    const g = s.progressBar;
+    g.clear();
+    g.visible = show;
+    if (show) {
+      const w = 22;
+      const color = s.agent.status === "working" ? C.indigo : C.clay;
+      g.roundRect(-w / 2 - 1, -2.5, w + 2, 5, 2.5).fill({ color: C.graphite, alpha: 0.9 }).stroke({ width: 0.8, color: C.niebla, alpha: 0.35 });
+      if (p > 0) g.roundRect(-w / 2, -1.5, (w * Math.min(100, p)) / 100, 3, 1.5).fill({ color });
+    }
+    layoutOverlay(s);
+  }
+
+  /** Inbox tray on the desk: one sheet per queued task (max 3) and a count badge (red when something is overdue). */
+  function drawTray(s: AgentSprite) {
+    const desk = s.seat.desk;
+    const queued = s.agent.tasksQueued ?? 0;
+    const overdue = s.agent.tasksOverdue ?? 0;
+    const key = desk ? `${queued}:${overdue}:${desk.x},${desk.y}` : "";
+    if (key === s.trayKey) return;
+    s.trayKey = key;
+    const g = s.trayGfx;
+    g.clear();
+    s.trayText.visible = false;
+    if (!desk || queued <= 0) return;
+    const sheets = Math.min(3, queued);
+    for (let i = 0; i < sheets; i++) {
+      isoTop(g, desk.x + 0.62, desk.y + 0.16, 0.24, 0.3, 10.4 + i * 1.3).fill({ color: C.ivory, alpha: 0.92 - i * 0.04 }).stroke({ width: 0.6, color: C.graphite, alpha: 0.5 });
+    }
+    const [bx, by] = P(desk.x + 0.74, desk.y + 0.31, 10.4 + sheets * 1.3 + 7);
+    g.circle(bx, by, 5.2).fill({ color: overdue ? C.error : C.indigo }).stroke({ width: 1, color: C.graphite, alpha: 0.7 });
+    s.trayText.text = queued > 9 ? "9+" : String(queued);
+    s.trayText.position.set(bx, by + 0.2);
+    s.trayText.visible = true;
   }
 
   /** Rings, name tag and alpha: depends on status, hover and selection. */
@@ -723,14 +839,190 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
     for (const [key, m] of monitors) m.setOn(lit.has(key));
   }
 
+  // ------------------------------------------------------------------ effects: work glyphs, flights, pulses
+  type Glyph = { text: Text; x0: number; y0: number; dx: number; start: number; dur: number };
+  type Flight = { paper: Graphics; trail: Graphics; from: Point; to: Point; start: number; dur: number; color: number; onArrive?: () => void; pts: Point[] };
+  type Ring = { g: Graphics; x: number; y: number; start: number; dur: number; color: number; r: number };
+  const glyphPool: Text[] = [];
+  const glyphs: Glyph[] = [];
+  const flights: Flight[] = [];
+  const rings: Ring[] = [];
+  const played = new Set<string>();
+  let nextFlightAt = 0;
+  let camTween: { fx: number; fy: number; tx: number; ty: number; start: number; dur: number } | null = null;
+
+  const deskPoint = (s: AgentSprite, z = 13): Point => {
+    if (s.seat.desk) {
+      const [x, y] = P(s.seat.desk.x + 0.62, s.seat.desk.y + 0.3, z);
+      return { x, y };
+    }
+    const p = seatScreenPosition(s.seat);
+    return { x: p.x, y: p.y - 20 };
+  };
+  const monitorTop = (s: AgentSprite): Point => {
+    if (s.seat.desk) {
+      const [x, y] = P(s.seat.desk.x + 0.5, s.seat.desk.y + 0.62, 27);
+      return { x, y };
+    }
+    const p = seatScreenPosition(s.seat);
+    return { x: p.x, y: p.y - 40 };
+  };
+
+  function spawnGlyph(s: AgentSprite, now: number) {
+    const act = workActivity(s.agent.department);
+    let text = glyphPool.pop();
+    if (!text) {
+      if (glyphs.length >= 120) return;
+      text = new Text({ text: "", style: textStyle(11, act.color), resolution: 3 });
+      text.anchor.set(0.5, 1);
+    }
+    text.text = act.glyphs[Math.floor(Math.random() * act.glyphs.length)]!;
+    text.style.fill = act.color;
+    text.alpha = 0;
+    text.visible = true;
+    fxLayer.addChild(text);
+    const o = monitorTop(s);
+    glyphs.push({ text, x0: o.x + (Math.random() - 0.5) * 8, y0: o.y, dx: (Math.random() - 0.5) * 14, start: now, dur: 1500 + Math.random() * 500 });
+  }
+
+  function ring(at: Point, color: number, now: number, r = 14, dur = 900) {
+    if (reducedMotion) return;
+    const g = new Graphics();
+    fxLayer.addChild(g);
+    rings.push({ g, x: at.x, y: at.y, start: now, dur, color, r });
+  }
+
+  function drawPaper(g: Graphics, kind: FlightKind) {
+    const stripe = kind === "assign" ? C.indigo : kind === "handoff" ? C.violet : kind === "approval" ? C.clay : kind === "cancel" ? C.niebla : C.ivory;
+    g.roundRect(-4.5, -6, 9, 12, 1.2).fill({ color: C.ivory }).stroke({ width: 0.8, color: C.graphite, alpha: 0.6 });
+    g.rect(-4.5, -6, 9, 2.6).fill({ color: stripe });
+    for (let i = 0; i < 3; i++) g.rect(-3, -1.6 + i * 2.2, i === 2 ? 4 : 6, 0.8).fill({ color: 0x8a8d97 });
+    if (kind === "deliver") g.moveTo(-2.2, 3.4).lineTo(-0.4, 5).lineTo(2.8, 1.4).stroke({ width: 1.4, color: C.indigo, cap: "round" });
+    if (kind === "approval") g.circle(3.2, 4.2, 2.6).fill({ color: C.clay });
+  }
+
+  function launch(kind: FlightKind, from: Point, to: Point, color: number, start: number, onArrive?: () => void) {
+    const paper = new Graphics();
+    drawPaper(paper, kind);
+    const trail = new Graphics();
+    fxLayer.addChild(trail, paper);
+    paper.position.set(from.x, from.y);
+    paper.visible = false;
+    const dist = Math.hypot(to.x - from.x, to.y - from.y);
+    flights.push({ paper, trail, from, to, start, dur: kind === "cancel" ? 900 : Math.min(2200, 800 + dist * 1.6), color, onArrive, pts: [] });
+  }
+
+  function playEvent(e: WorldEvent, now: number) {
+    const s = sprites.get(e.agentId);
+    if (!s) return;
+    const start = Math.max(now, nextFlightAt);
+    const f = flightForEvent(e.type, e.message);
+    if (f && !reducedMotion) {
+      nextFlightAt = start + 280;
+      const desk = deskPoint(s);
+      switch (f.kind) {
+        case "assign":
+          launch("assign", founderPoint, desk, C.indigo, start, () => ring(desk, C.indigo, performance.now()));
+          break;
+        case "handoff": {
+          const from = f.fromAgentId ? sprites.get(f.fromAgentId) : undefined;
+          launch("handoff", from ? deskPoint(from) : founderPoint, desk, C.violet, start, () => ring(desk, C.violet, performance.now()));
+          break;
+        }
+        case "deliver":
+          s.celebrateUntil = start + CELEBRATE_MS;
+          launch("deliver", monitorTop(s), founderPoint, C.ivory, start, () => ring(founderPoint, C.ivory, performance.now(), 18));
+          break;
+        case "approval":
+          launch("approval", monitorTop(s), founderPoint, C.clay, start, () => ring(founderPoint, C.clay, performance.now(), 18));
+          break;
+        case "cancel":
+          launch("cancel", desk, { x: desk.x, y: desk.y - 26 }, C.niebla, start);
+          break;
+      }
+      return;
+    }
+    if (e.type === "task_completed") s.celebrateUntil = now + CELEBRATE_MS;
+    const at = seatScreenPosition(s.seat);
+    if (e.type === "task_started") ring({ x: at.x, y: at.y }, C.indigo, now, 16);
+    else if (e.type === "task_failed") { ring({ x: at.x, y: at.y }, C.error, now, 16); s.shakeUntil = now + 700; }
+    else if (e.type === "task_waiting_input") ring({ x: at.x, y: at.y }, C.clay, now, 16);
+    else if (e.type === "task_updated") ring({ x: at.x, y: at.y + headTop(s.drawnPose ?? "idle") - 4 }, C.indigo, now, 10, 700);
+  }
+
+  function tickEffects(now: number) {
+    for (let i = glyphs.length - 1; i >= 0; i--) {
+      const gl = glyphs[i]!;
+      const t = (now - gl.start) / gl.dur;
+      if (t >= 1 || reducedMotion) {
+        gl.text.visible = false;
+        fxLayer.removeChild(gl.text);
+        glyphPool.push(gl.text);
+        glyphs.splice(i, 1);
+        continue;
+      }
+      gl.text.position.set(gl.x0 + gl.dx * t, gl.y0 - 34 * easeInOut(t));
+      gl.text.alpha = t < 0.15 ? t / 0.15 : 1 - (t - 0.15) / 0.85;
+      gl.text.scale.set(0.85 + 0.25 * t);
+    }
+    for (let i = flights.length - 1; i >= 0; i--) {
+      const f = flights[i]!;
+      if (now < f.start) continue;
+      const raw = (now - f.start) / f.dur;
+      const t = easeInOut(Math.min(1, raw));
+      const lift = Math.hypot(f.to.x - f.from.x, f.to.y - f.from.y) < 40 ? 6 : 70;
+      const p = arcPoint(f.from, f.to, t, lift);
+      f.paper.visible = true;
+      f.paper.position.set(p.x, p.y);
+      f.paper.rotation = Math.sin(raw * Math.PI * 2) * 0.25;
+      f.paper.scale.set(1 + 0.35 * Math.sin(Math.PI * t));
+      if (f.color === C.niebla) f.paper.alpha = 1 - t;
+      f.pts.push(p);
+      if (f.pts.length > 7) f.pts.shift();
+      f.trail.clear();
+      f.pts.forEach((q, k) => f.trail.circle(q.x, q.y, 0.6 + k * 0.25).fill({ color: f.color, alpha: 0.08 + k * 0.05 }));
+      if (raw >= 1) {
+        f.paper.destroy();
+        f.trail.destroy();
+        flights.splice(i, 1);
+        f.onArrive?.();
+      }
+    }
+    for (let i = rings.length - 1; i >= 0; i--) {
+      const r = rings[i]!;
+      const t = (now - r.start) / r.dur;
+      if (t >= 1) {
+        r.g.destroy();
+        rings.splice(i, 1);
+        continue;
+      }
+      const k = easeInOut(t);
+      r.g.clear();
+      r.g.ellipse(r.x, r.y, r.r * (0.4 + k), r.r * 0.5 * (0.4 + k)).stroke({ width: 2 * (1 - t) + 0.5, color: r.color, alpha: 1 - t });
+    }
+    if (camTween) {
+      const t = Math.min(1, (now - camTween.start) / camTween.dur);
+      const k = easeInOut(t);
+      camera.position.set(camTween.fx + (camTween.tx - camTween.fx) * k, camTween.fy + (camTween.ty - camTween.fy) * k);
+      if (t >= 1) camTween = null;
+    }
+  }
+
   // ------------------------------------------------------------------ ticker
   const tick = () => {
     const now = performance.now();
+    tickEffects(now);
     for (const s of sprites.values()) {
       const status = s.agent.status;
       const since = now - s.statusSince;
-      const pose = resolvePose(status, since);
-      const anim = resolveAnimation(status, since, reducedMotion);
+      const celebrating = now < s.celebrateUntil && now >= s.celebrateUntil - CELEBRATE_MS;
+      const pose = celebrating ? "celebrate" : resolvePose(status, since);
+      const anim = celebrating ? (reducedMotion ? "none" : "celebrate") : resolveAnimation(status, since, reducedMotion);
+      if (anim === "typing" && now >= s.nextGlyphAt) {
+        spawnGlyph(s, now);
+        s.nextGlyphAt = now + 650 + Math.random() * 650;
+      }
+      s.figure.x = now < s.shakeUntil && !reducedMotion ? Math.sin(now / 28) * 1.6 : 0;
       const frame = anim === "typing" ? Math.floor((now + s.phase * 7) / 170) % 2 : 0;
       if (pose !== s.drawnPose || frame !== s.drawnFrame) drawFigure(s, pose, frame);
 
@@ -790,10 +1082,13 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
         } else {
           layoutOverlay(s);
         }
+        drawProgress(s);
+        drawTray(s);
         refreshChrome(agent.id);
       }
       for (const [id, s] of sprites) {
         if (seen.has(id)) continue;
+        s.tray.destroy({ children: true });
         s.body.destroy({ children: true });
         s.decal.destroy();
         s.overlay.destroy({ children: true });
@@ -823,6 +1118,28 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
     zoomBy(factor) {
       zoomAt(app.screen.width / 2, app.screen.height / 2, factor);
     },
+    playEvents(events) {
+      const now = performance.now();
+      const fresh = events.filter((e) => !played.has(e.id)).sort((a, b) => (a.at < b.at ? -1 : a.at > b.at ? 1 : 0));
+      for (const e of fresh) {
+        played.add(e.id);
+        playEvent(e, now);
+      }
+    },
+    focusAgent(agentId) {
+      const s = sprites.get(agentId);
+      if (!s) return;
+      const p = seatScreenPosition(s.seat);
+      const scale = camera.scale.x;
+      const tx = app.screen.width / 2 - p.x * scale;
+      const ty = app.screen.height / 2 - (p.y - 20) * scale;
+      userMovedCamera = true;
+      if (reducedMotion) {
+        camera.position.set(tx, ty);
+        return;
+      }
+      camTween = { fx: camera.x, fy: camera.y, tx, ty, start: performance.now(), dur: 650 };
+    },
     destroy() {
       app.ticker.remove(tick);
       app.renderer.off("resize", onResize);
@@ -833,6 +1150,10 @@ export function createWorldScene(app: Application, options: WorldSceneOptions): 
       app.stage.off("pointerupoutside", onPointerUpOutside);
       sprites.clear();
       monitors.clear();
+      glyphs.length = 0;
+      flights.length = 0;
+      rings.length = 0;
+      glyphPool.length = 0;
     },
   };
 

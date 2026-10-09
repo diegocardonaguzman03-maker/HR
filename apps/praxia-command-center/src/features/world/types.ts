@@ -14,8 +14,17 @@ export type WorldAgent = {
   status: AgentStatus;
   statusNote: string;
   currentTaskTitle: string | null;
+  /** Recorded progress (0–100) of the current task, or null when there is none. */
+  currentTaskProgress?: number | null;
+  /** Tasks waiting in the agent's queue (drawn as an inbox tray on the desk). */
+  tasksQueued?: number;
+  /** Open tasks past their due date (the tray badge turns red). */
+  tasksOverdue?: number;
   avatar: AvatarConfig;
 };
+
+/** A real task event recorded in `agent_events`. The world plays each one once, as it arrives. */
+export type WorldEvent = { id: string; agentId: string; taskId: string | null; type: string; message: string; at: string };
 
 /** The 11 departments of the agent registry (PRD §13). Each maps to a room in the HQ. */
 export const WORLD_DEPARTMENTS = [
@@ -38,4 +47,8 @@ export type PraxiaWorldProps = {
   onSelectAgent: (agentId: string | null) => void;
   /** Respect prefers-reduced-motion: no walking/bobbing animations, instant transitions. */
   reducedMotion?: boolean;
+  /** New task events to play (each event id is played once). */
+  events?: WorldEvent[];
+  /** Pan the camera to this agent whenever `focus.nonce` changes. */
+  focus?: { agentId: string; nonce: number } | null;
 };
