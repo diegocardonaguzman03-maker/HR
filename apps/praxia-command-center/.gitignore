@@ -9,3 +9,4 @@ playwright-report/
 !.env.example
 next-env.d.ts
 *.tsbuildinfo
+artifact/dist/

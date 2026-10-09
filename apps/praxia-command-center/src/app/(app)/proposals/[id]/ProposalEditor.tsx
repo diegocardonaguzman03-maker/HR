@@ -8,6 +8,7 @@ import { Modal } from "@/components/ui/Modal";
 import { acceptProposalAction, markProposalSentAction, proposalOutcomeAction, saveProposalAction, submitProposalAction } from "@/app/actions/commercial";
 import { formatMoney, formatPct, parseMoneyInput } from "@/domain/money";
 import { proposalTotals } from "@/domain/finance";
+import { askConfirm, askText } from "@/lib/dialog";
 import { toast } from "@/lib/ui-store";
 import type { Currency, ProposalStatus } from "@/server/db/schema";
 
@@ -119,10 +120,10 @@ export function ProposalEditor({ proposal: p, lines: initial, marginTarget, serv
             {editable && <Button onClick={save} disabled={pending}>Save changes</Button>}
             {p.status === "draft" && <Button variant="primary" disabled={pending} onClick={() => call(() => submitProposalAction(p.id), "Submitted for founder approval (see Approvals).")}>Submit pricing for approval</Button>}
             {p.status === "internal_review" && <Link href="/approvals" className="rounded-lg border border-warn/40 bg-warn/10 px-3 py-2 text-center text-[13px] text-warn">Waiting for your approval → Approvals</Link>}
-            {p.status === "approved" && <Button variant="primary" disabled={pending} onClick={() => { const d = prompt("Date you sent it to the client (YYYY-MM-DD):", today); if (d) call(() => markProposalSentAction(p.id, d), "Recorded as sent."); }}>Record as sent (I sent it)</Button>}
+            {p.status === "approved" && <Button variant="primary" disabled={pending} onClick={async () => { const d = await askText({ title: "Record as sent", message: "The system does not send it — record the date you sent it.", label: "Date sent", inputType: "date", defaultValue: today, required: true, confirmLabel: "Record as sent" }); if (d) call(() => markProposalSentAction(p.id, d), "Recorded as sent."); }}>Record as sent (I sent it)</Button>}
             {p.status === "sent" && <Button disabled={pending} onClick={() => call(() => proposalOutcomeAction(p.id, "negotiation"), "Moved to negotiation.")}>Client is negotiating</Button>}
             {(p.status === "sent" || p.status === "negotiation") && <Button variant="human" disabled={pending} onClick={() => setAcceptOpen(true)}>Client accepted…</Button>}
-            {(p.status === "sent" || p.status === "negotiation") && <Button variant="danger" disabled={pending} onClick={() => confirm("Mark this proposal as rejected by the client?") && call(() => proposalOutcomeAction(p.id, "rejected"), "Marked as rejected.")}>Client rejected</Button>}
+            {(p.status === "sent" || p.status === "negotiation") && <Button variant="danger" disabled={pending} onClick={async () => (await askConfirm({ title: "Mark as rejected by the client?", confirmLabel: "Mark rejected", danger: true })) && call(() => proposalOutcomeAction(p.id, "rejected"), "Marked as rejected.")}>Client rejected</Button>}
             {["sent", "negotiation", "approved"].includes(p.status) && <Button variant="ghost" disabled={pending} onClick={() => call(() => proposalOutcomeAction(p.id, "expired"), "Marked as expired.")}>Mark expired</Button>}
             {contractId && <Link href={`/finance/contracts/${contractId}`} className="rounded-lg border border-ok/40 bg-ok/10 px-3 py-2 text-center text-[13px] text-ok">{contractSigned ? "View signed contract →" : "Contract created → record signature"}</Link>}
           </div>

@@ -4,6 +4,7 @@ import { useTransition, type FormEvent } from "react";
 import { Button, Field, Input, Select } from "@/components/ui/primitives";
 import { issueInvoiceAction, recordPaymentAction, voidInvoiceAction } from "@/app/actions/finance";
 import { formatMoney, parseMoneyInput } from "@/domain/money";
+import { askConfirm, askText } from "@/lib/dialog";
 import { toast } from "@/lib/ui-store";
 import type { Currency } from "@/server/db/schema";
 
@@ -32,7 +33,7 @@ export function InvoiceActions({ invoice: i, today }: { invoice: { id: string; s
           <Button variant="human" type="submit" disabled={pending}>Record payment</Button>
         </form>
       )}
-      {i.status !== "void" && <Button variant="danger" size="sm" disabled={pending} onClick={() => { const r = prompt("Reason for voiding (recorded):"); if (r) call(() => voidInvoiceAction(i.id, r), "Invoice voided."); }}>Void invoice</Button>}
+      {i.status !== "void" && <Button variant="danger" size="sm" disabled={pending} onClick={async () => { const r = await askText({ title: "Void invoice", label: "Reason (recorded)", required: true, confirmLabel: "Void invoice" }); if (r) call(() => voidInvoiceAction(i.id, r), "Invoice voided."); }}>Void invoice</Button>}
       <p className="text-[11.5px] text-mute">Only record cash you can see in the bank. Payments can't exceed the balance or differ from the invoice currency.</p>
     </div>
   );

@@ -2,10 +2,13 @@
 import { X } from "lucide-react";
 import { useToasts } from "@/lib/ui-store";
 import { cn } from "@/lib/cn";
+import { DialogHost } from "@/lib/dialog";
 
 export function Toaster() {
   const { toasts, dismiss } = useToasts();
   return (
+    <>
+    <DialogHost />
     <div className="fixed right-5 bottom-5 z-[60] flex w-[min(420px,90vw)] flex-col gap-2" role="status" aria-live="polite">
       {toasts.map((t) => (
         <div key={t.id} className={cn("flex items-start gap-3 rounded-lg border bg-graphite-2 px-4 py-3 text-[13px] shadow-xl", t.tone === "ok" ? "border-ok/50" : t.tone === "bad" ? "border-bad/60" : "border-indigo/50")}>
@@ -15,5 +18,6 @@ export function Toaster() {
         </div>
       ))}
     </div>
+    </>
   );
 }

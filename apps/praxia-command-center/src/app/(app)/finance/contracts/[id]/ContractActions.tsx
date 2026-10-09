@@ -4,6 +4,7 @@ import { useTransition, type FormEvent } from "react";
 import { Button, Field, Input, Select } from "@/components/ui/primitives";
 import { contractStatusAction, recognizeRevenueAction, signContractAction } from "@/app/actions/commercial";
 import { formatMoney, parseMoneyInput } from "@/domain/money";
+import { askConfirm, askText } from "@/lib/dialog";
 import { toast } from "@/lib/ui-store";
 import type { Currency } from "@/server/db/schema";
 
@@ -65,7 +66,7 @@ export function ContractActions({ contract: c, remaining, today }: { contract: C
       <div className="flex flex-wrap gap-2">
         {c.status === "signed" && <Button size="sm" disabled={pending} onClick={() => call(() => contractStatusAction(c.id, "active"), "Contract active.")}>Mark active</Button>}
         {["signed", "active"].includes(c.status) && <Button size="sm" disabled={pending} onClick={() => call(() => contractStatusAction(c.id, "completed"), "Contract completed.")}>Mark completed</Button>}
-        {["signed", "active"].includes(c.status) && <Button size="sm" variant="danger" disabled={pending} onClick={() => confirm("Terminate this contract?") && call(() => contractStatusAction(c.id, "terminated"), "Contract terminated.")}>Terminate</Button>}
+        {["signed", "active"].includes(c.status) && <Button size="sm" variant="danger" disabled={pending} onClick={async () => (await askConfirm({ title: "Terminate this contract?", confirmLabel: "Terminate", danger: true })) && call(() => contractStatusAction(c.id, "terminated"), "Contract terminated.")}>Terminate</Button>}
       </div>
     </div>
   );

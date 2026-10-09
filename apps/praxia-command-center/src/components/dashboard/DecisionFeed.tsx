@@ -5,6 +5,7 @@ import { ArrowUpRight, Check, X } from "lucide-react";
 import type { DecisionItem } from "@/domain/decisions";
 import { Badge, Button, EmptyState } from "@/components/ui/primitives";
 import { decideApprovalAction, assignTaskAction } from "@/app/actions/governance";
+import { askConfirm, askText } from "@/lib/dialog";
 import { toast } from "@/lib/ui-store";
 
 const PRIORITY = { critical: "bad", high: "clay", medium: "warn", low: "neutral" } as const;
@@ -46,8 +47,8 @@ export function DecisionFeed({ items }: { items: DecisionItem[] }) {
             <div className="flex flex-wrap gap-1.5">
               {d.actions.map((a, i) => {
                 if (a.type === "link") return <Link key={i} href={a.href} className="inline-flex items-center gap-1 rounded-lg border border-hair px-2.5 py-1.5 text-[12.5px] hover:bg-graphite-3">{a.label}<ArrowUpRight size={12} /></Link>;
-                if (a.type === "approve") return <Button key={i} size="sm" variant="primary" disabled={pending} onClick={() => confirm(`Approve: ${d.title}?\n\n${d.reason}`) && act(d, () => decideApprovalAction(a.approvalId, "approved", null), "Approved and recorded in the audit log.")}><Check size={13} />{a.label}</Button>;
-                if (a.type === "reject") return <Button key={i} size="sm" variant="danger" disabled={pending} onClick={() => { const note = prompt("Reason for rejecting (recorded):"); if (note !== null && note.trim()) act(d, () => decideApprovalAction(a.approvalId, "rejected", note), "Rejected."); }}><X size={13} />{a.label}</Button>;
+                if (a.type === "approve") return <Button key={i} size="sm" variant="primary" disabled={pending} onClick={async () => (await askConfirm({ title: `Approve: ${d.title}`, message: d.reason, confirmLabel: "Approve" })) && act(d, () => decideApprovalAction(a.approvalId, "approved", null), "Approved and recorded in the audit log.")}><Check size={13} />{a.label}</Button>;
+                if (a.type === "reject") return <Button key={i} size="sm" variant="danger" disabled={pending} onClick={async () => { const note = await askText({ title: "Reject", label: "Reason (recorded)", required: true, confirmLabel: "Reject" }); if (note) act(d, () => decideApprovalAction(a.approvalId, "rejected", note), "Rejected."); }}><X size={13} />{a.label}</Button>;
                 return <Button key={i} size="sm" disabled={pending} onClick={() => act(d, () => assignTaskAction({ agentId: a.agentId, title: a.title, origin: "decision_feed", entityType: a.entityType, entityId: a.entityId }), `Task queued for ${a.agentId}. It will run when the execution engine is connected.`)}>{a.label}</Button>;
               })}
             </div>

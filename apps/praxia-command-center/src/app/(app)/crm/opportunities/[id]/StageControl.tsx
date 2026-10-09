@@ -1,4 +1,5 @@
 "use client";
+import { askConfirm, askText } from "@/lib/dialog";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { moveStageAction } from "@/app/actions/crm";
@@ -9,9 +10,9 @@ export function StageControl({ opportunityId, stageId, stages }: { opportunityId
   const router = useRouter();
   const [pending, start] = useTransition();
   const current = stages.find((s) => s.id === stageId)!;
-  const move = (to: (typeof stages)[number]) => {
+  const move = async (to: (typeof stages)[number]) => {
     let reason: string | undefined;
-    if (to.kind === "lost") { const r = prompt("Lost reason (required):"); if (!r) return; reason = r; }
+    if (to.kind === "lost") { const r = await askText({ title: "Close as lost", label: "Lost reason", required: true, confirmLabel: "Move to Closed Lost" }); if (!r) return; reason = r; }
     start(async () => {
       const r = await moveStageAction(opportunityId, to.id, reason);
       if (r.ok) toast.ok(`Moved to ${to.name}`); else toast.bad(r.error);

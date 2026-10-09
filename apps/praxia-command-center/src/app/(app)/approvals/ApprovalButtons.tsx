@@ -3,13 +3,16 @@ import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { Button } from "@/components/ui/primitives";
 import { decideApprovalAction } from "@/app/actions/governance";
+import { askConfirm, askText } from "@/lib/dialog";
 import { toast } from "@/lib/ui-store";
 
 export function ApprovalButtons({ id }: { id: string }) {
   const router = useRouter();
   const [pending, start] = useTransition();
-  const decide = (d: "approved" | "rejected") => {
-    const note = d === "rejected" ? prompt("Reason for rejecting (recorded):") : prompt("Approve? Optional note (recorded). Cancel to abort.", "");
+  const decide = async (d: "approved" | "rejected") => {
+    const note = d === "rejected"
+      ? await askText({ title: "Reject", label: "Reason (recorded)", required: true, confirmLabel: "Reject" })
+      : await askText({ title: "Approve", message: "Add an optional note for the record.", label: "Note", confirmLabel: "Approve" });
     if (note === null) return; // cancelled — nothing is decided
     if (d === "rejected" && !note.trim()) return;
     start(async () => { const r = await decideApprovalAction(id, d, note || null); if (r.ok) { toast.ok(d === "approved" ? "Approved." : "Rejected."); router.refresh(); } else toast.bad(r.error); });

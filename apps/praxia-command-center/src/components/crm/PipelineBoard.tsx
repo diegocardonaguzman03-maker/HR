@@ -7,6 +7,7 @@ import { CalendarClock } from "lucide-react";
 import { moveStageAction } from "@/app/actions/crm";
 import { formatMoney } from "@/domain/money";
 import { toast } from "@/lib/ui-store";
+import { askText } from "@/lib/dialog";
 import { cn } from "@/lib/cn";
 import { Badge } from "@/components/ui/primitives";
 import type { Currency } from "@/server/db/schema";
@@ -77,7 +78,7 @@ export function PipelineBoard({ stages, cards, today, reportingCurrency }: { sta
     return m;
   }, [optimistic, stages]);
 
-  const onDragEnd = (e: DragEndEvent) => {
+  const onDragEnd = async (e: DragEndEvent) => {
     const id = String(e.active.id);
     const to = e.over ? String(e.over.id) : null;
     const card = cards.find((c) => c.id === id);
@@ -85,7 +86,7 @@ export function PipelineBoard({ stages, cards, today, reportingCurrency }: { sta
     const target = stages.find((s) => s.id === to)!;
     let lostReason: string | undefined;
     if (target.kind === "lost") {
-      const r = prompt(`Why was "${card.organizationName}" lost? (required)`);
+      const r = await askText({ title: `Close ${card.organizationName} as lost`, label: "Lost reason", required: true, confirmLabel: "Move to Closed Lost" });
       if (!r) return;
       lostReason = r;
     }

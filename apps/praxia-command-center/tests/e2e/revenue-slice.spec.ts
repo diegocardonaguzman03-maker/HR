@@ -15,9 +15,6 @@ test.beforeAll(async ({ browser }) => {
   page = await browser.newPage();
 });
 
-async function answerNextPrompt(value: string) {
-  page.once("dialog", (d) => d.accept(value));
-}
 
 test("requires login and rejects a wrong password", async () => {
   await page.goto("/");
@@ -103,14 +100,15 @@ test("proposal → approval → sent → accepted → signed contract", async ()
   await expect(page.getByText("Waiting for your approval")).toBeVisible();
 
   await page.goto("/approvals");
-  await answerNextPrompt("Within range");
   await page.getByRole("button", { name: "Approve" }).first().click();
+  await page.getByLabel("Note", { exact: true }).fill("Within range");
+  await page.getByRole("dialog").getByRole("button", { name: "Approve" }).click();
   await expect(page.getByText("0 waiting for you")).toBeVisible();
 
   await page.goBack();
   await page.reload();
-  await answerNextPrompt(today);
   await page.getByRole("button", { name: "Record as sent (I sent it)" }).click();
+  await page.getByRole("dialog").getByRole("button", { name: "Record as sent" }).click();
   await expect(page.getByRole("button", { name: "Client accepted…" })).toBeVisible();
   await page.getByRole("button", { name: "Client accepted…" }).click();
   await page.getByLabel("Evidence *", { exact: true }).fill("Signed proposal PDF ACME-001");
