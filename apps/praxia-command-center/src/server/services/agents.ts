@@ -12,12 +12,15 @@ import { canTransition, compareTasks, isOpenTask, isOverdue, REASSIGNABLE } from
  */
 export const EXECUTION_ENGINE = {
   connected: false,
-  reason: "Agent execution engine not connected yet (Phase 2). Tasks are queued and can be updated manually by the founder.",
+  reason: "No autonomous engine yet (Phase 2): agents work only when the founder or an orchestrated Claude Code session runs them, and every step is recorded here.",
 } as const;
+
+/** Actor id the orchestrating Claude Code session uses when it records the work of the agents it runs. */
+export const ORCHESTRATOR_ACTOR = "orchestrator:claude-code";
 
 export type AgentWithStatus = typeof agents.$inferSelect & {
   status: AgentStatus;
-  statusSource: "task" | "manual" | "engine";
+  statusSource: "task" | "manual" | "engine" | "session";
   statusNote: string;
   currentTask: { id: string; title: string; status: TaskStatus; progress: number; priority: (typeof TASK_PRIORITIES)[number] } | null;
   tasksCompleted: number;
@@ -51,7 +54,11 @@ export async function listAgentsWithStatus(db: DB): Promise<AgentWithStatus[]> {
       costUsdMicros: mine.reduce((s, t) => s + t.costUsdMicros, 0),
     };
     if (active) {
-      return { ...base, status: TASK_TO_AGENT_STATUS[active.status]!, statusSource: EXECUTION_ENGINE.connected ? ("task" as const) : ("manual" as const), statusNote: EXECUTION_ENGINE.connected ? `Task: ${active.title}` : `Task: ${active.title} (status set manually by the founder)`, currentTask: { id: active.id, title: active.title, status: active.status, progress: active.progress, priority: active.priority } };
+      const currentTask = { id: active.id, title: active.title, status: active.status, progress: active.progress, priority: active.priority };
+      const status = TASK_TO_AGENT_STATUS[active.status]!;
+      if (EXECUTION_ENGINE.connected) return { ...base, status, statusSource: "task" as const, statusNote: `Task: ${active.title}`, currentTask };
+      if (active.origin === "orchestrator") return { ...base, status, statusSource: "session" as const, statusNote: `Task: ${active.title} (run by ${a.id} in the orchestrated Claude Code session)`, currentTask };
+      return { ...base, status, statusSource: "manual" as const, statusNote: `Task: ${active.title} (status set manually by the founder)`, currentTask };
     }
     if (!a.active) return { ...base, status: "offline" as const, statusSource: "engine" as const, statusNote: "Agent deactivated.", currentTask: null };
     return EXECUTION_ENGINE.connected
@@ -125,7 +132,8 @@ export async function updateTaskStatus(db: DB, taskId: string, status: TaskStatu
     })
     .where(eq(agentTasks.id, taskId))
     .returning();
-  await db.insert(agentEvents).values({ agentId: t.agentId, taskId, type: EVENT_FOR[status]!, message: actor === "founder" ? `Manual update by founder: ${status}` : status });
+  const message = actor === "founder" ? `Manual update by founder: ${status}` : actor === ORCHESTRATOR_ACTOR ? `${t.agentId} · ${status}${status === "completed" && opts.output ? ` → ${opts.output}` : ""} (Claude Code session)` : status;
+  await db.insert(agentEvents).values({ agentId: t.agentId, taskId, type: EVENT_FOR[status]!, message });
   await audit(db, actor, `task.${status}`, "agent_task", taskId, { status: t.status }, { status });
   return after!;
 }

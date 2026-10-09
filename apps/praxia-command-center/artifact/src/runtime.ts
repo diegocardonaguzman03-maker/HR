@@ -9,8 +9,13 @@ import { createBrowserDb } from "../sqljs-db";
 declare const __MIGRATIONS__: string[];
 declare const __SQLJS_WASM_B64__: string;
 
+type Doc = { id: string; data(): Record<string, unknown> | undefined };
 type ArtifactDb = {
-  collection(path: string): { get(): Promise<{ docs: { id: string; data(): Record<string, unknown> | undefined }[] }>; doc(id: string): { set(d: Record<string, unknown>): Promise<void>; delete(): Promise<void> } };
+  collection(path: string): {
+    get(): Promise<{ docs: Doc[] }>;
+    doc(id: string): { set(d: Record<string, unknown>): Promise<void>; delete(): Promise<void> };
+    onSnapshot?(next: (snap: { docChanges(): { type: "added" | "modified" | "removed"; doc: Doc }[] }) => void, error?: (e: unknown) => void): () => void;
+  };
 };
 
 /** Fallback store when the page is opened outside claude.ai (e.g. a static host): this browser's localStorage. */
@@ -76,6 +81,65 @@ function snapshot(): Snap {
   return new Map(TABLES.map((t) => [t, readTable(t)]));
 }
 
+function upsertRow(t: string, row: Record<string, unknown>) {
+  const cols = Object.keys(row);
+  sqlite.run(`INSERT OR REPLACE INTO ${t} (${cols.map((c) => `"${c}"`).join(",")}) VALUES (${cols.map(() => "?").join(",")})`, cols.map((c) => row[c] as never));
+}
+
+function readRow(t: string, id: string): string | null {
+  const res = sqlite.exec(`SELECT * FROM ${t} WHERE id = ?`, [id as never]);
+  if (!res[0]?.values[0]) return null;
+  const { columns, values } = res[0];
+  return JSON.stringify(Object.fromEntries(columns.map((c, i) => [c, values[0]![i]])));
+}
+
+const remoteListeners = new Set<(tables: string[]) => void>();
+/** Called (debounced) after changes written elsewhere — by another viewer or by the orchestrating Claude session — land in this page. */
+export function onRemoteChange(cb: (tables: string[]) => void): () => void {
+  remoteListeners.add(cb);
+  return () => remoteListeners.delete(cb);
+}
+
+/**
+ * Live mode: every table is subscribed once. Changes written elsewhere are applied to the in-page SQLite and to the
+ * flush baseline (so they are never echoed back), and listeners are told which tables changed.
+ */
+function subscribeLive(db: ArtifactDb) {
+  let pending = new Set<string>();
+  let timer: ReturnType<typeof setTimeout> | null = null;
+  for (const t of TABLES) {
+    const col = db.collection(t);
+    if (!col.onSnapshot) return;
+    let first = true;
+    col.onSnapshot(
+      (snap) => {
+        const changes = snap.docChanges();
+        if (first) { first = false; return; } // the initial snapshot is what boot() already loaded
+        if (!changes.length) return;
+        sqlite.run("PRAGMA foreign_keys = OFF;");
+        const base = last.get(t) ?? new Map<string, string>();
+        for (const ch of changes) {
+          if (ch.type === "removed") {
+            sqlite.run(`DELETE FROM ${t} WHERE id = ?`, [ch.doc.id as never]);
+            base.delete(ch.doc.id);
+          } else {
+            const row = ch.doc.data();
+            if (!row) continue;
+            upsertRow(t, row);
+            const json = readRow(t, ch.doc.id);
+            if (json) base.set(ch.doc.id, json);
+          }
+        }
+        last.set(t, base);
+        sqlite.run("PRAGMA foreign_keys = ON;");
+        pending.add(t);
+        if (!timer) timer = setTimeout(() => { const tables = [...pending]; pending = new Set(); timer = null; for (const cb of remoteListeners) cb(tables); }, 250);
+      },
+      () => { /* subscription ended (offline or revoked): the page keeps working on its local copy */ },
+    );
+  }
+}
+
 const b64ToBuf = (b64: string) => Uint8Array.from(atob(b64), (c) => c.charCodeAt(0)).buffer;
 
 /** Boots the in-page database and hydrates it from the Artifact store (or runs unpersisted if unavailable). */
@@ -92,14 +156,13 @@ export async function boot(): Promise<Runtime> {
       const snap = await store.collection(t).get();
       for (const d of snap.docs) {
         const row = d.data();
-        if (!row) continue;
-        const cols = Object.keys(row);
-        sqlite.run(`INSERT OR REPLACE INTO ${t} (${cols.map((c) => `"${c}"`).join(",")}) VALUES (${cols.map(() => "?").join(",")})`, cols.map((c) => row[c] as never));
+        if (row) upsertRow(t, row);
       }
     }
     sqlite.run("PRAGMA foreign_keys = ON;");
   }
   last = snapshot();
+  if (storage === "artifact" && store) subscribeLive(store);
   runtime = {
     db: created.db,
     persisted: !!store,

@@ -55,7 +55,7 @@ export async function worldSnapshotAction(sinceEventAt?: string | null) {
   const db = await getDb();
   const [agents, board, events] = await Promise.all([listAgentsWithStatus(db), listBoard(db), listEvents(db, sinceEventAt ?? undefined, 60)]);
   return {
-    agents: agents.map((a) => ({ id: a.id, status: a.status, statusNote: a.statusNote, currentTaskTitle: a.currentTask?.title ?? null, currentTaskProgress: a.currentTask?.progress ?? null, tasksCompleted: a.tasksCompleted, tasksOpen: a.tasksOpen, tasksQueued: a.tasksQueued, tasksOverdue: a.tasksOverdue })),
+    agents: agents.map((a) => ({ id: a.id, status: a.status, statusSource: a.statusSource, statusNote: a.statusNote, currentTaskTitle: a.currentTask?.title ?? null, currentTaskProgress: a.currentTask?.progress ?? null, tasksCompleted: a.tasksCompleted, tasksOpen: a.tasksOpen, tasksQueued: a.tasksQueued, tasksOverdue: a.tasksOverdue })),
     tasks: board.tasks,
     today: board.today,
     events,

@@ -10,7 +10,7 @@ import { Topbar } from "@/components/shell/Topbar";
 import { CommandPalette } from "@/components/shell/CommandPalette";
 import { Toaster } from "@/components/shell/Toaster";
 import { AxisSymbol } from "@/components/shell/Logo";
-import { boot, getRuntime } from "./runtime";
+import { boot, getRuntime, onRemoteChange } from "./runtime";
 import { nav } from "./router";
 import { NotFoundSignal, RedirectSignal } from "./shims/next-navigation";
 import { cookies } from "./shims/next-headers";
@@ -98,6 +98,13 @@ function Shell() {
   const [demo, setDemo] = useState(false);
   const [hasDemoData, setHasDemoData] = useState(true);
   const [loadingSim, setLoadingSim] = useState(false);
+  const [liveUpdates, setLiveUpdates] = useState(0);
+  // Live: changes written elsewhere (another viewer, or the orchestrating Claude session running the agents).
+  // PRAXIA World re-reads them on its own; other pages offer a refresh instead of re-rendering under the user.
+  useEffect(() => onRemoteChange(() => {
+    if (nav.state().path === "/world") return;
+    setLiveUpdates((n) => n + 1);
+  }), []);
   useEffect(() => {
     (async () => {
       const includeDemo = (await cookies()).get("praxia_demo")?.value === "1";
@@ -131,6 +138,11 @@ function Shell() {
           {err ? <div className="px-card mx-auto max-w-xl p-6 text-[14px]"><div className="mb-2 font-display text-[18px] font-semibold">Can't show this page</div><p className="text-niebla">{err}</p><button className="mt-4 text-indigo-soft hover:underline" onClick={() => nav.push("/")}>Back to overview</button></div> : el}
         </main>
       </div>
+      {liveUpdates > 0 && !print && (
+        <button onClick={() => { setLiveUpdates(0); nav.refresh(); }} className="fixed bottom-5 left-1/2 z-50 -translate-x-1/2 rounded-full border border-indigo/60 bg-graphite-2 px-4 py-2 font-mono text-[11px] tracking-wider text-indigo-soft uppercase shadow-xl hover:bg-graphite-3">
+          ● Live · {liveUpdates} update{liveUpdates === 1 ? "" : "s"} — refresh
+        </button>
+      )}
       <CommandPalette />
       <Toaster />
     </div>

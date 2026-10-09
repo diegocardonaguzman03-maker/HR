@@ -21,7 +21,7 @@ import { STATUS_LABEL } from "./taskOps";
 
 const PraxiaWorld = dynamic(() => import("@/features/world/PraxiaWorld"), { ssr: false, loading: () => <div className="flex h-full items-center justify-center font-mono text-[11px] tracking-widest text-mute uppercase">Loading headquarters…</div> });
 
-type HostAgent = WorldAgent & { reportsTo: string; description: string; skills: string[]; tasksCompleted: number; tasksOpen: number; costUsdMicros: number; active: boolean };
+type HostAgent = WorldAgent & { reportsTo: string; statusSource?: string; description: string; skills: string[]; tasksCompleted: number; tasksOpen: number; costUsdMicros: number; active: boolean };
 
 const POLL_MS = 4000;
 
@@ -104,8 +104,8 @@ export function WorldHost({ agents: initialAgents, tasks: initialTasks, feed: in
         <PraxiaWorld agents={worldAgents} selectedAgentId={selected} onSelectAgent={selectAgent} reducedMotion={reduced} events={events} focus={focus} />
         <div className="pointer-events-none absolute top-4 right-4 rounded-lg border border-hair bg-graphite/80 px-3 py-2 text-right backdrop-blur">
           <div className="px-label">PRAXIA World · HQ</div>
-          <div className="font-mono text-[11px] text-niebla">{agents.length} agents · {working} working{engineNote && working ? " (manual)" : ""}</div>
-          {engineNote && <div className="mt-1 max-w-[280px] text-[11px] text-warn">{engineNote} Animations replay what is recorded; nothing runs on its own.</div>}
+          <div className="font-mono text-[11px] text-niebla">{agents.length} agents · {working} working</div>
+          {engineNote && <div className="mt-1 max-w-[280px] text-[11px] text-warn">{engineNote} Animations replay what is recorded.</div>}
         </div>
         {a && (
           <aside className="absolute top-0 right-0 bottom-0 w-[min(380px,92vw)] overflow-y-auto border-l border-hair bg-graphite-2/95 p-5 backdrop-blur" aria-label={`Agent ${a.id}`}>
@@ -133,7 +133,7 @@ export function WorldHost({ agents: initialAgents, tasks: initialTasks, feed: in
               </>)}
             </dl>
             <div className="mb-4 rounded-lg border border-hair p-3 text-[13px]">
-              <div className="mb-1 flex items-center gap-2"><AgentStatusBadge status={a.status} manual={!!engineNote && !!a.currentTaskTitle} /> <span className="text-niebla">{a.currentTaskTitle ?? "No active task"}</span></div>
+              <div className="mb-1 flex items-center gap-2"><AgentStatusBadge status={a.status} manual={a.statusSource === "manual"} /> <span className="text-niebla">{a.currentTaskTitle ?? "No active task"}</span></div>
               {a.currentTaskProgress != null && a.currentTaskTitle && (
                 <div className="my-2 flex items-center gap-2"><div className="h-1.5 flex-1 overflow-hidden rounded-full bg-graphite-3"><div className="h-full rounded-full bg-indigo" style={{ width: `${a.currentTaskProgress}%` }} /></div><span className="font-mono text-[11px] text-mute">{a.currentTaskProgress}%</span></div>
               )}
