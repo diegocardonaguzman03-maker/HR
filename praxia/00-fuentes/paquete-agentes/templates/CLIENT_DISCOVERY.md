@@ -1,0 +1,2 @@
+# Executive Discovery
+Company, sector, participants and meeting date. Business priority / why now / value at risk / baseline / executive sponsor / current workflows and decision rights / what has been tried / audience roles / top 3 adoption blockers / technology context / timing / budget owner and procurement / data availability / success metrics / scope exclusions / next steps / consent for note taking. Separate direct quotations, inferences and assumptions.

@@ -1,0 +1,241 @@
+{
+  "meta": {
+    "slug": "03-high-tech-software",
+    "title": "PRAXIA · High tech, software y servicios TI",
+    "sector": "High tech, software y servicios TI",
+    "date": "Octubre 2026",
+    "lang": "es",
+    "confidential": true,
+    "output": "../03-high-tech-software/deck-praxia-high-tech-software.pptx"
+  },
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Presentación ejecutiva",
+      "title": "Desplegar copilotos no es ~adoptarlos~.",
+      "subtitle": "Para empresas de software y servicios TI que venden IA a sus clientes y necesitan que su propio delivery la adopte."
+    },
+    {
+      "type": "statement",
+      "label": "01 — El momento",
+      "section": "El momento",
+      "statement": "Tu industria vende IA a sus clientes. La pregunta es cuánto cambió tu propio delivery.",
+      "support": "Copilotos para toda la ingeniería, agentes en piloto y un modelo de entrega que todavía se cotiza por hora o por FTE."
+    },
+    {
+      "type": "gap",
+      "label": "02 — El problema real",
+      "section": "El problema",
+      "title": "The ~Adoption Gap~ en casa propia.",
+      "definition": "Uso alto de copilotos y confianza baja. Decenas de pruebas de concepto sin dueño de negocio ni criterio de salida. Nadie mide si cambiaron el lead time, la calidad del código, el retrabajo o la utilización.",
+      "leftLabel": "Licencias de IA desplegadas",
+      "rightLabel": "Delivery que realmente cambió",
+      "gapLabel": "La brecha"
+    },
+    {
+      "type": "stats",
+      "label": "03 — El costo de la brecha",
+      "section": "El costo",
+      "title": "Uso alto, confianza baja y pilotos sin dueño: la brecha también vive en casa.",
+      "stats": [
+        {
+          "value": "46%",
+          "label": "de los desarrolladores desconfía de la precisión de la IA; 84% la usa o planea usarla.",
+          "source": "Stack Overflow Developer Survey, 2025"
+        },
+        {
+          "value": "39%",
+          "label": "de las organizaciones: TI lidera el rediseño del trabajo con IA. RH lo lidera solo en 12%.",
+          "source": "Deloitte, 2025 · Work Redesign Essential to Realize AI ROI"
+        },
+        {
+          "value": ">40%",
+          "label": "de los proyectos de IA agéntica se cancelará para finales de 2027, prevé Gartner.",
+          "source": "Gartner, 2025 (predicción)"
+        }
+      ],
+      "note": "Cifras globales. La de Gartner es una predicción, no un dato observado. Fuentes completas en las notas.",
+      "notes": "Fuentes de esta lámina (texto completo y enlace):\n• 84% de los desarrolladores usa o planea usar IA; 46% desconfía de la precisión de sus resultados. Fuente: Stack Overflow Developer Survey, 2025. https://survey.stackoverflow.co/2025/ai\n• El rediseño del trabajo con IA lo lidera TI en 39% de las organizaciones y RH solo en 12%. Fuente: Deloitte, 2025. https://www.deloitte.com/us/en/about/press-room/work-design-essential-to-ai-roi.html\n• Gartner prevé que más de 40% de los proyectos de IA agéntica se cancelará para finales de 2027. Fuente: Gartner, 2025 (predicción). https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027"
+    },
+    {
+      "type": "content",
+      "label": "04 — Qué hacemos",
+      "section": "Qué hacemos",
+      "title": "Convertimos licencias de IA en delivery que cambió.",
+      "body": "Tu inversión en copilotos y agentes rinde cuando tus equipos cambian cómo diseñan, construyen y entregan. Medimos esa brecha y la cerramos: del comité de dirección a la célula de delivery y a la forma de cotizar.",
+      "points": [
+        {
+          "title": "Diagnosticamos",
+          "body": "Dónde se rompe la adopción: flujos de ingeniería, pilotos sin dueño, roles, confianza y datos de uso."
+        },
+        {
+          "title": "Diseñamos el sistema",
+          "body": "Flujos humano-IA, roles, criterios para salir del piloto, incentivos y métricas de delivery."
+        },
+        {
+          "title": "Medimos el cambio",
+          "body": "Uso, comportamiento e impacto en lead time, calidad, retrabajo y utilización. Nunca horas de curso."
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "label": "05 — Por qué distinto",
+      "section": "Por qué PRAXIA",
+      "title": "Otros habilitan la herramienta. Nosotros respondemos por la adopción.",
+      "columns": [
+        {
+          "kicker": "Proveedores de plataforma",
+          "verb": "Habilitan",
+          "body": "Licencias, créditos y certificaciones. Miden consumo, no si cambió la forma en que tu equipo entrega."
+        },
+        {
+          "kicker": "Programas de upskilling",
+          "verb": "Capacitan",
+          "body": "Rutas de cursos y badges de IA. Horas de formación que no garantizan un flujo de trabajo distinto."
+        },
+        {
+          "kicker": "PRAXIA",
+          "verb": "Asegura la adopción",
+          "body": "Rediseña y mide cómo trabaja tu delivery con IA, hasta que se nota en lead time, calidad, utilización y margen."
+        }
+      ],
+      "highlight": 2
+    },
+    {
+      "type": "method",
+      "label": "06 — Cómo trabajamos",
+      "section": "Método",
+      "title": "The Adoption System en cuatro etapas.",
+      "intro": "Un sistema repetible y medible, del comité a la célula de delivery. Cada etapa cierra con un gate del sponsor.",
+      "stages": [
+        {
+          "name": "Sense",
+          "verb": "Diagnosticar",
+          "gate": "G0 · Business case aprobado",
+          "body": "Baseline de uso real de copilotos y agentes por equipo, pilotos activos, confianza y costo de no actuar."
+        },
+        {
+          "name": "Align",
+          "verb": "Alinear",
+          "gate": "G1 · Tesis y roadmap aprobados",
+          "body": "Casos de uso con dueño, criterios de salida del piloto, roles y métricas de delivery en un roadmap."
+        },
+        {
+          "name": "Adopt",
+          "verb": "Adoptar",
+          "gate": "G2 · KPIs de adopción por ola",
+          "body": "Pilotos por célula, flujos humano-IA, guías por rol, liderazgo técnico y mecanismos de refuerzo."
+        },
+        {
+          "name": "Sustain",
+          "verb": "Sostener",
+          "gate": "G3 · Re-medición periódica",
+          "body": "Re-medición de lead time, calidad y utilización, y transferencia del método a tu PMO o CoE de IA."
+        }
+      ],
+      "mantra": "La estrategia se compra. La ~adopción~ se diseña."
+    },
+    {
+      "type": "offer",
+      "label": "07 — Punto de entrada",
+      "section": "Punto de entrada",
+      "title": "Empieza midiendo: Adoption Gap Diagnostic.",
+      "body": "En 3 a 5 semanas medimos la distancia entre la IA que tu organización desplegó y la que realmente cambió el delivery, y construimos el business case con datos de tu propia operación.",
+      "facts": [
+        {
+          "k": "Duración",
+          "v": "3–5 semanas"
+        },
+        {
+          "k": "Qué medimos",
+          "v": "5 capas × 5 niveles"
+        },
+        {
+          "k": "Evidencia",
+          "v": "Uso real y entrevistas"
+        },
+        {
+          "k": "Inversión",
+          "v": "Según alcance"
+        }
+      ],
+      "panelTitle": "Lo que recibes",
+      "deliverables": [
+        "Hallazgos en las cinco capas, del comité a la célula de delivery",
+        "Baseline de uso, confianza e impacto por equipo",
+        "Costo de la brecha en lead time, retrabajo y utilización",
+        "Portafolio de pilotos priorizado por impacto y esfuerzo",
+        "Roadmap de 90 y 180 días"
+      ]
+    },
+    {
+      "type": "services",
+      "label": "08 — Cómo seguimos",
+      "section": "Servicios",
+      "title": "Del diagnóstico a un delivery que adopta la IA.",
+      "items": [
+        {
+          "name": "Adoption Gap Diagnostic",
+          "body": "Baseline de uso e impacto, costo de la brecha y business case. De 3 a 5 semanas.",
+          "tag": "Punto de entrada"
+        },
+        {
+          "name": "AI Adoption Accelerator",
+          "body": "Copilotos o agentes en un flujo de delivery, con uso e impacto medidos. De 6 a 12 semanas."
+        },
+        {
+          "name": "Strategy-to-Adoption Sprint",
+          "body": "Modelo de entrega con IA o integración post-adquisición. De 6 a 10 semanas."
+        },
+        {
+          "name": "Transformation Adoption Program",
+          "body": "Adopción por olas en toda la operación de delivery, con medición. De 3 a 6 meses."
+        }
+      ]
+    },
+    {
+      "type": "founder",
+      "label": "09 — Quién está detrás",
+      "section": "Quién está detrás",
+      "name": "Francisco Cardona",
+      "role": "Founder & Principal",
+      "bio": "PRAXIA es una firma senior-led y basada en evidencia. Francisco trabaja de par a par con la dirección, desde el P&L y el riesgo, para que la estrategia se convierta en decisiones, comportamientos e indicadores que cambian.",
+      "points": [
+        "Liderazgo en un grupo industrial multinacional",
+        "Talento, aprendizaje, desarrollo organizacional y people analytics",
+        "Exposición internacional",
+        "Proyectos de transformación y productividad"
+      ]
+    },
+    {
+      "type": "cta",
+      "label": "10 — Empecemos",
+      "section": "Empecemos",
+      "title": "Mide tu ~Adoption Gap~.",
+      "body": "Un diagnóstico de 3 a 5 semanas te dice cuánto de la IA que desplegaste cambió de verdad tu delivery y qué hacer al respecto. Es el punto de partida de menor riesgo.",
+      "steps": [
+        {
+          "title": "Conversación ejecutiva",
+          "body": "45 minutos sobre tu despliegue de IA, tu modelo de entrega y el valor en juego."
+        },
+        {
+          "title": "Hipótesis de valor",
+          "body": "Resumimos en una página la brecha, el valor en juego y el siguiente paso."
+        },
+        {
+          "title": "Diagnóstico",
+          "body": "Alcance, entregables e inversión según alcance, listos para decidir."
+        }
+      ],
+      "button": "Agenda tu diagnóstico →",
+      "contact": "[CANAL DE CONTACTO — COMPLETAR]"
+    },
+    {
+      "type": "closing",
+      "section": "Gracias",
+      "tagline": "Turn *strategy* into ~adoption~.",
+      "contact": "[CANAL DE CONTACTO — COMPLETAR]"
+    }
+  ]
+}

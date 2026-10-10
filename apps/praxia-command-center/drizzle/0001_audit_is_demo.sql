@@ -1,0 +1,1 @@
+ALTER TABLE `audit_log` ADD `is_demo` integer DEFAULT false NOT NULL;
