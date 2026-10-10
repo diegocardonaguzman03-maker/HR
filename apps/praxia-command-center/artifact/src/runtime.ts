@@ -45,7 +45,7 @@ function localStore(): ArtifactDb | null {
 export const TABLES = [
   "company_settings", "fx_rates", "services", "pipeline_stages", "agents", "organizations", "contacts", "opportunities",
   "activities", "proposals", "proposal_lines", "contracts", "revenue_entries", "invoices", "payments", "expenses",
-  "agent_tasks", "agent_events", "approvals", "engine_runs", "audit_log",
+  "agent_tasks", "agent_events", "approvals", "engine_runs", "suppressions", "audit_log",
 ] as const;
 
 type Snap = Map<string, Map<string, string>>; // table -> id -> JSON
@@ -56,6 +56,8 @@ export type Runtime = {
   storage: "artifact" | "browser" | "none";
   status: "ready" | "offline";
   flush: () => Promise<{ written: number; error?: string }>;
+  /** Set when the stored data is newer than this page (ADR-003); writes are refused. */
+  readOnly: string | null;
 };
 
 let runtime: Runtime | null = null;
@@ -81,8 +83,17 @@ function snapshot(): Snap {
   return new Map(TABLES.map((t) => [t, readTable(t)]));
 }
 
+const knownCols = new Map<string, Set<string>>();
+/** Columns this page's schema knows; unknown ones (written by a newer version) are skipped instead of crashing. */
+function columnsOf(t: string): Set<string> {
+  let c = knownCols.get(t);
+  if (!c) { c = new Set((sqlite.exec(`PRAGMA table_info(${t})`)[0]?.values ?? []).map((v) => String(v[1]))); knownCols.set(t, c); }
+  return c;
+}
+
 function upsertRow(t: string, row: Record<string, unknown>) {
-  const cols = Object.keys(row);
+  const known = columnsOf(t);
+  const cols = Object.keys(row).filter((c) => known.has(c));
   sqlite.run(`INSERT OR REPLACE INTO ${t} (${cols.map((c) => `"${c}"`).join(",")}) VALUES (${cols.map(() => "?").join(",")})`, cols.map((c) => row[c] as never));
 }
 
@@ -161,6 +172,16 @@ export async function boot(): Promise<Runtime> {
     }
     sqlite.run("PRAGMA foreign_keys = ON;");
   }
+  // ADR-003: the database records the schema version that wrote it. A page older than the data is read-only.
+  let readOnly: string | null = null;
+  if (store) {
+    try {
+      const meta = (await store.collection("meta").get()).docs.find((d) => d.id === "schema")?.data() as { migrations?: number } | undefined;
+      const remote = Number(meta?.migrations ?? 0);
+      if (remote > __MIGRATIONS__.length) readOnly = "This database was written by a newer version of the Command Center. Reload the artifact to get it — changes here are not saved.";
+      else if (remote < __MIGRATIONS__.length) await store.collection("meta").doc("schema").set({ migrations: __MIGRATIONS__.length, at: new Date().toISOString() });
+    } catch { /* meta is advisory; the column filter above still protects the page */ }
+  }
   last = snapshot();
   if (storage === "artifact" && store) subscribeLive(store);
   runtime = {
@@ -168,8 +189,10 @@ export async function boot(): Promise<Runtime> {
     persisted: !!store,
     storage,
     status: store ? "ready" : "offline",
+    readOnly,
     flush: async () => {
       if (!store) return { written: 0 };
+      if (readOnly) return { written: 0, error: readOnly };
       const next = snapshot();
       let written = 0;
       try {

@@ -23,7 +23,7 @@ export const FUNNEL_STAGES = [
 export type FunnelStageKey = (typeof FUNNEL_STAGES)[number]["key"];
 
 export type FunnelOrg = { id: string; name: string; fitScore: number | null; lifecycle: string };
-export type FunnelContact = { id: string; organizationId: string | null; lawfulBasis: string; doNotContact: boolean; leadStatus: string };
+export type FunnelContact = { id: string; organizationId: string | null; lawfulBasis: string; doNotContact: boolean; leadStatus: string; optOutAt?: string | null };
 export type FunnelActivity = { organizationId: string | null; contactId: string | null; type: string; direction: string };
 export type FunnelOpportunity = { organizationId: string; stageKind: "open" | "won" | "lost" };
 export type FunnelProposal = { organizationId: string; status: string };
@@ -47,7 +47,7 @@ export type FunnelResult = { stages: FunnelStage[]; accounts: FunnelAccount[]; b
 const SENT_PROPOSAL = new Set(["sent", "negotiation", "accepted"]);
 const OUTBOUND_TYPES = new Set(["email", "linkedin", "call"]);
 
-export const isCleared = (c: FunnelContact, gate: OutreachGate) => gate.open && !c.doNotContact && c.lawfulBasis !== "not_assessed";
+export const isCleared = (c: FunnelContact, gate: OutreachGate) => gate.open && !c.doNotContact && !c.optOutAt && c.lawfulBasis !== "not_assessed";
 
 export function computeFunnel(input: FunnelInput): FunnelResult {
   const by = <T,>(rows: T[], key: (r: T) => string | null) => {
@@ -64,7 +64,7 @@ export function computeFunnel(input: FunnelInput): FunnelResult {
   const appr = by(input.approvals, (a) => a.organizationId);
 
   const accounts: FunnelAccount[] = input.orgs.map((o) => {
-    const cs = (contacts.get(o.id) ?? []).filter((c) => !c.doNotContact);
+    const cs = (contacts.get(o.id) ?? []).filter((c) => !c.doNotContact && !c.optOutAt);
     const cleared = cs.filter((c) => isCleared(c, input.gate)).length;
     const a = acts.get(o.id) ?? [];
     const reached: boolean[] = [

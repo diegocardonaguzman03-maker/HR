@@ -28,7 +28,7 @@ export default async function OrganizationsPage() {
                   <td><Link href={`/crm/organizations/${o.id}`} className="font-medium hover:underline">{o.name}</Link> {o.isDemo && <Badge tone="clay">Demo</Badge>}<div className="text-[12px] text-mute">{o.domain}</div></td>
                   <td><Badge tone={o.lifecycle === "client" ? "ok" : o.lifecycle === "prospect" ? "indigo" : "neutral"}>{o.lifecycle.replace("_", " ")}</Badge></td>
                   <td>{o.industry ?? "—"}</td><td>{o.country ?? "—"}</td><td>{o.sizeBand ?? "—"}</td>
-                  <td className="font-mono">{o.fitScore ?? "—"}</td>
+                  <td className="font-mono">{o.fitScore ? `${o.fitScore}/5` : "—"}</td>
                   <td className="text-[12px] text-mute">{o.source}{o.sourceRetrievedAt ? ` · ${o.sourceRetrievedAt.slice(0, 10)}` : ""}</td>
                 </tr>
               ))}

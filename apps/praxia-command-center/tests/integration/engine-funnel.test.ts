@@ -7,6 +7,7 @@ import { createTask, listAgentsWithStatus, updateTaskStatus } from "@/server/ser
 import { createContact, createOrganization, updateOrganization } from "@/server/services/crm";
 import { decideApproval } from "@/server/services/commercial";
 import { clearContactForPilot, loadFunnel, markOutreachSent, outreachGate } from "@/server/services/funnel";
+import { setPrivacyNotice } from "@/server/services/privacy";
 import { importFounderDecisions, type DecisionSeed } from "@/server/seed/decisions";
 import { planWork, runEngine, setEngineConfig } from "@/server/engine/engine";
 import type { EngineProvider } from "@/server/engine/types";
@@ -120,6 +121,10 @@ describe("Phase 2 engine, approvals and funnel", () => {
 
     let f = (await loadFunnel(db, false)).funnel;
     expect(f.accounts.find((a) => a.id === o.id)!.stage).toBe("approved");
+    // RISK-01 C1: nothing is recorded as sent without a privacy notice in force.
+    await expect(markOutreachSent(db, drafts[0]!.id, { sentOn: "2026-10-10", channel: "linkedin" })).rejects.toThrow(/privacy notice/);
+    await setPrivacyNotice(db, { version: "1.0", url: "https://praxia.example/privacidad" }, "founder");
+    await expect(markOutreachSent(db, drafts[0]!.id, { sentOn: "2026-10-10", channel: "email" })).rejects.toThrow(/Email not verified/);
     await markOutreachSent(db, drafts[0]!.id, { sentOn: "2026-10-10", channel: "linkedin" });
     await expect(markOutreachSent(db, drafts[0]!.id, { sentOn: "2026-10-10", channel: "linkedin" })).rejects.toThrow(/Already recorded/);
     f = (await loadFunnel(db, false)).funnel;
@@ -128,6 +133,17 @@ describe("Phase 2 engine, approvals and funnel", () => {
     const [contact] = await db.select().from(contacts).where(eq(contacts.id, c.id));
     expect(contact!.leadStatus).toBe("contacted");
     expect((await outreachGate(db)).used).toBe(1);
+    expect(contact!.privacyNoticeVersion).toBe("1.0");
+    expect(contact!.basisAssessedBy).toBe("founder");
+    expect(contact!.residenceCountry).toBe("MX");
+  });
+
+  it("the pilot is limited to people residing in Mexico", async () => {
+    await importFounderDecisions(db);
+    const { c } = await prospect("Acme Industrial", 5, "Ana Pérez");
+    await decide("D-P07", "B");
+    await expect(clearContactForPilot(db, c.id, "founder", "CO")).rejects.toThrow(/residing in Mexico/);
+    await expect(clearContactForPilot(db, c.id, "founder", "Mexico")).rejects.toThrow(/ISO/);
   });
 
   it("engine failures are recorded with their cause (F3) and the budget is a hard stop", async () => {

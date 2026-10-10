@@ -11,6 +11,7 @@ import type { DB } from "../db/client";
 import { contacts, organizations } from "../db/schema";
 import { createContact, createOrganization, findDuplicateOrganization } from "./crm";
 import { audit, nowIso, type Actor } from "./common";
+import { isSuppressed, retentionDate } from "./privacy";
 
 export type ProspectRow = Record<string, string>;
 
@@ -44,9 +45,11 @@ export function parseCsv(text: string): ProspectRow[] {
 }
 
 const isPending = (v: string | undefined) => !v || /^\[?PENDIENTE|^\[patr[oó]n|^—$|^-$/i.test(v.trim());
-const url = (v: string | undefined) => (v && /^https?:\/\//i.test(v.trim()) ? v.trim() : null);
+/** Research annotations such as "[verificar]" or "[PENDIENTE …]" are stripped from structured fields (QA-01). */
+const stripNotes = (v: string | undefined) => (v ?? "").replace(/\[[^\]]*\]/g, "").trim();
+const url = (v: string | undefined) => { const u = stripNotes(v); return /^https?:\/\/\S+$/i.test(u) ? u : null; };
 const domainOf = (v: string | undefined) => {
-  const d = (v ?? "").trim().toLowerCase().replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/.*$/, "");
+  const d = stripNotes(v).toLowerCase().replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/.*$/, "");
   return d && /^[a-z0-9.-]+\.[a-z]{2,}$/.test(d) ? d : null;
 };
 const isoDate = (v: string | undefined) => (v && /^\d{4}-\d{2}-\d{2}/.test(v) ? v.slice(0, 10) : null);
@@ -94,6 +97,8 @@ export async function importProspects(db: DB, rows: ProspectRow[], opts: { sourc
 
     const person = (r.contacto_nombre ?? "").trim();
     if (isPending(person) || person.length < 2) { res.contactsSkipped++; continue; }
+    // Erased or opted-out people never come back through a re-import (RISK-01 C3/C4).
+    if (await isSuppressed(db, { fullName: person, org: (await db.select({ n: organizations.name }).from(organizations).where(eq(organizations.id, orgId)))[0]?.n })) { res.contactsSkipped++; continue; }
     // Compared in JS: SQLite's lower() only folds ASCII, so "Ángel" would never match itself.
     const known = await db.select({ fullName: contacts.fullName }).from(contacts).where(eq(contacts.organizationId, orgId));
     if (known.some((c) => c.fullName.trim().toLocaleLowerCase() === person.toLocaleLowerCase())) { res.contactsSkipped++; continue; }
@@ -101,7 +106,7 @@ export async function importProspects(db: DB, rows: ProspectRow[], opts: { sourc
       organizationId: orgId, fullName: person, title: r.contacto_cargo || undefined,
       email: undefined, // research holds only an unknown pattern — never stored as an address
       emailStatus: "unknown", linkedinUrl: url(r.contacto_linkedin_url) ?? undefined, source: clip(`${opts.source}${r.fuente_contacto_url ? ` · ${r.fuente_contacto_url}` : ""}`, 200),
-      lawfulBasis: "not_assessed", leadStatus: "researched", ownerAgentId: opts.ownerAgentId ?? null,
+      lawfulBasis: "not_assessed", leadStatus: "researched", ownerAgentId: opts.ownerAgentId ?? null, retainUntil: retentionDate(),
       notes: clip([r.base_legal && `Lawful basis (research): ${r.base_legal}`, r.estado_email && `Email: ${r.estado_email}`].filter(Boolean).join("\n"), 5000),
     }, actor);
     res.contactsCreated++;

@@ -10,6 +10,8 @@ import { Badge, Card, PageHeader, SectionTitle } from "@/components/ui/primitive
 import { ActivityForm } from "@/components/crm/forms";
 import { Timeline } from "@/components/crm/Timeline";
 import { EditContact } from "./EditContact";
+import { PrivacyActions } from "./PrivacyActions";
+import { outboundBlockers } from "@/server/services/privacy";
 
 export default async function ContactDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -19,6 +21,7 @@ export default async function ContactDetail({ params }: { params: Promise<{ id: 
   const [org] = c.organizationId ? await db.select().from(organizations).where(eq(organizations.id, c.organizationId)) : [];
   const acts = await listActivities(db, { contactId: id });
   const opts = await crmOptions(db, includeDemo);
+  const blockers = await outboundBlockers(db, c, { forSending: true, channel: c.email ? "email" : "linkedin" });
   return (
     <div className="mx-auto max-w-[1200px]">
       <PageHeader
@@ -54,6 +57,20 @@ export default async function ContactDetail({ params }: { params: Promise<{ id: 
             <dt className="text-mute">Owner</dt><dd>{c.ownerAgentId ?? "founder"}</dd>
           </dl>
           {c.notes && <p className="mt-4 whitespace-pre-wrap text-niebla">{c.notes}</p>}
+          <div className="mt-5 border-t border-hair pt-4">
+            <SectionTitle label="Privacy" title="Consent & data rights" />
+            <dl className="grid grid-cols-[110px_1fr] gap-y-2">
+              <dt className="text-mute">Resides in</dt><dd>{c.residenceCountry ?? "not recorded"}</dd>
+              <dt className="text-mute">Basis assessed</dt><dd>{c.basisAssessedAt ? `${c.basisAssessedBy} · ${c.basisAssessedAt.slice(0, 10)}` : "no"}</dd>
+              <dt className="text-mute">Privacy notice</dt><dd>{c.privacyNoticeDeliveredAt ? `v${c.privacyNoticeVersion} · ${c.privacyNoticeDeliveredAt.slice(0, 10)}` : "not delivered"}</dd>
+              <dt className="text-mute">Opt-out</dt><dd>{c.optOutAt ? `${c.optOutAt.slice(0, 10)} · ${c.optOutChannel}` : "—"}</dd>
+              <dt className="text-mute">Retain until</dt><dd>{c.retainUntil ?? "—"}</dd>
+            </dl>
+            {!c.isDemo && (blockers.length ? (
+              <ul className="mt-3 list-disc rounded-md border border-warn/40 bg-warn/5 py-2 pr-2 pl-6 text-[12px] text-warn">{blockers.map((b) => <li key={b}>{b}</li>)}</ul>
+            ) : <p className="mt-3 text-[12px] text-ok">Outbound allowed for this person.</p>)}
+            <PrivacyActions contactId={c.id} name={c.fullName} optedOut={!!c.optOutAt} />
+          </div>
         </Card>
       </div>
     </div>

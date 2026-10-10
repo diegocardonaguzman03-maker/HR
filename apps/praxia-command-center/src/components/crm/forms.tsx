@@ -70,7 +70,7 @@ export function OrganizationForm({ initial, onDone }: { initial?: OrgValues; onD
               {["target", "prospect", "client", "former_client", "partner"].map((l) => <option key={l} value={l}>{l.replace("_", " ")}</option>)}
             </Select>
           </Field>
-          <Field label="Fit score (0–100)" hint="Your assessment; no external scoring is applied"><Input name="fitScore" type="number" min={0} max={100} defaultValue={initial.fitScore ?? ""} /></Field>
+          <Field label="ICP fit (1–5)" hint="Your assessment, same scale as the research bases; no external scoring"><Input name="fitScore" type="number" min={1} max={5} defaultValue={initial.fitScore ?? ""} /></Field>
         </>
       )}
       <Field label="Notes" className="sm:col-span-2"><Textarea name="notes" defaultValue={initial?.notes ?? ""} /></Field>

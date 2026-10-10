@@ -74,6 +74,11 @@ describe("CRM rules", () => {
   it("blocks outbound activity to suppressed contacts and progresses lead status from real interactions", async () => {
     const org = await createOrganization(db, { name: "Gamma" });
     const c = await createContact(db, { organizationId: org.id, fullName: "Luis Pérez", email: "luis@gamma.example" });
+    // RISK-01 C1: no outbound record until the founder assesses the lawful basis.
+    await expect(logActivity(db, { type: "email", direction: "outbound", subject: "Intro (sent manually)", occurredAt: new Date().toISOString(), contactId: c.id })).rejects.toThrow(/Lawful basis not assessed/);
+    await expect(updateContact(db, c.id, { lawfulBasis: "existing_relationship" }, "engine:test")).rejects.toThrow(/Only the founder/);
+    const assessed = await updateContact(db, c.id, { lawfulBasis: "existing_relationship" });
+    expect(assessed.basisAssessedBy).toBe("founder");
     await logActivity(db, { type: "email", direction: "outbound", subject: "Intro (sent manually)", occurredAt: new Date().toISOString(), contactId: c.id });
     await logActivity(db, { type: "email", direction: "inbound", subject: "Reply", occurredAt: new Date().toISOString(), contactId: c.id });
     await updateContact(db, c.id, { doNotContact: true });

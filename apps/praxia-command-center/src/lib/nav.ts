@@ -8,7 +8,7 @@ export const NAV = [
   { href: "/world", label: "PRAXIA World", icon: Globe2, status: "live" },
   { href: "/sales", label: "Sales", icon: BarChart3, status: "live" },
   { href: "/crm", label: "CRM", icon: Users, status: "live" },
-  { href: "/outreach", label: "Outreach", icon: Send, status: "planned" },
+  { href: "/outreach", label: "Outreach", icon: Send, status: "live" },
   { href: "/marketing", label: "Marketing", icon: Megaphone, status: "planned" },
   { href: "/projects", label: "Projects", icon: Briefcase, status: "live" },
   { href: "/finance", label: "Finance", icon: Wallet, status: "live" },

@@ -144,6 +144,63 @@ switch (cmd) {
     result = { taskId, status: "waiting_approval" };
     break;
   }
+  case "qa-fixes": {
+    // QA-01 (PRX-0013) data conditions: merge Rappi, drop the repeated Coppel contact, split DHL Express, clean URLs.
+    const { organizations: O, contacts: C, agentTasks: T, activities: A, opportunities: OP } = await import("../src/server/db/schema");
+    const { eq: E, and: AND } = await import("drizzle-orm");
+    const { audit: AUD, nowIso: NOW } = await import("../src/server/services/common");
+    const done: string[] = [];
+    const orgs = await db.select().from(O);
+    const byName = (n: string) => orgs.find((o) => o.name === n);
+    const rappi = byName("Rappi"), rappiMx = byName("Rappi México");
+    if (rappi && rappiMx) {
+      await db.update(C).set({ organizationId: rappiMx.id, updatedAt: NOW() }).where(E(C.organizationId, rappi.id));
+      await db.update(A).set({ organizationId: rappiMx.id }).where(E(A.organizationId, rappi.id));
+      await db.update(OP).set({ organizationId: rappiMx.id }).where(E(OP.organizationId, rappi.id));
+      await db.update(T).set({ entityId: rappiMx.id }).where(AND(E(T.entityType, "organization"), E(T.entityId, rappi.id)));
+      await db.update(O).set({ notes: `${rappiMx.notes}\n\nMerged from "Rappi" (sector 02, QA-01):\n${rappi.notes}`.slice(0, 5000), fitScore: Math.max(rappiMx.fitScore ?? 0, rappi.fitScore ?? 0) || null, updatedAt: NOW() }).where(E(O.id, rappiMx.id));
+      await db.delete(O).where(E(O.id, rappi.id));
+      await AUD(db, ACTOR, "organization.merge", "organization", rappiMx.id, { mergedId: rappi.id }, { into: rappiMx.id, reason: "QA-01 duplicate" });
+      done.push("Rappi merged into Rappi México");
+    }
+    const ban = byName("Grupo Coppel — BanCoppel"), grp = byName("Grupo Coppel");
+    if (ban && grp) {
+      const dupes = (await db.select().from(C).where(E(C.organizationId, ban.id))).filter((c) => c.fullName === "Diego Coppel Sullivan");
+      const keep = (await db.select().from(C).where(E(C.organizationId, grp.id))).find((c) => c.fullName === "Diego Coppel Sullivan");
+      for (const d of keep ? dupes : []) {
+        await db.delete(C).where(E(C.id, d.id));
+        await AUD(db, ACTOR, "contact.merge_duplicate", "contact", keep!.id, { duplicateId: d.id, organization: ban.name }, { kept: keep!.id, reason: "QA-01: same person in two orgs" });
+        await db.update(O).set({ notes: `${ban.notes}\nDecision-maker (Diego Coppel Sullivan, DG de Grupo Coppel) is recorded under "Grupo Coppel" (QA-01).`.slice(0, 5000), updatedAt: NOW() }).where(E(O.id, ban.id));
+        done.push("Coppel duplicate contact removed");
+      }
+    }
+    const base = args[0]!;
+    const rows = fs.readdirSync(base).filter((d) => /^0[1-6]-/.test(d)).flatMap((d) => fs.readdirSync(path.join(base, d)).filter((f) => f.startsWith("base-") && f.endsWith(".csv")).flatMap((f) => parseCsv(fs.readFileSync(path.join(base, d, f), "utf8"))));
+    const dhlx = rows.find((r) => r.empresa === "DHL Express México");
+    if (dhlx && !byName("DHL Express México")) {
+      const notes = [dhlx.trigger_detectado && `Trigger: ${dhlx.trigger_detectado}`, dhlx.fuente_trigger_url && `Trigger source: ${dhlx.fuente_trigger_url}`, dhlx.justificacion_fit && `ICP fit: ${dhlx.justificacion_fit}`, dhlx.servicio_praxia_sugerido && `Suggested offer: ${dhlx.servicio_praxia_sugerido}`, dhlx.prioridad && `Priority: ${dhlx.prioridad}`, "Shares dhl.com with DHL Supply Chain México — separate business unit (QA-01)."].filter(Boolean).join("\n");
+      // Inserted directly: it shares dhl.com with DHL Supply Chain (domain is unique), so the domain stays empty.
+      const [o] = await db.insert(O).values({ name: "DHL Express México", website: "https://www.dhl.com/mx-es/home/express.html", industry: "Logística y cadena de suministro", country: dhlx.pais_sede || null, sizeBand: (dhlx.tamano_aprox || "").slice(0, 120) || null, notes: notes.slice(0, 5000), source: "research:PRX-0012", sourceRetrievedAt: "2026-10-09" }).returning();
+      await AUD(db, ACTOR, "organization.create", "organization", o!.id, null, { name: o!.name, reason: "QA-01: split from DHL Supply Chain" });
+      const fit = Number(dhlx.fit_icp_1a5);
+      await db.update(O).set({ fitScore: fit >= 1 && fit <= 5 ? fit : null }).where(E(O.id, o!.id));
+      done.push("DHL Express México split from DHL Supply Chain");
+    }
+    let cleaned = 0;
+    for (const o of await db.select().from(O)) {
+      const web = o.website?.includes("[") ? o.website.replace(/\s*\[[^\]]*\]/g, "").trim() : o.website;
+      if (web !== o.website) { await db.update(O).set({ website: /^https?:\/\/\S+$/.test(web ?? "") ? web : null, updatedAt: NOW() }).where(E(O.id, o.id)); cleaned++; }
+      if (o.domain?.includes("[")) {
+        const dom = o.domain.replace(/\s*\[[^\]]*\]/g, "").trim();
+        const clash = (await db.select({ id: O.id }).from(O).where(E(O.domain, dom))).length;
+        await db.update(O).set({ domain: clash ? null : dom || null, updatedAt: NOW() }).where(E(O.id, o.id));
+        cleaned++;
+      }
+    }
+    if (cleaned) { await AUD(db, ACTOR, "organization.clean_urls", "organization", "bulk", null, { cleaned, reason: "QA-01: strip research annotations" }); done.push(`${cleaned} URL/domain fields cleaned`); }
+    result = done;
+    break;
+  }
   default:
     throw new Error(`unknown command ${cmd}`);
 }

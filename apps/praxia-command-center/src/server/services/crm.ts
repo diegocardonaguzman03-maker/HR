@@ -3,6 +3,7 @@ import { z } from "zod";
 import type { DB } from "../db/client";
 import { activities, contacts, contracts, opportunities, organizations, pipelineStages, proposals, ACTIVITY_TYPES, CURRENCIES } from "../db/schema";
 import { validateStageMove, FIELD_LABELS, type StageRec } from "@/domain/pipeline";
+import { assertOutboundAllowed, guardContactPatch } from "./privacy";
 import { audit, BusinessRuleError, demoFilter, nowIso, type Actor } from "./common";
 
 const optText = z.string().trim().max(2000).optional().transform((v) => (v ? v : null));
@@ -67,7 +68,7 @@ export async function updateOrganization(db: DB, id: string, raw: Partial<z.inpu
   const patch: Record<string, unknown> = { ...Object.fromEntries(Object.entries(parsed).filter(([k]) => k in raw && k !== "isDemo" && k !== "sourceRetrievedAt")), updatedAt: nowIso() };
   if ("domain" in raw || "website" in raw) patch.domain = normalizeDomain((parsed.domain ?? parsed.website) || before.domain);
   if (raw.lifecycle) patch.lifecycle = z.enum(["target", "prospect", "client", "former_client", "partner"]).parse(raw.lifecycle);
-  if (raw.fitScore !== undefined) patch.fitScore = raw.fitScore === null ? null : z.number().int().min(0).max(100).parse(raw.fitScore);
+  if (raw.fitScore !== undefined) patch.fitScore = raw.fitScore === null ? null : z.number().int().min(1, "fit is 1–5").max(5, "fit is 1–5").parse(raw.fitScore);
   const [after] = await db.update(organizations).set(patch).where(eq(organizations.id, id)).returning();
   await audit(db, actor, "organization.update", "organization", id, before, after);
   return after!;
@@ -99,6 +100,8 @@ export const contactInput = z.object({
   leadScore: z.number().int().min(0).max(100).optional().nullable(),
   ownerAgentId: z.string().optional().nullable(),
   doNotContact: z.boolean().optional().default(false),
+  residenceCountry: z.string().trim().toUpperCase().regex(/^[A-Z]{2}$/, "2-letter ISO country").optional().nullable(),
+  retainUntil: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional().nullable(),
   notes: z.string().trim().max(5000).optional().default(""),
   isDemo: z.boolean().optional().default(false),
 });
@@ -121,7 +124,7 @@ export async function updateContact(db: DB, id: string, raw: Partial<z.input<typ
   const [before] = await db.select().from(contacts).where(eq(contacts.id, id));
   if (!before) throw new BusinessRuleError("Contact not found.");
   const parsed = contactInput.partial().parse(raw);
-  const patch = Object.fromEntries(Object.entries(parsed).filter(([k]) => k in raw && k !== "isDemo"));
+  const patch = guardContactPatch(before, Object.fromEntries(Object.entries(parsed).filter(([k]) => k in raw && k !== "isDemo")), actor);
   if (patch.email && patch.email !== before.email) {
     const [dup] = await db.select({ id: contacts.id, fullName: contacts.fullName }).from(contacts).where(eq(contacts.email, patch.email as string));
     if (dup && dup.id !== id) throw new BusinessRuleError(`A contact with this email already exists (${dup.fullName}).`, { duplicateId: dup.id });
@@ -287,6 +290,7 @@ export async function logActivity(db: DB, raw: z.input<typeof activityInput>, ac
     if (!c) throw new BusinessRuleError("Contact not found.");
     if (input.direction === "outbound" && c.doNotContact)
       throw new BusinessRuleError(`${c.fullName} is on the suppression list (do not contact). Outbound activity is blocked.`, { rule: "suppression" });
+    if (input.direction === "outbound") await assertOutboundAllowed(db, c, { channel: input.type });
     organizationId = organizationId ?? c.organizationId;
     // Lead progression from real logged interactions.
     const progression: Record<string, string> = { outbound: "contacted", inbound: "engaged" };

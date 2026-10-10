@@ -47,6 +47,9 @@ export const companySettings = sqliteTable("company_settings", {
   targetBasis: text("target_basis").$type<"recognized" | "collected" | "contracted">().notNull().default("recognized"),
   defaultTaxRate: real("default_tax_rate").notNull().default(0.16),
   /** Autonomous engine (Phase 2). Off until the founder turns it on; budget is a hard daily cap. */
+  /** Privacy notice in force (RISK-01 C1): no outbound contact is possible until one is recorded. */
+  privacyNoticeVersion: text("privacy_notice_version"),
+  privacyNoticeUrl: text("privacy_notice_url"),
   engineConfig: text("engine_config", { mode: "json" }).$type<EngineConfig>().notNull().default({ enabled: false, maxTasksPerRun: 3, dailyBudgetUsdMicros: 2_000_000 }),
   updatedAt: updatedAt(),
 });
@@ -141,6 +144,16 @@ export const contacts = sqliteTable(
     leadScore: integer("lead_score"),
     ownerAgentId: text("owner_agent_id"),
     doNotContact: integer("do_not_contact", { mode: "boolean" }).notNull().default(false),
+    /** Privacy controls (RISK-01 C2): ISO country of residence, who assessed the lawful basis and when, notice, opt-out, retention. */
+    residenceCountry: text("residence_country"),
+    basisAssessedBy: text("basis_assessed_by"),
+    basisAssessedAt: text("basis_assessed_at"),
+    privacyNoticeVersion: text("privacy_notice_version"),
+    privacyNoticeDeliveredAt: text("privacy_notice_delivered_at"),
+    optOutAt: text("opt_out_at"),
+    optOutChannel: text("opt_out_channel"),
+    sourceVerifiedAt: text("source_verified_at"),
+    retainUntil: text("retain_until"),
     notes: text("notes").notNull().default(""),
     isDemo: isDemo(),
     createdAt: createdAt(),
@@ -455,6 +468,20 @@ export const approvals = sqliteTable(
     createdAt: createdAt(),
   },
   (t) => [index("approval_status").on(t.status)],
+);
+
+/** Suppression list (RISK-01 C3): SHA-256 of a normalized email, domain or person key — never the clear value. */
+export const suppressions = sqliteTable(
+  "suppressions",
+  {
+    id: id(),
+    kind: text("kind").$type<"email" | "domain" | "person">().notNull(),
+    valueHash: text("value_hash").notNull(),
+    reason: text("reason").notNull().default(""),
+    createdBy: text("created_by").notNull(),
+    createdAt: createdAt(),
+  },
+  (t) => [uniqueIndex("suppression_unique").on(t.kind, t.valueHash)],
 );
 
 /** One autonomous engine run (who triggered it, provider, tasks executed, real cost). */

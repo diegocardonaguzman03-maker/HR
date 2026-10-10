@@ -50,11 +50,18 @@ Deferred (documented in `docs/FINANCIAL_DEFINITIONS.md` and `docs/SECURITY.md`):
 | F1–F4 from DEV-03: only the founder closes work waiting for approval (send-back requeues with feedback); waiting work always has an inbox row; errors keep their cause; mirror refuses missing output files | `agents.ts`, `commercial.ts`, `artifact/mirror.mts` |
 | Founder inbox: agents' decisions with A/B/C options (22 from PRX-0013), 1:1 drafts (approve → you send → mark sent), agent outputs (approve / send back) | `/approvals` |
 | Funnel & progress dashboard: 11-stage account funnel with conversion and blockers, bottleneck, D-P07 pilot clearing, agent throughput, approvals SLA, engine runs and spend | `/analytics` |
-| Tests | 84 unit/integration (6 for the engine/funnel flow) |
+| Privacy controls from RISK-01: C1 outbound blockers (lawful basis, privacy notice in force, verified email for email, suppression, opt-out), C2 assessment/residence/notice/opt-out/retention fields, C3 hashed suppression list, C4 ARCO export and erasure (redacts audit, blocks re-import), C5 retention review, C6 founder-only basis and suppression changes, C7 research labels never become the lawful basis | `src/server/services/privacy.ts`, contact page, Settings |
+| QA-01 data conditions: fit on a 1–5 scale everywhere; research annotations stripped from URLs/domains; Rappi merged, repeated Coppel contact removed, DHL Express split from DHL Supply Chain; import counts pinned in the test | `importer.ts`, `artifact/mirror.mts qa-fixes` |
+| Scheduled engine runs (`POST /api/engine/tick`, bearer secret, only when the founder turned them on) | `src/app/api/engine/tick/route.ts` |
+| ADR-003 schema guard: the Artifact database records the schema version; an older page goes read-only and unknown columns are ignored | `artifact/src/runtime.ts` |
+| Decisions sync: founder choices in the inbox → `praxia/01-equipo/registro-de-decisiones.md` | `artifact/decisions-sync.mts` |
+| Outreach page with real data (drafts, approvals, sent, replies, meetings; no opens/clicks tracking) | `/outreach` |
+| Tests | 90 unit/integration (engine, funnel, approvals, privacy) + 8 e2e |
 
 ## What is NOT built yet (honest)
 - **Sending** of any message: there is no email/LinkedIn integration; the founder sends approved drafts and records them. Hunter/OAuth sending needs D-P07 + RISK-01's conditions.
-- **Scheduler** for the engine (the flag exists; runs are founder-triggered today). D-P09 (single writer) before multi-writer sync.
+- **Hosting the scheduler:** the endpoint exists; a cron that calls it (and the server's `ANTHROPIC_API_KEY`) must be configured where the app is deployed. D-P09 (single writer) before multi-writer sync.
+- **Legal prerequisites for the first contact (RISK-01):** responsible party (legal name, address, privacy email), the privacy notice itself and a lawyer's review — inputs from the founder, not code.
 - **Full projects module**, finance v2 (payables, reconciliation, exports), multiple ICPs, ES/EN interface (D-P06).
 - **PRAXIA World:** other animation states (walking between rooms, discussing, presenting), chat. → Phase 3
 - Marketing and Knowledge are still "planned" pages with no fake controls.

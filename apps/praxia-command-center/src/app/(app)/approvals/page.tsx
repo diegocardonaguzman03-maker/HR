@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { desc, eq, inArray } from "drizzle-orm";
 import { getContext } from "@/server/context";
-import { agentTasks, approvals, type DecisionOption } from "@/server/db/schema";
+import { agentTasks, approvals, companySettings, type DecisionOption } from "@/server/db/schema";
 import { demoFilter } from "@/server/services/common";
 import { outreachGate } from "@/server/services/funnel";
 import { Badge, Card, EmptyState, PageHeader, SectionTitle } from "@/components/ui/primitives";
@@ -21,6 +21,7 @@ export default async function ApprovalsPage() {
   const tasks = taskIds.length ? await db.select({ id: agentTasks.id, agentId: agentTasks.agentId, output: agentTasks.output, title: agentTasks.title }).from(agentTasks).where(inArray(agentTasks.id, taskIds)) : [];
   const taskOf = new Map(tasks.map((t) => [t.id, t]));
   const gate = await outreachGate(db);
+  const noticeVersion = (await db.select({ v: companySettings.privacyNoticeVersion }).from(companySettings))[0]?.v ?? null;
   const pending = all.filter((a) => a.status === "pending");
   const decisions = pending.filter((a) => a.kind === "founder_decision").sort((x, y) => Number(meta(y).key === "D-P07") - Number(meta(x).key === "D-P07") || (meta(x).deadline ?? "").localeCompare(meta(y).deadline ?? ""));
   const drafts = pending.filter((a) => a.kind === "outbound_message");
@@ -99,6 +100,7 @@ export default async function ApprovalsPage() {
       {toSend.length > 0 && (
         <Card id="send" className="mb-6 p-5">
           <SectionTitle label="Your move" title="Approved — send them yourself, then mark as sent" />
+          {!noticeVersion && <p className="mb-3 rounded-md border border-warn/40 bg-warn/5 px-3 py-2 text-[12.5px] text-warn">Record the privacy notice in Settings first — a message can&apos;t be marked as sent without it (RISK-01 C1), and it should be linked in the message.</p>}
           <ul className="flex flex-col gap-3">
             {toSend.map((a) => { const m = meta(a); return (
               <li key={a.id} className="flex flex-wrap items-start justify-between gap-3 rounded-lg border border-hair p-4">

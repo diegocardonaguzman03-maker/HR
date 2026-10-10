@@ -18,6 +18,7 @@ import { agents, agentTasks, approvals, companySettings, contacts, engineRuns, o
 import { audit, BusinessRuleError, nowIso, type Actor } from "../services/common";
 import { createTask, ensureTaskApproval, updateTask, updateTaskStatus } from "../services/agents";
 import { outreachGate } from "../services/funnel";
+import { outboundBlockers } from "../services/privacy";
 import { compareTasks } from "@/domain/tasks";
 import { isCleared } from "@/domain/funnel";
 import type { EngineProvider } from "./types";
@@ -94,6 +95,7 @@ export async function planWork(db: DB, actor: Actor = "founder", origin: "decisi
     for (const { c, org } of cs) {
       if (n >= room) break;
       if (!isCleared(c, gate) || has(open, OUTREACH_PREFIX, c.id) || has(done, OUTREACH_PREFIX, c.id)) continue;
+      if ((await outboundBlockers(db, c)).length) continue; // suppressed / opted out since clearing
       await add("SAL-02", `${OUTREACH_PREFIX}${c.fullName} (${org.name})`, "Draft ONE personalized 1:1 first message (LinkedIn or email, ≤ 120 words, Spanish unless the account works in English). Open with the account's verified trigger, offer one useful idea, ask for a 20-minute conversation. No attachments, no pricing, no claims without evidence. The founder reviews and sends it himself.", "contact", c.id, "high");
       n++;
     }
@@ -216,6 +218,8 @@ async function requestOutreachApproval(db: DB, t: typeof agentTasks.$inferSelect
   // Re-check the gate at the moment of drafting (the founder may have changed D-P07 or the contact meanwhile).
   const gate = await outreachGate(db);
   if (!isCleared(r.c, gate)) throw new Error(`Not cleared to contact: ${gate.open ? "lawful basis not assessed or do-not-contact" : gate.reason}`);
+  const blockers = await outboundBlockers(db, r.c);
+  if (blockers.length) throw new Error(`Not cleared to contact: ${blockers.join(" ")}`);
   const [existing] = await db.select({ id: approvals.id }).from(approvals).where(and(eq(approvals.entityType, "agent_task"), eq(approvals.entityId, t.id), eq(approvals.status, "pending")));
   if (existing) return existing.id;
   const [a] = await db.insert(approvals).values({

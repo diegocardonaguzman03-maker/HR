@@ -26,8 +26,8 @@ export async function decideAction(approvalId: string, decision: "approved" | "r
 export async function markOutreachSentAction(approvalId: string, sentOn: string, channel: "linkedin" | "email" | "call") {
   return run((db, actor) => markOutreachSent(db, approvalId, { sentOn, channel }, actor), PAGES);
 }
-export async function clearForPilotAction(contactId: string) {
-  return run((db, actor) => clearContactForPilot(db, contactId, actor), PAGES);
+export async function clearForPilotAction(contactId: string, residenceCountry: string) {
+  return run((db, actor) => clearContactForPilot(db, contactId, actor, residenceCountry), PAGES);
 }
 export async function loadDecisionsAction() {
   return run(async (db, actor) => ({ ...(await importFounderDecisions(db, actor)), backfilled: await backfillApprovals(db, actor) }), PAGES);

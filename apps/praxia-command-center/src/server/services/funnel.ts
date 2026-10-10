@@ -5,9 +5,10 @@
 import { and, desc, eq, gte, inArray } from "drizzle-orm";
 import { z } from "zod";
 import type { DB } from "../db/client";
-import { activities, agentTasks, approvals, contacts, engineRuns, opportunities, organizations, pipelineStages, proposals } from "../db/schema";
+import { activities, agentTasks, approvals, companySettings, contacts, engineRuns, opportunities, organizations, pipelineStages, proposals } from "../db/schema";
 import { audit, BusinessRuleError, demoFilter, nowIso, type Actor } from "./common";
 import { logActivity } from "./crm";
+import { assertOutboundAllowed, outboundBlockers, retentionDate } from "./privacy";
 import { computeFunnel, type OutreachGate } from "@/domain/funnel";
 
 export const CONTACT_POLICY_KEY = "D-P07";
@@ -31,7 +32,7 @@ export async function outreachGate(db: DB): Promise<OutreachGate> {
 export async function loadFunnel(db: DB, includeDemo: boolean) {
   const gate = await outreachGate(db);
   const orgs = await db.select({ id: organizations.id, name: organizations.name, fitScore: organizations.fitScore, lifecycle: organizations.lifecycle }).from(organizations).where(demoFilter(organizations.isDemo, includeDemo));
-  const cs = await db.select({ id: contacts.id, organizationId: contacts.organizationId, lawfulBasis: contacts.lawfulBasis, doNotContact: contacts.doNotContact, leadStatus: contacts.leadStatus }).from(contacts).where(demoFilter(contacts.isDemo, includeDemo));
+  const cs = await db.select({ id: contacts.id, organizationId: contacts.organizationId, lawfulBasis: contacts.lawfulBasis, doNotContact: contacts.doNotContact, leadStatus: contacts.leadStatus, optOutAt: contacts.optOutAt }).from(contacts).where(demoFilter(contacts.isDemo, includeDemo));
   const acts = await db.select({ organizationId: activities.organizationId, contactId: activities.contactId, type: activities.type, direction: activities.direction }).from(activities).where(demoFilter(activities.isDemo, includeDemo));
   const opps = await db.select({ organizationId: opportunities.organizationId, stageKind: pipelineStages.kind }).from(opportunities).innerJoin(pipelineStages, eq(opportunities.stageId, pipelineStages.id)).where(demoFilter(opportunities.isDemo, includeDemo));
   const props = await db.select({ organizationId: opportunities.organizationId, status: proposals.status }).from(proposals).innerJoin(opportunities, eq(proposals.opportunityId, opportunities.id)).where(demoFilter(proposals.isDemo, includeDemo));
@@ -69,18 +70,26 @@ export async function loadProgress(db: DB, includeDemo: boolean, today: string) 
   };
 }
 
-/** Founder clears a contact for the D-P07 pilot: records the assessed lawful basis. Only possible while the gate is open. */
-export async function clearContactForPilot(db: DB, contactId: string, actor: Actor = "founder") {
+/**
+ * Founder clears a contact for the D-P07 pilot: records the assessed lawful basis, who assessed it, when, and where the
+ * person resides (RISK-01 C2). A capped pilot (D-P07 = B) is limited to people residing in Mexico.
+ */
+export async function clearContactForPilot(db: DB, contactId: string, actor: Actor = "founder", residenceCountry = "MX") {
   if (actor !== "founder") throw new BusinessRuleError("Only the founder can clear a contact for outreach.");
   const gate = await outreachGate(db);
   if (!gate.open) throw new BusinessRuleError(gate.reason);
+  const country = residenceCountry.trim().toUpperCase();
+  if (!/^[A-Z]{2}$/.test(country)) throw new BusinessRuleError("Country of residence as a 2-letter ISO code (e.g. MX).");
+  if (gate.cap !== null && country !== "MX") throw new BusinessRuleError("The D-P07 pilot is limited to people residing in Mexico (RISK-01).");
   const [c] = await db.select().from(contacts).where(eq(contacts.id, contactId));
   if (!c) throw new BusinessRuleError("Contact not found.");
-  if (c.doNotContact) throw new BusinessRuleError("This contact is on the do-not-contact list.");
+  const blockers = (await outboundBlockers(db, c)).filter((b) => !b.startsWith("Lawful basis"));
+  if (blockers.length) throw new BusinessRuleError(blockers.join(" "));
   if (c.lawfulBasis !== "not_assessed") return c;
-  const note = `Cleared for the D-P07 pilot by the founder on ${nowIso().slice(0, 10)} (legitimate interest, 1:1, B2B role). Check RISK-01's pilot conditions before sending.`;
-  const [after] = await db.update(contacts).set({ lawfulBasis: "legitimate_interest", notes: c.notes ? `${c.notes}\n${note}` : note, updatedAt: nowIso() }).where(eq(contacts.id, contactId)).returning();
-  await audit(db, actor, "contact.clear_for_pilot", "contact", contactId, { lawfulBasis: c.lawfulBasis }, { lawfulBasis: "legitimate_interest" });
+  const now = nowIso();
+  const note = `Cleared for the D-P07 pilot by the founder on ${now.slice(0, 10)} (legitimate interest, 1:1, B2B role, resides in ${country}). Check RISK-01's pilot conditions before sending.`;
+  const [after] = await db.update(contacts).set({ lawfulBasis: "legitimate_interest", basisAssessedBy: actor, basisAssessedAt: now, residenceCountry: country, retainUntil: c.retainUntil ?? retentionDate(), notes: c.notes ? `${c.notes}\n${note}` : note, updatedAt: now }).where(eq(contacts.id, contactId)).returning();
+  await audit(db, actor, "contact.clear_for_pilot", "contact", contactId, { lawfulBasis: c.lawfulBasis }, { lawfulBasis: "legitimate_interest", residenceCountry: country });
   return after!;
 }
 
@@ -95,8 +104,12 @@ export async function markOutreachSent(db: DB, approvalId: string, raw: z.input<
   if (a.status !== "approved") throw new BusinessRuleError("Approve the draft before recording it as sent.");
   const meta = (a.meta ?? {}) as { contactId?: string; organizationId?: string; draft?: string; sentAt?: string };
   if (meta.sentAt) throw new BusinessRuleError(`Already recorded as sent on ${meta.sentAt}.`);
+  const [c] = meta.contactId ? await db.select().from(contacts).where(eq(contacts.id, meta.contactId)) : [];
+  if (!c) throw new BusinessRuleError("The contact no longer exists.");
+  await assertOutboundAllowed(db, c, { channel, forSending: true });
+  const [settings] = await db.select({ v: companySettings.privacyNoticeVersion }).from(companySettings).where(eq(companySettings.id, 1));
   await logActivity(db, { type: channel, direction: "outbound", subject: `1:1 message sent (approved draft)`, body: meta.draft ?? a.detail, occurredAt: `${sentOn}T12:00:00.000Z`, organizationId: meta.organizationId ?? null, contactId: meta.contactId ?? null }, actor);
-  if (meta.contactId) await db.update(contacts).set({ leadStatus: "contacted", updatedAt: nowIso() }).where(and(eq(contacts.id, meta.contactId), inArray(contacts.leadStatus, ["new", "researched"])));
+  await db.update(contacts).set({ privacyNoticeVersion: settings!.v, privacyNoticeDeliveredAt: `${sentOn}T12:00:00.000Z`, updatedAt: nowIso() }).where(eq(contacts.id, c.id));
   await db.update(approvals).set({ meta: { ...meta, sentAt: sentOn, channel } }).where(eq(approvals.id, approvalId));
   await audit(db, actor, "outreach.sent", "contact", meta.contactId ?? a.entityId, null, { approvalId, sentOn, channel });
 }

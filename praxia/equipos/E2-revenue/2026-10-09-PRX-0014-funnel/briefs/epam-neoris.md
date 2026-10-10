@@ -1,51 +1,47 @@
+Revisión: cambios de QA-01 aplicados (2026-10-10)
+
 # Brief de cuenta · EPAM Systems (EPAM NEORIS)
 
-> PRX-0014 · SAL-02 · 2026-10-09 · Borrador interno · No se contactó a nadie · Fuente base: PRX-0012 (CRM)
+> PRX-0014 · SAL-02 · 2026-10-09 · Borrador interno · No se contactó a nadie · Base: PRX-0012
+
+**Tier:** B en STR-01 (70 puntos: 5/2/0). En el top 20 de SAL-02 (PRX-0013) quedó fuera por trigger viejo. La regla la decide el Founder (STR-01, decisión 1, 2026-10-16).
 
 ## 1. Mensaje clave
-La cuenta encaja con el ICP (M&A e integración de talento en México), pero su trigger ya cumplió 23 meses y no tiene decisor identificado. Recomiendo bajarla a nurture hasta encontrar una señal nueva [PROPUESTA].
+La cuenta encaja con el ICP (M&A e integración de talento en México), pero su trigger tiene 23 meses y no hay decisor identificado. Recomiendo pasarla a C (reserva) hasta que aparezca una señal nueva [PROPUESTA].
 
 ## 2. Por qué ahora
-- **Trigger:** EPAM adquirió el 99.7% de NEORIS el 1-nov-2024 (US$626.3 M) y el 0.3% restante el 2-ene-2025. Los ajustes al precio de compra aparecen en el 10-K FY2025. Fuente: [10-K FY2025, SEC](https://www.sec.gov/Archives/edgar/data/1352010/000135201026000015/epam-20251231.htm) **[No verificado]**: el 2026-10-09 la red de este entorno no alcanzó sec.gov ni la fuente secundaria (Portal ERP).
-- **Escala:** NEORIS tenía ~4,800 profesionales al cierre y 2,600+ en México (dato 2023) [PENDIENTE: confirmar fuente y vigencia].
-- **Frescura:** baja. Al 2026-10-09 el cierre tiene 23 meses, por encima del criterio de menos de 12 meses que usó PRX-0013, donde EPAM quedó excluida por «trigger viejo». La urgencia de la integración probablemente ya pasó o el trabajo ya se contrató [Supuesto]. Quedan abiertas, sin evidencia pública, preguntas como «¿qué no se adoptó?». No hay hoy una señal de compra activa.
+- **Trigger:** EPAM adquirió el 99.7% de NEORIS el 1-nov-2024 (US$626.3 M) y el resto el 2-ene-2025. Fuente: [10-K FY2025, SEC](https://www.sec.gov/Archives/edgar/data/1352010/000135201026000015/epam-20251231.htm) **[No verificado]**: sec.gov y Portal ERP inaccesibles el 2026-10-09.
+- **Escala:** NEORIS, 2,600+ personas en México (dato 2023) [PENDIENTE: vigencia].
+- **Frescura:** baja. Con la regla de STR-01, el trigger pasa de 24 meses en nov-2026 y la cuenta bajaría a 60 (C) [cálculo SAL-02, por validar]. La urgencia probablemente pasó [Supuesto].
 
 ## 3. Hipótesis del problema de adopción [Supuesto]
-Dos culturas de delivery quedaron bajo un solo operating model. Los procesos, herramientas y decision rights comunes pudieron adoptarse en papel sin cambiar las rutinas de los equipos ni de los mandos medios en México. El costo se vería en la consistencia del delivery, en la utilización y en la retención del talento clave. No hay datos públicos que lo confirmen. Se validaría en discovery con la guía de §8.3.
+Dos culturas de delivery quedaron bajo un operating model. Procesos y decision rights comunes pudieron adoptarse en papel sin cambiar las rutinas de los mandos medios en México. El costo: consistencia del delivery, utilización y retención de talento clave. Sin datos públicos; se valida en discovery (§8.3).
 
 ## 4. Oferta PRAXIA que encaja
-- **Entrada:** *A Transformation Diagnostic*, equivalente al Adoption Gap Diagnostic de §5.2 (3 a 5 semanas; USD 8k–15k, precio experimental) [PROPUESTA]. Sirve para medir qué prácticas comunes se adoptaron y dónde se rompió la integración.
-- **Continuación:** *D Organizational Effectiveness Advisory*, que corresponde al servicio 04 Organizational Design & Operating Model (§5.1) para decision rights y ownership [PROPUESTA].
-- Los nombres siguen pendientes (D-P02). El filtro de USD 20k solo se pasa si existe una brecha de integración viva que un sponsor quiera medir [Supuesto].
+- **Entrada:** *A Transformation Diagnostic* = Adoption Gap Diagnostic (§5.2; 3 a 5 semanas; USD 8k–15k, experimental) [PROPUESTA]: qué prácticas comunes se adoptaron y dónde se rompió la integración.
+- **Continuación:** *D Organizational Effectiveness Advisory* (servicio 04, §5.1) para decision rights y ownership [PROPUESTA].
+- Nombres sujetos a D-P02. El filtro de USD 20k pide una brecha viva que un sponsor quiera medir [Supuesto].
 
 ## 5. Quién decide
-**No está identificado.** No hay fuente pública vigente del Country Manager ni del HR Director de México [PENDIENTE]. Los roles a mapear (§3.2) son:
-- Economic Buyer: líder de EPAM México o de la región LatAm con P&L.
-- Champion: People/HR Director MX o el responsable de la integración.
-- Influencer: líderes de delivery y de prácticas de ingeniería.
-- Gatekeeper: procurement corporativo, que probablemente compra desde EE. UU. [Supuesto].
+**No identificado.** Sin fuente pública vigente del Country Manager ni del HR Director de México [PENDIENTE]. Roles a mapear (§3.2): Economic Buyer (líder México o LatAm con P&L), Champion (People/HR MX o responsable de la integración), Influencer (delivery e ingeniería), Gatekeeper (procurement, probablemente en EE. UU. [Supuesto]).
 
-Para encontrarlos, revisar solo fuentes públicas: los comunicados y el sitio de relación con inversionistas de EPAM, el 10-K y el proxy statement, la sala de prensa de EPAM y NEORIS, la prensa de negocios mexicana, los programas de conferencias del sector y la página pública de la empresa en LinkedIn. Se registran la URL y la fecha de cada dato. No se infieren nombres ni correos: el patrón `@epam.com` sigue NO VERIFICADO.
+Solo fuentes públicas con URL y fecha; nada inferido; patrón de correo desconocido.
 
 ## 6. Riesgos y conflictos de interés a revisar
-- **Competidor:** EPAM vende consultoría de transformación. Venderle puede leerse como reventa, y la entrada viable es solo la adopción interna.
-- **Decisión fuera de México:** el poder de compra puede estar en la sede [Supuesto], el mismo motivo por el que se excluyó a TCS y BMW.
-- **Fuente sin verificar:** las cifras del trigger no se citan hacia afuera hasta confirmarlas.
-- **Datos personales:** el repositorio es público (D-P08). No se registran personas sin fuente pública y aplica §8.2 (LFPDPPP, GDPR, CAN-SPAM).
-- **Conflictos:** el Founder debe declarar cualquier relación previa o actual con EPAM, NEORIS o sus clientes.
+- **Competidor:** EPAM vende consultoría de transformación; la única entrada viable es la adopción interna. Decisión pendiente (ver abajo).
+- **Decisión fuera de México [Supuesto]:** en el top 20 de SAL-02 eso excluyó a TCS y BMW; en STR-01, BMW Planta SLP es #22 (75).
+- **Datos personales:** repositorio público (D-P08); §8.2 (LFPDPPP, GDPR, CAN-SPAM).
+- **Conflictos:** el Founder declara cualquier relación con EPAM, NEORIS o sus clientes.
 
-## 7. Siguiente paso único
-RES-02 hace una búsqueda de dos horas en fuentes públicas desde una red con acceso. Su objetivo es confirmar el 10-K y buscar una señal de menos de 12 meses en EPAM México, como un nuevo líder local, una reorganización o un cambio a un delivery con IA. Contacto: ninguno hasta que se decida D-P07.
+## 7. Siguiente paso único (interno)
+RES-02 busca dos horas en fuentes públicas: confirmar el 10-K y una señal de menos de 12 meses en EPAM México (nuevo líder, reorganización o delivery con IA). Sin contacto hasta decidir D-P07.
 
 ## Decisión requerida del Founder
-- **A.** Mantener la cuenta en prioridad A y avanzar a la hipótesis de valor.
-- **B.** Pasarla a nurture (Tier 3) y reactivarla solo si aparece un trigger nuevo y verificado.
-- **C.** Descartarla por el conflicto con un competidor.
+**Pendiente, no se decide aquí:** decisión de QA-01 sobre cuentas competidoras (A cliente, B puerta de competidor a C, C esperar a SAL-01; fecha 2026-10-16). Con B, EPAM pasa a C.
 
-**Recomendación:** B. Es coherente con la exclusión de PRX-0013 y cuesta 2 h de investigación.
-**Riesgo:** con A se gasta tiempo del Founder en una urgencia que ya caducó. Con C se pierde una cuenta con buen encaje si la integración sigue abierta.
-**Fecha límite:** 2026-10-16.
+Tier en la escala de STR-01: **A.** mantener en B (70) y avanzar a hipótesis de valor; **B.** pasar a C (reserva) y subirla solo con trigger nuevo verificado; **C.** descartar.
+**Recomendación:** B; cuesta 2 h de investigación. **Riesgo:** A gasta tiempo en una urgencia vencida; C pierde una cuenta con buen encaje. **Fecha límite:** 2026-10-16.
 
 ```json
-{"brief_id":"PRX-0014","owner":"SAL-02","objective":"Brief interno EPAM NEORIS","deliverable":"praxia/equipos/E2-revenue/2026-10-09-PRX-0014-funnel/briefs/epam-neoris.md","evidence_and_sources":["10-K FY2025 SEC [No verificado]"],"assumptions":["Urgencia vencida","Compra desde EE. UU."],"risks":["Competidor","Sin decisor"],"decisions_needed":["A/B/C prioridad"],"next_owner":"QA-01","review_status":"borrador"}
+{"brief_id":"PRX-0014","owner":"SAL-02","objective":"Brief EPAM NEORIS corregido","deliverable":"praxia/equipos/E2-revenue/2026-10-09-PRX-0014-funnel/briefs/epam-neoris.md","evidence_and_sources":["10-K FY2025 SEC (no verificado)","STR-01-tiers.md"],"assumptions":["Urgencia vencida","Caída a C en nov-2026"],"risks":["Competidor","Sin decisor"],"decisions_needed":["Cuentas competidoras (QA-01)","Tier B/C/descarte","D-P07"],"next_owner":"QA-01","review_status":"corregido tras QA-01"}
 ```

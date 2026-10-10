@@ -122,6 +122,7 @@ function Shell() {
       {!print && <Sidebar approvals={pending} />}
       <div className="min-w-0 flex-1">
         {!print && <Topbar includeDemo={demo} approvals={pending} devOpen={false} />}
+        {rt.readOnly && <div className="border-b border-bad/40 bg-bad/10 px-6 py-2 text-[12.5px] text-ivory" role="alert">{rt.readOnly}</div>}
         {rt.storage === "browser" && <div className="border-b border-hair bg-graphite-2 px-6 py-2 font-mono text-[11px] tracking-wider text-niebla uppercase" role="note">Standalone mode — data is saved only in this browser (localStorage). Clearing site data erases it.</div>}
         {!rt.persisted && <div className="border-b border-warn/40 bg-warn/10 px-6 py-2 font-mono text-[11px] tracking-wider text-warn uppercase" role="note">Not connected to the Artifact database — changes in this view are not saved.</div>}
         {demo && !print && (

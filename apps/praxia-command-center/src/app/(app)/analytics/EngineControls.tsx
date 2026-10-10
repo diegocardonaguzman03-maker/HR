@@ -92,8 +92,9 @@ export function ClearForPilotButton({ contactId, disabled }: { contactId: string
   const [pending, start] = useTransition();
   return (
     <Button size="sm" disabled={pending || disabled} onClick={async () => {
-      if (!(await askConfirm({ title: "Clear this contact for the pilot?", message: "Records that you assessed the lawful basis (legitimate interest, 1:1, B2B role). The engine may then draft a message for your approval. Nothing is sent." }))) return;
-      start(async () => { const r = await clearForPilotAction(contactId); if (r.ok) { toast.ok("Cleared for the pilot."); router.refresh(); } else toast.bad(r.error); });
+      const country = await askText({ title: "Clear this contact for the pilot?", message: "Records that you assessed the lawful basis (legitimate interest, 1:1, B2B role) and where the person resides. The engine may then draft a message for your approval. Nothing is sent.", label: "Country of residence (ISO code)", defaultValue: "MX", required: true, confirmLabel: "Clear" });
+      if (!country) return;
+      start(async () => { const r = await clearForPilotAction(contactId, country); if (r.ok) { toast.ok("Cleared for the pilot."); router.refresh(); } else toast.bad(r.error); });
     }}>Clear</Button>
   );
 }

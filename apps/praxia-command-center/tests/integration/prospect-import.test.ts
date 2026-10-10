@@ -22,7 +22,12 @@ describe("prospect import (PRX-0012 → CRM)", () => {
     const orgs = await db.select().from(organizations);
     const people = await db.select().from(contacts);
     expect(orgs.length).toBe(r.organizationsCreated);
-    expect(orgs.length).toBeGreaterThan(100);
+    // Pinned (QA-01): 152 rows → 116 organizations (Rappi merged once "[verificar]" is stripped), 130 contacts, 22 skipped.
+    expect(r).toMatchObject({ rows: 152, organizationsCreated: 116, contactsCreated: 130, contactsSkipped: 22 });
+    expect(orgs.some((o) => /\[/.test(o.website ?? "") || /\[/.test(o.domain ?? ""))).toBe(false);
+    expect(people.every((c) => c.retainUntil !== null)).toBe(true);
+    // C7: the research's "Interés legítimo" label stays a note, never the lawful basis.
+    expect(people.some((c) => /Lawful basis \(research\)/.test(c.notes))).toBe(true);
     expect(people.length).toBe(r.contactsCreated);
     expect(people.every((c) => c.email === null && c.lawfulBasis === "not_assessed" && c.emailStatus === "unknown" && !c.doNotContact)).toBe(true);
     expect(orgs.every((o) => o.source === "research:PRX-0012" && !o.isDemo)).toBe(true);
