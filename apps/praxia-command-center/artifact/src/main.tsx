@@ -14,6 +14,7 @@ import { boot, getRuntime, onRemoteChange } from "./runtime";
 import { nav } from "./router";
 import { NotFoundSignal, RedirectSignal } from "./shims/next-navigation";
 import { cookies } from "./shims/next-headers";
+import { prepareEngineProvider } from "./shims/engine-provider";
 
 import Overview from "@/app/(app)/page";
 import World from "@/app/(app)/world/page";
@@ -171,6 +172,7 @@ function App() {
   const [phase, setPhase] = useState<"boot" | "setup" | "ready" | "error">("boot");
   const [msg, setMsg] = useState("");
   useEffect(() => {
+    void prepareEngineProvider(); // the engine runs on the viewer's Claude; resolves in the background
     boot()
       .then(async (rt) => {
         const s = await rt.db.select().from(companySettings);

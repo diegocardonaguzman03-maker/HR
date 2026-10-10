@@ -41,18 +41,20 @@
 
 Deferred (documented in `docs/FINANCIAL_DEFINITIONS.md` and `docs/SECURITY.md`): payables, tax ledger, per-currency revaluation, session revocation, ARCO workflow, strict CSP, interface language (D-P06).
 
-## What is NOT built yet (honest)
-- **Agent execution engine** (LLM provider, tool permissions, cost per task, chat with agents). Tasks are queued and the founder updates their status by hand. → Phase 2
-- **Outreach** (campaigns, personalization, sequences, email OAuth sending, LinkedIn-assisted workflow) and the **Hunter** integration. → Phase 2
-- **Full projects module** (milestones, tasks, risks, client workspace). Phase 1 covers margin per contract only. → Phase 2
-- **Finance:** accounts payable, recurring expense schedules, bank reconciliation, CSV/XLSX exports, cash forecast beyond 30 days. → Phase 2
-- **Multiple ICPs and account discovery.** → Phase 2
-- **Spanish/English interface** (the UI is English; data can be in either language). → Phase 2
-- **PRAXIA World:** other animation states (walking between rooms, discussing, presenting) tied to multi-agent events, chat. → Phase 3
-- Marketing, Knowledge and Analytics are shown as "planned" pages with no fake controls.
+## Phase 2 — Autonomous engine, funnel and founder inbox ✅ (started October 9–10, 2026)
+| Delivered | Where |
+|---|---|
+| Engine: `planWork` turns the funnel into agent tasks (account briefs for ICP-fit ≥ 4 accounts, 1:1 drafts only for contacts cleared under D-P07, next steps for open deals); `runEngine` executes queued tasks as the assigned agent | `src/server/engine/` |
+| Providers: Anthropic API on the server (`claude-opus-5-5`, credentials by env var, cost per task in micro-USD); the viewer's own Claude (`sample`) in the published Artifact | `provider.ts`, `artifact/src/shims/engine-provider.ts` |
+| Guardrails: founder-only configuration and manual runs, hard daily budget, scheduled runs off by default, every output → `waiting_approval` + inbox row, no tool that sends or publishes, contact gate re-checked at drafting time | `engine.ts`, `funnel.ts` |
+| F1–F4 from DEV-03: only the founder closes work waiting for approval (send-back requeues with feedback); waiting work always has an inbox row; errors keep their cause; mirror refuses missing output files | `agents.ts`, `commercial.ts`, `artifact/mirror.mts` |
+| Founder inbox: agents' decisions with A/B/C options (22 from PRX-0013), 1:1 drafts (approve → you send → mark sent), agent outputs (approve / send back) | `/approvals` |
+| Funnel & progress dashboard: 11-stage account funnel with conversion and blockers, bottleneck, D-P07 pilot clearing, agent throughput, approvals SLA, engine runs and spend | `/analytics` |
+| Tests | 84 unit/integration (6 for the engine/funnel flow) |
 
-## Phase 2 proposal (pending founder decision)
-1. Execution engine + LLM provider (credentials entered by the founder, per-agent permissions, cost per task).
-2. Outreach v1 with Hunter + email OAuth, approval of every message, suppression and stop-on-reply (prior review by RISK-01).
-3. Projects v1 + finance v2 (payables, reconciliation, exports).
-4. ES/EN interface.
+## What is NOT built yet (honest)
+- **Sending** of any message: there is no email/LinkedIn integration; the founder sends approved drafts and records them. Hunter/OAuth sending needs D-P07 + RISK-01's conditions.
+- **Scheduler** for the engine (the flag exists; runs are founder-triggered today). D-P09 (single writer) before multi-writer sync.
+- **Full projects module**, finance v2 (payables, reconciliation, exports), multiple ICPs, ES/EN interface (D-P06).
+- **PRAXIA World:** other animation states (walking between rooms, discussing, presenting), chat. → Phase 3
+- Marketing and Knowledge are still "planned" pages with no fake controls.

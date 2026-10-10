@@ -28,6 +28,7 @@ const ALIAS = {
   "@/server/context": S("server-context.ts"),
   "@/server/db/client": S("server-db-client.ts"),
   "@/app/actions/session": S("actions-session.ts"),
+  "@/server/engine/provider": S("engine-provider.ts"),
 };
 
 const aliasPlugin = {

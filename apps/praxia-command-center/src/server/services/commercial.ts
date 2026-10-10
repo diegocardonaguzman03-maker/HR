@@ -1,10 +1,11 @@
 import { and, asc, desc, eq, max, sql } from "drizzle-orm";
 import { z } from "zod";
 import type { DB } from "../db/client";
-import { approvals, contracts, opportunities, organizations, proposalLines, proposals, revenueEntries, services, pipelineStages, CURRENCIES } from "../db/schema";
+import { agentTasks, approvals, contracts, opportunities, organizations, proposalLines, proposals, revenueEntries, services, pipelineStages, CURRENCIES } from "../db/schema";
 import { proposalTotals } from "@/domain/finance";
 import { audit, BusinessRuleError, getSettings, nowIso, snapshotFor, todayIso, type Actor } from "./common";
 import { moveOpportunityStage } from "./crm";
+import { updateTaskStatus } from "./agents";
 
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "expected YYYY-MM-DD");
 export const MARGIN_TARGET = 0.5;
@@ -104,22 +105,33 @@ export async function submitProposalForApproval(db: DB, id: string, actor: Actor
 }
 
 /** Founder decision on any approval. Side effects depend on the approval kind. */
-export async function decideApproval(db: DB, approvalId: string, decision: "approved" | "rejected", note: string | null, actor: Actor = "founder") {
+export async function decideApproval(db: DB, approvalId: string, decision: "approved" | "rejected", note: string | null, actor: Actor = "founder", choice: string | null = null) {
   z.enum(["approved", "rejected"]).parse(decision);
   const [a] = await db.select().from(approvals).where(eq(approvals.id, approvalId));
   if (!a) throw new BusinessRuleError("Approval not found.");
   if (a.status !== "pending") throw new BusinessRuleError(`Already ${a.status}.`);
   // Only the founder decides. The demo seed may decide its own fictional (is_demo) approvals, under its own actor id.
   if (actor !== "founder" && !(actor === "system:demo-seed" && a.isDemo)) throw new BusinessRuleError("Only the founder can decide approvals.");
+  if (a.kind === "founder_decision" && decision === "approved") {
+    if (!choice || !(a.options ?? []).some((o) => o.id === choice)) throw new BusinessRuleError("Choose one of the options to record the decision.");
+  } else if (choice) throw new BusinessRuleError("Only founder decisions take an option.");
+  if (decision === "rejected" && (a.kind === "agent_output" || a.kind === "outbound_message") && !note?.trim()) throw new BusinessRuleError("Say what to change — the agent reworks it with your feedback.");
   const now = nowIso();
-  await db.update(approvals).set({ status: decision, decisionNote: note, decidedAt: now }).where(eq(approvals.id, approvalId));
+  await db.update(approvals).set({ status: decision, decisionNote: note, decidedAt: now, choice: decision === "approved" ? choice : null }).where(eq(approvals.id, approvalId));
+  if ((a.kind === "agent_output" || a.kind === "outbound_message") && a.entityType === "agent_task") {
+    const [t] = await db.select({ status: agentTasks.status }).from(agentTasks).where(eq(agentTasks.id, a.entityId));
+    if (t?.status === "waiting_approval") {
+      if (decision === "approved") await updateTaskStatus(db, a.entityId, "completed", {}, actor);
+      else await updateTaskStatus(db, a.entityId, "queued", { error: note ?? "" }, actor);
+    }
+  }
   if (a.kind === "proposal_pricing") {
     await db
       .update(proposals)
       .set(decision === "approved" ? { status: "approved", approvedAt: now, updatedAt: now } : { status: "draft", updatedAt: now })
       .where(and(eq(proposals.id, a.entityId), eq(proposals.status, "internal_review")));
   }
-  await audit(db, actor, `approval.${decision}`, a.entityType, a.entityId, { approvalId, status: "pending" }, { status: decision, note });
+  await audit(db, actor, `approval.${decision}`, a.entityType, a.entityId, { approvalId, status: "pending" }, { status: decision, note, ...(choice ? { choice } : {}) });
   return { ...a, status: decision };
 }
 

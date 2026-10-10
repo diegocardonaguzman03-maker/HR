@@ -1,7 +1,7 @@
 import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
 import type { DB } from "../db/client";
-import { agentEvents, agents, agentTasks, TASK_PRIORITIES, type AgentStatus, type AvatarConfig, type TaskStatus } from "../db/schema";
+import { agentEvents, agents, agentTasks, approvals, TASK_PRIORITIES, type AgentStatus, type AvatarConfig, type TaskStatus } from "../db/schema";
 import { audit, BusinessRuleError, nowIso, type Actor } from "./common";
 import { canTransition, compareTasks, isOpenTask, isOverdue, REASSIGNABLE } from "@/domain/tasks";
 
@@ -12,8 +12,11 @@ import { canTransition, compareTasks, isOpenTask, isOverdue, REASSIGNABLE } from
  */
 export const EXECUTION_ENGINE = {
   connected: false,
-  reason: "No autonomous engine yet (Phase 2): agents work only when the founder or an orchestrated Claude Code session runs them, and every step is recorded here.",
+  reason: "The autonomous engine (Phase 2) runs only when you start it from Funnel & progress, within its daily budget; between runs idle agents show as offline. Every output waits for your approval.",
 } as const;
+
+/** Marker in event messages written by the engine (actor "engine:<provider>"). */
+export const ENGINE_MARK = "(engine: ";
 
 /** Actor id the orchestrating Claude Code session uses when it records the work of the agents it runs. */
 export const ORCHESTRATOR_ACTOR = "orchestrator:claude-code";
@@ -42,6 +45,11 @@ export async function listAgentsWithStatus(db: DB): Promise<AgentWithStatus[]> {
   const rows = await db.select().from(agents).orderBy(asc(agents.department), asc(agents.id));
   const tasks = await db.select().from(agentTasks).orderBy(desc(agentTasks.updatedAt));
   const today = nowIso().slice(0, 10);
+  // Tasks the autonomous engine is running carry an "(engine: …)" event; they are shown as engine work, not manual.
+  const liveIds = tasks.filter((t) => t.status === "working" || t.status === "waiting_approval" || t.status === "error").map((t) => t.id);
+  const engineTasks = new Set(
+    liveIds.length ? (await db.select({ taskId: agentEvents.taskId, message: agentEvents.message }).from(agentEvents).where(inArray(agentEvents.taskId, liveIds))).filter((e) => e.message.includes(ENGINE_MARK)).map((e) => e.taskId) : [],
+  );
   return rows.map((a) => {
     const mine = tasks.filter((t) => t.agentId === a.id);
     const active = PRECEDENCE.map((s) => mine.filter((t) => t.status === s).sort(compareTasks)[0]).find(Boolean) ?? null;
@@ -57,6 +65,7 @@ export async function listAgentsWithStatus(db: DB): Promise<AgentWithStatus[]> {
       const currentTask = { id: active.id, title: active.title, status: active.status, progress: active.progress, priority: active.priority };
       const status = TASK_TO_AGENT_STATUS[active.status]!;
       if (EXECUTION_ENGINE.connected) return { ...base, status, statusSource: "task" as const, statusNote: `Task: ${active.title}`, currentTask };
+      if (engineTasks.has(active.id)) return { ...base, status, statusSource: "engine" as const, statusNote: `Task: ${active.title} (run by the autonomous engine)`, currentTask };
       if (active.origin === "orchestrator") return { ...base, status, statusSource: "session" as const, statusNote: `Task: ${active.title} (run by ${a.id} in the orchestrated Claude Code session)`, currentTask };
       return { ...base, status, statusSource: "manual" as const, statusNote: `Task: ${active.title} (status set manually by the founder)`, currentTask };
     }
@@ -111,19 +120,39 @@ const EVENT_FOR: Record<TaskStatus, (typeof agentEvents.$inferInsert)["type"] | 
 };
 
 
+/** Creates the pending agent_output approval for a task that waits for the founder (no-op if one is pending). */
+export async function ensureTaskApproval(db: DB, t: typeof agentTasks.$inferSelect, actor: Actor) {
+  const [pending] = await db.select({ id: approvals.id }).from(approvals).where(and(eq(approvals.entityType, "agent_task"), eq(approvals.entityId, t.id), eq(approvals.status, "pending")));
+  if (pending) return pending.id;
+  const [a] = await db
+    .insert(approvals)
+    .values({ kind: "agent_output", title: `${t.agentId}: ${t.title}`, detail: (t.output ?? "").slice(0, 600), entityType: "agent_task", entityId: t.id, requestedBy: actor === "founder" ? t.agentId : actor })
+    .returning();
+  await audit(db, actor, "approval.request", "agent_task", t.id, null, { approvalId: a!.id, kind: "agent_output" });
+  return a!.id;
+}
+
 /** Status change recorded by the founder (manual) or by the engine. Writes the event that drives PRAXIA World. */
 export async function updateTaskStatus(db: DB, taskId: string, status: TaskStatus, opts: { output?: string; error?: string; costUsdMicros?: number } = {}, actor: Actor = "founder") {
   const [t] = await db.select().from(agentTasks).where(eq(agentTasks.id, taskId));
   if (!t) throw new BusinessRuleError("Task not found.");
   if (!canTransition(t.status, status)) throw new BusinessRuleError(`Cannot move a ${t.status} task to ${status}.`);
   if (status === "completed" && !(opts.output ?? t.output)?.trim()) throw new BusinessRuleError("A completed task must have an output (the deliverable or its location).");
+  // F1: work waiting for approval is closed only by the founder. Completing it from the task board approves it.
+  if (t.status === "waiting_approval" && (status === "completed" || status === "queued")) {
+    if (actor !== "founder") throw new BusinessRuleError("Only the founder can approve or send back work that is waiting for approval.");
+    const decision = status === "completed" ? "approved" : "rejected";
+    const note = status === "completed" ? "Approved from the task board." : (opts.error ?? "Sent back for rework.");
+    await db.update(approvals).set({ status: decision, decisionNote: note, decidedAt: nowIso() }).where(and(eq(approvals.entityType, "agent_task"), eq(approvals.entityId, taskId), eq(approvals.status, "pending")));
+  }
   const now = nowIso();
   const [after] = await db
     .update(agentTasks)
     .set({
       status,
       output: opts.output ?? t.output,
-      errorMessage: status === "error" ? (opts.error ?? "Unspecified error") : t.errorMessage,
+      errorMessage: status === "error" ? (opts.error ?? "Unspecified error") : status === "queued" ? null : t.errorMessage,
+      instructions: status === "queued" && t.status === "waiting_approval" && opts.error ? `${t.instructions}\n\nFounder feedback (${now.slice(0, 10)}): ${opts.error}` : t.instructions,
       costUsdMicros: t.costUsdMicros + (opts.costUsdMicros ?? 0),
       progress: status === "completed" ? 100 : status === "queued" ? 0 : t.progress,
       startedAt: status === "working" && !t.startedAt ? now : t.startedAt,
@@ -132,7 +161,9 @@ export async function updateTaskStatus(db: DB, taskId: string, status: TaskStatu
     })
     .where(eq(agentTasks.id, taskId))
     .returning();
-  const message = actor === "founder" ? `Manual update by founder: ${status}` : actor === ORCHESTRATOR_ACTOR ? `${t.agentId} · ${status}${status === "completed" && opts.output ? ` → ${opts.output}` : ""} (Claude Code session)` : status;
+  // F2: anything waiting for approval has a row in the founder's inbox.
+  if (status === "waiting_approval") await ensureTaskApproval(db, after!, actor);
+  const message = actor === "founder" ? `Manual update by founder: ${status}` : actor.startsWith("engine:") ? `${t.agentId} · ${status} ${ENGINE_MARK}${actor.slice(7)})` : actor === ORCHESTRATOR_ACTOR ? `${t.agentId} · ${status}${status === "completed" && opts.output ? ` → ${opts.output}` : ""} (Claude Code session)` : status;
   await db.insert(agentEvents).values({ agentId: t.agentId, taskId, type: EVENT_FOR[status]!, message });
   await audit(db, actor, `task.${status}`, "agent_task", taskId, { status: t.status }, { status });
   return after!;

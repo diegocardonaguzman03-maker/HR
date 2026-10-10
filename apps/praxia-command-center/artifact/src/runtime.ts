@@ -45,7 +45,7 @@ function localStore(): ArtifactDb | null {
 export const TABLES = [
   "company_settings", "fx_rates", "services", "pipeline_stages", "agents", "organizations", "contacts", "opportunities",
   "activities", "proposals", "proposal_lines", "contracts", "revenue_entries", "invoices", "payments", "expenses",
-  "agent_tasks", "agent_events", "approvals", "audit_log",
+  "agent_tasks", "agent_events", "approvals", "engine_runs", "audit_log",
 ] as const;
 
 type Snap = Map<string, Map<string, string>>; // table -> id -> JSON

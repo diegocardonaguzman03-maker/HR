@@ -8,7 +8,7 @@ export const TASK_TRANSITIONS: Readonly<Record<TaskStatus, readonly TaskStatus[]
   queued: ["working", "cancelled"],
   working: ["waiting_input", "waiting_approval", "completed", "error", "cancelled"],
   waiting_input: ["working", "cancelled"],
-  waiting_approval: ["working", "completed", "cancelled"],
+  waiting_approval: ["working", "queued", "completed", "cancelled"],
   error: ["queued", "cancelled"],
   completed: [],
   cancelled: [],

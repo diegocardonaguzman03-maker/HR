@@ -46,8 +46,12 @@ export const companySettings = sqliteTable("company_settings", {
   /** Which revenue measure the target is compared against (open decision in the skill §16). */
   targetBasis: text("target_basis").$type<"recognized" | "collected" | "contracted">().notNull().default("recognized"),
   defaultTaxRate: real("default_tax_rate").notNull().default(0.16),
+  /** Autonomous engine (Phase 2). Off until the founder turns it on; budget is a hard daily cap. */
+  engineConfig: text("engine_config", { mode: "json" }).$type<EngineConfig>().notNull().default({ enabled: false, maxTasksPerRun: 3, dailyBudgetUsdMicros: 2_000_000 }),
   updatedAt: updatedAt(),
 });
+
+export type EngineConfig = { enabled: boolean; maxTasksPerRun: number; dailyBudgetUsdMicros: number };
 
 export const fxRates = sqliteTable(
   "fx_rates",
@@ -425,11 +429,15 @@ export const agentEvents = sqliteTable(
 
 // ───────────────────────────── Governance ─────────────────────────────
 
+export const APPROVAL_KINDS = ["proposal_pricing", "outbound_message", "contract", "expense", "agent_output", "founder_decision"] as const;
+export type ApprovalKind = (typeof APPROVAL_KINDS)[number];
+export type DecisionOption = { id: string; label: string };
+
 export const approvals = sqliteTable(
   "approvals",
   {
     id: id(),
-    kind: text("kind").$type<"proposal_pricing" | "outbound_message" | "contract" | "expense" | "agent_output">().notNull(),
+    kind: text("kind").$type<ApprovalKind>().notNull(),
     title: text("title").notNull(),
     detail: text("detail").notNull().default(""),
     entityType: text("entity_type").notNull(),
@@ -437,12 +445,31 @@ export const approvals = sqliteTable(
     requestedBy: text("requested_by").notNull().default("system"),
     status: text("status").$type<"pending" | "approved" | "rejected">().notNull().default("pending"),
     decisionNote: text("decision_note"),
+    /** founder_decision: the options offered (A/B/C…) and the one the founder chose. */
+    options: text("options", { mode: "json" }).$type<DecisionOption[] | null>(),
+    choice: text("choice"),
+    /** Free-form context: recommendation, deadline, sources, funnel stage it unblocks, draft text… */
+    meta: text("meta", { mode: "json" }).$type<Record<string, unknown> | null>(),
     decidedAt: text("decided_at"),
     isDemo: isDemo(),
     createdAt: createdAt(),
   },
   (t) => [index("approval_status").on(t.status)],
 );
+
+/** One autonomous engine run (who triggered it, provider, tasks executed, real cost). */
+export const engineRuns = sqliteTable("engine_runs", {
+  id: id(),
+  startedAt: text("started_at").notNull().default(sql`(strftime('%Y-%m-%dT%H:%M:%fZ','now'))`),
+  finishedAt: text("finished_at"),
+  provider: text("provider").notNull(),
+  model: text("model"),
+  trigger: text("trigger").notNull().default("founder"),
+  tasksRun: integer("tasks_run").notNull().default(0),
+  tasksFailed: integer("tasks_failed").notNull().default(0),
+  costUsdMicros: integer("cost_usd_micros").notNull().default(0),
+  note: text("note").notNull().default(""),
+});
 
 export const auditLog = sqliteTable(
   "audit_log",

@@ -1,0 +1,736 @@
+[
+  {
+    "key": "COM-01-brief",
+    "title": "Distribución del brief interno semanal de PRX-0013",
+    "question": "¿Cuándo se distribuye al equipo el brief interno semanal de PRX-0013?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Distribuirlo hoy, dentro del repositorio"
+      },
+      {
+        "id": "B",
+        "label": "Distribuirlo después de la revisión de QA-01, el 15 de octubre"
+      },
+      {
+        "id": "C",
+        "label": "Esperar al entregable consolidado del 16 de octubre"
+      }
+    ],
+    "recommended": "A",
+    "risks": "Que se lea la simulación demo de USD 4.3M como dato real. El brief expone la tensión entre congelar funciones del CRM (CEO-01) y la Fase 2 pedida por el Founder.",
+    "cost": "Ninguno.",
+    "deadline": "2026-10-12",
+    "sources": [
+      "COM-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/COM-01-brief.md"
+    ],
+    "unlocks": "Que los 28 agentes trabajen con la misma versión de prioridades y decisiones pendientes",
+    "funnelStage": "operations"
+  },
+  {
+    "key": "D-P07",
+    "title": "D-P07 · Cuándo usar los datos reales de prospectos para un primer contacto",
+    "question": "¿Se congela el contacto con los 130 contactos importados, se abre un piloto acotado o se contacta ya?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Congelar el contacto: los datos quedan como investigación de solo lectura hasta cerrar las condiciones §3 de RISK-01"
+      },
+      {
+        "id": "B",
+        "label": "Piloto acotado: hasta 10 contactos que residan en México, 1:1 por el Founder, con condiciones 1–6 y 9; sin UE, Brasil ni Colombia"
+      },
+      {
+        "id": "C",
+        "label": "Contactar ya: sin aviso de privacidad, sin responsable y sin bloqueo en el CRM"
+      }
+    ],
+    "recommended": "A",
+    "risks": "RISK-01: A hoy y pasar a B al cumplir las condiciones; C sería incumplimiento documentado. A retrasa la primera conversación; B deja abierta la duda legal (LFPDPPP) hasta que opine un abogado. QA-01 llama «D-P07 = B» al uso interno sin contacto, que equivale a la A de RISK-01.",
+    "cost": "Abogado [PENDIENTE cotizar]; C1–C3 y C6: 1–2 días de DEV-01 [Supuesto]; correcciones de datos de QA-01: 2–3 h",
+    "deadline": "2026-10-16",
+    "sources": [
+      "RISK-01",
+      "QA-01",
+      "SAL-02",
+      "COM-01",
+      "CEO-01",
+      "FIN-01",
+      "DEV-01",
+      "MKT-02",
+      "MKT-03",
+      "DAT-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E8-gobierno/2026-10-09-PRX-0013-consolidacion-crm/RISK-01-privacidad.md",
+      "praxia/equipos/E8-gobierno/2026-10-09-PRX-0013-consolidacion-crm/QA-01-qa-datos.md",
+      "praxia/equipos/E2-revenue/2026-10-09-PRX-0013-consolidacion-crm/SAL-02-top20.md",
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/COM-01-brief.md",
+      "praxia/equipos/E1-direccion/2026-10-09-PRX-0013-consolidacion-crm/CEO-01-cadencia.md",
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/FIN-01-pronostico.md",
+      "praxia/equipos/E6-producto-experiencia/2026-10-09-PRX-0013-consolidacion-crm/DEV-01-arquitectura.md",
+      "praxia/equipos/E3-marca-demanda/2026-10-09-PRX-0013-consolidacion-crm/MKT-02-borradores.md",
+      "praxia/equipos/E3-marca-demanda/2026-10-09-PRX-0013-consolidacion-crm/MKT-03-embudo.md",
+      "praxia/equipos/E5-research-datos-ip/2026-10-09-PRX-0013-consolidacion-crm/DAT-01-diccionario.md"
+    ],
+    "unlocks": "Primer contacto 1:1 del Founder (piloto de ≤10 contactos en México) y paso de registros a Contacted",
+    "funnelStage": "contacted"
+  },
+  {
+    "key": "CEO-01-foco-30d",
+    "title": "Uso de los próximos 30 días: congelar funciones del CRM y vender",
+    "question": "¿Se congelan las funciones nuevas del CRM para vender durante 30 días o se sigue construyendo el Command Center?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Congelar funciones nuevas del CRM (solo correcciones) y vender: prioridades 1 a 5 y revisión de pipeline de los lunes"
+      },
+      {
+        "id": "B",
+        "label": "Seguir construyendo el Command Center y contactar después"
+      },
+      {
+        "id": "C",
+        "label": "Repartir el esfuerzo a la mitad"
+      }
+    ],
+    "recommended": "A",
+    "risks": "Sin D-P07, la prioridad 5 se limita a la red personal del Founder; saturación del Founder (D-P01). Tensión (COM-01): el Founder pidió la Fase 2 y varios agentes (UX-01, SAL-01, DEL-02, RES-02) proponen construir campos nuevos.",
+    "cost": "30 minutos semanales de revisión más las conversaciones",
+    "deadline": "2026-10-16",
+    "sources": [
+      "CEO-01",
+      "COM-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E1-direccion/2026-10-09-PRX-0013-consolidacion-crm/CEO-01-cadencia.md",
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/COM-01-brief.md"
+    ],
+    "unlocks": "Meta [Supuesto] al 8 nov: 10 conversaciones ejecutivas, 3 discovery y 1 propuesta de diagnóstico en desarrollo",
+    "funnelStage": "contacted"
+  },
+  {
+    "key": "STR-01-tiers",
+    "title": "Regla de tiers A/B/C para las 117 cuentas del CRM",
+    "question": "¿Qué regla se adopta para clasificar las 117 cuentas en tiers A, B y C antes del primer contacto?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Adoptar la regla de STR-01 tal como está (10×Fit + 10×Trigger + 5×Sector): 16 A, 24 B y 77 C"
+      },
+      {
+        "id": "B",
+        "label": "Usar la fórmula ABM de §8.2, que pide que el Founder indique primero con qué cuentas tiene acceso"
+      },
+      {
+        "id": "C",
+        "label": "Conservar la prioridad de PRX-0012: 36 cuentas A, con criterios distintos según el analista"
+      }
+    ],
+    "recommended": "A",
+    "risks": "El orden cambia cuando se conozca el acceso del Founder; triggers sin reverificar (RES-01). Conflicto: MKT-01 y SAL-02 trabajan con las 36 cuentas A de PRX-0012, CEO-01 pide máximo 15 cuentas A y SAL-01 propone otros cortes ABM (≥85 / 72–84).",
+    "cost": "Esfuerzo bajo",
+    "deadline": "2026-10-16",
+    "sources": [
+      "STR-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E1-direccion/2026-10-09-PRX-0013-consolidacion-crm/STR-01-tiers.md"
+    ],
+    "unlocks": "Lista de 16 cuentas tier A que ordena la primera ola de ABM 1:1",
+    "funnelStage": "accounts"
+  },
+  {
+    "key": "COI-conflictos",
+    "title": "Declaración de conflictos de interés en cuentas marcadas",
+    "question": "¿Se declara por escrito, cuenta por cuenta, si hay conflicto de interés, o se excluyen todas las cuentas marcadas?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Declarar por escrito, cuenta por cuenta, si hay conflicto; la cuenta conserva su tier y nadie la contacta hasta confirmarlo"
+      },
+      {
+        "id": "B",
+        "label": "Excluir todas las cuentas marcadas con posible conflicto"
+      }
+    ],
+    "recommended": "A",
+    "risks": "Las fuentes difieren en el alcance: STR-01 marca 20 cuentas (7 del top 25: Nemak, FEMSA, Coppel, Softtek, APM, Nu, Banco Plata); SAL-02 pide declarar Metalsa, Nemak, Spin, BanCoppel y Nu; MKT-02, Softtek y Nemak. RISK-01 lo pone como condición previa al contacto.",
+    "cost": "Sin costo indicado en las fuentes; requiere la declaración escrita del Founder",
+    "deadline": "2026-10-16",
+    "sources": [
+      "STR-01",
+      "SAL-02",
+      "MKT-02"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E1-direccion/2026-10-09-PRX-0013-consolidacion-crm/STR-01-tiers.md",
+      "praxia/equipos/E2-revenue/2026-10-09-PRX-0013-consolidacion-crm/SAL-02-top20.md",
+      "praxia/equipos/E3-marca-demanda/2026-10-09-PRX-0013-consolidacion-crm/MKT-02-borradores.md"
+    ],
+    "unlocks": "Libera las cuentas marcadas (7 del top 25) y los borradores de Softtek y Nemak para contacto",
+    "funnelStage": "ready"
+  },
+  {
+    "key": "MKT-01-primera-ola",
+    "title": "Alcance y ritmo de la primera ola de contacto",
+    "question": "¿Cuántas y cuáles cuentas se activan en la primera ola de contacto ABM?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Activar todo: T1 de los seis sectores (36 cuentas) en lotes de 10 (MKT-01) o las 20 del top-20 en tres olas (SAL-02)"
+      },
+      {
+        "id": "B",
+        "label": "Activar un subconjunto: T1 de los sectores 01–03, 18 cuentas (MKT-01), o solo la Ola 1 (SAL-02); el resto a nurture"
+      },
+      {
+        "id": "C",
+        "label": "Solo contenido (T2/T3 para todos) hasta cerrar D-P07 (MKT-01)"
+      }
+    ],
+    "recommended": "B",
+    "risks": "MKT-01 condiciona B a D-P07 y a verificar URL A1–A21, y pide aprobar la notación T#/S-#/A#; SAL-02 recomienda B junto con reordenar con la red del Founder. Conflicto: la Ola 1 de SAL-02 incluye financieros y retail (BanBajío, Banamex, GNP, FEMSA), fuera de 01–03.",
+    "cost": "Sin gasto externo; 2–3 h/semana del Founder para T1 (MKT-01); 1–2 h de preparación (SAL-02)",
+    "deadline": "2026-10-16",
+    "sources": [
+      "MKT-01",
+      "SAL-02"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E3-marca-demanda/2026-10-09-PRX-0013-consolidacion-crm/MKT-01-mensajes.md",
+      "praxia/equipos/E2-revenue/2026-10-09-PRX-0013-consolidacion-crm/SAL-02-top20.md"
+    ],
+    "unlocks": "Lista activa de la primera ola (máximo 10 cuentas T1 a la vez) para preparar el contacto 1:1",
+    "funnelStage": "ready"
+  },
+  {
+    "key": "MKT-02-borradores",
+    "title": "Primeros mensajes de LinkedIn para cinco cuentas T1",
+    "question": "¿Qué se hace con los cinco borradores de primer mensaje (Softtek, Nemak, Kavak, GNP y Palacio de Hierro)?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Aprobar los cinco; enviar por LinkedIn tras D-P07 y la verificación de URL, en orden Softtek, GNP, Nemak, Palacio, Kavak"
+      },
+      {
+        "id": "B",
+        "label": "Aprobar solo los de 01–03 (Softtek, Nemak y Kavak); GNP y Palacio de Hierro quedan listos para la segunda ola"
+      },
+      {
+        "id": "C",
+        "label": "Pedir otra versión con otro ángulo o con otras cuentas (p. ej., BanBajío en lugar de GNP)"
+      }
+    ],
+    "recommended": "A",
+    "risks": "Conflicto: MKT-02 recomienda A, pero MKT-01 recomienda activar primero solo 01–03 (equivale a B). Riesgos: enviar antes de D-P07, triggers o cargos desactualizados, parecer frío masivo. Pendiente: versión en inglés para Nemak y Palacio (MKT-02 sugiere sí).",
+    "cost": "Sin gasto externo; unos 60 min del Founder para adaptar los textos (A) o 40 min (B)",
+    "deadline": "2026-10-16",
+    "sources": [
+      "MKT-02"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E3-marca-demanda/2026-10-09-PRX-0013-consolidacion-crm/MKT-02-borradores.md"
+    ],
+    "unlocks": "Envío 1:1 por LinkedIn de los primeros mensajes, empezando por Softtek (ventana de 90 días del nuevo CEO)",
+    "funnelStage": "contacted"
+  },
+  {
+    "key": "RES-01-verificacion-url",
+    "title": "Verificación visual de las cifras A1–A21 antes del primer envío",
+    "question": "¿Quién abre y verifica visualmente las 15 URL de las cifras A1–A21 antes de que salgan a un prospecto?",
+    "options": [
+      {
+        "id": "A",
+        "label": "El Founder abre las 15 URL y marca OK en el CRM"
+      },
+      {
+        "id": "B",
+        "label": "Una sesión con acceso web abre las URL y QA-01 deja registro"
+      },
+      {
+        "id": "C",
+        "label": "El primer contacto sale sin cifras"
+      }
+    ],
+    "recommended": "A",
+    "risks": "RES-01 recomienda A y aplicar C mientras siga pendiente. Con B puede repetirse el bloqueo de red; con C el mensaje pierde peso. Fecha en la fuente: antes del primer contacto real (atada a D-P07, 16 oct).",
+    "cost": "A: 15–20 min del Founder; B: bajo; C: nulo",
+    "deadline": "2026-10-16",
+    "sources": [
+      "RES-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E5-research-datos-ip/2026-10-09-PRX-0013-consolidacion-crm/RES-01-evidencia.md"
+    ],
+    "unlocks": "Uso de cifras A# verificadas en los primeros mensajes y en el one-pager",
+    "funnelStage": "contacted"
+  },
+  {
+    "key": "L-02",
+    "title": "L-02 · Bloquear actividad saliente sin base legal evaluada",
+    "question": "¿Se permite registrar actividad saliente a contactos con base legal not_assessed y se encargan los controles G1–G6 del diccionario?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Bloquear hasta que RISK-01 evalúe la base legal (DEV-02) y encargar a DEV-01 los huecos G1–G6 (DAT-01)"
+      },
+      {
+        "id": "B",
+        "label": "Permitir con aviso y auditoría (DEV-02) o solo reporte manual en /tablero, sin cambiar código (DAT-01)"
+      },
+      {
+        "id": "C",
+        "label": "Permitir, como hoy (DEV-02), o posponer el diccionario hasta cerrar D-P07 (DAT-01)"
+      }
+    ],
+    "recommended": "A",
+    "risks": "Con C se contacta a ejecutivos reales sin base legal revisada; con B el cumplimiento depende de la memoria del operador; posponer acumula duplicados y fechas incorrectas. RISK-01 lo pide como cambio C1 bloqueante. Requiere revisión de un abogado.",
+    "cost": "L-02: una regla en logActivity y dos pruebas, menos de medio día; G1–G6: esfuerzo bajo o medio [Supuesto]",
+    "deadline": "2026-10-16",
+    "sources": [
+      "DEV-02",
+      "DAT-01",
+      "RISK-01",
+      "COM-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E6-producto-experiencia/2026-10-09-PRX-0013-consolidacion-crm/DEV-02-pruebas.md",
+      "praxia/equipos/E5-research-datos-ip/2026-10-09-PRX-0013-consolidacion-crm/DAT-01-diccionario.md",
+      "praxia/equipos/E8-gobierno/2026-10-09-PRX-0013-consolidacion-crm/RISK-01-privacidad.md",
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/COM-01-brief.md"
+    ],
+    "unlocks": "Registro seguro de los primeros contactos: el CRM impide pasar a Contacted sin base legal evaluada",
+    "funnelStage": "contacted"
+  },
+  {
+    "key": "UX-01-cambios",
+    "title": "Cambios del flujo lead-to-cash en el Command Center",
+    "question": "¿Qué cambios del service blueprint lead-to-cash se construyen y en qué orden?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Construir los 5 cambios en orden: oportunidad por cuenta, aprobación de primer contacto, nota de discovery, puertas y kickoff"
+      },
+      {
+        "id": "B",
+        "label": "Solo 1 y 2 (oportunidad por cuenta Tier 1 y aprobación de primer contacto) para mover las 117 cuentas"
+      },
+      {
+        "id": "C",
+        "label": "Posponer todo y operar con el flujo manual actual"
+      }
+    ],
+    "recommended": "B",
+    "risks": "UX-01: B ahora y A completo antes del primer contrato. Con C las cuentas se enfrían y no queda rastro de qué mensaje aprobó el Founder. Depende de D-P07 y D-P05. Tensión con CEO-01, que pide congelar funciones nuevas del CRM.",
+    "cost": "1 a 3 días de trabajo de agente para B [Supuesto]",
+    "deadline": "2026-10-16",
+    "sources": [
+      "UX-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E6-producto-experiencia/2026-10-09-PRX-0013-consolidacion-crm/UX-01-blueprint.md"
+    ],
+    "unlocks": "Oportunidades con siguiente acción para cuentas Tier 1 y aprobación registrada del primer mensaje",
+    "funnelStage": "ready"
+  },
+  {
+    "key": "D-P02",
+    "title": "D-P02 · Catálogo de servicios mientras siguen abiertos los nombres",
+    "question": "¿Cómo se registra el servicio (serviceId) de cada oportunidad mientras D-P02 (nombres de servicios) sigue abierta?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Usar el catálogo A–G y anotar la oferta de §5.2 en description"
+      },
+      {
+        "id": "B",
+        "label": "Alinear el catálogo de serviceId a las ofertas de §5.2"
+      },
+      {
+        "id": "C",
+        "label": "Esperar a cerrar D-P02"
+      }
+    ],
+    "recommended": "A",
+    "risks": "SAL-03: A ahora y B al cerrar D-P02; con C no hay serviceId y no se avanza de etapa. DEL-03 pide vender el diagnóstico de IA como Adoption Gap Diagnostic con alcance de IA (no como fase del AI Accelerator). COM-01: D-P02 según skill §5.1; CEO-01 la cierra al 23 oct.",
+    "cost": "A: nulo; B: lo hace el dueño del Command Center",
+    "deadline": "2026-10-16",
+    "sources": [
+      "SAL-03",
+      "DEL-03",
+      "MKT-01",
+      "COM-01",
+      "CEO-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E2-revenue/2026-10-09-PRX-0013-consolidacion-crm/SAL-03-discovery.md",
+      "praxia/equipos/E4-delivery-adopcion/2026-10-09-PRX-0013-consolidacion-crm/DEL-03-intake.md",
+      "praxia/equipos/E3-marca-demanda/2026-10-09-PRX-0013-consolidacion-crm/MKT-01-mensajes.md",
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/COM-01-brief.md",
+      "praxia/equipos/E1-direccion/2026-10-09-PRX-0013-consolidacion-crm/CEO-01-cadencia.md"
+    ],
+    "unlocks": "Ficha de la oferta ancla (diagnóstico) y avance de oportunidades a Proposal Development con serviceId",
+    "funnelStage": "proposal"
+  },
+  {
+    "key": "SAL-01-etapas-fit",
+    "title": "Etapas con evidencia, fit 1–5 y campos de calificación del CRM",
+    "question": "¿Se aprueban las 12 etapas con evidencia, la regla de fit 1–5 y las brechas del CRM (incluida la calificación) como backlog?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Aprobar etapas, fit 1–5 con topes y las brechas 1 a 8 como backlog (incluye calificación y valor en juego)"
+      },
+      {
+        "id": "B",
+        "label": "Aprobar etapas y fit, pero registrar la calificación en notas, sin control automático"
+      },
+      {
+        "id": "C",
+        "label": "Aplazar hasta cerrar D-P05 y D-P07; el pipeline sigue sin reglas"
+      }
+    ],
+    "recommended": "A",
+    "risks": "Con B o C el pipeline puede inflarse sin evidencia; umbrales de 250 empleados y 2 intentos en 21 días sin validar. SAL-03 coincide: pide qualificationScore y valueAtStake para que no avance una propuesta con menos de 28. QA-01 y DAT-01 piden unificar la escala del fit.",
+    "cost": "A: esfuerzo medio (cambios de esquema y validación); B: esfuerzo bajo",
+    "deadline": "2026-10-16",
+    "sources": [
+      "SAL-01",
+      "SAL-03"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E2-revenue/2026-10-09-PRX-0013-consolidacion-crm/SAL-01-etapas.md",
+      "praxia/equipos/E2-revenue/2026-10-09-PRX-0013-consolidacion-crm/SAL-03-discovery.md"
+    ],
+    "unlocks": "Puertas por evidencia: Qualified con /calificar ≥ 21 y propuesta solo con ≥ 28 y sin 1 en sponsor o valor",
+    "funnelStage": "opportunity"
+  },
+  {
+    "key": "CRM-campos-prospeccion",
+    "title": "Origen, competencia e intake de IA: notas estructuradas o campos nuevos",
+    "question": "¿El origen de cada conversación, la competencia por cuenta y el intake de IA se guardan en notas con formato fijo o en campos nuevos?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Solo notas con formato fijo, sin cambiar el esquema (prefijo en subject, líneas [CI], plantilla de intake)"
+      },
+      {
+        "id": "B",
+        "label": "Campos o tablas nuevas ya: originChannel/originContentId, account_competitors y columnas de intake"
+      },
+      {
+        "id": "C",
+        "label": "Notas ahora y campos después: al terminar EXP-01 (MKT-03) o con 5 diagnósticos reales (DEL-03)"
+      }
+    ],
+    "recommended": "C",
+    "risks": "Desacuerdo: MKT-03 recomienda C y DEL-03 notas hasta tener 5 diagnósticos, pero RES-02 recomienda ya la tabla account_competitors (con notas mientras tanto). Con notas el dato se rompe si cambia el prefijo y no se puede filtrar. Nombres de terceros en repo público (D-P08).",
+    "cost": "Notas: sin costo. Campos: migración pequeña (MKT-03), cambio de esquema y migración (RES-02), 1–2 días [Supuesto] (DEL-03)",
+    "deadline": "2026-10-16",
+    "sources": [
+      "MKT-03",
+      "RES-02",
+      "DEL-03"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E3-marca-demanda/2026-10-09-PRX-0013-consolidacion-crm/MKT-03-embudo.md",
+      "praxia/equipos/E5-research-datos-ip/2026-10-09-PRX-0013-consolidacion-crm/RES-02-competencia.md",
+      "praxia/equipos/E4-delivery-adopcion/2026-10-09-PRX-0013-consolidacion-crm/DEL-03-intake.md"
+    ],
+    "unlocks": "Atribución de conversaciones por canal (WF03), contexto competitivo para calificar y línea base del piloto de IA",
+    "funnelStage": "opportunity"
+  },
+  {
+    "key": "DSN-01-onepager",
+    "title": "Formato del one-pager sectorial de seguimiento",
+    "question": "¿En qué formato se produce el one-pager que se envía después de un primer contacto aprobado?",
+    "options": [
+      {
+        "id": "A",
+        "label": "PDF carta vertical con un renderizador nuevo: lo más legible por correo y en papel"
+      },
+      {
+        "id": "B",
+        "label": "Una lámina 16:9 con el layout actual: más rápida, pero se lee mal en el teléfono y en papel"
+      },
+      {
+        "id": "C",
+        "label": "docx con la receta §15.3, fuera del builder: duplica tokens y contenido"
+      }
+    ],
+    "recommended": "A",
+    "risks": "Envío de versiones por cuenta sin aprobación del Founder, datos de cuenta (recap) en el repo público y logo provisional.",
+    "cost": "A: unas 6–8 h de DSN-01; B: unas 3 h",
+    "deadline": "2026-10-16",
+    "sources": [
+      "DSN-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E3-marca-demanda/2026-10-09-PRX-0013-consolidacion-crm/DSN-01-onepager.md"
+    ],
+    "unlocks": "Pieza de seguimiento por sector que lleva de la primera respuesta a agendar el diagnóstico",
+    "funnelStage": "meeting"
+  },
+  {
+    "key": "D-P05",
+    "title": "D-P05 · Qué mide la meta de USD 10k al mes",
+    "question": "¿La meta de USD 10k/mes se mide como ingreso reconocido, cobrado neto de IVA o contratado?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Ingreso reconocido, promedio móvil de 3 meses, con el cobrado neto de IVA siempre a la vista"
+      },
+      {
+        "id": "B",
+        "label": "Cobrado neto de IVA"
+      },
+      {
+        "id": "C",
+        "label": "Contratado"
+      }
+    ],
+    "recommended": "A",
+    "risks": "A requiere registrar el costo junto con el ingreso; B está bloqueado por el RFC y llega 30–60 días tarde; C es irregular y sobrestima el avance. Escenario base a 90 días: 1 diagnóstico pagado. Requiere revisión de un contador.",
+    "cost": "Cero en desarrollo; la medida ya es configurable en el Command Center",
+    "deadline": "2026-10-16",
+    "sources": [
+      "FIN-01",
+      "CEO-01",
+      "COM-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/FIN-01-pronostico.md",
+      "praxia/equipos/E1-direccion/2026-10-09-PRX-0013-consolidacion-crm/CEO-01-cadencia.md",
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/COM-01-brief.md"
+    ],
+    "unlocks": "Tablero y revisión mensual con una métrica de ingresos definida; dólares solo desde Proposal Development",
+    "funnelStage": "operations"
+  },
+  {
+    "key": "HR-01-capacidad",
+    "title": "Tope de revisión del Founder y política del primer asociado",
+    "question": "¿Qué tope semanal de revisión tiene el Founder y cuándo se suma el primer asociado?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Cola semanal de máximo 5 piezas (≤ 3 h) de QA-01; banco de Analysts desde la 1.ª propuesta; contratación por proyecto al firmar"
+      },
+      {
+        "id": "B",
+        "label": "Asociado con anticipo mensual desde ya"
+      },
+      {
+        "id": "C",
+        "label": "Sin asociado hasta tener 2 diagnósticos; el Founder cubre el campo"
+      }
+    ],
+    "recommended": "A",
+    "risks": "B es costo sin pipeline; con C el Founder rebasa su disponibilidad desde la semana 8 (escenario medio) y arriesga el primer caso. Saturación del Founder (D-P01).",
+    "cost": "Sin costo fijo en A; requiere dos datos del Founder: horas disponibles (20 h/semana [Supuesto]) y tarifa diaria del asociado",
+    "deadline": "2026-10-16",
+    "sources": [
+      "HR-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/HR-01-capacidad.md"
+    ],
+    "unlocks": "Tiempo protegido del Founder para vender y capacidad de entrega al firmar el primer diagnóstico",
+    "funnelStage": "operations"
+  },
+  {
+    "key": "PR-01-aliados",
+    "title": "Política de aliados para el Horizonte 1",
+    "question": "¿Los aliados se registran sin conversaciones, con referidos recíprocos sin comisión o también con comisiones y co-venta?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Solo registrar aliados como «identificado», sin conversaciones"
+      },
+      {
+        "id": "B",
+        "label": "Registrar y permitir referidos recíprocos sin comisión, con el Founder como único contacto"
+      },
+      {
+        "id": "C",
+        "label": "B más comisiones o co-venta"
+      }
+    ],
+    "recommended": "B",
+    "risks": "Recomendación B después de D-P07. Con A no se consigue credibilidad prestada; con C se compromete la independencia. C queda fuera hasta tener razón social, revisión legal y un primer caso.",
+    "cost": "2 a 3 horas al mes del Founder [Supuesto]; sin gasto",
+    "deadline": "2026-10-16",
+    "sources": [
+      "PR-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E3-marca-demanda/2026-10-09-PRX-0013-consolidacion-crm/PR-01-aliados.md"
+    ],
+    "unlocks": "Acceso a cuentas vía integradores, fondos y firmas complementarias en el momento del trigger",
+    "funnelStage": "accounts"
+  },
+  {
+    "key": "DEL-01-handoff-onboarding",
+    "title": "Handoff a kickoff (G0) y onboarding de 30 días tras la firma",
+    "question": "¿El handoff de Closed Won a kickoff y el onboarding del cliente se registran a mano, se automatizan después o se espera a Projects v1?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Adoptar hoy con registro manual: tareas H1–H9, aprobaciones y notas de salud con el esquema actual"
+      },
+      {
+        "id": "B",
+        "label": "A ahora y automatizar después: tareas al firmar y campo de salud del cliente (DEV-01, Projects v1)"
+      },
+      {
+        "id": "C",
+        "label": "Esperar a Projects v1 (DEL-01); CX-01 plantea y descarta una hoja externa"
+      }
+    ],
+    "recommended": "B",
+    "risks": "DEL-01 recomienda B; CX-01, A desde hoy y B antes del primer contrato. Sin decidir, el primer cliente entra sin dueño tras la firma. Faltan tarifas de asociados y horas del Founder. B ocupa capacidad de la Fase 2. CX-01 fija 2026-10-23 o la primera firma.",
+    "cost": "A: bajo, en tiempo del Founder; B: medio, entra en el backlog de DEV-01",
+    "deadline": "2026-10-16",
+    "sources": [
+      "DEL-01",
+      "CX-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E4-delivery-adopcion/2026-10-09-PRX-0013-consolidacion-crm/DEL-01-handoff.md",
+      "praxia/equipos/E4-delivery-adopcion/2026-10-09-PRX-0013-consolidacion-crm/CX-01-onboarding.md"
+    ],
+    "unlocks": "Paso ordenado de Closed Won a kickoff y G0, con dueño de entrega desde el día 0",
+    "funnelStage": "won"
+  },
+  {
+    "key": "DEL-02-scorecard",
+    "title": "Registro del Adoption Scorecard por contrato",
+    "question": "¿Cómo se registra en el Command Center el Adoption Scorecard de 7 indicadores por contrato?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Dos tablas nuevas (adoption_indicators y adoption_measurements) con historial, validación de G0 y semáforo calculado"
+      },
+      {
+        "id": "B",
+        "label": "Un campo JSON adoption_scorecard en contracts: más rápido, sin serie de tiempo ni validaciones confiables"
+      },
+      {
+        "id": "C",
+        "label": "El Scorecard queda fuera del Command Center, en documentos por proyecto"
+      }
+    ],
+    "recommended": "A",
+    "risks": "Umbrales sin calibrar (todos [Supuesto]); el cliente puede compartir datos sensibles (RISK-01); con A el contrato no pasa a active sin línea base aprobada en G0.",
+    "cost": "A: 2 a 3 días de desarrollo y pruebas [Supuesto]; B: 1 día; C: nada",
+    "deadline": "2026-10-16",
+    "sources": [
+      "DEL-02"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E4-delivery-adopcion/2026-10-09-PRX-0013-consolidacion-crm/DEL-02-scorecard.md"
+    ],
+    "unlocks": "Evidencia de adopción junto al ingreso reconocido de cada contrato, desde G0",
+    "funnelStage": "operations"
+  },
+  {
+    "key": "OPS-01-higiene",
+    "title": "Alcance de la higiene semanal del pipeline",
+    "question": "¿Qué alcance tiene la higiene semanal del pipeline a partir del lunes 12 de octubre?",
+    "options": [
+      {
+        "id": "A",
+        "label": "SOP completo (las 8 revisiones) desde el lunes 12 de octubre"
+      },
+      {
+        "id": "B",
+        "label": "Modo ligero (revisiones 1, 2, 6, 7 y 8) hasta la primera oportunidad real; después, el SOP completo"
+      },
+      {
+        "id": "C",
+        "label": "Higiene quincenal"
+      }
+    ],
+    "recommended": "B",
+    "risks": "Olvidar pasar al modo completo; con C una acción vencida puede pasar 14 días sin verse. Sin motor de tareas, el Founder lanza y registra cada corrida.",
+    "cost": "B ≈ 15 min, A ≈ 20 min y C ≈ 10 min por semana [Supuesto]",
+    "deadline": "2026-10-16",
+    "sources": [
+      "OPS-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/OPS-01-higiene.md"
+    ],
+    "unlocks": "Revisión de los lunes con datos limpios: base legal, demo separada, tareas y aprobaciones atrasadas",
+    "funnelStage": "operations"
+  },
+  {
+    "key": "D-P09",
+    "title": "D-P09 · Quién escribe en la base del Artifact (escritor único)",
+    "question": "¿Quién escribe en la base del Artifact: un solo escritor, varios escritores con versiones, o se deja como está?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Un solo escritor: el mirror o el motor escriben y la página solo lee el CRM"
+      },
+      {
+        "id": "B",
+        "label": "Varios escritores con versiones y leases: la página también edita"
+      },
+      {
+        "id": "C",
+        "label": "Dejar todo como está; se aceptan pérdidas silenciosas de datos"
+      }
+    ],
+    "recommended": "A",
+    "risks": "Con A, un cambio hecho desde claude.ai tarda en aparecer. Hoy la sincronización puede perder ediciones y reescribir cambios ajenos. Fecha: DEV-01 la pide antes de la próxima corrida del mirror (≤ 16 oct); COM-01 la sitúa antes de la Fase 2.",
+    "cost": "Incluido en el paso 2 de DEV-01 (ADR-002 y ADR-003: 2–3 días [Supuesto])",
+    "deadline": "2026-10-16",
+    "sources": [
+      "DEV-01",
+      "COM-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E6-producto-experiencia/2026-10-09-PRX-0013-consolidacion-crm/DEV-01-arquitectura.md",
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/COM-01-brief.md"
+    ],
+    "unlocks": "Sincronización segura del CRM y base para el motor autónomo de la Fase 2",
+    "funnelStage": "operations"
+  },
+  {
+    "key": "D-P06",
+    "title": "D-P06 · Idioma de la interfaz del Command Center",
+    "question": "¿En qué idioma queda la interfaz del Command Center?",
+    "options": [
+      {
+        "id": "A",
+        "label": "Todo en inglés"
+      },
+      {
+        "id": "B",
+        "label": "Todo en español"
+      },
+      {
+        "id": "C",
+        "label": "Bilingüe con i18n"
+      }
+    ],
+    "recommended": "B",
+    "risks": "Retrabajo de textos; C duplica el mantenimiento. Hoy la UI está en inglés y los equipos y el «[Supuesto]» en español.",
+    "cost": "Retrabajo de textos de 1 a 2 días [Supuesto]",
+    "deadline": "2026-10-16",
+    "sources": [
+      "UI-01",
+      "COM-01"
+    ],
+    "sourcePaths": [
+      "praxia/equipos/E6-producto-experiencia/2026-10-09-PRX-0013-consolidacion-crm/UI-01-auditoria-ui.md",
+      "praxia/equipos/E7-operaciones-personas/2026-10-09-PRX-0013-consolidacion-crm/COM-01-brief.md"
+    ],
+    "unlocks": "Arranque del bloque 1 de UI: tablas con búsqueda, filtros y paginación para las 117 cuentas",
+    "funnelStage": "operations"
+  }
+]

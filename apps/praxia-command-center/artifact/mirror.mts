@@ -10,6 +10,9 @@
  *   npx tsx artifact/mirror.mts <stateDir> task-create <agentId> <priority> <dueDate|-> <title> <instructions>
  *   npx tsx artifact/mirror.mts <stateDir> task-status <taskId> <status> [output]
  *   npx tsx artifact/mirror.mts <stateDir> task-progress <taskId> <0-95>
+ *   npx tsx artifact/mirror.mts <stateDir> decisions-import                   agents' founder decisions → inbox
+ *   npx tsx artifact/mirror.mts <stateDir> plan-work                          funnel work for the agents
+ *   npx tsx artifact/mirror.mts <stateDir> task-output <taskId> <file>         output → waiting for founder approval
  *
  * Every command prints the batch files (≤ 50 writes each, entries ready for ArtifactData batch) it wrote.
  */
@@ -19,6 +22,8 @@ import { createBrowserDb } from "./sqljs-db";
 import { TABLES } from "./src/runtime";
 import { createTask, updateTask, updateTaskStatus } from "../src/server/services/agents";
 import { importProspects, parseCsv } from "../src/server/services/importer";
+import { importFounderDecisions } from "../src/server/seed/decisions";
+import { backfillApprovals, planWork } from "../src/server/engine/engine";
 import type { TaskPriority, TaskStatus } from "../src/server/db/schema";
 
 const ACTOR = "orchestrator:claude-code";
@@ -94,7 +99,8 @@ switch (cmd) {
   }
   case "task-status": {
     const [taskId, status, output] = args;
-    await updateTaskStatus(db, taskId!, status as TaskStatus, output ? { output } : {}, ACTOR);
+    // F3: an error keeps its cause in errorMessage (not in the output field).
+    await updateTaskStatus(db, taskId!, status as TaskStatus, output ? (status === "error" ? { error: output } : { output }) : {}, ACTOR);
     result = { taskId, status };
     break;
   }
@@ -120,6 +126,22 @@ switch (cmd) {
     const items = JSON.parse(fs.readFileSync(args[0]!, "utf8")) as { taskId: string; status: TaskStatus; output?: string }[];
     for (const it of items) await updateTaskStatus(db, it.taskId, it.status, it.output ? { output: it.output } : {}, ACTOR);
     result = { updated: items.length };
+    break;
+  }
+  case "decisions-import": {
+    result = { ...(await importFounderDecisions(db, ACTOR)), backfilled: await backfillApprovals(db, ACTOR) };
+    break;
+  }
+  case "plan-work": {
+    result = await planWork(db, ACTOR, "orchestrator");
+    break;
+  }
+  case "task-output": {
+    // F4: the output must exist; its full text goes to the founder's inbox (waiting_approval).
+    const [taskId, file] = args;
+    if (!file || !fs.existsSync(file)) throw new Error(`output file not found: ${file}`);
+    await updateTaskStatus(db, taskId!, "waiting_approval", { output: fs.readFileSync(file, "utf8").trim() }, ACTOR);
+    result = { taskId, status: "waiting_approval" };
     break;
   }
   default:
